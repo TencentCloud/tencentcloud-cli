@@ -221,7 +221,7 @@
         },
         {
           "default": "",
-          "document": "任务来源,0:默认值(私域), 1:灵犀, 2:灵鲲",
+          "document": "任务来源,0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android)",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -277,7 +277,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -322,7 +322,7 @@
         },
         {
           "default": "",
-          "document": "上传的文件ID(灵犀诊断必填)",
+          "document": "上传的文件ID(任务来源为1时必填)",
           "example": "673d29c2f70b40c18d88******141",
           "member": "string",
           "name": "FileID",
@@ -331,7 +331,7 @@
         },
         {
           "default": "",
-          "document": "软件下载链接地址(灵鲲诊断必填)",
+          "document": "软件下载链接地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.apk",
           "member": "string",
           "name": "AppDownloadUrl",
@@ -340,7 +340,7 @@
         },
         {
           "default": "",
-          "document": "隐私文本下载地址(灵鲲诊断必填)",
+          "document": "隐私文本下载地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.txt",
           "member": "string",
           "name": "PrivacyTextUrl",
@@ -412,7 +412,7 @@
         },
         {
           "default": "",
-          "document": "任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -457,7 +457,7 @@
         },
         {
           "default": "",
-          "document": "上传的软件文件ID(灵犀诊断必填)",
+          "document": "上传的软件文件ID(任务来源为1时必填)",
           "example": "673d29c2f70b40c18d88******141",
           "member": "string",
           "name": "FileID",
@@ -466,7 +466,7 @@
         },
         {
           "default": "",
-          "document": "软件下载链接地址(灵鲲诊断必填)",
+          "document": "软件下载链接地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.apk",
           "member": "string",
           "name": "AppDownloadUrl",
@@ -475,7 +475,7 @@
         },
         {
           "default": "",
-          "document": "隐私文本下载地址(灵鲲诊断必填)",
+          "document": "隐私文本下载地址(任务来源为2时必填)",
           "example": "https://bma-privacy****.txt",
           "member": "string",
           "name": "PrivacyTextUrl",
@@ -592,7 +592,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -624,7 +624,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "上传url(灵鲲:Post方法（100:apk,101:txt）, 灵犀:put方法)",
+          "document": "上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)",
           "example": "https://private-7****2.gzc.vod.tencent-cloud.com/52423182d35",
           "member": "string",
           "name": "UploadUrl",
@@ -633,7 +633,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "上传url鉴权信息(灵犀上传需要, Authorization参数值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "q-sign-algorithm=sha1&q-ak=BY...",
           "member": "string",
           "name": "UploadSign",
@@ -642,7 +642,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "上传文件ID(灵犀提交诊断任务需要)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传文件ID(任务来源为1时提交诊断任务需要)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "170143860",
           "member": "string",
           "name": "FildID",
@@ -709,7 +709,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, -1:所有, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, -1:所有, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "-1",
           "member": "int64",
           "name": "Source",
@@ -835,7 +835,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -925,7 +925,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "2",
           "member": "int64",
           "name": "Source",

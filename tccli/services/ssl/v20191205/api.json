@@ -747,6 +747,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSM",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1923,7 +1933,7 @@
         },
         {
           "default": "",
-          "document": "证书状态。",
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
           "example": "1",
           "member": "uint64",
           "name": "CertificateStatus",
@@ -1965,6 +1975,15 @@
           "name": "FilterSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否筛选国密证书。1:筛选  0:不筛选",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSM",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

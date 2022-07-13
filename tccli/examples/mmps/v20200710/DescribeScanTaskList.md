@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli mmps DescribeScanTaskList --cli-unfold-argument  \
-    --Source -1 \
-    --Platform 2 \
     --TaskStatuses "0,1,2" \
-    --TaskTypes "0,1" \
     --PageNo 0 \
-    --PageSize 10
+    --PageSize 10 \
+    --TaskTypes "0,1" \
+    --Source -1 \
+    --Platform 2
 ```
 
 Output: 

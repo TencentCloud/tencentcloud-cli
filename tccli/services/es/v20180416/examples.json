@@ -16,6 +16,14 @@
         "title": "创建ES集群实例"
       }
     ],
+    "CreateLogstashInstance": [
+      {
+        "document": "根据输入参数创建Logstash实例",
+        "input": "https://es.tencentcloudapi.com/?Action=CreateLogstashInstance\n&InstanceName=logstash_test\n&LogstashVersion=6.8.13\n&ChargeType=POSTPAID_BY_HOUR\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&Zone=ap-guangzhou-3\n&DiskType=CLOUD_SSD\n&DiskSize=100\n&NodeNum=3\n&NodeType=LOGSTASH.S1.SMALL2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ls-xxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
+        "title": "创建Logstash实例"
+      }
+    ],
     "DeleteIndex": [
       {
         "document": "",
@@ -30,6 +38,22 @@
         "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
         "title": "删除ES集群实例"
+      }
+    ],
+    "DeleteLogstashInstance": [
+      {
+        "document": "删除指定ID的Logstash实例",
+        "input": "https://es.tencentcloudapi.com/?Action=DeleteLogstashInstance\n&InstanceId=ls-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "删除Logstash实例"
+      }
+    ],
+    "DeleteLogstashPipelines": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DeleteLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&PipelineIds.0=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "删除Logstash管道"
       }
     ],
     "DescribeIndexList": [
@@ -72,6 +96,38 @@
         "title": "查询ES集群实例"
       }
     ],
+    "DescribeLogstashInstanceLogs": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashInstanceLogs\n&InstanceId=ls-f5mwm28u\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 71633,\n        \"InstanceLogList\": [\n            {\n                \"Time\": \"2019-01-22T10:45:36.220+08:00\",\n                \"Ip\": \"10.0.128.65\",\n                \"Level\": \"INFO\",\n                \"Message\": \"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:cdc62072721547678872c0448c1ecaf9, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.43, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\n            },\n            {\n                \"Time\": \"2019-01-22T10:45:35.730+08:00\",\n                \"Ip\": \"10.0.128.65\",\n                \"Level\": \"INFO\",\n                \"Message\": \"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:1a8a5b7ea41a485ebdd769586c1dcdf6, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.73, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\n            }\n        ],\n        \"RequestId\": \"783d9290-dc60-4862-9340-10b632605374\"\n    }\n}",
+        "title": "获取Logstash实例日志"
+      }
+    ],
+    "DescribeLogstashInstanceOperations": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashInstanceOperations\n&InstanceId=ls-f5mwm28u\n&StartTime=2021-01-05 20:18:03\n&EndTime=2021-01-05 20:28:03\n&Offset=0\n&Limit=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Operations\": [\n            {\n                \"Id\": 6173,\n                \"StartTime\": \"2021-01-05 20:25:39\",\n                \"Type\": \"CreateInstance\",\n                \"Detail\": {\n                    \"OldInfo\": [],\n                    \"NewInfo\": []\n                },\n                \"Result\": \"completed\",\n                \"Tasks\": [\n                    {\n                        \"Name\": \"prepareResource\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2021-01-05 20:27:39\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"deployESCluster\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:34:32\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"deployKibana\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:13\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"configLB\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:15\",\n                        \"SubTasks\": []\n                    }\n                ],\n                \"Progress\": 1\n            }\n        ],\n        \"RequestId\": \"870dd618-b1ae-40cc-a5a9-22b867367ed7\"\n    }\n}",
+        "title": "查询Logstash实例操作记录"
+      }
+    ],
+    "DescribeLogstashInstances": [
+      {
+        "document": "根据给定条件查询符合条件的Logstash实例并返回详细信息",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashInstances\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"ls-ee6o1285\",\n                \"InstanceName\": \"wurong-20200927-ls01\",\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"AppId\": 1257780094,\n                \"Uin\": \"100007799884\",\n                \"VpcId\": \"vpc-ck9abamb\",\n                \"SubnetId\": \"subnet-gmmt588q\",\n                \"Status\": 1,\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"ChargePeriod\": 0,\n                \"RenewFlag\": \"\",\n                \"NodeType\": \"LOGSTASH.S1.MEDIUM4\",\n                \"NodeNum\": 5,\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskSize\": 100,\n                \"LogstashVersion\": \"6.8.10\",\n                \"LicenseType\": \"xpack\",\n                \"YMLConfig\": \"\",\n                \"BindedESInstanceId\": \"\",\n                \"Nodes\": [\n                    {\n                        \"NodeId\": \"100003160102096307\",\n                        \"Ip\": \"10.0.3.21\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160102096308\",\n                        \"Ip\": \"10.0.3.134\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160102514909\",\n                        \"Ip\": \"10.0.3.151\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160102514910\",\n                        \"Ip\": \"10.0.3.160\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160102514911\",\n                        \"Ip\": \"10.0.3.157\",\n                        \"Port\": 9600\n                    }\n                ],\n                \"ExtendedFiles\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Size\": 1\n                    }\n                ],\n                \"CreateTime\": \"2020-09-25 16:02:43\",\n                \"UpdateTime\": \"2020-09-27 16:10:17\",\n                \"Deadline\": \"2017-12-04 00:00:00\"\n            },\n            {\n                \"InstanceId\": \"ls-g8k9pzj9\",\n                \"InstanceName\": \"wurong-20200915-ls01\",\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"AppId\": 1257780094,\n                \"Uin\": \"100007799884\",\n                \"VpcId\": \"vpc-ck9abamb\",\n                \"SubnetId\": \"subnet-gmmt588q\",\n                \"Status\": 1,\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"ChargePeriod\": 0,\n                \"RenewFlag\": \"\",\n                \"NodeType\": \"LOGSTASH.S1.MEDIUM4\",\n                \"NodeNum\": 5,\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskSize\": 100,\n                \"LogstashVersion\": \"6.8.13\",\n                \"YMLConfig\": \"\",\n                \"LicenseType\": \"xpack\",\n                \"BindedESInstanceId\": \"\",\n                \"Nodes\": [\n                    {\n                        \"NodeId\": \"100003160015134602\",\n                        \"Ip\": \"10.0.3.136\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160015134603\",\n                        \"Ip\": \"10.0.3.249\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160015279213\",\n                        \"Ip\": \"10.0.3.227\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160015279214\",\n                        \"Ip\": \"10.0.3.248\",\n                        \"Port\": 9600\n                    },\n                    {\n                        \"NodeId\": \"100003160015279215\",\n                        \"Ip\": \"10.0.3.83\",\n                        \"Port\": 9600\n                    }\n                ],\n                \"ExtendedFiles\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Size\": 1\n                    }\n                ],\n                \"CreateTime\": \"2020-09-15 14:29:06\",\n                \"UpdateTime\": \"2020-09-15 15:28:27\",\n                \"Deadline\": \"2017-12-04 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccxxxxxx\"\n    }\n}",
+        "title": "查询Logstash实例"
+      }
+    ],
+    "DescribeLogstashPipelines": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LogstashPipelineList\": [\n            {\n                \"PipelineId\": \"g4cqkhhr_1\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xx\",\n                \"Status\": -2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            },\n            {\n                \"PipelineId\": \"g4cqkhhr_2\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xxx\",\n                \"Status\": 2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取Logstash实例管道列表"
+      }
+    ],
     "DescribeViews": [
       {
         "document": "",
@@ -112,12 +168,44 @@
         "title": "重启Kibana"
       }
     ],
+    "RestartLogstashInstance": [
+      {
+        "document": "用于重启Logstash实例",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartLogstashInstance\n&InstanceId=ls-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "重启Logstash实例"
+      }
+    ],
     "RestartNodes": [
       {
         "document": "",
         "input": "https://es.tencentcloudapi.com/?Action=RestartNodes\r\n&InstanceId=es-xxxxxxxx\r\n&NodeNames.0=159229897700074xxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "重启集群节点"
+      }
+    ],
+    "SaveAndDeployLogstashPipeline": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=SaveAndDeployLogstashPipeline\n&InstanceId=ls-xxxxxxxx\n&Pipeline.PipelineId=test\n&Pipeline.PipelineDesc=test\n&Pipeline.Config=\"\"\n&Pipeline.QueueCheckPointWrites=1000\n&Pipeline.QueueType=\"persisted\"\n&Pipeline.QueueMaxBytes=1GB\n&Pipeline.BatchDelay=50\n&Pipeline.BatchSize=1000\n&Pipeline.Workers=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "保存并部署管道"
+      }
+    ],
+    "StartLogstashPipelines": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=StartLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&PipelineIds.0=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "批量部署Logstash管道"
+      }
+    ],
+    "StopLogstashPipelines": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=StopLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&PipelineIds.0=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "批量停止Logstash管道"
       }
     ],
     "UpdateDiagnoseSettings": [
@@ -182,6 +270,22 @@
         "input": "https://es.tencentcloudapi.com/?Action=UpdateJdk\n&InstanceId=es-xxxxxx\n&Jdk=kona\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "UpdateJdk"
+      }
+    ],
+    "UpdateLogstashInstance": [
+      {
+        "document": "用以修改指定Logstash实例的名称",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateLogstashInstance\n&InstanceId=ls-xxxxxx\n&InstanceName=newName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "修改Logstash实例名称"
+      }
+    ],
+    "UpdateLogstashPipelineDesc": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateLogstashPipelineDesc\n&InstanceId=ls-xxxxxxxx\n&PipelineId=xx\n&PipelineDesc=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "更新实例管道的描述信息"
       }
     ],
     "UpdatePlugins": [

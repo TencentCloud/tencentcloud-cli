@@ -1,9 +1,9 @@
 {
   "actions": {
     "CreateBlockNodeRecords": {
-      "document": "创建节点记录",
+      "document": "推送节点数据",
       "input": "CreateBlockNodeRecordsRequest",
-      "name": "创建节点记录",
+      "name": "推送节点数据",
       "output": "CreateBlockNodeRecordsResponse"
     }
   },

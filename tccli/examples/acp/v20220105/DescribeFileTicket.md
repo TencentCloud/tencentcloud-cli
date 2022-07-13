@@ -1,6 +1,6 @@
 **Example 1: 获取App隐私诊断上传url**
 
-获取灵鲲app隐私诊断上传url
+获取app隐私诊断上传url
 
 Input: 
 

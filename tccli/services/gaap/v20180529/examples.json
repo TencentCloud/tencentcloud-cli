@@ -14,6 +14,14 @@
         "title": "AddRealServers"
       }
     ],
+    "BanAndRecoverProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BanAndRecoverProxy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be13ee03-60e8-4af1-880a-e84e5abdf6bc\"\n    }\n}",
+        "title": "封禁通道"
+      }
+    ],
     "BindListenerRealServers": [
       {
         "document": "监听器绑定源站",
@@ -318,6 +326,14 @@
         "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCountryAreaMapping\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"CountryAreaMappingList\": [\n            {\n                \"NationCountryName\": \"Fiji Islands\",\n                \"GeographicalZoneInnerCode\": \"401000\",\n                \"ContinentName\": \"Oceania\",\n                \"ContinentInnerCode\": \"400000\",\n                \"NationCountryInnerCode\": \"401012\",\n                \"GeographicalZoneName\": \"Oceania\"\n            }\n        ]\n    }\n}",
         "title": "获取国家地区编码映射表"
+      }
+    ],
+    "DescribeCrossBorderProxies": [
+      {
+        "document": "",
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCrossBorderProxies\n&Offset=0\n&Limit=1\n&Filters.0.Name=AccessRegion\n&Filters.0.Values.0=ap-hongkong\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca705529-e783-42a3-88c1-2cbe1e915ee6\"\n    }\n}",
+        "title": "查询通道实例列表"
       }
     ],
     "DescribeCustomHeader": [

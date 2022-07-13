@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mmps CreateAppScanTaskRepeat --cli-unfold-argument  \
-    --TaskType 0 \
-    --Source 0 \
     --AppPackage wx66e50f1e*******6f \
+    --Source 0 \
+    --OrgTaskID 170143813*******360 \
     --Platform 2 \
-    --OrgTaskID 170143813*******360
+    --TaskType 0
 ```
 
 Output: 

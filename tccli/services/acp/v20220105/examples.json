@@ -3,7 +3,7 @@
     "CreateAppScanTask": [
       {
         "document": "",
-        "input": "https://acp.tencentcloudapi.com/?Action=CreateAppScanTask\n&TaskType=0\n&Source=2\n&AppPackage=com.test.app\n&Platform=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"AppPackage\": \"com.test.app\",\n    \"Source\": \"2\",\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "创建App隐私合规基础诊断任务"
       },
@@ -35,7 +35,7 @@
     "CreateAppScanTaskRepeat": [
       {
         "document": "原任务失败后，重新提交隐私合规诊断基础版任务",
-        "input": "https://acp.tencentcloudapi.com/?Action=CreateAppScanTaskRepeat\n&TaskType=0\n&Source=2\n&AppPackage=com.test.app\n&Platform=0\n&OrgTaskID=170143813*******360\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"AppPackage\": \"com.test.app\",\n    \"Source\": \"2\",\n    \"OrgTaskID\": \"170143813*******360\",\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "创建App隐私合规诊断重试任务"
       },
@@ -54,8 +54,8 @@
     ],
     "DescribeFileTicket": [
       {
-        "document": "获取灵鲲app隐私诊断上传url",
-        "input": "https://acp.tencentcloudapi.com/?Action=DescribeFileTicket\n&Source=2\n&Platform=0\n&<公共请求参数>",
+        "document": "获取app隐私诊断上传url",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTicket\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://private-7****2.gz***d.tence***d.com/524***d35\"\n    }\n}",
         "title": "获取App隐私诊断上传url"
       },
@@ -77,7 +77,7 @@
     "DescribeScanTaskList": [
       {
         "document": "",
-        "input": "https://acp.tencentcloudapi.com/?Action=DescribeScanTaskList\n&Source=-1\n&Platform=2\n&TaskStatuses=\"0,1,2\"\n&TaskTypes=\"0,1\"\n&PageNo=0\n&PageSize=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"\\\"0,1,2\\\"\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"TaskTypes\": \"\\\"0,1\\\"\",\n    \"Source\": \"-1\",\n    \"Platform\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235414610411261952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"\",\n                    \"ReportTitle\": \"\",\n                    \"BehaviorUrl\": \"\",\n                    \"BehaviorTitle\": \"\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取应用合规诊断任务列表"
       },
@@ -91,7 +91,7 @@
     "DescribeScanTaskReportUrl": [
       {
         "document": "任务完成",
-        "input": "https://acp.tencentcloudapi.com/?Action=DescribeScanTaskReportUrl\n&ReportType=0\n&Source=2\n&TaskID=1701438134******0\n&Platform=0\n&TaskType=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"TaskID\": \"1701438134******0\",\n    \"Platform\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-***-0fdc-****-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\"\n    }\n}",
         "title": "查询App隐私合规诊断任务状态"
       }

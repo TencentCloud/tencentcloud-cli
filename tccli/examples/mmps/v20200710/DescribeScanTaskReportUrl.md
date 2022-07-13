@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mmps DescribeScanTaskReportUrl --cli-unfold-argument  \
-    --ReportType 0 \
     --Source 0 \
+    --TaskType 0 \
+    --ReportType 0 \
     --TaskID 1701438134******0 \
-    --Platform 2 \
-    --TaskType 0
+    --Platform 2
 ```
 
 Output: 

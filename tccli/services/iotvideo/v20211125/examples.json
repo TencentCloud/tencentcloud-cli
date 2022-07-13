@@ -16,6 +16,14 @@
         "title": "同步调用设备行为"
       }
     ],
+    "CreateProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProduct\n<公共请求参数>\n\n{\n    \"ProductDescription\": \"test\",\n    \"Features\": [\n        \"test1\"\n    ],\n    \"ChipId\": \"chip1\",\n    \"ProductName\": \"test\",\n    \"DeviceType\": 1,\n    \"ProductVaildYears\": 1,\n    \"ChipManufactureId\": \"x86\",\n    \"ChipOs\": \"linux\",\n    \"EncryptionType\": 2,\n    \"NetType\": \"wifi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UpdateTime\": 1,\n            \"ProductDescription\": \"test\",\n            \"EncryptionType\": 2,\n            \"ChipId\": \"chip1\",\n            \"ProductName\": \"test\",\n            \"DeviceType\": 1,\n            \"ChipManufactureId\": \"x86\",\n            \"ChipOs\": \"linux\",\n            \"ProductId\": \"ZPDHQH7YHR\",\n            \"CreateTime\": 1612216201,\n            \"Features\": [\n                \"test1\"\n            ],\n            \"NetType\": \"wifi\"\n        },\n        \"RequestId\": \"055cdcffeed5\"\n    }\n}",
+        "title": "创建产品"
+      }
+    ],
     "DescribeDeviceDataStats": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageDataStats\n<公共请求参数>\n\n{\n    \"StartDate\": \"2022-06-11\",\n    \"EndDate\": \"2022-06-13\",\n    \"ProductId\": \"L78xxxxZ95\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea134bab-41c7-426c-bfd9-559f453893db\",\n        \"Data\": [\n            {\n                \"Date\": \"2022-06-11\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-12\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-13\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "查询设备消息数据统计"
+      }
+    ],
+    "GenSingleDeviceSignatureOfPublic": [
+      {
+        "document": "生成单个设备绑定的签名, 一般用于APP绑定设备",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenSingleDeviceSignatureOfPublic\n<公共请求参数>\n\n{\n    \"DeviceName\": \"test_76854689_1\",\n    \"Expire\": \"86400\",\n    \"ProductId\": \"L78ASO6Z95\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"679e42ce-ee1b-408f-8e1f-5b5766614ec7\",\n        \"DeviceSignature\": {\n            \"DeviceName\": \"test_76854689_1\",\n            \"DeviceSignature\": \"751c625f1d674be09ab422883f16xxxx\"\n        }\n    }\n}",
+        "title": "生成单个设备绑定的签名"
       }
     ]
   },

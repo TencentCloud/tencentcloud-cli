@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --TaskType 0 \
-    --Source 2 \
     --AppPackage com.test.app \
-    --Platform 0
+    --Source 2 \
+    --Platform 0 \
+    --TaskType 0
 ```
 
 Output: 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mmps CreateAppScanTask --cli-unfold-argument  \
-    --TaskType 0 \
-    --Source 0 \
     --AppPackage wx66e50f1e*******6f \
-    --Platform 2
+    --Source 0 \
+    --Platform 2 \
+    --TaskType 0
 ```
 
 Output: 

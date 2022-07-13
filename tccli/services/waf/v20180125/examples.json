@@ -126,20 +126,6 @@
         "title": "描述WAF自动封禁IP 详情"
       }
     ],
-    "DescribeCustomRules": [
-      {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
-        "title": "获取自定义规则列表"
-      },
-      {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&Search=\"1\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d54d3c1-f60b-4766-bf2e-cb29738ed13d\",\n        \"RuleList\": [],\n        \"TotalCount\": \"0\"\n    }\n}",
-        "title": "带过滤参数返回结果为0的场景"
-      }
-    ],
     "DescribeDomainWhiteRules": [
       {
         "document": "",

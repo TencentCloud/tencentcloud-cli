@@ -12,6 +12,12 @@
       "name": "创建ES集群实例",
       "output": "CreateInstanceResponse"
     },
+    "CreateLogstashInstance": {
+      "document": "用于创建Logstash实例",
+      "input": "CreateLogstashInstanceRequest",
+      "name": "创建Logstash实例",
+      "output": "CreateLogstashInstanceResponse"
+    },
     "DeleteIndex": {
       "document": "删除索引",
       "input": "DeleteIndexRequest",
@@ -23,6 +29,18 @@
       "input": "DeleteInstanceRequest",
       "name": "销毁ES集群实例",
       "output": "DeleteInstanceResponse"
+    },
+    "DeleteLogstashInstance": {
+      "document": "用于删除Logstash实例",
+      "input": "DeleteLogstashInstanceRequest",
+      "name": "删除Logstash实例",
+      "output": "DeleteLogstashInstanceResponse"
+    },
+    "DeleteLogstashPipelines": {
+      "document": "用于批量删除Logstash管道",
+      "input": "DeleteLogstashPipelinesRequest",
+      "name": "删除Logstash管道",
+      "output": "DeleteLogstashPipelinesResponse"
     },
     "DescribeIndexList": {
       "document": "获取索引列表",
@@ -54,6 +72,30 @@
       "name": "查询ES集群实例",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeLogstashInstanceLogs": {
+      "document": "查询用户该地域下符合条件的Logstash实例的日志",
+      "input": "DescribeLogstashInstanceLogsRequest",
+      "name": "查询Logstash实例日志",
+      "output": "DescribeLogstashInstanceLogsResponse"
+    },
+    "DescribeLogstashInstanceOperations": {
+      "document": "查询实例指定条件下的操作记录",
+      "input": "DescribeLogstashInstanceOperationsRequest",
+      "name": "查询Logstash实例操作记录",
+      "output": "DescribeLogstashInstanceOperationsResponse"
+    },
+    "DescribeLogstashInstances": {
+      "document": "查询用户该地域下符合条件的所有Logstash实例",
+      "input": "DescribeLogstashInstancesRequest",
+      "name": "获取Logstash实例列表",
+      "output": "DescribeLogstashInstancesResponse"
+    },
+    "DescribeLogstashPipelines": {
+      "document": "用于获取Logstash实例管道列表",
+      "input": "DescribeLogstashPipelinesRequest",
+      "name": "获取Logstash实例管道列表",
+      "output": "DescribeLogstashPipelinesResponse"
+    },
     "DescribeViews": {
       "document": "查询集群各视图数据，包括集群维度、节点维度、Kibana维度",
       "input": "DescribeViewsRequest",
@@ -84,11 +126,35 @@
       "name": "重启Kibana",
       "output": "RestartKibanaResponse"
     },
+    "RestartLogstashInstance": {
+      "document": "用于重启Logstash实例",
+      "input": "RestartLogstashInstanceRequest",
+      "name": "重启Logstash实例",
+      "output": "RestartLogstashInstanceResponse"
+    },
     "RestartNodes": {
       "document": "用于重启集群节点",
       "input": "RestartNodesRequest",
       "name": "重启集群节点",
       "output": "RestartNodesResponse"
+    },
+    "SaveAndDeployLogstashPipeline": {
+      "document": "用于下发并且部署管道",
+      "input": "SaveAndDeployLogstashPipelineRequest",
+      "name": "保存并部署管道",
+      "output": "SaveAndDeployLogstashPipelineResponse"
+    },
+    "StartLogstashPipelines": {
+      "document": "用于启动Logstash管道",
+      "input": "StartLogstashPipelinesRequest",
+      "name": "启动Logstash管道",
+      "output": "StartLogstashPipelinesResponse"
+    },
+    "StopLogstashPipelines": {
+      "document": "用于批量停止Logstash管道",
+      "input": "StopLogstashPipelinesRequest",
+      "name": "停止Logstash管道",
+      "output": "StopLogstashPipelinesResponse"
     },
     "UpdateDiagnoseSettings": {
       "document": "更新智能运维配置",
@@ -119,6 +185,18 @@
       "input": "UpdateJdkRequest",
       "name": "更新实例Jdk配置",
       "output": "UpdateJdkResponse"
+    },
+    "UpdateLogstashInstance": {
+      "document": "对集群进行节点规格变更，修改实例名称，修改配置，等操作。参数中InstanceId为必传参数，参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeNum: 修改实例节点数量（节点横向扩缩容，纵向扩缩容等）\n- YMLConfig: 修改实例YML配置\n- BindedES：修改绑定的ES集群配置\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
+      "input": "UpdateLogstashInstanceRequest",
+      "name": "更新Logstash实例",
+      "output": "UpdateLogstashInstanceResponse"
+    },
+    "UpdateLogstashPipelineDesc": {
+      "document": "用于更新管道描述信息",
+      "input": "UpdateLogstashPipelineDescRequest",
+      "name": "更新管道描述",
+      "output": "UpdateLogstashPipelineDescResponse"
     },
     "UpdatePlugins": {
       "document": "变更插件列表",
@@ -845,6 +923,186 @@
       ],
       "type": "object"
     },
+    "CreateLogstashInstanceRequest": {
+      "document": "CreateLogstashInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "logstash_test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例版本（支持\"6.8.13\"、\"7.10.1\"）",
+          "example": "6.8.13",
+          "member": "string",
+          "name": "LogstashVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点数量（2-50个）",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "包年包月购买时长（单位由参数TimeUnit决定）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChargePeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费",
+          "example": "RENEW_FLAG_DEFAULT",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点规格<li>LOGSTASH.S1.SMALL2：1核2G</li><li>LOGSTASH.S1.MEDIUM4：2核4G</li><li>LOGSTASH.S1.MEDIUM8：2核8G</li><li>LOGSTASH.S1.LARGE16：4核16G</li><li>LOGSTASH.S1.2XLARGE32：8核32G</li><li>LOGSTASH.S1.4XLARGE32：16核32G</li><li>LOGSTASH.S1.4XLARGE64：16核64G</li>",
+          "example": "LOGSTASH.S1.SMALL2",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点磁盘容量（单位GB）",
+          "example": "100",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "License类型<li>oss：开源版</li><li>xpack：xpack版</li>默认值xpack",
+          "example": "xpack",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签信息列表",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogstashInstanceResponse": {
+      "document": "CreateLogstashInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "ls-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIndexRequest": {
       "document": "DeleteIndex请求参数结构体",
       "members": [
@@ -934,6 +1192,69 @@
     },
     "DeleteInstanceResponse": {
       "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogstashInstanceRequest": {
+      "document": "DeleteLogstashInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogstashInstanceResponse": {
+      "document": "DeleteLogstashInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogstashPipelinesRequest": {
+      "document": "DeleteLogstashPipelines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管道ID列表",
+          "example": "[]",
+          "member": "string",
+          "name": "PipelineIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogstashPipelinesResponse": {
+      "document": "DeleteLogstashPipelines返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1441,6 +1762,339 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstanceLogsRequest": {
+      "document": "DescribeLogstashInstanceLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志类型，默认值为1\n<li>1, 主日志</li>\n<li>2, 慢日志</li>\n<li>3, GC日志</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
+          "example": "2019-01-22 20:15:53",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
+          "example": "2019-01-22 21:15:53",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始值, 默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认值为100，最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间排序方式，默认值为0\n<li>0, 降序</li>\n<li>1, 升序</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderByType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstanceLogsResponse": {
+      "document": "DescribeLogstashInstanceLogs返回参数结构体",
+      "members": [
+        {
+          "document": "返回的日志条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志详细信息列表",
+          "example": "[]",
+          "member": "InstanceLog",
+          "name": "InstanceLogList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstanceOperationsRequest": {
+      "document": "DescribeLogstashInstanceOperations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-f5mwm28u",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间, e.g. \"2019-03-07 16:30:39\"",
+          "example": "2021-01-05 20:18:03",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间, e.g. \"2019-03-30 20:18:03\"",
+          "example": "2021-01-05 20:28:03",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "30",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstanceOperationsResponse": {
+      "document": "DescribeLogstashInstanceOperations返回参数结构体",
+      "members": [
+        {
+          "document": "操作记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作记录",
+          "example": "无",
+          "member": "Operation",
+          "name": "Operations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstancesRequest": {
+      "document": "DescribeLogstashInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例所属可用区，不传则默认所有可用区",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "example": "[]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名称列表",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页起始值, 默认值0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认值20",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderByKey",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderByType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashInstancesResponse": {
+      "document": "DescribeLogstashInstances返回参数结构体",
+      "members": [
+        {
+          "document": "返回的实例个数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例详细信息列表",
+          "example": "无",
+          "member": "LogstashInstanceInfo",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashPipelinesRequest": {
+      "document": "DescribeLogstashPipelines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogstashPipelinesResponse": {
+      "document": "DescribeLogstashPipelines返回参数结构体",
+      "members": [
+        {
+          "document": "管道总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管道列表",
+          "example": "[]",
+          "member": "LogstashPipelineInfo",
+          "name": "LogstashPipelineList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3067,6 +3721,549 @@
       ],
       "usage": "out"
     },
+    "LogstashBindedES": {
+      "document": "Logstash绑定的ES集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "ESInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES集群用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "ESUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES集群密码",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ESPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LogstashExtendedFile": {
+      "document": "Logstash扩展文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "扩展文件名称",
+          "example": "test.conf",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展文件大小，单位B",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LogstashInstanceInfo": {
+      "document": "Logstash实例详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "es-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "111",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户UIN",
+          "example": "111",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属VPC的ID",
+          "example": "vpc-xx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属子网的ID",
+          "example": "subnet-xx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包年包月购买时长,单位:月",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChargePeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点规格<li>LOGSTASH.S1.SMALL2：1核2G</li><li>LOGSTASH.S1.MEDIUM4：2核4G</li><li>LOGSTASH.S1.MEDIUM8：2核8G</li><li>LOGSTASH.S1.LARGE16：4核16G</li><li>LOGSTASH.S1.2XLARGE32：8核32G</li><li>LOGSTASH.S1.4XLARGE32：16核32G</li><li>LOGSTASH.S1.4XLARGE64：16核64G</li>",
+          "example": "LOGSTASH.S1.SMALL2",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘类型",
+          "example": "SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘大小，单位GB",
+          "example": "100",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Logstash版本号",
+          "example": "6.8.13",
+          "member": "string",
+          "name": "LogstashVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "License类型<li>oss：开源版</li><li>xpack：基础版</li>默认值xpack",
+          "example": "oss",
+          "member": "string",
+          "name": "LicenseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例最后修改操作时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Deadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例节点类型",
+          "example": "无",
+          "member": "LogstashNodeInfo",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例绑定的ES集群ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "BindedESInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的YML配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "YMLConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩展文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogstashExtendedFile",
+          "name": "ExtendedFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogstashNodeInfo": {
+      "document": "Logstash节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点IP",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点端口",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogstashPipeline": {
+      "document": "Logstash管道信息",
+      "members": [
+        {
+          "default": "",
+          "document": "管道ID",
+          "example": "test",
+          "member": "string",
+          "name": "PipelineId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管道描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "PipelineDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道配置内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管道的Worker数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Workers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道批处理大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "BatchSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道批处理延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "BatchDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "memory",
+          "member": "string",
+          "name": "QueueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1GB",
+          "member": "string",
+          "name": "QueueMaxBytes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列检查点写入数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "QueueCheckPointWrites",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogstashPipelineInfo": {
+      "document": "Logstash管道信息",
+      "members": [
+        {
+          "default": "",
+          "document": "管道ID",
+          "member": "string",
+          "name": "PipelineId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管道描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PipelineDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道配置内容",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管道状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道的Worker数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Workers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道批处理大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "BatchSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道批处理延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "BatchDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "QueueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "QueueMaxBytes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管道缓冲队列检查点写入数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "QueueCheckPointWrites",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MasterNodeInfo": {
       "document": "实例专用主节点相关信息",
       "members": [
@@ -3684,6 +4881,42 @@
       ],
       "type": "object"
     },
+    "RestartLogstashInstanceRequest": {
+      "document": "RestartLogstashInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重启类型，0全量重启，1滚动重启",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartLogstashInstanceResponse": {
+      "document": "RestartLogstashInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RestartNodesRequest": {
       "document": "RestartNodes请求参数结构体",
       "members": [
@@ -3716,6 +4949,123 @@
     },
     "RestartNodesResponse": {
       "document": "RestartNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveAndDeployLogstashPipelineRequest": {
+      "document": "SaveAndDeployLogstashPipeline请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例管道信息",
+          "example": "{}",
+          "member": "LogstashPipeline",
+          "name": "Pipeline",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作类型<li>1：只保存</li><li>2：保存并部署</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OpType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveAndDeployLogstashPipelineResponse": {
+      "document": "SaveAndDeployLogstashPipeline返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLogstashPipelinesRequest": {
+      "document": "StartLogstashPipelines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管道ID列表",
+          "example": "[]",
+          "member": "string",
+          "name": "PipelineIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLogstashPipelinesResponse": {
+      "document": "StartLogstashPipelines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLogstashPipelinesRequest": {
+      "document": "StopLogstashPipelines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管道ID列表",
+          "example": "[]",
+          "member": "string",
+          "name": "PipelineIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLogstashPipelinesResponse": {
+      "document": "StopLogstashPipelines返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4418,6 +5768,141 @@
     },
     "UpdateJdkResponse": {
       "document": "UpdateJdk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLogstashInstanceRequest": {
+      "document": "UpdateLogstashInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例节点数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例YML配置",
+          "example": "\"\"",
+          "member": "string",
+          "name": "YMLConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例绑定的ES集群信息",
+          "example": "{}",
+          "member": "LogstashBindedES",
+          "name": "BindedES",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩展文件列表",
+          "example": "无",
+          "member": "LogstashExtendedFile",
+          "name": "ExtendedFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例规格",
+          "example": "LOGSTASH.S1.LARGE16",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点磁盘容量",
+          "example": "100",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLogstashInstanceResponse": {
+      "document": "UpdateLogstashInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLogstashPipelineDescRequest": {
+      "document": "UpdateLogstashPipelineDesc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ls-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例管道ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "PipelineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管道描述信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "PipelineDesc",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLogstashPipelineDescResponse": {
+      "document": "UpdateLogstashPipelineDesc返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

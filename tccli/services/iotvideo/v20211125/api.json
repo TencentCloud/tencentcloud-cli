@@ -12,6 +12,12 @@
       "name": "同步调用设备行为",
       "output": "CallDeviceActionSyncResponse"
     },
+    "CreateProduct": {
+      "document": "创建产品",
+      "input": "CreateProductRequest",
+      "name": "创建产品",
+      "output": "CreateProductResponse"
+    },
     "DescribeDeviceDataStats": {
       "document": "查询设备数据统计",
       "input": "DescribeDeviceDataStatsRequest",
@@ -23,6 +29,12 @@
       "input": "DescribeMessageDataStatsRequest",
       "name": "查询设备消息数量统计",
       "output": "DescribeMessageDataStatsResponse"
+    },
+    "GenSingleDeviceSignatureOfPublic": {
+      "document": "获取设备的绑定签名",
+      "input": "GenSingleDeviceSignatureOfPublicRequest",
+      "name": "生成单个设备绑定的签名",
+      "output": "GenSingleDeviceSignatureOfPublicResponse"
     }
   },
   "metadata": {
@@ -175,6 +187,123 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductRequest": {
+      "document": "CreateProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品设备类型 1.普通设备 2.NVR设备",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品有效期",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProductVaildYears",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频",
+          "example": "无",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设备操作系统，通用设备填default",
+          "example": "linux",
+          "member": "string",
+          "name": "ChipOs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "芯片厂商id，通用设备填default",
+          "example": "x86",
+          "member": "string",
+          "name": "ChipManufactureId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "芯片id，通用设备填default",
+          "example": "chip1",
+          "member": "string",
+          "name": "ChipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品描述信息",
+          "example": "test",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "认证方式 只支持取值为2 psk认证",
+          "example": "2",
+          "member": "uint64",
+          "name": "EncryptionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "连接类型，wifi表示WIFI连接，cellular表示4G连接",
+          "example": "wifi",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductResponse": {
+      "document": "CreateProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品详情",
+          "example": "无",
+          "member": "VideoProduct",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -366,6 +495,86 @@
       ],
       "usage": "out"
     },
+    "DeviceSignatureInfo": {
+      "document": "设备签名信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备签名",
+          "example": "fbaba57679644f29adee48652864xxxx",
+          "member": "string",
+          "name": "DeviceSignature",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GenSingleDeviceSignatureOfPublicRequest": {
+      "document": "GenSingleDeviceSignatureOfPublic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属的产品ID",
+          "example": "dev001",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的设备",
+          "example": "H4ExxxxIZR",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）",
+          "example": "86400",
+          "member": "int64",
+          "name": "Expire",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenSingleDeviceSignatureOfPublicResponse": {
+      "document": "GenSingleDeviceSignatureOfPublic返回参数结构体",
+      "members": [
+        {
+          "document": "设备签名信息",
+          "example": "无",
+          "member": "DeviceSignatureInfo",
+          "name": "DeviceSignature",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MessageCntStats": {
       "document": "消息数量统计",
       "members": [
@@ -407,6 +616,132 @@
           "name": "NtpMsgCnt",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoProduct": {
+      "document": "video产品元数据",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "PV1674YINM",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品设备类型（普通设备)\t1.普通设备",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：2：PSK",
+          "example": "2",
+          "member": "uint64",
+          "name": "EncryptionType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备功能码",
+          "example": "ypsxth,spdxth",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "default",
+          "member": "string",
+          "name": "ChipOs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "芯片厂商id",
+          "example": "default",
+          "member": "string",
+          "name": "ChipManufactureId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "芯片id",
+          "example": "default",
+          "member": "string",
+          "name": "ChipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品描述信息",
+          "example": "test",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间unix时间戳",
+          "example": "1638340550",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间unix时间戳",
+          "example": "1638340550",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接类型，wifi表示WIFI连接，cellular表示4G连接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wifi",
+          "member": "string",
+          "name": "NetType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

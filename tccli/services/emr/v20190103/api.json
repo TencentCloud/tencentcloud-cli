@@ -5766,6 +5766,15 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预设配置组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ScaleOutServiceConfAssign",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
-    --TaskType 0 \
-    --Source 2 \
     --AppPackage com.test.app \
+    --Source 2 \
+    --OrgTaskID 170143813*******360 \
     --Platform 0 \
-    --OrgTaskID 170143813*******360
+    --TaskType 0
 ```
 
 Output: 

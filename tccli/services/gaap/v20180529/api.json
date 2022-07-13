@@ -6,6 +6,12 @@
       "name": "添加源站",
       "output": "AddRealServersResponse"
     },
+    "BanAndRecoverProxy": {
+      "document": "本接口（BanAndRecoverProxy）用于联通封禁解封GAAP跨境通道实例，支持按照客户UIN维度下发请求。被封禁的实例带宽上限将会被限制到0Mbps，无法正常处理客户端和源站之间的请求。",
+      "input": "BanAndRecoverProxyRequest",
+      "name": "封禁解封跨境通道实例",
+      "output": "BanAndRecoverProxyResponse"
+    },
     "BindListenerRealServers": {
       "document": "本接口（BindListenerRealServers）用于TCP/UDP监听器绑定解绑源站。\n注意：本接口会解绑之前绑定的源站，绑定本次调用所选择的源站。例如：原来绑定的源站为A，B，C，本次调用的选择绑定的源站为C，D，E，那么调用后所绑定的源站为C，D，E。",
       "input": "BindListenerRealServersRequest",
@@ -221,6 +227,12 @@
       "input": "DescribeCountryAreaMappingRequest",
       "name": "获取国家地区编码映射表",
       "output": "DescribeCountryAreaMappingResponse"
+    },
+    "DescribeCrossBorderProxies": {
+      "document": "本接口（DescribeCrossBorderProxies）用于查询跨境通道实例列表。",
+      "input": "DescribeCrossBorderProxiesRequest",
+      "name": "查询跨境通道实例列表",
+      "output": "DescribeCrossBorderProxiesResponse"
     },
     "DescribeCustomHeader": {
       "document": "本接口（DescribeCustomHeader）用于自定义header列表",
@@ -758,6 +770,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BanAndRecoverProxyRequest": {
+      "document": "BanAndRecoverProxy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BanAndRecoverProxyResponse": {
+      "document": "BanAndRecoverProxy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3446,6 +3475,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossBorderProxiesRequest": {
+      "document": "DescribeCrossBorderProxies请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCrossBorderProxiesResponse": {
+      "document": "DescribeCrossBorderProxies返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
