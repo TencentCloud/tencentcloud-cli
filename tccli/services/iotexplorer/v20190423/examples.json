@@ -67,13 +67,13 @@
     "CreateBatchProduction": [
       {
         "document": "使用系统生成的方式进行量产",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateBatchProduction\n&ProjectId=prj-pq00mstg\n&ProductId=R32ONVL0EU\n&BurnMethod=0\n&GenerationMethod=0\n&BatchCnt=5\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchProduction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-pq00mstg\",\n    \"BurnMethod\": \"0\",\n    \"BatchCnt\": \"5\",\n    \"GenerationMethod\": \"0\",\n    \"ProductId\": \"R32ONVL0EU\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client2213121026\"\n    }\n}",
         "title": "新建量产 - 系统生成"
       },
       {
         "document": "使用上传文件 url 的方式进行量产",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateBatchProduction\n&ProjectId=prj-pq00mstg\n&ProductId=R32ONVL0EU\n&BurnMethod=0\n&GenerationMethod=1\n&UploadUrl=www.xxxxxxxx.com/xxxxxx.csv\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchProduction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-pq00mstg\",\n    \"BurnMethod\": \"0\",\n    \"UploadUrl\": \"www.xxxxxxxx.com/xxxxxx.csv\",\n    \"GenerationMethod\": \"1\",\n    \"ProductId\": \"R32ONVL0EU\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client3331231026\"\n    }\n}",
         "title": "新建量产 - 上传URL"
       }

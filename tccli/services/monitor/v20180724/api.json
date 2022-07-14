@@ -2401,25 +2401,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
-          "example": "3",
-          "member": "int64",
-          "name": "KubeType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "集群 ID",
-          "example": "cls-xx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2428,7 +2411,8 @@
           "member": "string",
           "name": "Kind",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2437,7 +2421,28 @@
           "member": "string",
           "name": "Content",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "3",
+          "member": "int64",
+          "name": "KubeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2445,6 +2450,16 @@
     "CreateExporterIntegrationResponse": {
       "document": "CreateExporterIntegration返回参数结构体",
       "members": [
+        {
+          "document": "返回创建成功的集成名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2725,6 +2740,16 @@
       "document": "CreatePrometheusAgent返回参数结构体",
       "members": [
         {
+          "document": "创建成功的 Agent Id",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2841,7 +2866,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2850,7 +2876,8 @@
           "member": "string",
           "name": "AgentId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2859,7 +2886,8 @@
           "member": "string",
           "name": "Config",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2867,6 +2895,16 @@
     "CreatePrometheusScrapeJobResponse": {
       "document": "CreatePrometheusScrapeJob返回参数结构体",
       "members": [
+        {
+          "document": "成功创建抓取任务 Id",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

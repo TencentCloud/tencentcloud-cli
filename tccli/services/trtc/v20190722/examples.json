@@ -8,14 +8,6 @@
         "title": "上传图片"
       }
     ],
-    "CreateTroubleInfo": [
-      {
-        "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=CreateTroubleInfo\n&SdkAppId=1400188366\n&RoomId=1587879309\n&TeacherUserId=1587882309\n&StudentUserId=123456\n&TroubleUserId=123456\n&TroubleType=1\n&TroubleTime=87654321\n&TroubleMsg=VoiceException\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56b89272-cdff-46a3-a399-87ec6f209b53\"\n    }\n}",
-        "title": "创建异常信息"
-      }
-    ],
     "DeletePicture": [
       {
         "document": "",

@@ -157,7 +157,7 @@
       "output": "GeneralHandwritingOCRResponse"
     },
     "HKIDCardOCR": {
-      "document": "本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备防伪识别、人像照片裁剪等扩展功能。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
+      "document": "本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备防伪识别、人像照片裁剪等扩展功能。\n",
       "input": "HKIDCardOCRRequest",
       "name": "中国香港身份证识别",
       "output": "HKIDCardOCRResponse"
@@ -305,6 +305,12 @@
       "input": "RecognizeOnlineTaxiItineraryOCRRequest",
       "name": "网约车行程单识别",
       "output": "RecognizeOnlineTaxiItineraryOCRResponse"
+    },
+    "RecognizePermanentAccountNumberOCR": {
+      "document": "印度PAN卡识别",
+      "input": "RecognizePermanentAccountNumberOCRRequest",
+      "name": "印度PAN卡识别",
+      "output": "RecognizePermanentAccountNumberOCRResponse"
     },
     "RecognizePhilippinesDrivingLicenseOCR": {
       "document": "菲律宾驾驶证识别",
@@ -3361,7 +3367,8 @@
           "member": "bool",
           "name": "DetectFake",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3370,7 +3377,8 @@
           "member": "bool",
           "name": "ReturnHeadImage",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3379,7 +3387,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3388,7 +3397,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3403,7 +3413,8 @@
           "name": "CnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "英文姓名",
@@ -3412,7 +3423,8 @@
           "name": "EnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "中文姓名对应电码",
@@ -3421,7 +3433,8 @@
           "name": "TelexCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "性别 ：“男M”或“女F”",
@@ -3430,7 +3443,8 @@
           "name": "Sex",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "出生日期",
@@ -3439,7 +3453,8 @@
           "name": "Birthday",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "永久性居民身份证。\n0：非永久；\n1：永久；\n-1：未知。",
@@ -3448,7 +3463,8 @@
           "name": "Permanent",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "身份证号码",
@@ -3457,7 +3473,8 @@
           "name": "IdNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "证件符号，出生日期下的符号，例如\"***AZ\"",
@@ -3466,7 +3483,8 @@
           "name": "Symbol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "首次签发日期",
@@ -3475,7 +3493,8 @@
           "name": "FirstIssueDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "最近领用日期",
@@ -3484,7 +3503,8 @@
           "name": "CurrentIssueDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "真假判断。\n0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；\n1：假；\n2：真。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3493,7 +3513,8 @@
           "name": "FakeDetectResult",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "人像照片Base64后的结果\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3502,7 +3523,8 @@
           "name": "HeadImage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "多重告警码，当身份证是翻拍、复印、PS件时返回对应告警码。\n-9102：证照复印件告警\n-9103：证照翻拍告警\n-9104：证照PS告警\n-9105：证照防伪告警",
@@ -3511,7 +3533,8 @@
           "name": "WarningCode",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6656,6 +6679,104 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePermanentAccountNumberOCRRequest": {
+      "document": "RecognizePermanentAccountNumberOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePermanentAccountNumberOCRResponse": {
+      "document": "RecognizePermanentAccountNumberOCR返回参数结构体",
+      "members": [
+        {
+          "document": "持有人",
+          "example": "无",
+          "member": "string",
+          "name": "Holder",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "号码",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "WarnInfos，告警信息，Code 告警码列表和释义：\n-9100\t证件有效日期不合法告警",
+          "example": "无",
+          "member": "string",
+          "name": "WarnInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "人像截图",
+          "example": "无",
+          "member": "string",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

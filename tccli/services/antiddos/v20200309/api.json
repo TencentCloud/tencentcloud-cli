@@ -8145,7 +8145,8 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8155,7 +8156,8 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8165,7 +8167,8 @@
           "name": "Port",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -8401,6 +8404,17 @@
           "name": "Id",
           "required": false,
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "智能cc开关，取值[0(关闭), 1(开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCAIEnable",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         }

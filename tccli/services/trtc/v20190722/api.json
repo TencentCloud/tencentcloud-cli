@@ -6,12 +6,6 @@
       "name": "上传图片",
       "output": "CreatePictureResponse"
     },
-    "CreateTroubleInfo": {
-      "document": "创建异常信息",
-      "input": "CreateTroubleInfoRequest",
-      "name": "创建异常信息",
-      "output": "CreateTroubleInfoResponse"
-    },
     "DeletePicture": {
       "document": "如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁删除自定义背景图或水印，可通过此接口删除已上传的图片。无需频繁删除图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。",
       "input": "DeletePictureRequest",
@@ -296,88 +290,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTroubleInfoRequest": {
-      "document": "CreateTroubleInfo请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "应用的ID",
-          "member": "string",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "房间ID",
-          "member": "string",
-          "name": "RoomId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "老师用户ID",
-          "member": "string",
-          "name": "TeacherUserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "学生用户ID",
-          "member": "string",
-          "name": "StudentUserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "体验异常端（老师或学生）的用户 ID。",
-          "member": "string",
-          "name": "TroubleUserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "异常类型。\n1. 仅视频异常\n2. 仅声音异常\n3. 音视频都异常\n5. 进房异常\n4. 切课\n6. 求助\n7. 问题反馈\n8. 投诉",
-          "member": "uint64",
-          "name": "TroubleType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "异常发生的UNIX 时间戳，单位为秒。",
-          "member": "uint64",
-          "name": "TroubleTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "异常详情",
-          "member": "string",
-          "name": "TroubleMsg",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTroubleInfoResponse": {
-      "document": "CreateTroubleInfo返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

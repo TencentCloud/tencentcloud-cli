@@ -1123,7 +1123,8 @@
           "member": "uint64",
           "name": "TypeId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1132,7 +1133,8 @@
           "member": "uint64",
           "name": "MemSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1141,7 +1143,8 @@
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1150,7 +1153,8 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1159,7 +1163,8 @@
           "member": "int64",
           "name": "BillingMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1168,7 +1173,8 @@
           "member": "uint64",
           "name": "ZoneId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1177,7 +1183,8 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1186,7 +1193,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1195,7 +1203,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1204,7 +1213,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1213,7 +1223,8 @@
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1222,7 +1233,8 @@
           "member": "string",
           "name": "SecurityGroupIdList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1231,7 +1243,8 @@
           "member": "uint64",
           "name": "VPort",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1240,7 +1253,8 @@
           "member": "int64",
           "name": "RedisShardNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1249,7 +1263,8 @@
           "member": "int64",
           "name": "RedisReplicasNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1258,7 +1273,8 @@
           "member": "bool",
           "name": "ReplicasReadonly",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1267,7 +1283,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1276,7 +1293,8 @@
           "member": "bool",
           "name": "NoAuth",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1285,7 +1303,8 @@
           "member": "RedisNodeInfo",
           "name": "NodeSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1294,7 +1313,8 @@
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1303,7 +1323,8 @@
           "member": "string",
           "name": "ZoneName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1312,7 +1333,8 @@
           "member": "string",
           "name": "TemplateId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1321,7 +1343,28 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认发货为本地盘版本",
+          "example": "cdc",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "独享集群id，ProductVersion=\"cdc\"时必传",
+          "example": "crs-cdc-0xigvn3t",
+          "member": "string",
+          "name": "RedisClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1336,7 +1379,8 @@
           "name": "DealId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例ID",
@@ -1345,7 +1389,8 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4684,7 +4729,8 @@
           "member": "uint64",
           "name": "TypeId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4693,7 +4739,8 @@
           "member": "uint64",
           "name": "MemSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4702,7 +4749,8 @@
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4711,7 +4759,8 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4720,7 +4769,8 @@
           "member": "int64",
           "name": "BillingMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4729,7 +4779,8 @@
           "member": "uint64",
           "name": "ZoneId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4738,7 +4789,8 @@
           "member": "int64",
           "name": "RedisShardNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4747,7 +4799,8 @@
           "member": "int64",
           "name": "RedisReplicasNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4756,7 +4809,8 @@
           "member": "bool",
           "name": "ReplicasReadonly",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4765,7 +4819,18 @@
           "member": "string",
           "name": "ZoneName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认询价为本地盘版本",
+          "example": "cloud",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4780,7 +4845,8 @@
           "name": "Price",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

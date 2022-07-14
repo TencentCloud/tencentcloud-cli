@@ -7,10 +7,10 @@ Input:
 ```
 tccli iotexplorer CreateBatchProduction --cli-unfold-argument  \
     --ProjectId prj-pq00mstg \
-    --ProductId R32ONVL0EU \
     --BurnMethod 0 \
+    --BatchCnt 5 \
     --GenerationMethod 0 \
-    --BatchCnt 5
+    --ProductId R32ONVL0EU
 ```
 
 Output: 
@@ -34,10 +34,10 @@ Input:
 ```
 tccli iotexplorer CreateBatchProduction --cli-unfold-argument  \
     --ProjectId prj-pq00mstg \
-    --ProductId R32ONVL0EU \
     --BurnMethod 0 \
+    --UploadUrl www.xxxxxxxx.com/xxxxxx.csv \
     --GenerationMethod 1 \
-    --UploadUrl www.xxxxxxxx.com/xxxxxx.csv
+    --ProductId R32ONVL0EU
 ```
 
 Output: 
