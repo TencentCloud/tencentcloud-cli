@@ -182,6 +182,7 @@
         {
           "default": "",
           "document": "标签键",
+          "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -190,6 +191,7 @@
         {
           "default": "",
           "document": "标签值",
+          "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -198,6 +200,7 @@
         {
           "default": "",
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -1885,6 +1888,7 @@
         {
           "default": "",
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -1893,6 +1897,7 @@
         {
           "default": "",
           "document": "需要增加或修改的标签集合。如果Resource描述的资源未关联输入的标签键，则增加关联；若已关联，则将该资源关联的键对应的标签值修改为输入值。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
+          "example": "无",
           "member": "Tag",
           "name": "ReplaceTags",
           "required": false,
@@ -1901,6 +1906,7 @@
         {
           "default": "",
           "document": "需要解关联的标签集合。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
+          "example": "无",
           "member": "TagKeyObject",
           "name": "DeleteTags",
           "required": false,
@@ -2340,6 +2346,7 @@
         {
           "default": "",
           "document": "资源关联的标签键",
+          "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -2348,6 +2355,7 @@
         {
           "default": "",
           "document": "修改后的标签值",
+          "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -2356,6 +2364,7 @@
         {
           "default": "",
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
           "name": "Resource",
           "required": true,

@@ -1322,6 +1322,24 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认发货为本地盘版本",
+          "example": "cdc",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享集群id，ProductVersion=\"cdc\"时必传",
+          "example": "crs-cdc-0xigvn3t",
+          "member": "string",
+          "name": "RedisClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4723,6 +4741,15 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认询价为本地盘版本",
+          "example": "cloud",
+          "member": "string",
+          "name": "ProductVersion",
           "required": false,
           "type": "string"
         }

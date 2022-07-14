@@ -219,7 +219,7 @@
     "HKIDCardOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=HKIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&DetectFake=true\n&ReturnHeadImage=false\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HKIDCardOCR\n<公共请求参数>\n\n{\n    \"DetectFake\": \"true\",\n    \"ReturnHeadImage\": \"false\",\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"CnName\": \"申能\",\n        \"EnName\": \"SAN, Nan\",\n        \"TelexCode\": \"300000000000\",\n        \"Sex\": \"女F\",\n        \"Birthday\": \"01-01-2001\",\n        \"Permanent\": 1,\n        \"IdNum\": \"C000000(E)\",\n        \"Symbol\": \"***AZ\",\n        \"FirstIssueDate\": \"(09-99)\",\n        \"CurrentIssueDate\": \"23-09-10\",\n        \"FakeDetectResult\": 1,\n        \"WarningCode\": [\n            -9102,\n            -9103\n        ],\n        \"HeadImage\": \"xx\",\n        \"RequestId\": \"fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875\"\n    }\n}",
         "title": "中国香港身份证识别示例代码"
       }

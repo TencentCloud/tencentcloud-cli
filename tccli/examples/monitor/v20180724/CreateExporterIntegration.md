@@ -17,6 +17,9 @@ Output:
 ```
 {
     "Response": {
+        "Names": [
+            "redis-exporter"
+        ],
         "RequestId": "wpkysykx8k9tu1urmlyo54gq33f4kxwz"
     }
 }

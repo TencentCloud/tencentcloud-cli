@@ -7,8 +7,8 @@ Input:
 ```
 tccli tag UpdateResourceTagValue --cli-unfold-argument  \
     --TagKey testTagKey \
-    --TagValue testTagValue \
-    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123
+    --Resource qcs::cvm:ap-beijing:uin/1234567:instance/ins-123 \
+    --TagValue testTagValue
 ```
 
 Output: 

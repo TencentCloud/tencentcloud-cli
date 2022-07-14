@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid GetEidResult --cli-unfold-argument  \
-    --EidToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681 \
-    --InfoType 1
+    --InfoType 1 \
+    --EidToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681
 ```
 
 Output: 
@@ -66,6 +66,13 @@ Output:
             "BestFrames": [
                 "xx"
             ]
+        },
+        "IntentionVerifyData": {
+            "IntentionVerifyVideo": "xx",
+            "ErrorCode": 0,
+            "ErrorMessage": "成功",
+            "AsrResult": "xx",
+            "IntentionVerifyBestFrame": "xx"
         },
         "EidInfo": {
             "EidCode": "xx",

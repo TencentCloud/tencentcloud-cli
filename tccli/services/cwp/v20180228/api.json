@@ -20873,6 +20873,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-26 15:19:04",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近访问时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-26 15:19:04",
+          "member": "string",
+          "name": "StrFileAccessTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

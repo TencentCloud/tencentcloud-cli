@@ -131,7 +131,7 @@
     "CreateNewL7Rules": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateNewL7Rules\n&Business=bgpip\n&IdList.0=bgpip-000001\n&VipList.0=192.168.1.1\n&Rules.0.RuleName=test\n&Rules.0.Protocol=http\n&Rules.0.Domain=www.abc.com\n&Rules.0.SourceType=2\n&Rules.0.LbType=1\n&Rules.0.KeepTime=300\n&Rules.0.SourceList.0.Source=1.1.1.10\n&Rules.0.SourceList.0.Weight=100\n&Rules.0.SourceList.1.Source=1.1.1.20\n&Rules.0.SourceList.1.Weight=100\n&Rules.0.CertType=0\n&Rules.0.KeepEnable=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNewL7Rules\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"KeepTime\": \"300\",\n            \"Domain\": \"www.abc.com\",\n            \"Protocol\": \"http\",\n            \"SourceType\": \"2\",\n            \"CertType\": \"0\",\n            \"LbType\": \"1\",\n            \"SourceList\": [\n                {\n                    \"Source\": \"1.1.1.20\",\n                    \"Weight\": \"100\"\n                },\n                {\n                    \"Source\": \"1.1.1.10\",\n                    \"Weight\": \"100\"\n                }\n            ],\n            \"KeepEnable\": \"0\",\n            \"RuleName\": \"test\"\n        }\n    ],\n    \"VipList\": [\n        \"192.168.1.1\"\n    ],\n    \"IdList\": [\n        \"bgpip-000001\"\n    ],\n    \"Business\": \"bgpip\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "添加7层转发规则"
       }
