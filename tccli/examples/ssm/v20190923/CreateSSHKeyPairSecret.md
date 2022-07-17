@@ -11,7 +11,8 @@ tccli ssm CreateSSHKeyPairSecret --cli-unfold-argument  \
     --Tags.0.TagValue xx \
     --KmsKeyId xx \
     --Description xx \
-    --SecretName xx
+    --SecretName xx \
+    --SSHKeyName xx
 ```
 
 Output: 

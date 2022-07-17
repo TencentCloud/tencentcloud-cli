@@ -222,6 +222,12 @@
       "name": "运营后台接口：编辑规则更新日志的发布状态",
       "output": "EditOpRuleUpdateLogStatusResponse"
     },
+    "GetAttackDownloadRecords": {
+      "document": "查询下载攻击日志任务记录列表",
+      "input": "GetAttackDownloadRecordsRequest",
+      "name": "查询下载攻击日志任务记录列表",
+      "output": "GetAttackDownloadRecordsResponse"
+    },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限",
       "input": "ModifyAccessPeriodRequest",
@@ -3661,6 +3667,23 @@
         }
       ],
       "usage": "both"
+    },
+    "GetAttackDownloadRecordsRequest": {
+      "document": "GetAttackDownloadRecords请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetAttackDownloadRecordsResponse": {
+      "document": "GetAttackDownloadRecords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstanceInfo": {
       "document": "一个实例的详细信息",

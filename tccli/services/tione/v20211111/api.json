@@ -1538,6 +1538,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否同步清理cos",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeleteCos",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1565,6 +1575,16 @@
           "name": "TrainingModelVersionId",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否同步清理cos",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeleteCos",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],

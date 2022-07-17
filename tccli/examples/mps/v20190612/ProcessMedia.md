@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mps ProcessMedia --cli-unfold-argument  \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
     --InputInfo.Type COS \
-    --InputInfo.CosInputInfo.Bucket TopRankVideo-125xxx88 \
     --InputInfo.CosInputInfo.Region ap-chongqing \
     --InputInfo.CosInputInfo.Object /movie/201907/WildAnimal.mov \
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40
+    --InputInfo.CosInputInfo.Bucket TopRankVideo-125xxx88
 ```
 
 Output: 

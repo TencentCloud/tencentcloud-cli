@@ -18,6 +18,14 @@ Output:
     "Response": {
         "BackupFiles": [
             {
+                "CrossBackupAddr": [
+                    {
+                        "CrossExternalAddr": "xx",
+                        "CrossInternalAddr": "xx",
+                        "CrossRegion": "xx"
+                    }
+                ],
+                "Region": "xx",
                 "DBs": [
                     "db1"
                 ],
