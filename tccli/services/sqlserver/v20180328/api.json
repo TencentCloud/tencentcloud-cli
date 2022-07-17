@@ -1058,6 +1058,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例当前地域Code",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份的目的地域下载链接",
+          "example": "[]",
+          "member": "CrossBackupAddr",
+          "name": "CrossBackupAddr",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份的目标地域和备份状态",
+          "example": "[]",
+          "member": "CrossRegionStatus",
+          "name": "CrossBackupStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1113,6 +1143,26 @@
           "name": "DownloadLink",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前实例地域码",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份的跨地域region和所对应的下载地址",
+          "example": "[]",
+          "member": "CrossBackupAddr",
+          "name": "CrossBackupAddr",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2330,6 +2380,68 @@
       ],
       "type": "object"
     },
+    "CrossBackupAddr": {
+      "document": "跨地域备份下载地址集合",
+      "members": [
+        {
+          "default": "",
+          "document": "跨地域备份目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CrossRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份内网下载地址",
+          "example": " http://xxx",
+          "member": "string",
+          "name": "CrossInternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份外网下载地址",
+          "example": "http://xxx ",
+          "member": "string",
+          "name": "CrossExternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CrossRegionStatus": {
+      "document": "跨地域备份的目标地域和备份状态",
+      "members": [
+        {
+          "default": "",
+          "document": "跨地域备份目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CrossRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中",
+          "example": "0",
+          "member": "int64",
+          "name": "CrossStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DBCreateInfo": {
       "document": "数据库创建信息",
       "members": [
@@ -2876,6 +2988,36 @@
           "name": "InstanceType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份目的地域，如果为空，则表示未开启跨地域备份",
+          "example": "[ap-guangzhou]",
+          "member": "string",
+          "name": "CrossRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份状态 enable-开启，disable-关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "CrossBackupEnabled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地域备份保留天数，则默认7天",
+          "example": "7",
+          "member": "uint64",
+          "name": "CrossBackupSaveDays",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

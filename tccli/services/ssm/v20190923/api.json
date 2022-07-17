@@ -361,6 +361,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

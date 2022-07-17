@@ -127,6 +127,9 @@ Output:
             ]
         },
         "TaskNotifyConfig": null,
+        "EditMediaTask": null,
+        "LiveStreamProcessTask": null,
+        "ScheduleTask": null,
         "TasksPriority": 0,
         "SessionId": "",
         "SessionContext": "",

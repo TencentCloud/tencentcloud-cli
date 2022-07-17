@@ -11,7 +11,7 @@
     "CreateSSHKeyPairSecret": [
       {
         "document": "创建SSH密钥对凭据",
-        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSHKeyPairSecret\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"KmsKeyId\": \"xx\",\n    \"Description\": \"xx\",\n    \"SecretName\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSHKeyPairSecret\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"KmsKeyId\": \"xx\",\n    \"Description\": \"xx\",\n    \"SecretName\": \"xx\",\n    \"SSHKeyName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"SSHKeyID\": \"xx\",\n        \"TagMsg\": \"xx\",\n        \"TagCode\": 1,\n        \"RequestId\": \"xx\",\n        \"SecretName\": \"xx\",\n        \"SSHKeyName\": \"xx\"\n    }\n}",
         "title": "创建SSH密钥对凭据"
       }

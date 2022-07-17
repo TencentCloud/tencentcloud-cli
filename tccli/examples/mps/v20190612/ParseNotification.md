@@ -100,7 +100,11 @@ Output:
                 }
             ]
         },
-        "RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5"
+        "RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5",
+        "ScheduleTaskEvent": null,
+        "EditMediaTaskEvent": null,
+        "SessionId": "",
+        "SessionContext": ""
     }
 }
 ```

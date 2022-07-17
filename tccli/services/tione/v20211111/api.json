@@ -1479,6 +1479,15 @@
           "name": "TrainingModelId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否同步清理cos",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeleteCos",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1506,6 +1515,15 @@
           "name": "TrainingModelVersionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否同步清理cos",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeleteCos",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

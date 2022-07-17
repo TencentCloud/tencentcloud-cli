@@ -635,6 +635,128 @@
       ],
       "usage": "both"
     },
+    "ActivityResItem": {
+      "document": "编排子任务输出",
+      "members": [
+        {
+          "default": "",
+          "document": "转码任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskTranscodeResult",
+          "name": "TranscodeTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转动图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskAnimatedGraphicResult",
+          "name": "AnimatedGraphicTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间点截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskSampleSnapshotResult",
+          "name": "SnapshotByTimeOffsetTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采样截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskSampleSnapshotResult",
+          "name": "SampleSnapshotTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "雪碧图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskImageSpriteResult",
+          "name": "ImageSpriteTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自适应码流任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaProcessTaskAdaptiveDynamicStreamingResult",
+          "name": "AdaptiveDynamicStreamingTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ScheduleRecognitionTaskResult",
+          "name": "RecognitionTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ScheduleReviewTaskResult",
+          "name": "ReviewTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分析任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ScheduleAnalysisTaskResult",
+          "name": "AnalysisTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ActivityResult": {
+      "document": "编排任务输出",
+      "members": [
+        {
+          "default": "",
+          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原子任务输出。",
+          "example": "NULL",
+          "member": "ActivityResItem",
+          "name": "ActivityResItem",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AdaptiveDynamicStreamingInfoItem": {
       "document": "转自适应码流信息",
       "members": [
@@ -4088,6 +4210,32 @@
       ],
       "usage": "out"
     },
+    "ArtifactRepairConfig": {
+      "document": "去伪影（毛刺）配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>weak</li>\n<li>strong</li>\n默认值：weak。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AsrFullTextConfigureInfo": {
       "document": "语音全文识别任务控制参数",
       "members": [
@@ -4297,6 +4445,32 @@
         }
       ],
       "usage": "in"
+    },
+    "ColorEnhanceConfig": {
+      "document": "色彩增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>weak</li>\n<li>normal</li>\n<li>strong</li>\n默认值：weak。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ContentReviewTemplateItem": {
       "document": "内容审核模板详情",
@@ -5448,6 +5622,15 @@
           "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "音视频增强配置。",
+          "example": "“”",
+          "member": "EnhanceConfig",
+          "name": "EnhanceConfig",
           "required": false,
           "type": "object"
         }
@@ -6786,6 +6969,7 @@
         {
           "default": "",
           "document": "视频处理任务的任务 ID。",
+          "example": "235303****-WorkflowTask-80108cc3380155d98b2e3573a48a******",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6798,95 +6982,130 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，目前取值有：\n<li>WorkflowTask：视频工作流处理任务。</li>\n<li>EditMediaTask：视频编辑任务。</li>\n<li>LiveStreamProcessTask：直播流处理任务。</li>",
+          "document": "任务类型，目前取值有：\n<li>WorkflowTask：视频工作流处理任务。</li>\n<li>EditMediaTask：视频编辑任务。</li>\n<li>LiveStreamProcessTask：直播流处理任务。</li>\n<li>ScheduleTask：编排处理任务。</li>",
+          "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2019-07-16T06:21:27Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "WorkflowTask",
-          "name": "WorkflowTask",
+          "document": "视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EditMediaTask",
+          "name": "EditMediaTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "document": "视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "EditMediaTask",
-          "name": "EditMediaTask",
+          "document": "视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowTask",
+          "name": "WorkflowTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LiveStreamProcessTask",
           "name": "LiveStreamProcessTask",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "任务的事件通知信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "任务流的优先级，取值范围为 [-10, 10]。",
+          "example": "0",
           "member": "int64",
           "name": "TasksPriority",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。",
+          "example": "\"\"",
           "member": "string",
           "name": "SessionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长1000个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "SessionContext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "扩展信息字段，仅用于特定场景。",
+          "example": "\"\"",
           "member": "string",
           "name": "ExtInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "编排处理任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleTask",
+          "name": "ScheduleTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6903,6 +7122,7 @@
         {
           "default": "",
           "document": "过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -6911,6 +7131,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "5",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6919,6 +7140,7 @@
         {
           "default": "",
           "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
+          "example": "\"\"",
           "member": "string",
           "name": "ScrollToken",
           "required": false,
@@ -6932,16 +7154,29 @@
       "members": [
         {
           "document": "任务概要列表。",
+          "example": "无",
           "member": "TaskSimpleInfo",
           "name": "TaskSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空字符串，说明已无更多数据。",
+          "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
+          "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7009,6 +7244,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板类型（替换旧版本 TEHDType），可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>\n<li>Enhance：音视频增强模板。</li>\n默认空，不限制类型。",
+          "example": "“”",
+          "member": "string",
+          "name": "TranscodeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7558,6 +7802,22 @@
       ],
       "type": "object"
     },
+    "EnhanceConfig": {
+      "document": "音视频增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "视频增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEnhanceConfig",
+          "name": "VideoEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExecuteFunctionRequest": {
       "document": "ExecuteFunction请求参数结构体",
       "members": [
@@ -7730,6 +7990,58 @@
       ],
       "usage": "in"
     },
+    "FaceEnhanceConfig": {
+      "document": "人脸增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "强度，取值范围：0.0~1.0。\n默认：0.0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FrameRateConfig": {
+      "document": "插帧帧率配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帧率，取值范围：[0, 100]，单位：Hz。\n默认值 0。\n注意：对于转码，该参数会覆盖 VideoTemplate 内部的 Fps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Fps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FrameTagConfigureInfo": {
       "document": "智能按帧标签任务控制参数",
       "members": [
@@ -7760,6 +8072,32 @@
       ],
       "usage": "in"
     },
+    "HdrConfig": {
+      "document": "HDR配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>HDR10</li>\n<li>HLG</li>\n默认值：HDR10。\n注意：video的编码方式需要为libx265；\n注意：视频编码位深为10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HeadTailParameter": {
       "document": "片头片尾参数",
       "members": [
@@ -7785,6 +8123,32 @@
         }
       ],
       "usage": "in"
+    },
+    "ImageQualityEnhanceConfig": {
+      "document": "综合增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>weak</li>\n<li>normal</li>\n<li>strong</li>\n默认值：weak。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ImageSpriteTaskInput": {
       "document": "对视频截雪碧图任务输入参数类型",
@@ -8930,6 +9294,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LowLightEnhanceConfig": {
+      "document": "低光照增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>normal</li>\n默认值：normal。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11567,6 +11957,15 @@
           "name": "TEHDConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "音视频增强参数。",
+          "example": "无",
+          "member": "EnhanceConfig",
+          "name": "EnhanceConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12073,6 +12472,7 @@
         {
           "default": "",
           "document": "从 CMQ 获取到的事件通知内容。",
+          "example": "\"\"",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -12085,39 +12485,58 @@
       "document": "ParseNotification返回参数结构体",
       "members": [
         {
-          "document": "支持事件类型，目前取值有：\n<li>WorkflowTask：视频工作流处理任务。</li>\n<li>EditMediaTask：视频编辑任务。</li>",
+          "document": "支持事件类型，目前取值有：\n<li>WorkflowTask：视频工作流处理任务。</li>\n<li>EditMediaTask：视频编辑任务。</li>\n<li>ScheduleTask：编排任务。</li>",
+          "example": "WorkflowTask",
           "member": "string",
           "name": "EventType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WorkflowTask",
           "name": "WorkflowTaskEvent",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTaskEvent",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。",
+          "example": "\"xxxx\"",
           "member": "string",
           "name": "SessionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长1000个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "SessionContext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleTask",
+          "name": "ScheduleTaskEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12918,6 +13337,15 @@
           "name": "SessionContext",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。\n注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13609,6 +14037,312 @@
       ],
       "usage": "out"
     },
+    "ScheduleAnalysisTaskResult": {
+      "document": "编排视频分析任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析任务的输入。",
+          "example": "NULL",
+          "member": "AiAnalysisTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiAnalysisResult",
+          "name": "Output",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScheduleRecognitionTaskResult": {
+      "document": "编排视频识别任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别任务的输入。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiRecognitionResult",
+          "name": "Output",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScheduleReviewTaskResult": {
+      "document": "编排视频审核任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核任务的输入。",
+          "example": "NULL",
+          "member": "AiContentReviewTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiContentReviewResult",
+          "name": "Output",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScheduleTask": {
+      "document": "编排任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编排任务 ID。",
+          "example": "NULL",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "NULL",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编排任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ActivityResult",
+          "name": "ActivityResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScratchRepairConfig": {
+      "document": "去划痕配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "强度，取值范围：0.0~1.0。\n默认：0.0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SharpEnhanceConfig": {
+      "document": "细节增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "强度，取值范围：0.0~1.0。\n默认：0.0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Intensity",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SnapshotByTimeOffsetTaskInput": {
       "document": "对视频按指定时间点截图任务输入参数类型",
       "members": [
@@ -13782,6 +14516,42 @@
         }
       ],
       "usage": "out"
+    },
+    "SuperResolutionConfig": {
+      "document": "超分配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>lq：针对低清晰度有较多噪声视频的超分；</li>\n<li>hq：针对高清晰度视频超分。</li>\n默认值：lq。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "超分倍数，可选值：\n<li>2：目前只支持 2 倍超分。</li>\n默认值：2。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SvgWatermarkInput": {
       "document": "SVG水印模板输入参数",
@@ -13964,7 +14734,7 @@
         },
         {
           "default": "",
-          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n目前 默认CMQ。",
+          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n目前 默认CMQ。",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
@@ -14494,6 +15264,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "0",
           "member": "string",
           "name": "Definition",
           "required": true,
@@ -14503,6 +15274,7 @@
         {
           "default": "",
           "document": "封装格式，取值：mp4、flv、hls、mp3、flac、ogg。",
+          "example": "“”",
           "member": "string",
           "name": "Container",
           "required": true,
@@ -14512,6 +15284,7 @@
         {
           "default": "",
           "document": "转码模板名称。",
+          "example": "“”",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -14521,6 +15294,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "“”",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -14530,6 +15304,7 @@
         {
           "default": "",
           "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -14539,6 +15314,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": true,
@@ -14548,6 +15324,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": true,
@@ -14557,6 +15334,7 @@
         {
           "default": "",
           "document": "视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。",
+          "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
           "required": true,
@@ -14566,6 +15344,7 @@
         {
           "default": "",
           "document": "音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。",
+          "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
           "required": true,
@@ -14575,6 +15354,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
           "required": true,
@@ -14584,6 +15364,7 @@
         {
           "default": "",
           "document": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "ContainerType",
           "required": true,
@@ -14593,6 +15374,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -14602,11 +15384,22 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音视频增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnhanceConfig",
+          "name": "EnhanceConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14945,12 +15738,154 @@
       ],
       "usage": "in"
     },
+    "VideoDenoiseConfig": {
+      "document": "视频降噪配置",
+      "members": [
+        {
+          "default": "",
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，可选值：\n<li>weak</li>\n<li>strong</li>\n默认值：weak。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoEnhanceConfig": {
+      "document": "视频增强配置",
+      "members": [
+        {
+          "default": "",
+          "document": "插帧帧率配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FrameRateConfig",
+          "name": "FrameRate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "超分配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuperResolutionConfig",
+          "name": "SuperResolution",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HDR配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HdrConfig",
+          "name": "Hdr",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDenoiseConfig",
+          "name": "Denoise",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "综合增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageQualityEnhanceConfig",
+          "name": "ImageQualityEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "色彩增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColorEnhanceConfig",
+          "name": "ColorEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "细节增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SharpEnhanceConfig",
+          "name": "SharpEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人脸增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FaceEnhanceConfig",
+          "name": "FaceEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "低光照增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LowLightEnhanceConfig",
+          "name": "LowLightEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "去划痕配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScratchRepairConfig",
+          "name": "ScratchRepair",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "去伪影（毛刺）配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ArtifactRepairConfig",
+          "name": "ArtifactRepair",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "VideoTemplateInfo": {
       "document": "视频流配置参数",
       "members": [
         {
           "default": "",
-          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>",
+          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
           "example": "libx264",
           "member": "string",
           "name": "Codec",
@@ -14960,7 +15895,7 @@
         },
         {
           "default": "",
-          "document": "视频帧率，取值范围：[0, 100]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。",
+          "document": "视频帧率，取值范围：[0, 100]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
           "example": "0",
           "member": "uint64",
           "name": "Fps",
@@ -14970,7 +15905,7 @@
         },
         {
           "default": "",
-          "document": "视频流的码率，取值范围：0 和 [75, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
@@ -14980,7 +15915,7 @@
         },
         {
           "default": "",
-          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。\n注意：自适应模式时，Width不能小于Height。",
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
@@ -15020,7 +15955,7 @@
         },
         {
           "default": "",
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n默认值：black 。",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>\n默认值：black 。\n注意：自适应码流只支持 stretch、black。",
           "example": "black",
           "member": "string",
           "name": "FillType",
@@ -15046,7 +15981,7 @@
       "members": [
         {
           "default": "",
-          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。",
+          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
           "example": "libx264",
           "member": "string",
           "name": "Codec",
@@ -15076,7 +16011,7 @@
         },
         {
           "default": "",
-          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>",
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n注意：自适应模式时，Width不能小于Height。",
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",

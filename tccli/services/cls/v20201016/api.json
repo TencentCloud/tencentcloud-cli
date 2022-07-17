@@ -4264,7 +4264,7 @@
         },
         {
           "default": "",
-          "document": "日志下载状态。Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）。",
+          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
           "example": "Expired",
           "member": "string",
           "name": "Status",
@@ -4414,6 +4414,26 @@
           "example": "-1",
           "member": "int64",
           "name": "Backtracking",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为Gbk编码.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsGBK",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为标准json.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "JsonStandard",
           "required": false,
           "type": "int",
           "value_allowed_null": true

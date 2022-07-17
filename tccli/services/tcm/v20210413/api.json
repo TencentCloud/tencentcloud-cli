@@ -352,6 +352,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群关联的 Namespace 列表",
+          "example": "无",
+          "member": "string",
+          "name": "HostedNamespaces",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -675,6 +685,58 @@
       ],
       "usage": "both"
     },
+    "ExtensiveCluster": {
+      "document": "内网独占集群配置",
+      "members": [
+        {
+          "default": "",
+          "document": "Cluster ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tgw-lgt20d75",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-5",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtensiveClusters": {
+      "document": "内网独占集群配置列表",
+      "members": [
+        {
+          "default": "",
+          "document": "4层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtensiveCluster",
+          "name": "L4Clusters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "7层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtensiveCluster",
+          "name": "L7Clusters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "键值对过滤器，用于条件过滤查询。例如过滤ID、名称等",
       "members": [
@@ -992,7 +1054,7 @@
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1018,13 +1080,73 @@
         },
         {
           "default": "",
-          "document": "最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10",
+          "document": "最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10",
           "example": "10",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "ZoneID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运营商类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GMCC",
+          "member": "string",
+          "name": "VipIsp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TGW Group 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ziyan_huiyi",
+          "member": "string",
+          "name": "TgwGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPv4",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网独占集群配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtensiveClusters",
+          "name": "ExtensiveClusters",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1713,6 +1835,42 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "k1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "v1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否透传给其他关联产品",
+          "example": "true",
+          "member": "bool",
+          "name": "Passthrough",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TracingConfig": {
       "document": "调用链配置",
       "members": [
@@ -1816,6 +1974,16 @@
           "name": "SelectedNodeList",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件的部署模式，取值说明：\nIN_GENERAL_NODE：常规节点\nIN_EKLET：eklet 节点\nIN_SHARED_NODE_POOL：共享节电池\nIN_EXCLUSIVE_NODE_POOL：独占节点池",
+          "example": "IN_GENERAL_NODE",
+          "member": "string",
+          "name": "DeployMode",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

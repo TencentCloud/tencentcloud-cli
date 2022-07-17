@@ -291,8 +291,8 @@
     "LicensePlateOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=LicensePlateOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Number\": \"京N0L9U8\",\n        \"Confidence\": 99,\n        \"Rect\": {\n            \"X\": 217,\n            \"Y\": 233,\n            \"Width\": 170,\n            \"Height\": 21\n        },\n        \"Color\": \"蓝\",\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LicensePlateOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Number\": \"京N0L9U8\",\n        \"Confidence\": 99,\n        \"Rect\": {\n            \"X\": 217,\n            \"Y\": 233,\n            \"Width\": 170,\n            \"Height\": 21\n        },\n        \"Color\": \"蓝\",\n        \"LicensePlateInfos\": [\n            {\n                \"Color\": \"xx\",\n                \"Confidence\": 0,\n                \"Number\": \"xx\",\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
         "title": "车牌识别示例代码"
       }
     ],

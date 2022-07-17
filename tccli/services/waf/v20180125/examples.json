@@ -206,6 +206,14 @@
         "title": "描述WAF威胁情报封禁模块详情"
       }
     ],
+    "GetAttackDownloadRecords": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=GetAttackDownloadRecords\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "查询下载攻击日志任务记录列表"
+      }
+    ],
     "ModifyAccessPeriod": [
       {
         "document": "",

@@ -22,6 +22,19 @@ Output:
             "Height": 21
         },
         "Color": "蓝",
+        "LicensePlateInfos": [
+            {
+                "Color": "xx",
+                "Confidence": 0,
+                "Number": "xx",
+                "Rect": {
+                    "Y": 0,
+                    "X": 0,
+                    "Height": 0,
+                    "Width": 0
+                }
+            }
+        ],
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }
