@@ -7231,7 +7231,8 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7240,7 +7241,8 @@
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7249,7 +7251,8 @@
           "member": "string",
           "name": "ListenerName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7258,7 +7261,8 @@
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7267,7 +7271,8 @@
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7276,7 +7281,8 @@
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7285,7 +7291,8 @@
           "member": "string",
           "name": "Scheduler",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7294,7 +7301,18 @@
           "member": "int64",
           "name": "SniSwitch",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。",
+          "example": "NODE",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7303,7 +7321,8 @@
           "member": "int64",
           "name": "KeepaliveEnable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7312,7 +7331,8 @@
           "member": "bool",
           "name": "DeregisterTargetRst",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7321,7 +7341,8 @@
           "member": "string",
           "name": "SessionType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

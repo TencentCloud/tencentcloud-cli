@@ -1,151 +1,151 @@
 {
   "actions": {
     "CreateJob": {
-      "document": "创建任务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n创建任务",
       "input": "CreateJobRequest",
       "name": "创建任务",
       "output": "CreateJobResponse"
     },
     "CreateRsgAsGroup": {
-      "document": "创建资源组的伸缩组。当前一个资源组仅允许创建一个伸缩组。",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n创建资源组的伸缩组。当前一个资源组仅允许创建一个伸缩组。",
       "input": "CreateRsgAsGroupRequest",
       "name": "创建资源组的伸缩组",
       "output": "CreateRsgAsGroupResponse"
     },
     "CreateRuntime": {
-      "document": "创建运行环境",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n创建运行环境",
       "input": "CreateRuntimeRequest",
       "name": "创建运行环境",
       "output": "CreateRuntimeResponse"
     },
     "CreateService": {
-      "document": "创建服务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n创建服务",
       "input": "CreateServiceRequest",
       "name": "创建服务",
       "output": "CreateServiceResponse"
     },
     "CreateServiceConfig": {
-      "document": "创建服务配置",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n创建服务配置",
       "input": "CreateServiceConfigRequest",
       "name": "创建服务配置",
       "output": "CreateServiceConfigResponse"
     },
     "DeleteInstance": {
-      "document": "删除资源组中的节点。目前仅支持删除已经到期的预付费节点，和按量付费节点。",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除资源组中的节点。目前仅支持删除已经到期的预付费节点，和按量付费节点。",
       "input": "DeleteInstanceRequest",
       "name": "删除节点",
       "output": "DeleteInstanceResponse"
     },
     "DeleteJob": {
-      "document": "删除任务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除任务",
       "input": "DeleteJobRequest",
       "name": "删除任务",
       "output": "DeleteJobResponse"
     },
     "DeleteResourceGroup": {
-      "document": "删除资源组",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除资源组",
       "input": "DeleteResourceGroupRequest",
       "name": "删除资源组",
       "output": "DeleteResourceGroupResponse"
     },
     "DeleteRsgAsGroup": {
-      "document": "伸缩",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n伸缩",
       "input": "DeleteRsgAsGroupRequest",
       "name": "删除资源组的伸缩组",
       "output": "DeleteRsgAsGroupResponse"
     },
     "DeleteRuntime": {
-      "document": "删除运行环境",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除运行环境",
       "input": "DeleteRuntimeRequest",
       "name": "删除运行环境",
       "output": "DeleteRuntimeResponse"
     },
     "DeleteService": {
-      "document": "删除服务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除服务",
       "input": "DeleteServiceRequest",
       "name": "删除服务",
       "output": "DeleteServiceResponse"
     },
     "DeleteServiceConfig": {
-      "document": "删除服务配置",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n删除服务配置",
       "input": "DeleteServiceConfigRequest",
       "name": "删除服务配置",
       "output": "DeleteServiceConfigResponse"
     },
     "DescribeInstances": {
-      "document": "获取节点列表",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n获取节点列表",
       "input": "DescribeInstancesRequest",
       "name": "获取节点列表",
       "output": "DescribeInstancesResponse"
     },
     "DescribeResourceGroups": {
-      "document": "获取资源组列表",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n获取资源组列表",
       "input": "DescribeResourceGroupsRequest",
       "name": "获取资源组列表",
       "output": "DescribeResourceGroupsResponse"
     },
     "DescribeRsgAsGroupActivities": {
-      "document": "查询伸缩组活动",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n查询伸缩组活动",
       "input": "DescribeRsgAsGroupActivitiesRequest",
       "name": "查询伸缩组活动",
       "output": "DescribeRsgAsGroupActivitiesResponse"
     },
     "DescribeRsgAsGroups": {
-      "document": "查询资源组的伸缩组信息",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n查询资源组的伸缩组信息",
       "input": "DescribeRsgAsGroupsRequest",
       "name": "查询资源组的伸缩组信息",
       "output": "DescribeRsgAsGroupsResponse"
     },
     "DescribeRuntimes": {
-      "document": "描述服务运行环境",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n描述服务运行环境",
       "input": "DescribeRuntimesRequest",
       "name": "描述服务运行环境",
       "output": "DescribeRuntimesResponse"
     },
     "DescribeServiceConfigs": {
-      "document": "描述服务配置",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n描述服务配置",
       "input": "DescribeServiceConfigsRequest",
       "name": "描述服务配置",
       "output": "DescribeServiceConfigsResponse"
     },
     "DescribeServices": {
-      "document": "描述服务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n描述服务",
       "input": "DescribeServicesRequest",
       "name": "描述服务",
       "output": "DescribeServicesResponse"
     },
     "DisableRsgAsGroup": {
-      "document": "停用资源组的伸缩组",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n停用资源组的伸缩组",
       "input": "DisableRsgAsGroupRequest",
       "name": "停用资源组的伸缩组",
       "output": "DisableRsgAsGroupResponse"
     },
     "EnableRsgAsGroup": {
-      "document": "启用资源组的伸缩组",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n启用资源组的伸缩组",
       "input": "EnableRsgAsGroupRequest",
       "name": "启用资源组的伸缩组",
       "output": "EnableRsgAsGroupResponse"
     },
     "ExposeService": {
-      "document": "暴露服务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n暴露服务",
       "input": "ExposeServiceRequest",
       "name": "暴露服务",
       "output": "ExposeServiceResponse"
     },
     "UpdateJob": {
-      "document": "更新任务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n更新任务",
       "input": "UpdateJobRequest",
       "name": "更新任务",
       "output": "UpdateJobResponse"
     },
     "UpdateRsgAsGroup": {
-      "document": "更新资源组的伸缩组",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n更新资源组的伸缩组",
       "input": "UpdateRsgAsGroupRequest",
       "name": "更新资源组的伸缩组",
       "output": "UpdateRsgAsGroupResponse"
     },
     "UpdateService": {
-      "document": "更新服务",
+      "document": "因业务策略调整，腾讯云TI平台TI-EMS已经于2022年6月30日下线并停止提供服务。若您有新增的业务需求，可前往TI-ONE(https://cloud.tencent.com/document/product/851)使用。\n\n更新服务",
       "input": "UpdateServiceRequest",
       "name": "更新服务",
       "output": "UpdateServiceResponse"

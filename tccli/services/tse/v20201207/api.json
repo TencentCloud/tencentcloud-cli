@@ -1079,6 +1079,28 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境描述",
+          "example": "test",
+          "member": "string",
+          "name": "EnvDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "客户端带宽",
+          "example": "5",
+          "member": "uint64",
+          "name": "ClientBandWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

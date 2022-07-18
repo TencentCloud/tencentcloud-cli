@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc HaVipAssociateAddressIp --cli-unfold-argument  \
-    --HaVipId havip-9o233uri \
-    --AddressIp 119.29.93.218
+    --AddressIp 119.29.93.218 \
+    --HaVipId havip-9o233uri
 ```
 
 Output: 

@@ -16036,48 +16036,69 @@
       "members": [
         {
           "default": "",
-          "document": "分类 ID",
+          "document": "分类 ID。",
+          "example": "0",
           "member": "int64",
           "name": "ClassId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "父类 ID，一级分类的父类 ID 为 -1。",
+          "example": "0",
           "member": "int64",
           "name": "ParentId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "分类名称",
+          "document": "分类名称。",
+          "example": "\"SystemDefault\"",
           "member": "string",
-          "name": "ClassName",
+          "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分类级别，一级分类为 0，最大值为 3，即最多允许 4 级分类层次。",
+          "example": "0",
           "member": "uint64",
           "name": "Level",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "当前分类的第一级子类 ID 集合",
+          "document": "当前分类的第一级子类 ID 集合。",
+          "example": "[4]",
           "member": "int64",
           "name": "SubClassIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分类名称（该字段已不推荐使用，建议使用新的分类名称字段 Name）。",
+          "example": "\"其他\"",
+          "member": "string",
+          "name": "ClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -24859,47 +24880,68 @@
         {
           "default": "",
           "document": "子应用 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子应用名称。",
+          "example": "无",
           "member": "string",
-          "name": "Name",
+          "name": "SubAppIdName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子应用简介。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子应用创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子应用状态，有效值：\n<li>On：启用；</li>\n<li>Off：停用。</li>\n<li>Destroying：销毁中。</li>\n<li>Destroyed：销毁完成。</li>",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

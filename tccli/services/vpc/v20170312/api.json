@@ -3350,7 +3350,8 @@
           "member": "string",
           "name": "DhcpIpId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3359,7 +3360,8 @@
           "member": "string",
           "name": "AddressIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16923,7 +16925,8 @@
           "member": "string",
           "name": "HaVipId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16932,7 +16935,8 @@
           "member": "string",
           "name": "AddressIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
