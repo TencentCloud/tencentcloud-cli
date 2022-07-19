@@ -14582,7 +14582,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>ContainerStatus - string -是否必填: 否 - 容器状态 RUNNING PAUSED STOPPED CREATED DESTROYED RESTARTING REMOVING</li>",
+          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>ContainerStatus - string -是否必填: 否 - 容器状态 RUNNING PAUSED STOPPED CREATED DESTROYED RESTARTING REMOVING</li>\n<li>AutoIsolateMode - string -是否必填: 否 - 隔离方式 MANUAL AUTO</li>\n<li>MD5 - string -是否必填: 否 - md5 </li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -15506,7 +15506,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>",
+          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>ContainerStatus - string -是否必填: 否 - 容器状态 RUNNING PAUSED STOPPED CREATED DESTROYED RESTARTING REMOVING</li>\n<li>AutoIsolateMode - string -是否必填: 否 - 隔离方式 MANUAL AUTO</li>\n<li>MD5 - string -是否必填: 否 - md5 </li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",

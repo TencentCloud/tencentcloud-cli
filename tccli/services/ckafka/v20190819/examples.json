@@ -40,12 +40,28 @@
         "title": "实例token授权"
       }
     ],
+    "CheckCdcCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCdcCluster\n<公共请求参数>\n\n{\n    \"TaskId\": 111\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "查询cdc任务状态"
+      }
+    ],
     "CreateAcl": [
       {
         "document": "",
         "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\n&InstanceId=xxx\n&ResourceType=2\n&ResourceName=test1\n&Operation=2\n&PermissionType=2\n&Host=1.1.1.1\n&Principal=User:user1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
         "title": "添加 ACL 策略"
+      }
+    ],
+    "CreateCdcCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdcCluster\n<公共请求参数>\n\n{\n    \"CdcId\": \"cluster-d8htgb6k\",\n    \"CdcVpcId\": \"vpc-ixenz42t\",\n    \"CdcSubnetId\": \"subnet-k8x1dviw\",\n    \"ZoneId\": 100002,\n    \"Bandwidth\": 1200,\n    \"DiskSize\": 800,\n    \"DiskType\": \"CLOUD_SSD\",\n    \"SystemDiskType\": \"CLOUD_SSD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": 1111\n        },\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "创建cdc-ckafka共享集群"
       }
     ],
     "CreateConsumer": [

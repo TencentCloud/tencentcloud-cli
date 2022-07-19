@@ -19,7 +19,7 @@
       "members": [
         {
           "default": "",
-          "document": "盘查实例id",
+          "document": "盘查组id，可在“盘查组概览”功能中获取。",
           "example": "无",
           "member": "string",
           "name": "GroupId",
@@ -28,7 +28,7 @@
         },
         {
           "default": "",
-          "document": "节点id",
+          "document": "节点id，可在“数据接入管理”中获取。",
           "example": "无",
           "member": "string",
           "name": "NodeId",
@@ -37,7 +37,7 @@
         },
         {
           "default": "",
-          "document": "节点记录-json",
+          "document": "节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。",
           "example": "无",
           "member": "string",
           "name": "Records",

@@ -11,7 +11,7 @@
     "AssociateInstancesKeyPairs": [
       {
         "document": "绑定一个密钥对到实例上。",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=AssociateInstancesKeyPairs\n&InstanceIds.0=lhins-ruy9d2tw\n&KeyIds.0=lhkp-f7rjie1q\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateInstancesKeyPairs\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-ruy9d2tw\"\n    ],\n    \"KeyIds\": [\n        \"lhkp-f7rjie1q\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f192c1a9-580e-4653-9d54-ba42cd4353a3\"\n    }\n}",
         "title": "绑定密钥对到实例"
       }

@@ -30,11 +30,23 @@
       "name": "取消授权token",
       "output": "CancelAuthorizationTokenResponse"
     },
+    "CheckCdcCluster": {
+      "document": "用于查询cdc-ckafka任务状态",
+      "input": "CheckCdcClusterRequest",
+      "name": "查询cdc任务接口",
+      "output": "CheckCdcClusterResponse"
+    },
     "CreateAcl": {
       "document": "添加 ACL 策略",
       "input": "CreateAclRequest",
       "name": "添加 ACL 策略",
       "output": "CreateAclResponse"
+    },
+    "CreateCdcCluster": {
+      "document": "用于cdc的专用ckafka集群",
+      "input": "CreateCdcClusterRequest",
+      "name": "创建cdc-ckafka集群",
+      "output": "CreateCdcClusterResponse"
     },
     "CreateConsumer": {
       "document": "创建消费者组",
@@ -1077,6 +1089,58 @@
       ],
       "type": "object"
     },
+    "CdcClusterResponse": {
+      "document": "创建CDC 标准版共享集群出参",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckCdcClusterRequest": {
+      "document": "CheckCdcCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCdcClusterResponse": {
+      "document": "CheckCdcCluster返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果状态Success\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ClusterInfo": {
       "document": "集群信息实体",
       "members": [
@@ -1512,6 +1576,105 @@
           "document": "返回结果",
           "example": "无",
           "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCdcClusterRequest": {
+      "document": "CreateCdcCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "cdc的id",
+          "example": "无",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpcId,一个地域只有唯一一个vpcid用于CDC",
+          "example": "无",
+          "member": "string",
+          "name": "CdcVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每个CDC集群有唯一一个子网ID",
+          "example": "无",
+          "member": "string",
+          "name": "CdcSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所在可用区ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cdc集群的总带宽",
+          "example": "无",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cdc集群的总磁盘",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据盘类型",
+          "example": "无",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统盘类型",
+          "example": "无",
+          "member": "string",
+          "name": "SystemDiskType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCdcClusterResponse": {
+      "document": "CreateCdcCluster返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "CdcClusterResponse",
           "name": "Result",
           "required": true,
           "type": "object",

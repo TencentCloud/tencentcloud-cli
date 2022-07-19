@@ -211,11 +211,21 @@
       "members": [
         {
           "default": "",
+          "document": "模型ID列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ModelIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "设备ID，AccountType指定的类型",
           "example": "\"86********\"",
           "member": "string",
           "name": "Uid",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -225,18 +235,8 @@
           "example": "1",
           "member": "int64",
           "name": "AccountType",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "模型ID列表",
-          "example": "[1,2]",
-          "member": "int64",
-          "name": "ModelIdList",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -141,7 +141,7 @@
     "AssociateDhcpIpWithAddressIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateDhcpIpWithAddressIp\n&DhcpIpId=dpcpip-9o233uri\n&AddressIp=119.29.93.218\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateDhcpIpWithAddressIp\n<公共请求参数>\n\n{\n    \"DhcpIpId\": \"dpcpip-9o233uri\",\n    \"AddressIp\": \"119.29.93.218\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "DhcpIp绑定EIP"
       }
@@ -1861,7 +1861,7 @@
     "HaVipAssociateAddressIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=HaVipAssociateAddressIp\n&HaVipId=havip-9o233uri\n&AddressIp=119.29.93.218\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HaVipAssociateAddressIp\n<公共请求参数>\n\n{\n    \"AddressIp\": \"119.29.93.218\",\n    \"HaVipId\": \"havip-9o233uri\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "HAVIP绑定EIP"
       }

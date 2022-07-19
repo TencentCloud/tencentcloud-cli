@@ -10008,6 +10008,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销售地址",
+          "example": "无",
+          "member": "string",
+          "name": "SellerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销售电话",
+          "example": "10987765",
+          "member": "string",
+          "name": "SellerTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -7228,6 +7228,15 @@
         },
         {
           "default": "",
+          "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。",
+          "example": "NODE",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。",
           "example": "0",
           "member": "int64",

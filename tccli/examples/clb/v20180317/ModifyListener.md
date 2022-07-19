@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli clb ModifyListener --cli-unfold-argument  \
+    --HealthCheck.UnHealthNum 5 \
+    --HealthCheck.HealthNum 5 \
+    --HealthCheck.IntervalTime 60 \
+    --HealthCheck.TimeOut 35 \
+    --HealthCheck.HealthSwitch 1 \
     --LoadBalancerId lb-cuxw2rm0 \
     --ListenerId lbl-d1ubsydq \
     --ListenerName newlis \
-    --SessionExpireTime 120 \
     --Scheduler LEAST_CONN \
-    --HealthCheck.HealthSwitch 1 \
-    --HealthCheck.TimeOut 35 \
-    --HealthCheck.IntervalTime 60 \
-    --HealthCheck.HealthNum 5 \
-    --HealthCheck.UnHealthNum 5
+    --SessionExpireTime 120
 ```
 
 Output: 
@@ -35,10 +35,10 @@ Input:
 
 ```
 tccli clb ModifyListener --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0 \
     --ListenerId lbl-4fbxq45k \
     --Certificate.SSLMode UNIDIRECTIONAL \
-    --Certificate.CertId Nb1DY3hQ
+    --Certificate.CertId Nb1DY3hQ \
+    --LoadBalancerId lb-cuxw2rm0
 ```
 
 Output: 

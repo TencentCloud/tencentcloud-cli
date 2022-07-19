@@ -2737,7 +2737,7 @@
         },
         {
           "default": "",
-          "document": "子域名，填写@表示根域",
+          "document": "子域名",
           "example": "loadbalancing.123.com",
           "member": "string",
           "name": "Host",

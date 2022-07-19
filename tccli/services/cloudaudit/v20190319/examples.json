@@ -99,7 +99,7 @@
     "ListKeyAliasByRegion": [
       {
         "document": "根据地域获取KMS密钥别名",
-        "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListKeyAliasByRegion\n&KmsRegion=ap-hongkong\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListKeyAliasByRegion\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"KmsRegion\": \"ap-hongkong\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"KeyMetadatas\": [\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n                \"Alias\": \"KMS-CA\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "根据地域获取KMS密钥别名"
       }
