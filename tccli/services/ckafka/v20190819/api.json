@@ -5899,7 +5899,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5908,7 +5909,8 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5917,7 +5919,8 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5926,7 +5929,8 @@
           "member": "int64",
           "name": "EnableWhiteList",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5935,7 +5939,8 @@
           "member": "int64",
           "name": "MinInsyncReplicas",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5944,7 +5949,8 @@
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5953,7 +5959,8 @@
           "member": "int64",
           "name": "RetentionMs",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5962,7 +5969,8 @@
           "member": "int64",
           "name": "SegmentMs",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5971,7 +5979,8 @@
           "member": "int64",
           "name": "MaxMessageBytes",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5980,7 +5989,8 @@
           "member": "string",
           "name": "CleanUpPolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5989,7 +5999,8 @@
           "member": "string",
           "name": "IpWhiteList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5998,7 +6009,8 @@
           "member": "int64",
           "name": "EnableAclRule",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6007,7 +6019,8 @@
           "member": "string",
           "name": "AclRuleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6016,7 +6029,8 @@
           "member": "int64",
           "name": "RetentionBytes",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6025,7 +6039,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6034,7 +6049,8 @@
           "member": "int64",
           "name": "QuotaProducerByteRate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6043,7 +6059,18 @@
           "member": "int64",
           "name": "QuotaConsumerByteRate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "调整topic副本数",
+          "example": "2",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6058,7 +6085,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

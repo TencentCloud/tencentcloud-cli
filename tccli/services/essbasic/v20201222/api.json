@@ -427,13 +427,25 @@
       "members": [
         {
           "default": "",
+          "document": "主机构ID",
+          "example": "732aaefa78c439d726f999b89c49e022",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "应用号",
           "example": "c17bdf9c2a7bdcb88811f4d0200fee3d",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -443,7 +455,8 @@
           "name": "SubOrganizationId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -453,7 +466,8 @@
           "name": "OperatorId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

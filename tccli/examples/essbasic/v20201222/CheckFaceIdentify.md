@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic CheckFaceIdentify --cli-unfold-argument  \
+    --Caller.OrganizationId 机构ID \
     --Caller.ApplicationId 应用号ID \
     --Caller.SubOrganizationId  \
     --Caller.OperatorId 参与人脸核身用户的UserId \

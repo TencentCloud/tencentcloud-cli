@@ -1028,7 +1028,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1037,7 +1038,8 @@
           "member": "string",
           "name": "ClusterCIDRs",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1046,7 +1048,8 @@
           "member": "bool",
           "name": "IgnoreClusterCIDRConflict",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7952,7 +7955,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7967,7 +7971,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "当任务进度为Failed时，对任务状态的进一步描述，例如IPAMD组件安装失败\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -7976,7 +7981,8 @@
           "name": "ErrorMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10096,7 +10102,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11129,7 +11136,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11138,7 +11146,8 @@
           "member": "string",
           "name": "VpcCniType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11147,7 +11156,8 @@
           "member": "bool",
           "name": "EnableStaticIp",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11156,7 +11166,8 @@
           "member": "string",
           "name": "Subnets",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11165,7 +11176,8 @@
           "member": "uint64",
           "name": "ExpiredSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -6,11 +6,29 @@
       "name": "停止任务",
       "output": "AbortJobResponse"
     },
+    "AdjustJobSpeed": {
+      "document": "调整任务的目标RPS",
+      "input": "AdjustJobSpeedRequest",
+      "name": "调整任务目标RPS",
+      "output": "AdjustJobSpeedResponse"
+    },
+    "CopyScenario": {
+      "document": "复制场景",
+      "input": "CopyScenarioRequest",
+      "name": "复制场景",
+      "output": "CopyScenarioResponse"
+    },
     "CreateAlertChannel": {
       "document": "创建告警通知接收组",
       "input": "CreateAlertChannelRequest",
       "name": "创建告警通知接收组",
       "output": "CreateAlertChannelResponse"
+    },
+    "CreateCronJob": {
+      "document": "创建定时任务",
+      "input": "CreateCronJobRequest",
+      "name": "创建定时任务",
+      "output": "CreateCronJobResponse"
     },
     "CreateFile": {
       "document": "创建文件",
@@ -60,6 +78,12 @@
       "name": "删除场景",
       "output": "DeleteScenariosResponse"
     },
+    "DescribeAccountType": {
+      "document": "查询账号类型",
+      "input": "DescribeAccountTypeRequest",
+      "name": "查询账号类型",
+      "output": "DescribeAccountTypeResponse"
+    },
     "DescribeAlertChannels": {
       "document": "查询告警通知接收组",
       "input": "DescribeAlertChannelsRequest",
@@ -72,11 +96,23 @@
       "name": "查询告警历史",
       "output": "DescribeAlertRecordsResponse"
     },
+    "DescribeAvailableMetrics": {
+      "document": "查询系统支持的指标",
+      "input": "DescribeAvailableMetricsRequest",
+      "name": "查询系统支持的指标",
+      "output": "DescribeAvailableMetricsResponse"
+    },
     "DescribeCheckSummary": {
       "document": "查询检查点汇总信息",
       "input": "DescribeCheckSummaryRequest",
       "name": "查询检查点汇总信息",
       "output": "DescribeCheckSummaryResponse"
+    },
+    "DescribeCronJobs": {
+      "document": "列出定时任务，非必填数组为空就默认全选",
+      "input": "DescribeCronJobsRequest",
+      "name": "列出定时任务",
+      "output": "DescribeCronJobsResponse"
     },
     "DescribeFiles": {
       "document": "查询文件列表",
@@ -96,6 +132,12 @@
       "name": "查询标签值",
       "output": "DescribeLabelValuesResponse"
     },
+    "DescribeMetricLabelWithValues": {
+      "document": "查询指标所有的label及values值",
+      "input": "DescribeMetricLabelWithValuesRequest",
+      "name": "查询指标所有的label及values值",
+      "output": "DescribeMetricLabelWithValuesResponse"
+    },
     "DescribeNormalLogs": {
       "document": "压测过程日志日志包括引擎输出日志及用户输出日志",
       "input": "DescribeNormalLogsRequest",
@@ -114,6 +156,12 @@
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
     },
+    "DescribeRequestSummary": {
+      "document": "查询请求汇总信息",
+      "input": "DescribeRequestSummaryRequest",
+      "name": "查询请求汇总信息",
+      "output": "DescribeRequestSummaryResponse"
+    },
     "DescribeSampleBatchQuery": {
       "document": "批量查询指标，返回固定时间点指标内容",
       "input": "DescribeSampleBatchQueryRequest",
@@ -125,6 +173,18 @@
       "input": "DescribeSampleLogsRequest",
       "name": "查询采样日志",
       "output": "DescribeSampleLogsResponse"
+    },
+    "DescribeSampleMatrixBatchQuery": {
+      "document": "批量查询指标矩阵",
+      "input": "DescribeSampleMatrixBatchQueryRequest",
+      "name": "批量查询指标矩阵",
+      "output": "DescribeSampleMatrixBatchQueryResponse"
+    },
+    "DescribeSampleMatrixQuery": {
+      "document": "查询指标矩阵",
+      "input": "DescribeSampleMatrixQueryRequest",
+      "name": "查询指标矩阵",
+      "output": "DescribeSampleMatrixQueryResponse"
     },
     "DescribeSampleQuery": {
       "document": "查询指标，返回固定时间点指标内容",
@@ -162,11 +222,23 @@
       "name": "生成临时COS凭证",
       "output": "GenerateTmpKeyResponse"
     },
+    "RestartCronJobs": {
+      "document": "重启状态为已中止的定时任务",
+      "input": "RestartCronJobsRequest",
+      "name": "重启定时任务",
+      "output": "RestartCronJobsResponse"
+    },
     "StartJob": {
       "document": "创建并启动任务",
       "input": "StartJobRequest",
       "name": "创建并启动任务",
       "output": "StartJobResponse"
+    },
+    "UpdateCronJob": {
+      "document": "更新定时任务",
+      "input": "UpdateCronJobRequest",
+      "name": "更新定时任务",
+      "output": "UpdateCronJobResponse"
     },
     "UpdateFileScenarioRelation": {
       "document": "更新关联文件场景",
@@ -210,7 +282,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -219,7 +292,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -228,7 +302,18 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "中断原因",
+          "example": "1",
+          "member": "int64",
+          "name": "AbortReason",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -244,6 +329,81 @@
         }
       ],
       "type": "object"
+    },
+    "AdjustJobSpeedRequest": {
+      "document": "AdjustJobSpeed请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "job-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标RPS",
+          "example": "60",
+          "member": "int64",
+          "name": "TargetRequestsPerSecond",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AdjustJobSpeedResponse": {
+      "document": "AdjustJobSpeed返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AggregationLegend": {
+      "document": "聚合函数",
+      "members": [
+        {
+          "default": "",
+          "document": "指标支持的聚合函数",
+          "example": "Rate",
+          "member": "string",
+          "name": "Aggregation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "聚合函数作用于指标后对应的描述",
+          "example": "请求RPS",
+          "member": "string",
+          "name": "Legend",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "聚合之后的指标单位",
+          "example": "reqs/s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "AlertChannel": {
       "document": "告警通知渠道",
@@ -587,6 +747,54 @@
       ],
       "usage": "both"
     },
+    "CopyScenarioRequest": {
+      "document": "CopyScenario请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景 ID",
+          "example": "scenario-xx",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CopyScenarioResponse": {
+      "document": "CopyScenario返回参数结构体",
+      "members": [
+        {
+          "document": "复制出的新场景 ID",
+          "example": "scenario-xx",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAlertChannelRequest": {
       "document": "CreateAlertChannel请求参数结构体",
       "members": [
@@ -623,6 +831,134 @@
     "CreateAlertChannelResponse": {
       "document": "CreateAlertChannel返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCronJobRequest": {
+      "document": "CreateCronJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定时任务名字",
+          "example": "cronjob",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "scenario-xx",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ScenarioName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Notice ID",
+          "example": "notice-xx",
+          "member": "string",
+          "name": "NoticeId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "执行频率类型，1:只执行一次; 2:日粒度; 3:周粒度; 4:高级",
+          "example": "1",
+          "member": "int64",
+          "name": "FrequencyType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cron表达式",
+          "example": "*/1 * * * *",
+          "member": "string",
+          "name": "CronExpression",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务发起人",
+          "example": "tom",
+          "member": "string",
+          "name": "JobOwner",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "定时任务备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCronJobResponse": {
+      "document": "CreateCronJob返回参数结构体",
+      "members": [
+        {
+          "document": "定时任务ID",
+          "example": "cron-xx",
+          "member": "string",
+          "name": "CronJobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1028,6 +1364,177 @@
       ],
       "usage": "out"
     },
+    "CronJob": {
+      "document": "定时任务",
+      "members": [
+        {
+          "default": "",
+          "document": "定时任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron-xx",
+          "member": "string",
+          "name": "CronJobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "scenario-xx",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ScenarioName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cron 表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*/1 * * * *",
+          "member": "string",
+          "name": "CronExpression",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "中止原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AbortReason",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Notice ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "notice-xx",
+          "member": "string",
+          "name": "NoticeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "执行频率类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FrequencyType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "tom\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务发起人",
+          "member": "string",
+          "name": "JobOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "CustomSample": {
       "document": "sample附带原始查询语句中的metric, aggregation",
       "members": [
@@ -1090,6 +1597,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomSampleMatrix": {
+      "document": "指标矩阵，可包含多条指标序列",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名字",
+          "example": "pts_engine_req_total",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "聚合函数",
+          "example": "Rate",
+          "member": "string",
+          "name": "Aggregation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reqs/s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标序列数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SampleStream",
+          "name": "Streams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1317,6 +1870,33 @@
       ],
       "type": "object"
     },
+    "DescribeAccountTypeRequest": {
+      "document": "DescribeAccountType请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccountTypeResponse": {
+      "document": "DescribeAccountType返回参数结构体",
+      "members": [
+        {
+          "document": "当前账号是否为腾讯内部账号",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTencentAccount",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlertChannelsRequest": {
       "document": "DescribeAlertChannels请求参数结构体",
       "members": [
@@ -1417,7 +1997,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1426,7 +2007,8 @@
           "member": "string",
           "name": "ScenarioIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1435,7 +2017,8 @@
           "member": "string",
           "name": "JobIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1444,7 +2027,8 @@
           "member": "bool",
           "name": "Ascend",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1453,7 +2037,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1462,7 +2047,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1471,7 +2057,18 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "按场景名筛选",
+          "example": "[\"my-scenario\"]",
+          "member": "string",
+          "name": "ScenarioNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1486,7 +2083,8 @@
           "name": "AlertRecordSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "告警历史记录的总数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1495,7 +2093,34 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableMetricsRequest": {
+      "document": "DescribeAvailableMetrics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAvailableMetricsResponse": {
+      "document": "DescribeAvailableMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "系统支持的所有指标",
+          "example": "无",
+          "member": "MetricInfo",
+          "name": "MetricSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1550,6 +2175,124 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCronJobsRequest": {
+      "document": "DescribeCronJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID数组",
+          "example": "[\"project-xx\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID数组",
+          "example": "[\"cron-xx\"]",
+          "member": "string",
+          "name": "CronJobIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务名字，模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "CronJobName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务状态数组",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CronJobStatus",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序的列",
+          "example": "status",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否正序",
+          "example": "true",
+          "member": "bool",
+          "name": "Ascend",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCronJobsResponse": {
+      "document": "DescribeCronJobs返回参数结构体",
+      "members": [
+        {
+          "document": "定时任务总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "定时任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronJob",
+          "name": "CronJobSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1857,6 +2600,64 @@
       ],
       "type": "object"
     },
+    "DescribeMetricLabelWithValuesRequest": {
+      "document": "DescribeMetricLabelWithValues请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "job id",
+          "example": "job-12345",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "project id",
+          "example": "project-12345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "scenario id",
+          "example": "scenario-12345",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricLabelWithValuesResponse": {
+      "document": "DescribeMetricLabelWithValues返回参数结构体",
+      "members": [
+        {
+          "document": "指标所有的label和values数组",
+          "example": "无",
+          "member": "MetricLabelWithValues",
+          "name": "MetricLabelWithValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNormalLogsRequest": {
       "document": "DescribeNormalLogs请求参数结构体",
       "members": [
@@ -2107,6 +2908,64 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRequestSummaryRequest": {
+      "document": "DescribeRequestSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "压测任务ID",
+          "example": "job-12345",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "压测场景ID",
+          "example": "scenario-12345",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "压测项目ID",
+          "example": "project-12345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRequestSummaryResponse": {
+      "document": "DescribeRequestSummary返回参数结构体",
+      "members": [
+        {
+          "document": "请求汇总信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RequestSummary",
+          "name": "RequestSummarySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2369,6 +3228,159 @@
       ],
       "type": "object"
     },
+    "DescribeSampleMatrixBatchQueryRequest": {
+      "document": "DescribeSampleMatrixBatchQuery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "job-12345",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-12345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "scenario-12345",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询语句",
+          "example": "无",
+          "member": "InternalMetricQuery",
+          "name": "Queries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSampleMatrixBatchQueryResponse": {
+      "document": "DescribeSampleMatrixBatchQuery返回参数结构体",
+      "members": [
+        {
+          "document": "批量指标矩阵\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomSampleMatrix",
+          "name": "MetricSampleMatrixSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSampleMatrixQueryRequest": {
+      "document": "DescribeSampleMatrixQuery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "job-12345",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-12345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "scenario-12345",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标名字",
+          "example": "pts_engine_req_total",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合函数",
+          "example": "Rate",
+          "member": "string",
+          "name": "Aggregation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分组",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSampleMatrixQueryResponse": {
+      "document": "DescribeSampleMatrixQuery返回参数结构体",
+      "members": [
+        {
+          "document": "指标矩阵\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomSampleMatrix",
+          "name": "MetricSampleMatrix",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSampleQueryRequest": {
       "document": "DescribeSampleQuery请求参数结构体",
       "members": [
@@ -2460,7 +3472,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2469,7 +3482,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2478,7 +3492,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2487,7 +3502,8 @@
           "member": "string",
           "name": "ScenarioIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2496,7 +3512,8 @@
           "member": "string",
           "name": "ScenarioName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2505,7 +3522,8 @@
           "member": "int64",
           "name": "ScenarioStatus",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2514,7 +3532,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2523,7 +3542,8 @@
           "member": "bool",
           "name": "Ascend",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2532,7 +3552,18 @@
           "member": "ScenarioRelatedJobsParams",
           "name": "ScenarioRelatedJobsParams",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否需要返回场景的脚本内容",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreScript",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2547,7 +3578,8 @@
           "name": "ScenarioWithJobsSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "场景总数",
@@ -2556,7 +3588,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3047,6 +4080,42 @@
       ],
       "usage": "both"
     },
+    "Filter": {
+      "document": "指标查询过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "等于：0，不等于：1",
+          "example": "0",
+          "member": "int64",
+          "name": "Operator",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "service",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "LabelValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "GenerateTmpKeyRequest": {
       "document": "GenerateTmpKey请求参数结构体",
       "members": [
@@ -3197,10 +4266,30 @@
         },
         {
           "default": "",
-          "document": "查询过滤",
+          "document": "deprecated, 请使用Filters",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
           "member": "Label",
           "name": "Labels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标过滤",
+          "example": "[{\"LabelName\":\"Method\",\"Operator\":0, \"LabelValue\":\"GET\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标分组",
+          "example": "[\"status\"]",
+          "member": "string",
+          "name": "GroupBy",
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3219,7 +4308,8 @@
           "name": "JobId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3229,7 +4319,8 @@
           "name": "ScenarioId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3239,7 +4330,8 @@
           "name": "Load",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3249,7 +4341,8 @@
           "name": "Configs",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3259,7 +4352,8 @@
           "name": "Datasets",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3269,7 +4363,8 @@
           "name": "Extensions",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3279,7 +4374,8 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3289,7 +4385,8 @@
           "name": "StartTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3299,7 +4396,8 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3309,7 +4407,8 @@
           "name": "MaxVirtualUserCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3319,7 +4418,8 @@
           "name": "Note",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3329,7 +4429,8 @@
           "name": "ErrorRate",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3339,7 +4440,8 @@
           "name": "JobOwner",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3349,7 +4451,8 @@
           "name": "LoadSources",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3359,7 +4462,8 @@
           "name": "Duration",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3369,7 +4473,8 @@
           "name": "MaxRequestsPerSecond",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3379,7 +4484,8 @@
           "name": "RequestTotal",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3389,7 +4495,8 @@
           "name": "RequestsPerSecond",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3399,7 +4506,8 @@
           "name": "ResponseTimeAverage",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3409,7 +4517,8 @@
           "name": "ResponseTimeP99",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3419,7 +4528,8 @@
           "name": "ResponseTimeP95",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3429,7 +4539,8 @@
           "name": "ResponseTimeP90",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3439,7 +4550,8 @@
           "name": "Scripts",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3449,7 +4561,8 @@
           "name": "ResponseTimeMax",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3459,7 +4572,8 @@
           "name": "ResponseTimeMin",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3469,7 +4583,8 @@
           "name": "LoadSourceInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3479,7 +4594,8 @@
           "name": "TestScripts",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3489,7 +4605,8 @@
           "name": "Protocols",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3499,7 +4616,8 @@
           "name": "RequestFiles",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3509,7 +4627,19 @@
           "name": "Plugins",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron-xx",
+          "member": "string",
+          "name": "CronId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -3535,6 +4665,32 @@
           "name": "LabelValue",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LabelWithValues": {
+      "document": "标签及对应的值",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "service",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "[\"500\"，\"200\"]",
+          "member": "string",
+          "name": "LabelValues",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3647,6 +4803,115 @@
         }
       ],
       "usage": "both"
+    },
+    "MetricInfo": {
+      "document": "指标结构",
+      "members": [
+        {
+          "default": "",
+          "document": "后台指标",
+          "example": "pts_engine_reqs_total",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "前台展示指标名称",
+          "example": "RequestCount",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请求数量",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指标类型",
+          "example": "Counter",
+          "member": "string",
+          "name": "MetricType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "默认指标单位",
+          "example": "s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指标支持的聚合函数",
+          "example": "无",
+          "member": "AggregationLegend",
+          "name": "Aggregations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否内部指标，内部指标不可在前台提供用户自由选择",
+          "example": "true",
+          "member": "bool",
+          "name": "InnerMetric",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "MetricLabelWithValues": {
+      "document": "PTS提供的指标名，指标对应的labels及values",
+      "members": [
+        {
+          "default": "",
+          "document": "metric 名字",
+          "example": "RequestCount",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "label及values 数组",
+          "example": "无",
+          "member": "LabelWithValues",
+          "name": "LabelValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "NormalLog": {
       "document": "通用日志",
@@ -3958,6 +5223,111 @@
       ],
       "usage": "both"
     },
+    "RequestSummary": {
+      "document": "压测请求明细",
+      "members": [
+        {
+          "default": "",
+          "document": "请求URL",
+          "example": "http://www.baidu.com",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求方法",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求次数",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求响应平均耗时，单位秒",
+          "example": "0.50",
+          "member": "float",
+          "name": "Average",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求p90耗时，单位秒",
+          "example": "0.90",
+          "member": "float",
+          "name": "P90",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求p95耗时，单位秒",
+          "example": "0.95",
+          "member": "float",
+          "name": "P95",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求最小耗时，单位秒",
+          "example": "0.10",
+          "member": "float",
+          "name": "Min",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求最大耗时，单位秒",
+          "example": "0.99",
+          "member": "float",
+          "name": "Max",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求错误率",
+          "example": "1，代表错误率1%",
+          "member": "float",
+          "name": "ErrorPercentage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "RequestsPerSecond": {
       "document": "RPS模式的施压配置",
       "members": [
@@ -4010,9 +5380,57 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标RPS，入参无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "TargetRequestsPerSecond",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "RestartCronJobsRequest": {
+      "document": "RestartCronJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID数组",
+          "example": "[\"cron-xx\"]",
+          "member": "string",
+          "name": "CronJobIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RestartCronJobsResponse": {
+      "document": "RestartCronJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SLALabel": {
       "document": "SLA 标签",
@@ -4171,6 +5589,68 @@
           "example": "无",
           "member": "string",
           "name": "Body",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SamplePair": {
+      "document": "sample采样值",
+      "members": [
+        {
+          "default": "",
+          "document": "is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.",
+          "example": "2342342",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "is a representation of a value for a given sample at a given time.",
+          "example": "3242.23",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SampleStream": {
+      "document": "连续指标采样内容",
+      "members": [
+        {
+          "default": "",
+          "document": "labels描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标采样数组",
+          "example": "[{\"Timestamp\":24355, \"Value\":3243.45}]",
+          "member": "SamplePair",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标序列名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请求RPS",
+          "member": "string",
+          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4507,7 +5987,8 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4517,7 +5998,8 @@
           "name": "Size",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4527,7 +6009,8 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4537,7 +6020,8 @@
           "name": "UpdatedAt",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4547,7 +6031,8 @@
           "name": "EncodedContent",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4557,7 +6042,19 @@
           "name": "EncodedHttpArchive",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "脚本权重，范围 1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "LoadWeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4846,7 +6343,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4855,7 +6353,8 @@
           "member": "string",
           "name": "JobOwner",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4864,7 +6363,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4873,7 +6373,18 @@
           "member": "bool",
           "name": "Debug",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4888,7 +6399,8 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5040,6 +6552,134 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateCronJobRequest": {
+      "document": "UpdateCronJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID",
+          "example": "cron-xx",
+          "member": "string",
+          "name": "CronJobId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cron表达式",
+          "example": "*/1 * * * *",
+          "member": "string",
+          "name": "CronExpression",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "执行频率类型，1:只执行一次; 2:日粒度; 3:周粒度; 4:高级",
+          "example": "1",
+          "member": "int64",
+          "name": "FrequencyType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Notice ID",
+          "example": "notice-xx",
+          "member": "string",
+          "name": "NoticeId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务名字",
+          "example": "cronjob",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "scenario-xx",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ScenarioName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务发起人",
+          "example": "tom",
+          "member": "string",
+          "name": "JobOwner",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCronJobResponse": {
+      "document": "UpdateCronJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateFileScenarioRelationRequest": {
       "document": "UpdateFileScenarioRelation请求参数结构体",
@@ -5213,7 +6853,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5222,7 +6863,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5231,7 +6873,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5240,7 +6883,8 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5249,7 +6893,8 @@
           "member": "Load",
           "name": "Load",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5258,7 +6903,8 @@
           "member": "string",
           "name": "EncodedScripts",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5267,7 +6913,8 @@
           "member": "string",
           "name": "Configs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5276,7 +6923,8 @@
           "member": "TestData",
           "name": "Datasets",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5285,7 +6933,8 @@
           "member": "string",
           "name": "Extensions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5294,7 +6943,8 @@
           "member": "string",
           "name": "SLAId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5303,16 +6953,18 @@
           "member": "string",
           "name": "CronId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "场景状态",
+          "document": "场景状态（注：现已无需传递该参数）",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5321,7 +6973,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5330,7 +6983,8 @@
           "member": "ScriptInfo",
           "name": "TestScripts",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5339,7 +6993,8 @@
           "member": "ProtocolInfo",
           "name": "Protocols",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5348,7 +7003,8 @@
           "member": "FileInfo",
           "name": "RequestFiles",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5357,7 +7013,8 @@
           "member": "SLAPolicy",
           "name": "SLAPolicy",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5366,7 +7023,8 @@
           "member": "FileInfo",
           "name": "Plugins",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5375,7 +7033,8 @@
           "member": "DomainNameConfig",
           "name": "DomainNameConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

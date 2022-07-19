@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic UploadFiles --cli-unfold-argument  \
+    --Caller.OrganizationId 732aae***************b89c49e022 \
     --Caller.ApplicationId c17bdf9***************f4d0200fee3d \
     --Caller.OperatorId a08c79***************7b33bee00ce12 \
     --BusinessType SEAL \

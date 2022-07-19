@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic DescribeCatalogSignComponents --cli-unfold-argument  \
+    --Caller.OrganizationId 机构ID \
     --Caller.ApplicationId 应用号ID \
     --Caller.SubOrganizationId  \
     --Caller.OperatorId 操作人用户ID \

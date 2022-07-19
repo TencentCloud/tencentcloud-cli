@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic GenerateUserSeal --cli-unfold-argument  \
+    --Caller.OrganizationId 732aaefa78c439d726f999b89c49e022 \
     --Caller.ApplicationId c17bdf9c2a7bdcb88811f4d0200fee3d \
     --Caller.SubOrganizationId  \
     --Caller.OperatorId  \

@@ -8,6 +8,7 @@ Input:
 tccli essbasic SignFlow --cli-unfold-argument  \
     --ApproveMessage 同意 \
     --VerifyChannel FACEID \
+    --Caller.OrganizationId 机构账号 \
     --Caller.SubOrganizationId 子机构账号 \
     --Caller.ApplicationId 应用号 \
     --Caller.OperatorId  \

@@ -8,7 +8,8 @@ Input:
 tccli pts AbortJob --cli-unfold-argument  \
     --ProjectId xx \
     --ScenarioId xx \
-    --JobId xx
+    --JobId xx \
+    --AbortReason 1
 ```
 
 Output: 

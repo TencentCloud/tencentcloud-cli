@@ -1,4 +1,4 @@
-**Example 1: 使用文件创建流程**
+**Example 1: 使用文件创建签署流程**
 
 
 
@@ -11,6 +11,7 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --Agent.ProxyOrganizationId xx \
     --Agent.ProxyOrganizationOpenId xx \
     --Agent.AppId xx \
+    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
     --FlowApprovers.0.OpenId xx \
     --FlowApprovers.0.OrganizationName xx \
     --FlowApprovers.0.Name xx \

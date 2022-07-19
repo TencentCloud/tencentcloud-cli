@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic RejectFlow --cli-unfold-argument  \
+    --Caller.OrganizationId 机构账号 \
     --Caller.ApplicationId 应用号 \
     --Caller.SubOrganizationId 子机构账号 \
     --Caller.OperatorId  \

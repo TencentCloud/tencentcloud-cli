@@ -21036,7 +21036,7 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21047,7 +21047,7 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -21157,7 +21157,7 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21168,7 +21168,7 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -21185,7 +21185,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21196,7 +21196,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21207,7 +21207,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21218,7 +21218,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21229,7 +21229,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21240,7 +21240,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21251,7 +21251,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21262,7 +21262,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21273,7 +21273,7 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21284,7 +21284,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -21295,7 +21295,7 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "usage": "both"

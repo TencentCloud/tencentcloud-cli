@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli essbasic DestroyFlowFile --cli-unfold-argument  \
+    --Caller.OrganizationId  \
     --Caller.ApplicationId  \
     --Caller.SubOrganizationId  \
     --Caller.OperatorId  \

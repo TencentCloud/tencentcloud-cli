@@ -8,6 +8,7 @@ Input:
 tccli essbasic VerifySubOrganization --cli-unfold-argument  \
     --Caller.OperatorId dolore \
     --Caller.ApplicationId c17bdf9c2a7bdcb32611f4d0200fee3d \
+    --Caller.OrganizationId 732aaefa78c439d726f541b89c49e022 \
     --Caller.SubOrganizationId 3768438f76ea49b43b8c819b13438ae3
 ```
 

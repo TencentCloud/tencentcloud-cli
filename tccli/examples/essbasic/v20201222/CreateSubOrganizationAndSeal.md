@@ -8,6 +8,7 @@ Input:
 tccli essbasic CreateSubOrganizationAndSeal --cli-unfold-argument  \
     --Caller.OperatorId erdsdf9c2a7bdcb32611f4d0200fee3d \
     --Caller.ApplicationId c17bdf9c2a7bdcb32611f4d0200fee3d \
+    --Caller.OrganizationId 732aaefa78c439d726f541b89c49e022 \
     --Caller.SubOrganizationId 23dbdf9c2a7bdcb32611f4d0200fee3d \
     --Name TestName \
     --LegalName testName \

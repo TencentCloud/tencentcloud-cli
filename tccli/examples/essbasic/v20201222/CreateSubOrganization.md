@@ -8,6 +8,7 @@ Input:
 tccli essbasic CreateSubOrganization --cli-unfold-argument  \
     --Caller.OperatorId  \
     --Caller.ApplicationId c17bdf9c2a7bdcb32611f4d0200fee3d \
+    --Caller.OrganizationId 732aaefa78c439d726f541b89c49e022 \
     --Caller.SubOrganizationId  \
     --Name 机构名称 \
     --LegalName 法人或联系人姓名 \

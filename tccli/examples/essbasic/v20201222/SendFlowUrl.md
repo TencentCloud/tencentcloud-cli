@@ -13,6 +13,7 @@ tccli essbasic SendFlowUrl --cli-unfold-argument  \
     --PreReadTime 20 \
     --JumpUrl https://www.qq.com \
     --Caller.OperatorId e3e303228df9327c3e1661e1ebff7e1b \
+    --Caller.OrganizationId 732aaefa78c439d726f541b89c49e022 \
     --Caller.ApplicationId c17bdf9c2a7bdcb32611f4d0200fee3d \
     --SignComponents.0.ComponentPosY 100 \
     --SignComponents.0.ComponentType SIGN_SIGNATURE \
