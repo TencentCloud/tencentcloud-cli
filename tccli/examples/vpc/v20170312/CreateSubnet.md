@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc CreateSubnet --cli-unfold-argument  \
-    --VpcId vpc-m3ul053f \
     --SubnetName TestSubnet \
+    --VpcId vpc-m3ul053f \
     --CidrBlock 10.8.0.0/16 \
     --Zone ap-guangzhou-1 \
-    --Tags.0.Key city \
-    --Tags.0.Value shanghai
+    --Tags.0.Value shanghai \
+    --Tags.0.Key city
 ```
 
 Output: 

@@ -35,7 +35,7 @@
     "AttachUserPolicy": [
       {
         "document": "绑定策略ID为524497的策略到用户3449203261",
-        "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\n&PolicyId=524497\n&AttachUin=3449203261\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"AttachUin\": \"3449203261\",\n    \"PolicyId\": \"524497\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "绑定策略到用户"
       }

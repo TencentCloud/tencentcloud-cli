@@ -929,10 +929,12 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "10091",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -942,10 +944,23 @@
       "members": [
         {
           "document": "模板内容数据",
+          "example": "无",
           "member": "TemplateContent",
           "name": "TemplateContent",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "模板状态 0-审核通过 1-待审核 2-审核拒绝",
+          "example": "0",
+          "member": "uint64",
+          "name": "TemplateStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc CreateStoreLocation --cli-unfold-argument  \
-    --StoreLocation cosn://rickyhu-1301312708/test2/
+    --StoreLocation cosn://ricky-1301xxx708/test2/
 ```
 
 Output: 

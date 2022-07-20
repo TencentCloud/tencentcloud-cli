@@ -1328,7 +1328,8 @@
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1337,7 +1338,8 @@
           "member": "string",
           "name": "RecordId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1346,7 +1348,8 @@
           "member": "string",
           "name": "RecordType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1355,7 +1358,8 @@
           "member": "string",
           "name": "SubDomain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1364,7 +1368,8 @@
           "member": "string",
           "name": "RecordValue",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1373,7 +1378,8 @@
           "member": "int64",
           "name": "Weight",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1382,7 +1388,8 @@
           "member": "int64",
           "name": "MX",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1391,7 +1398,8 @@
           "member": "int64",
           "name": "TTL",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

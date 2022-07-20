@@ -3048,7 +3048,8 @@
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3057,7 +3058,8 @@
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3066,7 +3068,8 @@
           "member": "uint64",
           "name": "Ipv6AddressCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3081,7 +3084,8 @@
           "name": "Ipv6AddressSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5755,7 +5759,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5764,7 +5769,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5773,7 +5779,8 @@
           "member": "string",
           "name": "HaVipName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5782,7 +5789,8 @@
           "member": "string",
           "name": "Vip",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5797,7 +5805,8 @@
           "name": "HaVip",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6309,13 +6318,13 @@
         },
         {
           "default": "",
-          "document": "网络ACL类型，三元组或五元组",
-          "example": "TUPLE5,TUPLE3",
+          "document": "网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)",
+          "example": "TRIPLE,QUINTUPLE",
           "member": "string",
           "name": "NetworkAclType",
           "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -6325,7 +6334,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12615,7 +12624,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12624,7 +12634,8 @@
           "member": "string",
           "name": "NetworkAclIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12633,7 +12644,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12642,7 +12654,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12655,16 +12668,20 @@
           "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的实例数量。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19390,7 +19407,7 @@
           "name": "NetworkAclQuintupleSet",
           "required": false,
           "type": "object",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"

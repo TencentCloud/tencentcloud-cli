@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vpc AssignIpv6Addresses --cli-unfold-argument  \
-    --NetworkInterfaceId eni-5u5biujl \
-    --Ipv6Addresses.0.Address 3402:4e00:20:1202::1 \
+    --Ipv6Addresses.0.Description test2 \
     --Ipv6Addresses.0.Primary false \
-    --Ipv6Addresses.0.Description test1 \
-    --Ipv6Addresses.1.Address 3402:4e00:20:1202::2 \
+    --Ipv6Addresses.0.Address 3402:4e00:20:1202::2 \
+    --Ipv6Addresses.1.Description test1 \
     --Ipv6Addresses.1.Primary false \
-    --Ipv6Addresses.1.Description test2
+    --Ipv6Addresses.1.Address 3402:4e00:20:1202::1 \
+    --NetworkInterfaceId eni-5u5biujl
 ```
 
 Output: 

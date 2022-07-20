@@ -976,7 +976,8 @@
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -985,7 +986,8 @@
           "member": "uint64",
           "name": "AttachUin",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

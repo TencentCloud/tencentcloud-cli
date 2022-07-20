@@ -12,7 +12,7 @@ Output:
 {
     "Response": {
         "RequestId": "e54c6a1d-c56c-4412-b327-299732cfcd1c",
-        "StoreLocation": "cosn://rickyhu-1301312708/test1/"
+        "StoreLocation": "cosn://ricky-1301xxx708/test1/"
     }
 }
 ```
