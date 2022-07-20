@@ -18,7 +18,7 @@ tccli dlc CreateTable --cli-unfold-argument  \
     --TableInfo.Partitions.0.Comment part \
     --TableInfo.Partitions.0.Name gender \
     --TableInfo.Partitions.0.Type string \
-    --TableInfo.Location cosn://rickyhu-1301312708/test1/ \
+    --TableInfo.Location cosn://ricky-1301xxx708/test1/ \
     --TableInfo.DataFormat.CSV.Format CSV \
     --TableInfo.DataFormat.CSV.CodeCompress None \
     --TableInfo.DataFormat.CSV.HeadLines 1 \

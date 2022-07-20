@@ -11,14 +11,15 @@ tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId d7c13a8b81340cce9e3968c0ee248f04 \
     --Agent.AppId 65fb0c591044be8a1f60aa382cc5ed0e \
     --Module TEMPLATE \
-    --ModuleId yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs
+    --ModuleId yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs \
+    --MenuStatus ENABLE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ConsoleUrl": "https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs",
+        "ConsoleUrl": "https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs&menuStatus=ENABLE",
         "IsActivated": false,
         "RequestId": "s16221xxx14775648"
     }

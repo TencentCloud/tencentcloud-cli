@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm ResetInstancesType --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy \
-    --InstanceType S5.16XLARGE256
+    --InstanceType S5.16XLARGE256 \
+    --InstanceIds ins-r8hr2upy
 ```
 
 Output: 

@@ -914,6 +914,7 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "10091",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
@@ -927,9 +928,20 @@
       "members": [
         {
           "document": "模板内容数据",
+          "example": "无",
           "member": "TemplateContent",
           "name": "TemplateContent",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板状态 0-审核通过 1-待审核 2-审核拒绝",
+          "example": "0",
+          "member": "uint64",
+          "name": "TemplateStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

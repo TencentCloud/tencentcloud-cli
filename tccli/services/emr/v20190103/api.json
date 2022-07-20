@@ -24,6 +24,12 @@
       "name": "获取账户的CVM配额",
       "output": "DescribeCvmQuotaResponse"
     },
+    "DescribeEmrApplicationStatics": {
+      "document": "（通过走emrcc接入到cam） yarn applciation 统计接口",
+      "input": "DescribeEmrApplicationStaticsRequest",
+      "name": "【监控】查询Appilication统计V2",
+      "output": "DescribeEmrApplicationStaticsResponse"
+    },
     "DescribeInstanceRenewNodes": {
       "document": "预付费集群隔离后续费资源查询",
       "input": "DescribeInstanceRenewNodesRequest",
@@ -199,6 +205,92 @@
         }
       ],
       "type": "object"
+    },
+    "ApplicationStatics": {
+      "document": "yarn application 统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名",
+          "example": "root.default",
+          "member": "string",
+          "name": "Queue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "hadoop",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业类型",
+          "example": "MAPREDUCE",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SumMemorySeconds含义",
+          "example": "58250",
+          "member": "int64",
+          "name": "SumMemorySeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SumVCoreSeconds含义",
+          "example": "33",
+          "member": "int64",
+          "name": "SumVCoreSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SumHDFSBytesWritten（带单位）",
+          "example": "48 bytes",
+          "member": "string",
+          "name": "SumHDFSBytesWritten",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SumHDFSBytesRead（待单位）",
+          "example": "269.1 MB",
+          "member": "string",
+          "name": "SumHDFSBytesRead",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业数",
+          "example": "3",
+          "member": "int64",
+          "name": "CountApps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BootstrapAction": {
       "document": "引导脚本",
@@ -1566,6 +1658,168 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEmrApplicationStaticsRequest": {
+      "document": "DescribeEmrApplicationStatics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "emr-9kd5tnmq",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "1621570097",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1621590097",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤的队列名",
+          "example": "[]",
+          "member": "string",
+          "name": "Queues",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤的用户名",
+          "example": "[]",
+          "member": "string",
+          "name": "Users",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤的作业类型",
+          "example": "[]",
+          "member": "string",
+          "name": "ApplicationTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分组字段，可选：queue, user, applicationType",
+          "example": "[]",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead",
+          "example": "sumMemorySeconds",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否顺序排序，0-逆序，1-正序",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAsc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页号",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页容量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEmrApplicationStaticsResponse": {
+      "document": "DescribeEmrApplicationStatics返回参数结构体",
+      "members": [
+        {
+          "document": "作业统计信息",
+          "example": "无",
+          "member": "ApplicationStatics",
+          "name": "Statics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可选择的队列名",
+          "example": "[\"root.default\"]",
+          "member": "string",
+          "name": "Queues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可选择的用户名",
+          "example": "[\"hadoop\"]",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可选择的作业类型",
+          "example": "[\"MAPREDUCE\"]",
+          "member": "string",
+          "name": "ApplicationTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

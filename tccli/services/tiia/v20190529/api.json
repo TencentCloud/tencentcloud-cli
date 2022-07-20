@@ -370,7 +370,7 @@
         },
         {
           "default": "",
-          "document": "置信度，0-100",
+          "document": "车系置信度，0-100",
           "example": "无",
           "member": "int64",
           "name": "Confidence",
@@ -400,12 +400,42 @@
         },
         {
           "default": "",
-          "document": "车牌信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌信息，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CarPlateContent",
           "name": "PlateContent",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌信息置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PlateConfidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车辆类型置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TypeConfidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车辆颜色置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ColorConfidence",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

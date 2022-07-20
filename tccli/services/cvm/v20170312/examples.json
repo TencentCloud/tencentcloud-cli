@@ -689,7 +689,7 @@
     "ResetInstancesType": [
       {
         "document": "当目前的机型配置不满足业务需求时，您可以重新调整其规格。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceType=S5.16XLARGE256\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "重置实例机型"
       }

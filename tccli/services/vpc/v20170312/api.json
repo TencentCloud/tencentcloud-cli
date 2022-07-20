@@ -5734,6 +5734,24 @@
           "name": "NetworkAclName",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)",
+          "example": "TRIPLE,QUINTUPLE",
+          "member": "string",
+          "name": "NetworkAclType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11350,6 +11368,7 @@
           "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11358,6 +11377,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17660,6 +17680,15 @@
           "name": "NetworkAclEntrySet",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntries",
+          "name": "NetworkAclQuintupleSet",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -19343,6 +19372,148 @@
         }
       ],
       "usage": "in"
+    },
+    "NetworkAclQuintupleEntries": {
+      "document": "网络ACL五元组",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL五元组入站规则。",
+          "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
+          "member": "NetworkAclQuintupleEntry",
+          "name": "Ingress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ACL五元组出站规则",
+          "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
+          "member": "NetworkAclQuintupleEntry",
+          "name": "Egress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "NetworkAclQuintupleEntry": {
+      "document": "网络ACL五元组Entry",
+      "members": [
+        {
+          "default": "",
+          "document": "协议, 取值: TCP,UDP, ICMP, ALL。",
+          "example": "UDP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
+          "example": "446",
+          "member": "string",
+          "name": "SourcePort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源CIDR。",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "SourceCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
+          "example": "446",
+          "member": "string",
+          "name": "DestinationPort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的CIDR。",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "DestinationCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作，ACCEPT 或 DROP。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ACL条目唯一ID。",
+          "example": "acli45-ahnu4rv5",
+          "member": "string",
+          "name": "NetworkAclQuintupleEntryId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级，从1开始。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，用于DescribeNetworkAclQuintupleEntries的出参。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。",
+          "example": "INGRESS",
+          "member": "string",
+          "name": "NetworkAclDirection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NetworkInterface": {
       "document": "弹性网卡",

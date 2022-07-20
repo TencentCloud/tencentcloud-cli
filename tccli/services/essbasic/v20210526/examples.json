@@ -27,8 +27,8 @@
     "CreateConsoleLoginUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道侧企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道侧企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\",\n    \"MenuStatus\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成控制台链接"
       }
     ],

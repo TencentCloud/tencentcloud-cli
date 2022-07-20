@@ -19,7 +19,12 @@ Output:
             "TableBaseInfo": {
                 "DatasourceConnectionName": "DataLakeCatalog",
                 "DatabaseName": "testdb",
-                "TableName": "table1"
+                "TableName": "table1",
+                "TableComment": "测试表",
+                "Type": "table",
+                "TableFormat": "iceberg",
+                "UserAlias": "testUser",
+                "UserSubUin": "100019878767"
             },
             "Columns": [
                 {
@@ -54,10 +59,12 @@ Output:
                     "Value": "1630495521302"
                 }
             ],
-            "Location": "cosn://rickyhu-1301312708/test1",
+            "Location": "cosn://ricky-1301xxx708/test1",
             "CreateTime": "1630495521000",
             "ModifiedTime": "1630495521000",
-            "InputFormat": "org.apache.hadoop.mapred.TextInputFormat"
+            "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+            "StorageSize": 1024,
+            "RecordCount": 10
         }
     }
 }

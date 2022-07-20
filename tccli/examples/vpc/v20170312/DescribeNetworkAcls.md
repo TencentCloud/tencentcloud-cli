@@ -16,6 +16,7 @@ Output:
             {
                 "NetworkAclId": "acl-kmxukyv6",
                 "VpcId": "vpc-9it989fn",
+                "NetworkAclType": "TRIPLE",
                 "IngressEntries": [
                     {
                         "Protocol": "all",
@@ -39,6 +40,8 @@ Output:
                         "IsRemoteVpcSnat": true,
                         "SubnetName": "子网1",
                         "TotalIpAddressCount": 1,
+                        "IsCdcSubnet": 0,
+                        "CdcId": "xx",
                         "TagSet": [
                             {
                                 "Value": "og",
@@ -80,8 +83,8 @@ Input:
 ```
 tccli vpc DescribeNetworkAcls --cli-unfold-argument  \
     --NetworkAclIds acl-12345678 \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
@@ -93,6 +96,7 @@ Output:
             {
                 "NetworkAclId": "",
                 "VpcId": "xx",
+                "NetworkAclType": "TRIPLE",
                 "IngressEntries": [
                     {
                         "Protocol": "xx",
@@ -122,6 +126,8 @@ Output:
                         "Zone": "ap-guangzhou",
                         "Ipv6CidrBlock": "::/0",
                         "AvailableIpAddressCount": 1,
+                        "IsCdcSubnet": 0,
+                        "CdcId": "xx",
                         "IsRemoteVpcSnat": true,
                         "SubnetName": "测试01",
                         "TotalIpAddressCount": 1,

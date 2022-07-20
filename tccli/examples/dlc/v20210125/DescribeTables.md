@@ -22,7 +22,9 @@ Output:
                 "TableBaseInfo": {
                     "DatasourceConnectionName": "",
                     "DatabaseName": "testdb",
-                    "TableName": "table1"
+                    "TableName": "table1",
+                    "UserAlias": "testUser",
+                    "UserSubUin": "100019878767"
                 },
                 "Columns": [],
                 "Partitions": [],

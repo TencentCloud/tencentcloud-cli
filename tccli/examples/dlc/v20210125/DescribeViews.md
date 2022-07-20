@@ -25,7 +25,9 @@ Output:
             {
                 "ViewBaseInfo": {
                     "DatabaseName": "testdb",
-                    "ViewName": "v1"
+                    "ViewName": "v1",
+                    "UserAlias": "testUser",
+                    "UserSubUin": "100019878767"
                 },
                 "Columns": [],
                 "Properties": [

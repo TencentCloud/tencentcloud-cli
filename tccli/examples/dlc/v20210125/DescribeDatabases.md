@@ -21,9 +21,17 @@ Output:
             {
                 "DatabaseName": "testdb",
                 "Comment": "create by nick",
-                "Properties": null,
+                "Properties": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
                 "CreateTime": "1630486408000",
-                "ModifiedTime": "1630486408000"
+                "ModifiedTime": "1630486408000",
+                "UserAlias": "testUser",
+                "UserSubUin": "100019878767",
+                "Location": ""
             }
         ]
     }

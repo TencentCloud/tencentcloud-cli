@@ -3126,6 +3126,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cos存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://test",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建库用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testUser",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建库用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100019878767",
+          "member": "string",
+          "name": "UserSubUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4257,6 +4287,33 @@
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新时间起始点",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新时间截止点",
+          "example": "2022-01-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照该参数过滤,支持task-state",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4448,7 +4505,7 @@
         },
         {
           "default": "",
-          "document": "排序字段，支持：ModifiedTime（默认）；CreateTime",
+          "document": "排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）",
           "example": "UpdateTime",
           "member": "string",
           "name": "Sort",
@@ -6818,6 +6875,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建表用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建表用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100019878767",
+          "member": "string",
+          "name": "UserSubUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7845,6 +7922,26 @@
           "member": "string",
           "name": "ViewName",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图创建人昵称",
+          "example": "testUser",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图创建人ID",
+          "example": "100019878767",
+          "member": "string",
+          "name": "UserSubUin",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

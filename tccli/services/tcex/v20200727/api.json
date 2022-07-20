@@ -1,13 +1,13 @@
 {
   "actions": {
     "DescribeInvocationResult": {
-      "document": "获取服务调用结果。和InvokeService接口配置合适，其InvokeId参数为InvokeService接口返回的RequestId。",
+      "document": "产品控制台已经下线\n\n获取服务调用结果。和InvokeService接口配置合适，其InvokeId参数为InvokeService接口返回的RequestId。",
       "input": "DescribeInvocationResultRequest",
       "name": "查询服务调用结果",
       "output": "DescribeInvocationResultResponse"
     },
     "InvokeService": {
-      "document": "通过传入文档url，测试服务算法。此接口需要和DescribeInvocationResult接口配置使用，该接口使用InvokeService返回的RequestId作为InvokeId参数，用于查询调用结果。",
+      "document": "产品控制台已经下线\n\n通过传入文档url，测试服务算法。此接口需要和DescribeInvocationResult接口配置使用，该接口使用InvokeService返回的RequestId作为InvokeId参数，用于查询调用结果。",
       "input": "InvokeServiceRequest",
       "name": "调用服务",
       "output": "InvokeServiceResponse"
