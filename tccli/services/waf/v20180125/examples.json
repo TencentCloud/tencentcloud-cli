@@ -209,8 +209,8 @@
     "GetAttackDownloadRecords": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=GetAttackDownloadRecords\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAttackDownloadRecords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Id\": 100003,\n                \"TaskName\": \"20201027-fuqian\",\n                \"TaskId\": \"a5b05859-54d5-4cb2-b1af-c19b5195758b\",\n                \"Host\": \"all\",\n                \"CreateTime\": \"2020-10-28 00:36:19\",\n                \"ModifyTime\": \"2020-10-28 01:04:15\",\n                \"ExpireTime\": \"2020-11-04 00:36:19\",\n                \"Count\": 752507,\n                \"TotalCount\": 752507,\n                \"Status\": 1,\n                \"Url\": \"https://log-1256704386.cos.ap-guangzhou.myqcloud.com/cls/a5b05859-54d5-4cb2-b1af-c19b5195758b.zip\"\n            },\n            {\n                \"Id\": 100004,\n                \"TaskName\": \"20201027-fuqian\",\n                \"TaskId\": \"6d68a0a5-c646-4b7a-ba95-f36b79f2921d\",\n                \"Host\": \"all\",\n                \"CreateTime\": \"2020-10-28 10:55:07\",\n                \"ModifyTime\": \"2020-10-28 10:58:47\",\n                \"ExpireTime\": \"2020-11-04 10:55:07\",\n                \"Count\": 150000,\n                \"TotalCount\": 150000,\n                \"Status\": 4,\n                \"Url\": \"\"\n            }\n        ],\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "查询下载攻击日志任务记录列表"
       }
     ],
@@ -260,6 +260,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafThreatenIntelligence\n<公共请求参数>\n\n{\n    \"WafThreatenIntelligenceDetails\": {\n        \"DefenseStatus\": 0,\n        \"Tags\": [\n            \"xx\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "配置WAF威胁情报封禁模块详情"
+      }
+    ],
+    "PostAttackDownloadTask": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=PostAttackDownloadTask\n&StartTime=2020-08-2800:00:00\n&EndTime=2020-08-2814:12:36\n&Domain=all\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Flow\": \"ead32d5d-a9ac-496f-b8e3-d3a92f1fb1ce\",\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "创建搜索下载攻击日志任务"
       }
     ],
     "SearchAccessLog": [

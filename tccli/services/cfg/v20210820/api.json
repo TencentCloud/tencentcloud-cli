@@ -1275,6 +1275,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExecuteRedo",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作风险级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "高风险",
+          "member": "string",
+          "name": "ActionRisk",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1462,6 +1482,16 @@
           "name": "TaskGroupInstanceEndTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "TaskGroupInstanceIsRedo",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

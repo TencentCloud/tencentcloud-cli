@@ -19227,6 +19227,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'",
+          "example": "TRIPLE",
+          "member": "string",
+          "name": "NetworkAclType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签键值对",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

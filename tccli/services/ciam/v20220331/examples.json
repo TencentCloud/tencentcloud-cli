@@ -32,6 +32,14 @@
         "title": "批量删除用户"
       }
     ],
+    "DescribeUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"PropertyKey\": \"xx\",\n            \"PropertyValue\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ResidentIdentityCard\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"WechatOpenId\": \"xx\",\n                \"Email\": \"xx\",\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Job\": \"xx\",\n                \"Address\": \"xx\",\n                \"Nationality\": \"xx\",\n                \"Nickname\": \"xx\",\n                \"UserStoreId\": \"xx\",\n                \"QqOpenId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Gender\": \"xx\",\n                \"IdentityVerificationMethod\": \"xx\",\n                \"AlipayUserId\": \"xx\",\n                \"LastSignOn\": \"xx\",\n                \"PhoneNumber\": \"xx\",\n                \"QqUnionId\": \"xx\",\n                \"Locale\": \"xx\",\n                \"Primary\": true,\n                \"IdentityVerified\": true,\n                \"WechatUnionId\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户信息"
+      }
+    ],
     "DescribeUserById": [
       {
         "document": "",

@@ -192,6 +192,12 @@
       "name": "配置WAF威胁情报封禁模块详情",
       "output": "ModifyWafThreatenIntelligenceResponse"
     },
+    "PostAttackDownloadTask": {
+      "document": "创建搜索下载攻击日志任务，使用CLS新版本的搜索下载getlog接口",
+      "input": "PostAttackDownloadTaskRequest",
+      "name": "创建搜索下载攻击日志任务",
+      "output": "PostAttackDownloadTaskResponse"
+    },
     "SearchAccessLog": {
       "document": "本接口用于搜索WAF访问日志",
       "input": "SearchAccessLogRequest",
@@ -2572,6 +2578,111 @@
       ],
       "usage": "in"
     },
+    "DownloadAttackRecordInfo": {
+      "document": "下载攻击日志记录数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "记录ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载任务名",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前下载任务的日志条数",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载任务运行状态：-1-下载超时，0-下载等待，1-下载完成，2-下载失败，4-正在下载",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载文件URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新修改时间",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "datetime",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载任务需下载的日志总条数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExportAccessInfo": {
       "document": "DescribeAccessExports接口",
       "members": [
@@ -2818,6 +2929,15 @@
     "GetAttackDownloadRecordsResponse": {
       "document": "GetAttackDownloadRecords返回参数结构体",
       "members": [
+        {
+          "document": "下载攻击日志记录数组",
+          "example": "无",
+          "member": "DownloadAttackRecordInfo",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3564,6 +3684,79 @@
         }
       ],
       "usage": "both"
+    },
+    "PostAttackDownloadTaskRequest": {
+      "document": "PostAttackDownloadTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的域名，所有域名使用all",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Lucene语法",
+          "member": "string",
+          "name": "QueryString",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为desc，可以取值desc和asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PostAttackDownloadTaskResponse": {
+      "document": "PostAttackDownloadTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务task id",
+          "member": "string",
+          "name": "Flow",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QPSPackageNew": {
       "document": "clb-waf QPS套餐 New",

@@ -24,6 +24,12 @@
       "name": "批量删除用户",
       "output": "DeleteUsersResponse"
     },
+    "DescribeUser": {
+      "document": "多条件查询用户信息",
+      "input": "DescribeUserRequest",
+      "name": "查询用户信息",
+      "output": "DescribeUserResponse"
+    },
     "DescribeUserById": {
       "document": "根据ID查询用户信息",
       "input": "DescribeUserByIdRequest",
@@ -373,6 +379,15 @@
           "name": "UserId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回信息是否为原文\n\n<li> **false** </li>\t默认，返回信息为脱敏信息\n<li> **true** </li>\t返回用户信息原文",
+          "example": "true",
+          "member": "bool",
+          "name": "Original",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -387,6 +402,87 @@
           "name": "User",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRequest": {
+      "document": "DescribeUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页数据",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "查询条件，根据propertycode和propertykey",
+          "example": "无",
+          "member": "QueryUserFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否返回明文",
+          "example": "true",
+          "member": "bool",
+          "name": "Original",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResponse": {
+      "document": "DescribeUser返回参数结构体",
+      "members": [
+        {
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "Content",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -1073,6 +1169,15 @@
           "name": "PropertyValue",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回信息是否为原文",
+          "example": "true",
+          "member": "bool",
+          "name": "Original",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1127,6 +1232,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回信息是否为原文",
+          "example": "true",
+          "member": "bool",
+          "name": "Original",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1407,6 +1521,42 @@
         }
       ],
       "usage": "both"
+    },
+    "QueryUserFilter": {
+      "document": "查询用户信息条件",
+      "members": [
+        {
+          "default": "",
+          "document": "属性key",
+          "example": "xxx",
+          "member": "string",
+          "name": "PropertyKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性value",
+          "example": "xxx",
+          "member": "string",
+          "name": "PropertyValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑值，等于true，不等于false",
+          "example": "true",
+          "member": "bool",
+          "name": "Logic",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResetPasswordRequest": {
       "document": "ResetPassword请求参数结构体",

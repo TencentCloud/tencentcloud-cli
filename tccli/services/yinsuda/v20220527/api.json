@@ -388,6 +388,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RecommendType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

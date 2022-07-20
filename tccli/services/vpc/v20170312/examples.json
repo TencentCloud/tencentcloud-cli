@@ -442,7 +442,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateNetworkAcl\n&VpcId=vpc-12345678\n&NetworkAclName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetworkAcl\": {\n            \"NetworkAclId\": \"acl-12345678\",\n            \"VpcId\": \"vpc-12345678\",\n            \"NetworkAclName\": \"test\",\n            \"CreatedTime\": \"2020-01-01 10:00:00\",\n            \"SubnetSet\": [],\n            \"IngressEntries\": [],\n            \"EgressEntries\": []\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkAcl\": {\n            \"NetworkAclId\": \"acl-12345678\",\n            \"VpcId\": \"vpc-12345678\",\n            \"NetworkAclName\": \"test\",\n            \"CreatedTime\": \"2020-01-01 10:00:00\",\n            \"SubnetSet\": [],\n            \"IngressEntries\": [],\n            \"EgressEntries\": [],\n            \"NetworkAclType\": \"TUPLE3\"\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建网络ACL"
       }
     ],
