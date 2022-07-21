@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli trtc DescribeCallDetail --cli-unfold-argument  \
-    --CommId 1400353843_218695_1590065777 \
-    --StartTime 1590065777 \
+    --DataType bigvCapFps \
+    --CommId 1400188366_218695_1590065777 \
     --EndTime 1590065877 \
-    --SdkAppId 1400353843 \
-    --DataType bigvCapFps
+    --SdkAppId 1400188366 \
+    --StartTime 1590065777
 ```
 
 Output: 

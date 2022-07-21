@@ -13,21 +13,21 @@
       "output": "DeletePictureResponse"
     },
     "DescribeAbnormalEvent": {
-      "document": "查询SDKAppID下用户的异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询15天内数据，查询起止时间不超过1个小时。支持跨天查询。异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
+      "document": "查询SdkAppId下任意20条异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询14天内数据，查询起止时间不超过1个小时。支持跨天查询。\n异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
       "input": "DescribeAbnormalEventRequest",
-      "name": "查询异常体验事件",
+      "name": "查询异常体验事件（旧）",
       "output": "DescribeAbnormalEventResponse"
     },
     "DescribeCallDetail": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeCallDetailRequest",
-      "name": "查询历史用户列表与通话指标",
+      "name": "查询历史用户列表与通话指标（旧）",
       "output": "DescribeCallDetailResponse"
     },
     "DescribeDetailEvent": {
       "document": "查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。",
       "input": "DescribeDetailEventRequest",
-      "name": "查询详细事件",
+      "name": "查询详细事件（旧）",
       "output": "DescribeDetailEventResponse"
     },
     "DescribeExternalTrtcMeasure": {
@@ -37,9 +37,9 @@
       "output": "DescribeExternalTrtcMeasureResponse"
     },
     "DescribeHistoryScale": {
-      "document": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。 ",
+      "document": "可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数",
       "input": "DescribeHistoryScaleRequest",
-      "name": "查询历史房间和用户数",
+      "name": "查询历史房间和用户数（旧）",
       "output": "DescribeHistoryScaleResponse"
     },
     "DescribePicture": {
@@ -55,9 +55,9 @@
       "output": "DescribeRecordStatisticResponse"
     },
     "DescribeRoomInformation": {
-      "document": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeRoomInformationRequest",
-      "name": "查询历史房间列表",
+      "name": "查询历史房间列表（旧）",
       "output": "DescribeRoomInformationResponse"
     },
     "DescribeTrtcMcuTranscodeTime": {
@@ -69,7 +69,7 @@
     "DescribeUserInformation": {
       "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeUserInformationRequest",
-      "name": "查询历史用户列表",
+      "name": "查询历史用户列表（旧）",
       "output": "DescribeUserInformationResponse"
     },
     "DismissRoom": {
@@ -340,7 +340,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
@@ -349,7 +349,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间,本地unix时间戳（1592448600s）",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1592448600",
           "member": "uint64",
           "name": "StartTime",
@@ -358,7 +358,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间,本地unix时间戳（1592449080s）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。",
           "example": "1592449080",
           "member": "uint64",
           "name": "EndTime",
@@ -412,7 +412,7 @@
       "members": [
         {
           "default": "",
-          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400353843_218695_1590065777",
           "member": "string",
           "name": "CommId",
@@ -421,7 +421,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777），\n注意：支持查询14天内的数据。",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -430,7 +430,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1590065877s）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。",
           "example": "1590065877",
           "member": "uint64",
           "name": "EndTime",
@@ -439,7 +439,7 @@
         },
         {
           "default": "",
-          "document": "用户SDKAppID（1400353843）",
+          "document": "用户SdkAppId（如：1400xxxxxx）。",
           "example": "1400353843",
           "member": "string",
           "name": "SdkAppId",
@@ -448,7 +448,7 @@
         },
         {
           "default": "",
-          "document": "需查询的用户数组，不填默认返回6个用户,最多可填6个用户",
+          "document": "需查询的用户数组，默认不填返回6个用户。",
           "example": "UserIds",
           "member": "string",
           "name": "UserIds",
@@ -458,7 +458,7 @@
         {
           "default": "",
           "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
-          "example": "[\"bigvCapFps\\n\"]",
+          "example": "[\"bigvCapFps\"]",
           "member": "string",
           "name": "DataType",
           "required": false,
@@ -466,7 +466,7 @@
         },
         {
           "default": "",
-          "document": "设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
           "example": "0",
           "member": "string",
           "name": "PageNumber",
@@ -475,7 +475,7 @@
         },
         {
           "default": "",
-          "document": "设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）",
+          "document": "每页个数，默认为6，\n范围：[1，100]\n注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；\nDataType 为null，UserIds长度不超过100，PageSize最大不超过100。",
           "example": "6",
           "member": "string",
           "name": "PageSize",
@@ -529,7 +529,7 @@
       "members": [
         {
           "default": "",
-          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400188366_3568_1588055615",
           "member": "string",
           "name": "CommId",
@@ -538,7 +538,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588055615s）",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1588055615",
           "member": "uint64",
           "name": "StartTime",
@@ -547,7 +547,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588058615s）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：查询时间大于房间结束时间，以房间结束时间为准。",
           "example": "1588055615",
           "member": "uint64",
           "name": "EndTime",
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "用户id",
+          "document": "用户UserId",
           "example": "user_66319581",
           "member": "string",
           "name": "UserId",
@@ -565,7 +565,7 @@
         },
         {
           "default": "",
-          "document": "房间号",
+          "document": "房间号（如：223）",
           "example": "1711",
           "member": "string",
           "name": "RoomId",
@@ -673,7 +673,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户sdkappid(1400188366)",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
@@ -682,7 +682,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1587571000s）",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据。",
           "example": "1587571000",
           "member": "uint64",
           "name": "StartTime",
@@ -691,7 +691,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588034999s）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。\n注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。",
           "example": "1588034999",
           "member": "uint64",
           "name": "EndTime",
@@ -862,7 +862,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户sdkappid",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
@@ -871,7 +871,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999）",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1588031999",
           "member": "uint64",
           "name": "StartTime",
@@ -880,7 +880,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588034999）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过24小时。",
           "example": "1588034999",
           "member": "uint64",
           "name": "EndTime",
@@ -889,7 +889,7 @@
         },
         {
           "default": "",
-          "document": "字符串房间号",
+          "document": "房间号（如：223)",
           "example": "1000",
           "member": "string",
           "name": "RoomId",
@@ -898,7 +898,7 @@
         },
         {
           "default": "",
-          "document": "分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。",
           "example": "0",
           "member": "string",
           "name": "PageNumber",
@@ -907,7 +907,7 @@
         },
         {
           "default": "",
-          "document": "分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）",
+          "document": "每页个数，默认为10，\n范围：[1，100]",
           "example": "10",
           "member": "string",
           "name": "PageSize",
@@ -1006,7 +1006,7 @@
       "members": [
         {
           "default": "",
-          "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400353843_218695_1590065777",
           "member": "string",
           "name": "CommId",
@@ -1015,7 +1015,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1590065777）",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -1024,7 +1024,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1590065877）",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过4小时。",
           "example": "1590065877",
           "member": "uint64",
           "name": "EndTime",
@@ -1033,7 +1033,7 @@
         },
         {
           "default": "",
-          "document": "用户SDKAppID（1400353843）",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400353843",
           "member": "string",
           "name": "SdkAppId",
@@ -1042,7 +1042,7 @@
         },
         {
           "default": "",
-          "document": "需查询的用户数组，不填默认返回6个用户,最多可填6个用户",
+          "document": "需查询的用户数组，不填默认返回6个用户\n范围：[1，100]。",
           "example": "aaa",
           "member": "string",
           "name": "UserIds",
@@ -1051,7 +1051,7 @@
         },
         {
           "default": "",
-          "document": "设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
           "example": "0",
           "member": "string",
           "name": "PageNumber",
@@ -1060,7 +1060,7 @@
         },
         {
           "default": "",
-          "document": "设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,PageSize最大不超过100）",
+          "document": "每页个数，默认为6，\n范围：[1，100]。",
           "example": "100",
           "member": "string",
           "name": "PageSize",

@@ -12,6 +12,12 @@
       "name": "隐私合规诊断重试任务",
       "output": "CreateAppScanTaskRepeatResponse"
     },
+    "CreateFlySecMiniAppProfessionalScanTask": {
+      "document": "创建小程序安全深度诊断任务",
+      "input": "CreateFlySecMiniAppProfessionalScanTaskRequest",
+      "name": "提交深度诊断任务",
+      "output": "CreateFlySecMiniAppProfessionalScanTaskResponse"
+    },
     "CreateFlySecMiniAppScanTask": {
       "document": "创建小程序翼扬安全的基础或深度诊断任务",
       "input": "CreateFlySecMiniAppScanTaskRequest",
@@ -490,6 +496,96 @@
       ],
       "type": "object"
     },
+    "CreateFlySecMiniAppProfessionalScanTaskRequest": {
+      "document": "CreateFlySecMiniAppProfessionalScanTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "小程序AppID",
+          "example": "wx66e50f1e*******6f",
+          "member": "string",
+          "name": "MiniAppID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小程序名称",
+          "example": "测试小程序",
+          "member": "string",
+          "name": "MiniAppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "诊断模式 2:深度诊断",
+          "example": "2",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公司名称",
+          "example": "微信小程序有限公司",
+          "member": "string",
+          "name": "CorpName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "13800138000",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电子邮箱",
+          "example": "wechat@tencent.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "thanks",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlySecMiniAppProfessionalScanTaskResponse": {
+      "document": "CreateFlySecMiniAppProfessionalScanTask返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
+          "example": "0",
+          "member": "int64",
+          "name": "Ret",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlySecMiniAppScanTaskRepeatRequest": {
       "document": "CreateFlySecMiniAppScanTaskRepeat请求参数结构体",
       "members": [
@@ -504,7 +600,7 @@
         },
         {
           "default": "",
-          "document": "诊断模式 1:基础诊断，2:深度诊断",
+          "document": "诊断模式 1:基础诊断",
           "example": "1",
           "member": "int64",
           "name": "Mode",
@@ -594,7 +690,7 @@
         },
         {
           "default": "",
-          "document": "诊断模式 1:基础诊断，2:深度诊断",
+          "document": "诊断模式 1:基础诊断",
           "example": "1",
           "member": "int64",
           "name": "Mode",

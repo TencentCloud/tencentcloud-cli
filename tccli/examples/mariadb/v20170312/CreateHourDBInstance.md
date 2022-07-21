@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mariadb CreateHourDBInstance --cli-unfold-argument  \
-    --Zones ap-guangzhou-1 ap-guangzhou-1 \
-    --NodeCount 2 \
+    --DbVersionId 5.7.17 \
     --VpcId vpc-n2vdqxdx \
+    --Storage 10 \
+    --Zones ap-guangzhou-1 ap-guangzhou-1 \
     --SubnetId subnet-j2ezrypg \
     --Memory 2 \
-    --Storage 10 \
-    --DbVersionId 5.7.17
+    --NodeCount 2
 ```
 
 Output: 
@@ -23,6 +23,7 @@ Output:
         "InstanceIds": [
             "tdsql-dup8gl6t"
         ],
+        "FlowId": 22051110000,
         "RequestId": "05ad9b30-ac0a-4945-afd5-3d405d537a93"
     }
 }

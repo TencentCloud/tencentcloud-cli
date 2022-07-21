@@ -2239,6 +2239,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

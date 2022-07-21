@@ -75,8 +75,8 @@
     "CreateHourDBInstance": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=CreateHourDBInstance\n&Zones.0=ap-guangzhou-1\n&Zones.1=ap-guangzhou-1\n&NodeCount=2\n&VpcId=vpc-n2vdqxdx\n&SubnetId=subnet-j2ezrypg\n&Memory=2\n&Storage=10\n&DbVersionId=5.7.17\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200409111543\",\n        \"InstanceIds\": [\n            \"tdsql-dup8gl6t\"\n        ],\n        \"RequestId\": \"05ad9b30-ac0a-4945-afd5-3d405d537a93\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHourDBInstance\n<公共请求参数>\n\n{\n    \"DbVersionId\": \"5.7.17\",\n    \"VpcId\": \"vpc-n2vdqxdx\",\n    \"Storage\": \"10\",\n    \"Zones\": [\n        \"ap-guangzhou-1\",\n        \"ap-guangzhou-1\"\n    ],\n    \"SubnetId\": \"subnet-j2ezrypg\",\n    \"Memory\": \"2\",\n    \"NodeCount\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200409111543\",\n        \"InstanceIds\": [\n            \"tdsql-dup8gl6t\"\n        ],\n        \"FlowId\": 22051110000,\n        \"RequestId\": \"05ad9b30-ac0a-4945-afd5-3d405d537a93\"\n    }\n}",
         "title": "创建后付费实例"
       }
     ],

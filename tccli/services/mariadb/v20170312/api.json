@@ -1609,6 +1609,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/237/16177)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22051110000",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2292,6 +2301,16 @@
           "name": "ResourceTags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli trtc DescribeDetailEvent --cli-unfold-argument  \
-    --CommId 1400188366_3568_1588055615 \
-    --StartTime 1588055615 \
-    --EndTime 1588058615 \
-    --UserId user_66319581 \
-    --RoomId 1711
+    --StartTime 1590065777 \
+    --EndTime 1590065877 \
+    --CommId 1400188366_218695_1590065777 \
+    --UserId user_2045351 \
+    --RoomId 1400
 ```
 
 Output: 

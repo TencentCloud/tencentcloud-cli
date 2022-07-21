@@ -276,6 +276,12 @@
       "name": "创建网络ACL",
       "output": "CreateNetworkAclResponse"
     },
+    "CreateNetworkAclQuintupleEntries": {
+      "document": "本接口（CreateNetworkAclQuintupleEntries）用于增量网络ACL五元组的入站规则和出站规则。",
+      "input": "CreateNetworkAclQuintupleEntriesRequest",
+      "name": "增量添加网络ACL五元组规则接口",
+      "output": "CreateNetworkAclQuintupleEntriesResponse"
+    },
     "CreateNetworkInterface": {
       "document": "本接口（CreateNetworkInterface）用于创建弹性网卡。\n* 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。\n* 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 创建弹性网卡同时可以绑定已有安全组。\n* 创建弹性网卡同时可以绑定标签, 应答里的标签列表代表添加成功的标签。\n>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。\n>",
       "input": "CreateNetworkInterfaceRequest",
@@ -497,6 +503,12 @@
       "input": "DeleteNetworkAclRequest",
       "name": "删除网络ACL",
       "output": "DeleteNetworkAclResponse"
+    },
+    "DeleteNetworkAclQuintupleEntries": {
+      "document": "本接口（DeleteNetworkAclQuintupleEntries）用于删除网络ACL五元组指定的入站规则和出站规则（但不是全量删除该ACL下的所有条目）。在NetworkAclQuintupleEntrySet参数中：NetworkAclQuintupleEntry需要提供NetworkAclQuintupleEntryId。",
+      "input": "DeleteNetworkAclQuintupleEntriesRequest",
+      "name": "删除网络ACL五元组指定的部分条目接口。",
+      "output": "DeleteNetworkAclQuintupleEntriesResponse"
     },
     "DeleteNetworkInterface": {
       "document": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
@@ -839,6 +851,12 @@
       "input": "DescribeNetDetectsRequest",
       "name": "查询网络探测列表",
       "output": "DescribeNetDetectsResponse"
+    },
+    "DescribeNetworkAclQuintupleEntries": {
+      "document": "本接口（DescribeNetworkAclQuintupleEntries）查询入方向或出方向网络ACL五元组条目列表。",
+      "input": "DescribeNetworkAclQuintupleEntriesRequest",
+      "name": "分页查询网络ACL五元组条目列表",
+      "output": "DescribeNetworkAclQuintupleEntriesResponse"
     },
     "DescribeNetworkAcls": {
       "document": "本接口（DescribeNetworkAcls）用于查询网络ACL列表。",
@@ -1403,6 +1421,12 @@
       "input": "ModifyNetworkAclEntriesRequest",
       "name": "修改网络ACL规则",
       "output": "ModifyNetworkAclEntriesResponse"
+    },
+    "ModifyNetworkAclQuintupleEntries": {
+      "document": "本接口（ModifyNetworkAclQuintupleEntries）用于修改网络ACL五元组的入站规则和出站规则。在NetworkAclQuintupleEntrySet参数中：NetworkAclQuintupleEntry需要提供NetworkAclQuintupleEntryId。",
+      "input": "ModifyNetworkAclQuintupleEntriesRequest",
+      "name": "增量更新网络ACL五元组规则接口",
+      "output": "ModifyNetworkAclQuintupleEntriesResponse"
     },
     "ModifyNetworkInterfaceAttribute": {
       "document": "本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。",
@@ -5714,6 +5738,42 @@
       ],
       "type": "object"
     },
+    "CreateNetworkAclQuintupleEntriesRequest": {
+      "document": "CreateNetworkAclQuintupleEntries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络五元组ACL规则集。",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntries",
+          "name": "NetworkAclQuintupleSet",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetworkAclQuintupleEntriesResponse": {
+      "document": "CreateNetworkAclQuintupleEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNetworkAclRequest": {
       "document": "CreateNetworkAcl请求参数结构体",
       "members": [
@@ -8141,6 +8201,42 @@
     },
     "DeleteNetDetectResponse": {
       "document": "DeleteNetDetect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkAclQuintupleEntriesRequest": {
+      "document": "DeleteNetworkAclQuintupleEntries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络五元组ACL规则集。",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntries",
+          "name": "NetworkAclQuintupleSet",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkAclQuintupleEntriesResponse": {
+      "document": "DeleteNetworkAclQuintupleEntries返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11308,6 +11404,41 @@
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkAclQuintupleEntriesRequest": {
+      "document": "DescribeNetworkAclQuintupleEntries请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNetworkAclQuintupleEntriesResponse": {
+      "document": "DescribeNetworkAclQuintupleEntries返回参数结构体",
+      "members": [
+        {
+          "document": "网络ACL条目列表（NetworkAclTuple5Entry）",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntry",
+          "name": "NetworkAclQuintupleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -17695,6 +17826,42 @@
     },
     "ModifyNetworkAclEntriesResponse": {
       "document": "ModifyNetworkAclEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkAclQuintupleEntriesRequest": {
+      "document": "ModifyNetworkAclQuintupleEntries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络五元组ACL规则集。",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntries",
+          "name": "NetworkAclQuintupleSet",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkAclQuintupleEntriesResponse": {
+      "document": "ModifyNetworkAclQuintupleEntries返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

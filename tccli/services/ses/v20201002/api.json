@@ -801,6 +801,7 @@
         {
           "default": "",
           "document": "发信域名",
+          "example": "mail.qcloud.com",
           "member": "string",
           "name": "IdentityName",
           "required": true,
@@ -810,6 +811,7 @@
         {
           "default": "",
           "document": "验证类型，固定为DOMAIN",
+          "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
           "required": true,
@@ -819,10 +821,31 @@
         {
           "default": "",
           "document": "是否已通过验证",
+          "example": "false",
           "member": "bool",
           "name": "SendingEnabled",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前信誉等级",
+          "example": "10",
+          "member": "uint64",
+          "name": "CurrentReputationLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当日最高发信量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DailyQuota",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1211,9 +1234,29 @@
       "members": [
         {
           "document": "发信域名列表",
+          "example": "无",
           "member": "EmailIdentity",
           "name": "EmailIdentities",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最大信誉等级",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxReputationLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单域名最高日发送量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MaxDailyQuota",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

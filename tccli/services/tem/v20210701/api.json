@@ -84,6 +84,12 @@
       "name": "查询应用关联的 Ingress 规则列表",
       "output": "DescribeRelatedIngressesResponse"
     },
+    "DestroyEnvironment": {
+      "document": "销毁命名空间",
+      "input": "DestroyEnvironmentRequest",
+      "name": "销毁命名空间",
+      "output": "DestroyEnvironmentResponse"
+    },
     "GenerateApplicationPackageDownloadUrl": {
       "document": "生成应用程序包预签名下载链接",
       "input": "GenerateApplicationPackageDownloadUrlRequest",
@@ -1950,6 +1956,51 @@
         }
       ],
       "usage": "out"
+    },
+    "DestroyEnvironmentRequest": {
+      "document": "DestroyEnvironment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Namespace",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyEnvironmentResponse": {
+      "document": "DestroyEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EksService": {
       "document": "eks service info",

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli mmps CreateFlySecMiniAppScanTaskRepeat --cli-unfold-argument  \
+    --MiniAppTestPwd TestPwd \
+    --OrgTaskID 170143813*******360 \
     --MiniAppID wx66e50f1e*******6f \
     --Mode 1 \
     --ScanVersion 0 \
-    --MiniAppTestAccount Test \
-    --MiniAppTestPwd TestPwd \
-    --OrgTaskID 170143813*******360
+    --MiniAppTestAccount Test
 ```
 
 Output: 

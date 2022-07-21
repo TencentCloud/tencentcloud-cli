@@ -16,10 +16,18 @@
         "title": "创建小程序隐私合规诊断重试任务"
       }
     ],
+    "CreateFlySecMiniAppProfessionalScanTask": [
+      {
+        "document": "对小程序全面的进行诊断，包括后台服务安全，UGC合规等",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppProfessionalScanTask\n<公共请求参数>\n\n{\n    \"MiniAppName\": \"测试小程序\",\n    \"Remark\": \"thanks\",\n    \"Mobile\": \"13800138000\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"2\",\n    \"CorpName\": \"微信小程序有限公司\",\n    \"Email\": \"wechat@tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0\n    }\n}",
+        "title": "创建小程序安全的深度诊断任务"
+      }
+    ],
     "CreateFlySecMiniAppScanTask": [
       {
         "document": "",
-        "input": "https://mmps.tencentcloudapi.com/?Action=CreateFlySecMiniAppScanTask\n&MiniAppID=wx66e50f1e*******6f\n&Mode=1\n&ScanVersion=0\n&MiniAppTestAccount=Test\n&MiniAppTestPwd=TestPwd\n&Industry=电商\n&SurveyContent={\"wx66e50f1e*******6f\":{\"1\":[\"B\"],\"n\":[\"A\",\"B\",\"D\"]}}\n&Mobile=13800138000\n&Email=wechat@tencent.com\n&SalesPerson=王某\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTask\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"Mobile\": \"13800138000\",\n    \"Industry\": \"电商\",\n    \"SurveyContent\": \"{\\\"wx66e50f1e*******6f\\\":{\\\"1\\\":[\\\"B\\\"],\\\"n\\\":[\\\"A\\\",\\\"B\\\",\\\"D\\\"]}}\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"SalesPerson\": \"王某\",\n    \"ScanVersion\": \"0\",\n    \"Email\": \"wechat@tencent.com\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Ret\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "创建小程序翼扬安全基础诊断任务"
       }
@@ -27,7 +35,7 @@
     "CreateFlySecMiniAppScanTaskRepeat": [
       {
         "document": "原任务失败后，重新提交基础诊断任务",
-        "input": "https://mmps.tencentcloudapi.com/?Action=CreateFlySecMiniAppScanTaskRepeat\n&MiniAppID=wx66e50f1e*******6f\n&Mode=1\n&ScanVersion=0\n&MiniAppTestAccount=Test\n&MiniAppTestPwd=TestPwd\n&OrgTaskID=170143813*******360\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlySecMiniAppScanTaskRepeat\n<公共请求参数>\n\n{\n    \"MiniAppTestPwd\": \"TestPwd\",\n    \"OrgTaskID\": \"170143813*******360\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"ScanVersion\": \"0\",\n    \"MiniAppTestAccount\": \"Test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Ret\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "重新创建小程序翼扬安全基础诊断任务"
       }

@@ -1295,6 +1295,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TaskGroupActionExecuteTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1492,6 +1502,16 @@
           "name": "TaskGroupInstanceIsRedo",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作实例执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TaskGroupInstanceExecuteTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

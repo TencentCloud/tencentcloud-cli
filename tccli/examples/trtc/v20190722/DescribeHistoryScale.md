@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli trtc DescribeHistoryScale --cli-unfold-argument  \
-    --SdkAppId 1400188366 \
-    --StartTime 1587571000 \
-    --EndTime 1588034999
+    --StartTime 1590065777 \
+    --SdkAppId 1400353843 \
+    --EndTime 1590065877
 ```
 
 Output: 

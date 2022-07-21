@@ -42,6 +42,7 @@ Output:
                             "ActionId": 1,
                             "ActionTitle": "关机",
                             "ActionApiType": 1,
+                            "ActionRisk": "高风险",
                             "ActionAttribute": 1,
                             "TaskGroupActionOrder": 1,
                             "TaskGroupActionGeneralConfiguration": "{}",

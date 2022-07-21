@@ -25,9 +25,9 @@
       "output": "DescribeCvmQuotaResponse"
     },
     "DescribeEmrApplicationStatics": {
-      "document": "（通过走emrcc接入到cam） yarn applciation 统计接口",
+      "document": " yarn applciation 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
-      "name": "【监控】查询Appilication统计V2",
+      "name": "【监控】查询Appilication统计信息",
       "output": "DescribeEmrApplicationStaticsResponse"
     },
     "DescribeInstanceRenewNodes": {
@@ -1682,7 +1682,7 @@
         },
         {
           "default": "",
-          "document": "起始时间",
+          "document": "起始时间，时间戳（秒）",
           "example": "1621570097",
           "member": "int64",
           "name": "StartTime",
@@ -1691,7 +1691,7 @@
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "结束时间，时间戳（秒）",
           "example": "1621590097",
           "member": "int64",
           "name": "EndTime",
