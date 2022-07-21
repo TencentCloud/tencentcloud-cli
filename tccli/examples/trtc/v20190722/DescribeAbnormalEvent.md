@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli trtc DescribeAbnormalEvent --cli-unfold-argument  \
+    --StartTime 1590065777 \
     --SdkAppId 1400188366 \
-    --StartTime 1592448600 \
-    --EndTime 1592449080 \
+    --EndTime 1590065877 \
     --RoomId 461
 ```
 

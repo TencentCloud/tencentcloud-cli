@@ -7,9 +7,9 @@ Input:
 ```
 tccli trtc DescribeUserInformation --cli-unfold-argument  \
     --StartTime 1590065777 \
-    --CommId 1400353843_218695_1590065777 \
+    --CommId 1400188366_218695_1590065777 \
     --UserIds user1_54816741 user2_2107025 \
-    --SdkAppId 1400353843 \
+    --SdkAppId 1400188366 \
     --EndTime 1590065877
 ```
 

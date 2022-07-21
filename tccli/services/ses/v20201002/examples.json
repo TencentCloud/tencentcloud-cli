@@ -160,7 +160,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEmailIdentities\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"EmailIdentities\": [\n            {\n                \"IdentityName\": \"mail.qcloud.com\",\n                \"IdentityType\": \"DOMAIN\",\n                \"SendingEnabled\": false\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"EmailIdentities\": [\n            {\n                \"IdentityName\": \"mail.qcloud.com\",\n                \"IdentityType\": \"DOMAIN\",\n                \"SendingEnabled\": false,\n                \"CurrentReputationLevel\": 2,\n                \"DailyQuota\": 5000\n            }\n        ],\n        \"MaxReputationLevel\": 10,\n        \"MaxDailyQuota\": 10000\n    }\n}",
         "title": "获取列表"
       }
     ],

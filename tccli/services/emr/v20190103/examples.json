@@ -35,7 +35,7 @@
     "DescribeEmrApplicationStatics": [
       {
         "document": "",
-        "input": "https://emr.tencentcloudapi.com/?Action=DescribeEmrApplicationStatics\n&InstanceId=emr-9kd5tnmq\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEmrApplicationStatics\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-9kd5tnmq\"\n}",
         "output": "{\n    \"Response\": {\n        \"ApplicationTypes\": [\n            \"MAPREDUCE\"\n        ],\n        \"Queues\": [\n            \"root.default\"\n        ],\n        \"RequestId\": \"12345678\",\n        \"Statics\": [\n            {\n                \"Queue\": \"root.default\",\n                \"User\": \"hadoop\",\n                \"ApplicationType\": \"MAPREDUCE\",\n                \"SumMemorySeconds\": 58250,\n                \"SumVCoreSeconds\": 33,\n                \"SumHDFSBytesWritten\": \"48 bytes\",\n                \"SumHDFSBytesRead\": \"269 bytes\",\n                \"CountApps\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Users\": [\n            \"hadoop\"\n        ]\n    }\n}",
         "title": "【监控】查询Appilication统计V2"
       }

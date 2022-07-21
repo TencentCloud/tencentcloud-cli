@@ -248,6 +248,14 @@
         "title": "根据网络探测ID验证探测参数"
       }
     ],
+    "CheckRoutingTableRouteSubnetOverlapInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CheckRoutingTableRouteSubnetOverlapInternal\n&UniqueVpcId=vpc-jmaywf6r\n&Subnet=10.0.0.0\n&IntMask=16\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CheckCode\": 0,\n        \"OverlapList\": [\n            {\n                \"Subnet\": \"10.2.0.0\",\n                \"VpcId\": 6,\n                \"Name\": \"testss2\",\n                \"UniqueVpcId\": \"vpc-pe0kssdp\",\n                \"VirtualGatewayType\": 4,\n                \"UniqueVpcGatewayIndex\": \"pcx-qjtzxwhm\",\n                \"Mask\": \"255.255.0.0\",\n                \"RoutingTableId\": 29,\n                \"IntMask\": 16,\n                \"VpcGatewayIndex\": \"19\",\n                \"Owner\": \"toyacao\",\n                \"UniqueRoutingTableId\": \"rtb-o9u877nw\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "判断和路由表网段是否冲突"
+      }
+    ],
     "CloneSecurityGroup": [
       {
         "document": "",
@@ -382,6 +390,22 @@
         "title": "创建专线网关云联网路由"
       }
     ],
+    "CreateDockerInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDockerInternal\n&DockerRequestSet.0.VpcId=1\n&DockerRequestSet.0.Subnet=10.0.0.0\n&DockerRequestSet.0.IntMask=16\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加DOCKER"
+      }
+    ],
+    "CreateEniLimitInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateEniLimitInternal\n&EniLimitRequestSet.0.Owner=251198225\n&EniLimitRequestSet.0.InstanceId=ins-y5gh3gq8\n&EniLimitRequestSet.0.Type=1\n&EniLimitRequestSet.0.Val=3\n&EniLimitRequestSet.0.LowerCpu=2\n&EniLimitRequestSet.0.UpperCpu=4\n&EniLimitRequestSet.0.LowerMem=1\n&EniLimitRequestSet.0.UpperMem=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加ENI限制"
+      }
+    ],
     "CreateFlowLog": [
       {
         "document": "",
@@ -468,6 +492,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkAcl\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NetworkAclName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkAcl\": {\n            \"NetworkAclId\": \"acl-12345678\",\n            \"VpcId\": \"vpc-12345678\",\n            \"NetworkAclName\": \"test\",\n            \"CreatedTime\": \"2020-01-01 10:00:00\",\n            \"SubnetSet\": [],\n            \"IngressEntries\": [],\n            \"EgressEntries\": [],\n            \"NetworkAclType\": \"TRIPLE\"\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建网络ACL"
+      }
+    ],
+    "CreateNetworkAclQuintupleEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkAclQuintupleEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclQuintupleSet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
+        "title": "修改五元组优先级"
       }
     ],
     "CreateNetworkInterface": [
@@ -716,6 +748,14 @@
         "title": "删除专线网关云联网路由"
       }
     ],
+    "DeleteEniLimitInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteEniLimitInternal\n&EniLimitRequestSet.0.Owner=251198225\n&EniLimitRequestSet.0.InstanceId=ins-y5gh3gq8\n&EniLimitRequestSet.0.Type=1\n&EniLimitRequestSet.0.Val=3\n&EniLimitRequestSet.0.LowerCpu=2\n&EniLimitRequestSet.0.UpperCpu=4\n&EniLimitRequestSet.0.LowerMem=1\n&EniLimitRequestSet.0.UpperMem=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除ENI限制"
+      }
+    ],
     "DeleteFlowLog": [
       {
         "document": "",
@@ -802,6 +842,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetworkAcl\n&NetworkAclId=acl-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "删除网络ACL"
+      }
+    ],
+    "DeleteNetworkAclQuintupleEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNetworkAclQuintupleEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclQuintupleSet\": {\n        \"Ingress\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
+        "title": "删除网络ACL五元组的指定的ITEM"
       }
     ],
     "DeleteNetworkInterface": [
@@ -1224,12 +1272,52 @@
         "title": "多条件过滤查询专线网关列表"
       }
     ],
+    "DescribeDockerInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDockerInternal\n&VpcId=78257\n&Subnet=10.0.0.0\n&IntMask=16\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DockerSet\": [\n            {\n                \"Subnet\": \"10.0.0.0\",\n                \"VpcId\": 78257,\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"Mask\": \"255.255.0.0\",\n                \"IntMask\": 16,\n                \"CreateTime\": \"2021-12-28 16:42:40\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询DOCKER"
+      }
+    ],
+    "DescribeDockerSubnetInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDockerSubnetInternal\n&VpcId=78257\n&UniqueVpcId=vpc-xxx\n&Subnet=10.0.0.0\n&Mask=xxx\n&IntMask=16\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DockerSubnet\": [\n            {\n                \"Subnet\": \"10.0.0.0\",\n                \"VpcId\": 78257,\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"Mask\": \"255.255.0.0\",\n                \"IntMask\": 16,\n                \"CreateTime\": \"2021-12-28 16:42:40\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "描述Docker subnet"
+      }
+    ],
     "DescribeEniAllInternal": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniAllInternal\n<公共请求参数>\n\n{\n    \"Uuid\": \"xxx\",\n    \"SafeGroupId\": \"xxx\",\n    \"State\": \"0\",\n    \"IfnName\": \"xxx\",\n    \"Type\": \"0\",\n    \"UniqueSubnetId\": \"xxx\",\n    \"VpcId\": \"123\",\n    \"EniId\": \"1\",\n    \"Description\": \"xxx\",\n    \"Business\": \"xxx\",\n    \"InstanceId\": \"xxx\",\n    \"Mac\": \"xxx\",\n    \"Offset\": \"0\",\n    \"SubnetId\": \"123\",\n    \"Name\": \"xxx\",\n    \"TagValue\": \"xxx\",\n    \"Limit\": \"100\",\n    \"BusinessOwner\": \"xxx\",\n    \"TagKey\": \"xxx\",\n    \"EniPrivateIp\": \"1.1.1.1\",\n    \"UniqueEniId\": \"xxx\",\n    \"Owner\": \"251198225\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"EniSet\": [\n            {\n                \"DefaultFlag\": 0,\n                \"VpcId\": 16769060,\n                \"EniId\": 2609655,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Mask\": \"255.255.128.0\",\n                \"VpcDefaultFlag\": 0,\n                \"TrunkingFlag\": 0,\n                \"SubnetId\": 2018313,\n                \"PrivateIpSet\": [\n                    {\n                        \"Description\": \"xxx\",\n                        \"State\": 1,\n                        \"DhcpIpFlag\": 0,\n                        \"WanIp\": \"0.0.0.0\",\n                        \"HavIpFlag\": 0,\n                        \"PrivateIp\": \"10.4.128.5\",\n                        \"Type\": 1,\n                        \"CreateTime\": \"2021-06-17 11:24:24\",\n                        \"BlockedFlag\": 0\n                    }\n                ],\n                \"EniQos\": {\n                    \"PortMax\": 65535,\n                    \"DirectSend\": 0,\n                    \"PortMin\": 1025,\n                    \"QosType\": 0\n                },\n                \"AclId\": 95805,\n                \"Owner\": \"251197522\",\n                \"UniqAclId\": \"acl-r762el0i\",\n                \"UniqueCdcId\": \"xxx\",\n                \"Subnet\": \"10.4.128.0\",\n                \"UniqueEniId\": \"eni-nl6govs9\",\n                \"VpcIntMask\": 16,\n                \"VpcMask\": \"255.255.0.0\",\n                \"ZoneId\": 100002,\n                \"Instance\": {\n                    \"WanInLimit\": 0,\n                    \"IfnIndex\": 0,\n                    \"LanInLimit\": 1610612736,\n                    \"AttachType\": 0,\n                    \"AttachTime\": \"2021-06-17 11:24:24\",\n                    \"LanOutLimit\": 1610612736,\n                    \"InstanceId\": \"ins-yn79rou1\",\n                    \"UniqueCdcId\": \"xxx\",\n                    \"Bandwidth\": 1,\n                    \"Owner\": \"251197522\",\n                    \"CdcFlag\": 0,\n                    \"HostIp\": \"100.99.164.201\",\n                    \"WanOutLimit\": 1048576,\n                    \"BridgeName\": \"vbr16769060\",\n                    \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\"\n                },\n                \"State\": 1,\n                \"ArpLearningFlag\": 1,\n                \"Ipv6\": [\n                    {\n                        \"Description\": \"\",\n                        \"State\": 1,\n                        \"WanIp\": \"\",\n                        \"HavIpFlag\": 0,\n                        \"PrivateIp\": \"2402:4e00:1000:2b00:0:90fb:c2c4:6995\",\n                        \"Type\": 0,\n                        \"CreateTime\": \"2020-07-07 16:16:28\",\n                        \"BlockedFlag\": 0\n                    }\n                ],\n                \"IntMask\": 17,\n                \"BusinessOwner\": \"xxx\",\n                \"DhcpFlag\": 0,\n                \"Type\": 1,\n                \"Description\": \"xx\",\n                \"Business\": \"xx\",\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"CdcFlag\": 0,\n                \"Mac\": \"52:54:00:51:48:6B\",\n                \"TagProto\": \"vlan\",\n                \"CreateTime\": \"2021-06-17 11:24:24\",\n                \"StreamFlowNumber\": 1,\n                \"Name\": \"ins-yn79rou1 Primary ENI\",\n                \"StreamFlow\": [\n                    {\n                        \"Name\": \"tsss\",\n                        \"Uin\": \"100000072292\",\n                        \"LogId\": \"38ed2b0e-28ac-47d3-834f-b425d6f83a78\",\n                        \"Policy\": 1,\n                        \"LogState\": 0,\n                        \"Description\": \"xxx\"\n                    }\n                ],\n                \"AclName\": \"ttttt\",\n                \"LocalZoneFlag\": 0,\n                \"VpcName\": \"cissytest\",\n                \"UniqueSubnetId\": \"subnet-oiqmspv4\",\n                \"ElasticNetworkCardName\": \"veth_51486Bf0\",\n                \"SubnetName\": \"testtt\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于获取弹性网卡极其附属的信息"
+      }
+    ],
+    "DescribeEniInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniInternal\n<公共请求参数>\n\n{\n    \"Limit\": \"100\",\n    \"UniqueEniId\": \"eniid\",\n    \"VpcId\": \"1\",\n    \"EniId\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"EniSet\": [\n            {\n                \"VpcId\": 78257,\n                \"EniId\": 2660066,\n                \"UniqueEniId\": \"eni-kj7karc5\",\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"Description\": \"xxx\",\n                \"Mac\": \"20:90:6F:BF:08:D2\",\n                \"Business\": \"xxx\",\n                \"Owner\": \"251198225\",\n                \"State\": 1,\n                \"UniqueSubnetId\": \"subnet-dbrazzr0\",\n                \"ElasticNetworkCardName\": \"veni_vFspLEfU\",\n                \"SubnetId\": 1990867,\n                \"BusinessOwner\": \"xxx\",\n                \"ArpLearningFlag\": 1,\n                \"Type\": 0,\n                \"CreateTime\": \"2021-07-06 09:52:34\",\n                \"Name\": \"TEST\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取弹性网卡的信息"
+      }
+    ],
+    "DescribeEniLimitAllInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniLimitAllInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubEniLimit\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 100\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 100\n            }\n        ],\n        \"SubEniPipLimit\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 8\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 8\n            }\n        ],\n        \"PipLimitEx\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 0\n            }\n        ],\n        \"EniLimit\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 2\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 2\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 2\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 4\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 4\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 6\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 8\n            }\n        ],\n        \"PipLimit\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 2\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 6\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 10\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 10\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 20\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 20\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 30\n            }\n        ],\n        \"EniLimitEx\": [\n            {\n                \"LowerMem\": 1,\n                \"LowerCpu\": 1,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 2,\n                \"LowerCpu\": 1,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 2,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 4,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 16,\n                \"LowerCpu\": 4,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 8,\n                \"Limit\": 0\n            },\n            {\n                \"LowerMem\": 0,\n                \"LowerCpu\": 16,\n                \"Limit\": 0\n            }\n        ],\n        \"RequestId\": \"64ef9bd5-1824-4733-a19b-603d0fa26843\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeEniLimitInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniLimitInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": [\n        \"default\",\n        \"ins-1ksiqu38\"\n    ],\n    \"Owner\": \"2323232\",\n    \"InstanceFamily\": [\n        \"S6\",\n        \"S1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EniLimitSet\": [\n            {\n                \"LowerMem\": 0,\n                \"Val\": 8,\n                \"InstanceFamily\": \"D1\",\n                \"InstanceId\": \"default\",\n                \"UpperCpu\": 1000000,\n                \"LowerCpu\": 16,\n                \"EniLimitId\": 326,\n                \"UpperMem\": 1000000,\n                \"Owner\": \"default\",\n                \"Type\": 0,\n                \"CreateTime\": \"2020-09-22 17:29:55\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询弹性网卡配额Internal"
       }
     ],
     "DescribeFlowLog": [
@@ -1426,6 +1514,14 @@
         "title": "根据ID查询网络探测"
       }
     ],
+    "DescribeNetworkAclQuintupleEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkAclQuintupleEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"Limit\": \"20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NetworkAclQuintupleSet\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"SourcePort\": \"80\",\n                \"SourceCidr\": \"192.168.0.0/24\",\n                \"DestinationPort\": \"80\",\n                \"DestinationCidr\": \"192.168.0.0/24\",\n                \"Action\": \"ACCEPT\",\n                \"CreateTime\": \"2019-11-11 22:16:17\",\n                \"NetworkAclQuintupleEntryId\": \"acli45-q1phngkz\",\n                \"NetworkAclDirection\": \"EGRESS\"\n            }\n        ],\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
+        "title": "示例1 根据条件查询网络ACL列表五元组条目"
+      }
+    ],
     "DescribeNetworkAcls": [
       {
         "document": "",
@@ -1496,6 +1592,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRouteTables\n&Offset=0\n&Limit=1\n&Filters.0.Name=tag:city\n&Filters.0.Values.0=shanghai\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteId\": 14915,\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14916,\n                        \"RouteItemId\": \"rti-22345678\",\n                        \"DestinationCidrBlock\": \"10.254.64.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"\"\n                    },\n                    {\n                        \"RouteId\": 14917,\n                        \"RouteItemId\": \"rti-32345678\",\n                        \"DestinationCidrBlock\": \"10.254.100.0/24\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.26\",\n                        \"RouteDescription\": \"whoIam\"\n                    },\n                    {\n                        \"RouteId\": 16642,\n                        \"RouteItemId\": \"rti-42345678\",\n                        \"DestinationCidrBlock\": \"10.200.0.0/18\",\n                        \"GatewayType\": \"PEERCONNECTION\",\n                        \"GatewayId\": \"pcx-4n2m594s\",\n                        \"RouteDescription\": \"bb\"\n                    }\n                ],\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"xx\",\n                        \"PublishedToVbc\": true\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2017-06-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 16,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询绑定了标签的路由表列表"
+      }
+    ],
+    "DescribeRoutingTableListDetailInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoutingTableListDetailInternal\n<公共请求参数>\n\n{\n    \"Name\": \"xxx\",\n    \"RoutingTableId\": \"1\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\",\n    \"Owner\": \"251198225\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RoutingTableSet\": [\n            {\n                \"Subnet\": [\n                    {\n                        \"Subnet\": \"172.16.0.0\",\n                        \"Name\": \"Default-Subnet\",\n                        \"CdcFlag\": 0,\n                        \"DefaultFlag\": 1,\n                        \"UniqueCdcId\": \"\",\n                        \"Mask\": \"255.255.240.0\",\n                        \"ZoneId\": 100002,\n                        \"IntMask\": 20,\n                        \"UniqueSubnetId\": \"subnet-dbrazzr0\",\n                        \"SubnetId\": 1990867,\n                        \"DhcpFlag\": 0\n                    }\n                ],\n                \"VpcId\": 78257,\n                \"Name\": \"default\",\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"SubnetNum\": 1,\n                \"VpcSubnet\": \"172.16.0.0\",\n                \"RoutingTableId\": 213266,\n                \"RouterId\": 196826,\n                \"VpcIntMask\": 16,\n                \"VpcName\": \"Default-VPC\",\n                \"VpcMask\": \"255.255.0.0\",\n                \"VpcDefaultFlag\": 1,\n                \"UniqueRouterId\": \"router-omlmjmr6\",\n                \"Owner\": \"251198225\",\n                \"UniqueRoutingTableId\": \"rtb-c6mxqnvy\",\n                \"Type\": 1,\n                \"CreateTime\": \"2021-03-22 20:59:55\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询rtb列表详情"
       }
     ],
     "DescribeSecurityGroupAssociationStatistics": [
@@ -1574,6 +1678,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceTemplates\n&Filters.0.Name=service-template-name\n&Filters.0.Values.0=TestName\n&Limit=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 8,\n        \"ServiceTemplateSet\": [\n            {\n                \"ServiceTemplateName\": \"TestName\",\n                \"ServiceTemplateId\": \"ppm-bu8cir16\",\n                \"ServiceSet\": [\n                    \"tcp:8080\",\n                    \"udp:99\"\n                ],\n                \"CreatedTime\": \"2018-04-03 21:19:31\"\n            },\n            {\n                \"ServiceTemplateName\": \"TestName\",\n                \"ServiceTemplateId\": \"ppm-2jju0z3u\",\n                \"ServiceSet\": [\n                    \"tcp:8080\",\n                    \"udp:99\"\n                ],\n                \"CreatedTime\": \"2018-04-03 21:03:12\"\n            }\n        ],\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "查看协议端口模板"
+      }
+    ],
+    "DescribeSubnetInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnetInternal\n<公共请求参数>\n\n{\n    \"VpcId\": \"123123\",\n    \"Owner\": \"251198225\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\",\n    \"SubnetId\": \"123123\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"UniqueSubnetId\": \"subnet-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 3,\n        \"SubnetSet\": [\n            {\n                \"DefaultFlag\": 0,\n                \"VpcId\": 16769060,\n                \"CdcFlag\": 0,\n                \"SubnetId\": 2007467,\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"Owner\": \"251197522\",\n                \"Subnet\": \"10.0.0.0\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Min\": 167772160,\n                \"UniqueCdcId\": \"\",\n                \"ZoneId\": 100001,\n                \"IntMask\": 24,\n                \"DhcpFlag\": 0,\n                \"Type\": 0,\n                \"Max\": 167772415,\n                \"GatewayIp\": \"0.0.0.0\",\n                \"CreateTime\": \"2021-05-10 15:40:12\",\n                \"RemoteVpcSnatFlag\": 0,\n                \"Name\": \"test\",\n                \"BroadcastFlag\": 0,\n                \"Mask\": \"255.255.255.0\",\n                \"LocalZoneFlag\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取子网信息"
       }
     ],
     "DescribeSubnets": [
@@ -1694,6 +1806,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcLimits\n&LimitTypes.0=appid-max-vpcs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VpcLimitSet\": [\n            {\n                \"LimitType\": \"appid-max-vpcs\",\n                \"LimitValue\": 5\n            }\n        ],\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "获取私有网络配额"
+      }
+    ],
+    "DescribeVpcPeerInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcPeerInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"1231231\",\n    \"Limit\": \"100\",\n    \"UniqueVpcPeerId\": \"xxx\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"VpcPeerSet\": [\n            {\n                \"SrcVpcSubnet\": \"172.16.0.0\",\n                \"DestVpcId\": 76644,\n                \"PublishDockerCidrFlag\": 0,\n                \"UniqueDestVpcId\": \"vpc-n05ss3vl\",\n                \"Bandwidth\": 0,\n                \"SrcOwner\": \"251198225\",\n                \"SrcVpcId\": 78257,\n                \"DestExpireTime\": \"2021-12-31 19:41:49\",\n                \"State\": 1,\n                \"LocalBandwidth\": 0,\n                \"DestVpcIntMask\": 16,\n                \"DestOwner\": \"251198225\",\n                \"Type\": 0,\n                \"LastState\": 0,\n                \"DestRegion\": 0,\n                \"WanOutLimit\": 0,\n                \"SrcViewFlag\": 1,\n                \"DestViewFlag\": 1,\n                \"ImageId\": \"\",\n                \"DestVpcSubnet\": \"10.0.0.0\",\n                \"CreateTime\": \"2021-12-31 19:41:49\",\n                \"SrcExpireTime\": \"2021-12-31 19:41:49\",\n                \"VpcPeerId\": 26574,\n                \"ZoneVpcPeerFlag\": 0,\n                \"UniqueSrcVpcId\": \"vpc-jmaywf6r\",\n                \"OwedFlag\": 0,\n                \"Name\": \"DDDD\",\n                \"NfvFlag\": 0,\n                \"VirtualSafeGroupIp\": \"0.0.0.0\",\n                \"NewAfcFlag\": 0,\n                \"SrcRegion\": 0,\n                \"UniqueVpcPeerId\": \"pcx-fh7xs34s\",\n                \"AfcVpcPeerGlobalId\": 0,\n                \"SrcVpcIntMask\": 16\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询vpc peer"
       }
     ],
     "DescribeVpcPrivateIpAddresses": [
@@ -2326,6 +2446,14 @@
         "title": "网络ACL删除入站规则"
       }
     ],
+    "ModifyNetworkAclQuintupleEntries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAclQuintupleEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclQuintupleSet\": {\n        \"Ingress\": [\n            {\n                \"Priority\": \"3\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
+        "title": "修改五元组优先级"
+      }
+    ],
     "ModifyNetworkInterfaceAttribute": [
       {
         "document": "",
@@ -2730,12 +2858,28 @@
         "title": "解封云联网实例"
       }
     ],
+    "UpdateEniLimitInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UpdateEniLimitInternal\n&EniLimitRequestSet.0.Owner=251198225\n&EniLimitRequestSet.0.InstanceId=ins-y5gh3gq8\n&EniLimitRequestSet.0.Type=1\n&EniLimitRequestSet.0.Val=3\n&EniLimitRequestSet.0.LowerCpu=2\n&EniLimitRequestSet.0.UpperCpu=4\n&EniLimitRequestSet.0.LowerMem=1\n&EniLimitRequestSet.0.UpperMem=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "更新ENI限制"
+      }
+    ],
     "UpdateRouteWeightInternal": [
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=UpdateRouteWeightInternal\n&RouteWeightRequestSet.0.VpcId=1\n&RouteWeightRequestSet.0.UniqueVpcId=vpc-jmaywf6r\n&RouteWeightRequestSet.0.GroupId=1\n&RouteWeightRequestSet.0.Protocol=tcp\n&RouteWeightRequestSet.0.Vip=172.16.0.18\n&RouteWeightRequestSet.0.VirtualPort=22\n&RouteWeightRequestSet.0.RouteSet.0.PrivateIp=10.19.0.121\n&RouteWeightRequestSet.0.RouteSet.0.ProtocolPort=8080\n&RouteWeightRequestSet.0.RouteSet.0.Weight=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于更新vpc内的服务的Route信息的权重"
+      }
+    ],
+    "UpdateVpcPeerInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UpdateVpcPeerInternal\n&VpcPeerRequestSet.0.VpcPeerId=2\n&VpcPeerRequestSet.0.Owner=251198225\n&VpcPeerRequestSet.0.State=0\n&VpcPeerRequestSet.0.Name=11\n&VpcPeerRequestSet.0.Bandwidth=0\n&VpcPeerRequestSet.0.OwedFlag=0\n&VpcPeerRequestSet.0.VirtualSafeGroupIp=1.2.3.5\n&VpcPeerRequestSet.0.NewAfcFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UpdatePeerSet\": [\n            {\n                \"SrcVpcSubnet\": \"172.16.0.0\",\n                \"DestVpcId\": 76644,\n                \"PublishDockerCidrFlag\": 0,\n                \"OldDestVpcSubnet\": \"10.0.0.0\",\n                \"OldNewAfcFlag\": 0,\n                \"OldVirtualSafeGroupIp\": \"0.0.0.0\",\n                \"UniqueDestVpcId\": \"vpc-n05ss3vl\",\n                \"OldLocalBandwidth\": 0,\n                \"OldName\": \"DDDD\",\n                \"SrcOwner\": \"251198225\",\n                \"Owner\": \"251198225\",\n                \"OldZoneVpcPeerFlag\": 0,\n                \"OldOwedFlag\": 0,\n                \"OldLastState\": 0,\n                \"SrcVpcId\": 78257,\n                \"State\": 1,\n                \"OldSrcVpcIntMask\": 16,\n                \"LocalBandwidth\": 0,\n                \"DestVpcIntMask\": 16,\n                \"DestOwner\": \"251198225\",\n                \"Type\": 0,\n                \"LastState\": 0,\n                \"OldDestExpireTime\": \"2021-12-31 19:41:49\",\n                \"OldDestVpcIntMask\": 16,\n                \"OldSrcVpcSubnet\": \"172.16.0.0\",\n                \"DestRegion\": 0,\n                \"OldState\": 1,\n                \"OldSrcExpireTime\": \"2021-12-31 19:41:49\",\n                \"WanOutLimit\": 0,\n                \"SrcViewFlag\": 1,\n                \"OldDestViewFlag\": 1,\n                \"ImageId\": \"\",\n                \"DestVpcSubnet\": \"10.0.0.0\",\n                \"CreateTime\": \"2021-12-31 19:41:49\",\n                \"SrcExpireTime\": \"2021-12-31 19:41:49\",\n                \"VpcPeerId\": 26574,\n                \"ZoneVpcPeerFlag\": 0,\n                \"UniqueSrcVpcId\": \"vpc-jmaywf6r\",\n                \"OwedFlag\": 0,\n                \"Name\": \"DDDD\",\n                \"NfvFlag\": 0,\n                \"VirtualSafeGroupIp\": \"0.0.0.0\",\n                \"NewAfcFlag\": 0,\n                \"SrcRegion\": 0,\n                \"Bandwidth\": 0,\n                \"UniqueVpcPeerId\": \"pcx-fh7xs34s\",\n                \"OldPublishDockerCidrFlag\": 0,\n                \"AfcVpcPeerGlobalId\": 0,\n                \"SrcVpcIntMask\": 16,\n                \"DestViewFlag\": 1,\n                \"OldBandwidth\": 0,\n                \"OldSrcViewFlag\": 1,\n                \"OldWanOutLimit\": 0,\n                \"DestExpireTime\": \"2021-12-31 19:41:49\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "更新vpc peer"
       }
     ],
     "WithdrawNotifyRoutes": [

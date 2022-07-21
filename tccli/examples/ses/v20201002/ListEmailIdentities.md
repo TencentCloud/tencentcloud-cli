@@ -16,9 +16,13 @@ Output:
             {
                 "IdentityName": "mail.qcloud.com",
                 "IdentityType": "DOMAIN",
-                "SendingEnabled": false
+                "SendingEnabled": false,
+                "CurrentReputationLevel": 2,
+                "DailyQuota": 5000
             }
-        ]
+        ],
+        "MaxReputationLevel": 10,
+        "MaxDailyQuota": 10000
     }
 }
 ```

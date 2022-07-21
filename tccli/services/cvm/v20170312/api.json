@@ -4920,6 +4920,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "导入镜像后，激活操作系统采用的许可证类型。\n可选项：\nTencentCloud: 腾讯云官方许可\nBYOL: 自带许可（Bring Your Own License）",
+          "example": "TencentCloud",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
