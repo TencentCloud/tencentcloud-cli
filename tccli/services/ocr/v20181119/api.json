@@ -133,7 +133,7 @@
       "output": "GeneralAccurateOCRResponse"
     },
     "GeneralBasicOCR": {
-      "document": "本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语，阿拉伯语20种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:200px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>中</td>\n          <td>高</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语，阿拉伯语20种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:200px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>中</td>\n          <td>高</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
       "input": "GeneralBasicOCRRequest",
       "name": "通用印刷体识别",
       "output": "GeneralBasicOCRResponse"
@@ -173,6 +173,12 @@
       "input": "IDCardOCRRequest",
       "name": "身份证识别",
       "output": "IDCardOCRResponse"
+    },
+    "ImageEnhancement": {
+      "document": "图像增强",
+      "input": "ImageEnhancementRequest",
+      "name": "图像增强",
+      "output": "ImageEnhancementResponse"
     },
     "InstitutionOCR": {
       "document": "本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。",
@@ -3021,7 +3027,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3030,7 +3037,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3039,7 +3047,8 @@
           "member": "string",
           "name": "Scene",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3048,7 +3057,8 @@
           "member": "string",
           "name": "LanguageType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3057,7 +3067,8 @@
           "member": "bool",
           "name": "IsPdf",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3066,7 +3077,8 @@
           "member": "uint64",
           "name": "PdfPageNumber",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3075,7 +3087,8 @@
           "member": "bool",
           "name": "IsWords",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3090,7 +3103,8 @@
           "name": "TextDetections",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "检测到的语言类型，目前支持的语言类型参考入参LanguageType说明。",
@@ -3099,7 +3113,8 @@
           "name": "Language",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
@@ -3108,7 +3123,8 @@
           "name": "Angel",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片为PDF时，返回PDF的总页数，默认为0",
@@ -3117,7 +3133,8 @@
           "name": "PdfPageSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3805,6 +3822,84 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageEnhancementRequest": {
+      "document": "ImageEnhancement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "默认为空，ReturnImage的取值以及含义如下：\n“preprocess”: 返回预处理后的图片数据\n“origin”：返回原图片数据\n\" \":不返回图片数据",
+          "example": "preprocess",
+          "member": "string",
+          "name": "ReturnImage",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "默认值为1，指定图像增强方法：\n1：切边增强\n2：弯曲矫正\n202：黑白模式\n204：提亮模式\n205：灰度模式\n207：省墨模式\n208：文字锐化（适合非彩色图片）\n301：去摩尔纹\n302：去除阴影",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ImageEnhancementResponse": {
+      "document": "ImageEnhancement返回参数结构体",
+      "members": [
+        {
+          "document": "图片数据标识：\n“origin”：原图\n“preprocess”:预处理后的图",
+          "example": "无",
+          "member": "string",
+          "name": "ImageTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "图片数据，返回预处理后图像或原图像base64字符",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10809,25 +10904,28 @@
           "member": "string",
           "name": "InvoiceCode",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "发票号码（8位）。",
+          "document": "发票号码（8位）",
           "example": "04000000",
           "member": "string",
           "name": "InvoiceNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。",
+          "document": "开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。",
           "example": "2019-12-11",
           "member": "string",
           "name": "InvoiceDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10836,7 +10934,8 @@
           "member": "string",
           "name": "Additional",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10851,7 +10950,8 @@
           "name": "Invoice",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "机动车销售统一发票信息",
@@ -10860,7 +10960,8 @@
           "name": "VehicleInvoiceInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "二手车销售统一发票信息",
@@ -10869,7 +10970,8 @@
           "name": "UsedVehicleInvoiceInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

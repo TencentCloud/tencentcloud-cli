@@ -240,6 +240,14 @@
         "title": "批量授权账号权限"
       }
     ],
+    "InquirePriceCreate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreate\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": 1,\n    \"Cpu\": 1,\n    \"Memory\": 1,\n    \"StorageLimit\": 10,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\",\n    \"InstancePayMode\": \"POSTPAID\",\n    \"StoragePayMode\": \"POSTPAID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstancePrice\": {\n            \"ChargeUnit\": \"\",\n            \"Discount\": 100,\n            \"TotalPrice\": 200,\n            \"TotalPriceDiscount\": 200,\n            \"UnitPrice\": 0,\n            \"UnitPriceDiscount\": 0\n        },\n        \"RequestId\": \"123-123bcde-1243\",\n        \"StoragePrice\": {\n            \"ChargeUnit\": \"GB*h\",\n            \"Discount\": 100,\n            \"TotalPrice\": 0,\n            \"TotalPriceDiscount\": 0,\n            \"UnitPrice\": 350,\n            \"UnitPriceDiscount\": 350\n        }\n    }\n}",
+        "title": "新购集群询价"
+      }
+    ],
     "IsolateCluster": [
       {
         "document": "",

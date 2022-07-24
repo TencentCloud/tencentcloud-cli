@@ -5720,7 +5720,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5729,7 +5730,8 @@
           "member": "string",
           "name": "Layer",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5738,7 +5740,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5747,7 +5750,18 @@
           "member": "bool",
           "name": "Segment",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否查询节点 IPV6 信息。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "ShowIpv6",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5762,7 +5776,8 @@
           "name": "Ips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "节点总个数",
@@ -5771,7 +5786,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9530,47 +9546,68 @@
         {
           "default": "",
           "document": "节点 IP",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "节点所属区域",
+          "example": "无",
           "member": "string",
           "name": "District",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "节点所属运营商",
+          "example": "无",
           "member": "string",
           "name": "Isp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "节点所在城市",
+          "example": "无",
           "member": "string",
           "name": "City",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "节点状态\nonline：上线状态，正常调度服务中\noffline：下线状态",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "节点 IPV6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

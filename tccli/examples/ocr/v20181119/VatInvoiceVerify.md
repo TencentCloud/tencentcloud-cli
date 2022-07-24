@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr VatInvoiceVerify --cli-unfold-argument  \
-    --InvoiceCode 1300000000 \
     --InvoiceNo 04000000 \
+    --InvoiceCode 1300000000 \
     --InvoiceDate 2019-12-11 \
     --Additional 88.50
 ```
@@ -69,7 +69,9 @@ Output:
             "CertificateNo": "xx",
             "ProduceAddress": "xx",
             "LimitCount": "xx",
-            "ImportNo": "xx"
+            "ImportNo": "xx",
+            "SellerTel": "xx",
+            "SellerAddress": "xx"
         },
         "UsedVehicleInvoiceInfo": {
             "BuyerTel": "xx",

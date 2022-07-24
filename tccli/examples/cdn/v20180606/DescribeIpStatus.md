@@ -21,7 +21,8 @@ Output:
                 "District": "广东",
                 "Isp": "电信",
                 "City": "深圳",
-                "Status": "online"
+                "Status": "online",
+                "Ipv6": null
             }
         ]
     }

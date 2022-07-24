@@ -3373,6 +3373,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "批量查询指定的实例",
+          "example": "[\"crs-fljrtizn\",\"crs-0tbmwtop\",\"crs-i0n3dutj\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
