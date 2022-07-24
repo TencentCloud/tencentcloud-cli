@@ -180,6 +180,12 @@
       "name": "批量授权账号权限",
       "output": "GrantAccountPrivilegesResponse"
     },
+    "InquirePriceCreate": {
+      "document": "查询新购集群价格",
+      "input": "InquirePriceCreateRequest",
+      "name": "新购集群询价",
+      "output": "InquirePriceCreateResponse"
+    },
     "IsolateCluster": {
       "document": "隔离集群",
       "input": "IsolateClusterRequest",
@@ -4495,6 +4501,132 @@
       ],
       "usage": "in"
     },
+    "InquirePriceCreateRequest": {
+      "document": "InquirePriceCreate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区,每个地域提供最佳实践",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买商品数量",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstancePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CPU核数，PREPAID与POSTPAID实例类型必传",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Ccu大小，serverless类型必传",
+          "example": "0.5",
+          "member": "float",
+          "name": "Ccu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "存储大小，PREPAID存储类型必传",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，PREPAID购买类型必传",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时长单位，可选值为：m,d。PREPAID购买类型必传",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateResponse": {
+      "document": "InquirePriceCreate返回参数结构体",
+      "members": [
+        {
+          "document": "实例价格",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储价格",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "StoragePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",
       "members": [
@@ -6022,6 +6154,72 @@
         }
       ],
       "usage": "both"
+    },
+    "TradePrice": {
+      "document": "计费询价结果",
+      "members": [
+        {
+          "default": "",
+          "document": "预付费模式下资源总价，不包含优惠，单位:分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6000",
+          "member": "int64",
+          "name": "TotalPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总的折扣，100表示100%不打折",
+          "example": "100",
+          "member": "float",
+          "name": "Discount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6000",
+          "member": "int64",
+          "name": "TotalPriceDiscount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费模式下的单位资源价格，不包含优惠，单位:分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "350",
+          "member": "int64",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "350",
+          "member": "int64",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费价格单位",
+          "example": "GB*h",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpgradeInstanceRequest": {
       "document": "UpgradeInstance请求参数结构体",

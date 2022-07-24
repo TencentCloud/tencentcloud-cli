@@ -24,6 +24,12 @@
       "name": "查询历史用户列表与通话指标（旧）",
       "output": "DescribeCallDetailResponse"
     },
+    "DescribeCallDetailInfo": {
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "input": "DescribeCallDetailInfoRequest",
+      "name": "查询历史用户列表与通话指标",
+      "output": "DescribeCallDetailInfoResponse"
+    },
     "DescribeDetailEvent": {
       "document": "查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。",
       "input": "DescribeDetailEventRequest",
@@ -54,17 +60,47 @@
       "name": "查询云端录制计费时长",
       "output": "DescribeRecordStatisticResponse"
     },
+    "DescribeRoomInfo": {
+      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "input": "DescribeRoomInfoRequest",
+      "name": "查询历史房间列表",
+      "output": "DescribeRoomInfoResponse"
+    },
     "DescribeRoomInformation": {
       "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeRoomInformationRequest",
       "name": "查询历史房间列表（旧）",
       "output": "DescribeRoomInformationResponse"
     },
+    "DescribeScaleInfo": {
+      "document": "可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数。（同老接口DescribeHistoryScale） ",
+      "input": "DescribeScaleInfoRequest",
+      "name": "查询历史房间和用户数",
+      "output": "DescribeScaleInfoResponse"
+    },
     "DescribeTrtcMcuTranscodeTime": {
       "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
       "name": "查询旁路转码计费时长(旧)",
       "output": "DescribeTrtcMcuTranscodeTimeResponse"
+    },
+    "DescribeUnusualEvent": {
+      "document": "查询SdkAppId下任意20条异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询14天内数据，查询起止时间不超过1个小时。支持跨天查询。（同老接口DescribeAbnormalEvent）\n异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
+      "input": "DescribeUnusualEventRequest",
+      "name": "查询异常体验事件",
+      "output": "DescribeUnusualEventResponse"
+    },
+    "DescribeUserEvent": {
+      "document": "查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。（同接口DescribeDetailEvent）",
+      "input": "DescribeUserEventRequest",
+      "name": "查询详细事件",
+      "output": "DescribeUserEventResponse"
+    },
+    "DescribeUserInfo": {
+      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "input": "DescribeUserInfoRequest",
+      "name": "查询历史用户列表",
+      "output": "DescribeUserInfoResponse"
     },
     "DescribeUserInformation": {
       "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
@@ -397,6 +433,123 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallDetailInfoRequest": {
+      "document": "DescribeCallDetailInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
+          "example": "1400xxxxxx_218695_1590065777",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777），\n注意：支持查询14天内的数据。",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。",
+          "example": "1590065877",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）。",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需查询的用户数组，默认不填返回6个用户。",
+          "example": "[\"a\",\"b\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
+          "example": "[\"bigvCapFps\"]",
+          "member": "string",
+          "name": "DataType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页个数，默认为6，\n范围：[1，100]\n注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；\nDataType 为null，UserIds长度不超过100，PageSize最大不超过100。",
+          "example": "6",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallDetailInfoResponse": {
+      "document": "DescribeCallDetailInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的用户总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserInformation",
+          "name": "UserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "质量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -857,6 +1010,96 @@
       ],
       "type": "object"
     },
+    "DescribeRoomInfoRequest": {
+      "document": "DescribeRoomInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过24小时。",
+          "example": "1590065877",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号（如：223)",
+          "example": "223",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页个数，默认为10，\n范围：[1，100]",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomInfoResponse": {
+      "document": "DescribeRoomInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回当页数据总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间信息列表",
+          "example": "RoomList",
+          "member": "RoomState",
+          "name": "RoomList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoomInformationRequest": {
       "document": "DescribeRoomInformation请求参数结构体",
       "members": [
@@ -947,6 +1190,69 @@
       ],
       "type": "object"
     },
+    "DescribeScaleInfoRequest": {
+      "document": "DescribeScaleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据。",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。\n注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScaleInfoResponse": {
+      "document": "DescribeScaleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"Time\": 1587830400,                 \"RoomNumbe",
+          "member": "ScaleInfomation",
+          "name": "ScaleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrtcMcuTranscodeTimeRequest": {
       "document": "DescribeTrtcMcuTranscodeTime请求参数结构体",
       "members": [
@@ -991,6 +1297,258 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnusualEventRequest": {
+      "document": "DescribeUnusualEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。",
+          "example": "1590065877",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间号，查询房间内任意20条以内异常体验事件",
+          "example": "223",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnusualEventResponse": {
+      "document": "DescribeUnusualEvent返回参数结构体",
+      "members": [
+        {
+          "document": "返回的数据总条数\n范围：[0，20]",
+          "example": "11",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异常体验列表",
+          "example": "无",
+          "member": "AbnormalExperience",
+          "name": "AbnormalExperienceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserEventRequest": {
+      "document": "DescribeUserEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
+          "example": "1400xxxxxx_3568_1588055615",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：查询时间大于房间结束时间，以房间结束时间为准。",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户UserId",
+          "example": "user_66319581",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间号（如：223）",
+          "example": "1711",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserEventResponse": {
+      "document": "DescribeUserEvent返回参数结构体",
+      "members": [
+        {
+          "document": "返回的事件列表，若没有数据，会返回空数组。",
+          "example": "\"Data\": [             {                 \"Content\": [            ",
+          "member": "EventList",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
+          "example": "1400xxxxxx_218695_1590065777",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "example": "1590065777",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过4小时。",
+          "example": "1590065877",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "1400xxxxxx",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需查询的用户数组，不填默认返回6个用户\n范围：[1，100]。",
+          "example": "[\"a\",\"b\",\"c\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页个数，默认为6，\n范围：[1，100]。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回的用户总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserList",
+          "member": "UserInformation",
+          "name": "UserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

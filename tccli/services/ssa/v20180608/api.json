@@ -4206,36 +4206,36 @@
       "usage": "out"
     },
     "QueryFilter": {
-      "document": "查询参数",
+      "document": "过滤条件",
       "members": [
         {
           "default": "",
-          "document": "查询的字段",
-          "example": "time",
+          "document": "过滤key",
+          "example": "-",
           "member": "string",
           "name": "FilterKey",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "查询的值",
-          "example": "\"asd\"",
-          "member": "string",
-          "name": "FilterValue",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配",
-          "example": "1",
+          "document": "操作符(只支持32位)",
+          "example": "-",
           "member": "int64",
           "name": "FilterOperatorType",
-          "required": true,
+          "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤value",
+          "example": "-",
+          "member": "string",
+          "name": "FilterValue",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

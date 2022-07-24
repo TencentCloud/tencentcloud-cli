@@ -64,12 +64,52 @@
         "title": "创建cdc-ckafka共享集群"
       }
     ],
+    "CreateConnectResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-xxx\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"xx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xx\",\n    \"Type\": \"DTS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建Datahub连接源(DTS)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-xxx\",\n        \"Password\": \"xx\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-xxx\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"xx\",\n    \"Type\": \"ES\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建Datahub连接源(ES)"
+      }
+    ],
     "CreateConsumer": [
       {
         "document": "创建消费者",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxx\",\n    \"TopicName\": \"topic-xxx\",\n    \"GroupName\": \"group-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnMessage\": \"xx\",\n            \"ReturnCode\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建消费者"
+      }
+    ],
+    "CreateDatahubTask": [
+      {
+        "document": "SINK任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-7kd5rzza\",\n            \"Topic\": \"topic-test\",\n            \"OffsetType\": \"timestamp\",\n            \"StartTime\": 1635339533\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"EB\",\n        \"EventBusParam\": {\n            \"Type\": \"COS\",\n            \"SelfBuilt\": false,\n            \"Resource\": \"target-resource\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"ckafka-7kd5rzza_topic-0cus2p9z_task_1633501781881_schedule\",\n            \"Qualifier\": \"$LATEST\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"datahub-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建SINK任务"
+      },
+      {
+        "document": "TRANSFORM任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"TRANSFORM\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-aaa\",\n            \"Topic\": \"topic-source\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-bbb\",\n            \"Topic\": \"topic-traget\"\n        }\n    },\n    \"TransformParam\": {\n        \"Regex\": \";\",\n        \"AnalysisFormat\": \"DELIMITER\",\n        \"OutputFormat\": \"JSON\",\n        \"SourceType\": \"xx\",\n        \"FilterParam\": [\n            {\n                \"MatchMode\": \"PREFIX\",\n                \"Value\": \"cass\",\n                \"Key\": \"0\"\n            }\n        ],\n        \"FailureParam\": {\n            \"Type\": \"DLQ\",\n            \"MaxRetryAttempts\": 1,\n            \"KafkaParam\": {\n                \"Resource\": \"ckafka-xxx\",\n                \"SelfBuilt\": false,\n                \"Topic\": \"test-dlq\"\n            }\n        },\n        \"Content\": \"xx\",\n        \"MapParam\": [\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"1\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"2\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Value\": \"abc\",\n                \"Key\": \"3\"\n            },\n            {\n                \"Type\": \"DATE\",\n                \"Value\": \"\",\n                \"Key\": \"5\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"datahub-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建TRANSFORM任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-7kd5rzza\",\n            \"Topic\": \"topic-test\",\n            \"OffsetType\": \"earliest\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"ES\",\n        \"EsParam\": {\n            \"Resource\": \"resource-xxx\",\n            \"DropInvalidMessage\": true,\n            \"Index\": \"xxx\",\n            \"DropInvalidJsonMessage\": false\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建SINK任务(ES)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"TOPIC\",\n        \"TopicParam\": {\n            \"Resource\": \"12345-xxx\",\n            \"OffsetType\": \"earliest\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"ES\",\n        \"EsParam\": {\n            \"Resource\": \"resource-xxx\",\n            \"DropInvalidMessage\": true,\n            \"Index\": \"xxx\",\n            \"DropInvalidJsonMessage\": false\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建SINK任务(DIP Topic to ES)"
       }
     ],
     "CreateInstancePre": [

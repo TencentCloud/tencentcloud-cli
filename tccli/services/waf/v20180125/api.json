@@ -24,12 +24,6 @@
       "name": "创建访问日志导出",
       "output": "CreateAccessExportResponse"
     },
-    "CreateAttackDownloadTask": {
-      "document": "创建攻击日志下载任务",
-      "input": "CreateAttackDownloadTaskRequest",
-      "name": "创建攻击日志下载任务",
-      "output": "CreateAttackDownloadTaskResponse"
-    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -1217,114 +1211,6 @@
           "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
           "member": "string",
           "name": "ExportId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAttackDownloadTaskRequest": {
-      "document": "CreateAttackDownloadTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "域名，所有域名填写all",
-          "example": "abc.qcloudwaf.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询起始时间",
-          "example": "2019-12-30 00:00:00",
-          "member": "datetime",
-          "name": "FromTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询结束时间",
-          "example": "2019-12-30 23:59:59",
-          "member": "datetime",
-          "name": "ToTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "下载任务名字",
-          "example": "d0wnload",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "风险等级",
-          "example": "0",
-          "member": "uint64",
-          "name": "RiskLevel",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "拦截状态",
-          "example": "0",
-          "member": "uint64",
-          "name": "Status",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "自定义策略ID",
-          "example": "0",
-          "member": "uint64",
-          "name": "RuleId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "攻击者IP",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "AttackIp",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "攻击类型",
-          "example": "无",
-          "member": "string",
-          "name": "AttackType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAttackDownloadTaskResponse": {
-      "document": "CreateAttackDownloadTask返回参数结构体",
-      "members": [
-        {
-          "document": "任务ID",
-          "example": "XXXX-XXXX-XXXX",
-          "member": "string",
-          "name": "Flow",
           "required": true,
           "type": "string",
           "value_allowed_null": false

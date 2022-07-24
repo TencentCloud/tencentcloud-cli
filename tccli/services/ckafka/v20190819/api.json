@@ -48,11 +48,23 @@
       "name": "创建cdc-ckafka集群",
       "output": "CreateCdcClusterResponse"
     },
+    "CreateConnectResource": {
+      "document": "创建Datahub连接源",
+      "input": "CreateConnectResourceRequest",
+      "name": "创建Datahub连接源",
+      "output": "CreateConnectResourceResponse"
+    },
     "CreateConsumer": {
       "document": "创建消费者组",
       "input": "CreateConsumerRequest",
       "name": "创建消费者组",
       "output": "CreateConsumerResponse"
+    },
+    "CreateDatahubTask": {
+      "document": "创建Datahub转储任务",
+      "input": "CreateDatahubTaskRequest",
+      "name": "创建Datahub转储任务",
+      "output": "CreateDatahubTaskResponse"
     },
     "CreateInstancePre": {
       "document": "创建实例(预付费包年包月)",
@@ -573,6 +585,52 @@
         }
       ],
       "usage": "in"
+    },
+    "AnalyseParam": {
+      "document": "数据处理-解析参数",
+      "members": [
+        {
+          "default": "",
+          "document": "解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果",
+          "example": "JSON",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分隔符、正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ",",
+          "member": "string",
+          "name": "Regex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需再次处理的KEY——模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JSONPATH",
+          "member": "string",
+          "name": "InputValueType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需再次处理的KEY——KEY表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$.log",
+          "member": "string",
+          "name": "InputValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AppIdResponse": {
       "document": "AppId的查询结果",
@@ -1141,6 +1199,340 @@
       ],
       "type": "object"
     },
+    "ClickHouseConnectParam": {
+      "document": "ClickHouse连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "ClickHouse的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ClickHouseParam": {
+      "document": "ClickHouse类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "ClickHouse的集群",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的数据库名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的数据表名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的schema",
+          "example": "[{\"ColumnName\":\"x\",\"JsonKey\":\"x\",\"Type\":\"String\",\"AllowNull\":f}]",
+          "member": "ClickHouseSchema",
+          "name": "Schema",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例资源",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的连接ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的连接port",
+          "example": "0",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例vip",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的vpcId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为自建集群",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse是否抛弃解析失败的消息，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidMessage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ClickHouse 类型，emr-clickhouse : \"emr\";cdw-clickhouse : \"cdwch\";自建 : \"\"",
+          "example": "emr",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
+          "example": "xxx",
+          "member": "DropCls",
+          "name": "DropCls",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClickHouseSchema": {
+      "document": "ClickHouse的Schema",
+      "members": [
+        {
+          "default": "",
+          "document": "表的列名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ColumnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该列对应的jsonKey名",
+          "example": "xxx",
+          "member": "string",
+          "name": "JsonKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表列项的类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列项是否允许为空",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowNull",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClsParam": {
+      "document": "Cls类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "生产的信息是否为json格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DecodeJson",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cls日志主题id",
+          "example": "test",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cls日志集id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "LogSet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当DecodeJson为false时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"content\"",
+          "member": "string",
+          "name": "ContentKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "ClusterInfo": {
       "document": "集群信息实体",
       "members": [
@@ -1300,6 +1692,22 @@
           "name": "RetentionBytes",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConnectResourceResourceIdResp": {
+      "document": "返回连接源的Id",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1490,6 +1898,92 @@
         }
       ],
       "usage": "out"
+    },
+    "CosParam": {
+      "document": "Cos Datahub 任务接入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "cos 存储桶名称",
+          "example": "bucket-name-example-123585",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域代码",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象名称",
+          "example": "cbg.csv",
+          "member": "string",
+          "name": "ObjectKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "汇聚消息量的大小（单位：MB)",
+          "example": "100",
+          "member": "uint64",
+          "name": "AggregateBatchSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "汇聚的时间间隔（单位：小时）",
+          "example": "1",
+          "member": "uint64",
+          "name": "AggregateInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息汇聚后的文件格式（支持csv, json）",
+          "example": "json",
+          "member": "string",
+          "name": "FormatOutputType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转储的对象目录前缀",
+          "example": "task-9g89nb",
+          "member": "string",
+          "name": "ObjectKeyPrefix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "根据strptime 时间格式化的分区格式",
+          "example": "/%Y/%m/%d/%H",
+          "member": "string",
+          "name": "DirectoryTimeFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CreateAclRequest": {
       "document": "CreateAcl请求参数结构体",
@@ -1689,6 +2183,132 @@
       ],
       "type": "object"
     },
+    "CreateConnectResourceRequest": {
+      "document": "CreateConnectResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Dts配置，Type为DTS时必填",
+          "example": "xxx",
+          "member": "DtsConnectParam",
+          "name": "DtsConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MongoDB配置，Type为MONGODB时必填",
+          "example": "xxx",
+          "member": "MongoDBConnectParam",
+          "name": "MongoDBConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Es配置，Type为ES时必填",
+          "example": "xxx",
+          "member": "EsConnectParam",
+          "name": "EsConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
+          "example": "xxx",
+          "member": "ClickHouseConnectParam",
+          "name": "ClickHouseConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
+          "example": "xxx",
+          "member": "MySQLConnectParam",
+          "name": "MySQLConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
+          "example": "xxx",
+          "member": "PostgreSQLConnectParam",
+          "name": "PostgreSQLConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MariaDB配置，Type为MARIADB时必填",
+          "example": "xxx",
+          "member": "MariaDBConnectParam",
+          "name": "MariaDBConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "SQLServer配置，Type为SQLSERVER时必填",
+          "example": "xxx",
+          "member": "SQLServerConnectParam",
+          "name": "SQLServerConnectParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectResourceResponse": {
+      "document": "CreateConnectResource返回参数结构体",
+      "members": [
+        {
+          "document": "连接源的Id",
+          "example": "xxx",
+          "member": "ConnectResourceResourceIdResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConsumerRequest": {
       "document": "CreateConsumer请求参数结构体",
       "members": [
@@ -1738,6 +2358,140 @@
           "document": "创建group描述",
           "example": "data",
           "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatahubTaskRequest": {
+      "document": "CreateDatahubTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "example": "SINK",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "SourceResource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据目标",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "TargetResource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据处理规则",
+          "example": "xxx",
+          "member": "TransformParam",
+          "name": "TransformParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例连接参数【已废弃】",
+          "example": "xxx",
+          "member": "PrivateLinkParam",
+          "name": "PrivateLinkParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "选择所要绑定的SchemaId",
+          "example": "schema-rgi94jg",
+          "member": "string",
+          "name": "SchemaId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据处理规则",
+          "example": "xxx",
+          "member": "TransformsParam",
+          "name": "TransformsParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatahubTaskRes": {
+      "document": "创建数据转储返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "转储任务id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据转储Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DatahubId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDatahubTaskResponse": {
+      "document": "CreateDatahubTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "xxx",
+          "member": "CreateDatahubTaskRes",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -2517,6 +3271,198 @@
         }
       ],
       "type": "object"
+    },
+    "DatahubResource": {
+      "document": "Datahub资源配置",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "EB",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ckafka配置，Type为KAFKA时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "KafkaParam",
+          "name": "KafkaParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "EB配置，Type为EB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "EventBusParam",
+          "name": "EventBusParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB配置，Type为MONGODB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MongoDBParam",
+          "name": "MongoDBParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es配置，Type为ES时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "EsParam",
+          "name": "EsParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Tdw配置，Type为TDW时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TdwParam",
+          "name": "TdwParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts配置，Type为DTS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DtsParam",
+          "name": "DtsParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ClickHouseParam",
+          "name": "ClickHouseParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Cls配置，Type为CLS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ClsParam",
+          "name": "ClsParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Cos配置，Type为COS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "CosParam",
+          "name": "CosParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL配置，Type为MYSQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MySQLParam",
+          "name": "MySQLParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "PostgreSQLParam",
+          "name": "PostgreSQLParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Topic配置，Type为Topic时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TopicParam",
+          "name": "TopicParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB配置，Type为MARIADB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MariaDBParam",
+          "name": "MariaDBParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer配置，Type为SQLSERVER时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "SQLServerParam",
+          "name": "SQLServerParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DateParam": {
+      "document": "数据处理——Value处理参数——转换时间格式参数",
+      "members": [
+        {
+          "default": "",
+          "document": "时间格式",
+          "example": "yyyy-MM-dd HH:mm:ss",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入类型，string，unix时间戳，默认string\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时区，默认GMT+8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GMT+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAclRequest": {
       "document": "DeleteAcl请求参数结构体",
@@ -4087,6 +5033,224 @@
       ],
       "type": "object"
     },
+    "DropCls": {
+      "document": "dip失败消息写入cls的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否投递到cls\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidMessageToCls",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递cls的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DropClsRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递cls的账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "DropClsOwneruin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递cls的主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eafds-vfdfsdf-dbdfsdf",
+          "member": "string",
+          "name": "DropClsTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递cls的日志集id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wqead-bfdebv-sfds",
+          "member": "string",
+          "name": "DropClsLogSet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DtsConnectParam": {
+      "document": "Dts连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Dts的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts订阅的topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DtsParam": {
+      "document": "Dts类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "Dts实例Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts的连接ip",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts的连接port",
+          "example": "0",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts订阅的topic",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的账号",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupUser",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupPassword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "false同步原始数据，true同步解析后的json格式数据,默认true",
+          "example": "xxx",
+          "member": "bool",
+          "name": "TranSql",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "DynamicDiskConfig": {
       "document": "动态硬盘扩容配置",
       "members": [
@@ -4175,6 +5339,390 @@
       ],
       "usage": "both"
     },
+    "EsConnectParam": {
+      "document": "Es连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Es的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EsParam": {
+      "document": "Es类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "实例资源",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es的连接port",
+          "example": "0",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为自建集群",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例vip",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的vpcId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es是否抛弃解析失败的消息",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidMessage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es自定义index名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es自定义日期后缀",
+          "example": "yyyy-MM-dd",
+          "member": "string",
+          "name": "DateFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "非json格式数据的自定义key",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContentKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es是否抛弃非json格式的消息",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidJsonMessage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转储到Es中的文档ID取值字段名",
+          "example": "$.payload.name",
+          "member": "string",
+          "name": "DocumentIdField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Es自定义index名称的类型，STRING，JSONPATH，默认为STRING",
+          "example": "JSONPATH",
+          "member": "string",
+          "name": "IndexType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
+          "example": "xxx",
+          "member": "DropCls",
+          "name": "DropCls",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键",
+          "example": "xxx",
+          "member": "string",
+          "name": "DatabasePrimaryKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EventBusParam": {
+      "document": "EventBus配置",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型。EB_COS/EB_ES/EB_CLS",
+          "example": "COS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为自建集群",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例资源",
+          "example": "COS-xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SCF云函数命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SCF云函数函数名",
+          "example": "ckafka-xxx_topic-xxx_toCOS_1633501781881_schedule",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SCF云函数版本及别名",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FailureParam": {
+      "document": "数据处理规则失败处理",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃",
+          "example": "DLQ",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka类型死信队列",
+          "example": "xxx",
+          "member": "KafkaParam",
+          "name": "KafkaParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试间隔",
+          "example": "1",
+          "member": "uint64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试次数",
+          "example": "2",
+          "member": "uint64",
+          "name": "MaxRetryAttempts",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DIP Topic类型死信队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TopicParam",
+          "name": "TopicParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信队列类型，CKAFKA，TOPIC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DlqType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FetchMessageByOffsetRequest": {
       "document": "FetchMessageByOffset请求参数结构体",
       "members": [
@@ -4238,6 +5786,92 @@
       ],
       "type": "object"
     },
+    "FieldParam": {
+      "document": "数据处理——处理链",
+      "members": [
+        {
+          "default": "",
+          "document": "解析",
+          "example": "null",
+          "member": "AnalyseParam",
+          "name": "Analyse",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二次解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SecondaryAnalyseParam",
+          "name": "SecondaryAnalyse",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SMTParam",
+          "name": "SMT",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测试结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SMTParam",
+          "name": "AnalyseResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二次解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SMTParam",
+          "name": "SecondaryAnalyseResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JSON格式解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "AnalyseJsonResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JSON格式二次解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "SecondaryAnalyseJsonResult",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询过滤器\n>描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n",
       "members": [
@@ -4261,6 +5895,52 @@
         }
       ],
       "usage": "in"
+    },
+    "FilterMapParam": {
+      "document": "过滤器参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Key值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配模式，前缀匹配PREFIX，后缀匹配SUFFIX，包含匹配CONTAINS，EXCEPT除外匹配，数值匹配NUMBER，IP匹配IP",
+          "example": "PREFIX",
+          "member": "string",
+          "name": "MatchMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Value值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固定REGULAR",
+          "example": "REGULAR",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Group": {
       "document": "组实体",
@@ -5402,6 +7082,280 @@
       ],
       "usage": "out"
     },
+    "KafkaParam": {
+      "document": "Ckafka配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否为自建集群",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例资源",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic名称，多个以“,”分隔",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "timestamp",
+          "member": "string",
+          "name": "OffsetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1635339533",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyCkafkaName",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Zone ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200005",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Topic的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Topic的分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启用容错实例/开启死信队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableToleration",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Qps 限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4000",
+          "member": "uint64",
+          "name": "QpsLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MapParam": {
+      "document": "Map参数",
+      "members": [
+        {
+          "default": "",
+          "document": "key值",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，DEFAULT默认，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MariaDBConnectParam": {
+      "document": "MariaDB连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MariaDB的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MariaDBParam": {
+      "document": "MariaDB类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "MariaDB的数据库名称，\"*\"为全数据库",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MariaDB的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写",
+          "example": "xxx",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该MariaDB在连接管理内的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制存量信息(schema_only不复制, initial全量)，默认位initial",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyGroupOffsetsRequest": {
       "document": "ModifyGroupOffsets请求参数结构体",
       "members": [
@@ -5932,6 +7886,440 @@
       ],
       "type": "object"
     },
+    "MongoDBConnectParam": {
+      "document": "MongoDB连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MongoDB的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MongoDBParam": {
+      "document": "MongoDB类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "MongoDB的数据库名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MongoDB的集群",
+          "example": "xxx",
+          "member": "string",
+          "name": "Collection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否复制存量数据，默认传参true",
+          "example": "true",
+          "member": "bool",
+          "name": "CopyExisting",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例资源",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MongoDB的连接ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MongoDB的连接port",
+          "example": "0",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MongoDB数据库用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MongoDB数据库密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听事件类型，为空时表示全选。取值包括insert,update,replace,delete,invalidate,drop,dropdatabase,rename，多个类型间使用,逗号分隔",
+          "example": "xxx",
+          "member": "string",
+          "name": "ListeningEvent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主从优先级，默认主节点",
+          "example": "xxx",
+          "member": "string",
+          "name": "ReadPreference",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "聚合管道",
+          "example": "xxx",
+          "member": "string",
+          "name": "Pipeline",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为自建集群",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MySQLConnectParam": {
+      "document": "MySQL连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MySQL的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当type为TDSQL_C_MYSQL时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MySQLParam": {
+      "document": "MySQL类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "MySQL的数据库名称，\"*\"为全数据库",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MySQL的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写",
+          "example": "xxx",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该MySQL在连接管理内的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制存量信息(schema_only不复制, initial全量)，默认位initial",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存放MySQL的Ddl信息的Topic，为空则默认不存放",
+          "example": "xxx",
+          "member": "string",
+          "name": "DdlTopic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"TABLE\" 表示读取项为 table，\"QUERY\" 表示读取项为 query",
+          "example": "TABLE",
+          "member": "string",
+          "name": "DataSourceMonitorMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 \"DataMonitorMode\"=\"TABLE\" 时，传入需要读取的 Table；当 \"DataMonitorMode\"=\"QUERY\" 时，传入需要读取的查询 sql 语句",
+          "example": "testTable",
+          "member": "string",
+          "name": "DataSourceMonitorResource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"TIMESTAMP\" 表示增量列为时间戳类型，\"INCREMENT\" 表示增量列为自增 id 类型",
+          "example": "TIMESTAMP",
+          "member": "string",
+          "name": "DataSourceIncrementMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传入需要监听的列名称",
+          "example": "testColumn",
+          "member": "string",
+          "name": "DataSourceIncrementColumn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"HEAD\" 表示复制存量 + 增量数据，\"TAIL\" 表示只复制增量数据",
+          "example": "HEAD",
+          "member": "string",
+          "name": "DataSourceStartFrom",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"INSERT\" 表示使用 Insert 模式插入，\"UPSERT\" 表示使用 Upsert 模式插入",
+          "example": "INSERT",
+          "member": "string",
+          "name": "DataTargetInsertMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 \"DataInsertMode\"=\"UPSERT\" 时，传入当前 upsert 时依赖的主键",
+          "example": "id",
+          "member": "string",
+          "name": "DataTargetPrimaryKeyField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表与消息间的映射关系",
+          "example": "无",
+          "member": "RecordMapping",
+          "name": "DataTargetRecordMapping",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "OperateResponseData": {
       "document": "操作类型返回的Data结构",
       "members": [
@@ -6013,6 +8401,148 @@
       ],
       "usage": "in"
     },
+    "PostgreSQLConnectParam": {
+      "document": "PostgreSQL连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "PostgreSQL的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当type为TDSQL_C_POSTGRESQL时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PostgreSQLParam": {
+      "document": "PostgreSQL类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "PostgreSQL的数据库名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写",
+          "example": "xxx",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该PostgreSQL在连接管理内的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件名(decoderbufs/pgoutput)，默认为decoderbufs",
+          "example": "xxx",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制存量信息(never增量, initial全量)，默认为initial",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Price": {
       "document": "消息价格实体",
       "members": [
@@ -6036,6 +8566,154 @@
         }
       ],
       "usage": "out"
+    },
+    "PrivateLinkParam": {
+      "document": "建立私有连接的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "客户实例的vip",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户实例的vpcId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RecordMapping": {
+      "document": "record 与数据库表的映射关系",
+      "members": [
+        {
+          "default": "",
+          "document": "消息的 key 名称",
+          "example": "key1",
+          "member": "string",
+          "name": "JsonKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息类型",
+          "example": "Integer",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息是否允许为空",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowNull",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应映射列名称",
+          "example": "testColumn",
+          "member": "string",
+          "name": "ColumnName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库表额外字段",
+          "example": "AUTO_INCREMENT COMMENT 'ID'",
+          "member": "string",
+          "name": "ExtraInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前列大小",
+          "example": "32",
+          "member": "string",
+          "name": "ColumnSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前列精度",
+          "example": "10",
+          "member": "string",
+          "name": "DecimalDigits",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为自增列",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoIncrement",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库表默认参数",
+          "example": "0",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RegexReplaceParam": {
+      "document": "数据处理——Value处理参数——正则替换参数",
+      "members": [
+        {
+          "default": "",
+          "document": "正则表达式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换新值",
+          "example": "xxx",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Region": {
       "document": "地域实体对象",
@@ -6122,6 +8800,32 @@
         }
       ],
       "usage": "out"
+    },
+    "ReplaceParam": {
+      "document": "数据处理——Value处理参数——替换参数",
+      "members": [
+        {
+          "default": "",
+          "document": "被替换值",
+          "example": "old",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换值",
+          "example": "new",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Route": {
       "document": "路由实体对象",
@@ -6214,6 +8918,204 @@
       ],
       "usage": "out"
     },
+    "SMTParam": {
+      "document": "数据处理——数据处理参数",
+      "members": [
+        {
+          "default": "",
+          "document": "数据处理KEY",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作，DATE系统预设-时间戳，CUSTOMIZE自定义，MAPPING映射，JSONPATH",
+          "example": "MAPPING",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据类型，ORIGINAL原始，STRING，INT64，FLOAT64，BOOLEAN，MAP，ARRAY",
+          "example": "ORIGINAL",
+          "member": "string",
+          "name": "SchemeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据处理VALUE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VALUE处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ValueParam",
+          "name": "ValueOperate",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始VALUE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "OriginalValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VALUE处理链\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ValueParam",
+          "name": "ValueOperates",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SQLServerConnectParam": {
+      "document": "SQLServer连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "SQLServer的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1433",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SQLServerParam": {
+      "document": "SQLServer类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "SQLServer的数据库名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SQLServer的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写",
+          "example": "xxx",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该SQLServer在连接管理内的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制存量信息(schema_only增量, initial全量)，默认为initial",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SaleInfo": {
       "document": "标准版销售信息",
       "members": [
@@ -6259,6 +9161,22 @@
         }
       ],
       "usage": "out"
+    },
+    "SecondaryAnalyseParam": {
+      "document": "数据处理——二次解析参数",
+      "members": [
+        {
+          "default": "",
+          "document": "分隔符",
+          "example": ",",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SendMessageRequest": {
       "document": "SendMessage请求参数结构体",
@@ -6347,6 +9265,32 @@
       ],
       "usage": "out"
     },
+    "SubstrParam": {
+      "document": "数据处理——Value处理参数——截取参数",
+      "members": [
+        {
+          "default": "",
+          "document": "截取起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取截止位置",
+          "example": "7",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Tag": {
       "document": "实例详情中的标签对象",
       "members": [
@@ -6370,6 +9314,32 @@
         }
       ],
       "usage": "out"
+    },
+    "TdwParam": {
+      "document": "Tdw类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "Tdw的bid",
+          "example": "xxx",
+          "member": "string",
+          "name": "Bid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tdw的tid",
+          "example": "xxx",
+          "member": "string",
+          "name": "Tid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Topic": {
       "document": "返回的topic对象",
@@ -6804,6 +9774,52 @@
       ],
       "usage": "out"
     },
+    "TopicParam": {
+      "document": "Topic配置",
+      "members": [
+        {
+          "default": "",
+          "document": "单独售卖Topic的Topic名称",
+          "example": "1234-xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "timestamp",
+          "member": "string",
+          "name": "OffsetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Offset类型为timestamp时必传，传时间戳，精确到秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1635339533",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Topic的TopicId【出参】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TopicPartitionDO": {
       "document": "分区详情",
       "members": [
@@ -6947,6 +9963,198 @@
       ],
       "usage": "out"
     },
+    "TransformParam": {
+      "document": "数据处理参数",
+      "members": [
+        {
+          "default": "",
+          "document": "解析格式，JSON，DELIMITER分隔符，REGULAR正则提取",
+          "example": "DELIMITER",
+          "member": "string",
+          "name": "AnalysisFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出格式",
+          "example": "JSON",
+          "member": "string",
+          "name": "OutputFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否保留解析失败数据",
+          "example": "xxx",
+          "member": "FailureParam",
+          "name": "FailureParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始数据",
+          "example": "xxx",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据来源，TOPIC从源topic拉取，CUSTOMIZE自定义",
+          "example": "xxx",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分隔符、正则表达式",
+          "example": ",",
+          "member": "string",
+          "name": "Regex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Map",
+          "example": "xxx",
+          "member": "MapParam",
+          "name": "MapParam",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤器",
+          "example": "xxx",
+          "member": "FilterMapParam",
+          "name": "FilterParam",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "测试结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MapParam",
+          "name": "AnalyseResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "底层引擎是否使用eb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UseEventBus",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TransformsParam": {
+      "document": "数据处理参数",
+      "members": [
+        {
+          "default": "",
+          "document": "原始数据",
+          "example": "{\"name\":\"abc\"}",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理链",
+          "example": "null",
+          "member": "FieldParam",
+          "name": "FieldChain",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "FilterMapParam",
+          "name": "FilterParam",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "FailureParam",
+          "name": "FailureParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测试结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "OutputFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "User": {
       "document": "用户实体",
       "members": [
@@ -7012,6 +10220,62 @@
         }
       ],
       "usage": "out"
+    },
+    "ValueParam": {
+      "document": "数据处理——Value处理参数",
+      "members": [
+        {
+          "default": "",
+          "document": "处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换",
+          "example": "TRIM",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换，TYPE=REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ReplaceParam",
+          "name": "Replace",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "截取，TYPE=SUBSTR时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SubstrParam",
+          "name": "Substr",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间转换，TYPE=DATE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "DateParam",
+          "name": "Date",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "正则替换，TYPE=REGEX_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RegexReplaceParam",
+          "name": "RegexReplace",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VipEntity": {
       "document": "虚拟IP实体",

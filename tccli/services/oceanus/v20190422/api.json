@@ -6,6 +6,18 @@
       "name": "检查快照是否可用",
       "output": "CheckSavepointResponse"
     },
+    "CopyJobs": {
+      "document": "单条和批量复制作业\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=1288112774",
+      "input": "CopyJobsRequest",
+      "name": "复制作业",
+      "output": "CopyJobsResponse"
+    },
+    "CreateFolder": {
+      "document": "作业列表页面新建文件夹请求",
+      "input": "CreateFolderRequest",
+      "name": "创建文件夹",
+      "output": "CreateFolderResponse"
+    },
     "CreateJob": {
       "document": "新建作业接口，一个 AppId 最多允许创建1000个作业",
       "input": "CreateJobRequest",
@@ -625,6 +637,59 @@
         }
       ],
       "usage": "out"
+    },
+    "CopyJobsRequest": {
+      "document": "CopyJobs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CopyJobsResponse": {
+      "document": "CopyJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFolderRequest": {
+      "document": "CreateFolder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
+          "example": "0",
+          "member": "int64",
+          "name": "FolderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFolderResponse": {
+      "document": "CreateFolder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateJobConfigRequest": {
       "document": "CreateJobConfig请求参数结构体",

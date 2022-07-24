@@ -38,14 +38,6 @@
         "title": "创建访问日志导出"
       }
     ],
-    "CreateAttackDownloadTask": [
-      {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=CreateAttackDownloadTask\n&FromTime=2019-12-30 00:00:00\n&ToTime=2019-12-30 23:59:59\n&Domain=abc.qcloudwaf.com\n&Name=d0wnload\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Flow\": \"XXXX-XXXX-XXXX\",\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
-        "title": "创建攻击日志下载任务"
-      }
-    ],
     "DeleteAccessExport": [
       {
         "document": "",
