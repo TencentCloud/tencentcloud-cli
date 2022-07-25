@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli as DescribeAutoScalingActivities --cli-unfold-argument  \
-    --Filters.0.Name activity-id \
-    --Filters.0.Values asa-o4v87ae9
+    --Filters.0.Values asa-o4v87ae9 \
+    --Filters.0.Name activity-id
 ```
 
 Output: 
@@ -35,7 +35,8 @@ Output:
                 "Cause": "Activity was launched in response to a difference between desired capacity and actual capacity.",
                 "StatusMessageSimplified": "Success",
                 "StatusMessage": "Success",
-                "StatusCode": "SUCCESSFUL"
+                "StatusCode": "SUCCESSFUL",
+                "InvocationResultSet": []
             }
         ],
         "RequestId": "1082ab5d-c985-4d8c-bb9d-0d05e282b4a7"
@@ -79,7 +80,8 @@ Output:
                 "Cause": "Activity was launched in response to a difference between desired capacity and actual capacity.",
                 "StatusMessageSimplified": "Success",
                 "StatusMessage": "Success",
-                "StatusCode": "SUCCESSFUL"
+                "StatusCode": "SUCCESSFUL",
+                "InvocationResultSet": []
             }
         ],
         "RequestId": "1082ab5d-c985-4d8c-bb9d-0d05e282b4a7"

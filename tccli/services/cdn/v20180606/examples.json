@@ -587,7 +587,7 @@
     "UpdateDomainConfig": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateDomainConfig\n&ProjectId=0\n&Domain=www.test.com\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDomainConfig\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"Domain\": \"www.test.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
         "title": "更新域名配置"
       }

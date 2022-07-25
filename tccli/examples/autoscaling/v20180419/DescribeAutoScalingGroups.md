@@ -59,7 +59,7 @@ Output:
                     "ReplaceLoadBalancerUnhealthy": false,
                     "ScalingMode": "CLASSIC_SCALING"
                 },
-                "LaunchConfigurationName": "test_2jerry",
+                "LaunchConfigurationName": "test",
                 "CapacityRebalance": false,
                 "TerminationPolicySet": [
                     "OLDEST_INSTANCE"
@@ -88,10 +88,10 @@ Input:
 
 ```
 tccli as DescribeAutoScalingGroups --cli-unfold-argument  \
-    --Filters.0.Name tag:city \
+    --Limit 1 \
     --Filters.0.Values shenzhen \
-    --Offset 0 \
-    --Limit 1
+    --Filters.0.Name tag:city \
+    --Offset 0
 ```
 
 Output: 

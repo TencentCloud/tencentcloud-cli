@@ -5,13 +5,21 @@
 Input: 
 
 ```
-tccli oceanus CopyJobs --cli-unfold-argument ```
+tccli oceanus CopyJobs --cli-unfold-argument  \
+    --WorkSpaceId sapce-xxx
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123456a"
+        "CopyJobsResults": [
+            {},
+            {}
+        ],
+        "FailCount": 1,
+        "RequestId": "123456a",
+        "SuccessCount": 1
     }
 }
 ```

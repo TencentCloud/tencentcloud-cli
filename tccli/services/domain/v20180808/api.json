@@ -2240,7 +2240,8 @@
           "member": "string",
           "name": "DomainId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2249,7 +2250,8 @@
           "member": "uint64",
           "name": "AutoRenew",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

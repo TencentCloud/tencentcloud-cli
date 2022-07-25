@@ -593,7 +593,7 @@
     "RestoreInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=RestoreInstance\n&InstanceId=crs-5a4py64p\n&Password=mypassword\n&BackupId=678362566696298532848117\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"BackupId\": \"678362566696298532848117\",\n    \"Password\": \"mypassword\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "恢复 CRS 实例"
       }

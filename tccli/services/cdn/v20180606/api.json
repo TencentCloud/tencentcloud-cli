@@ -439,7 +439,7 @@
       "output": "StopScdnDomainResponse"
     },
     "UpdateDomainConfig": {
-      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。",
+      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。\n云审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到云审计。",
       "input": "UpdateDomainConfigRequest",
       "name": "更新加速域名配置",
       "output": "UpdateDomainConfigResponse"
@@ -15469,7 +15469,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15478,7 +15479,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15487,7 +15489,8 @@
           "member": "Origin",
           "name": "Origin",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15496,7 +15499,8 @@
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15505,7 +15509,8 @@
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15514,7 +15519,8 @@
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15523,7 +15529,8 @@
           "member": "Compression",
           "name": "Compression",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15532,7 +15539,8 @@
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15541,7 +15549,8 @@
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15550,7 +15559,8 @@
           "member": "FollowRedirect",
           "name": "FollowRedirect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15559,7 +15569,8 @@
           "member": "ErrorPage",
           "name": "ErrorPage",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15568,7 +15579,8 @@
           "member": "RequestHeader",
           "name": "RequestHeader",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15577,7 +15589,8 @@
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15586,7 +15599,8 @@
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15595,7 +15609,8 @@
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15604,7 +15619,8 @@
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15613,7 +15629,8 @@
           "member": "VideoSeek",
           "name": "VideoSeek",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15622,7 +15639,8 @@
           "member": "Cache",
           "name": "Cache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15631,7 +15649,8 @@
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15640,7 +15659,8 @@
           "member": "Https",
           "name": "Https",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15649,7 +15669,8 @@
           "member": "Authentication",
           "name": "Authentication",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15658,7 +15679,8 @@
           "member": "Seo",
           "name": "Seo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15667,7 +15689,8 @@
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15676,7 +15699,8 @@
           "member": "Referer",
           "name": "Referer",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15685,7 +15709,8 @@
           "member": "MaxAge",
           "name": "MaxAge",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15694,7 +15719,8 @@
           "member": "SpecificConfig",
           "name": "SpecificConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15703,7 +15729,8 @@
           "member": "string",
           "name": "ServiceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15712,7 +15739,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15721,7 +15749,8 @@
           "member": "OriginPullTimeout",
           "name": "OriginPullTimeout",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15730,7 +15759,8 @@
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15739,7 +15769,8 @@
           "member": "UserAgentFilter",
           "name": "UserAgentFilter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15748,7 +15779,8 @@
           "member": "AccessControl",
           "name": "AccessControl",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15757,7 +15789,8 @@
           "member": "UrlRedirect",
           "name": "UrlRedirect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15766,7 +15799,8 @@
           "member": "int64",
           "name": "AccessPort",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15775,7 +15809,8 @@
           "member": "AdvancedAuthentication",
           "name": "AdvancedAuthentication",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15784,7 +15819,8 @@
           "member": "OriginAuthentication",
           "name": "OriginAuthentication",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15793,7 +15829,8 @@
           "member": "Ipv6Access",
           "name": "Ipv6Access",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15802,7 +15839,8 @@
           "member": "OfflineCache",
           "name": "OfflineCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15811,7 +15849,8 @@
           "member": "OriginCombine",
           "name": "OriginCombine",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15820,7 +15859,8 @@
           "member": "PostSize",
           "name": "PostMaxSize",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15829,7 +15869,8 @@
           "member": "Quic",
           "name": "Quic",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15838,7 +15879,8 @@
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15847,7 +15889,8 @@
           "member": "WebSocket",
           "name": "WebSocket",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15856,7 +15899,8 @@
           "member": "RemoteAuthentication",
           "name": "RemoteAuthentication",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15865,7 +15909,8 @@
           "member": "ShareCname",
           "name": "ShareCname",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15874,7 +15919,8 @@
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -15883,7 +15929,8 @@
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

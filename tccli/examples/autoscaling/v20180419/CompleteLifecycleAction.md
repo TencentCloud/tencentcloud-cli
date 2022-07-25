@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli as CompleteLifecycleAction --cli-unfold-argument  \
-    --LifecycleHookId ash-fbjiexz7 \
     --InstanceId ins-ni8bpmve \
-    --LifecycleActionResult CONTINUE
+    --LifecycleActionResult CONTINUE \
+    --LifecycleHookId ash-fbjiexz7
 ```
 
 Output: 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli as CompleteLifecycleAction --cli-unfold-argument  \
+    --LifecycleActionResult CONTINUE \
     --LifecycleHookId ash-fbjiexz7 \
-    --LifecycleActionToken 4d910016-2590-444d-8f4a-c14940036902 \
-    --LifecycleActionResult CONTINUE
+    --LifecycleActionToken 4d910016-2590-444d-8f4a-c14940036902
 ```
 
 Output: 

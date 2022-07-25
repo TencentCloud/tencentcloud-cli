@@ -1134,6 +1134,12 @@
       "name": "查询终端节点服务的服务白名单列表",
       "output": "DescribeVpcEndPointServiceWhiteListResponse"
     },
+    "DescribeVpcInner": {
+      "document": "用于获取vpc的信息 原始VPC OSS接口: GetVpc",
+      "input": "DescribeVpcInnerRequest",
+      "name": "用于获取vpc的信息",
+      "output": "DescribeVpcInnerResponse"
+    },
     "DescribeVpcInstances": {
       "document": " 本接口（DescribeVpcInstances）用于查询VPC下的云主机实例列表。",
       "input": "DescribeVpcInstancesRequest",
@@ -15036,6 +15042,104 @@
       ],
       "type": "object"
     },
+    "DescribeVpcInnerRequest": {
+      "document": "DescribeVpcInner请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "[\"vpc-jmaywf6r\"]",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "[123123]",
+          "member": "uint64",
+          "name": "VpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "251198225",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否查询默认vpc",
+          "example": "1",
+          "member": "uint64",
+          "name": "DefaultFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcInnerResponse": {
+      "document": "DescribeVpcInner返回参数结构体",
+      "members": [
+        {
+          "document": "原VPC OSS APIv2名称: GetVpc.total",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetVpc.vpcDetailSet\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcOssVpcDetail",
+          "name": "VpcDetailSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcInstancesRequest": {
       "document": "DescribeVpcInstances请求参数结构体",
       "members": [
@@ -26881,6 +26985,67 @@
       ],
       "usage": "out"
     },
+    "VpcOssAssistCidrs": {
+      "document": "复杂类型: VpcOssAssistCidrs",
+      "members": [
+        {
+          "default": "",
+          "document": "子网地址",
+          "example": "10.4.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.subnetUseInfo",
+          "example": "无",
+          "member": "VpcOssSubnetUseInfo",
+          "name": "SubnetUseInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "掩码",
+          "example": "255.255.0.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数掩码",
+          "example": "16",
+          "member": "int64",
+          "name": "IntMask",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.assistType",
+          "example": "0",
+          "member": "int64",
+          "name": "AssistType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "VpcOssDocker": {
       "document": "复杂类型: VpcOssDocker",
       "members": [
@@ -31412,6 +31577,199 @@
       ],
       "usage": "both"
     },
+    "VpcOssSubnetUseInfo": {
+      "document": "复杂类型: VpcOssSubnetUseInfo",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bDefault",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "16769060",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bCdc",
+          "example": "0",
+          "member": "int64",
+          "name": "CdcFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-7zayowkt",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子网地址",
+          "example": "10.4.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.broadcastFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "BroadcastFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.uniqCdcId",
+          "example": "xx",
+          "member": "string",
+          "name": "UniqueCdcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "掩码",
+          "example": "255.255.192.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.zoneId",
+          "example": "100001",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "251197522",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一SubnetId",
+          "example": "subnet-cx7wjby6",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数掩码",
+          "example": "18",
+          "member": "int64",
+          "name": "IntMask",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数subnetId",
+          "example": "2009875",
+          "member": "int64",
+          "name": "SubnetId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bLocalZone",
+          "example": "0",
+          "member": "int64",
+          "name": "LocalZoneFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.type",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bRemoteVpcSnat",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoteVpcSnatFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "aaa",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "VpcOssUpdatePeer": {
       "document": "复杂类型: VpcOssUpdatePeer",
       "members": [
@@ -32156,6 +32514,386 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssVpcDetail": {
+      "document": "复杂类型: VpcOssVpcDetail",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bDefault",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "16769060",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.transChannelFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "TransChannelFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-7zayowkt",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.dscpFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "DSCPFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "掩码",
+          "example": "255.255.0.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.regionId",
+          "example": "0",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.subnetRoutePriority",
+          "example": "0",
+          "member": "int64",
+          "name": "SubnetRoutePriority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "251197522",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.id",
+          "example": "495906",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子网地址",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.min",
+          "example": "167772160",
+          "member": "int64",
+          "name": "Min",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否自研",
+          "example": "0",
+          "member": "int64",
+          "name": "OwnedFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bVbcDc",
+          "example": "0",
+          "member": "int64",
+          "name": "VbcDcFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.ownerLevel",
+          "example": "-1",
+          "member": "int64",
+          "name": "OwnerLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数掩码",
+          "example": "16",
+          "member": "int64",
+          "name": "IntMask",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.dhcpFlag",
+          "example": "1",
+          "member": "int64",
+          "name": "DhcpFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.type",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.multicastFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "MulticastFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.cdcType",
+          "example": "0",
+          "member": "int64",
+          "name": "CdcType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.bypassPVgwSticky",
+          "example": "0",
+          "member": "int64",
+          "name": "BypassPVGWSticky",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.max",
+          "example": "167837695",
+          "member": "int64",
+          "name": "Max",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.directSend",
+          "example": "0",
+          "member": "int64",
+          "name": "DirectSend",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.nextGenFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "NextGenFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.hbFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "HBFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.gwIp",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "GatewayIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.createTime",
+          "example": "2021-05-10 15:40:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.count",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "cissytest",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.braceLinkFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "BraceLinkFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.region",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.learnTsvIp",
+          "example": "1",
+          "member": "int64",
+          "name": "LearnTsvIp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.cloudMonitorFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudMonitorFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetVpc.assistCidrs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcOssAssistCidrs",
+          "name": "AssistCidrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 2
         }
       ],
