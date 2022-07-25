@@ -120,6 +120,24 @@
       "name": "删除ACL规则",
       "output": "DeleteAclRuleResponse"
     },
+    "DeleteConnectResource": {
+      "document": "删除Datahub连接源",
+      "input": "DeleteConnectResourceRequest",
+      "name": "删除Datahub连接源",
+      "output": "DeleteConnectResourceResponse"
+    },
+    "DeleteDatahubTask": {
+      "document": "删除Datahub任务",
+      "input": "DeleteDatahubTaskRequest",
+      "name": "删除Datahub任务",
+      "output": "DeleteDatahubTaskResponse"
+    },
+    "DeleteDatahubTopic": {
+      "document": "删除Datahub主题",
+      "input": "DeleteDatahubTopicRequest",
+      "name": "删除Datahub主题",
+      "output": "DeleteDatahubTopicResponse"
+    },
     "DeleteGroup": {
       "document": "删除消费组",
       "input": "DeleteGroupRequest",
@@ -180,11 +198,41 @@
       "name": "查看可用区列表",
       "output": "DescribeCkafkaZoneResponse"
     },
+    "DescribeConnectResource": {
+      "document": "查询Datahub连接源",
+      "input": "DescribeConnectResourceRequest",
+      "name": "查询Datahub连接源",
+      "output": "DescribeConnectResourceResponse"
+    },
+    "DescribeConnectResources": {
+      "document": "查询Datahub连接源列表",
+      "input": "DescribeConnectResourcesRequest",
+      "name": "查询Datahub连接源列表",
+      "output": "DescribeConnectResourcesResponse"
+    },
     "DescribeConsumerGroup": {
       "document": "查询消费分组信息",
       "input": "DescribeConsumerGroupRequest",
       "name": "查询消费分组信息",
       "output": "DescribeConsumerGroupResponse"
+    },
+    "DescribeDatahubGroupOffsets": {
+      "document": "获取Datahub消费分组offset",
+      "input": "DescribeDatahubGroupOffsetsRequest",
+      "name": "获取Datahub消费分组offset",
+      "output": "DescribeDatahubGroupOffsetsResponse"
+    },
+    "DescribeDatahubTask": {
+      "document": "查询Datahub任务信息",
+      "input": "DescribeDatahubTaskRequest",
+      "name": "查询Datahub任务信息",
+      "output": "DescribeDatahubTaskResponse"
+    },
+    "DescribeDatahubTasks": {
+      "document": "查询Datahub任务列表 ",
+      "input": "DescribeDatahubTasksRequest",
+      "name": "查询Datahub任务列表",
+      "output": "DescribeDatahubTasksResponse"
     },
     "DescribeGroup": {
       "document": "枚举消费分组(精简版)",
@@ -270,11 +318,35 @@
       "name": "查询用户信息",
       "output": "DescribeUserResponse"
     },
+    "FetchDatahubMessageByOffset": {
+      "document": "根据指定offset位置的消息",
+      "input": "FetchDatahubMessageByOffsetRequest",
+      "name": "查询Datahub Topic消息",
+      "output": "FetchDatahubMessageByOffsetResponse"
+    },
+    "FetchLatestDatahubMessageList": {
+      "document": "查询最新消息列表",
+      "input": "FetchLatestDatahubMessageListRequest",
+      "name": "查询Datahub Topic最新消息列表",
+      "output": "FetchLatestDatahubMessageListResponse"
+    },
     "FetchMessageByOffset": {
       "document": "根据指定offset位置的消息",
       "input": "FetchMessageByOffsetRequest",
       "name": "查询消息",
       "output": "FetchMessageByOffsetResponse"
+    },
+    "ModifyConnectResource": {
+      "document": "编辑Datahub连接源",
+      "input": "ModifyConnectResourceRequest",
+      "name": "编辑Datahub连接源",
+      "output": "ModifyConnectResourceResponse"
+    },
+    "ModifyDatahubTask": {
+      "document": "修改Datahub任务",
+      "input": "ModifyDatahubTaskRequest",
+      "name": "修改Datahub任务",
+      "output": "ModifyDatahubTaskResponse"
     },
     "ModifyGroupOffsets": {
       "document": "设置Groups 消费分组offset",
@@ -1285,6 +1357,92 @@
       ],
       "usage": "both"
     },
+    "ClickHouseModifyConnectParam": {
+      "document": "ClickHouse修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "ClickHouse连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse连接源是否为自建集群【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务，默认为true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClickHouseParam": {
       "document": "ClickHouse类型入参",
       "members": [
@@ -1709,6 +1867,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Connection": {
+      "document": "Connection信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic的Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3428,6 +3622,148 @@
       ],
       "usage": "both"
     },
+    "DatahubTaskIdRes": {
+      "document": "Datahub请求的taskid",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DatahubTaskInfo": {
+      "document": "Datahub任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "task-xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "example": "SINK",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "SourceResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "TargetResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建进度百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "float",
+          "name": "TaskProgress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务当前处于的步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "等待连接",
+          "member": "string",
+          "name": "TaskCurrentStep",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Datahub转储Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "datahub-xxx",
+          "member": "string",
+          "name": "DatahubId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "步骤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "StepList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DateParam": {
       "document": "数据处理——Value处理参数——转换时间格式参数",
       "members": [
@@ -3588,6 +3924,114 @@
           "name": "Result",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConnectResourceRequest": {
+      "document": "DeleteConnectResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConnectResourceResponse": {
+      "document": "DeleteConnectResource返回参数结构体",
+      "members": [
+        {
+          "document": "连接源的Id",
+          "example": "xxx",
+          "member": "ConnectResourceResourceIdResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatahubTaskRequest": {
+      "document": "DeleteDatahubTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatahubTaskResponse": {
+      "document": "DeleteDatahubTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubTaskIdRes",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatahubTopicRequest": {
+      "document": "DeleteDatahubTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatahubTopicResponse": {
+      "document": "DeleteDatahubTopic返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果集",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4059,6 +4503,443 @@
       ],
       "type": "object"
     },
+    "DescribeConnectResource": {
+      "document": "查询连接源具体数据的返参",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的当前所处步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CurrentStep",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该连接源关联的Datahub任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DatahubTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DtsConnectParam",
+          "name": "DtsConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MongoDBConnectParam",
+          "name": "MongoDBConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "EsConnectParam",
+          "name": "EsConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ClickHouseConnectParam",
+          "name": "ClickHouseConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL配置，Type为MYSQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MySQLConnectParam",
+          "name": "MySQLConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "PostgreSQLConnectParam",
+          "name": "PostgreSQLConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeConnectResourceRequest": {
+      "document": "DescribeConnectResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectResourceResp": {
+      "document": "查询连接源具体数据的返参",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接源的当前所处步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CurrentStep",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "步骤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "StepList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL配置，Type为MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MySQLConnectParam",
+          "name": "MySQLConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "PostgreSQLConnectParam",
+          "name": "PostgreSQLConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DtsConnectParam",
+          "name": "DtsConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MongoDBConnectParam",
+          "name": "MongoDBConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "EsConnectParam",
+          "name": "EsConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ClickHouseConnectParam",
+          "name": "ClickHouseConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeConnectResourceResponse": {
+      "document": "DescribeConnectResource返回参数结构体",
+      "members": [
+        {
+          "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DescribeConnectResourceResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectResourcesRequest": {
+      "document": "DescribeConnectResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源名称的关键字查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectResourcesResp": {
+      "document": "查询连接源列表的返参",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源个数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接源数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DescribeConnectResource",
+          "name": "ConnectResourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeConnectResourcesResponse": {
+      "document": "DescribeConnectResources返回参数结构体",
+      "members": [
+        {
+          "document": "连接源列表",
+          "example": "xxx",
+          "member": "DescribeConnectResourcesResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConsumerGroupRequest": {
       "document": "DescribeConsumerGroup请求参数结构体",
       "members": [
@@ -4112,6 +4993,376 @@
           "document": "返回的消费分组信息",
           "member": "ConsumerGroupResponse",
           "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubGroupOffsetsRequest": {
+      "document": "DescribeDatahubGroupOffsets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（过滤条件）按照实例 ID 过滤",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kafka 消费分组",
+          "example": "xxx",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配 topicName",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次查询的偏移位置，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次返回结果的最大个数，默认为50，最大值为50",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubGroupOffsetsResponse": {
+      "document": "DescribeDatahubGroupOffsets返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果对象",
+          "example": "无",
+          "member": "GroupOffsetResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubTaskRequest": {
+      "document": "DescribeDatahubTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubTaskRes": {
+      "document": "查询Datahub任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "task-xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "example": "SINK",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "SourceResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubResource",
+          "name": "TargetResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Connection列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "Connection",
+          "name": "Connections",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息处理规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TransformParam",
+          "name": "TransformParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DatahubId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的SchemaId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SchemaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据处理规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TransformsParam",
+          "name": "TransformsParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDatahubTaskResponse": {
+      "document": "DescribeDatahubTask返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "xxx",
+          "member": "DescribeDatahubTaskRes",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubTasksRequest": {
+      "document": "DescribeDatahubTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，按照 TaskName 过滤，支持模糊查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转储的目标类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型，SOURCE数据接入，SINK数据流出",
+          "example": "SINK",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转储的源类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转储的资源",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatahubTasksRes": {
+      "document": "查询Datahub任务列表",
+      "members": [
+        {
+          "default": "",
+          "document": "任务总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Datahub任务信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubTaskInfo",
+          "name": "TaskList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDatahubTasksResponse": {
+      "document": "DescribeDatahubTasks返回参数结构体",
+      "members": [
+        {
+          "document": "返回任务查询结果",
+          "example": "xxx",
+          "member": "DescribeDatahubTasksRes",
+          "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5165,6 +6416,82 @@
       ],
       "usage": "both"
     },
+    "DtsModifyConnectParam": {
+      "document": "Dts修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Dts实例Id【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts消费分组的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务，默认为true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Dts订阅的topic【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "DtsParam": {
       "document": "Dts类型入参",
       "members": [
@@ -5410,6 +6737,92 @@
           "name": "UniqVpcId",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EsModifyConnectParam": {
+      "document": "Es修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Es连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es连接源是否为自建集群【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         },
         {
@@ -5722,6 +7135,123 @@
         }
       ],
       "usage": "both"
+    },
+    "FetchDatahubMessageByOffsetRequest": {
+      "document": "FetchDatahubMessageByOffset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息，必填",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchDatahubMessageByOffsetResponse": {
+      "document": "FetchDatahubMessageByOffset返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchLatestDatahubMessageListRequest": {
+      "document": "FetchLatestDatahubMessageList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大查询条数，最小1，最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "MessageCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchLatestDatahubMessageListResponse": {
+      "document": "FetchLatestDatahubMessageList返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果。",
+          "example": "无",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "FetchMessageByOffsetRequest": {
       "document": "FetchMessageByOffset请求参数结构体",
@@ -7310,6 +8840,82 @@
       ],
       "usage": "both"
     },
+    "MariaDBModifyConnectParam": {
+      "document": "MariaDB连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MariaDB连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MariaDBParam": {
       "document": "MariaDB类型入参",
       "members": [
@@ -7355,6 +8961,186 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyConnectResourceRequest": {
+      "document": "ModifyConnectResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接源的Id",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源名称，为空时不修改",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源描述，为空时不修改",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接源类型，修改数据源参数时，需要与原Type相同，否则编辑数据源无效",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Dts配置，Type为DTS时必填",
+          "example": "xxx",
+          "member": "DtsModifyConnectParam",
+          "name": "DtsConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MongoDB配置，Type为MONGODB时必填",
+          "example": "xxx",
+          "member": "MongoDBModifyConnectParam",
+          "name": "MongoDBConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Es配置，Type为ES时必填",
+          "example": "xxx",
+          "member": "EsModifyConnectParam",
+          "name": "EsConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "ClickHouse配置，Type为CLICKHOUSE时必填",
+          "example": "xxx",
+          "member": "ClickHouseModifyConnectParam",
+          "name": "ClickHouseConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填",
+          "example": "xxx",
+          "member": "MySQLModifyConnectParam",
+          "name": "MySQLConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填",
+          "example": "xxx",
+          "member": "PostgreSQLModifyConnectParam",
+          "name": "PostgreSQLConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "MariaDB配置，Type为MARIADB时必填",
+          "example": "xxx",
+          "member": "MariaDBModifyConnectParam",
+          "name": "MariaDBConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "SQLServer配置，Type为SQLSERVER时必填",
+          "example": "xxx",
+          "member": "SQLServerModifyConnectParam",
+          "name": "SQLServerConnectParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConnectResourceResponse": {
+      "document": "ModifyConnectResource返回参数结构体",
+      "members": [
+        {
+          "document": "连接源的Id",
+          "example": "xxx",
+          "member": "ConnectResourceResourceIdResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatahubTaskRequest": {
+      "document": "ModifyDatahubTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatahubTaskResponse": {
+      "document": "ModifyDatahubTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "DatahubTaskIdRes",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyGroupOffsetsRequest": {
       "document": "ModifyGroupOffsets请求参数结构体",
@@ -7972,6 +9758,92 @@
       ],
       "usage": "both"
     },
+    "MongoDBModifyConnectParam": {
+      "document": "MongoDB修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MongoDB连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MongoDB连接源是否为自建集群【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MongoDBParam": {
       "document": "MongoDB类型入参",
       "members": [
@@ -8174,6 +10046,92 @@
         {
           "default": "",
           "document": "当type为TDSQL_C_MYSQL时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MySQLModifyConnectParam": {
+      "document": "MySQL修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "MySQL连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MySQL连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当type为TDSQL_C_MYSQL时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
@@ -8467,6 +10425,92 @@
         {
           "default": "",
           "document": "当type为TDSQL_C_POSTGRESQL时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PostgreSQLModifyConnectParam": {
+      "document": "PostgreSQL修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当type为TDSQL_C_POSTGRESQL时，该参数才有值【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
@@ -9070,6 +11114,82 @@
       ],
       "usage": "both"
     },
+    "SQLServerModifyConnectParam": {
+      "document": "SQLServer修改连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "SQLServer连接源的实例资源【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer的连接port【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1433",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的实例vip【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的vpcId【不支持修改】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SQLServerParam": {
       "document": "SQLServer类型入参",
       "members": [
@@ -9336,6 +11456,16 @@
           "name": "Tid",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为国内站，默认true",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDomestic",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

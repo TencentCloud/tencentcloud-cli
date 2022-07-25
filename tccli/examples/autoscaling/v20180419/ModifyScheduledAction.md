@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli as ModifyScheduledAction --cli-unfold-argument  \
-    --ScheduledActionId asst-chwbkq4c \
-    --ScheduledActionName scheduled-action-0 \
-    --MaxSize 5 \
-    --MinSize 0 \
     --DesiredCapacity 3 \
-    --StartTime 2018-08-28T23:00:00+08:00
+    --MinSize 0 \
+    --MaxSize 5 \
+    --ScheduledActionName scheduled-action-0 \
+    --StartTime 2018-08-28T23:00:00+08:00 \
+    --ScheduledActionId asst-chwbkq4c
 ```
 
 Output: 

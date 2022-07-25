@@ -3,7 +3,7 @@
     "AttachInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=AttachInstances\n&AutoScalingGroupId=asg-boz1qhnk\n&InstanceIds.0=ins-cri8d02t\n&InstanceIds.1=ins-osckfnm7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-q59zikez\",\n        \"RequestId\": \"5b039ee6-e8ff-4605-bb24-b45337747431\"\n    }\n}",
         "title": "添加实例到伸缩组中"
       }
@@ -11,13 +11,13 @@
     "AttachLoadBalancers": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=AttachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&LoadBalancerIds.0=lb-crhgatrf\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"LoadBalancerIds\": [\n        \"lb-crhgatrf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
         "title": "将传统负载均衡器lb-crhgatrf添加到伸缩组"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=AttachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"10\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）添加到伸缩组"
       }
@@ -33,13 +33,13 @@
     "CompleteLifecycleAction": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=CompleteLifecycleAction\n&LifecycleHookId=ash-fbjiexz7\n&InstanceId=ins-ni8bpmve\n&LifecycleActionResult=CONTINUE\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteLifecycleAction\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-ni8bpmve\",\n    \"LifecycleActionResult\": \"CONTINUE\",\n    \"LifecycleHookId\": \"ash-fbjiexz7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0cf47b9-4236-491c-bfab-106947198afe\"\n    }\n}",
         "title": "完成生命周期动作，通过InstanceId调用"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=CompleteLifecycleAction\n&LifecycleHookId=ash-fbjiexz7\n&LifecycleActionToken=4d910016-2590-444d-8f4a-c14940036902\n&LifecycleActionResult=CONTINUE\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteLifecycleAction\n<公共请求参数>\n\n{\n    \"LifecycleActionResult\": \"CONTINUE\",\n    \"LifecycleHookId\": \"ash-fbjiexz7\",\n    \"LifecycleActionToken\": \"4d910016-2590-444d-8f4a-c14940036902\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"de792ffe-e37e-4f1d-8534-300b555739da\"\n    }\n}",
         "title": "完成生命周期动作，通过LifecycleActionToken调用"
       }
@@ -47,7 +47,7 @@
     "CreateAutoScalingGroup": [
       {
         "document": "创建伸缩组，VPC网络，配置7层负载均衡器",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateAutoScalingGroup\n&AutoScalingGroupName=asg-vpc-7layer-lb\n&DefaultCooldown=300\n&DesiredCapacity=0\n&LaunchConfigurationId=asc-7vucy6ae\n&MaxSize=10\n&MinSize=0\n&ProjectId=0\n&VpcId=vpc-hy436tmc\n&SubnetIds.0=subnet-3tmerl37\n&SubnetIds.1=subnet-b0vxjhot\n&TerminationPolicies.0=OLDEST_INSTANCE\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoScalingGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-hy436tmc\",\n    \"DesiredCapacity\": \"0\",\n    \"LaunchConfigurationId\": \"asc-7vucy6ae\",\n    \"ProjectId\": \"0\",\n    \"SubnetIds\": [\n        \"subnet-b0vxjhot\",\n        \"subnet-3tmerl37\"\n    ],\n    \"AutoScalingGroupName\": \"asg-vpc-7layer-lb\",\n    \"DefaultCooldown\": \"300\",\n    \"MinSize\": \"0\",\n    \"MaxSize\": \"10\",\n    \"TerminationPolicies\": [\n        \"OLDEST_INSTANCE\"\n    ],\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"10\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingGroupId\": \"asg-nkdwoui0\",\n        \"RequestId\": \"a5d66fed-85b9-4f43-8243-597337ba896e\"\n    }\n}",
         "title": "创建伸缩组"
       }
@@ -89,25 +89,25 @@
     "CreateLifecycleHook": [
       {
         "document": "创建生命周期挂钩，在实例创建场景下生效。DefaultResult采用默认值，即CONTINUE。HeartbeatTimeout采用默认值，即300秒。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLifecycleHook\n&AutoScalingGroupId=asg-8fbozqja\n&LifecycleHookName=one-hook-default\n&LifecycleTransition=INSTANCE_LAUNCHING\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"one-hook-default\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-8azjzxj9\",\n        \"RequestId\": \"4fa9fd2e-5b6c-49fe-9ba7-ed2ee62d8271\"\n    }\n}",
         "title": "创建生命周期挂钩，采用默认值"
       },
       {
         "document": "创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为360秒。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLifecycleHook\n&AutoScalingGroupId=asg-8fbozqja\n&DefaultResult=ABANDON\n&HeartbeatTimeout=360\n&LifecycleHookName=one-hook\n&LifecycleTransition=INSTANCE_LAUNCHING\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleHookName\": \"one-hook\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": \"360\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-heyubibl\",\n        \"RequestId\": \"5e414011-3359-45bd-8ba4-5b503d3fd3f6\"\n    }\n}",
         "title": "创建生命周期挂钩"
       },
       {
         "document": "创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为CONTINUE，HeartbeatTimeout设置为120秒，通知名为“one-queue”的CMQ队列模型。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLifecycleHook\n&AutoScalingGroupId=asg-8fbozqja\n&DefaultResult=CONTINUE\n&HeartbeatTimeout=120\n&LifecycleHookName=launch-queue\n&LifecycleTransition=INSTANCE_LAUNCHING\n&NotificationMetadata=queue\n&NotificationTarget.TargetType=CMQ_QUEUE\n&NotificationTarget.QueueName=one-queue\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"HeartbeatTimeout\": \"120\",\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"launch-queue\",\n    \"NotificationMetadata\": \"queue\",\n    \"NotificationTarget\": {\n        \"TargetType\": \"CMQ_QUEUE\",\n        \"QueueName\": \"one-queue\"\n    },\n    \"DefaultResult\": \"CONTINUE\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-fbjiexz7\",\n        \"RequestId\": \"d3cf27b7-3090-4317-9107-d2eac986a446\"\n    }\n}",
         "title": "创建生命周期挂钩，通知CMQ队列模型"
       },
       {
         "document": "创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的CMQ主题模型。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLifecycleHook\n&AutoScalingGroupId=asg-8fbozqja\n&DefaultResult=ABANDON\n&HeartbeatTimeout=120\n&LifecycleHookName=terminate-topic\n&LifecycleTransition=INSTANCE_TERMINATING\n&NotificationMetadata=topic\n&NotificationTarget.TargetType=CMQ_TOPIC\n&NotificationTarget.TopicName=one-topic\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"HeartbeatTimeout\": \"120\",\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"terminate-topic\",\n    \"NotificationMetadata\": \"topic\",\n    \"NotificationTarget\": {\n        \"TargetType\": \"CMQ_TOPIC\",\n        \"TopicName\": \"one-topic\"\n    },\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleTransition\": \"INSTANCE_TERMINATING\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-oq76wsrx\",\n        \"RequestId\": \"cdb7670b-0412-444f-9d2f-0da9cd07c410\"\n    }\n}",
         "title": "创建生命周期挂钩，通知CMQ主题模型"
       }
@@ -115,7 +115,7 @@
     "CreateNotificationConfiguration": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateNotificationConfiguration\n&AutoScalingGroupId=asg-12wjuh0s\n&NotificationTypes.0=SCALE_OUT_SUCCESSFUL\n&NotificationTypes.1=SCALE_OUT_FAILED\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotificationConfiguration\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"NotificationTypes\": [\n        \"SCALE_OUT_FAILED\",\n        \"SCALE_OUT_SUCCESSFUL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingNotificationId\": \"asn-2sestqbr\",\n        \"RequestId\": \"fb02c8bd-5f38-4786-91b6-0c6e06a88832\"\n    }\n}",
         "title": "创建扩容成功、扩容失败事件通知"
       },
@@ -143,13 +143,13 @@
     "CreateScheduledAction": [
       {
         "document": "创建定时任务，在指定时间（北京时间2018年8月28日23点）调整伸缩组的最大实例数、最小实例数和期望实例数至 10、4、6。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateScheduledAction\n&AutoScalingGroupId=asg-2nr9xh8h\n&ScheduledActionName=scheduled-action-0\n&MaxSize=10\n&MinSize=4\n&DesiredCapacity=6\n&StartTime=2018-08-28T23:00:00+08:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": \"6\",\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": \"4\",\n    \"MaxSize\": \"10\",\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScheduledActionId\": \"asst-chwbkq4c\",\n        \"RequestId\": \"193a710f-8dbf-46aa-8b4a-195532244df8\"\n    }\n}",
         "title": "创建单次执行的定时任务"
       },
       {
         "document": "创建定时任务，从北京时间2018年8月28日开始，每天 23:00 调整伸缩组的最大实例数、最小实例数和期望实例数至 7、2、3，在北京时间2019年1月1日 00:00 后结束。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateScheduledAction\n&AutoScalingGroupId=asg-2nr9xh8h\n&ScheduledActionName=scheduled-action-1\n&MaxSize=7\n&MinSize=2\n&DesiredCapacity=3\n&StartTime=2018-08-28T23:00:00+08:00\n&EndTime=2019-01-01T00:00:00+08:00\n&Recurrence=0 23 */1 * *\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"Recurrence\": \"0 23 */1 * *\",\n    \"DesiredCapacity\": \"3\",\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": \"2\",\n    \"MaxSize\": \"7\",\n    \"ScheduledActionName\": \"scheduled-action-1\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"EndTime\": \"2019-01-01T00:00:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScheduledActionId\": \"asst-le3us530\",\n        \"RequestId\": \"502fd6fa-44ff-4c79-b77e-ee20f72bddc0\"\n    }\n}",
         "title": "创建重复执行的定时任务"
       }
@@ -157,7 +157,7 @@
     "DeleteAutoScalingGroup": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteAutoScalingGroup\n&AutoScalingGroupId=asg-nvnlpbb8\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-nvnlpbb8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b12066f8-1a4d-4a08-a0e0-d4b8a7f88568\"\n    }\n}",
         "title": "删除指定伸缩组"
       }
@@ -165,7 +165,7 @@
     "DeleteLaunchConfiguration": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteLaunchConfiguration\n&LaunchConfigurationId=asc-fdz8j7dh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLaunchConfiguration\n<公共请求参数>\n\n{\n    \"LaunchConfigurationId\": \"asc-fdz8j7dh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfc4da00-b643-405c-bb4f-d590cfa48b92\"\n    }\n}",
         "title": "删除启动配置"
       }
@@ -173,7 +173,7 @@
     "DeleteLifecycleHook": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteLifecycleHook\n&LifecycleHookId=ash-5rynk2n5\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLifecycleHook\n<公共请求参数>\n\n{\n    \"LifecycleHookId\": \"ash-5rynk2n5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4351a2d1-5cf1-43cc-97d3-16444c86b29f\"\n    }\n}",
         "title": "删除指定的生命周期挂钩"
       }
@@ -181,7 +181,7 @@
     "DeleteNotificationConfiguration": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteNotificationConfiguration\n&AutoScalingNotificationId=asn-2sestqbr\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNotificationConfiguration\n<公共请求参数>\n\n{\n    \"AutoScalingNotificationId\": \"asn-2sestqbr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12868c8c-b1a3-4b66-a03d-1a3cacadca1d\"\n    }\n}",
         "title": "删除通知"
       }
@@ -189,7 +189,7 @@
     "DeleteScalingPolicy": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteScalingPolicy\n&AutoScalingPolicyId=asp-lnfqbsoq\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-lnfqbsoq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"56e8b8fc-6043-4b3e-87b6-1a0be1c58f01\"\n    }\n}",
         "title": "删除告警策略"
       }
@@ -197,7 +197,7 @@
     "DeleteScheduledAction": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DeleteScheduledAction\n&ScheduledActionId=asst-chwbkq4c\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledAction\n<公共请求参数>\n\n{\n    \"ScheduledActionId\": \"asst-chwbkq4c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde28f43-67f6-4084-a01e-9623c08ff288\"\n    }\n}",
         "title": "删除定时任务"
       }
@@ -205,7 +205,7 @@
     "DescribeAccountLimits": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAccountLimits\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountLimits\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"NumberOfLaunchConfigurations\": 15,\n        \"MaxNumberOfLaunchConfigurations\": 20,\n        \"NumberOfAutoScalingGroups\": 25,\n        \"MaxNumberOfAutoScalingGroups\": 30,\n        \"RequestId\": \"0c243e3a-70e0-4365-98b1-5fe22b4498a1\"\n    }\n}",
         "title": "查询启动配置和伸缩组的限制"
       }
@@ -213,14 +213,14 @@
     "DescribeAutoScalingActivities": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingActivities\n&Filters.0.Name=activity-id\n&Filters.0.Values.0=asa-o4v87ae9\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"LifecycleActionResultSet\": [],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\"\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingActivities\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"asa-o4v87ae9\"\n            ],\n            \"Name\": \"activity-id\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"LifecycleActionResultSet\": [],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\",\n                \"InvocationResultSet\": []\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
         "title": "使用Filters查看伸缩活动列表"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingActivities\n&ActivityIds.0=asa-o4v87ae9\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"LifecycleActionResultSet\": [],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\"\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingActivities\n<公共请求参数>\n\n{\n    \"ActivityIds\": [\n        \"asa-o4v87ae9\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"LifecycleActionResultSet\": [],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\",\n                \"InvocationResultSet\": []\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
         "title": "根据伸缩活动ID查询伸缩活动列表"
       }
     ],
@@ -235,21 +235,21 @@
     "DescribeAutoScalingGroupLastActivities": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingGroupLastActivities\n&AutoScalingGroupIds.0=asg-2umy3jbd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"LifecycleActionResultSet\": [],\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\"\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingGroupLastActivities\n<公共请求参数>\n\n{\n    \"AutoScalingGroupIds\": [\n        \"asg-2umy3jbd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivitySet\": [\n            {\n                \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"LifecycleActionResultSet\": [],\n                \"ActivityRelatedInstanceSet\": [\n                    {\n                        \"InstanceId\": \"ins-q3ss14yo\",\n                        \"InstanceStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"DetailedStatusMessageSet\": [],\n                \"ActivityType\": \"SCALE_OUT\",\n                \"ActivityId\": \"asa-o4v87ae9\",\n                \"StartTime\": \"2018-11-20T08:33:56Z\",\n                \"CreatedTime\": \"2018-11-20T08:33:56Z\",\n                \"EndTime\": \"2018-11-20T08:34:52Z\",\n                \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\",\n                \"StatusMessageSimplified\": \"Success\",\n                \"StatusMessage\": \"Success\",\n                \"StatusCode\": \"SUCCESSFUL\",\n                \"InvocationResultSet\": []\n            }\n        ],\n        \"RequestId\": \"1082ab5d-c985-4d8c-bb9d-0d05e282b4a7\"\n    }\n}",
         "title": "查询伸缩组最新一次伸缩活动列表"
       }
     ],
     "DescribeAutoScalingGroups": [
       {
         "document": "指定伸缩组ID查询伸缩组",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingGroups\n&AutoScalingGroupIds.0=asg-pts6qcgp\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AutoScalingGroupSet\": [\n            {\n                \"InActivityStatus\": \"NOT_IN_ACTIVITY\",\n                \"LoadBalancerIdSet\": [],\n                \"RetryPolicy\": \"IMMEDIATE_RETRY\",\n                \"InServiceInstanceCount\": 0,\n                \"CreatedTime\": \"2022-04-21T03:21:14Z\",\n                \"SpotMixedAllocationPolicy\": {\n                    \"CompensateWithBaseInstance\": null,\n                    \"SpotAllocationStrategy\": null,\n                    \"OnDemandPercentageAboveBaseCapacity\": null,\n                    \"BaseCapacity\": null\n                },\n                \"VpcId\": \"vpc-lceuvai4\",\n                \"InstanceAllocationPolicy\": \"LAUNCH_CONFIGURATION\",\n                \"Tags\": [],\n                \"LaunchConfigurationId\": \"asc-mo1woym9\",\n                \"MaxSize\": 1,\n                \"MultiZoneSubnetPolicy\": \"PRIORITY\",\n                \"SubnetIdSet\": [\n                    \"subnet-6qqolfi7\"\n                ],\n                \"HealthCheckType\": \"CLB\",\n                \"LoadBalancerHealthCheckGracePeriod\": 0,\n                \"ForwardLoadBalancerSet\": [\n                    {\n                        \"TargetAttributes\": [\n                            {\n                                \"Port\": 8080,\n                                \"Weight\": 10\n                            }\n                        ],\n                        \"Region\": \"ap-shanghai\",\n                        \"LocationId\": \"loc-5dovrfov\",\n                        \"ListenerId\": \"lbl-i4p05pmv\",\n                        \"LoadBalancerId\": \"lb-pbx8nq2p\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"AutoScalingGroupName\": \"testasg\",\n                \"MinSize\": 0,\n                \"ServiceSettings\": {\n                    \"ReplaceMonitorUnhealthy\": false,\n                    \"ReplaceLoadBalancerUnhealthy\": false,\n                    \"ScalingMode\": \"CLASSIC_SCALING\"\n                },\n                \"LaunchConfigurationName\": \"test_2jerry\",\n                \"CapacityRebalance\": false,\n                \"TerminationPolicySet\": [\n                    \"OLDEST_INSTANCE\"\n                ],\n                \"AutoScalingGroupStatus\": \"NORMAL\",\n                \"InstanceCount\": 0,\n                \"DesiredCapacity\": 0,\n                \"AutoScalingGroupId\": \"asg-pts6qcgp\",\n                \"Ipv6AddressCount\": 0,\n                \"DefaultCooldown\": 300,\n                \"EnabledStatus\": \"ENABLED\",\n                \"ZoneSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"53a76c96-a88c-4972-8488-66d6c15a080f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingGroups\n<公共请求参数>\n\n{\n    \"AutoScalingGroupIds\": [\n        \"asg-pts6qcgp\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoScalingGroupSet\": [\n            {\n                \"InActivityStatus\": \"NOT_IN_ACTIVITY\",\n                \"LoadBalancerIdSet\": [],\n                \"RetryPolicy\": \"IMMEDIATE_RETRY\",\n                \"InServiceInstanceCount\": 0,\n                \"CreatedTime\": \"2022-04-21T03:21:14Z\",\n                \"SpotMixedAllocationPolicy\": {\n                    \"CompensateWithBaseInstance\": null,\n                    \"SpotAllocationStrategy\": null,\n                    \"OnDemandPercentageAboveBaseCapacity\": null,\n                    \"BaseCapacity\": null\n                },\n                \"VpcId\": \"vpc-lceuvai4\",\n                \"InstanceAllocationPolicy\": \"LAUNCH_CONFIGURATION\",\n                \"Tags\": [],\n                \"LaunchConfigurationId\": \"asc-mo1woym9\",\n                \"MaxSize\": 1,\n                \"MultiZoneSubnetPolicy\": \"PRIORITY\",\n                \"SubnetIdSet\": [\n                    \"subnet-6qqolfi7\"\n                ],\n                \"HealthCheckType\": \"CLB\",\n                \"LoadBalancerHealthCheckGracePeriod\": 0,\n                \"ForwardLoadBalancerSet\": [\n                    {\n                        \"TargetAttributes\": [\n                            {\n                                \"Port\": 8080,\n                                \"Weight\": 10\n                            }\n                        ],\n                        \"Region\": \"ap-shanghai\",\n                        \"LocationId\": \"loc-5dovrfov\",\n                        \"ListenerId\": \"lbl-i4p05pmv\",\n                        \"LoadBalancerId\": \"lb-pbx8nq2p\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"AutoScalingGroupName\": \"testasg\",\n                \"MinSize\": 0,\n                \"ServiceSettings\": {\n                    \"ReplaceMonitorUnhealthy\": false,\n                    \"ReplaceLoadBalancerUnhealthy\": false,\n                    \"ScalingMode\": \"CLASSIC_SCALING\"\n                },\n                \"LaunchConfigurationName\": \"test\",\n                \"CapacityRebalance\": false,\n                \"TerminationPolicySet\": [\n                    \"OLDEST_INSTANCE\"\n                ],\n                \"AutoScalingGroupStatus\": \"NORMAL\",\n                \"InstanceCount\": 0,\n                \"DesiredCapacity\": 0,\n                \"AutoScalingGroupId\": \"asg-pts6qcgp\",\n                \"Ipv6AddressCount\": 0,\n                \"DefaultCooldown\": 300,\n                \"EnabledStatus\": \"ENABLED\",\n                \"ZoneSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"53a76c96-a88c-4972-8488-66d6c15a080f\"\n    }\n}",
         "title": "查询伸缩组"
       },
       {
         "document": "查询绑定了标签键值对（city:shenzhen）的伸缩组。",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingGroups\n&Filters.0.Name=tag:city\n&Filters.0.Values.0=shenzhen\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingGroups\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"shenzhen\"\n            ],\n            \"Name\": \"tag:city\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingGroupSet\": [\n            {\n                \"InActivityStatus\": \"NOT_IN_ACTIVITY\",\n                \"LoadBalancerIdSet\": [],\n                \"RetryPolicy\": \"IMMEDIATE_RETRY\",\n                \"InServiceInstanceCount\": 0,\n                \"CreatedTime\": \"2019-10-29T02:21:26Z\",\n                \"SpotMixedAllocationPolicy\": {\n                    \"CompensateWithBaseInstance\": null,\n                    \"SpotAllocationStrategy\": null,\n                    \"OnDemandPercentageAboveBaseCapacity\": null,\n                    \"BaseCapacity\": null\n                },\n                \"VpcId\": \"vpc-qmjyqjnk\",\n                \"InstanceAllocationPolicy\": \"LAUNCH_CONFIGURATION\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shenzhen\"\n                    }\n                ],\n                \"LaunchConfigurationId\": \"asc-3d9e2zfx\",\n                \"MaxSize\": 10,\n                \"MultiZoneSubnetPolicy\": \"PRIORITY\",\n                \"SubnetIdSet\": [\n                    \"subnet-3cpb9yfp\",\n                    \"subnet-c98udmmr\",\n                    \"subnet-1xsr551x\",\n                    \"subnet-o3ibshdr\",\n                    \"subnet-6c7q2jhz\"\n                ],\n                \"HealthCheckType\": \"CVM\",\n                \"LoadBalancerHealthCheckGracePeriod\": 0,\n                \"ForwardLoadBalancerSet\": [\n                    {\n                        \"TargetAttributes\": [\n                            {\n                                \"Port\": 8080,\n                                \"Weight\": 10\n                            }\n                        ],\n                        \"Region\": \"ap-shanghai\",\n                        \"LocationId\": \"\",\n                        \"ListenerId\": \"lbl-aiwdu9bd\",\n                        \"LoadBalancerId\": \"lb-k264wzwj\"\n                    },\n                    {\n                        \"TargetAttributes\": [\n                            {\n                                \"Port\": 80,\n                                \"Weight\": 10\n                            }\n                        ],\n                        \"Region\": \"ap-shanghai\",\n                        \"LocationId\": \"loc-qmxmx085\",\n                        \"ListenerId\": \"lbl-ldjbrn65\",\n                        \"LoadBalancerId\": \"lb-k264wzwj\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"AutoScalingGroupName\": \"sz-asg\",\n                \"MinSize\": 0,\n                \"ServiceSettings\": {\n                    \"ReplaceMonitorUnhealthy\": false,\n                    \"ReplaceLoadBalancerUnhealthy\": false,\n                    \"ScalingMode\": \"CLASSIC_SCALING\"\n                },\n                \"LaunchConfigurationName\": \"sz-asc\",\n                \"CapacityRebalance\": false,\n                \"TerminationPolicySet\": [\n                    \"OLDEST_INSTANCE\"\n                ],\n                \"AutoScalingGroupStatus\": \"NORMAL\",\n                \"InstanceCount\": 0,\n                \"DesiredCapacity\": 0,\n                \"AutoScalingGroupId\": \"asg-h71x7a3f\",\n                \"Ipv6AddressCount\": 0,\n                \"DefaultCooldown\": 300,\n                \"EnabledStatus\": \"ENABLED\",\n                \"ZoneSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"53a76c96-a88c-4972-8488-66d6c15a080f\"\n    }\n}",
         "title": "查询绑定了标签的伸缩组"
       }
@@ -257,7 +257,7 @@
     "DescribeAutoScalingInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeAutoScalingInstances\n&InstanceIds.0=ins-1fswxz1m\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-1fswxz1m\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AutoScalingInstanceSet\": [\n            {\n                \"ProtectedFromScaleIn\": false,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"LaunchConfigurationId\": \"asc-5fzsm72a\",\n                \"InstanceId\": \"ins-1fswxz1m\",\n                \"VersionNumber\": 1,\n                \"AddTime\": \"2018-08-21T12:05:12Z\",\n                \"CreationType\": \"AUTO_CREATION\",\n                \"AutoScalingGroupName\": \"asgname\",\n                \"AutoScalingGroupId\": \"asg-4o61gsxi\",\n                \"HealthStatus\": \"HEALTHY\",\n                \"LifeCycleState\": \"IN_SERVICE\",\n                \"LaunchConfigurationName\": \"系列2本地盘\",\n                \"InstanceType\": \"S2.SMALL2\"\n            }\n        ],\n        \"RequestId\": \"2ae3e836-d47a-431c-b54b-4e1c2f419e5b\"\n    }\n}",
         "title": "查询指定实例"
       }
@@ -265,27 +265,33 @@
     "DescribeLaunchConfigurations": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeLaunchConfigurations\n&LaunchConfigurationIds.0=asc-fa28v4in\n&LaunchConfigurationIds.1=asc-g9uwgyvx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                }\n            },\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-g9uwgyvx\",\n                \"VersionNumber\": 1,\n                \"LaunchConfigurationName\": \"lc2\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 40,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": null,\n                        \"Encrypt\": null,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-02T02:25:12Z\",\n                \"UpdatedTime\": \"2022-03-02T02:25:12Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"0d4514d4-e277-4f0f-bc85-8b7377a71980\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"LaunchConfigurationIds\": [\n        \"asc-g9uwgyvx\",\n        \"asc-fa28v4in\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": []\n            },\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-g9uwgyvx\",\n                \"VersionNumber\": 1,\n                \"LaunchConfigurationName\": \"lc2\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 40,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": null,\n                        \"Encrypt\": null,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-02T02:25:12Z\",\n                \"UpdatedTime\": \"2022-03-02T02:25:12Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": []\n            }\n        ],\n        \"RequestId\": \"0d4514d4-e277-4f0f-bc85-8b7377a71980\"\n    }\n}",
         "title": "根据启动配置ID查询启动配置列表"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeLaunchConfigurations\n&Filters.0.Name=launch-configuration-id\n&Filters.0.Values.0=asc-fa28v4in\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"asc-fa28v4in\"\n            ],\n            \"Name\": \"launch-configuration-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"923dd24c-e492-4bdb-90be-1d3bd4bfe8a5\"\n    }\n}",
         "title": "使用Filters查看启动配置列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"v2\"\n            ],\n            \"Name\": \"tag:k1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-0zri3ck1\",\n                \"VersionNumber\": 1,\n                \"LaunchConfigurationName\": \"test_tag_k1_v2\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S5.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S5.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 40,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": null,\n                        \"Encrypt\": null,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"Tags\": [\n                    {\n                        \"ResourceType\": \"launch-configuration\",\n                        \"Key\": \"k1\",\n                        \"Value\": \"v2\"\n                    }\n                ],\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-07-14T06:37:08Z\",\n                \"UpdatedTime\": \"2022-07-14T06:37:08Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"8b8047bb-1372-4208-866e-a18e7b7547e9\"\n    }\n}",
+        "title": "使用Filters通过Tag:Key方式查看启动配置列表。"
       }
     ],
     "DescribeLifecycleHooks": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeLifecycleHooks\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLifecycleHooks\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"LifecycleHookSet\": [\n            {\n                \"LifecycleHookName\": \"terminate-topic\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 120,\n                \"NotificationMetadata\": \"topic\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"CMQ_TOPIC\",\n                    \"TopicName\": \"one-topic\",\n                    \"QueueName\": \"\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:59:30Z\",\n                \"DefaultResult\": \"ABANDON\",\n                \"LifecycleHookId\": \"ash-oq76wsrx\",\n                \"LifecycleTransition\": \"INSTANCE_TERMINATING\"\n            },\n            {\n                \"LifecycleHookName\": \"launch-queue\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 120,\n                \"NotificationMetadata\": \"queue\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"CMQ_QUEUE\",\n                    \"TopicName\": \"\",\n                    \"QueueName\": \"one-queue\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:57:14Z\",\n                \"DefaultResult\": \"CONTINUE\",\n                \"LifecycleHookId\": \"ash-fbjiexz7\",\n                \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n            },\n            {\n                \"LifecycleHookName\": \"one-hook\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 360,\n                \"NotificationMetadata\": \"\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"\",\n                    \"TopicName\": \"\",\n                    \"QueueName\": \"\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:56:02Z\",\n                \"DefaultResult\": \"CONTINUE\",\n                \"LifecycleHookId\": \"ash-heyubibl\",\n                \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n            },\n            {\n                \"LifecycleHookName\": \"one-hook-default\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 300,\n                \"NotificationMetadata\": \"\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"\",\n                    \"TopicName\": \"\",\n                    \"QueueName\": \"\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:51:24Z\",\n                \"DefaultResult\": \"CONTINUE\",\n                \"LifecycleHookId\": \"ash-8azjzxj9\",\n                \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n            }\n        ],\n        \"RequestId\": \"dff07f6e-bdbc-4532-baeb-e7fb3aebe248\"\n    }\n}",
         "title": "查询生命周期挂钩"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeLifecycleHooks\n&Filters.0.Name=lifecycle-hook-id\n&Filters.0.Values.0=ash-oq76wsrx\n&Filters.0.Values.1=ash-fbjiexz7\n&Filters.1.Name=auto-scaling-group-id\n&Filters.1.Values.0=asg-8fbozqja\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLifecycleHooks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"asg-8fbozqja\"\n            ],\n            \"Name\": \"auto-scaling-group-id\"\n        },\n        {\n            \"Values\": [\n                \"ash-fbjiexz7\",\n                \"ash-oq76wsrx\"\n            ],\n            \"Name\": \"lifecycle-hook-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LifecycleHookSet\": [\n            {\n                \"LifecycleHookName\": \"terminate-topic\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 120,\n                \"NotificationMetadata\": \"topic\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"CMQ_TOPIC\",\n                    \"TopicName\": \"one-topic\",\n                    \"QueueName\": \"\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:59:30Z\",\n                \"DefaultResult\": \"ABANDON\",\n                \"LifecycleHookId\": \"ash-oq76wsrx\",\n                \"LifecycleTransition\": \"INSTANCE_TERMINATING\"\n            },\n            {\n                \"LifecycleHookName\": \"launch-queue\",\n                \"LifecycleTransitionType\": \"NORMAL\",\n                \"AutoScalingGroupId\": \"asg-8fbozqja\",\n                \"HeartbeatTimeout\": 120,\n                \"NotificationMetadata\": \"queue\",\n                \"NotificationTarget\": {\n                    \"TargetType\": \"CMQ_QUEUE\",\n                    \"TopicName\": \"\",\n                    \"QueueName\": \"one-queue\"\n                },\n                \"CreatedTime\": \"2019-04-19T02:57:14Z\",\n                \"DefaultResult\": \"CONTINUE\",\n                \"LifecycleHookId\": \"ash-fbjiexz7\",\n                \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n            }\n        ],\n        \"RequestId\": \"2d774a6c-bcaa-4805-b0cd-bd64519e2538\"\n    }\n}",
         "title": "查询生命周期挂钩，使用Filter"
       }
@@ -293,7 +299,7 @@
     "DescribeNotificationConfigurations": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeNotificationConfigurations\n&AutoScalingNotificationIds.0=asn-9bhwvxqh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotificationConfigurations\n<公共请求参数>\n\n{\n    \"AutoScalingNotificationIds\": [\n        \"asn-9bhwvxqh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AutoScalingNotificationSet\": [\n            {\n                \"TargetType\": \"USER_GROUP\",\n                \"TopicName\": \"topicname\",\n                \"QueueName\": \"queuename\",\n                \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n                \"NotificationUserGroupIds\": [\n                    \"1678\"\n                ],\n                \"NotificationTypes\": [\n                    \"SCALE_OUT_SUCCESSFUL\"\n                ],\n                \"AutoScalingNotificationId\": \"asn-9bhwvxqh\"\n            }\n        ],\n        \"RequestId\": \"0539a5fc-14b8-4591-9fe2-faee32031a64\"\n    }\n}",
         "title": "查询通知"
       }
@@ -301,7 +307,7 @@
     "DescribeScalingPolicies": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeScalingPolicies\n&AutoScalingPolicyIds.0=asp-5zffv598\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScalingPolicies\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyIds\": [\n        \"asp-5zffv598\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ScalingPolicySet\": [\n            {\n                \"AutoScalingGroupId\": \"asg-gbqa1n66\",\n                \"AutoScalingPolicyId\": \"asp-5zffv598\",\n                \"Cooldown\": 100,\n                \"ScalingPolicyName\": \"cpu-test\",\n                \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n                \"MetricAlarm\": {\n                    \"Period\": 60,\n                    \"ContinuousTime\": 5,\n                    \"ComparisonOperator\": \"GREATER_THAN_OR_EQUAL_TO\",\n                    \"Statistic\": \"AVERAGE\",\n                    \"Threshold\": 60,\n                    \"MetricName\": \"CPU_UTILIZATION\"\n                },\n                \"NotificationUserGroupIds\": [],\n                \"AdjustmentValue\": 10\n            }\n        ],\n        \"RequestId\": \"351dd0ef-27bc-4312-9287-48cd0835274b\"\n    }\n}",
         "title": "查询告警触发策略"
       }
@@ -309,7 +315,7 @@
     "DescribeScheduledActions": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribeScheduledActions\n&ScheduledActionIds.0=asst-caa5ha40\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledActions\n<公共请求参数>\n\n{\n    \"ScheduledActionIds\": [\n        \"asst-caa5ha40\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc207181-288d-4a39-a1d1-63a5e1ba1d2b\",\n        \"TotalCount\": 1,\n        \"ScheduledActionSet\": [\n            {\n                \"ScheduledActionId\": \"asst-jf898dps\",\n                \"ScheduledActionName\": \"test\",\n                \"AutoScalingGroupId\": \"asg-keqt9eg1\",\n                \"StartTime\": \"2022-02-22T16:00:00+08:00\",\n                \"Recurrence\": \"0 0 * * *\",\n                \"EndTime\": \"2024-02-22T16:00:00+08:00\",\n                \"MaxSize\": 15,\n                \"DesiredCapacity\": 1,\n                \"MinSize\": 1,\n                \"CreatedTime\": \"2022-02-21T02:19:52Z\",\n                \"ScheduledType\": \"CRONTAB\"\n            }\n        ]\n    }\n}",
         "title": "查询定时任务"
       }
@@ -317,7 +323,7 @@
     "DetachInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DetachInstances\n&AutoScalingGroupId=asg-boz1qhnk\n&InstanceIds.0=ins-cri8d02t\n&InstanceIds.1=ins-osckfnm7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-bcfxhy55\",\n        \"RequestId\": \"5b039ee6-e8ff-4605-bb24-b45337747431\"\n    }\n}",
         "title": "从伸缩组移出实例"
       }
@@ -325,13 +331,13 @@
     "DetachLoadBalancers": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DetachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&LoadBalancerIds.0=lb-crhgatrf\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"LoadBalancerIds\": [\n        \"lb-crhgatrf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
         "title": "将传统负载均衡器lb-crhgatrf从伸缩组中移出"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DetachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancerIdentifications.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancerIdentifications.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancerIdentifications.0.LocationId=loc-l3hmaev9\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancerIdentifications\": [\n        {\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）从伸缩组中移出"
       }
@@ -339,7 +345,7 @@
     "DisableAutoScalingGroup": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=DisableAutoScalingGroup\n&AutoScalingGroupId=asg-nvnlpbb8\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-nvnlpbb8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa9ead18-44c8-42a8-a68b-ac6206969c2c\"\n    }\n}",
         "title": "停用指定伸缩组"
       }
@@ -347,7 +353,7 @@
     "EnableAutoScalingGroup": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=EnableAutoScalingGroup\n&AutoScalingGroupId=asg-nvnlpbb8\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-nvnlpbb8\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1c937b5-5f0b-4bf3-bdfb-bb859aceda6f\"\n    }\n}",
         "title": "启用指定伸缩组"
       }
@@ -355,7 +361,7 @@
     "ExecuteScalingPolicy": [
       {
         "document": "触发告警伸缩策略",
-        "input": "https://as.tencentcloudapi.com/?Action=ExecuteScalingPolicy\n&AutoScalingPolicyId=asp-f59pppuh\n&HonorCooldown=false\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteScalingPolicy\n<公共请求参数>\n\n{\n    \"HonorCooldown\": \"false\",\n    \"AutoScalingPolicyId\": \"asp-f59pppuh\"\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-o4v87ae9\",\n        \"RequestId\": \"116213d6-2269-44cc-af76-c4a8dc7dbdf9\"\n    }\n}",
         "title": "触发伸缩策略"
       }
@@ -363,13 +369,13 @@
     "ModifyAutoScalingGroup": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyAutoScalingGroup\n&AutoScalingGroupId=asg-ka0s0q80\n&VpcId=vpc-hy436tmc\n&SubnetIds.0=subnet-3tmerl37\n&SubnetIds.1=subnet-b0vxjhot\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-ka0s0q80\",\n    \"SubnetIds\": [\n        \"subnet-b0vxjhot\",\n        \"subnet-3tmerl37\"\n    ],\n    \"VpcId\": \"vpc-hy436tmc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c503ddc6-496c-44c9-8cec-e9f1c3f9c11c\"\n    }\n}",
         "title": "修改伸缩组VPC子网信息"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyAutoScalingGroup\n&AutoScalingGroupId=asg-ka0s0q80\n&DesiredCapacity=3\n&MaxSize=10\n&MinSize=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalingGroup\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-ka0s0q80\",\n    \"MinSize\": \"1\",\n    \"MaxSize\": \"10\",\n    \"DesiredCapacity\": \"3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b41d8d30-21d4-412c-b7f3-53041879968c\"\n    }\n}",
         "title": "修改伸缩组期望实例、最大实例数、最小实例数"
       }
@@ -377,7 +383,7 @@
     "ModifyDesiredCapacity": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyDesiredCapacity\n&AutoScalingGroupId=asg-nvnlpbb8\n&DesiredCapacity=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDesiredCapacity\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-nvnlpbb8\",\n    \"DesiredCapacity\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f7c0f11-edfd-4598-a5f6-fb5c10cc9d8e\"\n    }\n}",
         "title": "修改伸缩组期望实例数"
       }
@@ -407,7 +413,7 @@
     "ModifyLoadBalancerTargetAttributes": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyLoadBalancerTargetAttributes\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=20\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancerTargetAttributes\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"20\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "修改应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）的目标规则属性，将端口修改为8080，权重修改为20。"
       }
@@ -415,19 +421,19 @@
     "ModifyLoadBalancers": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&LoadBalancerIds.0=lb-crhgatrf\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"LoadBalancerIds\": [\n        \"lb-crhgatrf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
         "title": "将伸缩组的负载均衡器修改为传统负载均衡器lb-crhgatrf"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"10\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "将伸缩组的负载均衡器修改为应用型负载均衡器lb-23aejgcv，监听器为lbl-ncw704sn"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\"\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-rp63a5q8\",\n        \"RequestId\": \"7de5a82f-b781-4302-b723-e7a879c20767\"\n    }\n}",
         "title": "清空伸缩组的负载均衡器"
       }
@@ -435,7 +441,7 @@
     "ModifyNotificationConfiguration": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyNotificationConfiguration\n&AutoScalingNotificationId=asn-2sestqbr\n&NotificationTypes.0=SCALE_IN_SUCCESSFUL\n&NotificationTypes.1=SCALE_IN_FAILED\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotificationConfiguration\n<公共请求参数>\n\n{\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"NotificationTypes\": [\n        \"SCALE_IN_FAILED\",\n        \"SCALE_IN_SUCCESSFUL\"\n    ],\n    \"AutoScalingNotificationId\": \"asn-2sestqbr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52e32a5b-5f69-4d48-a3f1-f2fea5c43a70\"\n    }\n}",
         "title": "修改事件通知"
       }
@@ -443,7 +449,7 @@
     "ModifyScalingPolicy": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyScalingPolicy\n&AutoScalingPolicyId=asp-iir70sxv\n&ScalingPolicyName=cpu_policy_test\n&AdjustmentType=CHANGE_IN_CAPACITY\n&AdjustmentValue=1\n&Cooldown=60\n&MetricAlarm.ComparisonOperator=GREATER_THAN\n&MetricAlarm.MetricName=CPU_USAGE\n&MetricAlarm.Statistic=AVERAGE\n&MetricAlarm.Threshold=50\n&MetricAlarm.Period=60\n&MetricAlarm.ContinuousTime=5\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_USAGE\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"91413a64-9587-486b-aef4-9aba5e8a0068\"\n    }\n}",
         "title": "修改告警触发策略"
       }
@@ -451,7 +457,7 @@
     "ModifyScheduledAction": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyScheduledAction\n&ScheduledActionId=asst-chwbkq4c\n&ScheduledActionName=scheduled-action-0\n&MaxSize=5\n&MinSize=0\n&DesiredCapacity=3\n&StartTime=2018-08-28T23:00:00+08:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": \"3\",\n    \"MinSize\": \"0\",\n    \"MaxSize\": \"5\",\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"ScheduledActionId\": \"asst-chwbkq4c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f6f0f95-216f-4745-a2e6-617897e9cedb\"\n    }\n}",
         "title": "修改定时任务"
       }
@@ -459,7 +465,7 @@
     "RemoveInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=RemoveInstances\n&AutoScalingGroupId=asg-boz1qhnk\n&InstanceIds.0=ins-cri8d02t\n&InstanceIds.1=ins-osckfnm7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-dne04cxp\",\n        \"RequestId\": \"5b039ee6-e8ff-4605-bb24-b45337747431\"\n    }\n}",
         "title": "从伸缩组删除实例"
       }
@@ -483,7 +489,7 @@
     "SetInstancesProtection": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=SetInstancesProtection\n&AutoScalingGroupId=asg-2umy3jbd\n&InstanceIds.0=ins-b2d33ywt\n&ProtectedFromScaleIn=true\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetInstancesProtection\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n    \"ProtectedFromScaleIn\": \"true\",\n    \"InstanceIds\": [\n        \"ins-b2d33ywt\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b7168d9-5709-4d69-bd32-880a2f565e33\"\n    }\n}",
         "title": "为实例设置保护"
       }
@@ -491,7 +497,7 @@
     "StartAutoScalingInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=StartAutoScalingInstances\n&AutoScalingGroupId=asg-boz1qhnk\n&InstanceIds.0=ins-cri8d02t\n&InstanceIds.1=ins-osckfnm7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAutoScalingInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-a023dwdj\",\n        \"RequestId\": \"28cf9089-2b76-4934-9d1b-b2694c679ff0\"\n    }\n}",
         "title": "开启 CVM 实例"
       }
@@ -499,7 +505,7 @@
     "StopAutoScalingInstances": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=StopAutoScalingInstances\n&AutoScalingGroupId=asg-boz1qhnk\n&InstanceIds.0=ins-cri8d02t\n&InstanceIds.1=ins-osckfnm7\n&StoppedMode=STOP_CHARGING\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAutoScalingInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"StoppedMode\": \"STOP_CHARGING\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-m1ebiskl\",\n        \"RequestId\": \"f3e2873c-af7c-43ee-8aa7-53565d4181c2\"\n    }\n}",
         "title": "按关机不收费模式关闭伸缩组内实例"
       }
@@ -507,13 +513,13 @@
     "UpgradeLaunchConfiguration": [
       {
         "document": "只传必传的启动配置名称，实例机型，镜像ID，其他均采用系统默认值，具体配置如下：启动配置名称为：as_test，实例机型为：标准2型 1C1G（S2.SMALL1），镜像ID为：img-8toqc6s3。",
-        "input": "https://as.tencentcloudapi.com/?Action=UpgradeLaunchConfiguration\n&LaunchConfigurationId=asc-gj14vczi\n&LaunchConfigurationName=as_test\n&InstanceTypes.0=S2.SMALL1\n&ImageId=img-8toqc6s3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"LaunchConfigurationId\": \"asc-gj14vczi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d68a3364-a933-4664-bee4-fb89b8c69b49\"\n    }\n}",
         "title": "简单参数升级启动配置"
       },
       {
         "document": "启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。",
-        "input": "https://as.tencentcloudapi.com/?Action=UpgradeLaunchConfiguration\n&LaunchConfigurationId=asc-gj14vczi\n&LaunchConfigurationName=as_test\n&ImageId=img-8toqc6s3\n&InstanceTypes.0=S2.SMALL1\n&SystemDisk.DiskType=LOCAL_BASIC\n&SystemDisk.DiskSize=50\n&DataDisks.0.DiskType=CLOUD_HSSD\n&DataDisks.0.DiskSize=1000\n&DataDisks.0.DeleteWithInstance=TRUE\n&DataDisks.0.Encrypt=FALSE\n&DataDisks.0.ThroughputPerformance=100\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=5\n&InternetAccessible.PublicIpAssigned=TRUE\n&LoginSettings.KeyIds.0=skey-k8eypc1l\n&EnhancedService.SecurityService.Enabled=TRUE\n&EnhancedService.MonitorService.Enabled=TRUE\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"LaunchConfigurationId\": \"asc-gj14vczi\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": \"TRUE\"\n        },\n        \"MonitorService\": {\n            \"Enabled\": \"TRUE\"\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"TRUE\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"5\"\n    },\n    \"DataDisks\": [\n        {\n            \"Encrypt\": \"FALSE\",\n            \"DeleteWithInstance\": \"TRUE\",\n            \"DiskSize\": \"1000\",\n            \"ThroughputPerformance\": \"100\",\n            \"DiskType\": \"CLOUD_HSSD\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1430a2d3-eb73-44c6-8316-218c4562a85c\"\n    }\n}",
         "title": "详细参数升级启动配置"
       }
@@ -521,7 +527,7 @@
     "UpgradeLifecycleHook": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=UpgradeLifecycleHook\n&LifecycleHookId=ash-8azjzxj9\n&DefaultResult=CONTINUE\n&HeartbeatTimeout=240\n&LifecycleHookName=hook-updated\n&LifecycleTransition=INSTANCE_LAUNCHING\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLifecycleHook\n<公共请求参数>\n\n{\n    \"DefaultResult\": \"CONTINUE\",\n    \"LifecycleHookName\": \"hook-updated\",\n    \"LifecycleHookId\": \"ash-8azjzxj9\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": \"240\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"db656d36-ed6b-4795-bdc4-94e7a7e04acb\"\n    }\n}",
         "title": "升级生命周期挂钩"
       }

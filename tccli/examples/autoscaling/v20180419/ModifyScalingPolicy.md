@@ -7,17 +7,17 @@ Input:
 ```
 tccli as ModifyScalingPolicy --cli-unfold-argument  \
     --AutoScalingPolicyId asp-iir70sxv \
+    --Cooldown 60 \
     --ScalingPolicyName cpu_policy_test \
     --AdjustmentType CHANGE_IN_CAPACITY \
-    --AdjustmentValue 1 \
-    --Cooldown 60 \
-    --MetricAlarm.ComparisonOperator GREATER_THAN \
-    --MetricAlarm.MetricName CPU_USAGE \
-    --MetricAlarm.Statistic AVERAGE \
-    --MetricAlarm.Threshold 50 \
     --MetricAlarm.Period 60 \
     --MetricAlarm.ContinuousTime 5 \
-    --NotificationUserGroupIds 1678
+    --MetricAlarm.ComparisonOperator GREATER_THAN \
+    --MetricAlarm.Statistic AVERAGE \
+    --MetricAlarm.Threshold 50 \
+    --MetricAlarm.MetricName CPU_USAGE \
+    --NotificationUserGroupIds 1678 \
+    --AdjustmentValue 1
 ```
 
 Output: 

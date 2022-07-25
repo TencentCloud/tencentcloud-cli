@@ -108,6 +108,12 @@
       "name": "创建容器实例",
       "output": "CreateEKSContainerInstancesResponse"
     },
+    "CreateEdgeLogConfig": {
+      "document": "创建边缘集群日志采集配置",
+      "input": "CreateEdgeLogConfigRequest",
+      "name": "创建边缘集群日志采集配置",
+      "output": "CreateEdgeLogConfigResponse"
+    },
     "CreateImageCache": {
       "document": "创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。",
       "input": "CreateImageCacheRequest",
@@ -371,6 +377,12 @@
       "input": "DescribeClusterEndpointVipStatusRequest",
       "name": "查询托管集群开启外网端口流程状态",
       "output": "DescribeClusterEndpointVipStatusResponse"
+    },
+    "DescribeClusterEndpoints": {
+      "document": "获取集群的访问地址，包括内网地址，外网地址，外网域名，外网访问安全策略",
+      "input": "DescribeClusterEndpointsRequest",
+      "name": "获取集群访问地址",
+      "output": "DescribeClusterEndpointsResponse"
     },
     "DescribeClusterInstances": {
       "document": " 查询集群下节点实例信息 ",
@@ -792,6 +804,12 @@
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse"
     },
+    "InstallEdgeLogAgent": {
+      "document": "在tke@edge集群的边缘节点上安装日志采集组件",
+      "input": "InstallEdgeLogAgentRequest",
+      "name": "安装边缘日志采集组件",
+      "output": "InstallEdgeLogAgentResponse"
+    },
     "InstallLogAgent": {
       "document": "在TKE集群中安装CLS日志采集组件",
       "input": "InstallLogAgentRequest",
@@ -941,6 +959,12 @@
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
       "output": "SyncPrometheusTemplateResponse"
+    },
+    "UninstallEdgeLogAgent": {
+      "document": "从tke@edge集群边缘节点上卸载日志采集组件",
+      "input": "UninstallEdgeLogAgentRequest",
+      "name": "卸载边缘日志采集组件",
+      "output": "UninstallEdgeLogAgentResponse"
     },
     "UninstallLogAgent": {
       "document": "从TKE集群中卸载CLS日志采集组件",
@@ -4441,6 +4465,48 @@
       ],
       "type": "object"
     },
+    "CreateEdgeLogConfigRequest": {
+      "document": "CreateEdgeLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志采集配置的json表达",
+          "member": "string",
+          "name": "LogConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLS日志集ID",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeLogConfigResponse": {
+      "document": "CreateEdgeLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageCacheRequest": {
       "document": "CreateImageCache请求参数结构体",
       "members": [
@@ -6453,6 +6519,78 @@
           "member": "string",
           "name": "ErrorMsg",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointsRequest": {
+      "document": "DescribeClusterEndpoints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterEndpointsResponse": {
+      "document": "DescribeClusterEndpoints返回参数结构体",
+      "members": [
+        {
+          "document": "集群APIServer的CA证书",
+          "example": "xxx",
+          "member": "string",
+          "name": "CertificationAuthority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群APIServer的外网访问地址",
+          "example": "12.34.56.78",
+          "member": "string",
+          "name": "ClusterExternalEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群APIServer的内网访问地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ClusterIntranetEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群APIServer的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-65r1c5nu.ccs.tencent-cloud.com",
+          "member": "string",
+          "name": "ClusterDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群APIServer的外网访问ACL列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"10.0.0.0\\/24\"]",
+          "member": "string",
+          "name": "ClusterExternalACL",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -12149,6 +12287,32 @@
       ],
       "usage": "both"
     },
+    "InstallEdgeLogAgentRequest": {
+      "document": "InstallEdgeLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallEdgeLogAgentResponse": {
+      "document": "InstallEdgeLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstallLogAgentRequest": {
       "document": "InstallLogAgent请求参数结构体",
       "members": [
@@ -16795,6 +16959,32 @@
         }
       ],
       "usage": "in"
+    },
+    "UninstallEdgeLogAgentRequest": {
+      "document": "UninstallEdgeLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallEdgeLogAgentResponse": {
+      "document": "UninstallEdgeLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UninstallLogAgentRequest": {
       "document": "UninstallLogAgent请求参数结构体",

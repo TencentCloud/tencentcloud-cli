@@ -31,9 +31,9 @@ Input:
 tccli as CreateLifecycleHook --cli-unfold-argument  \
     --AutoScalingGroupId asg-8fbozqja \
     --DefaultResult ABANDON \
-    --HeartbeatTimeout 360 \
     --LifecycleHookName one-hook \
-    --LifecycleTransition INSTANCE_LAUNCHING
+    --LifecycleTransition INSTANCE_LAUNCHING \
+    --HeartbeatTimeout 360
 ```
 
 Output: 
@@ -54,14 +54,14 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja \
-    --DefaultResult CONTINUE \
     --HeartbeatTimeout 120 \
+    --AutoScalingGroupId asg-8fbozqja \
     --LifecycleHookName launch-queue \
-    --LifecycleTransition INSTANCE_LAUNCHING \
     --NotificationMetadata queue \
     --NotificationTarget.TargetType CMQ_QUEUE \
-    --NotificationTarget.QueueName one-queue
+    --NotificationTarget.QueueName one-queue \
+    --DefaultResult CONTINUE \
+    --LifecycleTransition INSTANCE_LAUNCHING
 ```
 
 Output: 
@@ -82,14 +82,14 @@ Input:
 
 ```
 tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja \
-    --DefaultResult ABANDON \
     --HeartbeatTimeout 120 \
+    --AutoScalingGroupId asg-8fbozqja \
     --LifecycleHookName terminate-topic \
-    --LifecycleTransition INSTANCE_TERMINATING \
     --NotificationMetadata topic \
     --NotificationTarget.TargetType CMQ_TOPIC \
-    --NotificationTarget.TopicName one-topic
+    --NotificationTarget.TopicName one-topic \
+    --DefaultResult ABANDON \
+    --LifecycleTransition INSTANCE_TERMINATING
 ```
 
 Output: 

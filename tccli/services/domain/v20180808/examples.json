@@ -171,7 +171,7 @@
     "SetDomainAutoRenew": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=SetDomainAutoRenew\n&DomainId=域名ID\n&AutoRenew=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetDomainAutoRenew\n<公共请求参数>\n\n{\n    \"AutoRenew\": \"1\",\n    \"DomainId\": \"域名ID\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "设置域名自动续费"
       }

@@ -29,9 +29,9 @@ Input:
 ```
 tccli as DetachLoadBalancers --cli-unfold-argument  \
     --AutoScalingGroupId asg-12wjuh0s \
-    --ForwardLoadBalancerIdentifications.0.LoadBalancerId lb-23aejgcv \
+    --ForwardLoadBalancerIdentifications.0.LocationId loc-l3hmaev9 \
     --ForwardLoadBalancerIdentifications.0.ListenerId lbl-ncw704sn \
-    --ForwardLoadBalancerIdentifications.0.LocationId loc-l3hmaev9
+    --ForwardLoadBalancerIdentifications.0.LoadBalancerId lb-23aejgcv
 ```
 
 Output: 

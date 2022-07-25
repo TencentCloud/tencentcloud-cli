@@ -33,7 +33,8 @@ Output:
                 "Cause": "Activity was launched in response to a difference between desired capacity and actual capacity.",
                 "StatusMessageSimplified": "Success",
                 "StatusMessage": "Success",
-                "StatusCode": "SUCCESSFUL"
+                "StatusCode": "SUCCESSFUL",
+                "InvocationResultSet": []
             }
         ],
         "RequestId": "1082ab5d-c985-4d8c-bb9d-0d05e282b4a7"

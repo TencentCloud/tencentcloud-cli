@@ -13,7 +13,7 @@
       "output": "ArithmeticOCRResponse"
     },
     "BankCardOCR": {
-      "document": "本接口支持对中国大陆主流银行卡正反面关键字段的检测与识别，包括卡号、卡类型、卡名字、银行信息、有效期。支持竖排异形卡识别、多角度旋转图片识别。支持对复印件、翻拍件、边框遮挡的银行卡进行告警，可应用于各种银行卡信息有效性校验场景，如金融行业身份认证、第三方支付绑卡等场景。",
+      "document": "本接口支持对中国大陆主流银行卡正反面关键字段的检测与识别，包括卡号、卡类型、卡名字、银行信息、有效期。支持竖排异形卡识别、多角度旋转图片识别。支持对复印件、翻拍件、边框遮挡的银行卡进行告警，可应用于各种银行卡信息有效性校验场景，如金融行业身份认证、第三方支付绑卡等场景。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BankCardOCRRequest",
       "name": "银行卡识别",
       "output": "BankCardOCRResponse"
@@ -115,7 +115,7 @@
       "output": "FormulaOCRResponse"
     },
     "GeneralAccurateOCR": {
-      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于文字较多、版式复杂、对识别准召率要求较高的场景，如试卷试题、网络图片、街景店招牌、法律卷宗等场景。\n\n产品优势：与通用印刷体识别相比，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >【荐】通用印刷体识别（高精度版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>99%</td>\n          <td>96%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>高</td>\n          <td>中</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于文字较多、版式复杂、对识别准召率要求较高的场景，如试卷试题、网络图片、街景店招牌、法律卷宗等场景。\n\n产品优势：与通用印刷体识别相比，提供更高精度的文字识别服务，在文字较多、长串数字、小字、模糊字、倾斜文本等困难场景下，高精度版的准确率和召回率更高。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >【荐】通用印刷体识别（高精度版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/37831\">通用印刷体识别（精简版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>99%</td>\n          <td>96%</td>\n          <td>91%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>高</td>\n          <td>中</td>\n          <td>低</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralAccurateOCRRequest",
       "name": "通用印刷体识别（高精度版）",
       "output": "GeneralAccurateOCRResponse"
@@ -127,19 +127,19 @@
       "output": "GeneralBasicOCRResponse"
     },
     "GeneralEfficientOCR": {
-      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于快速文本识别场景。\n\n产品优势：与通用印刷体识别接口相比，精简版虽然在准确率和召回率上有一定损失，但价格更加优惠。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >通用印刷体识别（精简版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>91%</td>\n          <td>96%</td>\n          <td>99%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n          <td>高</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于快速文本识别场景。\n\n产品优势：与通用印刷体识别接口相比，精简版虽然在准确率和召回率上有一定损失，但价格更加优惠。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >通用印刷体识别（精简版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>91%</td>\n          <td>96%</td>\n          <td>99%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n          <td>高</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralEfficientOCRRequest",
       "name": "通用印刷体识别（精简版）",
       "output": "GeneralEfficientOCRResponse"
     },
     "GeneralFastOCR": {
-      "document": "本接口支持图片中整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，识别速度更快。",
+      "document": "本接口支持图片中整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，识别速度更快。\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralFastOCRRequest",
       "name": "通用印刷体识别（高速版）",
       "output": "GeneralFastOCRResponse"
     },
     "GeneralHandwritingOCR": {
-      "document": "本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。",
+      "document": "本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralHandwritingOCRRequest",
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse"
@@ -157,7 +157,7 @@
       "output": "HmtResidentPermitOCRResponse"
     },
     "IDCardOCR": {
-      "document": "本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。\n\n另外，本接口还支持多种增值能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">增值能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n          <td>身份证有效日期不合法告警</td>\n        </tr>\n        <tr>\n          <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n          <tr>\n          <td>身份证 PS 告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。\n\n另外，本接口还支持多种增值能力，满足不同场景的需求。如身份证照片、人像照片的裁剪功能，同时具备9种告警功能，如下表所示。\n\n<table style=\"width:650px\">\n      <thead>\n        <tr>\n       <th width=\"150\">增值能力</th>\n          <th width=\"500\">能力项</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td rowspan=\"2\">裁剪功能</td>\n          <td>身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）</td>\n        </tr>\n        <tr>\n          <td>人像照片裁剪（自动抠取身份证头像区域）</td>\n        </tr>\n        <tr>\n          <td rowspan=\"9\">告警功能</td>\n          <td>身份证有效日期不合法告警</td>\n        </tr>\n        <tr>\n          <td>身份证边框不完整告警</td>\n        </tr>\n        <tr>\n          <td>身份证复印件告警</td>\n        </tr>\n        <tr>\n          <td>身份证翻拍告警</td>\n        </tr>\n          <tr>\n          <td>身份证框内遮挡告警</td>\n        </tr>\n         <tr>\n          <td>临时身份证告警</td>\n        </tr>\n          <tr>\n          <td>身份证 PS 告警</td>\n        </tr>\n          <tr>\n          <td>图片模糊告警（可根据图片质量分数判断）</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
       "input": "IDCardOCRRequest",
       "name": "身份证识别",
       "output": "IDCardOCRResponse"
@@ -307,7 +307,7 @@
       "output": "RecognizeThaiIDCardOCRResponse"
     },
     "RecognizeTravelCardOCR": {
-      "document": "本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。",
+      "document": "本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizeTravelCardOCRRequest",
       "name": "通信行程卡识别",
       "output": "RecognizeTravelCardOCRResponse"

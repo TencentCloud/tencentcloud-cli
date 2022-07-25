@@ -333,7 +333,7 @@
         },
         {
           "default": "",
-          "document": "伸缩活动类型。取值如下：<br>\n<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例\n<li>START_INSTANCES：开启实例\n<li>STOP_INSTANCES：关闭实例",
+          "document": "伸缩活动类型。取值如下：<br>\n<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例\n<li>START_INSTANCES：开启实例\n<li>STOP_INSTANCES：关闭实例\n<li>INVOKE_COMMAND：执行命令",
           "example": "无",
           "member": "string",
           "name": "ActivityType",
@@ -447,6 +447,16 @@
           "example": "无",
           "member": "DetailedStatusMessage",
           "name": "DetailedStatusMessageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行命令结果。",
+          "example": "无",
+          "member": "InvocationResult",
+          "name": "InvocationResultSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1628,6 +1638,15 @@
         },
         {
           "default": "",
+          "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
+          "example": "无",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。\n<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。\n<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。\n\n实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。\n如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。",
           "example": "无",
           "member": "string",
@@ -1646,12 +1665,12 @@
         },
         {
           "default": "",
-          "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
+          "document": "标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。",
           "example": "无",
-          "member": "string",
-          "name": "CamRoleName",
+          "member": "Tag",
+          "name": "Tags",
           "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "default": "",
@@ -2683,7 +2702,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n<li> vague-launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称模糊搜索。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。",
+          "document": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n<li> vague-launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称模糊搜索。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3\n</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3736,6 +3755,72 @@
       ],
       "usage": "both"
     },
+    "InvocationResult": {
+      "document": "执行命令结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-0lizunus",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行活动ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "inv-0h9q6ahv",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "invt-4mqj9ekr",
+          "member": "string",
+          "name": "InvocationTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命令ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmd-5l44tu7j",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行任务状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行异常信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LaunchConfiguration": {
       "document": "符合条件的启动配置信息的集合。",
       "members": [
@@ -3921,13 +4006,23 @@
         },
         {
           "default": "",
-          "document": "标签列表。",
+          "document": "实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。",
           "example": "无",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "default": "",

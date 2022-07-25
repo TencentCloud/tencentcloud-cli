@@ -7,7 +7,7 @@
       "output": "CheckSavepointResponse"
     },
     "CopyJobs": {
-      "document": "单条和批量复制作业\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=1288112774",
+      "document": "单条和批量复制作业",
       "input": "CopyJobsRequest",
       "name": "复制作业",
       "output": "CopyJobsResponse"
@@ -638,14 +638,70 @@
       ],
       "usage": "out"
     },
+    "CopyJobItem": {
+      "document": "复制作业单条明细",
+      "members": [],
+      "usage": "in"
+    },
+    "CopyJobResult": {
+      "document": "复制作业单条明细结果",
+      "members": [],
+      "usage": "out"
+    },
     "CopyJobsRequest": {
       "document": "CopyJobs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "复制明细列表",
+          "example": "无",
+          "member": "CopyJobItem",
+          "name": "JobItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "无",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CopyJobsResponse": {
       "document": "CopyJobs返回参数结构体",
       "members": [
+        {
+          "document": "成功条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FailCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CopyJobResult",
+          "name": "CopyJobsResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -658,6 +714,24 @@
     "CreateFolderRequest": {
       "document": "CreateFolder请求参数结构体",
       "members": [
+        {
+          "default": "",
+          "document": "新建文件夹名",
+          "example": "joylyu-test",
+          "member": "string",
+          "name": "FolderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建文件夹的父目录ID",
+          "example": "folder-xxxxxxxx",
+          "member": "string",
+          "name": "ParentId",
+          "required": true,
+          "type": "string"
+        },
         {
           "default": "",
           "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
@@ -682,6 +756,15 @@
     "CreateFolderResponse": {
       "document": "CreateFolder返回参数结构体",
       "members": [
+        {
+          "document": "新建文件夹的唯一ID",
+          "example": "folder-xxxxxxxx",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

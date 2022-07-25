@@ -156,6 +156,14 @@
         "title": "创建容器实例"
       }
     ],
+    "CreateEdgeLogConfig": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateEdgeLogConfig\n&LogConfig=xxxxxx\n&ClusterId=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "创建日志采集规则"
+      }
+    ],
     "CreateImageCache": [
       {
         "document": "",
@@ -518,6 +526,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterEndpointVipStatus\r\n&ClusterId=cls-xxxxxxxx,\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"Creating\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询集群开启端口流程状态"
+      }
+    ],
+    "DescribeClusterEndpoints": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterEndpoints\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CertificationAuthority\": \"xxx\",\n        \"ClusterExternalEndpoint\": \"12.34.56.78\",\n        \"ClusterIntranetEndpoint\": \"10.0.0.1\",\n        \"ClusterDomain\": \"cls-65r1c5nu.ccs.tencent-cloud.com\",\n        \"ClusterExternalACL\": [\n            \"10.0.0.0/24\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "获取集群访问地址"
       }
     ],
     "DescribeClusterInstances": [
@@ -1086,6 +1102,14 @@
         "title": "查询升级状态"
       }
     ],
+    "InstallEdgeLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=InstallEdgeLogAgent\n&ClusterId=\"\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "在tke@edge集群的边缘节点上安装日志采集组件"
+      }
+    ],
     "InstallLogAgent": [
       {
         "document": "",
@@ -1284,6 +1308,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "同步模板到实例"
+      }
+    ],
+    "UninstallEdgeLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=UninstallEdgeLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "从tke@edge集群边缘节点上卸载日志采集组件"
       }
     ],
     "UninstallLogAgent": [

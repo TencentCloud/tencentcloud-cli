@@ -17,17 +17,29 @@
     "CopyJobs": [
       {
         "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CopyJobs\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyJobs\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"sapce-xxx\",\n    \"JobItems\": [\n        {}\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CopyJobsResults\": [\n            {},\n            {}\n        ],\n        \"FailCount\": 1,\n        \"RequestId\": \"123456a\",\n        \"SuccessCount\": 1\n    }\n}",
         "title": "复制作业"
       }
     ],
     "CreateFolder": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateFolder\n<公共请求参数>\n\n{\n    \"FolderType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateFolder\n<公共请求参数>\n\n{\n    \"FolderName\": \"joylyu-test\",\n    \"ParentId\": \"folder-xxxxxxxx\",\n    \"FolderType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FolderId\": \"folder-cccccccc\",\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
         "title": "作业列表新建文件夹"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFolder\n<公共请求参数>\n\n{\n    \"FolderName\": \"test1\",\n    \"WorkSpaceId\": \"space-1257058945ap-guangzho\",\n    \"FolderType\": \"0\",\n    \"ParentId\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FolderId\": \"folder-qy7n62qr\",\n        \"RequestId\": \"eb7bbe76-77b3-444d-8554-4dd14394a008\"\n    }\n}",
+        "title": "测试"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFolder\n<公共请求参数>\n\n{\n    \"FolderName\": \"test2\",\n    \"WorkSpaceId\": \"space-1257058945ap-guangzho\",\n    \"FolderType\": \"0\",\n    \"ParentId\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FolderId\": \"folder-dhq5omrl\",\n        \"RequestId\": \"a6030a9d-d791-4e7f-8f2c-7d908b6449a0\"\n    }\n}",
+        "title": "2"
       }
     ],
     "CreateJob": [

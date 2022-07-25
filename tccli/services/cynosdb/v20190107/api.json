@@ -138,6 +138,12 @@
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintainPeriodResponse"
     },
+    "DescribeParamTemplates": {
+      "document": "查询用户指定产品下的所有参数模板信息",
+      "input": "DescribeParamTemplatesRequest",
+      "name": "查询参数模板信息",
+      "output": "DescribeParamTemplatesResponse"
+    },
     "DescribeProjectSecurityGroups": {
       "document": "查询项目安全组信息",
       "input": "DescribeProjectSecurityGroupsRequest",
@@ -185,6 +191,12 @@
       "input": "InquirePriceCreateRequest",
       "name": "新购集群询价",
       "output": "InquirePriceCreateResponse"
+    },
+    "InquirePriceRenew": {
+      "document": "查询续费集群价格",
+      "input": "InquirePriceRenewRequest",
+      "name": "续费集群询价",
+      "output": "InquirePriceRenewResponse"
     },
     "IsolateCluster": {
       "document": "隔离集群",
@@ -4074,6 +4086,41 @@
       ],
       "type": "object"
     },
+    "DescribeParamTemplatesRequest": {
+      "document": "DescribeParamTemplates请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeParamTemplatesResponse": {
+      "document": "DescribeParamTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "参数模板数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板信息",
+          "example": "[{\"...\"}]",
+          "member": "ParamTemplateListInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProjectSecurityGroupsRequest": {
       "document": "DescribeProjectSecurityGroups请求参数结构体",
       "members": [
@@ -4616,6 +4663,96 @@
           "name": "StoragePrice",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewRequest": {
+      "document": "InquirePriceRenew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买时长,与TimeUnit组合才能生效",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewResponse": {
+      "document": "InquirePriceRenew返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例ID列表",
+          "example": "[\"cynosdbmysql-ins-2\",\"cynosdbmysql-ins-6\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对应的询价结果数组",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "Prices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "续费计算节点的总价格",
+          "example": "500",
+          "member": "int64",
+          "name": "InstanceRealTotalPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "续费存储节点的总价格",
+          "example": "500",
+          "member": "int64",
+          "name": "StorageRealTotalPrice",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5438,6 +5575,52 @@
         }
       ],
       "usage": "in"
+    },
+    "ParamTemplateListInfo": {
+      "document": "参数模板信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板名称",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板描述",
+          "example": "\"cynosdbmysqltemplste\"",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎版本",
+          "example": "\"5.7\"",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PauseServerlessRequest": {
       "document": "PauseServerless请求参数结构体",
