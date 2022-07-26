@@ -1427,6 +1427,26 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要回档的源实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "RollbackInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "回档时间",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "RollbackTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

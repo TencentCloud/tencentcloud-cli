@@ -24,6 +24,18 @@
       "name": "绑定安全组",
       "output": "AssociateSecurityGroupsResponse"
     },
+    "ChangeInstanceRole": {
+      "document": "复制组实例更换角色",
+      "input": "ChangeInstanceRoleRequest",
+      "name": "复制组实例更换角色",
+      "output": "ChangeInstanceRoleResponse"
+    },
+    "ChangeMasterInstance": {
+      "document": "复制组实例切主",
+      "input": "ChangeMasterInstanceRequest",
+      "name": "复制组实例切主",
+      "output": "ChangeMasterInstanceResponse"
+    },
     "ChangeReplicaToMaster": {
       "document": "该接口仅支持多AZ实例副本组提主和单AZ副本提主",
       "input": "ChangeReplicaToMasterRequest",
@@ -881,6 +893,105 @@
         }
       ],
       "usage": "out"
+    },
+    "ChangeInstanceRoleRequest": {
+      "document": "ChangeInstanceRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "复制组ID",
+          "example": "crs-rpl-267khx71",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例角色，rw可读写，r只读",
+          "example": "rw",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeInstanceRoleResponse": {
+      "document": "ChangeInstanceRole返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeMasterInstanceRequest": {
+      "document": "ChangeMasterInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "复制组ID",
+          "example": "crs-rpl-deindi7de",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeMasterInstanceResponse": {
+      "document": "ChangeMasterInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ChangeReplicaToMasterRequest": {
       "document": "ChangeReplicaToMaster请求参数结构体",

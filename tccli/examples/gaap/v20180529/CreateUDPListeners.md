@@ -7,8 +7,8 @@ Input:
 ```
 tccli gaap CreateUDPListeners --cli-unfold-argument  \
     --ProxyId link-bjkpdum1 \
-    --ListenerName test1 \
     --RealServerType IP \
+    --ListenerName test1 \
     --Scheduler rr \
     --Ports 90
 ```

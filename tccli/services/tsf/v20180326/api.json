@@ -8634,50 +8634,72 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cluster-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "搜索字段",
+          "example": "test",
           "member": "string",
           "name": "SearchWord",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "排序字段",
+          "example": "null",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "排序类型",
+          "example": "0",
           "member": "int64",
           "name": "OrderType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分页个数",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否只查询EKS超级节点",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyEKS",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -8687,10 +8709,13 @@
       "members": [
         {
           "document": "集群机器实例分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageInstance",
           "name": "Result",
+          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11351,7 +11376,8 @@
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11360,7 +11386,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11369,7 +11396,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11378,7 +11406,18 @@
           "member": "string",
           "name": "GroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。filter name 取值有：id（实例id）、name（实例名）、lan-ip（内网ip）、node-ip（所在节点ip）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11393,7 +11432,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

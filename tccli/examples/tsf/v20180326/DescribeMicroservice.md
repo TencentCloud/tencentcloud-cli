@@ -7,8 +7,8 @@ Input:
 ```
 tccli tsf DescribeMicroservice --cli-unfold-argument  \
     --MicroserviceId ms-xxxxxxx \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 

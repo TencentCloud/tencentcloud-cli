@@ -17,15 +17,16 @@ Output:
         "TotalCount": 1,
         "ListenerSet": [
             {
-                "BindStatus": 1,
-                "SessionPersist": 1,
+                "RecvContext": "xx",
                 "RealServerType": "xx",
-                "Protocol": "xx",
-                "RealServerPort": 1,
+                "CheckPort": 0,
                 "ListenerId": "xx",
-                "CreateTime": 1,
-                "ListenerStatus": 1,
+                "ContextType": "xx",
                 "ListenerName": "xx",
+                "Port": 1,
+                "BindStatus": 1,
+                "FailoverSwitch": 0,
+                "CheckType": "xx",
                 "Scheduler": "xx",
                 "RealServerSet": [
                     {
@@ -39,7 +40,17 @@ Output:
                         "RealServerIP": "xx"
                     }
                 ],
-                "Port": 1
+                "SessionPersist": 1,
+                "ConnectTimeout": 1,
+                "SendContext": "xx",
+                "HealthCheck": 1,
+                "HealthyThreshold": 1,
+                "DelayLoop": 1,
+                "ListenerStatus": 1,
+                "Protocol": "xx",
+                "RealServerPort": 1,
+                "UnhealthyThreshold": 1,
+                "CreateTime": 1
             }
         ],
         "RequestId": "xx"
