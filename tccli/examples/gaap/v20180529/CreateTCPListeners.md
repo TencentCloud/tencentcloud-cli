@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli gaap CreateTCPListeners --cli-unfold-argument  \
-    --ProxyId link-bjkpdum1 \
-    --ListenerName test1 \
     --RealServerType IP \
-    --Scheduler rr \
-    --DelayLoop 20 \
     --ConnectTimeout 20 \
+    --ProxyId link-bjkpdum1 \
     --HealthCheck 1 \
-    --Ports 90
+    --ListenerName test1 \
+    --Scheduler rr \
+    --Ports 90 \
+    --DelayLoop 20
 ```
 
 Output: 

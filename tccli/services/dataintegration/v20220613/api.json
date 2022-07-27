@@ -1,0 +1,90 @@
+{
+  "actions": {
+    "SendMessage": {
+      "document": "使用SDK将数据上报到DIP",
+      "input": "SendMessageRequest",
+      "name": "数据上报",
+      "output": "SendMessageResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-06-13",
+    "api_brief": "文档包含数据上报、数据任务的创建、暂停、重启等。",
+    "serviceNameCN": "数据接入平台",
+    "serviceShortName": "dataintegration"
+  },
+  "objects": {
+    "BatchContent": {
+      "document": "批量消息",
+      "members": [
+        {
+          "default": "",
+          "document": "消息体",
+          "example": "MessageIdContent",
+          "member": "string",
+          "name": "Body",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息的键名",
+          "example": "Message-key-439j9hj92",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SendMessageRequest": {
+      "document": "SendMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "接入资源ID",
+          "example": "datahub-rinibi1",
+          "member": "string",
+          "name": "DataHubId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量消息",
+          "example": "无",
+          "member": "BatchContent",
+          "name": "Message",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageResponse": {
+      "document": "SendMessage返回参数结构体",
+      "members": [
+        {
+          "document": "消息ID",
+          "example": "无",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

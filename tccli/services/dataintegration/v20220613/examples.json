@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "SendMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dataintegration.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"Message\": [\n        {\n            \"Body\": \"xx\",\n            \"Key\": \"xx\"\n        },\n        {\n            \"Body\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"DataHubId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\",\n        \"MessageId\": [\n            \"646174616875622d6d657568396e686e3a6465736372696265436c6f75644170693a343a3236313838\",\n            \"875622d6d657568396e686e3a6465736372696265436c6f75644170693a343a3236323337\"\n        ]\n    }\n}",
+        "title": "数据上报"
+      }
+    ]
+  },
+  "version": "1.0"
+}

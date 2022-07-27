@@ -258,6 +258,15 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "签署流程id",
           "example": "flow-id",
           "member": "string",
@@ -273,15 +282,6 @@
           "name": "CancelMessage",
           "required": true,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作用户id",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
         },
         {
           "default": "",
@@ -559,6 +559,15 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "签署流程编号,由CreateFlow接口返回",
           "example": "无",
           "member": "string",
@@ -586,24 +595,6 @@
         },
         {
           "default": "",
-          "document": "无",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "应用相关信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "内容控件信息数组",
           "example": "无",
           "member": "FormField",
@@ -628,6 +619,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -667,6 +667,15 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "签署流程名称,最大长度200个字符",
           "example": "无",
           "member": "string",
@@ -694,21 +703,12 @@
         },
         {
           "default": "",
-          "document": "调用方用户信息",
+          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "应用号信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "member": "string",
+          "name": "FlowType",
           "required": false,
-          "type": "object"
+          "type": "string"
         },
         {
           "default": "",
@@ -721,21 +721,12 @@
         },
         {
           "default": "",
-          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
+          "document": "被抄送人的信息列表。\n注:此功能为白名单功能，若有需要，请联系电子签客服开白使用",
           "example": "无",
-          "member": "int64",
-          "name": "Deadline",
+          "member": "CcInfo",
+          "name": "CcInfos",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签）",
-          "example": "无",
-          "member": "bool",
-          "name": "Unordered",
-          "required": false,
-          "type": "bool"
+          "type": "list"
         },
         {
           "default": "",
@@ -757,21 +748,21 @@
         },
         {
           "default": "",
-          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
+          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "无",
-          "member": "string",
-          "name": "FlowType",
+          "member": "int64",
+          "name": "Deadline",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
-          "document": "被抄送人的信息列表。\n注:此功能为白名单功能，若有需要，请联系电子签客服开白使用",
+          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签）",
           "example": "无",
-          "member": "CcInfo",
-          "name": "CcInfos",
+          "member": "bool",
+          "name": "Unordered",
           "required": false,
-          "type": "list"
+          "type": "bool"
         },
         {
           "default": "",
@@ -781,6 +772,15 @@
           "name": "CustomShowMap",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用号信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -820,6 +820,15 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "签署流程名称,最大长度200个字符",
           "example": "无",
           "member": "string",
@@ -838,30 +847,30 @@
         },
         {
           "default": "",
-          "document": "操作人信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
+          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
+          "example": "劳务合同",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
-          "document": "应用相关信息",
+          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
           "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "member": "string",
+          "name": "ClientToken",
           "required": false,
-          "type": "object"
+          "type": "string"
         },
         {
           "default": "",
-          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致",
-          "example": "true",
-          "member": "bool",
-          "name": "Unordered",
+          "document": "暂未开放",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
           "required": false,
-          "type": "bool"
+          "type": "string"
         },
         {
           "default": "",
@@ -871,15 +880,6 @@
           "name": "DeadLine",
           "required": false,
           "type": "int"
-        },
-        {
-          "default": "",
-          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
-          "example": "劳务合同",
-          "member": "string",
-          "name": "FlowType",
-          "required": false,
-          "type": "string"
         },
         {
           "default": "",
@@ -901,12 +901,12 @@
         },
         {
           "default": "",
-          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
-          "example": "无",
-          "member": "string",
-          "name": "ClientToken",
+          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致",
+          "example": "true",
+          "member": "bool",
+          "name": "Unordered",
           "required": false,
-          "type": "string"
+          "type": "bool"
         },
         {
           "default": "",
@@ -928,12 +928,12 @@
         },
         {
           "default": "",
-          "document": "暂未开放",
+          "document": "应用相关信息",
           "example": "无",
-          "member": "string",
-          "name": "CallbackUrl",
+          "member": "Agent",
+          "name": "Agent",
           "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1063,7 +1063,7 @@
       "members": [
         {
           "default": "",
-          "document": "调用方用户信息，参考通用结构",
+          "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1072,19 +1072,10 @@
         },
         {
           "default": "",
-          "document": "应用相关信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "链接类型\nHTTP：跳转电子签小程序的http_url，\nAPP：第三方APP或小程序跳转电子签小程序的path。\n默认为HTTP类型",
-          "example": "HTTP",
+          "document": "企业名称",
+          "example": "测试企业",
           "member": "string",
-          "name": "EndPoint",
+          "name": "OrganizationName",
           "required": false,
           "type": "string"
         },
@@ -1108,10 +1099,10 @@
         },
         {
           "default": "",
-          "document": "企业名称",
-          "example": "测试企业",
+          "document": "链接类型\nHTTP：跳转电子签小程序的http_url，\nAPP：第三方APP或小程序跳转电子签小程序的path。\n默认为HTTP类型",
+          "example": "HTTP",
           "member": "string",
-          "name": "OrganizationName",
+          "name": "EndPoint",
           "required": false,
           "type": "string"
         },
@@ -1141,6 +1132,15 @@
           "name": "AutoJumpBack",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1306,21 +1306,21 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "需要查询的流程ID列表",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
           "required": true,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "操作人信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
         },
         {
           "default": "",
@@ -1360,30 +1360,12 @@
       "members": [
         {
           "default": "",
-          "document": "操作人信息",
+          "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "查询偏移位置，默认0",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "查询个数，默认20，最大100",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
         },
         {
           "default": "",
@@ -1396,12 +1378,30 @@
         },
         {
           "default": "",
-          "document": "应用相关信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "document": "查询个数，默认20，最大100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
-          "type": "object"
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询偏移位置，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
+          "example": "无",
+          "member": "int64",
+          "name": "ContentType",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -1414,12 +1414,12 @@
         },
         {
           "default": "",
-          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
+          "document": "应用相关信息",
           "example": "无",
-          "member": "int64",
-          "name": "ContentType",
+          "member": "Agent",
+          "name": "Agent",
           "required": false,
-          "type": "int"
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1992,6 +1992,15 @@
       "members": [
         {
           "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "签署流程编号，由CreateFlow接口返回",
           "example": "无",
           "member": "string",
@@ -2001,12 +2010,12 @@
         },
         {
           "default": "",
-          "document": "用户信息",
+          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -2016,15 +2025,6 @@
           "name": "Agent",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
-          "example": "无",
-          "member": "string",
-          "name": "ClientToken",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"

@@ -199,6 +199,16 @@
         },
         {
           "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -233,6 +243,16 @@
           "example": "MySQL",
           "member": "string",
           "name": "DbEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-05-10 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -438,7 +458,7 @@
         },
         {
           "default": "",
-          "document": "集群类型, 0:公有云, 1:金融围笼",
+          "document": "集群类型, 0:公有云, 1:金融围笼, 2:CDC集群",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -448,7 +468,7 @@
         },
         {
           "default": "",
-          "document": "主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘",
+          "document": "主机类型, 0:物理机, 1:CVM机型, 2:CDC机型",
           "example": "0",
           "member": "int64",
           "name": "HostType",
@@ -638,10 +658,20 @@
         },
         {
           "default": "",
-          "document": "围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "金融围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cage-x-x",
           "member": "string",
           "name": "FenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属集群ID(默认集群为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "ClusterId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -884,10 +914,19 @@
           "value_allowed_null": false
         },
         {
-          "document": "围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "金融围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cage-x-x",
           "member": "string",
           "name": "FenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所属集群ID(默认集群为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "ClusterId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -982,6 +1021,15 @@
           "example": "[1]",
           "member": "int64",
           "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按所属集群ID过滤",
+          "example": "[\"cluster-xxxx\"\"]",
+          "member": "string",
+          "name": "ClusterId",
           "required": false,
           "type": "list"
         }

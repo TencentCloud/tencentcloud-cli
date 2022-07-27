@@ -1041,6 +1041,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "InstanceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7778,6 +7788,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备份源站，1: 备份源站，0: 普通源站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Backup",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8098,6 +8118,66 @@
           "member": "uint64",
           "name": "StatusCode",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否同时下发http和https规则健康检查配置",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProtocolFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测开关，=1表示开启；=0表示关闭",
+          "example": "无",
+          "member": "uint64",
+          "name": "PassiveEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测不健康屏蔽时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "BlockInter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测不健康统计间隔",
+          "example": "无",
+          "member": "uint64",
+          "name": "FailedCountInter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测不健康阈值",
+          "example": "无",
+          "member": "uint64",
+          "name": "FailedThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
+          "example": "无",
+          "member": "uint64",
+          "name": "PassiveStatusCode",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

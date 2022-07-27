@@ -1,0 +1,541 @@
+{
+  "actions": {
+    "CreateCRBlock": {
+      "document": "版权保护-新建拦截接口",
+      "input": "CreateCRBlockRequest",
+      "name": "新建拦截",
+      "output": "CreateCRBlockResponse"
+    },
+    "CreateCRCompanyVerify": {
+      "document": "品牌经营管家-版权保护模块企业认证接口",
+      "input": "CreateCRCompanyVerifyRequest",
+      "name": "企业认证",
+      "output": "CreateCRCompanyVerifyResponse"
+    },
+    "CreateCRRight": {
+      "document": "版权保护-新建发函接口",
+      "input": "CreateCRRightRequest",
+      "name": "新建发函",
+      "output": "CreateCRRightResponse"
+    },
+    "DescribeCRWorkInfo": {
+      "document": "查询作品基本信息",
+      "input": "DescribeCRWorkInfoRequest",
+      "name": "查询作品基本信息",
+      "output": "DescribeCRWorkInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-06-24",
+    "api_brief": "介绍如何使用API对品牌经营管家相关数据进行操作，例如获取热点商品信息等",
+    "serviceNameCN": "品牌经营管家",
+    "serviceShortName": "bma"
+  },
+  "objects": {
+    "CreateCRBlockRequest": {
+      "document": "CreateCRBlock请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "已存证的作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "侵权链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "侵权标题",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "侵权平台",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拦截结果回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "BlockUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "ValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "ValidEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "TortPic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommValidEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsProducer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRBlockResponse": {
+      "document": "CreateCRBlock返回参数结构体",
+      "members": [
+        {
+          "document": "侵权ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRCompanyVerifyRequest": {
+      "document": "CreateCRCompanyVerify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业证件号码",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业法人姓名",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyLegalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理员名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ManagerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理员手机号",
+          "example": "xxx",
+          "member": "string",
+          "name": "ManagerPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机验证码",
+          "example": "xxx",
+          "member": "string",
+          "name": "VerificationCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1",
+          "example": "1",
+          "member": "string",
+          "name": "CompanyIDType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRCompanyVerifyResponse": {
+      "document": "CreateCRCompanyVerify返回参数结构体",
+      "members": [
+        {
+          "document": "认证状态 0-认证成功 1-认证失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "认证结果返回",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRRightRequest": {
+      "document": "CreateCRRight请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "已存证的作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "侵权链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "侵权标题",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "侵权平台",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发函结果回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "RightUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x x x",
+          "member": "string",
+          "name": "ValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "ValidEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommValidEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "HomeFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "HomeValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "HomeValidEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsProducer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRRightResponse": {
+      "document": "CreateCRRight返回参数结构体",
+      "members": [
+        {
+          "document": "侵权ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRWorkInfoRequest": {
+      "document": "DescribeCRWorkInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRWorkInfoResponse": {
+      "document": "DescribeCRWorkInfo返回参数结构体",
+      "members": [
+        {
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "xxx",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "xxx",
+          "member": "int64",
+          "name": "AuthStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "xxx",
+          "member": "int64",
+          "name": "CommStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "xxx",
+          "member": "int64",
+          "name": "IsProducer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

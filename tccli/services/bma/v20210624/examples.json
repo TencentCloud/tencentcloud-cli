@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CreateCRBlock": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRBlock\n<公共请求参数>\n\n{\n    \"ValidStartDate\": \"xx\",\n    \"ValidEndDate\": \"xx\",\n    \"WorkId\": 0,\n    \"TortUrl\": \"xx\",\n    \"TortTitle\": \"xx\",\n    \"TortPlat\": \"xx\",\n    \"FileUrl\": \"xx\",\n    \"BlockUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"TortNum\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建拦截"
+      }
+    ],
+    "CreateCRCompanyVerify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRCompanyVerify\n<公共请求参数>\n\n{\n    \"CompanyName\": \"xxx\",\n    \"CompanyID\": \"xxx\",\n    \"CompanyLegalName\": \"xxx\",\n    \"ManagerName\": \"xxx\",\n    \"ManagerPhone\": \"xxx\",\n    \"VerificationCode\": \"xxx\",\n    \"CompanyIDType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Note\": \"xxx\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "企业认证接口"
+      }
+    ],
+    "CreateCRRight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRRight\n<公共请求参数>\n\n{\n    \"ValidStartDate\": \"xx\",\n    \"ValidEndDate\": \"xx\",\n    \"WorkId\": 0,\n    \"TortUrl\": \"xx\",\n    \"RightUrl\": \"xx\",\n    \"TortTitle\": \"xx\",\n    \"TortPlat\": \"xx\",\n    \"FileUrl\": \"xx\",\n    \"IsProducer\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"TortNum\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建发函"
+      }
+    ],
+    "DescribeCRWorkInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRWorkInfo\n<公共请求参数>\n\n{\n    \"WorkId\": 111\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorStatus\": 1,\n        \"IsProducer\": 0,\n        \"WorkName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"AuthStatus\": 1,\n        \"CommStatus\": 1\n    }\n}",
+        "title": "查询作品基本信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

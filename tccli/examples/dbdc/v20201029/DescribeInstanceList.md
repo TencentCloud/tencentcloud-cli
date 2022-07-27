@@ -42,6 +42,7 @@ Output:
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-3",
                 "FenceId": "cage-x-x",
+                "ClusterId": "",
                 "CreateTime": "2021-04-28 00:00:00"
             }
         ],

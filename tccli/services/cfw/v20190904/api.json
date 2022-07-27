@@ -31,9 +31,9 @@
       "output": "CreateDatabaseWhiteListRulesResponse"
     },
     "CreateNatFwInstance": {
-      "document": "创建防火墙实例",
+      "document": "创建NAT防火墙实例（Region参数必填）",
       "input": "CreateNatFwInstanceRequest",
-      "name": "创建防火墙实例",
+      "name": "创建NAT防火墙实例（Region参数必填）",
       "output": "CreateNatFwInstanceResponse"
     },
     "CreateNatFwInstanceWithDomain": {

@@ -31,9 +31,11 @@ Output:
                 "Memory": 10,
                 "Disk": 10,
                 "ShardNum": 0,
+                "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-1",
                 "DbHosts": "svr-test1|svr-test2",
-                "HostRole": 0
+                "HostRole": 0,
+                "CreateTime": "2022-05-20 12:00:00"
             }
         ],
         "RequestId": "8cf4daa6-b172-11eb-94d3-525400542aa6",

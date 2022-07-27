@@ -25,40 +25,11 @@ Output:
         "Total": 1,
         "InstanceList": [
             {
-                "Status": "xx",
-                "EipAddressStatus": "xx",
-                "Domain": "xx",
-                "DamDDoSStatus": 1,
-                "TagInfoList": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "Name": "xx",
-                "StaticPackRelation": {
-                    "ForwardRulesLimit": 1,
-                    "AutoRenewFlag": 1,
-                    "ProtectBandwidth": 1,
-                    "CurDeadline": "xx",
-                    "NormalBandwidth": 1
+                "Usage": {
+                    "PortRulesUsage": 1,
+                    "DomainRulesUsage": 1,
+                    "Last7DayAttackCount": 1
                 },
-                "Region": {
-                    "Region": "xx"
-                },
-                "EipAddressPackRelation": {
-                    "AutoRenewFlag": 1,
-                    "CurDeadline": "2020-09-22 00:00:00",
-                    "IpCount": 1
-                },
-                "EipFlag": 1,
-                "InstanceDetail": {
-                    "InstanceId": "xx",
-                    "EipList": [
-                        "1.1.1.1"
-                    ]
-                },
-                "CreatedTime": "2020-09-22 00:00:00",
                 "ExpiredTime": "2020-09-22 00:00:00",
                 "EipAddressInfo": {
                     "EipBoundRscIns": "xx",
@@ -66,6 +37,26 @@ Output:
                     "EipBoundRscEni": "xx",
                     "EipAddressRegion": "xx",
                     "ModifyTime": "xx"
+                },
+                "TagInfoList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "CreatedTime": "2020-09-22 00:00:00",
+                "Status": "xx",
+                "StaticPackRelation": {
+                    "ForwardRulesLimit": 1,
+                    "AutoRenewFlag": 1,
+                    "ProtectBandwidth": 1,
+                    "CurDeadline": "xx",
+                    "NormalBandwidth": 1
+                },
+                "EipAddressPackRelation": {
+                    "AutoRenewFlag": 1,
+                    "CurDeadline": "2020-09-22 00:00:00",
+                    "IpCount": 1
                 },
                 "SpecificationLimit": {
                     "ProtectCCQPS": 1,
@@ -82,19 +73,29 @@ Output:
                     "CurDeadline": "xx",
                     "NormalBandwidth": 1
                 },
-                "BGPIPChannelFlag": 1,
-                "Usage": {
-                    "PortRulesUsage": 1,
-                    "DomainRulesUsage": 1,
-                    "Last7DayAttackCount": 1
+                "Name": "xx",
+                "Region": {
+                    "Region": "xx"
                 },
-                "V6Flag": 1,
+                "DamDDoSStatus": 1,
+                "EipFlag": 1,
                 "PackInfo": {
                     "PackId": "xx",
                     "PackType": "xx"
                 },
-                "ZoneId": 1,
-                "Tgw": 1
+                "EipAddressStatus": "xx",
+                "Domain": "xx",
+                "Tgw": 1,
+                "InstanceDetail": {
+                    "InstanceId": "xx",
+                    "EipList": [
+                        "1.1.1.1"
+                    ]
+                },
+                "V6Flag": 1,
+                "BGPIPChannelFlag": 1,
+                "InstanceVersion": 1,
+                "ZoneId": 1
             }
         ],
         "RequestId": "xx"

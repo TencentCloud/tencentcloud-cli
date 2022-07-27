@@ -32,6 +32,22 @@
         "title": "请求示例"
       }
     ],
+    "ChangeInstanceRole": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=ChangeInstanceRole\n&GroupId=crs-rpl-267khx71\n&InstanceId=crs-5qlrlhux\n&InstanceRole=rw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "复制组实例更换角色"
+      }
+    ],
+    "ChangeMasterInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeMasterInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ChangeReplicaToMaster": [
       {
         "document": "",

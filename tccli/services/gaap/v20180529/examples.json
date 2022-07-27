@@ -195,7 +195,7 @@
     "CreateTCPListeners": [
       {
         "document": "创建TCP监听器",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateTCPListeners\n&ProxyId=link-bjkpdum1\n&ListenerName=test1\n&RealServerType=IP\n&Scheduler=rr\n&DelayLoop=20\n&ConnectTimeout=20\n&HealthCheck=1\n&Ports.0=90\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTCPListeners\n<公共请求参数>\n\n{\n    \"RealServerType\": \"IP\",\n    \"ConnectTimeout\": \"20\",\n    \"ProxyId\": \"link-bjkpdum1\",\n    \"HealthCheck\": \"1\",\n    \"ListenerName\": \"test1\",\n    \"Scheduler\": \"rr\",\n    \"Ports\": [\n        \"90\"\n    ],\n    \"DelayLoop\": \"20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\n        \"ListenerIds\": [\n            \"listener-o0f3at99\"\n        ]\n    }\n}",
         "title": "创建TCP监听器"
       }
@@ -203,7 +203,7 @@
     "CreateUDPListeners": [
       {
         "document": "创建UDP监听器",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateUDPListeners\n&ProxyId=link-bjkpdum1\n&ListenerName=test1\n&RealServerType=IP\n&Scheduler=rr\n&Ports.0=90\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUDPListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-bjkpdum1\",\n    \"RealServerType\": \"IP\",\n    \"ListenerName\": \"test1\",\n    \"Scheduler\": \"rr\",\n    \"Ports\": [\n        \"90\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\n        \"ListenerIds\": [\n            \"listener-o0f3at99\"\n        ]\n    }\n}",
         "title": "创建UDP监听器"
       }
@@ -597,8 +597,8 @@
     "DescribeUDPListeners": [
       {
         "document": "查询UDP监听器列表",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeUDPListeners\n&ProxyId=link-hwera8lq\n&ListenerId=listener-pbsgn7ej\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ListenerSet\": [\n            {\n                \"BindStatus\": 1,\n                \"SessionPersist\": 1,\n                \"RealServerType\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"RealServerPort\": 1,\n                \"ListenerId\": \"xx\",\n                \"CreateTime\": 1,\n                \"ListenerStatus\": 1,\n                \"ListenerName\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 111,\n                        \"RealServerId\": \"xx\",\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ],\n                        \"RealServerWeight\": 1,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ],\n                \"Port\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUDPListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-hwera8lq\",\n    \"ListenerId\": \"listener-pbsgn7ej\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ListenerSet\": [\n            {\n                \"RecvContext\": \"xx\",\n                \"RealServerType\": \"xx\",\n                \"CheckPort\": 0,\n                \"ListenerId\": \"xx\",\n                \"ContextType\": \"xx\",\n                \"ListenerName\": \"xx\",\n                \"Port\": 1,\n                \"BindStatus\": 1,\n                \"FailoverSwitch\": 0,\n                \"CheckType\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 111,\n                        \"RealServerId\": \"xx\",\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ],\n                        \"RealServerWeight\": 1,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ],\n                \"SessionPersist\": 1,\n                \"ConnectTimeout\": 1,\n                \"SendContext\": \"xx\",\n                \"HealthCheck\": 1,\n                \"HealthyThreshold\": 1,\n                \"DelayLoop\": 1,\n                \"ListenerStatus\": 1,\n                \"Protocol\": \"xx\",\n                \"RealServerPort\": 1,\n                \"UnhealthyThreshold\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询UDP监听器列表"
       }
     ],
@@ -731,7 +731,7 @@
     "ModifyTCPListenerAttribute": [
       {
         "document": "修改TCP监听器配置",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyTCPListenerAttribute\n&ProxyId=link-bjkpdum1\n&ListenerId=listener-o0f3at99\n&ListenerName=test10\n&Scheduler=rr\n&DelayLoop=30\n&ConnectTimeout=20\n&HealthCheck=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTCPListenerAttribute\n<公共请求参数>\n\n{\n    \"ConnectTimeout\": \"20\",\n    \"ProxyId\": \"link-bjkpdum1\",\n    \"HealthCheck\": \"1\",\n    \"ListenerId\": \"listener-o0f3at99\",\n    \"ListenerName\": \"test10\",\n    \"Scheduler\": \"rr\",\n    \"DelayLoop\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3919ba30-85c4-4cb4-81bf-ff243b50f3dc\"\n    }\n}",
         "title": "修改TCP监听器配置"
       }
@@ -739,7 +739,7 @@
     "ModifyUDPListenerAttribute": [
       {
         "document": "修改UDP监听器配置",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyUDPListenerAttribute\n&ProxyId=link-bjkpdum1\n&ListenerId=listener-o0f3at99\n&ListenerName=test10\n&Scheduler=rr\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUDPListenerAttribute\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-bjkpdum1\",\n    \"ListenerId\": \"listener-o0f3at99\",\n    \"Scheduler\": \"rr\",\n    \"ListenerName\": \"test10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3919ba30-85c4-4cb4-81bf-ff243b50f3dc\"\n    }\n}",
         "title": "修改UDP监听器配置"
       }

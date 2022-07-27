@@ -218,7 +218,7 @@
         {
           "default": "",
           "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "'20121212000001'",
+          "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
           "required": true,
@@ -238,7 +238,7 @@
         {
           "default": "",
           "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"20121212000001\"",
+          "example": "20121212000001",
           "member": "string",
           "name": "BatchCode",
           "required": true,
@@ -258,7 +258,7 @@
         {
           "default": "",
           "document": "所属商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"eqdmnz7020bmtvi9\"",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -268,7 +268,7 @@
         {
           "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"85tfp1sn78r9m1568i\"",
+          "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -318,7 +318,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"2021-12-01T06:48:45.000Z\"",
+          "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -328,7 +328,7 @@
         {
           "default": "",
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"2021-12-01T06:48:45.000Z\"",
+          "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -357,8 +357,8 @@
         },
         {
           "default": "",
-          "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "扩展字段",
           "member": "Ext",
           "name": "Ext",
           "required": true,
@@ -448,6 +448,15 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动ID",
+          "example": "1",
+          "member": "string",
+          "name": "MpTpl",
           "required": false,
           "type": "string"
         }
@@ -1960,6 +1969,33 @@
           "example": "abc",
           "member": "string",
           "name": "MpTpl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户ID",
+          "example": "1",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品ID",
+          "example": "1",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "abc",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         }

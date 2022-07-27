@@ -49,6 +49,8 @@ include tccli/services/bizlive/v20190313/api.json
 include tccli/services/bizlive/v20190313/examples.json
 include tccli/services/bm/v20180423/api.json
 include tccli/services/bm/v20180423/examples.json
+include tccli/services/bma/v20210624/api.json
+include tccli/services/bma/v20210624/examples.json
 include tccli/services/bmeip/v20180625/api.json
 include tccli/services/bmeip/v20180625/examples.json
 include tccli/services/bmlb/v20180625/api.json
@@ -135,6 +137,8 @@ include tccli/services/cynosdb/v20190107/api.json
 include tccli/services/cynosdb/v20190107/examples.json
 include tccli/services/dasb/v20191018/api.json
 include tccli/services/dasb/v20191018/examples.json
+include tccli/services/dataintegration/v20220613/api.json
+include tccli/services/dataintegration/v20220613/examples.json
 include tccli/services/dayu/v20180709/api.json
 include tccli/services/dayu/v20180709/examples.json
 include tccli/services/dbbrain/v20210527/api.json

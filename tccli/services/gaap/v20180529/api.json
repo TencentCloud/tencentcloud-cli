@@ -927,6 +927,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。",
+          "example": "master",
+          "member": "string",
+          "name": "RealServerFailoverRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2448,7 +2458,7 @@
         },
         {
           "default": "",
-          "document": "规则转发源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -2664,7 +2674,7 @@
         },
         {
           "default": "",
-          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -2682,7 +2692,7 @@
         },
         {
           "default": "",
-          "document": "监听器对应源站类型，支持IP或者DOMAIN类型。DOMAIN源站类型不支持wrr的源站调度策略。",
+          "document": "监听器绑定源站类型。IP表示IP地址，DOMAIN表示域名。",
           "example": "IP",
           "member": "string",
           "name": "RealServerType",
@@ -2817,7 +2827,7 @@
         },
         {
           "default": "",
-          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -2826,7 +2836,7 @@
         },
         {
           "default": "",
-          "document": "监听器对应源站类型，支持IP或者DOMAIN类型",
+          "document": "监听器绑定源站类型。IP表示IP地址，DOMAIN表示域名。",
           "example": "IP",
           "member": "string",
           "name": "RealServerType",
@@ -2859,6 +2869,105 @@
           "name": "RealServerPorts",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DelayLoop",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ConnectTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10",
+          "example": "5",
+          "member": "uint64",
+          "name": "HealthyThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhealthyThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启",
+          "example": "0",
+          "member": "int64",
+          "name": "FailoverSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启健康检查：1开启，0关闭。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康类型。PORT表示检查端口，PING表示PING。",
+          "example": "PING",
+          "member": "string",
+          "name": "CheckType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查探测端口。",
+          "example": "8888",
+          "member": "int64",
+          "name": "CheckPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测报文类型：TEXT表示文本。仅在健康检查类型为PORT时使用。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ContextType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测发送报文。仅在健康检查类型为PORT时使用。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "SendContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测接收报文。仅在健康检查类型为PORT时使用。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "RecvContext",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7275,7 +7384,7 @@
         },
         {
           "default": "",
-          "document": "调度策略，其中：\nrr，轮询；\nwrr，加权轮询；\nlc，最小连接数。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -7491,7 +7600,7 @@
         },
         {
           "default": "",
-          "document": "监听器源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -7608,10 +7717,109 @@
         },
         {
           "default": "",
-          "document": "监听器源站调度策略",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DelayLoop",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ConnectTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10",
+          "example": "5",
+          "member": "uint64",
+          "name": "HealthyThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhealthyThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启",
+          "example": "0",
+          "member": "int64",
+          "name": "FailoverSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源站是否开启健康检查：1开启，0关闭。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康类型。PORT表示检查端口，PING表示PING。",
+          "example": "PING",
+          "member": "string",
+          "name": "CheckType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查探测端口。",
+          "example": "8888",
+          "member": "int64",
+          "name": "CheckPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测报文类型：TEXT表示文本。仅在健康检查类型为PORT时使用。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ContextType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测发送报文。仅在健康检查类型为PORT时使用。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "SendContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测接收报文。仅在健康检查类型为PORT时使用。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "RecvContext",
           "required": false,
           "type": "string"
         }
@@ -8664,7 +8872,7 @@
         },
         {
           "default": "",
-          "document": "源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器",
+          "document": "源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。",
           "example": "master",
           "member": "string",
           "name": "RealServerFailoverRole",
@@ -8965,7 +9173,7 @@
         },
         {
           "default": "",
-          "document": "转发源站策略",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "xx",
           "member": "string",
           "name": "Scheduler",
@@ -9421,7 +9629,7 @@
         },
         {
           "default": "",
-          "document": "监听器源站访问策略，其中：\nrr表示轮询；\nwrr表示加权轮询；\nlc表示最小连接数。",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -9667,7 +9875,7 @@
         },
         {
           "default": "",
-          "document": "监听器源站访问策略",
+          "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
@@ -9713,6 +9921,116 @@
           "name": "SessionPersist",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站健康检查时间间隔，单位：秒。时间间隔取值在[5，300]之间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DelayLoop",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站健康检查响应超时时间，单位：秒。超时时间取值在[2，60]之间。超时时间应小于健康检查时间间隔DelayLoop。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ConnectTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "HealthyThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhealthyThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FailoverSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站是否开启健康检查：1开启，0关闭。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthCheck",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康类型。PORT表示检查端口，PING表示PING。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PING",
+          "member": "string",
+          "name": "CheckType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查探测端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8888",
+          "member": "int64",
+          "name": "CheckPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测报文类型：TEXT表示文本。仅在健康检查类型为PORT时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEXT",
+          "member": "string",
+          "name": "ContextType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测发送报文。仅在健康检查类型为PORT时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "SendContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP源站健康检查端口探测接收报文。仅在健康检查类型为PORT时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "RecvContext",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
