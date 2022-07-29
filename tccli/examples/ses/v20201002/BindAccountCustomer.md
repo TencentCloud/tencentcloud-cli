@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli ses BindAccountCustomer --cli-unfold-argument ```
+tccli ses BindAccountCustomer --cli-unfold-argument  \
+    --UserAppId 123 \
+    --TrackUrl http://123.com
+```
 
 Output: 
 ```

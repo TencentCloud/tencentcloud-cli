@@ -490,7 +490,28 @@
     },
     "BindAccountCustomerRequest": {
       "document": "BindAccountCustomer请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "使用该机构的用户的腾讯云账号ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "UserAppId",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "回调地址，以便将邮件递送状态通过该接口通知给调用方",
+          "example": "http://123.com/interface",
+          "member": "string",
+          "name": "TrackUrl",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "BindAccountCustomerResponse": {
@@ -632,6 +653,26 @@
           "required": true,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模板类型，直接访问腾讯云客户不对该字段进行处理",
+          "example": "templateCategory",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户appId, 直接访问腾讯云客户不用填写该字段",
+          "example": "1345",
+          "member": "uint64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2389,6 +2430,26 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "邮件模板分类，直接访问腾讯云用户会忽略该字段",
+          "example": "xx",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户账号id， 直接访问腾讯云用户不用传该字段",
+          "example": "123",
+          "member": "uint64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2417,6 +2478,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "腾讯云直接用户不必填写该字段",
+          "example": "123",
+          "member": "uint64",
+          "name": "InterAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
