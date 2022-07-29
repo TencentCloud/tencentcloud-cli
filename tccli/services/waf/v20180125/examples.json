@@ -54,6 +54,14 @@
         "title": "删除攻击日志下载任务记录"
       }
     ],
+    "DeleteCdcResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCdcResource\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DeleteTsRegion"
+      }
+    ],
     "DeleteDomainWhiteRules": [
       {
         "document": "",
@@ -140,6 +148,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoDenyIP\n<公共请求参数>\n\n{\n    \"Count\": 0,\n    \"Category\": \"xx\",\n    \"Domain\": \"xx\",\n    \"Name\": \"xx\",\n    \"Ip\": \"xx\",\n    \"VtsMax\": 1,\n    \"VtsMin\": 1,\n    \"Sort\": \"xx\",\n    \"Limit\": 1,\n    \"CtsMin\": 1,\n    \"Skip\": 1,\n    \"CtsMax\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "描述WAF自动封禁IP 详情"
+      }
+    ],
+    "DescribeCdcResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdcResource\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"010000000\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": false\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"Status\": 0,\n                \"Ip\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"Auth\": \"xx\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Port\": 1,\n                \"Type\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
       }
     ],
     "DescribeDomainWhiteRules": [
@@ -246,6 +262,14 @@
         "title": "查询示例"
       }
     ],
+    "DescribeUserCdcClbWafRegions": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserCdcClbWafRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Region\": \"gz\",\n                \"Clusters\": [\n                    {\n                        \"Id\": \"cluster-o41khj88\",\n                        \"Name\": \"xxx\"\n                    },\n                    {\n                        \"Id\": \"cluster-o41khj99\",\n                        \"Name\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"123456789\"\n    }\n}",
+        "title": "获取CDC场景下对客户已经开放的负载均衡型WAF的地域"
+      }
+    ],
     "DescribeUserClbWafRegions": [
       {
         "document": "",
@@ -308,6 +332,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessPeriod\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"Period\": 30\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "删除访问日志导出"
+      }
+    ],
+    "ModifyCdcResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdcResource\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"OpAppId\": 1,\n    \"ClusterId\": \"1\",\n    \"Ip\": \"192.168.1.1\",\n    \"Port\": 6379,\n    \"Auth\": \"passwd\",\n    \"Type\": \"redis\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "ModifyCdcResource"
       }
     ],
     "ModifyCustomRuleStatus": [

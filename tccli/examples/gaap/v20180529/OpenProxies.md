@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap OpenProxies --cli-unfold-argument  \
-    --ProxyIds link-11112222 link-11113333
+    --ProxyIds link-11113333 link-11112222
 ```
 
 Output: 

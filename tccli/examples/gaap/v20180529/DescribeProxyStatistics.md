@@ -7,10 +7,10 @@ Input:
 ```
 tccli gaap DescribeProxyStatistics --cli-unfold-argument  \
     --ProxyId link-rfgt56hy \
-    --MetricNames Concurrent \
-    --StartTime '2019-03-25 12:00:00' \
-    --EndTime '2019-03-26 12:00:00' \
-    --Granularity 300
+    --EndTime 2019-03-26 12:00:00 \
+    --Granularity 300 \
+    --StartTime 2019-03-25 12:00:00 \
+    --MetricNames Concurrent
 ```
 
 Output: 

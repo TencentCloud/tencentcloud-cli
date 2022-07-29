@@ -25,9 +25,9 @@
       "output": "DescribeCvmQuotaResponse"
     },
     "DescribeEmrApplicationStatics": {
-      "document": " yarn applciation 统计接口查询",
+      "document": " yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
-      "name": "【监控】查询Appilication统计信息",
+      "name": "【监控】查询Application统计信息",
       "output": "DescribeEmrApplicationStaticsResponse"
     },
     "DescribeInstanceRenewNodes": {

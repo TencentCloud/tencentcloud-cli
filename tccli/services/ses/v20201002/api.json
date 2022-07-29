@@ -6,6 +6,18 @@
       "name": "批量发送邮件",
       "output": "BatchSendEmailResponse"
     },
+    "BatchSendEmailWithReceiverDetail": {
+      "document": "本接口与接口BatchSendEmail大致相同，是同时结合接口CreateReceiverDetailWithData和接口BatchSendEmail的功能，减少一次API调用，避免等待收件人明细上传完毕才能创建批量发送任务。需要说明的是，使用本接口发送，任务发送完成后，会删除收件人列表和收件人明细数据，请结合实际需求考虑使用。\n您可以通过此API批量发送TEXT或者HTML邮件，适用于营销类、通知类邮件。仅支持使用模板发送邮件。需先创建收件人列表，然后使用本接口，传入收件人地址数组和收件人列表id来发送。\n批量发送任务支持定时发送和周期重复发送，定时发送需传TimedParam，周期重复发送需传CycleParam。不需要用户手动启动任务。",
+      "input": "BatchSendEmailWithReceiverDetailRequest",
+      "name": "通过收件人地址来批量发送",
+      "output": "BatchSendEmailWithReceiverDetailResponse"
+    },
+    "BindAccountCustomer": {
+      "document": "为了满足有的用户通过第三方机构访问腾讯云SES服务的需求，提供该接口。机构及其用户必须开通了SES服务",
+      "input": "BindAccountCustomerRequest",
+      "name": "绑定机构及其用户",
+      "output": "BindAccountCustomerResponse"
+    },
     "CreateEmailAddress": {
       "document": "在验证了发信域名之后，您需要一个发信地址来发送邮件。例如发信域名是mail.qcloud.com，那么发信地址可以为 service@mail.qcloud.com。如果您想要收件人在收件箱列表中显示您的别名，例如\"腾讯云邮件通知\"。那么发信地址为： 别名 空格 尖括号 邮箱地址。请注意中间需要有空格",
       "input": "CreateEmailAddressRequest",
@@ -149,6 +161,12 @@
       "input": "UpdateEmailTemplateRequest",
       "name": "更新邮件模板",
       "output": "UpdateEmailTemplateResponse"
+    },
+    "UpdateWebhookUrl": {
+      "document": "调用SendMail返回成功，并不表示邮件已经递送到相应的ESP(Email Service Provider)。您需要设置一个回调地址，腾讯云将在产生递送成功、腾讯云拒信、ESP退信、用户打开邮件、点击链接、退订等事件后通知到Webhook的地址。该地址默认为空，不通知。",
+      "input": "UpdateWebhookUrlRequest",
+      "name": "配置Webhook地址",
+      "output": "UpdateWebhookUrlResponse"
     }
   },
   "metadata": {
@@ -332,6 +350,161 @@
       ],
       "type": "object"
     },
+    "BatchSendEmailWithReceiverDetailRequest": {
+      "document": "BatchSendEmailWithReceiverDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照\n发信人 <邮件地址> 的方式填写，例如：\n腾讯云团队 <noreply@mail.qcloud.com>",
+          "example": "abc@ef.com",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "邮件主题",
+          "example": "邮件主题",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收信人邮箱以及模板参数，数组形式",
+          "example": "无",
+          "member": "ReceiverInputData",
+          "name": "EmailDatas",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云",
+          "example": "abc@ef.com",
+          "member": "string",
+          "name": "ReplyToAddresses",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "使用模板发送时，填写的模板相关参数",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "周期发送任务的必要参数",
+          "example": "无",
+          "member": "CycleEmailParam",
+          "name": "CycleParam",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时发送任务的必要参数",
+          "example": "无",
+          "member": "TimedEmailParam",
+          "name": "TimedParam",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "退订选项 1: 加入退订链接 0: 不加入退订链接",
+          "example": "无",
+          "member": "string",
+          "name": "Unsubscribe",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面",
+          "example": "无",
+          "member": "uint64",
+          "name": "ADLocation",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "BatchSendEmailWithReceiverDetailResponse": {
+      "document": "BatchSendEmailWithReceiverDetail返回参数结构体",
+      "members": [
+        {
+          "document": "发送任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAccountCustomerRequest": {
+      "document": "BindAccountCustomer请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BindAccountCustomerResponse": {
+      "document": "BindAccountCustomer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BlackEmailAddress": {
       "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间",
       "members": [
@@ -447,7 +620,8 @@
           "member": "string",
           "name": "TemplateName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -456,7 +630,8 @@
           "member": "TemplateContent",
           "name": "TemplateContent",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -471,7 +646,8 @@
           "name": "TemplateID",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2191,7 +2367,8 @@
           "member": "TemplateContent",
           "name": "TemplateContent",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2200,7 +2377,8 @@
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2209,13 +2387,42 @@
           "member": "string",
           "name": "TemplateName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
     },
     "UpdateEmailTemplateResponse": {
       "document": "UpdateEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWebhookUrlRequest": {
+      "document": "UpdateWebhookUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "回调地址",
+          "example": "https://www.example.com/path/to/callback",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWebhookUrlResponse": {
+      "document": "UpdateWebhookUrl返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap ModifyCertificate --cli-unfold-argument  \
-    --ListenerId listener-xxx \
     --Domain www.test.com \
     --CertificateId cert-12345678 \
-    --ClientCertificateId cert-abcdefgh
+    --ClientCertificateId cert-abcdefgh \
+    --ListenerId listener-xxx
 ```
 
 Output: 

@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli gaap DescribeCustomHeader --cli-unfold-argument  \
-    --RuleId rule-18vhg67
-```
+tccli gaap DescribeCustomHeader --cli-unfold-argument ```
 
 Output: 
 ```

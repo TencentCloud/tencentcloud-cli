@@ -6,11 +6,14 @@ Input:
 
 ```
 tccli dlc ListTaskJobLogDetail --cli-unfold-argument  \
-    --TaskId xx \
+    --Filters.0.Values xx \
+    --Filters.0.Name xx \
     --StartTime 0 \
-    --EndTime 0 \
+    --Asc True \
     --Limit 0 \
-    --Context xx
+    --Context xx \
+    --TaskId xx \
+    --EndTime 0
 ```
 
 Output: 

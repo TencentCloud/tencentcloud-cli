@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap CheckProxyCreate --cli-unfold-argument  \
-    --AccessRegion EastChina \
-    --RealServerRegion SouthChina \
+    --Concurrent 2 \
     --Bandwidth 10 \
-    --Concurrent 2
+    --RealServerRegion SouthChina \
+    --AccessRegion EastChina
 ```
 
 Output: 

@@ -775,7 +775,7 @@
     "SendMessages": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMessages\n&Topic=tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessages\n<公共请求参数>\n\n{\n    \"Topic\": \"tenant/namespace/topic\",\n    \"Payload\": \"\\\"hello TDMQ\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:11:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "成功发送单条消息"
       }

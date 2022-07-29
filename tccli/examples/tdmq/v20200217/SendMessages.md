@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq SendMessages --cli-unfold-argument  \
     --Topic tenant/namespace/topic \
-    --Payload '"hello TDMQ"'
+    --Payload "hello TDMQ"
 ```
 
 Output: 

@@ -33,6 +33,7 @@ Output:
                         "RealServerStatus": 0,
                         "RealServerPort": 111,
                         "RealServerId": "xx",
+                        "RealServerFailoverRole": "master",
                         "DownIPList": [
                             "11.11.11.11:111"
                         ],

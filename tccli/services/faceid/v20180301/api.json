@@ -1248,7 +1248,8 @@
           "name": "OcrFront",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1258,7 +1259,8 @@
           "name": "OcrBack",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1268,7 +1270,8 @@
           "name": "ProcessedFrontImage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1278,7 +1281,8 @@
           "name": "ProcessedBackImage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1288,17 +1292,30 @@
           "name": "Avatar",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9102 身份证复印件告警。\n-9103 身份证翻拍告警。\n-9106 身份证 PS 告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警，\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "int64",
           "name": "WarnInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警，\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "int64",
+          "name": "BackWarnInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

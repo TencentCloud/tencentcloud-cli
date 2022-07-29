@@ -13407,7 +13407,17 @@
           "name": "NetworkAclId",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13417,7 +13427,7 @@
           "name": "Limit",
           "required": false,
           "type": "int",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -13427,7 +13437,7 @@
           "name": "Filters",
           "required": false,
           "type": "list",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"

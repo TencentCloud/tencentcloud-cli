@@ -3111,6 +3111,28 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外网地址域名",
+          "example": "gz.xxx.sqlserver.tencent.com",
+          "member": "string",
+          "name": "DnsPodDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外网端口号",
+          "example": "2032",
+          "member": "int64",
+          "name": "TgwWanVPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

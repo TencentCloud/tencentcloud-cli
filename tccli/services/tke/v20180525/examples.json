@@ -704,6 +704,14 @@
         "title": "查询边缘计算集群的节点信息"
       }
     ],
+    "DescribeEdgeLogSwitches": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeLogSwitches\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cls-xxx1\",\n        \"cls-xxx2\"\n    ]\n}",
+        "output": "{\r\n    \"Response\":{\r\n        \"SwitchSet\":[\r\n            {\r\n                \"ClusterId\":\"cls-xxx1\",\r\n                \"Audit\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Event\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Log\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                }\r\n            },\r\n            {\r\n                \"ClusterId\":\"cls-xxx2\",\r\n                \"Audit\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Event\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                },\r\n                \"Log\":{\r\n                   \"Enable\": true,\r\n                   \"TopicSet\": \"xxxxx\",\r\n                   \"TopicId\": \"xxxxx\"\r\n                }\r\n            }\r\n        ],\r\n        \"RequestId\":\"eac6b301-a322-493a-8e36-83b295459397\"\r\n    }\r\n}",
+        "title": "查询开关列表接口示例"
+      }
+    ],
     "DescribeEksContainerInstanceLog": [
       {
         "document": "",

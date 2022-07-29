@@ -8693,7 +8693,7 @@
         },
         {
           "default": "",
-          "document": "是否只查询EKS超级节点",
+          "document": "是否只查询EKS超级节点(容器集群)",
           "example": "false",
           "member": "bool",
           "name": "OnlyEKS",

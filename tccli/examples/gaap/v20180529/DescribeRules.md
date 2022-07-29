@@ -62,6 +62,7 @@ Output:
                                 1
                             ]
                         },
+                        "ForcedRedirect": "1",
                         "Scheduler": "xx",
                         "Path": "xx",
                         "RuleStatus": 1,
@@ -71,6 +72,7 @@ Output:
                                 "RealServerStatus": 0,
                                 "RealServerPort": 234,
                                 "RealServerId": "xx",
+                                "RealServerFailoverRole": "xx",
                                 "DownIPList": [
                                     "xx"
                                 ],
@@ -82,6 +84,7 @@ Output:
                                 "RealServerPort": 424,
                                 "RealServerId": "xx",
                                 "RealServerWeight": 1,
+                                "RealServerFailoverRole": "xx",
                                 "DownIPList": [
                                     "xx"
                                 ],

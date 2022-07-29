@@ -539,7 +539,7 @@
     "PushUrlsCache": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=PushUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PushUrlsCache\n<公共请求参数>\n\n{\n    \"Urls\": [\n        \"http://www.test.com/1.jpg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"TaskId\": \"15475444535871929928456\"\n    }\n}",
         "title": "预热 URL"
       }

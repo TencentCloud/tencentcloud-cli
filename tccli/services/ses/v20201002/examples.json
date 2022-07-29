@@ -8,6 +8,22 @@
         "title": "新增批量发送任务"
       }
     ],
+    "BatchSendEmailWithReceiverDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSendEmailWithReceiverDetail\n<公共请求参数>\n\n{\n    \"TimedParam\": {\n        \"BeginTime\": \"2021-09-10 11:10:11\"\n    },\n    \"FromEmailAddress\": \"abc@bbc.com\",\n    \"ReplyToAddresses\": \"abc@bbc.com\",\n    \"ReceiverId\": 123,\n    \"Template\": {\n        \"TemplateData\": \"{\\\"name\\\":\\\"123\\\"}\",\n        \"TemplateID\": 1\n    },\n    \"CycleParam\": {\n        \"IntervalTime\": 1,\n        \"BeginTime\": \"2021-09-10 11:10:11\"\n    },\n    \"Subject\": \"邮件主题\",\n    \"TaskType\": 1,\n    \"ADLocation\": 0,\n    \"EmailDatas\": [\n        {\n            \"Email\": \"456@bc.com\",\n            \"TemplateData\": \"{\\\"name\\\":\\\"aa\\\",\\\"age\\\":\\\"12\\\"}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "新增批量自动发送任务"
+      }
+    ],
+    "BindAccountCustomer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAccountCustomer\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "绑定用户"
+      }
+    ],
     "CreateEmailAddress": [
       {
         "document": "",
@@ -222,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateID\": 10091,\n    \"TemplateName\": \"xx\",\n    \"TemplateContent\": {\n        \"Html\": \"PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+\",\n        \"Text\": \"dGhpcyBpcyBhIGV4YW1wbGU=\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "更新模板内容"
+      }
+    ],
+    "UpdateWebhookUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWebhookUrl\n<公共请求参数>\n\n{\n    \"Url\": \"https://www.example.com/path/to/callback\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "请求验证"
       }
     ]
   },

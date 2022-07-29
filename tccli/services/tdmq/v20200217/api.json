@@ -10424,7 +10424,8 @@
           "member": "string",
           "name": "Topic",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10433,7 +10434,8 @@
           "member": "string",
           "name": "Payload",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10442,16 +10444,18 @@
           "member": "string",
           "name": "StringToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "设置 producer 的名字，要求全局唯一，用户不配置，系统会随机生成",
+          "document": "设置 producer 的名字，要求全局唯一。该参数建议用户无需手动配置，此时系统会随机生成，如果手动设置有可能会造成创建 Producer 失败进而导致消息发送失败。\n该参数主要用于某些特定场景下，只允许特定的 Producer 生产消息时设置，用户的大部分场景使用不到该特性。",
           "example": "producer",
           "member": "string",
           "name": "ProducerName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10460,7 +10464,8 @@
           "member": "int64",
           "name": "SendTimeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10469,7 +10474,8 @@
           "member": "int64",
           "name": "MaxPendingMessages",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10484,7 +10490,8 @@
           "name": "MessageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "返回的错误消息，如果返回为 “”，说明没有错误\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10493,7 +10500,8 @@
           "name": "ErrorMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

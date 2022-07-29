@@ -37,6 +37,7 @@ Output:
                 "RealServerStatus": 1,
                 "RealServerPort": 80,
                 "RealServerId": "xx",
+                "RealServerFailoverRole": "xx",
                 "DownIPList": [
                     "1.1.1.1"
                 ],

@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AbortCronJobs": {
+      "document": "停止定时任务",
+      "input": "AbortCronJobsRequest",
+      "name": "停止定时任务",
+      "output": "AbortCronJobsResponse"
+    },
     "AbortJob": {
       "document": "停止任务",
       "input": "AbortJobRequest",
@@ -53,6 +59,12 @@
       "input": "DeleteAlertChannelRequest",
       "name": "删除告警通知接收组",
       "output": "DeleteAlertChannelResponse"
+    },
+    "DeleteCronJobs": {
+      "document": "删除定时任务",
+      "input": "DeleteCronJobsRequest",
+      "name": "删除定时任务",
+      "output": "DeleteCronJobsResponse"
     },
     "DeleteFiles": {
       "document": "删除文件",
@@ -272,6 +284,44 @@
     "serviceShortName": "pts"
   },
   "objects": {
+    "AbortCronJobsRequest": {
+      "document": "AbortCronJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID数组",
+          "example": "[\"cron-xx\"]",
+          "member": "string",
+          "name": "CronJobIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AbortCronJobsResponse": {
+      "document": "AbortCronJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AbortJobRequest": {
       "document": "AbortJob请求参数结构体",
       "members": [
@@ -885,16 +935,6 @@
         },
         {
           "default": "",
-          "document": "Notice ID",
-          "example": "notice-xx",
-          "member": "string",
-          "name": "NoticeId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "执行频率类型，1:只执行一次; 2:日粒度; 3:周粒度; 4:高级",
           "example": "1",
           "member": "int64",
@@ -929,6 +969,16 @@
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Notice ID",
+          "example": "notice-xx",
+          "member": "string",
+          "name": "NoticeId",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -1104,7 +1154,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1113,7 +1164,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1122,7 +1174,8 @@
           "member": "TagSpec",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1137,7 +1190,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1689,6 +1743,44 @@
     },
     "DeleteAlertChannelResponse": {
       "document": "DeleteAlertChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCronJobsRequest": {
+      "document": "DeleteCronJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定时任务ID数组",
+          "example": "[\"cron-xx\"]",
+          "member": "string",
+          "name": "CronJobIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCronJobsResponse": {
+      "document": "DeleteCronJobs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2803,7 +2895,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2812,7 +2905,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2821,7 +2915,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2830,7 +2925,8 @@
           "member": "string",
           "name": "ProjectName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2839,7 +2935,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2848,7 +2945,8 @@
           "member": "bool",
           "name": "Ascend",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2857,7 +2955,8 @@
           "member": "TagSpec",
           "name": "TagFilters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2872,7 +2971,8 @@
           "name": "ProjectSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "项目数量",
@@ -2881,7 +2981,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6608,16 +6709,6 @@
         },
         {
           "default": "",
-          "document": "Notice ID",
-          "example": "notice-xx",
-          "member": "string",
-          "name": "NoticeId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "定时任务名字",
           "example": "cronjob",
           "member": "string",
@@ -6662,6 +6753,16 @@
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Notice ID",
+          "example": "notice-xx",
+          "member": "string",
+          "name": "NoticeId",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -6790,7 +6891,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6799,7 +6901,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6808,7 +6911,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6817,7 +6921,8 @@
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6826,7 +6931,8 @@
           "member": "TagSpec",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
