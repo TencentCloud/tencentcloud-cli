@@ -42,12 +42,6 @@
       "name": "查询图片信息",
       "output": "DescribeImagesResponse"
     },
-    "DetectCelebrity": {
-      "document": "传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。\n\n支持识别一张图片中存在的多个人脸，针对每个人脸，会给出与之最相似的公众人物。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
-      "input": "DetectCelebrityRequest",
-      "name": "公众人物识别",
-      "output": "DetectCelebrityResponse"
-    },
     "DetectDisgust": {
       "document": "输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。\n\n通过恶心图片识别, 可以判断一张图片是否令人恶心, 同时给出它属于的潜在类别, 让您能够过滤掉使人不愉快的图片。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectDisgustRequest",
@@ -978,54 +972,6 @@
       ],
       "type": "object"
     },
-    "DetectCelebrityRequest": {
-      "document": "DetectCelebrity请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DetectCelebrityResponse": {
-      "document": "DetectCelebrity返回参数结构体",
-      "members": [
-        {
-          "document": "公众人物识别结果数组。如果检测不到人脸，返回为空；最多可以返回10个人脸识别结果。",
-          "member": "Face",
-          "name": "Faces",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "本服务在不同误识率水平下（将图片中的人物识别错误的比例）的推荐阈值，可以用于控制识别结果的精度。 \nFalseRate1Percent, FalseRate5Permil, FalseRate1Permil分别代表误识率在百分之一、千分之五、千分之一情况下的推荐阈值。 \n因为阈值会存在变动，请勿将此处输出的固定值处理，而是每次取值与confidence对比，来判断本次的识别结果是否可信。\n 例如，如果您业务中可以接受的误识率是1%，则可以将所有confidence>=FalseRate1Percent的结论认为是正确的。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "Threshold",
-          "name": "Threshold",
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DetectDisgustRequest": {
       "document": "DetectDisgust请求参数结构体",
       "members": [
@@ -1621,93 +1567,6 @@
       ],
       "type": "object"
     },
-    "Face": {
-      "document": "公众人物识别人脸信息",
-      "members": [
-        {
-          "default": "",
-          "document": "与图片中人脸最相似的公众人物的名字。",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "公众人物身份标签的数组，一个公众人物可能有多个身份标签。",
-          "member": "Labels",
-          "name": "Labels",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "对人物的简介。",
-          "member": "string",
-          "name": "BasicInfo",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。",
-          "member": "int64",
-          "name": "Confidence",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "人脸区域左上角横坐标。",
-          "member": "int64",
-          "name": "X",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "人脸区域左上角纵坐标。",
-          "member": "int64",
-          "name": "Y",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "人脸区域宽度。",
-          "member": "int64",
-          "name": "Width",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "人脸区域高度。",
-          "member": "int64",
-          "name": "Height",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "GroupInfo": {
       "document": "图库信息。",
       "members": [
@@ -1924,32 +1783,6 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "Labels": {
-      "document": "名人识别的标签",
-      "members": [
-        {
-          "default": "",
-          "document": "公众人物身份标签的一级分类，例如体育明星、娱乐明星等；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
-          "member": "string",
-          "name": "FirstLabel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "公众人物身份标签的二级分类，例如歌手（对应一级标签为“娱乐明星”）；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "string",
-          "member": "string",
-          "name": "SecondLabel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2574,39 +2407,6 @@
         }
       ],
       "type": "object"
-    },
-    "Threshold": {
-      "document": "本服务在不同误识率水平下（将图片中的人物识别错误的比例）的推荐阈值，可以用于控制识别结果的精度。\n{FalseRate1Percent, FalseRate5Permil, FalseRate1Permil}分别代表误识率在百分之一、千分之五、千分之一情况下的推荐阈值。\n因为阈值会存在变动，请勿将此处输出的固定值处理，而是每次取值与confidence对比，来判断本次的识别结果是否可信。\n例如，如果您业务中可以接受的误识率是1%，则可以将所有confidence>=FalseRate1Percent的结论认为是正确的。",
-      "members": [
-        {
-          "default": "",
-          "document": "误识率在百分之一时的推荐阈值。",
-          "member": "int64",
-          "name": "FalseRate1Percent",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "误识率在千分之五时的推荐阈值。",
-          "member": "int64",
-          "name": "FalseRate5Permil",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "误识率在千分之一时的推荐阈值。",
-          "member": "int64",
-          "name": "FalseRate1Permil",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     }
   },
   "version": "1.0"

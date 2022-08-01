@@ -11,7 +11,7 @@
     "CreateCRCompanyVerify": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRCompanyVerify\n<公共请求参数>\n\n{\n    \"CompanyName\": \"xxx\",\n    \"CompanyID\": \"xxx\",\n    \"CompanyLegalName\": \"xxx\",\n    \"ManagerName\": \"xxx\",\n    \"ManagerPhone\": \"xxx\",\n    \"VerificationCode\": \"xxx\",\n    \"CompanyIDType\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRCompanyVerify\n<公共请求参数>\n\n{\n    \"CompanyName\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Note\": \"xxx\",\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "企业认证接口"
       }
@@ -24,12 +24,76 @@
         "title": "新建发函"
       }
     ],
+    "CreateCRWork": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRWork\n<公共请求参数>\n\n{\n    \"WhiteLists\": [\n        \"xx\"\n    ],\n    \"IsMonitor\": \"xx\",\n    \"MonitorUrl\": \"xx\",\n    \"IsOriginal\": \"xx\",\n    \"SampleDownloadURL\": \"xx\",\n    \"ProducerID\": 0,\n    \"IsRelease\": \"xx\",\n    \"WorkCategory\": \"xx\",\n    \"WorkDesc\": \"xx\",\n    \"WorkName\": \"xx\",\n    \"SamplePublicURL\": \"xx\",\n    \"ProduceTime\": \"xx\",\n    \"CertUrl\": \"xx\",\n    \"ProduceType\": \"xx\",\n    \"IsCert\": \"xx\",\n    \"SampleContentURL\": \"xx\",\n    \"GrantType\": \"xx\",\n    \"WorkSign\": \"xx\",\n    \"WorkPic\": \"xx\",\n    \"WorkType\": \"xx\",\n    \"ProducerName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": 0,\n        \"RequestId\": \"xx\",\n        \"WorkId\": 0\n    }\n}",
+        "title": "添加作品"
+      }
+    ],
+    "DescribeCRMonitorDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRMonitorDetail\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"WorkId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"MonitorStatus\": 0,\n        \"RequestId\": \"xx\",\n        \"Torts\": [\n            {\n                \"TortId\": 0,\n                \"DetectTime\": \"xx\",\n                \"WorkTitle\": \"xx\",\n                \"Author\": \"xx\",\n                \"BlockStatus\": 0,\n                \"TortURL\": \"xx\",\n                \"TortTitle\": \"xx\",\n                \"PubTime\": \"xx\",\n                \"TortNum\": \"xx\",\n                \"ObtainNote\": \"xx\",\n                \"TortPlat\": \"xx\",\n                \"RightStatus\": 0,\n                \"ObtainStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询作品监测详情"
+      }
+    ],
+    "DescribeCRMonitors": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRMonitors\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {},\n        {},\n        {},\n        {},\n        {},\n        {},\n        {},\n        {}\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"Monitors\": [\n            {\n                \"TortURLNum\": 0,\n                \"MonitorStatus\": 1,\n                \"WorkId\": 39,\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"WorkCategory\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkType\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 0,\n                \"MonitorStatus\": 1,\n                \"WorkId\": 38,\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 0,\n                \"MonitorStatus\": 1,\n                \"WorkId\": 37,\n                \"TortPlatNum\": 0,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            },\n            {\n                \"TortURLNum\": 4,\n                \"MonitorStatus\": 1,\n                \"WorkId\": 36,\n                \"TortPlatNum\": 4,\n                \"WorkName\": \"xx\",\n                \"InsertTime\": \"xx\",\n                \"WorkType\": \"xx\",\n                \"MonitorNote\": \"xx\",\n                \"MonitorTime\": \"xx\",\n                \"WorkCategory\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询监测列表"
+      }
+    ],
     "DescribeCRWorkInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRWorkInfo\n<公共请求参数>\n\n{\n    \"WorkId\": 111\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorStatus\": 1,\n        \"IsProducer\": 0,\n        \"WorkName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"AuthStatus\": 1,\n        \"CommStatus\": 1\n    }\n}",
         "title": "查询作品基本信息"
+      }
+    ],
+    "ModifyCRBlockStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRBlockStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"BlockUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拦截申请"
+      }
+    ],
+    "ModifyCRMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRMonitor\n<公共请求参数>\n\n{\n    \"MonitorStatus\": \"xx\",\n    \"WorkId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改监测状态"
+      }
+    ],
+    "ModifyCRObtainStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRObtainStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"ObtainType\": 0,\n    \"ObtainDuration\": 0,\n    \"ObtainUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取证申请"
+      }
+    ],
+    "ModifyCRRightStatus": [
+      {
+        "document": "维权申请",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRRightStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"RightUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "维权申请"
+      }
+    ],
+    "UpdateCRWork": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCRWork\n<公共请求参数>\n\n{\n    \"WorkId\": 123,\n    \"ContentType\": \"txt\",\n    \"Content\": \"xxx\",\n    \"CertType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceId\": 0,\n        \"RequestId\": \"xx\",\n        \"WorkId\": 123\n    }\n}",
+        "title": "更新作品"
       }
     ]
   },

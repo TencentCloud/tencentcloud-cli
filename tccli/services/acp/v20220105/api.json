@@ -664,12 +664,30 @@
       "members": [
         {
           "default": "",
-          "document": "资源计费项名称",
+          "document": "资源计费项名称(为空时，则根据TaskType和Platform进行查询)",
           "example": "sp_011886_maats_inquire",
           "member": "string",
           "name": "PriceName",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型, 0:基础版, 1:专家版",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用平台, 0:android",
+          "example": "0",
+          "member": "int64",
+          "name": "Platform",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -871,7 +889,7 @@
         },
         {
           "default": "",
-          "document": "报告类型, 0:诊断报告, 1:堆栈报告",
+          "document": "报告类型, 0:诊断报告, 1:堆栈报告, 2:视频证据(预留), 3:报告json结果",
           "example": "0",
           "member": "int64",
           "name": "ReportType",
@@ -894,7 +912,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "诊断报告/堆栈信息下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断报告/堆栈信息/报告json结果下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
@@ -903,7 +921,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "诊断报告/堆栈名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断报告/堆栈/报告json结果的名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",

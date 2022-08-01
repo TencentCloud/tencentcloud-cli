@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: region.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Limit\": 5,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 39,\n        \"Products\": [\n            {\n                \"Name\": \"cvm\"\n            },\n            {\n                \"Name\": \"vpc\"\n            },\n            {\n                \"Name\": \"faceid\"\n            },\n            {\n                \"Name\": \"cp\"\n            },\n            {\n                \"Name\": \"cls\"\n            }\n        ],\n        \"RequestId\": \"bae5aa6f-f179-4fd6-95a1-e939c3c0b253\"\n    }\n}",
+        "title": "查询产品信息"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: region.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{\n    \"Product\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区(广州)\",\n                \"RegionState\": \"AVAILABLE\"\n            }\n        ],\n        \"RequestId\": \"f252873e-fbbd-4651-ba75-205c7e5ba6fc\"\n    }\n}",
+        "title": "请求例子"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: region.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"Product\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 5,\n        \"ZoneSet\": [\n            {\n                \"ZoneState\": \"UNAVAILABLE\",\n                \"ZoneId\": \"100001\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ZoneName\": \"广州一区\"\n            },\n            {\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneId\": \"100002\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneName\": \"广州二区\"\n            },\n            {\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneId\": \"100003\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ZoneName\": \"广州三区\"\n            },\n            {\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneId\": \"100004\",\n                \"Zone\": \"ap-guangzhou-4\",\n                \"ZoneName\": \"广州四区\"\n            },\n            {\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneId\": \"100005\",\n                \"Zone\": \"ap-guangzhou-5\",\n                \"ZoneName\": \"广州五区\"\n            }\n        ],\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "title": "查询可用区信息（可用区中文名称）"
+      }
+    ]
+  },
+  "version": "1.0"
+}

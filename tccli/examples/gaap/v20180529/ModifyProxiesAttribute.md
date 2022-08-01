@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap ModifyProxiesAttribute --cli-unfold-argument  \
-    --ProxyIds link-11112222 link-11113333 \
-    --ProxyName test
+    --ProxyName test \
+    --ProxyIds link-11113333 link-11112222
 ```
 
 Output: 

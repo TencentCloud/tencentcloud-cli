@@ -12343,6 +12343,15 @@
           "name": "DisableRange",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否对URL进行编码",
+          "example": "false",
+          "member": "bool",
+          "name": "UrlEncode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

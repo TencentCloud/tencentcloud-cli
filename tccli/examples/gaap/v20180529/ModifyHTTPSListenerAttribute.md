@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli gaap ModifyHTTPSListenerAttribute --cli-unfold-argument  \
+    --ClientCertificateId string \
+    --CertificateId string \
     --ProxyId link-3d85gh \
     --ListenerId listener-o0f3at99 \
-    --ListenerName test-2 \
     --ForwardProtocol HTTP \
-    --CertificateId string \
-    --ClientCertificateId string \
+    --ListenerName test-2 \
     --PolyClientCertificateIds casdfg
 ```
 

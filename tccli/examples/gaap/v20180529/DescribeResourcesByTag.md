@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap DescribeResourcesByTag --cli-unfold-argument  \
+    --ResourceType Proxy \
     --TagKey testkey \
-    --TagValue test \
-    --ResourceType Proxy
+    --TagValue test
 ```
 
 Output: 

@@ -51,7 +51,7 @@
     "DescribeFlySecMiniAppReportUrl": [
       {
         "document": "",
-        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppReportUrl\n&TaskID=1701438134******0\n&MiniAppID=wx66e50f1e*******6f\n&Mode=1\n&ReportType=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlySecMiniAppReportUrl\n<公共请求参数>\n\n{\n    \"ReportType\": \"0\",\n    \"MiniAppID\": \"wx66e50f1e*******6f\",\n    \"Mode\": \"1\",\n    \"TaskID\": \"1701438134******0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Url\": \"诊断报告下载链接\"\n    }\n}",
         "title": "获取小程序的诊断报告链接"
       }

@@ -120,6 +120,12 @@
       "name": "获取安全域名列表",
       "output": "DescribeAuthDomainsResponse"
     },
+    "DescribeBaasPackageList": {
+      "document": "获取新套餐列表，含详情，如果传了PackageId，则只获取指定套餐详情",
+      "input": "DescribeBaasPackageListRequest",
+      "name": "获取新套餐",
+      "output": "DescribeBaasPackageListResponse"
+    },
     "DescribeCloudBaseBuildService": {
       "document": "获取云托管代码上传url",
       "input": "DescribeCloudBaseBuildServiceRequest",
@@ -664,6 +670,102 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BaasPackageInfo": {
+      "document": "新套餐套餐详情",
+      "members": [
+        {
+          "default": "",
+          "document": "DAU产品套餐ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "personal_calculation",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DAU套餐中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "个人版-计算型",
+          "member": "string",
+          "name": "PackageTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "套餐分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "calculation",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "套餐分组中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "计算型",
+          "member": "string",
+          "name": "GroupTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "json格式化计费标签，例如：\n{\"pid\":2, \"cids\":{\"create\": 2, \"renew\": 2, \"modify\": 2}, \"productCode\":\"p_tcb_mp\", \"subProductCode\":\"sp_tcb_mp_cloudbase_dau\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "BillTags",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "json格式化用户资源限制，例如：\n{\"Qps\":1000,\"InvokeNum\":{\"TimeUnit\":\"m\", \"Unit\":\"万次\", \"MaxSize\": 100},\"Capacity\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"Cdn\":{\"Flux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"BackFlux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}},\"Scf\":{\"Concurrency\":1000,\"OutFlux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100},\"MemoryUse\":{\"TimeUnit\":\"m\", \"Unit\":\"WGBS\", \"MaxSize\": 100000}}}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "参考接口示例",
+          "member": "string",
+          "name": "ResourceLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "json格式化高级限制，例如：\n{\"CMSEnable\":false,\"ProvisionedConcurrencyMem\":512000, \"PictureProcessing\":false, \"SecurityAudit\":false, \"RealTimePush\":false, \"TemplateMessageBatchPush\":false, \"Payment\":false}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "参考接口示例",
+          "member": "string",
+          "name": "AdvanceLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "套餐描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "适合商家小程序",
+          "member": "string",
+          "name": "PackageDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否对外展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExternal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4039,6 +4141,105 @@
           "document": "安全域名列表列表",
           "member": "AuthDomain",
           "name": "Domains",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaasPackageListRequest": {
+      "document": "DescribeBaasPackageList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tcb产品套餐ID，不填拉取全量package信息。",
+          "example": "xxx",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "套餐归属方，填写后只返回对应的套餐 包含miniapp与qcloud两种 默认为miniapp",
+          "example": "miniapp",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "套餐归属环境渠道",
+          "example": "qc_console",
+          "member": "string",
+          "name": "EnvChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拉取套餐用途：\n1）new 新购\n2）modify变配\n3）renew续费",
+          "example": "new",
+          "member": "string",
+          "name": "TargetAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预留字段，同一商品会对应多个类型套餐，对指标有不同侧重。\n计算型calculation\n流量型flux\n容量型capactiy",
+          "example": "calculation",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型分组过滤。默认为[\"default\"]",
+          "example": "[\"default\",\"vip\"]",
+          "member": "string",
+          "name": "PackageTypeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "付费渠道，与回包billTags中的计费参数相关，不填返回默认值。",
+          "example": "miniapp",
+          "member": "string",
+          "name": "PaymentChannel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaasPackageListResponse": {
+      "document": "DescribeBaasPackageList返回参数结构体",
+      "members": [
+        {
+          "document": "套餐列表",
+          "example": "无",
+          "member": "BaasPackageInfo",
+          "name": "PackageList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7845,6 +8046,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "套餐类型:空\\baas\\tcbr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "baas",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8411,6 +8622,7 @@
         {
           "default": "",
           "document": "log名",
+          "example": "xx",
           "member": "string",
           "name": "LogsetName",
           "required": true,
@@ -8420,6 +8632,7 @@
         {
           "default": "",
           "document": "log-id",
+          "example": "xx",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -8429,6 +8642,7 @@
         {
           "default": "",
           "document": "topic名",
+          "example": "xx",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -8438,6 +8652,7 @@
         {
           "default": "",
           "document": "topic-id",
+          "example": "xx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8447,11 +8662,22 @@
         {
           "default": "",
           "document": "cls日志所属地域",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic保存时长 默认7天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

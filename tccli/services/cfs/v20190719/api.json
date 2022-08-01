@@ -950,8 +950,10 @@
       "members": [
         {
           "document": "权限组信息列表",
+          "example": "无",
           "member": "PGroupInfo",
           "name": "PGroupList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

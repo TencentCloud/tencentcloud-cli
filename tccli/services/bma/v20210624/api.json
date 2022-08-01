@@ -18,11 +18,59 @@
       "name": "新建发函",
       "output": "CreateCRRightResponse"
     },
+    "CreateCRWork": {
+      "document": "版权保护-添加作品接口",
+      "input": "CreateCRWorkRequest",
+      "name": "添加作品",
+      "output": "CreateCRWorkResponse"
+    },
+    "DescribeCRMonitorDetail": {
+      "document": "版权保护-查询作品监测详情接口",
+      "input": "DescribeCRMonitorDetailRequest",
+      "name": "查询作品监测详情",
+      "output": "DescribeCRMonitorDetailResponse"
+    },
+    "DescribeCRMonitors": {
+      "document": "版权保护-查询监测列表接口",
+      "input": "DescribeCRMonitorsRequest",
+      "name": "查询监测列表",
+      "output": "DescribeCRMonitorsResponse"
+    },
     "DescribeCRWorkInfo": {
       "document": "查询作品基本信息",
       "input": "DescribeCRWorkInfoRequest",
       "name": "查询作品基本信息",
       "output": "DescribeCRWorkInfoResponse"
+    },
+    "ModifyCRBlockStatus": {
+      "document": "版权保护-拦截申请接口",
+      "input": "ModifyCRBlockStatusRequest",
+      "name": "拦截申请",
+      "output": "ModifyCRBlockStatusResponse"
+    },
+    "ModifyCRMonitor": {
+      "document": "版权保护-修改监测状态接口",
+      "input": "ModifyCRMonitorRequest",
+      "name": "修改监测状态",
+      "output": "ModifyCRMonitorResponse"
+    },
+    "ModifyCRObtainStatus": {
+      "document": "申请取证",
+      "input": "ModifyCRObtainStatusRequest",
+      "name": "申请取证",
+      "output": "ModifyCRObtainStatusResponse"
+    },
+    "ModifyCRRightStatus": {
+      "document": "版权保护-维权申请接口",
+      "input": "ModifyCRRightStatusRequest",
+      "name": "维权申请",
+      "output": "ModifyCRRightStatusResponse"
+    },
+    "UpdateCRWork": {
+      "document": "更新作品",
+      "input": "UpdateCRWorkRequest",
+      "name": "更新作品",
+      "output": "UpdateCRWorkResponse"
     }
   },
   "metadata": {
@@ -199,11 +247,20 @@
         },
         {
           "default": "",
+          "document": "企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1",
+          "example": "1",
+          "member": "string",
+          "name": "CompanyIDType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "企业证件号码",
           "example": "xxx",
           "member": "string",
           "name": "CompanyID",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -212,7 +269,7 @@
           "example": "xxx",
           "member": "string",
           "name": "CompanyLegalName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -221,7 +278,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ManagerName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -230,7 +287,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ManagerPhone",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -239,15 +296,6 @@
           "example": "xxx",
           "member": "string",
           "name": "VerificationCode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1",
-          "example": "1",
-          "member": "string",
-          "name": "CompanyIDType",
           "required": false,
           "type": "string"
         },
@@ -464,6 +512,438 @@
       ],
       "type": "object"
     },
+    "CreateCRWorkRequest": {
+      "document": "CreateCRWork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作品名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品分类",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkCategory",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品内容类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品标签",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkSign",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品图片",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkPic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创作描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否原创 0:否 1:是",
+          "example": "1",
+          "member": "string",
+          "name": "IsOriginal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否发布 0：未发布 1：已发布",
+          "example": "1",
+          "member": "string",
+          "name": "IsRelease",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "著作权人ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProducerID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创作时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "样品文件路径",
+          "example": "xxx",
+          "member": "string",
+          "name": "SampleContentURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "样本下载Url",
+          "example": "xxx",
+          "member": "string",
+          "name": "SampleDownloadURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授予类型",
+          "example": "1",
+          "member": "string",
+          "name": "GrantType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品发布Url",
+          "example": "xxx",
+          "member": "string",
+          "name": "SamplePublicURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用监测 0：不启用 1：启用 默认为0",
+          "example": "xx",
+          "member": "string",
+          "name": "IsMonitor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用存证0：不启用 1：启用 默认为1",
+          "example": "1",
+          "member": "string",
+          "name": "IsCert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存证回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "CertUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "监测回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "MonitorUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创作性质（原创,改编,翻译,汇编,注释,整理,其他)",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProduceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WhiteLists",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "int64",
+          "name": "WorkId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "ProducerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "x x",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "string",
+          "name": "Authorization",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "string",
+          "name": "AuthorizationStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "string",
+          "name": "AuthorizationEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "x",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRWorkResponse": {
+      "document": "CreateCRWork返回参数结构体",
+      "members": [
+        {
+          "document": "作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "1",
+          "member": "int64",
+          "name": "EvidenceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRMonitorDetailRequest": {
+      "document": "DescribeCRMonitorDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRMonitorDetailResponse": {
+      "document": "DescribeCRMonitorDetail返回参数结构体",
+      "members": [
+        {
+          "document": "MonitorTort数组",
+          "example": "无",
+          "member": "MonitorTort",
+          "name": "Torts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "x",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRMonitorsRequest": {
+      "document": "DescribeCRMonitors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRMonitorsResponse": {
+      "document": "DescribeCRMonitors返回参数结构体",
+      "members": [
+        {
+          "document": "监测结果",
+          "example": "无",
+          "member": "Monitor",
+          "name": "Monitors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCRWorkInfoRequest": {
       "document": "DescribeCRWorkInfo请求参数结构体",
       "members": [
@@ -523,6 +1003,487 @@
           "example": "xxx",
           "member": "int64",
           "name": "IsProducer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤参数",
+      "members": [],
+      "usage": "in"
+    },
+    "ModifyCRBlockStatusRequest": {
+      "document": "ModifyCRBlockStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "侵权ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拦截结果回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "BlockUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRBlockStatusResponse": {
+      "document": "ModifyCRBlockStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRMonitorRequest": {
+      "document": "ModifyCRMonitor请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监测状态 1-开启监测 2-关闭监测 默认为1",
+          "example": "1",
+          "member": "string",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRMonitorResponse": {
+      "document": "ModifyCRMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRObtainStatusRequest": {
+      "document": "ModifyCRObtainStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "123",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "123",
+          "member": "int64",
+          "name": "ObtainType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "123",
+          "member": "int64",
+          "name": "ObtainDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "123",
+          "member": "string",
+          "name": "ObtainUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRObtainStatusResponse": {
+      "document": "ModifyCRObtainStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRRightStatusRequest": {
+      "document": "ModifyCRRightStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "侵权ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发函结果回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "RightUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRRightStatusResponse": {
+      "document": "ModifyCRRightStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Monitor": {
+      "document": "版权保护-监测结果",
+      "members": [
+        {
+          "default": "",
+          "document": "作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作品名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作品内容类型 01-视频 02-音频 03-文本 04-图片",
+          "example": "01",
+          "member": "string",
+          "name": "WorkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权平台数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TortPlatNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权链接数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TortURLNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监测时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "MonitorTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0-待监测 1-监测中 2-不监测 3-暂停监测",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作品类型",
+          "example": "010101",
+          "member": "string",
+          "name": "WorkCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "MonitorNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorTort": {
+      "document": "监测侵权信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "侵权信息ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权标题",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权平台",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权链接发布时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "PubTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作者",
+          "example": "xxx",
+          "member": "string",
+          "name": "Author",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "ObtainStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "RightStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "BlockStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "TortNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "ObtainNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "WorkTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateCRWorkRequest": {
+      "document": "UpdateCRWork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "CertType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCRWorkResponse": {
+      "document": "UpdateCRWork返回参数结构体",
+      "members": [
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "int64",
+          "name": "EvidenceId",
           "required": true,
           "type": "int",
           "value_allowed_null": false

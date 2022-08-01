@@ -1121,7 +1121,7 @@ def doCreateStandaloneGateway(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAuthDomains(args, parsed_globals):
+def doDescribeEnvs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1146,11 +1146,11 @@ def doDescribeAuthDomains(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuthDomainsRequest()
+    model = models.DescribeEnvsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAuthDomains(model)
+        rsp = client.DescribeEnvs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1361,7 +1361,7 @@ def doCreatePostpayPackage(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCloudBaseRunResource(args, parsed_globals):
+def doDescribeBaasPackageList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1386,11 +1386,11 @@ def doCreateCloudBaseRunResource(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCloudBaseRunResourceRequest()
+    model = models.DescribeBaasPackageListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCloudBaseRunResource(model)
+        rsp = client.DescribeBaasPackageList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1823,6 +1823,54 @@ def doModifyCloudBaseRunServerFlowConf(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyCloudBaseRunServerFlowConf(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCloudBaseRunResource(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCloudBaseRunResourceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateCloudBaseRunResource(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3137,7 +3185,7 @@ def doDescribeCloudBaseRunOneClickTaskExternal(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEnvs(args, parsed_globals):
+def doDescribeAuthDomains(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3162,11 +3210,11 @@ def doDescribeEnvs(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEnvsRequest()
+    model = models.DescribeAuthDomainsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeEnvs(model)
+        rsp = client.DescribeAuthDomains(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3795,12 +3843,12 @@ ACTION_MAP = {
     "CreateAuthDomain": doCreateAuthDomain,
     "CreateCloudBaseRunServerVersion": doCreateCloudBaseRunServerVersion,
     "CreateStandaloneGateway": doCreateStandaloneGateway,
-    "DescribeAuthDomains": doDescribeAuthDomains,
+    "DescribeEnvs": doDescribeEnvs,
     "TurnOnStandaloneGateway": doTurnOnStandaloneGateway,
     "DescribeQuotaData": doDescribeQuotaData,
     "UnfreezeCloudBaseRunServers": doUnfreezeCloudBaseRunServers,
     "CreatePostpayPackage": doCreatePostpayPackage,
-    "CreateCloudBaseRunResource": doCreateCloudBaseRunResource,
+    "DescribeBaasPackageList": doDescribeBaasPackageList,
     "DescribeCloudBaseRunResource": doDescribeCloudBaseRunResource,
     "TurnOffStandaloneGateway": doTurnOffStandaloneGateway,
     "DescribeCloudBaseProjectVersionList": doDescribeCloudBaseProjectVersionList,
@@ -3810,6 +3858,7 @@ ACTION_MAP = {
     "DescribeDatabaseACL": doDescribeDatabaseACL,
     "DescribeStandaloneGateway": doDescribeStandaloneGateway,
     "ModifyCloudBaseRunServerFlowConf": doModifyCloudBaseRunServerFlowConf,
+    "CreateCloudBaseRunResource": doCreateCloudBaseRunResource,
     "DescribeCloudBaseRunResourceForExtend": doDescribeCloudBaseRunResourceForExtend,
     "ModifyEndUser": doModifyEndUser,
     "DescribeDownloadFile": doDescribeDownloadFile,
@@ -3837,7 +3886,7 @@ ACTION_MAP = {
     "DescribeActivityInfo": doDescribeActivityInfo,
     "DescribeCloudBaseRunServer": doDescribeCloudBaseRunServer,
     "DescribeCloudBaseRunOneClickTaskExternal": doDescribeCloudBaseRunOneClickTaskExternal,
-    "DescribeEnvs": doDescribeEnvs,
+    "DescribeAuthDomains": doDescribeAuthDomains,
     "DescribeEndUsers": doDescribeEndUsers,
     "DescribeCloudBaseRunVersion": doDescribeCloudBaseRunVersion,
     "DescribeCloudBaseRunServerVersion": doDescribeCloudBaseRunServerVersion,

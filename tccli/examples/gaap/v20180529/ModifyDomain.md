@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gaap ModifyDomain --cli-unfold-argument  \
-    --ListenerId 0 \
     --OldDomain a.a.com \
-    --NewDomain b.b.com \
-    --CertificateId default
+    --CertificateId default \
+    --ListenerId 0 \
+    --NewDomain b.b.com
 ```
 
 Output: 

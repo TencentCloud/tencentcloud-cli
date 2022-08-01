@@ -24,3 +24,30 @@ Output:
 }
 ```
 
+**Example 2: 获取应用合规基础版资源使用情况**
+
+
+
+Input: 
+
+```
+tccli acp DescribeResourceUsageInfo --cli-unfold-argument  \
+    --Platform 0 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "4e417380-6596-4e49-b1eb-ac96d567ae0f",
+        "Result": 0,
+        "Data": {
+            "ResourceName": "sv_011886_ab_p",
+            "Total": 0,
+            "UnusedCount": 0
+        }
+    }
+}
+```
+

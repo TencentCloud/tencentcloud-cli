@@ -624,6 +624,12 @@
       "name": "修改实例参数",
       "output": "ModifyInstanceParamResponse"
     },
+    "ModifyInstancePasswordComplexity": {
+      "document": "本接口(ModifyInstancePasswordComplexity)用于修改云数据库实例的密码复杂度。",
+      "input": "ModifyInstancePasswordComplexityRequest",
+      "name": "修改实例密码复杂度",
+      "output": "ModifyInstancePasswordComplexityResponse"
+    },
     "ModifyInstanceTag": {
       "document": "本接口(ModifyInstanceTag)用于对实例标签进行添加、修改或者删除。",
       "input": "ModifyInstanceTagRequest",
@@ -11052,6 +11058,51 @@
           "document": "异步任务 ID，可用于查询任务进度。",
           "member": "string",
           "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordComplexityRequest": {
+      "document": "ModifyInstancePasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例短 ID 列表。",
+          "example": "[\"cdb-atjl8gns\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。",
+          "example": "无",
+          "member": "Parameter",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordComplexityResponse": {
+      "document": "ModifyInstancePasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务 ID，可用于查询任务进度。",
+          "example": "38265324-dd030463-3d46a793-4a0420b1",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

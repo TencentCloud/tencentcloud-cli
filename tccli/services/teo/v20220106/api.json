@@ -9145,6 +9145,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "计费资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13026,6 +13035,102 @@
       ],
       "type": "object"
     },
+    "Resource": {
+      "document": "计费资源",
+      "members": [
+        {
+          "default": "",
+          "document": "资源 ID",
+          "example": "edgeone-xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式\n0 为后付费\n1 为预付费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失效时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "询价参数",
+          "example": "无",
+          "member": "Sv",
+          "name": "Sv",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费\n0 表示默认状态\n1 表示自动续费\n2 表示不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐关联资源ID",
+          "example": "edgeone-xxx",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ScanDnsRecordsRequest": {
       "document": "ScanDnsRecords请求参数结构体",
       "members": [
@@ -13452,6 +13557,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Sv": {
+      "document": "询价参数",
+      "members": [
+        {
+          "default": "",
+          "document": "询价参数 key",
+          "example": "sv_xxx",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "询价参数 value",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SwitchConfig": {
       "document": "功能总开关",
@@ -14384,6 +14515,26 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启cname加速\n- enabled 开启\n- disabled 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CnameSpeedUp",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

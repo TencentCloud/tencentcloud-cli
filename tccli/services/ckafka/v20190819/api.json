@@ -10274,6 +10274,36 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件路由到特定主题的正则表达式，默认为(.*)",
+          "example": "(.*).db.(.*)",
+          "member": "string",
+          "name": "TopicRegex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TopicRegex的引用组，指定$1、$2等",
+          "example": "$1",
+          "member": "string",
+          "name": "TopicReplacement",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键",
+          "example": "db1.table2.k1,k2",
+          "member": "string",
+          "name": "KeyColumns",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -11460,12 +11490,32 @@
         },
         {
           "default": "",
-          "document": "是否为国内站，默认true",
+          "document": "默认true",
           "example": "true",
           "member": "bool",
           "name": "IsDomestic",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com",
+          "example": "tl-tdbank-tdmanager.tencent-distribute.com",
+          "member": "string",
+          "name": "TdwHost",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDW端口，默认8099",
+          "example": "8099",
+          "member": "int64",
+          "name": "TdwPort",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

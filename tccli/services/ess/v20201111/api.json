@@ -12,6 +12,12 @@
       "name": "取消一码多扫二维码",
       "output": "CancelMultiFlowSignQRCodeResponse"
     },
+    "CreateConvertTaskApi": {
+      "document": "创建文件转换任务",
+      "input": "CreateConvertTaskApiRequest",
+      "name": "创建文件转换任务",
+      "output": "CreateConvertTaskApiResponse"
+    },
     "CreateDocument": {
       "document": "创建签署流程电子文档\n适用场景：见创建签署流程接口。\u000b\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。是“发起流程”接口的前置接口。",
       "input": "CreateDocumentRequest",
@@ -65,6 +71,12 @@
       "input": "DescribeThirdPartyAuthCodeRequest",
       "name": "通过AuthCode查询用户是否实名",
       "output": "DescribeThirdPartyAuthCodeResponse"
+    },
+    "GetTaskResultApi": {
+      "document": "查询转换任务状态",
+      "input": "GetTaskResultApiRequest",
+      "name": "查询转换任务状态",
+      "output": "GetTaskResultApiResponse"
     },
     "StartFlow": {
       "document": "此接口用于发起流程\n适用场景：见创建签署流程接口。\n注：该接口是“创建电子文档”接口的后置接口，用于激活包含完整合同信息（模板及内容信息）的流程。激活后的流程就是一份待签署的电子合同。",
@@ -126,7 +138,7 @@
         },
         {
           "default": "",
-          "document": "本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。",
+          "document": "本环节操作人签署控件配置",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -373,7 +385,7 @@
       "members": [
         {
           "default": "",
-          "document": "如果是 Component 控件类型，则可选类型为：\nTEXT - 内容文本控件\nDATE - 内容日期控件\nCHECK_BOX - 勾选框控件\n如果是 SignComponent 控件类型，则可选类型为：\nSIGN_SEAL - 签署印章控件\nSIGN_DATE - 签署日期控件\nSIGN_SIGNATURE - 手写签名控件",
+          "document": "如果是 Component 控件类型，则可选类型为：\nTEXT - 单行文本\nMULTI_LINE_TEXT - 多行文本\nCHECK_BOX - 勾选框\nATTACHMENT - 附件\nSELECTOR - 选择器\n如果是 SignComponent 控件类型，则可选类型为：\nSIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue\nSIGN_DATE - 签署日期控件\nSIGN_SIGNATURE - 手写签名控件，静默签署时不能使用",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -493,7 +505,7 @@
         },
         {
           "default": "",
-          "document": "控件所填写的内容",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值",
           "example": "无",
           "member": "string",
           "name": "ComponentValue",
@@ -553,6 +565,87 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateConvertTaskApiRequest": {
+      "document": "CreateConvertTaskApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型 取值范围doc,docx,html之一",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConvertTaskApiResponse": {
+      "document": "CreateConvertTaskApi返回参数结构体",
+      "members": [
+        {
+          "document": "转换任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDocumentRequest": {
       "document": "CreateDocument请求参数结构体",
@@ -712,7 +805,7 @@
         },
         {
           "default": "",
-          "document": "经办人内容控件配置。可选类型为：\nTEXT - 内容文本控件\nMULTI_LINE_TEXT - 多行文本控件\nCHECK_BOX - 勾选框控件\nATTACHMENT - 附件\n注：默认字体大小为 字号12",
+          "document": "经办人内容控件配置",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -1797,7 +1890,7 @@
       "members": [
         {
           "default": "",
-          "document": "控件填充value",
+          "document": "控件填充value，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 模板中配置的选项值",
           "example": "ComponentValue",
           "member": "string",
           "name": "ComponentValue",
@@ -1807,7 +1900,7 @@
         },
         {
           "default": "",
-          "document": "控件id",
+          "document": "控件id，和ComponentName选择一项传入即可",
           "example": "componentId",
           "member": "string",
           "name": "ComponentId",
@@ -1817,10 +1910,151 @@
         },
         {
           "default": "",
-          "document": "控件名字，最大长度不超过30字符",
+          "document": "控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可",
           "example": "ComponentName",
           "member": "string",
           "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetTaskResultApiRequest": {
+      "document": "GetTaskResultApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskResultApiResponse": {
+      "document": "GetTaskResultApi返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "TaskMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrganizationInfo": {
+      "document": "机构信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机构在平台的编号",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户渠道",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户在渠道的机构编号",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户真实的IP",
+          "member": "string",
+          "name": "ClientIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构的代理IP",
+          "member": "string",
+          "name": "ProxyIp",
           "required": false,
           "type": "string",
           "value_allowed_null": false

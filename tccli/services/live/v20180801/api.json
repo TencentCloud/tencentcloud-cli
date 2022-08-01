@@ -8671,6 +8671,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -8680,6 +8681,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2020-01-01 12:12:12",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8689,11 +8691,32 @@
         {
           "default": "",
           "document": "禁推过期时间。",
+          "example": "2020-01-01 12:12:12",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -1349,7 +1349,7 @@
     "DescribeNetworkAclQuintupleEntries": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkAclQuintupleEntries\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkAclQuintupleEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"NetworkAclQuintupleSet\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"SourcePort\": \"80\",\n                \"SourceCidr\": \"192.168.0.0/24\",\n                \"DestinationPort\": \"80\",\n                \"DestinationCidr\": \"192.168.0.0/24\",\n                \"Action\": \"ACCEPT\",\n                \"CreateTime\": \"2019-11-11 22:16:17\",\n                \"NetworkAclQuintupleEntryId\": \"acli45-q1phngkz\",\n                \"NetworkAclDirection\": \"EGRESS\"\n            }\n        ],\n        \"RequestId\": \"cccb2665-5d02-4d87-b9e7-757bb06e5beb\"\n    }\n}",
         "title": "示例1 根据条件查询网络ACL列表五元组条目"
       }

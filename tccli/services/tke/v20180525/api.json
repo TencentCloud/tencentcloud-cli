@@ -510,6 +510,12 @@
       "name": "查询边缘计算集群的节点信息",
       "output": "DescribeEdgeClusterInstancesResponse"
     },
+    "DescribeEdgeLogSwitches": {
+      "document": "获取事件、审计和日志的状态接口",
+      "input": "DescribeEdgeLogSwitchesRequest",
+      "name": "查询边缘集群日志开关列表",
+      "output": "DescribeEdgeLogSwitchesResponse"
+    },
     "DescribeEksContainerInstanceLog": {
       "document": "查询容器实例中容器日志",
       "input": "DescribeEksContainerInstanceLogRequest",
@@ -7799,6 +7805,42 @@
           "name": "InstanceInfoSet",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeLogSwitchesRequest": {
+      "document": "DescribeEdgeLogSwitches请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表",
+          "example": "[\"cls-xxx1\",\"cls-xxx2\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeLogSwitchesResponse": {
+      "document": "DescribeEdgeLogSwitches返回参数结构体",
+      "members": [
+        {
+          "document": "集群日志开关集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ClusterId\":\"cls-xxx1\",\"Audit\":{\"Enable\":true,\"TopicSet\":\"xxxx",
+          "member": "string",
+          "name": "SwitchSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -16,6 +16,20 @@
         "title": "CancelMultiFlowSignQRCode"
       }
     ],
+    "CreateConvertTaskApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceId\": \"yDRvQUUgygqt75qpUuO4zjERW6iCFCEl\",\n    \"Agent\": {},\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxHyUyKQDHrGYUuO4zjEEGgzwY0Ak1p\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"ResourceName\": \"hello.docx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2eae803-fe6e-4b1c-8901-c61cfaf19a21\",\n        \"TaskId\": \"20220726175923011294\"\n    }\n}",
+        "title": "调用示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"doc\",\n    \"ResourceName\": \"hello.docx\",\n    \"Operator\": {\n        \"ProxyIp\": \"8.8.8.8\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"682c1d5bdce884ad3df5ba5fabb6fcf1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"8.8.8.8\"\n    },\n    \"ResourceId\": \"yDRvQUUgygqt75qpUuO4zjERW6iCFCEl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbf25f31-1b45-4ed5-9b45-8afed19e9849\",\n        \"TaskId\": \"20220728163549202141\"\n    }\n}",
+        "title": "test示例"
+      }
+    ],
     "CreateDocument": [
       {
         "document": "",
@@ -104,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAuthCode\n<公共请求参数>\n\n{\n    \"AuthCode\": \"yDxAxU*******E4JGgr8S5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80905521-1203-41b1-9203-1eb2973cc488\",\n        \"VerifyStatus\": \"VERIFIED\"\n    }\n}",
         "title": "测试用例"
+      }
+    ],
+    "GetTaskResultApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ProxyIp\": \"\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR\",\n        \"Channel\": \"\",\n        \"OpenId\": \"\"\n    },\n    \"Organization\": {\n        \"OrganizationOpenId\": \"\",\n        \"OrganizationId\": \"682c1d5bdce884ad3df5ba5fabb6fcf1\",\n        \"ClientIp\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {},\n    \"TaskId\": \"20220726183047992850\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2255ca9d-d831-4c9d-ab76-6192fc301053\",\n        \"ResourceId\": \"yDRtsUUgygq7jtzwUuO4zjEyx4jZM3A7\",\n        \"TaskId\": \"20220726183047992850\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
+        "title": "test示例"
       }
     ],
     "StartFlow": [

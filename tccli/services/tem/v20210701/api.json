@@ -48,6 +48,12 @@
       "name": "获取应用实例列表",
       "output": "DescribeApplicationPodsResponse"
     },
+    "DescribeApplications": {
+      "document": "获取运行服务列表",
+      "input": "DescribeApplicationsRequest",
+      "name": "获取运行服务列表",
+      "output": "DescribeApplicationsResponse"
+    },
     "DescribeApplicationsStatus": {
       "document": "单环境下所有应用状态查看",
       "input": "DescribeApplicationsStatusRequest",
@@ -59,6 +65,12 @@
       "input": "DescribeDeployApplicationDetailRequest",
       "name": "获取分批发布详情",
       "output": "DescribeDeployApplicationDetailResponse"
+    },
+    "DescribeEnvironmentStatus": {
+      "document": "获取环境状态",
+      "input": "DescribeEnvironmentStatusRequest",
+      "name": "获取环境状态",
+      "output": "DescribeEnvironmentStatusResponse"
     },
     "DescribeEnvironments": {
       "document": "获取租户环境列表",
@@ -1559,6 +1571,87 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationsRequest": {
+      "document": "DescribeApplications请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页offset",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "1",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsResponse": {
+      "document": "DescribeApplications返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "ServicePage",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationsStatusRequest": {
       "document": "DescribeApplicationsStatus请求参数结构体",
       "members": [
@@ -1647,6 +1740,51 @@
           "name": "Result",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentStatusRequest": {
+      "document": "DescribeEnvironmentStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间id",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "来源Channel",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentStatusResponse": {
+      "document": "DescribeEnvironmentStatus返回参数结构体",
+      "members": [
+        {
+          "document": "返回状态列表",
+          "example": "1",
+          "member": "NamespaceStatusInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3062,6 +3200,72 @@
       ],
       "usage": "out"
     },
+    "NamespaceStatusInfo": {
+      "document": "命名空间状态",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间id",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TCB envId | EKS clusterId",
+          "example": "env-xxx | cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境状态",
+          "example": "normal |  unavailable",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境启动状态（不在启动中为null）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "TemEnvironmentStartingStatus",
+          "name": "EnvironmentStartingStatus",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境停止状态（不在停止中为null）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "TemEnvironmentStoppingStatus",
+          "name": "EnvironmentStoppingStatus",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Pair": {
       "document": "键值对",
       "members": [
@@ -3621,6 +3825,52 @@
       ],
       "usage": "out"
     },
+    "ServicePage": {
+      "document": "服务分页",
+      "members": [
+        {
+          "default": "",
+          "document": "条目",
+          "example": "1",
+          "member": "TemService",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "条目",
+          "example": "1",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ServiceVersionBrief": {
       "document": "服务版本信息列表",
       "members": [
@@ -4029,6 +4279,58 @@
       ],
       "usage": "out"
     },
+    "TemEnvironmentStartingStatus": {
+      "document": "环境启动进程（只统计由环境启动操作触发的应用数量）",
+      "members": [
+        {
+          "default": "",
+          "document": "需要启动的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicationNumNeedToStart",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已经启动的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StartedApplicationNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TemEnvironmentStoppingStatus": {
+      "document": "环境停止进程（只统计由环境停止操作触发的应用数量）",
+      "members": [
+        {
+          "default": "",
+          "document": "需要停止的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicationNumNeedToStop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已经停止的应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StoppedApplicationNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TemNamespaceInfo": {
       "document": "命名空间对象",
       "members": [
@@ -4201,6 +4503,172 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TemService": {
+      "document": "服务",
+      "members": [
+        {
+          "default": "",
+          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "datetime",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "datetime",
+          "name": "ModifyDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Modifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "tcr个人版or企业版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RepoType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业版实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像仓库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tem-ns/repo",
+          "member": "string",
+          "name": "RepoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CodingLanguage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeployMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务当前运行环境的实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ServiceVersionBrief",
+          "name": "ActiveVersions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用链路追踪\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableTracing",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

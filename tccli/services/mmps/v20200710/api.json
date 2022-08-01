@@ -897,7 +897,7 @@
         },
         {
           "default": "",
-          "document": "诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告",
+          "document": "诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果",
           "example": "0",
           "member": "int64",
           "name": "ReportType",
@@ -1463,7 +1463,7 @@
         },
         {
           "default": "",
-          "document": "报告类型, 0:诊断报告, 1:堆栈报告",
+          "document": "报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果",
           "example": "0",
           "member": "int64",
           "name": "ReportType",

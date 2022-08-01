@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli vpc DescribeNetworkAclQuintupleEntries --cli-unfold-argument ```
+tccli vpc DescribeNetworkAclQuintupleEntries --cli-unfold-argument  \
+    --NetworkAclId acl-12345678 \
+    --Limit 20 \
+    --Offset 0
+```
 
 Output: 
 ```

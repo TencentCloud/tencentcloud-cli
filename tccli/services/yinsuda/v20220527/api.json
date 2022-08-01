@@ -13,7 +13,7 @@
       "output": "DescribeKTVPlaylistDetailResponse"
     },
     "DescribeKTVPlaylists": {
-      "document": "获取推荐歌单列表。",
+      "document": "获取歌单列表。",
       "input": "DescribeKTVPlaylistsRequest",
       "name": "获取推荐歌单列表",
       "output": "DescribeKTVPlaylistsResponse"
@@ -237,6 +237,15 @@
           "name": "UserId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型列表，取值有：\n<li>OfficialRec：官方推荐；</li>\n<li>Customize：自定义。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

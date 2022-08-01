@@ -966,6 +966,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式，一次性、按月、按年\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MONTHLY",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "YEAR",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1141,6 +1171,26 @@
           "name": "ComputeFormat",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPUTE",
+          "member": "string",
+          "name": "TypeFamily",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0未支付，1已支付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SubOrderPayStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

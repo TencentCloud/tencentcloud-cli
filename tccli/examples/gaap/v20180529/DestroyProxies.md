@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DestroyProxies --cli-unfold-argument  \
-    --ProxyIds link-11112222 link-11113333 \
-    --Force 1
+    --Force 1 \
+    --ProxyIds link-11113333 link-11112222
 ```
 
 Output: 

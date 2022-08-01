@@ -3,7 +3,7 @@
     "AddRealServers": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=AddRealServers\n&ProjectId=0\n&RealServerIP.0=1.1.1.1\n&RealServerName='test'\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRealServers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"RealServerName\": \"'test'\",\n    \"RealServerIP\": [\n        \"1.1.1.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RealServerSet\": [\n            {\n                \"RealServerId\": \"id-5dr8gu4\",\n                \"RealServerIP\": \"1.1.1.1\"\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "添加源站"
       },
@@ -25,7 +25,7 @@
     "BindListenerRealServers": [
       {
         "document": "监听器绑定源站",
-        "input": "https://gaap.tencentcloudapi.com/?Action=BindListenerRealServers\n&ListenerId=listener-pbsgn7ej\n&RealServerBindSet.0.RealServerId=rs-04v3s12t\n&RealServerBindSet.0.RealServerIP=119.28.69.101\n&RealServerBindSet.0.RealServerPort=80\n&RealServerBindSet.0.RealServerWeight=1\n&RealServerBindSet.0.RealServerFailoverRole=master\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindListenerRealServers\n<公共请求参数>\n\n{\n    \"RealServerBindSet\": [\n        {\n            \"RealServerWeight\": \"1\",\n            \"RealServerId\": \"rs-04v3s12t\",\n            \"RealServerPort\": \"80\",\n            \"RealServerIP\": \"119.28.69.101\",\n            \"RealServerFailoverRole\": \"master\"\n        }\n    ],\n    \"ListenerId\": \"listener-pbsgn7ej\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f1e794d-a35e-41d2-8f40-fe32a2077329\"\n    }\n}",
         "title": "监听器绑定源站"
       }
@@ -33,7 +33,7 @@
     "BindRuleRealServers": [
       {
         "document": "转发规则绑定源站",
-        "input": "https://gaap.tencentcloudapi.com/?Action=BindRuleRealServers\n&RuleId=0\n&RealServerBindSet.0.RealServerId=rs-i3658cdf\n&RealServerBindSet.0.RealServerPort=80\n&RealServerBindSet.0.RealServerIP=1.1.1.1\n&RealServerBindSet.0.RealServerWeight=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindRuleRealServers\n<公共请求参数>\n\n{\n    \"RealServerBindSet\": [\n        {\n            \"RealServerWeight\": \"1\",\n            \"RealServerId\": \"rs-i3658cdf\",\n            \"RealServerIP\": \"1.1.1.1\",\n            \"RealServerPort\": \"80\"\n        }\n    ],\n    \"RuleId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "转发规则绑定源站"
       }
@@ -41,7 +41,7 @@
     "CheckProxyCreate": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CheckProxyCreate\n&AccessRegion=EastChina\n&RealServerRegion=SouthChina\n&Bandwidth=10\n&Concurrent=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckProxyCreate\n<公共请求参数>\n\n{\n    \"Concurrent\": \"2\",\n    \"Bandwidth\": \"10\",\n    \"RealServerRegion\": \"SouthChina\",\n    \"AccessRegion\": \"EastChina\"\n}",
         "output": "{\n    \"Response\": {\n        \"CheckFlag\": 1,\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "查询通道是否可以创建"
       }
@@ -49,7 +49,7 @@
     "CloseProxies": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CloseProxies\n&ProxyIds.0=link-11112222\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseProxies\n<公共请求参数>\n\n{\n    \"ProxyIds\": [\n        \"link-11112222\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedInstanceSet\": [],\n        \"RequestId\": \"888fe1bb-be58-4a80-90b9-24a0398633c6\",\n        \"InvalidStatusInstanceSet\": []\n    }\n}",
         "title": "关闭通道"
       }
@@ -57,7 +57,7 @@
     "CloseProxyGroup": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CloseProxyGroup\n&GroupId=lg-111xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseProxyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"lg-111xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedInstanceSet\": [],\n        \"RequestId\": \"888fe1bb-be58-4a80-90b9-24a0398633c6\",\n        \"InvalidStatusInstanceSet\": []\n    }\n}",
         "title": "关闭通道组"
       }
@@ -65,7 +65,7 @@
     "CloseSecurityPolicy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CloseSecurityPolicy\n&ProxyId=link-xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseSecurityPolicy\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"TaskId\": \"1234.2\"\n    }\n}",
         "title": "关闭安全策略"
       }
@@ -73,7 +73,7 @@
     "CreateCertificate": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateCertificate\n&CertificateAlias=xxx\n&CertificateType=2\n&CertificateContent=%0A-----BEGIN%20CERTIFICATE-----%0AMIIFmDCCBICgAwIBAgIQC6TGAPV%2B4MO7NIhlkkKFljANBgkqhkiG9w0BAQsFADBy%0AMQswCQYDVQQGEwJDTjElMCMGA1UEChMcVHJ1c3RBc2lhIFRlY2hub2xvZ2llcywg%0ASW5jLjEdMBsGA1UECxMURG9tYWluIFZhbGlkYXRlZCBTU0wxHTAbBgNVBAMTFFRy%0AdXN0QXNpYSBUTFMgUlNBIENBMB4XDTE5MDQwMjAwMDAwMFoXDTIwMDQwMTEyMDAw%0AMFowGTEXMBUGA1UEAxMObGFnYW1lZnQwMS54eXowggEiMA0GCSqGSIb3DQEBAQUA%0AA4IBDwAwggEKAoIBAQCuSgglfAksbFSrvWp6cEFr8ulTWEND2KvXf6cCs3kBBCzE%0AMLhCw4792LMFY0%2BFE7a0j7i5nJ9%2BQvhX7GRiu1P9flyge0eUCOBOAtVCn0dvhbLy%0A7efWsmH3kp/owWXnZXeb/k5R1FvojCiV968MxMC%2B2Y7ejz5qMm5XlQPn3xQOEj2h%0AQmHwQ9XwO8qRsIuCD1oNrsXsyXuEhA2zkEvcgtYP35zPsXfjbBaBg7Iw3o0j3jXj%0AgdhD2Q2OzH05jDn3hDhSnej1jbWuGmDEOO%2Bu6W/xqnCOhBMjWLnuW2aUddiBiqsH%0A8BQK/Ge6HUp%2BmMdkdNAw5FN6ztIPzP6GFb0OOLitAgMBAAGjggKBMIICfTAfBgNV%0AHSMEGDAWgBR/05nzoEcOMQBWViKOt8ye3coBijAdBgNVHQ4EFgQUqYL1l3uFqYHC%0A2mJcZC26nLHtkjYwLQYDVR0RBCYwJIIObGFnYW1lZnQwMS54eXqCEnd3dy5sYWdh%0AbWVmdDAxLnh5ejAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG%0ACCsGAQUFBwMCMEwGA1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEW%0AHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMH0GCCsGAQUF%0ABwEBBHEwbzAhBggrBgEFBQcwAYYVaHR0cDovL29jc3AuZGNvY3NwLmNuMEoGCCsG%0AAQUFBzAChj5odHRwOi8vY2FjZXJ0cy5kaWdpdGFsY2VydHZhbGlkYXRpb24uY29t%0AL1RydXN0QXNpYVRMU1JTQUNBLmNydDAJBgNVHRMEAjAAMIIBAwYKKwYBBAHWeQIE%0AAgSB9ASB8QDvAHUAu9nfvB%2BKcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YUAAAFp%0A3cON9gAABAMARjBEAiABFpvdLsJKm6zxh5wLS6uN5%2BTnX8bXD5bj7CPVC4Kg/wIg%0AB%2BBzdsZL0UmuvbNAYkr8W53bJKhEgoHJ0RdSyoF5yZAAdgCHdb/nWXz4jEOZX73z%0Abv9WjUdWNv9KtWDBtOr/XqCDDwAAAWndw47mAAAEAwBHMEUCIQC%2BDdvaJ2kKvsVv%0AiivLe4W/YFa/K64HdnyOdHksEl9pSAIgTqLXfw6Tc7d%2BgiKMtt%2B6P/xdrvjGt5Du%0Aokvgu70INuQwDQYJKoZIhvcNAQELBQADggEBAHxewHgySBS5UoO6l/IcU95baR/O%0AYGLcCpgEbWj4MigIZcrkHsD7RddRDoyM/3hxKyzs3Dkes4wHTQDWnyrNuXdn8aNV%0AJAhrh/0yzAe3/UTJ/%2BSRoMg1K6rHWORmLa52d9u3Ei%2B1BF2qLi5L2tTmLrSQJXzB%0ANSIFd40x1mZLp9uqhcB9kcwwkHSFUtLjFwUSN6Zjn9FStlq06ezjgnVv2tP9/HoP%0AKWiRgRFDgqj8%2BROJPQvfuO2xdWoxYUmuMcx1o6IiSVn2F48ood029cyT%2Bt3TaYpb%0AhVI9JuYnHW9kN69xPNzamJVCdu4i/1ELvcr0p/wQf9ax63XsgX4YYhdYgMQ%3D%0A-----END%20CERTIFICATE-----%0A-----BEGIN%20CERTIFICATE-----%0AMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh%0AMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3%0Ad3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD%0AQTAeFw0xNzEyMDgxMjI4MjZaFw0yNzEyMDgxMjI4MjZaMHIxCzAJBgNVBAYTAkNO%0AMSUwIwYDVQQKExxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMR0wGwYDVQQL%0AExREb21haW4gVmFsaWRhdGVkIFNTTDEdMBsGA1UEAxMUVHJ1c3RBc2lhIFRMUyBS%0AU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgWa9X%2Bph%2BwAm8%0AYh1Fk1MjKbQ5QwBOOKVaZR/OfCh%2BF6f93u7vZHGcUU/lvVGgUQnbzJhR1UV2epJa%0Ae%2Bm7cxnXIKdD0/VS9btAgwJszGFvwoqXeaCqFoP71wPmXjjUwLT70%2BqvX4hdyYfO%0AJcjeTz5QKtg8zQwxaK9x4JT9CoOmoVdVhEBAiD3DwR5fFgOHDwwGxdJWVBvktnoA%0AzjdTLXDdbSVC5jZ0u8oq9BiTDv7jAlsB5F8aZgvSZDOQeFrwaOTbKWSEInEhnchK%0AZTD1dz6aBlk1xGEI5PZWAnVAba/ofH33ktymaTDsE6xRDnW97pDkimCRak6CEbfe%0A3dXw6OV5AgMBAAGjggFPMIIBSzAdBgNVHQ4EFgQUf9OZ86BHDjEAVlYijrfMnt3K%0AAYowHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQD%0AAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAG%0AAQH/AgEAMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3Au%0AZGlnaWNlcnQuY29tMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2lj%0AZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RDQS5jcmwwTAYDVR0gBEUwQzA3Bglg%0AhkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29t%0AL0NQUzAIBgZngQwBAgEwDQYJKoZIhvcNAQELBQADggEBAK3dVOj5dlv4MzK2i233%0AlDYvyJ3slFY2X2HKTYGte8nbK6i5/fsDImMYihAkp6VaNY/en8WZ5qcrQPVLuJrJ%0ADSXT04NnMeZOQDUoj/NHAmdfCBB/h1bZ5OGK6Sf1h5Yx/5wR4f3TUoPgGlnU7EuP%0AISLNdMRiDrXntcImDAiRvkh5GJuH4YCVE6XEntqaNIgGkRwxKSgnU3Id3iuFbW9F%0AUQ9Qqtb1GX91AJ7i4153TikGgYCdwYkBURD8gSVe8OAco6IfZOYt/TEwii1Ivi1C%0AqnuUlWpsF1LdQNIdfbW3TSe0BhQa7ifbVIfvPWHYOu3rkg1ZeMo6XRU9B4n5VyJY%0ARmE%3D%0A-----END%20CERTIFICATE-----%0A\n&CertificateKey=%0A-----BEGIN%20RSA%20PRIVATE%20KEY-----%0Axxxxxxxxxxx%0A-----END%20RSA%20PRIVATE%20KEY-----%0A\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCertificate\n<公共请求参数>\n\n{\n    \"CertificateType\": \"2\",\n    \"CertificateAlias\": \"xxx\",\n    \"CertificateKey\": \"%0A-----BEGIN%20RSA%20PRIVATE%20KEY-----%0Axxxxxxxxxxx%0A-----END%20RSA%20PRIVATE%20KEY-----%0A\",\n    \"CertificateContent\": \"%0A-----BEGIN%20CERTIFICATE-----%0AMIIFmDCCBICgAwIBAgIQC6TGAPV%2B4MO7NIhlkkKFljANBgkqhkiG9w0BAQsFADBy%0AMQswCQYDVQQGEwJDTjElMCMGA1UEChMcVHJ1c3RBc2lhIFRlY2hub2xvZ2llcywg%0ASW5jLjEdMBsGA1UECxMURG9tYWluIFZhbGlkYXRlZCBTU0wxHTAbBgNVBAMTFFRy%0AdXN0QXNpYSBUTFMgUlNBIENBMB4XDTE5MDQwMjAwMDAwMFoXDTIwMDQwMTEyMDAw%0AMFowGTEXMBUGA1UEAxMObGFnYW1lZnQwMS54eXowggEiMA0GCSqGSIb3DQEBAQUA%0AA4IBDwAwggEKAoIBAQCuSgglfAksbFSrvWp6cEFr8ulTWEND2KvXf6cCs3kBBCzE%0AMLhCw4792LMFY0%2BFE7a0j7i5nJ9%2BQvhX7GRiu1P9flyge0eUCOBOAtVCn0dvhbLy%0A7efWsmH3kp/owWXnZXeb/k5R1FvojCiV968MxMC%2B2Y7ejz5qMm5XlQPn3xQOEj2h%0AQmHwQ9XwO8qRsIuCD1oNrsXsyXuEhA2zkEvcgtYP35zPsXfjbBaBg7Iw3o0j3jXj%0AgdhD2Q2OzH05jDn3hDhSnej1jbWuGmDEOO%2Bu6W/xqnCOhBMjWLnuW2aUddiBiqsH%0A8BQK/Ge6HUp%2BmMdkdNAw5FN6ztIPzP6GFb0OOLitAgMBAAGjggKBMIICfTAfBgNV%0AHSMEGDAWgBR/05nzoEcOMQBWViKOt8ye3coBijAdBgNVHQ4EFgQUqYL1l3uFqYHC%0A2mJcZC26nLHtkjYwLQYDVR0RBCYwJIIObGFnYW1lZnQwMS54eXqCEnd3dy5sYWdh%0AbWVmdDAxLnh5ejAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG%0ACCsGAQUFBwMCMEwGA1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEW%0AHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMH0GCCsGAQUF%0ABwEBBHEwbzAhBggrBgEFBQcwAYYVaHR0cDovL29jc3AuZGNvY3NwLmNuMEoGCCsG%0AAQUFBzAChj5odHRwOi8vY2FjZXJ0cy5kaWdpdGFsY2VydHZhbGlkYXRpb24uY29t%0AL1RydXN0QXNpYVRMU1JTQUNBLmNydDAJBgNVHRMEAjAAMIIBAwYKKwYBBAHWeQIE%0AAgSB9ASB8QDvAHUAu9nfvB%2BKcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YUAAAFp%0A3cON9gAABAMARjBEAiABFpvdLsJKm6zxh5wLS6uN5%2BTnX8bXD5bj7CPVC4Kg/wIg%0AB%2BBzdsZL0UmuvbNAYkr8W53bJKhEgoHJ0RdSyoF5yZAAdgCHdb/nWXz4jEOZX73z%0Abv9WjUdWNv9KtWDBtOr/XqCDDwAAAWndw47mAAAEAwBHMEUCIQC%2BDdvaJ2kKvsVv%0AiivLe4W/YFa/K64HdnyOdHksEl9pSAIgTqLXfw6Tc7d%2BgiKMtt%2B6P/xdrvjGt5Du%0Aokvgu70INuQwDQYJKoZIhvcNAQELBQADggEBAHxewHgySBS5UoO6l/IcU95baR/O%0AYGLcCpgEbWj4MigIZcrkHsD7RddRDoyM/3hxKyzs3Dkes4wHTQDWnyrNuXdn8aNV%0AJAhrh/0yzAe3/UTJ/%2BSRoMg1K6rHWORmLa52d9u3Ei%2B1BF2qLi5L2tTmLrSQJXzB%0ANSIFd40x1mZLp9uqhcB9kcwwkHSFUtLjFwUSN6Zjn9FStlq06ezjgnVv2tP9/HoP%0AKWiRgRFDgqj8%2BROJPQvfuO2xdWoxYUmuMcx1o6IiSVn2F48ood029cyT%2Bt3TaYpb%0AhVI9JuYnHW9kN69xPNzamJVCdu4i/1ELvcr0p/wQf9ax63XsgX4YYhdYgMQ%3D%0A-----END%20CERTIFICATE-----%0A-----BEGIN%20CERTIFICATE-----%0AMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh%0AMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3%0Ad3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD%0AQTAeFw0xNzEyMDgxMjI4MjZaFw0yNzEyMDgxMjI4MjZaMHIxCzAJBgNVBAYTAkNO%0AMSUwIwYDVQQKExxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMR0wGwYDVQQL%0AExREb21haW4gVmFsaWRhdGVkIFNTTDEdMBsGA1UEAxMUVHJ1c3RBc2lhIFRMUyBS%0AU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgWa9X%2Bph%2BwAm8%0AYh1Fk1MjKbQ5QwBOOKVaZR/OfCh%2BF6f93u7vZHGcUU/lvVGgUQnbzJhR1UV2epJa%0Ae%2Bm7cxnXIKdD0/VS9btAgwJszGFvwoqXeaCqFoP71wPmXjjUwLT70%2BqvX4hdyYfO%0AJcjeTz5QKtg8zQwxaK9x4JT9CoOmoVdVhEBAiD3DwR5fFgOHDwwGxdJWVBvktnoA%0AzjdTLXDdbSVC5jZ0u8oq9BiTDv7jAlsB5F8aZgvSZDOQeFrwaOTbKWSEInEhnchK%0AZTD1dz6aBlk1xGEI5PZWAnVAba/ofH33ktymaTDsE6xRDnW97pDkimCRak6CEbfe%0A3dXw6OV5AgMBAAGjggFPMIIBSzAdBgNVHQ4EFgQUf9OZ86BHDjEAVlYijrfMnt3K%0AAYowHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQD%0AAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAG%0AAQH/AgEAMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3Au%0AZGlnaWNlcnQuY29tMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2lj%0AZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RDQS5jcmwwTAYDVR0gBEUwQzA3Bglg%0AhkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29t%0AL0NQUzAIBgZngQwBAgEwDQYJKoZIhvcNAQELBQADggEBAK3dVOj5dlv4MzK2i233%0AlDYvyJ3slFY2X2HKTYGte8nbK6i5/fsDImMYihAkp6VaNY/en8WZ5qcrQPVLuJrJ%0ADSXT04NnMeZOQDUoj/NHAmdfCBB/h1bZ5OGK6Sf1h5Yx/5wR4f3TUoPgGlnU7EuP%0AISLNdMRiDrXntcImDAiRvkh5GJuH4YCVE6XEntqaNIgGkRwxKSgnU3Id3iuFbW9F%0AUQ9Qqtb1GX91AJ7i4153TikGgYCdwYkBURD8gSVe8OAco6IfZOYt/TEwii1Ivi1C%0AqnuUlWpsF1LdQNIdfbW3TSe0BhQa7ifbVIfvPWHYOu3rkg1ZeMo6XRU9B4n5VyJY%0ARmE%3D%0A-----END%20CERTIFICATE-----%0A\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"CertificateId\": \"cert-xxx\"\n    }\n}",
         "title": "创建证书"
       },
@@ -95,7 +95,7 @@
     "CreateDomain": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateDomain\n&ListenerId=0\n&Domain=a.a.com\n&CertificateId=abc\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"a.a.com\",\n    \"CertificateId\": \"abc\",\n    \"ListenerId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "CreateDomain"
       }
@@ -103,7 +103,7 @@
     "CreateDomainErrorPageInfo": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateDomainErrorPageInfo\n&ListenerId=0\n&Domain=a.com\n&ErrorNos.0=501\n&ErrorNos.1=502\n&NewErrorNo=400\n&Body=helloword\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"Body\": \"helloword\",\n    \"Domain\": \"a.com\",\n    \"ListenerId\": \"0\",\n    \"ErrorNos\": [\n        \"502\",\n        \"501\"\n    ],\n    \"NewErrorNo\": \"400\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"ErrorPageId\": \"errorPage-1fewf\"\n    }\n}",
         "title": "CreateDomainErrorPageInfo"
       }
@@ -119,7 +119,7 @@
     "CreateHTTPListener": [
       {
         "document": "创建HTTP监听器",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateHTTPListener\n&ProxyId=link-cuxw2rm0\n&ListenerName=listener-1\n&Port=443\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHTTPListener\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-cuxw2rm0\",\n    \"ListenerName\": \"listener-1\",\n    \"Port\": \"443\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\n        \"ListenerId\": \"listener-o0f3at99\"\n    }\n}",
         "title": "创建HTTP监听器"
       }
@@ -127,7 +127,7 @@
     "CreateHTTPSListener": [
       {
         "document": "创建HTTPS监听器",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateHTTPSListener\n&ProxyId=link-cuxw2rm0\n&ListenerName=listener-1\n&Port=443\n&CertificateId=N4Al2mhF\n&ForwardProtocol=HTTP\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHTTPSListener\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-cuxw2rm0\",\n    \"ForwardProtocol\": \"HTTP\",\n    \"CertificateId\": \"N4Al2mhF\",\n    \"ListenerName\": \"listener-1\",\n    \"Port\": \"443\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9aeda369-17c7-429f-be39-745c1e92fc71\",\n        \"ListenerId\": \"listener-o0f3at99\"\n    }\n}",
         "title": "创建HTTPS监听器"
       }
@@ -135,7 +135,7 @@
     "CreateProxy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxy\n&ProjectId=0\n&ProxyName=test\n&AccessRegion=SouthChina\n&Bandwidth=10\n&Concurrent=2\n&GroupId=lg-xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxy\n<公共请求参数>\n\n{\n    \"AccessRegion\": \"SouthChina\",\n    \"ProjectId\": \"0\",\n    \"Concurrent\": \"2\",\n    \"Bandwidth\": \"10\",\n    \"ProxyName\": \"test\",\n    \"GroupId\": \"lg-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"link-11112222\",\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "创建通道"
       },
@@ -149,7 +149,7 @@
     "CreateProxyGroup": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxyGroup\n&ProjectId=0\n&GroupName=test\n&RealServerRegion=EastChina\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyGroup\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"RealServerRegion\": \"EastChina\",\n    \"GroupName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\",\n        \"GroupId\": \"lg-negxun2x\"\n    }\n}",
         "title": "创建通道组"
       },
@@ -163,7 +163,7 @@
     "CreateProxyGroupDomain": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxyGroupDomain\n&GroupId=lg-b7h4d02f\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyGroupDomain\n<公共请求参数>\n\n{\n    \"GroupId\": \"lg-b7h4d02f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\",\n        \"GroupId\": \"lg-okl0h0n1\"\n    }\n}",
         "title": "开启通道组域名"
       }
@@ -179,7 +179,7 @@
     "CreateSecurityPolicy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateSecurityPolicy\n&ProxyId=link-1234\n&DefaultAction=Accept\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityPolicy\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-1234\",\n    \"DefaultAction\": \"Accept\"\n}",
         "output": "{\n    \"Response\": {\n        \"PolicyId\": \"pl-xxxx\",\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\"\n    }\n}",
         "title": "创建安全策略"
       }
@@ -187,7 +187,7 @@
     "CreateSecurityRules": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateSecurityRules\n&PolicyId=字符串\n&RuleList.0.SourceCidr=字符串\n&RuleList.0.Action=字符串\n&RuleList.0.AliasName=字符串\n&RuleList.0.Protocol=字符串\n&RuleList.0.DestPortRange=字符串\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityRules\n<公共请求参数>\n\n{\n    \"PolicyId\": \"字符串\",\n    \"RuleList\": [\n        {\n            \"Action\": \"字符串\",\n            \"Protocol\": \"字符串\",\n            \"DestPortRange\": \"字符串\",\n            \"AliasName\": \"字符串\",\n            \"SourceCidr\": \"字符串\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\",\n        \"RuleIdList\": [\n            \"sr-ishgwan1\",\n            \"sr-ishgwan2\"\n        ]\n    }\n}",
         "title": "添加访问规则"
       }
@@ -211,7 +211,7 @@
     "DeleteCertificate": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteCertificate\n&CertificateId=xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "删除证书"
       }
@@ -219,7 +219,7 @@
     "DeleteDomain": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteDomain\n&ListenerId=0\n&Domain=a.a.com\n&Force=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"a.a.com\",\n    \"Force\": \"1\",\n    \"ListenerId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "根据域名删除转发规则"
       }
@@ -227,7 +227,7 @@
     "DeleteDomainErrorPageInfo": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteDomainErrorPageInfo\n&ErrorPageId='errorPage-xxxx'\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"ErrorPageId\": \"'errorPage-xxxx'\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "DeleteDomainErrorPageInfo"
       }
@@ -243,7 +243,7 @@
     "DeleteListeners": [
       {
         "document": "删除监听器",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteListeners\n&ProxyId=link-3d85gh\n&ListenerIds.0=listener-o0f3at99\n&Force=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-3d85gh\",\n    \"Force\": \"1\",\n    \"ListenerIds\": [\n        \"listener-o0f3at99\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedListenerSet\": [],\n        \"OperationSucceedListenerSet\": [\n            \"listener-o0f3at99\"\n        ],\n        \"InvalidStatusListenerSet\": [],\n        \"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\n    }\n}",
         "title": "删除监听器"
       }
@@ -251,7 +251,7 @@
     "DeleteProxyGroup": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteProxyGroup\n&GroupId=lg-b7h4d02f\n&Force=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProxyGroup\n<公共请求参数>\n\n{\n    \"Force\": \"0\",\n    \"GroupId\": \"lg-b7h4d02f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
         "title": "删除通道组"
       }
@@ -259,7 +259,7 @@
     "DeleteRule": [
       {
         "document": "删除7层监听器转发规则",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteRule\n&ListenerId=0\n&RuleId=rule-18vhg67\n&Force=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRule\n<公共请求参数>\n\n{\n    \"Force\": \"1\",\n    \"ListenerId\": \"0\",\n    \"RuleId\": \"rule-18vhg67\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "删除7层监听器转发规则"
       }
@@ -267,7 +267,7 @@
     "DeleteSecurityPolicy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteSecurityPolicy\n&PolicyId=sp-hw5czrxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"sp-hw5czrxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\"\n    }\n}",
         "title": "删除安全策略"
       }
@@ -275,7 +275,7 @@
     "DeleteSecurityRules": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DeleteSecurityRules\n&PolicyId=sp-xxxx\n&RuleIdList.0=sr-xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityRules\n<公共请求参数>\n\n{\n    \"RuleIdList\": [\n        \"sr-xxx\"\n    ],\n    \"PolicyId\": \"sp-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\"\n    }\n}",
         "title": "删除访问规则"
       }
@@ -283,7 +283,7 @@
     "DescribeAccessRegions": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeAccessRegions\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccessRegionSet\": [\n            {\n                \"RegionId\": \"xx\",\n                \"RegionAreaName\": \"xx\",\n                \"IDCType\": \"xx\",\n                \"FeatureBitmap\": 1,\n                \"RegionArea\": \"xx\",\n                \"RegionName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询加速区域"
       }
@@ -291,7 +291,7 @@
     "DescribeAccessRegionsByDestRegion": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeAccessRegionsByDestRegion\n&DestRegion=SouthChina\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessRegionsByDestRegion\n<公共请求参数>\n\n{\n    \"DestRegion\": \"SouthChina\"\n}",
         "output": "{\n    \"Response\": {\n        \"AccessRegionSet\": [\n            {\n                \"RegionId\": \"eu-moscow\",\n                \"RegionName\": \"Russia\",\n                \"ConcurrentList\": [\n                    1,\n                    2,\n                    3,\n                    4,\n                    5,\n                    6,\n                    7\n                ],\n                \"BandwidthList\": [\n                    1,\n                    2,\n                    3,\n                    4,\n                    5,\n                    6,\n                    7\n                ],\n                \"RegionArea\": \"NorthChina\",\n                \"RegionAreaName\": \"中国大陆-华北\",\n                \"IDCType\": \"dc\",\n                \"FeatureBitmap\": 3\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "根据源站区域查询可用加速区域"
       }
@@ -299,7 +299,7 @@
     "DescribeBlackHeader": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeBlackHeader\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlackHeader\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"BlackHeaders\": [\n            \"X-Forward-For\",\n            \"allow\"\n        ]\n    }\n}",
         "title": "查询禁用自定义header 名称列表"
       }
@@ -307,7 +307,7 @@
     "DescribeCertificateDetail": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCertificateDetail\n&CertificateId=cert-d5y6ei3b\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertificateDetail\n<公共请求参数>\n\n{\n    \"CertificateId\": \"cert-d5y6ei3b\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateDetail\": {\n            \"CertificateId\": \"cert-d5y6ei3b\",\n            \"SubjectCN\": \"lagameft01.xyz\",\n            \"CertificateAlias\": \"ca\",\n            \"CertificateContent\": \"-----BEGIN CERTIFICATE-----\\nMIIFmDCCBICgAwIBAgIQC6TGAPV+4MO7NIhlkkKFljANBgkqhkiG9w0BAQsFADBy\\nMQswCQYDVQQGEwJDTjElMCMGA1UEChMcVHJ1c3RBc2lhIFRlY2hub2xvZ2llcywg\\nSW5jLjEdMBsGA1UECxMURG9tYWluIFZhbGlkYXRlZCBTU0wxHTAbBgNVBAMTFFRy\\ndXN0QXNpYSBUTFMgUlNBIENBMB4XDTE5MDQwMjAwMDAwMFoXDTIwMDQwMTEyMDAw\\nMFowGTEXMBUGA1UEAxMObGFnYW1lZnQwMS54eXowggEiMA0GCSqGSIb3DQEBAQUA\\nA4IBDwAwggEKAoIBAQCuSgglfAksbFSrvWp6cEFr8ulTWEND2KvXf6cCs3kBBCzE\\nMLhCw4792LMFY0+FE7a0j7i5nJ9+QvhX7GRiu1P9flyge0eUCOBOAtVCn0dvhbLy\\n7efWsmH3kp/owWXnZXeb/k5R1FvojCiV968MxMC+2Y7ejz5qMm5XlQPn3xQOEj2h\\nQmHwQ9XwO8qRsIuCD1oNrsXsyXuEhA2zkEvcgtYP35zPsXfjbBaBg7Iw3o0j3jXj\\ngdhD2Q2OzH05jDn3hDhSnej1jbWuGmDEOO+u6W/xqnCOhBMjWLnuW2aUddiBiqsH\\n8BQK/Ge6HUp+mMdkdNAw5FN6ztIPzP6GFb0OOLitAgMBAAGjggKBMIICfTAfBgNV\\nHSMEGDAWgBR/05nzoEcOMQBWViKOt8ye3coBijAdBgNVHQ4EFgQUqYL1l3uFqYHC\\n2mJcZC26nLHtkjYwLQYDVR0RBCYwJIIObGFnYW1lZnQwMS54eXqCEnd3dy5sYWdh\\nbWVmdDAxLnh5ejAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG\\nCCsGAQUFBwMCMEwGA1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEW\\nHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMH0GCCsGAQUF\\nBwEBBHEwbzAhBggrBgEFBQcwAYYVaHR0cDovL29jc3AuZGNvY3NwLmNuMEoGCCsG\\nAQUFBzAChj5odHRwOi8vY2FjZXJ0cy5kaWdpdGFsY2VydHZhbGlkYXRpb24uY29t\\nL1RydXN0QXNpYVRMU1JTQUNBLmNydDAJBgNVHRMEAjAAMIIBAwYKKwYBBAHWeQIE\\nAgSB9ASB8QDvAHUAu9nfvB+KcbWTlCOXqpJ7RzhXlQqrUugakJZkNo4e0YUAAAFp\\n3cON9gAABAMARjBEAiABFpvdLsJKm6zxh5wLS6uN5+TnX8bXD5bj7CPVC4Kg/wIg\\nB+BzdsZL0UmuvbNAYkr8W53bJKhEgoHJ0RdSyoF5yZAAdgCHdb/nWXz4jEOZX73z\\nbv9WjUdWNv9KtWDBtOr/XqCDDwAAAWndw47mAAAEAwBHMEUCIQC+DdvaJ2kKvsVv\\niivLe4W/YFa/K64HdnyOdHksEl9pSAIgTqLXfw6Tc7d+giKMtt+6P/xdrvjGt5Du\\nokvgu70INuQwDQYJKoZIhvcNAQELBQADggEBAHxewHgySBS5UoO6l/IcU95baR/O\\nYGLcCpgEbWj4MigIZcrkHsD7RddRDoyM/3hxKyzs3Dkes4wHTQDWnyrNuXdn8aNV\\nJAhrh/0yzAe3/UTJ/+SRoMg1K6rHWORmLa52d9u3Ei+1BF2qLi5L2tTmLrSQJXzB\\nNSIFd40x1mZLp9uqhcB9kcwwkHSFUtLjFwUSN6Zjn9FStlq06ezjgnVv2tP9/HoP\\nKWiRgRFDgqj8+ROJPQvfuO2xdWoxYUmuMcx1o6IiSVn2F48ood029cyT+t3TaYpb\\nhVI9JuYnHW9kN69xPNzamJVCdu4i/1ELvcr0p/wQf9ax63XsgX4YYhdYgMQ=\\n-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----\\nMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh\\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\\nQTAeFw0xNzEyMDgxMjI4MjZaFw0yNzEyMDgxMjI4MjZaMHIxCzAJBgNVBAYTAkNO\\nMSUwIwYDVQQKExxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMR0wGwYDVQQL\\nExREb21haW4gVmFsaWRhdGVkIFNTTDEdMBsGA1UEAxMUVHJ1c3RBc2lhIFRMUyBS\\nU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgWa9X+ph+wAm8\\nYh1Fk1MjKbQ5QwBOOKVaZR/OfCh+F6f93u7vZHGcUU/lvVGgUQnbzJhR1UV2epJa\\ne+m7cxnXIKdD0/VS9btAgwJszGFvwoqXeaCqFoP71wPmXjjUwLT70+qvX4hdyYfO\\nJcjeTz5QKtg8zQwxaK9x4JT9CoOmoVdVhEBAiD3DwR5fFgOHDwwGxdJWVBvktnoA\\nzjdTLXDdbSVC5jZ0u8oq9BiTDv7jAlsB5F8aZgvSZDOQeFrwaOTbKWSEInEhnchK\\nZTD1dz6aBlk1xGEI5PZWAnVAba/ofH33ktymaTDsE6xRDnW97pDkimCRak6CEbfe\\n3dXw6OV5AgMBAAGjggFPMIIBSzAdBgNVHQ4EFgQUf9OZ86BHDjEAVlYijrfMnt3K\\nAYowHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQD\\nAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAG\\nAQH/AgEAMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3Au\\nZGlnaWNlcnQuY29tMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2lj\\nZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RDQS5jcmwwTAYDVR0gBEUwQzA3Bglg\\nhkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29t\\nL0NQUzAIBgZngQwBAgEwDQYJKoZIhvcNAQELBQADggEBAK3dVOj5dlv4MzK2i233\\nlDYvyJ3slFY2X2HKTYGte8nbK6i5/fsDImMYihAkp6VaNY/en8WZ5qcrQPVLuJrJ\\nDSXT04NnMeZOQDUoj/NHAmdfCBB/h1bZ5OGK6Sf1h5Yx/5wR4f3TUoPgGlnU7EuP\\nISLNdMRiDrXntcImDAiRvkh5GJuH4YCVE6XEntqaNIgGkRwxKSgnU3Id3iuFbW9F\\nUQ9Qqtb1GX91AJ7i4153TikGgYCdwYkBURD8gSVe8OAco6IfZOYt/TEwii1Ivi1C\\nqnuUlWpsF1LdQNIdfbW3TSe0BhQa7ifbVIfvPWHYOu3rkg1ZeMo6XRU9B4n5VyJY\\nRmE=\\n-----END CERTIFICATE-----\",\n            \"CertificateKey\": null,\n            \"BeginTime\": 1554134400,\n            \"CertificateType\": 3,\n            \"EndTime\": 1585713600,\n            \"CreateTime\": 1564560608,\n            \"IssuerCN\": \"TrustAsia TLS RSA CA\"\n        },\n        \"RequestId\": \"7a4d63f8-a663-469c-be71-f1c00001c74b\"\n    }\n}",
         "title": "查询证书详情。"
       }
@@ -315,7 +315,7 @@
     "DescribeCertificates": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCertificates\n&CertificateType=2\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertificates\n<公共请求参数>\n\n{\n    \"CertificateType\": \"2\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 19,\n        \"RequestId\": \"35d85baa-eeb8-4eb5-96a9-b6d27f4ff92c\",\n        \"CertificateSet\": [\n            {\n                \"CertificateId\": \"cert-8k1l0pat\",\n                \"SubjectCN\": \"lagameft01.xyz\",\n                \"CertificateAlias\": \"test\",\n                \"CertificateName\": \"test\",\n                \"BeginTime\": 1554134400,\n                \"CertificateType\": 2,\n                \"EndTime\": 1585713600,\n                \"CreateTime\": 1564557014,\n                \"IssuerCN\": \"TrustAsia TLS RSA CA\"\n            }\n        ]\n    }\n}",
         "title": "查询服务器证书信息"
       }
@@ -323,15 +323,15 @@
     "DescribeCountryAreaMapping": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCountryAreaMapping\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"CountryAreaMappingList\": [\n            {\n                \"NationCountryName\": \"Fiji Islands\",\n                \"GeographicalZoneInnerCode\": \"401000\",\n                \"ContinentName\": \"Oceania\",\n                \"ContinentInnerCode\": \"400000\",\n                \"NationCountryInnerCode\": \"401012\",\n                \"GeographicalZoneName\": \"Oceania\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCountryAreaMapping\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"CountryAreaMappingList\": [\n            {\n                \"Remark\": \"1\",\n                \"NationCountryName\": \"Fiji Islands\",\n                \"GeographicalZoneInnerCode\": \"401000\",\n                \"ContinentName\": \"Oceania\",\n                \"ContinentInnerCode\": \"400000\",\n                \"NationCountryInnerCode\": \"401012\",\n                \"GeographicalZoneName\": \"Oceania\"\n            }\n        ]\n    }\n}",
         "title": "获取国家地区编码映射表"
       }
     ],
     "DescribeCrossBorderProxies": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCrossBorderProxies\n&Offset=0\n&Limit=1\n&Filters.0.Name=AccessRegion\n&Filters.0.Values.0=ap-hongkong\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderProxies\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca705529-e783-42a3-88c1-2cbe1e915ee6\"\n    }\n}",
         "title": "查询通道实例列表"
       }
@@ -339,7 +339,7 @@
     "DescribeCustomHeader": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCustomHeader\n&RuleId=rule-18vhg67\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomHeader\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"RuleId\": \"rule-18vhg67\",\n        \"Headers\": [\n            {\n                \"HeaderName\": \"X-REAL_IP\",\n                \"HeaderValue\": \"$remote_addr\"\n            },\n            {\n                \"HeaderName\": \"X-FORWORD-IP\",\n                \"HeaderValue\": \"192.168.2.101\"\n            }\n        ]\n    }\n}",
         "title": "查询自定义header列表"
       }
@@ -347,7 +347,7 @@
     "DescribeDestRegions": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeDestRegions\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDestRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DestRegionSet\": [\n            {\n                \"RegionId\": \"xx\",\n                \"RegionAreaName\": \"xx\",\n                \"IDCType\": \"xx\",\n                \"FeatureBitmap\": 1,\n                \"RegionArea\": \"xx\",\n                \"RegionName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询源站 区域"
       },
@@ -361,7 +361,7 @@
     "DescribeDomainErrorPageInfo": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeDomainErrorPageInfo\n&ListenerId=0\n&Domain=a.com\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"Domain\": \"a.com\",\n    \"ListenerId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d9f4d84-b825-4a4f-8c4c-3c87c559c84c\",\n        \"ErrorPageSet\": [\n            {\n                \"Body\": \"str\",\n                \"Domain\": \"test.domain\",\n                \"ClearHeaders\": [\n                    \"MyClearHeader\",\n                    \"MyClearHeader1\"\n                ],\n                \"ListenerId\": \"listener-23egjhxb\",\n                \"ErrorNos\": [\n                    501,\n                    502\n                ],\n                \"Status\": 1,\n                \"ErrorPageId\": \"errorPage-lhlnux1v\",\n                \"NewErrorNo\": 123,\n                \"SetHeaders\": [\n                    {\n                        \"HeaderName\": \"MyName\",\n                        \"HeaderValue\": \"MyValue\"\n                    },\n                    {\n                        \"HeaderName\": \"MyName1\",\n                        \"HeaderValue\": \"MyValue1\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "DescribeDomainErrorPageInfo"
       }
@@ -369,7 +369,7 @@
     "DescribeDomainErrorPageInfoByIds": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeDomainErrorPageInfoByIds\n&ErrorPageIds.0=errorPage-lhlnux1v\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainErrorPageInfoByIds\n<公共请求参数>\n\n{\n    \"ErrorPageIds\": [\n        \"errorPage-lhlnux1v\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d9f4d84-b825-4a4f-8c4c-3c87c559c84c\",\n        \"ErrorPageSet\": [\n            {\n                \"Body\": \"sx\",\n                \"Status\": 0,\n                \"Domain\": \"test.domain\",\n                \"ClearHeaders\": [\n                    \"MyClearHeader\",\n                    \"MyClearHeader1\"\n                ],\n                \"ListenerId\": \"listener-23egjhxb\",\n                \"ErrorNos\": [\n                    501,\n                    502\n                ],\n                \"ErrorPageId\": \"errorPage-lhlnux1v\",\n                \"NewErrorNo\": 4123,\n                \"SetHeaders\": [\n                    {\n                        \"HeaderName\": \"MyName\",\n                        \"HeaderValue\": \"MyValue\"\n                    },\n                    {\n                        \"HeaderName\": \"MyName1\",\n                        \"HeaderValue\": \"MyValue1\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "DescribeDomainErrorPageInfoByIds"
       }
@@ -385,7 +385,7 @@
     "DescribeGroupAndStatisticsProxy": [
       {
         "document": "查询统计通道组和通道信息",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeGroupAndStatisticsProxy\n&ProjectId=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupAndStatisticsProxy\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupSet\": [\n            {\n                \"GroupId\": \"lg-r737geg\",\n                \"GroupName\": \"lg-test\",\n                \"ProxySet\": [\n                    {\n                        \"ProxyId\": \"link-mmu241ob\",\n                        \"ProxyName\": \"link-test\",\n                        \"ListenerList\": [\n                            {\n                                \"ListenerId\": \"listener-lmifrrmh\",\n                                \"ListenerName\": \"linstener-test\",\n                                \"Port\": 80,\n                                \"Protocol\": \"HTTP\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询统计通道组和通道信息"
       }
@@ -393,7 +393,7 @@
     "DescribeGroupDomainConfig": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeGroupDomainConfig\n&GroupId=lg-b7h4d02f\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupDomainConfig\n<公共请求参数>\n\n{\n    \"GroupId\": \"lg-b7h4d02f\"\n}",
         "output": "{\n    \"Response\": {\n        \"DefaultDnsIp\": \"lg-na2d00jf\",\n        \"AccessRegionCount\": 2,\n        \"RequestId\": \"74b5f95c-e976-4f78-b2ee-aad49eb844c4\",\n        \"AccessRegionList\": [\n            {\n                \"NationCountryInnerList\": [\n                    {\n                        \"NationCountryName\": \"North China\",\n                        \"NationCountryInnerCode\": \"101001\"\n                    },\n                    {\n                        \"NationCountryName\": \"East China\",\n                        \"NationCountryInnerCode\": \"101002\"\n                    },\n                    {\n                        \"NationCountryName\": \"South China\",\n                        \"NationCountryInnerCode\": \"101003\"\n                    },\n                    {\n                        \"NationCountryName\": \"West China\",\n                        \"NationCountryInnerCode\": \"101004\"\n                    }\n                ],\n                \"ContinentInnerCode\": \"100000\",\n                \"RegionId\": \"EastChina\",\n                \"GeographicalZoneInnerCode\": \"101000\",\n                \"ProxyList\": [\n                    {\n                        \"ProxyId\": \"link-4lzfc73l\"\n                    }\n                ],\n                \"RegionName\": \"East China\"\n            },\n            {\n                \"NationCountryInnerList\": [\n                    {\n                        \"NationCountryName\": \"Australia\",\n                        \"NationCountryInnerCode\": \"401000\"\n                    },\n                    {\n                        \"NationCountryName\": \"New Zealand\",\n                        \"NationCountryInnerCode\": \"401001\"\n                    }\n                ],\n                \"ContinentInnerCode\": \"400000\",\n                \"RegionId\": \"SL_Australia\",\n                \"GeographicalZoneInnerCode\": \"401000\",\n                \"ProxyList\": [\n                    {\n                        \"ProxyId\": \"link-ozvhjhp1\"\n                    }\n                ],\n                \"RegionName\": \"Australia (Sydney)\"\n            }\n        ],\n        \"GroupId\": \"lg-na2d00jf\"\n    }\n}",
         "title": "获取通道组域名解析配置详情"
       }
@@ -401,7 +401,7 @@
     "DescribeHTTPListeners": [
       {
         "document": "查询HTTP监听器信息",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeHTTPListeners\n&ProxyId=link-n9ha8jzl\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHTTPListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-n9ha8jzl\",\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"ListenerSet\": [\n            {\n                \"Protocol\": \"HTTP\",\n                \"ListenerId\": \"listener-4e99n24b\",\n                \"Port\": 80,\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"http80\",\n                \"CreateTime\": 1563335063\n            },\n            {\n                \"Protocol\": \"HTTP\",\n                \"ListenerId\": \"listener-jmi21mrf\",\n                \"Port\": 8080,\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"http8080\",\n                \"CreateTime\": 1564590945\n            },\n            {\n                \"Protocol\": \"HTTP\",\n                \"ListenerId\": \"listener-1grazsz5\",\n                \"Port\": 18080,\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"http18080\",\n                \"CreateTime\": 1564590963\n            },\n            {\n                \"Protocol\": \"HTTP\",\n                \"ListenerId\": \"listener-l6z66uqb\",\n                \"Port\": 28080,\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"http28080\",\n                \"CreateTime\": 1564640821\n            }\n        ],\n        \"RequestId\": \"4c43a7f7-3527-4e2a-9998-bbd363e4b095\"\n    }\n}",
         "title": "查询HTTP监听器信息"
       }
@@ -409,7 +409,7 @@
     "DescribeHTTPSListeners": [
       {
         "document": "查询HTTPS监听器信息",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeHTTPSListeners\n&ProxyId=link-n9ha8jzl\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHTTPSListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-n9ha8jzl\",\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 11,\n        \"ListenerSet\": [\n            {\n                \"ForwardProtocol\": \"HTTPS\",\n                \"ClientCertificateId\": \"123\",\n                \"CertificateId\": \"Sv8lFuYh\",\n                \"Protocol\": \"HTTPS\",\n                \"CertificateAlias\": \"lagameft01_test勿删除\",\n                \"AuthType\": 0,\n                \"ListenerId\": \"listener-eqq49dct\",\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"连通性测试httpstohttps443\",\n                \"ClientCertificateAlias\": \"sdvadf\",\n                \"CreateTime\": 1563340571,\n                \"Port\": 443,\n                \"PolyClientCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"123\",\n                        \"CertificateAlias\": \"alis\"\n                    }\n                ]\n            },\n            {\n                \"ForwardProtocol\": \"HTTPS\",\n                \"ClientCertificateId\": \"\",\n                \"CertificateId\": \"cert-r79xf99t\",\n                \"Protocol\": \"HTTPS\",\n                \"CertificateAlias\": \"boris服务器证书user001\",\n                \"AuthType\": 0,\n                \"ListenerId\": \"listener-85646933\",\n                \"ListenerStatus\": 0,\n                \"ListenerName\": \"testcert001\",\n                \"ClientCertificateAlias\": null,\n                \"CreateTime\": 1564201158,\n                \"Port\": 1443,\n                \"PolyClientCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"123\",\n                        \"CertificateAlias\": \"alis\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"db5cebe8-b79a-401c-8704-388776fae938\"\n    }\n}",
         "title": "查询HTTPS监听器信息"
       }
@@ -417,15 +417,15 @@
     "DescribeListenerRealServers": [
       {
         "document": "查询4层监听器源站列表",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeListenerRealServers\n&ListenerId=listener-pbsgn7ej\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RealServerSet\": [\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            }\n        ],\n        \"BindRealServerTotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"BindRealServerSet\": [\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 80,\n                \"RealServerId\": \"xx\",\n                \"DownIPList\": [\n                    \"1.1.1.1\"\n                ],\n                \"RealServerWeight\": 0,\n                \"RealServerIP\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListenerRealServers\n<公共请求参数>\n\n{\n    \"ListenerId\": \"listener-pbsgn7ej\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RealServerSet\": [\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            }\n        ],\n        \"BindRealServerTotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"BindRealServerSet\": [\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 80,\n                \"RealServerId\": \"xx\",\n                \"RealServerFailoverRole\": \"xx\",\n                \"DownIPList\": [\n                    \"1.1.1.1\"\n                ],\n                \"RealServerWeight\": 0,\n                \"RealServerIP\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询4层监听器源站列表"
       }
     ],
     "DescribeListenerStatistics": [
       {
         "document": "查询监听器统计数据",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeListenerStatistics\n&ListenerId=listener-rfgt56hy\n&MetricNames.0=InputBandwidth\n&MetricNames.1=OutputBandwidth\n&StartTime=2019-03-25 12:00:00\n&EndTime=2019-03-26 12:00:00\n&Granularity=300\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListenerStatistics\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-26 12:00:00\",\n    \"Granularity\": \"300\",\n    \"ListenerId\": \"listener-rfgt56hy\",\n    \"StartTime\": \"2019-03-25 12:00:00\",\n    \"MetricNames\": [\n        \"OutputBandwidth\",\n        \"InputBandwidth\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"StatisticsData\": [\n            {\n                \"MetricName\": \"InputBandwidth\",\n                \"MetricData\": [\n                    {\n                        \"Time\": 1564736040,\n                        \"Data\": 2000\n                    },\n                    {\n                        \"Time\": 1564735980,\n                        \"Data\": 2001\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "查询监听器统计数据"
       }
@@ -441,7 +441,7 @@
     "DescribeProxiesStatus": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxiesStatus\n&ProxyIds.0=link-1234abcd\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxiesStatus\n<公共请求参数>\n\n{\n    \"ProxyIds\": [\n        \"link-1234abcd\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceStatusSet\": [\n            {\n                \"InstanceId\": \"link-4ftf12sb\",\n                \"Status\": \"RUNNING\"\n            }\n        ],\n        \"RequestId\": \"caac3323-bda3-4edc-b063-f584eb5936a2\"\n    }\n}",
         "title": "查询通道状态列表"
       }
@@ -449,7 +449,7 @@
     "DescribeProxyAndStatisticsListeners": [
       {
         "document": "查询统计通道和监听器信息",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyAndStatisticsListeners\n&ProjectId=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyAndStatisticsListeners\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"ProxySet\": [\n            {\n                \"ProxyId\": \"link-mmu241ob\",\n                \"ProxyName\": \"wegame\",\n                \"ListenerList\": [\n                    {\n                        \"ListenerId\": \"listener-lmifrrmh\",\n                        \"ListenerName\": \"wegame\",\n                        \"Protocol\": \"HTTP\",\n                        \"Port\": 80\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询统计通道和监听器信息"
       }
@@ -487,7 +487,7 @@
     "DescribeProxyGroupStatistics": [
       {
         "document": "查询通道组统计数据",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyGroupStatistics\n&GroupId=lg-rfgt56hy\n&MetricNames.0=InputBandwidth\n&StartTime=2019-03-25 12:00:00\n&EndTime=2019-03-26 12:00:00\n&Granularity=300\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyGroupStatistics\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-26 12:00:00\",\n    \"Granularity\": \"300\",\n    \"GroupId\": \"lg-rfgt56hy\",\n    \"StartTime\": \"2019-03-25 12:00:00\",\n    \"MetricNames\": [\n        \"InputBandwidth\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"StatisticsData\": [\n            {\n                \"MetricName\": \"InputBandwidth\",\n                \"MetricData\": [\n                    {\n                        \"Time\": 1564734780,\n                        \"Data\": 2000\n                    },\n                    {\n                        \"Time\": 1564734720,\n                        \"Data\": 2001\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "查询通道组统计数据"
       }
@@ -495,7 +495,7 @@
     "DescribeProxyStatistics": [
       {
         "document": "查询通道统计数据",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeProxyStatistics\n&ProxyId=link-rfgt56hy\n&MetricNames.0=Concurrent\n&StartTime=2019-03-25 12:00:00\n&EndTime=2019-03-26 12:00:00\n&Granularity=300\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyStatistics\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-rfgt56hy\",\n    \"EndTime\": \"2019-03-26 12:00:00\",\n    \"Granularity\": \"300\",\n    \"StartTime\": \"2019-03-25 12:00:00\",\n    \"MetricNames\": [\n        \"Concurrent\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"StatisticsData\": [\n            {\n                \"MetricName\": \"Concurrent\",\n                \"MetricData\": [\n                    {\n                        \"Time\": 1564734780,\n                        \"Data\": 2000\n                    },\n                    {\n                        \"Time\": 1564734720,\n                        \"Data\": 2001\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "查询通道统计数据"
       }
@@ -503,7 +503,7 @@
     "DescribeRealServerStatistics": [
       {
         "document": "查询已绑定源站健康检查统计数据",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServerStatistics\n&RealServerId=rs-rfgt56hy\n&ListenerId=listener-gucvb6d\n&WithinTime=3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealServerStatistics\n<公共请求参数>\n\n{\n    \"WithinTime\": \"3\",\n    \"RealServerId\": \"rs-rfgt56hy\",\n    \"ListenerId\": \"listener-gucvb6d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RsStatisticsData\": [\n            {\n                \"MetricData\": [\n                    {\n                        \"Data\": 0.0,\n                        \"Time\": 1\n                    },\n                    {\n                        \"Data\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"MetricName\": \"xx\"\n            },\n            {\n                \"MetricData\": [\n                    {\n                        \"Data\": 0.0,\n                        \"Time\": 1\n                    },\n                    {\n                        \"Data\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"MetricName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"StatisticsData\": [\n            {\n                \"Data\": 0.0,\n                \"Time\": 1\n            }\n        ]\n    }\n}",
         "title": "查询已绑定源站健康检查统计数据"
       }
@@ -511,7 +511,7 @@
     "DescribeRealServers": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServers\n&ProjectId=0\n&SearchValue='1.1.1.1'\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealServers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"SearchValue\": \"'1.1.1.1'\"\n}",
         "output": "{\n    \"Response\": {\n        \"RealServerSet\": [\n            {\n                \"RealServerId\": \"rs123\",\n                \"RealServerIP\": \"1.1.1.1\",\n                \"RealServerName\": \"rsname\",\n                \"ProjectId\": 0,\n                \"TagSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "查询源站信息"
       }
@@ -519,7 +519,7 @@
     "DescribeRealServersStatus": [
       {
         "document": "查询源站绑定状态",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRealServersStatus\n&RealServerIds.0=rs-4ftghy6\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealServersStatus\n<公共请求参数>\n\n{\n    \"RealServerIds\": [\n        \"rs-4ftghy6\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RealServerStatusSet\": [\n            {\n                \"ProxyId\": \"xx\",\n                \"BindStatus\": 0,\n                \"RealServerId\": \"xx\",\n                \"GroupId\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询源站绑定状态"
       }
@@ -527,7 +527,7 @@
     "DescribeRegionAndPrice": [
       {
         "document": "获取源站区域和带宽梯度价格",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRegionAndPrice\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegionAndPrice\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DestRegionSet\": [\n            {\n                \"RegionId\": \"xx\",\n                \"RegionAreaName\": \"xx\",\n                \"IDCType\": \"xx\",\n                \"FeatureBitmap\": 1,\n                \"RegionArea\": \"xx\",\n                \"RegionName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"BandwidthUnitPrice\": [\n            {\n                \"BandwidthRange\": [\n                    0,\n                    20\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    20,\n                    100\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    100,\n                    500\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    500,\n                    2000\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    2000,\n                    0\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            }\n        ],\n        \"Currency\": \"xx\"\n    }\n}",
         "title": "获取源站区域和带宽梯度价格"
       },
@@ -541,7 +541,7 @@
     "DescribeResourcesByTag": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeResourcesByTag\n&TagKey=testkey\n&TagValue=test\n&ResourceType=Proxy\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesByTag\n<公共请求参数>\n\n{\n    \"ResourceType\": \"Proxy\",\n    \"TagKey\": \"testkey\",\n    \"TagValue\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResourceSet\": [\n            {\n                \"ResourceType\": \"Proxy\",\n                \"ResourceId\": \"link-12345678\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "根据标签拉取资源列表"
       }
@@ -549,31 +549,31 @@
     "DescribeRuleRealServers": [
       {
         "document": "查询转发规则相关源站信息",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRuleRealServers\n&RuleId=rule-hh5xg2yd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RealServerSet\": [\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            }\n        ],\n        \"BindRealServerTotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"BindRealServerSet\": [\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 234,\n                \"RealServerId\": \"xx\",\n                \"DownIPList\": [\n                    \"xx\"\n                ],\n                \"RealServerWeight\": 1,\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 424,\n                \"RealServerId\": \"xx\",\n                \"RealServerWeight\": 1,\n                \"DownIPList\": [\n                    \"xx\"\n                ],\n                \"RealServerIP\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleRealServers\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-hh5xg2yd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RealServerSet\": [\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"ProjectId\": 1,\n                \"RealServerId\": \"xx\",\n                \"InBanBlacklist\": 0,\n                \"RealServerName\": \"xx\",\n                \"RealServerIP\": \"xx\"\n            }\n        ],\n        \"BindRealServerTotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"BindRealServerSet\": [\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 234,\n                \"RealServerId\": \"xx\",\n                \"RealServerFailoverRole\": \"xx\",\n                \"DownIPList\": [\n                    \"xx\"\n                ],\n                \"RealServerWeight\": 1,\n                \"RealServerIP\": \"xx\"\n            },\n            {\n                \"RealServerStatus\": 1,\n                \"RealServerPort\": 424,\n                \"RealServerId\": \"xx\",\n                \"RealServerWeight\": 1,\n                \"RealServerFailoverRole\": \"xx\",\n                \"DownIPList\": [\n                    \"xx\"\n                ],\n                \"RealServerIP\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询转发规则相关源站信息"
       }
     ],
     "DescribeRules": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRules\n&ListenerId=listener-9jt0rtv9\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainRuleSet\": [\n            {\n                \"GaapCertificateAlias\": \"xx\",\n                \"Http3Supported\": 0,\n                \"Domain\": \"xx\",\n                \"CertificateId\": \"xx\",\n                \"PolyRealServerCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"xx\",\n                        \"CertificateAlias\": \"xx\"\n                    }\n                ],\n                \"RealServerCertificateId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"CertificateAlias\": \"xx\",\n                \"ClientCertificateId\": \"xx\",\n                \"GaapCertificateId\": \"xx\",\n                \"BasicAuth\": 1,\n                \"BasicAuthConfAlias\": \"xx\",\n                \"BasicAuthConfId\": \"xx\",\n                \"RealServerCertificateAlias\": \"xx\",\n                \"RuleSet\": [\n                    {\n                        \"BindStatus\": 1,\n                        \"Domain\": \"xx\",\n                        \"RealServerType\": \"xx\",\n                        \"ForwardHost\": \"xx\",\n                        \"RuleId\": \"xx\",\n                        \"HealthCheck\": 1,\n                        \"ServerNameIndication\": \"xx\",\n                        \"ListenerId\": \"xx\",\n                        \"CheckParams\": {\n                            \"Domain\": \"xx\",\n                            \"ConnectTimeout\": 1,\n                            \"BlockInter\": 1,\n                            \"FailedThreshold\": 1,\n                            \"Path\": \"xx\",\n                            \"FailedCountInter\": 1,\n                            \"Method\": \"xx\",\n                            \"DelayLoop\": 1,\n                            \"StatusCode\": [\n                                1,\n                                1,\n                                1,\n                                1,\n                                1\n                            ]\n                        },\n                        \"Scheduler\": \"xx\",\n                        \"Path\": \"xx\",\n                        \"RuleStatus\": 1,\n                        \"ServerNameIndicationSwitch\": \"xx\",\n                        \"RealServerSet\": [\n                            {\n                                \"RealServerStatus\": 0,\n                                \"RealServerPort\": 234,\n                                \"RealServerId\": \"xx\",\n                                \"DownIPList\": [\n                                    \"xx\"\n                                ],\n                                \"RealServerWeight\": 1,\n                                \"RealServerIP\": \"xx\"\n                            },\n                            {\n                                \"RealServerStatus\": 0,\n                                \"RealServerPort\": 424,\n                                \"RealServerId\": \"xx\",\n                                \"RealServerWeight\": 1,\n                                \"DownIPList\": [\n                                    \"xx\"\n                                ],\n                                \"RealServerIP\": \"xx\"\n                            }\n                        ]\n                    }\n                ],\n                \"PolyClientCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"xx\",\n                        \"CertificateAlias\": \"xx\"\n                    }\n                ],\n                \"GaapAuth\": 1,\n                \"ClientCertificateAlias\": \"xx\",\n                \"RealServerAuth\": 1,\n                \"RealServerCertificateDomain\": \"xx\",\n                \"DomainStatus\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRules\n<公共请求参数>\n\n{\n    \"ListenerId\": \"listener-9jt0rtv9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainRuleSet\": [\n            {\n                \"GaapCertificateAlias\": \"xx\",\n                \"Http3Supported\": 0,\n                \"Domain\": \"xx\",\n                \"CertificateId\": \"xx\",\n                \"PolyRealServerCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"xx\",\n                        \"CertificateAlias\": \"xx\"\n                    }\n                ],\n                \"RealServerCertificateId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"CertificateAlias\": \"xx\",\n                \"ClientCertificateId\": \"xx\",\n                \"GaapCertificateId\": \"xx\",\n                \"BasicAuth\": 1,\n                \"BasicAuthConfAlias\": \"xx\",\n                \"BasicAuthConfId\": \"xx\",\n                \"RealServerCertificateAlias\": \"xx\",\n                \"RuleSet\": [\n                    {\n                        \"BindStatus\": 1,\n                        \"Domain\": \"xx\",\n                        \"RealServerType\": \"xx\",\n                        \"ForwardHost\": \"xx\",\n                        \"RuleId\": \"xx\",\n                        \"HealthCheck\": 1,\n                        \"ServerNameIndication\": \"xx\",\n                        \"ListenerId\": \"xx\",\n                        \"CheckParams\": {\n                            \"Domain\": \"xx\",\n                            \"ConnectTimeout\": 1,\n                            \"BlockInter\": 1,\n                            \"FailedThreshold\": 1,\n                            \"Path\": \"xx\",\n                            \"FailedCountInter\": 1,\n                            \"Method\": \"xx\",\n                            \"DelayLoop\": 1,\n                            \"StatusCode\": [\n                                1,\n                                1,\n                                1,\n                                1,\n                                1\n                            ]\n                        },\n                        \"ForcedRedirect\": \"1\",\n                        \"Scheduler\": \"xx\",\n                        \"Path\": \"xx\",\n                        \"RuleStatus\": 1,\n                        \"ServerNameIndicationSwitch\": \"xx\",\n                        \"RealServerSet\": [\n                            {\n                                \"RealServerStatus\": 0,\n                                \"RealServerPort\": 234,\n                                \"RealServerId\": \"xx\",\n                                \"RealServerFailoverRole\": \"xx\",\n                                \"DownIPList\": [\n                                    \"xx\"\n                                ],\n                                \"RealServerWeight\": 1,\n                                \"RealServerIP\": \"xx\"\n                            },\n                            {\n                                \"RealServerStatus\": 0,\n                                \"RealServerPort\": 424,\n                                \"RealServerId\": \"xx\",\n                                \"RealServerWeight\": 1,\n                                \"RealServerFailoverRole\": \"xx\",\n                                \"DownIPList\": [\n                                    \"xx\"\n                                ],\n                                \"RealServerIP\": \"xx\"\n                            }\n                        ]\n                    }\n                ],\n                \"PolyClientCertificateAliasInfo\": [\n                    {\n                        \"CertificateId\": \"xx\",\n                        \"CertificateAlias\": \"xx\"\n                    }\n                ],\n                \"GaapAuth\": 1,\n                \"ClientCertificateAlias\": \"xx\",\n                \"RealServerAuth\": 1,\n                \"RealServerCertificateDomain\": \"xx\",\n                \"DomainStatus\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询转发规则信息"
       }
     ],
     "DescribeRulesByRuleIds": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeRulesByRuleIds\n&RuleIds.0=rule-3bsuu01r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RuleSet\": [\n            {\n                \"BindStatus\": 1,\n                \"Domain\": \"xx\",\n                \"RealServerType\": \"xx\",\n                \"ForwardHost\": \"xx\",\n                \"RuleId\": \"xx\",\n                \"HealthCheck\": 1,\n                \"ServerNameIndication\": \"xx\",\n                \"ListenerId\": \"xx\",\n                \"CheckParams\": {\n                    \"Domain\": \"xx\",\n                    \"ConnectTimeout\": 1,\n                    \"BlockInter\": 1,\n                    \"FailedThreshold\": 1,\n                    \"Path\": \"xx\",\n                    \"FailedCountInter\": 1,\n                    \"Method\": \"xx\",\n                    \"DelayLoop\": 1,\n                    \"StatusCode\": [\n                        1,\n                        1,\n                        1,\n                        1,\n                        1\n                    ]\n                },\n                \"Scheduler\": \"xx\",\n                \"Path\": \"xx\",\n                \"RuleStatus\": 1,\n                \"ServerNameIndicationSwitch\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 0,\n                        \"RealServerId\": \"xx\",\n                        \"DownIPList\": [\n                            \"xx\"\n                        ],\n                        \"RealServerWeight\": 0,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRulesByRuleIds\n<公共请求参数>\n\n{\n    \"RuleIds\": [\n        \"rule-3bsuu01r\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RuleSet\": [\n            {\n                \"BindStatus\": 1,\n                \"Domain\": \"xx\",\n                \"RealServerType\": \"xx\",\n                \"ForwardHost\": \"xx\",\n                \"RuleId\": \"xx\",\n                \"HealthCheck\": 1,\n                \"ServerNameIndication\": \"xx\",\n                \"ListenerId\": \"xx\",\n                \"CheckParams\": {\n                    \"Domain\": \"xx\",\n                    \"ConnectTimeout\": 1,\n                    \"BlockInter\": 1,\n                    \"FailedThreshold\": 1,\n                    \"Path\": \"xx\",\n                    \"FailedCountInter\": 1,\n                    \"Method\": \"xx\",\n                    \"DelayLoop\": 1,\n                    \"StatusCode\": [\n                        1,\n                        1,\n                        1,\n                        1,\n                        1\n                    ]\n                },\n                \"ForcedRedirect\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"Path\": \"xx\",\n                \"RuleStatus\": 1,\n                \"ServerNameIndicationSwitch\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 0,\n                        \"RealServerId\": \"xx\",\n                        \"RealServerFailoverRole\": \"xx\",\n                        \"DownIPList\": [\n                            \"xx\"\n                        ],\n                        \"RealServerWeight\": 0,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "根据规则ID拉取规则信息列表"
       }
     ],
     "DescribeSecurityPolicyDetail": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeSecurityPolicyDetail\n&PolicyId=sp-xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyDetail\n<公共请求参数>\n\n{\n    \"PolicyId\": \"sp-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"UNBIND\",\n        \"ProxyId\": \"link-gw4sxx8j\",\n        \"DefaultAction\": \"ACCEPT\",\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\",\n        \"RuleList\": [\n            {\n                \"Action\": \"DROP\",\n                \"DestPortRange\": \"ALL\",\n                \"SourceCidr\": \"2.2.2.2\",\n                \"AliasName\": \"test1\",\n                \"RuleId\": \"sr-bf0yxxpp\",\n                \"PolicyId\": \"ssavdf\",\n                \"Protocol\": \"string\"\n            }\n        ],\n        \"PolicyId\": \"sp-9scxxhdh\"\n    }\n}",
         "title": "获取安全策略详情"
       }
@@ -581,7 +581,7 @@
     "DescribeSecurityRules": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeSecurityRules\n&SecurityRuleIds.0=sr-xxxxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityRules\n<公共请求参数>\n\n{\n    \"SecurityRuleIds\": [\n        \"sr-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"6dc6b074-9bcf-4120-9500-0583aebe375d\",\n        \"SecurityRuleSet\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"SourceCidr\": \"1.1.1.101\",\n                \"RuleId\": \"sr-0vr5571x\",\n                \"DestPortRange\": \"6666,6667\",\n                \"AliasName\": \"\",\n                \"PolicyId\": \"sp-8k1l0pat\",\n                \"Action\": \"ACCEPT\"\n            }\n        ]\n    }\n}",
         "title": "根据安全规则ID查询安全规则详情列表"
       }
@@ -589,7 +589,7 @@
     "DescribeTCPListeners": [
       {
         "document": "查询TCP监听器列表",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeTCPListeners\n&ProxyId=link-hwera8lq\n&ListenerId=listener-gkzl9e7t\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTCPListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-hwera8lq\",\n    \"ListenerId\": \"listener-gkzl9e7t\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ListenerSet\": [\n            {\n                \"HealthyThreshold\": 1,\n                \"BindStatus\": 1,\n                \"SessionPersist\": 1,\n                \"RealServerType\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"ConnectTimeout\": 1,\n                \"RealServerPort\": 1,\n                \"HealthCheck\": 1,\n                \"ListenerId\": \"xx\",\n                \"UnhealthyThreshold\": 1,\n                \"ListenerStatus\": 1,\n                \"ListenerName\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"ClientIPMethod\": 1,\n                \"FailoverSwitch\": 1,\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 111,\n                        \"RealServerId\": \"xx\",\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ],\n                        \"RealServerWeight\": 1,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": 1,\n                \"Port\": 1,\n                \"DelayLoop\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询TCP监听器列表"
       }
@@ -598,14 +598,14 @@
       {
         "document": "查询UDP监听器列表",
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUDPListeners\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-hwera8lq\",\n    \"ListenerId\": \"listener-pbsgn7ej\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ListenerSet\": [\n            {\n                \"RecvContext\": \"xx\",\n                \"RealServerType\": \"xx\",\n                \"CheckPort\": 0,\n                \"ListenerId\": \"xx\",\n                \"ContextType\": \"xx\",\n                \"ListenerName\": \"xx\",\n                \"Port\": 1,\n                \"BindStatus\": 1,\n                \"FailoverSwitch\": 0,\n                \"CheckType\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 111,\n                        \"RealServerId\": \"xx\",\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ],\n                        \"RealServerWeight\": 1,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ],\n                \"SessionPersist\": 1,\n                \"ConnectTimeout\": 1,\n                \"SendContext\": \"xx\",\n                \"HealthCheck\": 1,\n                \"HealthyThreshold\": 1,\n                \"DelayLoop\": 1,\n                \"ListenerStatus\": 1,\n                \"Protocol\": \"xx\",\n                \"RealServerPort\": 1,\n                \"UnhealthyThreshold\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ListenerSet\": [\n            {\n                \"RecvContext\": \"xx\",\n                \"RealServerType\": \"xx\",\n                \"CheckPort\": 0,\n                \"ListenerId\": \"xx\",\n                \"ContextType\": \"xx\",\n                \"ListenerName\": \"xx\",\n                \"Port\": 1,\n                \"BindStatus\": 1,\n                \"FailoverSwitch\": 0,\n                \"CheckType\": \"xx\",\n                \"Scheduler\": \"xx\",\n                \"RealServerSet\": [\n                    {\n                        \"RealServerStatus\": 0,\n                        \"RealServerPort\": 111,\n                        \"RealServerId\": \"xx\",\n                        \"RealServerFailoverRole\": \"master\",\n                        \"DownIPList\": [\n                            \"11.11.11.11:111\"\n                        ],\n                        \"RealServerWeight\": 1,\n                        \"RealServerIP\": \"xx\"\n                    }\n                ],\n                \"SessionPersist\": 1,\n                \"ConnectTimeout\": 1,\n                \"SendContext\": \"xx\",\n                \"HealthCheck\": 1,\n                \"HealthyThreshold\": 1,\n                \"DelayLoop\": 1,\n                \"ListenerStatus\": 1,\n                \"Protocol\": \"xx\",\n                \"RealServerPort\": 1,\n                \"UnhealthyThreshold\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询UDP监听器列表"
       }
     ],
     "DestroyProxies": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=DestroyProxies\n&ProxyIds.0=link-11112222\n&ProxyIds.1=link-11113333\n&Force=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyProxies\n<公共请求参数>\n\n{\n    \"Force\": \"1\",\n    \"ProxyIds\": [\n        \"link-11113333\",\n        \"link-11112222\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedInstanceSet\": [],\n        \"RequestId\": \"d4228b1a-8b3b-43d6-a8e7-272d158ff332\",\n        \"InvalidStatusInstanceSet\": [\n            \"link-11112222\"\n        ]\n    }\n}",
         "title": "销毁通道"
       }
@@ -613,7 +613,7 @@
     "InquiryPriceCreateProxy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=InquiryPriceCreateProxy\n&AccessRegion=EastChina\n&RealServerRegion=SouthChina\n&Bandwidth=10\n&Concurrency=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceCreateProxy\n<公共请求参数>\n\n{\n    \"Concurrency\": \"2\",\n    \"Bandwidth\": \"10\",\n    \"RealServerRegion\": \"SouthChina\",\n    \"AccessRegion\": \"EastChina\"\n}",
         "output": "{\n    \"Response\": {\n        \"Cn2BandwidthPrice\": 0.0,\n        \"Cn2BandwidthPriceWithDiscount\": 0.0,\n        \"ProxyDailyPrice\": 80.64,\n        \"FlowUnitPrice\": 0.0,\n        \"Currency\": \"xx\",\n        \"DiscountProxyDailyPrice\": 56.84,\n        \"RequestId\": \"xx\",\n        \"DiscountFlowUnitPrice\": 0.0,\n        \"BandwidthUnitPrice\": [\n            {\n                \"BandwidthRange\": [\n                    0,\n                    20\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    20,\n                    100\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    100,\n                    500\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    500,\n                    2000\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            },\n            {\n                \"BandwidthRange\": [\n                    2000,\n                    0\n                ],\n                \"BandwidthUnitPrice\": 0.0,\n                \"DiscountBandwidthUnitPrice\": 0.0\n            }\n        ]\n    }\n}",
         "title": "创建加速通道询价"
       }
@@ -621,7 +621,7 @@
     "ModifyCertificate": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyCertificate\n&ListenerId=listener-xxx\n&Domain=www.test.com\n&CertificateId=cert-12345678\n&ClientCertificateId=cert-abcdefgh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCertificate\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"CertificateId\": \"cert-12345678\",\n    \"ClientCertificateId\": \"cert-abcdefgh\",\n    \"ListenerId\": \"listener-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "修改域名对应的证书"
       }
@@ -629,7 +629,7 @@
     "ModifyCertificateAttributes": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyCertificateAttributes\n&CertificateId=xxx\n&CertificateAlias=xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCertificateAttributes\n<公共请求参数>\n\n{\n    \"CertificateId\": \"xxx\",\n    \"CertificateAlias\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "修改证书属性"
       }
@@ -637,7 +637,7 @@
     "ModifyDomain": [
       {
         "document": "修改7层监听器转发规则域名",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyDomain\n&ListenerId=0\n&OldDomain=a.a.com\n&NewDomain=b.b.com\n&CertificateId=default\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomain\n<公共请求参数>\n\n{\n    \"OldDomain\": \"a.a.com\",\n    \"CertificateId\": \"default\",\n    \"ListenerId\": \"0\",\n    \"NewDomain\": \"b.b.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "修改7层监听器转发规则域名"
       }
@@ -645,7 +645,7 @@
     "ModifyGroupDomainConfig": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyGroupDomainConfig\n&GroupId=lg-b7h4d02f\n&DefaultDnsIp=1.1.1.1\n&AccessRegionList.0.RegionId=111\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroupDomainConfig\n<公共请求参数>\n\n{\n    \"DefaultDnsIp\": \"1.1.1.1\",\n    \"GroupId\": \"lg-b7h4d02f\",\n    \"AccessRegionList\": [\n        {\n            \"RegionId\": \"111\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74b5f95c-e976-4f78-b2ee-aad49eb844c4\"\n    }\n}",
         "title": "配置通道组就近接入域名"
       }
@@ -653,7 +653,7 @@
     "ModifyHTTPListenerAttribute": [
       {
         "document": "修改HTTP监听器配置",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyHTTPListenerAttribute\n&ProxyId=link-3d85gh\n&ListenerId=listener-o0f3at99\n&ListenerName=‘test-2’\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHTTPListenerAttribute\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-3d85gh\",\n    \"ListenerId\": \"listener-o0f3at99\",\n    \"ListenerName\": \"‘test-2’\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\n    }\n}",
         "title": "修改HTTP监听器配置"
       }
@@ -661,7 +661,7 @@
     "ModifyHTTPSListenerAttribute": [
       {
         "document": "修改HTTPS监听器配置",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyHTTPSListenerAttribute\n&ProxyId=link-3d85gh\n&ListenerId=listener-o0f3at99\n&ListenerName=test-2\n&ForwardProtocol=HTTP\n&CertificateId=string\n&ClientCertificateId=string\n&PolyClientCertificateIds.0=casdfg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHTTPSListenerAttribute\n<公共请求参数>\n\n{\n    \"ClientCertificateId\": \"string\",\n    \"CertificateId\": \"string\",\n    \"ProxyId\": \"link-3d85gh\",\n    \"ListenerId\": \"listener-o0f3at99\",\n    \"ForwardProtocol\": \"HTTP\",\n    \"ListenerName\": \"test-2\",\n    \"PolyClientCertificateIds\": [\n        \"casdfg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"38fab584-8d14-4e2c-988c-4acdabbf2dff\"\n    }\n}",
         "title": "修改HTTPS监听器配置"
       }
@@ -669,7 +669,7 @@
     "ModifyProxiesAttribute": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxiesAttribute\n&ProxyIds.0=link-11112222\n&ProxyIds.1=link-11113333\n&ProxyName=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxiesAttribute\n<公共请求参数>\n\n{\n    \"ProxyName\": \"test\",\n    \"ProxyIds\": [\n        \"link-11113333\",\n        \"link-11112222\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"04d1af8f-5c76-4053-acbc-62bdf0541c15\"\n    }\n}",
         "title": "修改通道的属性"
       }
@@ -677,7 +677,7 @@
     "ModifyProxiesProject": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxiesProject\n&ProxyIds.0=link-11112222\n&ProxyIds.1=link-11113333\n&ProjectId=12345\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxiesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"12345\",\n    \"ProxyIds\": [\n        \"link-11113333\",\n        \"link-11112222\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"59224cc0-082c-4f00-adb3-dbe4fe9fe478\"\n    }\n}",
         "title": "修改通道所属项目"
       }
@@ -685,7 +685,7 @@
     "ModifyProxyConfiguration": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxyConfiguration\n&ProxyId=link-4ftf12sb\n&Bandwidth=10\n&Concurrent=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxyConfiguration\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-4ftf12sb\",\n    \"Concurrent\": \"2\",\n    \"Bandwidth\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"967ef39b-b096-4338-a1c9-4b42977dde0e\"\n    }\n}",
         "title": "修改通道配置"
       }
@@ -693,7 +693,7 @@
     "ModifyProxyGroupAttribute": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyProxyGroupAttribute\n&GroupId=lg-b7h4d02f\n&GroupName=newName\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxyGroupAttribute\n<公共请求参数>\n\n{\n    \"GroupName\": \"newName\",\n    \"GroupId\": \"lg-b7h4d02f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
         "title": "修改通道组名称"
       },
@@ -707,7 +707,7 @@
     "ModifyRealServerName": [
       {
         "document": "修改源站名称",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyRealServerName\n&RealServerName=‘namexxx’\n&RealServerId='rsxxxx'\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRealServerName\n<公共请求参数>\n\n{\n    \"RealServerName\": \"‘namexxx’\",\n    \"RealServerId\": \"'rsxxxx'\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "修改源站名称"
       }
@@ -723,7 +723,7 @@
     "ModifySecurityRule": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifySecurityRule\n&PolicyId=sp-xxxx\n&RuleId=sr-xxxx\n&AliasName=t3\n&Protocol=TCP\n&SourceCidr=180.180.180.180/8\n&RuleAction=ACCEPT\n&DestPortRange=ALL\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityRule\n<公共请求参数>\n\n{\n    \"Protocol\": \"TCP\",\n    \"SourceCidr\": \"180.180.180.180/8\",\n    \"RuleId\": \"sr-xxxx\",\n    \"DestPortRange\": \"ALL\",\n    \"AliasName\": \"t3\",\n    \"PolicyId\": \"sp-xxxx\",\n    \"RuleAction\": \"ACCEPT\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1eea4c85-e088-4512-9c6c-480dff91677e\"\n    }\n}",
         "title": "修改规则名"
       }
@@ -747,7 +747,7 @@
     "OpenProxies": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=OpenProxies\n&ProxyIds.0=link-11112222\n&ProxyIds.1=link-11113333\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenProxies\n<公共请求参数>\n\n{\n    \"ProxyIds\": [\n        \"link-11113333\",\n        \"link-11112222\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedInstanceSet\": [],\n        \"RequestId\": \"7daaa62c-7c4b-40d9-a22e-90de42bde58d\",\n        \"InvalidStatusInstanceSet\": []\n    }\n}",
         "title": "开启通道"
       }
@@ -755,7 +755,7 @@
     "OpenProxyGroup": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=OpenProxyGroup\n&GroupId=lg-11112222\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenProxyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"lg-11112222\"\n}",
         "output": "{\n    \"Response\": {\n        \"OperationFailedInstanceSet\": [],\n        \"RequestId\": \"7daaa62c-7c4b-40d9-a22e-90de42bde58d\",\n        \"InvalidStatusInstanceSet\": []\n    }\n}",
         "title": "开启通道组"
       }
@@ -763,7 +763,7 @@
     "OpenSecurityPolicy": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=OpenSecurityPolicy\n&ProxyId=link-xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSecurityPolicy\n<公共请求参数>\n\n{\n    \"ProxyId\": \"link-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"TaskId\": \"1234.2\"\n    }\n}",
         "title": "开启安全策略"
       }
@@ -771,7 +771,7 @@
     "RemoveRealServers": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=RemoveRealServers\n&RealServerIds.0=rs-fgerw3dt\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveRealServers\n<公共请求参数>\n\n{\n    \"RealServerIds\": [\n        \"rs-fgerw3dt\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "删除源站"
       }
@@ -779,7 +779,7 @@
     "SetAuthentication": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=SetAuthentication\n&ListenerId=0\n&Domain=a.a.com\n&BasicAuth=1\n&BasicAuthConfId=xxx\n&GaapAuth=1\n&GaapCertificateId=xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAuthentication\n<公共请求参数>\n\n{\n    \"Domain\": \"a.a.com\",\n    \"GaapAuth\": \"1\",\n    \"GaapCertificateId\": \"xxx\",\n    \"ListenerId\": \"0\",\n    \"BasicAuthConfId\": \"xxx\",\n    \"BasicAuth\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "认证高级配置"
       }

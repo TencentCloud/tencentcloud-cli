@@ -7,11 +7,11 @@ Input:
 ```
 tccli gaap CreateSecurityRules --cli-unfold-argument  \
     --PolicyId 字符串 \
-    --RuleList.0.SourceCidr 字符串 \
     --RuleList.0.Action 字符串 \
-    --RuleList.0.AliasName 字符串 \
     --RuleList.0.Protocol 字符串 \
-    --RuleList.0.DestPortRange 字符串
+    --RuleList.0.DestPortRange 字符串 \
+    --RuleList.0.AliasName 字符串 \
+    --RuleList.0.SourceCidr 字符串
 ```
 
 Output: 

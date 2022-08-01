@@ -6,13 +6,7 @@ Input:
 
 ```
 tccli bma CreateCRCompanyVerify --cli-unfold-argument  \
-    --CompanyName xxx \
-    --CompanyID xxx \
-    --CompanyLegalName xxx \
-    --ManagerName xxx \
-    --ManagerPhone xxx \
-    --VerificationCode xxx \
-    --CompanyIDType 1
+    --CompanyName xxx
 ```
 
 Output: 

@@ -34,7 +34,8 @@ Output:
                 "Extra": "weight:100",
                 "CreatedOn": "2020-11-16 17:16:24",
                 "UpdatedOn": "2020-11-16 17:16:24",
-                "Weight": 100
+                "Weight": 100,
+                "Enabled": 0
             },
             {
                 "RecordId": "65",
@@ -48,7 +49,8 @@ Output:
                 "Extra": null,
                 "CreatedOn": "2020-11-16 17:14:02",
                 "UpdatedOn": "2020-11-16 17:14:02",
-                "Weight": null
+                "Weight": null,
+                "Enabled": 0
             }
         ]
     }

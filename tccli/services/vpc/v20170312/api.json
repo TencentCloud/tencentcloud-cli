@@ -11416,7 +11416,44 @@
     },
     "DescribeNetworkAclQuintupleEntriesRequest": {
       "document": "DescribeNetworkAclQuintupleEntries请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL实例ID。形如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最小值为1，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。\n<li>protocol - String - 协议，形如：`TCP`。</li>\n<li>description - String - 描述。</li>\n<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>\n<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>\n<li>action - String - 动作，形如ACCEPT或DROP。</li>\n<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>\n<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeNetworkAclQuintupleEntriesResponse": {

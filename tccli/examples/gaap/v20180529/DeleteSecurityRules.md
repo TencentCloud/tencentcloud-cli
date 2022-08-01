@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DeleteSecurityRules --cli-unfold-argument  \
-    --PolicyId sp-xxxx \
-    --RuleIdList sr-xxx
+    --RuleIdList sr-xxx \
+    --PolicyId sp-xxxx
 ```
 
 Output: 

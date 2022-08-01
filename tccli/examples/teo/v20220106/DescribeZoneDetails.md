@@ -37,6 +37,24 @@ Output:
         ],
         "Paused": true,
         "CnameSpeedUp": "xx",
+        "Resources": [
+            {
+                "EnableTime": "2020-09-22T00:00:00+00:00",
+                "Status": "xx",
+                "ExpireTime": "2020-09-22T00:00:00+00:00",
+                "PlanId": "xx",
+                "Sv": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "PayMode": 0,
+                "AutoRenewFlag": 0,
+                "Id": "xx"
+            }
+        ],
         "RequestId": "xx",
         "Type": "xx",
         "Id": "xx",

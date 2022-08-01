@@ -166,6 +166,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeUserCdcClbWafRegions": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserCdcClbWafRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Region\": \"gz\",\n                \"Clusters\": [\n                    {\n                        \"Id\": \"cluster-o41khj88\",\n                        \"Name\": \"xxx\"\n                    },\n                    {\n                        \"Id\": \"cluster-o41khj99\",\n                        \"Name\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"123456789\"\n    }\n}",
+        "title": "获取CDC场景下对客户已经开放的负载均衡型WAF的地域"
+      }
+    ],
     "DescribeUserClbWafRegions": [
       {
         "document": "",

@@ -311,10 +311,14 @@ include tccli/services/postgres/v20170312/api.json
 include tccli/services/postgres/v20170312/examples.json
 include tccli/services/privatedns/v20201028/api.json
 include tccli/services/privatedns/v20201028/examples.json
+include tccli/services/pts/v20210728/api.json
+include tccli/services/pts/v20210728/examples.json
 include tccli/services/rce/v20201103/api.json
 include tccli/services/rce/v20201103/examples.json
 include tccli/services/redis/v20180412/api.json
 include tccli/services/redis/v20180412/examples.json
+include tccli/services/region/v20220627/api.json
+include tccli/services/region/v20220627/examples.json
 include tccli/services/rkp/v20191209/api.json
 include tccli/services/rkp/v20191209/examples.json
 include tccli/services/rp/v20200224/api.json

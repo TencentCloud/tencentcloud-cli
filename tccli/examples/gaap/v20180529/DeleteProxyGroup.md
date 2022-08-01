@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gaap DeleteProxyGroup --cli-unfold-argument  \
-    --GroupId lg-b7h4d02f \
-    --Force 0
+    --Force 0 \
+    --GroupId lg-b7h4d02f
 ```
 
 Output: 

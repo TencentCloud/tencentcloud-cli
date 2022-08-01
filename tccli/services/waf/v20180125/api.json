@@ -120,6 +120,12 @@
       "name": "Waf  IP封堵状态查询",
       "output": "DescribeIpHitItemsResponse"
     },
+    "DescribeUserCdcClbWafRegions": {
+      "document": "在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表",
+      "input": "DescribeUserCdcClbWafRegionsRequest",
+      "name": "获取CDC场景下对客户已经开放的负载均衡型WAF(cdc-clb-waf)的地域",
+      "output": "DescribeUserCdcClbWafRegionsResponse"
+    },
     "DescribeUserClbWafRegions": {
       "document": "在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserClbWafRegionsRequest",
@@ -1133,6 +1139,58 @@
         }
       ],
       "usage": "out"
+    },
+    "CdcCluster": {
+      "document": "CDC场景下负载均衡WAF的集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cdc的集群id",
+          "example": "\"cluster-123456\"",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cdc的集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"光明测试环境\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CdcRegion": {
+      "document": "CDC场景下负载均衡WAF的地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域",
+          "example": "\"gz\"",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该地域对应的集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cluster-123456\"]",
+          "member": "CdcCluster",
+          "name": "Clusters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateAccessExportRequest": {
       "document": "CreateAccessExport请求参数结构体",
@@ -2255,6 +2313,32 @@
           "member": "IpHitItemsData",
           "name": "Data",
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserCdcClbWafRegionsRequest": {
+      "document": "DescribeUserCdcClbWafRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserCdcClbWafRegionsResponse": {
+      "document": "DescribeUserCdcClbWafRegions返回参数结构体",
+      "members": [
+        {
+          "document": "CdcRegion的类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdcRegion",
+          "name": "Data",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {

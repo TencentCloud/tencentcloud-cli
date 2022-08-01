@@ -14,6 +14,7 @@ Output:
         "RequestId": "bdcb19c0-74db-47b1-a07c-bbe6985ef44c",
         "CountryAreaMappingList": [
             {
+                "Remark": "1",
                 "NationCountryName": "Fiji Islands",
                 "GeographicalZoneInnerCode": "401000",
                 "ContinentName": "Oceania",

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gaap CreateDomain --cli-unfold-argument  \
-    --ListenerId 0 \
     --Domain a.a.com \
-    --CertificateId abc
+    --CertificateId abc \
+    --ListenerId 0
 ```
 
 Output: 

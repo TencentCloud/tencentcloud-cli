@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mmps DescribeFlySecMiniAppReportUrl --cli-unfold-argument  \
-    --TaskID 1701438134******0 \
+    --ReportType 0 \
     --MiniAppID wx66e50f1e*******6f \
     --Mode 1 \
-    --ReportType 0
+    --TaskID 1701438134******0
 ```
 
 Output: 
