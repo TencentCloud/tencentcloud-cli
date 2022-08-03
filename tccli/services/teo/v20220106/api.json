@@ -12462,7 +12462,7 @@
         },
         {
           "default": "",
-          "document": "当源站配置类型Type=weight时，表示权重\n取值范围为[1-100]\n源站组内多个源站权重总和应为100",
+          "document": "当源站配置类型Type=weight时，表示权重\n取值范围为[1-100]\n源站组内多个源站权重总和应为100。\n当源站配置类型Type=proto，表示权重\n取值范围为[1-100]\n源站组内Proto相同的多个源站权重总和应为100。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
@@ -12508,6 +12508,16 @@
           "name": "PrivateParameter",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Proto",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14043,7 +14053,7 @@
       "members": [
         {
           "default": "",
-          "document": "黑名单",
+          "document": "黑名单，ID参考接口 DescribeSecurityPolicyManagedRules",
           "example": "[0,1]",
           "member": "int64",
           "name": "BlockRuleIDs",
@@ -14053,7 +14063,7 @@
         },
         {
           "default": "",
-          "document": "id的开关",
+          "document": "托管规则 开关",
           "example": "on",
           "member": "string",
           "name": "Switch",
@@ -14063,7 +14073,7 @@
         },
         {
           "default": "",
-          "document": "观察模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "观察模式，ID参考接口 DescribeSecurityPolicyManagedRules\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[4,5]",
           "member": "int64",
           "name": "ObserveRuleIDs",

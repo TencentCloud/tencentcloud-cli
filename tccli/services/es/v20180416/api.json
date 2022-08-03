@@ -2029,6 +2029,15 @@
           "name": "OrderByType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VpcId 筛选项",
+          "example": "vpc-imhajivf",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -6,6 +6,18 @@
       "name": "创建应用",
       "output": "CreateApplicationResponse"
     },
+    "CreateApplicationAutoscaler": {
+      "document": "创建弹性伸缩策略组合",
+      "input": "CreateApplicationAutoscalerRequest",
+      "name": "创建弹性伸缩策略组合",
+      "output": "CreateApplicationAutoscalerResponse"
+    },
+    "CreateConfigData": {
+      "document": "创建配置",
+      "input": "CreateConfigDataRequest",
+      "name": "创建配置",
+      "output": "CreateConfigDataResponse"
+    },
     "CreateCosToken": {
       "document": "生成Cos临时秘钥",
       "input": "CreateCosTokenRequest",
@@ -30,6 +42,12 @@
       "name": "服务删除",
       "output": "DeleteApplicationResponse"
     },
+    "DeleteApplicationAutoscaler": {
+      "document": "删除应用弹性策略组合",
+      "input": "DeleteApplicationAutoscalerRequest",
+      "name": "删除应用弹性策略组合",
+      "output": "DeleteApplicationAutoscalerResponse"
+    },
     "DeleteIngress": {
       "document": "删除 Ingress 规则",
       "input": "DeleteIngressRequest",
@@ -41,6 +59,18 @@
       "input": "DeployApplicationRequest",
       "name": "应用部署",
       "output": "DeployApplicationResponse"
+    },
+    "DescribeApplicationAutoscalerList": {
+      "document": "获取应用弹性策略组合",
+      "input": "DescribeApplicationAutoscalerListRequest",
+      "name": "获取应用弹性策略组合",
+      "output": "DescribeApplicationAutoscalerListResponse"
+    },
+    "DescribeApplicationInfo": {
+      "document": "服务基本信息查看",
+      "input": "DescribeApplicationInfoRequest",
+      "name": "服务基本信息查看",
+      "output": "DescribeApplicationInfoResponse"
     },
     "DescribeApplicationPods": {
       "document": "获取应用实例列表",
@@ -59,6 +89,18 @@
       "input": "DescribeApplicationsStatusRequest",
       "name": "单环境下所有应用状态查看",
       "output": "DescribeApplicationsStatusResponse"
+    },
+    "DescribeConfigData": {
+      "document": "查询配置详情",
+      "input": "DescribeConfigDataRequest",
+      "name": "查询配置详情",
+      "output": "DescribeConfigDataResponse"
+    },
+    "DescribeConfigDataList": {
+      "document": "查询配置列表",
+      "input": "DescribeConfigDataListRequest",
+      "name": "查询配置列表",
+      "output": "DescribeConfigDataListResponse"
     },
     "DescribeDeployApplicationDetail": {
       "document": "获取分批发布详情",
@@ -96,6 +138,12 @@
       "name": "查询应用关联的 Ingress 规则列表",
       "output": "DescribeRelatedIngressesResponse"
     },
+    "DestroyConfigData": {
+      "document": "销毁配置",
+      "input": "DestroyConfigDataRequest",
+      "name": "销毁配置",
+      "output": "DestroyConfigDataResponse"
+    },
     "DestroyEnvironment": {
       "document": "销毁命名空间",
       "input": "DestroyEnvironmentRequest",
@@ -108,6 +156,12 @@
       "name": "生成应用程序包预签名下载链接",
       "output": "GenerateApplicationPackageDownloadUrlResponse"
     },
+    "ModifyApplicationAutoscaler": {
+      "document": "修改弹性伸缩策略组合",
+      "input": "ModifyApplicationAutoscalerRequest",
+      "name": "修改弹性伸缩策略组合",
+      "output": "ModifyApplicationAutoscalerResponse"
+    },
     "ModifyApplicationInfo": {
       "document": "修改应用基本信息",
       "input": "ModifyApplicationInfoRequest",
@@ -119,6 +173,12 @@
       "input": "ModifyApplicationReplicasRequest",
       "name": "修改应用实例数量",
       "output": "ModifyApplicationReplicasResponse"
+    },
+    "ModifyConfigData": {
+      "document": "编辑配置",
+      "input": "ModifyConfigDataRequest",
+      "name": "编辑配置",
+      "output": "ModifyConfigDataResponse"
     },
     "ModifyEnvironment": {
       "document": "编辑环境",
@@ -176,6 +236,168 @@
     "serviceShortName": "tem"
   },
   "objects": {
+    "Autoscaler": {
+      "document": "弹性伸缩策略组合",
+      "members": [
+        {
+          "default": "",
+          "document": "弹性伸缩最小实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩最大实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "HorizontalAutoscaler",
+          "name": "HorizontalAutoscaler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "CronHorizontalAutoscaler",
+          "name": "CronHorizontalAutoscaler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AutoscalerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AutoscalerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ModifyDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EnableDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigData": {
+      "document": "配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2012-12-10 09:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的服务列表",
+          "example": "[]",
+          "member": "TemService",
+          "name": "RelatedApplications",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置条目",
+          "example": "[]",
+          "member": "Pair",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CosToken": {
       "document": "Cos token",
       "members": [
@@ -271,6 +493,69 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateApplicationAutoscalerRequest": {
+      "document": "CreateApplicationAutoscaler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-adfi142f",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩策略",
+          "example": "1",
+          "member": "Autoscaler",
+          "name": "Autoscaler",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationAutoscalerResponse": {
+      "document": "CreateApplicationAutoscaler返回参数结构体",
+      "members": [
+        {
+          "document": "弹性伸缩策略组合ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
@@ -405,6 +690,69 @@
           "name": "Result",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigDataRequest": {
+      "document": "CreateConfigData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "配置信息",
+          "example": "[]",
+          "member": "Pair",
+          "name": "Data",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigDataResponse": {
+      "document": "CreateConfigData返回参数结构体",
+      "members": [
+        {
+          "document": "创建是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -740,6 +1088,69 @@
         }
       ],
       "usage": "both"
+    },
+    "DeleteApplicationAutoscalerRequest": {
+      "document": "DeleteApplicationAutoscaler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-adfi142f",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩策略ID",
+          "example": "1",
+          "member": "string",
+          "name": "AutoscalerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationAutoscalerResponse": {
+      "document": "DeleteApplicationAutoscaler返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteApplicationRequest": {
       "document": "DeleteApplication请求参数结构体",
@@ -1481,6 +1892,114 @@
       ],
       "usage": "both"
     },
+    "DescribeApplicationAutoscalerListRequest": {
+      "document": "DescribeApplicationAutoscalerList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-adfi142f",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationAutoscalerListResponse": {
+      "document": "DescribeApplicationAutoscalerList返回参数结构体",
+      "members": [
+        {
+          "document": "弹性伸缩策略组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "Autoscaler",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationInfoRequest": {
+      "document": "DescribeApplicationInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务版本ID",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationInfoResponse": {
+      "document": "DescribeApplicationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "TemServiceVersionInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationPodsRequest": {
       "document": "DescribeApplicationPods请求参数结构体",
       "members": [
@@ -1686,6 +2205,159 @@
           "name": "Result",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigDataListPage": {
+      "document": "配置信息的分页列表",
+      "members": [
+        {
+          "default": "",
+          "document": "记录",
+          "example": "[]",
+          "member": "ConfigData",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分页游标，用以查询下一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContinueToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "int64",
+          "name": "RemainingCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeConfigDataListRequest": {
+      "document": "DescribeConfigDataList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询游标",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContinueToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页 limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigDataListResponse": {
+      "document": "DescribeConfigDataList返回参数结构体",
+      "members": [
+        {
+          "document": "配置列表",
+          "example": "[]",
+          "member": "DescribeConfigDataListPage",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigDataRequest": {
+      "document": "DescribeConfigData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigDataResponse": {
+      "document": "DescribeConfigData返回参数结构体",
+      "members": [
+        {
+          "document": "配置",
+          "example": "[]",
+          "member": "ConfigData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2094,6 +2766,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DestroyConfigDataRequest": {
+      "document": "DestroyConfigData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyConfigDataResponse": {
+      "document": "DestroyConfigData返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DestroyEnvironmentRequest": {
       "document": "DestroyEnvironment请求参数结构体",
@@ -2865,6 +3591,78 @@
       ],
       "usage": "both"
     },
+    "ModifyApplicationAutoscalerRequest": {
+      "document": "ModifyApplicationAutoscaler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-adfi142f",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩策略ID",
+          "example": "1",
+          "member": "string",
+          "name": "AutoscalerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩策略",
+          "example": "1",
+          "member": "Autoscaler",
+          "name": "Autoscaler",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationAutoscalerResponse": {
+      "document": "ModifyApplicationAutoscaler返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyApplicationInfoRequest": {
       "document": "ModifyApplicationInfo请求参数结构体",
       "members": [
@@ -2973,6 +3771,69 @@
     "ModifyApplicationReplicasResponse": {
       "document": "ModifyApplicationReplicas返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigDataRequest": {
+      "document": "ModifyConfigData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "配置信息",
+          "example": "[]",
+          "member": "Pair",
+          "name": "Data",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigDataResponse": {
+      "document": "ModifyConfigData返回参数结构体",
+      "members": [
+        {
+          "document": "编辑是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3265,6 +4126,62 @@
         }
       ],
       "usage": "both"
+    },
+    "NodeInfo": {
+      "document": "node信息",
+      "members": [
+        {
+          "default": "",
+          "document": "node名字",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "node可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "node子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用IP数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AvailableIpCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cidr块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Cidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Pair": {
       "document": "键值对",
@@ -4673,6 +5590,732 @@
       ],
       "usage": "out"
     },
+    "TemServiceVersionInfo": {
+      "document": "版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主键",
+          "example": "1",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "1",
+          "member": "bool",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署方式",
+          "example": "1",
+          "member": "string",
+          "name": "DeployMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "jdk版本",
+          "example": "1",
+          "member": "string",
+          "name": "JdkVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署版本",
+          "example": "1",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布方式",
+          "example": "1",
+          "member": "string",
+          "name": "PublishMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "JvmOpts",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始实例",
+          "example": "1",
+          "member": "int64",
+          "name": "InitPodNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu规格",
+          "example": "1",
+          "member": "float",
+          "name": "CpuSpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存规格",
+          "example": "1",
+          "member": "float",
+          "name": "MemorySpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像路径",
+          "example": "1",
+          "member": "string",
+          "name": "ImgRepo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像名称",
+          "example": "1",
+          "member": "string",
+          "name": "ImgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像版本",
+          "example": "1",
+          "member": "string",
+          "name": "ImgVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性配置",
+          "example": "1",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境配置",
+          "example": "1",
+          "member": "Pair",
+          "name": "EnvConf",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储配置",
+          "example": "1",
+          "member": "StorageConf",
+          "name": "StorageConfs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络",
+          "example": "1",
+          "member": "string",
+          "name": "Vpc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网网络",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "1",
+          "member": "string",
+          "name": "ModifyDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageMountConf",
+          "name": "StorageMountConfs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "LogOutputConf",
+          "name": "LogOutputConf",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PublicDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开通公网访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePublicAccess",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "现有的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentInstances",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "期望的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpectedInstances",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CodingLanguage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "程序包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PkgName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EsEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EsStrategy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ImageTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LogEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinAliveInstances",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ls",
+          "member": "string",
+          "name": "ImageCommand",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"-c\", \"100\"]",
+          "member": "string",
+          "name": "ImageArgs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否使用默认注册中心配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "UseRegistryDefaultConfig",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "eks 访问设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "EksService",
+          "name": "Service",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂载配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MountedSettingConf",
+          "name": "SettingConfs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "log path数组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LogConfs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动后立即执行的脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PostStart",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停止前执行的脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PreStop",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存活探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "HealthCheckConfig",
+          "name": "Liveness",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "就绪探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "HealthCheckConfig",
+          "name": "Readiness",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "HorizontalAutoscaler",
+          "name": "HorizontalAutoscaler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时弹性策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "CronHorizontalAutoscaler",
+          "name": "CronHorizontalAutoscaler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用实际可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最新部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LastDeployDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最新部署成功时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LastDeploySuccessDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用所在node信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "NodeInfo",
+          "name": "NodeInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "image类型 -0 为demo -1为正常image\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ImageType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用调用链组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableTracing",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启调用链上报，只有 EnableTracing=1 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableTracingReport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像类型：0-个人镜像、1-企业镜像、2-公有镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RepoType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分批发布子状态：batch_updating、batch_updating_waiting_confirm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batch_updating",
+          "member": "string",
+          "name": "BatchDeployStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "APM 资源 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apm-xxx",
+          "member": "string",
+          "name": "ApmInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "WorkloadInfo",
+          "name": "WorkloadInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用应用加速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SpeedUp",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动检测探针配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "HealthCheckConfig",
+          "name": "StartupProbe",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作系统版本，可选参数：\n- ALPINE\n- CENTOS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OsFlavour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像仓库server\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RepoServer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否正在发布中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UnderDeploying",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启prometheus业务指标监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "EnablePrometheusConf",
+          "name": "EnablePrometheusConf",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为手动停止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "StoppedManually",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "tcr实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TcrInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UseDefaultRepoParameters": {
       "document": "创建应用，创建仓库参数",
       "members": [
@@ -4702,6 +6345,32 @@
           "example": "basic",
           "member": "string",
           "name": "EnterpriseInstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkloadInfo": {
+      "document": "工作负载详情",
+      "members": [
+        {
+          "default": "",
+          "document": "资源 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

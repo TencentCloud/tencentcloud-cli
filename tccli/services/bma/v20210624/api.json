@@ -1,5 +1,35 @@
 {
   "actions": {
+    "CreateBPFakeURL": {
+      "document": "添加仿冒链接（举报）",
+      "input": "CreateBPFakeURLRequest",
+      "name": "添加仿冒链接（举报）",
+      "output": "CreateBPFakeURLResponse"
+    },
+    "CreateBPFalseTicket": {
+      "document": "添加误报工单",
+      "input": "CreateBPFalseTicketRequest",
+      "name": "添加误报工单",
+      "output": "CreateBPFalseTicketResponse"
+    },
+    "CreateBPOfflineAttachment": {
+      "document": "添加下线材料",
+      "input": "CreateBPOfflineAttachmentRequest",
+      "name": "添加下线材料",
+      "output": "CreateBPOfflineAttachmentResponse"
+    },
+    "CreateBPOfflineTicket": {
+      "document": "添加下线工单",
+      "input": "CreateBPOfflineTicketRequest",
+      "name": "添加下线工单",
+      "output": "CreateBPOfflineTicketResponse"
+    },
+    "CreateBPProtectURLs": {
+      "document": "添加保护网站",
+      "input": "CreateBPProtectURLsRequest",
+      "name": "添加保护网站",
+      "output": "CreateBPProtectURLsResponse"
+    },
     "CreateCRBlock": {
       "document": "版权保护-新建拦截接口",
       "input": "CreateCRBlockRequest",
@@ -24,6 +54,30 @@
       "name": "添加作品",
       "output": "CreateCRWorkResponse"
     },
+    "DescribeBPCompanyInfo": {
+      "document": "查询企业信息",
+      "input": "DescribeBPCompanyInfoRequest",
+      "name": "查询企业信息",
+      "output": "DescribeBPCompanyInfoResponse"
+    },
+    "DescribeBPFakeURLs": {
+      "document": "查询仿冒链接",
+      "input": "DescribeBPFakeURLsRequest",
+      "name": "查询仿冒链接",
+      "output": "DescribeBPFakeURLsResponse"
+    },
+    "DescribeBPProtectURLs": {
+      "document": "查询保护网站",
+      "input": "DescribeBPProtectURLsRequest",
+      "name": "查询保护网站",
+      "output": "DescribeBPProtectURLsResponse"
+    },
+    "DescribeBPReportFakeURLs": {
+      "document": "查询举报列表",
+      "input": "DescribeBPReportFakeURLsRequest",
+      "name": "查询举报列表",
+      "output": "DescribeBPReportFakeURLsResponse"
+    },
     "DescribeCRMonitorDetail": {
       "document": "版权保护-查询作品监测详情接口",
       "input": "DescribeCRMonitorDetailRequest",
@@ -41,6 +95,12 @@
       "input": "DescribeCRWorkInfoRequest",
       "name": "查询作品基本信息",
       "output": "DescribeCRWorkInfoResponse"
+    },
+    "ModifyBPOfflineAttachment": {
+      "document": "修改下线材料",
+      "input": "ModifyBPOfflineAttachmentRequest",
+      "name": "修改下线材料",
+      "output": "ModifyBPOfflineAttachmentResponse"
     },
     "ModifyCRBlockStatus": {
       "document": "版权保护-拦截申请接口",
@@ -80,6 +140,307 @@
     "serviceShortName": "bma"
   },
   "objects": {
+    "BrandData": {
+      "document": "商标信息",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "BrandStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TransferStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBPFakeURLRequest": {
+      "document": "CreateBPFakeURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ProtectURLId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFakeURLResponse": {
+      "document": "CreateBPFakeURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFalseTicketRequest": {
+      "document": "CreateBPFalseTicket请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPFalseTicketResponse": {
+      "document": "CreateBPFalseTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineAttachmentRequest": {
+      "document": "CreateBPOfflineAttachment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineAttachmentResponse": {
+      "document": "CreateBPOfflineAttachment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineTicketRequest": {
+      "document": "CreateBPOfflineTicket请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "FakeURLId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPOfflineTicketResponse": {
+      "document": "CreateBPOfflineTicket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPProtectURLsRequest": {
+      "document": "CreateBPProtectURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectURLs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectWebs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBPProtectURLsResponse": {
+      "document": "CreateBPProtectURLs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCRBlockRequest": {
       "document": "CreateCRBlock请求参数结构体",
       "members": [
@@ -800,6 +1161,302 @@
       ],
       "type": "object"
     },
+    "DescribeBPCompanyInfoRequest": {
+      "document": "DescribeBPCompanyInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBPCompanyInfoResponse": {
+      "document": "DescribeBPCompanyInfo返回参数结构体",
+      "members": [
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "int64",
+          "name": "LicenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "LicenseNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "int64",
+          "name": "AuthorizationStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "string",
+          "name": "AuthorizationNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xx",
+          "member": "BrandData",
+          "name": "BrandDatas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "CompanyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsRequest": {
+      "document": "DescribeBPFakeURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPFakeURLsResponse": {
+      "document": "DescribeBPFakeURLs返回参数结构体",
+      "members": [
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "FakeURLInfo",
+          "name": "FakeURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ExportURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPProtectURLsRequest": {
+      "document": "DescribeBPProtectURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPProtectURLsResponse": {
+      "document": "DescribeBPProtectURLs返回参数结构体",
+      "members": [
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "ProtectURLInfo",
+          "name": "ProtectURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPReportFakeURLsRequest": {
+      "document": "DescribeBPReportFakeURLs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBPReportFakeURLsResponse": {
+      "document": "DescribeBPReportFakeURLs返回参数结构体",
+      "members": [
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "ReportFakeURLInfo",
+          "name": "ReportFakeURLInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCRMonitorDetailRequest": {
       "document": "DescribeCRMonitorDetail请求参数结构体",
       "members": [
@@ -1016,10 +1673,239 @@
       ],
       "type": "object"
     },
+    "FakeURLInfo": {
+      "document": "仿冒网站信息",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectWeb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Snapshot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Heat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLCompany",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLAttr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLICP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "过滤参数",
       "members": [],
       "usage": "in"
+    },
+    "ModifyBPOfflineAttachmentRequest": {
+      "document": "ModifyBPOfflineAttachment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "LicenseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BrandCertificateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TransferName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBPOfflineAttachmentResponse": {
+      "document": "ModifyBPOfflineAttachment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCRBlockStatusRequest": {
       "document": "ModifyCRBlockStatus请求参数结构体",
@@ -1418,6 +2304,258 @@
           "example": "1",
           "member": "string",
           "name": "WorkTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProtectURLInfo": {
+      "document": "保护网站信息",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ProtectURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectWeb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ProtectURLStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectURLNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportFakeURLInfo": {
+      "document": "举报网址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "FakeURLId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "DetectTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProtectWeb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Snapshot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Heat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLCompany",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLAttr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLICP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FakeURLExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "BlockTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

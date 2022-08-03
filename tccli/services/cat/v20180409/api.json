@@ -18,6 +18,12 @@
       "name": "列出单次拨测详情数据",
       "output": "DescribeDetailedSingleProbeDataResponse"
     },
+    "DescribeNodes": {
+      "document": "获取拨测节点",
+      "input": "DescribeNodesRequest",
+      "name": "获取拨测节点",
+      "output": "DescribeNodesResponse"
+    },
     "DescribeProbeMetricData": {
       "document": "查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询",
       "input": "DescribeProbeMetricDataRequest",
@@ -385,6 +391,87 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodesRequest": {
+      "document": "DescribeNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 海外 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "Location",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否IPv6",
+          "example": "false",
+          "member": "bool",
+          "name": "IsIPv6",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "名字模糊搜索",
+          "example": "沈阳",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务类型\n<li>1 = 页面性能</li>\n<li>2 = 文件上传</li>\n<li>3 = 文件下载</li>\n<li>4 = 端口性能</li>\n<li>5 = 网络质量</li>\n<li>6 = 音视频体验</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodesResponse": {
+      "document": "DescribeNodes返回参数结构体",
+      "members": [
+        {
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
+          "member": "NodeDefineExt",
+          "name": "NodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -936,6 +1023,112 @@
           "name": "NodeDefineStatus",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeDefineExt": {
+      "document": "探测节点",
+      "members": [
+        {
+          "default": "",
+          "document": "节点名称",
+          "example": "中国电信-北京 IDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点代码",
+          "example": "10001",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络服务商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "NetService",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域",
+          "example": "福建",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "宁德市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IPType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Location",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点类型  如果为base 则为可用性拨测点，为空则为高级拨测点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "base",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点支持的任务类型。1: 页面性能 2: 文件上传 3: 文件下载 4: 端口性能 5: 网络质量 6: 音视频体验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1, 2, 3]",
+          "member": "int64",
+          "name": "TaskTypes",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

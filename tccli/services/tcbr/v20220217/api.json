@@ -832,6 +832,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网id",
+          "example": "subnet-4l06atqr  cloud_run_cluster_pod_subnet3",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

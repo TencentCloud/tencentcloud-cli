@@ -906,6 +906,24 @@
           "name": "BusinessName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页长",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -920,6 +938,15 @@
           "name": "Records",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询指标结果集条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

@@ -12,6 +12,12 @@
       "name": "取消一码多扫二维码",
       "output": "CancelMultiFlowSignQRCodeResponse"
     },
+    "CreateBatchCancelFlowUrl": {
+      "document": "电子签企业版：指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+      "input": "CreateBatchCancelFlowUrlRequest",
+      "name": "获取批量撤销签署流程链接",
+      "output": "CreateBatchCancelFlowUrlResponse"
+    },
     "CreateConvertTaskApi": {
       "document": "创建文件转换任务",
       "input": "CreateConvertTaskApiRequest",
@@ -214,6 +220,52 @@
           "name": "PreReadTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ApproverRestriction": {
+      "document": "指定签署人限制项",
+      "members": [
+        {
+          "default": "",
+          "document": "指定签署人名字",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定签署人手机号",
+          "example": "13000000000",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定签署人证件类型",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定签署人证件号码",
+          "example": "4500000000000000000",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -565,6 +617,69 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateBatchCancelFlowUrlRequest": {
+      "document": "CreateBatchCancelFlowUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要执行撤回的签署流程id数组，最多100个",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchCancelFlowUrlResponse": {
+      "document": "CreateBatchCancelFlowUrl返回参数结构体",
+      "members": [
+        {
+          "document": "批量撤回签署流程链接",
+          "example": "无",
+          "member": "string",
+          "name": "BatchCancelFlowUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签署流程撤回失败信息",
+          "example": "无",
+          "member": "string",
+          "name": "FailMessages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签署连接过期时间字符串：年月日-时分秒",
+          "example": "无",
+          "member": "string",
+          "name": "UrlExpireOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateConvertTaskApiRequest": {
       "document": "CreateConvertTaskApi请求参数结构体",
@@ -1126,6 +1241,15 @@
           "name": "QrEffectiveDay",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制二维码用户条件",
+          "example": "无",
+          "member": "ApproverRestriction",
+          "name": "ApproverRestrictions",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1138,6 +1262,15 @@
           "example": "无",
           "member": "SignQrCode",
           "name": "QrCode",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签署链接对象",
+          "example": "无",
+          "member": "SignUrl",
+          "name": "SignUrls",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -2216,6 +2349,42 @@
           "name": "ExpiredTime",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SignUrl": {
+      "document": "一码多扫签署二维码签署信息",
+      "members": [
+        {
+          "default": "",
+          "document": "小程序签署链接",
+          "example": "无",
+          "member": "string",
+          "name": "AppSignUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署链接有效时间",
+          "example": "2022-08-05 15:55:01",
+          "member": "string",
+          "name": "EffectiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "移动端签署链接",
+          "example": "无",
+          "member": "string",
+          "name": "HttpSignUrl",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

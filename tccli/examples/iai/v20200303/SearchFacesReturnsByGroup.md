@@ -7,10 +7,10 @@ Input:
 ```
 tccli iai SearchFacesReturnsByGroup --cli-unfold-argument  \
     --Url http://test.image.myqcloud.com/testA.jpg \
-    --MaxFaceNum 1 \
-    --MinFaceSize 40 \
     --MaxPersonNumPerGroup 5 \
-    --GroupIds TencentShenZhenEmployee
+    --GroupIds TencentShenZhenEmployee \
+    --MaxFaceNum 1 \
+    --MinFaceSize 40
 ```
 
 Output: 

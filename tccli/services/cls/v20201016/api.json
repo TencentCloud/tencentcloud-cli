@@ -993,7 +993,7 @@
       "members": [
         {
           "default": "",
-          "document": "压缩格式，支持gzip、lzop和none不压缩",
+          "document": "压缩格式，支持gzip、lzop、snappy和none不压缩",
           "example": "none",
           "member": "string",
           "name": "Format",

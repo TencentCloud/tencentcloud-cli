@@ -16,6 +16,14 @@
         "title": "CancelMultiFlowSignQRCode"
       }
     ],
+    "CreateBatchCancelFlowUrl": [
+      {
+        "document": "电子签企业版：指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowIds\": [\n        \"1\",\n        \"2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"url\",\n        \"FailMessages\": [\n            \"\",\n            \"\"\n        ],\n        \"UrlExpireOn\": \"\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取批量撤销签署流程链接"
+      }
+    ],
     "CreateConvertTaskApi": [
       {
         "document": "",
@@ -64,7 +72,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"MaxFlowNum\": 0,\n    \"FlowEffectiveDay\": 0,\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Channel\": \"xx\",\n        \"ProxyIp\": \"xx\"\n    },\n    \"TemplateId\": \"xx\",\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"xx\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"xx\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"xx\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"xx\",\n            \"HttpSignUrl\": \"xx\",\n            \"AppSignUrl\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "CreateMultiFlowSignQRCode"
       }
     ],

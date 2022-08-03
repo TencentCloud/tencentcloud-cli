@@ -8,6 +8,22 @@
         "title": "创建应用"
       }
     ],
+    "CreateApplicationAutoscaler": [
+      {
+        "document": "创建弹性伸缩策略组合",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": 0,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建弹性伸缩策略组合"
+      }
+    ],
+    "CreateConfigData": [
+      {
+        "document": "创建配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Data\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "创建配置"
+      }
+    ],
     "CreateCosToken": [
       {
         "document": "为上传jar包和war包，生成Cos临时秘钥",
@@ -40,6 +56,14 @@
         "title": "服务版本删除"
       }
     ],
+    "DeleteApplicationAutoscaler": [
+      {
+        "document": "修改版本规格",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改版本规格"
+      }
+    ],
     "DeleteIngress": [
       {
         "document": "删除 Ingress 规则",
@@ -60,6 +84,22 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployApplication\n<公共请求参数>\n\n{\n    \"Service\": {\n        \"Name\": \"字符串\"\n    },\n    \"JvmOpts\": \"字符串\",\n    \"SpeedUp\": \"false\",\n    \"PreStop\": \"字符串\",\n    \"ImgRepo\": \"字符串\",\n    \"EnvConf\": [\n        {\n            \"Config\": \"字符串\",\n            \"Type\": \"字符串\",\n            \"Key\": \"字符串\",\n            \"Value\": \"字符串\"\n        }\n    ],\n    \"ImageCommand\": \"字符串\",\n    \"Description\": \"字符串\",\n    \"JdkVersion\": \"字符串\",\n    \"ApplicationId\": \"字符串\",\n    \"LogOutputConf\": {\n        \"ClsLogTopicName\": \"字符串\",\n        \"ClsLogsetName\": \"字符串\",\n        \"ClsLogTopicId\": \"字符串\",\n        \"OutputType\": \"字符串\",\n        \"ClsLogsetId\": \"字符串\"\n    },\n    \"ConfEdited\": \"false\",\n    \"EnvironmentId\": \"字符串\",\n    \"CpuSpec\": \"0.1\",\n    \"DeployMode\": \"字符串\",\n    \"SecurityGroupIds\": [\n        \"字符串\"\n    ],\n    \"SourceChannel\": \"0\",\n    \"LogEnable\": \"0\",\n    \"InitPodNum\": \"2\",\n    \"VersionDesc\": \"字符串\",\n    \"ImageArgs\": [\n        \"字符串\"\n    ],\n    \"MemorySpec\": \"1024\",\n    \"UseRegistryDefaultConfig\": \"true\",\n    \"LogConfs\": [\n        \"字符串\"\n    ],\n    \"PkgName\": \"字符串\",\n    \"StorageMountConfs\": [\n        {\n            \"VolumeName\": \"字符串\",\n            \"MountPath\": \"字符串\"\n        }\n    ],\n    \"DeployVersion\": \"字符串\",\n    \"VersionId\": \"字符串\",\n    \"SettingConfs\": [\n        {\n            \"ConfigDataName\": \"字符串\",\n            \"MountedPath\": \"字符串\",\n            \"Data\": [\n                {\n                    \"Config\": \"字符串\",\n                    \"Type\": \"字符串\",\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ]\n        }\n    ],\n    \"StorageConfs\": [\n        {\n            \"StorageVolPath\": \"字符串\",\n            \"StorageVolIp\": \"字符串\",\n            \"StorageVolName\": \"字符串\"\n        }\n    ],\n    \"PostStart\": \"字符串\",\n    \"OsFlavour\": \"ALPINE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"422a54ac-9913-4d46-8439-9c05600003b3\",\n        \"Result\": \"version-success\"\n    }\n}",
         "title": "nanjing-test-20220111"
+      }
+    ],
+    "DescribeApplicationAutoscalerList": [
+      {
+        "document": "获取应用弹性策略组合",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationAutoscalerList\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"MinReplicas\": 0,\n                \"HorizontalAutoscaler\": [\n                    {\n                        \"MinReplicas\": 0,\n                        \"Metrics\": \"xx\",\n                        \"Threshold\": 0,\n                        \"MaxReplicas\": 0\n                    }\n                ],\n                \"MaxReplicas\": 0,\n                \"CronHorizontalAutoscaler\": [\n                    {\n                        \"Priority\": 0,\n                        \"Schedules\": [\n                            {\n                                \"StartAt\": \"xx\",\n                                \"TargetReplicas\": 0\n                            }\n                        ],\n                        \"Enabled\": true,\n                        \"Period\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取应用弹性策略组合"
+      }
+    ],
+    "DescribeApplicationInfo": [
+      {
+        "document": "服务基本信息查看",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationInfo\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"CurrentInstances\": 1,\n            \"ImgName\": \"xx\",\n            \"Service\": {\n                \"ApplicationName\": \"xx\",\n                \"ExternalIp\": \"xx\",\n                \"Name\": \"xx\",\n                \"PortMappings\": [\n                    {\n                        \"Protocol\": \"xx\",\n                        \"TargetPort\": 0,\n                        \"Port\": 0\n                    }\n                ],\n                \"Yaml\": \"xx\",\n                \"LoadBalanceId\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"ClusterIp\": [\n                    \"xx\"\n                ],\n                \"SubnetId\": \"xx\",\n                \"Type\": \"xx\",\n                \"Ports\": [\n                    0\n                ]\n            },\n            \"JvmOpts\": \"xx\",\n            \"ImageTag\": \"xx\",\n            \"PublicDomain\": \"xx\",\n            \"StorageConfs\": [\n                {\n                    \"StorageVolName\": \"xx\",\n                    \"StorageVolIp\": \"xx\",\n                    \"StorageVolPath\": \"xx\"\n                }\n            ],\n            \"ExpectedInstances\": 1,\n            \"ImgRepo\": \"xx\",\n            \"EnvConf\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Status\": \"xx\",\n            \"EnvironmentName\": \"xx\",\n            \"ImageCommand\": \"xx\",\n            \"ModifyDate\": \"xx\",\n            \"Description\": \"xx\",\n            \"EnablePublicAccess\": true,\n            \"JdkVersion\": \"xx\",\n            \"Vpc\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"CodingLanguage\": \"xx\",\n            \"ApplicationId\": true,\n            \"ApplicationName\": \"xx\",\n            \"LogOutputConf\": {\n                \"ClsLogTopicId\": \"xx\",\n                \"ClsLogsetName\": \"xx\",\n                \"ClsLogsetId\": \"xx\",\n                \"ClsLogTopicName\": \"xx\",\n                \"OutputType\": \"xx\"\n            },\n            \"UseRegistryDefaultConfig\": true,\n            \"ApplicationDescription\": \"xx\",\n            \"PublishMode\": \"xx\",\n            \"CpuSpec\": 0.0,\n            \"EsEnable\": 0,\n            \"CreateDate\": \"xx\",\n            \"DeployMode\": \"xx\",\n            \"SecurityGroupIds\": [\n                \"xx\"\n            ],\n            \"DeployVersion\": \"xx\",\n            \"InitPodNum\": 0,\n            \"ImageArgs\": [\n                \"xx\"\n            ],\n            \"MemorySpec\": 0.0,\n            \"EnvironmentId\": \"xx\",\n            \"PkgName\": \"xx\",\n            \"StorageMountConfs\": [\n                {\n                    \"VolumeName\": \"xx\",\n                    \"MountPath\": \"xx\"\n                }\n            ],\n            \"LogEnable\": 0,\n            \"EsInfo\": {\n                \"MinAliveInstances\": 0,\n                \"EsStrategy\": 0,\n                \"VersionId\": \"xx\",\n                \"Threshold\": 1,\n                \"MaxAliveInstances\": 0\n            },\n            \"ImgVersion\": \"xx\",\n            \"VersionId\": \"xx\",\n            \"SettingConfs\": [\n                {\n                    \"ConfigDataName\": \"xx\",\n                    \"MountedPath\": \"xx\",\n                    \"Data\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ]\n                }\n            ],\n            \"VersionName\": \"xx\",\n            \"MinAliveInstances\": 0,\n            \"EsStrategy\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "服务基本信息查看"
       }
     ],
     "DescribeApplicationPods": [
@@ -84,6 +124,22 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationsStatus\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Status\": \"xx\",\n                \"CurrentInstances\": 0,\n                \"LogOutputConf\": {\n                    \"ClsLogTopicId\": \"xx\",\n                    \"ClsLogsetName\": \"xx\",\n                    \"ClsLogsetId\": \"xx\",\n                    \"ClsLogTopicName\": \"xx\",\n                    \"OutputType\": \"xx\"\n                },\n                \"EnableEs\": 0,\n                \"EnvironmentId\": \"xx\",\n                \"BuildTaskId\": \"xx\",\n                \"DeployMode\": \"xx\",\n                \"VersionId\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"ExpectedInstances\": 0,\n                \"ApplicationId\": \"xx\",\n                \"EnvironmentName\": \"xx\",\n                \"ApplicationName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "单环境下所有应用状态查看"
+      }
+    ],
+    "DescribeConfigData": [
+      {
+        "document": "查询配置详情",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"RelatedApplications\": [\n                {\n                    \"ApplicationName\": \"xx\",\n                    \"EnvironmentId\": \"xx\",\n                    \"ModifyDate\": \"2020-09-22 00:00:00\",\n                    \"Description\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"InstanceId\": \"xx\",\n                    \"CreateDate\": \"2020-09-22 00:00:00\",\n                    \"ActiveVersions\": [\n                        {\n                            \"Status\": \"xx\",\n                            \"CurrentInstances\": 0,\n                            \"LogOutputConf\": {\n                                \"ClsLogTopicId\": \"xx\",\n                                \"ClsLogsetName\": \"xx\",\n                                \"ClsLogsetId\": \"xx\",\n                                \"ClsLogTopicName\": \"xx\",\n                                \"OutputType\": \"xx\"\n                            },\n                            \"EnableEs\": 0,\n                            \"EnvironmentId\": \"xx\",\n                            \"BuildTaskId\": \"xx\",\n                            \"DeployMode\": \"xx\",\n                            \"VersionId\": \"xx\",\n                            \"VersionName\": \"xx\",\n                            \"ExpectedInstances\": 0,\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\",\n                            \"ApplicationName\": \"xx\"\n                        }\n                    ],\n                    \"DeployMode\": \"xx\",\n                    \"RepoType\": 0,\n                    \"RepoName\": \"xx\",\n                    \"CodingLanguage\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"ApplicationId\": \"xx\",\n                    \"EnvironmentName\": \"xx\"\n                }\n            ],\n            \"Data\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Name\": \"xx\",\n            \"CreateTime\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询配置详情"
+      }
+    ],
+    "DescribeConfigDataList": [
+      {
+        "document": "查询配置列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigDataList\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ContinueToken\": \"xx\",\n    \"Limit\": 0,\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"RelatedApplications\": [\n                        {\n                            \"ApplicationName\": \"xx\",\n                            \"EnvironmentId\": \"xx\",\n                            \"ModifyDate\": \"2020-09-22 00:00:00\",\n                            \"Description\": \"xx\",\n                            \"Creator\": \"xx\",\n                            \"InstanceId\": \"xx\",\n                            \"CreateDate\": \"2020-09-22 00:00:00\",\n                            \"ActiveVersions\": [\n                                {\n                                    \"Status\": \"xx\",\n                                    \"CurrentInstances\": 0,\n                                    \"LogOutputConf\": {\n                                        \"ClsLogTopicId\": \"xx\",\n                                        \"ClsLogsetName\": \"xx\",\n                                        \"ClsLogsetId\": \"xx\",\n                                        \"ClsLogTopicName\": \"xx\",\n                                        \"OutputType\": \"xx\"\n                                    },\n                                    \"EnableEs\": 0,\n                                    \"EnvironmentId\": \"xx\",\n                                    \"BuildTaskId\": \"xx\",\n                                    \"DeployMode\": \"xx\",\n                                    \"VersionId\": \"xx\",\n                                    \"VersionName\": \"xx\",\n                                    \"ExpectedInstances\": 0,\n                                    \"ApplicationId\": \"xx\",\n                                    \"EnvironmentName\": \"xx\",\n                                    \"ApplicationName\": \"xx\"\n                                }\n                            ],\n                            \"DeployMode\": \"xx\",\n                            \"RepoType\": 0,\n                            \"RepoName\": \"xx\",\n                            \"CodingLanguage\": \"xx\",\n                            \"Modifier\": \"xx\",\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\"\n                        }\n                    ],\n                    \"Data\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ],\n                    \"Name\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"RemainingCount\": 0,\n            \"ContinueToken\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询配置列表"
       }
     ],
     "DescribeDeployApplicationDetail": [
@@ -134,6 +190,14 @@
         "title": "查询应用关联的 Ingress 规则列表"
       }
     ],
+    "DestroyConfigData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "销毁命名空间"
+      }
+    ],
     "DestroyEnvironment": [
       {
         "document": "",
@@ -150,6 +214,14 @@
         "title": "生成应用程序包预签名下载链接"
       }
     ],
+    "ModifyApplicationAutoscaler": [
+      {
+        "document": "修改弹性伸缩策略组合",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"AutoscalerId\": \"xx\",\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": 0,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改弹性伸缩策略组合"
+      }
+    ],
     "ModifyApplicationInfo": [
       {
         "document": "修改应用基本信息",
@@ -164,6 +236,14 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationReplicas\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Replicas\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改版本规格"
+      }
+    ],
+    "ModifyConfigData": [
+      {
+        "document": "编辑配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Data\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "编辑配置"
       }
     ],
     "ModifyEnvironment": [

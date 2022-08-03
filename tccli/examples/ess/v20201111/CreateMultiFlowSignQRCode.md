@@ -28,6 +28,11 @@ Output:
             "ExpiredTime": 5,
             "QrCodeId": "xx"
         },
+        "SignUrls": {
+            "EffectiveTime": "xx",
+            "HttpSignUrl": "xx",
+            "AppSignUrl": "xx"
+        },
         "RequestId": "xx"
     }
 }
