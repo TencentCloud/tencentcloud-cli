@@ -37,9 +37,9 @@
       "output": "CreateNatFwInstanceResponse"
     },
     "CreateNatFwInstanceWithDomain": {
-      "document": "创建防火墙实例和接入域名",
+      "document": "创建防火墙实例和接入域名（Region参数必填）",
       "input": "CreateNatFwInstanceWithDomainRequest",
-      "name": "创建防火墙实例和接入域名",
+      "name": "创建防火墙实例和接入域名（Region参数必填）",
       "output": "CreateNatFwInstanceWithDomainResponse"
     },
     "CreateSecurityGroupApiRules": {
@@ -1228,7 +1228,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1237,7 +1238,8 @@
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1246,7 +1248,8 @@
           "member": "int64",
           "name": "Mode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1255,7 +1258,8 @@
           "member": "NewModeItems",
           "name": "NewModeItems",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1264,7 +1268,8 @@
           "member": "string",
           "name": "NatGwList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1273,7 +1278,8 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1282,7 +1288,8 @@
           "member": "string",
           "name": "ZoneBak",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1291,7 +1298,8 @@
           "member": "int64",
           "name": "CrossAZone",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1300,7 +1308,8 @@
           "member": "int64",
           "name": "IsCreateDomain",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1309,7 +1318,8 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1324,7 +1334,8 @@
           "name": "CfwInsId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

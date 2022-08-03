@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke DescribeTKEEdgeScript --cli-unfold-argument  \
     --Interface eth0 \
-    --Config {} \
+    --Config {"Interface":"","RuntimePath":"/var/lib/docker","EdgeClusterVersion":"2.2","TTL":"24h", "SkipInstallRuntime":true} \
     --ClusterId cls123 \
     --NodeName node
 ```
@@ -19,7 +19,8 @@ Output:
         "Link": "www.tencent.com",
         "Token": "123456",
         "Command": "wget www.tencent.com",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "ScriptVersion": "xx"
     }
 }
 ```

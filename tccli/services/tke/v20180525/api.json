@@ -1527,26 +1527,32 @@
         {
           "default": "",
           "document": "集群的vpc-id",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "集群的pod CIDR",
+          "example": "10.0.1.10/24",
           "member": "string",
           "name": "PodCIDR",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "集群的service CIDR",
+          "example": "192.168.0.0/16",
           "member": "string",
           "name": "ServiceCIDR",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1556,17 +1562,23 @@
       "members": [
         {
           "document": "返回码，具体如下\n-1 内部错误\n0 没冲突\n1 vpc 和 serviceCIDR 冲突\n2 vpc 和 podCIDR 冲突\n3 serviceCIDR  和 podCIDR 冲突",
+          "example": "0",
           "member": "int64",
           "name": "ConflictCode",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CIDR冲突描述信息。",
+          "example": "OK",
           "member": "string",
           "name": "ConflictMsg",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9887,6 +9899,7 @@
         {
           "default": "",
           "document": "边缘计算容器集群Id",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9900,15 +9913,19 @@
       "members": [
         {
           "document": "集群当前状态",
+          "example": "Initializing",
           "member": "string",
           "name": "Phase",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群过程数组",
+          "example": "无",
           "member": "ClusterCondition",
           "name": "Conditions",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10060,6 +10077,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看",
+          "example": "v_20220725193138",
+          "member": "string",
+          "name": "ScriptVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10095,6 +10122,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "edgectl脚本版本，默认拉取最新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_20220725193138",
+          "member": "string",
+          "name": "ScriptVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -10638,11 +10675,35 @@
         {
           "default": "",
           "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EdgeClusterExtraArgs",
           "member": "EdgeClusterExtraArgs",
           "name": "ExtraArgs",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "运行时类型，支持\"docker\"和\"containerd\"，默认为docker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "docker",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群kube-proxy转发模式，支持\"iptables\"和\"ipvs\"，默认为iptables\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iptables",
+          "member": "string",
+          "name": "ProxyMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

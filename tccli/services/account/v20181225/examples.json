@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeIpByUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpByUin\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"AccountIdList\": [\n        123445\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IP\": \"0.0.0.0\",\n                \"Time\": \"2020-12-12 12:00:00\",\n                \"Type\": \"login\",\n                \"Uin\": 1234455\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"088b49b1-ea91-4d33-8cd0-43a73ccb602f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeNickname": [
       {
         "document": "",

@@ -3642,7 +3642,8 @@
           "member": "string",
           "name": "GroupIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3651,7 +3652,8 @@
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3660,7 +3662,8 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3669,7 +3672,8 @@
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3678,16 +3682,18 @@
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNum为5，则最多可能返回3*5=15个人员。",
+          "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNumPerGroup为5，GroupIds长度为3，则最多可能返回3*5*3=45个人员。",
           "example": "5",
           "member": "uint64",
           "name": "MaxPersonNumPerGroup",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3696,7 +3702,8 @@
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3705,7 +3712,8 @@
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3714,7 +3722,8 @@
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3723,7 +3732,8 @@
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3738,7 +3748,8 @@
           "name": "FaceNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "识别结果。",
@@ -3747,7 +3758,8 @@
           "name": "ResultsReturnsByGroup",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸识别所用的算法模型版本。",
@@ -3756,7 +3768,8 @@
           "name": "FaceModelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

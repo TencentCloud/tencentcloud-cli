@@ -43,7 +43,7 @@
     "CheckEdgeClusterCIDR": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CheckEdgeClusterCIDR\r\n&VpcId=vpc-xxx\r\n&PodCIDR=10.0.1.10/24\r\n&ServiceCIDR=192.168.0.0/16\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=CheckEdgeClusterCIDR\n&VpcId=vpc-xxx\n&PodCIDR=10.0.1.10/24\n&ServiceCIDR=192.168.0.0/16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ConflictCode\": \"0\",\n        \"ConflictMsg\": \"OK\"\n    }\n}",
         "title": "检查边缘计算集群的CIDR是否冲突示例"
       }
@@ -953,7 +953,7 @@
     "DescribeTKEEdgeClusterStatus": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterStatus\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterStatus\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Phase\": \"Initializing\",\n        \"Conditions\": [\n            {\n                \"Type\": \"初始化Master部署环境\",\n                \"Status\": \"True\",\n                \"LastProbeTime\": \"2020-02-25 12:10:15\",\n                \"LastTransitionTime\": \"2020-02-25 12:10:15\",\n                \"Reason\": \"WaitingProcess\",\n                \"Message\": \"waiting process\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取边缘计算集群的当前状态以及过程信息"
       }
@@ -977,8 +977,8 @@
     "DescribeTKEEdgeScript": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTKEEdgeScript\n<公共请求参数>\n\n{\n    \"Interface\": \"eth0\",\n    \"Config\": \"{}\",\n    \"ClusterId\": \"cls123\",\n    \"NodeName\": \"node\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Link\": \"www.tencent.com\",\n        \"Token\": \"123456\",\n        \"Command\": \"wget www.tencent.com\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTKEEdgeScript\n<公共请求参数>\n\n{\n    \"Interface\": \"eth0\",\n    \"Config\": \"{\\\"Interface\\\":\\\"\\\",\\\"RuntimePath\\\":\\\"/var/lib/docker\\\",\\\"EdgeClusterVersion\\\":\\\"2.2\\\",\\\"TTL\\\":\\\"24h\\\", \\\"SkipInstallRuntime\\\":true}\",\n    \"ClusterId\": \"cls123\",\n    \"NodeName\": \"node\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Link\": \"www.tencent.com\",\n        \"Token\": \"123456\",\n        \"Command\": \"wget www.tencent.com\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ScriptVersion\": \"xx\"\n    }\n}",
         "title": "获取边缘脚本链接"
       }
     ],

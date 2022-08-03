@@ -624,6 +624,12 @@
       "name": "修改实例参数",
       "output": "ModifyInstanceParamResponse"
     },
+    "ModifyInstancePasswordComplexity": {
+      "document": "本接口(ModifyInstancePasswordComplexity)用于修改云数据库实例的密码复杂度。",
+      "input": "ModifyInstancePasswordComplexityRequest",
+      "name": "修改实例密码复杂度",
+      "output": "ModifyInstancePasswordComplexityResponse"
+    },
     "ModifyInstanceTag": {
       "document": "本接口(ModifyInstanceTag)用于对实例标签进行添加、修改或者删除。",
       "input": "ModifyInstanceTagRequest",
@@ -9274,7 +9280,8 @@
           "name": "WanStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9284,7 +9291,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9294,7 +9302,8 @@
           "name": "InitFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9304,7 +9313,8 @@
           "name": "RoVipInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9314,7 +9324,8 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9324,7 +9335,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9334,7 +9346,8 @@
           "name": "VpcId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9344,7 +9357,8 @@
           "name": "SlaveInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9354,7 +9368,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9364,7 +9379,8 @@
           "name": "Volume",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9374,7 +9390,8 @@
           "name": "AutoRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9384,7 +9401,8 @@
           "name": "ProtectMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9394,7 +9412,8 @@
           "name": "RoGroups",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9404,7 +9423,8 @@
           "name": "SubnetId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9414,7 +9434,8 @@
           "name": "InstanceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9424,7 +9445,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9434,7 +9456,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9444,7 +9467,8 @@
           "name": "DeadlineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9454,7 +9478,8 @@
           "name": "DeployMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9464,7 +9489,8 @@
           "name": "TaskStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9474,7 +9500,8 @@
           "name": "MasterInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9484,7 +9511,8 @@
           "name": "DeviceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9494,7 +9522,8 @@
           "name": "EngineVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9504,7 +9533,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9514,7 +9544,8 @@
           "name": "DrInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9524,7 +9555,8 @@
           "name": "WanDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9534,7 +9566,8 @@
           "name": "WanPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9544,7 +9577,8 @@
           "name": "PayType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9554,7 +9588,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9564,7 +9599,8 @@
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9574,7 +9610,8 @@
           "name": "Vport",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9584,7 +9621,8 @@
           "name": "CdbError",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9594,7 +9632,8 @@
           "name": "UniqVpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9604,7 +9643,8 @@
           "name": "UniqSubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9614,7 +9654,8 @@
           "name": "PhysicalId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9624,7 +9665,8 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9634,7 +9676,8 @@
           "name": "Qps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9644,7 +9687,8 @@
           "name": "ZoneName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9654,7 +9698,8 @@
           "name": "DeviceClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9664,7 +9709,8 @@
           "name": "DeployGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9674,7 +9720,8 @@
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9684,7 +9731,8 @@
           "name": "InstanceNodes",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9694,7 +9742,63 @@
           "name": "TagList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "支撑实例的北极星 Cl5 地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123:456",
+          "member": "string",
+          "name": "PolarisAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "支撑实例的内网访问 IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "TgwVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "支撑实例的内网访问端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "int64",
+          "name": "TgwVport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "支撑实例的类型。当前只有 INNER_DB，代表双属性实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INNER_DB",
+          "member": "string",
+          "name": "InnerDBType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "支撑实例是否处于EC集群。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEdgeComputeInstance",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -11209,6 +11313,54 @@
           "name": "AsyncRequestId",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordComplexityRequest": {
+      "document": "ModifyInstancePasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例短 ID 列表。",
+          "example": "[\"cdb-atjl8gns\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改成的值。",
+          "example": "无",
+          "member": "Parameter",
+          "name": "ParamList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancePasswordComplexityResponse": {
+      "document": "ModifyInstancePasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务 ID，可用于查询任务进度。",
+          "example": "38265324-dd030463-3d46a793-4a0420b1",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

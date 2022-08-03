@@ -1606,7 +1606,8 @@
           "name": "RuleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1616,7 +1617,8 @@
           "name": "DetectionTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1626,7 +1628,8 @@
           "name": "FrequencyLimit",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1636,7 +1639,8 @@
           "name": "PunishmentSwitch",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1646,7 +1650,8 @@
           "name": "PunishmentTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1656,7 +1661,8 @@
           "name": "Action",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1666,7 +1672,8 @@
           "name": "RedirectUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1676,7 +1683,19 @@
           "name": "Configure",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启改规则 on 开启，off关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -13549,7 +13568,8 @@
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13559,7 +13579,8 @@
           "name": "Rules",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13569,7 +13590,19 @@
           "name": "AdvancedRules",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "增强自定义 cc 防护规则， 全局\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedCCRules",
+          "name": "GlobalAdvancedRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

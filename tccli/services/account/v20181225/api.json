@@ -1,5 +1,11 @@
 {
   "actions": {
+    "DescribeIpByUin": {
+      "document": "根据UIN查询注册IP地址",
+      "input": "DescribeIpByUinRequest",
+      "name": "根据UIN查询注册IP地址",
+      "output": "DescribeIpByUinResponse"
+    },
     "DescribeNickname": {
       "document": "获取用户昵称",
       "input": "DescribeNicknameRequest",
@@ -26,6 +32,74 @@
     "serviceShortName": "account"
   },
   "objects": {
+    "DescribeIpByUinRequest": {
+      "document": "DescribeIpByUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询Uin，最多50个",
+          "example": "[1224555,14234234]",
+          "member": "int64",
+          "name": "AccountIdList",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "限制个数,最多100个",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpByUinResponse": {
+      "document": "DescribeIpByUin返回参数结构体",
+      "members": [
+        {
+          "document": "IP信息列表",
+          "example": "无",
+          "member": "IPInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "数据总数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNicknameRequest": {
       "document": "DescribeNickname请求参数结构体",
       "members": [],
@@ -263,6 +337,56 @@
         }
       ],
       "type": "object"
+    },
+    "IPInfo": {
+      "document": " 所查询Uin的IP信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "时间",
+          "example": "2022-12-12 12:00:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "IP类型",
+          "example": "login/register",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用户uin",
+          "example": "12344555",
+          "member": "int64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "MailValidInfo": {
       "document": "邮箱备选验证详情",

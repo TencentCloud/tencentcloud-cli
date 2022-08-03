@@ -1,11 +1,27 @@
 {
   "actions": {
+    "CreateCloudRecording": [
+      {
+        "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为混流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n第三方存储设置为腾讯云存储，存储的文件前缀为directory1/directory2/。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"xx\",\n            \"Bucket\": \"xx\",\n            \"FileNamePrefix\": [\n                \"directory1\",\n                \"directory2\"\n            ],\n            \"SecretKey\": \"xx\",\n            \"AccessKey\": \"xx\"\n        }\n    },\n    \"UserSig\": \"xx\",\n    \"UserId\": \"xx\",\n    \"RecordParams\": {\n        \"MaxIdleTime\": 60,\n        \"StreamType\": 0,\n        \"RecordMode\": 2\n    },\n    \"RoomIdType\": 1,\n    \"MixTranscodeParams\": {\n        \"VideoParams\": {\n            \"Width\": 360,\n            \"BitRate\": 500000,\n            \"Fps\": 15,\n            \"Height\": 640,\n            \"Gop\": 10\n        }\n    },\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"3560\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "启动云端录制"
+      }
+    ],
     "CreatePicture": [
       {
         "document": "",
         "input": "https://trtc.tencentcloudapi.com/?Action=CreatePicture\n&Content=test\n&Suffix=jpg\n&SdkAppId=123\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PictureId\": 1400297109,\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "上传图片"
+      }
+    ],
+    "DeleteCloudRecording": [
+      {
+        "document": "停止SdkAppId 为 1234, TaskId 为 xx 的云端录制。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "停止云端录制"
       }
     ],
     "DeletePicture": [
@@ -38,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallDetailInfo\n<公共请求参数>\n\n{\n    \"DataType\": [\n        \"bigvCapFps\"\n    ],\n    \"CommId\": \"1400188366_218695_1590065777\",\n    \"EndTime\": 1590065877,\n    \"SdkAppId\": 1400188366,\n    \"StartTime\": 1590065777\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"UserList\": [\n            {\n                \"RoomStr\": \"218695\",\n                \"UserId\": \"1716\",\n                \"JoinTs\": 1590065777,\n                \"LeaveTs\": 1590067658,\n                \"Finished\": true,\n                \"DeviceType\": \"\",\n                \"SdkVersion\": \"4.3.14\",\n                \"ClientIp\": \"10.4.1.13\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"Content\": [\n                    {\n                        \"Time\": 1590065779,\n                        \"Value\": 0\n                    },\n                    {\n                        \"Time\": 1590065781,\n                        \"Value\": 0\n                    },\n                    {\n                        \"Time\": 1590065783,\n                        \"Value\": 0\n                    },\n                    {\n                        \"Time\": 1590065785,\n                        \"Value\": 0\n                    },\n                    {\n                        \"Time\": 1590065787,\n                        \"Value\": 0\n                    },\n                    {\n                        \"Time\": 1590065789,\n                        \"Value\": 0\n                    }\n                ],\n                \"PeerId\": \"\",\n                \"UserId\": \"1716\",\n                \"DataType\": \"bigvCapFps\"\n            }\n        ],\n        \"RequestId\": \"2e12e365-43e8-4efd-902d-906303e2ee4a\"\n    }\n}",
         "title": "查询历史用户列表与通话指标"
+      }
+    ],
+    "DescribeCloudRecording": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"StorageFileList\": [\n            {\n                \"TrackType\": \"xx\",\n                \"BeginTimeStamp\": 1,\n                \"UserId\": \"xx\",\n                \"FileName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
       }
     ],
     "DescribeDetailEvent": [
@@ -158,6 +182,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoomByStrRoomId\n&SdkAppId=1400000001\n&RoomId=abcd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "解散房间"
+      }
+    ],
+    "ModifyCloudRecording": [
+      {
+        "document": "更新SdkAppId 为 1234 TaskId 为xx 的云端录制，设置视频流订阅白名单123，456，设置音频流订阅白名单123，456。设置自定义布局模式。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudRecording\n<公共请求参数>\n\n{\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeVideoUserIds\": [\n            \"123\",\n            \"456\"\n        ],\n        \"SubscribeAudioUserIds\": [\n            \"123\",\n            \"456\"\n        ]\n    },\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234,\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 4,\n        \"MixLayoutList\": [\n            {\n                \"Top\": 100,\n                \"UserId\": \"123\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 100\n            },\n            {\n                \"Top\": 200,\n                \"UserId\": \"456\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 200\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "更新云端录制"
       }
     ],
     "ModifyPicture": [

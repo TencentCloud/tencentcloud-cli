@@ -156,6 +156,14 @@
         "title": "获取统计数据"
       }
     ],
+    "ListAccountPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAccountPackage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"AccountPackages\": [\n            {\n                \"UsedQuota\": 3000,\n                \"PackageStatus\": 0,\n                \"PackageQuota\": 5000,\n                \"AvailableQuota\": 2000,\n                \"LastUpdateTime\": \"2020-09-22 00:00:00\",\n                \"PackageID\": \"8979fc2958ce679b72\"\n            },\n            {\n                \"UsedQuota\": 2000,\n                \"PackageStatus\": 0,\n                \"PackageQuota\": 6000,\n                \"AvailableQuota\": 4000,\n                \"LastUpdateTime\": \"2020-09-22 00:00:00\",\n                \"PackageID\": \"8979fc1e9564bf7d\"\n            }\n        ]\n    }\n}",
+        "title": "获取用户套餐包"
+      }
+    ],
     "ListBlackEmailAddress": [
       {
         "document": "",

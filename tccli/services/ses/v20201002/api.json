@@ -108,6 +108,12 @@
       "name": "获取发送统计数据",
       "output": "GetStatisticsReportResponse"
     },
+    "ListAccountPackage": {
+      "document": "获取用户套餐包",
+      "input": "ListAccountPackageRequest",
+      "name": "获取用户套餐包",
+      "output": "ListAccountPackageResponse"
+    },
     "ListBlackEmailAddress": {
       "document": "腾讯云发送的邮件一旦被收件方判断为硬退(Hard Bounce)，腾讯云会拉黑该地址，并不允许所有用户向该地址发送邮件。成为邮箱黑名单。如果业务方确认是误判，可以从黑名单中删除。",
       "input": "ListBlackEmailAddressRequest",
@@ -176,6 +182,84 @@
     "serviceShortName": "ses"
   },
   "objects": {
+    "AccountPackage": {
+      "document": "用户套餐包",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐包额度",
+          "member": "int64",
+          "name": "PackageQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已用额度",
+          "member": "int64",
+          "name": "UsedQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余额度",
+          "member": "int64",
+          "name": "AvailableQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "datetime",
+          "name": "LastUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包状态，0-正常 | 1-隔离中 | 2-已隔离 | 3-已销毁 | 4-已过期",
+          "member": "int64",
+          "name": "PackageStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包ID",
+          "member": "string",
+          "name": "PackageID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "datetime",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Attachment": {
       "document": "附件结构，包含附件名和base64之后的附件内容。",
       "members": [
@@ -1350,6 +1434,30 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAccountPackageRequest": {
+      "document": "ListAccountPackage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListAccountPackageResponse": {
+      "document": "ListAccountPackage返回参数结构体",
+      "members": [
+        {
+          "document": "用户套餐包列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AccountPackage",
+          "name": "AccountPackages",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

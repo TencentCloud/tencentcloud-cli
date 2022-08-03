@@ -981,7 +981,8 @@
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -990,7 +991,8 @@
           "member": "string",
           "name": "TerminalType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -999,7 +1001,8 @@
           "member": "string",
           "name": "IdCard",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1008,7 +1011,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1017,7 +1021,8 @@
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1026,7 +1031,8 @@
           "member": "string",
           "name": "Extra",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1035,7 +1041,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1044,7 +1051,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1053,7 +1061,18 @@
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。",
+          "example": "无",
+          "member": "IntentionQuestion",
+          "name": "IntentionQuestions",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1068,7 +1087,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "一次核身流程的标识，有效时间为7,200秒；\n完成核身后，可用该标识获取验证结果信息。",
@@ -1077,7 +1097,8 @@
           "name": "BizToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1767,7 +1788,8 @@
           "member": "string",
           "name": "BizToken",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1776,7 +1798,8 @@
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1785,7 +1808,8 @@
           "member": "string",
           "name": "InfoType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1794,7 +1818,8 @@
           "member": "uint64",
           "name": "BestFramesCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1803,7 +1828,8 @@
           "member": "bool",
           "name": "IsCutIdCardImage",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1812,7 +1838,8 @@
           "member": "bool",
           "name": "IsNeedIdCardAvatar",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1821,7 +1848,8 @@
           "member": "bool",
           "name": "IsEncrypt",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1836,7 +1864,8 @@
           "name": "Text",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1845,7 +1874,8 @@
           "name": "IdCardData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1854,7 +1884,8 @@
           "name": "BestFrame",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1863,7 +1894,8 @@
           "name": "VideoData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1872,7 +1904,8 @@
           "name": "Encryption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1881,7 +1914,18 @@
           "name": "IntentionVerifyData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionQuestionResult",
+          "name": "IntentionQuestionResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2889,6 +2933,106 @@
       ],
       "type": "object"
     },
+    "IntentionQuestion": {
+      "document": "意愿核身过程中播报的问题文本、用户回答的标准文本。",
+      "members": [
+        {
+          "default": "",
+          "document": "系统播报的问题文本，问题最大长度为150个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。",
+          "example": "确认 我确认",
+          "member": "string",
+          "name": "Answers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "IntentionQuestionResult": {
+      "document": "意愿核身问答模式结果",
+      "members": [
+        {
+          "default": "",
+          "document": "意愿核身最终结果：\n0：通过，-1：未通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "FinalResultCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Video",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "屏幕截图base64列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScreenShot",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "和答案匹配结果列表\n0：成功，-1：不匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ResultCode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsrResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "答案录音音频\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Audios",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "IntentionVerifyData": {
       "document": "意愿核身相关结果",
       "members": [
@@ -2900,7 +3044,8 @@
           "name": "IntentionVerifyVideo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2910,7 +3055,8 @@
           "name": "AsrResult",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2920,7 +3066,8 @@
           "name": "ErrorCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2930,7 +3077,8 @@
           "name": "ErrorMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2940,7 +3088,8 @@
           "name": "IntentionVerifyBestFrame",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2950,7 +3099,8 @@
           "name": "AsrResultSimilarity",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

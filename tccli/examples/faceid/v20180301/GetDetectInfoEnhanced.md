@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli faceid GetDetectInfoEnhanced --cli-unfold-argument  \
-    --RuleId 0 \
+    --InfoType 1 \
     --BizToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681 \
-    --InfoType 1
+    --RuleId 0
 ```
 
 Output: 
@@ -68,6 +68,19 @@ Output:
             "ErrorMessage": "成功",
             "AsrResult": "xx",
             "IntentionVerifyBestFrame": "xx"
+        },
+        "IntentionQuestionResult": {
+            "AsrResult": [
+                "同意"
+            ],
+            "ResultCode": [
+                "0"
+            ],
+            "Video": "xx",
+            "ScreenShot": [
+                "xx"
+            ],
+            "FinalResultCode": "0"
         },
         "BestFrame": {
             "BestFrame": "xx",
