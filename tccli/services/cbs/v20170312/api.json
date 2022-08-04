@@ -2239,6 +2239,7 @@
         {
           "default": "",
           "document": "配置是否可用。",
+          "example": "false",
           "member": "bool",
           "name": "Available",
           "required": false,
@@ -2247,25 +2248,8 @@
         },
         {
           "default": "",
-          "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
-          "member": "string",
-          "name": "DiskType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
-          "member": "string",
-          "name": "DiskUsage",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "DiskChargeType",
           "required": false,
@@ -2274,25 +2258,8 @@
         },
         {
           "default": "",
-          "document": "最大可配置云盘大小，单位GB。",
-          "member": "uint64",
-          "name": "MaxDiskSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最小可配置云盘大小，单位GB。",
-          "member": "uint64",
-          "name": "MinDiskSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -2301,7 +2268,48 @@
         },
         {
           "default": "",
+          "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N1",
+          "member": "string",
+          "name": "InstanceFamily",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘大小变化的最小步长，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "StepSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "额外的性能区间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "ExtraPerformanceRange",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "DeviceClass",
           "required": false,
@@ -2310,12 +2318,33 @@
         },
         {
           "default": "",
-          "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
+          "example": "DATA_DISK",
           "member": "string",
-          "name": "InstanceFamily",
+          "name": "DiskUsage",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小可配置云盘大小，单位GB。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MinDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大可配置云盘大小，单位GB。",
+          "example": "32000",
+          "member": "uint64",
+          "name": "MaxDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

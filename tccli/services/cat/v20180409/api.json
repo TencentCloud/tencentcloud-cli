@@ -1291,7 +1291,7 @@
       "usage": "out"
     },
     "ProbeTaskBasicConfiguration": {
-      "document": "type ProbeTaskBasicConfiguration struct {\n\tTaskID        TaskID `json:\"TaskId\" gorm:\"column:task_id\"`\n\tName          string `json:\"Name\" binding:\"required\" gorm:\"column:name\"`\n\tTargetAddress string `json:\"TargetAddress\" binding:\"required\" gorm:\"column:target_address\"`\n}",
+      "document": "拨测任务基础配置",
       "members": [
         {
           "default": "",

@@ -4971,6 +4971,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属 DNS 服务器",
+          "example": " [\"r6i9m.dnspod.net\",\"a6i6c.dnspod.net\" ]",
+          "member": "string",
+          "name": "FreeNs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

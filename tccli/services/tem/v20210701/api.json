@@ -30,6 +30,12 @@
       "name": "创建环境",
       "output": "CreateEnvironmentResponse"
     },
+    "CreateLogConfig": {
+      "document": "创建日志收集配置",
+      "input": "CreateLogConfigRequest",
+      "name": "创建日志收集配置",
+      "output": "CreateLogConfigResponse"
+    },
     "CreateResource": {
       "document": "绑定云资源",
       "input": "CreateResourceRequest",
@@ -115,9 +121,9 @@
       "output": "DescribeEnvironmentStatusResponse"
     },
     "DescribeEnvironments": {
-      "document": "获取租户环境列表",
+      "document": "获取环境列表",
       "input": "DescribeEnvironmentsRequest",
-      "name": "获取租户环境列表",
+      "name": "获取环境列表",
       "output": "DescribeEnvironmentsResponse"
     },
     "DescribeIngress": {
@@ -132,6 +138,18 @@
       "name": "查询 Ingress 规则列表",
       "output": "DescribeIngressesResponse"
     },
+    "DescribeLogConfig": {
+      "document": "查询日志收集配置详情",
+      "input": "DescribeLogConfigRequest",
+      "name": "查询日志收集配置详情",
+      "output": "DescribeLogConfigResponse"
+    },
+    "DescribePagedLogConfigList": {
+      "document": "查询分页的日志收集配置列表",
+      "input": "DescribePagedLogConfigListRequest",
+      "name": "查询分页的日志收集配置列表",
+      "output": "DescribePagedLogConfigListResponse"
+    },
     "DescribeRelatedIngresses": {
       "document": "查询应用关联的 Ingress 规则列表",
       "input": "DescribeRelatedIngressesRequest",
@@ -145,10 +163,16 @@
       "output": "DestroyConfigDataResponse"
     },
     "DestroyEnvironment": {
-      "document": "销毁命名空间",
+      "document": "销毁环境",
       "input": "DestroyEnvironmentRequest",
-      "name": "销毁命名空间",
+      "name": "销毁环境",
       "output": "DestroyEnvironmentResponse"
+    },
+    "DestroyLogConfig": {
+      "document": "销毁日志收集配置",
+      "input": "DestroyLogConfigRequest",
+      "name": "销毁日志收集配置",
+      "output": "DestroyLogConfigResponse"
     },
     "GenerateApplicationPackageDownloadUrl": {
       "document": "生成应用程序包预签名下载链接",
@@ -191,6 +215,12 @@
       "input": "ModifyIngressRequest",
       "name": "创建或者更新 Ingress 规则",
       "output": "ModifyIngressResponse"
+    },
+    "ModifyLogConfig": {
+      "document": "编辑日志收集配置",
+      "input": "ModifyLogConfigRequest",
+      "name": "编辑日志收集配置",
+      "output": "ModifyLogConfigResponse"
     },
     "RestartApplication": {
       "document": "服务重启",
@@ -916,6 +946,123 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogConfigRequest": {
+      "document": "CreateLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "environment-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收集类型，container_stdout 为标准输出；container_file 为文件；",
+          "example": "container_file",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "application-xxxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集 ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题 ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "首行正则表达式，当LogType=multiline_log 时生效",
+          "example": "/xx/",
+          "member": "string",
+          "name": "BeginningRegex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收集文件目录，当 InputType=container_file 时生效",
+          "example": "/xxx",
+          "member": "string",
+          "name": "LogPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收集文件名模式，当 InputType=container_file 时生效",
+          "example": "app_*.log",
+          "member": "string",
+          "name": "FilePattern",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogConfigResponse": {
+      "document": "CreateLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "创建是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2648,6 +2795,141 @@
       ],
       "type": "object"
     },
+    "DescribeLogConfigRequest": {
+      "document": "DescribeLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "app-xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogConfigResponse": {
+      "document": "DescribeLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "配置",
+          "example": "[]",
+          "member": "LogConfig",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePagedLogConfigListRequest": {
+      "document": "DescribePagedLogConfigList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "application-xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页游标",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ContinueToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePagedLogConfigListResponse": {
+      "document": "DescribePagedLogConfigList返回参数结构体",
+      "members": [
+        {
+          "document": "日志收集配置列表",
+          "example": "{}",
+          "member": "LogConfigListPage",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRelatedIngressesRequest": {
       "document": "DescribeRelatedIngresses请求参数结构体",
       "members": [
@@ -2866,6 +3148,60 @@
       ],
       "type": "object"
     },
+    "DestroyLogConfigRequest": {
+      "document": "DestroyLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyLogConfigResponse": {
+      "document": "DestroyLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EksService": {
       "document": "eks service info",
       "members": [
@@ -2977,6 +3313,56 @@
           "name": "PortMappings",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每种类型访问配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"name\":\"test\"}]",
+          "member": "ServicePortMapping",
+          "name": "ServicePortMappingList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "刷新复写所有类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "FlushAll",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1: 下次部署自动注入注册中心信息；0：不注入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableRegistryNextDeploy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "返回应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app-123",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所有服务IP是否已经ready\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllIpDone",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -3535,6 +3921,158 @@
       ],
       "usage": "both"
     },
+    "LogConfig": {
+      "document": "日志收集配置",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收集类型，container_stdout 为标准输出；container_file 为文件；",
+          "example": "xxx",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首行正则表达式，当LogType=multiline_log 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "BeginningRegex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收集文件目录，当 InputType=container_file 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收集文件名模式，当 InputType=container_file 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app_*.log",
+          "member": "string",
+          "name": "FilePattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-20T14:42:16Z",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-20T14:42:16Z",
+          "member": "string",
+          "name": "ModifyDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app-xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogConfigListPage": {
+      "document": "LogConfig 列表结果",
+      "members": [
+        {
+          "default": "",
+          "document": "记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "LogConfig",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "翻页游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ContinueToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LogOutputConf": {
       "document": "日志输出配置",
       "members": [
@@ -3959,6 +4497,69 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogConfigRequest": {
+      "document": "ModifyLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境 ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志收集配置信息",
+          "example": "[]",
+          "member": "LogConfig",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLogConfigResponse": {
+      "document": "ModifyLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "编辑是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4784,6 +5385,148 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServicePortMapping": {
+      "document": "端口映射详细信息结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClusterIP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "consumer",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群内访问vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.2",
+          "member": "string",
+          "name": "ClusterIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群外方位vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "202.0.0.2",
+          "member": "string",
+          "name": "ExternalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-123",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-123",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "LoadBalance Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb-123",
+          "member": "string",
+          "name": "LoadBalanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "yaml 内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yaml",
+          "member": "string",
+          "name": "Yaml",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "暴露端口列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100,2000,3000]",
+          "member": "int64",
+          "name": "Ports",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口映射数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ServicePortMappingItem",
+          "name": "PortMappingItemList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServicePortMappingItem": {
+      "document": "服务端口映射条目",
+      "members": [
+        {
+          "default": "",
+          "document": "应用访问端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "int64",
+          "name": "TargetPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

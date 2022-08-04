@@ -7339,6 +7339,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "ns/repoName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7348,6 +7349,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "ns",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -7356,7 +7358,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
+          "document": "创建时间，格式\"2006-01-02 15:04:05.999999999 -0700 MST\"",
+          "example": "2022-07-16 10:34:42.697947 +0000 UTC",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -7366,6 +7369,7 @@
         {
           "default": "",
           "document": "是否公开",
+          "example": "false",
           "member": "bool",
           "name": "Public",
           "required": true,
@@ -7375,6 +7379,7 @@
         {
           "default": "",
           "document": "仓库详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "this is a description",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -7384,6 +7389,7 @@
         {
           "default": "",
           "document": "简单描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "this is a brief description",
           "member": "string",
           "name": "BriefDescription",
           "required": true,
@@ -7392,7 +7398,8 @@
         },
         {
           "default": "",
-          "document": "更新时间",
+          "document": "更新时间，格式\"2006-01-02 15:04:05.999999999 -0700 MST\"",
+          "example": "2022-07-16 10:34:42.697947 +0000 UTC",
           "member": "string",
           "name": "UpdateTime",
           "required": true,

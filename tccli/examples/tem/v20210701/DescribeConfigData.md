@@ -41,6 +41,7 @@ Output:
                             "BuildTaskId": "xx",
                             "DeployMode": "xx",
                             "VersionId": "xx",
+                            "UnderDeploying": true,
                             "VersionName": "xx",
                             "ExpectedInstances": 0,
                             "ApplicationId": "xx",
@@ -51,6 +52,7 @@ Output:
                     "DeployMode": "xx",
                     "RepoType": 0,
                     "RepoName": "xx",
+                    "EnableTracing": 1,
                     "CodingLanguage": "xx",
                     "Modifier": "xx",
                     "ApplicationId": "xx",
@@ -59,6 +61,9 @@ Output:
             ],
             "Data": [
                 {
+                    "Config": "xx",
+                    "Secret": "xx",
+                    "Type": "xx",
                     "Value": "xx",
                     "Key": "xx"
                 }

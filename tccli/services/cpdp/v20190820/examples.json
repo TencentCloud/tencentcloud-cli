@@ -476,14 +476,6 @@
         "title": "CreateRedInvoiceV2"
       }
     ],
-    "CreateSinglePay": [
-      {
-        "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateSinglePay\n&SerialNumber=20190505000000000013\n&PayAccountNumber=123123123\n&PayAccountName=测试付款账户\n&PayBankCnaps=321321321\n&Amount=1\n&RecvAccountNumber=123123123123\n&RecvAccountName=王大拿\n&RecvBankCnaps=321321321\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be294bbb-47c9-4f01-9b1e-9e8ca3a72d4b\",\n        \"Result\": {\n            \"SerialNo\": \"20190505000000000013\",\n            \"BankSerialNo\": \"123123123123123\",\n            \"PayStatus\": \"P\",\n            \"HandleStatus\": \"S\",\n            \"BankRetMsg\": null,\n            \"BankRetCode\": null,\n            \"HandleMsg\": \"处理成功！\"\n        }\n    }\n}",
-        "title": "CreateSinglePay"
-      }
-    ],
     "CreateSinglePayment": [
       {
         "document": "",
@@ -1394,14 +1386,6 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryShopOpenId\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"ShopNo\": \"TestS115\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ShopNo\": \"20260437\",\n            \"ShopName\": \"南山店\",\n            \"ShopFullName\": \"API进件测试的商户（南山店）\",\n            \"MerchantNo\": \"20743873\",\n            \"MerchantName\": \"API进件测试的商户\",\n            \"BrandName\": \"招牌名称\",\n            \"Province\": \"北京\",\n            \"City\": \"北京\",\n            \"County\": \"东城区\",\n            \"CityId\": \"110101\",\n            \"Address\": \"南山区科技园科苑大道讯美科技广场2栋12楼\",\n            \"Telephone\": \"88888888\",\n            \"OpenId\": \"eadca266c6d9a0aaa962323f3f778b576\",\n            \"OpenKey\": \"1248d0bc506ff93e012364d16d449df3\"\n        }\n    }\n}",
         "title": "获取门店OpenId接口成功示例"
-      }
-    ],
-    "QuerySinglePay": [
-      {
-        "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QuerySinglePay\n&SerialNumber=123123123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b919ced-362c-4190-8cb8-cc6216526bfb\",\n        \"Result\": {\n            \"SerialNo\": \"123123123\",\n            \"HandleStatus\": \"S\",\n            \"Items\": [\n                {\n                    \"PayStatus\": \"P\",\n                    \"PlatformMsg\": null,\n                    \"BankRetMsg\": null,\n                    \"BankRetCode\": null\n                }\n            ],\n            \"HandleMsg\": null\n        }\n    }\n}",
-        "title": "QuerySinglePay"
       }
     ],
     "QuerySinglePaymentResult": [

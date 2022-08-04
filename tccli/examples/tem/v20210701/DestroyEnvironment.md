@@ -1,6 +1,6 @@
-**Example 1: 销毁命名空间**
+**Example 1: 销毁环境**
 
-
+销毁环境
 
 Input: 
 

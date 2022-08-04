@@ -882,6 +882,15 @@
           "name": "Url",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启\n\n注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。",
+          "example": "true",
+          "member": "bool",
+          "name": "LocalBodySwitch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1272,6 +1281,7 @@
         {
           "default": "",
           "document": "代表不同位置的人体关键点信息，返回值为以下集合中的一个 [头部,颈部,右肩,右肘,右腕,左肩,左肘,左腕,右髋,右膝,右踝,左髋,左膝,左踝]",
+          "example": "\"\"",
           "member": "string",
           "name": "KeyPointType",
           "required": true,
@@ -1281,6 +1291,7 @@
         {
           "default": "",
           "document": "人体关键点横坐标",
+          "example": "0",
           "member": "float",
           "name": "X",
           "required": true,
@@ -1290,8 +1301,19 @@
         {
           "default": "",
           "document": "人体关键点纵坐标",
+          "example": "0",
           "member": "float",
           "name": "Y",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。",
+          "example": "0",
+          "member": "float",
+          "name": "BodyScore",
           "required": true,
           "type": "float",
           "value_allowed_null": false

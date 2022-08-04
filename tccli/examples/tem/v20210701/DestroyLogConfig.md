@@ -1,14 +1,13 @@
-**Example 1: 销毁配置**
+**Example 1: 销毁日志收集配置**
 
-
+销毁日志收集配置
 
 Input: 
 
 ```
-tccli tem DestroyConfigData --cli-unfold-argument  \
+tccli tem DestroyLogConfig --cli-unfold-argument  \
     --EnvironmentId xx \
-    --Name xx \
-    --SourceChannel 0
+    --Name xx
 ```
 
 Output: 
