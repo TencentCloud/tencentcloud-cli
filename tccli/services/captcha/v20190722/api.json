@@ -1271,7 +1271,8 @@
           "member": "uint64",
           "name": "CaptchaType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1280,7 +1281,8 @@
           "member": "string",
           "name": "Ticket",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1289,7 +1291,8 @@
           "member": "string",
           "name": "UserIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1298,7 +1301,8 @@
           "member": "string",
           "name": "Randstr",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1307,7 +1311,8 @@
           "member": "uint64",
           "name": "CaptchaAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1316,7 +1321,8 @@
           "member": "string",
           "name": "AppSecretKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1325,7 +1331,8 @@
           "member": "uint64",
           "name": "BusinessId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1334,7 +1341,8 @@
           "member": "uint64",
           "name": "SceneId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1343,7 +1351,8 @@
           "member": "string",
           "name": "MacAddress",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1352,7 +1361,8 @@
           "member": "string",
           "name": "Imei",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1361,7 +1371,8 @@
           "member": "int64",
           "name": "NeedGetCaptchaTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1376,7 +1387,8 @@
           "name": "CaptchaCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1385,16 +1397,18 @@
           "name": "CaptchaMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "document": "[0,100]，恶意等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无感验证模式下，该参数返回验证结果：\n\nEvilLevel=0 请求无恶意\nEvilLevel=100 请求有恶意\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "EvilLevel",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "前端获取验证码时间，时间戳格式\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1403,7 +1417,8 @@
           "name": "GetCaptchaTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -871,7 +871,8 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -880,16 +881,18 @@
           "member": "string",
           "name": "DiskChargeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -898,7 +901,8 @@
           "member": "string",
           "name": "DiskName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -907,7 +911,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -916,7 +921,8 @@
           "member": "string",
           "name": "SnapshotId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -925,7 +931,8 @@
           "member": "uint64",
           "name": "DiskCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -934,7 +941,8 @@
           "member": "uint64",
           "name": "ThroughputPerformance",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -943,7 +951,8 @@
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -952,7 +961,8 @@
           "member": "bool",
           "name": "Shareable",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -961,7 +971,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -970,7 +981,8 @@
           "member": "string",
           "name": "Encrypt",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -979,7 +991,8 @@
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -988,7 +1001,8 @@
           "member": "int64",
           "name": "DeleteSnapshot",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -997,7 +1011,8 @@
           "member": "AutoMountConfiguration",
           "name": "AutoMountConfiguration",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1006,7 +1021,8 @@
           "member": "uint64",
           "name": "DiskBackupQuota",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1021,7 +1037,8 @@
           "name": "DiskIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1298,66 +1315,82 @@
         {
           "default": "",
           "document": "查询类别，取值范围。<br><li>INQUIRY_CBS_CONFIG：查询云盘配置列表<br><li>INQUIRY_CVM_CONFIG：查询云盘与实例搭配的配置列表。",
+          "example": "INQUIRY_CVM_CONFIG",
           "member": "string",
           "name": "InquiryType",
           "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。",
-          "member": "string",
-          "name": "Zones",
-          "required": false,
-          "type": "list"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "DiskChargeType",
           "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。",
-          "member": "string",
-          "name": "DiskTypes",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
-          "member": "string",
-          "name": "DiskUsage",
-          "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)",
+          "example": "[\"S3\\n\"]",
           "member": "string",
           "name": "InstanceFamilies",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例CPU核数。",
-          "member": "uint64",
-          "name": "CPU",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。",
+          "example": "[\"CLOUD_PREMIUM\"]",
+          "member": "string",
+          "name": "DiskTypes",
           "required": false,
-          "type": "int"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。",
+          "example": "[\"ap-guangzhou-2\\n\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "实例内存大小。",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
+          "example": "DATA_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例CPU核数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "CPU",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1367,10 +1400,13 @@
       "members": [
         {
           "document": "云盘配置列表。",
+          "example": "无",
           "member": "DiskConfig",
           "name": "DiskConfigSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1851,7 +1887,8 @@
           "name": "DeleteWithInstance",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1861,17 +1898,19 @@
           "name": "RenewFlag",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_BSSD：表示通用型SSD云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1881,7 +1920,8 @@
           "name": "DiskState",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1891,7 +1931,8 @@
           "name": "SnapshotCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1901,7 +1942,8 @@
           "name": "AutoRenewFlagError",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1911,7 +1953,8 @@
           "name": "Rollbacking",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1921,7 +1964,8 @@
           "name": "InstanceIdList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1931,7 +1975,8 @@
           "name": "Encrypt",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1941,7 +1986,8 @@
           "name": "DiskName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1951,7 +1997,8 @@
           "name": "BackupDisk",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1961,7 +2008,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1971,7 +2019,8 @@
           "name": "InstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1981,7 +2030,8 @@
           "name": "AttachMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1991,7 +2041,8 @@
           "name": "AutoSnapshotPolicyIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2001,7 +2052,8 @@
           "name": "ThroughputPerformance",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2011,7 +2063,8 @@
           "name": "Migrating",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2021,7 +2074,8 @@
           "name": "DiskId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2031,7 +2085,8 @@
           "name": "SnapshotSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2041,7 +2096,8 @@
           "name": "Placement",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2051,7 +2107,8 @@
           "name": "IsReturnable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2061,7 +2118,8 @@
           "name": "DeadlineTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2071,7 +2129,8 @@
           "name": "Attached",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2081,7 +2140,8 @@
           "name": "DiskSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2091,7 +2151,8 @@
           "name": "MigratePercent",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2101,7 +2162,8 @@
           "name": "DiskUsage",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2111,7 +2173,8 @@
           "name": "DiskChargeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2121,7 +2184,8 @@
           "name": "Portable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2131,7 +2195,8 @@
           "name": "SnapshotAbility",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2141,7 +2206,8 @@
           "name": "DeadlineError",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2151,7 +2217,8 @@
           "name": "RollbackPercent",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2161,7 +2228,8 @@
           "name": "DifferDaysOfDeadline",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2171,7 +2239,8 @@
           "name": "ReturnFailCode",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2181,7 +2250,8 @@
           "name": "Shareable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2191,7 +2261,8 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2201,7 +2272,8 @@
           "name": "DeleteSnapshot",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2211,7 +2283,8 @@
           "name": "DiskBackupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2221,7 +2294,8 @@
           "name": "InstanceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2268,83 +2342,123 @@
         {
           "default": "",
           "document": "配置是否可用。",
+          "example": "false",
           "member": "bool",
           "name": "Available",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
-          "member": "string",
-          "name": "DiskType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
-          "member": "string",
-          "name": "DiskUsage",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "DiskChargeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最大可配置云盘大小，单位GB。",
-          "member": "uint64",
-          "name": "MaxDiskSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最小可配置云盘大小，单位GB。",
-          "member": "uint64",
-          "name": "MinDiskSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "DeviceClass",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N1",
           "member": "string",
           "name": "InstanceFamily",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云盘大小变化的最小步长，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "StepSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "额外的性能区间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "ExtraPerformanceRange",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "DeviceClass",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
+          "example": "DATA_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最小可配置云盘大小，单位GB。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MinDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最大可配置云盘大小，单位GB。",
+          "example": "32000",
+          "member": "uint64",
+          "name": "MaxDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

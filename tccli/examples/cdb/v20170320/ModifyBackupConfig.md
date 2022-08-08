@@ -9,8 +9,8 @@ tccli cdb ModifyBackupConfig --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
     --ExpireDays 10 \
     --BinlogExpireDays 8 \
-    --StartTime 02:00-06:00 \
-    --BackupMethod logical
+    --BackupMethod logical \
+    --StartTime 02:00-06:00
 ```
 
 Output: 

@@ -161,54 +161,6 @@ def doInquiryPriceResetInstancesInternetMaxBandwidth(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstanceFamilyConfigs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceFamilyConfigsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeInstanceFamilyConfigs(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDeleteKeyPairs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -353,7 +305,7 @@ def doRunInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyLaunchTemplateDefaultVersion(args, parsed_globals):
+def doDeleteLaunchTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -378,11 +330,11 @@ def doModifyLaunchTemplateDefaultVersion(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyLaunchTemplateDefaultVersionRequest()
+    model = models.DeleteLaunchTemplateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyLaunchTemplateDefaultVersion(model)
+        rsp = client.DeleteLaunchTemplate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -737,7 +689,7 @@ def doDescribeReservedInstancesConfigInfos(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeHostsInfos(args, parsed_globals):
+def doDescribeInstanceFamilyConfigs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -762,11 +714,11 @@ def doDescribeHostsInfos(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeHostsInfosRequest()
+    model = models.DescribeInstanceFamilyConfigsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeHostsInfos(model)
+        rsp = client.DescribeInstanceFamilyConfigs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1985,7 +1937,7 @@ def doModifyImageSharePermission(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteLaunchTemplate(args, parsed_globals):
+def doModifyLaunchTemplateDefaultVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2010,11 +1962,11 @@ def doDeleteLaunchTemplate(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLaunchTemplateRequest()
+    model = models.ModifyLaunchTemplateDefaultVersionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteLaunchTemplate(model)
+        rsp = client.ModifyLaunchTemplateDefaultVersion(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3617,6 +3569,54 @@ def doDescribeImageQuota(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeChcDeniedActions(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeChcDeniedActionsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeChcDeniedActions(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAccountQuota(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3839,6 +3839,54 @@ def doCreateLaunchTemplateVersion(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateLaunchTemplateVersion(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHostsInfos(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHostsInfosRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeHostsInfos(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4207,11 +4255,10 @@ ACTION_MAP = {
     "InquiryPriceRunInstances": doInquiryPriceRunInstances,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "InquiryPriceResetInstancesInternetMaxBandwidth": doInquiryPriceResetInstancesInternetMaxBandwidth,
-    "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
     "DeleteKeyPairs": doDeleteKeyPairs,
     "ImportKeyPair": doImportKeyPair,
     "RunInstances": doRunInstances,
-    "ModifyLaunchTemplateDefaultVersion": doModifyLaunchTemplateDefaultVersion,
+    "DeleteLaunchTemplate": doDeleteLaunchTemplate,
     "ModifyInstancesVpcAttribute": doModifyInstancesVpcAttribute,
     "DescribeDisasterRecoverGroupQuota": doDescribeDisasterRecoverGroupQuota,
     "DescribeReservedInstances": doDescribeReservedInstances,
@@ -4219,7 +4266,7 @@ ACTION_MAP = {
     "ConfigureChcAssistVpc": doConfigureChcAssistVpc,
     "ResetInstancesType": doResetInstancesType,
     "DescribeReservedInstancesConfigInfos": doDescribeReservedInstancesConfigInfos,
-    "DescribeHostsInfos": doDescribeHostsInfos,
+    "DescribeInstanceFamilyConfigs": doDescribeInstanceFamilyConfigs,
     "InquirePricePurchaseReservedInstancesOffering": doInquirePricePurchaseReservedInstancesOffering,
     "SyncImages": doSyncImages,
     "ImportImage": doImportImage,
@@ -4245,7 +4292,7 @@ ACTION_MAP = {
     "DescribeHosts": doDescribeHosts,
     "DescribeInstancesStatus": doDescribeInstancesStatus,
     "ModifyImageSharePermission": doModifyImageSharePermission,
-    "DeleteLaunchTemplate": doDeleteLaunchTemplate,
+    "ModifyLaunchTemplateDefaultVersion": doModifyLaunchTemplateDefaultVersion,
     "CreateKeyPair": doCreateKeyPair,
     "InquiryPriceResizeInstanceDisks": doInquiryPriceResizeInstanceDisks,
     "InquiryPriceResetInstance": doInquiryPriceResetInstance,
@@ -4279,11 +4326,13 @@ ACTION_MAP = {
     "ResizeInstanceDisks": doResizeInstanceDisks,
     "DescribeZones": doDescribeZones,
     "DescribeImageQuota": doDescribeImageQuota,
+    "DescribeChcDeniedActions": doDescribeChcDeniedActions,
     "DescribeAccountQuota": doDescribeAccountQuota,
     "ConfigureChcDeployVpc": doConfigureChcDeployVpc,
     "InquiryPriceResetInstancesType": doInquiryPriceResetInstancesType,
     "ProgramFpgaImage": doProgramFpgaImage,
     "CreateLaunchTemplateVersion": doCreateLaunchTemplateVersion,
+    "DescribeHostsInfos": doDescribeHostsInfos,
     "ExportImages": doExportImages,
     "RenewInstances": doRenewInstances,
     "ResetInstancesInternetMaxBandwidth": doResetInstancesInternetMaxBandwidth,

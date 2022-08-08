@@ -59,8 +59,8 @@
     "CreateWhiteBoxKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=CreateWhiteBoxKey\r\n&Alias=test_alias&Description=test_description&Algorithm=SM4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3691b76c-1ba5-4f93-88ad-858d23ba6c8a\",\n        \"EncryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"DecryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"KeyId\": \"3235f222-6e40-11ea-8f2f-5254006d0810\"\n    }\n}",
+        "input": "https://kms.tencentcloudapi.com/?Action=CreateWhiteBoxKey\n&Alias=test_alias\n&Description=test_description\n&Algorithm=SM4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3691b76c-1ba5-4f93-88ad-858d23ba6c8a\",\n        \"EncryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"DecryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"KeyId\": \"3235f222-6e40-11ea-8f2f-5254006d0810\",\n        \"TagMsg\": \"xx\",\n        \"TagCode\": 1\n    }\n}",
         "title": "创建白盒密钥"
       }
     ],
@@ -83,7 +83,7 @@
     "DeleteWhiteBoxKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DeleteWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=DeleteWhiteBoxKey\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "删除白盒密钥"
       }
@@ -113,7 +113,7 @@
     "DescribeWhiteBoxDecryptKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDecryptKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDecryptKey\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8788b5f3-8eaa-48a8-915a-b7c52f57065e\",\n        \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n    }\n}",
         "title": "获取白盒解密密钥"
       }
@@ -121,7 +121,7 @@
     "DescribeWhiteBoxDeviceFingerprints": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDeviceFingerprints\r\n&KeyId=cd850a3d-9b1b-11ea-a96a-5254006d0810\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDeviceFingerprints\n&KeyId=cd850a3d-9b1b-11ea-a96a-5254006d0810\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f643be96-3ea8-4abe-b148-0cc74436b2c1\",\n        \"DeviceFingerprints\": [\n            {\n                \"Identity\": \"c19c024c-2ba1-11b2-a85c-96f970f4a8e1\",\n                \"Description\": \"desc\"\n            }\n        ]\n    }\n}",
         "title": "获取指定密钥的设备指纹列表"
       }
@@ -129,23 +129,23 @@
     "DescribeWhiteBoxKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"395989ef-4e4a-4f16-856d-3bb5a86ba99c\",\n        \"KeyInfo\": {\n            \"KeyId\": \"244dab8c-6dad-11ea-80c6-5254006d0810\",\n            \"Alias\": \"xx\",\n            \"CreateTime\": 1585040099,\n            \"Description\": \"xx\",\n            \"CreatorUin\": 0,\n            \"OwnerUin\": 0,\n            \"Status\": \"Disabled\",\n            \"Algorithm\": \"SM4\",\n            \"EncryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n            \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n        }\n    }\n}",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKey\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"395989ef-4e4a-4f16-856d-3bb5a86ba99c\",\n        \"KeyInfo\": {\n            \"KeyId\": \"244dab8c-6dad-11ea-80c6-5254006d0810\",\n            \"Alias\": \"xx\",\n            \"CreateTime\": 1585040099,\n            \"Description\": \"xx\",\n            \"CreatorUin\": 0,\n            \"OwnerUin\": 0,\n            \"Status\": \"Disabled\",\n            \"Algorithm\": \"SM4\",\n            \"EncryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n            \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n            \"DeviceFingerprintBind\": true,\n            \"ResourceId\": \"xx\"\n        }\n    }\n}",
         "title": "展示白盒密钥的信息"
       }
     ],
     "DescribeWhiteBoxKeyDetails": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKeyDetails\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6308605-f9d7-4a69-9401-c542cd414e00\",\n        \"KeyInfos\": [\n            {\n                \"KeyId\": \"244dab8c-6dad-11ea-80c6-5254006d0810\",\n                \"Alias\": \"xx\",\n                \"CreateTime\": 1585040099,\n                \"Description\": \"xx\",\n                \"CreatorUin\": 0,\n                \"OwnerUin\": 0,\n                \"Status\": \"Disabled\",\n                \"Algorithm\": \"SM4\",\n                \"EncryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n                \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n            },\n            {\n                \"KeyId\": \"3d2de9cd-6daf-11ea-af24-5254006d0810\",\n                \"Alias\": \"xxx\",\n                \"CreateTime\": 1585041000,\n                \"Description\": \"xx\",\n                \"CreatorUin\": 0,\n                \"OwnerUin\": 0,\n                \"Status\": \"Enabled\",\n                \"Algorithm\": \"SM4\",\n                \"EncryptKey\": \"AAAAAE2+4Kz2XEgQkdJk2tZuDunuvGOrGd2lbD6tIZESi2sBNR/aTF2Bx/GWdl5sBNlfUKTIsrwxONNABo65mm6x1KmTUIZT/3aVVqK7PLINZ51g0t7i0gERdiimLxjVwQUstPLFqR2hrfcVR+TvheGskQgYJEpdQ1wthcOlm37SRjAvd6OdDx7gQtdutgf49SZ9YCVoYRf5phQDrKSc2WfxI96UwO2zoTCKD+aRB9u3hTzd7Z305kMJ6e+thcgUd+zzCy8KR/nAMeZ/8PKDsrQW/UsugZJLEBdrVk0vD0dQUCYGG7nSTjzS877+570H+WvyNfCCvzLvfu50PA7gLvyXLodppwqWJPOhqfPw9muoec9BD6vA1jxDnhlF6nb0GEh5V6QsAJUyVXzWMXJEce99u1DzeS4pRsc09/7GQ0HauJRz\",\n                \"DecryptKey\": \"AAAAAE2+4Kz2XEgQkdJk2tZuDunuvGOrGd2lbD6tIZESi2sBNR/aTF2Bx/GWdl5sBNlfUKTIsrwxONNABo65mm6x1KmTUIZT/3aVVqK7PLINZ51g0t7i0gERdiimLxjVwQUstPLFqR2hrfcVR+TvheGskQgYJEpdQ1wthcOlm37SRjAvd6OdDx7gQtdutgf49SZ9YCVoYRf5phQDrKSc2WfxI96UwO2zoTCKD+aRB9u3hTzd7Z305kMJ6e+thcgUd+zzCy8KR/nAMeZ/8PKDsrQW/UsugZJLEBdrVk0vD0dQUCYGG7nSTjzS877+570H+WvyNfCCvzLvfu50PA7gLvyXLodppwqWJPOhqfPw9muoec9BD6vA1jxDnhlF6nb0GEh5V6QsAJUyVXzWMXJEce99u1DzeS4pRsc09/7GQ0HauJRz\"\n            }\n        ]\n    }\n}",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKeyDetails\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyInfos\": [\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            },\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取白盒密钥列表"
       }
     ],
     "DescribeWhiteBoxServiceStatus": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxServiceStatus\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxServiceStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a5ab931-bb22-4d55-9042-e1ef1a36c941\",\n        \"ServiceEnabled\": true\n    }\n}",
         "title": "获取白盒密钥服务状态"
       }
@@ -177,7 +177,7 @@
     "DisableWhiteBoxKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DisableWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableWhiteBoxKey\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "禁用白盒密钥"
       }
@@ -185,7 +185,7 @@
     "DisableWhiteBoxKeys": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DisableWhiteBoxKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableWhiteBoxKeys\n<公共请求参数>\n\n{\n    \"KeyIds\": [\n        \"23e80852-1e38-11e9-b129-5cb9019b4b02\",\n        \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "批量禁用白盒密钥"
       }
@@ -217,7 +217,7 @@
     "EnableWhiteBoxKey": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKey\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "启用白盒密钥"
       }
@@ -225,7 +225,7 @@
     "EnableWhiteBoxKeys": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKeys\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "批量启用白盒密钥"
       }
@@ -241,7 +241,7 @@
     "EncryptByWhiteBox": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=EncryptByWhiteBox\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&PlainText=UGxhaW5UZXh0\r\n&<公共请求参数>",
+        "input": "https://kms.tencentcloudapi.com/?Action=EncryptByWhiteBox\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&PlainText=UGxhaW5UZXh0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b3be01e-117a-43f5-aa34-dd5034efe3dd\",\n        \"InitializationVector\": \"BQbVImt3p_xr8VQebZaXGQ==\",\n        \"CipherText\": \"ZKHH2la4DpwlkwjANQ5hgw==\"\n    }\n}",
         "title": "使用白盒密钥进行加密"
       }

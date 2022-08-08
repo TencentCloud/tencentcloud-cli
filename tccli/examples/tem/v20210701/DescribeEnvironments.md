@@ -1,6 +1,6 @@
-**Example 1: 获取租户环境列表**
+**Example 1: 获取环境列表**
 
-获取租户环境列表
+获取环境列表
 
 Input: 
 
@@ -16,7 +16,7 @@ Output:
                 {
                     "Status": 0,
                     "EnvironmentId": "xx",
-                    "ModifyDate": "xx",
+                    "Locked": 0,
                     "Description": "xx",
                     "EnvironmentName": "xx",
                     "Region": "xx",
@@ -24,6 +24,7 @@ Output:
                     "EnableTswTraceService": true,
                     "RunInstancesNum": 0,
                     "Vpc": "xx",
+                    "ModifyDate": "xx",
                     "SubnetId": "xx",
                     "ClusterStatus": "xx",
                     "Modifier": "xx",

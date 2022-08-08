@@ -24,6 +24,14 @@
         "title": "查询物联网卡片列表"
       }
     ],
+    "DescribeSms": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=DescribeSms\r\n&Iccid=898607B0011700966351\r\n&Msisdn=1064702726351\r\n&Sdkappid=1400057107\r\n&SmsType=1\r\n&BeginTime=1970-01-01\r\n&EndTime=2019-11-30\r\n&Offset=0&Limit=3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b74d269-cbb6-4d06-b2b0-0c6f0efe850a\",\n        \"Total\": 39,\n        \"List\": [\n            {\n                \"Iccid\": \"898607B0011700966351\",\n                \"Msisdn\": \"1064702726351\",\n                \"SdkAppid\": 1400057107,\n                \"Content\": \"haha\",\n                \"SmsType\": 1,\n                \"SendTime\": \"2018-11-12 16:04:55\",\n                \"ReportTime\": \"\",\n                \"Remark\": \"\",\n                \"Status\": 3\n            },\n            {\n                \"Iccid\": \"898607B0011700966351\",\n                \"Msisdn\": \"1064702726351\",\n                \"SdkAppid\": 1400057107,\n                \"Content\": \"haha\",\n                \"SmsType\": 1,\n                \"SendTime\": \"2018-11-12 15:58:32\",\n                \"ReportTime\": \"2018-11-14 15:58:32\",\n                \"Remark\": \"FAIL\",\n                \"Status\": 2\n            },\n            {\n                \"Iccid\": \"898607B0011700966351\",\n                \"Msisdn\": \"1064702726351\",\n                \"SdkAppid\": 1400057107,\n                \"Content\": \"haha\",\n                \"SmsType\": 1,\n                \"SendTime\": \"2018-11-12 15:58:25\",\n                \"ReportTime\": \"\",\n                \"Remark\": \"\",\n                \"Status\": 3\n            }\n        ]\n    }\n}",
+        "title": "查询短信列表"
+      }
+    ],
     "ModifyUserCardRemark": [
       {
         "document": "",

@@ -12,6 +12,12 @@
       "name": "删除拨测任务",
       "output": "DeleteProbeTaskResponse"
     },
+    "DescribeChartDetail": {
+      "document": "页面性能瀑布图，TCP连接图，饼图",
+      "input": "DescribeChartDetailRequest",
+      "name": "查询页面性能瀑布图，TCP连接图，饼图",
+      "output": "DescribeChartDetailResponse"
+    },
     "DescribeDetailedSingleProbeData": {
       "document": "根据时间范围、任务ID、运营商等条件查询单次拨测详情数据",
       "input": "DescribeDetailedSingleProbeDataRequest",
@@ -260,6 +266,321 @@
       ],
       "type": "object"
     },
+    "DescribeChartDetail": {
+      "document": "任务瀑布图、TCP建连图响应",
+      "members": [
+        {
+          "default": "",
+          "document": "索引值",
+          "example": "1",
+          "member": "uint64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sataMainID序列号",
+          "example": "12341",
+          "member": "uint64",
+          "name": "StatMainID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控时间",
+          "example": "\"2022-02-22 11:02:41\"",
+          "member": "string",
+          "name": "MonitorTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "URL地址",
+          "example": "\"https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superui/css/\"",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去除协议头后的 URL",
+          "example": "\"dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superui/css/ubase_93\"",
+          "member": "string",
+          "name": "VeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TCP序号",
+          "example": "3",
+          "member": "uint64",
+          "name": "TcpNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态码 STATUS_CODE",
+          "example": "2",
+          "member": "uint64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总体用时 s_time单位：秒",
+          "example": "0.25",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "阻塞时间 block_time，单位：秒",
+          "example": "0.23",
+          "member": "float",
+          "name": "BlockTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始时间 start_time，单位：秒",
+          "example": "0.12",
+          "member": "float",
+          "name": "StartTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "dns用时  dns_time，单位：秒",
+          "example": "0.16",
+          "member": "float",
+          "name": "DnsTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SSL时间  ssl_time，单位：秒",
+          "example": "0.12",
+          "member": "float",
+          "name": "SslTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求用时  req_time，单位：毫秒",
+          "example": "0.15",
+          "member": "float",
+          "name": "RequestTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载时间  receive_time\n当等于零并且状态码是200，返回“<0.001”  \n单位：秒",
+          "example": "0.17",
+          "member": "float",
+          "name": "DownloadTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载大小  s_size\n单位：KB",
+          "example": "0.18",
+          "member": "float",
+          "name": "DownloadSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标IP  server_ip",
+          "example": "\"222.35.78.33\"",
+          "member": "string",
+          "name": "TargetIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型 MIME_TYPE",
+          "example": "\"text/css\"",
+          "member": "string",
+          "name": "MimeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求方法 REQ_METHOD\nGET、POST等",
+          "example": "\"GET\"",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "http版本",
+          "example": "\"h2\"",
+          "member": "string",
+          "name": "HttpVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcpTime时间",
+          "example": "0.23",
+          "member": "float",
+          "name": "TcpTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ResponseTime时间",
+          "example": "0.34",
+          "member": "float",
+          "name": "ResponseTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeChartDetailRequest": {
+      "document": "DescribeChartDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询时间戳",
+          "example": "1645498961000",
+          "member": "uint64",
+          "name": "ProbeTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "task-rjdpau6y",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "AnalyzeTaskType_Browse",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询图表类型",
+          "example": "waterfall：瀑布图 tcp：TCP建连图 mimetype：类型饼图 domainpie：域名饼图",
+          "member": "string",
+          "name": "ChartType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "[\"移动\",\"电信\"]",
+          "member": "string",
+          "name": "Operators",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "[\"广西\"]",
+          "member": "string",
+          "name": "Districts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "[\"桂林市\"]",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChartDetailResponse": {
+      "document": "DescribeChartDetail返回参数结构体",
+      "members": [
+        {
+          "document": "饼图数据",
+          "example": "[]",
+          "member": "DescribeDomainPie",
+          "name": "PieDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "瀑布图，TCP连接图",
+          "example": "[]",
+          "member": "DescribeChartDetail",
+          "name": "ChartDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDetailedSingleProbeDataRequest": {
       "document": "DescribeDetailedSingleProbeData请求参数结构体",
       "members": [
@@ -427,6 +748,102 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeDomainPie": {
+      "document": "域名和类型饼图响应",
+      "members": [
+        {
+          "default": "",
+          "document": "Index索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Domain域名饼图",
+          "example": "dss0.bdstatic.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MimeType类型饼图",
+          "example": "text/plain",
+          "member": "string",
+          "name": "MimeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ElementNum元素数",
+          "example": "2.0",
+          "member": "float",
+          "name": "ElementNum",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ErrElementNum异常数",
+          "example": "3.0",
+          "member": "float",
+          "name": "ErrElementNum",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载字节",
+          "example": "0.21",
+          "member": "float",
+          "name": "BytesReceived",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "整体性能 总体耗时",
+          "example": "0.21",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元素可用性",
+          "example": "1.0",
+          "member": "float",
+          "name": "ElementUseable",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规范名字",
+          "example": "opencdnglobalv6",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeNodesRequest": {
       "document": "DescribeNodes请求参数结构体",

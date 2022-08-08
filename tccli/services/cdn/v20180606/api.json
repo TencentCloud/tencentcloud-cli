@@ -16090,7 +16090,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16099,7 +16100,8 @@
           "member": "ScdnWafConfig",
           "name": "Waf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16108,7 +16110,8 @@
           "member": "ScdnAclConfig",
           "name": "Acl",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16117,7 +16120,8 @@
           "member": "ScdnConfig",
           "name": "CC",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16126,7 +16130,8 @@
           "member": "ScdnDdosConfig",
           "name": "Ddos",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16135,7 +16140,8 @@
           "member": "ScdnBotConfig",
           "name": "Bot",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16150,7 +16156,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

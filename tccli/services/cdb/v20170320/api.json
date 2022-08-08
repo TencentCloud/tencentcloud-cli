@@ -10612,7 +10612,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10621,7 +10622,8 @@
           "member": "int64",
           "name": "ExpireDays",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10630,7 +10632,8 @@
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10639,7 +10642,8 @@
           "member": "string",
           "name": "BackupMethod",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10648,7 +10652,8 @@
           "member": "int64",
           "name": "BinlogExpireDays",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10657,16 +10662,18 @@
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off",
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效",
           "example": "off",
           "member": "string",
           "name": "EnableBackupPeriodSave",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10675,7 +10682,8 @@
           "member": "string",
           "name": "EnableBackupPeriodLongTermSave",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10684,7 +10692,8 @@
           "member": "int64",
           "name": "BackupPeriodSaveDays",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10693,7 +10702,8 @@
           "member": "string",
           "name": "BackupPeriodSaveInterval",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10702,7 +10712,8 @@
           "member": "int64",
           "name": "BackupPeriodSaveCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10711,7 +10722,8 @@
           "member": "string",
           "name": "StartBackupPeriodSaveDate",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

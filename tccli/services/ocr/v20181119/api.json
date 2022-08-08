@@ -25,7 +25,7 @@
       "output": "BankSlipOCRResponse"
     },
     "BizLicenseOCR": {
-      "document": "本接口支持快速精准识别营业执照上的字段，包括统一社会信用代码、公司名称、经营场所、主体类型、法定代表人、注册资金、组成形式、成立日期、营业期限和经营范围等字段。",
+      "document": "本接口支持快速精准识别营业执照上的字段，包括统一社会信用代码、公司名称、经营场所、主体类型、法定代表人、注册资金、组成形式、成立日期、营业期限和经营范围等字段。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BizLicenseOCRRequest",
       "name": "营业执照识别",
       "output": "BizLicenseOCRResponse"
@@ -55,7 +55,7 @@
       "output": "ClassifyDetectOCRResponse"
     },
     "DriverLicenseOCR": {
-      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。",
+      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
       "name": "驾驶证识别",
       "output": "DriverLicenseOCRResponse"
@@ -79,7 +79,7 @@
       "output": "EduPaperOCRResponse"
     },
     "EnglishOCR": {
-      "document": "本接口支持图像英文文字的检测和识别，返回文字框位置与文字内容。支持多场景、任意版面下的英文、字母、数字和常见字符的识别，同时覆盖英文印刷体和英文手写体识别。",
+      "document": "本接口支持图像英文文字的检测和识别，返回文字框位置与文字内容。支持多场景、任意版面下的英文、字母、数字和常见字符的识别，同时覆盖英文印刷体和英文手写体识别。\n\n默认接口请求频率限制：10次/秒。",
       "input": "EnglishOCRRequest",
       "name": "英文识别",
       "output": "EnglishOCRResponse"
@@ -229,7 +229,7 @@
       "output": "MixedInvoiceDetectResponse"
     },
     "MixedInvoiceOCR": {
-      "document": "本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。",
+      "document": "本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "MixedInvoiceOCRRequest",
       "name": "混贴票据识别",
       "output": "MixedInvoiceOCRResponse"
@@ -289,7 +289,7 @@
       "output": "RecognizeFinancialReportOCRResponse"
     },
     "RecognizeHealthCodeOCR": {
-      "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。",
+      "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeHealthCodeOCRRequest",
       "name": "健康码识别",
       "output": "RecognizeHealthCodeOCRResponse"
@@ -391,7 +391,7 @@
       "output": "ShipInvoiceOCRResponse"
     },
     "SmartStructuralOCR": {
-      "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。",
+      "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SmartStructuralOCRRequest",
       "name": "智能结构化识别",
       "output": "SmartStructuralOCRResponse"
@@ -427,7 +427,7 @@
       "output": "TrainTicketOCRResponse"
     },
     "VatInvoiceOCR": {
-      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子发票全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段。",
+      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子发票全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段。\n\n默认接口请求频率限制：10次/秒。",
       "input": "VatInvoiceOCRRequest",
       "name": "增值税发票识别",
       "output": "VatInvoiceOCRResponse"
@@ -451,7 +451,7 @@
       "output": "VatRollInvoiceOCRResponse"
     },
     "VehicleLicenseOCR": {
-      "document": "本接口支持行驶证主页和副页所有字段的自动定位与识别。\n\n行驶证主页：车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、识别代码、发动机号、注册日期、发证日期、发证单位。\n\n行驶证副页：号牌号码、档案编号、核定载人数、总质量、整备质量、核定载质量、外廓尺寸、准牵引总质量、备注、检验记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。",
+      "document": "本接口支持行驶证主页和副页所有字段的自动定位与识别。\n\n行驶证主页：车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、识别代码、发动机号、注册日期、发证日期、发证单位。\n\n行驶证副页：号牌号码、档案编号、核定载人数、总质量、整备质量、核定载质量、外廓尺寸、准牵引总质量、备注、检验记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。\n\n默认接口请求频率限制：10次/秒。",
       "input": "VehicleLicenseOCRRequest",
       "name": "行驶证识别",
       "output": "VehicleLicenseOCRResponse"
@@ -1680,7 +1680,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1689,7 +1690,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1698,7 +1700,8 @@
           "member": "string",
           "name": "CardSide",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1713,7 +1716,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "性别",
@@ -1722,7 +1726,8 @@
           "name": "Sex",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "国籍",
@@ -1731,7 +1736,8 @@
           "name": "Nationality",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "住址",
@@ -1740,7 +1746,8 @@
           "name": "Address",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "出生日期（YYYY-MM-DD）",
@@ -1749,7 +1756,8 @@
           "name": "DateOfBirth",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "初次领证日期（YYYY-MM-DD）",
@@ -1758,7 +1766,8 @@
           "name": "DateOfFirstIssue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "准驾车型",
@@ -1767,7 +1776,8 @@
           "name": "Class",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "有效期开始时间（YYYY-MM-DD）",
@@ -1776,7 +1786,8 @@
           "name": "StartDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "有效期截止时间（YYYY-MM-DD）",
@@ -1785,7 +1796,8 @@
           "name": "EndDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "证号",
@@ -1794,7 +1806,8 @@
           "name": "CardCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "档案编号",
@@ -1803,7 +1816,8 @@
           "name": "ArchivesCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "记录",
@@ -1812,7 +1826,8 @@
           "name": "Record",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "Code 告警码列表和释义：\n-9102  复印件告警\n-9103  翻拍件告警\n-9106  ps告警\n注：告警码可以同时存在多个",
@@ -1821,7 +1836,8 @@
           "name": "RecognizeWarnCode",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "告警码说明：\nWARN_DRIVER_LICENSE_COPY_CARD 复印件告警\nWARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警\nWARN_DRIVER_LICENSE_PS_CARD ps告警\n注：告警信息可以同时存在多个",
@@ -1830,7 +1846,8 @@
           "name": "RecognizeWarnMsg",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发证单位",
@@ -1839,7 +1856,8 @@
           "name": "IssuingAuthority",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "状态（仅电子驾驶证支持返回该字段）",
@@ -1848,7 +1866,8 @@
           "name": "State",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "累积记分（仅电子驾驶证支持返回该字段）",
@@ -1857,7 +1876,8 @@
           "name": "CumulativeScore",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2181,7 +2201,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2190,7 +2211,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2199,7 +2221,8 @@
           "member": "bool",
           "name": "EnableCoordPoint",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2208,7 +2231,8 @@
           "member": "bool",
           "name": "EnableCandWord",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2217,7 +2241,8 @@
           "member": "bool",
           "name": "Preprocess",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2232,7 +2257,8 @@
           "name": "TextDetections",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
@@ -2241,7 +2267,8 @@
           "name": "Angel",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10854,7 +10881,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10863,7 +10891,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10872,7 +10901,8 @@
           "member": "bool",
           "name": "IsPdf",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10881,7 +10911,8 @@
           "member": "uint64",
           "name": "PdfPageNumber",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10896,7 +10927,8 @@
           "name": "VatInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "明细条目。VatInvoiceInfos中关于明细项的具体条目。",
@@ -10905,7 +10937,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "默认值为0。如果图片为PDF时，返回PDF的总页数。",
@@ -10914,7 +10947,8 @@
           "name": "PdfPageSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
@@ -10923,7 +10957,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

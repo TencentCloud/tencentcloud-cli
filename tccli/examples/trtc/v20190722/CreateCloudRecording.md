@@ -14,12 +14,7 @@ Input:
 
 ```
 tccli trtc CreateCloudRecording --cli-unfold-argument  \
-    --StorageParams.CloudStorage.Vendor 0 \
-    --StorageParams.CloudStorage.Region xx \
-    --StorageParams.CloudStorage.Bucket xx \
-    --StorageParams.CloudStorage.FileNamePrefix directory1 directory2 \
-    --StorageParams.CloudStorage.SecretKey xx \
-    --StorageParams.CloudStorage.AccessKey xx \
+    --StorageParams.CloudVod.TencentVod.ExpireTime 0 \
     --UserSig xx \
     --UserId xx \
     --RecordParams.MaxIdleTime 60 \

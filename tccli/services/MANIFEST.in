@@ -23,6 +23,8 @@ include tccli/services/api/v20201106/api.json
 include tccli/services/api/v20201106/examples.json
 include tccli/services/apigateway/v20180808/api.json
 include tccli/services/apigateway/v20180808/examples.json
+include tccli/services/apm/v20210622/api.json
+include tccli/services/apm/v20210622/examples.json
 include tccli/services/autoscaling/v20180419/api.json
 include tccli/services/autoscaling/v20180419/examples.json
 include tccli/services/asr/v20190614/api.json

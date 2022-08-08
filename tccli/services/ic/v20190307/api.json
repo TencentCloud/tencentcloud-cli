@@ -18,6 +18,12 @@
       "name": "查询卡片列表",
       "output": "DescribeCardsResponse"
     },
+    "DescribeSms": {
+      "document": "查询短信列表",
+      "input": "DescribeSmsRequest",
+      "name": "查询短信列表",
+      "output": "DescribeSmsResponse"
+    },
     "ModifyUserCardRemark": {
       "document": "编辑卡片备注",
       "input": "ModifyUserCardRemarkRequest",
@@ -575,6 +581,102 @@
       ],
       "type": "object"
     },
+    "DescribeSmsRequest": {
+      "document": "DescribeSms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "int64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "卡片ID",
+          "member": "string",
+          "name": "Iccid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "卡片号码",
+          "member": "string",
+          "name": "Msisdn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信类型",
+          "member": "int64",
+          "name": "SmsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间  YYYY-MM-DD HH:mm:ss",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间  YYYY-MM-DD HH:mm:ss",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "小于200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsResponse": {
+      "document": "DescribeSms返回参数结构体",
+      "members": [
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "短信列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ResSms",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserCardRemarkRequest": {
       "document": "ModifyUserCardRemark请求参数结构体",
       "members": [
@@ -684,6 +786,93 @@
           "name": "OrderIds",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResSms": {
+      "document": "查询短信列表",
+      "members": [
+        {
+          "default": "",
+          "document": "卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "卡片号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Msisdn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SdkAppid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "短信内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "短信类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SmsType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SendTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReportTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SUCC：成功  FAIL 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回执状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

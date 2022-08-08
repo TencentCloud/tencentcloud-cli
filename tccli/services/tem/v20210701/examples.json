@@ -40,6 +40,14 @@
         "title": "创建环境"
       }
     ],
+    "CreateLogConfig": [
+      {
+        "document": "创建日志收集配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"xx\",\n    \"BeginningRegex\": \"xx\",\n    \"Name\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"LogPath\": \"xx\",\n    \"InputType\": \"xx\",\n    \"LogType\": \"xx\",\n    \"FilePattern\": \"xx\",\n    \"ApplicationId\": \"xx\",\n    \"LogsetId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "创建日志收集配置"
+      }
+    ],
     "CreateResource": [
       {
         "document": "绑定云资源",
@@ -130,7 +138,7 @@
       {
         "document": "查询配置详情",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"RelatedApplications\": [\n                {\n                    \"ApplicationName\": \"xx\",\n                    \"EnvironmentId\": \"xx\",\n                    \"ModifyDate\": \"2020-09-22 00:00:00\",\n                    \"Description\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"InstanceId\": \"xx\",\n                    \"CreateDate\": \"2020-09-22 00:00:00\",\n                    \"ActiveVersions\": [\n                        {\n                            \"Status\": \"xx\",\n                            \"CurrentInstances\": 0,\n                            \"LogOutputConf\": {\n                                \"ClsLogTopicId\": \"xx\",\n                                \"ClsLogsetName\": \"xx\",\n                                \"ClsLogsetId\": \"xx\",\n                                \"ClsLogTopicName\": \"xx\",\n                                \"OutputType\": \"xx\"\n                            },\n                            \"EnableEs\": 0,\n                            \"EnvironmentId\": \"xx\",\n                            \"BuildTaskId\": \"xx\",\n                            \"DeployMode\": \"xx\",\n                            \"VersionId\": \"xx\",\n                            \"VersionName\": \"xx\",\n                            \"ExpectedInstances\": 0,\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\",\n                            \"ApplicationName\": \"xx\"\n                        }\n                    ],\n                    \"DeployMode\": \"xx\",\n                    \"RepoType\": 0,\n                    \"RepoName\": \"xx\",\n                    \"CodingLanguage\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"ApplicationId\": \"xx\",\n                    \"EnvironmentName\": \"xx\"\n                }\n            ],\n            \"Data\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Name\": \"xx\",\n            \"CreateTime\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"RelatedApplications\": [\n                {\n                    \"ApplicationName\": \"xx\",\n                    \"EnvironmentId\": \"xx\",\n                    \"ModifyDate\": \"2020-09-22 00:00:00\",\n                    \"Description\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"InstanceId\": \"xx\",\n                    \"CreateDate\": \"2020-09-22 00:00:00\",\n                    \"ActiveVersions\": [\n                        {\n                            \"Status\": \"xx\",\n                            \"CurrentInstances\": 0,\n                            \"LogOutputConf\": {\n                                \"ClsLogTopicId\": \"xx\",\n                                \"ClsLogsetName\": \"xx\",\n                                \"ClsLogsetId\": \"xx\",\n                                \"ClsLogTopicName\": \"xx\",\n                                \"OutputType\": \"xx\"\n                            },\n                            \"EnableEs\": 0,\n                            \"EnvironmentId\": \"xx\",\n                            \"BuildTaskId\": \"xx\",\n                            \"DeployMode\": \"xx\",\n                            \"VersionId\": \"xx\",\n                            \"UnderDeploying\": true,\n                            \"VersionName\": \"xx\",\n                            \"ExpectedInstances\": 0,\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\",\n                            \"ApplicationName\": \"xx\"\n                        }\n                    ],\n                    \"DeployMode\": \"xx\",\n                    \"RepoType\": 0,\n                    \"RepoName\": \"xx\",\n                    \"EnableTracing\": 1,\n                    \"CodingLanguage\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"ApplicationId\": \"xx\",\n                    \"EnvironmentName\": \"xx\"\n                }\n            ],\n            \"Data\": [\n                {\n                    \"Config\": \"xx\",\n                    \"Secret\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Name\": \"xx\",\n            \"CreateTime\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询配置详情"
       }
     ],
@@ -138,7 +146,7 @@
       {
         "document": "查询配置列表",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigDataList\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ContinueToken\": \"xx\",\n    \"Limit\": 0,\n    \"SourceChannel\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"RelatedApplications\": [\n                        {\n                            \"ApplicationName\": \"xx\",\n                            \"EnvironmentId\": \"xx\",\n                            \"ModifyDate\": \"2020-09-22 00:00:00\",\n                            \"Description\": \"xx\",\n                            \"Creator\": \"xx\",\n                            \"InstanceId\": \"xx\",\n                            \"CreateDate\": \"2020-09-22 00:00:00\",\n                            \"ActiveVersions\": [\n                                {\n                                    \"Status\": \"xx\",\n                                    \"CurrentInstances\": 0,\n                                    \"LogOutputConf\": {\n                                        \"ClsLogTopicId\": \"xx\",\n                                        \"ClsLogsetName\": \"xx\",\n                                        \"ClsLogsetId\": \"xx\",\n                                        \"ClsLogTopicName\": \"xx\",\n                                        \"OutputType\": \"xx\"\n                                    },\n                                    \"EnableEs\": 0,\n                                    \"EnvironmentId\": \"xx\",\n                                    \"BuildTaskId\": \"xx\",\n                                    \"DeployMode\": \"xx\",\n                                    \"VersionId\": \"xx\",\n                                    \"VersionName\": \"xx\",\n                                    \"ExpectedInstances\": 0,\n                                    \"ApplicationId\": \"xx\",\n                                    \"EnvironmentName\": \"xx\",\n                                    \"ApplicationName\": \"xx\"\n                                }\n                            ],\n                            \"DeployMode\": \"xx\",\n                            \"RepoType\": 0,\n                            \"RepoName\": \"xx\",\n                            \"CodingLanguage\": \"xx\",\n                            \"Modifier\": \"xx\",\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\"\n                        }\n                    ],\n                    \"Data\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ],\n                    \"Name\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"RemainingCount\": 0,\n            \"ContinueToken\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"RelatedApplications\": [\n                        {\n                            \"ApplicationName\": \"xx\",\n                            \"EnvironmentId\": \"xx\",\n                            \"ModifyDate\": \"2020-09-22 00:00:00\",\n                            \"Description\": \"xx\",\n                            \"Creator\": \"xx\",\n                            \"InstanceId\": \"xx\",\n                            \"CreateDate\": \"2020-09-22 00:00:00\",\n                            \"ActiveVersions\": [\n                                {\n                                    \"Status\": \"xx\",\n                                    \"CurrentInstances\": 0,\n                                    \"LogOutputConf\": {\n                                        \"ClsLogTopicId\": \"xx\",\n                                        \"ClsLogsetName\": \"xx\",\n                                        \"ClsLogsetId\": \"xx\",\n                                        \"ClsLogTopicName\": \"xx\",\n                                        \"OutputType\": \"xx\"\n                                    },\n                                    \"EnableEs\": 0,\n                                    \"EnvironmentId\": \"xx\",\n                                    \"BuildTaskId\": \"xx\",\n                                    \"DeployMode\": \"xx\",\n                                    \"VersionId\": \"xx\",\n                                    \"UnderDeploying\": true,\n                                    \"VersionName\": \"xx\",\n                                    \"ExpectedInstances\": 0,\n                                    \"ApplicationId\": \"xx\",\n                                    \"EnvironmentName\": \"xx\",\n                                    \"ApplicationName\": \"xx\"\n                                }\n                            ],\n                            \"DeployMode\": \"xx\",\n                            \"RepoType\": 0,\n                            \"RepoName\": \"xx\",\n                            \"EnableTracing\": 1,\n                            \"CodingLanguage\": \"xx\",\n                            \"Modifier\": \"xx\",\n                            \"ApplicationId\": \"xx\",\n                            \"EnvironmentName\": \"xx\"\n                        }\n                    ],\n                    \"Data\": [\n                        {\n                            \"Config\": \"xx\",\n                            \"Secret\": \"xx\",\n                            \"Type\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ],\n                    \"Name\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"RemainingCount\": 0,\n            \"ContinueToken\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询配置列表"
       }
     ],
@@ -160,10 +168,10 @@
     ],
     "DescribeEnvironments": [
       {
-        "document": "获取租户环境列表",
+        "document": "获取环境列表",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"Status\": 0,\n                    \"EnvironmentId\": \"xx\",\n                    \"ModifyDate\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"EnvironmentName\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"EnableTswTraceService\": true,\n                    \"RunInstancesNum\": 0,\n                    \"Vpc\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ClusterStatus\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"ApplicationNum\": 0,\n                    \"CreateDate\": \"xx\",\n                    \"Channel\": \"xx\"\n                }\n            ],\n            \"Total\": 0,\n            \"Pages\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取租户环境列表"
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"Status\": 0,\n                    \"EnvironmentId\": \"xx\",\n                    \"Locked\": 0,\n                    \"Description\": \"xx\",\n                    \"EnvironmentName\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"EnableTswTraceService\": true,\n                    \"RunInstancesNum\": 0,\n                    \"Vpc\": \"xx\",\n                    \"ModifyDate\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ClusterStatus\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"ApplicationNum\": 0,\n                    \"CreateDate\": \"xx\",\n                    \"Channel\": \"xx\"\n                }\n            ],\n            \"Total\": 0,\n            \"Pages\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取环境列表"
       }
     ],
     "DescribeIngress": [
@@ -182,6 +190,22 @@
         "title": "查询 Ingress 规则列表"
       }
     ],
+    "DescribeLogConfig": [
+      {
+        "document": "查询日志收集配置详情",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogConfig\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApplicationName\": \"xx\",\n            \"TopicId\": \"xx\",\n            \"BeginningRegex\": \"xx\",\n            \"Name\": \"xx\",\n            \"CreateDate\": \"xx\",\n            \"LogPath\": \"xx\",\n            \"InputType\": \"xx\",\n            \"LogType\": \"xx\",\n            \"FilePattern\": \"xx\",\n            \"ModifyDate\": \"xx\",\n            \"ApplicationId\": \"xx\",\n            \"LogsetId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询日志收集配置详情"
+      }
+    ],
+    "DescribePagedLogConfigList": [
+      {
+        "document": "查询分页的日志收集配置列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePagedLogConfigList\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"ApplicationId\": \"xx\",\n                    \"ApplicationName\": \"xx\",\n                    \"TopicId\": \"xx\",\n                    \"BeginningRegex\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"CreateDate\": \"xx\",\n                    \"LogPath\": \"xx\",\n                    \"InputType\": \"container_stdout\",\n                    \"LogType\": \"xx\",\n                    \"FilePattern\": \"xx\",\n                    \"ModifyDate\": \"xx\",\n                    \"LogsetId\": \"xx\"\n                }\n            ],\n            \"ContinueToken\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询分页的日志收集配置列表"
+      }
+    ],
     "DescribeRelatedIngresses": [
       {
         "document": "查询应用关联的 Ingress 规则列表",
@@ -195,15 +219,23 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyConfigData\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\",\n    \"SourceChannel\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
-        "title": "销毁命名空间"
+        "title": "销毁配置"
       }
     ],
     "DestroyEnvironment": [
       {
-        "document": "",
+        "document": "销毁环境",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"SourceChannel\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
-        "title": "销毁命名空间"
+        "title": "销毁环境"
+      }
+    ],
+    "DestroyLogConfig": [
+      {
+        "document": "销毁日志收集配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyLogConfig\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "销毁日志收集配置"
       }
     ],
     "GenerateApplicationPackageDownloadUrl": [
@@ -260,6 +292,14 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIngress\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Ingress\": {\n        \"Tls\": [\n            {\n                \"CertificateId\": \"xx\",\n                \"Hosts\": [\n                    \"xxx.com\"\n                ],\n                \"SecretName\": \"xx\"\n            }\n        ],\n        \"EnvironmentId\": \"xx\",\n        \"ClusterNamespace\": \"xx\",\n        \"Rules\": [\n            {\n                \"Protocol\": \"xx\",\n                \"Host\": \"xx\",\n                \"Http\": {\n                    \"Paths\": [\n                        {\n                            \"Path\": \"xx\",\n                            \"Backend\": {\n                                \"ServiceName\": \"xx\",\n                                \"ServicePort\": 443\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"ClbId\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"IngressName\": \"xx\",\n        \"Vip\": \"xx\",\n        \"Mixed\": true,\n        \"AddressIPVersion\": \"xx\",\n        \"CreateTime\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
         "title": "创建或者更新 Ingress 规则"
+      }
+    ],
+    "ModifyLogConfig": [
+      {
+        "document": "编辑日志收集配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogConfig\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Data\": {\n        \"TopicId\": \"xx\",\n        \"BeginningRegex\": \"xx\",\n        \"Name\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"LogPath\": \"xx\",\n        \"InputType\": \"xx\",\n        \"LogType\": \"xx\",\n        \"FilePattern\": \"xx\",\n        \"ModifyDate\": \"xx\",\n        \"LogsetId\": \"xx\"\n    },\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "编辑日志收集配置"
       }
     ],
     "RestartApplication": [
