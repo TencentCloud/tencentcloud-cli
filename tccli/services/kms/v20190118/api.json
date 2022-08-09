@@ -737,6 +737,7 @@
         {
           "default": "",
           "document": "作为密钥更容易辨识，更容易被人看懂的别名， 不可为空，1-60个字母数字 - _ 的组合，首字符必须为字母或者数字。Alias不可重复。",
+          "example": "test_alias",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -745,6 +746,7 @@
         {
           "default": "",
           "document": "创建密钥所有的算法类型，支持的取值：AES_256,SM4",
+          "example": "SM4",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -753,6 +755,7 @@
         {
           "default": "",
           "document": "密钥的描述，最大1024字节",
+          "example": "test_description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -761,6 +764,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -774,36 +778,46 @@
       "members": [
         {
           "document": "用于加密的密钥，base64编码",
+          "example": "无",
           "member": "string",
           "name": "EncryptKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用于解密的密钥，base64编码",
+          "example": "无",
           "member": "string",
           "name": "DecryptKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "白盒密钥的全局唯一标识符",
+          "example": "无",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TagCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -921,6 +935,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1019,6 +1034,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1032,8 +1048,10 @@
       "members": [
         {
           "document": "白盒解密密钥，base64编码",
+          "example": "无",
           "member": "string",
           "name": "DecryptKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1052,6 +1070,7 @@
         {
           "default": "",
           "document": "白盒密钥ID",
+          "example": "cd850a3d-9b1b-11ea-a96a-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1065,8 +1084,10 @@
       "members": [
         {
           "document": "设备指纹列表",
+          "example": "无",
           "member": "DeviceFingerprint",
           "name": "DeviceFingerprints",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1085,6 +1106,7 @@
         {
           "default": "",
           "document": "过滤条件：密钥的状态，0：disabled，1：enabled",
+          "example": "无",
           "member": "int64",
           "name": "KeyStatus",
           "required": false,
@@ -1093,6 +1115,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1101,6 +1124,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为0, 表示不分页",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1109,6 +1133,7 @@
         {
           "default": "",
           "document": "标签过滤条件",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -1122,15 +1147,19 @@
       "members": [
         {
           "document": "白盒密钥信息列表",
+          "example": "无",
           "member": "WhiteboxKeyInfo",
           "name": "KeyInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "key总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1149,6 +1178,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1162,8 +1192,10 @@
       "members": [
         {
           "document": "白盒密钥信息",
+          "example": "无",
           "member": "WhiteboxKeyInfo",
           "name": "KeyInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1186,8 +1218,10 @@
       "members": [
         {
           "document": "用户的白盒密钥服务是否可用",
+          "example": "1",
           "member": "bool",
           "name": "ServiceEnabled",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1311,6 +1345,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1337,6 +1372,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -1444,6 +1480,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1470,6 +1507,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符列表。注意：要确保所有提供的KeyId是格式有效的，没有重复，个数不超过50个，并且都是有效存在的。",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -1496,6 +1534,7 @@
         {
           "default": "",
           "document": "白盒密钥的全局唯一标识符",
+          "example": "244dab8c-6dad-11ea-80c6-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1504,6 +1543,7 @@
         {
           "default": "",
           "document": "待加密的文本， base64编码，文本的原始长度最大不超过4KB",
+          "example": "UGxhaW5UZXh0",
           "member": "string",
           "name": "PlainText",
           "required": true,
@@ -1512,6 +1552,7 @@
         {
           "default": "",
           "document": "初始化向量，大小为 16 Bytes，加密算法会使用到, base64编码；如果不传，则由后端服务随机生成。用户需要自行保存该值，作为解密的参数。",
+          "example": "无",
           "member": "string",
           "name": "InitializationVector",
           "required": false,
@@ -1525,15 +1566,19 @@
       "members": [
         {
           "document": "初始化向量，加密算法会使用到, base64编码。如果由调用方在入参中传入，则原样返回。如果调用方没有传入，则后端服务随机生成，并返回",
+          "example": "BQbVImt3p_xr8VQebZaXGQ==",
           "member": "string",
           "name": "InitializationVector",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "加密后的密文，base64编码",
+          "example": "ZKHH2la4DpwlkwjANQ5hgw==",
           "member": "string",
           "name": "CipherText",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2513,6 +2558,7 @@
         {
           "default": "",
           "document": "白盒密钥ID",
+          "example": "cd850a3d-9b1b-11ea-a96a-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2521,6 +2567,7 @@
         {
           "default": "",
           "document": "设备指纹列表，如果列表为空，则表示删除该密钥对应的所有指纹信息。列表最大长度不超过200。",
+          "example": "无",
           "member": "DeviceFingerprint",
           "name": "DeviceFingerprints",
           "required": false,

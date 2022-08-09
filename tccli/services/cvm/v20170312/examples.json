@@ -134,6 +134,14 @@
         "title": "查询用户概览数据"
       }
     ],
+    "DescribeChcDeniedActions": [
+      {
+        "document": "查询CHC物理服务器禁止做的操作",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeChcDeniedActions\n&ChcIds.0=chc-1a2b3c4d\n&ChcIds.1=chc-adf34aft\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ChcHostDeniedActionSet\": [\n            {\n                \"ChcId\": \"chc-1a2b3c4d\",\n                \"DenyActions\": [\n                    \"ConfigureChcAssistVpc\",\n                    \"RunInstances\"\n                ],\n                \"State\": \"INIT\"\n            },\n            {\n                \"ChcId\": \"chc-adf34aft\",\n                \"DenyActions\": [\n                    \"ConfigureChcAssistVpc\",\n                    \"RunInstances\"\n                ],\n                \"State\": \"INIT\"\n            }\n        ],\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "title": "查询CHC物理服务器禁止做的操作"
+      }
+    ],
     "DescribeChcHosts": [
       {
         "document": "根据CHC物理服务器ID查看实例",

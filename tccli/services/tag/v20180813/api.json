@@ -42,6 +42,12 @@
       "name": "批量删除标签",
       "output": "DeleteTagsResponse"
     },
+    "DescribeProjects": {
+      "document": "获取项目列表",
+      "input": "DescribeProjectsRequest",
+      "name": "获取项目列表",
+      "output": "DescribeProjectsResponse"
+    },
     "DescribeResourceTags": {
       "document": "查询资源关联标签",
       "input": "DescribeResourceTagsRequest",
@@ -438,6 +444,69 @@
     "DeleteTagsResponse": {
       "document": "DeleteTags返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传1拉取所有项目（包括隐藏项目），不传或传0拉取显示项目",
+          "example": "1",
+          "member": "uint64",
+          "name": "AllList",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页条数，固定值1000。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "document": "数据总条数",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目列表",
+          "example": "无",
+          "member": "Project",
+          "name": "Projects",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1992,6 +2061,62 @@
         }
       ],
       "type": "object"
+    },
+    "Project": {
+      "document": "项目信息",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "project_1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建人uin",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目描述",
+          "example": "info",
+          "member": "string",
+          "name": "ProjectInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-08-03 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResourceIdTag": {
       "document": "资源标签键值",

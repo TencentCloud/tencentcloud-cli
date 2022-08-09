@@ -472,6 +472,14 @@
         "title": "消息查询"
       }
     ],
+    "FetchMessageListByOffset": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchMessageListByOffset\n&InstanceId=xxx\n&Topic=xxx\n&Partition=1\n&Offset=1\n&SinglePartitionRecordNumber=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Topic\": \"xxx\",\n                \"Partition\": 2,\n                \"Offset\": 1,\n                \"Key\": \"xxx\",\n                \"Value\": \"xxx\",\n                \"Timestamp\": 1\n            },\n            {\n                \"Topic\": \"xxx\",\n                \"Partition\": 2,\n                \"Offset\": 2,\n                \"Key\": \"xxx\",\n                \"Value\": \"xxx\",\n                \"Timestamp\": 1\n            }\n        ],\n        \"RequestId\": \"62d589e0-53d5-47e0-95ff-237c48b8fb77\"\n    }\n}",
+        "title": "根据offset查询消息"
+      }
+    ],
     "ModifyConnectResource": [
       {
         "document": "",

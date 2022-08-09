@@ -56,6 +56,14 @@
         "title": "删除标签"
       }
     ],
+    "DescribeProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"500\",\n    \"AllList\": \"0\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Projects\": [\n            {\n                \"ProjectId\": 1024701,\n                \"ProjectName\": \"test1\",\n                \"CreatorUin\": 100000548134,\n                \"ProjectInfo\": \"\",\n                \"CreateTime\": \"2021-10-13 11:03:30\"\n            }\n        ],\n        \"RequestId\": \"d75bbc07-f5bd-4020-b4bd-f877e9ccd1db\"\n    }\n}",
+        "title": "获取项目列表"
+      }
+    ],
     "DescribeResourceTags": [
       {
         "document": "",

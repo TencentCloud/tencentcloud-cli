@@ -12,6 +12,12 @@
       "name": "电子签渠道版-根据签署流程id创建批量撤回url",
       "output": "ChannelCreateBatchCancelFlowUrlResponse"
     },
+    "ChannelCreateConvertTaskApi": {
+      "document": "渠道创建文件转换任务",
+      "input": "ChannelCreateConvertTaskApiRequest",
+      "name": "渠道创建文件转换任务",
+      "output": "ChannelCreateConvertTaskApiResponse"
+    },
     "ChannelCreateFlowByFiles": {
       "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建签署流程。此接口不可直接使用，需要运营申请",
       "input": "ChannelCreateFlowByFilesRequest",
@@ -24,6 +30,12 @@
       "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse"
     },
+    "ChannelGetTaskResultApi": {
+      "document": "渠道版查询转换任务状态",
+      "input": "ChannelGetTaskResultApiRequest",
+      "name": "渠道版查询转换任务状态",
+      "output": "ChannelGetTaskResultApiResponse"
+    },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
       "input": "CreateConsoleLoginUrlRequest",
@@ -31,7 +43,7 @@
       "output": "CreateConsoleLoginUrlResponse"
     },
     "CreateFlowsByTemplates": {
-      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建签署流程。当前可批量发起合同（签署流程）数量最大为20个。",
+      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建签署流程。当前可批量发起合同（签署流程）数量最大为20个。\n",
       "input": "CreateFlowsByTemplatesRequest",
       "name": "使用多个模板批量创建签署流程",
       "output": "CreateFlowsByTemplatesResponse"
@@ -377,6 +389,87 @@
       ],
       "type": "object"
     },
+    "ChannelCreateConvertTaskApiRequest": {
+      "document": "ChannelCreateConvertTaskApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型 取值范围doc,docx,html之一",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateConvertTaskApiResponse": {
+      "document": "ChannelCreateConvertTaskApi返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateFlowByFilesRequest": {
       "document": "ChannelCreateFlowByFiles请求参数结构体",
       "members": [
@@ -638,8 +731,98 @@
       ],
       "type": "object"
     },
+    "ChannelGetTaskResultApiRequest": {
+      "document": "ChannelGetTaskResultApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelGetTaskResultApiResponse": {
+      "document": "ChannelGetTaskResultApi返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "TaskMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Component": {
-      "document": "此结构体 (Component) 用于描述控件属性。",
+      "document": "此结构体 (Component) 用于描述控件属性。\n",
       "members": [
         {
           "default": "",
@@ -653,7 +836,7 @@
         },
         {
           "default": "",
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nDATE - 普通日期控件；跟TEXT相比会有校验逻辑\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件；\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\n\n表单域的控件不能作为印章和签名控件",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -763,7 +946,7 @@
         },
         {
           "default": "",
-          "document": "印章 ID，传参 DEFAULT_COMPANY_SEAL 表示使用默认印章。\n控件填入内容，印章控件里面，如果是手写签名内容为PNG图片格式的base64编码",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
           "example": "ComponentValue",
           "member": "string",
           "name": "ComponentValue",
@@ -1976,7 +2159,7 @@
       "usage": "out"
     },
     "FlowInfo": {
-      "document": "此结构体 (FlowInfo) 用于描述签署流程信息。",
+      "document": "此结构体 (FlowInfo) 用于描述签署流程信息。\n\n【动态表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充动态表格（支持内容的单元格合并）\n输入示例\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n",
       "members": [
         {
           "default": "",
@@ -2118,11 +2301,11 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "此结构 (FormField) 用于描述内容控件填充结构。",
+      "document": "此结构 (FormField) 用于描述内容控件填充结构。\n",
       "members": [
         {
           "default": "",
-          "document": "表单域或控件的Value",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
           "example": "name",
           "member": "string",
           "name": "ComponentValue",
@@ -2332,6 +2515,62 @@
         }
       ],
       "type": "object"
+    },
+    "OrganizationInfo": {
+      "document": "机构信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在渠道的机构编号",
+          "example": "OrganizationOpenId",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户真实的IP",
+          "example": "ClientIp",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构的代理IP",
+          "example": "ProxyIp",
+          "member": "string",
+          "name": "ProxyIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构在平台的编号",
+          "example": "OrganizationId",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户渠道",
+          "example": "Channel",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrepareFlowsRequest": {
       "document": "PrepareFlows请求参数结构体",

@@ -421,6 +421,7 @@
         {
           "default": "",
           "document": "人员ID",
+          "example": "person1",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -429,7 +430,8 @@
         },
         {
           "default": "",
-          "document": "人脸ID",
+          "document": "人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义",
+          "example": "3820314501007076807",
           "member": "string",
           "name": "FaceId",
           "required": true,
@@ -439,6 +441,7 @@
         {
           "default": "",
           "document": "候选者的匹配得分。 \n\n1万大小人脸底库下，误识率百分之一对应分数为70分，误识率千分之一对应分数为80分，误识率万分之一对应分数为90分；\n10万大小人脸底库下，误识率百分之一对应分数为80分，误识率千分之一对应分数为90分，误识率万分之一对应分数为100分；\n30万大小人脸底库下，误识率百分之一对应分数为85分，误识率千分之一对应分数为95分。\n\n一般80分左右可适用大部分场景，建议分数不要超过90分。您可以根据实际情况选择合适的分数。",
+          "example": "50",
           "member": "float",
           "name": "Score",
           "required": true,
@@ -448,6 +451,7 @@
         {
           "default": "",
           "document": "人员名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
           "member": "string",
           "name": "PersonName",
           "required": true,
@@ -457,6 +461,7 @@
         {
           "default": "",
           "document": "人员性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Gender",
           "required": true,
@@ -466,6 +471,7 @@
         {
           "default": "",
           "document": "包含此人员的人员库及描述字段内容列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PersonGroupInfo",
           "name": "PersonGroupInfos",
           "required": true,
@@ -3486,7 +3492,7 @@
         },
         {
           "default": "",
-          "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNum为5，则最多可能返回3*5=15个人员。",
+          "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNumPerGroup为5，GroupIds长度为3，则最多可能返回3*5*3=45个人员。",
           "example": "5",
           "member": "uint64",
           "name": "MaxPersonNumPerGroup",

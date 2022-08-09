@@ -432,6 +432,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveDomainCertBindings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveDomainCertBindings\n<公共请求参数>\n\n{\n    \"DomainSearch\": \"\",\n    \"DomainName\": \"abc.com\",\n    \"Offset\": 0,\n    \"Length\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b4a072b-9f74-4baa-9200-1e0858baa7a5\",\n        \"LiveDomainCertBindings\": [],\n        \"TotalNum\": 0\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveDomainPlayInfoList": [
       {
         "document": "",
@@ -821,6 +829,14 @@
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveCallbackTemplate\n&TemplateId=1000\n&TemplateName=testName\n&Description=test\n&CallbackKey=adasdas23432423\n&StreamBeginNotifyUrl=http://www.yourdomain.com/api/notify?action=streamBegin\n&StreamEndNotifyUrl=http://www.yourdomain.com/api/notify?action=streamEnd\n&RecordNotifyUrl=http://www.yourdomain.com/api/notify?action=record\n&SnapshotNotifyUrl=http://www.yourdomain.com/api/notify?action=snapshot\n&PornCensorshipNotifyUrl=http://www.yourdomain.com/api/notify?action=porn\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyLiveDomainCertBindings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveDomainCertBindings\n<公共请求参数>\n\n{\n    \"CloudCertId\": \"hZy2N9vF\",\n    \"DomainInfos\": [\n        {\n            \"DomainName\": \"abc.tst.com.cn\",\n            \"Status\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb91d382-e9be-4688-9008-d57088271b5f\",\n        \"MismatchedDomainNames\": [],\n        \"Errors\": []\n    }\n}",
         "title": "请求示例"
       }
     ],

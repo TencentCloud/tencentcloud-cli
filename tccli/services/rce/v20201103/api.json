@@ -6,12 +6,6 @@
       "name": "查询风险评估结果",
       "output": "DescribeRiskAssessmentResponse"
     },
-    "DescribeRiskModel": {
-      "document": "依托人工智能技术和腾讯丰富的风控实战经验，根据用户提供的数据和业务场景，给客户提供定制化模型服务",
-      "input": "DescribeRiskModelRequest",
-      "name": "风控建模服务",
-      "output": "DescribeRiskModelResponse"
-    },
     "DescribeRiskTrends": {
       "document": "以图表形式展示三种请求状态的趋势变化",
       "input": "DescribeRiskTrendsRequest",
@@ -95,42 +89,6 @@
       ],
       "type": "object"
     },
-    "DescribeRiskModelRequest": {
-      "document": "DescribeRiskModel请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "业务入参",
-          "example": "无",
-          "member": "InputDescribeRiskModelData",
-          "name": "BusinessSecurityData",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRiskModelResponse": {
-      "document": "DescribeRiskModel返回参数结构体",
-      "members": [
-        {
-          "document": "业务出参",
-          "example": "无",
-          "member": "OutputDescribeRiskModel",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeRiskTrendsRequest": {
       "document": "DescribeRiskTrends请求参数结构体",
       "members": [
@@ -195,52 +153,6 @@
           "name": "CryptoContent",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
-    "InputDescribeRiskModelData": {
-      "document": "客户请求入参",
-      "members": [
-        {
-          "default": "",
-          "document": "业务参数加密后的签名值",
-          "example": "H4sIAAAAAAAEAOy9a3Mb2XUu/Fe2xieyJibAvl8YO54mAJIgCRACwIs0nHI1gSbZ",
-          "member": "string",
-          "name": "UserData",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "调用时间戳，精确到秒",
-          "example": "1631429799",
-          "member": "uint64",
-          "name": "ApplyDate",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "客户业务侧标识用户的唯一ID",
-          "example": "088a3a92-1fb3-4e6a-8c3d-c458619779bd",
-          "member": "string",
-          "name": "UserId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否为测试流量",
-          "example": "1",
-          "member": "uint64",
-          "name": "IsTest",
-          "required": false,
-          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -692,58 +604,6 @@
         }
       ],
       "usage": "in"
-    },
-    "OutputDescribeRiskModel": {
-      "document": "业务出参",
-      "members": [
-        {
-          "default": "",
-          "document": "请求返回状态值，0为成功，别的结合Message查看\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "请求返回信息",
-          "example": "Succeed",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "请求返回结果",
-          "example": "89.11",
-          "member": "OutputDescribeRiskModelValue",
-          "name": "Value",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputDescribeRiskModelValue": {
-      "document": "风控建模服务出参对应值",
-      "members": [
-        {
-          "default": "",
-          "document": "模型分数值",
-          "example": "89.11",
-          "member": "float",
-          "name": "ApplyScore",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "OutputFrontRisk": {
       "document": "风险趋势统计出参，需要为数组",

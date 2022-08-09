@@ -14,15 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "StorageFileList": [
-            {
-                "TrackType": "xx",
-                "BeginTimeStamp": 1,
-                "UserId": "xx",
-                "FileName": "xx"
-            }
-        ],
+        "Status": "InProgress",
+        "StorageFileList": [],
         "RequestId": "xx",
         "TaskId": "xx"
     }

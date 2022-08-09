@@ -2356,7 +2356,7 @@
         },
         {
           "default": "",
-          "document": "类型",
+          "document": "列表类型，只能是下面三种之一：port、address、ip",
           "example": "address",
           "member": "string",
           "name": "QueryType",

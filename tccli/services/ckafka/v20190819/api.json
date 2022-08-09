@@ -336,6 +336,12 @@
       "name": "查询消息",
       "output": "FetchMessageByOffsetResponse"
     },
+    "FetchMessageListByOffset": {
+      "document": "根据位点查询消息列表",
+      "input": "FetchMessageListByOffsetRequest",
+      "name": "根据位点查询消息列表",
+      "output": "FetchMessageListByOffsetResponse"
+    },
     "ModifyConnectResource": {
       "document": "编辑Datahub连接源",
       "input": "ModifyConnectResourceRequest",
@@ -7305,6 +7311,71 @@
           "name": "Result",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByOffsetRequest": {
+      "document": "FetchMessageListByOffset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大查询条数，默认20，最大20",
+          "member": "int64",
+          "name": "SinglePartitionRecordNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageListByOffsetResponse": {
+      "document": "FetchMessageListByOffset返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果。注意，列表中不返回具体的消息内容（key、value），如果需要查询具体消息内容，请使用FetchMessageByOffset接口",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "type": "list",
           "value_allowed_null": false
         },
         {
