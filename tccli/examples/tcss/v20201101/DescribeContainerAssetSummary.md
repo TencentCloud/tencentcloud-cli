@@ -21,7 +21,8 @@ Output:
         "HostCnt": 1,
         "RequestId": "xx",
         "HostOfflineCnt": 1,
-        "ContainerTotalCnt": 1
+        "ContainerTotalCnt": 1,
+        "HostUnInstallCnt": 1
     }
 }
 ```

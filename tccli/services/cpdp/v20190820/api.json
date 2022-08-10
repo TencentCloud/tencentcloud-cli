@@ -3204,6 +3204,15 @@
           "name": "Environment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付结果通知回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

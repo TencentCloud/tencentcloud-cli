@@ -3099,6 +3099,62 @@
       ],
       "type": "object"
     },
+    "DetailPrice": {
+      "document": "计费项目明细。",
+      "members": [
+        {
+          "default": "",
+          "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表云硬盘备份点配额收费项。</li>",
+          "example": "DiskSpace",
+          "member": "string",
+          "name": "PriceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘计费项维度单价。",
+          "example": "1.1",
+          "member": "float",
+          "name": "OriginUnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘计费项维度总价。",
+          "example": "2.2",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘在计费项维度折扣。",
+          "example": "0.8",
+          "member": "float",
+          "name": "Discount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘在计费项维度折后总价。",
+          "example": "2.1",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DisassociateInstancesKeyPairsRequest": {
       "document": "DisassociateInstancesKeyPairs请求参数结构体",
       "members": [
@@ -3350,7 +3406,7 @@
         },
         {
           "default": "",
-          "document": "创建时间",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -3360,7 +3416,7 @@
         },
         {
           "default": "",
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
@@ -3370,13 +3426,33 @@
         },
         {
           "default": "",
-          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘的已有备份点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘的备份点配额数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskBackupQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3550,6 +3626,16 @@
           "name": "DiscountPrice",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费项目明细列表。",
+          "example": "无",
+          "member": "DetailPrice",
+          "name": "DetailPrices",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

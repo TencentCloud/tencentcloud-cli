@@ -10330,6 +10330,7 @@
         {
           "default": "",
           "document": "集群Id",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -10339,6 +10340,7 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "test",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -10348,6 +10350,7 @@
         {
           "default": "",
           "document": "Vpc Id",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -10357,6 +10360,7 @@
         {
           "default": "",
           "document": "集群pod cidr",
+          "example": "10.0.0.1/16",
           "member": "string",
           "name": "PodCIDR",
           "required": true,
@@ -10366,6 +10370,7 @@
         {
           "default": "",
           "document": "集群 service cidr",
+          "example": "10.1.1.1/16",
           "member": "string",
           "name": "ServiceCIDR",
           "required": true,
@@ -10375,6 +10380,7 @@
         {
           "default": "",
           "document": "k8s 版本号",
+          "example": "1.20.6",
           "member": "string",
           "name": "K8SVersion",
           "required": true,
@@ -10384,6 +10390,7 @@
         {
           "default": "",
           "document": "集群状态",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -10393,6 +10400,7 @@
         {
           "default": "",
           "document": "集群描述信息",
+          "example": "test",
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
@@ -10402,6 +10410,7 @@
         {
           "default": "",
           "document": "集群创建时间",
+          "example": "2022-08-09 16:54:33",
           "member": "string",
           "name": "CreatedTime",
           "required": false,
@@ -10411,6 +10420,7 @@
         {
           "default": "",
           "document": "边缘集群版本",
+          "example": "2.2",
           "member": "string",
           "name": "EdgeClusterVersion",
           "required": false,
@@ -10420,10 +10430,21 @@
         {
           "default": "",
           "document": "节点最大Pod数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "61",
           "member": "int64",
           "name": "MaxNodePodNum",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClusterAdvancedSettings",
+          "member": "EdgeClusterAdvancedSettings",
+          "name": "ClusterAdvancedSettings",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

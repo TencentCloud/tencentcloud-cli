@@ -386,7 +386,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenewDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-5vmz00i3\"\n    ],\n    \"RenewDiskChargePrepaid\": {\n        \"Period\": 1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 16.0,\n            \"OriginalPrice\": 16.0,\n            \"Discount\": 100,\n            \"DiscountPrice\": 16.0\n        },\n        \"RequestId\": \"4214ba7a-0784-4cbb-a342-e5cc288c484c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 22.0,\n            \"OriginalPrice\": 22.0,\n            \"Discount\": 100,\n            \"DiscountPrice\": 22.0,\n            \"DetailPrices\": [\n                {\n                    \"PriceName\": \"DiskSpace\",\n                    \"OriginUnitPrice\": 20.0,\n                    \"OriginalPrice\": 20.0,\n                    \"Discount\": 100,\n                    \"DiscountPrice\": 20.0\n                },\n                {\n                    \"PriceName\": \"DiskBackupQuota\",\n                    \"OriginUnitPrice\": 2.0,\n                    \"OriginalPrice\": 2.0,\n                    \"Discount\": 100,\n                    \"DiscountPrice\": 2.0\n                }\n            ]\n        },\n        \"RequestId\": \"03da2972-121e-4dcc-9a10-4cbec5c8991a\"\n    }\n}",
         "title": "续费磁盘询价"
       }
     ],

@@ -1,4 +1,4 @@
-**Example 1: 获取超级播放器配置列表**
+**Example 1: 获取播放器配置列表**
 
 
 
@@ -31,9 +31,16 @@ Output:
                         "Name": "2K"
                     }
                 ],
+                "TranscodeDefinition": 0,
+                "AudioVideoType": "AdaptiveDynamicStream",
                 "Domain": "xxx.vod2.myqcloud.com",
                 "Scheme": "HTTPS",
                 "Comment": "",
+                "DrmStreamingsInfo": {
+                    "FairPlayDefinition": 0,
+                    "SimpleAesDefinition": 0,
+                    "WidevineDefinition": 0
+                },
                 "CreateTime": "2019-10-11T10:00:00Z",
                 "UpdateTime": "2019-10-11T10:00:00Z"
             }

@@ -1,4 +1,4 @@
-**Example 1: 修改超级播放器配置**
+**Example 1: 修改播放器配置**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ModifySuperPlayerConfig --cli-unfold-argument  \
-    --Name test \
-    --AdaptiveDynamicStreamingDefinition 20
+    --AdaptiveDynamicStreamingDefinition 20 \
+    --Name test
 ```
 
 Output: 

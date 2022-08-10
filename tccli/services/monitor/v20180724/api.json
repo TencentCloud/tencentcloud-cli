@@ -5350,6 +5350,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "监控类型详情",
+          "example": "无",
+          "member": "MonitorTypeInfo",
+          "name": "MonitorTypeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9461,6 +9470,42 @@
         }
       ],
       "type": "object"
+    },
+    "MonitorTypeInfo": {
+      "document": "监控类型详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "监控类型ID",
+          "example": "19023",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排列顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "SortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MonitorTypeNamespace": {
       "document": "策略类型",

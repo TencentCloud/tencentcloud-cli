@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaResult --cli-unfold-argument  \
-    --CaptchaType 9 \
-    --Ticket xxxx \
-    --UserIp 127.0.0.1 \
-    --Randstr xxx \
     --CaptchaAppId 201111111 \
-    --AppSecretKey xxxxxx \
-    --NeedGetCaptchaTime 1
+    --CaptchaType 9 \
+    --NeedGetCaptchaTime 1 \
+    --Randstr xxx \
+    --UserIp 127.0.0.1 \
+    --Ticket xxxx \
+    --AppSecretKey xxxxxx
 ```
 
 Output: 

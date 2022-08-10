@@ -7,9 +7,9 @@
       "output": "ChannelCancelMultiFlowSignQRCodeResponse"
     },
     "ChannelCreateBatchCancelFlowUrl": {
-      "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+      "document": "指定需要批量撤销的签署流程Id，获取批量撤销链接\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
-      "name": "电子签渠道版-根据签署流程id创建批量撤回url",
+      "name": "电子签渠道版-根据签署流程id创建批量撤销url",
       "output": "ChannelCreateBatchCancelFlowUrlResponse"
     },
     "ChannelCreateConvertTaskApi": {
@@ -354,7 +354,7 @@
       "document": "ChannelCreateBatchCancelFlowUrl返回参数结构体",
       "members": [
         {
-          "document": "批量撤回url",
+          "document": "批量撤销url",
           "example": "无",
           "member": "string",
           "name": "BatchCancelFlowUrl",
@@ -363,7 +363,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "签署流程批量撤回失败原因",
+          "document": "签署流程批量撤销失败原因",
           "example": "无",
           "member": "string",
           "name": "FailMessages",
@@ -372,7 +372,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "签署撤回url过期时间-年月日-时分秒",
+          "document": "签署撤销url过期时间-年月日-时分秒",
           "example": "无",
           "member": "string",
           "name": "UrlExpireOn",
@@ -394,21 +394,12 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "资源Id",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
         },
         {
           "default": "",
@@ -421,7 +412,7 @@
         },
         {
           "default": "",
-          "document": "资源名称",
+          "document": "资源名称，长度限制为256字符",
           "example": "无",
           "member": "string",
           "name": "ResourceName",
@@ -430,19 +421,28 @@
         },
         {
           "default": "",
-          "document": "无",
+          "document": "资源Id，通过UploadFiles获取",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object"
         },
         {
           "default": "",
-          "document": "无",
+          "document": "暂未开放",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         }
@@ -736,7 +736,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -745,7 +745,7 @@
         },
         {
           "default": "",
-          "document": "任务Id",
+          "document": "任务Id，通过ChannelCreateConvertTaskApi接口获得",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -754,19 +754,19 @@
         },
         {
           "default": "",
-          "document": "企业信息",
+          "document": "操作者的信息",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object"
         },
         {
           "default": "",
-          "document": "操作人信息",
+          "document": "暂未开放",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         }
@@ -786,7 +786,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "任务状态",
+          "document": "任务状态，需要关注的状态\n0  :NeedTranform   - 任务已提交\n4  :Processing     - 文档转换中\n8  :TaskEnd        - 任务处理完成\n-2 :DownloadFailed - 下载失败\n-6 :ProcessFailed  - 转换失败\n-13:ProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
@@ -795,7 +795,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态描述",
+          "document": "状态描述，需要关注的状态\nNeedTranform   - 任务已提交\nProcessing     - 文档转换中\nTaskEnd        - 任务处理完成\nDownloadFailed - 下载失败\nProcessFailed  - 转换失败\nProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
@@ -804,7 +804,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "资源Id",
+          "document": "资源Id，也是FileId，用于文件发起使用",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -3326,7 +3326,7 @@
         },
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf .doc .docx .html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

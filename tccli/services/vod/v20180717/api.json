@@ -121,9 +121,9 @@
       "output": "CreateSubAppIdResponse"
     },
     "CreateSuperPlayerConfig": {
-      "document": "创建超级播放器配置，数量上限：100。",
+      "document": "创建播放器配置，数量上限：100。",
       "input": "CreateSuperPlayerConfigRequest",
-      "name": "创建超级播放器配置",
+      "name": "创建播放器配置",
       "output": "CreateSuperPlayerConfigResponse"
     },
     "CreateTranscodeTemplate": {
@@ -235,9 +235,9 @@
       "output": "DeleteSnapshotByTimeOffsetTemplateResponse"
     },
     "DeleteSuperPlayerConfig": {
-      "document": "删除超级播放器配置。  \n*注：系统预置播放器配置不允许删除。*",
+      "document": "删除播放器配置。  \n*注：系统预置播放器配置不允许删除。*",
       "input": "DeleteSuperPlayerConfigRequest",
-      "name": "删除超级播放器配置",
+      "name": "删除播放器配置",
       "output": "DeleteSuperPlayerConfigResponse"
     },
     "DeleteTranscodeTemplate": {
@@ -463,9 +463,9 @@
       "output": "DescribeSubAppIdsResponse"
     },
     "DescribeSuperPlayerConfigs": {
-      "document": "查询超级播放器配置，支持根据条件，分页查询。",
+      "document": "查询播放器配置，支持根据条件，分页查询。",
       "input": "DescribeSuperPlayerConfigsRequest",
-      "name": "获取超级播放器配置列表",
+      "name": "获取播放器配置列表",
       "output": "DescribeSuperPlayerConfigsResponse"
     },
     "DescribeTaskDetail": {
@@ -637,9 +637,9 @@
       "output": "ModifySubAppIdStatusResponse"
     },
     "ModifySuperPlayerConfig": {
-      "document": "修改超级播放器配置。",
+      "document": "修改播放器配置。",
       "input": "ModifySuperPlayerConfigRequest",
-      "name": "修改超级播放器配置",
+      "name": "修改播放器配置",
       "output": "ModifySuperPlayerConfigResponse"
     },
     "ModifyTranscodeTemplate": {
@@ -11880,7 +11880,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "播放器配置名字过滤条件，数组长度限制：100。",
+          "example": "[\"test\\r\\n\"]",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -11889,6 +11899,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -11897,6 +11908,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -11905,18 +11917,11 @@
         {
           "default": "",
           "document": "播放器配置类型过滤条件，可选值：\n<li>Preset：系统预置配置；</li>\n<li>Custom：用户自定义配置。</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -11926,15 +11931,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "播放器配置数组。",
+          "example": "无",
           "member": "PlayerConfig",
           "name": "PlayerConfigSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19076,6 +19085,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "播放的音视频类型，可选值：\n<li>AdaptiveDynamicStream：自适应码流输出；</li>\n<li>Transcode：转码输出；</li>\n<li>Original：原始音视频。</li>",
           "example": "无",
           "member": "string",
@@ -19163,15 +19181,6 @@
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -19944,6 +19953,7 @@
         {
           "default": "",
           "document": "播放器配置名字。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -19953,6 +19963,7 @@
         {
           "default": "",
           "document": "播放器配置类型，取值范围：\n<li>Preset：系统预置配置；</li>\n<li>Custom：用户自定义配置。</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -19961,7 +19972,18 @@
         },
         {
           "default": "",
+          "document": "播放的音视频类型，可选值有：\n<li>AdaptiveDynamicStream：自适应码流输出；</li>\n<li>Transcode：转码输出；</li>\n<li>Original：原始音视频。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "AudioVideoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "播放 DRM 保护的自适应码流开关：\n<li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>\n<li>OFF：关闭，表示播放未加密的自适应码流输出。</li>",
+          "example": "无",
           "member": "string",
           "name": "DrmSwitch",
           "required": true,
@@ -19971,6 +19993,7 @@
         {
           "default": "",
           "document": "允许输出的未加密的自适应码流模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "AdaptiveDynamicStreamingDefinition",
           "required": true,
@@ -19980,6 +20003,7 @@
         {
           "default": "",
           "document": "允许输出的 DRM 自适应码流模板内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DrmStreamingsInfo",
           "name": "DrmStreamingsInfo",
           "required": true,
@@ -19988,7 +20012,18 @@
         },
         {
           "default": "",
+          "document": "允许输出的转码模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TranscodeDefinition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "允许输出的雪碧图模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "ImageSpriteDefinition",
           "required": true,
@@ -19998,6 +20033,7 @@
         {
           "default": "",
           "document": "播放器对不于不同分辨率的子流展示名字。",
+          "example": "无",
           "member": "ResolutionNameInfo",
           "name": "ResolutionNameSet",
           "required": true,
@@ -20007,6 +20043,7 @@
         {
           "default": "",
           "document": "播放器配置创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -20016,6 +20053,7 @@
         {
           "default": "",
           "document": "播放器配置最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -20025,6 +20063,7 @@
         {
           "default": "",
           "document": "播放时使用的域名。值为 Default，表示使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的域名。",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -20034,6 +20073,7 @@
         {
           "default": "",
           "document": "播放时使用的 Scheme。取值范围：\n<li>Default：使用[默认分发配置](https://cloud.tencent.com/document/product/266/33373)中的 Scheme；</li>\n<li>HTTP；</li>\n<li>HTTPS。</li>",
+          "example": "无",
           "member": "string",
           "name": "Scheme",
           "required": true,
@@ -20043,6 +20083,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -24651,7 +24692,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

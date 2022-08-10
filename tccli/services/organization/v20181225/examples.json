@@ -115,7 +115,7 @@
     "ListOrganizationNodes": [
       {
         "document": "",
-        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationNodes\r\n&Nodes.0=123\r\n&<公共请求参数>",
+        "input": "https://organization.tencentcloudapi.com/?Action=ListOrganizationNodes\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Nodes\": [\n            {\n                \"NodeId\": 1,\n                \"Name\": \"aa\",\n                \"ParentNodeId\": 111,\n                \"MemberCount\": 11\n            }\n        ],\n        \"RequestId\": \"f2b75a7e-fc82-4b00-8426-d04371d9052c\"\n    }\n}",
         "title": "获取企业组织单元列表"
       }

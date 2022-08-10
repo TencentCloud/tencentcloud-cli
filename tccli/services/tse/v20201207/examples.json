@@ -16,6 +16,14 @@
         "title": "删除引擎实例"
       }
     ],
+    "DescribeCloudNativeAPIGatewayNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayNodes\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"NodeList\": [\n                {\n                    \"NodeId\": \"kong-0\",\n                    \"NodeIp\": \"172.16.0.40\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "测试获取云原生API网关节点列表"
+      }
+    ],
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",
@@ -35,8 +43,8 @@
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",
-        "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstanceAccessAddress\n&InstanceId=sre-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnvAddressInfos\": [\n            {\n                \"EnableConfigInternet\": true,\n                \"EnvName\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\"\n            }\n        ],\n        \"IntranetAddress\": \"xx\",\n        \"InternetAddress\": \"xx\",\n        \"ConsoleInternetBandWidth\": 0,\n        \"ConsoleIntranetAddress\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ConsoleInternetAddress\": \"xx\",\n        \"InternetBandWidth\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSREInstanceAccessAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"sre-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvAddressInfos\": [\n            {\n                \"EnableConfigInternet\": true,\n                \"EnvName\": \"xx\",\n                \"ConfigIntranetAddress\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\"\n            }\n        ],\n        \"IntranetAddress\": \"xx\",\n        \"InternetAddress\": \"xx\",\n        \"ConsoleInternetBandWidth\": 0,\n        \"ConsoleIntranetAddress\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ConsoleInternetAddress\": \"xx\",\n        \"InternetBandWidth\": 0\n    }\n}",
         "title": "查询引擎实例访问地址"
       }
     ],

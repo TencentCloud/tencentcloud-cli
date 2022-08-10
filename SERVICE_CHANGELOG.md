@@ -1,84 +1,66 @@
 # 本版本更新包含以下内容：
 
-## 容器安全服务(tcss) 版本：2020-11-01
+## 容器服务(tke) 版本：2018-05-25
 
-### 第 22 次发布
+### 第 115 次发布
 
-发布时间：2022-08-09 12:25:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeAssetSummary](https://cloud.tencent.com/document/api/1285/65477)
-
-	* 新增出参：HostUnInstallCnt
-
-* [DescribeContainerAssetSummary](https://cloud.tencent.com/document/api/1285/65475)
-
-	* 新增出参：HostUnInstallCnt
-
-
-
-
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
-
-### 第 4 次发布
-
-发布时间：2022-08-09 12:28:40
+发布时间：2022-08-10 06:54:09
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [CreateTrainingModel](https://cloud.tencent.com/document/api/851/75074)
-
-	* 新增入参：ReasoningEnvironmentId
-
-* [DeleteTrainingModel](https://cloud.tencent.com/document/api/851/75073)
-
-	* 新增入参：ModelVersionType
-
 
 修改数据结构：
 
-* [TrainingTaskDetail](https://cloud.tencent.com/document/api/851/75051#TrainingTaskDetail)
+* [EdgeCluster](https://cloud.tencent.com/document/api/457/31866#EdgeCluster)
 
-	* 新增成员：Message
+	* 新增成员：ClusterAdvancedSettings
 
-* [TrainingTaskSetItem](https://cloud.tencent.com/document/api/851/75051#TrainingTaskSetItem)
-
-	* 新增成员：Message
-
-
-
-
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
 
 
 
 ## 腾讯云微服务引擎(tse) 版本：2020-12-07
 
-### 第 24 次发布
+### 第 25 次发布
 
-发布时间：2022-08-09 12:30:23
+发布时间：2022-08-10 06:55:45
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeCloudNativeAPIGatewayNodes](https://cloud.tencent.com/document/api/1364/78800)
+* [DescribeSREInstanceAccessAddress](https://cloud.tencent.com/document/api/1364/54941)
 
-新增数据结构：
+	* 新增入参：EngineRegion
 
-* [CloudNativeAPIGatewayNode](https://cloud.tencent.com/document/api/1364/54942#CloudNativeAPIGatewayNode)
-* [DescribeCloudNativeAPIGatewayNodesResult](https://cloud.tencent.com/document/api/1364/54942#DescribeCloudNativeAPIGatewayNodesResult)
+
+修改数据结构：
+
+* [ZookeeperReplica](https://cloud.tencent.com/document/api/1364/54942#ZookeeperReplica)
+
+	* 新增成员：AliasName
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 122 次发布
+
+发布时间：2022-08-10 06:57:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpnConnection](https://cloud.tencent.com/document/api/215/15824#VpnConnection)
+
+	* 新增成员：DpdEnable, DpdTimeout, DpdAction, TagSet, NegotiationType
+
 
 
 
@@ -73518,6 +73500,21 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 115 次发布
+
+发布时间：2022-08-10 06:54:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EdgeCluster](https://cloud.tencent.com/document/api/457/31866#EdgeCluster)
+
+	* 新增成员：ClusterAdvancedSettings
+
+
 ### 第 114 次发布
 
 发布时间：2022-08-02 06:35:11
@@ -76919,6 +76916,28 @@
 
 ## 腾讯云微服务引擎(tse) 版本：2020-12-07
 
+### 第 25 次发布
+
+发布时间：2022-08-10 06:55:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSREInstanceAccessAddress](https://cloud.tencent.com/document/api/1364/54941)
+
+	* 新增入参：EngineRegion
+
+
+修改数据结构：
+
+* [ZookeeperReplica](https://cloud.tencent.com/document/api/1364/54942#ZookeeperReplica)
+
+	* 新增成员：AliasName
+
+
 ### 第 24 次发布
 
 发布时间：2022-08-09 12:30:23
@@ -76929,12 +76948,12 @@
 
 新增接口：
 
-* [[DescribeCloudNativeAPIGatewayNodes](https://cloud.tencent.com/document/api/1364/78800)](https://cloud.tencent.com/document/api/#/#)
+* [DescribeCloudNativeAPIGatewayNodes](https://cloud.tencent.com/document/api/1364/78800)
 
 新增数据结构：
 
-* [[CloudNativeAPIGatewayNode](https://cloud.tencent.com/document/api/1364/54942#CloudNativeAPIGatewayNode)](https://cloud.tencent.com/document/api/1364/54942#[CloudNativeAPIGatewayNode](https://cloud.tencent.com/document/api/1364/54942#CloudNativeAPIGatewayNode))
-* [[DescribeCloudNativeAPIGatewayNodesResult](https://cloud.tencent.com/document/api/1364/54942#DescribeCloudNativeAPIGatewayNodesResult)](https://cloud.tencent.com/document/api/1364/54942#[DescribeCloudNativeAPIGatewayNodesResult](https://cloud.tencent.com/document/api/1364/54942#DescribeCloudNativeAPIGatewayNodesResult))
+* [CloudNativeAPIGatewayNode](https://cloud.tencent.com/document/api/1364/54942#CloudNativeAPIGatewayNode)
+* [DescribeCloudNativeAPIGatewayNodesResult](https://cloud.tencent.com/document/api/1364/54942#DescribeCloudNativeAPIGatewayNodesResult)
 
 ### 第 23 次发布
 
@@ -82961,6 +82980,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 122 次发布
+
+发布时间：2022-08-10 06:57:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpnConnection](https://cloud.tencent.com/document/api/215/15824#VpnConnection)
+
+	* 新增成员：DpdEnable, DpdTimeout, DpdAction, TagSet, NegotiationType
+
 
 ### 第 121 次发布
 

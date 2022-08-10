@@ -23414,6 +23414,7 @@
         {
           "default": "",
           "document": "通道实例ID。",
+          "example": "vpnx-xxxxx",
           "member": "string",
           "name": "VpnConnectionId",
           "required": true,
@@ -23423,6 +23424,7 @@
         {
           "default": "",
           "document": "通道名称。",
+          "example": "xxxxx",
           "member": "string",
           "name": "VpnConnectionName",
           "required": true,
@@ -23432,6 +23434,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -23441,6 +23444,7 @@
         {
           "default": "",
           "document": "VPN网关实例ID。",
+          "example": "vpngw-xxxxx",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -23450,6 +23454,7 @@
         {
           "default": "",
           "document": "对端网关实例ID。",
+          "example": "cgw-xxxxx",
           "member": "string",
           "name": "CustomerGatewayId",
           "required": true,
@@ -23459,6 +23464,7 @@
         {
           "default": "",
           "document": "预共享密钥。",
+          "example": "xxxxx",
           "member": "string",
           "name": "PreShareKey",
           "required": true,
@@ -23468,6 +23474,7 @@
         {
           "default": "",
           "document": "通道传输协议。",
+          "example": "IPSEC",
           "member": "string",
           "name": "VpnProto",
           "required": true,
@@ -23477,6 +23484,7 @@
         {
           "default": "",
           "document": "通道加密协议。",
+          "example": "IKE",
           "member": "string",
           "name": "EncryptProto",
           "required": true,
@@ -23486,6 +23494,7 @@
         {
           "default": "",
           "document": "路由类型。",
+          "example": "StaticRoute",
           "member": "string",
           "name": "RouteType",
           "required": true,
@@ -23495,6 +23504,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "0000-00-00 00:00:00",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -23504,6 +23514,7 @@
         {
           "default": "",
           "document": "通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
           "required": true,
@@ -23513,6 +23524,7 @@
         {
           "default": "",
           "document": "通道连接状态，AVAILABLE：已连接。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "NetStatus",
           "required": true,
@@ -23522,6 +23534,7 @@
         {
           "default": "",
           "document": "SPD。",
+          "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabaseSet",
           "required": true,
@@ -23531,6 +23544,7 @@
         {
           "default": "",
           "document": "IKE选项。",
+          "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": true,
@@ -23540,6 +23554,7 @@
         {
           "default": "",
           "document": "IPSEC选择。",
+          "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": true,
@@ -23549,6 +23564,7 @@
         {
           "default": "",
           "document": "是否支持健康状态探测",
+          "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": true,
@@ -23558,6 +23574,7 @@
         {
           "default": "",
           "document": "本端探测ip",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckLocalIp",
           "required": true,
@@ -23567,6 +23584,7 @@
         {
           "default": "",
           "document": "对端探测ip",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckRemoteIp",
           "required": true,
@@ -23576,11 +23594,62 @@
         {
           "default": "",
           "document": "通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "HealthCheckStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DpdEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DPD超时时间。即探测确认对端不存在需要的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "string",
+          "name": "DpdTimeout",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clear",
+          "member": "string",
+          "name": "DpdAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签键值对数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协商类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "flowTrigger",
+          "member": "string",
+          "name": "NegotiationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

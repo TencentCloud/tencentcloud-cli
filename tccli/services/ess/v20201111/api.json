@@ -61,7 +61,7 @@
       "output": "DescribeFileUrlsResponse"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程摘要\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。",
+      "document": "查询流程摘要\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n日调用量默认10W",
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse"
@@ -686,15 +686,6 @@
       "members": [
         {
           "default": "",
-          "document": "资源Id",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "资源类型 取值范围doc,docx,html之一",
           "example": "无",
           "member": "string",
@@ -704,7 +695,7 @@
         },
         {
           "default": "",
-          "document": "资源名称",
+          "document": "资源名称，长度限制为256字符",
           "example": "无",
           "member": "string",
           "name": "ResourceName",
@@ -713,16 +704,16 @@
         },
         {
           "default": "",
-          "document": "无",
+          "document": "资源Id，通过UploadFiles获取",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
-          "required": false,
-          "type": "object"
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
         },
         {
           "default": "",
-          "document": "无",
+          "document": "操作者信息",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -731,10 +722,19 @@
         },
         {
           "default": "",
-          "document": "无",
+          "document": "应用号信息",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         }
@@ -1541,7 +1541,7 @@
         },
         {
           "default": "",
-          "document": "需要查询的流程ID列表",
+          "document": "需要查询的流程ID列表，限制最大20个",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -1604,7 +1604,7 @@
         },
         {
           "default": "",
-          "document": "查询个数，默认20，最大100",
+          "document": "查询个数，默认20，最大200",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -2059,21 +2059,12 @@
       "members": [
         {
           "default": "",
-          "document": "任务Id",
+          "document": "任务Id，通过CreateConvertTaskApi得到",
           "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "企业信息",
-          "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
-          "required": false,
-          "type": "object"
         },
         {
           "default": "",
@@ -2086,10 +2077,19 @@
         },
         {
           "default": "",
-          "document": "渠道信息",
+          "document": "应用号信息",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object"
         }
@@ -2109,7 +2109,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "任务状态",
+          "document": "任务状态，需要关注的状态\n0  :NeedTranform   - 任务已提交\n4  :Processing     - 文档转换中\n8  :TaskEnd        - 任务处理完成\n-2 :DownloadFailed - 下载失败\n-6 :ProcessFailed  - 转换失败\n-13:ProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
@@ -2118,7 +2118,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态描述",
+          "document": "状态描述，需要关注的状态\nNeedTranform   - 任务已提交\nProcessing     - 文档转换中\nTaskEnd        - 任务处理完成\nDownloadFailed - 下载失败\nProcessFailed  - 转换失败\nProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
@@ -2127,7 +2127,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "资源Id",
+          "document": "资源Id，也是FileId，用于文件发起使用",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -2616,7 +2616,7 @@
       "members": [
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf/.html\n2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf .doc .docx .html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

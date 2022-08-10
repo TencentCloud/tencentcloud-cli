@@ -318,7 +318,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"MonitorTypeInfos\": [\n            {\n                \"Id\": \"1002\",\n                \"Name\": \"MT_QCE\",\n                \"SortId\": 1\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "查询所有监控类型"
       }
     ],

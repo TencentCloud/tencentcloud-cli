@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli organization ListOrganizationNodes --cli-unfold-argument  \
-    --Nodes 123
-```
+tccli organization ListOrganizationNodes --cli-unfold-argument ```
 
 Output: 
 ```

@@ -483,7 +483,7 @@
         },
         {
           "default": "",
-          "document": "模型来源 （JOB/COS/AUTO_ML）",
+          "document": "模型来源 （JOB/COS）",
           "example": "JOB",
           "member": "string",
           "name": "TrainingModelSource",
@@ -532,6 +532,15 @@
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推理镜像ID",
+          "example": "tensorflow2.4-py38(gpu)",
+          "member": "string",
+          "name": "ReasoningEnvironmentId",
           "required": false,
           "type": "string"
         }
@@ -1488,6 +1497,15 @@
           "name": "EnableDeleteCos",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有",
+          "example": "NORMAL ",
+          "member": "string",
+          "name": "ModelVersionType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4690,6 +4708,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4905,6 +4933,16 @@
           "name": "ImageInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

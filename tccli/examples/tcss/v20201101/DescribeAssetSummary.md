@@ -30,7 +30,8 @@ Output:
         "ListenPortCnt": 58,
         "ProcessCnt": 87,
         "RequestId": "c2ac8fcc-f9af-4aa6-97fc-26c855bf9a6b",
-        "WebServiceCnt": 7
+        "WebServiceCnt": 7,
+        "HostUnInstallCnt": 1
     }
 }
 ```

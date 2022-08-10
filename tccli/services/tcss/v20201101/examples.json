@@ -682,7 +682,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSummary\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AppCnt\": 14,\n        \"ContainerCnt\": 223,\n        \"ContainerPause\": 1,\n        \"ContainerRunning\": 56,\n        \"ContainerStop\": 166,\n        \"CreateTime\": \"2020-11-02T12:55:02.043Z\",\n        \"DbCnt\": 2,\n        \"HostCnt\": 122,\n        \"HostOnline\": 119,\n        \"ImageCnt\": 339,\n        \"ImageHasRiskInfoCnt\": 145,\n        \"ImageHasVirusCnt\": 22,\n        \"ImageHasVulsCnt\": 325,\n        \"ImageUnsafeCnt\": 326,\n        \"ImageUntrustCnt\": 4,\n        \"LatestImageScanTime\": \"2021-01-29T06:10:17.043Z\",\n        \"ListenPortCnt\": 58,\n        \"ProcessCnt\": 87,\n        \"RequestId\": \"c2ac8fcc-f9af-4aa6-97fc-26c855bf9a6b\",\n        \"WebServiceCnt\": 7\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppCnt\": 14,\n        \"ContainerCnt\": 223,\n        \"ContainerPause\": 1,\n        \"ContainerRunning\": 56,\n        \"ContainerStop\": 166,\n        \"CreateTime\": \"2020-11-02T12:55:02.043Z\",\n        \"DbCnt\": 2,\n        \"HostCnt\": 122,\n        \"HostOnline\": 119,\n        \"ImageCnt\": 339,\n        \"ImageHasRiskInfoCnt\": 145,\n        \"ImageHasVirusCnt\": 22,\n        \"ImageHasVulsCnt\": 325,\n        \"ImageUnsafeCnt\": 326,\n        \"ImageUntrustCnt\": 4,\n        \"LatestImageScanTime\": \"2021-01-29T06:10:17.043Z\",\n        \"ListenPortCnt\": 58,\n        \"ProcessCnt\": 87,\n        \"RequestId\": \"c2ac8fcc-f9af-4aa6-97fc-26c855bf9a6b\",\n        \"WebServiceCnt\": 7,\n        \"HostUnInstallCnt\": 1\n    }\n}",
         "title": "查询账户容器、镜像等统计信息"
       }
     ],
@@ -801,8 +801,8 @@
     "DescribeContainerAssetSummary": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeContainerAssetSummary\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HostRunningCnt\": 1,\n        \"ContainerPauseCnt\": 1,\n        \"ContainerRunningCnt\": 1,\n        \"ImageRegistryCnt\": 1,\n        \"ContainerStopped\": 1,\n        \"ImageTotalCnt\": 1,\n        \"ImageCnt\": 1,\n        \"HostCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"HostOfflineCnt\": 1,\n        \"ContainerTotalCnt\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContainerAssetSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HostRunningCnt\": 1,\n        \"ContainerPauseCnt\": 1,\n        \"ContainerRunningCnt\": 1,\n        \"ImageRegistryCnt\": 1,\n        \"ContainerStopped\": 1,\n        \"ImageTotalCnt\": 1,\n        \"ImageCnt\": 1,\n        \"HostCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"HostOfflineCnt\": 1,\n        \"ContainerTotalCnt\": 1,\n        \"HostUnInstallCnt\": 1\n    }\n}",
         "title": "查询容器资产信息"
       }
     ],

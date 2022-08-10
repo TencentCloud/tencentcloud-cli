@@ -4611,7 +4611,7 @@
         },
         {
           "default": "",
-          "document": "时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填",
           "example": "2020-04-23 18:56:16",
           "member": "string",
           "name": "StartTime",
@@ -4620,7 +4620,7 @@
         },
         {
           "default": "",
-          "document": "时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填",
           "example": "2020-04-30 18:56:16",
           "member": "string",
           "name": "EndTime",
