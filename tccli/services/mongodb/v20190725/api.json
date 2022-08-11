@@ -36,12 +36,6 @@
       "name": "查询异步任务状态接口",
       "output": "DescribeAsyncRequestInfoResponse"
     },
-    "DescribeBackupAccess": {
-      "document": "备份下载功能已调整，此接口即将下线\n\n本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取",
-      "input": "DescribeBackupAccessRequest",
-      "name": "获取实例备份下载授权",
-      "output": "DescribeBackupAccessResponse"
-    },
     "DescribeBackupDownloadTask": {
       "document": "查询备份下载任务信息",
       "input": "DescribeBackupDownloadTaskRequest",
@@ -398,30 +392,6 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "BackupFile": {
-      "document": "备份文件存储信息",
-      "members": [
-        {
-          "default": "",
-          "document": "备份文件所属的副本集/分片ID",
-          "member": "string",
-          "name": "ReplicateSetId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "备份文件保存路径",
-          "member": "string",
-          "name": "File",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1340,61 +1310,6 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBackupAccessRequest": {
-      "document": "DescribeBackupAccess请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "需要获取下载授权的备份文件名",
-          "member": "string",
-          "name": "BackupName",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBackupAccessResponse": {
-      "document": "DescribeBackupAccess返回参数结构体",
-      "members": [
-        {
-          "document": "实例所属地域",
-          "member": "string",
-          "name": "Region",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "备份文件所在存储桶",
-          "member": "string",
-          "name": "Bucket",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "备份文件的存储信息",
-          "member": "BackupFile",
-          "name": "Files",
-          "type": "list",
           "value_allowed_null": false
         },
         {

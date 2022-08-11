@@ -893,7 +893,7 @@
         },
         {
           "default": "",
-          "document": "签署参与者信息",
+          "document": "签署参与者信息，最大限制50方",
           "example": "无",
           "member": "ApproverInfo",
           "name": "Approvers",
@@ -983,6 +983,15 @@
         },
         {
           "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
           "document": "应用号信息",
           "example": "无",
           "member": "Agent",
@@ -1046,7 +1055,7 @@
         },
         {
           "default": "",
-          "document": "签署流程参与者信息",
+          "document": "签署流程参与者信息，最大限制50方",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "Approvers",
@@ -1124,6 +1133,15 @@
           "name": "CustomShowMap",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
         },
         {
           "default": "",

@@ -28,7 +28,10 @@ Output:
                 "LatestScanTime": "xx",
                 "Path": "xx",
                 "Size": 1,
-                "Desc": "xx"
+                "Desc": "xx",
+                "CheckPlatform": [
+                    "xx"
+                ]
             }
         ],
         "RequestId": "xx",

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live DescribeLiveDomains --cli-unfold-argument  \
-    --DomainType 1 \
-    --DomainStatus 1 \
+    --IsDelayLive 0 \
     --PageSize 10 \
     --PageNum 1 \
-    --IsDelayLive 0
+    --DomainStatus 1 \
+    --DomainType 1
 ```
 
 Output: 
@@ -20,6 +20,11 @@ Output:
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "AllCount": 2,
         "CreateLimitCount": 0,
+        "PlayTypeCount": [
+            1,
+            2,
+            3
+        ],
         "DomainList": [
             {
                 "Name": "abc.com",

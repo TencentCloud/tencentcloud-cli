@@ -6,20 +6,22 @@ Input:
 
 ```
 tccli sqlserver CreateBasicDBInstances --cli-unfold-argument  \
-    --Zone ap-guangzhou-3 \
-    --InstanceChargeType PREPAID \
-    --Cpu 1 \
-    --Memory 2 \
-    --Storage 20 \
-    --GoodsNum 1 \
-    --DBVersion 2008R2 \
-    --SubnetId subnet-pudyecyk \
     --VpcId vpc-huew581t \
-    --Period 1 \
     --AutoRenewFlag 0 \
-    --StartTime 00:00 \
-    --Span 6 \
+    --Zone ap-guangzhou-3 \
+    --GoodsNum 1 \
+    --TimeZone China Standard Time \
+    --DBVersion 2008R2 \
+    --Storage 20 \
+    --Period 1 \
     --MachineType CLOUD_PREMIUM \
+    --Collation Chinese_PRC_CI_AS \
+    --InstanceChargeType PREPAID \
+    --StartTime 00:00 \
+    --Memory 2 \
+    --SubnetId subnet-pudyecyk \
+    --Span 6 \
+    --Cpu 1 \
     --Weekly 1
 ```
 

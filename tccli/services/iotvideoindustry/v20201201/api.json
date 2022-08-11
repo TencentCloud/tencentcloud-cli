@@ -333,7 +333,7 @@
     "DescribeLiveStream": {
       "document": "直播拉流接口",
       "input": "DescribeLiveStreamRequest",
-      "name": "直播拉流接",
+      "name": "直播拉流接口",
       "output": "DescribeLiveStreamResponse"
     },
     "DescribeLiveVideoList": {

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli teo DescribeDDosAttackTopData --cli-unfold-argument  \
-    --AttackType xx \
-    --MetricName xx \
-    --ProtocolType xx \
-    --PolicyIds 0 \
-    --ZoneIds xx \
-    --Limit 0 \
+    --AttackType UDPFLOOD \
+    --MetricName ddos_attackFlux_protocol \
+    --ProtocolType udp \
+    --PolicyIds 1705 \
+    --ZoneIds zone-21xfqlh4qjee \
+    --Limit 1 \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --Port 0
+    --Port 22
 ```
 
 Output: 
@@ -31,10 +31,10 @@ Output:
                         "Name": "udp"
                     }
                 ],
-                "Key": "subzoneId2"
+                "Key": "zone-21xfqlh4qjee"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "3824cf60-c2aa-4f4a-95b7-a4d5e4dee188"
     }
 }
 ```

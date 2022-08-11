@@ -12,11 +12,23 @@
       "name": "创建GME应用",
       "output": "CreateAppResponse"
     },
+    "CreateCustomization": {
+      "document": "用户使用该接口可以创建语音消息转文本自学习模型，以供识别调用",
+      "input": "CreateCustomizationRequest",
+      "name": "创建语音消息转文本自学习模型",
+      "output": "CreateCustomizationResponse"
+    },
     "CreateScanUser": {
       "document": "新增自定义送检用户",
       "input": "CreateScanUserRequest",
       "name": "新增自定义送检用户",
       "output": "CreateScanUserResponse"
+    },
+    "DeleteCustomization": {
+      "document": "用户通过该接口可以删除语音消息转文本自学习模型",
+      "input": "DeleteCustomizationRequest",
+      "name": "删除语音消息转文本自学习模型",
+      "output": "DeleteCustomizationResponse"
     },
     "DeleteScanUser": {
       "document": "删除自定义送检用户",
@@ -78,11 +90,29 @@
       "name": "拉取用户在房间得进出时间",
       "output": "DescribeUserInAndOutTimeResponse"
     },
+    "GetCustomizationList": {
+      "document": "查询语音消息转文本自学习模型列表",
+      "input": "GetCustomizationListRequest",
+      "name": "查询语音消息转文本自学习模型列表",
+      "output": "GetCustomizationListResponse"
+    },
     "ModifyAppStatus": {
       "document": "本接口(ModifyAppStatus)用于修改应用总开关状态。",
       "input": "ModifyAppStatusRequest",
       "name": "修改应用开关状态",
       "output": "ModifyAppStatusResponse"
+    },
+    "ModifyCustomization": {
+      "document": "用户通过该接口可以更新语音消息转文本自学习模型。",
+      "input": "ModifyCustomizationRequest",
+      "name": "更新语音消息转文本自学习模型",
+      "output": "ModifyCustomizationResponse"
+    },
+    "ModifyCustomizationState": {
+      "document": "通过该接口，用户可以修改语音消息转文本自学习模型状态，上下线自学习模型",
+      "input": "ModifyCustomizationStateRequest",
+      "name": "修改语音消息转文本自学习模型状态",
+      "output": "ModifyCustomizationStateResponse"
     },
     "ModifyRoomInfo": {
       "document": "修改房间信息",
@@ -604,6 +634,51 @@
       ],
       "type": "object"
     },
+    "CreateCustomizationRequest": {
+      "document": "CreateCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "1234",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
+          "example": "abc",
+          "member": "string",
+          "name": "TextUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomizationResponse": {
+      "document": "CreateCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "模型ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScanUserRequest": {
       "document": "CreateScanUser请求参数结构体",
       "members": [
@@ -633,6 +708,87 @@
       "members": [
         {
           "document": "返回结果码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomizationConfigs": {
+      "document": "语音消息转文本自学习模型配置",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "123",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "123",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2训练失败",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteCustomizationRequest": {
+      "document": "DeleteCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的模型ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "1234",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomizationResponse": {
+      "document": "DeleteCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "返回值。0为成功，非0为失败。",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -1388,6 +1544,42 @@
       ],
       "type": "object"
     },
+    "GetCustomizationListRequest": {
+      "document": "GetCustomizationList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "1234",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCustomizationListResponse": {
+      "document": "GetCustomizationList返回参数结构体",
+      "members": [
+        {
+          "document": "语音消息转文本自学习模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomizationConfigs",
+          "name": "CustomizationConfigs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InOutTimeInfo": {
       "document": "用户进出房间信息",
       "members": [
@@ -1472,6 +1664,132 @@
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationRequest": {
+      "document": "ModifyCustomization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "123",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文本文件",
+          "example": "abc",
+          "member": "string",
+          "name": "TextUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的模型ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationResponse": {
+      "document": "ModifyCustomization返回参数结构体",
+      "members": [
+        {
+          "document": "返回值。0为成功，非0为失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自学习模型ID",
+          "example": "123",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationStateRequest": {
+      "document": "ModifyCustomizationState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自学习模型ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "想要变换的模型状态，-1代表下线，1代表上线",
+          "example": "1",
+          "member": "int64",
+          "name": "ToState",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用 ID，登录控制台创建应用得到的AppID",
+          "example": "1234",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizationStateResponse": {
+      "document": "ModifyCustomizationState返回参数结构体",
+      "members": [
+        {
+          "document": "自学习模型ID",
+          "example": "abc",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回值。0为成功，非0为失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

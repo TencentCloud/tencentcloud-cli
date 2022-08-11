@@ -1,4 +1,4 @@
-**Example 1: 查询DDos攻击日志**
+**Example 1: 查询DDos攻击时序数据**
 
 
 
@@ -6,43 +6,43 @@ Input:
 
 ```
 tccli teo DescribeDDosAttackData --cli-unfold-argument  \
-    --AttackType xx \
-    --MetricNames xx \
-    --ProtocolType xx \
-    --Interval xx \
-    --PolicyIds 0 \
-    --ZoneIds xx \
-    --StartTime 2020-09-22T00:00:00+00:00 \
-    --EndTime 2020-09-22T00:00:00+00:00 \
-    --Port 0
+    --AttackType UDPFLOOD \
+    --MetricNames ddos_attackMaxBandwidth \
+    --ProtocolType udp \
+    --Interval min \
+    --PolicyIds 1706 \
+    --ZoneIds zone-21xfqlh4qjee \
+    --StartTime 2022-08-22T00:00:00+00:00 \
+    --EndTime 2022-08-23T00:00:00+00:00 \
+    --Port 22
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": 0,
-        "Msg": "xx",
-        "Interval": "xx",
+        "Status": 1,
+        "Msg": "success",
+        "Interval": "min",
         "Data": [
             {
                 "Value": [
                     {
-                        "Max": 0,
-                        "Metric": "xx",
-                        "Avg": 0.0,
+                        "Max": 100,
+                        "Metric": "ddos_attackMaxBandwidth",
+                        "Avg": 100.0,
                         "Detail": [
                             {
-                                "Value": 0
+                                "Value": 100
                             }
                         ],
-                        "Sum": 0.0
+                        "Sum": 100.0
                     }
                 ],
-                "Key": "xx"
+                "Key": "ddos_attackMaxBandwidth"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "a79e60f8-34cc-4ee5-a7f9-a24adb572c68"
     }
 }
 ```

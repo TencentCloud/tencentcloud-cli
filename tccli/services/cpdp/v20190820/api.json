@@ -6607,6 +6607,32 @@
       ],
       "usage": "in"
     },
+    "CloudExternalUserInfo": {
+      "document": "渠道方用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道方用户类型",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalUserType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道方用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CloudGlobalPayTimeInfo": {
       "document": "全局支付时间信息",
       "members": [
@@ -36566,6 +36592,15 @@
           "name": "OrderReceiveMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道方用户信息列表",
+          "example": "无",
+          "member": "CloudExternalUserInfo",
+          "name": "ExternalUserInfoList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -10,8 +10,8 @@ tccli essbasic ChannelGetTaskResultApi --cli-unfold-argument  \
     --Operator.ClientIp 8.8.8.8 \
     --Operator.ProxyIp  \
     --Agent.ProxyOrganizationOpenId test1_clara_open_organization1 \
-    --Agent.AppId 7f3497f015042c9a35e0984a9657b0ec \
-    --TaskId 20220729152534589282
+    --Agent.AppId 7f349*********984a9657b0ec \
+    --TaskId 2022*********589282
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
 {
     "Response": {
         "RequestId": "3f08b529-f13e-4129-85a4-9585fd794656",
-        "ResourceId": "yDRt2UUgygqxvx1tUuO4zjEytoAXw44x",
-        "TaskId": "20220729152534589282",
+        "ResourceId": "yDRt2*********EytoAXw44x",
+        "TaskId": "2022*********4589282",
         "TaskMessage": "任务处理完成",
         "TaskStatus": 8
     }

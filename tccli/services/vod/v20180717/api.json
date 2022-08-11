@@ -312,6 +312,12 @@
       "name": "查询 CDN 日志下载链接列表",
       "output": "DescribeCdnLogsResponse"
     },
+    "DescribeClientUploadAccelerationUsageData": {
+      "document": "该接口返回查询时间范围内客户端上传加速统计信息。\n   1. 可以查询最近365天内的客户端上传加速统计数据。\n   2. 查询时间跨度不超过90天。\n   3. 查询时间跨度超过1天的，返回以天为粒度的数据，否则，返回以5分钟为粒度的数据。\n",
+      "input": "DescribeClientUploadAccelerationUsageDataRequest",
+      "name": "查询客户端上传加速统计数据",
+      "output": "DescribeClientUploadAccelerationUsageDataResponse"
+    },
     "DescribeContentReviewTemplates": {
       "document": "根据音视频内容审核模板唯一标识，获取音视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。",
       "input": "DescribeContentReviewTemplatesRequest",
@@ -10236,6 +10242,69 @@
       ],
       "type": "object"
     },
+    "DescribeClientUploadAccelerationUsageDataRequest": {
+      "document": "DescribeClientUploadAccelerationUsageData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2020-09-07T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2020-09-09T23:59:59+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端上传加速类型，取值有：\n<li> AccelerationWithHTTP：HTTP 传输方式的上传加速。</li>\n<li> AccelerationWithQUIC：QUIC 传输方式的上传加速。</li>\n默认查询所有加速类型的用量 。",
+          "example": "AccelarationWithHTTP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientUploadAccelerationUsageDataResponse": {
+      "document": "DescribeClientUploadAccelerationUsageData返回参数结构体",
+      "members": [
+        {
+          "document": "客户端上传加速统计数据。",
+          "example": "无",
+          "member": "StatDataItem",
+          "name": "ClientUploadAccelerationUsageDataSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeContentReviewTemplatesRequest": {
       "document": "DescribeContentReviewTemplates请求参数结构体",
       "members": [
@@ -13324,7 +13393,7 @@
         },
         {
           "default": "",
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -24863,16 +24932,6 @@
         },
         {
           "default": "",
-          "document": "片头片尾列表，支持多片头片尾，最大可支持 10 个。",
-          "example": "无",
-          "member": "HeadTailTaskInput",
-          "name": "HeadTailSet",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "马赛克列表，最大可支持 10 张。",
           "example": "无",
           "member": "MosaicInput",
@@ -24883,12 +24942,12 @@
         },
         {
           "default": "",
-          "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
-          "example": "3",
-          "member": "float",
-          "name": "EndTimeOffset",
+          "document": "片头片尾列表，支持多片头片尾，最大可支持 10 个。",
+          "example": "无",
+          "member": "HeadTailTaskInput",
+          "name": "HeadTailSet",
           "required": false,
-          "type": "float",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -24897,6 +24956,16 @@
           "example": "2",
           "member": "float",
           "name": "StartTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
+          "example": "3",
+          "member": "float",
+          "name": "EndTimeOffset",
           "required": false,
           "type": "float",
           "value_allowed_null": false

@@ -17,9 +17,11 @@ tccli tem ModifyApplicationAutoscaler --cli-unfold-argument  \
     --Autoscaler.CronHorizontalAutoscaler.0.Period xx \
     --Autoscaler.CronHorizontalAutoscaler.0.Name xx \
     --Autoscaler.MinReplicas 0 \
-    --Autoscaler.AutoscalerId 0 \
+    --Autoscaler.AutoscalerId xx \
+    --Autoscaler.Enabled True \
     --Autoscaler.HorizontalAutoscaler.0.MinReplicas 0 \
     --Autoscaler.HorizontalAutoscaler.0.Metrics xx \
+    --Autoscaler.HorizontalAutoscaler.0.Enabled True \
     --Autoscaler.HorizontalAutoscaler.0.Threshold 0 \
     --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 0 \
     --Autoscaler.EnableDate xx \

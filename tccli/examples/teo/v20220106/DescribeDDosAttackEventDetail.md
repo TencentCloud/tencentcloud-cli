@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli teo DescribeDDosAttackEventDetail --cli-unfold-argument  \
-    --EventId xx
+    --EventId 12314451244512
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": 0,
-        "Msg": "xx",
+        "Status": 1,
+        "Msg": "success",
         "Data": {
-            "EventId": "xx",
-            "PacketMaxRate": 0,
-            "AttackType": "xx",
-            "PolicyId": 0,
-            "StartTime": 0,
-            "MaxBandWidth": 0,
-            "EndTime": 0,
-            "AttackStatus": 0
+            "EventId": "12314451244512",
+            "PacketMaxRate": 10,
+            "AttackType": "UDPFLOOD",
+            "PolicyId": 1705,
+            "StartTime": 1660010100,
+            "MaxBandWidth": 100,
+            "EndTime": 1660010160,
+            "AttackStatus": 1
         },
-        "RequestId": "xx"
+        "RequestId": "dd54b175-5594-4acc-a230-75d8ae19b5bf"
     }
 }
 ```

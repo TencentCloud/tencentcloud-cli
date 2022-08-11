@@ -1,38 +1,4 @@
-**Example 1: 创建电子签流程。**
-
-
-
-Input: 
-
-```
-tccli ess CreateFlow --cli-unfold-argument  \
-    --Operator.UserId 1956103********520fde6a \
-    --FlowName 测试 \
-    --Unordered False \
-    --DeadLine 1604912664 \
-    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
-    --Approvers.0.ApproverType 0 \
-    --Approvers.0.OrganizationName ***有限公司 \
-    --Approvers.0.Required True \
-    --Approvers.0.ApproverName 张三 \
-    --Approvers.0.ApproverMobile 185****11111 \
-    --Approvers.1.ApproverType 1 \
-    --Approvers.1.Required True \
-    --Approvers.1.ApproverName 李四 \
-    --Approvers.1.ApproverMobile 185****2222
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FlowId": "2fb48c3945****65aaedf6",
-        "RequestId": "s1234345677xxxx"
-    }
-}
-```
-
-**Example 2: 测试**
+**Example 1: 测试**
 
 
 
@@ -73,6 +39,40 @@ Output:
     "Response": {
         "FlowId": "yDR8YUUg****O4zjEuwxLMnR24",
         "RequestId": "2846e98d-53bd-4d1f-807f-d2632a7fceef"
+    }
+}
+```
+
+**Example 2: 创建签署流程。**
+
+
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId 1956103********520fde6a \
+    --FlowName 测试 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverName 张三 \
+    --Approvers.0.ApproverMobile 185****11111 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 185****2222
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "2fb48c3945****65aaedf6",
+        "RequestId": "s1234345677xxxx"
     }
 }
 ```

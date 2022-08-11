@@ -29,7 +29,8 @@ Output:
                 "__SOURCE__"
             ]
         },
-        "NeedContent": true
+        "NeedContent": true,
+        "Compression": 0
     }
 }
 ```

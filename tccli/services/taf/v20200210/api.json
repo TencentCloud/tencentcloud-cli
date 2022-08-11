@@ -12,12 +12,6 @@
       "name": "流量反欺诈-流量验准定制版",
       "output": "RecognizeCustomizedAudienceResponse"
     },
-    "RecognizeEffectiveFlow": {
-      "document": "该服务已不再对外提供能力\n\n筛选敏感易骚扰人群",
-      "input": "RecognizeEffectiveFlowRequest",
-      "name": "流量甄选",
-      "output": "RecognizeEffectiveFlowResponse"
-    },
     "RecognizePreciseTargetAudience": {
       "document": "流量反欺诈-流量验准高级版",
       "input": "RecognizePreciseTargetAudienceRequest",
@@ -199,11 +193,6 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
-    },
-    "InputRecognizeEffectiveFlow": {
-      "document": "接口入参",
-      "members": [],
       "usage": "in"
     },
     "InputRecognizeTargetAudience": {
@@ -763,63 +752,6 @@
       ],
       "usage": "out"
     },
-    "OutputRecognizeEffectiveFlow": {
-      "document": "业务出参",
-      "members": [
-        {
-          "default": "",
-          "document": "返回码。0表示成功，非0标识失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "UTF-8编码，出错消息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "业务入参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "OutputRecognizeEffectiveFlowValue",
-          "name": "Value",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputRecognizeEffectiveFlowValue": {
-      "document": "业务出参",
-      "members": [
-        {
-          "default": "",
-          "document": "返回标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Lable",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "返回分值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "float",
-          "name": "Score",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "OutputRecognizeTargetAudience": {
       "document": "流量反欺诈-验准返回值",
       "members": [
@@ -942,39 +874,6 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeEffectiveFlowRequest": {
-      "document": "RecognizeEffectiveFlow请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "业务入参",
-          "member": "InputRecognizeEffectiveFlow",
-          "name": "BusinessSecurityData",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeEffectiveFlowResponse": {
-      "document": "RecognizeEffectiveFlow返回参数结构体",
-      "members": [
-        {
-          "document": "业务出参",
-          "member": "OutputRecognizeEffectiveFlow",
-          "name": "Data",
-          "type": "object",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

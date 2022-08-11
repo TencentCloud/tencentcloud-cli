@@ -1321,7 +1321,7 @@
         },
         {
           "default": "",
-          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_和\\_\\_TIMESTAMP\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
           "member": "string",
           "name": "MetaFields",
@@ -2103,6 +2103,15 @@
           "name": "Ckafka",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3353,6 +3362,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5853,6 +5871,15 @@
           "name": "Ckafka",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

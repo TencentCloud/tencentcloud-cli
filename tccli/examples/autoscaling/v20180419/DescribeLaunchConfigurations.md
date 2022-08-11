@@ -80,7 +80,8 @@ Output:
                     "Period": 0,
                     "RenewFlag": ""
                 },
-                "Tags": []
+                "Tags": [],
+                "HpcClusterId": ""
             },
             {
                 "ProjectId": 0,
@@ -147,7 +148,8 @@ Output:
                     "Period": 0,
                     "RenewFlag": ""
                 },
-                "Tags": []
+                "Tags": [],
+                "HpcClusterId": ""
             }
         ],
         "RequestId": "0d4514d4-e277-4f0f-bc85-8b7377a71980"
@@ -237,7 +239,8 @@ Output:
                 "InstanceChargePrepaid": {
                     "Period": 0,
                     "RenewFlag": ""
-                }
+                },
+                "HpcClusterId": ""
             }
         ],
         "RequestId": "923dd24c-e492-4bdb-90be-1d3bd4bfe8a5"
@@ -334,7 +337,8 @@ Output:
                 "InstanceChargePrepaid": {
                     "Period": 0,
                     "RenewFlag": ""
-                }
+                },
+                "HpcClusterId": ""
             }
         ],
         "RequestId": "8b8047bb-1372-4208-866e-a18e7b7547e9"

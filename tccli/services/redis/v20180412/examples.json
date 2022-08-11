@@ -630,6 +630,14 @@
         "title": "请求示例"
       }
     ],
+    "SwitchProxy": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=SwitchProxy\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "UpgradeInstance": [
       {
         "document": "",

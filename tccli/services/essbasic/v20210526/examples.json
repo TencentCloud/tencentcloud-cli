@@ -19,8 +19,8 @@
     "ChannelCreateConvertTaskApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"hello.docx\",\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f3497f015042c9a35e0984a9657b0ec\"\n    },\n    \"ResourceId\": \"yDRvQUUgygqt75qpUuO4zjERW6iCFCEl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0218bd4e-541e-45e8-8d1f-76efef6c83d2\",\n        \"TaskId\": \"20220729152534589282\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"hello.docx\",\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f3497*********84a9657b0ec\"\n    },\n    \"ResourceId\": \"yDRvQUUg*********zjERW6iCFCEl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0218bd4e-541e-45e8-8d1f-76efef6c83d2\",\n        \"TaskId\": \"20220*********589282\"\n    }\n}",
         "title": "test示例"
       }
     ],
@@ -43,8 +43,8 @@
     "ChannelGetTaskResultApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelGetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f3497f015042c9a35e0984a9657b0ec\"\n    },\n    \"TaskId\": \"20220729152534589282\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f08b529-f13e-4129-85a4-9585fd794656\",\n        \"ResourceId\": \"yDRt2UUgygqxvx1tUuO4zjEytoAXw44x\",\n        \"TaskId\": \"20220729152534589282\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelGetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f349*********984a9657b0ec\"\n    },\n    \"TaskId\": \"2022*********589282\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f08b529-f13e-4129-85a4-9585fd794656\",\n        \"ResourceId\": \"yDRt2*********EytoAXw44x\",\n        \"TaskId\": \"2022*********4589282\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8\n    }\n}",
         "title": "test示例"
       }
     ],

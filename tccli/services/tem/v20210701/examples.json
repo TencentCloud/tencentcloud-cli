@@ -11,7 +11,7 @@
     "CreateApplicationAutoscaler": [
       {
         "document": "创建弹性伸缩策略组合",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": 0,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": \"xx\",\n        \"Enabled\": true,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Enabled\": true,\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建弹性伸缩策略组合"
       }
@@ -158,6 +158,14 @@
         "title": "获取分批发布详情"
       }
     ],
+    "DescribeEnvironment": [
+      {
+        "document": "获取环境状态",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Region\": \"ap-shanghai\",\n            \"VpcId\": \"vpc-xxx\",\n            \"SubnetIds\": [\n                \"subnet-xxx\"\n            ],\n            \"Description\": \"vpc-xxx\",\n            \"CreatedDate\": \"2011-11-11\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取环境状态"
+      }
+    ],
     "DescribeEnvironmentStatus": [
       {
         "document": "获取环境状态",
@@ -249,7 +257,7 @@
     "ModifyApplicationAutoscaler": [
       {
         "document": "修改弹性伸缩策略组合",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"AutoscalerId\": \"xx\",\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": 0,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"AutoscalerId\": \"xx\",\n    \"Autoscaler\": {\n        \"ModifyDate\": \"xx\",\n        \"Description\": \"xx\",\n        \"CronHorizontalAutoscaler\": [\n            {\n                \"Priority\": 0,\n                \"Schedules\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"TargetReplicas\": 0\n                    }\n                ],\n                \"Enabled\": true,\n                \"Period\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"MinReplicas\": 0,\n        \"AutoscalerId\": \"xx\",\n        \"Enabled\": true,\n        \"HorizontalAutoscaler\": [\n            {\n                \"MinReplicas\": 0,\n                \"Metrics\": \"xx\",\n                \"Enabled\": true,\n                \"Threshold\": 0,\n                \"MaxReplicas\": 0\n            }\n        ],\n        \"EnableDate\": \"xx\",\n        \"AutoscalerName\": \"xx\",\n        \"CreateDate\": \"xx\",\n        \"MaxReplicas\": 0\n    },\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改弹性伸缩策略组合"
       }

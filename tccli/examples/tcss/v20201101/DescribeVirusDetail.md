@@ -61,7 +61,11 @@ Output:
         "Size": 1,
         "ContainerNetStatus": "xx",
         "ContainerNetSubStatus": "xx",
-        "ContainerIsolateOperationSrc": "xx"
+        "ContainerIsolateOperationSrc": "xx",
+        "CheckPlatform": [
+            "1",
+            "2"
+        ]
     }
 }
 ```

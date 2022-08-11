@@ -128,18 +128,10 @@
         "title": "获取主被叫受保护的电话话单示例"
       }
     ],
-    "DescribeSeatUserList": [
-      {
-        "document": "",
-        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeSeatUserList\n&InstanceId=11\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"TotalCount\": 30,\n        \"SeatUsers\": [\n            {\n                \"Name\": \"张三\",\n                \"Mail\": \"zhangsan@qq.com\",\n                \"Phone\": \"12345678901\",\n                \"Nick\": \"张三\"\n            },\n            {\n                \"Name\": \"李四\",\n                \"Mail\": \"lisi@qq.com\",\n                \"Phone\": \"12345678902\",\n                \"Nick\": \"李四\"\n            },\n            {\n                \"Name\": \"王五\",\n                \"Mail\": \"wangwu@qq.com\",\n                \"Phone\": \"12345678903\",\n                \"Nick\": \"王五\"\n            }\n        ]\n    }\n}",
-        "title": "获取坐席用户列表示例"
-      }
-    ],
     "DescribeSkillGroupInfoList": [
       {
         "document": "",
-        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeSkillGroupInfoList\n&SdkAppId=1400000000\n&SkillGroupId=12\n&ModifiedTime=1590147606\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillGroupInfoList\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"0\",\n    \"ModifiedTime\": \"1590147606\",\n    \"SdkAppId\": \"1400000000\",\n    \"SkillGroupId\": \"12\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 2,\n        \"SkillGroupList\": [\n            {\n                \"SkillGroupId\": 1115,\n                \"SkillGroupName\": \"luluttt\",\n                \"Type\": \"TEL\",\n                \"RoutePolicy\": \"firstCreate\",\n                \"UsingLastSeat\": 0,\n                \"MaxConcurrency\": 1,\n                \"LastModifyTimestamp\": 1613976392\n            }\n        ]\n    }\n}",
         "title": "获取技能组列表示例"
       }

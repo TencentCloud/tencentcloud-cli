@@ -1671,6 +1671,24 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "example": "Chinese_PRC_CI_AS",
+          "member": "string",
+          "name": "Collation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统时区，默认：China Standard Time",
+          "example": "China Standard Time",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1878,6 +1896,24 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "example": "Chinese_PRC_CI_AS",
+          "member": "string",
+          "name": "Collation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统时区，默认：China Standard Time",
+          "example": "China Standard Time",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2355,6 +2391,24 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "example": "Chinese_PRC_CI_AS",
+          "member": "string",
+          "name": "Collation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统时区，默认：China Standard Time",
+          "example": "China Standard Time",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3038,6 +3092,26 @@
           "name": "TgwWanVPort",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
+          "example": "Chinese_PRC_CI_AS",
+          "member": "string",
+          "name": "Collation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统时区，默认：China Standard Time",
+          "example": "China Standard Time",
+          "member": "string",
+          "name": "TimeZone",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

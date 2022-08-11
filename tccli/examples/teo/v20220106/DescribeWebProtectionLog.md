@@ -1,4 +1,4 @@
-**Example 1: 限速拦截日志**
+**Example 1: 查询CC防护日志**
 
 
 
@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli teo DescribeWebProtectionLog --cli-unfold-argument  \
-    --ZoneIds zoneId1 zoneId2 \
+    --PageSize 1 \
+    --PageNo 1 \
+    --EntityType acl \
+    --ZoneIds zone-21xfqlh4qjee \
+    --StartTime 2020-09-22T00:00:00+00:00 \
     --Domains www.baidu.com \
-    --QueryCondition.0.Key key test \
-    --QueryCondition.0.Operator operator test \
-    --QueryCondition.0.Value v1 v2 \
-    --StartTime 2020-04-30T00:00:00Z \
-    --EndTime 2020-04-30T00:00:00Z \
-    --PageSize 2 \
-    --PageNo 1
+    --EndTime 2020-09-22T00:00:00+00:00 \
+    --QueryCondition.0.Operator equals \
+    --QueryCondition.0.Value monitor \
+    --QueryCondition.0.Key action
 ```
 
 Output: 
@@ -27,24 +28,31 @@ Output:
             "TotalSize": 0,
             "List": [
                 {
-                    "EventId": "xx",
-                    "HttpLog": "xx",
-                    "SipCountryCode": "xx",
-                    "RuleId": 1,
-                    "RiskLevel": "xx",
-                    "RequestUri": "xx",
-                    "AttackDomain": "xx",
-                    "AttackTime": 1,
+                    "EventId": "91558071885490496",
+                    "SipCountryCode": "CN",
+                    "RequestUri": "/",
+                    "RequestMethod": "GET",
+                    "RuleDetailList": [
+                        {
+                            "Description": "cooper5_acl",
+                            "RuleId": 1123,
+                            "RuleTypeName": "cooper5_acl",
+                            "Action": "monitor"
+                        }
+                    ],
+                    "AttackDomain": "www.baidu.com",
+                    "AttackTime": 1660035802,
                     "DisposalMethod": "xx",
                     "HitCount": 1,
-                    "AttackSip": "xx"
+                    "Ua": "SemrushBot",
+                    "AttackSip": "1.2.3.4"
                 }
             ],
-            "PageSize": 0,
-            "PageNo": 0,
-            "Pages": 0
+            "PageSize": 1,
+            "PageNo": 1,
+            "Pages": 1
         },
-        "RequestId": "xx"
+        "RequestId": "a55ce448-d5e6-4351-9a1f-8f0a5222fba1"
     }
 }
 ```

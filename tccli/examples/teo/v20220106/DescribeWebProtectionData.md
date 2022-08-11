@@ -1,4 +1,4 @@
-**Example 1: Web攻击数据**
+**Example 1: 查询CC防护时序数据**
 
 
 
@@ -6,13 +6,11 @@ Input:
 
 ```
 tccli teo DescribeWebProtectionData --cli-unfold-argument  \
-    --AttackType xx \
-    --MetricNames xx \
-    --ProtocolType xx \
-    --Interval xx \
-    --ZoneIds xx \
+    --MetricNames ccRate_interceptNum \
+    --Interval min \
+    --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
-    --Domains xx \
+    --Domains www.baidu.com \
     --EndTime 2020-09-22T00:00:00+00:00
 ```
 
@@ -21,28 +19,28 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Msg": "xx",
-        "Interval": "xx",
+        "Msg": "success",
+        "Interval": "min",
         "Data": [
             {
                 "Value": [
                     {
-                        "Max": 0,
-                        "Metric": "xx",
-                        "Avg": 0.0,
+                        "Max": 10,
+                        "Metric": "ccRate_interceptNum",
+                        "Avg": 10.0,
                         "Detail": [
                             {
-                                "Timestamp": 0,
-                                "Value": 0
+                                "Timestamp": 1659456000,
+                                "Value": 10
                             }
                         ],
-                        "Sum": 0.0
+                        "Sum": 10.0
                     }
                 ],
-                "Key": "xx"
+                "Key": "zone-21xfqlh4qjee"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "4caecd0e-5465-4c90-a100-1abd7f028ab3"
     }
 }
 ```

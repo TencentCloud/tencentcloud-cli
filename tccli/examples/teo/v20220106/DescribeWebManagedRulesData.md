@@ -1,4 +1,4 @@
-**Example 1: Web托管规则数据**
+**Example 1: 查询waf攻击时序数据**
 
 
 
@@ -6,13 +6,11 @@ Input:
 
 ```
 tccli teo DescribeWebManagedRulesData --cli-unfold-argument  \
-    --AttackType xx \
-    --MetricNames xx \
-    --ProtocolType xx \
-    --Interval xx \
-    --ZoneIds xx \
+    --MetricNames waf_interceptNum \
+    --Interval min \
+    --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
-    --Domains xx \
+    --Domains www.baidu.com \
     --EndTime 2020-09-22T00:00:00+00:00
 ```
 
@@ -21,28 +19,28 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Msg": "xx",
-        "Interval": "xx",
+        "Msg": "success",
+        "Interval": "min",
         "Data": [
             {
                 "Value": [
                     {
-                        "Max": 0,
+                        "Max": 10,
                         "Metric": "xx",
-                        "Avg": 0.0,
+                        "Avg": 10.0,
                         "Detail": [
                             {
-                                "Timestamp": 0,
-                                "Value": 0
+                                "Timestamp": 1657411200,
+                                "Value": 10
                             }
                         ],
-                        "Sum": 0.0
+                        "Sum": 10.0
                     }
                 ],
-                "Key": "xx"
+                "Key": "www.baidu.com"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "23dd59e1-0d8a-4fa2-a9f9-9f20195523c6"
     }
 }
 ```

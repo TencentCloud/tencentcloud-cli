@@ -1707,6 +1707,15 @@
           "name": "DiskTypePolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4103,6 +4112,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4794,6 +4813,15 @@
           "example": "无",
           "member": "string",
           "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterId",
           "required": false,
           "type": "string"
         }

@@ -6,12 +6,6 @@
       "name": "申请用户证书",
       "output": "ApplyUserCertResponse"
     },
-    "BlockByNumberHandler": {
-      "document": "版本升级\n\nBcos根据块高查询区块信息",
-      "input": "BlockByNumberHandlerRequest",
-      "name": "按块高查询区块信息",
-      "output": "BlockByNumberHandlerResponse"
-    },
     "CreateChaincodeAndInstallForUser": {
       "document": "创建并安装合约",
       "input": "CreateChaincodeAndInstallForUserRequest",
@@ -23,12 +17,6 @@
       "input": "DeployDynamicBcosContractRequest",
       "name": "动态部署并发布Bcos合约",
       "output": "DeployDynamicBcosContractResponse"
-    },
-    "DeployDynamicContractHandler": {
-      "document": "版本升级\n\n动态部署合约",
-      "input": "DeployDynamicContractHandlerRequest",
-      "name": "动态部署合约",
-      "output": "DeployDynamicContractHandlerResponse"
     },
     "DownloadUserCert": {
       "document": "下载用户证书",
@@ -65,12 +53,6 @@
       "input": "GetBlockListRequest",
       "name": "查询区块列表",
       "output": "GetBlockListResponse"
-    },
-    "GetBlockListHandler": {
-      "document": "版本升级\n\nBcos分页查询当前群组下的区块列表",
-      "input": "GetBlockListHandlerRequest",
-      "name": "查询区块列表",
-      "output": "GetBlockListHandlerResponse"
     },
     "GetBlockTransactionListForUser": {
       "document": "获取区块内的交易列表",
@@ -131,18 +113,6 @@
       "input": "GetPeerLogForUserRequest",
       "name": "获取节点日志",
       "output": "GetPeerLogForUserResponse"
-    },
-    "GetTransByHashHandler": {
-      "document": "版本升级\n\nBcos根据交易哈希查看交易详细信息",
-      "input": "GetTransByHashHandlerRequest",
-      "name": "根据交易哈希查询交易信息",
-      "output": "GetTransByHashHandlerResponse"
-    },
-    "GetTransListHandler": {
-      "document": "版本升级\n\nBcos分页查询当前群组的交易信息列表",
-      "input": "GetTransListHandlerRequest",
-      "name": "查询交易列表",
-      "output": "GetTransListHandlerResponse"
     },
     "GetTransactionDetailForUser": {
       "document": "获取交易详情",
@@ -222,23 +192,11 @@
       "name": "通过交易ID查询长安链交易",
       "output": "QueryChainMakerTransactionResponse"
     },
-    "SendTransactionHandler": {
-      "document": "版本升级\n\nBcos发送交易",
-      "input": "SendTransactionHandlerRequest",
-      "name": "发送交易",
-      "output": "SendTransactionHandlerResponse"
-    },
     "SrvInvoke": {
       "document": "trustsql服务统一接口",
       "input": "SrvInvokeRequest",
       "name": "trustsql服务统一接口",
       "output": "SrvInvokeResponse"
-    },
-    "TransByDynamicContractHandler": {
-      "document": "版本升级\n\n根据动态部署的合约发送交易",
-      "input": "TransByDynamicContractHandlerRequest",
-      "name": "根据动态部署的合约发送交易",
-      "output": "TransByDynamicContractHandlerResponse"
     }
   },
   "metadata": {
@@ -549,63 +507,6 @@
         }
       ],
       "usage": "out"
-    },
-    "BlockByNumberHandlerRequest": {
-      "document": "BlockByNumberHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：block",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：block_by_number",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "当前群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "区块高度",
-          "member": "int64",
-          "name": "BlockNumber",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "BlockByNumberHandlerResponse": {
-      "document": "BlockByNumberHandler返回参数结构体",
-      "members": [
-        {
-          "document": "返回区块json字符串",
-          "member": "string",
-          "name": "BlockJson",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ChainMakerContractResult": {
       "document": "长安链合约执行结果",
@@ -984,87 +885,6 @@
           "member": "string",
           "name": "ContractAddress",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeployDynamicContractHandlerRequest": {
-      "document": "DeployDynamicContractHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：contract",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：deploy_dynamic_contract",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约名称",
-          "member": "string",
-          "name": "ContractName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约编译后的abi",
-          "member": "string",
-          "name": "AbiInfo",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约编译后的binary",
-          "member": "string",
-          "name": "ByteCodeBin",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "构造函数入参",
-          "member": "string",
-          "name": "ConstructorParams",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DeployDynamicContractHandlerResponse": {
-      "document": "DeployDynamicContractHandler返回参数结构体",
-      "members": [
-        {
-          "document": "部署成功返回的合约地址",
-          "member": "string",
-          "name": "ContractAddress",
           "type": "string",
           "value_allowed_null": false
         },
@@ -1457,93 +1277,6 @@
           "member": "BcosTransInfo",
           "name": "List",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetBlockListHandlerRequest": {
-      "document": "GetBlockListHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：block",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：get_block_list",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "记录偏移数",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "每页记录数",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "当前群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "区块哈希",
-          "member": "string",
-          "name": "BlockHash",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetBlockListHandlerResponse": {
-      "document": "GetBlockListHandler返回参数结构体",
-      "members": [
-        {
-          "document": "总记录数",
-          "member": "int64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "当前群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "返回数据列表",
-          "member": "BcosBlockObj",
-          "name": "List",
           "type": "list",
           "value_allowed_null": false
         },
@@ -2702,150 +2435,6 @@
           "member": "LogDetailForUser",
           "name": "PeerLogList",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTransByHashHandlerRequest": {
-      "document": "GetTransByHashHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：transaction",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：get_trans_by_hash",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "交易哈希",
-          "member": "string",
-          "name": "TransHash",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTransByHashHandlerResponse": {
-      "document": "GetTransByHashHandler返回参数结构体",
-      "members": [
-        {
-          "document": "交易信息json字符串",
-          "member": "string",
-          "name": "TransactionJson",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTransListHandlerRequest": {
-      "document": "GetTransListHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：transaction",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：get_trans_list",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "记录偏移量",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "每页记录数",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "交易哈希",
-          "member": "string",
-          "name": "TransHash",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTransListHandlerResponse": {
-      "document": "GetTransListHandler返回参数结构体",
-      "members": [
-        {
-          "document": "总记录数",
-          "member": "int64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "当前群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "返回数据列表",
-          "member": "BcosTransInfo",
-          "name": "List",
           "type": "list",
           "value_allowed_null": false
         },
@@ -4107,79 +3696,6 @@
       ],
       "type": "object"
     },
-    "SendTransactionHandlerRequest": {
-      "document": "SendTransactionHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：transaction",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：send_transaction",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约编号",
-          "member": "int64",
-          "name": "ContractId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "合约方法名",
-          "member": "string",
-          "name": "FuncName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约方法入参",
-          "member": "string",
-          "name": "FuncParam",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "SendTransactionHandlerResponse": {
-      "document": "SendTransactionHandler返回参数结构体",
-      "members": [
-        {
-          "document": "交易结果json字符串",
-          "member": "string",
-          "name": "TransactionRsp",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "SrvInvokeRequest": {
       "document": "SrvInvoke请求参数结构体",
       "members": [
@@ -4231,95 +3747,6 @@
           "document": "返回数据",
           "member": "string",
           "name": "Data",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "TransByDynamicContractHandlerRequest": {
-      "document": "TransByDynamicContractHandler请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "模块名，固定字段：transaction",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作名，固定字段：trans_by_dynamic_contract",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "群组编号",
-          "member": "string",
-          "name": "GroupPk",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约地址（合约部署成功，可得到合约地址）",
-          "member": "string",
-          "name": "ContractAddress",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约名",
-          "member": "string",
-          "name": "ContractName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约编译后的abi",
-          "member": "string",
-          "name": "AbiInfo",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约被调用方法名",
-          "member": "string",
-          "name": "FuncName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "合约被调用方法的入参",
-          "member": "string",
-          "name": "FuncParam",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "TransByDynamicContractHandlerResponse": {
-      "document": "TransByDynamicContractHandler返回参数结构体",
-      "members": [
-        {
-          "document": "交易结果json字符串",
-          "member": "string",
-          "name": "TransactionRsp",
           "type": "string",
           "value_allowed_null": false
         },

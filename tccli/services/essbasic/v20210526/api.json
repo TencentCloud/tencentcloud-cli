@@ -475,7 +475,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道应用相关信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -580,6 +580,15 @@
           "name": "CustomerData",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。 若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。  注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
         },
         {
           "default": "",
@@ -2269,6 +2278,16 @@
           "name": "CcInfos",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

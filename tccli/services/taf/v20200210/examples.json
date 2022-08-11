@@ -16,14 +16,6 @@
         "title": "RecognizeCustomizedAudience"
       }
     ],
-    "RecognizeEffectiveFlow": [
-      {
-        "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeEffectiveFlow\n&BusinessSecurityData.MsgPhone=13112345678\n&BusinessSecurityData.MsgSignature=oz5I********************GfVv\n&BusinessSecurityData.MsgContext=qw########wqer\n&BusinessSecurityData.MsgType=1\n&BusinessSecurityData.MsgSubType=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"Lable\": \"1\",\n                \"Score\": 10.0\n            }\n        },\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
-        "title": "RecognizeEffectiveFlow"
-      }
-    ],
     "RecognizePreciseTargetAudience": [
       {
         "document": "",

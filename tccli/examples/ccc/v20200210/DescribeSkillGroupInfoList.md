@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ccc DescribeSkillGroupInfoList --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
-    --SkillGroupId 12 \
-    --ModifiedTime 1590147606 \
     --PageSize 10 \
-    --PageNumber 0
+    --PageNumber 0 \
+    --ModifiedTime 1590147606 \
+    --SdkAppId 1400000000 \
+    --SkillGroupId 12
 ```
 
 Output: 

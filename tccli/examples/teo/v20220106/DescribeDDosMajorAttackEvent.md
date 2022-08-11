@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli teo DescribeDDosMajorAttackEvent --cli-unfold-argument  \
-    --PageNo 0 \
-    --PageSize 0 \
-    --ProtocolType xx \
-    --PolicyIds 0 \
-    --ZoneIds zoneId1 zoneid2 \
+    --PageNo 1 \
+    --PageSize 1 \
+    --ProtocolType tcp \
+    --PolicyIds 1705 \
+    --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-22T00:00:00+00:00
 ```
@@ -25,16 +25,16 @@ Output:
             "TotalSize": 36,
             "List": [
                 {
-                    "AttackMaxBandWidth": 0,
-                    "PolicyId": 0,
-                    "AttackTime": 0
+                    "AttackMaxBandWidth": 10,
+                    "PolicyId": 10,
+                    "AttackTime": 10
                 }
             ],
             "PageSize": 12,
             "PageNo": 2,
             "Pages": 3
         },
-        "RequestId": "xx"
+        "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707"
     }
 }
 ```

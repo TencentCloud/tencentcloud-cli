@@ -16,12 +16,28 @@
         "title": "使用自定义配置，创建一个GME应用"
       }
     ],
+    "CreateCustomization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"TextUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "title": "创建语音消息转文本自学习模型"
+      }
+    ],
     "CreateScanUser": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 1234,\n    \"BizId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "新增自定义送检用户"
+      }
+    ],
+    "DeleteCustomization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除自学习模型"
       }
     ],
     "DeleteScanUser": [
@@ -110,12 +126,36 @@
         "title": "拉取用户在房间得进出时间"
       }
     ],
+    "GetCustomizationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomizationList\n<公共请求参数>\n\n{\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomizationConfigs\": [\n            {\n                \"ModelState\": 0,\n                \"BizId\": 0,\n                \"ModelId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询语音消息转文本自学习模型列表"
+      }
+    ],
     "ModifyAppStatus": [
       {
         "document": "",
         "input": "https://gme.tencentcloudapi.com/?Action=ModifyAppStatus\n&BizId=140000001\n&Status=close\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BizId\": 140000001,\n            \"Status\": \"close\"\n        },\n        \"RequestId\": \"e2900289-f21e-43a8-a3bf-0b439cdbbbb8\"\n    }\n}",
         "title": "关闭GME应用140000001"
+      }
+    ],
+    "ModifyCustomization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomization\n<公共请求参数>\n\n{\n    \"TextUrl\": \"xx\",\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "title": "修改自学习模型"
+      }
+    ],
+    "ModifyCustomizationState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizationState\n<公共请求参数>\n\n{\n    \"ToState\": 0,\n    \"BizId\": 0,\n    \"ModelId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "title": "修改自学习模型状态"
       }
     ],
     "ModifyRoomInfo": [

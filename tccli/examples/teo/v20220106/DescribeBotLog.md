@@ -1,4 +1,4 @@
-**Example 1: Bot攻击日志**
+**Example 1: 查询Bot攻击日志**
 
 
 
@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli teo DescribeBotLog --cli-unfold-argument  \
-    --PageSize 0 \
-    --PageNo 0 \
-    --ZoneIds xx \
+    --PageSize 1 \
+    --PageNo 1 \
+    --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
-    --Domains xx \
+    --Domains www.baidu.com \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --QueryCondition.0.Operator xx \
-    --QueryCondition.0.Value xx \
-    --QueryCondition.0.Key xx
+    --QueryCondition.0.Operator equals \
+    --QueryCondition.0.Value monitor \
+    --QueryCondition.0.Key action
 ```
 
 Output: 
@@ -22,35 +22,36 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "Msg": "xx",
+        "Msg": "success",
         "Data": {
-            "TotalSize": 0,
+            "TotalSize": 1,
             "List": [
                 {
-                    "EventId": "xx",
-                    "HttpLog": "xx",
-                    "Domain": "xx",
-                    "SipCountryCode": "xx",
-                    "AttackIp": "xx",
-                    "RiskLevel": "xx",
-                    "RequestUri": "xx",
-                    "RuleId": 1,
-                    "Confidence": "xx",
-                    "AttackContent": "xx",
-                    "RequestMethod": "xx",
-                    "Maliciousness": "xx",
-                    "AttackTime": 1,
-                    "AttackType": "xx",
-                    "DisposalMethod": "xx",
-                    "DetectionMethod": "xx",
-                    "Ua": "xx"
+                    "AttackContent": "",
+                    "AttackIp": "120.241.137.74",
+                    "AttackTime": 1660035802,
+                    "Domain": "cooper5.wshxin.cn",
+                    "EventId": "91558071885490496",
+                    "Label": "none",
+                    "RequestMethod": "GET",
+                    "RequestUri": "/",
+                    "RuleDetailList": [
+                        {
+                            "Action": "drop",
+                            "Description": "营销",
+                            "RuleId": 1003,
+                            "RuleTypeName": "uabot"
+                        }
+                    ],
+                    "SipCountryCode": "CN",
+                    "Ua": "SemrushBot"
                 }
             ],
-            "PageSize": 0,
-            "PageNo": 0,
-            "Pages": 0
+            "PageSize": 1,
+            "PageNo": 1,
+            "Pages": 1
         },
-        "RequestId": "xx"
+        "RequestId": "40b7844d-e4d9-4072-824d-f3a8bc85b487"
     }
 }
 ```

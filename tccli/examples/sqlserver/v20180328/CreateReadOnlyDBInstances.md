@@ -6,21 +6,23 @@ Input:
 
 ```
 tccli sqlserver CreateReadOnlyDBInstances --cli-unfold-argument  \
-    --InstanceId mssql-6upluvd5 \
-    --Zone ap-guangzhou-2 \
-    --ReadOnlyGroupType 2 \
-    --ReadOnlyGroupForcedUpgrade 1 \
-    --ReadOnlyGroupName default_name \
-    --ReadOnlyGroupIsOfflineDelay 1 \
     --ReadOnlyGroupMaxDelayTime 10 \
+    --VpcId vpc-3xq2t5al \
+    --GoodsNum 1 \
+    --Zone ap-guangzhou-2 \
+    --InstanceId mssql-6upluvd5 \
+    --Period 1 \
+    --Storage 10 \
+    --ReadOnlyGroupIsOfflineDelay 1 \
     --ReadOnlyGroupMinInGroup 1 \
+    --ReadOnlyGroupName default_name \
+    --Collation Chinese_PRC_CI_AS \
+    --ReadOnlyGroupType 2 \
     --InstanceChargeType POSTPAID \
     --Memory 2 \
-    --Storage 10 \
-    --GoodsNum 1 \
     --SubnetId subnet-gdy95gfs \
-    --VpcId vpc-3xq2t5al \
-    --Period 1
+    --TimeZone China Standard Time \
+    --ReadOnlyGroupForcedUpgrade 1
 ```
 
 Output: 

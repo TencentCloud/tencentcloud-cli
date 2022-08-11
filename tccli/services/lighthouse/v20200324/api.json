@@ -1915,6 +1915,15 @@
           "name": "DiskSize",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskBackupQuota",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1999,7 +2008,7 @@
         },
         {
           "default": "",
-          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。",
+          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3346,7 +3355,7 @@
         },
         {
           "default": "",
-          "document": "磁盘状态",
+          "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：未挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
@@ -4123,6 +4132,15 @@
           "example": "1",
           "member": "int64",
           "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskBackupQuota",
           "required": false,
           "type": "int"
         }

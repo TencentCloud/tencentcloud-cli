@@ -10375,6 +10375,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Mysql 是否抛弃解析失败的消息，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidMessage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
+          "example": "xxx",
+          "member": "DropCls",
+          "name": "DropCls",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
