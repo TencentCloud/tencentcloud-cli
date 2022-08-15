@@ -1,75 +1,75 @@
 {
   "actions": {
     "BatchDeleteTasksNew": {
-      "document": "批量删除任务，仅对任务状态为”已停止“有效；（Beta版本）\n",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量删除任务，仅对任务状态为”已停止“有效；\n",
       "input": "BatchDeleteTasksNewRequest",
-      "name": "批量删除任务（最新）",
+      "name": "批量删除任务【Beta版本】",
       "output": "BatchDeleteTasksNewResponse"
     },
     "BatchModifyOwnersNew": {
-      "document": "批量修改任务责任人（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量修改任务责任人",
       "input": "BatchModifyOwnersNewRequest",
-      "name": "批量修改任务责任人（最新）",
+      "name": "批量修改任务责任人【Beta版本】",
       "output": "BatchModifyOwnersNewResponse"
     },
     "BatchStopTasksNew": {
-      "document": "仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度",
       "input": "BatchStopTasksNewRequest",
-      "name": "批量停止任务（最新）",
+      "name": "批量停止任务【Beta版本】",
       "output": "BatchStopTasksNewResponse"
     },
     "CreateFolder": {
-      "document": "创建文件夹（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建文件夹",
       "input": "CreateFolderRequest",
-      "name": "创建文件夹",
+      "name": "创建文件夹【Beta版本】",
       "output": "CreateFolderResponse"
     },
     "CreateTask": {
-      "document": "创建任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建任务",
       "input": "CreateTaskRequest",
-      "name": "创建任务",
+      "name": "创建任务【Beta版本】",
       "output": "CreateTaskResponse"
     },
     "CreateWorkflow": {
-      "document": "创建工作流（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建工作流",
       "input": "CreateWorkflowRequest",
-      "name": "创建工作流",
+      "name": "创建工作流【Beta版本】",
       "output": "CreateWorkflowResponse"
     },
     "DeleteFolder": {
-      "document": "删除文件夹（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除文件夹",
       "input": "DeleteFolderRequest",
-      "name": "删除文件夹",
+      "name": "删除文件夹【Beta版本】",
       "output": "DeleteFolderResponse"
     },
     "DeleteWorkflowNew": {
-      "document": "删除工作流（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除工作流",
       "input": "DeleteWorkflowNewRequest",
-      "name": "删除工作流（最新）",
+      "name": "删除工作流【Beta版本】",
       "output": "DeleteWorkflowNewResponse"
     },
     "DescribeDependTasksNew": {
-      "document": "根据层级查找上/下游任务节点（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据层级查找上/下游任务节点",
       "input": "DescribeDependTasksNewRequest",
-      "name": "任务运维-根据层级查找上-下游任务节点（最新）",
+      "name": "任务运维-根据层级查找上-下游任务节点【Beta版本】",
       "output": "DescribeDependTasksNewResponse"
     },
     "DescribeFolderList": {
-      "document": "拉取文件夹目录（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n拉取文件夹目录",
       "input": "DescribeFolderListRequest",
-      "name": "拉取文件夹目录",
+      "name": "拉取文件夹目录【Beta版本】",
       "output": "DescribeFolderListResponse"
     },
     "DescribeFolderWorkflowList": {
-      "document": "拉取文件夹下的工作流（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n拉取文件夹下的工作流",
       "input": "DescribeFolderWorkflowListRequest",
-      "name": "拉取文件夹下的工作流",
+      "name": "拉取文件夹下的工作流【Beta版本】",
       "output": "DescribeFolderWorkflowListResponse"
     },
     "DescribeInstanceLogs": {
-      "document": "获取实例日志列表（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n获取实例日志列表",
       "input": "DescribeInstanceLogsRequest",
-      "name": "获取实例日志列表",
+      "name": "获取实例日志列表【Beta版本】",
       "output": "DescribeInstanceLogsResponse"
     },
     "DescribeProject": {
@@ -85,9 +85,9 @@
       "output": "DescribeRelatedInstancesResponse"
     },
     "DescribeTaskDetail": {
-      "document": "查询任务具体详情（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n查询任务具体详情",
       "input": "DescribeTaskDetailRequest",
-      "name": "查询任务具体详情",
+      "name": "查询任务具体详情【Beta版本】",
       "output": "DescribeTaskDetailResponse"
     },
     "DescribeTaskInstances": {
@@ -97,135 +97,135 @@
       "output": "DescribeTaskInstancesResponse"
     },
     "DescribeTaskScript": {
-      "document": "查询任务脚本（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n查询任务脚本",
       "input": "DescribeTaskScriptRequest",
-      "name": "查询任务脚本",
+      "name": "查询任务脚本【Beta版本】",
       "output": "DescribeTaskScriptResponse"
     },
     "DescribeTasksByPage": {
-      "document": "根据工作流分页查询任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据工作流分页查询任务",
       "input": "DescribeTasksByPageRequest",
-      "name": "根据工作流分页查询任务",
+      "name": "根据工作流分页查询任务【Beta版本】",
       "output": "DescribeTasksByPageResponse"
     },
     "ForceSucInstances": {
-      "document": "实例批量置成功（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量置成功",
       "input": "ForceSucInstancesRequest",
-      "name": "实例批量置成功",
+      "name": "实例批量置成功【Beta版本】",
       "output": "ForceSucInstancesResponse"
     },
     "FreezeTasks": {
-      "document": "批量冻结任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量冻结任务",
       "input": "FreezeTasksRequest",
-      "name": "批量冻结任务",
+      "name": "批量冻结任务【Beta版本】",
       "output": "FreezeTasksResponse"
     },
     "FreezeTasksByMultiWorkflow": {
-      "document": "基于多个工作流进行批量冻结任务操作（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n基于多个工作流进行批量冻结任务操作",
       "input": "FreezeTasksByMultiWorkflowRequest",
-      "name": "基于多个工作流进行批量冻结任务操作",
+      "name": "基于多个工作流进行批量冻结任务操作【Beta版本】",
       "output": "FreezeTasksByMultiWorkflowResponse"
     },
     "KillInstances": {
-      "document": "实例批量终止操作（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量终止操作",
       "input": "KillInstancesRequest",
-      "name": "实例批量终止操作",
+      "name": "实例批量终止操作【Beta版本】",
       "output": "KillInstancesResponse"
     },
     "MakeUpTasksNew": {
-      "document": "任务批量补录，调度状态任务才可以补录；（Beta版本）\n",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n任务批量补录，调度状态任务才可以补录；\n\n\n",
       "input": "MakeUpTasksNewRequest",
-      "name": "批量补录任务（最新）",
+      "name": "批量补录任务【Beta版本】",
       "output": "MakeUpTasksNewResponse"
     },
     "MakeUpWorkflowNew": {
-      "document": "工作流下所有任务的补录（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n工作流下所有任务的补录",
       "input": "MakeUpWorkflowNewRequest",
-      "name": "工作流任务补录（最新）",
+      "name": "工作流任务补录【Beta版本】",
       "output": "MakeUpWorkflowNewResponse"
     },
     "ModifyFolder": {
-      "document": "文件夹更新（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n文件夹更新",
       "input": "ModifyFolderRequest",
-      "name": "文件夹更新",
+      "name": "文件夹更新【Beta版本】",
       "output": "ModifyFolderResponse"
     },
     "ModifyTaskInfo": {
-      "document": "更新任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新任务",
       "input": "ModifyTaskInfoRequest",
-      "name": "更新任务",
+      "name": "更新任务【Beta版本】",
       "output": "ModifyTaskInfoResponse"
     },
     "ModifyTaskLinks": {
-      "document": "添加父任务依赖（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n添加父任务依赖",
       "input": "ModifyTaskLinksRequest",
-      "name": "添加父任务依赖",
+      "name": "添加父任务依赖【Beta版本】",
       "output": "ModifyTaskLinksResponse"
     },
     "ModifyTaskScript": {
-      "document": "修改任务脚本（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n修改任务脚本",
       "input": "ModifyTaskScriptRequest",
-      "name": "修改任务脚本",
+      "name": "修改任务脚本【Beta版本】",
       "output": "ModifyTaskScriptResponse"
     },
     "ModifyWorkflowInfo": {
-      "document": "更新工作流（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新工作流",
       "input": "ModifyWorkflowInfoRequest",
-      "name": "更新工作流",
+      "name": "更新工作流【Beta版本】",
       "output": "ModifyWorkflowInfoResponse"
     },
     "ModifyWorkflowSchedule": {
-      "document": "更新工作流调度（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n更新工作流调度",
       "input": "ModifyWorkflowScheduleRequest",
-      "name": "更新工作流调度",
+      "name": "更新工作流调度【Beta版本】",
       "output": "ModifyWorkflowScheduleResponse"
     },
     "RegisterEvent": {
-      "document": "注册事件（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n注册事件",
       "input": "RegisterEventRequest",
-      "name": "注册事件",
+      "name": "注册事件【Beta版本】",
       "output": "RegisterEventResponse"
     },
     "RegisterEventListener": {
-      "document": "注册事件监听器（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n注册事件监听器",
       "input": "RegisterEventListenerRequest",
-      "name": "注册事件监听器",
+      "name": "注册事件监听器【Beta版本】",
       "output": "RegisterEventListenerResponse"
     },
     "RerunInstances": {
-      "document": "实例批量重跑（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量重跑",
       "input": "RerunInstancesRequest",
-      "name": "实例批量重跑",
+      "name": "实例批量重跑【Beta版本】",
       "output": "RerunInstancesResponse"
     },
     "RunTask": {
-      "document": "运行任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n运行任务",
       "input": "RunTaskRequest",
-      "name": "运行任务",
+      "name": "运行任务【Beta版本】",
       "output": "RunTaskResponse"
     },
     "SetTaskAlarmNew": {
-      "document": "设置任务告警，新建/更新告警信息（最新）（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n设置任务告警，新建/更新告警信息（最新）",
       "input": "SetTaskAlarmNewRequest",
-      "name": "设置任务告警（最新）",
+      "name": "设置任务告警【Beta版本】",
       "output": "SetTaskAlarmNewResponse"
     },
     "SubmitTask": {
-      "document": "提交任务（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交任务",
       "input": "SubmitTaskRequest",
-      "name": "提交任务",
+      "name": "提交任务【Beta版本】",
       "output": "SubmitTaskResponse"
     },
     "SubmitWorkflow": {
-      "document": "提交工作流（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交工作流",
       "input": "SubmitWorkflowRequest",
-      "name": "提交工作流",
+      "name": "提交工作流【Beta版本】",
       "output": "SubmitWorkflowResponse"
     },
     "TriggerEvent": {
-      "document": "触发事件（Beta版本）",
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n触发事件",
       "input": "TriggerEventRequest",
-      "name": "触发事件",
+      "name": "触发事件【Beta版本】",
       "output": "TriggerEventResponse"
     }
   },

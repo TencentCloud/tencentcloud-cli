@@ -42,6 +42,12 @@
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse"
     },
+    "CreateFlowSignReview": {
+      "document": "提交企业签署流程审批结果\n适用场景: \n在通过接口(CreateFlow 或者CreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。\n",
+      "input": "CreateFlowSignReviewRequest",
+      "name": "提交企业签署流程审批结果",
+      "output": "CreateFlowSignReviewResponse"
+    },
     "CreateMultiFlowSignQRCode": {
       "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。",
       "input": "CreateMultiFlowSignQRCodeRequest",
@@ -1176,6 +1182,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowSignReviewRequest": {
+      "document": "CreateFlowSignReview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业内部审核结果\nPASS: 通过 \nREJECT: 拒绝",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核原因 \n当ReviewType 是REJECT 时此字段必填,字符串长度不超过200",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowSignReviewResponse": {
+      "document": "CreateFlowSignReview返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -3529,6 +3529,15 @@
           "name": "IgnoreScript",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回测试数据文件信息",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreDataset",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

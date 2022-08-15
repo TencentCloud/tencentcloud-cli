@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "FeedRecommend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: irp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FeedRecommend\n<公共请求参数>\n\n{\n    \"UserId\": \"2824324234\",\n    \"InstanceId\": \"d3f5718e_d5a9\",\n    \"SceneId\": \"20787a_13428\",\n    \"UserIdList\": [\n        {\n            \"Type\": \"imei_md5\",\n            \"Value\": \"f458988816c956727db5d9fd6a1e4b3d\"\n        }\n    ],\n    \"ItemCnt\": 2,\n    \"CurrentItemId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"DataList\": [\n            {\n                \"ItemId\": \"20220324V0843100\",\n                \"ItemType\": \"article\",\n                \"ItemTraceId\": \"9588983c6db7a36734d628537fb26463\",\n                \"Score\": 6.1\n            },\n            {\n                \"ItemId\": \"20210213V02U2J00\",\n                \"ItemType\": \"article\",\n                \"ItemTraceId\": \"9588983c6db7a36734d628537fb26463\",\n                \"Score\": 6.1\n            }\n        ]\n    }\n}",
+        "title": "获取信息流推荐结果"
+      }
+    ],
+    "ReportFeedBehavior": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: irp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportFeedBehavior\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dd77b984_d517\",\n    \"FeedBehaviorList\": [\n        {\n            \"UserId\": \"3154571\",\n            \"ItemId\": \"1232\",\n            \"BehaviorType\": \"expose\",\n            \"BehaviorValue\": \"1\",\n            \"BehaviorTimestamp\": 1652705901,\n            \"SceneId\": \"db5ccd_765291\",\n            \"ItemTraceId\": \"9994f7bc21231288365e0f773\",\n            \"ItemType\": \"article\",\n            \"ReferrerItemId\": \"1231\",\n            \"UserIdList\": [\n                {\n                    \"Type\": \"qq\",\n                    \"Value\": \"313211\"\n                },\n                {\n                    \"Type\": \"imei_md5\",\n                    \"Value\": \"9994f7bc21231288365e0f773dc81cec186\"\n                }\n            ],\n            \"Source\": \"tencent\",\n            \"Country\": \"CN\",\n            \"Province\": \"CN-GD\",\n            \"City\": \"440100\",\n            \"IP\": \"127.0.0.1\",\n            \"Network\": \"wifi\",\n            \"Platform\": \"android\",\n            \"AppVersion\": \"11\",\n            \"OsVersion\": \"7.2\",\n            \"DeviceModel\": \"xiaomi\",\n            \"Extension\": \"{}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "上报信息流行为"
+      }
+    ],
+    "ReportFeedItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: irp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportFeedItem\n<公共请求参数>\n\n{\n    \"FeedItemList\": [\n        {\n            \"ItemId\": \"20220112A02JTB01\",\n            \"ItemType\": \"article\",\n            \"Status\": 1,\n            \"PublishTimestamp\": 1641459038,\n            \"ExpireTimestamp\": 1642668637,\n            \"CategoryLevel\": 3,\n            \"CategoryPath\": \"体育:足球:巴塞罗纳\",\n            \"Tags\": \"体育:娱乐\",\n            \"Author\": \"作者名\",\n            \"SourceId\": \"1\",\n            \"Title\": \"标题\",\n            \"Content\": \"杜兰特又夺冠，篮网银河巨舰\",\n            \"ContentUrl\": \"https://xx/xxx\",\n            \"VideoDuration\": 60,\n            \"Country\": \"CN\",\n            \"Province\": \"CN-GD\",\n            \"City\": \"440100\",\n            \"AuthorFans\": 1,\n            \"AuthorLevel\": \"高级\",\n            \"CollectCnt\": 11,\n            \"PraiseCnt\": 11,\n            \"CommentCnt\": 11,\n            \"ShareCnt\": 11,\n            \"RewardCnt\": 11,\n            \"Score\": 9.7,\n            \"Extension\": \"{}\"\n        }\n    ],\n    \"InstanceId\": \"3154571c_d511\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "上报信息流内容"
+      }
+    ],
+    "ReportFeedUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: irp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportFeedUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"deeb213e_d5a8\",\n    \"FeedUserList\": [\n        {\n            \"UserId\": \"2824324234\",\n            \"UserIdList\": [\n                {\n                    \"Type\": \"qq\",\n                    \"Value\": \"412323\"\n                },\n                {\n                    \"Type\": \"imei_md5\",\n                    \"Value\": \"9994f7wqeqweb88365e0f773dc81cec186\"\n                }\n            ],\n            \"Tags\": \"科技:娱乐\",\n            \"DislikeInfoList\": [\n                {\n                    \"Type\": \"author\",\n                    \"Value\": \"作者名\"\n                },\n                {\n                    \"Type\": \"author\",\n                    \"Value\": \"作者名\"\n                }\n            ],\n            \"Age\": 22,\n            \"Gender\": 1,\n            \"Degree\": \"本科\",\n            \"School\": \"xx大学\",\n            \"Occupation\": \"销售\",\n            \"Industry\": \"互联网\",\n            \"ResidentCountry\": \"CN\",\n            \"ResidentProvince\": \"CN-GD\",\n            \"ResidentCity\": \"444100\",\n            \"RegisterTimestamp\": 1639624786,\n            \"MembershipLevel\": \"高\",\n            \"LastLoginTimestamp\": 1639624786,\n            \"LastLoginIp\": \"127.0.0.1\",\n            \"LastModifyTimestamp\": 1639624786,\n            \"Extension\": \"{}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "上报信息流用户信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

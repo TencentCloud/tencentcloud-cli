@@ -247,6 +247,8 @@ include tccli/services/iotvideo/v20191126/api.json
 include tccli/services/iotvideo/v20191126/examples.json
 include tccli/services/iotvideoindustry/v20201201/api.json
 include tccli/services/iotvideoindustry/v20201201/examples.json
+include tccli/services/irp/v20220805/api.json
+include tccli/services/irp/v20220805/examples.json
 include tccli/services/irp/v20220324/api.json
 include tccli/services/irp/v20220324/examples.json
 include tccli/services/ivld/v20210903/api.json

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli billing DescribeBillSummaryByPayMode --cli-unfold-argument  \
-    --BeginTime 2018-11 \
-    --EndTime 2018-11
+    --EndTime 2018-11 \
+    --BeginTime 2018-11
 ```
 
 Output: 
@@ -19,117 +19,86 @@ Output:
             {
                 "PayMode": "prePay",
                 "PayModeName": "包年包月",
-                "RealTotalCost": "0.00",
-                "TotalCost": "-",
-                "CashPayAmount": "0.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "0.00",
+                "RealTotalCost": "3228.80000000",
+                "TotalCost": "5064.00000000",
+                "CashPayAmount": "0.00000000",
+                "IncentivePayAmount": "3228.80000000",
+                "VoucherPayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000",
+                "RealTotalCostRatio": "99.49",
                 "Detail": [
                     {
-                        "ActionType": "prepay_purchase",
-                        "ActionTypeName": "包年包月新购",
-                        "RealTotalCost": "0.00",
-                        "TotalCost": "-",
-                        "CashPayAmount": "0.00",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "0.00",
+                        "ActionType": "prepay_renew",
+                        "ActionTypeName": "包年包月续费",
+                        "RealTotalCost": "3228.80000000",
+                        "TotalCost": "5064.00000000",
+                        "CashPayAmount": "0.00000000",
+                        "IncentivePayAmount": "3228.80000000",
+                        "VoucherPayAmount": "0.00000000",
                         "RealTotalCostRatio": "100.00",
-                        "BillMonth": "2021-01"
+                        "BillMonth": "2021-12"
                     }
                 ]
             },
             {
                 "PayMode": "postPay",
                 "PayModeName": "按量计费",
-                "RealTotalCost": "224.81",
-                "TotalCost": "-",
-                "CashPayAmount": "206.12",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "18.69",
-                "RealTotalCostRatio": "100.00",
+                "RealTotalCost": "16.44000000",
+                "TotalCost": "27.64446128",
+                "CashPayAmount": "0.00000000",
+                "IncentivePayAmount": "16.44000000",
+                "VoucherPayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000",
+                "RealTotalCostRatio": "0.51",
                 "Detail": [
                     {
-                        "ActionType": "recon_deduct",
-                        "ActionTypeName": "调账扣费",
-                        "RealTotalCost": "206.45",
-                        "TotalCost": "-",
-                        "CashPayAmount": "206.45",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "0.00",
-                        "RealTotalCostRatio": "87.39",
-                        "BillMonth": "2021-01"
-                    },
-                    {
-                        "ActionType": "postpay_deduct_s",
-                        "ActionTypeName": "竞价实例小时结",
-                        "RealTotalCost": "26.78",
-                        "TotalCost": "-",
-                        "CashPayAmount": "6.30",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "20.48",
-                        "RealTotalCostRatio": "11.34",
-                        "BillMonth": "2021-01"
-                    },
-                    {
-                        "ActionType": "billVirtualId",
-                        "ActionTypeName": "月度计费精度差异",
-                        "RealTotalCost": "2.98",
-                        "TotalCost": "-",
-                        "CashPayAmount": "0.70",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "2.28",
-                        "RealTotalCostRatio": "1.26",
-                        "BillMonth": "2021-01"
-                    },
-                    {
-                        "ActionType": "postpay_deduct_m",
-                        "ActionTypeName": "按量计费月结",
-                        "RealTotalCost": "0.02",
-                        "TotalCost": "-",
-                        "CashPayAmount": "0.00",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "0.02",
-                        "RealTotalCostRatio": "0.01",
-                        "BillMonth": "2021-01"
+                        "ActionType": "postpay_deduct_h",
+                        "ActionTypeName": "按量计费小时结",
+                        "RealTotalCost": "19.32711686",
+                        "TotalCost": "29.73402790",
+                        "CashPayAmount": "3.83470332",
+                        "IncentivePayAmount": "15.49241354",
+                        "VoucherPayAmount": "0.00000000",
+                        "RealTotalCostRatio": "96.00",
+                        "BillMonth": "2021-12"
                     },
                     {
                         "ActionType": "postpay_deduct_d",
                         "ActionTypeName": "按量计费日结",
-                        "RealTotalCost": "0.00",
-                        "TotalCost": "-",
-                        "CashPayAmount": "0.00",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "0.00",
-                        "RealTotalCostRatio": "0.00",
-                        "BillMonth": "2021-01"
+                        "RealTotalCost": "0.80604458",
+                        "TotalCost": "1.24113445",
+                        "CashPayAmount": "0.00000000",
+                        "IncentivePayAmount": "0.80604458",
+                        "VoucherPayAmount": "0.00000000",
+                        "RealTotalCostRatio": "4.00",
+                        "BillMonth": "2021-12"
                     },
                     {
-                        "ActionType": "recon_increase",
-                        "ActionTypeName": "调账补偿",
-                        "RealTotalCost": "-2.00",
-                        "TotalCost": "-",
-                        "CashPayAmount": "-2.00",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "0.00",
+                        "ActionType": "postpay_deduct_m",
+                        "ActionTypeName": "按量计费月结",
+                        "RealTotalCost": "0.00000000",
+                        "TotalCost": "0.36246037",
+                        "CashPayAmount": "0.00000000",
+                        "IncentivePayAmount": "0.00000000",
+                        "VoucherPayAmount": "0.00000000",
                         "RealTotalCostRatio": "0.00",
-                        "BillMonth": "2021-01"
+                        "BillMonth": "2021-12"
                     },
                     {
-                        "ActionType": "recon_increase_d",
-                        "ActionTypeName": "优惠补偿",
-                        "RealTotalCost": "-9.42",
-                        "TotalCost": "-",
-                        "CashPayAmount": "-5.33",
-                        "IncentivePayAmount": "0.00",
-                        "VoucherPayAmount": "-4.09",
+                        "ActionType": "billVirtualId",
+                        "ActionTypeName": "月度计费精度差异",
+                        "RealTotalCost": "-3.69316144",
+                        "TotalCost": "-3.69316144",
+                        "CashPayAmount": "-3.83470332",
+                        "IncentivePayAmount": "0.14154188",
+                        "VoucherPayAmount": "0.00000000",
                         "RealTotalCostRatio": "0.00",
-                        "BillMonth": "2021-01"
+                        "BillMonth": "2021-12"
                     }
                 ]
             }
         ],
-        "RequestId": "cbe90413-4027-4c7d-a6de-82bc57db396c"
+        "RequestId": "5d83209a-3223-497f-a36b-32330d88e454"
     }
 }
 ```

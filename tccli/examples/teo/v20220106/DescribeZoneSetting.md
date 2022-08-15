@@ -6,95 +6,101 @@ Input:
 
 ```
 tccli teo DescribeZoneSetting --cli-unfold-argument  \
-    --ZoneId zone-xxxx
+    --ZoneId zone-21xfqlh4qjee
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Origin": {
-            "OriginPullProtocol": "xx"
-        },
-        "CacheKey": {
-            "FullUrlCache": "xx",
-            "IgnoreCase": "xx",
-            "QueryString": {
-                "Action": "xx",
-                "Switch": "xx",
-                "Value": [
-                    "xx"
-                ]
+        "RequestId": "ddc589b3-c3f3-487d-a29e-43a9008d3c59",
+        "Cache": {
+            "Cache": {
+                "CacheTime": 2592000,
+                "Switch": "off"
+            },
+            "FollowOrigin": {
+                "Switch": "on"
+            },
+            "NoCache": {
+                "Switch": "off"
             }
         },
-        "WebSocket": {
-            "Switch": "xx",
-            "Timeout": 0
+        "CacheKey": {
+            "FullUrlCache": "on",
+            "IgnoreCase": "off",
+            "QueryString": {
+                "Action": "includeCustom",
+                "Switch": "off",
+                "Value": []
+            }
+        },
+        "CachePrefresh": {
+            "Percent": 90,
+            "Switch": "off"
+        },
+        "ClientIpHeader": {
+            "Switch": "off"
         },
         "Compression": {
-            "Switch": "xx"
+            "Algorithms": [
+                "brotli",
+                "gzip"
+            ],
+            "Switch": "on"
         },
-        "Zone": "xx",
         "ForceRedirect": {
-            "Switch": "xx",
-            "RedirectStatusCode": 0
+            "RedirectStatusCode": 302,
+            "Switch": "off"
         },
         "Https": {
             "Hsts": {
-                "IncludeSubDomains": "xx",
-                "Preload": "xx",
-                "Switch": "xx",
-                "MaxAge": 0
+                "IncludeSubDomains": "off",
+                "MaxAge": 0,
+                "Preload": "off",
+                "Switch": "off"
             },
-            "OcspStapling": "xx",
+            "Http2": "on",
+            "OcspStapling": "off",
             "TlsVersion": [
-                "xx"
-            ],
-            "Http2": "xx"
+                "TLSv1",
+                "TLSv1.1",
+                "TLSv1.2",
+                "TLSv1.3"
+            ]
         },
-        "Cache": {
-            "FollowOrigin": {
-                "Switch": "xx"
-            },
-            "Cache": {
-                "CacheTime": 0,
-                "Switch": "xx",
-                "IgnoreCacheControl": "xx"
-            },
-            "NoCache": {
-                "Switch": "xx"
-            }
-        },
-        "PostMaxSize": {
-            "Switch": "xx",
-            "MaxSize": 0
+        "Ipv6": {
+            "Switch": "off"
         },
         "MaxAge": {
-            "FollowOrigin": "xx",
-            "MaxAgeTime": 0
-        },
-        "ZoneId": "xx",
-        "UpstreamHttp2": {
-            "Switch": "xx"
-        },
-        "ClientIpHeader": {
-            "HeaderName": "xx",
-            "Switch": "xx"
+            "FollowOrigin": "on",
+            "MaxAgeTime": 600
         },
         "OfflineCache": {
-            "Switch": "xx"
+            "Switch": "on"
+        },
+        "Origin": {
+            "OriginPullProtocol": "follow"
+        },
+        "PostMaxSize": {
+            "MaxSize": 524288000,
+            "Switch": "on"
         },
         "Quic": {
-            "Switch": "xx"
-        },
-        "CachePrefresh": {
-            "Switch": "xx",
-            "Percent": 0
+            "Switch": "off"
         },
         "SmartRouting": {
-            "Switch": "xx"
+            "Switch": "off"
         },
-        "RequestId": "xx"
+        "UpstreamHttp2": {
+            "Switch": "off"
+        },
+        "WebSocket": {
+            "Switch": "off",
+            "Timeout": 30
+        },
+        "Zone": "test.com",
+        "ZoneId": "zone-21xfqlh4qjee"
     }
 }
 ```

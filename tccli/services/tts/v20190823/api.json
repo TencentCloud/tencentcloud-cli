@@ -260,6 +260,62 @@
       ],
       "type": "object"
     },
+    "Subtitle": {
+      "document": "时间戳信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "⽂本信息。",
+          "example": "你",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "⽂本对应tts语⾳开始时间戳，单位ms。",
+          "example": "250",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "⽂本对应tts语⾳结束时间戳，单位ms。",
+          "example": "580,",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字在整句中的开始位置，从0开始。",
+          "example": "0",
+          "member": "int64",
+          "name": "BeginIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字在整句中的结束位置，从0开始。",
+          "example": "1",
+          "member": "int64",
+          "name": "EndIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TextToVoiceRequest": {
       "document": "TextToVoice请求参数结构体",
       "members": [
@@ -352,6 +408,15 @@
           "name": "Codec",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启时间戳功能，默认为false。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSubtitle",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -375,6 +440,15 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间戳信息，若未开启时间戳，则返回空数组。",
+          "example": "无",
+          "member": "Subtitle",
+          "name": "Subtitles",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

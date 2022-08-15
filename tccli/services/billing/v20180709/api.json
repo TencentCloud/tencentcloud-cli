@@ -1359,6 +1359,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1412,6 +1422,16 @@
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4917,6 +4937,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5037,6 +5067,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5133,6 +5173,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5202,6 +5252,46 @@
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "现金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "赠送金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代金券金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分成金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
           "required": true,
           "type": "string",
           "value_allowed_null": true

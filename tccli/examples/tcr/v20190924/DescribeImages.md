@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcr DescribeImages --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
+    --Limit 20 \
     --NamespaceName team-01 \
     --RepositoryName nginx \
-    --Limit 20 \
+    --RegistryId tcr-okmj78 \
     --Offset 0
 ```
 
@@ -17,22 +17,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3fdc859a-00fb-4ae4-a989-42eb387c6683",
+        "RequestId": "d76f7a1b-d9e9-4454-b95b-25c34f17b943",
         "ImageInfoList": [
             {
-                "Digest": "sha256:ca30d8e9449eae19367f542aeb6e39764e94e7c34fca4277b9b7c77ba93eaa6c",
-                "ImageVersion": "2.0",
-                "Size": 63923200,
-                "UpdateTime": "2020-02-14T06:45:40.40753972Z"
-            },
-            {
-                "Digest": "sha256:0925d086715714114c1988f7c947db94064fd385e171a63c07730f1fa014e6f9",
-                "ImageVersion": "1.0",
-                "Size": 26733036,
-                "UpdateTime": "2020-02-14T06:45:40.40753972Z"
+                "Digest": "sha256:a1801b843b1bfaf77c501e7a6d3f709401a1e0c83863037fa3aab063a7fdb9dc",
+                "ImageVersion": "8",
+                "Size": 83520757,
+                "UpdateTime": "2022-08-06T07:31:01.207374Z",
+                "Kind": "Artifact::application/vnd.docker.distribution.manifest.v2+json",
+                "KmsSignature": "UKauWpHdjaTjTsE64BSFhJe0YZj7eXiu8DzkRgTk0vbuxl+ICYbVJ2p1afHGv/WsOqqJvEKJdNPU4iAGNYEbegTi/UwcrCRijNeFkzHNqljBa75g1u9LHjVmtE9dxzh17YGRHpDxbL2CCjZ9YgeCqppsl1LiXvlYdrMLgoqwHKwao3WnkZU2fye4HIreZ3CXGkjv7g8rbhmjwEZJUTWAuEws7eNSvl9RS8NAJctwvZWZQUGKkRpbBRkKxdENSIgRoA+SyX0Qmu2SxvwDRTsCwI+B1rJxLmw1wYgAh3mQiXtehBZAJdYLcOvokUgAUC8cpKpeJ+bSsYvCLh+uJlF4Pg=="
             }
         ],
-        "TotalCount": 2
+        "TotalCount": 1
     }
 }
 ```

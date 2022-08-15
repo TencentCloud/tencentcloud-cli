@@ -16,7 +16,8 @@ tccli privatedns CreatePrivateZone --cli-unfold-argument  \
     --AccountVpcSet.0.UniqVpcId vpc-adsebmy1 \
     --AccountVpcSet.0.VpcName vpcname \
     --Remark 测试域名 \
-    --DnsForwardStatus ENABLED
+    --DnsForwardStatus ENABLED \
+    --CnameSpeedupStatus ENABLED
 ```
 
 Output: 

@@ -714,7 +714,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSummary\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4\",\n        \"TotalCount\": 9,\n        \"RiskClusterCount\": 7,\n        \"UncheckClusterCount\": 1,\n        \"ManagedClusterCount\": 6,\n        \"IndependentClusterCount\": 3,\n        \"NoRiskClusterCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NoRiskClusterCount\": 1,\n        \"ManagedClusterCount\": 1,\n        \"AutoCheckClusterCount\": 1,\n        \"UncheckClusterCount\": 1,\n        \"IndependentClusterCount\": 1,\n        \"TotalCount\": 1,\n        \"CheckedClusterCount\": 1,\n        \"RequestId\": \"fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4\",\n        \"FailedClusterCount\": 1,\n        \"ManualCheckClusterCount\": 1,\n        \"RiskClusterCount\": 1\n    }\n}",
         "title": "查询用户集群资产总览示例"
       }
     ],

@@ -247,6 +247,14 @@
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "为当前实例设置账号权限。"
       }
+    ],
+    "TerminateDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=TerminateDBInstances\n&InstanceId=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccfe11c0-b1d3-11ea-8b51-552abe435100\"\n    }\n}",
+        "title": "包年包月实例隔离接口"
+      }
     ]
   },
   "version": "1.0"

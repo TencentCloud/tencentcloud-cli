@@ -8,7 +8,8 @@ Input:
 tccli privatedns ModifyPrivateZone --cli-unfold-argument  \
     --ZoneId 1 \
     --Remark 测试域名 \
-    --DnsForwardStatus ENABLED
+    --DnsForwardStatus ENABLED \
+    --CnameSpeedupStatus ENABLED
 ```
 
 Output: 

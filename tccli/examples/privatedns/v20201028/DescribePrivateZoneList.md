@@ -51,7 +51,8 @@ Output:
                 "Status": "ENABLED",
                 "DnsForwardStatus": "DISABLED",
                 "Tags": [],
-                "IsCustomTld": false
+                "IsCustomTld": false,
+                "CnameSpeedupStatus": "DISABLED"
             },
             {
                 "ZoneId": "zone-123456",
@@ -71,7 +72,8 @@ Output:
                         "TagValue": "tagValue"
                     }
                 ],
-                "IsCustomTld": true
+                "IsCustomTld": true,
+                "CnameSpeedupStatus": "DISABLED"
             }
         ]
     }

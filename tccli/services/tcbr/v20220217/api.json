@@ -1670,6 +1670,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网访问类型",
+          "example": "[\"OA\",\"MINIAPP\",\"VPC\"]",
+          "member": "string",
+          "name": "AccessTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

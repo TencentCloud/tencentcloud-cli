@@ -6,33 +6,49 @@ Input:
 
 ```
 tccli teo DescribeApplicationProxyDetail --cli-unfold-argument  \
-    --ProxyId proxy-xxx \
-    --ZoneId zone-xxx
+    --ProxyId proxy-f11f7ab4-1632-11ed-9fe6-52540033158e \
+    --ZoneId zone-24j9wpas4c62
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "ProxyId": "xx",
-        "ProxyName": "ins name",
-        "ProxyType": "instance",
-        "PlatType": "domain",
-        "SecurityType": 1,
-        "AccelerateType": 0,
+        "RequestId": "c7870673-3982-4636-a721-c00e54f81d19",
+        "AccelerateType": 1,
         "ForwardClientIp": "OFF",
-        "SessionPersist": false,
-        "SessionPersistTime": 0,
-        "Status": "xx",
-        "ZoneId": "zone-xxx",
-        "ZoneName": "123.com",
-        "UpdateTime": "2020-09-22T00:00:00+00:00",
-        "ScheduleValue": [
-            "xx"
+        "HostId": "edgeone-24j9wpas4c62",
+        "Ipv6": {
+            "Switch": "on"
+        },
+        "PlatType": "domain",
+        "ProxyId": "proxy-f11f7ab4-1632-11ed-9fe6-52540033158e",
+        "ProxyName": "test-ipv6-l4",
+        "ProxyType": "instance",
+        "Rule": [
+            {
+                "ForwardClientIp": "OFF",
+                "OriginType": "origins",
+                "OriginValue": [
+                    "origin-537f5b41-162a-11ed-abaa-525400c5da15"
+                ],
+                "Port": [
+                    "88"
+                ],
+                "Proto": "TCP",
+                "RuleId": "rule-f11f7ac4-1632-11ed-9fe6-52540033158e",
+                "SessionPersist": false,
+                "Status": "online"
+            }
         ],
-        "Rule": [],
-        "HostId": ""
+        "ScheduleValue": [],
+        "SecurityType": 1,
+        "SessionPersist": false,
+        "SessionPersistTime": 3600,
+        "Status": "progress",
+        "UpdateTime": "2022-08-10T04:38:03Z",
+        "ZoneId": "zone-24j9wpas4c62",
+        "ZoneName": "test.com"
     }
 }
 ```

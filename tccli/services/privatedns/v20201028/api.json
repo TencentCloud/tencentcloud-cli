@@ -489,7 +489,7 @@
         },
         {
           "default": "",
-          "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED",
+          "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "DnsForwardStatus",
@@ -513,6 +513,15 @@
           "name": "AccountVpcSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "CnameSpeedupStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1437,6 +1446,15 @@
           "name": "DnsForwardStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启CNAME加速：ENABLED， DISABLED",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "CnameSpeedupStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1693,6 +1711,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CNAME加速状态：开通：ENABLED, 关闭，DISABLED",
+          "example": "DISABLED",
+          "member": "string",
+          "name": "CnameSpeedupStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

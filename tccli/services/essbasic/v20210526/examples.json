@@ -32,6 +32,14 @@
         "title": "使用文件创建签署流程"
       }
     ],
+    "ChannelCreateFlowSignReview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowSignReview\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"622201199508023314\"\n        },\n        \"ProxyOrganizationOpenId\": \"sharpezhang-testorg-pay\",\n        \"AppId\": \"15edb41f2ee412f5ff533ac0185ebb0b\"\n    },\n    \"FlowId\": \"xxxx\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"企业内部审核通过，允许签署\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16221xxxx12775546\"\n    }\n}",
+        "title": "提交企业签署流程审批结果"
+      }
+    ],
     "ChannelCreateMultiFlowSignQRCode": [
       {
         "document": "",

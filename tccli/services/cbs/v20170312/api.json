@@ -2887,15 +2887,6 @@
         },
         {
           "default": "",
-          "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
-          "example": "0",
-          "member": "uint64",
-          "name": "ProjectId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "新的云硬盘名称。",
           "example": "test",
           "member": "string",
@@ -2911,6 +2902,15 @@
           "name": "Portable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",

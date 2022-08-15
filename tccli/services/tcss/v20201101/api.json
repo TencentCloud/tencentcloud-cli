@@ -11234,6 +11234,42 @@
           "value_allowed_null": false
         },
         {
+          "document": "已经检查集群数",
+          "example": "3",
+          "member": "uint64",
+          "name": "CheckedClusterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动检查集群数",
+          "example": "2",
+          "member": "uint64",
+          "name": "AutoCheckClusterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "手动检查集群数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ManualCheckClusterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "检查失败集群数",
+          "example": "1",
+          "member": "uint64",
+          "name": "FailedClusterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

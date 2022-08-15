@@ -765,17 +765,17 @@
       "members": [
         {
           "default": "",
-          "document": "代理ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代理ID。",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
+          "document": "当ProxyType=hostname时，表示域名或子域名；\n当ProxyType=instance时，表示代理名称。",
           "example": "a proxy",
           "member": "string",
           "name": "ProxyName",
@@ -785,7 +785,7 @@
         },
         {
           "default": "",
-          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
+          "document": "调度模式，取值有：\n<li>ip：表示Anycast IP调度；</li>\n<li>domain：表示CNAME调度。</li>",
           "example": "ip",
           "member": "string",
           "name": "PlatType",
@@ -795,7 +795,7 @@
         },
         {
           "default": "",
-          "document": "0关闭安全，1开启安全",
+          "document": "是否开启安全，取值有：\n<li>0：关闭安全；</li>\n<li>1：开启安全。</li>",
           "example": "1",
           "member": "int64",
           "name": "SecurityType",
@@ -805,7 +805,7 @@
         },
         {
           "default": "",
-          "document": "0关闭加速，1开启加速",
+          "document": "是否开启加速，取值有：\n<li>0：关闭加速；</li>\n<li>1：开启加速。</li>",
           "example": "1",
           "member": "int64",
           "name": "AccelerateType",
@@ -815,7 +815,7 @@
         },
         {
           "default": "",
-          "document": "字段已经移至Rule.ForwardClientIp",
+          "document": "字段已经废弃。",
           "example": "TOA",
           "member": "string",
           "name": "ForwardClientIp",
@@ -825,7 +825,7 @@
         },
         {
           "default": "",
-          "document": "字段已经移至Rule.SessionPersist",
+          "document": "字段已经废弃。",
           "example": "false",
           "member": "bool",
           "name": "SessionPersist",
@@ -835,7 +835,7 @@
         },
         {
           "default": "",
-          "document": "规则列表",
+          "document": "规则列表。",
           "example": "无",
           "member": "ApplicationProxyRule",
           "name": "Rule",
@@ -845,83 +845,93 @@
         },
         {
           "default": "",
-          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中\nstopping：停用中\nfail：部署失败/停用失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用；</li>\n<li>progress：部署中；</li>\n<li>stopping：停用中；</li>\n<li>fail：部署失败/停用失败。</li>",
           "example": "online",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "调度信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度信息。",
           "example": "[]",
           "member": "string",
           "name": "ScheduleValue",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间。",
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "站点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "站点ID。",
           "example": "zone-xxx",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "站点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "站点名称。",
           "example": "123.com",
           "member": "string",
           "name": "ZoneName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话保持时间。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "当ProxyType=hostname时：\nProxyName为域名，如：test.123.com\nHostId表示该域名，即test.123.com对应的代理加速唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当ProxyType=hostname时：\n表示代理加速唯一标识。",
           "example": "edge-xxx",
           "member": "string",
           "name": "HostId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ipv6访问配置。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -931,7 +941,7 @@
       "members": [
         {
           "default": "",
-          "document": "协议，取值为TCP或者UDP",
+          "document": "协议，取值有：\n<li>TCP：TCP协议；</li>\n<li>UDP：UDP协议。</li>",
           "example": "TCP",
           "member": "string",
           "name": "Proto",
@@ -941,7 +951,7 @@
         },
         {
           "default": "",
-          "document": "端口，支持格式：\n80：80端口\n81-90：81至90端口",
+          "document": "端口，支持格式：\n单个端口，如：80。\n端口段，如：81-82。表示81，82两个端口。\n注意：一条规则最多可填写20个端口。",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -951,7 +961,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组",
+          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -961,7 +971,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]\n\n当OriginType=origins时，包含一个元素，表示源站组ID，如：\nOriginValue=[\"origin-xxx\"]",
+          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]；\n当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：\nOriginValue=[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]。",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -971,7 +981,7 @@
         },
         {
           "default": "",
-          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rule-xxx",
           "member": "string",
           "name": "RuleId",
@@ -981,7 +991,7 @@
         },
         {
           "default": "",
-          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中\nstopping：停用中\nfail：部署失败/停用失败",
+          "document": "状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用；</li>\n<li>progress：部署中；</li>\n<li>stopping：停用中；</li>\n<li>fail：部署失败/停用失败。</li>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -991,7 +1001,7 @@
         },
         {
           "default": "",
-          "document": "传递客户端IP，当Proto=TCP时，取值：\nTOA：TOA\nPPV1: Proxy Protocol传递，协议版本V1\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递\n当Proto=UDP时，取值：\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递",
+          "document": "传递客户端IP，取值有：\n<li>TOA：TOA（仅Proto=TCP时可选）；</li>\n<li>PPV1：Proxy Protocol传递，协议版本V1（仅Proto=TCP时可选）；</li>\n<li>PPV2：Proxy Protocol传递，协议版本V2；</li>\n<li>OFF：不传递。</li>",
           "example": "TOA",
           "member": "string",
           "name": "ForwardClientIp",
@@ -1001,7 +1011,7 @@
         },
         {
           "default": "",
-          "document": "是否开启会话保持",
+          "document": "是否开启会话保持，取值有：\n<li>true：开启；</li>\n<li>false：关闭。</li>",
           "example": "false",
           "member": "bool",
           "name": "SessionPersist",
@@ -1887,7 +1897,7 @@
       "members": [
         {
           "default": "",
-          "document": "缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheConfigCache",
           "name": "Cache",
@@ -1897,7 +1907,7 @@
         },
         {
           "default": "",
-          "document": "不缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheConfigNoCache",
           "name": "NoCache",
@@ -1907,7 +1917,7 @@
         },
         {
           "default": "",
-          "document": "遵循源站配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "遵循源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheConfigFollowOrigin",
           "name": "FollowOrigin",
@@ -1923,7 +1933,7 @@
       "members": [
         {
           "default": "",
-          "document": "缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -1933,7 +1943,7 @@
         },
         {
           "default": "",
-          "document": "缓存过期时间设置\n单位为秒，最大可设置为 365 天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存过期时间设置。\n单位为秒，最大可设置为 365 天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "36000",
           "member": "int64",
           "name": "CacheTime",
@@ -1943,7 +1953,7 @@
         },
         {
           "default": "",
-          "document": "是否开启强制缓存\n开启：on\n关闭：off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启强制缓存，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "IgnoreCacheControl",
@@ -1959,7 +1969,7 @@
       "members": [
         {
           "default": "",
-          "document": "遵循源站配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "遵循源站配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -1975,7 +1985,7 @@
       "members": [
         {
           "default": "",
-          "document": "不缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不缓存配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -1991,7 +2001,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数忽略）\noff：关闭全路径缓存（即开启参数忽略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启全路径缓存，取值有：\n<li>on：开启全路径缓存（即关闭参数忽略）；</li>\n<li>off：关闭全路径缓存（即开启参数忽略）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "FullUrlCache",
@@ -2001,7 +2011,7 @@
         },
         {
           "default": "",
-          "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否忽略大小写缓存，取值有：\n<li>on：忽略；</li>\n<li>off：不忽略。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "IgnoreCase",
@@ -2011,7 +2021,7 @@
         },
         {
           "default": "",
-          "document": "CacheKey中包含请求参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheKey中包含请求参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QueryString",
           "name": "QueryString",
@@ -2027,7 +2037,7 @@
       "members": [
         {
           "default": "",
-          "document": "缓存预刷新配置开关",
+          "document": "缓存预刷新配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -2037,7 +2047,7 @@
         },
         {
           "default": "",
-          "document": "缓存预刷新百分比：1-99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存预刷新百分比，取值范围：1-99。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Percent",
@@ -2147,11 +2157,11 @@
       "type": "object"
     },
     "ClientIp": {
-      "document": "客户端IP头部",
+      "document": "存储客户端请求IP的头部信息配置",
       "members": [
         {
           "default": "",
-          "document": "客户端IP头部配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -2161,7 +2171,7 @@
         },
         {
           "default": "",
-          "document": "回源客户端IP请求头名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源时，存放客户端IP的请求头名称。\n为空则使用默认值：X-Forwarded-IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "X-ClientIp",
           "member": "string",
           "name": "HeaderName",
@@ -2213,7 +2223,7 @@
       "members": [
         {
           "default": "",
-          "document": "智能压缩配置开关\non：开启\noff：关闭",
+          "document": "智能压缩配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -2223,7 +2233,7 @@
         },
         {
           "default": "",
-          "document": "支持的压缩算法列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的压缩算法列表，取值有：\n<li>brotli：brotli算法；</li>\n<li>gzip：gzip算法。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"brotli\",\"gzip\"]",
           "member": "string",
           "name": "Algorithms",
@@ -2239,7 +2249,7 @@
       "members": [
         {
           "default": "",
-          "document": "站点ID",
+          "document": "站点ID。",
           "example": "zone-xxxx",
           "member": "string",
           "name": "ZoneId",
@@ -2248,7 +2258,7 @@
         },
         {
           "default": "",
-          "document": "站点名称",
+          "document": "站点名称。",
           "example": "123.com",
           "member": "string",
           "name": "ZoneName",
@@ -2257,61 +2267,7 @@
         },
         {
           "default": "",
-          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
-          "example": "a proxy",
-          "member": "string",
-          "name": "ProxyName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
-          "example": "cname",
-          "member": "string",
-          "name": "PlatType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "0关闭安全，1开启安全",
-          "example": "1",
-          "member": "int64",
-          "name": "SecurityType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "0关闭加速，1开启加速",
-          "example": "1",
-          "member": "int64",
-          "name": "AccelerateType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "字段已经移至Rule.ForwardClientIp",
-          "example": "TOA",
-          "member": "string",
-          "name": "ForwardClientIp",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "字段已经移至Rule.SessionPersist",
-          "example": "false",
-          "member": "bool",
-          "name": "SessionPersist",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "default": "",
-          "document": "规则详细信息",
+          "document": "规则详细信息。",
           "example": "无",
           "member": "ApplicationProxyRule",
           "name": "Rule",
@@ -2320,7 +2276,70 @@
         },
         {
           "default": "",
-          "document": "会话保持时间，取值范围：30-3600，单位：秒",
+          "document": "当ProxyType=hostname时，表示域名或子域名；\n当ProxyType=instance时，表示代理名称。",
+          "example": "a proxy",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调度模式，取值有：\n<li>ip：表示Anycast IP调度；</li>\n<li>domain：表示CNAME调度。</li>",
+          "example": "cname",
+          "member": "string",
+          "name": "PlatType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启安全，取值有：\n<li>0：关闭安全；</li>\n<li>1：开启安全。</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "SecurityType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启加速，取值有：\n<li>0：关闭加速；</li>\n<li>1：开启加速。</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "AccelerateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字段已经废弃。",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "字段已经废弃。",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>不填写使用默认值instance。",
+          "example": "hostname",
+          "member": "string",
+          "name": "ProxyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，取值范围：30-3600，单位：秒。\n不填写使用默认值600。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
@@ -2329,12 +2348,12 @@
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
-          "example": "hostname",
-          "member": "string",
-          "name": "ProxyType",
+          "document": "Ipv6访问配置。\n不填写表示关闭Ipv6访问。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
           "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2343,7 +2362,7 @@
       "document": "CreateApplicationProxy返回参数结构体",
       "members": [
         {
-          "document": "新增的四层代理应用ID",
+          "document": "新增的四层代理应用ID。",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -4818,8 +4837,8 @@
       "members": [
         {
           "default": "",
-          "document": "站点ID",
-          "example": "zone-xxx",
+          "document": "站点ID。",
+          "example": "zone-24j9wpas4c62",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -4827,8 +4846,8 @@
         },
         {
           "default": "",
-          "document": "实例ID",
-          "example": "proxy-xxx",
+          "document": "实例ID。",
+          "example": "proxy-f11f7ab4-1632-11ed-9fe6-52540033158e",
           "member": "string",
           "name": "ProxyId",
           "required": true,
@@ -4841,8 +4860,8 @@
       "document": "DescribeApplicationProxyDetail返回参数结构体",
       "members": [
         {
-          "document": "实例ID",
-          "example": "proxy-xxx",
+          "document": "实例ID。",
+          "example": "proxy-f11f7ab4-1632-11ed-9fe6-52540033158e",
           "member": "string",
           "name": "ProxyId",
           "required": true,
@@ -4850,7 +4869,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
+          "document": "当ProxyType=hostname时，表示域名或子域名；\n当ProxyType=instance时，表示代理名称。",
           "example": "name",
           "member": "string",
           "name": "ProxyName",
@@ -4859,7 +4878,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
+          "document": "调度模式，取值有：\n<li>ip：表示Anycast IP调度；</li>\n<li>domain：表示CNAME调度。</li>",
           "example": "ip",
           "member": "string",
           "name": "PlatType",
@@ -4868,7 +4887,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "0关闭安全，1开启安全",
+          "document": "是否开启安全，取值有：\n<li>0：关闭安全；</li>\n<li>1：开启安全。</li>",
           "example": "1",
           "member": "int64",
           "name": "SecurityType",
@@ -4877,7 +4896,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "0关闭加速，1开启加速",
+          "document": "是否开启加速，取值有：\n<li>0：关闭加速；</li>\n<li>1：开启加速。</li>",
           "example": "1",
           "member": "int64",
           "name": "AccelerateType",
@@ -4886,7 +4905,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "字段已经移至Rule.ForwardClientIp",
+          "document": "字段已经废弃。",
           "example": "TOA",
           "member": "string",
           "name": "ForwardClientIp",
@@ -4895,7 +4914,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "字段已经移至Rule.SessionPersist",
+          "document": "字段已经废弃。",
           "example": "false",
           "member": "bool",
           "name": "SessionPersist",
@@ -4904,7 +4923,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "规则列表",
+          "document": "规则列表。",
           "example": "[]",
           "member": "ApplicationProxyRule",
           "name": "Rule",
@@ -4913,7 +4932,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中",
+          "document": "状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用；</li>\n<li>progress：部署中。</li>",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -4922,7 +4941,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "调度信息",
+          "document": "调度信息。",
           "example": "[]",
           "member": "string",
           "name": "ScheduleValue",
@@ -4931,7 +4950,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "更新时间",
+          "document": "更新时间。",
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
@@ -4940,8 +4959,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "站点ID",
-          "example": "zone-xxx",
+          "document": "站点ID。",
+          "example": "zone-24j9wpas4c62",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -4949,8 +4968,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "站点名称",
-          "example": "123.com",
+          "document": "站点名称。",
+          "example": "test.com",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -4958,7 +4977,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "会话保持时间",
+          "document": "会话保持时间。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
@@ -4967,7 +4986,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
+          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
@@ -4976,12 +4995,21 @@
           "value_allowed_null": false
         },
         {
-          "document": "当ProxyType=hostname时：\nProxyName为域名，如：test.123.com\nHostId表示该域名，即test.123.com对应的代理加速唯一标识",
-          "example": "edgeone-xxx",
+          "document": "当ProxyType=hostname时：\n表示代理加速唯一标识。",
+          "example": "edgeone-24j9wpas4c62",
           "member": "string",
           "name": "HostId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IPv6访问配置。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4998,8 +5026,8 @@
       "members": [
         {
           "default": "",
-          "document": "站点ID",
-          "example": "zone-xxxx",
+          "document": "站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -5007,7 +5035,7 @@
         },
         {
           "default": "",
-          "document": "分页参数Offset",
+          "document": "分页查询偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5016,12 +5044,21 @@
         },
         {
           "default": "",
-          "document": "分页参数Limit",
+          "document": "分页查询限制数目，默认为10，最大可设置为1000。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代理ID。\n当ProxyId为空时，表示查询站点下所有应用代理的列表。",
+          "example": "proxy-34c74aa7-9a9f-11ec-bcb0-52540015711d",
+          "member": "string",
+          "name": "ProxyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5030,49 +5067,49 @@
       "document": "DescribeApplicationProxy返回参数结构体",
       "members": [
         {
-          "document": "数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用代理列表。",
           "example": "无",
           "member": "ApplicationProxy",
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录总数。",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段已废弃。",
           "example": "1",
           "member": "int64",
           "name": "Quota",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "表示套餐内PlatType为ip的Anycast IP实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当ProxyId为空时，表示套餐内PlatType为ip的Anycast IP的实例数量。",
           "example": "1",
           "member": "uint64",
           "name": "IpCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "表示套餐内PlatType为domain的CNAME实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当ProxyId为空时，表示套餐内PlatType为domain的CNAME的实例数量。",
           "example": "1",
           "member": "uint64",
           "name": "DomainCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9272,8 +9309,8 @@
       "members": [
         {
           "default": "",
-          "document": "站点ID",
-          "example": "zone-xxx",
+          "document": "站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -9286,116 +9323,8 @@
       "document": "DescribeZoneSetting返回参数结构体",
       "members": [
         {
-          "document": "缓存过期时间配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CacheConfig",
-          "name": "Cache",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "节点缓存键配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CacheKey",
-          "name": "CacheKey",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "浏览器缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "MaxAge",
-          "name": "MaxAge",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "离线缓存\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OfflineCache",
-          "name": "OfflineCache",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "Quic访问\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Quic",
-          "name": "Quic",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "POST请求传输配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "PostMaxSize",
-          "name": "PostMaxSize",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "智能压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Compression",
-          "name": "Compression",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "http2回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "UpstreamHttp2",
-          "name": "UpstreamHttp2",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "访问协议强制https跳转配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ForceRedirect",
-          "name": "ForceRedirect",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "Https 加速配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Https",
-          "name": "Https",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "源站配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Origin",
-          "name": "Origin",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "动态加速配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "SmartRouting",
-          "name": "SmartRouting",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "站点ID",
-          "example": "zone-xxxx",
+          "document": "站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -9403,7 +9332,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "站点域名",
+          "document": "站点名称。",
           "example": "test.com",
           "member": "string",
           "name": "Zone",
@@ -9412,7 +9341,115 @@
           "value_allowed_null": false
         },
         {
-          "document": "WebSocket配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存过期时间配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfig",
+          "name": "Cache",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点缓存键配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKey",
+          "name": "CacheKey",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Quic访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Quic",
+          "name": "Quic",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "POST请求传输配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostMaxSize",
+          "name": "PostMaxSize",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能压缩配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Compression",
+          "name": "Compression",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Http2回源配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHttp2",
+          "name": "UpstreamHttp2",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问协议强制Https跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirect",
+          "name": "ForceRedirect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Https 加速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Https",
+          "name": "Https",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Origin",
+          "name": "Origin",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能加速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartRouting",
+          "name": "SmartRouting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "浏览器缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAge",
+          "name": "MaxAge",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "离线缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OfflineCache",
+          "name": "OfflineCache",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "WebSocket配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
@@ -9421,7 +9458,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "客户端IP回源请求头配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端IP回源请求头配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClientIp",
           "name": "ClientIpHeader",
@@ -9430,10 +9467,19 @@
           "value_allowed_null": true
         },
         {
-          "document": "缓存预刷新配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "缓存预刷新配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CachePrefresh",
           "name": "CachePrefresh",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Ipv6访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -10064,7 +10110,7 @@
       "members": [
         {
           "default": "",
-          "document": "访问强制跳转配置开关\non：开启\noff：关闭",
+          "document": "访问强制跳转配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -10074,7 +10120,7 @@
         },
         {
           "default": "",
-          "document": "重定向状态码\n301\n302\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向状态码，取值有：\n<li>301：301跳转；</li>\n<li>302：302跳转。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "302",
           "member": "int64",
           "name": "RedirectStatusCode",
@@ -10198,7 +10244,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否开启，on或off。",
+          "document": "是否开启，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -10208,7 +10254,7 @@
         },
         {
           "default": "",
-          "document": "MaxAge数值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MaxAge数值。单位为秒，最大值为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "600",
           "member": "int64",
           "name": "MaxAge",
@@ -10218,7 +10264,7 @@
         },
         {
           "default": "",
-          "document": "是否包含子域名，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否包含子域名，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "IncludeSubDomains",
@@ -10228,7 +10274,7 @@
         },
         {
           "default": "",
-          "document": "是否预加载，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启预加载，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Preload",
@@ -10244,7 +10290,7 @@
       "members": [
         {
           "default": "",
-          "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http2 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Http2",
@@ -10254,7 +10300,7 @@
         },
         {
           "default": "",
-          "document": "OCSP 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OCSP 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "OcspStapling",
@@ -10264,7 +10310,7 @@
         },
         {
           "default": "",
-          "document": "Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tls版本设置，取值有：\n<li>TLSv1：TLSv1版本；</li>\n<li>TLSV1.1：TLSv1.1版本；</li>\n<li>TLSV1.2：TLSv1.2版本；</li>\n<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"TLSv1\", \"TLSv1.1\"]",
           "member": "string",
           "name": "TlsVersion",
@@ -10523,6 +10569,22 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Ipv6Access": {
+      "document": "Ipv6访问配置",
+      "members": [
+        {
+          "default": "",
+          "document": "Ipv6访问功能配置，取值有：\n<li>on：开启Ipv6访问功能；</li>\n<li>off：关闭Ipv6访问功能。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10790,23 +10852,23 @@
       "members": [
         {
           "default": "",
-          "document": "MaxAge 时间设置，单位秒，最大365天\n注意：时间为0，即不缓存。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "600",
-          "member": "int64",
-          "name": "MaxAgeTime",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "是否遵循源站，on或off，开启时忽略时间设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否遵循源站，取值有：\n<li>on：遵循源站，忽略MaxAge 时间设置；</li>\n<li>off：不遵循源站，使用MaxAge 时间设置。</li>",
           "example": "on/off",
           "member": "string",
           "name": "FollowOrigin",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MaxAge 时间设置，单位秒，最大365天。\n注意：时间为0，即不缓存。",
+          "example": "600",
+          "member": "int64",
+          "name": "MaxAgeTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10816,8 +10878,8 @@
       "members": [
         {
           "default": "",
-          "document": "站点ID",
-          "example": "zone-xxxx",
+          "document": "站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -10825,8 +10887,8 @@
         },
         {
           "default": "",
-          "document": "代理ID",
-          "example": "proxy-xxx",
+          "document": "代理ID。",
+          "example": "proxy-537f5b41-162a-11ed-abaa-525400c5da15",
           "member": "string",
           "name": "ProxyId",
           "required": true,
@@ -10834,8 +10896,8 @@
         },
         {
           "default": "",
-          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
-          "example": "a proxy",
+          "document": "当ProxyType=hostname时，表示域名或子域名；\n当ProxyType=instance时，表示代理名称。",
+          "example": "proxy-name",
           "member": "string",
           "name": "ProxyName",
           "required": true,
@@ -10843,7 +10905,7 @@
         },
         {
           "default": "",
-          "document": "参数已经废弃",
+          "document": "参数已经废弃。",
           "example": "TOA",
           "member": "string",
           "name": "ForwardClientIp",
@@ -10852,7 +10914,7 @@
         },
         {
           "default": "",
-          "document": "参数已经废弃",
+          "document": "参数已经废弃。",
           "example": "false",
           "member": "bool",
           "name": "SessionPersist",
@@ -10861,7 +10923,7 @@
         },
         {
           "default": "",
-          "document": "会话保持时间，取值范围：30-3600，单位：秒",
+          "document": "会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。",
           "example": "3600",
           "member": "uint64",
           "name": "SessionPersistTime",
@@ -10870,12 +10932,21 @@
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
+          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>不填写保持原有配置。",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Ipv6访问配置，不填写保持原有配置。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10884,8 +10955,8 @@
       "document": "ModifyApplicationProxy返回参数结构体",
       "members": [
         {
-          "document": "代理ID",
-          "example": "proxy-xxx",
+          "document": "代理ID。",
+          "example": "proxy-537f5b41-162a-11ed-abaa-525400c5da15",
           "member": "string",
           "name": "ProxyId",
           "required": true,
@@ -12094,8 +12165,8 @@
       "members": [
         {
           "default": "",
-          "document": "待变更的站点ID",
-          "example": "zone-xxxx",
+          "document": "待变更的站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -12103,7 +12174,7 @@
         },
         {
           "default": "",
-          "document": "缓存过期时间配置",
+          "document": "缓存过期时间配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "CacheConfig",
           "name": "Cache",
@@ -12112,7 +12183,7 @@
         },
         {
           "default": "",
-          "document": "节点缓存键配置",
+          "document": "节点缓存键配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
@@ -12121,7 +12192,7 @@
         },
         {
           "default": "",
-          "document": "浏览器缓存配置",
+          "document": "浏览器缓存配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
@@ -12130,7 +12201,7 @@
         },
         {
           "default": "",
-          "document": "离线缓存",
+          "document": "离线缓存配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "OfflineCache",
           "name": "OfflineCache",
@@ -12139,7 +12210,7 @@
         },
         {
           "default": "",
-          "document": "Quic访问",
+          "document": "Quic访问配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "Quic",
           "name": "Quic",
@@ -12148,7 +12219,7 @@
         },
         {
           "default": "",
-          "document": "POST请求传输配置",
+          "document": "Post请求传输配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "PostMaxSize",
           "name": "PostMaxSize",
@@ -12157,7 +12228,7 @@
         },
         {
           "default": "",
-          "document": "智能压缩配置",
+          "document": "智能压缩配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "Compression",
           "name": "Compression",
@@ -12166,7 +12237,7 @@
         },
         {
           "default": "",
-          "document": "http2回源配置",
+          "document": "Http2回源配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "UpstreamHttp2",
           "name": "UpstreamHttp2",
@@ -12175,7 +12246,7 @@
         },
         {
           "default": "",
-          "document": "访问协议强制https跳转配置",
+          "document": "访问协议强制Https跳转配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
@@ -12184,7 +12255,7 @@
         },
         {
           "default": "",
-          "document": "Https 加速配置",
+          "document": "Https加速配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "Https",
           "name": "Https",
@@ -12193,7 +12264,7 @@
         },
         {
           "default": "",
-          "document": "源站配置",
+          "document": "源站配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "Origin",
           "name": "Origin",
@@ -12202,7 +12273,7 @@
         },
         {
           "default": "",
-          "document": "智能加速配置",
+          "document": "智能加速配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "SmartRouting",
           "name": "SmartRouting",
@@ -12211,7 +12282,7 @@
         },
         {
           "default": "",
-          "document": "WebSocket配置",
+          "document": "WebSocket配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
@@ -12220,7 +12291,7 @@
         },
         {
           "default": "",
-          "document": "客户端IP回源请求头配置",
+          "document": "客户端IP回源请求头配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "ClientIp",
           "name": "ClientIpHeader",
@@ -12229,10 +12300,19 @@
         },
         {
           "default": "",
-          "document": "缓存预刷新配置",
+          "document": "缓存预刷新配置。\n不填写表示保持原有配置。",
           "example": "无",
           "member": "CachePrefresh",
           "name": "CachePrefresh",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Ipv6访问配置。\n不填写表示保持原有配置。",
+          "example": "无",
+          "member": "Ipv6Access",
+          "name": "Ipv6",
           "required": false,
           "type": "object"
         }
@@ -12243,8 +12323,8 @@
       "document": "ModifyZoneSetting返回参数结构体",
       "members": [
         {
-          "document": "站点ID",
-          "example": "zone-xxxx",
+          "document": "站点ID。",
+          "example": "zone-21xfqlh4qjee",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -12337,7 +12417,7 @@
       "members": [
         {
           "default": "",
-          "document": "on | off, 离线缓存是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "离线缓存是否开启，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -12353,10 +12433,40 @@
       "members": [
         {
           "default": "",
-          "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源，https 回源时仅支持源站 443 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主源站列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "Origins",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备源站列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2.2.2.2\"]",
+          "member": "string",
+          "name": "BackupOrigins",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源协议配置，取值有：\n<li>http：强制 http 回源；</li>\n<li>follow：协议跟随回源；</li>\n<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https",
           "member": "string",
           "name": "OriginPullProtocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "CosPrivateAccess",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12715,7 +12825,7 @@
       "members": [
         {
           "default": "",
-          "document": "是调整POST请求限制，平台默认为32MB。\n关闭：off，\n开启：on。",
+          "document": "是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：\n<li>on：开启限制；</li>\n<li>off：关闭限制。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -12725,7 +12835,7 @@
         },
         {
           "default": "",
-          "document": "最大限制，取值在1MB和500MB之间。单位字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大限制，取值在1MB和500MB之间。单位字节。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000000",
           "member": "int64",
           "name": "MaxSize",
@@ -12777,7 +12887,7 @@
       "members": [
         {
           "default": "",
-          "document": "on | off CacheKey是否由QueryString组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheKey是否由QueryString组成，取值有：\n<li>on：是；</li>\n<li>off：否。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -12787,7 +12897,7 @@
         },
         {
           "default": "",
-          "document": "includeCustom:使用部分url参数\nexcludeCustom:排除部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CacheKey使用QueryString的方式，取值有：\n<li>includeCustom：使用部分url参数；</li>\n<li>excludeCustom：排除部分url参数。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "includeCustom",
           "member": "string",
           "name": "Action",
@@ -12797,7 +12907,7 @@
         },
         {
           "default": "",
-          "document": "使用/排除的url参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用/排除的url参数数组。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "key1;key2",
           "member": "string",
           "name": "Value",
@@ -12813,7 +12923,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否启动Quic配置",
+          "document": "是否开启Quic配置，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -13728,7 +13838,7 @@
       "members": [
         {
           "default": "",
-          "document": "智能加速配置开关\non：开启\noff：关闭",
+          "document": "智能加速配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -14100,7 +14210,7 @@
       "members": [
         {
           "default": "",
-          "document": "http2回源配置开关\non：开启\noff：关闭",
+          "document": "http2回源配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -14574,7 +14684,7 @@
       "members": [
         {
           "default": "",
-          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.",
+          "document": "WebSocket 超时时间配置开关，取值有：\n<li>on：使用Timeout作为WebSocket超时时间；</li>\n<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -14584,7 +14694,7 @@
         },
         {
           "default": "",
-          "document": "设置超时时间，单位为秒，最大超时时间120秒。",
+          "document": "超时时间，单位为秒，最大超时时间120秒。",
           "example": "10",
           "member": "int64",
           "name": "Timeout",

@@ -265,7 +265,7 @@
       "output": "RecognizeContainerOCRResponse"
     },
     "RecognizeHealthCodeOCR": {
-      "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeHealthCodeOCRRequest",
       "name": "健康码识别",
       "output": "RecognizeHealthCodeOCRResponse"
@@ -7192,6 +7192,7 @@
         {
           "default": "",
           "document": "识别出的字段名称",
+          "example": "发票名称",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7201,10 +7202,21 @@
         {
           "default": "",
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
+          "example": "XX发票",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。",
+          "example": "1",
+          "member": "int64",
+          "name": "Row",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

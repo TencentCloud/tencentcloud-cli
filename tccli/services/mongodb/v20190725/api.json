@@ -185,6 +185,12 @@
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
       "output": "SetAccountUserPrivilegeResponse"
+    },
+    "TerminateDBInstances": {
+      "document": "包年包月实例隔离接口",
+      "input": "TerminateDBInstancesRequest",
+      "name": "包年包月隔离接口",
+      "output": "TerminateDBInstancesResponse"
     }
   },
   "metadata": {
@@ -4377,6 +4383,33 @@
         }
       ],
       "usage": "in"
+    },
+    "TerminateDBInstancesRequest": {
+      "document": "TerminateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id列表",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateDBInstancesResponse": {
+      "document": "TerminateDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

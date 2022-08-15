@@ -68,6 +68,14 @@
         "title": "创建签署流程"
       }
     ],
+    "CreateFlowSignReview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignReview\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowId\": \"xxxx\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"企业内部审核通过，允许签署\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1234345677xxxx\"\n    }\n}",
+        "title": "提交企业签署流程审批结果"
+      }
+    ],
     "CreateMultiFlowSignQRCode": [
       {
         "document": "",

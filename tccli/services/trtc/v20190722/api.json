@@ -410,7 +410,7 @@
         },
         {
           "default": "",
-          "document": "TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:\n0: 字符串类型的RoomId\n1: 32位整型的RoomId（默认）",
+          "document": "TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:\n0: 字符串类型的RoomId\n1: 32位整型的RoomId",
           "example": "1",
           "member": "uint64",
           "name": "RoomIdType",

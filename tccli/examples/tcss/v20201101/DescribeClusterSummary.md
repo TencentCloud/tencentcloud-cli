@@ -11,13 +11,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4",
-        "TotalCount": 9,
-        "RiskClusterCount": 7,
+        "NoRiskClusterCount": 1,
+        "ManagedClusterCount": 1,
+        "AutoCheckClusterCount": 1,
         "UncheckClusterCount": 1,
-        "ManagedClusterCount": 6,
-        "IndependentClusterCount": 3,
-        "NoRiskClusterCount": 1
+        "IndependentClusterCount": 1,
+        "TotalCount": 1,
+        "CheckedClusterCount": 1,
+        "RequestId": "fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4",
+        "FailedClusterCount": 1,
+        "ManualCheckClusterCount": 1,
+        "RiskClusterCount": 1
     }
 }
 ```
