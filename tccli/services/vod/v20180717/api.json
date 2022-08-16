@@ -12039,7 +12039,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -12053,7 +12053,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务。</li>\n<li>FastClipMedia：快速剪辑任务。</li>\n\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>ReduceMediaBitrate：降码率任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",

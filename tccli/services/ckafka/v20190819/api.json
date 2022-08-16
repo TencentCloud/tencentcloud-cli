@@ -8712,7 +8712,7 @@
           "example": "test",
           "member": "string",
           "name": "Topic",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8794,6 +8794,26 @@
           "name": "QpsLimit",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Table到Topic的路由，「分发到多个topic」开关打开时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "TableMapping",
+          "name": "TableMappings",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "「分发到多个topic」开关，默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "UseTableMapping",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -10123,6 +10143,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Mysql 连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10395,6 +10425,46 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出格式，DEFAULT、CANAL_1、CANAL_2",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "OutputFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Table输入的是前缀时，该项值为true，否则为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTablePrefix",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic",
+          "example": "all",
+          "member": "string",
+          "name": "IncludeContentChanges",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为true，且MySQL中\"binlog_rows_query_log_events\"配置项的值为\"ON\"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeQuery",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -10559,6 +10629,16 @@
           "example": "xxx",
           "member": "bool",
           "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -11527,6 +11607,52 @@
           "name": "End",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TableMapping": {
+      "document": "Table、Topic路由",
+      "members": [
+        {
+          "default": "",
+          "document": "库名",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名，多个表,（逗号）隔开",
+          "example": "table1",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic名称",
+          "example": "topic1",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic ID",
+          "example": "topic-id",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

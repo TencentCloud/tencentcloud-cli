@@ -72,6 +72,12 @@
       "name": "删除设备资源",
       "output": "DeleteDeviceResourceResponse"
     },
+    "DeleteDeviceShadow": {
+      "document": "本接口（DeleteDeviceShadow）用于删除设备影子 ",
+      "input": "DeleteDeviceShadowRequest",
+      "name": "删除设备影子",
+      "output": "DeleteDeviceShadowResponse"
+    },
     "DeletePrivateCA": {
       "document": "删除私有CA证书",
       "input": "DeletePrivateCARequest",
@@ -1547,6 +1553,42 @@
     },
     "DeleteDeviceResponse": {
       "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceShadowRequest": {
+      "document": "DeleteDeviceShadow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceShadowResponse": {
+      "document": "DeleteDeviceShadow返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

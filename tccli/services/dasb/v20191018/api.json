@@ -414,6 +414,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属部门的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -780,6 +790,15 @@
           "name": "ValidateTo",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问权限所属部门的ID",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -816,6 +835,15 @@
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产组所属部门ID，如：1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -851,6 +879,15 @@
           "member": "string",
           "name": "Name",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组所属部门的ID，如：1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -958,6 +995,15 @@
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所属部门ID，如：“1.2.3”",
+          "example": "\"1.2.3\"",
+          "member": "string",
+          "name": "DepartmentId",
           "required": false,
           "type": "string"
         }
@@ -1165,6 +1211,42 @@
       ],
       "type": "object"
     },
+    "Department": {
+      "document": "部门信息",
+      "members": [
+        {
+          "default": "",
+          "document": "部门ID",
+          "example": "\"1.2.3\"",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部门名称，1 - 256个字符",
+          "example": "\"研发部\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部门管理员账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Managers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAclsRequest": {
       "document": "DescribeAcls请求参数结构体",
       "members": [
@@ -1239,6 +1321,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "部门ID，用于过滤属于某个部门的访问权限",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1360,6 +1451,15 @@
           "name": "Kind",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "所属部门ID",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1432,6 +1532,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "部门ID，用于过滤属于某个部门的资产组",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1558,6 +1667,15 @@
           "name": "KindSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，可按照部门ID进行过滤",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1693,6 +1811,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "所属部门ID",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1765,6 +1892,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "部门ID，用于过滤属于某个部门的用户组",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1873,6 +2009,15 @@
           "name": "AuthTypeSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "部门ID，用于过滤属于某个部门的用户",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2049,6 +2194,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产所属部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2075,6 +2230,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2306,6 +2471,15 @@
           "name": "ValidateTo",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限所属部门的ID，如：1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2403,6 +2577,15 @@
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属部门的ID，如1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
           "required": false,
           "type": "string"
         }
@@ -2809,6 +2992,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户所属部门（用于出参）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户所属部门（用于入参）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "yk6c1-548fut9xrdczcmefxaqhfm6x9i",
+        "RequestId": "xx",
         "ScenarioId": "scenario-83osaafm"
     }
 }

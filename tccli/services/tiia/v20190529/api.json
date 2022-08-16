@@ -269,6 +269,16 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主体区域类目ID",
+          "example": "2",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1910,7 +1920,7 @@
         },
         {
           "default": "",
-          "document": "图像的所有主体区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图像的所有主体区域，置信度，以及主体区域类别ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "Box",
           "name": "AllBox",

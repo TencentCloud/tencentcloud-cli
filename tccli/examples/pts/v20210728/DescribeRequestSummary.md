@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f9byccyy7i7u9cw-81axnla-a-ezcnwr",
+        "RequestId": "xx",
         "RequestSummarySet": [
             {
                 "Service": "http://pets.com/0",

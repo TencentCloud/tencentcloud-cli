@@ -9482,7 +9482,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务器Quuid",
+          "document": "云服务器UUID",
           "example": "xx",
           "member": "string",
           "name": "Quuid",
@@ -9491,7 +9491,7 @@
         },
         {
           "default": "",
-          "document": "服务器Uuid",
+          "document": "主机安全UUID",
           "example": "xx",
           "member": "string",
           "name": "Uuid",

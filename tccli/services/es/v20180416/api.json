@@ -3483,6 +3483,26 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "web节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OptionalWebServiceInfo",
+          "name": "OptionalWebServiceInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自治索引开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoIndexEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4819,6 +4839,82 @@
       ],
       "usage": "both"
     },
+    "OptionalWebServiceInfo": {
+      "document": "可选web组件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cerebro",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://es-xxxxxxxx.cerebro.tencentelasticsearch.com:9000",
+          "member": "string",
+          "name": "PublicUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://es-xxxxxxxx.interna.cerebro.tencentelasticsearch.com:9000",
+          "member": "string",
+          "name": "PrivateUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网访问权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "PublicAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网访问权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "PrivateAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.9.4",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
       "members": [
@@ -5411,6 +5507,15 @@
           "name": "Password",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否滚动后备索引",
+          "example": "false",
+          "member": "bool",
+          "name": "RolloverBackingIndex",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

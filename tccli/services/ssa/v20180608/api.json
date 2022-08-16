@@ -3405,7 +3405,7 @@
         },
         {
           "default": "",
-          "document": "业务场景 参考ScenesType",
+          "document": "1:急需关注 2.重保监控 3.全量告警",
           "example": "1",
           "member": "int64",
           "name": "Scenes",

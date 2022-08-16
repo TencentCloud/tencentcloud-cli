@@ -44,6 +44,7 @@ Output:
                 "CpuNum": 2,
                 "MemSize": 4,
                 "DiskType": "CLOUD_SSD",
+                "AutoIndexEnabled": true,
                 "DiskSize": 20,
                 "EnableHotWarmMode": false,
                 "WarmNodeType": "",
@@ -140,7 +141,18 @@ Output:
                 "CreateTime": "2022-07-06 20:52:48",
                 "UpdateTime": "2022-07-07 17:35:29",
                 "Deadline": "2017-12-04 00:00:00",
-                "OperationDuration": null
+                "OperationDuration": null,
+                "OptionalWebServiceInfos": [
+                    {
+                        "Status": 0,
+                        "PrivateAccess": "xx",
+                        "PublicAccess": "xx",
+                        "PrivateUrl": "xx",
+                        "Version": "xx",
+                        "Type": "xx",
+                        "PublicUrl": "xx"
+                    }
+                ]
             }
         ],
         "RequestId": "xxxx"

@@ -645,7 +645,7 @@
         },
         {
           "default": "",
-          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT",
+          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
@@ -654,7 +654,7 @@
         },
         {
           "default": "",
-          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15-py3.6-cpu、1.9-py3.6-cuda11.1-gpu",
+          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
           "example": "1.12",
           "member": "string",
           "name": "FrameworkVersion",

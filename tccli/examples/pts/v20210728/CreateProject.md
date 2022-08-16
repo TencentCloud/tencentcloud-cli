@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "m2zcv6drxckn53gb61anxndsckjdwgfw",
+        "RequestId": "xx",
         "ProjectId": "project-xx"
     }
 }

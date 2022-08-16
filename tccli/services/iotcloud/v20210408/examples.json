@@ -102,6 +102,14 @@
         "title": "删除设备资源"
       }
     ],
+    "DeleteDeviceShadow": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "删除设备影子接口"
+      }
+    ],
     "DeletePrivateCA": [
       {
         "document": "",
