@@ -265,7 +265,9 @@ class Loader(object):
         param_info[para["name"]]["members"] = member
         return param_info
 
-    def _get_param_info(self, param_model, object_model, object_set=[]):
+    def _get_param_info(self, param_model, object_model, object_set=None):
+        if object_set is None:
+            object_set = []
         param_info = {}
         for para in param_model:
             if para["type"] == "list":
@@ -299,7 +301,9 @@ class Loader(object):
         param_model = service_model["objects"]
         return self._get_param_info(param_model[action + "Response"]["members"], param_model)
 
-    def _generate_param_skeleton(self, param_model, name, object_set=[]):
+    def _generate_param_skeleton(self, param_model, name, object_set=None):
+        if object_set is None:
+            object_set = []
         param_skeleton = {}
         for para in param_model:
             if para["type"] == "list":
@@ -367,7 +371,9 @@ class Loader(object):
         if param_list.pop().isdigit():
             param_list.pop()
 
-    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, object_set=[]):
+    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, object_set=None):
+        if object_set is None:
+            object_set = []
         param_list.append(para["name"])
         if para["type"] == "list" and para["member"] not in BASE_TYPE:
             param_list.append('0')
