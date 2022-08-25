@@ -16,7 +16,7 @@ def test_describe_instances():
 
 def test_describe_disaster_disaster_recover_group_quota():
     cmd = 'tccli cvm DescribeDisasterRecoverGroupQuota'
-    expect = "\"CvmInHostGroupQuota\": 50,"
+    expect = "\"CvmInHostGroupQuota\":"
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
 
