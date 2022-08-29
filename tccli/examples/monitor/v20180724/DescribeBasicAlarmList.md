@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli monitor DescribeBasicAlarmList --cli-unfold-argument  \
-    --Module monitor \
-    --StartTime 1573660800 \
-    --EndTime 1573919999 \
-    --Limit 20 \
-    --Offset 0 \
-    --OccurTimeOrder DESC \
-    --ProjectIds 0 \
-    --ViewNames cvm_device \
     --AlarmStatus 1 \
-    --MetricNames mem_used
+    --MetricNames mem_used \
+    --Module monitor \
+    --ViewNames cvm_device \
+    --Limit 20 \
+    --StartTime 1573660800 \
+    --Offset 0 \
+    --ProjectIds 0 \
+    --EndTime 1573919999 \
+    --OccurTimeOrder DESC
 ```
 
 Output: 
@@ -90,7 +90,8 @@ Output:
             }
         ],
         "RequestId": "6b64cc24-0c60-483f-bdc3-2e55edbbc68c",
-        "Total": 2
+        "Total": 2,
+        "Warning": "This method is deprecated! Use `DescribeAlarmHistories` instead!"
     }
 }
 ```

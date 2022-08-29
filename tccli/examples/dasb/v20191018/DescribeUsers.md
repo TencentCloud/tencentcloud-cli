@@ -14,23 +14,38 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "xx",
+                "UserName": "jassls",
                 "AuthType": 1,
                 "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "RealName": "xx",
-                "Email": "xx",
-                "Phone": "xx",
+                "RealName": "张宏宇",
+                "ValidateTime": "2020-09-23T00:00:00+00:00",
+                "Email": "xxx@tencent.com",
+                "Phone": "+86|13500000001",
                 "GroupSet": [
                     {
+                        "Department": {
+                            "Managers": [
+                                "152017423"
+                            ],
+                            "Id": "1.2",
+                            "Name": "研发部"
+                        },
                         "Id": 1,
-                        "Name": "xx"
+                        "Name": "运维组"
                     }
                 ],
+                "Department": {
+                    "Managers": [
+                        "152017423"
+                    ],
+                    "Id": "1.2",
+                    "Name": "研发部"
+                },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
                 "Id": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "cf839eee-b651-4ff3-9b49-173f9f55733f"
     }
 }
 ```
@@ -54,23 +69,38 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "zhanghongyu",
+                "UserName": "jassls",
                 "AuthType": 1,
                 "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "RealName": "xx",
-                "Email": "xx",
-                "Phone": "xx",
+                "RealName": "张宏宇",
+                "ValidateTime": "2020-09-23T00:00:00+00:00",
+                "Email": "xxx@tencent.com",
+                "Phone": "+86|13500000001",
                 "GroupSet": [
                     {
+                        "Department": {
+                            "Managers": [
+                                "152017423"
+                            ],
+                            "Id": "1.2",
+                            "Name": "研发部"
+                        },
                         "Id": 1,
-                        "Name": "xx"
+                        "Name": "运维组"
                     }
                 ],
+                "Department": {
+                    "Managers": [
+                        "152017423"
+                    ],
+                    "Id": "1.2",
+                    "Name": "研发部"
+                },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
                 "Id": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "cf839eee-b651-4ff3-9b49-173f9f55733f"
     }
 }
 ```

@@ -1304,7 +1304,8 @@
           "name": "BusinessCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1314,7 +1315,8 @@
           "name": "BusinessCodeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1324,7 +1326,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1334,7 +1337,8 @@
           "name": "RealTotalCostRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1344,7 +1348,8 @@
           "name": "CashPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1354,7 +1359,8 @@
           "name": "IncentivePayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1364,7 +1370,8 @@
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1374,7 +1381,8 @@
           "name": "BillMonth",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1384,7 +1392,19 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1400,7 +1420,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1410,7 +1431,8 @@
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1420,7 +1442,8 @@
           "name": "IncentivePayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1430,7 +1453,8 @@
           "name": "CashPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1440,7 +1464,19 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3348,7 +3384,8 @@
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3357,7 +3394,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3366,7 +3404,8 @@
           "member": "string",
           "name": "PayerUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3381,7 +3420,8 @@
           "name": "Ready",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3390,7 +3430,8 @@
           "name": "SummaryOverview",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3411,7 +3452,8 @@
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3420,7 +3462,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3429,7 +3472,8 @@
           "member": "string",
           "name": "PayerUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3438,7 +3482,8 @@
           "member": "string",
           "name": "PayType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3453,7 +3498,8 @@
           "name": "Ready",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3462,7 +3508,8 @@
           "name": "SummaryTotal",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3471,7 +3518,8 @@
           "name": "SummaryOverview",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3492,7 +3540,8 @@
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3501,7 +3550,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3510,7 +3560,8 @@
           "member": "string",
           "name": "PayerUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3525,7 +3576,8 @@
           "name": "Ready",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "各项目花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3534,7 +3586,8 @@
           "name": "SummaryOverview",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3555,7 +3608,8 @@
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3564,7 +3618,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3573,7 +3628,8 @@
           "member": "string",
           "name": "PayerUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3588,7 +3644,8 @@
           "name": "Ready",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3597,7 +3654,8 @@
           "name": "SummaryOverview",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3618,7 +3676,8 @@
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3627,7 +3686,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3636,7 +3696,8 @@
           "member": "string",
           "name": "TagKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3645,7 +3706,8 @@
           "member": "string",
           "name": "PayerUin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3654,7 +3716,8 @@
           "member": "string",
           "name": "TagValue",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3669,7 +3732,8 @@
           "name": "Ready",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3678,7 +3742,8 @@
           "name": "SummaryOverview",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3687,7 +3752,8 @@
           "name": "SummaryTotal",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4888,7 +4954,8 @@
           "name": "PayMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4898,7 +4965,8 @@
           "name": "PayModeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4908,7 +4976,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4918,7 +4987,8 @@
           "name": "RealTotalCostRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4928,7 +4998,8 @@
           "name": "Detail",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4938,7 +5009,8 @@
           "name": "CashPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4948,7 +5020,8 @@
           "name": "IncentivePayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4958,7 +5031,8 @@
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4968,7 +5042,19 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5008,7 +5094,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5018,7 +5105,8 @@
           "name": "ProjectName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5028,7 +5116,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5038,7 +5127,8 @@
           "name": "RealTotalCostRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5048,7 +5138,8 @@
           "name": "CashPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5058,7 +5149,8 @@
           "name": "IncentivePayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5068,7 +5160,8 @@
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5078,7 +5171,8 @@
           "name": "BillMonth",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5088,7 +5182,19 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5104,7 +5210,8 @@
           "name": "RegionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5114,7 +5221,8 @@
           "name": "RegionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5124,7 +5232,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5134,7 +5243,8 @@
           "name": "RealTotalCostRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5144,7 +5254,8 @@
           "name": "CashPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5154,7 +5265,8 @@
           "name": "IncentivePayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5164,7 +5276,8 @@
           "name": "VoucherPayAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5174,7 +5287,8 @@
           "name": "BillMonth",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5184,7 +5298,19 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5226,7 +5352,8 @@
           "name": "TagValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5236,7 +5363,8 @@
           "name": "RealTotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5246,7 +5374,8 @@
           "name": "RealTotalCostRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5256,7 +5385,52 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "现金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "赠送金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "代金券金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分成金金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

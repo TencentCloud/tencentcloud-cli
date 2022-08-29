@@ -23,12 +23,6 @@
       "input": "DescribeTaskDetailRequest",
       "name": "查看任务详情",
       "output": "DescribeTaskDetailResponse"
-    },
-    "DescribeVideoStat": {
-      "document": "控制台识别统计",
-      "input": "DescribeVideoStatRequest",
-      "name": "识别统计",
-      "output": "DescribeVideoStatResponse"
     }
   },
   "metadata": {
@@ -673,85 +667,6 @@
       ],
       "type": "object"
     },
-    "DescribeVideoStatRequest": {
-      "document": "DescribeVideoStat请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "审核类型 1: 机器审核; 2: 人工审核",
-          "member": "int64",
-          "name": "AuditType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "查询条件",
-          "member": "Filters",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVideoStatResponse": {
-      "document": "DescribeVideoStat返回参数结构体",
-      "members": [
-        {
-          "document": "识别结果统计",
-          "member": "Overview",
-          "name": "Overview",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "识别量统计",
-          "member": "TrendCount",
-          "name": "TrendCount",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "违规数据分布",
-          "member": "EvilCount",
-          "name": "EvilCount",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EvilCount": {
-      "document": "违规数据分布",
-      "members": [
-        {
-          "default": "",
-          "document": "违规类型：\nTerror\t24001\nPorn\t20002\nPolity\t20001\nAd\t20105\nAbuse\t20007\t\nIllegal\t20006\t\nSpam\t25001\t\nMoan\t26001",
-          "member": "string",
-          "name": "EvilType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "分布类型总量",
-          "member": "int64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "FileOutput": {
       "document": "Cos FileOutput ",
       "members": [
@@ -780,30 +695,6 @@
           "name": "ObjectPrefix",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
-    "Filters": {
-      "document": "视频过滤条件",
-      "members": [
-        {
-          "default": "",
-          "document": "查询字段：\n策略BizType\n子账号SubUin\n日期区间DateRange",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "查询值",
-          "member": "string",
-          "name": "Values",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1271,84 +1162,6 @@
       ],
       "usage": "in"
     },
-    "Overview": {
-      "document": "识别结果统计",
-      "members": [
-        {
-          "default": "",
-          "document": "总调用量",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "总调用时长",
-          "member": "int64",
-          "name": "TotalHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "通过量",
-          "member": "int64",
-          "name": "PassCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "通过时长",
-          "member": "int64",
-          "name": "PassHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "违规量",
-          "member": "int64",
-          "name": "EvilCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "违规时长",
-          "member": "int64",
-          "name": "EvilHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "疑似违规量",
-          "member": "int64",
-          "name": "SuspectCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "疑似违规时长",
-          "member": "int64",
-          "name": "SuspectHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "StorageInfo": {
       "document": " 数据存储信息",
       "members": [
@@ -1486,93 +1299,6 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "TrendCount": {
-      "document": "识别量统计",
-      "members": [
-        {
-          "default": "",
-          "document": "总调用量",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "总调用时长",
-          "member": "int64",
-          "name": "TotalHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "通过量",
-          "member": "int64",
-          "name": "PassCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "通过时长",
-          "member": "int64",
-          "name": "PassHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "违规量",
-          "member": "int64",
-          "name": "EvilCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "违规时长",
-          "member": "int64",
-          "name": "EvilHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "疑似违规量",
-          "member": "int64",
-          "name": "SuspectCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "疑似违规时长",
-          "member": "int64",
-          "name": "SuspectHour",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "日期",
-          "member": "string",
-          "name": "Date",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"

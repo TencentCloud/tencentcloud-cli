@@ -686,7 +686,7 @@
         },
         {
           "default": "",
-          "document": "拨测点地区\n\t\n这里实际按拨测结果中的地区来填写即可\n\n国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海\n\n海外一般是国家名，如澳大利亚、新加坡",
+          "document": "拨测点地区\n\t\n这里实际按拨测结果中的地区来填写即可\n\n国内一般是省级单位，如广东、广西、中国香港、新疆；直辖市则填北京、上海\n\n境外一般是国家名，如澳大利亚、新加坡",
           "example": "[上海]",
           "member": "string",
           "name": "Districts",
@@ -860,7 +860,7 @@
         },
         {
           "default": "",
-          "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 海外 </li>",
+          "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外</li>",
           "example": "1",
           "member": "int64",
           "name": "Location",
@@ -1599,7 +1599,7 @@
         },
         {
           "default": "",
-          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 境外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Location",
@@ -1644,7 +1644,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1654,7 +1655,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1664,7 +1666,8 @@
           "name": "TaskType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1674,7 +1677,8 @@
           "name": "Nodes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1684,7 +1688,8 @@
           "name": "Interval",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1694,7 +1699,8 @@
           "name": "Parameters",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1704,7 +1710,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1714,7 +1721,8 @@
           "name": "TargetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1724,7 +1732,8 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1734,7 +1743,8 @@
           "name": "OrderState",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1744,7 +1754,8 @@
           "name": "TaskCategory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1754,7 +1765,8 @@
           "name": "CreatedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1764,7 +1776,8 @@
           "name": "Cron",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1774,7 +1787,8 @@
           "name": "CronState",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1784,7 +1798,8 @@
           "name": "TagInfoList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1827,7 +1842,8 @@
           "member": "string",
           "name": "TaskIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1842,7 +1858,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1851,7 +1868,8 @@
           "name": "SuccessCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "任务执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1860,7 +1878,8 @@
           "name": "Results",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1997,7 +2016,8 @@
           "member": "string",
           "name": "TaskIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2006,7 +2026,8 @@
           "member": "string",
           "name": "Nodes",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2015,7 +2036,8 @@
           "member": "int64",
           "name": "Interval",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2024,7 +2046,8 @@
           "member": "string",
           "name": "Parameters",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2033,7 +2056,18 @@
           "member": "string",
           "name": "Cron",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预付费套餐id\n需要与taskId对应",
+          "example": "[\"presub-xx\"]",
+          "member": "string",
+          "name": "ResourceIDs",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

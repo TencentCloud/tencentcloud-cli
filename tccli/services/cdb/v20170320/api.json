@@ -2440,7 +2440,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2449,7 +2450,8 @@
           "member": "Account",
           "name": "Accounts",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2458,7 +2460,8 @@
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2467,7 +2470,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2476,7 +2480,8 @@
           "member": "int64",
           "name": "MaxUserConnections",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2491,7 +2496,8 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3171,7 +3177,7 @@
         },
         {
           "default": "",
-          "document": "主实例的可用区信息，购买灾备实例时必填。",
+          "document": "主实例的可用区信息，购买灾备、RO实例时必填。",
           "example": "ap-beijing",
           "member": "string",
           "name": "MasterRegion",
@@ -3341,7 +3347,7 @@
         },
         {
           "default": "",
-          "document": "告警策略id数组。",
+          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "member": "int64",
           "name": "AlarmPolicyList",
@@ -3669,7 +3675,7 @@
         },
         {
           "default": "",
-          "document": "主实例地域信息，购买灾备实例时，该字段必填。",
+          "document": "主实例地域信息，购买灾备、RO实例时，该字段必填。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MasterRegion",
@@ -3759,7 +3765,7 @@
         },
         {
           "default": "",
-          "document": "告警策略id数组。",
+          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "member": "int64",
           "name": "AlarmPolicyList",
@@ -7560,7 +7566,38 @@
           "member": "string",
           "name": "EngineVersions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "引擎类型，缺省则查询所有",
+          "example": "[\"innodb\"]",
+          "member": "string",
+          "name": "EngineTypes",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模板名称，缺省则查询所有",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "TemplateNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模板id，缺省则查询所有",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7575,7 +7612,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "参数模板详情。",
@@ -7584,7 +7622,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10306,26 +10345,32 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。",
+          "example": "Gx18ux23F^X",
           "member": "string",
           "name": "NewPassword",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "云数据库账号。",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10335,10 +10380,13 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12083,7 +12131,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12093,7 +12142,8 @@
           "name": "ParamType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12103,7 +12153,8 @@
           "name": "Default",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12113,7 +12164,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12123,7 +12175,8 @@
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12133,7 +12186,8 @@
           "name": "NeedReboot",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12143,7 +12197,8 @@
           "name": "Max",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12153,7 +12208,8 @@
           "name": "Min",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12163,7 +12219,8 @@
           "name": "EnumValue",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12173,7 +12230,8 @@
           "name": "MaxFunc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12183,7 +12241,30 @@
           "name": "MinFunc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "参数快照值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "参数快照是否存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSnapshotExist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -15321,18 +15402,22 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "实例 ROOT 账号的密码。",
+          "example": "sxxxxxx",
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -15342,10 +15427,13 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

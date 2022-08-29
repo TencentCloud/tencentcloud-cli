@@ -16,8 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "69wmlimeh2g7qijbpr469yw8p17kn8ur",
-        "RuleId": "rrule-fzhp4p7c"
+        "RequestId": "xyz",
+        "RuleId": "rrule-xyz"
     }
 }
 ```

@@ -17,6 +17,7 @@ Output:
             {
                 "EnableConfigInternet": true,
                 "EnvName": "xx",
+                "ConfigIntranetAddress": "xx",
                 "ConfigInternetServiceIp": "xx"
             }
         ],

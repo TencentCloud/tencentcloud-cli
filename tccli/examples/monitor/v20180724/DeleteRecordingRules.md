@@ -7,14 +7,14 @@ Input:
 ```
 tccli monitor DeleteRecordingRules --cli-unfold-argument  \
     --InstanceId prom-xxxerwer \
-    --RuleIds rrule-m74lrt6g
+    --RuleIds rrule-xyz
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ljynf9quqfeko5pwcr24llmhy9rspzye"
+        "RequestId": "xyz"
     }
 }
 ```

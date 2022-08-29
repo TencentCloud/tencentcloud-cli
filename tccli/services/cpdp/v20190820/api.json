@@ -3238,6 +3238,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "支付结果通知回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6673,6 +6683,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudExternalUserInfo": {
+      "document": "渠道方用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道方用户类型",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalUserType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道方用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -37215,7 +37253,8 @@
           "member": "string",
           "name": "MidasAppId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37224,7 +37263,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37233,7 +37273,8 @@
           "member": "string",
           "name": "OutTradeNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37242,7 +37283,8 @@
           "member": "string",
           "name": "CurrencyType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37251,7 +37293,8 @@
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37260,7 +37303,8 @@
           "member": "string",
           "name": "ProductName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37269,7 +37313,8 @@
           "member": "string",
           "name": "ProductDetail",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37278,7 +37323,8 @@
           "member": "int64",
           "name": "OriginalAmt",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37287,7 +37333,8 @@
           "member": "int64",
           "name": "TotalAmt",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37296,7 +37343,8 @@
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37305,7 +37353,8 @@
           "member": "string",
           "name": "SubAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37314,7 +37363,8 @@
           "member": "string",
           "name": "RealChannel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37323,7 +37373,8 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37332,7 +37383,8 @@
           "member": "string",
           "name": "Metadata",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37341,7 +37393,8 @@
           "member": "int64",
           "name": "Quantity",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37350,7 +37403,8 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37359,7 +37413,8 @@
           "member": "string",
           "name": "CancelUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37368,7 +37423,8 @@
           "member": "string",
           "name": "WxAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37377,7 +37433,8 @@
           "member": "string",
           "name": "WxSubAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37386,7 +37443,8 @@
           "member": "string",
           "name": "WxOpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37395,7 +37453,8 @@
           "member": "string",
           "name": "WxSubOpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37404,7 +37463,8 @@
           "member": "int64",
           "name": "TotalPlatformIncome",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37413,7 +37473,8 @@
           "member": "int64",
           "name": "TotalMchIncome",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37422,7 +37483,8 @@
           "member": "CloudSubOrder",
           "name": "SubOrderList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37431,7 +37493,8 @@
           "member": "CloudSettleInfo",
           "name": "SettleInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37440,7 +37503,8 @@
           "member": "CloudAttachmentInfo",
           "name": "AttachmentInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37449,7 +37513,8 @@
           "member": "string",
           "name": "PaymentNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37458,7 +37523,8 @@
           "member": "string",
           "name": "PayScene",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37467,7 +37533,8 @@
           "member": "string",
           "name": "LocaleCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37476,7 +37543,8 @@
           "member": "string",
           "name": "RegionCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37485,7 +37553,8 @@
           "member": "string",
           "name": "UserClientIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37494,7 +37563,8 @@
           "member": "string",
           "name": "ChannelOrderIdMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37503,7 +37573,8 @@
           "member": "CloudGlobalPayTimeInfo",
           "name": "GlobalPayTimeInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37512,7 +37583,8 @@
           "member": "string",
           "name": "ChannelAppIdPolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37521,7 +37593,8 @@
           "member": "CloudStoreInfo",
           "name": "StoreInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37530,7 +37603,8 @@
           "member": "CloudClientInfo",
           "name": "ClientInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37539,7 +37613,8 @@
           "member": "CloudExternalPromptGroup",
           "name": "ExternalPromptGroupList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -37548,7 +37623,18 @@
           "member": "string",
           "name": "OrderReceiveMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道方用户信息列表",
+          "example": "无",
+          "member": "CloudExternalUserInfo",
+          "name": "ExternalUserInfoList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -37563,7 +37649,8 @@
           "name": "TransactionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "开发者的支付订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -37572,7 +37659,8 @@
           "name": "OutTradeNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "SDK的支付参数。\n支付参数透传给米大师SDK（原文透传给SDK即可，不需要解码）\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -37581,7 +37669,8 @@
           "name": "PayInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "支付金额，单位：分。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -37590,7 +37679,8 @@
           "name": "TotalAmt",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "渠道信息，用于拉起渠道支付。j\nson字符串，注意此字段仅会在传入正确的PayScene入参时才会有效。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -37599,7 +37689,8 @@
           "name": "ChannelInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -37703,210 +37794,262 @@
         {
           "default": "",
           "document": "ISO 货币代码，CNY",
+          "example": "CNY",
           "member": "string",
           "name": "CurrencyType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_order_no",
           "member": "string",
           "name": "OutTradeNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "商品详情，需要URL编码",
+          "example": "商品详情",
           "member": "string",
           "name": "ProductDetail",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_product_id",
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "商品名称，需要URL编码",
+          "example": "商品名称",
           "member": "string",
           "name": "ProductName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "支付金额，单位： 分",
+          "example": "1",
           "member": "int64",
           "name": "TotalAmt",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "银行真实渠道.如:bank_pingan",
+          "example": "bank_pingan",
           "member": "string",
           "name": "RealChannel",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "原始金额",
+          "example": "1",
           "member": "int64",
           "name": "OriginalAmt",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "Web端回调地址",
+          "example": "http://callbackurl",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "指定支付渠道：  wechat：微信支付  qqwallet：QQ钱包 \n bank：网银支付  只有一个渠道时需要指定",
+          "example": "wechat",
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "透传字段，支付成功回调透传给应用，用于业务透传自定义内容",
+          "example": "xxxx",
           "member": "string",
           "name": "Metadata",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "购买数量，不传默认为1",
+          "example": "1",
           "member": "int64",
           "name": "Quantity",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
           "member": "string",
           "name": "SubAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)\n注：接入银行或其他支付渠道服务商模式下，必传",
+          "example": "无",
           "member": "UnifiedOrderInSubOrderList",
           "name": "SubOrderList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "结算应收金额，单位：分",
+          "example": "1",
           "member": "int64",
           "name": "TotalMchIncome",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "平台应收金额，单位：分",
+          "example": "0",
           "member": "int64",
           "name": "TotalPlatformIncome",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "微信公众号/小程序支付时为必选，需要传微信下的openid",
+          "example": "xxxx",
           "member": "string",
           "name": "WxOpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一",
+          "example": "your_wx_sub_open_id",
           "member": "string",
           "name": "WxSubOpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "xxxx",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "微信商户应用ID",
+          "example": "your_wx_app_id",
           "member": "string",
           "name": "WxAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "微信商户子应用ID",
+          "example": "your_wx_sub_app_id",
           "member": "string",
           "name": "WxSubAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "支付通知地址",
+          "example": "http://cloud.tencent.com",
           "member": "string",
           "name": "PaymentNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -37916,31 +38059,43 @@
       "members": [
         {
           "document": "支付金额，单位： 分",
+          "example": "1",
           "member": "int64",
           "name": "TotalAmt",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "应用支付订单号",
+          "example": "your_order_no",
           "member": "string",
           "name": "OutTradeNo",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "支付参数透传给聚鑫SDK（原文透传给SDK即可，不需要解码）",
+          "example": "data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22user123%22%2C%22out_trade_no%22%3A%22mikeuf1910181230%22%2C%22product_id%22%3A%22product_111%22%7D&sign=sign",
           "member": "string",
           "name": "PayInfo",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "聚鑫的交易订单",
+          "example": "E-191018160200005000",
           "member": "string",
           "name": "TransactionId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli cdb CreateDBInstance --cli-unfold-argument  \
-    --Memory 1000 \
-    --Volume 25 \
-    --Period 1 \
-    --GoodsNum 1 \
+    --ResourceTags.0.TagKey marchtest \
+    --ResourceTags.0.TagValue test1 \
     --Zone ap-guangzhou-3 \
     --UniqVpcId vpc-0akbol5v \
-    --UniqSubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
     --InstanceRole master \
-    --InstanceNodes 2 \
+    --GoodsNum 1 \
+    --Period 1 \
+    --Volume 25 \
     --EngineVersion 5.6 \
-    --ResourceTags.0.TagKey marchtest \
-    --ResourceTags.0.TagValue test1
+    --UniqSubnetId subnet-fyrtjbqw \
+    --Memory 1000 \
+    --InstanceNodes 2
 ```
 
 Output: 
@@ -44,17 +44,17 @@ Input:
 
 ```
 tccli cdb CreateDBInstance --cli-unfold-argument  \
-    --MasterInstanceId cdb-fn3f9xpx \
-    --Period 1 \
-    --GoodsNum 1 \
-    --Memory 4000 \
-    --Volume 100 \
-    --InstanceRole ro \
     --RoGroup.RoGroupMode allinone \
     --RoGroup.RoGroupName jersey_test \
-    --RoGroup.RoOfflineDelay 1 \
     --RoGroup.RoMaxDelayTime 5 \
-    --RoGroup.MinRoInGroup 1
+    --RoGroup.MinRoInGroup 1 \
+    --RoGroup.RoOfflineDelay 1 \
+    --GoodsNum 1 \
+    --InstanceRole ro \
+    --MasterInstanceId cdb-fn3f9xpx \
+    --Period 1 \
+    --Volume 100 \
+    --Memory 4000
 ```
 
 Output: 

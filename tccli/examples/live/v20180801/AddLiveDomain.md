@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live AddLiveDomain --cli-unfold-argument  \
-    --DomainName www.test.com \
-    --DomainType 0
+    --DomainType 0 \
+    --DomainName www.test.com
 ```
 
 Output: 

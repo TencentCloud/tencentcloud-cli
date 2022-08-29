@@ -18,7 +18,7 @@ Output:
     "Response": {
         "Context": "123-456-789",
         "NormalLogs": [],
-        "RequestId": "nes5mdwkfrbfhbpjrs4ox6ck41xjn9jp"
+        "RequestId": "xx"
     }
 }
 ```

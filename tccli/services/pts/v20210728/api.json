@@ -280,7 +280,7 @@
   "metadata": {
     "apiVersion": "2021-07-28",
     "api_brief": "介绍如何使用API的方式来构建压测相关场景",
-    "serviceNameCN": "性能测试服务",
+    "serviceNameCN": "云压测",
     "serviceShortName": "pts"
   },
   "objects": {
@@ -855,7 +855,8 @@
           "member": "string",
           "name": "NoticeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -864,7 +865,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -873,7 +875,8 @@
           "member": "string",
           "name": "AMPConsumerId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1028,7 +1031,8 @@
           "member": "string",
           "name": "FileId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1037,7 +1041,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1046,7 +1051,8 @@
           "member": "int64",
           "name": "Kind",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1055,7 +1061,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1064,7 +1071,8 @@
           "member": "int64",
           "name": "Size",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1073,7 +1081,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1082,7 +1091,8 @@
           "member": "int64",
           "name": "LineCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1091,7 +1101,8 @@
           "member": "string",
           "name": "HeadLines",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1100,7 +1111,8 @@
           "member": "string",
           "name": "TailLines",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1109,7 +1121,8 @@
           "member": "bool",
           "name": "HeaderInFile",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1118,7 +1131,8 @@
           "member": "string",
           "name": "HeaderColumns",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1127,7 +1141,8 @@
           "member": "FileInfo",
           "name": "FileInfos",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1837,7 +1852,8 @@
           "member": "string",
           "name": "JobIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1846,7 +1862,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1855,7 +1872,8 @@
           "member": "string",
           "name": "ScenarioIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1882,7 +1900,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1891,7 +1910,8 @@
           "member": "bool",
           "name": "DeleteScenarios",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1900,7 +1920,8 @@
           "member": "bool",
           "name": "DeleteJobs",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2233,7 +2254,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2242,7 +2264,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2251,7 +2274,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2266,7 +2290,8 @@
           "name": "CheckSummarySet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2495,7 +2520,8 @@
           "member": "string",
           "name": "ScenarioIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2504,7 +2530,8 @@
           "member": "string",
           "name": "ProjectIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2513,7 +2540,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2522,7 +2550,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2531,7 +2560,8 @@
           "member": "string",
           "name": "JobIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2540,7 +2570,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2549,7 +2580,8 @@
           "member": "bool",
           "name": "Ascend",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2558,7 +2590,8 @@
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2567,7 +2600,8 @@
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2576,7 +2610,8 @@
           "member": "bool",
           "name": "Debug",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2585,7 +2620,8 @@
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2600,7 +2636,8 @@
           "name": "JobSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2609,7 +2646,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2630,7 +2668,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2639,7 +2678,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2648,7 +2688,8 @@
           "member": "string",
           "name": "Metric",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2657,7 +2698,8 @@
           "member": "string",
           "name": "LabelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2666,7 +2708,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2681,7 +2724,8 @@
           "name": "LabelValueSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2760,7 +2804,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2769,7 +2814,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2778,7 +2824,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2787,7 +2834,8 @@
           "member": "string",
           "name": "Context",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2796,7 +2844,8 @@
           "member": "datetime_iso",
           "name": "From",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2805,7 +2854,8 @@
           "member": "datetime_iso",
           "name": "To",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2814,7 +2864,8 @@
           "member": "string",
           "name": "SeverityText",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2823,7 +2874,8 @@
           "member": "string",
           "name": "Instance",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2832,7 +2884,8 @@
           "member": "string",
           "name": "InstanceRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2841,7 +2894,8 @@
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2850,7 +2904,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2865,7 +2920,8 @@
           "name": "Context",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "日志数组\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2874,7 +2930,8 @@
           "name": "NormalLogs",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3008,7 +3065,8 @@
           "name": "RegionSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3339,7 +3397,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3348,7 +3407,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3357,7 +3417,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3366,7 +3427,8 @@
           "member": "InternalMetricQuery",
           "name": "Queries",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3381,7 +3443,8 @@
           "name": "MetricSampleMatrixSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3402,7 +3465,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3411,7 +3475,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3420,7 +3485,8 @@
           "member": "string",
           "name": "ScenarioId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3429,7 +3495,8 @@
           "member": "string",
           "name": "Metric",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3438,7 +3505,8 @@
           "member": "string",
           "name": "Aggregation",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3447,7 +3515,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3456,7 +3525,8 @@
           "member": "string",
           "name": "GroupBy",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3471,7 +3541,8 @@
           "name": "MetricSampleMatrix",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3662,6 +3733,16 @@
           "example": "true",
           "member": "bool",
           "name": "IgnoreScript",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否需要返回测试数据文件信息",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreDataset",
           "required": false,
           "type": "bool",
           "visibility": 1
@@ -5049,6 +5130,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Notification": {
+      "document": "测试启动前后的消息通知",
+      "members": [
+        {
+          "default": "",
+          "document": "发生事件",
+          "example": "[\"name\", \"age\"]",
+          "member": "string",
+          "name": "Events",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "webhook的网址",
+          "example": "\"http://abc.com\"",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "Project": {
       "document": "项目",
@@ -7140,6 +7249,16 @@
           "name": "DomainNameConfig",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "WebHook请求配置",
+          "example": "无",
+          "member": "Notification",
+          "name": "NotificationHooks",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],

@@ -11,123 +11,43 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "AclSet": [
             {
-                "UserGroupSet": [
-                    {
-                        "Id": 1,
-                        "Name": "xx"
-                    }
-                ],
-                "AllowClipTextDown": true,
-                "AllowShellFileDown": true,
-                "AllowShellFileUp": true,
-                "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                "AllowDiskFileDown": true,
-                "UserSet": [
-                    {
-                        "UserName": "xx",
-                        "AuthType": 1,
-                        "ValidateTo": "2020-09-22T00:00:00+00:00",
-                        "RealName": "xx",
-                        "Email": "xx",
-                        "Phone": "xx",
-                        "GroupSet": [
-                            {
-                                "Id": 1,
-                                "Name": "xx"
-                            }
-                        ],
-                        "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                        "Id": 1
-                    }
-                ],
-                "AllowFileUp": true,
-                "Status": 1,
-                "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "DeviceSet": [
-                    {
-                        "Kind": 1,
-                        "GroupSet": [
-                            {
-                                "Id": 1,
-                                "Name": "xx"
-                            }
-                        ],
-                        "Resource": {
-                            "RenewFlag": 1,
-                            "Zone": "xx",
-                            "SubnetName": "xx",
-                            "Nodes": 1,
-                            "Status": 1,
-                            "VpcId": "xx",
-                            "SubProductCode": "xx",
-                            "ResourceId": "xx",
-                            "VpcName": "xx",
-                            "ApCode": "xx",
-                            "SubnetId": "xx",
-                            "ResourceName": "xx",
-                            "Expired": true,
-                            "Deployed": true,
-                            "ProductCode": "xx",
-                            "PublicIpSet": [
-                                "xx"
-                            ],
-                            "PrivateIpSet": [
-                                "xx"
-                            ],
-                            "Pid": 1,
-                            "VpcCidrBlock": "xx",
-                            "ExpireTime": "2020-09-22T00:00:00+00:00",
-                            "SvArgs": "xx",
-                            "CidrBlock": "xx",
-                            "CreateTime": "2020-09-22T00:00:00+00:00"
-                        },
-                        "Name": "xx",
-                        "InstanceId": "xx",
-                        "OsName": "xx",
-                        "AccountCount": 1,
-                        "PrivateIp": "xx",
-                        "PublicIp": "xx",
-                        "VpcId": "xx",
-                        "ApCode": "xx",
-                        "SubnetId": "xx",
-                        "Port": 1,
-                        "Id": 1
-                    }
-                ],
-                "AllowDiskRedirect": false,
-                "AllowAnyAccount": true,
-                "MaxFileDownSize": 1,
-                "Name": "xx",
+                "Id": 224,
+                "Name": "云鼎部门权限",
+                "AllowDiskRedirect": true,
                 "AllowDiskFileUp": true,
-                "AllowClipFileUp": false,
+                "AllowDiskFileDown": true,
+                "AllowClipFileUp": true,
+                "AllowClipFileDown": true,
                 "AllowClipTextUp": true,
+                "AllowClipTextDown": true,
+                "AllowShellFileUp": true,
+                "AllowShellFileDown": true,
+                "AllowFileUp": true,
                 "AllowFileDown": true,
-                "DeviceGroupSet": [
-                    {
-                        "Id": 1,
-                        "Name": "xx"
-                    }
-                ],
-                "CmdTemplateSet": [
-                    {
-                        "CmdList": "xx",
-                        "Name": "xx",
-                        "Id": 1
-                    }
-                ],
-                "AccountSet": [
-                    "xx"
-                ],
-                "AllowClipFileDown": false,
-                "MaxFileUpSize": 1,
-                "Id": 1,
-                "AllowFileDel": true
+                "AllowFileDel": false,
+                "MaxFileUpSize": 0,
+                "MaxFileDownSize": 0,
+                "AllowAnyAccount": false,
+                "ValidateFrom": "1970-01-01T08:00:01+08:00",
+                "ValidateTo": "1970-01-01T08:00:01+08:00",
+                "Status": 1,
+                "UserSet": [],
+                "UserGroupSet": [],
+                "DeviceSet": [],
+                "DeviceGroupSet": [],
+                "AccountSet": [],
+                "CmdTemplateSet": [],
+                "Department": {
+                    "Id": "1.3.14",
+                    "Name": "云鼎实验室",
+                    "Managers": null
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "aba1efad-4aa2-4ce4-93ce-538e39b5f1f9",
+        "TotalCount": 1
     }
 }
 ```
@@ -148,123 +68,43 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "AclSet": [
             {
-                "UserGroupSet": [
-                    {
-                        "Id": 1,
-                        "Name": "xx"
-                    }
-                ],
-                "AllowClipTextDown": true,
-                "AllowShellFileDown": true,
-                "AllowShellFileUp": true,
-                "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                "AllowDiskFileDown": true,
-                "UserSet": [
-                    {
-                        "UserName": "xx",
-                        "AuthType": 1,
-                        "ValidateTo": "2020-09-22T00:00:00+00:00",
-                        "RealName": "xx",
-                        "Email": "xx",
-                        "Phone": "xx",
-                        "GroupSet": [
-                            {
-                                "Id": 1,
-                                "Name": "xx"
-                            }
-                        ],
-                        "ValidateFrom": "2020-09-22T00:00:00+00:00",
-                        "Id": 1
-                    }
-                ],
-                "AllowFileUp": true,
-                "Status": 1,
-                "ValidateTo": "2020-09-22T00:00:00+00:00",
-                "DeviceSet": [
-                    {
-                        "Kind": 1,
-                        "GroupSet": [
-                            {
-                                "Id": 1,
-                                "Name": "xx"
-                            }
-                        ],
-                        "Resource": {
-                            "RenewFlag": 1,
-                            "Zone": "xx",
-                            "SubnetName": "xx",
-                            "Nodes": 1,
-                            "Status": 1,
-                            "VpcId": "xx",
-                            "SubProductCode": "xx",
-                            "ResourceId": "xx",
-                            "VpcName": "xx",
-                            "ApCode": "xx",
-                            "SubnetId": "xx",
-                            "ResourceName": "xx",
-                            "Expired": true,
-                            "Deployed": true,
-                            "ProductCode": "xx",
-                            "PublicIpSet": [
-                                "xx"
-                            ],
-                            "PrivateIpSet": [
-                                "xx"
-                            ],
-                            "Pid": 1,
-                            "VpcCidrBlock": "xx",
-                            "ExpireTime": "2020-09-22T00:00:00+00:00",
-                            "SvArgs": "xx",
-                            "CidrBlock": "xx",
-                            "CreateTime": "2020-09-22T00:00:00+00:00"
-                        },
-                        "Name": "xx",
-                        "InstanceId": "xx",
-                        "OsName": "xx",
-                        "AccountCount": 1,
-                        "PrivateIp": "xx",
-                        "PublicIp": "xx",
-                        "VpcId": "xx",
-                        "ApCode": "xx",
-                        "SubnetId": "xx",
-                        "Port": 1,
-                        "Id": 1
-                    }
-                ],
-                "AllowDiskRedirect": false,
-                "AllowAnyAccount": true,
-                "MaxFileDownSize": 1,
-                "Name": "xx",
+                "Id": 224,
+                "Name": "云鼎部门权限",
+                "AllowDiskRedirect": true,
                 "AllowDiskFileUp": true,
-                "AllowClipFileUp": false,
+                "AllowDiskFileDown": true,
+                "AllowClipFileUp": true,
+                "AllowClipFileDown": true,
                 "AllowClipTextUp": true,
+                "AllowClipTextDown": true,
+                "AllowShellFileUp": true,
+                "AllowShellFileDown": true,
+                "AllowFileUp": true,
                 "AllowFileDown": true,
-                "DeviceGroupSet": [
-                    {
-                        "Id": 1,
-                        "Name": "xx"
-                    }
-                ],
-                "CmdTemplateSet": [
-                    {
-                        "CmdList": "xx",
-                        "Name": "xx",
-                        "Id": 1
-                    }
-                ],
-                "AccountSet": [
-                    "xx"
-                ],
-                "AllowClipFileDown": false,
-                "MaxFileUpSize": 1,
-                "Id": 1,
-                "AllowFileDel": true
+                "AllowFileDel": false,
+                "MaxFileUpSize": 0,
+                "MaxFileDownSize": 0,
+                "AllowAnyAccount": false,
+                "ValidateFrom": "1970-01-01T08:00:01+08:00",
+                "ValidateTo": "1970-01-01T08:00:01+08:00",
+                "Status": 1,
+                "UserSet": [],
+                "UserGroupSet": [],
+                "DeviceSet": [],
+                "DeviceGroupSet": [],
+                "AccountSet": [],
+                "CmdTemplateSet": [],
+                "Department": {
+                    "Id": "1.3.14",
+                    "Name": "云鼎实验室",
+                    "Managers": null
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "aba1efaa-4ac2-4ce3-93ce-538539b5f1f9",
+        "TotalCount": 1
     }
 }
 ```

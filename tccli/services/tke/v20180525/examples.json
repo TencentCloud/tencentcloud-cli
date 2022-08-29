@@ -156,6 +156,14 @@
         "title": "创建容器实例"
       }
     ],
+    "CreateEdgeCVMInstances": [
+      {
+        "document": "创建边缘容器CVM机器",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&CvmRegion=ap-guangzhou\n&CvmCount=3\n&UserScript=whoami\n&RunInstancePara={}\n&EnableEni=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d40cdb72-7bc0-4b48-b3aa-25e8401f6999\",\n        \"CvmIdSet\": [\n            \"cvm-197252sp\",\n            \"cvm-19725win\",\n            \"cvm-19623ash\"\n        ]\n    }\n}",
+        "title": "创建边缘容器CVM机器"
+      }
+    ],
     "CreateEdgeLogConfig": [
       {
         "document": "",
@@ -259,7 +267,7 @@
     "CreateTKEEdgeCluster": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateTKEEdgeCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&PodCIDR=172.16.0.0/20\n&ServiceCIDR=192.168.0.0/18\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTKEEdgeCluster\n<公共请求参数>\n\n{\n    \"ClusterName\": \"for_test\",\n    \"PodCIDR\": \"172.16.0.0/20\",\n    \"VpcId\": \"vpc-xxx\",\n    \"ServiceCIDR\": \"192.168.0.0/18\",\n    \"K8SVersion\": \"1.12.4\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建边缘计算集群示例"
       }
@@ -395,7 +403,7 @@
     "DeletePrometheusClusterAgent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusClusterAgent\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Agents\": [\n        {\n            \"Describe\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"ClusterType\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除agent"
       }

@@ -28,6 +28,8 @@ Output:
                 "DiskState": "ATTACHED",
                 "Attached": true,
                 "DeleteWithInstance": false,
+                "DiskBackupCount": 1,
+                "DiskBackupQuota": 1,
                 "LatestOperation": "DetachDisks",
                 "LatestOperationState": "FAILED",
                 "LatestOperationRequestId": "54118bb6-7206-43f7-bf53-b77a394ad51e",

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --StreamIds StreamId_test1 StreamId_test2 \
-    --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z \
-    --SourceTypes Record \
     --Sort.Field CreatTime \
     --Sort.Order Desc \
+    --StreamIds StreamId_test2 StreamId_test1 \
     --Limit 1 \
-    --Offset 0
+    --SourceTypes Record \
+    --Offset 0 \
+    --CreateTime.After 2020-12-10T07:25:52Z \
+    --CreateTime.Before 2020-12-13T07:25:52Z
 ```
 
 Output: 
@@ -312,11 +312,11 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
+    --Sort.Field CreatTime \
+    --Sort.Order Desc \
     --NamePrefixes Sport \
     --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z \
-    --Sort.Field CreatTime \
-    --Sort.Order Desc
+    --CreateTime.Before 2020-12-13T07:25:52Z
 ```
 
 Output: 
@@ -615,11 +615,11 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
+    --Sort.Field CreatTime \
+    --Sort.Order Desc \
     --Names Sport \
     --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z \
-    --Sort.Field CreatTime \
-    --Sort.Order Desc
+    --CreateTime.Before 2020-12-13T07:25:52Z
 ```
 
 Output: 
@@ -918,12 +918,12 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --Tags tag1 tag2 \
-    --SourceTypes Upload \
+    --Sort.Field CreatTime \
+    --Sort.Order Desc \
     --CreateTime.After 2020-12-10T07:25:52Z \
     --CreateTime.Before 2020-12-13T07:25:52Z \
-    --Sort.Field CreatTime \
-    --Sort.Order Desc
+    --SourceTypes Upload \
+    --Tags tag2 tag1
 ```
 
 Output: 
@@ -1224,13 +1224,13 @@ Input:
 
 ```
 tccli vod SearchMedia --cli-unfold-argument  \
-    --ClassIds 123 \
-    --Categories Image \
-    --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z \
     --Sort.Field CreatTime \
     --Sort.Order Desc \
-    --Filters basicInfo
+    --Filters basicInfo \
+    --Categories Image \
+    --ClassIds 123 \
+    --CreateTime.After 2020-12-10T07:25:52Z \
+    --CreateTime.Before 2020-12-13T07:25:52Z
 ```
 
 Output: 

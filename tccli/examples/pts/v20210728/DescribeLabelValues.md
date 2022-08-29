@@ -39,7 +39,7 @@ Output:
             "http://pets.com/8",
             "http://pets.com/9"
         ],
-        "RequestId": "putbj9hmg-65fh73i4j1gse2e4r7x97b"
+        "RequestId": "xx"
     }
 }
 ```

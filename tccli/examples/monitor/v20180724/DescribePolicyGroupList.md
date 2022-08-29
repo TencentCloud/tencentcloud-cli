@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DescribePolicyGroupList --cli-unfold-argument  \
-    --Module monitor \
     --Limit 2 \
+    --Module monitor \
     --Offset 0
 ```
 
@@ -117,7 +117,8 @@ Output:
             }
         ],
         "RequestId": "5fdf1257-6024-4b59-b924-2b995080f0bd",
-        "Total": 142
+        "Total": 142,
+        "Warning": "This method is deprecated! Use `DescribeAlarmPolicies` instead!"
     }
 }
 ```

@@ -8,6 +8,14 @@
         "title": "恢复实例访问"
       }
     ],
+    "AddClusterSlaveZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SlaveZone\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "增加从可用区"
+      }
+    ],
     "AddInstances": [
       {
         "document": "",
@@ -128,6 +136,14 @@
         "title": "查询参数修改日志"
       }
     ],
+    "DescribeClusterParams": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusterParams\n&ClusterId=cynosdbpg-1xcycbu8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"MatchValue\": \"\",\n                \"CurrentValue\": \"4096\",\n                \"Min\": \"1024\",\n                \"Default\": \"4096\",\n                \"Description\": \"xx\",\n                \"Max\": \"65536\",\n                \"ParamType\": \"integer\",\n                \"EnumValue\": null,\n                \"ParamName\": \"work_mem\",\n                \"MatchType\": \"\",\n                \"NeedReboot\": 0\n            },\n            {\n                \"MatchValue\": \"\",\n                \"CurrentValue\": \"base64\",\n                \"Min\": \"\",\n                \"Default\": \"base64\",\n                \"Description\": \"xx\",\n                \"Max\": \"\",\n                \"ParamType\": \"enum\",\n                \"EnumValue\": [\n                    \"base64\",\n                    \"hex\"\n                ],\n                \"ParamName\": \"xmlbinary\",\n                \"MatchType\": \"\",\n                \"NeedReboot\": 0\n            }\n        ],\n        \"RequestId\": \"117812\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询集群参数"
+      }
+    ],
     "DescribeClusters": [
       {
         "document": "",
@@ -163,8 +179,8 @@
     "DescribeInstanceSpecs": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeInstanceSpecs\n&DbType=MYSQL\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"114114\",\n        \"InstanceSpecSet\": [\n            {\n                \"MinStorageSize\": 100,\n                \"MaxStorageSize\": 100,\n                \"Cpu\": 2,\n                \"Memory\": 4\n            },\n            {\n                \"MinStorageSize\": 100,\n                \"MaxStorageSize\": 100,\n                \"Cpu\": 4,\n                \"Memory\": 8\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSpecs\n<公共请求参数>\n\n{\n    \"DbType\": \"MYSQL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSpecSet\": [\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            },\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询可售卖实例规格信息"
       }
     ],
@@ -211,8 +227,8 @@
     "DescribeRollbackTimeRange": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeRollbackTimeRange\n&ClusterId=cynosdbmysql-oib3wx0i\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TimeRangeStart\": \"2019-01-13 02:12:05\",\n        \"TimeRangeEnd\": \"2019-01-20 02:10:12\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackTimeRange\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-oib3wx0i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RollbackTimeRanges\": [\n            {\n                \"TimeRangeStart\": \"2019-01-13 02:12:05\",\n                \"TimeRangeEnd\": \"2019-01-20 02:10:12\"\n            }\n        ],\n        \"TimeRangeStart\": \"xx\",\n        \"TimeRangeEnd\": \"xx\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询有效回归时间范围"
       }
     ],
@@ -320,6 +336,14 @@
         "title": "修改集群参数"
       }
     ],
+    "ModifyClusterSlaveZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"OldSlaveZone\": \"xx\",\n    \"NewSlaveZone\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "修改从可用区"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
@@ -368,6 +392,14 @@
         "title": "暂停serverless集群"
       }
     ],
+    "RemoveClusterSlaveZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SlaveZone\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "删除从可用区"
+      }
+    ],
     "ResumeServerless": [
       {
         "document": "",
@@ -398,6 +430,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=SetRenewFlag\n&ResourceIds.0=cynosdbmysql-ins-xxxxxxx\n&AutoRenewFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": 123123123\n    }\n}",
         "title": "设置自动续费标志"
+      }
+    ],
+    "SwitchClusterZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"OldZone\": \"xx\",\n    \"NewZone\": \"xx\",\n    \"IsInMaintainPeriod\": \"yes\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "切换到从可用区"
       }
     ],
     "UpgradeInstance": [

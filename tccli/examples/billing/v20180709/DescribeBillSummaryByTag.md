@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli billing DescribeBillSummaryByTag --cli-unfold-argument  \
-    --BeginTime 2019-09 \
+    --TagKey province \
     --EndTime 2019-09 \
-    --TagKey province
+    --BeginTime 2019-09
 ```
 
 Output: 
@@ -19,14 +19,30 @@ Output:
         "SummaryOverview": [
             {
                 "TagValue": "",
-                "RealTotalCost": "13001.95",
-                "RealTotalCostRatio": "100.00"
+                "RealTotalCost": "3081.26707105",
+                "TotalCost": "5026.37707609",
+                "RealTotalCostRatio": "99.88",
+                "CashPayAmount": "3081.26707105",
+                "IncentivePayAmount": "0.00000000",
+                "VoucherPayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000"
+            },
+            {
+                "TagValue": "kCH0vYyI",
+                "RealTotalCost": "3.77264000",
+                "TotalCost": "4.71580000",
+                "RealTotalCostRatio": "0.12",
+                "CashPayAmount": "3.77264000",
+                "IncentivePayAmount": "0.00000000",
+                "VoucherPayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000"
             }
         ],
         "SummaryTotal": {
-            "RealTotalCost": "13001.95"
+            "RealTotalCost": "3085.03971105",
+            "TotalCost": "5031.09287609"
         },
-        "RequestId": "7119a6ed-5023-4682-9ea3-33102af1b19e"
+        "RequestId": "0cdd9b57-4597-4e78-a60b-0e72f7637a3a"
     }
 }
 ```

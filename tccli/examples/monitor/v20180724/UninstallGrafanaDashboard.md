@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor UninstallGrafanaDashboard --cli-unfold-argument  \
-    --InstanceId prom-c0wy130a \
+    --InstanceId prom-xyz \
     --IntegrationCodes spring-mvc
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "49h8tychqjqzl63wzfvxfkyucee87tmz"
+        "RequestId": "xyz"
     }
 }
 ```

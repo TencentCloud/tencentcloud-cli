@@ -328,6 +328,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeIdleLoadBalancers": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeIdleLoadBalancers\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 46,\n        \"IdleLoadBalancers\": [\n            {\n                \"LoadBalancerId\": \"lb-1l1i6a3k\",\n                \"LoadBalancerName\": \"lb-613054ce\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"172.16.32.29\",\n                \"IdleReason\": \"NO_RULES\",\n                \"Status\": 1,\n                \"Forward\": 1\n            }\n        ],\n        \"RequestId\": \"afa28690-f148-483f-9727-58c2f1da3794\"\n    }\n}",
+        "title": "获取负载均衡闲置实例"
+      }
+    ],
     "DescribeLBListeners": [
       {
         "document": "",

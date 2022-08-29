@@ -1,27 +1,11 @@
 {
   "actions": {
-    "DetectFraudKOL": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectFraudKOL\n<公共请求参数>\n\n{\n    \"BspData\": {\n        \"DataList\": [\n            {\n                \"Type\": 1,\n                \"Id\": \"xxxx\",\n                \"Name\": \"xxxx\"\n            }\n        ]\n    },\n    \"BusinessEncryptData\": {}\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"Id\": \"dgxyx0769\",\n                    \"IsCheck\": 1,\n                    \"FraudPScore\": 23,\n                    \"EvilPScore\": 56\n                }\n            ]\n        },\n        \"RequestId\": \"19f4cd87-29b3-4fac-bf36-62cd7e785e27\"\n    }\n}",
-        "title": "DetectFraudKOL-识别假量"
-      }
-    ],
     "RecognizeCustomizedAudience": [
       {
         "document": "",
         "input": "https://taf.tencentcloudapi.com/?Action=RecognizeCustomizedAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"ModelId\": 5128,\n                    \"IsFound\": 1,\n                    \"Score\": 120\n                },\n                {\n                    \"ModelId\": 5129,\n                    \"IsFound\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "RecognizeCustomizedAudience"
-      }
-    ],
-    "RecognizeEffectiveFlow": [
-      {
-        "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeEffectiveFlow\n&BusinessSecurityData.MsgPhone=13112345678\n&BusinessSecurityData.MsgSignature=oz5I********************GfVv\n&BusinessSecurityData.MsgContext=qw########wqer\n&BusinessSecurityData.MsgType=1\n&BusinessSecurityData.MsgSubType=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"Lable\": \"1\",\n                \"Score\": 10.0\n            }\n        },\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
-        "title": "RecognizeEffectiveFlow"
       }
     ],
     "RecognizePreciseTargetAudience": [

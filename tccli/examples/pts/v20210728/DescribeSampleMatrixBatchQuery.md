@@ -44,7 +44,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "81yqe6o9-8nju6mgrdxmfikgxvcodojj"
+        "RequestId": "xx"
     }
 }
 ```

@@ -16,7 +16,8 @@ tccli cls ModifyConsumer --cli-unfold-argument  \
     --Ckafka.TopicName xxxxx \
     --Content.EnableTag True \
     --Content.MetaFields __SOURCE__ \
-    --NeedContent True
+    --NeedContent True \
+    --Compression 0
 ```
 
 Output: 

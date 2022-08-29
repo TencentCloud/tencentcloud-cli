@@ -531,18 +531,22 @@
         {
           "default": "",
           "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
+          "example": "test_pgroup",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "权限组描述信息，1-255个字符",
+          "example": "test_pgroup_desc",
           "member": "string",
           "name": "DescInfo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -552,38 +556,53 @@
       "members": [
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组名字",
+          "example": "test_pgroup",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组描述信息",
+          "example": "test_pgroup_desc",
           "member": "string",
           "name": "DescInfo",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "已经与该权限组绑定的文件系统个数",
+          "example": "0",
           "member": "int64",
           "name": "BindCfsNum",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组创建时间",
+          "example": "2019-7-20 10:25:33",
           "member": "string",
           "name": "CDate",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -600,42 +619,52 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
+          "example": "10.1.1.10",
           "member": "string",
           "name": "AuthClientIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
+          "example": "9",
           "member": "int64",
           "name": "Priority",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "读写权限, 值为 RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
+          "example": "rw",
           "member": "string",
           "name": "RWPermission",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "example": "root_squash",
           "member": "string",
           "name": "UserPermission",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -645,45 +674,63 @@
       "members": [
         {
           "document": "规则 ID",
+          "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "客户端 IP",
+          "example": "10.1.1.10",
           "member": "string",
           "name": "AuthClientIp",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "读写权限",
+          "example": "rw",
           "member": "string",
           "name": "RWPermission",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户权限",
+          "example": "root_squash",
           "member": "string",
           "name": "UserPermission",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "优先级",
+          "example": "9",
           "member": "int64",
           "name": "Priority",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -700,10 +747,12 @@
         {
           "default": "",
           "document": "文件系统 ID。说明，进行删除文件系统操作前需要先调用 DeleteMountTarget 接口删除该文件系统的挂载点，否则会删除失败。",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -726,10 +775,12 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -739,17 +790,23 @@
       "members": [
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户 ID",
+          "example": "1250000000",
           "member": "int64",
           "name": "AppId",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -766,18 +823,22 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "规则 ID",
+          "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -787,17 +848,23 @@
       "members": [
         {
           "document": "规则 ID",
+          "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -814,18 +881,22 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "挂载点 ID",
+          "example": "mount-12345",
           "member": "string",
           "name": "MountTargetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -852,10 +923,13 @@
       "members": [
         {
           "document": "各可用区的资源售卖情况以及支持的存储类型、存储协议等信息",
+          "example": "无",
           "member": "AvailableRegion",
           "name": "RegionZones",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -872,10 +946,12 @@
         {
           "default": "",
           "document": "文件系统 ID。",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -885,10 +961,13 @@
       "members": [
         {
           "document": "客户端列表",
+          "example": "无",
           "member": "FileSystemClient",
           "name": "ClientList",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -995,10 +1074,12 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1008,10 +1089,13 @@
       "members": [
         {
           "document": "权限组规则列表",
+          "example": "无",
           "member": "PGroupRuleInfo",
           "name": "RuleList",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1032,10 +1116,13 @@
       "members": [
         {
           "document": "该用户当前 CFS 服务的状态，none 为未开通，creating 为开通中，created 为已开通",
+          "example": "none",
           "member": "string",
           "name": "CfsServiceStatus",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1052,10 +1139,12 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1065,17 +1154,23 @@
       "members": [
         {
           "document": "挂载点详情",
+          "example": "无",
           "member": "MountInfo",
           "name": "MountTargets",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "挂载点数量",
+          "example": "1",
           "member": "int64",
           "name": "NumberOfMountTargets",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1613,11 +1708,14 @@
       "document": "SignUpCfsService返回参数结构体",
       "members": [
         {
-          "document": "该用户当前 CFS 服务的状态，none 是未开通，creating 是开通中，created 是已开通",
+          "document": "该用户当前 CFS 服务的状态，creating 是开通中，created 是已开通",
+          "example": "creating",
           "member": "string",
           "name": "CfsServiceStatus",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1660,18 +1758,22 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "用户自定义文件系统名称",
+          "example": "fs_name",
           "member": "string",
           "name": "FsName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1681,24 +1783,33 @@
       "members": [
         {
           "document": "用户自定义文件系统名称",
+          "example": "test",
           "member": "string",
           "name": "CreationToken",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "文件系统ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户自定义文件系统名称",
+          "example": "test",
           "member": "string",
           "name": "FsName",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1715,18 +1826,22 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1736,17 +1851,23 @@
       "members": [
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1767,7 +1888,8 @@
           "member": "uint64",
           "name": "FsLimit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1776,7 +1898,8 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1799,26 +1922,32 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "权限组描述信息，1-255个字符",
+          "example": "test",
           "member": "string",
           "name": "DescInfo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1828,24 +1957,33 @@
       "members": [
         {
           "document": "权限组ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "权限组名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "描述信息",
+          "example": "test",
           "member": "string",
           "name": "DescInfo",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1862,50 +2000,62 @@
         {
           "default": "",
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "规则 ID",
+          "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
+          "example": "10.0.0.10",
           "member": "string",
           "name": "AuthClientIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
+          "example": "rw",
           "member": "string",
           "name": "RWPermission",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "example": "no_root_squash",
           "member": "string",
           "name": "UserPermission",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
+          "example": "7",
           "member": "int64",
           "name": "Priority",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1915,45 +2065,63 @@
       "members": [
         {
           "document": "权限组 ID",
+          "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "规则 ID",
+          "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "允许访问的客户端 IP 或者 IP 段",
+          "example": "10.0.0.10",
           "member": "string",
           "name": "AuthClientIp",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "读写权限",
+          "example": "rw",
           "member": "string",
           "name": "RWPermission",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户权限",
+          "example": "no_root_squash",
           "member": "string",
           "name": "UserPermission",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "优先级",
+          "example": "7",
           "member": "int64",
           "name": "Priority",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

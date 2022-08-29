@@ -254,16 +254,10 @@
     ],
     "ModifyDiskAttributes": [
       {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\n&DiskIds.0=disk-fyctkqsf\n&DiskName=test_data_disk\n&<公共请求参数>",
+        "document": "修改指定云硬盘名称为test_data_disk",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskAttributes\n<公共请求参数>\n\n{\n    \"DiskName\": \"test_data_disk\",\n    \"DiskIds\": [\n        \"disk-fyctkqsf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf84fb00-6949-c0f6-aea8-5a1f806401c2\"\n    }\n}",
         "title": "修改云硬盘名称"
-      },
-      {
-        "document": "将一块弹性数据盘，付费模式为预付费，从普通云盘升级为高性能云盘，云盘大小 100G，当前未挂载。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyDiskAttributes\n&DiskIds.0=disk-hdz4c824\n&DiskType=CLOUD_PREMIUM\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d010c751-3edb-4388-878c-1de0891aa1fd\"\n    }\n}",
-        "title": "修改云盘类型"
       }
     ],
     "ModifyDiskExtraPerformance": [

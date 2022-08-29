@@ -333,7 +333,7 @@
     "DescribeLiveStream": {
       "document": "直播拉流接口",
       "input": "DescribeLiveStreamRequest",
-      "name": "直播拉流接",
+      "name": "直播拉流接口",
       "output": "DescribeLiveStreamResponse"
     },
     "DescribeLiveVideoList": {
@@ -4008,7 +4008,8 @@
           "member": "string",
           "name": "LiveChannelId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4017,7 +4018,8 @@
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4032,7 +4034,8 @@
           "name": "Data",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -3480,6 +3480,28 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群自动挂起时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSuspendTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络连接配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkConnection",
+          "name": "NetworkConnectionSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -6855,6 +6877,210 @@
       ],
       "type": "object"
     },
+    "NetworkConnection": {
+      "document": "网络配置",
+      "members": [
+        {
+          "default": "",
+          "document": "网络配置id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89876",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置唯一标志符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssociateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "计算引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HouseId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源id(已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置状态（0-初始化，1-正常）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建用户Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Appid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "计算引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HouseName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NetworkConnectionType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建用户SubAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConnectionDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源SubnetCidrBlock\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionSubnetCidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Other": {
       "document": "数据格式其它类型。",
       "members": [
@@ -8087,7 +8313,7 @@
       "usage": "in"
     },
     "TaskResponseInfo": {
-      "document": "任务实例",
+      "document": "任务实例。",
       "members": [
         {
           "default": "",
@@ -8124,7 +8350,7 @@
         },
         {
           "default": "",
-          "document": "计算时长，单位： ms。",
+          "document": "计算耗时，单位： ms",
           "example": "60000",
           "member": "int64",
           "name": "UsedTime",
@@ -8418,12 +8644,23 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务耗时，单位： ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80000",
+          "member": "int64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
     },
     "TaskResultInfo": {
-      "document": "任务结果信息",
+      "document": "任务结果信息。",
       "members": [
         {
           "default": "",
@@ -8433,7 +8670,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8443,7 +8681,8 @@
           "name": "DatasourceConnectionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8453,7 +8692,8 @@
           "name": "DatabaseName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8463,7 +8703,8 @@
           "name": "SQL",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8473,7 +8714,8 @@
           "name": "SQLType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8483,7 +8725,8 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8493,17 +8736,19 @@
           "name": "DataAmount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "任务执行耗时，单位秒",
+          "document": "计算耗时，单位： ms",
           "example": "42",
           "member": "int64",
           "name": "UsedTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8513,7 +8758,8 @@
           "name": "OutputPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8523,7 +8769,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8533,7 +8780,8 @@
           "name": "OutputMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8543,7 +8791,8 @@
           "name": "RowAffectInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8553,7 +8802,8 @@
           "name": "ResultSchema",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8563,7 +8813,8 @@
           "name": "ResultSet",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8573,7 +8824,8 @@
           "name": "NextToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8583,7 +8835,8 @@
           "name": "Percentage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8593,7 +8846,8 @@
           "name": "ProgressDetail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8603,7 +8857,19 @@
           "name": "DisplayFormat",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务耗时，单位： ms",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

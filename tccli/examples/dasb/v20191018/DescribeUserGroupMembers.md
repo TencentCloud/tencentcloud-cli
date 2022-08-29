@@ -18,17 +18,34 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "张三",
-                "GroupSet": [
-                    {
-                        "Id": 1,
-                        "Name": 1
-                    }
-                ],
+                "UserName": "xx",
+                "AuthType": 1,
+                "ValidateTo": "2020-09-22T00:00:00+00:00",
                 "RealName": "xx",
+                "ValidateTime": "xx",
                 "Email": "xx",
                 "Phone": "xx",
-                "ValidateTo": "2020-09-22T00:00:00+00:00",
+                "GroupSet": [
+                    {
+                        "Department": {
+                            "Managers": [
+                                "xx"
+                            ],
+                            "Id": "xx",
+                            "Name": "xx"
+                        },
+                        "Id": 1,
+                        "Name": "xx"
+                    }
+                ],
+                "DepartmentId": "xx",
+                "Department": {
+                    "Managers": [
+                        "xx"
+                    ],
+                    "Id": "xx",
+                    "Name": "xx"
+                },
                 "ValidateFrom": "2020-09-22T00:00:00+00:00",
                 "Id": 1
             }

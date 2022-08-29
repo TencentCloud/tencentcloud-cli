@@ -51,7 +51,7 @@
     "CreateAccounts": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAccounts\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.User=ajnnw\n&Accounts.0.Host=127.0.0.1\n&Password=fsdgfdgfd\n&Description=description\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Password\": \"fsdgfdgfd\",\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"ajnnw\"\n        }\n    ],\n    \"Description\": \"description\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "创建云数据库的账户"
       }
@@ -119,13 +119,13 @@
     "CreateDBInstance": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBInstance\n&Memory=1000\n&Volume=25\n&Period=1\n&GoodsNum=1\n&Zone=ap-guangzhou-3\n&UniqVpcId=vpc-0akbol5v\n&UniqSubnetId=subnet-fyrtjbqw\n&ProjectId=0\n&InstanceRole=master\n&InstanceNodes=2\n&EngineVersion=5.6\n&ResourceTags.0.TagKey=marchtest\n&ResourceTags.0.TagValue.0=test1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"InstanceNodes\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-pn6gd5jp\"\n        ],\n        \"DealIds\": [\n            \"20171201110011\"\n        ]\n    }\n}",
         "title": "购买主实例"
       },
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBInstance\n&MasterInstanceId=cdb-fn3f9xpx\n&Period=1\n&GoodsNum=1\n&Memory=4000\n&Volume=100\n&InstanceRole=ro\n&RoGroup.RoGroupMode=allinone\n&RoGroup.RoGroupName=jersey_test\n&RoGroup.RoOfflineDelay=1\n&RoGroup.RoMaxDelayTime=5\n&RoGroup.MinRoInGroup=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey_test\",\n        \"RoMaxDelayTime\": \"5\",\n        \"MinRoInGroup\": \"1\",\n        \"RoOfflineDelay\": \"1\"\n    },\n    \"GoodsNum\": \"1\",\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": \"1\",\n    \"Volume\": \"100\",\n    \"Memory\": \"4000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
         "title": "购买只读实例"
       }
@@ -133,7 +133,7 @@
     "CreateDBInstanceHour": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBInstanceHour\n&Memory=1000\n&Volume=25\n&GoodsNum=1\n&Zone=ap-guangzhou-3\n&UniqVpcId=vpc-0akbol5v\n&UniqSubnetId=subnet-fyrtjbqw\n&ProjectId=0\n&InstanceRole=master\n&EngineVersion=5.6\n&ProtectMode=0\n&DeployMode=0\n&SlaveZone=ap-guangzhou-3\n&ResourceTags.0.TagKey=marchtest\n&ResourceTags.0.TagValue.0=test1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"DeployMode\": \"0\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"ProtectMode\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-03brtubb\"\n        ],\n        \"DealIds\": [\n            \"20171201160000002670226599824833\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }
@@ -547,7 +547,7 @@
     "DescribeParamTemplates": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeParamTemplates\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplates\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TemplateId\": 2333,\n                \"Name\": \"test\",\n                \"Description\": \"test\",\n                \"EngineVersion\": \"5.7\",\n                \"TemplateType\": \"HIGH_STABILITY\"\n            }\n        ]\n    }\n}",
         "title": "查询参数模板列表"
       }
@@ -731,7 +731,7 @@
     "ModifyAccountPassword": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAccountPassword\n&InstanceId=cdb-f35wr6wj\n&Accounts.0.user=ajnnw\n&NewPassword=Gx18ux23F^X\n&Accounts.0.host=127.0.0.1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"NewPassword\": \"xx\",\n    \"Accounts\": [\n        {\n            \"Host\": \"xx\",\n            \"User\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "修改云数据库实例账号的密码"
       }
@@ -1105,7 +1105,7 @@
     "VerifyRootAccount": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=VerifyRootAccount\n&InstanceId=cdb-f35wr6wj\n&Password=sxxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyRootAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Password\": \"sxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "验证root账号权限"
       }

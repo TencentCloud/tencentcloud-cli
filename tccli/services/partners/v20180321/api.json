@@ -145,7 +145,8 @@
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -155,7 +156,8 @@
           "name": "ClientUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -165,7 +167,8 @@
           "name": "AgentTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -175,7 +178,8 @@
           "name": "ClientFlag",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -185,7 +189,8 @@
           "name": "ClientRemark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -195,17 +200,19 @@
           "name": "ClientName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "认证类型, 0：个人，1：企业；其他：未认证",
+          "document": "认证类型, 0：个人，1：企业；其他：未认证或无效值",
           "example": "0",
           "member": "string",
           "name": "AuthType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -215,7 +222,8 @@
           "name": "AppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -225,7 +233,8 @@
           "name": "LastMonthAmt",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -235,7 +244,8 @@
           "name": "ThisMonthAmt",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -245,7 +255,8 @@
           "name": "HasOverdueBill",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -255,7 +266,8 @@
           "name": "ClientType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -265,7 +277,8 @@
           "name": "ProjectType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -275,7 +288,8 @@
           "name": "SalesUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -285,7 +299,8 @@
           "name": "SalesName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -295,7 +310,8 @@
           "name": "Mail",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1257,7 +1273,8 @@
           "member": "string",
           "name": "ClientUin",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1266,7 +1283,8 @@
           "member": "string",
           "name": "AuditResult",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1275,7 +1293,8 @@
           "member": "string",
           "name": "Note",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1290,7 +1309,8 @@
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "客户账号ID",
@@ -1299,7 +1319,8 @@
           "name": "ClientUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "审核结果，包括accept/reject/qcloudaudit（腾讯云审核）",
@@ -1308,16 +1329,18 @@
           "name": "AuditResult",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "关联时间对应的时间戳",
+          "document": "关联时间对应的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "133218546",
           "member": "uint64",
           "name": "AgentTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2593,7 +2616,8 @@
           "member": "string",
           "name": "ClientUin",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2602,13 +2626,14 @@
       "document": "DescribeClientBalance返回参数结构体",
       "members": [
         {
-          "document": "账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）",
+          "document": "账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）  【注：该数据准确性存疑，请切换至DescribeClientBalanceNew取值】",
           "example": "40",
           "member": "uint64",
           "name": "Balance",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "账户现金余额，单位分",
@@ -2617,7 +2642,8 @@
           "name": "Cash",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

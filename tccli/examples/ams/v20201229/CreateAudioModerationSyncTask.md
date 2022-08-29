@@ -20,6 +20,7 @@ Output:
         "RequestId": "xx",
         "DataId": "test0000000000001",
         "Label": "Normal",
+        "SubLabel": "",
         "Name": "test_audio",
         "BizType": "test_biztype",
         "Suggestion": "Pass",
@@ -32,10 +33,14 @@ Output:
                 "Suggestion": "Pass",
                 "LibId": "",
                 "LibType": 0,
-                "LibName": ""
+                "LibName": "",
+                "SubLabel": ""
             }
         ],
-        "MoanResults": []
+        "MoanResults": [],
+        "LanguageResults": [],
+        "SpeakerResults": [],
+        "RecognitionResults": []
     }
 }
 ```

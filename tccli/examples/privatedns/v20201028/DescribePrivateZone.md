@@ -43,7 +43,8 @@ Output:
                     "TagValue": "tagValue"
                 }
             ],
-            "IsCustomTld": false
+            "IsCustomTld": false,
+            "CnameSpeedupStatus": "DISABLED"
         }
     }
 }

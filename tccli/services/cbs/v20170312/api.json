@@ -2993,16 +2993,8 @@
           "member": "string",
           "name": "DiskIds",
           "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
-          "example": "0",
-          "member": "uint64",
-          "name": "ProjectId",
-          "required": false,
-          "type": "int"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3011,7 +3003,8 @@
           "member": "string",
           "name": "DiskName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3020,7 +3013,18 @@
           "member": "bool",
           "name": "Portable",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3029,7 +3033,8 @@
           "member": "bool",
           "name": "DeleteWithInstance",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3038,7 +3043,8 @@
           "member": "string",
           "name": "DiskType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

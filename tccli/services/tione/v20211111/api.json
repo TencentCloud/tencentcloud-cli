@@ -419,7 +419,7 @@
         },
         {
           "default": "",
-          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)",
+          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)",
           "example": "a2",
           "member": "string",
           "name": "AlgorithmFramework",
@@ -509,7 +509,7 @@
         },
         {
           "default": "",
-          "document": "模型来源 （JOB/COS/AUTO_ML）",
+          "document": "模型来源 （JOB/COS）",
           "example": "JOB",
           "member": "string",
           "name": "TrainingModelSource",
@@ -529,7 +529,7 @@
         },
         {
           "default": "",
-          "document": "自动学习任务ID",
+          "document": "自动学习任务ID（已废弃）",
           "example": "rodftv7u3gg",
           "member": "string",
           "name": "AutoMLTaskId",
@@ -563,6 +563,16 @@
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "推理镜像ID",
+          "example": "tensorflow2.4-py38(gpu)",
+          "member": "string",
+          "name": "ReasoningEnvironmentId",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -677,7 +687,7 @@
         },
         {
           "default": "",
-          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT",
+          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
@@ -687,7 +697,7 @@
         },
         {
           "default": "",
-          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15-py3.6-cpu、1.9-py3.6-cuda11.1-gpu",
+          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
           "example": "1.12",
           "member": "string",
           "name": "FrameworkVersion",
@@ -919,7 +929,8 @@
           "name": "MappingPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -929,7 +940,8 @@
           "name": "DataSourceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -939,7 +951,8 @@
           "name": "DataSetSource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -949,7 +962,8 @@
           "name": "COSSource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -959,7 +973,8 @@
           "name": "CFSSource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -969,7 +984,8 @@
           "name": "HDFSSource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1547,6 +1563,16 @@
           "name": "EnableDeleteCos",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有",
+          "example": "NORMAL ",
+          "member": "string",
+          "name": "ModelVersionType",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -4539,7 +4565,8 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4549,7 +4576,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4559,7 +4587,8 @@
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4569,7 +4598,8 @@
           "name": "SubUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4579,7 +4609,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4589,7 +4620,8 @@
           "name": "FrameworkName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4599,7 +4631,8 @@
           "name": "FrameworkVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4609,7 +4642,8 @@
           "name": "TrainingMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4619,7 +4653,8 @@
           "name": "ChargeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4629,7 +4664,8 @@
           "name": "ResourceGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4639,7 +4675,8 @@
           "name": "ResourceConfigInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4649,7 +4686,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4659,7 +4697,8 @@
           "name": "ImageInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4669,7 +4708,8 @@
           "name": "CodePackagePath",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4679,7 +4719,8 @@
           "name": "StartCmdInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4689,7 +4730,8 @@
           "name": "DataSource",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4699,7 +4741,8 @@
           "name": "DataConfigs",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4709,7 +4752,8 @@
           "name": "TuningParameters",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4719,7 +4763,8 @@
           "name": "Output",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4729,7 +4774,8 @@
           "name": "LogEnable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4739,7 +4785,8 @@
           "name": "LogConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4749,7 +4796,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4759,7 +4807,8 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4769,7 +4818,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4779,7 +4829,8 @@
           "name": "RuntimeInSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4789,7 +4840,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4799,7 +4851,8 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4809,7 +4862,8 @@
           "name": "ChargeStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4819,7 +4873,8 @@
           "name": "LatestInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4829,7 +4884,8 @@
           "name": "TensorBoardId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4839,7 +4895,8 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4849,7 +4906,8 @@
           "name": "FailureReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4859,7 +4917,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4869,7 +4928,8 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4879,7 +4939,8 @@
           "name": "BillingInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4889,7 +4950,19 @@
           "name": "ResourceGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4905,7 +4978,8 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4915,7 +4989,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4925,7 +5000,8 @@
           "name": "FrameworkName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4935,7 +5011,8 @@
           "name": "FrameworkVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4945,7 +5022,8 @@
           "name": "TrainingMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4955,7 +5033,8 @@
           "name": "ChargeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4965,7 +5044,8 @@
           "name": "ChargeStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4975,7 +5055,8 @@
           "name": "ResourceGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4985,7 +5066,8 @@
           "name": "ResourceConfigInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4995,7 +5077,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5005,7 +5088,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5015,7 +5099,8 @@
           "name": "RuntimeInSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5025,7 +5110,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5035,7 +5121,8 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5045,7 +5132,8 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5055,7 +5143,8 @@
           "name": "Output",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5065,7 +5154,8 @@
           "name": "FailureReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5075,7 +5165,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5085,7 +5176,8 @@
           "name": "BillingInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5095,7 +5187,8 @@
           "name": "ResourceGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5105,7 +5198,19 @@
           "name": "ImageInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

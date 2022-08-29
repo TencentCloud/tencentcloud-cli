@@ -3392,7 +3392,8 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3401,16 +3402,18 @@
           "member": "int64",
           "name": "PageIndex",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "业务场景 参考ScenesType",
+          "document": "1:急需关注 2.重保监控 3.全量告警",
           "example": "1",
           "member": "int64",
           "name": "Scenes",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3419,7 +3422,8 @@
           "member": "QueryFilter",
           "name": "Filter",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3428,7 +3432,8 @@
           "member": "QuerySort",
           "name": "Sorter",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3437,7 +3442,8 @@
           "member": "bool",
           "name": "ExportFlag",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3452,7 +3458,8 @@
           "name": "Data",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

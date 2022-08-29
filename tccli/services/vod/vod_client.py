@@ -977,7 +977,7 @@ def doCreateAdaptiveDynamicStreamingTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDrmDataKey(args, parsed_globals):
+def doDescribeSampleSnapshotTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1002,11 +1002,11 @@ def doDescribeDrmDataKey(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDrmDataKeyRequest()
+    model = models.DescribeSampleSnapshotTemplatesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeDrmDataKey(model)
+        rsp = client.DescribeSampleSnapshotTemplates(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1055,6 +1055,54 @@ def doDeleteSnapshotByTimeOffsetTemplate(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteSnapshotByTimeOffsetTemplate(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRemoveWatermark(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RemoveWatermarkRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RemoveWatermark(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1697,7 +1745,7 @@ def doExecuteFunction(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVodDomain(args, parsed_globals):
+def doDescribeClientUploadAccelerationUsageData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1722,11 +1770,11 @@ def doDeleteVodDomain(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVodDomainRequest()
+    model = models.DescribeClientUploadAccelerationUsageDataRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVodDomain(model)
+        rsp = client.DescribeClientUploadAccelerationUsageData(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1775,6 +1823,54 @@ def doDescribeMediaProcessUsageData(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeMediaProcessUsageData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTranscodeTemplates(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTranscodeTemplatesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeTranscodeTemplates(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2081,7 +2177,7 @@ def doDeleteAIAnalysisTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMediaInfos(args, parsed_globals):
+def doDescribeDrmKeyProviderInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2106,11 +2202,11 @@ def doDescribeMediaInfos(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMediaInfosRequest()
+    model = models.DescribeDrmKeyProviderInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMediaInfos(model)
+        rsp = client.DescribeDrmKeyProviderInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2465,7 +2561,7 @@ def doDescribeProcedureTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTranscodeTemplates(args, parsed_globals):
+def doDeleteVodDomain(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2490,11 +2586,11 @@ def doDescribeTranscodeTemplates(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTranscodeTemplatesRequest()
+    model = models.DeleteVodDomainRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeTranscodeTemplates(model)
+        rsp = client.DeleteVodDomain(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4577,7 +4673,7 @@ def doComposeMedia(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSampleSnapshotTemplates(args, parsed_globals):
+def doDescribeDrmDataKey(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4602,11 +4698,11 @@ def doDescribeSampleSnapshotTemplates(args, parsed_globals):
     client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSampleSnapshotTemplatesRequest()
+    model = models.DescribeDrmDataKeyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSampleSnapshotTemplates(model)
+        rsp = client.DescribeDrmDataKey(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4847,6 +4943,54 @@ def doCreateWatermarkTemplate(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateWatermarkTemplate(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSetDrmKeyProviderInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SetDrmKeyProviderInfoRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.SetDrmKeyProviderInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5777,6 +5921,54 @@ def doSimpleHlsClip(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeMediaInfos(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VodClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeMediaInfosRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeMediaInfos(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteHeadTailTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -6240,8 +6432,9 @@ ACTION_MAP = {
     "DeleteProcedureTemplate": doDeleteProcedureTemplate,
     "DeleteAdaptiveDynamicStreamingTemplate": doDeleteAdaptiveDynamicStreamingTemplate,
     "CreateAdaptiveDynamicStreamingTemplate": doCreateAdaptiveDynamicStreamingTemplate,
-    "DescribeDrmDataKey": doDescribeDrmDataKey,
+    "DescribeSampleSnapshotTemplates": doDescribeSampleSnapshotTemplates,
     "DeleteSnapshotByTimeOffsetTemplate": doDeleteSnapshotByTimeOffsetTemplate,
+    "RemoveWatermark": doRemoveWatermark,
     "DescribeCdnLogs": doDescribeCdnLogs,
     "ModifyClass": doModifyClass,
     "DescribeTasks": doDescribeTasks,
@@ -6255,15 +6448,16 @@ ACTION_MAP = {
     "ModifyImageSpriteTemplate": doModifyImageSpriteTemplate,
     "DeleteClass": doDeleteClass,
     "ExecuteFunction": doExecuteFunction,
-    "DeleteVodDomain": doDeleteVodDomain,
+    "DescribeClientUploadAccelerationUsageData": doDescribeClientUploadAccelerationUsageData,
     "DescribeMediaProcessUsageData": doDescribeMediaProcessUsageData,
+    "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
     "DescribePrepaidProducts": doDescribePrepaidProducts,
     "DescribeSnapshotByTimeOffsetTemplates": doDescribeSnapshotByTimeOffsetTemplates,
     "DescribeAdaptiveDynamicStreamingTemplates": doDescribeAdaptiveDynamicStreamingTemplates,
     "CreateContentReviewTemplate": doCreateContentReviewTemplate,
     "CreateSampleSnapshotTemplate": doCreateSampleSnapshotTemplate,
     "DeleteAIAnalysisTemplate": doDeleteAIAnalysisTemplate,
-    "DescribeMediaInfos": doDescribeMediaInfos,
+    "DescribeDrmKeyProviderInfo": doDescribeDrmKeyProviderInfo,
     "LiveRealTimeClip": doLiveRealTimeClip,
     "ModifyMediaStorageClass": doModifyMediaStorageClass,
     "PullUpload": doPullUpload,
@@ -6271,7 +6465,7 @@ ACTION_MAP = {
     "ModifyVodDomainAccelerateConfig": doModifyVodDomainAccelerateConfig,
     "DeleteSuperPlayerConfig": doDeleteSuperPlayerConfig,
     "DescribeProcedureTemplates": doDescribeProcedureTemplates,
-    "DescribeTranscodeTemplates": doDescribeTranscodeTemplates,
+    "DeleteVodDomain": doDeleteVodDomain,
     "ParseStreamingManifest": doParseStreamingManifest,
     "ProcessImage": doProcessImage,
     "CreateProcedureTemplate": doCreateProcedureTemplate,
@@ -6315,12 +6509,13 @@ ACTION_MAP = {
     "DescribeEventConfig": doDescribeEventConfig,
     "ModifySubAppIdInfo": doModifySubAppIdInfo,
     "ComposeMedia": doComposeMedia,
-    "DescribeSampleSnapshotTemplates": doDescribeSampleSnapshotTemplates,
+    "DescribeDrmDataKey": doDescribeDrmDataKey,
     "ModifyWordSample": doModifyWordSample,
     "DescribeImageSpriteTemplates": doDescribeImageSpriteTemplates,
     "DescribeAllClass": doDescribeAllClass,
     "DescribeWatermarkTemplates": doDescribeWatermarkTemplates,
     "CreateWatermarkTemplate": doCreateWatermarkTemplate,
+    "SetDrmKeyProviderInfo": doSetDrmKeyProviderInfo,
     "DescribeContentReviewTemplates": doDescribeContentReviewTemplates,
     "DescribeSuperPlayerConfigs": doDescribeSuperPlayerConfigs,
     "DescribeSubAppIds": doDescribeSubAppIds,
@@ -6340,6 +6535,7 @@ ACTION_MAP = {
     "DeleteSampleSnapshotTemplate": doDeleteSampleSnapshotTemplate,
     "WeChatMiniProgramPublish": doWeChatMiniProgramPublish,
     "SimpleHlsClip": doSimpleHlsClip,
+    "DescribeMediaInfos": doDescribeMediaInfos,
     "DeleteHeadTailTemplate": doDeleteHeadTailTemplate,
     "CreatePersonSample": doCreatePersonSample,
     "ModifySubAppIdStatus": doModifySubAppIdStatus,

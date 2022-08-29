@@ -16,6 +16,8 @@ Output:
         "TotalVulCount": 38,
         "VulHostCount": 16,
         "IfFirstScan": true,
+        "hadAutoFixVul": true,
+        "LastFixTime": "xx",
         "TaskId": 1
     }
 }

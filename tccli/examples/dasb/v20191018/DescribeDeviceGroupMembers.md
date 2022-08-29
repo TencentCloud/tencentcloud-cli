@@ -22,38 +22,52 @@ Output:
                 "Kind": 1,
                 "GroupSet": [
                     {
+                        "Department": {
+                            "Managers": [
+                                "xx"
+                            ],
+                            "Id": "xx",
+                            "Name": "xx"
+                        },
                         "Id": 1,
                         "Name": "xx"
                     }
                 ],
                 "Resource": {
-                    "Status": 1,
-                    "ProductCode": "xx",
-                    "VpcId": "xx",
                     "RenewFlag": 1,
                     "Zone": "xx",
+                    "SubnetName": "xx",
+                    "Nodes": 1,
+                    "Status": 1,
+                    "VpcId": "xx",
                     "SubProductCode": "xx",
                     "ResourceId": "xx",
-                    "Pid": 1,
-                    "CidrBlock": "xx",
-                    "VpcCidrBlock": "xx",
-                    "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "ExpireTime": "2020-09-22T00:00:00+00:00",
-                    "SubnetName": "xx",
+                    "PackageBandwidth": 1,
                     "VpcName": "xx",
                     "ApCode": "xx",
                     "SubnetId": "xx",
                     "ResourceName": "xx",
+                    "Expired": true,
+                    "Deployed": true,
+                    "ProductCode": "xx",
                     "PublicIpSet": [
                         "xx"
                     ],
+                    "ModuleSet": [
+                        "xx"
+                    ],
+                    "ExtendPoints": 1,
+                    "UsedNodes": 1,
                     "PrivateIpSet": [
                         "xx"
                     ],
-                    "Nodes": 1,
-                    "Expired": true,
+                    "Pid": 1,
+                    "VpcCidrBlock": "xx",
+                    "PackageNode": 1,
+                    "ExpireTime": "2020-09-22T00:00:00+00:00",
                     "SvArgs": "xx",
-                    "Deployed": true
+                    "CidrBlock": "xx",
+                    "CreateTime": "2020-09-22T00:00:00+00:00"
                 },
                 "Name": "xx",
                 "InstanceId": "xx",
@@ -61,6 +75,13 @@ Output:
                 "AccountCount": 1,
                 "PrivateIp": "xx",
                 "PublicIp": "xx",
+                "Department": {
+                    "Managers": [
+                        "xx"
+                    ],
+                    "Id": "xx",
+                    "Name": "xx"
+                },
                 "VpcId": "xx",
                 "ApCode": "xx",
                 "SubnetId": "xx",

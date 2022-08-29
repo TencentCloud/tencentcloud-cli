@@ -40,6 +40,14 @@
         "title": "编辑物联卡备注信息"
       }
     ],
+    "PayForExtendData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PayForExtendData\n<公共请求参数>\n\n{\n    \"Iccid\": \"xx\",\n    \"ExtentData\": 1,\n    \"Sdkappid\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OrderIds\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "购买套外流量包"
+      }
+    ],
     "RenewCards": [
       {
         "document": "为两张卡片续费。",

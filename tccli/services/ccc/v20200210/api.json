@@ -96,12 +96,6 @@
       "name": "获取主被叫受保护的电话服务记录与录音",
       "output": "DescribeProtectedTelCdrResponse"
     },
-    "DescribeSeatUserList": {
-      "document": "废弃接口下架\n\n获取坐席用户列表（废弃）",
-      "input": "DescribeSeatUserListRequest",
-      "name": "获取坐席用户列表（废弃）",
-      "output": "DescribeSeatUserListResponse"
-    },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
@@ -703,7 +697,8 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -712,7 +707,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -721,7 +717,8 @@
           "member": "string",
           "name": "Callee",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -730,7 +727,8 @@
           "member": "string",
           "name": "Caller",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -739,7 +737,8 @@
           "member": "bool",
           "name": "IsForceUseMobile",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -748,7 +747,8 @@
           "member": "string",
           "name": "Uui",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -763,7 +763,8 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1656,69 +1657,6 @@
       ],
       "type": "object"
     },
-    "DescribeSeatUserListRequest": {
-      "document": "DescribeSeatUserList请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID",
-          "example": "12",
-          "member": "int64",
-          "name": "InstanceId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSeatUserListResponse": {
-      "document": "DescribeSeatUserList返回参数结构体",
-      "members": [
-        {
-          "document": "此实例的坐席用户总数",
-          "example": "10",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "坐席用户信息列表",
-          "example": "无",
-          "member": "SeatUserInfo",
-          "name": "SeatUsers",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeSkillGroupInfoListRequest": {
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
@@ -1729,7 +1667,8 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1738,7 +1677,8 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1747,7 +1687,8 @@
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1756,7 +1697,8 @@
           "member": "int64",
           "name": "SkillGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1765,7 +1707,18 @@
           "member": "int64",
           "name": "ModifiedTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "技能组名称",
+          "example": "销售组",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1780,7 +1733,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "技能组信息列表",
@@ -1789,7 +1743,8 @@
           "name": "SkillGroupList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1810,16 +1765,18 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "分页尺寸，上限 100",
-          "example": "100",
+          "document": "分页尺寸，上限 9999",
+          "example": "9999",
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1828,7 +1785,8 @@
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1837,7 +1795,8 @@
           "member": "string",
           "name": "StaffMail",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1846,7 +1805,18 @@
           "member": "int64",
           "name": "ModifiedTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "技能组ID",
+          "example": "123",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1861,7 +1831,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "坐席用户信息列表",
@@ -1870,7 +1841,8 @@
           "name": "StaffList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2461,6 +2433,26 @@
           "name": "SkillGroupIds",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启手机外呼开关",
+          "example": "true",
+          "member": "bool",
+          "name": "UseMobileCallOut",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终",
+          "example": "0",
+          "member": "int64",
+          "name": "UseMobileAccept",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -3481,7 +3473,8 @@
           "name": "Email",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3491,7 +3484,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3501,7 +3495,8 @@
           "name": "StatusExtra",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3511,7 +3506,8 @@
           "name": "OnlineDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3521,7 +3517,8 @@
           "name": "FreeDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3531,7 +3528,8 @@
           "name": "BusyDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3541,7 +3539,8 @@
           "name": "NotReadyDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3551,7 +3550,8 @@
           "name": "RestDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3561,7 +3561,8 @@
           "name": "AfterCallWorkDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3571,7 +3572,8 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3581,7 +3583,8 @@
           "name": "ReserveRest",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3591,7 +3594,30 @@
           "name": "ReserveNotReady",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "手机接听模式： 0 - 关闭 | 1 - 仅离线 | 2- 始终",
+          "example": "0",
+          "member": "int64",
+          "name": "UseMobileAccept",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "手机外呼开关",
+          "example": "false",
+          "member": "bool",
+          "name": "UseMobileCallOut",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -2240,7 +2240,8 @@
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2250,17 +2251,19 @@
           "name": "BpsThreshold",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "达到阈值后的操作\nRESOLVE_DNS_TO_ORIGIN：直接回源，仅自有源站域名支持\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "达到阈值后的操作\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RETURN_404",
           "member": "string",
           "name": "CounterMeasure",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2270,7 +2273,8 @@
           "name": "LastTriggerTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2280,7 +2284,8 @@
           "name": "AlertSwitch",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2290,7 +2295,8 @@
           "name": "AlertPercentage",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2300,7 +2306,8 @@
           "name": "LastTriggerTimeOverseas",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2310,7 +2317,8 @@
           "name": "Metric",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2320,7 +2328,8 @@
           "name": "StatisticItems",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -14491,7 +14500,7 @@
       "usage": "both"
     },
     "ServerCert": {
-      "document": "https 加速服务端证书配置：\n+ 支持使用托管至 SSL 证书管理的证书进行部署\n+ 支持上传 PEM 格式的证书进行部署\n注意：上传 PEM 证书时，需要进行 Base 64 编码",
+      "document": "https 加速服务端证书配置：\n+ 支持使用托管至 SSL 证书管理的证书进行部署\n+ 支持上传 PEM 格式的证书进行部署",
       "members": [
         {
           "default": "",
@@ -14501,7 +14510,8 @@
           "name": "CertId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14511,7 +14521,8 @@
           "name": "CertName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14521,7 +14532,8 @@
           "name": "Certificate",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14531,7 +14543,8 @@
           "name": "PrivateKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14541,7 +14554,8 @@
           "name": "ExpireTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14551,7 +14565,8 @@
           "name": "DeployTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14561,7 +14576,8 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14571,7 +14587,8 @@
           "name": "From",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

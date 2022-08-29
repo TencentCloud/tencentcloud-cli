@@ -11,7 +11,7 @@
     "AddLiveDomain": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=AddLiveDomain\n&DomainName=www.test.com\n&DomainType=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLiveDomain\n<公共请求参数>\n\n{\n    \"DomainType\": \"0\",\n    \"DomainName\": \"www.test.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "添加域名"
       }
@@ -459,8 +459,8 @@
     "DescribeLiveDomains": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomains\n&DomainType=1\n&DomainStatus=1\n&PageSize=10\n&PageNum=1\n&IsDelayLive=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AllCount\": 2,\n        \"CreateLimitCount\": 0,\n        \"DomainList\": [\n            {\n                \"Name\": \"abc.com\",\n                \"IsMiniProgramLive\": 0,\n                \"Type\": 1,\n                \"Status\": 1,\n                \"PlayType\": 1,\n                \"IsDelayLive\": 0,\n                \"CreateTime\": \"2018-08-29 10:00:00\",\n                \"BCName\": 1,\n                \"CurrentCName\": \"\",\n                \"TargetDomain\": \"abc.com.liveplay.myqcloud.com\",\n                \"RentTag\": 0,\n                \"RentExpireTime\": \"0000-00-00 00:00:00\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveDomains\n<公共请求参数>\n\n{\n    \"IsDelayLive\": \"0\",\n    \"PageSize\": \"10\",\n    \"PageNum\": \"1\",\n    \"DomainStatus\": \"1\",\n    \"DomainType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AllCount\": 2,\n        \"CreateLimitCount\": 0,\n        \"PlayTypeCount\": [\n            1,\n            2,\n            3\n        ],\n        \"DomainList\": [\n            {\n                \"Name\": \"abc.com\",\n                \"IsMiniProgramLive\": 0,\n                \"Type\": 1,\n                \"Status\": 1,\n                \"PlayType\": 1,\n                \"IsDelayLive\": 0,\n                \"CreateTime\": \"2018-08-29 10:00:00\",\n                \"BCName\": 1,\n                \"CurrentCName\": \"\",\n                \"TargetDomain\": \"abc.com.liveplay.myqcloud.com\",\n                \"RentTag\": 0,\n                \"RentExpireTime\": \"0000-00-00 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询域名列表"
       }
     ],
@@ -635,7 +635,7 @@
     "DescribeLiveTranscodeTotalInfo": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeTotalInfo\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTranscodeTotalInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-01 12:00:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Duration\": 100,\n                \"ModuleCodec\": \"\",\n                \"Resolution\": \"540*480\"\n            }\n        ],\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
         "title": "请求示例"
       }
@@ -755,7 +755,7 @@
     "DescribeStreamPlayInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPlayInfoList\n&PlayDomain=5000.playdomain.com\n&StreamName=stream1\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 00:03:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPlayInfoList\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"5000.playdomain.com\",\n    \"StreamName\": \"stream1\",\n    \"EndTime\": \"2019-03-01 00:03:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Bandwidth\": 10.0,\n                \"Flux\": 75.0,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01 00:02:00\",\n                \"Bandwidth\": 20.0,\n                \"Flux\": 150.0,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01 00:03:00\",\n                \"Bandwidth\": 30.0,\n                \"Flux\": 225.0,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }

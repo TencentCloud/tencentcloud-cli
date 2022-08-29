@@ -84,6 +84,12 @@
       "name": "修改Istio资源",
       "output": "ModifyIstioResourceResponse"
     },
+    "ModifyMesh": {
+      "document": "修改网格",
+      "input": "ModifyMeshRequest",
+      "name": "修改网格",
+      "output": "ModifyMeshResponse"
+    },
     "RelinkCluster": {
       "document": "重新关联集群",
       "input": "RelinkClusterRequest",
@@ -2219,6 +2225,60 @@
     },
     "ModifyIstioResourceResponse": {
       "document": "ModifyIstioResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMeshRequest": {
+      "document": "ModifyMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改的网格Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的网格名称",
+          "example": "name",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的网格配置",
+          "example": "无",
+          "member": "MeshConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "修改的集群配置",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMeshResponse": {
+      "document": "ModifyMesh返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

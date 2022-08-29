@@ -1,21 +1,5 @@
 {
   "actions": {
-    "DescribeImageStat": [
-      {
-        "document": "",
-        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImageStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TrendCount\": [\n            {\n                \"TotalHour\": 0,\n                \"EvilHour\": 0,\n                \"TotalCount\": 0,\n                \"EvilCount\": 0,\n                \"PassCount\": 0,\n                \"Date\": \"xx\",\n                \"PassHour\": 0,\n                \"SuspectHour\": 0,\n                \"SuspectCount\": 0\n            }\n        ],\n        \"Overview\": {\n            \"TotalHour\": 0,\n            \"EvilHour\": 0,\n            \"TotalCount\": 0,\n            \"EvilCount\": 0,\n            \"PassCount\": 0,\n            \"PassHour\": 0,\n            \"SuspectHour\": 0,\n            \"SuspectCount\": 0\n        },\n        \"RequestId\": \"xx\",\n        \"EvilCount\": [\n            {\n                \"Count\": 0,\n                \"EvilType\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "控制台识别统计"
-      }
-    ],
-    "DescribeImsList": [
-      {
-        "document": "",
-        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImsList\n&PageIndex=0\n&PageSize=0\n&Filters.0.Name=\"xx\"\n&Filters.0.Values.0=\"xx\"\n&Filters.0.Values.1=\"xx\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 312,\n        \"ImsDetailSet\": {\n            \"UpdateUser\": 0,\n            \"UpdateTime\": \"xx\",\n            \"ModerationTime\": 0,\n            \"ContentId\": 0,\n            \"EvilType\": 0,\n            \"Content\": \"xx\",\n            \"DataSource\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "机器审核详情列表"
-      }
-    ],
     "ImageModeration": [
       {
         "document": "图片内容安全识别",

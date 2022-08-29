@@ -7,9 +7,9 @@
       "output": "ChannelCancelMultiFlowSignQRCodeResponse"
     },
     "ChannelCreateBatchCancelFlowUrl": {
-      "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
+      "document": "指定需要批量撤销的签署流程Id，获取批量撤销链接\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
-      "name": "电子签渠道版-根据签署流程id创建批量撤回url",
+      "name": "电子签渠道版-根据签署流程id创建批量撤销url",
       "output": "ChannelCreateBatchCancelFlowUrlResponse"
     },
     "ChannelCreateConvertTaskApi": {
@@ -24,6 +24,12 @@
       "name": "渠道版通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse"
     },
+    "ChannelCreateFlowSignReview": {
+      "document": "提交企业签署流程审批结果\n\n在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
+      "input": "ChannelCreateFlowSignReviewRequest",
+      "name": "提交企业签署流程审批结果",
+      "output": "ChannelCreateFlowSignReviewResponse"
+    },
     "ChannelCreateMultiFlowSignQRCode": {
       "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫签署流程二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
@@ -35,6 +41,12 @@
       "input": "ChannelGetTaskResultApiRequest",
       "name": "渠道版查询转换任务状态",
       "output": "ChannelGetTaskResultApiResponse"
+    },
+    "CreateChannelFlowEvidenceReport": {
+      "document": "创建出证报告，返回报告 URL",
+      "input": "CreateChannelFlowEvidenceReportRequest",
+      "name": "创建并返回出证报告",
+      "output": "CreateChannelFlowEvidenceReportResponse"
     },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
@@ -370,7 +382,7 @@
       "document": "ChannelCreateBatchCancelFlowUrl返回参数结构体",
       "members": [
         {
-          "document": "批量撤回url",
+          "document": "批量撤销url",
           "example": "无",
           "member": "string",
           "name": "BatchCancelFlowUrl",
@@ -380,7 +392,7 @@
           "visibility": 1
         },
         {
-          "document": "签署流程批量撤回失败原因",
+          "document": "签署流程批量撤销失败原因",
           "example": "无",
           "member": "string",
           "name": "FailMessages",
@@ -390,7 +402,7 @@
           "visibility": 1
         },
         {
-          "document": "签署撤回url过期时间-年月日-时分秒",
+          "document": "签署撤销url过期时间-年月日-时分秒",
           "example": "无",
           "member": "string",
           "name": "UrlExpireOn",
@@ -413,22 +425,12 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
           "type": "object",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "资源Id",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string",
           "visibility": 1
         },
         {
@@ -443,7 +445,7 @@
         },
         {
           "default": "",
-          "document": "资源名称",
+          "document": "资源名称，长度限制为256字符",
           "example": "无",
           "member": "string",
           "name": "ResourceName",
@@ -453,20 +455,30 @@
         },
         {
           "default": "",
-          "document": "无",
+          "document": "资源Id，通过UploadFiles获取",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object",
           "visibility": 1
         },
         {
           "default": "",
-          "document": "无",
+          "document": "暂未开放",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -501,7 +513,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道应用相关信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -621,6 +633,16 @@
         },
         {
           "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。 若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。  注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -645,6 +667,64 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowSignReviewRequest": {
+      "document": "ChannelCreateFlowSignReview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "企业内部审核结果\nPASS: 通过\nREJECT: 拒绝",
+          "example": "xxx",
+          "member": "string",
+          "name": "ReviewType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "审核原因 \n当ReviewType 是REJECT 时此字段必填,字符串长度不超过200",
+          "example": "xx",
+          "member": "string",
+          "name": "ReviewMessage",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowSignReviewResponse": {
+      "document": "ChannelCreateFlowSignReview返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -787,7 +867,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -797,7 +877,7 @@
         },
         {
           "default": "",
-          "document": "任务Id",
+          "document": "任务Id，通过ChannelCreateConvertTaskApi接口获得",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -807,20 +887,20 @@
         },
         {
           "default": "",
-          "document": "企业信息",
+          "document": "操作者的信息",
           "example": "无",
-          "member": "OrganizationInfo",
-          "name": "Organization",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object",
           "visibility": 1
         },
         {
           "default": "",
-          "document": "操作人信息",
+          "document": "暂未开放",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -842,7 +922,7 @@
           "visibility": 1
         },
         {
-          "document": "任务状态",
+          "document": "任务状态，需要关注的状态\n0  :NeedTranform   - 任务已提交\n4  :Processing     - 文档转换中\n8  :TaskEnd        - 任务处理完成\n-2 :DownloadFailed - 下载失败\n-6 :ProcessFailed  - 转换失败\n-13:ProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
@@ -852,7 +932,7 @@
           "visibility": 1
         },
         {
-          "document": "状态描述",
+          "document": "状态描述，需要关注的状态\nNeedTranform   - 任务已提交\nProcessing     - 文档转换中\nTaskEnd        - 任务处理完成\nDownloadFailed - 下载失败\nProcessFailed  - 转换失败\nProcessTimeout - 转换文件超时",
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
@@ -862,7 +942,7 @@
           "visibility": 1
         },
         {
-          "document": "资源Id",
+          "document": "资源Id，也是FileId，用于文件发起使用",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -872,7 +952,7 @@
           "visibility": 1
         },
         {
-          "document": "资源下载URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源下载URL，有效期30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResourceUrl",
@@ -880,6 +960,16 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "document": "预览文件Url，有效期30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1094,6 +1184,64 @@
       ],
       "usage": "both"
     },
+    "CreateChannelFlowEvidenceReportRequest": {
+      "document": "CreateChannelFlowEvidenceReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelFlowEvidenceReportResponse": {
+      "document": "CreateChannelFlowEvidenceReport返回参数结构体",
+      "members": [
+        {
+          "document": "出证报告 URL（有效五分钟）",
+          "example": "无",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConsoleLoginUrlRequest": {
       "document": "CreateConsoleLoginUrl请求参数结构体",
       "members": [
@@ -1296,6 +1444,16 @@
           "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "PreviewUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "复杂文档合成任务的任务信息数组",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfos",
           "required": true,
           "type": "list",
           "value_allowed_null": false,
@@ -2453,6 +2611,17 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -2499,7 +2668,7 @@
         },
         {
           "default": "",
-          "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空；\nCreateFlowsByTemplates 接口不使用此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "391963b9d3cb2de35dedc6eb0a60e535",
           "member": "string",
           "name": "ComponentId",
@@ -2914,7 +3083,8 @@
           "name": "RecipientId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2924,7 +3094,8 @@
           "name": "RecipientType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2934,7 +3105,8 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2944,7 +3116,8 @@
           "name": "RoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2954,7 +3127,8 @@
           "name": "RequireValidation",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2964,7 +3138,8 @@
           "name": "RequireSign",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2974,7 +3149,8 @@
           "name": "SignType",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2984,7 +3160,8 @@
           "name": "RoutingOrder",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2994,7 +3171,8 @@
           "name": "IsPromoter",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -3010,7 +3188,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3020,7 +3199,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3030,7 +3210,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3411,6 +3592,34 @@
       ],
       "type": "object"
     },
+    "TaskInfo": {
+      "document": "复杂文档合成任务的任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务状态：READY - 任务已完成；NOTREADY - 任务未完成；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTREADY",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "TemplateInfo": {
       "document": "此结构体 (TemplateInfo) 用于描述模板的信息。",
       "members": [
@@ -3566,7 +3775,7 @@
         },
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf .doc .docx .html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

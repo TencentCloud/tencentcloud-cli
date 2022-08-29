@@ -48,14 +48,6 @@
         "title": "查询异步任务状态接口"
       }
     ],
-    "DescribeBackupAccess": [
-      {
-        "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeBackupAccess\r\n&InstanceId=cmgo-f0vrx2v9\r\n&BackupName=cmgo-f0vrx2v9_2019-09-02_04:49\r\n&<公共请求参数>",
-        "output": "{\r\n        \"Bucket\":\"cmongo-cd-backup\",\r\n        \"Files\":[\r\n            {\r\n                \"File\":\"cmongo_hotbackup/cmgo-f0vrx2v9_0/1567370984\",\r\n                \"ReplicaSetId\":\"cmgo-f0vrx2v9_0\"\r\n            }\r\n        ],\r\n        \"Region\":\"ap-chengdu\",\r\n        \"RequestId\":\"7e108f10-d228-11e9-b27e-9500754d2540\"\r\n}",
-        "title": "获取实例备份下载授权"
-      }
-    ],
     "DescribeBackupDownloadTask": [
       {
         "document": "",
@@ -254,6 +246,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAccountUserPrivilege\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"UserName\": \"xx\",\n    \"AuthRole\": [\n        {\n            \"Mask\": 0,\n            \"NameSpace\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "为当前实例设置账号权限。"
+      }
+    ],
+    "TerminateDBInstances": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=TerminateDBInstances\n&InstanceId=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccfe11c0-b1d3-11ea-8b51-552abe435100\"\n    }\n}",
+        "title": "包年包月实例隔离接口"
       }
     ]
   },

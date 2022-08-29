@@ -9489,21 +9489,23 @@
       "members": [
         {
           "default": "",
-          "document": "服务器Quuid",
+          "document": "云服务器UUID",
           "example": "xx",
           "member": "string",
           "name": "Quuid",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "服务器Uuid",
+          "document": "主机安全UUID",
           "example": "xx",
           "member": "string",
           "name": "Uuid",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9512,7 +9514,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9527,7 +9530,8 @@
           "name": "User",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13477,7 +13481,8 @@
           "member": "string",
           "name": "MachineType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13486,7 +13491,8 @@
           "member": "string",
           "name": "MachineRegion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13495,7 +13501,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13504,7 +13511,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13513,7 +13521,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13522,7 +13531,8 @@
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13537,7 +13547,8 @@
           "name": "Machines",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主机数量",
@@ -13546,7 +13557,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16786,7 +16798,8 @@
           "name": "TotalVulCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "漏洞影响主机数",
@@ -16795,7 +16808,8 @@
           "name": "VulHostCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "扫描时间",
@@ -16804,7 +16818,8 @@
           "name": "ScanTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否第一次检测",
@@ -16813,7 +16828,8 @@
           "name": "IfFirstScan",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "运行中的任务号, 没有任务则为0",
@@ -16822,7 +16838,28 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "最后一次修复漏洞的时间",
+          "example": "2021-07-09 15:04:01",
+          "member": "string",
+          "name": "LastFixTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否有支持自动修复的漏洞事件",
+          "example": "true",
+          "member": "bool",
+          "name": "hadAutoFixVul",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -17055,6 +17092,26 @@
           "example": "12",
           "member": "uint64",
           "name": "DefenseAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "全网修复成功次数, 不支持自动修复的漏洞默认返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessFixCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FixSwitch",
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -20290,7 +20347,8 @@
           "name": "MachineName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20300,7 +20358,8 @@
           "name": "MachineOs",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20310,7 +20369,8 @@
           "name": "MachineStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20320,7 +20380,8 @@
           "name": "Uuid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20330,7 +20391,8 @@
           "name": "Quuid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20340,7 +20402,8 @@
           "name": "VulNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20350,7 +20413,8 @@
           "name": "MachineIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20360,7 +20424,8 @@
           "name": "IsProVersion",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20370,7 +20435,8 @@
           "name": "MachineWanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20380,7 +20446,8 @@
           "name": "PayMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20390,7 +20457,8 @@
           "name": "MalwareNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20400,7 +20468,8 @@
           "name": "Tag",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20410,7 +20479,8 @@
           "name": "BaselineNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20420,7 +20490,8 @@
           "name": "CyberAttackNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20430,7 +20501,8 @@
           "name": "SecurityStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20440,7 +20512,8 @@
           "name": "InvasionNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20450,7 +20523,8 @@
           "name": "RegionInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20460,7 +20534,8 @@
           "name": "InstanceState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20470,7 +20545,8 @@
           "name": "LicenseStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20480,7 +20556,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20490,7 +20567,8 @@
           "name": "HasAssetScan",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20500,7 +20578,8 @@
           "name": "MachineType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -20510,17 +20589,30 @@
           "name": "KernelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.",
+          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tags",
+          "name": "CloudTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -24310,6 +24402,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Tags": {
+      "document": "平台标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "TaskStatus": {
       "document": "任务扫描状态列表",

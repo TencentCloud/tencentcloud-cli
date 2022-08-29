@@ -192,14 +192,6 @@
         "title": "添加DDoS防护的水印防护密钥"
       }
     ],
-    "DeleteBlackWhiteIpList": [
-      {
-        "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DeleteBlackWhiteIpList\n&InstanceId=bgpip-00001001\n&IpList.0=1.1.1.1\n&Type=black\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7739a1e-837d-4248-bf9f-16a9bf77db22\"\n    }\n}",
-        "title": "删除DDoS防护的IP黑白名单"
-      }
-    ],
     "DeleteCCLevelPolicy": [
       {
         "document": "",
@@ -310,6 +302,14 @@
         "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeBasicDeviceStatus\n&IpList.0=‘1.1.1.1’\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"1.1.1.1\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"RequestId\": \"8f7a9451-2372-4a88-a69d-9868b8991076\"\n    }\n}",
         "title": "获取基础防护攻击状态"
+      }
+    ],
+    "DescribeBgpBizTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpBizTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Flag\": 1,\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            1\n        ],\n        \"Total\": 1,\n        \"MaxData\": 1,\n        \"RequestId\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
+        "title": "获取高防包流量折线图"
       }
     ],
     "DescribeBizTrend": [
@@ -550,6 +550,14 @@
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNewL7Rules\n<公共请求参数>\n\n{\n    \"StatusList\": [\n        1\n    ],\n    \"Domain\": \"xx\",\n    \"Business\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ProtocolList\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"KeepTime\": 1,\n                \"HttpsToHttpEnable\": 1,\n                \"Status\": 1,\n                \"LbType\": 1,\n                \"CCLevel\": \"xx\",\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"Region\": 1,\n                \"VirtualPort\": 1,\n                \"SourceList\": [\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    },\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    }\n                ],\n                \"Cert\": \"xx\",\n                \"KeepEnable\": 1,\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": 1,\n                \"RuleId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"PrivateKey\": \"xx\",\n                \"CertType\": 1,\n                \"RuleName\": \"xx\",\n                \"CCStatus\": 1,\n                \"SSLId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Healths\": [\n            {\n                \"Status\": 1,\n                \"Enable\": 1,\n                \"RuleId\": \"xx\",\n                \"Url\": \"xx\",\n                \"Interval\": 1,\n                \"AliveNum\": 1,\n                \"KickNum\": 1,\n                \"Method\": \"xx\",\n                \"StatusCode\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取7层规则"
+      }
+    ],
+    "DescribeNewL7RulesErrHealth": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeNewL7RulesErrHealth\n&Business=bgpip\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"ErrHealths\": [\n            {\n                \"Key\": \"rule-00000001\",\n                \"Value\": \"1.1.1.1 400,2.2.2.2 500\"\n            }\n        ]\n    }\n}",
+        "title": "获取L7转发规则健康检查异常结果"
       }
     ],
     "DescribeOverviewAttackTrend": [

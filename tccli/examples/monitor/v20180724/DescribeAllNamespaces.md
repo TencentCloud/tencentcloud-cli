@@ -62,6 +62,14 @@ Output:
                 "SortId": 0
             }
         ],
+        "CommonNamespaces": [
+            {
+                "Id": "performance_metric",
+                "MonitorType": "MT_TAW",
+                "Name": "性能指标",
+                "Dimensions": []
+            }
+        ],
         "RequestId": "d96ec542-6547-4af2-91ac-fee85c1b8b85"
     }
 }

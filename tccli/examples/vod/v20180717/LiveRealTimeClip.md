@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod LiveRealTimeClip --cli-unfold-argument  \
-    --StreamId record-stream \
-    --StartTime 2018-09-20T10:00:00Z \
+    --Host example.com \
     --EndTime 2018-09-20T11:00:00Z \
-    --Host example.com
+    --StartTime 2018-09-20T10:00:00Z \
+    --StreamId record-stream
 ```
 
 Output: 
@@ -43,11 +43,11 @@ Input:
 
 ```
 tccli vod LiveRealTimeClip --cli-unfold-argument  \
-    --StreamId record-stream \
-    --StartTime 2018-09-20T12:00:00Z \
-    --EndTime 2018-09-20T13:00:00Z \
-    --Host example.com \
     --IsPersistence 1 \
+    --Host example.com \
+    --StartTime 2018-09-20T12:00:00Z \
+    --StreamId record-stream \
+    --EndTime 2018-09-20T13:00:00Z \
     --Procedure SomeProcedure
 ```
 

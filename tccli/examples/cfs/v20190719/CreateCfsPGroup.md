@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfs CreateCfsPGroup --cli-unfold-argument  \
-    --Name test_pgroup \
-    --DescInfo test_pgroup_desc
+    --DescInfo test_pgroup_desc \
+    --Name test_pgroup
 ```
 
 Output: 

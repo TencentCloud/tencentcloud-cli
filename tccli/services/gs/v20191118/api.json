@@ -7,9 +7,9 @@
       "output": "CreateSessionResponse"
     },
     "DescribeInstancesCount": {
-      "document": "获取实例总数和运行数",
+      "document": "获取并发总数和运行数",
       "input": "DescribeInstancesCountRequest",
-      "name": "获取实例总数和运行数",
+      "name": "获取并发总数和运行数",
       "output": "DescribeInstancesCountResponse"
     },
     "SaveGameArchive": {
@@ -294,7 +294,8 @@
           "member": "string",
           "name": "GameId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -303,7 +304,18 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "游戏区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "GameRegion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -318,7 +330,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "客户的实例运行数",
@@ -327,7 +340,8 @@
           "name": "Running",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

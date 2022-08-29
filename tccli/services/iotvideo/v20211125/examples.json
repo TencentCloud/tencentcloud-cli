@@ -296,6 +296,14 @@
         "title": "获取云存套餐包消耗详统计"
       }
     ],
+    "DescribeCloudStorageStreamData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageStreamData\n<公共请求参数>\n\n{\n    \"DeviceName\": \"device\",\n    \"StartTime\": 1660561529,\n    \"ProductId\": \"product\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VideoStream\": \"https://test.cos.ap-guangzhou.myqcloud.com/test.mjpg\",\n        \"AudioStream\": \"https://test.cos.ap-guangzhou.myqcloud.com/test.aac\",\n        \"RequestId\": \"test-id\"\n    }\n}",
+        "title": "获取设备图片流数据"
+      }
+    ],
     "DescribeCloudStorageThumbnail": [
       {
         "document": "",

@@ -1353,7 +1353,7 @@
         },
         {
           "default": "",
-          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_和\\_\\_TIMESTAMP\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
           "member": "string",
           "name": "MetaFields",
@@ -2142,6 +2142,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2510,7 +2520,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2519,7 +2530,8 @@
           "member": "string",
           "name": "Bucket",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2528,7 +2540,8 @@
           "member": "string",
           "name": "Prefix",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2537,7 +2550,8 @@
           "member": "string",
           "name": "ShipperName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2546,7 +2560,8 @@
           "member": "uint64",
           "name": "Interval",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2555,7 +2570,8 @@
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2564,7 +2580,8 @@
           "member": "FilterRuleInfo",
           "name": "FilterRules",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2573,7 +2590,8 @@
           "member": "string",
           "name": "Partition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2582,7 +2600,8 @@
           "member": "CompressInfo",
           "name": "Compress",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2591,7 +2610,18 @@
           "member": "ContentInfo",
           "name": "Content",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilenameMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2606,7 +2636,8 @@
           "name": "ShipperId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3641,6 +3672,16 @@
           "visibility": 1
         },
         {
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4397,7 +4438,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4406,7 +4448,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4415,7 +4458,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4430,7 +4474,8 @@
           "name": "Shippers",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "本次查询获取到的总数",
@@ -4439,7 +4484,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5149,17 +5195,19 @@
           "name": "EnableTag",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "MetaFields",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -6244,6 +6292,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6522,7 +6580,8 @@
           "member": "string",
           "name": "ShipperId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6531,7 +6590,8 @@
           "member": "string",
           "name": "Bucket",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6540,7 +6600,8 @@
           "member": "string",
           "name": "Prefix",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6549,7 +6610,8 @@
           "member": "bool",
           "name": "Status",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6558,7 +6620,8 @@
           "member": "string",
           "name": "ShipperName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6567,7 +6630,8 @@
           "member": "uint64",
           "name": "Interval",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6576,7 +6640,8 @@
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6585,7 +6650,8 @@
           "member": "FilterRuleInfo",
           "name": "FilterRules",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6594,7 +6660,8 @@
           "member": "string",
           "name": "Partition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6603,7 +6670,8 @@
           "member": "CompressInfo",
           "name": "Compress",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6612,7 +6680,18 @@
           "member": "ContentInfo",
           "name": "Content",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilenameMode",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6694,7 +6773,7 @@
         },
         {
           "default": "",
-          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
+          "document": "生命周期，单位天，标准存储取值范围1~3600，低频存储取值范围7~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -6827,7 +6906,18 @@
           "member": "string",
           "name": "FromTopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "1",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6842,7 +6932,8 @@
           "name": "TopicID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
