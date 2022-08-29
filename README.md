@@ -189,6 +189,7 @@ TCCLI 支持 [JMESPath](https://jmespath.org/examples.html) ，以下仅为部�
 4
 ```
 3. 指定某个数组类型对象的第N个子对象的信息。
+注意：Mac OS 系统使用如下命令可能会报错 `zsh: no matches found: xxx`，这时需要将说明过滤行为的内容用单引号包裹起来
 ```bash
 [root@VM_180_248_centos ~]# tccli cvm DescribeZones  --filter ZoneSet[0]
 {
