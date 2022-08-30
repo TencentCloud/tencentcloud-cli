@@ -53,12 +53,19 @@ Output:
                 "OutputMessage": "xx",
                 "CreateTime": "xx",
                 "UsedTime": 60000,
+                "TotalTime": 80000,
                 "DatabaseName": "xx",
                 "SQL": "xx",
                 "Id": "xx"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "xx",
+        "TasksOverview": {
+            "TaskQueuedCount": 0,
+            "TaskInitCount": 0,
+            "TaskRunningCount": 0,
+            "TotalTaskCount": 1888
+        }
     }
 }
 ```

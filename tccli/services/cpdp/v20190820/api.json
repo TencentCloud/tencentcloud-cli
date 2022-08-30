@@ -12005,6 +12005,26 @@
         },
         {
           "default": "",
+          "document": "商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数",
+          "example": "无",
+          "member": "OpenBankSettlementRulesInfo",
+          "name": "SettlementRulesInfo",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "底层支付渠道特殊字段，若无特殊说明时，可以为空",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPaymentData",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "备注信息。",
           "example": "备注",
           "member": "string",
@@ -19386,6 +19406,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "OpenBankSettlementRulesInfo": {
+      "document": "云企付-结算规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ONCE：仅单次解冻（默认）\nMULTI：多次解冻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONCE",
+          "member": "string",
+          "name": "UnfreezeRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ONCE：仅单次退款（默认）\nMULTI：多次退款\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONCE",
+          "member": "string",
+          "name": "RefundRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

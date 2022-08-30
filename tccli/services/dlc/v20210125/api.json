@@ -5388,16 +5388,18 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回1000行数据。",
+          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回MaxResults字段设置的数据量。",
           "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
           "member": "string",
           "name": "NextToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5406,7 +5408,8 @@
           "member": "int64",
           "name": "MaxResults",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5421,7 +5424,8 @@
           "name": "TaskInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5539,6 +5543,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "任务概览信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TasksOverview",
+          "name": "TasksOverview",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -8929,6 +8943,56 @@
         }
       ],
       "usage": "in"
+    },
+    "TasksOverview": {
+      "document": "任务概览",
+      "members": [
+        {
+          "default": "",
+          "document": "正在排队的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskQueuedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "初始化的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskInitCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "正在执行的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskRunningCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前时间范围的总任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "TextFile": {
       "document": "文本格式",

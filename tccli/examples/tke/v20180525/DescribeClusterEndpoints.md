@@ -14,6 +14,9 @@ Output:
 {
     "Response": {
         "CertificationAuthority": "xxx",
+        "ClusterIntranetDomain": "xx",
+        "ClusterExternalDomain": "xx",
+        "SecurityGroup": "xx",
         "ClusterExternalEndpoint": "12.34.56.78",
         "ClusterIntranetEndpoint": "10.0.0.1",
         "ClusterDomain": "cls-65r1c5nu.ccs.tencent-cloud.com",

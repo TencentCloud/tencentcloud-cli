@@ -1702,7 +1702,8 @@
           "name": "DecodeJson",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1712,7 +1713,8 @@
           "name": "Resource",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1722,7 +1724,8 @@
           "name": "LogSet",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1732,7 +1735,19 @@
           "name": "ContentKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定消息中的某字段内容作为cls日志的时间。\n字段内容格式需要是秒级时间戳",
+          "example": "time",
+          "member": "string",
+          "name": "TimeField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

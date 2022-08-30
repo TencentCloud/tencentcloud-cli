@@ -1475,6 +1475,52 @@
       ],
       "usage": "out"
     },
+    "CUDNN": {
+      "document": "cuDNN的版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cuDNN的版本",
+          "example": "7.5.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的名字",
+          "example": "libcudnn7_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的Doc名字",
+          "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "DocName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的Dev名字",
+          "example": "libcudnn7-dev_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "DevName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Capabilities": {
       "document": "cloudrun安全特性能力",
       "members": [
@@ -5428,6 +5474,22 @@
       ],
       "type": "object"
     },
+    "CustomDriver": {
+      "document": "自定义驱动信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义GPU驱动地址链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://abc.com/NVIDIA-Linux-x86_64-460.32.03.run",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DNSConfig": {
       "document": "自定义DNS配置",
       "members": [
@@ -6878,7 +6940,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6893,7 +6956,8 @@
           "name": "CertificationAuthority",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群APIServer的外网访问地址",
@@ -6902,7 +6966,8 @@
           "name": "ClusterExternalEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群APIServer的内网访问地址",
@@ -6911,7 +6976,8 @@
           "name": "ClusterIntranetEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群APIServer的域名\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6920,7 +6986,8 @@
           "name": "ClusterDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群APIServer的外网访问ACL列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6929,7 +6996,38 @@
           "name": "ClusterExternalACL",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls.domain",
+          "member": "string",
+          "name": "ClusterExternalDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "内网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls.domain",
+          "member": "string",
+          "name": "ClusterIntranetDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "外网安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10532,6 +10630,32 @@
       ],
       "usage": "both"
     },
+    "DriverVersion": {
+      "document": "GPU驱动和CUDA的版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "GPU驱动或者CUDA的版本",
+          "example": "418.126.02",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU驱动或者CUDA的名字",
+          "example": "NVIDIA-Linux-x86_64-418.126.02.run",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ECMEnhancedService": {
       "document": "ECM增强服务",
       "members": [
@@ -12289,6 +12413,67 @@
       ],
       "type": "object"
     },
+    "GPUArgs": {
+      "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本以及是否开启MIG",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用MIG特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "MIGEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "GPU驱动版本信息",
+          "example": "无",
+          "member": "DriverVersion",
+          "name": "Driver",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CUDA版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DriverVersion",
+          "name": "CUDA",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cuDNN版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CUDNN",
+          "name": "CUDNN",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自定义GPU驱动信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomDriver",
+          "name": "CustomDriver",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "GetClusterLevelPriceRequest": {
       "document": "GetClusterLevelPrice请求参数结构体",
       "members": [
@@ -13122,6 +13307,17 @@
         },
         {
           "default": "",
+          "document": "GPU驱动相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUArgs",
+          "name": "GPUArgs",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
@@ -13781,7 +13977,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13790,7 +13987,18 @@
           "member": "string",
           "name": "SecurityPolicies",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "修改外网访问安全组",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

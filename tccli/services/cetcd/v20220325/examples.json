@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DeleteEtcdInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEtcdInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"etcd-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a78\"\n    }\n}",
+        "title": "删除etcd实例"
+      }
+    ],
+    "DescribeEtcdInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cetcd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEtcdInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"etcd-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Etcds\": [\n            {\n                \"Description\": \"第一版测试\",\n                \"Endpoint\": \"\",\n                \"InstanceId\": \"etcd-abcd1234\",\n                \"Members\": null,\n                \"Name\": \"etcd-test-cluster\",\n                \"Status\": \"running\",\n                \"Version\": \"v3.3.11\",\n                \"VpcId\": \"vpc-abcd1234\"\n            }\n        ],\n        \"RequestId\": \"51abd77d-f503-41e7-ab28-010083e02a78\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeEtcdInstances"
+      }
+    ]
+  },
+  "version": "1.0"
+}
