@@ -1,11 +1,5 @@
 {
   "actions": {
-    "DetectFraudKOL": {
-      "document": "流量反欺诈-KOL欺诈识别",
-      "input": "DetectFraudKOLRequest",
-      "name": "流量反欺诈-KOL欺诈识别",
-      "output": "DetectFraudKOLResponse"
-    },
     "RecognizeCustomizedAudience": {
       "document": "流量反欺诈-流量验准定制版",
       "input": "RecognizeCustomizedAudienceRequest",
@@ -38,51 +32,6 @@
     "serviceShortName": "taf"
   },
   "objects": {
-    "DetectFraudKOLRequest": {
-      "document": "DetectFraudKOL请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "业务数据",
-          "example": "无",
-          "member": "InputKolBspData",
-          "name": "BspData",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "业务加密数据",
-          "example": "{     \"BusinessEncryptData\":{         \"EncryptMethod\":0,        ",
-          "member": "InputBusinessEncryptData",
-          "name": "BusinessEncryptData",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DetectFraudKOLResponse": {
-      "document": "DetectFraudKOL返回参数结构体",
-      "members": [
-        {
-          "document": "回包数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OutputKolData",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Device": {
       "document": "业务入参",
       "members": [
@@ -112,87 +61,6 @@
     "InputBusinessEncryptData": {
       "document": "业务入参",
       "members": [],
-      "usage": "in"
-    },
-    "InputKolBspData": {
-      "document": "CheckKol",
-      "members": [
-        {
-          "default": "",
-          "document": "BspData",
-          "member": "InputKolDataList",
-          "name": "DataList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
-    "InputKolDataList": {
-      "document": "CheckKOL",
-      "members": [
-        {
-          "default": "",
-          "document": "账号类型[1：微信；2：qq；3：微博]",
-          "example": "1",
-          "member": "uint64",
-          "name": "Type",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "KOL账号ID[比如微信公众号ID]",
-          "example": "\"xxxxID\"",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "KOL名称",
-          "example": "\"moumou\"",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "手机号",
-          "example": "“131XXXX1234”",
-          "member": "string",
-          "name": "Phone",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "代理商名称",
-          "example": "\"XXX代理商\"",
-          "member": "string",
-          "name": "AgentInfo",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否授权",
-          "example": "1",
-          "member": "uint64",
-          "name": "IsAuthorized",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
       "usage": "in"
     },
     "InputRecognizeTargetAudience": {
@@ -676,81 +544,6 @@
         }
       ],
       "usage": "in"
-    },
-    "OutputKolData": {
-      "document": "CheckKol",
-      "members": [
-        {
-          "default": "",
-          "document": "错误码[0:成功；非0：失败的错误码]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "业务返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "OutputKolValue",
-          "name": "Value",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputKolValue": {
-      "document": "CheckKol",
-      "members": [
-        {
-          "default": "",
-          "document": "KOL账号ID[比如微信公众号ID]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "是否查得[0：未查得；1：查得]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "IsCheck",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "作弊的可能性[0～100]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "FraudPScore",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "作弊的严重性[0～100]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "EvilPScore",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "OutputRecognizeTargetAudience": {
       "document": "流量反欺诈-验准返回值",

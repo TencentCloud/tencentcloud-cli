@@ -96,3 +96,56 @@ Output:
 }
 ```
 
+**Example 3: 订单已受理**
+
+
+
+Input: 
+
+```
+tccli cpdp CreateOpenBankPaymentOrder --cli-unfold-argument  \
+    --Remark 123 \
+    --ChannelName TENPAY \
+    --ProfitShareFlag  \
+    --NotifyUrl http://127.0.0.1/pay/notify \
+    --GoodsInfo.GoodsDetail 测试0001 \
+    --GoodsInfo.GoodsDescription 测试001 \
+    --GoodsInfo.GoodsBizType 字符串 \
+    --PaymentMode FREEZE \
+    --PayerInfo.PayerId CM618130447205666816 \
+    --PayerInfo.BindSerialNo 123 \
+    --PayerInfo.PayerName 测试 \
+    --ChannelMerchantId CM584693967762206720 \
+    --ExpireTime 2022-07-02 17:09:44 \
+    --OutOrderId 202206270000001 \
+    --ProfitShareInfoList.0.RecvId 11 \
+    --ProfitShareInfoList.0.ProfitShareFee 1 \
+    --SceneInfo.DeviceType GoodsInfo.GoodsName \
+    --SceneInfo.PayerUa user agent \
+    --SceneInfo.PayerClientIp 127.0.0.1 \
+    --SceneInfo.OrderTime  \
+    --SceneInfo.DeviceId 0001 \
+    --PayeeInfo.BankAccountNumber 20220602170937 \
+    --PayeeInfo.BindSerialNo 1002030191514840205164 \
+    --PayeeInfo.BankBranchId 301290050123 \
+    --PayeeInfo.BankBranchName  \
+    --PayeeInfo.PayeeName 测试 \
+    --PayeeInfo.PayeeId CM618130426611634176 \
+    --TotalAmount 1 \
+    --Currency CNY \
+    --PaymentMethod EBANK_PAYMENT \
+    --Attachment test123
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "c1c1ba98-a977-4ac0-a755-30c006e4a6fa",
+        "Result": null,
+        "ErrCode": "ORDER.RECORD_ALREADY_EXISTED",
+        "ErrMessage": "订单已受理，请使用查询接口确认订单状态"
+    }
+}
+```
+

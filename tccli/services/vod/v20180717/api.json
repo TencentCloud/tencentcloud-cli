@@ -348,6 +348,12 @@
       "name": "获取视频解密密钥",
       "output": "DescribeDrmDataKeyResponse"
     },
+    "DescribeDrmKeyProviderInfo": {
+      "document": "查询 DRM 密钥提供商信息。",
+      "input": "DescribeDrmKeyProviderInfoRequest",
+      "name": "查询 DRM 密钥提供商信息",
+      "output": "DescribeDrmKeyProviderInfoResponse"
+    },
     "DescribeEventConfig": {
       "document": "腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。\n\n开发者可以通过本接口来查询当前配置事件通知的接收方式、接收地址以及哪些事件开启了接收回调通知。\n\n默认接口请求频率限制：100次/秒。",
       "input": "DescribeEventConfigRequest",
@@ -732,6 +738,12 @@
       "name": "刷新URL",
       "output": "RefreshUrlCacheResponse"
     },
+    "RemoveWatermark": {
+      "document": "智能去除水印",
+      "input": "RemoveWatermarkRequest",
+      "name": "智能去除水印",
+      "output": "RemoveWatermarkResponse"
+    },
     "ResetProcedureTemplate": {
       "document": "重新设置用户自定义任务流模板的内容。  ",
       "input": "ResetProcedureTemplateRequest",
@@ -751,13 +763,19 @@
       "output": "ReviewImageResponse"
     },
     "SearchMedia": {
-      "document": "搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：\n- 指定文件 ID 集合 FileIds ，返回匹配集合中任意 ID 的媒体。\n- 根据多个媒体文件名 Names 或描述信息 Descriptions 进行模糊搜索。\n- 根据多个文件名前缀 NamePrefixes 进行搜索。\n- 指定分类集合 ClassIds（见输入参数），返回满足集合中任意分类的媒体。例如：媒体分类有电影、电视剧、综艺等，其中电影分类下又有子分类历史片、动作片、言情片。如果 ClassIds 指定了电影、电视剧，那么电影和电视剧下的所有子分类都会返回；而如果 ClassIds 指定的是历史片、动作片，那么只有这2个子分类下的媒体才会返回。\n- 指定标签集合 Tags（见输入参数），返回满足集合中任意标签的媒体。例如：媒体标签有二次元、宫斗、鬼畜，如果 Tags 指定了二次元、鬼畜2个标签，那么只要符合这2个标签中任意一个的媒体都会被检索出来。\n- 指定文件类型集合 Categories（见输入参数），返回满足集合中任意类型的媒体。例如：文件类型有 Video（视频）、 Audio （音频）、 Image （图片）。如果Categories指定了 Video 和 Audio 2个文件类型，那么符合这些类型的媒体都会被检索出来。\n- 指定来源集合 SourceTypes（见输入参数），返回满足集合中任意来源的媒体。例如：媒体来源有 Record (直播录制)、Upload （上传）等。如果 SourceTypes 指定了 Record 和 Upload ，那么符合这些来源的媒体都会被检索出来。\n- 指定直播推流码集合 StreamIds（见输入参数）筛选直播录制的媒体。\n- 指定视频 ID 集合 Vids （见输入参数）筛选直播录制的媒体。\n- 指定媒体的创建时间范围筛选媒体。\n- （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）指定单个文本 Text 对媒体文件名或描述信息进行模糊搜索。\n- （不推荐：应使用 SourceTypes 替代）指定单个媒体文件来源 SourceType 进行搜索。\n- （不推荐：应使用 StreamIds 替代）指定单个推流直播码 StreamId 进行搜索。\n- （不推荐：应使用 Vids 替代）指定单个视频 ID Vid 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个起始创建时间 StartTime 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个结尾创建时间 EndTime 进行搜索。\n- 以上参数之间可以任意组合进行检索。例如：筛选创建时间在2018年12月1日12:00:00到2018年12月8日12:00:00之间、分类为电影或电视剧、带有宫斗和悬疑标签的媒体。注意，任何支持数组输入的参数，其元素之间的搜索逻辑为‘或’。所有参数之间的逻辑关系为‘与’。\n\n- 允许对结果根据创建时间进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。\n- 允许通过 Filters 控制返回的媒体信息种类（默认返回所有信息）。可选输入包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n\n<div id=\"maxResultsDesc\">接口返回结果数限制：</div>\n- <b><a href=\"#p_offset\">Offset</a> 和 <a href=\"#p_limit\">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>\n- <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>",
+      "document": "搜索媒体信息，支持多种条件筛选，以及支持对返回结果排序、过滤等功能，具体包括：\n- 指定文件 ID 集合 FileIds ，返回匹配集合中任意 ID 的媒体。\n- 根据多个媒体文件名 Names 或描述信息 Descriptions 进行模糊搜索。\n- 根据多个文件名前缀 NamePrefixes 进行搜索。\n- 指定分类集合 ClassIds（见输入参数），返回满足集合中任意分类的媒体。例如：媒体分类有电影、电视剧、综艺等，其中电影分类下又有子分类历史片、动作片、言情片。如果 ClassIds 指定了电影、电视剧，那么电影和电视剧下的所有子分类都会返回；而如果 ClassIds 指定的是历史片、动作片，那么只有这2个子分类下的媒体才会返回。\n- 指定标签集合 Tags（见输入参数），返回满足集合中任意标签的媒体。例如：媒体标签有二次元、宫斗、鬼畜，如果 Tags 指定了二次元、鬼畜2个标签，那么只要符合这2个标签中任意一个的媒体都会被检索出来。\n- 指定文件类型集合 Categories（见输入参数），返回满足集合中任意类型的媒体。例如：文件类型有 Video（视频）、 Audio （音频）、 Image （图片）。如果Categories指定了 Video 和 Audio 2个文件类型，那么符合这些类型的媒体都会被检索出来。\n- 指定来源集合 SourceTypes（见输入参数），返回满足集合中任意来源的媒体。例如：媒体来源有 Record (直播录制)、Upload （上传）等。如果 SourceTypes 指定了 Record 和 Upload ，那么符合这些来源的媒体都会被检索出来。\n- 指定直播推流码集合 StreamIds（见输入参数）筛选直播录制的媒体。\n- 指定视频 ID 集合 Vids （见输入参数）筛选直播录制的媒体。\n- 指定媒体的创建时间范围筛选媒体。\n- 指定 TRTC 应用 ID 集合筛选媒体。\n- 指定 TRTC 房间 ID 集合筛选媒体。\n- （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）指定单个文本 Text 对媒体文件名或描述信息进行模糊搜索。\n- （不推荐：应使用 SourceTypes 替代）指定单个媒体文件来源 SourceType 进行搜索。\n- （不推荐：应使用 StreamIds 替代）指定单个推流直播码 StreamId 进行搜索。\n- （不推荐：应使用 Vids 替代）指定单个视频 ID Vid 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个起始创建时间 StartTime 进行搜索。\n- （不推荐：应使用 CreateTime 替代）指定单个结尾创建时间 EndTime 进行搜索。\n- 以上参数之间可以任意组合进行检索。例如：筛选创建时间在2018年12月1日12:00:00到2018年12月8日12:00:00之间、分类为电影或电视剧、带有宫斗和悬疑标签的媒体。注意，任何支持数组输入的参数，其元素之间的搜索逻辑为‘或’。所有参数之间的逻辑关系为‘与’。\n\n- 允许对结果根据创建时间进行排序并分页返回，通过 Offset 和 Limit （见输入参数）来控制分页。\n- 允许通过 Filters 控制返回的媒体信息种类（默认返回所有信息）。可选输入包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n\n<div id=\"maxResultsDesc\">接口返回结果数限制：</div>\n- <b><a href=\"#p_offset\">Offset</a> 和 <a href=\"#p_limit\">Limit</a> 两个参数影响单次分页查询结果数。特别注意：当这2个值都缺省时，本接口最多只返回10条查询结果。</b>\n- <b>最大支持返回5000条搜索结果，超出部分不再支持查询。如果搜索结果量太大，建议使用更精细的筛选条件来减少搜索结果。</b>",
       "input": "SearchMediaRequest",
       "name": "搜索媒体信息",
       "output": "SearchMediaResponse"
     },
+    "SetDrmKeyProviderInfo": {
+      "document": "设置 DRM 密钥提供商信息。",
+      "input": "SetDrmKeyProviderInfoRequest",
+      "name": "设置 DRM 密钥提供商信息",
+      "output": "SetDrmKeyProviderInfoResponse"
+    },
     "SimpleHlsClip": {
-      "document": "对 HLS 视频进行按时间段裁剪，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段长久保存的场景；\n- 剪辑不固化：剪辑得到的视频附属于输入文件，没有独立 FileId；适用于将精彩片段临时分享的场景。\n\n注意：\n- 剪辑是基于输入 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n###剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始输入视频影响（即使原始输入视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始输入视频相互独立，可以独立管理、长久保存。\n\n###剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与原始输入视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与原始输入的完整视频有效期是一致的。一旦原始输入的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。",
+      "document": "对 HLS 视频进行按时间段裁剪，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段长久保存的场景；\n- 剪辑不固化：剪辑得到的视频附属于输入文件，没有独立 FileId；适用于将精彩片段临时分享的场景。\n\n注意：\n- 剪辑是基于输入 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始输入视频影响（即使原始输入视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始输入视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与原始输入视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与原始输入的完整视频有效期是一致的。一旦原始输入的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。",
       "input": "SimpleHlsClipRequest",
       "name": "简单 HLS 剪辑",
       "output": "SimpleHlsClipResponse"
@@ -1207,6 +1225,16 @@
           "example": "无",
           "member": "string",
           "name": "DrmType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DRM 的密钥提供商，取值范围：\n<li>SDMC：华曦达；</li>\n<li>VOD：云点播。</li>\n默认值为 VOD 。",
+          "example": "无",
+          "member": "string",
+          "name": "DrmKeyProvider",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2285,7 +2313,7 @@
         },
         {
           "default": "",
-          "document": "语音全文识别片段列表文件 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。。",
+          "document": "语音全文识别片段列表文件 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -2295,10 +2323,46 @@
         },
         {
           "default": "",
-          "document": "字幕文件 Url。",
+          "document": "生成的字幕列表，对应 [语音全文识别任务控制参数](https://cloud.tencent.com/document/api/266/31773#AsrFullTextConfigureInfo) SubtitleFormats。",
+          "example": "无",
+          "member": "AiRecognitionTaskAsrFullTextResultOutputSubtitleItem",
+          "name": "SubtitleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成的字幕文件 Url，对应 [语音全文识别任务控制参数](https://cloud.tencent.com/document/api/266/31773#AsrFullTextConfigureInfo) SubtitleFormat。",
           "example": "http://123xxx",
           "member": "string",
           "name": "SubtitleUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskAsrFullTextResultOutputSubtitleItem": {
+      "document": "字幕信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "字幕文件格式，取值范围：\n<li>vtt：WebVTT 字幕文件；</li>\n<li>srt：SRT 字幕文件。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕文件 Url。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5555,6 +5619,7 @@
         {
           "default": "",
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -5563,7 +5628,18 @@
         },
         {
           "default": "",
-          "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
+          "document": "生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SubtitleFormats",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>",
+          "example": "无",
           "member": "string",
           "name": "SubtitleFormat",
           "required": false,
@@ -5579,6 +5655,7 @@
         {
           "default": "",
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -5587,7 +5664,18 @@
         },
         {
           "default": "",
-          "document": "生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
+          "document": "字幕格式列表操作信息。",
+          "example": "无",
+          "member": "SubtitleFormatsOperation",
+          "name": "SubtitleFormatsOperation",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>",
+          "example": "无",
           "member": "string",
           "name": "SubtitleFormat",
           "required": false,
@@ -7260,6 +7348,15 @@
           "example": "无",
           "member": "string",
           "name": "DrmType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DRM 的密钥提供商，取值范围：\n<li>SDMC：华曦达；</li>\n<li>VOD：云点播。</li>\n默认为 VOD 。",
+          "example": "无",
+          "member": "string",
+          "name": "DrmKeyProvider",
           "required": false,
           "type": "string"
         },
@@ -10593,6 +10690,42 @@
       ],
       "type": "object"
     },
+    "DescribeDrmKeyProviderInfoRequest": {
+      "document": "DescribeDrmKeyProviderInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDrmKeyProviderInfoResponse": {
+      "document": "DescribeDrmKeyProviderInfo返回参数结构体",
+      "members": [
+        {
+          "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SDMCDrmKeyProviderInfo",
+          "name": "SDMCInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventConfigRequest": {
       "document": "DescribeEventConfig请求参数结构体",
       "members": [
@@ -12053,7 +12186,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>ReduceMediaBitrate：降码率任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li> ReviewAudioVideo：音视频审核任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -12201,6 +12334,24 @@
           "example": "无",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemoveWatermarkTask",
+          "name": "RemoveWatermarkTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewAudioVideoTask",
+          "name": "ReviewAudioVideoTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -13393,7 +13544,7 @@
         },
         {
           "default": "",
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成；</li>\n<li>ReviewAudioVideoComplete：音视频审核完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -13543,10 +13694,30 @@
         },
         {
           "default": "",
+          "document": "智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RemoveWatermarkTask",
+          "name": "RemoveWatermarkCompleteEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ReviewAudioVideoTask",
+          "name": "ReviewAudioVideoCompleteEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -14814,6 +14985,33 @@
         },
         {
           "default": "",
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。",
           "example": "无",
           "member": "uint64",
@@ -14829,6 +15027,15 @@
           "name": "Host",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "剪辑的直播流信息：\n<li>默认剪辑直播原始流。</li>\n<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>",
+          "example": "无",
+          "member": "LiveRealTimeClipStreamInfo",
+          "name": "StreamInfo",
+          "required": false,
+          "type": "object"
         },
         {
           "default": "",
@@ -14898,6 +15105,32 @@
         }
       ],
       "type": "object"
+    },
+    "LiveRealTimeClipStreamInfo": {
+      "document": "直播即时剪辑流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "直播流类型，可选值：\n<li>Original（原始流，<b>默认值</b>）。</li>\n<li>Transcoding（转码流）。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播转码模板ID。\n<b>当Type值为\"Transcoding\"时，必须填写。</b>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ManageTaskRequest": {
       "document": "ManageTask请求参数结构体",
@@ -17188,6 +17421,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TRTC 伴生录制信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrtcRecordInfo",
+          "name": "TrtcRecordInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17410,6 +17653,7 @@
         {
           "default": "",
           "document": "各规格的转码信息集合，每个元素代表一个规格的转码结果。",
+          "example": "无",
           "member": "MediaTranscodeItem",
           "name": "TranscodeSet",
           "required": true,
@@ -21617,6 +21861,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费状态，取值有：\n<li>Never：不自动续费。</li>\n<li>Expire：到期自动续费。</li>\n<li>ExpireOrUseOut：到期或用完自动续费。</li>\n<li>NotSupport：不支持。</li>",
+          "example": "Expire",
+          "member": "string",
+          "name": "RenewStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22263,6 +22517,225 @@
       ],
       "type": "object"
     },
+    "RemoveWaterMarkTaskInput": {
+      "document": "智能去除水印任务的输入。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveWaterMarkTaskOutput": {
+      "document": "智能去除水印任务的输出。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频 ID。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元信息。包括大小、时长、视频流信息、音频流信息等。",
+          "example": "null",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveWatermarkRequest": {
+      "document": "RemoveWatermark请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID 。",
+          "example": "12xxx",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "abc",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "demo",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "1",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "该字段已无效。",
+          "example": "Finish",
+          "member": "string",
+          "name": "TasksNotifyMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWatermarkResponse": {
+      "document": "RemoveWatermark返回参数结构体",
+      "members": [
+        {
+          "document": "任务 ID 。",
+          "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWatermarkTask": {
+      "document": "智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID 。",
+          "example": "125xxx-procedurev2-xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "“”",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能去除水印任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RemoveWaterMarkTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能去除水印任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RemoveWaterMarkTaskOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "demo",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "demo",
+          "member": "string",
+          "name": "SessionContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResetProcedureTemplateRequest": {
       "document": "ResetProcedureTemplate请求参数结构体",
       "members": [
@@ -22515,6 +22988,254 @@
       ],
       "usage": "out"
     },
+    "ReviewAudioVideoSegmentItem": {
+      "document": "音视频审核片段。",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段涉及令人反感的信息的分数。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴别涉及违规信息的结果建议，取值范围：\n<li>review：疑似违规，建议复审；</li>\n<li>block：确认违规，建议封禁。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terrorism：暴恐；</li>\n<li>Political：令人不适宜的信息。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 Image 或 Voice 时有效，表示当前标签（Label）下的二级标签。\n当 Form 为 Image 且 Label 为 Porn 时，取值范围：\n<li>porn：色情；</li>\n<li>vulgar：低俗。</li>\n\n当 Form 为 Image 且 Label 为 Terrorism 时，取值范围：\n<li>guns：武器枪支；</li>\n<li>bloody：血腥画面；</li>\n<li>banners：暴恐旗帜；</li>\n<li> scenario：暴恐画面；</li>\n<li>explosion：爆炸火灾。</li>\n\n当 Form 为 Image 且 Label 为 Political 时，取值范围：\n<li>violation_photo：违规图标；</li>\n<li>nation_politician：国家领导人；</li>\n<li>province_politician：省部级领导人；</li>\n<li>county_politician：市/县级领导人；</li>\n<li>sensitive_politician：敏感相关人物；</li>\n<li>foreign_politician：国外政治人物；</li>\n<li>sensitive_entertainment：敏感娱乐明星；</li>\n<li>sensitive_military：敏感军事人物。</li>\n\n当 Form 为 Voice 且 Label 为 Porn 时，取值范围：\n<li>moan：娇喘。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Form",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 Image 或 OCR 时有效，表示嫌疑人物、图标或文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 OCR 或 ASR 时有效，表示识别出来的 OCR 或 ASR 文本内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 OCR 或 ASR 时有效，表示嫌疑片段命中的违规关键词列表。",
+          "example": "无",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoTask": {
+      "document": "音视频审核任务信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音视频审核任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewAudioVideoTaskOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoTaskOutput": {
+      "document": "音视频审核任务的输出。",
+      "members": [
+        {
+          "default": "",
+          "document": "音视频内容审核的结果建议，取值范围：\n<li>pass：建议通过；</li>\n<li>review：建议复审；</li>\n<li>block：建议封禁。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terrorism：暴恐；</li>\n<li>Political：令人不适宜的信息。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Form",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有违规信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 10个 元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
+          "member": "ReviewAudioVideoSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及违规信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及违规信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ReviewImageRequest": {
       "document": "ReviewImage请求参数结构体",
       "members": [
@@ -22568,6 +23289,52 @@
         }
       ],
       "type": "object"
+    },
+    "SDMCDrmKeyProviderInfo": {
+      "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "华曦达分配的用户 ID。最大长度为128个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "华曦达分配的用户密钥 ID。最大长度为128个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "华曦达分配的用户密钥内容。最大长度为128个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "FairPlayCertificateUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型",
@@ -22905,6 +23672,24 @@
         },
         {
           "default": "",
+          "document": "TRTC 应用 ID 集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "TrtcSdkAppIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "TRTC 房间 ID 集合。匹配集合中的任意元素。\n<li>单个房间 ID 长度限制：64个字符；</li>\n<li>数组长度限制：10。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TrtcRoomIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）\n搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。",
           "example": "无",
           "member": "string",
@@ -23020,6 +23805,42 @@
       ],
       "usage": "in"
     },
+    "SetDrmKeyProviderInfoRequest": {
+      "document": "SetDrmKeyProviderInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",
+          "example": "无",
+          "member": "SDMCDrmKeyProviderInfo",
+          "name": "SDMCInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetDrmKeyProviderInfoResponse": {
+      "document": "SetDrmKeyProviderInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SimpleAesEdkPair": {
       "document": "简单加密加解密密钥对。",
       "members": [
@@ -23093,6 +23914,51 @@
           "name": "IsPersistence",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "剪辑固化后的视频存储过期时间。格式参照 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。填“9999-12-31T23:59:59Z”表示永不过期。过期后该媒体文件及其相关资源（转码结果、雪碧图等）将被永久删除。仅 IsPersistence 为 1 时有效，默认剪辑固化的视频永不过期。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "剪辑固化后的视频点播任务流处理，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "Procedure",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>\n仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23123,6 +23989,15 @@
           "example": "无",
           "member": "string",
           "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "剪辑固化后的视频任务流 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24028,6 +24903,32 @@
         }
       ],
       "usage": "out"
+    },
+    "SubtitleFormatsOperation": {
+      "document": "字幕格式列表操作。",
+      "members": [
+        {
+          "default": "",
+          "document": "操作类型，取值范围：\n<li>add：添加 Formats 指定的格式列表；</li>\n<li>delete：删除 Formats 指定的格式列表；<l/i>\n<li>reset：将已配置的格式列表重置为  Formats 指定的格式列表。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕格式列表，取值范围：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Formats",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SvgWatermarkInput": {
       "document": "SVG水印模板输入参数",
@@ -25110,6 +26011,52 @@
         }
       ],
       "usage": "both"
+    },
+    "TrtcRecordInfo": {
+      "document": "TRTC伴生录制信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC 应用 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TRTC 房间 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与录制的用户 ID 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UrlSignatureAuthPolicy": {
       "document": "基于签名的 Key 防盗链信息",

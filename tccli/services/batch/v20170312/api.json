@@ -2516,34 +2516,62 @@
         {
           "default": "",
           "document": "Docker Hub 用户名或 Tencent Registry 用户名",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "Docker Hub 密码或 Tencent Registry 密码",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”",
+          "example": "无",
           "member": "string",
           "name": "Server",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拉取Docker镜像重试次数。默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxRetryCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拉取Docker镜像失败时延迟时间。单位：秒。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DelayOnRetry",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

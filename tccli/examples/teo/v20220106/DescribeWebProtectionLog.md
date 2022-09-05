@@ -15,7 +15,8 @@ tccli teo DescribeWebProtectionLog --cli-unfold-argument  \
     --EndTime 2020-09-22T00:00:00+00:00 \
     --QueryCondition.0.Operator equals \
     --QueryCondition.0.Value monitor \
-    --QueryCondition.0.Key action
+    --QueryCondition.0.Key action \
+    --Area overseas
 ```
 
 Output: 

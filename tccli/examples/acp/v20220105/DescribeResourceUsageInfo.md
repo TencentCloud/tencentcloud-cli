@@ -51,3 +51,31 @@ Output:
 }
 ```
 
+**Example 3: 获取漏洞扫描资源使用情况**
+
+
+
+Input: 
+
+```
+tccli acp DescribeResourceUsageInfo --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5251f818-f384-49f0-8681-d4dba6d12826",
+        "Result": 0,
+        "Data": {
+            "ResourceName": "sv_011886_keen_p",
+            "Total": 0,
+            "UnusedCount": 0
+        }
+    }
+}
+```
+

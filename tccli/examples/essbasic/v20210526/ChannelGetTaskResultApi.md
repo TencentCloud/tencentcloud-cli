@@ -22,7 +22,8 @@ Output:
         "ResourceId": "yDRt2*********EytoAXw44x",
         "TaskId": "2022*********4589282",
         "TaskMessage": "任务处理完成",
-        "TaskStatus": 8
+        "TaskStatus": 8,
+        "PreviewUrl": "xxxxxx"
     }
 }
 ```

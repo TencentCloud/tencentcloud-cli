@@ -3156,7 +3156,7 @@
         },
         {
           "default": "",
-          "document": "主实例的可用区信息，购买灾备实例时必填。",
+          "document": "主实例的可用区信息，购买灾备、RO实例时必填。",
           "example": "ap-beijing",
           "member": "string",
           "name": "MasterRegion",
@@ -3309,7 +3309,7 @@
         },
         {
           "default": "",
-          "document": "告警策略id数组。",
+          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "member": "int64",
           "name": "AlarmPolicyList",
@@ -3606,7 +3606,7 @@
         },
         {
           "default": "",
-          "document": "主实例地域信息，购买灾备实例时，该字段必填。",
+          "document": "主实例地域信息，购买灾备、RO实例时，该字段必填。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MasterRegion",
@@ -3687,7 +3687,7 @@
         },
         {
           "default": "",
-          "document": "告警策略id数组。",
+          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "member": "int64",
           "name": "AlarmPolicyList",
@@ -7427,6 +7427,33 @@
           "name": "EngineVersions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引擎类型，缺省则查询所有",
+          "example": "[\"innodb\"]",
+          "member": "string",
+          "name": "EngineTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板名称，缺省则查询所有",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "TemplateNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板id，缺省则查询所有",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10074,6 +10101,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10082,6 +10110,7 @@
         {
           "default": "",
           "document": "数据库账号的新密码。密码应至少包含字母、数字和字符（_+-&=!@#$%^*()）中的两种，长度为8-64个字符。",
+          "example": "Gx18ux23F^X",
           "member": "string",
           "name": "NewPassword",
           "required": true,
@@ -10090,6 +10119,7 @@
         {
           "default": "",
           "document": "云数据库账号。",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -10103,8 +10133,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15011,6 +15043,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -15019,6 +15052,7 @@
         {
           "default": "",
           "document": "实例 ROOT 账号的密码。",
+          "example": "sxxxxxx",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -15032,8 +15066,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -36,11 +36,23 @@
       "name": "创建签署流程",
       "output": "CreateFlowResponse"
     },
+    "CreateFlowApprovers": {
+      "document": "补充签署流程本企业签署人信息\n适用场景：在通过模版或者文件发起合同时，若未指定本企业签署人信息，则流程发起后，可以调用此接口补充签署人。\n同一签署人可以补充多个员工作为候选签署人,最终签署人取决于谁先领取合同完成签署。\n\n注：目前暂时只支持补充来源于企业微信的员工作为候选签署人",
+      "input": "CreateFlowApproversRequest",
+      "name": "补充签署流程本企业签署人信息",
+      "output": "CreateFlowApproversResponse"
+    },
     "CreateFlowByFiles": {
       "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。\n适用场景1：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。\n适用场景2：可通过该接口传入制式合同文件，同时在指定位置添加签署控件。可以起到接口创建临时模板的效果。如果是标准的制式文件，建议使用模板功能生成模板ID进行合同流程的生成。\n注意事项：该接口需要依赖“多文件上传”接口生成pdf资源编号（FileIds）进行使用。",
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse"
+    },
+    "CreateFlowEvidenceReport": {
+      "document": "创建出证报告，返回报告 URL",
+      "input": "CreateFlowEvidenceReportRequest",
+      "name": "创建并返回出证报告",
+      "output": "CreateFlowEvidenceReportResponse"
     },
     "CreateFlowSignReview": {
       "document": "提交企业签署流程审批结果\n适用场景: \n在通过接口(CreateFlow 或者CreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。\n",
@@ -71,6 +83,12 @@
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse"
+    },
+    "DescribeFlowInfo": {
+      "document": "查询合同详情\n适用场景：可用于主动查询某个合同详情信息。",
+      "input": "DescribeFlowInfoRequest",
+      "name": "查询合同详情",
+      "output": "DescribeFlowInfoResponse"
     },
     "DescribeFlowTemplates": {
       "document": "二期接口-查询模板\n适用场景：当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取自己主体下的模板列表，以及每个模板内的控件信息。该接口常用来配合“创建电子文档”接口作为前置的接口使用。",
@@ -226,6 +244,36 @@
           "name": "PreReadTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人userId，非企微场景不使用此字段",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段",
+          "example": "无",
+          "member": "string",
+          "name": "CustomApproverTag",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -800,7 +848,7 @@
         },
         {
           "default": "",
-          "document": "文件名列表,单个文件名最大长度200个字符",
+          "document": "文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起",
           "example": "无",
           "member": "string",
           "name": "FileNames",
@@ -876,6 +924,51 @@
       ],
       "type": "object"
     },
+    "CreateFlowApproversRequest": {
+      "document": "CreateFlowApprovers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "补充签署人信息",
+          "example": "无",
+          "member": "FillApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowApproversResponse": {
+      "document": "CreateFlowApprovers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowByFilesRequest": {
       "document": "CreateFlowByFiles请求参数结构体",
       "members": [
@@ -908,7 +1001,7 @@
         },
         {
           "default": "",
-          "document": "签署pdf文件的资源编号列表，通过UploadFiles接口获取",
+          "document": "签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起",
           "example": "无",
           "member": "string",
           "name": "FileIds",
@@ -1028,6 +1121,51 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowEvidenceReportRequest": {
+      "document": "CreateFlowEvidenceReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowEvidenceReportResponse": {
+      "document": "CreateFlowEvidenceReport返回参数结构体",
+      "members": [
+        {
+          "document": "出证报告 URL（有效期5分钟）",
+          "example": "https://file.xxx",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1668,6 +1806,51 @@
       ],
       "type": "object"
     },
+    "DescribeFlowInfoRequest": {
+      "document": "DescribeFlowInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的流程ID列表，限制最大100个",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "调用方用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowInfoResponse": {
+      "document": "DescribeFlowInfo返回参数结构体",
+      "members": [
+        {
+          "document": "签署流程信息",
+          "example": "无",
+          "member": "FlowDetailInfo",
+          "name": "FlowDetailInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowTemplatesRequest": {
       "document": "DescribeFlowTemplates请求参数结构体",
       "members": [
@@ -1869,6 +2052,42 @@
       ],
       "usage": "out"
     },
+    "FillApproverInfo": {
+      "document": "补充签署人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署人签署Id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "RecipientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人来源\nWEWORKAPP: 企业微信",
+          "example": "WEWORKAPP",
+          "member": "string",
+          "name": "ApproverSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业自定义账号Id\nWEWORKAPP场景下指企业自有应用获取企微明文的userid",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "CustomUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Filter": {
       "document": "查询过滤条件",
       "members": [
@@ -1892,6 +2111,142 @@
         }
       ],
       "usage": "both"
+    },
+    "FlowApproverDetail": {
+      "document": "签署人详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人名字",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人的状态",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproveStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板配置时候的签署人id,与控件绑定",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiptId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署顺序",
+          "example": "无",
+          "member": "int64",
+          "name": "SignOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人签署时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与者类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人侧用户来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户自定义签署人标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomApproverTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FlowBrief": {
       "document": "流程信息摘要",
@@ -2084,7 +2439,7 @@
         },
         {
           "default": "",
-          "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个",
+          "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -2101,9 +2456,115 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义签署人标识，64位长度，保证唯一。非企微场景不使用此字段",
+          "example": "无",
+          "member": "string",
+          "name": "CustomApproverTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
+    },
+    "FlowDetailInfo": {
+      "document": "此结构体(FlowDetailInfo)描述的是合同(流程)的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合同(流程)的Id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的名字",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的状态",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流程的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的创建时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的签署人数组",
+          "example": "无",
+          "member": "FlowApproverDetail",
+          "name": "FlowApproverInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FormField": {
       "document": "电子文档的控件填充信息",

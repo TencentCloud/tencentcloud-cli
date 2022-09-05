@@ -11,7 +11,8 @@ tccli teo DescribeWebProtectionData --cli-unfold-argument  \
     --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --Domains www.baidu.com \
-    --EndTime 2020-09-22T00:00:00+00:00
+    --EndTime 2020-09-22T00:00:00+00:00 \
+    --Area overseas
 ```
 
 Output: 

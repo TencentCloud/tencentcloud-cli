@@ -108,6 +108,12 @@
       "name": "创建容器实例",
       "output": "CreateEKSContainerInstancesResponse"
     },
+    "CreateEdgeCVMInstances": {
+      "document": "创建边缘容器CVM机器",
+      "input": "CreateEdgeCVMInstancesRequest",
+      "name": "创建边缘容器CVM机器",
+      "output": "CreateEdgeCVMInstancesResponse"
+    },
     "CreateEdgeLogConfig": {
       "document": "创建边缘集群日志采集配置",
       "input": "CreateEdgeLogConfigRequest",
@@ -277,9 +283,9 @@
       "output": "DeletePrometheusAlertRuleResponse"
     },
     "DeletePrometheusClusterAgent": {
-      "document": "解除2.0实例的集群关联",
+      "document": "解除TMP实例的集群关联",
       "input": "DeletePrometheusClusterAgentRequest",
-      "name": "解除2.0实例的集群关联",
+      "name": "解除TMP实例的集群关联",
       "output": "DeletePrometheusClusterAgentResponse"
     },
     "DeletePrometheusConfig": {
@@ -1451,6 +1457,52 @@
       ],
       "usage": "out"
     },
+    "CUDNN": {
+      "document": "cuDNN的版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cuDNN的版本",
+          "example": "7.5.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的名字",
+          "example": "libcudnn7_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的Doc名字",
+          "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "DocName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cuDNN的Dev名字",
+          "example": "libcudnn7-dev_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "DevName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Capabilities": {
       "document": "cloudrun安全特性能力",
       "members": [
@@ -1881,6 +1933,16 @@
           "name": "QGPUShareEnable",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行时版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.4.3",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4478,6 +4540,96 @@
       ],
       "type": "object"
     },
+    "CreateEdgeCVMInstancesRequest": {
+      "document": "CreateEdgeCVMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls-xxxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。",
+          "example": "{}",
+          "member": "string",
+          "name": "RunInstancePara",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM所属Region",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CvmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CVM数量",
+          "example": "3",
+          "member": "int64",
+          "name": "CvmCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例扩展信息",
+          "example": "{}",
+          "member": "string",
+          "name": "External",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义脚本",
+          "example": "whoami",
+          "member": "string",
+          "name": "UserScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启弹性网卡功能",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEni",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeCVMInstancesResponse": {
+      "document": "CreateEdgeCVMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "cvm id 列表",
+          "example": "[\"cvm-197252sp\",\"cvm-19725win\",\"cvm-19623ash\"]",
+          "member": "string",
+          "name": "CvmIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEdgeLogConfigRequest": {
       "document": "CreateEdgeLogConfig请求参数结构体",
       "members": [
@@ -5111,6 +5263,33 @@
           "name": "PublicLB",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "集群的级别",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群是否支持自动升配",
+          "example": "flase",
+          "member": "bool",
+          "name": "AutoUpgradeClusterLevel",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "集群计费方式",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5135,6 +5314,22 @@
         }
       ],
       "type": "object"
+    },
+    "CustomDriver": {
+      "document": "自定义驱动信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义GPU驱动地址链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://abc.com/NVIDIA-Linux-x86_64-460.32.03.run",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DNSConfig": {
       "document": "自定义DNS配置",
@@ -5872,7 +6067,26 @@
     },
     "DeletePrometheusClusterAgentRequest": {
       "document": "DeletePrometheusClusterAgent请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "agent列表",
+          "example": "无",
+          "member": "PrometheusAgentInfo",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prome-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeletePrometheusClusterAgentResponse": {
@@ -6604,6 +6818,33 @@
           "name": "ClusterExternalACL",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls.domain",
+          "member": "string",
+          "name": "ClusterExternalDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "内网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls.domain",
+          "member": "string",
+          "name": "ClusterIntranetDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外网安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -10135,6 +10376,32 @@
       ],
       "usage": "both"
     },
+    "DriverVersion": {
+      "document": "GPU驱动和CUDA的版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "GPU驱动或者CUDA的版本",
+          "example": "418.126.02",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU驱动或者CUDA的名字",
+          "example": "NVIDIA-Linux-x86_64-418.126.02.run",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ECMEnhancedService": {
       "document": "ECM增强服务",
       "members": [
@@ -11851,6 +12118,62 @@
       ],
       "type": "object"
     },
+    "GPUArgs": {
+      "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本以及是否开启MIG",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用MIG特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "MIGEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU驱动版本信息",
+          "example": "无",
+          "member": "DriverVersion",
+          "name": "Driver",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CUDA版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DriverVersion",
+          "name": "CUDA",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cuDNN版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CUDNN",
+          "name": "CUDNN",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义GPU驱动信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomDriver",
+          "name": "CustomDriver",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GetClusterLevelPriceRequest": {
       "document": "GetClusterLevelPrice请求参数结构体",
       "members": [
@@ -12654,6 +12977,16 @@
         },
         {
           "default": "",
+          "document": "GPU驱动相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUArgs",
+          "name": "GPUArgs",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
@@ -13308,6 +13641,15 @@
           "name": "SecurityPolicies",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "修改外网访问安全组",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14320,6 +14662,39 @@
         }
       ],
       "usage": "both"
+    },
+    "PrometheusAgentInfo": {
+      "document": "托管Prometheus agent信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PrometheusAgentOverview": {
       "document": "托管prometheus agent概览",
@@ -16815,6 +17190,16 @@
           "name": "Name",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "sg-xxxxx,sg-xxxx",
+          "member": "string",
+          "name": "SecurityGroups",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

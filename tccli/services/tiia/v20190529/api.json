@@ -91,7 +91,7 @@
       "output": "DetectProductBetaResponse"
     },
     "EnhanceImage": {
-      "document": "传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": ">!\n- 图像清晰度增强接口将于2022年8月31日结束免费公测，2022年9月1日起正式转入计费。若您不需要使用本服务，请及时停止使用。价格详情在[计费概述](https://cloud.tencent.com/document/product/865/17627)中提前公示，请您参阅。\n\n传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "EnhanceImageRequest",
       "name": "图像清晰度增强",
       "output": "EnhanceImageResponse"
@@ -308,7 +308,7 @@
         },
         {
           "default": "",
-          "document": "车牌类型；渣土车车牌遮挡时,该值为枚举值“异常”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌\n注意：\n此字段可能返回 null，表示取不到有效值。\n此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -324,6 +324,36 @@
           "name": "PlateLocation",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "判断车牌是否遮挡：“遮挡污损模糊车牌”和\"正常车牌\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PlateStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌遮挡的置信度，0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PlateStatusConfidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌角度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "PlateAngle",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -438,6 +468,26 @@
           "example": "0",
           "member": "int64",
           "name": "ColorConfidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车辆朝向，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Orientation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车辆朝向置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "OrientationConfidence",
           "required": true,
           "type": "int",
           "value_allowed_null": true

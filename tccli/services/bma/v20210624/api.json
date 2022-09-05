@@ -48,6 +48,24 @@
       "name": "新建发函",
       "output": "CreateCRRightResponse"
     },
+    "CreateCRRightFile": {
+      "document": "新增权属文件",
+      "input": "CreateCRRightFileRequest",
+      "name": "新增权属文件",
+      "output": "CreateCRRightFileResponse"
+    },
+    "CreateCRTort": {
+      "document": "举报侵权链接",
+      "input": "CreateCRTortRequest",
+      "name": "举报侵权链接",
+      "output": "CreateCRTortResponse"
+    },
+    "CreateCRUserVerify": {
+      "document": "品牌经营管家-版权保护个人认证接口",
+      "input": "CreateCRUserVerifyRequest",
+      "name": "个人认证",
+      "output": "CreateCRUserVerifyResponse"
+    },
     "CreateCRWork": {
       "document": "版权保护-添加作品接口",
       "input": "CreateCRWorkRequest",
@@ -125,6 +143,12 @@
       "input": "ModifyCRRightStatusRequest",
       "name": "维权申请",
       "output": "ModifyCRRightStatusResponse"
+    },
+    "ModifyCRWhiteList": {
+      "document": "版权保护-白名单修改接口",
+      "input": "ModifyCRWhiteListRequest",
+      "name": "白名单修改",
+      "output": "ModifyCRWhiteListResponse"
     },
     "UpdateCRWork": {
       "document": "更新作品",
@@ -702,6 +726,51 @@
       ],
       "type": "object"
     },
+    "CreateCRRightFileRequest": {
+      "document": "CreateCRRightFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "File",
+          "name": "FileList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRRightFileResponse": {
+      "document": "CreateCRRightFile返回参数结构体",
+      "members": [
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCRRightRequest": {
       "document": "CreateCRRight请求参数结构体",
       "members": [
@@ -860,6 +929,204 @@
           "example": "xxx",
           "member": "string",
           "name": "TortNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRTortRequest": {
+      "document": "CreateCRTort请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortTitle",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRTortResponse": {
+      "document": "CreateCRTort返回参数结构体",
+      "members": [
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortBodyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRUserVerifyRequest": {
+      "document": "CreateCRUserVerify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户真实姓名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户身份证ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户手机号码",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信验证码",
+          "example": "xxx",
+          "member": "string",
+          "name": "VerificationCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRUserVerifyResponse": {
+      "document": "CreateCRUserVerify返回参数结构体",
+      "members": [
+        {
+          "document": "认证状态 0-认证成功 1-认证失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "认证结果返回",
+          "example": "xxx",
+          "member": "string",
+          "name": "Note",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1839,6 +2106,52 @@
       ],
       "usage": "out"
     },
+    "File": {
+      "document": "权属文件列表",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "FileType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ValidStartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ValidEndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Filter": {
       "document": "过滤参数",
       "members": [],
@@ -1957,11 +2270,20 @@
         },
         {
           "default": "",
-          "document": "监测状态 1-开启监测 2-关闭监测 默认为1",
+          "document": "监测状态 1-开启监测 2-关闭监测",
           "example": "1",
           "member": "string",
           "name": "MonitorStatus",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认不停止，支持续期",
+          "example": "1",
+          "member": "string",
+          "name": "MonitorEnd",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2059,6 +2381,87 @@
     },
     "ModifyCRRightStatusResponse": {
       "document": "ModifyCRRightStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRWhiteListRequest": {
+      "document": "ModifyCRWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "白名单ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WhiteListId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "平台名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "PlatForm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台站点链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "PlatUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作者ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorksId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WhiteSites",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCRWhiteListResponse": {
+      "document": "ModifyCRWhiteList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

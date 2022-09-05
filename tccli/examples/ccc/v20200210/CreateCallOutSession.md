@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ccc CreateCallOutSession --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
-    --UserId FooOrBar@tencent.com \
+    --IsForceUseMobile true \
     --Callee 008612300000000 \
     --Uui fooandbar \
-    --IsForceUseMobile true
+    --UserId FooOrBar@tencent.com \
+    --SdkAppId 1400000000
 ```
 
 Output: 

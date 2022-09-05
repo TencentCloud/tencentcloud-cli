@@ -84,6 +84,12 @@
       "name": "拉取单个号码短信下发状态",
       "output": "PullSmsSendStatusByPhoneNumberResponse"
     },
+    "ReportConversion": {
+      "document": "短信转化率上报。将已接收到短信的流水号上报到腾讯云短信服务。\n>- 注：当前接口以白名单方式对外开放，如有需要请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。",
+      "input": "ReportConversionRequest",
+      "name": "上报转换率",
+      "output": "ReportConversionResponse"
+    },
     "SendSms": {
       "document": "短信发送接口，用于给用户发短信验证码、通知类短信或营销短信。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 注：您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n>- 注：当前接口属于 2021-01-11 版本，如果您仍在使用 [2019-07-11 版本](https://cloud.tencent.com/document/product/382/38778)，建议您使用当前最新版本的接口，版本差异可参考[版本描述](https://cloud.tencent.com/document/product/382/63195#.E7.89.88.E6.9C.AC.E6.8F.8F.E8.BF.B0)。",
       "input": "SendSmsRequest",
@@ -1588,6 +1594,86 @@
         }
       ],
       "type": "object"
+    },
+    "ReportConversionRequest": {
+      "document": "ReportConversion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "短信应用ID。在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
+          "example": "1400000001",
+          "member": "string",
+          "name": "SmsSdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送短信返回的流水号。",
+          "example": "5000:1045710669157053657849499619",
+          "member": "string",
+          "name": "SerialNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户回填时间，UNIX 时间戳（单位：秒）。",
+          "example": "1357702710187",
+          "member": "uint64",
+          "name": "ConversionTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportConversionResponse": {
+      "document": "ReportConversion返回参数结构体",
+      "members": [
+        {
+          "document": "转化率上报响应包体。",
+          "example": "无",
+          "member": "ReportConversionStatus",
+          "name": "ReportConversionStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportConversionStatus": {
+      "document": "转化率上报响应。",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码。上报成功返回 ok。",
+          "example": "ok",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码描述。",
+          "example": "report success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SendSmsRequest": {
       "document": "SendSms请求参数结构体",

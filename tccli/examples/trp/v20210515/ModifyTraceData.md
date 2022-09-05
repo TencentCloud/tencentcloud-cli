@@ -6,12 +6,18 @@ Input:
 
 ```
 tccli trp ModifyTraceData --cli-unfold-argument  \
+    --TraceItems.0.Key  \
     --TraceItems.0.Name xx \
     --TraceItems.0.Value xx \
     --TraceItems.0.ReadOnly True \
     --TraceItems.0.Values xx \
     --TraceItems.0.Hidden True \
     --TraceItems.0.Type xx \
+    --PhaseData.HeadEnabled False \
+    --PhaseData.HeadTitle  \
+    --PhaseData.AppId  \
+    --PhaseData.AppPath  \
+    --PhaseData.AppName  \
     --BatchId xx \
     --Code xx \
     --PhaseName xx \

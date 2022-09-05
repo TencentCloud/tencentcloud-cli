@@ -70,6 +70,8 @@ Output:
         "ClipTask": null,
         "CreateImageSpriteTask": null,
         "PullUploadTask": null,
+        "RemoveWatermarkTask": null,
+        "ReviewAudioVideoTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -131,6 +133,8 @@ Output:
         "ClipTask": null,
         "CreateImageSpriteTask": null,
         "PullUploadTask": null,
+        "RemoveWatermarkTask": null,
+        "ReviewAudioVideoTask": null,
         "RequestId": "62597d15-3fad-4234-af1a-ed33602a6118"
     }
 }
@@ -201,6 +205,8 @@ Output:
         "ClipTask": null,
         "CreateImageSpriteTask": null,
         "PullUploadTask": null,
+        "RemoveWatermarkTask": null,
+        "ReviewAudioVideoTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -246,6 +252,8 @@ Output:
         "ConcatTask": null,
         "ClipTask": null,
         "CreateImageSpriteTask": null,
+        "RemoveWatermarkTask": null,
+        "ReviewAudioVideoTask": null,
         "RequestId": "04db7d25-f590-414a-a341-8f1584f15f84"
     }
 }

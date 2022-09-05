@@ -18,6 +18,12 @@
       "name": "策略绑定标签",
       "output": "BindingPolicyTagResponse"
     },
+    "CleanGrafanaInstance": {
+      "document": "强制销毁 Grafana 实例",
+      "input": "CleanGrafanaInstanceRequest",
+      "name": "强制销毁 Grafana 实例",
+      "output": "CleanGrafanaInstanceResponse"
+    },
     "CreateAlarmNotice": {
       "document": "创建通知模板",
       "input": "CreateAlarmNoticeRequest",
@@ -41,6 +47,24 @@
       "input": "CreateExporterIntegrationRequest",
       "name": "创建 exporter 集成",
       "output": "CreateExporterIntegrationResponse"
+    },
+    "CreateGrafanaInstance": {
+      "document": "创建 Grafana 实例",
+      "input": "CreateGrafanaInstanceRequest",
+      "name": "创建 Grafana 实例",
+      "output": "CreateGrafanaInstanceResponse"
+    },
+    "CreateGrafanaIntegration": {
+      "document": "创建 Grafana 集成配置",
+      "input": "CreateGrafanaIntegrationRequest",
+      "name": "创建 Grafana 集成配置",
+      "output": "CreateGrafanaIntegrationResponse"
+    },
+    "CreateGrafanaNotificationChannel": {
+      "document": "创建 Grafana 告警通道",
+      "input": "CreateGrafanaNotificationChannelRequest",
+      "name": "创建 Grafana 告警通道",
+      "output": "CreateGrafanaNotificationChannelResponse"
     },
     "CreatePolicyGroup": {
       "document": "增加策略组",
@@ -72,6 +96,12 @@
       "name": "创建预聚合规则",
       "output": "CreateRecordingRuleResponse"
     },
+    "CreateSSOAccount": {
+      "document": "Grafana实例授权其他腾讯云用户",
+      "input": "CreateSSOAccountRequest",
+      "name": "授权腾讯云用户",
+      "output": "CreateSSOAccountResponse"
+    },
     "CreateServiceDiscovery": {
       "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "CreateServiceDiscoveryRequest",
@@ -102,6 +132,24 @@
       "name": "删除 exporter 集成",
       "output": "DeleteExporterIntegrationResponse"
     },
+    "DeleteGrafanaInstance": {
+      "document": "删除 Grafana 实例",
+      "input": "DeleteGrafanaInstanceRequest",
+      "name": "删除 Grafana 实例",
+      "output": "DeleteGrafanaInstanceResponse"
+    },
+    "DeleteGrafanaIntegration": {
+      "document": "删除 Grafana 集成配置",
+      "input": "DeleteGrafanaIntegrationRequest",
+      "name": "删除 Grafana 集成配置",
+      "output": "DeleteGrafanaIntegrationResponse"
+    },
+    "DeleteGrafanaNotificationChannel": {
+      "document": "删除 Grafana 告警通道",
+      "input": "DeleteGrafanaNotificationChannelRequest",
+      "name": "删除 Grafana 告警通道",
+      "output": "DeleteGrafanaNotificationChannelResponse"
+    },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
       "input": "DeletePolicyGroupRequest",
@@ -119,6 +167,12 @@
       "input": "DeleteRecordingRulesRequest",
       "name": "删除预聚合规则",
       "output": "DeleteRecordingRulesResponse"
+    },
+    "DeleteSSOAccount": {
+      "document": "Grafana可视化服务 删除授权用户",
+      "input": "DeleteSSOAccountRequest",
+      "name": "删除授权用户",
+      "output": "DeleteSSOAccountResponse"
     },
     "DeleteServiceDiscovery": {
       "document": "删除在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -216,17 +270,71 @@
       "name": "获取条件模板列表",
       "output": "DescribeConditionsTemplateListResponse"
     },
+    "DescribeDNSConfig": {
+      "document": "列出 Grafana DNS 配置",
+      "input": "DescribeDNSConfigRequest",
+      "name": "列出 Grafana DNS 配置",
+      "output": "DescribeDNSConfigResponse"
+    },
     "DescribeExporterIntegrations": {
       "document": "查询 exporter 集成列表",
       "input": "DescribeExporterIntegrationsRequest",
       "name": "查询 exporter 集成列表",
       "output": "DescribeExporterIntegrationsResponse"
     },
+    "DescribeGrafanaConfig": {
+      "document": "列出 Grafana 的设置，即 grafana.ini 文件内容",
+      "input": "DescribeGrafanaConfigRequest",
+      "name": "列出 Grafana 的设置",
+      "output": "DescribeGrafanaConfigResponse"
+    },
+    "DescribeGrafanaEnvironments": {
+      "document": "列出 Grafana 环境变量",
+      "input": "DescribeGrafanaEnvironmentsRequest",
+      "name": "列出 Grafana 环境变量",
+      "output": "DescribeGrafanaEnvironmentsResponse"
+    },
+    "DescribeGrafanaInstances": {
+      "document": "列出用户所有的 Grafana 服务",
+      "input": "DescribeGrafanaInstancesRequest",
+      "name": "列出用户所有的 Grafana 服务",
+      "output": "DescribeGrafanaInstancesResponse"
+    },
+    "DescribeGrafanaIntegrations": {
+      "document": "列出 Grafana 已安装的集成",
+      "input": "DescribeGrafanaIntegrationsRequest",
+      "name": "列出 Grafana 已安装的集成",
+      "output": "DescribeGrafanaIntegrationsResponse"
+    },
+    "DescribeGrafanaNotificationChannels": {
+      "document": "列出 Grafana 告警通道",
+      "input": "DescribeGrafanaNotificationChannelsRequest",
+      "name": "列出 Grafana 告警通道",
+      "output": "DescribeGrafanaNotificationChannelsResponse"
+    },
+    "DescribeGrafanaWhiteList": {
+      "document": "列出 Grafana 白名单",
+      "input": "DescribeGrafanaWhiteListRequest",
+      "name": "列出 Grafana 白名单",
+      "output": "DescribeGrafanaWhiteListResponse"
+    },
+    "DescribeInstalledPlugins": {
+      "document": "列出实例已安装的插件",
+      "input": "DescribeInstalledPluginsRequest",
+      "name": "列出实例已安装的插件",
+      "output": "DescribeInstalledPluginsResponse"
+    },
     "DescribeMonitorTypes": {
       "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
       "name": "查询监控类型",
       "output": "DescribeMonitorTypesResponse"
+    },
+    "DescribePluginOverviews": {
+      "document": "列出可安装的所有 Grafana 插件",
+      "input": "DescribePluginOverviewsRequest",
+      "name": "列出所有 Grafana 插件",
+      "output": "DescribePluginOverviewsResponse"
     },
     "DescribePolicyConditionList": {
       "document": "获取基础告警策略条件",
@@ -282,6 +390,12 @@
       "name": "查询预聚合规则",
       "output": "DescribeRecordingRulesResponse"
     },
+    "DescribeSSOAccount": {
+      "document": "列出当前grafana实例的所有授权账号",
+      "input": "DescribeSSOAccountRequest",
+      "name": "列出授权账号",
+      "output": "DescribeSSOAccountResponse"
+    },
     "DescribeServiceDiscovery": {
       "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "DescribeServiceDiscoveryRequest",
@@ -300,6 +414,24 @@
       "name": "强制释放 Prometheus 实例",
       "output": "DestroyPrometheusInstanceResponse"
     },
+    "EnableGrafanaInternet": {
+      "document": "设置 Grafana 公网访问",
+      "input": "EnableGrafanaInternetRequest",
+      "name": "设置 Grafana 公网访问",
+      "output": "EnableGrafanaInternetResponse"
+    },
+    "EnableGrafanaSSO": {
+      "document": "设置 Grafana 单点登录，使用腾讯云账号",
+      "input": "EnableGrafanaSSORequest",
+      "name": "设置 Grafana 单点登录",
+      "output": "EnableGrafanaSSOResponse"
+    },
+    "EnableSSOCamCheck": {
+      "document": "SSO单点登录时，设置是否cam鉴权",
+      "input": "EnableSSOCamCheckRequest",
+      "name": "设置SSO登录是否鉴权",
+      "output": "EnableSSOCamCheckResponse"
+    },
     "GetMonitorData": {
       "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。",
       "input": "GetMonitorDataRequest",
@@ -311,6 +443,12 @@
       "input": "GetPrometheusAgentManagementCommandRequest",
       "name": "获取 Prometheus Agent 管理相关的命令行",
       "output": "GetPrometheusAgentManagementCommandResponse"
+    },
+    "InstallPlugins": {
+      "document": "安装 Grafana Plugin",
+      "input": "InstallPluginsRequest",
+      "name": "安装 Grafana Plugin",
+      "output": "InstallPluginsResponse"
     },
     "ModifyAlarmNotice": {
       "document": "云监控告警编辑告警通知模板",
@@ -354,6 +492,12 @@
       "name": "修改告警接收人",
       "output": "ModifyAlarmReceiversResponse"
     },
+    "ModifyGrafanaInstance": {
+      "document": "修改 Grafana 实例属性",
+      "input": "ModifyGrafanaInstanceRequest",
+      "name": "修改 Grafana 实例属性",
+      "output": "ModifyGrafanaInstanceResponse"
+    },
     "ModifyPolicyGroup": {
       "document": "更新策略组",
       "input": "ModifyPolicyGroupRequest",
@@ -371,6 +515,12 @@
       "input": "PutMonitorDataRequest",
       "name": "自定义监控上报数据",
       "output": "PutMonitorDataResponse"
+    },
+    "ResumeGrafanaInstance": {
+      "document": "恢复 Grafana 实例",
+      "input": "ResumeGrafanaInstanceRequest",
+      "name": "恢复 Grafana 实例",
+      "output": "ResumeGrafanaInstanceResponse"
     },
     "SendCustomAlarmMsg": {
       "document": "发送自定义消息告警",
@@ -414,6 +564,12 @@
       "name": "删除 Grafana Dashboard",
       "output": "UninstallGrafanaDashboardResponse"
     },
+    "UninstallGrafanaPlugins": {
+      "document": "删除已安装的插件",
+      "input": "UninstallGrafanaPluginsRequest",
+      "name": "删除已安装的插件",
+      "output": "UninstallGrafanaPluginsResponse"
+    },
     "UpdateAlertRule": {
       "document": "更新 Prometheus 的报警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "UpdateAlertRuleRequest",
@@ -426,11 +582,47 @@
       "name": "更新报警策略状态",
       "output": "UpdateAlertRuleStateResponse"
     },
+    "UpdateDNSConfig": {
+      "document": "更新 Grafana 的 DNS 配置",
+      "input": "UpdateDNSConfigRequest",
+      "name": "更新 Grafana 的 DNS 配置",
+      "output": "UpdateDNSConfigResponse"
+    },
     "UpdateExporterIntegration": {
       "document": "更新 exporter 集成配置",
       "input": "UpdateExporterIntegrationRequest",
       "name": "更新 exporter 集成配置",
       "output": "UpdateExporterIntegrationResponse"
+    },
+    "UpdateGrafanaConfig": {
+      "document": "更新 Grafana 配置",
+      "input": "UpdateGrafanaConfigRequest",
+      "name": "更新 Grafana 配置",
+      "output": "UpdateGrafanaConfigResponse"
+    },
+    "UpdateGrafanaEnvironments": {
+      "document": "更新 Grafana 环境变量",
+      "input": "UpdateGrafanaEnvironmentsRequest",
+      "name": "更新 Grafana 环境变量",
+      "output": "UpdateGrafanaEnvironmentsResponse"
+    },
+    "UpdateGrafanaIntegration": {
+      "document": "更新 Grafana 集成配置",
+      "input": "UpdateGrafanaIntegrationRequest",
+      "name": "更新 Grafana 集成配置",
+      "output": "UpdateGrafanaIntegrationResponse"
+    },
+    "UpdateGrafanaNotificationChannel": {
+      "document": "更新 Grafana 告警通道",
+      "input": "UpdateGrafanaNotificationChannelRequest",
+      "name": "更新 Grafana 告警通道",
+      "output": "UpdateGrafanaNotificationChannelResponse"
+    },
+    "UpdateGrafanaWhiteList": {
+      "document": "更新 Grafana 白名单",
+      "input": "UpdateGrafanaWhiteListRequest",
+      "name": "更新 Grafana 白名单",
+      "output": "UpdateGrafanaWhiteListResponse"
     },
     "UpdatePrometheusAgentStatus": {
       "document": "更新 Prometheus CVM Agent 状态",
@@ -450,6 +642,12 @@
       "name": "更新预聚合规则",
       "output": "UpdateRecordingRuleResponse"
     },
+    "UpdateSSOAccount": {
+      "document": "更新已授权账号的备注、权限信息，会直接覆盖原有的信息，不传则不会更新。",
+      "input": "UpdateSSOAccountRequest",
+      "name": "更新账号信息",
+      "output": "UpdateSSOAccountResponse"
+    },
     "UpdateServiceDiscovery": {
       "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "UpdateServiceDiscoveryRequest",
@@ -461,6 +659,12 @@
       "input": "UpgradeGrafanaDashboardRequest",
       "name": "升级 Grafana Dashboard",
       "output": "UpgradeGrafanaDashboardResponse"
+    },
+    "UpgradeGrafanaInstance": {
+      "document": "升级 Grafana 实例",
+      "input": "UpgradeGrafanaInstanceRequest",
+      "name": "升级 Grafana 实例",
+      "output": "UpgradeGrafanaInstanceResponse"
     }
   },
   "metadata": {
@@ -906,6 +1110,16 @@
           "name": "PolicyIds",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后台 amp consumer id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Consumer-asfafasf",
+          "member": "string",
+          "name": "AMPConsumerId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1762,12 +1976,40 @@
       ],
       "usage": "both"
     },
+    "CleanGrafanaInstanceRequest": {
+      "document": "CleanGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-grafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CleanGrafanaInstanceResponse": {
+      "document": "CleanGrafanaInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CommonNamespace": {
       "document": "统一的命名空间信息",
       "members": [
         {
           "default": "",
           "document": "命名空间标示",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -1777,6 +2019,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1786,6 +2029,7 @@
         {
           "default": "",
           "document": "命名空间值",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -1795,6 +2039,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "无",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -1804,6 +2049,7 @@
         {
           "default": "",
           "document": "配置信息",
+          "example": "无",
           "member": "string",
           "name": "Config",
           "required": true,
@@ -1813,6 +2059,7 @@
         {
           "default": "",
           "document": "支持地域列表",
+          "example": "无",
           "member": "string",
           "name": "AvailableRegions",
           "required": true,
@@ -1822,6 +2069,7 @@
         {
           "default": "",
           "document": "排序Id",
+          "example": "无",
           "member": "int64",
           "name": "SortId",
           "required": true,
@@ -1831,10 +2079,57 @@
         {
           "default": "",
           "document": "Dashboard中的唯一表示",
+          "example": "无",
           "member": "string",
           "name": "DashboardId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CommonNamespaceNew": {
+      "document": "策略类型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间标示",
+          "example": "performance_database_metric",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "数据库指标",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控类型",
+          "example": " MT_TAW",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度信息",
+          "example": "无",
+          "member": "DimensionNew",
+          "name": "Dimensions",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2401,6 +2696,195 @@
       ],
       "type": "object"
     },
+    "CreateGrafanaInstanceRequest": {
+      "document": "CreateGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "my-grafana",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网 ID 数组",
+          "example": "[\"subnet-id1\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Grafana 初始密码",
+          "example": "admin",
+          "member": "string",
+          "name": "GrafanaInitPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用外网",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternet",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "PrometheusTag",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGrafanaInstanceResponse": {
+      "document": "CreateGrafanaInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例名",
+          "example": "my-grafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGrafanaIntegrationRequest": {
+      "document": "CreateGrafanaIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "grafana",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "example": "[]",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGrafanaIntegrationResponse": {
+      "document": "CreateGrafanaIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGrafanaNotificationChannelRequest": {
+      "document": "CreateGrafanaNotificationChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "my-channel",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "OrgId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接受告警通道 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "额外组织 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "ExtraOrgIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGrafanaNotificationChannelResponse": {
+      "document": "CreateGrafanaNotificationChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
       "members": [
@@ -2894,6 +3378,60 @@
       ],
       "type": "object"
     },
+    "CreateSSOAccountRequest": {
+      "document": "CreateSSOAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "myGrafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户账号ID",
+          "example": "1000000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限",
+          "example": "无",
+          "member": "GrafanaAccountRole",
+          "name": "Role",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Notes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSSOAccountResponse": {
+      "document": "CreateSSOAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateServiceDiscoveryRequest": {
       "document": "CreateServiceDiscovery请求参数结构体",
       "members": [
@@ -3110,24 +3648,6 @@
         },
         {
           "default": "",
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
-          "example": "3",
-          "member": "int64",
-          "name": "KubeType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "集群 ID",
-          "example": "cls-xx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "类型",
           "example": "mysql-exporter",
           "member": "string",
@@ -3143,12 +3663,129 @@
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "3",
+          "member": "int64",
+          "name": "KubeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
     "DeleteExporterIntegrationResponse": {
       "document": "DeleteExporterIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaInstanceRequest": {
+      "document": "DeleteGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名数组",
+          "example": "[\"instance-id\"]",
+          "member": "string",
+          "name": "InstanceIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaInstanceResponse": {
+      "document": "DeleteGrafanaInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaIntegrationRequest": {
+      "document": "DeleteGrafanaIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集成 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "IntegrationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaIntegrationResponse": {
+      "document": "DeleteGrafanaIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaNotificationChannelRequest": {
+      "document": "DeleteGrafanaNotificationChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通道 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "ChannelIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGrafanaNotificationChannelResponse": {
+      "document": "DeleteGrafanaNotificationChannel返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3261,6 +3898,42 @@
     },
     "DeleteRecordingRulesResponse": {
       "document": "DeleteRecordingRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSSOAccountRequest": {
+      "document": "DeleteSSOAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "myGrafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户账号ID",
+          "example": "1000000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSSOAccountResponse": {
+      "document": "DeleteSSOAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4487,6 +5160,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "通用告警策略类型(包括：应用性能监控，前端性能监控，云拨测)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonNamespaceNew",
+          "name": "CommonNamespaces",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4759,6 +5441,7 @@
         {
           "default": "",
           "document": "接口模块名，当前取值monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -4767,6 +5450,7 @@
         {
           "default": "",
           "document": "起始时间，默认一天前的时间戳",
+          "example": "1573660800",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -4775,6 +5459,7 @@
         {
           "default": "",
           "document": "结束时间，默认当前时间戳",
+          "example": "1573919999",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -4783,6 +5468,7 @@
         {
           "default": "",
           "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4791,6 +5477,7 @@
         {
           "default": "",
           "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4799,6 +5486,7 @@
         {
           "default": "",
           "document": "根据发生时间排序，取值ASC或DESC",
+          "example": "DESC",
           "member": "string",
           "name": "OccurTimeOrder",
           "required": false,
@@ -4807,6 +5495,7 @@
         {
           "default": "",
           "document": "根据项目ID过滤",
+          "example": "[\"0\\n\"]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -4815,6 +5504,7 @@
         {
           "default": "",
           "document": "根据策略类型过滤",
+          "example": "[\"cvm_device\\n\"]",
           "member": "string",
           "name": "ViewNames",
           "required": false,
@@ -4823,6 +5513,7 @@
         {
           "default": "",
           "document": "根据告警状态过滤",
+          "example": "[\"1\\n\"]",
           "member": "int64",
           "name": "AlarmStatus",
           "required": false,
@@ -4831,6 +5522,7 @@
         {
           "default": "",
           "document": "根据告警对象过滤",
+          "example": "123",
           "member": "string",
           "name": "ObjLike",
           "required": false,
@@ -4839,6 +5531,7 @@
         {
           "default": "",
           "document": "根据实例组ID过滤",
+          "example": "[11233]",
           "member": "int64",
           "name": "InstanceGroupIds",
           "required": false,
@@ -4847,6 +5540,7 @@
         {
           "default": "",
           "document": "根据指标名过滤",
+          "example": "[\"mem_used\\n\"]",
           "member": "string",
           "name": "MetricNames",
           "required": false,
@@ -4860,16 +5554,29 @@
       "members": [
         {
           "document": "告警列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeBasicAlarmListAlarms",
           "name": "Alarms",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This method is deprecated! Use `DescribeAlarmHistories` instead!",
+          "member": "string",
+          "name": "Warning",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -5250,6 +5957,42 @@
       ],
       "type": "object"
     },
+    "DescribeDNSConfigRequest": {
+      "document": "DescribeDNSConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDNSConfigResponse": {
+      "document": "DescribeDNSConfig返回参数结构体",
+      "members": [
+        {
+          "document": "DNS 服务器数组",
+          "example": "[]",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExporterIntegrationsRequest": {
       "document": "DescribeExporterIntegrations请求参数结构体",
       "members": [
@@ -5268,7 +6011,7 @@
           "example": "3",
           "member": "int64",
           "name": "KubeType",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -5277,7 +6020,7 @@
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5309,6 +6052,384 @@
           "example": "[]",
           "member": "IntegrationConfiguration",
           "name": "IntegrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaConfigRequest": {
+      "document": "DescribeGrafanaConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaConfigResponse": {
+      "document": "DescribeGrafanaConfig返回参数结构体",
+      "members": [
+        {
+          "document": "JSON 编码后的字符串",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaEnvironmentsRequest": {
+      "document": "DescribeGrafanaEnvironments请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaEnvironmentsResponse": {
+      "document": "DescribeGrafanaEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "环境变量字符串",
+          "example": "{\"env1\":\"value1\"}",
+          "member": "string",
+          "name": "Envs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaInstancesRequest": {
+      "document": "DescribeGrafanaInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例 ID 数组",
+          "example": "[\"instance-id\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名，支持前缀模糊搜索",
+          "example": "instance-id",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询状态",
+          "example": "[2]",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤数组",
+          "example": "无",
+          "member": "PrometheusTag",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaInstancesResponse": {
+      "document": "DescribeGrafanaInstances返回参数结构体",
+      "members": [
+        {
+          "document": "已废弃，请使用 Instances",
+          "example": "无",
+          "member": "GrafanaInstanceInfo",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的实例总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "GrafanaInstanceInfo",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaIntegrationsRequest": {
+      "document": "DescribeGrafanaIntegrations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集成 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "IntegrationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "grafana",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaIntegrationsResponse": {
+      "document": "DescribeGrafanaIntegrations返回参数结构体",
+      "members": [
+        {
+          "document": "集成数组",
+          "example": "[]",
+          "member": "GrafanaIntegrationConfig",
+          "name": "IntegrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaNotificationChannelsRequest": {
+      "document": "DescribeGrafanaNotificationChannels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "my-channel",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道 ID",
+          "example": "[\"crule-123\"]",
+          "member": "string",
+          "name": "ChannelIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ChannelState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaNotificationChannelsResponse": {
+      "document": "DescribeGrafanaNotificationChannels返回参数结构体",
+      "members": [
+        {
+          "document": "告警通道数组",
+          "example": "[]",
+          "member": "GrafanaNotificationChannel",
+          "name": "NotificationChannelSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaWhiteListRequest": {
+      "document": "DescribeGrafanaWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaWhiteListResponse": {
+      "document": "DescribeGrafanaWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "数组",
+          "example": "[]",
+          "member": "string",
+          "name": "WhiteList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstalledPluginsRequest": {
+      "document": "DescribeInstalledPlugins请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstalledPluginsResponse": {
+      "document": "DescribeInstalledPlugins返回参数结构体",
+      "members": [
+        {
+          "document": "插件列表",
+          "example": "无",
+          "member": "GrafanaPlugin",
+          "name": "PluginSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5354,6 +6475,32 @@
           "example": "无",
           "member": "MonitorTypeInfo",
           "name": "MonitorTypeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginOverviewsRequest": {
+      "document": "DescribePluginOverviews请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePluginOverviewsResponse": {
+      "document": "DescribePluginOverviews返回参数结构体",
+      "members": [
+        {
+          "document": "插件列表",
+          "example": "[]",
+          "member": "GrafanaPlugin",
+          "name": "PluginSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6147,6 +7294,7 @@
         {
           "default": "",
           "document": "告警接收组id列表",
+          "example": " 无",
           "member": "int64",
           "name": "ReceiverGroupList",
           "required": true,
@@ -6156,6 +7304,7 @@
         {
           "default": "",
           "document": "告警接收人id列表",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverUserList",
           "required": true,
@@ -6164,7 +7313,8 @@
         },
         {
           "default": "",
-          "document": "告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
+          "document": "告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
+          "example": "无",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -6174,6 +7324,7 @@
         {
           "default": "",
           "document": "告警时间段结束时间。含义同StartTime",
+          "example": "无",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -6183,6 +7334,7 @@
         {
           "default": "",
           "document": "接收类型。“group”(接收组)或“user”(接收人)",
+          "example": "无",
           "member": "string",
           "name": "ReceiverType",
           "required": true,
@@ -6192,6 +7344,7 @@
         {
           "default": "",
           "document": "告警通知方式。可选 \"SMS\",\"SITE\",\"EMAIL\",\"CALL\",\"WECHAT\"",
+          "example": "无",
           "member": "string",
           "name": "NotifyWay",
           "required": true,
@@ -6201,6 +7354,7 @@
         {
           "default": "",
           "document": "电话告警接收者uid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "UidList",
           "required": true,
@@ -6210,6 +7364,7 @@
         {
           "default": "",
           "document": "电话告警轮数",
+          "example": "无",
           "member": "int64",
           "name": "RoundNumber",
           "required": true,
@@ -6219,6 +7374,7 @@
         {
           "default": "",
           "document": "电话告警每轮间隔（秒）",
+          "example": "无",
           "member": "int64",
           "name": "RoundInterval",
           "required": true,
@@ -6228,6 +7384,7 @@
         {
           "default": "",
           "document": "电话告警对个人间隔（秒）",
+          "example": "无",
           "member": "int64",
           "name": "PersonInterval",
           "required": true,
@@ -6237,6 +7394,7 @@
         {
           "default": "",
           "document": "是否需要电话告警触达提示。0不需要，1需要",
+          "example": "无",
           "member": "int64",
           "name": "NeedSendNotice",
           "required": true,
@@ -6246,6 +7404,7 @@
         {
           "default": "",
           "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)",
+          "example": "无",
           "member": "string",
           "name": "SendFor",
           "required": true,
@@ -6255,6 +7414,7 @@
         {
           "default": "",
           "document": "恢复通知方式。可选\"SMS\"",
+          "example": "无",
           "member": "string",
           "name": "RecoverNotify",
           "required": true,
@@ -6264,6 +7424,7 @@
         {
           "default": "",
           "document": "告警发送语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReceiveLanguage",
           "required": true,
@@ -6432,6 +7593,7 @@
         {
           "default": "",
           "document": "策略组id",
+          "example": "无",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -6441,6 +7603,7 @@
         {
           "default": "",
           "document": "策略组名称",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -6450,6 +7613,7 @@
         {
           "default": "",
           "document": "是否开启",
+          "example": "无",
           "member": "bool",
           "name": "IsOpen",
           "required": true,
@@ -6459,6 +7623,7 @@
         {
           "default": "",
           "document": "策略视图名称",
+          "example": "无",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -6468,6 +7633,7 @@
         {
           "default": "",
           "document": "最近编辑的用户uin",
+          "example": "无",
           "member": "string",
           "name": "LastEditUin",
           "required": true,
@@ -6477,6 +7643,7 @@
         {
           "default": "",
           "document": "最后修改时间",
+          "example": "无",
           "member": "int64",
           "name": "UpdateTime",
           "required": true,
@@ -6486,6 +7653,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "int64",
           "name": "InsertTime",
           "required": true,
@@ -6495,6 +7663,7 @@
         {
           "default": "",
           "document": "策略组绑定的实例数",
+          "example": "无",
           "member": "int64",
           "name": "UseSum",
           "required": true,
@@ -6504,6 +7673,7 @@
         {
           "default": "",
           "document": "策略组绑定的未屏蔽实例数",
+          "example": "无",
           "member": "int64",
           "name": "NoShieldedSum",
           "required": true,
@@ -6513,6 +7683,7 @@
         {
           "default": "",
           "document": "是否为默认策略，0表示非默认策略，1表示默认策略",
+          "example": "无",
           "member": "int64",
           "name": "IsDefault",
           "required": true,
@@ -6522,6 +7693,7 @@
         {
           "default": "",
           "document": "是否可以设置成默认策略",
+          "example": "无",
           "member": "bool",
           "name": "CanSetDefault",
           "required": true,
@@ -6531,6 +7703,7 @@
         {
           "default": "",
           "document": "父策略组id",
+          "example": "无",
           "member": "int64",
           "name": "ParentGroupId",
           "required": true,
@@ -6540,6 +7713,7 @@
         {
           "default": "",
           "document": "策略组备注",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -6549,6 +7723,7 @@
         {
           "default": "",
           "document": "策略组所属项目id",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -6558,6 +7733,7 @@
         {
           "default": "",
           "document": "阈值规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupInfoCondition",
           "name": "Conditions",
           "required": true,
@@ -6567,6 +7743,7 @@
         {
           "default": "",
           "document": "产品事件规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupInfoEventCondition",
           "name": "EventConditions",
           "required": true,
@@ -6576,6 +7753,7 @@
         {
           "default": "",
           "document": "用户接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupInfoReceiverInfo",
           "name": "ReceiverInfos",
           "required": true,
@@ -6585,6 +7763,7 @@
         {
           "default": "",
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupInfoConditionTpl",
           "name": "ConditionsTemp",
           "required": true,
@@ -6594,6 +7773,7 @@
         {
           "default": "",
           "document": "策略组绑定的实例组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupListGroupInstanceGroup",
           "name": "InstanceGroup",
           "required": true,
@@ -6603,6 +7783,7 @@
         {
           "default": "",
           "document": "且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "IsUnionRule",
           "required": true,
@@ -6687,6 +7868,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -6695,6 +7877,7 @@
         {
           "default": "",
           "document": "分页参数，每页返回的数量，取值1~100",
+          "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -6703,6 +7886,7 @@
         {
           "default": "",
           "document": "分页参数，页偏移量，从0开始计数",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -6711,6 +7895,7 @@
         {
           "default": "",
           "document": "按策略名搜索",
+          "example": "test",
           "member": "string",
           "name": "Like",
           "required": false,
@@ -6719,6 +7904,7 @@
         {
           "default": "",
           "document": "实例分组id",
+          "example": "12345",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
@@ -6727,6 +7913,7 @@
         {
           "default": "",
           "document": "按更新时间排序, asc 或者 desc",
+          "example": "asc",
           "member": "string",
           "name": "UpdateTimeOrder",
           "required": false,
@@ -6735,6 +7922,7 @@
         {
           "default": "",
           "document": "项目id列表",
+          "example": "[1]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -6743,6 +7931,7 @@
         {
           "default": "",
           "document": "告警策略类型列表",
+          "example": "[cvm_device]",
           "member": "string",
           "name": "ViewNames",
           "required": false,
@@ -6751,6 +7940,7 @@
         {
           "default": "",
           "document": "是否过滤无接收人策略组, 1表示过滤, 0表示不过滤",
+          "example": "0",
           "member": "int64",
           "name": "FilterUnuseReceiver",
           "required": false,
@@ -6759,6 +7949,7 @@
         {
           "default": "",
           "document": "过滤条件, 接收组列表",
+          "example": "[123]",
           "member": "string",
           "name": "Receivers",
           "required": false,
@@ -6767,6 +7958,7 @@
         {
           "default": "",
           "document": "过滤条件, 接收人列表",
+          "example": "[12345]",
           "member": "string",
           "name": "ReceiverUserList",
           "required": false,
@@ -6775,6 +7967,7 @@
         {
           "default": "",
           "document": "维度组合字段(json字符串), 例如[[{\"name\":\"unInstanceId\",\"value\":\"ins-6e4b2aaa\"}]]",
+          "example": "{}",
           "member": "string",
           "name": "Dimensions",
           "required": false,
@@ -6783,6 +7976,7 @@
         {
           "default": "",
           "document": "模板策略组id, 多个id用逗号分隔",
+          "example": "123,345",
           "member": "string",
           "name": "ConditionTempGroupId",
           "required": false,
@@ -6791,6 +7985,7 @@
         {
           "default": "",
           "document": "过滤条件, 接收人或者接收组, user表示接收人, group表示接收组",
+          "example": "user",
           "member": "string",
           "name": "ReceiverType",
           "required": false,
@@ -6799,6 +7994,7 @@
         {
           "default": "",
           "document": "过滤条件，告警策略是否已启动或停止",
+          "example": "true",
           "member": "bool",
           "name": "IsOpen",
           "required": false,
@@ -6812,17 +8008,30 @@
       "members": [
         {
           "document": "策略组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribePolicyGroupListGroup",
           "name": "GroupList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "策略组总数",
+          "example": "142",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This method is deprecated! Use `DescribeAlarmPolicies` instead!",
+          "member": "string",
+          "name": "Warning",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7792,6 +9001,42 @@
       ],
       "type": "object"
     },
+    "DescribeSSOAccountRequest": {
+      "document": "DescribeSSOAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "myGrafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSSOAccountResponse": {
+      "document": "DescribeSSOAccount返回参数结构体",
+      "members": [
+        {
+          "document": "授权账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GrafanaAccountInfo",
+          "name": "AccountSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceDiscoveryRequest": {
       "document": "DescribeServiceDiscovery请求参数结构体",
       "members": [
@@ -8018,6 +9263,132 @@
       ],
       "usage": "in"
     },
+    "DimensionNew": {
+      "document": "策略类型的维度信息",
+      "members": [
+        {
+          "default": "",
+          "document": "维度 key 标示，后台英文名",
+          "example": "tapm.instance.key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度 key 名称，中英文前台展示名",
+          "example": "业务系统",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否必选",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRequired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的操作符列表",
+          "example": "无",
+          "member": "Operator",
+          "name": "Operators",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持多选",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMultiple",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建后是否可以修改",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMutable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否展示给用户",
+          "example": "true",
+          "member": "bool",
+          "name": "IsVisible",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "能否用来过滤策略列表",
+          "example": "false",
+          "member": "bool",
+          "name": "CanFilterPolicy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "能否用来过滤告警历史",
+          "example": "false",
+          "member": "bool",
+          "name": "CanFilterHistory",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "能否作为聚合维度",
+          "example": "true",
+          "member": "bool",
+          "name": "CanGroupBy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否必须作为聚合维度",
+          "example": "true",
+          "member": "bool",
+          "name": "MustGroupBy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "前端翻译要替换的 key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ShowValueReplace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DimensionsDesc": {
       "document": "维度信息",
       "members": [
@@ -8032,6 +9403,114 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableGrafanaInternetRequest": {
+      "document": "EnableGrafanaInternet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开启或关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternet",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableGrafanaInternetResponse": {
+      "document": "EnableGrafanaInternet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableGrafanaSSORequest": {
+      "document": "EnableGrafanaSSO请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启 SSO",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSO",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableGrafanaSSOResponse": {
+      "document": "EnableGrafanaSSO返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSSOCamCheckRequest": {
+      "document": "EnableSSOCamCheck请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启cam鉴权",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSOCamCheck",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSSOCamCheckResponse": {
+      "document": "EnableSSOCamCheck返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EventCondition": {
       "document": "事件告警条件",
@@ -8233,6 +9712,436 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrafanaAccountInfo": {
+      "document": "Grafana可视化服务 授权账户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户账号ID",
+          "example": "1000000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户权限",
+          "example": "无",
+          "member": "GrafanaAccountRole",
+          "name": "Role",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Notes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "datetime_iso",
+          "name": "CreateAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GrafanaAccountRole": {
+      "document": "Grafana可视化服务 账号权限",
+      "members": [
+        {
+          "default": "",
+          "document": "组织",
+          "example": "Org",
+          "member": "string",
+          "name": "Organization",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限",
+          "example": "Admin",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GrafanaInstanceInfo": {
+      "document": "查询 Grafana 实例时的实例类型",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "grafana-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-abcdef",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 ID 数组",
+          "example": "[\"subnet-abcdef\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 内网地址",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "InternetUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 公网地址",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "InternalUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "datetime",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"key\":\"1\",\"value\":\"2\"}]",
+          "member": "PrometheusTag",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的可用区",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式（1:包年包月）",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC 名称",
+          "example": "Default-VPC",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网名称",
+          "example": "Default-Subnet",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可访问此实例的完整 URL",
+          "example": "http://127.0.0.1",
+          "member": "string",
+          "name": "RootUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启 SSO",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSO",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "example": "v7.4.2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SSO登录时是否开启cam鉴权",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSOCamCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GrafanaIntegrationConfig": {
+      "document": "Grafana 集成实例配置",
+      "members": [
+        {
+          "default": "",
+          "document": "集成 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "IntegrationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集成类型",
+          "example": "grafana",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集成内容",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集成描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GrafanaNotificationChannel": {
+      "document": "Grafana 告警渠道",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道 ID",
+          "example": "channel-id",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "channel-name",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通道模板 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "date",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GrafanaPlugin": {
+      "document": "Grafana 插件",
+      "members": [
+        {
+          "default": "",
+          "document": "Grafana 插件 ID",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 插件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstallPluginsRequest": {
+      "document": "InstallPlugins请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "插件信息",
+          "example": "无",
+          "member": "GrafanaPlugin",
+          "name": "Plugins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallPluginsResponse": {
+      "document": "InstallPlugins返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9217,6 +11126,42 @@
       ],
       "type": "object"
     },
+    "ModifyGrafanaInstanceRequest": {
+      "document": "ModifyGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "my-instance-1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGrafanaInstanceResponse": {
+      "document": "ModifyGrafanaInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPolicyGroupCondition": {
       "document": "修改告警策略组传入的指标阈值条件",
       "members": [
@@ -9530,6 +11475,32 @@
         }
       ],
       "usage": "in"
+    },
+    "Operator": {
+      "document": "维度支持的操作符信息",
+      "members": [
+        {
+          "default": "",
+          "document": "运算符标识",
+          "example": "eq",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运算符展示名",
+          "example": "=",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PeriodsSt": {
       "document": "周期内的统计方式",
@@ -10325,6 +12296,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "AlertRuleLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预聚合规则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "RecordingRuleLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10588,7 +12579,8 @@
       "members": [
         {
           "default": "",
-          "document": "告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
+          "document": "告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
+          "example": "无",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -10598,6 +12590,7 @@
         {
           "default": "",
           "document": "告警时间段结束时间。含义同StartTime",
+          "example": "无",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -10607,6 +12600,7 @@
         {
           "default": "",
           "document": "告警通知方式。可选 \"SMS\",\"SITE\",\"EMAIL\",\"CALL\",\"WECHAT\"",
+          "example": "无",
           "member": "string",
           "name": "NotifyWay",
           "required": true,
@@ -10616,6 +12610,7 @@
         {
           "default": "",
           "document": "接收人类型。“group” 或 “user”",
+          "example": "无",
           "member": "string",
           "name": "ReceiverType",
           "required": true,
@@ -10625,6 +12620,7 @@
         {
           "default": "",
           "document": "ReceiverId",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": false,
@@ -10634,6 +12630,7 @@
         {
           "default": "",
           "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)",
+          "example": "无",
           "member": "string",
           "name": "SendFor",
           "required": false,
@@ -10642,7 +12639,8 @@
         },
         {
           "default": "",
-          "document": "电话告警接收者uid",
+          "document": "电话告警接收者 UID",
+          "example": "无",
           "member": "int64",
           "name": "UidList",
           "required": false,
@@ -10652,6 +12650,7 @@
         {
           "default": "",
           "document": "电话告警轮数",
+          "example": "无",
           "member": "int64",
           "name": "RoundNumber",
           "required": false,
@@ -10661,6 +12660,7 @@
         {
           "default": "",
           "document": "电话告警对个人间隔（秒）",
+          "example": "无",
           "member": "int64",
           "name": "PersonInterval",
           "required": false,
@@ -10670,6 +12670,7 @@
         {
           "default": "",
           "document": "电话告警每轮间隔（秒）",
+          "example": "无",
           "member": "int64",
           "name": "RoundInterval",
           "required": false,
@@ -10679,6 +12680,7 @@
         {
           "default": "",
           "document": "恢复通知方式。可选\"SMS\"",
+          "example": "无",
           "member": "string",
           "name": "RecoverNotify",
           "required": false,
@@ -10688,6 +12690,7 @@
         {
           "default": "",
           "document": "是否需要电话告警触达提示。0不需要，1需要",
+          "example": "无",
           "member": "int64",
           "name": "NeedSendNotice",
           "required": false,
@@ -10696,7 +12699,8 @@
         },
         {
           "default": "",
-          "document": "接收组列表。通过平台接口查询到的接收组id列表",
+          "document": "接收组列表。通过平台接口查询到的接收组 ID 列表",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverGroupList",
           "required": false,
@@ -10705,7 +12709,8 @@
         },
         {
           "default": "",
-          "document": "接收人列表。通过平台接口查询到的接收人id列表",
+          "document": "接收人列表。通过平台接口查询到的接收人 ID 列表",
+          "example": "无",
           "member": "int64",
           "name": "ReceiverUserList",
           "required": false,
@@ -10715,6 +12720,7 @@
         {
           "default": "",
           "document": "告警接收语言，枚举值（zh-CN，en-US）",
+          "example": "无",
           "member": "string",
           "name": "ReceiveLanguage",
           "required": false,
@@ -10792,6 +12798,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ResumeGrafanaInstanceRequest": {
+      "document": "ResumeGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeGrafanaInstanceResponse": {
+      "document": "ResumeGrafanaInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SendCustomAlarmMsgRequest": {
       "document": "SendCustomAlarmMsg请求参数结构体",
@@ -11403,6 +13436,42 @@
       ],
       "type": "object"
     },
+    "UninstallGrafanaPluginsRequest": {
+      "document": "UninstallGrafanaPlugins请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "插件 ID 数组",
+          "example": "[\"grafana-clock-panel\"]",
+          "member": "string",
+          "name": "PluginIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallGrafanaPluginsResponse": {
+      "document": "UninstallGrafanaPlugins返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateAlertRuleRequest": {
       "document": "UpdateAlertRule请求参数结构体",
       "members": [
@@ -11565,6 +13634,42 @@
       ],
       "type": "object"
     },
+    "UpdateDNSConfigRequest": {
+      "document": "UpdateDNSConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DNS 数组",
+          "example": "[\"114.114.114.114\"]",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDNSConfigResponse": {
+      "document": "UpdateDNSConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateExporterIntegrationRequest": {
       "document": "UpdateExporterIntegration请求参数结构体",
       "members": [
@@ -11618,6 +13723,231 @@
     },
     "UpdateExporterIntegrationResponse": {
       "document": "UpdateExporterIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaConfigRequest": {
+      "document": "UpdateGrafanaConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "JSON 编码后的字符串",
+          "example": "\"{\"server\":{\"root_url\":\"http://balabalahahaha\"}}\"",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaConfigResponse": {
+      "document": "UpdateGrafanaConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaEnvironmentsRequest": {
+      "document": "UpdateGrafanaEnvironments请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量字符串",
+          "example": "{}",
+          "member": "string",
+          "name": "Envs",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaEnvironmentsResponse": {
+      "document": "UpdateGrafanaEnvironments返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaIntegrationRequest": {
+      "document": "UpdateGrafanaIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集成 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "IntegrationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集成类型",
+          "example": "grafana",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集成内容",
+          "example": "'{}'",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaIntegrationResponse": {
+      "document": "UpdateGrafanaIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaNotificationChannelRequest": {
+      "document": "UpdateGrafanaNotificationChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "通道 ID",
+          "example": "channel-id",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "channel-name",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接受告警通道 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "额外组织 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "ExtraOrgIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaNotificationChannelResponse": {
+      "document": "UpdateGrafanaNotificationChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaWhiteListRequest": {
+      "document": "UpdateGrafanaWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单数组",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "Whitelist",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGrafanaWhiteListResponse": {
+      "document": "UpdateGrafanaWhiteList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11799,6 +14129,60 @@
       ],
       "type": "object"
     },
+    "UpdateSSOAccountRequest": {
+      "document": "UpdateSSOAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "示例ID",
+          "example": "myGrafana",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户账号ID",
+          "example": "10000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限",
+          "example": "无",
+          "member": "GrafanaAccountRole",
+          "name": "Role",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Notes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSSOAccountResponse": {
+      "document": "UpdateSSOAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateServiceDiscoveryRequest": {
       "document": "UpdateServiceDiscovery请求参数结构体",
       "members": [
@@ -11890,6 +14274,42 @@
     },
     "UpgradeGrafanaDashboardResponse": {
       "document": "UpgradeGrafanaDashboard返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeGrafanaInstanceRequest": {
+      "document": "UpgradeGrafanaInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本别名",
+          "example": "my-instance",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeGrafanaInstanceResponse": {
+      "document": "UpgradeGrafanaInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

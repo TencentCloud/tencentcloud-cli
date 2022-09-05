@@ -30,6 +30,12 @@
       "name": "创建应用更新触发器",
       "output": "CreateApplicationTriggerPersonalResponse"
     },
+    "CreateImageAccelerationService": {
+      "document": "创建镜像加速服务",
+      "input": "CreateImageAccelerationServiceRequest",
+      "name": "创建镜像加速服务",
+      "output": "CreateImageAccelerationServiceResponse"
+    },
     "CreateImageLifecyclePersonal": {
       "document": "用于在个人版中创建清理策略",
       "input": "CreateImageLifecyclePersonalRequest",
@@ -47,6 +53,12 @@
       "input": "CreateInstanceRequest",
       "name": "创建实例",
       "output": "CreateInstanceResponse"
+    },
+    "CreateInstanceCustomizedDomain": {
+      "document": "创建自定义域名",
+      "input": "CreateInstanceCustomizedDomainRequest",
+      "name": "创建自定义域名",
+      "output": "CreateInstanceCustomizedDomainResponse"
     },
     "CreateInstanceToken": {
       "document": "创建实例的临时或长期访问凭证",
@@ -96,11 +108,29 @@
       "name": "创建个人版镜像仓库",
       "output": "CreateRepositoryPersonalResponse"
     },
+    "CreateSecurityPolicies": {
+      "document": "创建实例公网访问白名单策略",
+      "input": "CreateSecurityPoliciesRequest",
+      "name": "创建实例公网访问白名单策略",
+      "output": "CreateSecurityPoliciesResponse"
+    },
     "CreateSecurityPolicy": {
       "document": "创建实例公网访问白名单策略",
       "input": "CreateSecurityPolicyRequest",
       "name": "创建实例公网访问白名单策略",
       "output": "CreateSecurityPolicyResponse"
+    },
+    "CreateSignature": {
+      "document": "为一个镜像版本创建签名",
+      "input": "CreateSignatureRequest",
+      "name": "创建镜像签名",
+      "output": "CreateSignatureResponse"
+    },
+    "CreateSignaturePolicy": {
+      "document": "创建镜像签名策略",
+      "input": "CreateSignaturePolicyRequest",
+      "name": "创建签名策略",
+      "output": "CreateSignaturePolicyResponse"
     },
     "CreateTagRetentionExecution": {
       "document": "手动执行版本保留",
@@ -138,6 +168,12 @@
       "name": "删除指定镜像",
       "output": "DeleteImageResponse"
     },
+    "DeleteImageAccelerateService": {
+      "document": "删除镜像加速服务",
+      "input": "DeleteImageAccelerateServiceRequest",
+      "name": "删除镜像加速服务",
+      "output": "DeleteImageAccelerateServiceResponse"
+    },
     "DeleteImageLifecycleGlobalPersonal": {
       "document": "用于删除个人版全局镜像版本自动清理策略",
       "input": "DeleteImageLifecycleGlobalPersonalRequest",
@@ -167,6 +203,12 @@
       "input": "DeleteInstanceRequest",
       "name": "删除实例",
       "output": "DeleteInstanceResponse"
+    },
+    "DeleteInstanceCustomizedDomain": {
+      "document": "删除自定义域名",
+      "input": "DeleteInstanceCustomizedDomainRequest",
+      "name": "删除自定义域名",
+      "output": "DeleteInstanceCustomizedDomainResponse"
     },
     "DeleteInstanceToken": {
       "document": "删除长期访问凭证",
@@ -198,6 +240,12 @@
       "name": "删除个人版命名空间",
       "output": "DeleteNamespacePersonalResponse"
     },
+    "DeleteReplicationInstance": {
+      "document": "删除从实例",
+      "input": "DeleteReplicationInstanceRequest",
+      "name": "删除从实例",
+      "output": "DeleteReplicationInstanceResponse"
+    },
     "DeleteRepository": {
       "document": "删除镜像仓库",
       "input": "DeleteRepositoryRequest",
@@ -210,11 +258,23 @@
       "name": "删除个人版镜像仓库",
       "output": "DeleteRepositoryPersonalResponse"
     },
+    "DeleteRepositoryTags": {
+      "document": "用于企业版批量删除Repository Tag",
+      "input": "DeleteRepositoryTagsRequest",
+      "name": "批量删除Repository Tag",
+      "output": "DeleteRepositoryTagsResponse"
+    },
     "DeleteSecurityPolicy": {
       "document": "删除实例公网访问白名单策略",
       "input": "DeleteSecurityPolicyRequest",
       "name": "删除实例公网访问白名单策略",
       "output": "DeleteSecurityPolicyResponse"
+    },
+    "DeleteSignaturePolicy": {
+      "document": "删除命名空间加签策略",
+      "input": "DeleteSignaturePolicyRequest",
+      "name": "删除命名空间加签策略",
+      "output": "DeleteSignaturePolicyResponse"
     },
     "DeleteTagRetentionRule": {
       "document": "删除版本保留规则",
@@ -258,6 +318,18 @@
       "name": "查询个人收藏仓库",
       "output": "DescribeFavorRepositoryPersonalResponse"
     },
+    "DescribeGCJobs": {
+      "document": "GC 最近10条历史",
+      "input": "DescribeGCJobsRequest",
+      "name": "GC 历史",
+      "output": "DescribeGCJobsResponse"
+    },
+    "DescribeImageAccelerateService": {
+      "document": "查询镜像加速服务状态",
+      "input": "DescribeImageAccelerateServiceRequest",
+      "name": "查询镜像加速服务状态",
+      "output": "DescribeImageAccelerateServiceResponse"
+    },
     "DescribeImageFilterPersonal": {
       "document": "用于在个人版中查询与指定tag镜像内容相同的tag列表",
       "input": "DescribeImageFilterPersonalRequest",
@@ -300,6 +372,24 @@
       "name": "列出镜像不可变规则",
       "output": "DescribeImmutableTagRulesResponse"
     },
+    "DescribeInstanceAll": {
+      "document": "查询全部实例信息",
+      "input": "DescribeInstanceAllRequest",
+      "name": "查询全部实例信息",
+      "output": "DescribeInstanceAllResponse"
+    },
+    "DescribeInstanceAllNamespaces": {
+      "document": "查询所有有实例命名空间列表",
+      "input": "DescribeInstanceAllNamespacesRequest",
+      "name": "查询所有实例命名空间",
+      "output": "DescribeInstanceAllNamespacesResponse"
+    },
+    "DescribeInstanceCustomizedDomain": {
+      "document": "查询实例自定义域名列表",
+      "input": "DescribeInstanceCustomizedDomainRequest",
+      "name": "查询实例自定义域名列表",
+      "output": "DescribeInstanceCustomizedDomainResponse"
+    },
     "DescribeInstanceStatus": {
       "document": "查询实例当前状态以及过程信息",
       "input": "DescribeInstanceStatusRequest",
@@ -341,6 +431,12 @@
       "input": "DescribeNamespacesRequest",
       "name": "查询命名空间信息",
       "output": "DescribeNamespacesResponse"
+    },
+    "DescribeRegions": {
+      "document": "用于在TCR中获取可用区域",
+      "input": "DescribeRegionsRequest",
+      "name": "列出TCR可用区域",
+      "output": "DescribeRegionsResponse"
     },
     "DescribeReplicationInstanceCreateTasks": {
       "document": "查询创建从实例任务状态",
@@ -933,6 +1029,87 @@
       ],
       "type": "object"
     },
+    "CreateImageAccelerationServiceRequest": {
+      "document": "CreateImageAccelerationService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建CFS的归属的VPCID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建CFS的归属的子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云标签描述",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageAccelerationServiceResponse": {
+      "document": "CreateImageAccelerationService返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageLifecyclePersonalRequest": {
       "document": "CreateImageLifecyclePersonal请求参数结构体",
       "members": [
@@ -1013,6 +1190,51 @@
     },
     "CreateImmutableTagRulesResponse": {
       "document": "CreateImmutableTagRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceCustomizedDomainRequest": {
+      "document": "CreateInstanceCustomizedDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "kWGTVuU3",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceCustomizedDomainResponse": {
+      "document": "CreateInstanceCustomizedDomain返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1532,6 +1754,55 @@
       ],
       "type": "object"
     },
+    "CreateSecurityPoliciesRequest": {
+      "document": "CreateSecurityPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "192.168.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityPoliciesResponse": {
+      "document": "CreateSecurityPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSecurityPolicyRequest": {
       "document": "CreateSecurityPolicy请求参数结构体",
       "members": [
@@ -1577,6 +1848,141 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignaturePolicyRequest": {
+      "document": "CreateSignaturePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "library加签",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "KMS 密钥",
+          "example": "08408a30-0416-11ed-abdc-52540036b432",
+          "member": "string",
+          "name": "KmsId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "KMS 密钥所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义域名，为空时使用 TCR 实例默认域名生成签名",
+          "example": "tcr.tencentcloudcr.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "禁用加签策略，默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "Disabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignaturePolicyResponse": {
+      "document": "CreateSignaturePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignatureRequest": {
+      "document": "CreateSignature请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-okmju7",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库名称",
+          "example": "nginx",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Tag名称",
+          "example": "v1.2.0",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignatureResponse": {
+      "document": "CreateSignature返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1770,6 +2176,52 @@
       ],
       "type": "object"
     },
+    "CustomizedDomainInfo": {
+      "document": "自定义域名信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "46Gddd",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名创建状态（SUCCESS, FAILURE, CREATING, DELETING）",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteApplicationTriggerPersonalRequest": {
       "document": "DeleteApplicationTriggerPersonal请求参数结构体",
       "members": [
@@ -1786,6 +2238,32 @@
     },
     "DeleteApplicationTriggerPersonalResponse": {
       "document": "DeleteApplicationTriggerPersonal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageAccelerateServiceRequest": {
+      "document": "DeleteImageAccelerateService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageAccelerateServiceResponse": {
+      "document": "DeleteImageAccelerateService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1959,6 +2437,51 @@
     },
     "DeleteImmutableTagRulesResponse": {
       "document": "DeleteImmutableTagRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceCustomizedDomainRequest": {
+      "document": "DeleteInstanceCustomizedDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "kWGTVuU3",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceCustomizedDomainResponse": {
+      "document": "DeleteInstanceCustomizedDomain返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2218,6 +2741,51 @@
       ],
       "type": "object"
     },
+    "DeleteReplicationInstanceRequest": {
+      "document": "DeleteReplicationInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "tcr-12345",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制实例ID",
+          "example": "tcr-12345-5",
+          "member": "string",
+          "name": "ReplicationRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制实例地域Id",
+          "example": "5",
+          "member": "uint64",
+          "name": "ReplicationRegionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReplicationInstanceResponse": {
+      "document": "DeleteReplicationInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRepositoryPersonalRequest": {
       "document": "DeleteRepositoryPersonal请求参数结构体",
       "members": [
@@ -2289,6 +2857,60 @@
       ],
       "type": "object"
     },
+    "DeleteRepositoryTagsRequest": {
+      "document": "DeleteRepositoryTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "demo",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库名称",
+          "example": "Nginx",
+          "member": "string",
+          "name": "RepositoryName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Tag列表，单次请求Tag数量最大为20",
+          "example": "[\"tag1\", \"tag2\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRepositoryTagsResponse": {
+      "document": "DeleteRepositoryTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSecurityPolicyRequest": {
       "document": "DeleteSecurityPolicy请求参数结构体",
       "members": [
@@ -2334,6 +2956,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSignaturePolicyRequest": {
+      "document": "DeleteSignaturePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-okmj78",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间的名称",
+          "example": "library",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSignaturePolicyResponse": {
+      "document": "DeleteSignaturePolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2748,6 +3406,89 @@
       ],
       "type": "object"
     },
+    "DescribeGCJobsRequest": {
+      "document": "DescribeGCJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id",
+          "example": "tcr-test134",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGCJobsResponse": {
+      "document": "DescribeGCJobs返回参数结构体",
+      "members": [
+        {
+          "document": "GC Job 列表",
+          "example": "无",
+          "member": "GCJobInfo",
+          "name": "Jobs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageAccelerateServiceRequest": {
+      "document": "DescribeImageAccelerateService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageAccelerateServiceResponse": {
+      "document": "DescribeImageAccelerateService返回参数结构体",
+      "members": [
+        {
+          "document": "镜像加速状态",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CFS的VIP",
+          "member": "string",
+          "name": "CFSVIP",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开通",
+          "member": "bool",
+          "name": "IsEnable",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeImageFilterPersonalRequest": {
       "document": "DescribeImageFilterPersonal请求参数结构体",
       "members": [
@@ -3111,6 +3852,167 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAllNamespacesRequest": {
+      "document": "DescribeInstanceAllNamespaces请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceAllNamespacesResponse": {
+      "document": "DescribeInstanceAllNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAllRequest": {
+      "document": "DescribeInstanceAll请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表(为空时，\n表示获取账号下所有实例)",
+          "example": "tcr-xxxxxxxx",
+          "member": "string",
+          "name": "Registryids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "获取所有地域的实例，默认为False",
+          "example": "false",
+          "member": "bool",
+          "name": "AllRegion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAllResponse": {
+      "document": "DescribeInstanceAll返回参数结构体",
+      "members": [
+        {
+          "document": "总实例个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Registry",
+          "name": "Registries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceCustomizedDomainRequest": {
+      "document": "DescribeInstanceCustomizedDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例iD",
+          "example": "tcr-test123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceCustomizedDomainResponse": {
+      "document": "DescribeInstanceCustomizedDomain返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomizedDomainInfo",
+          "name": "DomainInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总个数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3503,6 +4405,37 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "返回的总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域信息列表",
+          "member": "Region",
+          "name": "Regions",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4708,6 +5641,62 @@
       ],
       "usage": "in"
     },
+    "GCJobInfo": {
+      "document": "GC 执行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "作业 ID",
+          "example": "123",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业状态",
+          "example": "finished",
+          "member": "string",
+          "name": "JobStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-05-14T08:20:01Z",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-05-14T08:20:02.387203Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调度信息",
+          "example": "无",
+          "member": "Schedule",
+          "name": "Schedule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Header": {
       "document": "Header KV",
       "members": [
@@ -5859,6 +6848,84 @@
       ],
       "usage": "in"
     },
+    "Region": {
+      "document": "地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "gz",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "alluser",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Registry": {
       "document": "实例信息结构体",
       "members": [
@@ -6845,6 +7912,22 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Schedule": {
+      "document": " 作业调度信息",
+      "members": [
+        {
+          "default": "",
+          "document": "类型：Hourly, Daily, Weekly, Custom, Manual, Dryrun, None",
+          "example": "Manual",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

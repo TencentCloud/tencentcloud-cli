@@ -16729,6 +16729,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "最后一次修复漏洞的时间",
+          "example": "2021-07-09 15:04:01",
+          "member": "string",
+          "name": "LastFixTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否有支持自动修复的漏洞事件",
+          "example": "true",
+          "member": "bool",
+          "name": "hadAutoFixVul",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16940,6 +16958,24 @@
           "example": "12",
           "member": "uint64",
           "name": "DefenseAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "全网修复成功次数, 不支持自动修复的漏洞默认返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessFixCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FixSwitch",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -20335,13 +20371,23 @@
         },
         {
           "default": "",
-          "document": "防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.",
+          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tags",
+          "name": "CloudTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24051,6 +24097,32 @@
         }
       ],
       "usage": "out"
+    },
+    "Tags": {
+      "document": "平台标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TaskStatus": {
       "document": "任务扫描状态列表",

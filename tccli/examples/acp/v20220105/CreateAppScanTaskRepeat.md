@@ -34,8 +34,8 @@ Input:
 tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
     --Platform 2 \
     --Source 0 \
-    --OrgTaskID 267335492440166400 \
-    --AppPackage wxec0b921a4d97c684 \
+    --OrgTaskID 2673***400 \
+    --AppPackage wxec***97c684 \
     --TaskType 0
 ```
 
@@ -45,7 +45,7 @@ Output:
     "Response": {
         "RequestId": "1c2cde1b-8226-4ab9-a6da-52edc66af0af",
         "Result": 0,
-        "TaskID": "267340467379638272"
+        "TaskID": "2673***638272"
     }
 }
 ```
@@ -60,7 +60,7 @@ Input:
 tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
     --Platform 2 \
     --Source 0 \
-    --OrgTaskID 267340467379638272 \
+    --OrgTaskID 2673***638272 \
     --AppPackage wxec0b921a4d97c684 \
     --TaskType 0
 ```
@@ -71,7 +71,32 @@ Output:
     "Response": {
         "RequestId": "eb9d4e07-11f6-4d04-8e55-d6121c72ad4c",
         "Result": 0,
-        "TaskID": "269129073702211584"
+        "TaskID": "269***584"
+    }
+}
+```
+
+**Example 4: 重新提交漏洞扫描任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --OrgTaskID 347***22496 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "abc2*******2b2ffd0",
+        "Result": 0,
+        "TaskID": "347*********16"
     }
 }
 ```

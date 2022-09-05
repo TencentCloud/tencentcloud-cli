@@ -19,7 +19,7 @@
     "AuditApplyClient": [
       {
         "document": "对待审核某客户，给予审核通过操作",
-        "input": "https://partners.tencentcloudapi.com/?Action=AuditApplyClient\n&ClientUin=123456\n&AuditResult=accept\n&Note=reason\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuditApplyClient\n<公共请求参数>\n\n{\n    \"Note\": \"reason\",\n    \"AuditResult\": \"accept\",\n    \"ClientUin\": \"123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AuditResult\": \"xx\",\n        \"ClientUin\": \"xx\",\n        \"AgentTime\": 1,\n        \"Uin\": \"xx\"\n    }\n}",
         "title": "审核通过某客户"
       }
@@ -73,7 +73,7 @@
     "DescribeAgentDealsByCache": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentDealsByCache\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDealsByCache\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78b52639-8471-41c1-a05a-1ea787a605e0\",\n        \"AgentDealSet\": [\n            {\n                \"DealId\": \"3775889\",\n                \"DealName\": \"20170316123135\",\n                \"BigDealId\": \"20170316123136\",\n                \"GoodsCategoryId\": \"75\",\n                \"OwnerUin\": \"12512\",\n                \"AppId\": \"1201\",\n                \"GoodsNum\": \"1\",\n                \"GoodsPrice\": {\n                    \"RealTotalCost\": 5500,\n                    \"OriginalTotalCost\": 0\n                },\n                \"Creater\": \"12512\",\n                \"CreatTime\": \"2017-03-16 16:00:06\",\n                \"Payer\": \"12512\",\n                \"BillId\": \"20170316030000047100683218060026\",\n                \"PayEndTime\": \"2017-03-16 16:00:45\",\n                \"Status\": \"4\",\n                \"VoucherDecline\": null,\n                \"PayerMode\": \"0\",\n                \"GoodsName\": \"购买域名\",\n                \"ClientRemark\": \"\",\n                \"ClientType\": \"\",\n                \"ProjectType\": \"\",\n                \"SalesUin\": \"\",\n                \"DealStatus\": \"分配完成\",\n                \"ActionType\": \"purchase\",\n                \"ActivityId\": \"\",\n                \"OverdueTime\": \"2017-03-31 16:00:06\",\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-01-01 00:00:00\",\n                \"PaymentMethod\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取某代理商缓存订单"
       }
@@ -121,7 +121,7 @@
     "DescribeClientBalance": [
       {
         "document": "",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeClientBalance\n&ClientUin=125****938\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClientBalance\n<公共请求参数>\n\n{\n    \"ClientUin\": \"125****938\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eeedc7d9-2310-4b77-bd3e-23f077e44b7d\",\n        \"Balance\": 40,\n        \"Cash\": 50\n    }\n}",
         "title": "查询客户余额"
       }

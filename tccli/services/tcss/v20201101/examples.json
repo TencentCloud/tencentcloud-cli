@@ -1233,7 +1233,7 @@
     "ModifyEscapeEventStatus": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyEscapeEventStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEscapeEventStatus\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"Remark\": \"xx\",\n    \"EventIdSet\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改容器逃逸扫描事件状态"
       }

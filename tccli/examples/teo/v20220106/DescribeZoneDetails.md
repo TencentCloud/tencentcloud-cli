@@ -6,65 +6,69 @@ Input:
 
 ```
 tccli teo DescribeZoneDetails --cli-unfold-argument  \
-    --Id xx
+    --Id zone-27q0p0bali16
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "xx",
+        "Id": "zone-27q0p0bali16",
+        "Name": "example.com",
+        "Status": "active",
         "ModifiedOn": "2020-09-22T00:00:00+00:00",
-        "Name": "xx",
         "Tags": [
             {
-                "TagKey": "xx",
-                "TagValue": "xx"
+                "TagKey": "test",
+                "TagValue": "test"
             }
         ],
         "NameServers": [
-            "xx"
+            "ns1.teodns.com",
+            "ns2.teodns.com"
         ],
         "VanityNameServers": {
-            "Switch": "xx",
+            "Switch": "on",
             "Servers": [
-                "xx"
+                "ns1.example.com",
+                "ns2.example.com"
             ]
         },
         "CreatedOn": "2020-09-22T00:00:00+00:00",
         "OriginalNameServers": [
-            "xx"
+            "ns1.example.com",
+            "ns2.example.com"
         ],
         "Paused": true,
-        "CnameSpeedUp": "xx",
+        "CnameSpeedUp": "enabled",
         "Resources": [
             {
                 "EnableTime": "2020-09-22T00:00:00+00:00",
-                "Status": "xx",
+                "Status": "normal",
                 "ExpireTime": "2020-09-22T00:00:00+00:00",
-                "PlanId": "xx",
+                "PlanId": "edgeone-27q0p0bali15",
                 "Sv": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "12",
+                        "Key": "sv_a"
                     }
                 ],
                 "CreateTime": "2020-09-22T00:00:00+00:00",
                 "PayMode": 0,
                 "AutoRenewFlag": 0,
-                "Id": "xx"
+                "Id": "edgeone-27q0p0bali18"
             }
         ],
-        "RequestId": "xx",
-        "Type": "xx",
-        "Id": "xx",
+        "RequestId": "9cc50b24-7dc5-44f4-96ce-95825d53ff2f",
+        "Type": "full",
         "VanityNameServersIps": [
             {
-                "Name": "xx",
-                "IPv4": "xx"
+                "Name": "ns1.example.com",
+                "IPv4": "1.1.1.1"
             }
         ],
-        "CnameStatus": "xx"
+        "CnameStatus": "finished",
+        "Area": "global"
     }
 }
 ```

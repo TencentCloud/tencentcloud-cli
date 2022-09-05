@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli live ModifyLiveSnapshotTemplate --cli-unfold-argument  \
-    --TemplateId 1000 \
-    --TemplateName testName \
+    --CosRegion beijing \
     --Description testDesc \
     --SnapshotInterval 10 \
-    --Width 250 \
-    --Height 250 \
     --PornFlag 0 \
-    --CosAppId 123 \
     --CosBucket bucket \
-    --CosRegion beijing
+    --TemplateName testName \
+    --Height 250 \
+    --CosAppId 123 \
+    --Width 250 \
+    --TemplateId 1000
 ```
 
 Output: 

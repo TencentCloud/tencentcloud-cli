@@ -51,7 +51,7 @@
     "DescribeAgentDealsByCache": {
       "document": "供代理商拉取缓存的全量客户订单",
       "input": "DescribeAgentDealsByCacheRequest",
-      "name": "代理商缓存订单查询接口（新）",
+      "name": "代理商缓存订单查询接口",
       "output": "DescribeAgentDealsByCacheResponse"
     },
     "DescribeAgentDealsCache": {
@@ -199,7 +199,7 @@
         },
         {
           "default": "",
-          "document": "认证类型, 0：个人，1：企业；其他：未认证",
+          "document": "认证类型, 0：个人，1：企业；其他：未认证或无效值",
           "example": "0",
           "member": "string",
           "name": "AuthType",
@@ -1311,13 +1311,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "关联时间对应的时间戳",
+          "document": "关联时间对应的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "133218546",
           "member": "uint64",
           "name": "AgentTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2587,7 +2587,7 @@
       "document": "DescribeClientBalance返回参数结构体",
       "members": [
         {
-          "document": "账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）",
+          "document": "账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）  【注：该数据准确性存疑，请切换至DescribeClientBalanceNew取值】",
           "example": "40",
           "member": "uint64",
           "name": "Balance",

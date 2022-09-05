@@ -16,7 +16,8 @@ tccli cls CreateShipper --cli-unfold-argument  \
     --Compress.Format none \
     --FilterRules.0.Key  \
     --FilterRules.0.Regex  \
-    --FilterRules.0.Value 
+    --FilterRules.0.Value  \
+    --FilenameMode 0
 ```
 
 Output: 

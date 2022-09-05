@@ -20,9 +20,13 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_TOPIC",
+                    "TargetType": "TDMQ_TOPIC",
                     "TopicName": "one-topic",
                     "QueueName": ""
+                },
+                "LifecycleCommand": {
+                    "CommandId": "",
+                    "Parameters": ""
                 },
                 "CreatedTime": "2019-04-19T02:59:30Z",
                 "DefaultResult": "ABANDON",
@@ -36,9 +40,13 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_QUEUE",
+                    "TargetType": "TDMQ_QUEUE",
                     "TopicName": "",
                     "QueueName": "one-queue"
+                },
+                "LifecycleCommand": {
+                    "CommandId": "",
+                    "Parameters": ""
                 },
                 "CreatedTime": "2019-04-19T02:57:14Z",
                 "DefaultResult": "CONTINUE",
@@ -71,6 +79,10 @@ Output:
                     "TargetType": "",
                     "TopicName": "",
                     "QueueName": ""
+                },
+                "LifecycleCommand": {
+                    "CommandId": "",
+                    "Parameters": ""
                 },
                 "CreatedTime": "2019-04-19T02:51:24Z",
                 "DefaultResult": "CONTINUE",
@@ -110,7 +122,7 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_TOPIC",
+                    "TargetType": "TDMQ_TOPIC",
                     "TopicName": "one-topic",
                     "QueueName": ""
                 },
@@ -126,9 +138,13 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_QUEUE",
+                    "TargetType": "TDMQ_QUEUE",
                     "TopicName": "",
                     "QueueName": "one-queue"
+                },
+                "LifecycleCommand": {
+                    "CommandId": "",
+                    "Parameters": ""
                 },
                 "CreatedTime": "2019-04-19T02:57:14Z",
                 "DefaultResult": "CONTINUE",

@@ -116,6 +116,28 @@
         "title": "创建接入段加速会话"
       }
     ],
+    "CreateGlobalDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomain\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"DefaultValue\": \"1.1.1.1\",\n    \"Alias\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainId\": \"dm-pcp5xac5\",\n        \"RequestId\": \"0266e1f0-10a4-46ce-a118-29e360c90a1b\"\n    }\n}",
+        "title": "创建域名"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomain\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"DefaultValue\": \"127.0.0.1\",\n    \"Alias\": \"www.baidu.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4195a4c-7595-46db-b46d-7fcdafddee2c\",\n        \"DomainId\": \"dm-bihtw7x3\"\n    }\n}",
+        "title": "创建域名示例"
+      }
+    ],
+    "CreateGlobalDomainDns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomainDns\n<公共请求参数>\n\n{\n    \"ProxyIdList\": [\n        \"111\"\n    ],\n    \"NationCountryInnerCodes\": [\n        \"221\"\n    ],\n    \"DomainId\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "创建域名解析记录"
+      }
+    ],
     "CreateHTTPListener": [
       {
         "document": "创建HTTP监听器",
@@ -238,6 +260,22 @@
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirstLinkSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除接入段加速会话"
+      }
+    ],
+    "DeleteGlobalDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "删除域名"
+      }
+    ],
+    "DeleteGlobalDomainDns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalDomainDns\n<公共请求参数>\n\n{\n    \"DnsRecordId\": \"223\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "删除域名解析记录"
       }
     ],
     "DeleteListeners": [
@@ -380,6 +418,28 @@
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirstLinkSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"MTYzMjczNDYyNDU0MWE5OWY3MWMzYTQ3OGZhMjJkY2NlNDU0NDE2YzE3-3-65537\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"DestIpv4\": [\n            \"143.244.174.31\"\n        ],\n        \"Duration\": 1771,\n        \"SuiteType\": \"T100K\",\n        \"RequestId\": \"q708a7c6-db58-4729-8e09-2ea6b727109p\",\n        \"SrcPublicIpv4\": \"211.97.129.234\"\n    }\n}",
         "title": "查询接入段加速会话信息"
+      }
+    ],
+    "DescribeGlobalDomainDns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalDomainDns\n<公共请求参数>\n\n{\n    \"DomainId\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51828ffb-75f5-4378-921b-212a8a07574c\",\n        \"GlobalDnsList\": [\n            {\n                \"Status\": 0,\n                \"AccessList\": [],\n                \"CountryAreaList\": [\n                    {\n                        \"Remark\": \"1\",\n                        \"NationCountryName\": \"韩国\",\n                        \"GeographicalZoneInnerCode\": \"101000\",\n                        \"ContinentName\": \"亚洲\",\n                        \"ContinentInnerCode\": \"100000\",\n                        \"NationCountryInnerCode\": \"101007\",\n                        \"GeographicalZoneName\": \"东亚\"\n                    },\n                    {\n                        \"Remark\": \"1\",\n                        \"NationCountryName\": \"中国大陆-华西\",\n                        \"GeographicalZoneInnerCode\": \"101000\",\n                        \"ContinentName\": \"亚洲\",\n                        \"ContinentInnerCode\": \"100000\",\n                        \"NationCountryInnerCode\": \"101004\",\n                        \"GeographicalZoneName\": \"东亚\"\n                    }\n                ],\n                \"DnsRecordId\": 258\n            }\n        ]\n    }\n}",
+        "title": "查询域名解析记录列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalDomainDns\n<公共请求参数>\n\n{\n    \"DomainId\": \"dm-fgsymu39\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa0f3927-406e-4a45-bced-590b4b0175fe\",\n        \"GlobalDnsList\": [\n            {\n                \"DnsRecordId\": 12756,\n                \"CountryAreaList\": [\n                    {\n                        \"ContinentInnerCode\": \"100000\",\n                        \"ContinentName\": \"亚洲\",\n                        \"GeographicalZoneInnerCode\": \"101000\",\n                        \"GeographicalZoneName\": \"东亚\",\n                        \"NationCountryInnerCode\": \"101001\",\n                        \"NationCountryName\": \"中国大陆-华北\"\n                    }\n                ],\n                \"AccessList\": [\n                    {\n                        \"ProxyId\": \"link-4m6fx36h\",\n                        \"Vip\": \"1.14.225.21\",\n                        \"VipList\": [\n                            {\n                                \"IP\": \"1.14.225.21\",\n                                \"Provider\": \"BGP\",\n                                \"Bandwidth\": 10\n                            }\n                        ],\n                        \"RegionId\": \"Guangzhou\",\n                        \"SourceRegionIdcType\": \"dc\",\n                        \"RegionName\": \"广州（原中国大陆-华南大区）\"\n                    }\n                ],\n                \"Status\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询统一域名的域名解析"
+      }
+    ],
+    "DescribeGlobalDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalDomains\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"Limit\": \"112\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"Status\": 1,\n                \"FullDomain\": \"xx\",\n                \"UpdateTime\": 1,\n                \"DomainId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"ProjectId\": 0,\n                \"DefaultValue\": \"xx\",\n                \"Alias\": \"xx\",\n                \"TagSet\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    },\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": 1,\n                \"ProxyCount\": 1\n            },\n            {\n                \"Status\": 1,\n                \"FullDomain\": \"xx\",\n                \"UpdateTime\": 1,\n                \"DomainId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"ProjectId\": 0,\n                \"DefaultValue\": \"xx\",\n                \"Alias\": \"xx\",\n                \"TagSet\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": 1,\n                \"ProxyCount\": 1\n            },\n            {\n                \"Status\": 1,\n                \"FullDomain\": \"xx\",\n                \"UpdateTime\": 1,\n                \"DomainId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"ProjectId\": 0,\n                \"DefaultValue\": \"xx\",\n                \"Alias\": \"xx\",\n                \"TagSet\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": 1,\n                \"ProxyCount\": 1\n            },\n            {\n                \"Status\": 1,\n                \"FullDomain\": \"xx\",\n                \"UpdateTime\": 1,\n                \"DomainId\": \"xx\",\n                \"BanStatus\": \"xx\",\n                \"ProjectId\": 0,\n                \"DefaultValue\": \"xx\",\n                \"Alias\": \"xx\",\n                \"TagSet\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": 1,\n                \"ProxyCount\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询域名列表"
       }
     ],
     "DescribeGroupAndStatisticsProxy": [
@@ -610,6 +670,22 @@
         "title": "销毁通道"
       }
     ],
+    "DisableGlobalDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5fc71eb-451a-40f2-933f-2732c8990d7f\"\n    }\n}",
+        "title": "暂停指定域名的解析"
+      }
+    ],
+    "EnableGlobalDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "开启域名解析"
+      }
+    ],
     "InquiryPriceCreateProxy": [
       {
         "document": "",
@@ -640,6 +716,28 @@
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomain\n<公共请求参数>\n\n{\n    \"OldDomain\": \"a.a.com\",\n    \"CertificateId\": \"default\",\n    \"ListenerId\": \"0\",\n    \"NewDomain\": \"b.b.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "修改7层监听器转发规则域名"
+      }
+    ],
+    "ModifyGlobalDomainAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalDomainAttribute\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"DefaultValue\": \"1.1.1.1\",\n    \"DomainId\": \"test.com\",\n    \"Alias\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "修改域名属性"
+      }
+    ],
+    "ModifyGlobalDomainDns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalDomainDns\n<公共请求参数>\n\n{\n    \"ProxyIdList\": [\n        \"1213\"\n    ],\n    \"NationCountryInnerCodes\": [\n        \"123\"\n    ],\n    \"DnsRecordId\": \"3223\",\n    \"DomainId\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\"\n    }\n}",
+        "title": "修改域名解析记录"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalDomainDns\n<公共请求参数>\n\n{\n    \"ProxyIdList\": [\n        \"link-4m6fx36h\"\n    ],\n    \"NationCountryInnerCodes\": [\n        \"101001\"\n    ],\n    \"DnsRecordId\": \"12756\",\n    \"DomainId\": \"dm-fgsymu39\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9910da0b-ac6f-4669-bb73-6d0841e93957\"\n    }\n}",
+        "title": "修改统一域名的域名解析"
       }
     ],
     "ModifyGroupDomainConfig": [

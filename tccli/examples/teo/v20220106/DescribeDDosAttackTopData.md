@@ -14,7 +14,8 @@ tccli teo DescribeDDosAttackTopData --cli-unfold-argument  \
     --Limit 1 \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --Port 22
+    --Port 22 \
+    --Area overseas
 ```
 
 Output: 

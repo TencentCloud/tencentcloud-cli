@@ -414,6 +414,12 @@
       "name": "高防IP获取7层规则",
       "output": "DescribeNewL7RulesResponse"
     },
+    "DescribeNewL7RulesErrHealth": {
+      "document": "获取L7转发规则健康检查异常结果列表",
+      "input": "DescribeNewL7RulesErrHealthRequest",
+      "name": "获取L7转发规则健康检查异常结果列表",
+      "output": "DescribeNewL7RulesErrHealthResponse"
+    },
     "DescribeOverviewAttackTrend": {
       "document": "拉取防护概览攻击趋势",
       "input": "DescribeOverviewAttackTrendRequest",
@@ -6730,6 +6736,60 @@
           "name": "ConfigList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewL7RulesErrHealthRequest": {
+      "document": "DescribeNewL7RulesErrHealth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号(bgpip表示高防IP)",
+          "example": "bgpip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则Id列表",
+          "example": "无",
+          "member": "string",
+          "name": "RuleIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewL7RulesErrHealthResponse": {
+      "document": "DescribeNewL7RulesErrHealth返回参数结构体",
+      "members": [
+        {
+          "document": "异常规则列表，返回值说明: Key值为规则ID，Value值为异常IP及错误信息，多个IP用\",\"分割",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "ErrHealths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异常规则的总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -7,14 +7,14 @@ Input:
 ```
 tccli cpdp CreateAcct --cli-unfold-argument  \
     --MidasAppId your_midas_app_id \
-    --SubMchId your_sub_mch_id \
-    --SubMchName 商户名称 \
-    --Address 商户地址 \
-    --Contact encrypted_contact_information \
     --Mobile encrypted_mobile_no \
-    --Email encrypted_email \
+    --MidasSignature your_midas_signature \
     --MidasSecretId your_midas_secret_id \
-    --MidasSignature your_midas_signature
+    --SubMchName 商户名称 \
+    --SubMchId your_sub_mch_id \
+    --Contact encrypted_contact_information \
+    --Address 商户地址 \
+    --Email encrypted_email
 ```
 
 Output: 

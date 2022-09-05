@@ -33,7 +33,7 @@ Input:
 tccli acp CreateAppScanTask --cli-unfold-argument  \
     --Platform 2 \
     --Source 0 \
-    --AppPackage wxec0b921a4d97c684 \
+    --AppPackage wxe***97c684 \
     --TaskType 0
 ```
 
@@ -43,7 +43,7 @@ Output:
     "Response": {
         "RequestId": "6d9fc265-a647-4f3c-b188-3b98e064e905",
         "Result": 0,
-        "TaskID": "267335492440166400"
+        "TaskID": "267***400"
     }
 }
 ```
@@ -74,7 +74,7 @@ Output:
     "Response": {
         "RequestId": "6c296e5b-48ad-4cfb-a90d-8010c9951341",
         "Result": 0,
-        "TaskID": "271249918524395520"
+        "TaskID": "271***520"
     }
 }
 ```
@@ -88,12 +88,12 @@ Input:
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
     --PrivacyTextName 腾讯iOA隐私保护指引.txt \
-    --AppDownloadUrl https://bma-privacy-detection-1251316161.cos.ap-guangzhou.myqcloud.com/1vtHQ3FOVJSFRvu4ZOYpo8YKRrbnTofaB.apk \
+    --AppDownloadUrl https://bm****OYpo8YKRrbnTofaB.apk \
     --Platform 0 \
     --TelNumber 10086 \
     --AppName ioa \
-    --PrivacyTextUrl https://bma-privacy-detection-1251316161.cos.ap-guangzhou.myqcloud.com/2BSWe68WHavcxjc7yrar9xIKPYyvpEgVA.txt \
-    --AppPackage com.tencent.ioa \
+    --PrivacyTextUrl https://bm****jc7yrar9xIKPYyvpEgVA.txt \
+    --AppPackage com.***.i**oa \
     --Source 2 \
     --SalesPerson 张三 \
     --ContactName 老王 \
@@ -109,7 +109,7 @@ Output:
     "Response": {
         "RequestId": "ab653763-5494-42db-b7d3-4afd9eb76410",
         "Result": 0,
-        "TaskID": "271647403302457344"
+        "TaskID": "271***344"
     }
 }
 ```
@@ -123,12 +123,12 @@ Input:
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
     --PrivacyTextName 腾讯iOA隐私保护指引.txt \
-    --AppDownloadUrl https://bma-privacy-detection-1251316161.cos.ap-guangzhou.myqcloud.com/1vtHQ3FOVJSFRvu4ZOYpo8YKRrbnTofaB.apk \
+    --AppDownloadUrl https://bm***8YKRrbnTofaB.apk \
     --Platform 0 \
     --TelNumber 10086 \
     --AppName ioa \
-    --PrivacyTextUrl https://bma-privacy-detection-1251316161.cos.ap-guangzhou.myqcloud.com/2BSWe68WHavcxjc7yrar9xIKPYyvpEgVA.txt \
-    --AppPackage com.tencent.ioa \
+    --PrivacyTextUrl https://bm****cxjc7yrar9xIKPYyvpEgVA.txt \
+    --AppPackage com.***.i**oa \
     --Source 2 \
     --SalesPerson 张三 \
     --ContactName 老王 \
@@ -144,7 +144,32 @@ Output:
     "Response": {
         "RequestId": "4a9ed2aa-a7a9-4a29-90dc-235d8ee83040",
         "Result": 0,
-        "TaskID": "271647786087223296"
+        "TaskID": "271****296"
+    }
+}
+```
+
+**Example 6: 提交漏洞扫描app任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --AppDownloadUrl https://bm***berJdezPIV926.apk \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "0b496234-892d-4f58-8261-9eb7ac3062a9",
+        "Result": 0,
+        "TaskID": "347***496"
     }
 }
 ```

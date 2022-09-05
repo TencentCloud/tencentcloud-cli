@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli tke DeletePrometheusClusterAgent --cli-unfold-argument ```
+tccli tke DeletePrometheusClusterAgent --cli-unfold-argument  \
+    --InstanceId xx \
+    --Agents.0.Describe xx \
+    --Agents.0.ClusterId xx \
+    --Agents.0.ClusterType xx
+```
 
 Output: 
 ```

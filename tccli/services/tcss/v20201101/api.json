@@ -18012,7 +18012,7 @@
         },
         {
           "default": "",
-          "document": "标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除",
+          "document": "标记事件的状态：\nEVENT_UNDEAL:未处理（取消忽略），\nEVENT_DEALED:已处理，\nEVENT_IGNORE:忽略，\nEVENT_DELETE：已删除\nEVENT_ADD_WHITE：加白",
           "example": "EVENT_DEALED",
           "member": "string",
           "name": "Status",
@@ -18027,6 +18027,24 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加白镜像ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "ImageIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "加白事件类型\n   ESCAPE_CGROUPS：利用cgroup机制逃逸\n   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸\n   ESCAPE_DOCKER_API：访问Docker API接口逃逸\n   ESCAPE_VUL_OCCURRED：逃逸漏洞利用\n   MOUNT_SENSITIVE_PTAH：敏感路径挂载\n   PRIVILEGE_CONTAINER_START：特权容器\n   PRIVILEGE：程序提权逃逸",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

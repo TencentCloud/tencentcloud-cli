@@ -17,6 +17,7 @@ Output:
     "Response": {
         "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
         "FileId": "",
+        "TaskId": "",
         "MetaData": {
             "Size": 0,
             "Container": "hls",
@@ -68,6 +69,7 @@ Output:
     "Response": {
         "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
         "FileId": "",
+        "TaskId": "",
         "MetaData": {
             "Size": 0,
             "Container": "hls",

@@ -1680,6 +1680,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "展示自定义域名",
+          "example": "[\"http://xxx.xxx.xxx\",\"http://xxx.xxx.xxx\"]",
+          "member": "string",
+          "name": "CustomDomainNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

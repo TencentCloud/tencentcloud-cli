@@ -195,7 +195,7 @@
     "DeleteRule": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DeleteRule\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&Domain=foo.net\n&Url=/bar2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRule\n<公共请求参数>\n\n{\n    \"Url\": \"/bar2\",\n    \"Domain\": \"foo.net\",\n    \"ListenerId\": \"lbl-4fbxq45k\",\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba2d4eb1-c7c5-480c-98e4-9b7b6a0fd498\"\n    }\n}",
         "title": "删除一条转发规则"
       }
@@ -326,6 +326,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeExclusiveClusters\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClustersVersion\": \"\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"ClusterName\": \"tgw_cluster\",\n                \"ClusterType\": \"TGW\",\n                \"ClusterTag\": null,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Network\": \"Public\",\n                \"Isp\": \"CMCC\",\n                \"MaxConn\": 12,\n                \"MaxInFlow\": 0,\n                \"MaxInPkg\": 0,\n                \"MaxOutFlow\": 0,\n                \"MaxOutPkg\": 0,\n                \"MaxNewConn\": 0,\n                \"HTTPMaxNewConn\": 0,\n                \"HTTPSMaxNewConn\": 0,\n                \"HTTPQps\": 0,\n                \"HTTPSQps\": 0,\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                },\n                \"ResourceCount\": 30,\n                \"IdleResourceCount\": 26,\n                \"LoadBalanceDirectorCount\": 4\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
         "title": "查询集群列表"
+      }
+    ],
+    "DescribeIdleLoadBalancers": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeIdleLoadBalancers\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 46,\n        \"IdleLoadBalancers\": [\n            {\n                \"LoadBalancerId\": \"lb-1l1i6a3k\",\n                \"LoadBalancerName\": \"lb-613054ce\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"172.16.32.29\",\n                \"IdleReason\": \"NO_RULES\",\n                \"Status\": 1,\n                \"Forward\": 1\n            }\n        ],\n        \"RequestId\": \"afa28690-f148-483f-9727-58c2f1da3794\"\n    }\n}",
+        "title": "获取负载均衡闲置实例"
       }
     ],
     "DescribeLBListeners": [

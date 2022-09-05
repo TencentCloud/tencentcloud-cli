@@ -262,7 +262,7 @@
   "metadata": {
     "apiVersion": "2021-07-28",
     "api_brief": "介绍如何使用API的方式来构建压测相关场景",
-    "serviceNameCN": "性能测试服务",
+    "serviceNameCN": "云压测",
     "serviceShortName": "pts"
   },
   "objects": {
@@ -4748,6 +4748,32 @@
       ],
       "usage": "out"
     },
+    "Notification": {
+      "document": "测试启动前后的消息通知",
+      "members": [
+        {
+          "default": "",
+          "document": "发生事件",
+          "example": "[\"name\", \"age\"]",
+          "member": "string",
+          "name": "Events",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "webhook的网址",
+          "example": "\"http://abc.com\"",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Project": {
       "document": "项目",
       "members": [
@@ -6568,6 +6594,15 @@
           "name": "DomainNameConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "WebHook请求配置",
+          "example": "无",
+          "member": "Notification",
+          "name": "NotificationHooks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

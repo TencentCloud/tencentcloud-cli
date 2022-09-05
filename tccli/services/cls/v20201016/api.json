@@ -2508,6 +2508,15 @@
           "name": "Content",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilenameMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4785,7 +4794,7 @@
         },
         {
           "default": "",
-          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "MetaFields",
@@ -6195,6 +6204,15 @@
           "name": "Content",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilenameMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6393,6 +6411,15 @@
           "name": "FromTopicId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
+          "example": "1",
+          "member": "int64",
+          "name": "Compression",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

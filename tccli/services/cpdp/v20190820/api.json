@@ -54,6 +54,18 @@
       "name": "云企付-申请单笔交易回单",
       "output": "ApplyOpenBankOrderDetailReceiptResponse"
     },
+    "ApplyOpenBankSettleOrder": {
+      "document": "云企付结算申请接口",
+      "input": "ApplyOpenBankSettleOrderRequest",
+      "name": "云企付结算申请接口",
+      "output": "ApplyOpenBankSettleOrderResponse"
+    },
+    "ApplyOpenBankSubMerchantSignOnline": {
+      "document": "子商户在线签约",
+      "input": "ApplyOpenBankSubMerchantSignOnlineRequest",
+      "name": "云企付-子商户在线签约",
+      "output": "ApplyOpenBankSubMerchantSignOnlineResponse"
+    },
     "ApplyOutwardOrder": {
       "document": "跨境-汇出指令申请。通过该接口可将对接方账户中的人民币余额汇兑成外币，再汇出至指定银行账户。",
       "input": "ApplyOutwardOrderRequest",
@@ -900,6 +912,12 @@
       "name": "云企付-退款结果查询",
       "output": "QueryOpenBankRefundOrderResponse"
     },
+    "QueryOpenBankSettleOrder": {
+      "document": "云企付结算单查询结果",
+      "input": "QueryOpenBankSettleOrderRequest",
+      "name": "云企付结算单查询结果",
+      "output": "QueryOpenBankSettleOrderResponse"
+    },
     "QueryOpenBankSubMerchantCredential": {
       "document": "云企付-子商户资质文件查询",
       "input": "QueryOpenBankSubMerchantCredentialRequest",
@@ -911,6 +929,12 @@
       "input": "QueryOpenBankSubMerchantRateConfigureRequest",
       "name": "云企付-子商户费率配置结果查询",
       "output": "QueryOpenBankSubMerchantRateConfigureResponse"
+    },
+    "QueryOpenBankSubMerchantSignOnline": {
+      "document": "子商户在线签约查询",
+      "input": "QueryOpenBankSubMerchantSignOnlineRequest",
+      "name": "云企付-子商户在线签约查询",
+      "output": "QueryOpenBankSubMerchantSignOnlineResponse"
     },
     "QueryOpenBankSupportBankList": {
       "document": "云企付-查询支持银行列表",
@@ -1683,6 +1707,15 @@
           "example": "无",
           "member": "string",
           "name": "Environment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string"
         }
@@ -3604,6 +3637,276 @@
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyOpenBankSettleOrderRequest": {
+      "document": "ApplyOpenBankSettleOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部结算流水号",
+          "example": "无",
+          "member": "string",
+          "name": "OutSettleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结算金额",
+          "example": "无",
+          "member": "int64",
+          "name": "SettleAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "渠道名称。详见附录-枚举类型-ChannelName。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道子商户号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结算备注",
+          "example": "无",
+          "member": "string",
+          "name": "SettleDetail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结算成功回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyOpenBankSettleOrderResponse": {
+      "document": "ApplyOpenBankSettleOrder返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyOpenBankSettleOrderResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyOpenBankSettleOrderResult": {
+      "document": "云企付结算申请结果",
+      "members": [
+        {
+          "default": "",
+          "document": "外部结算流水号",
+          "example": "无",
+          "member": "string",
+          "name": "OutSettleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道结算流水号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSettleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "退款状态。\nSUCCESS：结算成功；\nFAILED：结算失败；\nPROCESSING：结算中;\nINIT:初始化;\nACCEPT_FAILED:受理失败,底层银行返回订单不存在\nACCEPTED：受理成功\n_UNKNOWN：默认未知",
+          "example": "无",
+          "member": "string",
+          "name": "SettleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyOpenBankSubMerchantSignOnlineRequest": {
+      "document": "ApplyOpenBankSubMerchantSignOnline请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户号。外部平台接入云企付平台下发。必填。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称。详见附录-枚举类型-ChannelName。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部子商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道子商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约成功回调地址。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyOpenBankSubMerchantSignOnlineResponse": {
+      "document": "ApplyOpenBankSubMerchantSignOnline返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyOpenBankSubMerchantSignOnlineResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyOpenBankSubMerchantSignOnlineResult": {
+      "document": "子商户在线签约返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING“签约中",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "SignStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传返回描述，例如失败原因等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道返回信息，见渠道特殊说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalReturnData",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -8467,6 +8770,24 @@
           "name": "OrganizationInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "子商户证件类型\n1 - 身份证\n3 - 回乡证\n4 - 中国护照\n5 - 台胞证\n19 - 外国护照\n52 - 组织机构代码证\n68 - 营业执照 \n73 - 统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantIdType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子商户证件号码\n<敏感信息>加密详见<a href=\"https://cloud.tencent.com/document/product/1122/48979\" target=\"_blank\">《商户端接口敏感信息加密说明》</a>",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantIdCode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11698,6 +12019,24 @@
           "name": "ProfitShareInfoList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数",
+          "example": "无",
+          "member": "OpenBankSettlementRulesInfo",
+          "name": "SettlementRulesInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "底层支付渠道特殊字段，若无特殊说明时，可以为空",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPaymentData",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -18368,6 +18707,72 @@
       ],
       "usage": "in"
     },
+    "OpenBankProfitShareRespInfo": {
+      "document": "分账信息结果",
+      "members": [
+        {
+          "default": "",
+          "document": "接收方企业ID",
+          "example": "无",
+          "member": "string",
+          "name": "RecvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分润金额（分）",
+          "example": "无",
+          "member": "int64",
+          "name": "ProfitShareFee",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际分账金额",
+          "example": "无",
+          "member": "int64",
+          "name": "RealProfitShareFee",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分账状态",
+          "example": "无",
+          "member": "string",
+          "name": "ProfitShareStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分账完成时间",
+          "example": "无",
+          "member": "string",
+          "name": "ProfitFinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分账类型",
+          "example": "无",
+          "member": "int64",
+          "name": "ProfitShareType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OpenBankQueryRefundOrderResult": {
       "document": "云企付-退款查询结果",
       "members": [
@@ -18479,6 +18884,16 @@
           "name": "RefundMessage",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分账信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankProfitShareRespInfo",
+          "name": "ProfitShareRespInfoList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -18760,6 +19175,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OpenBankSettlementRulesInfo": {
+      "document": "云企付-结算规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ONCE：仅单次解冻（默认）\nMULTI：多次解冻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONCE",
+          "member": "string",
+          "name": "UnfreezeRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ONCE：仅单次退款（默认）\nMULTI：多次退款\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONCE",
+          "member": "string",
+          "name": "RefundRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -28267,7 +28708,7 @@
         },
         {
           "default": "",
-          "document": "订单状态。\nINIT：初始化\nPAYING：支付中\nACCEPTED：支付受理成功\nSUCCESS：支付成功\nCLOSED：关单\nPAY_FAIL：支付失败\nREVOKE：退票",
+          "document": "订单状态。\nINIT：初始化\nPAYING：支付中\nACCEPTED：支付受理成功\nSUCCESS：支付成功\nCLOSED：关单\nPAY_FAIL：支付失败\nREVOKE：退票\nPART_REFUND：部分退款\nFULL_REFUND：全部退款",
           "example": "SUCCESS",
           "member": "string",
           "name": "OrderStatus",
@@ -28384,6 +28825,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分账信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankProfitShareRespInfo",
+          "name": "ProfitShareRespInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -28468,6 +28919,183 @@
         }
       ],
       "type": "object"
+    },
+    "QueryOpenBankSettleOrderRequest": {
+      "document": "QueryOpenBankSettleOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道子商户号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部结算流水号，与渠道结算流水号二选一",
+          "example": "无",
+          "member": "string",
+          "name": "OutSettleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道结算流水号，与外部结算流水号二选一",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSettleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSettleOrderResponse": {
+      "document": "QueryOpenBankSettleOrder返回参数结构体",
+      "members": [
+        {
+          "document": "错误码",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryOpenBankSettleOrderResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSettleOrderResult": {
+      "document": "云企付结算查询结果",
+      "members": [
+        {
+          "default": "",
+          "document": "外部结算流水号",
+          "example": "无",
+          "member": "string",
+          "name": "OutSettleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道结算流水号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSettleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "退款状态。\nSUCCESS：结算成功；\nFAILED：结算失败；\nPROCESSING：结算中;\nINIT:初始化;\nACCEPT_FAILED:受理失败,底层银行返回订单不存在\nACCEPTED：受理成功\n_UNKNOWN：默认未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SettleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结算金额",
+          "example": "无",
+          "member": "int64",
+          "name": "SettleAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结算日期，格式YYYYMMdd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SettleDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结算类型（T1/D1）",
+          "example": "无",
+          "member": "string",
+          "name": "SettleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "完成时间，格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFinish",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结算手续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SettleFee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QueryOpenBankSubMerchantCredentialRequest": {
       "document": "QueryOpenBankSubMerchantCredential请求参数结构体",
@@ -28730,6 +29358,113 @@
           "example": "成功",
           "member": "string",
           "name": "DealMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryOpenBankSubMerchantSignOnlineRequest": {
+      "document": "QueryOpenBankSubMerchantSignOnline请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户号。外部平台接入云企付平台下发。必填。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称。详见附录-枚举类型-ChannelName。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部子商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道子商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSubMerchantSignOnlineResponse": {
+      "document": "QueryOpenBankSubMerchantSignOnline返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryOpenBankSubMerchantSignOnlineResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSubMerchantSignOnlineResult": {
+      "document": "子商户查询签约返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING“签约中",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "SignStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传返回描述，例如失败原因等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignMessage",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -32850,6 +33585,15 @@
           "name": "Environment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账信息列表。",
+          "example": "无",
+          "member": "OpenBankProfitShareInfo",
+          "name": "ProfitShareInfoList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -36755,6 +37499,7 @@
         {
           "default": "",
           "document": "ISO 货币代码，CNY",
+          "example": "CNY",
           "member": "string",
           "name": "CurrencyType",
           "required": true,
@@ -36763,6 +37508,7 @@
         {
           "default": "",
           "document": "聚鑫分配的支付主MidasAppId",
+          "example": "your_midas_app_id",
           "member": "string",
           "name": "MidasAppId",
           "required": true,
@@ -36771,6 +37517,7 @@
         {
           "default": "",
           "document": "支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_order_no",
           "member": "string",
           "name": "OutTradeNo",
           "required": true,
@@ -36779,6 +37526,7 @@
         {
           "default": "",
           "document": "商品详情，需要URL编码",
+          "example": "商品详情",
           "member": "string",
           "name": "ProductDetail",
           "required": true,
@@ -36787,6 +37535,7 @@
         {
           "default": "",
           "document": "商品ID，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "your_product_id",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -36795,6 +37544,7 @@
         {
           "default": "",
           "document": "商品名称，需要URL编码",
+          "example": "商品名称",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -36803,6 +37553,7 @@
         {
           "default": "",
           "document": "支付金额，单位： 分",
+          "example": "1",
           "member": "int64",
           "name": "TotalAmt",
           "required": true,
@@ -36811,6 +37562,7 @@
         {
           "default": "",
           "document": "用户ID，长度不小于5位，仅支持字母和数字的组合",
+          "example": "your_user_id",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -36819,6 +37571,7 @@
         {
           "default": "",
           "document": "银行真实渠道.如:bank_pingan",
+          "example": "bank_pingan",
           "member": "string",
           "name": "RealChannel",
           "required": true,
@@ -36827,6 +37580,7 @@
         {
           "default": "",
           "document": "原始金额",
+          "example": "1",
           "member": "int64",
           "name": "OriginalAmt",
           "required": true,
@@ -36835,6 +37589,7 @@
         {
           "default": "",
           "document": "聚鑫分配的安全ID",
+          "example": "your_midas_secret_id",
           "member": "string",
           "name": "MidasSecretId",
           "required": true,
@@ -36843,6 +37598,7 @@
         {
           "default": "",
           "document": "按照聚鑫安全密钥计算的签名",
+          "example": "your_midas_signature",
           "member": "string",
           "name": "MidasSignature",
           "required": true,
@@ -36851,6 +37607,7 @@
         {
           "default": "",
           "document": "Web端回调地址",
+          "example": "http://callbackurl",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -36859,6 +37616,7 @@
         {
           "default": "",
           "document": "指定支付渠道：  wechat：微信支付  qqwallet：QQ钱包 \n bank：网银支付  只有一个渠道时需要指定",
+          "example": "wechat",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -36867,6 +37625,7 @@
         {
           "default": "",
           "document": "透传字段，支付成功回调透传给应用，用于业务透传自定义内容",
+          "example": "xxxx",
           "member": "string",
           "name": "Metadata",
           "required": false,
@@ -36875,6 +37634,7 @@
         {
           "default": "",
           "document": "购买数量，不传默认为1",
+          "example": "1",
           "member": "int64",
           "name": "Quantity",
           "required": false,
@@ -36883,6 +37643,7 @@
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "your_sub_app_id",
           "member": "string",
           "name": "SubAppId",
           "required": false,
@@ -36891,6 +37652,7 @@
         {
           "default": "",
           "document": "子订单信息列表，格式：子订单号、子应用ID、金额。 压缩后最长不可超过65535字节(去除空格，换行，制表符等无意义字符)\n注：接入银行或其他支付渠道服务商模式下，必传",
+          "example": "无",
           "member": "UnifiedOrderInSubOrderList",
           "name": "SubOrderList",
           "required": false,
@@ -36899,6 +37661,7 @@
         {
           "default": "",
           "document": "结算应收金额，单位：分",
+          "example": "1",
           "member": "int64",
           "name": "TotalMchIncome",
           "required": false,
@@ -36907,6 +37670,7 @@
         {
           "default": "",
           "document": "平台应收金额，单位：分",
+          "example": "0",
           "member": "int64",
           "name": "TotalPlatformIncome",
           "required": false,
@@ -36915,6 +37679,7 @@
         {
           "default": "",
           "document": "微信公众号/小程序支付时为必选，需要传微信下的openid",
+          "example": "xxxx",
           "member": "string",
           "name": "WxOpenId",
           "required": false,
@@ -36923,6 +37688,7 @@
         {
           "default": "",
           "document": "在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一",
+          "example": "your_wx_sub_open_id",
           "member": "string",
           "name": "WxSubOpenId",
           "required": false,
@@ -36931,6 +37697,7 @@
         {
           "default": "",
           "document": "环境名:\nrelease: 现网环境\nsandbox: 沙箱环境\ndevelopment: 开发环境\n缺省: release",
+          "example": "xxxx",
           "member": "string",
           "name": "MidasEnvironment",
           "required": false,
@@ -36939,6 +37706,7 @@
         {
           "default": "",
           "document": "微信商户应用ID",
+          "example": "your_wx_app_id",
           "member": "string",
           "name": "WxAppId",
           "required": false,
@@ -36947,6 +37715,7 @@
         {
           "default": "",
           "document": "微信商户子应用ID",
+          "example": "your_wx_sub_app_id",
           "member": "string",
           "name": "WxSubAppId",
           "required": false,
@@ -36955,6 +37724,7 @@
         {
           "default": "",
           "document": "支付通知地址",
+          "example": "http://cloud.tencent.com",
           "member": "string",
           "name": "PaymentNotifyUrl",
           "required": false,
@@ -36968,29 +37738,37 @@
       "members": [
         {
           "document": "支付金额，单位： 分",
+          "example": "1",
           "member": "int64",
           "name": "TotalAmt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "应用支付订单号",
+          "example": "your_order_no",
           "member": "string",
           "name": "OutTradeNo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "支付参数透传给聚鑫SDK（原文透传给SDK即可，不需要解码）",
+          "example": "data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22user123%22%2C%22out_trade_no%22%3A%22mikeuf1910181230%22%2C%22product_id%22%3A%22product_111%22%7D&sign=sign",
           "member": "string",
           "name": "PayInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "聚鑫的交易订单",
+          "example": "E-191018160200005000",
           "member": "string",
           "name": "TransactionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

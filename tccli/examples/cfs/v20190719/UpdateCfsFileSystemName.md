@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli cfs UpdateCfsFileSystemName --cli-unfold-argument  \
-    --FileSystemId cfs-12345 \
-    --CreationToken test
+    --FileSystemId cfs-12345
 ```
 
 Output: 

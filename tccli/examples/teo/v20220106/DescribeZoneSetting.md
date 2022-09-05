@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "ddc589b3-c3f3-487d-a29e-43a9008d3c59",
+        "Area": "mainland",
         "Cache": {
             "Cache": {
                 "CacheTime": 2592000,

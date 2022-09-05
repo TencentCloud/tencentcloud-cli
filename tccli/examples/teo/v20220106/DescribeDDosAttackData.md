@@ -14,7 +14,8 @@ tccli teo DescribeDDosAttackData --cli-unfold-argument  \
     --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2022-08-22T00:00:00+00:00 \
     --EndTime 2022-08-23T00:00:00+00:00 \
-    --Port 22
+    --Port 22 \
+    --Area overseas
 ```
 
 Output: 

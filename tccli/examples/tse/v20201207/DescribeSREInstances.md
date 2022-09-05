@@ -28,12 +28,15 @@ Output:
                         "Status": "xx",
                         "SpecId": "xx",
                         "EnableConfigInternet": true,
+                        "EnvDesc": "xx",
                         "ConfigServiceIp": "xx",
                         "StorageCapacity": 0,
                         "EnvName": "xx",
                         "EnvReplica": 0,
                         "ConfigInternetServiceIp": "xx",
                         "AdminServiceIp": "xx",
+                        "ClientBandWidth": 1,
+                        "AliasEnvName": "xx",
                         "RunningCount": 0
                     }
                 ],
@@ -57,6 +60,7 @@ Output:
                 "EnableConsoleIntranet": true,
                 "EngineRegion": "xx",
                 "ConfigInfoVisible": true,
+                "IsolateTime": "xx",
                 "Name": "xx",
                 "ServiceGovernanceInfos": [
                     {
@@ -77,6 +81,13 @@ Output:
                         "Features": [
                             "xx"
                         ],
+                        "PgwVpcInfos": [
+                            {
+                                "SubnetId": "xx",
+                                "VpcId": "xx",
+                                "IntranetAddress": "xx"
+                            }
+                        ],
                         "AuthOpen": true,
                         "EngineRegion": "xx",
                         "MainPassword": "xx"
@@ -85,21 +96,28 @@ Output:
                 "ConsoleDefaultPwd": "xx",
                 "StorageCapacity": 0,
                 "EKSClusterID": "xx",
-                "VpcInfos": [
+                "RegionInfos": [
                     {
-                        "SubnetId": "xx",
-                        "VpcId": "xx",
-                        "IntranetAddress": "xx"
+                        "Replica": 0,
+                        "SpecId": "xx",
+                        "EngineRegion": "xx",
+                        "EnableClientInternet": true
                     }
                 ],
                 "StorageType": "xx",
                 "SubnetIds": [
-                    "a"
+                    "xx"
                 ],
                 "Paymode": "xx",
                 "EnableStorage": true,
-                "Replica": 3,
-                "CreateTime": "xx"
+                "Replica": 0,
+                "CreateTime": "xx",
+                "VpcInfos": [
+                    {
+                        "VpcId": "xx",
+                        "SubnetId": "xx"
+                    }
+                ]
             }
         ],
         "TotalCount": 0,

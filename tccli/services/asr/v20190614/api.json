@@ -439,7 +439,7 @@
       "members": [
         {
           "default": "",
-          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；\n• 16k_zh_dialect：多方言，支持23种方言。",
+          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -457,7 +457,7 @@
         },
         {
           "default": "",
-          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）",
+          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。",
           "example": "0",
           "member": "uint64",
           "name": "ResTextFormat",
@@ -547,7 +547,7 @@
         },
         {
           "default": "",
-          "document": "热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。",
+          "document": "热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。",
           "example": "无",
           "member": "string",
           "name": "HotwordId",
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。",
+          "document": "自学习模型 id。如设置了该参数，将生效对应的自学习模型。",
           "example": "无",
           "member": "string",
           "name": "CustomizationId",
@@ -1296,7 +1296,7 @@
       "members": [
         {
           "default": "",
-          "document": "腾讯云项目 ID，可填 0，总长度不超过 1024 字节。",
+          "document": "腾讯云项目 ID，废弃参数，默认填写0即可。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -1314,7 +1314,7 @@
         },
         {
           "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_medical：16k 医疗；\n• 16k_zh_dialect：多方言，支持23种方言。",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_medical：16k 医疗；",
           "example": "16k_en",
           "member": "string",
           "name": "EngSerViceType",
@@ -1341,7 +1341,7 @@
         },
         {
           "default": "",
-          "document": "用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。",
+          "document": "用户端对此任务的唯一标识。废弃参数，忽略即可。",
           "example": "d4ce3bb438dd0743",
           "member": "string",
           "name": "UsrAudioKey",
@@ -1377,12 +1377,12 @@
         },
         {
           "default": "",
-          "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
-          "example": "966ecea2abd537c8",
-          "member": "string",
-          "name": "HotwordId",
+          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "WordInfo",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
@@ -1422,12 +1422,21 @@
         },
         {
           "default": "",
-          "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。",
-          "example": "0",
-          "member": "int64",
-          "name": "WordInfo",
+          "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
+          "example": "966ecea2abd537c8",
+          "member": "string",
+          "name": "HotwordId",
           "required": false,
-          "type": "int"
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自学习模型 id。如设置了该参数，将生效对应的自学习模型。",
+          "example": "966ecea2abd537c8",
+          "member": "string",
+          "name": "CustomizationId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -4984,6 +4984,148 @@
       ],
       "usage": "out"
     },
+    "SyncTableField": {
+      "document": "缓写表字段名称的映射",
+      "members": [
+        {
+          "default": "",
+          "document": "TcaplusDB表字段名称",
+          "example": "id",
+          "member": "string",
+          "name": "SourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标缓写表的字段名称",
+          "example": "id",
+          "member": "string",
+          "name": "TargetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SyncTableInfo": {
+      "document": "TcaplusDB的缓写表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标缓写表的分表数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "TargetTableSplitNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标缓写表名前缀",
+          "example": "无",
+          "member": "string",
+          "name": "TargetTableNamePrefix",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缓写数据库实例ID",
+          "example": "cdb-70zdmgg1",
+          "member": "string",
+          "name": "TargetSyncDBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缓写表所在数据库名称",
+          "example": "db",
+          "member": "string",
+          "name": "TargetDatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格所在集群ID",
+          "example": "18641706761",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格所在表格组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格名称",
+          "example": "tablename",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格ID",
+          "example": "tcaplus-d753f0db",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB表主键字段到目标缓写表字段的映射",
+          "example": "无",
+          "member": "SyncTableField",
+          "name": "KeyFieldMapping",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB表字段到目标缓写表字段的映射",
+          "example": "无",
+          "member": "SyncTableField",
+          "name": "ValueFieldMapping",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TableGroupInfo": {
       "document": "表格组详细信息",
       "members": [
@@ -5316,6 +5458,16 @@
           "name": "TxhBackupExpireDay",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格的缓写信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SyncTableInfo",
+          "name": "SyncTableInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

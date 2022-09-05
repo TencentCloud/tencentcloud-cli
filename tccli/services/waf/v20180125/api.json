@@ -1090,9 +1090,75 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子产品code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_wsm_waf_bot",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "BotQPS": {
+      "document": "bot的qps详情",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id",
+          "example": "waf_2kuj8hls00b7bo99_bot",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效时间",
+          "example": "2022-08-11 17:39:53",
+          "member": "string",
+          "name": "ValidTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所在地区",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用qps的最大值",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxBotQPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BotStatPointItem": {
       "document": "bot的趋势图对象",
@@ -3126,6 +3192,16 @@
           "example": "无",
           "member": "BotPkg",
           "name": "BotPkg",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "bot的qps详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotQPS",
+          "name": "BotQPS",
           "required": false,
           "type": "object",
           "value_allowed_null": true

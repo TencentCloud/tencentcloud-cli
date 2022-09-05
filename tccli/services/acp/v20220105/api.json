@@ -277,7 +277,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -412,7 +412,7 @@
         },
         {
           "default": "",
-          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -592,7 +592,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -664,7 +664,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源计费项名称(为空时，则根据TaskType和Platform进行查询)",
+          "document": "资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)",
           "example": "sp_011886_maats_inquire",
           "member": "string",
           "name": "PriceName",
@@ -686,6 +686,15 @@
           "example": "0",
           "member": "int64",
           "name": "Platform",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
+          "example": "2",
+          "member": "int64",
+          "name": "Source",
           "required": false,
           "type": "int"
         }
@@ -727,7 +736,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, -1:所有, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, -1:所有, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "-1",
           "member": "int64",
           "name": "Source",
@@ -737,7 +746,7 @@
         {
           "default": "",
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
-          "example": "0",
+          "example": "2",
           "member": "int64",
           "name": "Platform",
           "required": true,
@@ -853,7 +862,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
           "name": "Source",
@@ -930,6 +939,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "诊断json结果内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "诊断json结果内容",
+          "member": "string",
+          "name": "ReportResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -943,7 +961,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
+          "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;",
           "example": "2",
           "member": "int64",
           "name": "Source",

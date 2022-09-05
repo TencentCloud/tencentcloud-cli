@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcss ModifyEscapeEventStatus --cli-unfold-argument  \
-    --EventIdSet xx \
     --Status xx \
-    --Remark xx
+    --Remark xx \
+    --EventIdSet xx
 ```
 
 Output: 

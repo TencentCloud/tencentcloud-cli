@@ -116,14 +116,6 @@
         "title": "资产中心资产组删除"
       }
     ],
-    "DeleteSecurityGroupAllRule": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupAllRule\n<公共请求参数>\n\n{\n    \"Area\": \"ap-guangzhou\",\n    \"Direction\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
-        "title": "删除全部安全组规则"
-      }
-    ],
     "DeleteSecurityGroupRule": [
       {
         "document": "",
@@ -250,14 +242,6 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwVpcDnsLst\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"VpcDnsSwitchLst\": [\n            {\n                \"SwitchStatus\": 0,\n                \"NatInsId\": \"cfwnat-f3250045\",\n                \"DNSEip\": \"121.5.27.250\",\n                \"VpcIpv4Cidr\": \"10.115.0.0/16\",\n                \"FwMode\": 1,\n                \"VpcName\": \"wy\",\n                \"VpcId\": \"vpc-ilbrv877\"\n            }\n        ],\n        \"Total\": 1,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
         "title": "ShowNatFwVpcDnsLst 展示租户NAT防火墙实例的vpc dns 开关信息"
-      }
-    ],
-    "DescribeNatRuleOverview": [
-      {
-        "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeNatRuleOverview\n&Direction=1\n&Area=ap-chongqing\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"cfwnat-f3250045\",\n        \"InstanceName\": \"nat-name\",\n        \"EipList\": [\n            \"192.168.0.1\",\n            \"10.10.10.10\"\n        ],\n        \"DnatNum\": 10,\n        \"TotalNum\": 100,\n        \"RemainNum\": 4900,\n        \"BlockNum\": 50,\n        \"EnableNum\": 10,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
-        "title": "nat规则列表概况"
       }
     ],
     "DescribeResourceGroup": [
@@ -566,14 +550,6 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RemoveType\": 0,\n    \"RuleUuid\": 8888\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Status\": 0\n    }\n}",
         "title": "删除新企业安全组规则"
-      }
-    ],
-    "RunSyncAsset": [
-      {
-        "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=RunSyncAsset\n&Type=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
-        "title": "同步资产-互联网&VPC"
       }
     ],
     "SetNatFwDnatRule": [

@@ -72,22 +72,6 @@
         "title": "获取数据详情"
       }
     ],
-    "DescribeFilterResult": [
-      {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResult\r\n&BizId=0\r\n&FileId=test_file_id\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BizId\": 0,\n            \"Data\": [\n                {\n                    \"Type\": 1,\n                    \"Word\": \"xxxx\"\n                }\n            ],\n            \"FileId\": \"test_file_id\",\n            \"FileName\": \"test_file_name\",\n            \"OpenId\": \"\",\n            \"Timestamp\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
-        "title": "查询识别结果"
-      }
-    ],
-    "DescribeFilterResultList": [
-      {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResultList\r\n&BizId=0\r\n&StartDate=0000-00-00\r\n&EndDate=0000-00-00\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            }\n        ],\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 100\n    }\n}",
-        "title": "查询识别结果列表"
-      }
-    ],
     "DescribeRealtimeScanConfig": [
       {
         "document": "",
@@ -208,14 +192,6 @@
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanUsers\n<公共请求参数>\n\n{\n    \"UserIdRegex\": [\n        \"xx\"\n    ],\n    \"UserIdString\": \"xx\",\n    \"BizId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新用户自定义送检用户号"
-      }
-    ],
-    "VoiceFilter": [
-      {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=VoiceFilter\n&BizId=0\n&FileId=test_file_id\n&FileName=test_file_name\n&FileUrl=http%3a%2f%2ftest_file_url.com%2ffile\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
-        "title": "语音过滤"
       }
     ]
   },

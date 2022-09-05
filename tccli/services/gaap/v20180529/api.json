@@ -78,6 +78,18 @@
       "name": "创建接入段加速会话",
       "output": "CreateFirstLinkSessionResponse"
     },
+    "CreateGlobalDomain": {
+      "document": "用来创建统一域名",
+      "input": "CreateGlobalDomainRequest",
+      "name": "创建域名",
+      "output": "CreateGlobalDomainResponse"
+    },
+    "CreateGlobalDomainDns": {
+      "document": "创建域名解析记录",
+      "input": "CreateGlobalDomainDnsRequest",
+      "name": "创建域名解析记录",
+      "output": "CreateGlobalDomainDnsResponse"
+    },
     "CreateHTTPListener": {
       "document": "该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。",
       "input": "CreateHTTPListenerRequest",
@@ -161,6 +173,18 @@
       "input": "DeleteFirstLinkSessionRequest",
       "name": "删除接入段加速会话",
       "output": "DeleteFirstLinkSessionResponse"
+    },
+    "DeleteGlobalDomain": {
+      "document": "删除统一域名",
+      "input": "DeleteGlobalDomainRequest",
+      "name": "删除域名",
+      "output": "DeleteGlobalDomainResponse"
+    },
+    "DeleteGlobalDomainDns": {
+      "document": "删除域名的某条解析记录",
+      "input": "DeleteGlobalDomainDnsRequest",
+      "name": "删除域名解析记录",
+      "output": "DeleteGlobalDomainDnsResponse"
     },
     "DeleteListeners": {
       "document": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。",
@@ -263,6 +287,18 @@
       "input": "DescribeFirstLinkSessionRequest",
       "name": "查询接入段加速会话信息",
       "output": "DescribeFirstLinkSessionResponse"
+    },
+    "DescribeGlobalDomainDns": {
+      "document": "查询域名解析列表",
+      "input": "DescribeGlobalDomainDnsRequest",
+      "name": "查询域名解析列表",
+      "output": "DescribeGlobalDomainDnsResponse"
+    },
+    "DescribeGlobalDomains": {
+      "document": "查询域名列表",
+      "input": "DescribeGlobalDomainsRequest",
+      "name": "查询域名列表",
+      "output": "DescribeGlobalDomainsResponse"
     },
     "DescribeGroupAndStatisticsProxy": {
       "document": "该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息",
@@ -426,6 +462,18 @@
       "name": "销毁通道",
       "output": "DestroyProxiesResponse"
     },
+    "DisableGlobalDomain": {
+      "document": "暂停域名解析",
+      "input": "DisableGlobalDomainRequest",
+      "name": "暂停域名解析",
+      "output": "DisableGlobalDomainResponse"
+    },
+    "EnableGlobalDomain": {
+      "document": "开启域名解析",
+      "input": "EnableGlobalDomainRequest",
+      "name": "开启域名解析",
+      "output": "EnableGlobalDomainResponse"
+    },
     "InquiryPriceCreateProxy": {
       "document": "本接口（InquiryPriceCreateProxy）用于创建加速通道询价。",
       "input": "InquiryPriceCreateProxyRequest",
@@ -449,6 +497,18 @@
       "input": "ModifyDomainRequest",
       "name": "更新监听器转发规则域名",
       "output": "ModifyDomainResponse"
+    },
+    "ModifyGlobalDomainAttribute": {
+      "document": "修改域名属性",
+      "input": "ModifyGlobalDomainAttributeRequest",
+      "name": "修改域名属性",
+      "output": "ModifyGlobalDomainAttributeResponse"
+    },
+    "ModifyGlobalDomainDns": {
+      "document": "修改域名解析记录",
+      "input": "ModifyGlobalDomainDnsRequest",
+      "name": "修改域名解析记录",
+      "output": "ModifyGlobalDomainDnsResponse"
     },
     "ModifyGroupDomainConfig": {
       "document": "本接口（ModifyGroupDomainConfig）用于配置通道组就近接入域名。",
@@ -1940,6 +2000,114 @@
       ],
       "type": "object"
     },
+    "CreateGlobalDomainDnsRequest": {
+      "document": "CreateGlobalDomainDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道ID列表",
+          "example": "[\"111\\n\"]",
+          "member": "string",
+          "name": "ProxyIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "国家ID列表",
+          "example": "[\"221\\n\"]",
+          "member": "string",
+          "name": "NationCountryInnerCodes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalDomainDnsResponse": {
+      "document": "CreateGlobalDomainDns返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalDomainRequest": {
+      "document": "CreateGlobalDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名所属项目ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名默认入口",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别名",
+          "example": "test",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "TagPair",
+          "name": "TagSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalDomainResponse": {
+      "document": "CreateGlobalDomain返回参数结构体",
+      "members": [
+        {
+          "document": "域名ID",
+          "example": "dm-pcp5xac5",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateHTTPListenerRequest": {
       "document": "CreateHTTPListener请求参数结构体",
       "members": [
@@ -3119,6 +3287,60 @@
       ],
       "type": "object"
     },
+    "DeleteGlobalDomainDnsRequest": {
+      "document": "DeleteGlobalDomainDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "解析记录的ID",
+          "example": "223",
+          "member": "uint64",
+          "name": "DnsRecordId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalDomainDnsResponse": {
+      "document": "DeleteGlobalDomainDns返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalDomainRequest": {
+      "document": "DeleteGlobalDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalDomainResponse": {
+      "document": "DeleteGlobalDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteListenersRequest": {
       "document": "DeleteListeners请求参数结构体",
       "members": [
@@ -3823,6 +4045,123 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainDnsRequest": {
+      "document": "DescribeGlobalDomainDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainDnsResponse": {
+      "document": "DescribeGlobalDomainDns返回参数结构体",
+      "members": [
+        {
+          "document": "DNS解析记录详细信息列表",
+          "example": "无",
+          "member": "GlobalDns",
+          "name": "GlobalDnsList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainsRequest": {
+      "document": "DescribeGlobalDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页数量限制",
+          "example": "112",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，域名会被拉取出来。",
+          "example": "无",
+          "member": "TagPair",
+          "name": "TagSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainsResponse": {
+      "document": "DescribeGlobalDomains返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息列表",
+          "example": "无",
+          "member": "Domain",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5840,6 +6179,159 @@
       ],
       "usage": "in"
     },
+    "DisableGlobalDomainRequest": {
+      "document": "DisableGlobalDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableGlobalDomainResponse": {
+      "document": "DisableGlobalDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Domain": {
+      "document": "统一域名信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "xx",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完整域名记录",
+          "example": "xx",
+          "member": "string",
+          "name": "FullDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别名",
+          "example": "xx",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "xx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，1表示关闭，0表示开启，2表示关闭中，3表示开启中",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属项目",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认入口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "ProxyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，使用UNIX时间戳",
+          "example": "123456",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，使用UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TagPair",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "封禁解封状态：BANNED表示已封禁，RECOVER表示已解封或未封禁，BANNING表示封禁中，RECOVERING表示解封中，BAN_FAILED表示封禁失败，RECOVER_FAILED表示解封失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RECOVER",
+          "member": "string",
+          "name": "BanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DomainAccessRegionDict": {
       "document": "域名解析就近访问配置详情",
       "members": [
@@ -6203,6 +6695,33 @@
       ],
       "usage": "out"
     },
+    "EnableGlobalDomainRequest": {
+      "document": "EnableGlobalDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableGlobalDomainResponse": {
+      "document": "EnableGlobalDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "过滤条件",
       "members": [
@@ -6226,6 +6745,52 @@
         }
       ],
       "usage": "in"
+    },
+    "GlobalDns": {
+      "document": "统一域名解析的DNS记录",
+      "members": [
+        {
+          "default": "",
+          "document": "解析记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "DnsRecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名就近接入地域信息列表",
+          "example": "[]",
+          "member": "CountryAreaMap",
+          "name": "CountryAreaList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名解析对应的通道接入点信息列表",
+          "example": "[]",
+          "member": "ProxyAccessInfo",
+          "name": "AccessList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析状态：1表示运行中，2表示创建中，3表示修改中，4表示删除中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GroupStatisticsInfo": {
       "document": "可以显示统计数据的通道组和对应通道信息",
@@ -6326,6 +6891,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-xxxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -6335,6 +6901,7 @@
         {
           "default": "",
           "document": "监听器名称",
+          "example": "test",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -6344,6 +6911,7 @@
         {
           "default": "",
           "document": "监听器端口",
+          "example": "443",
           "member": "uint64",
           "name": "Port",
           "required": true,
@@ -6353,6 +6921,7 @@
         {
           "default": "",
           "document": "监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS",
+          "example": "HTTPS",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -6362,6 +6931,7 @@
         {
           "default": "",
           "document": "监听器状态，其中：\n0表示运行中；\n1表示创建中；\n2表示销毁中；\n3表示源站调整中；\n4表示配置变更中。",
+          "example": "0",
           "member": "uint64",
           "name": "ListenerStatus",
           "required": true,
@@ -6371,6 +6941,7 @@
         {
           "default": "",
           "document": "监听器服务器SSL证书ID",
+          "example": "cert-xxxx",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -6380,6 +6951,7 @@
         {
           "default": "",
           "document": "监听器后端转发源站协议",
+          "example": "HTTPS",
           "member": "string",
           "name": "ForwardProtocol",
           "required": true,
@@ -6389,6 +6961,7 @@
         {
           "default": "",
           "document": "监听器创建时间，Unix时间戳",
+          "example": "1661788772",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -6398,6 +6971,7 @@
         {
           "default": "",
           "document": "服务器SSL证书的别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testcert",
           "member": "string",
           "name": "CertificateAlias",
           "required": true,
@@ -6407,6 +6981,7 @@
         {
           "default": "",
           "document": "监听器客户端CA证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cert-xxxx",
           "member": "string",
           "name": "ClientCertificateId",
           "required": true,
@@ -6416,6 +6991,7 @@
         {
           "default": "",
           "document": "监听器认证方式。其中，\n0表示单向认证；\n1表示双向认证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AuthType",
           "required": true,
@@ -6425,6 +7001,7 @@
         {
           "default": "",
           "document": "客户端CA证书别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testcert",
           "member": "string",
           "name": "ClientCertificateAlias",
           "required": true,
@@ -6434,10 +7011,21 @@
         {
           "default": "",
           "document": "多客户端CA证书别名信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "CertificateAliasInfo",
           "name": "PolyClientCertificateAliasInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持Http3，其中：\n0，不支持Http3接入；\n1，持Http3接入。\n注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6919,6 +7507,114 @@
     },
     "ModifyDomainResponse": {
       "document": "ModifyDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalDomainAttributeRequest": {
+      "document": "ModifyGlobalDomainAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "别名",
+          "example": "test",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认入口",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalDomainAttributeResponse": {
+      "document": "ModifyGlobalDomainAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalDomainDnsRequest": {
+      "document": "ModifyGlobalDomainDns请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "解析记录ID",
+          "example": "3223",
+          "member": "uint64",
+          "name": "DnsRecordId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "国家ID列表",
+          "example": "[\"123\\n\"]",
+          "member": "string",
+          "name": "NationCountryInnerCodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "通道ID列表",
+          "example": "[\"1213\\n\"]",
+          "member": "string",
+          "name": "ProxyIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalDomainDnsResponse": {
+      "document": "ModifyGlobalDomainDns返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8038,6 +8734,72 @@
         }
       ],
       "type": "object"
+    },
+    "ProxyAccessInfo": {
+      "document": "加速通道接入点详细信息(包含id、地域、ip等）",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道接入ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "三网通道VIP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IPDetail",
+          "name": "VipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点IDC类型。ec或dc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SourceRegionIdcType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ProxyGroupDetail": {
       "document": "通道组详情信息",

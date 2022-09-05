@@ -43,7 +43,7 @@
       "output": "CreateLaunchConfigurationResponse"
     },
     "CreateLifecycleHook": {
-      "document": "本接口（CreateLifecycleHook）用于创建生命周期挂钩。\n\n* 您可以为生命周期挂钩配置消息通知，弹性伸缩会通知您的CMQ消息队列，通知内容形如：\n\n```\n{\n\t\"Service\": \"Tencent Cloud Auto Scaling\",\n\t\"Time\": \"2019-03-14T10:15:11Z\",\n\t\"AppId\": \"1251783334\",\n\t\"ActivityId\": \"asa-fznnvrja\",\n\t\"AutoScalingGroupId\": \"asg-rrrrtttt\",\n\t\"LifecycleHookId\": \"ash-xxxxyyyy\",\n\t\"LifecycleHookName\": \"my-hook\",\n\t\"LifecycleActionToken\": \"3080e1c9-0efe-4dd7-ad3b-90cd6618298f\",\n\t\"InstanceId\": \"ins-aaaabbbb\",\n\t\"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n\t\"NotificationMetadata\": \"\"\n}\n```",
+      "document": "本接口（CreateLifecycleHook）用于创建生命周期挂钩。\n\n* 您可以为生命周期挂钩配置消息通知或执行自动化助手命令。\n\n如果您配置了通知消息，弹性伸缩会通知您的TDMQ消息队列，通知内容形如：\n\n```\n{\n\t\"Service\": \"Tencent Cloud Auto Scaling\",\n\t\"Time\": \"2019-03-14T10:15:11Z\",\n\t\"AppId\": \"1251783334\",\n\t\"ActivityId\": \"asa-fznnvrja\",\n\t\"AutoScalingGroupId\": \"asg-rrrrtttt\",\n\t\"LifecycleHookId\": \"ash-xxxxyyyy\",\n\t\"LifecycleHookName\": \"my-hook\",\n\t\"LifecycleActionToken\": \"3080e1c9-0efe-4dd7-ad3b-90cd6618298f\",\n\t\"InstanceId\": \"ins-aaaabbbb\",\n\t\"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n\t\"NotificationMetadata\": \"\"\n}\n```",
       "input": "CreateLifecycleHookRequest",
       "name": "创建生命周期挂钩",
       "output": "CreateLifecycleHookResponse"
@@ -1791,7 +1791,7 @@
         },
         {
           "default": "",
-          "document": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\"。最大长度不能超过1024个字节。",
+          "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串\"\"。最大长度不能超过1024个字节。",
           "example": "\"\"",
           "member": "string",
           "name": "NotificationMetadata",
@@ -1800,7 +1800,7 @@
         },
         {
           "default": "",
-          "document": "通知目标",
+          "document": "通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
           "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
@@ -1815,6 +1815,15 @@
           "name": "LifecycleTransitionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
+          "example": "无",
+          "member": "LifecycleCommand",
+          "name": "LifecycleCommand",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4132,6 +4141,7 @@
         {
           "default": "",
           "document": "生命周期挂钩标识。",
+          "example": "ash-xxxxxxxx",
           "member": "string",
           "name": "LifecycleHookId",
           "required": true,
@@ -4141,6 +4151,7 @@
         {
           "default": "",
           "document": "实例标识。",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4149,7 +4160,28 @@
         },
         {
           "default": "",
-          "document": "通知的结果，表示通知CMQ是否成功。",
+          "document": "执行活动ID。可通过TAT的[查询执行活动](https://cloud.tencent.com/document/api/1340/52679)API查询具体的执行结果。",
+          "example": "inv-xxxxxxxx",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令调用的结果，表示执行TAT命令是否成功。<br>\n<li>SUCCESSFUL 命令调用成功，不代表命令执行成功，执行的具体情况可根据InvocationId进行查询</li>\n<li>FAILED 命令调用失败</li>\n<li>NONE</li>",
+          "example": "SUCCESSFUL",
+          "member": "string",
+          "name": "InvokeCommandResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知的结果，表示通知CMQ/TDMQ是否成功。<br>\n<li>SUCCESSFUL 通知成功</li>\n<li>FAILED 通知失败</li>\n<li>NONE</li>",
+          "example": "null",
           "member": "string",
           "name": "NotificationResult",
           "required": true,
@@ -4159,6 +4191,7 @@
         {
           "default": "",
           "document": "生命周期挂钩动作的执行结果，取值包括 CONTINUE、ABANDON。",
+          "example": "CONTINUE",
           "member": "string",
           "name": "LifecycleActionResult",
           "required": true,
@@ -4167,7 +4200,8 @@
         },
         {
           "default": "",
-          "document": "结果的原因。",
+          "document": "结果的原因。<br>\n<li>HEARTBEAT_TIMEOUT 由于心跳超时，结果根据DefaultResult设置。</li>\n<li>NOTIFICATION_FAILURE 由于发送通知失败，结果根据DefaultResult设置。</li>\n<li>CALL_INTERFACE 调用了接口CompleteLifecycleAction设置结果。</li>\n<li>ANOTHER_ACTION_ABANDON 另一个生命周期操作的结果已设置为“ABANDON”。</li>\n<li>COMMAND_CALL_FAILURE  由于命令调用失败，结果根据DefaultResult设置。</li>\n<li>COMMAND_EXEC_FINISH  命令执行完成。</li>\n<li>COMMAND_EXEC_FAILURE 由于命令执行失败，结果根据DefaultResult设置。</li>\n<li>COMMAND_EXEC_RESULT_CHECK_FAILURE 由于命令结果检查失败，结果根据DefaultResult设置。</li>",
+          "example": "HEARTBEAT_TIMEOUT",
           "member": "string",
           "name": "ResultReason",
           "required": true,
@@ -4177,12 +4211,39 @@
       ],
       "usage": "out"
     },
+    "LifecycleCommand": {
+      "document": "远程命令执行对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "远程命令ID。若选择执行命令，则此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmd-xxxxxxxx",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义参数。字段类型为 json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LifecycleHook": {
       "document": "生命周期挂钩",
       "members": [
         {
           "default": "",
           "document": "生命周期挂钩ID",
+          "example": "ash-ck4bkcjt",
           "member": "string",
           "name": "LifecycleHookId",
           "required": true,
@@ -4192,6 +4253,7 @@
         {
           "default": "",
           "document": "生命周期挂钩名称",
+          "example": "demo",
           "member": "string",
           "name": "LifecycleHookName",
           "required": true,
@@ -4201,6 +4263,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-lk5nn4xi",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4210,6 +4273,7 @@
         {
           "default": "",
           "document": "生命周期挂钩默认结果",
+          "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
           "required": true,
@@ -4219,6 +4283,7 @@
         {
           "default": "",
           "document": "生命周期挂钩等待超时时间",
+          "example": "300",
           "member": "int64",
           "name": "HeartbeatTimeout",
           "required": true,
@@ -4228,6 +4293,7 @@
         {
           "default": "",
           "document": "生命周期挂钩适用场景",
+          "example": "INSTANCE_TERMINATING",
           "member": "string",
           "name": "LifecycleTransition",
           "required": true,
@@ -4237,6 +4303,7 @@
         {
           "default": "",
           "document": "通知目标的附加信息",
+          "example": "\"\"",
           "member": "string",
           "name": "NotificationMetadata",
           "required": true,
@@ -4246,6 +4313,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -4255,6 +4323,7 @@
         {
           "default": "",
           "document": "通知目标",
+          "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
           "required": true,
@@ -4264,11 +4333,22 @@
         {
           "default": "",
           "document": "生命周期挂钩适用场景",
+          "example": "NORMAL",
           "member": "string",
           "name": "LifecycleTransitionType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "远程命令执行对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LifecycleCommand",
+          "name": "LifecycleCommand",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4912,6 +4992,15 @@
           "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "远程命令执行对象。",
+          "example": "无",
+          "member": "LifecycleCommand",
+          "name": "LifecycleCommand",
           "required": false,
           "type": "object"
         }
@@ -6257,7 +6346,7 @@
         },
         {
           "default": "",
-          "document": "弹性伸缩向通知目标发送的附加信息，默认值为空字符串\"\"",
+          "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串\"\"",
           "example": "\"\"",
           "member": "string",
           "name": "NotificationMetadata",
@@ -6266,7 +6355,7 @@
         },
         {
           "default": "",
-          "document": "通知目标",
+          "document": "通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
           "example": "无",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
@@ -6281,6 +6370,15 @@
           "name": "LifecycleTransitionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
+          "example": "无",
+          "member": "LifecycleCommand",
+          "name": "LifecycleCommand",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

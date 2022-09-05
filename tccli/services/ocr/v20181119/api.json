@@ -193,7 +193,7 @@
       "output": "MLIDCardOCRResponse"
     },
     "MLIDPassportOCR": {
-      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n",
+      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。\n",
       "input": "MLIDPassportOCRRequest",
       "name": "护照识别（港澳台地区及境外护照）",
       "output": "MLIDPassportOCRResponse"
@@ -4024,7 +4024,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "国籍",
+          "document": "国家地区代码",
           "example": "SGP",
           "member": "string",
           "name": "Nationality",
@@ -9278,6 +9278,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属税局",
+          "example": "深圳",
+          "member": "string",
+          "name": "TaxBureau",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通行费标志:Y、是;N、否",
+          "example": "N",
+          "member": "string",
+          "name": "TrafficFreeFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9374,6 +9394,7 @@
         {
           "default": "",
           "document": "行号",
+          "example": "1",
           "member": "string",
           "name": "LineNo",
           "required": true,
@@ -9383,6 +9404,7 @@
         {
           "default": "",
           "document": "名称",
+          "example": "XX",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9392,6 +9414,7 @@
         {
           "default": "",
           "document": "规格",
+          "example": "N",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -9401,6 +9424,7 @@
         {
           "default": "",
           "document": "单位",
+          "example": "无",
           "member": "string",
           "name": "Unit",
           "required": true,
@@ -9410,6 +9434,7 @@
         {
           "default": "",
           "document": "数量",
+          "example": "1",
           "member": "string",
           "name": "Quantity",
           "required": true,
@@ -9419,6 +9444,7 @@
         {
           "default": "",
           "document": "单价",
+          "example": "1",
           "member": "string",
           "name": "UnitPrice",
           "required": true,
@@ -9428,6 +9454,7 @@
         {
           "default": "",
           "document": "不含税金额",
+          "example": "1",
           "member": "string",
           "name": "AmountWithoutTax",
           "required": true,
@@ -9437,6 +9464,7 @@
         {
           "default": "",
           "document": "税率",
+          "example": "3%",
           "member": "string",
           "name": "TaxRate",
           "required": true,
@@ -9446,8 +9474,19 @@
         {
           "default": "",
           "document": "税额",
+          "example": "1",
           "member": "string",
           "name": "TaxAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税收分类编码",
+          "example": "XXX",
+          "member": "string",
+          "name": "TaxClassifyCode",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10049,6 +10088,16 @@
           "example": "10987765",
           "member": "string",
           "name": "SellerTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购方身份证",
+          "example": "xx",
+          "member": "string",
+          "name": "BuyerNo",
           "required": true,
           "type": "string",
           "value_allowed_null": false

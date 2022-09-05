@@ -449,6 +449,8 @@ include tccli/services/tts/v20190823/api.json
 include tccli/services/tts/v20190823/examples.json
 include tccli/services/ump/v20200918/api.json
 include tccli/services/ump/v20200918/examples.json
+include tccli/services/vm/v20210922/api.json
+include tccli/services/vm/v20210922/examples.json
 include tccli/services/vm/v20201229/api.json
 include tccli/services/vm/v20201229/examples.json
 include tccli/services/vm/v20200709/api.json

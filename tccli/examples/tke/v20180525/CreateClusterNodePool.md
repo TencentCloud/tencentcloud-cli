@@ -17,6 +17,16 @@ tccli tke CreateClusterNodePool --cli-unfold-argument  \
     --InstanceAdvancedSettings.Unschedulable 0 \
     --InstanceAdvancedSettings.UserScript xx \
     --InstanceAdvancedSettings.DesiredPodNumber 0 \
+    --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
+    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address xx \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version xx \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Version xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Name xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName xx \
     --InstanceAdvancedSettings.MountTarget xx \
     --InstanceAdvancedSettings.DataDisks.0.DiskPartition xx \
     --InstanceAdvancedSettings.DataDisks.0.DiskType xx \

@@ -6,6 +6,12 @@
       "name": "恢复实例访问",
       "output": "ActivateInstanceResponse"
     },
+    "AddClusterSlaveZone": {
+      "document": "增加从可用区",
+      "input": "AddClusterSlaveZoneRequest",
+      "name": "增加从可用区",
+      "output": "AddClusterSlaveZoneResponse"
+    },
     "AddInstances": {
       "document": "本接口（AddInstances）用于集群添加实例",
       "input": "AddInstancesRequest",
@@ -95,6 +101,12 @@
       "input": "DescribeClusterParamLogsRequest",
       "name": "查询参数修改日志",
       "output": "DescribeClusterParamLogsResponse"
+    },
+    "DescribeClusterParams": {
+      "document": "本接口（DescribeClusterParams）用于查询集群参数",
+      "input": "DescribeClusterParamsRequest",
+      "name": "查询集群参数",
+      "output": "DescribeClusterParamsResponse"
     },
     "DescribeClusters": {
       "document": "查询集群列表",
@@ -240,6 +252,12 @@
       "name": "修改集群参数",
       "output": "ModifyClusterParamResponse"
     },
+    "ModifyClusterSlaveZone": {
+      "document": "修改从可用区",
+      "input": "ModifyClusterSlaveZoneRequest",
+      "name": "修改从可用区",
+      "output": "ModifyClusterSlaveZoneResponse"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -276,6 +294,12 @@
       "name": "暂停serverless集群",
       "output": "PauseServerlessResponse"
     },
+    "RemoveClusterSlaveZone": {
+      "document": "删除从可用区",
+      "input": "RemoveClusterSlaveZoneRequest",
+      "name": "删除从可用区",
+      "output": "RemoveClusterSlaveZoneResponse"
+    },
     "ResumeServerless": {
       "document": "恢复serverless集群",
       "input": "ResumeServerlessRequest",
@@ -299,6 +323,12 @@
       "input": "SetRenewFlagRequest",
       "name": "设置自动续费",
       "output": "SetRenewFlagResponse"
+    },
+    "SwitchClusterZone": {
+      "document": "切换到从可用区",
+      "input": "SwitchClusterZoneRequest",
+      "name": "切换到从可用区",
+      "output": "SwitchClusterZoneResponse"
     },
     "UpgradeInstance": {
       "document": "升级实例",
@@ -421,6 +451,51 @@
         {
           "document": "任务流id",
           "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClusterSlaveZoneRequest": {
+      "document": "AddClusterSlaveZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClusterSlaveZoneResponse": {
+      "document": "AddClusterSlaveZone返回参数结构体",
+      "members": [
+        {
+          "document": "异步FlowId",
+          "example": "12345",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -3600,6 +3675,51 @@
       ],
       "type": "object"
     },
+    "DescribeClusterParamsRequest": {
+      "document": "DescribeClusterParams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-1xcycbu8",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterParamsResponse": {
+      "document": "DescribeClusterParams返回参数结构体",
+      "members": [
+        {
+          "document": "参数个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例参数列表",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClustersRequest": {
       "document": "DescribeClusters请求参数结构体",
       "members": [
@@ -3899,6 +4019,15 @@
           "name": "DbType",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回可用区信息",
+          "example": "False",
+          "member": "bool",
+          "name": "IncludeZoneStocks",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4221,7 +4350,7 @@
       "document": "DescribeRollbackTimeRange返回参数结构体",
       "members": [
         {
-          "document": "有效回归时间范围开始时间点",
+          "document": "有效回归时间范围开始时间点（已废弃）",
           "example": "2019-01-13 02:12:05",
           "member": "string",
           "name": "TimeRangeStart",
@@ -4230,12 +4359,21 @@
           "value_allowed_null": false
         },
         {
-          "document": "有效回归时间范围结束时间点",
+          "document": "有效回归时间范围结束时间点（已废弃）",
           "example": "2019-01-20 02:10:12",
           "member": "string",
           "name": "TimeRangeEnd",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可回档时间范围",
+          "example": "无",
+          "member": "RollbackTimeRange",
+          "name": "RollbackTimeRanges",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4562,7 +4700,7 @@
         },
         {
           "default": "",
-          "document": "购买商品数量",
+          "document": "购买计算节点个数",
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
@@ -4770,6 +4908,7 @@
         {
           "default": "",
           "document": "实例CPU，单位：核",
+          "example": "无",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -4779,6 +4918,7 @@
         {
           "default": "",
           "document": "实例内存，单位：GB",
+          "example": "无",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -4788,6 +4928,7 @@
         {
           "default": "",
           "document": "实例最大可用存储，单位：GB",
+          "example": "无",
           "member": "uint64",
           "name": "MaxStorageSize",
           "required": true,
@@ -4797,11 +4938,62 @@
         {
           "default": "",
           "document": "实例最小可用存储，单位：GB",
+          "example": "无",
           "member": "uint64",
           "name": "MinStorageSize",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有库存",
+          "example": "无",
+          "member": "bool",
+          "name": "HasStock",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大IOPS",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxIops",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大IO带宽",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxIoBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域库存信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneStockInfo",
+          "name": "ZoneStockInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5164,6 +5356,60 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterSlaveZoneRequest": {
+      "document": "ModifyClusterSlaveZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "旧从可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "OldSlaveZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新从可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "NewSlaveZone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterSlaveZoneResponse": {
+      "document": "ModifyClusterSlaveZone返回参数结构体",
+      "members": [
+        {
+          "document": "异步FlowId",
+          "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5570,6 +5816,111 @@
       ],
       "type": "object"
     },
+    "ParamInfo": {
+      "document": "参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "当前值",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数为enum/string/bool时，可选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数类型为float/integer时的最大值",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型为float/integer时的最小值",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启生效",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型：integer/float/string/enum/bool",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配类型，multiVal, regex在参数类型是string时使用",
+          "member": "string",
+          "name": "MatchType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配目标值，当multiVal时，各个key用;分割",
+          "member": "string",
+          "name": "MatchValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ParamItem": {
       "document": "修改参数时，传入参数描述",
       "members": [
@@ -5820,6 +6171,51 @@
         }
       ],
       "usage": "in"
+    },
+    "RemoveClusterSlaveZoneRequest": {
+      "document": "RemoveClusterSlaveZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveClusterSlaveZoneResponse": {
+      "document": "RemoveClusterSlaveZone返回参数结构体",
+      "members": [
+        {
+          "document": "异步FlowId",
+          "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResumeServerlessRequest": {
       "document": "ResumeServerless请求参数结构体",
@@ -6079,6 +6475,32 @@
       ],
       "usage": "in"
     },
+    "RollbackTimeRange": {
+      "document": "可回档的时间范围",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeRangeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeRangeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SecurityGroup": {
       "document": "安全组详情",
       "members": [
@@ -6308,6 +6730,69 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchClusterZoneRequest": {
+      "document": "SwitchClusterZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "OldZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要切换到的可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "NewZone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "维护期间执行-yes,立即执行-no",
+          "example": "false",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchClusterZoneResponse": {
+      "document": "SwitchClusterZone返回参数结构体",
+      "members": [
+        {
+          "document": "异步FlowId",
+          "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TablePrivileges": {
       "document": "mysql表权限",
@@ -6550,6 +7035,32 @@
         }
       ],
       "type": "object"
+    },
+    "ZoneStockInfo": {
+      "document": "可用区库存信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有库存",
+          "example": "无",
+          "member": "bool",
+          "name": "HasStock",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

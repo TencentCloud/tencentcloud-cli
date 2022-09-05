@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli teo DescribeDDosAttackEventDetail --cli-unfold-argument  \
-    --EventId 12314451244512
+    --EventId 12314451244512 \
+    --Area overseas
 ```
 
 Output: 

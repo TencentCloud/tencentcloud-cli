@@ -78,12 +78,6 @@
       "name": "资产中心资产组删除",
       "output": "DeleteResourceGroupResponse"
     },
-    "DeleteSecurityGroupAllRule": {
-      "document": "删除全部规则",
-      "input": "DeleteSecurityGroupAllRuleRequest",
-      "name": "删除全部安全组规则",
-      "output": "DeleteSecurityGroupAllRuleResponse"
-    },
     "DeleteSecurityGroupRule": {
       "document": "删除规则",
       "input": "DeleteSecurityGroupRuleRequest",
@@ -179,12 +173,6 @@
       "input": "DescribeNatFwVpcDnsLstRequest",
       "name": "展示当前natfw 实例对应的vpc dns开关",
       "output": "DescribeNatFwVpcDnsLstResponse"
-    },
-    "DescribeNatRuleOverview": {
-      "document": "nat规则列表概况",
-      "input": "DescribeNatRuleOverviewRequest",
-      "name": "nat规则列表概况",
-      "output": "DescribeNatRuleOverviewResponse"
     },
     "DescribeResourceGroup": {
       "document": "DescribeResourceGroup资产中心资产树信息",
@@ -407,12 +395,6 @@
       "input": "RemoveEnterpriseSecurityGroupRuleRequest",
       "name": "删除新企业安全组规则",
       "output": "RemoveEnterpriseSecurityGroupRuleResponse"
-    },
-    "RunSyncAsset": {
-      "document": "同步资产-互联网&VPC",
-      "input": "RunSyncAssetRequest",
-      "name": "同步资产-互联网&VPC",
-      "output": "RunSyncAssetResponse"
     },
     "SetNatFwDnatRule": {
       "document": "配置防火墙Dnat规则",
@@ -1767,54 +1749,6 @@
       ],
       "type": "object"
     },
-    "DeleteSecurityGroupAllRuleRequest": {
-      "document": "DeleteSecurityGroupAllRule请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "方向，0：出站，1：入站",
-          "member": "uint64",
-          "name": "Direction",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "腾讯云地域的英文简写",
-          "member": "string",
-          "name": "Area",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteSecurityGroupAllRuleResponse": {
-      "document": "DeleteSecurityGroupAllRule返回参数结构体",
-      "members": [
-        {
-          "document": "0: 操作成功，非0：操作失败",
-          "member": "int64",
-          "name": "Status",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "返回数据的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "Info",
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteSecurityGroupRuleRequest": {
       "document": "DeleteSecurityGroupRule请求参数结构体",
       "members": [
@@ -2410,7 +2344,7 @@
       "members": [
         {
           "default": "",
-          "document": "0：cfw新增模式，1：cfw接入模式",
+          "document": "1：cfw接入模式，目前仅支持接入模式实例",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -2428,7 +2362,7 @@
         },
         {
           "default": "",
-          "document": "防火墙实例id",
+          "document": "防火墙实例id，当前仅支持接入模式的实例",
           "example": "cfwnat-d2afc817",
           "member": "string",
           "name": "CfwInstance",
@@ -2922,96 +2856,6 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeNatRuleOverviewRequest": {
-      "document": "DescribeNatRuleOverview请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "方向，0：出站，1：入站 默认值：0",
-          "member": "uint64",
-          "name": "Direction",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "NAT地域  这个是必填项，填入相关的英文，'ap-beijing-fsi': '北京金融',\n        'ap-beijing': '北京',\n        'ap-changsha-ec': '长沙EC',\n        'ap-chengdu': '成都',\n        'ap-chongqing': '重庆',\n        'ap-fuzhou-ec': '福州EC',\n        'ap-guangzhou-open': '广州Open',\n        'ap-guangzhou': '广州',\n        'ap-hangzhou-ec': '杭州EC',\n        'ap-jinan-ec': '济南EC',\n        'ap-nanjing': '南京',\n        'ap-shanghai-fsi': '上海金融',\n        'ap-shanghai': '上海',\n        'ap-shenzhen-fsi': '深圳金融',\n        'ap-shenzhen': '深圳',\n        'ap-wuhan-ec': '武汉EC'",
-          "member": "string",
-          "name": "Area",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeNatRuleOverviewResponse": {
-      "document": "DescribeNatRuleOverview返回参数结构体",
-      "members": [
-        {
-          "document": "实例ID",
-          "member": "string",
-          "name": "InstanceId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "实例名称",
-          "member": "string",
-          "name": "InstanceName",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "弹性IP列表",
-          "member": "string",
-          "name": "EipList",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "端口转发规则数量",
-          "member": "int64",
-          "name": "DnatNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "访问控制规则总数",
-          "member": "int64",
-          "name": "TotalNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "访问控制规则剩余配额",
-          "member": "int64",
-          "name": "RemainNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "阻断规则条数",
-          "member": "int64",
-          "name": "BlockNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "启用规则条数",
-          "member": "int64",
-          "name": "EnableNum",
-          "type": "int",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6018,39 +5862,6 @@
         }
       ],
       "usage": "in"
-    },
-    "RunSyncAssetRequest": {
-      "document": "RunSyncAsset请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "0: 互联网防火墙开关，1：vpc 防火墙开关",
-          "member": "uint64",
-          "name": "Type",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "RunSyncAssetResponse": {
-      "document": "RunSyncAsset返回参数结构体",
-      "members": [
-        {
-          "document": "0：同步成功，1：资产更新中，2：后台同步调用失败",
-          "member": "int64",
-          "name": "Status",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ScanInfo": {
       "document": "新手引导扫描信息  ",

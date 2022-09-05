@@ -7,9 +7,9 @@
       "output": "CreateSessionResponse"
     },
     "DescribeInstancesCount": {
-      "document": "获取实例总数和运行数",
+      "document": "获取并发总数和运行数",
       "input": "DescribeInstancesCountRequest",
-      "name": "获取实例总数和运行数",
+      "name": "获取并发总数和运行数",
       "output": "DescribeInstancesCountResponse"
     },
     "SaveGameArchive": {
@@ -281,6 +281,15 @@
           "example": "cgg-1234abcd",
           "member": "string",
           "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "GameRegion",
           "required": false,
           "type": "string"
         }

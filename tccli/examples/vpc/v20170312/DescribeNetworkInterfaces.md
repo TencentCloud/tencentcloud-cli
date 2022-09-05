@@ -89,8 +89,8 @@ Input:
 
 ```
 tccli vpc DescribeNetworkInterfaces --cli-unfold-argument  \
-    --Filters.0.Name tag:Version \
-    --Filters.0.Values TEST
+    --Filters.0.Values TEST \
+    --Filters.0.Name tag:Version
 ```
 
 Output: 

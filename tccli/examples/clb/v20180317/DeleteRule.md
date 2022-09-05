@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli clb DeleteRule --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2rm0 \
-    --ListenerId lbl-4fbxq45k \
+    --Url /bar2 \
     --Domain foo.net \
-    --Url /bar2
+    --ListenerId lbl-4fbxq45k \
+    --LoadBalancerId lb-cuxw2rm0
 ```
 
 Output: 

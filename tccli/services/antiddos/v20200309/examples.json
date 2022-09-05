@@ -552,6 +552,14 @@
         "title": "获取7层规则"
       }
     ],
+    "DescribeNewL7RulesErrHealth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNewL7RulesErrHealth\n<公共请求参数>\n\n{\n    \"Business\": \"bgpip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"ErrHealths\": [\n            {\n                \"Key\": \"rule-00000001\",\n                \"Value\": \"1.1.1.1 400,2.2.2.2 500\"\n            }\n        ]\n    }\n}",
+        "title": "获取L7转发规则健康检查异常结果"
+      }
+    ],
     "DescribeOverviewAttackTrend": [
       {
         "document": "",

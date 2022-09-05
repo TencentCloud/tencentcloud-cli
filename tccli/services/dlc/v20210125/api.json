@@ -4586,7 +4586,7 @@
         },
         {
           "default": "",
-          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回1000行数据。",
+          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回MaxResults字段设置的数据量。",
           "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
           "member": "string",
           "name": "NextToken",
@@ -4724,6 +4724,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "任务概览信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TasksOverview",
+          "name": "TasksOverview",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7116,7 +7125,7 @@
       "usage": "in"
     },
     "TaskResponseInfo": {
-      "document": "任务实例",
+      "document": "任务实例。",
       "members": [
         {
           "default": "",
@@ -7150,7 +7159,7 @@
         },
         {
           "default": "",
-          "document": "计算时长，单位： ms。",
+          "document": "计算耗时，单位： ms",
           "example": "60000",
           "member": "int64",
           "name": "UsedTime",
@@ -7417,12 +7426,22 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务耗时，单位： ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80000",
+          "member": "int64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
     "TaskResultInfo": {
-      "document": "任务结果信息",
+      "document": "任务结果信息。",
       "members": [
         {
           "default": "",
@@ -7496,7 +7515,7 @@
         },
         {
           "default": "",
-          "document": "任务执行耗时，单位秒",
+          "document": "计算耗时，单位： ms",
           "example": "42",
           "member": "int64",
           "name": "UsedTime",
@@ -7603,6 +7622,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务耗时，单位： ms",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7662,6 +7691,52 @@
         }
       ],
       "usage": "in"
+    },
+    "TasksOverview": {
+      "document": "任务概览",
+      "members": [
+        {
+          "default": "",
+          "document": "正在排队的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskQueuedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskInitCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正在执行的任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskRunningCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前时间范围的总任务个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TextFile": {
       "document": "文本格式",

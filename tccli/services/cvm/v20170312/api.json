@@ -4151,11 +4151,12 @@
       "usage": "out"
     },
     "HostItem": {
-      "document": "cdh实例详细信息",
+      "document": "专用宿主机实例详细信息",
       "members": [
         {
           "default": "",
-          "document": "cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "document": "专用宿主机实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": false,
@@ -4164,7 +4165,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例id",
+          "document": "专用宿主机实例id",
+          "example": "无",
           "member": "string",
           "name": "HostId",
           "required": false,
@@ -4173,7 +4175,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例类型",
+          "document": "专用宿主机实例类型",
+          "example": "无",
           "member": "string",
           "name": "HostType",
           "required": false,
@@ -4182,7 +4185,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例名称",
+          "document": "专用宿主机实例名称",
+          "example": "无",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -4191,7 +4195,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例付费模式",
+          "document": "专用宿主机实例付费模式",
+          "example": "无",
           "member": "string",
           "name": "HostChargeType",
           "required": false,
@@ -4200,7 +4205,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例自动续费标记",
+          "document": "专用宿主机实例自动续费标记",
+          "example": "无",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -4209,7 +4215,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例创建时间",
+          "document": "专用宿主机实例创建时间",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": false,
@@ -4218,7 +4225,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例过期时间",
+          "document": "专用宿主机实例过期时间",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "required": false,
@@ -4227,7 +4235,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例上已创建云子机的实例id列表",
+          "document": "专用宿主机实例上已创建云子机的实例id列表",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -4236,7 +4245,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例状态",
+          "document": "专用宿主机实例状态",
+          "example": "无",
           "member": "string",
           "name": "HostState",
           "required": false,
@@ -4245,7 +4255,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例ip",
+          "document": "专用宿主机实例ip",
+          "example": "无",
           "member": "string",
           "name": "HostIp",
           "required": false,
@@ -4254,7 +4265,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例资源信息",
+          "document": "专用宿主机实例资源信息",
+          "example": "无",
           "member": "HostResource",
           "name": "HostResource",
           "required": false,
@@ -4264,6 +4276,7 @@
         {
           "default": "",
           "document": "专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CageId",
           "required": true,
@@ -9738,7 +9751,7 @@
         },
         {
           "default": "",
-          "document": "目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。",
+          "document": "目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。\n\n如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。",
           "example": "[\"ap-guangzhou\\r\\n\"]",
           "member": "string",
           "name": "DestinationRegions",
@@ -9747,12 +9760,21 @@
         },
         {
           "default": "",
-          "document": "检测是否支持发起同步镜像",
+          "document": "检测是否支持发起同步镜像。",
           "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "目标镜像名称。",
+          "example": "“a”",
+          "member": "string",
+          "name": "ImageName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9953,7 +9975,7 @@
       "members": [
         {
           "default": "",
-          "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1（售罄） </li>\n<li> ap-hongkong-2 </li>\n<li> ap-hongkong-3 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-guangzhou-7 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-tokyo-2 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-singapore-3 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-bangkok-2 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1（售罄）</li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> ap-beijing-6 </li>\n<li> ap-beijing-7 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> eu-frankfurt-2 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>\n<li> sa-saopaulo-1</li>",
+          "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1（售罄） </li>\n<li> ap-hongkong-2 </li>\n<li> ap-hongkong-3 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-guangzhou-7 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-tokyo-2 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-singapore-3 </li>\n<li>ap-singapore-4 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-bangkok-2 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-shanghai-8 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1（售罄）</li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> ap-beijing-6 </li>\n<li> ap-beijing-7 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> eu-frankfurt-2 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>\n<li> ap-nanjing-3 </li>\n<li> sa-saopaulo-1</li>\n<li> ap-jakarta-1 </li>\n<li> ap-jakarta-2 </li>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",

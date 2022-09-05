@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vod CreateAdaptiveDynamicStreamingTemplate --cli-unfold-argument  \
-    --Name 转自适应码流模板1 \
-    --Format HLS \
+    --StreamInfos.0.Audio.SampleRate 44100 \
+    --StreamInfos.0.Audio.Codec flac \
+    --StreamInfos.0.Audio.Bitrate 1024 \
     --StreamInfos.0.Video.Codec libx264 \
     --StreamInfos.0.Video.Bitrate 2000 \
     --StreamInfos.0.Video.Fps 25 \
-    --StreamInfos.0.Audio.Codec flac \
-    --StreamInfos.0.Audio.SampleRate 44100 \
-    --StreamInfos.0.Audio.Bitrate 1024
+    --Name 转自适应码流模板1 \
+    --Format HLS
 ```
 
 Output: 

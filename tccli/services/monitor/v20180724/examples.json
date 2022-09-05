@@ -24,6 +24,14 @@
         "title": "策略绑定标签"
       }
     ],
+    "CleanGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"my-grafana\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "title": "强制销毁 Grafana 实例"
+      }
+    ],
     "CreateAlarmNotice": [
       {
         "document": "",
@@ -52,8 +60,32 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"xx\\\"]}}}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"redis-exporter\"\n        ],\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"redis-exporter\"\n        ],\n        \"RequestId\": \"xyz\"\n    }\n}",
         "title": "创建 exporter 集成"
+      }
+    ],
+    "CreateGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaInstance\n<公共请求参数>\n\n{\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"GrafanaInitPassword\": \"test\",\n    \"EnableInternet\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"grafana-c1enzs01\",\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "title": "创建 Grafana 实例"
+      }
+    ],
+    "CreateGrafanaIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Kind\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建 Grafana 集成配置"
+      }
+    ],
+    "CreateGrafanaNotificationChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建 Grafana 告警通道"
       }
     ],
     "CreatePolicyGroup": [
@@ -92,8 +124,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxxsfds\",\n    \"RuleState\": \"2\",\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69wmlimeh2g7qijbpr469yw8p17kn8ur\",\n        \"RuleId\": \"rrule-fzhp4p7c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"RuleId\": \"rrule-xyz\"\n    }\n}",
         "title": "创建预聚合规则"
+      }
+    ],
+    "CreateSSOAccount": [
+      {
+        "document": "Grafana实例授权其他腾讯云用户",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "授权腾讯云用户"
       }
     ],
     "CreateServiceDiscovery": [
@@ -132,8 +172,32 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"mysql-exporter\",\n    \"Name\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\"\n    }\n}",
         "title": "DeleteExporterIntegration"
+      }
+    ],
+    "DeleteGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceIDs\": [\n        \"grafana-abcdefgh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除指定实例"
+      }
+    ],
+    "DeleteGrafanaIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"IntegrationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除 Grafana 集成配置"
+      }
+    ],
+    "DeleteGrafanaNotificationChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelIDs\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除 Grafana 告警通道"
       }
     ],
     "DeletePolicyGroup": [
@@ -155,9 +219,17 @@
     "DeleteRecordingRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordingRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxerwer\",\n    \"RuleIds\": [\n        \"rrule-m74lrt6g\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ljynf9quqfeko5pwcr24llmhy9rspzye\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordingRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxerwer\",\n    \"RuleIds\": [\n        \"rrule-xyz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\"\n    }\n}",
         "title": "删除预聚合规则"
+      }
+    ],
+    "DeleteSSOAccount": [
+      {
+        "document": "Grafana可视化服务 删除授权用户",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "DeleteSSOAccount"
       }
     ],
     "DeleteServiceDiscovery": [
@@ -264,7 +336,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllNamespaces\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"MonitorTypes\": [\n        \"MT_QCE\"\n    ],\n    \"SceneType\": \"ST_ALARM\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QceNamespaces\": {\n            \"Id\": \"\",\n            \"Name\": \"\",\n            \"ProductName\": \"\",\n            \"Value\": \"\",\n            \"Config\": \"\",\n            \"AvailableRegions\": [],\n            \"DashboardId\": \"\",\n            \"SortId\": 0\n        },\n        \"QceNamespacesNew\": [\n            {\n                \"Id\": \"xxxxxxx\",\n                \"Name\": \"专线接入-专用通道\",\n                \"ProductName\": \"专线接入-专用通道\",\n                \"Value\": \"qce/dcx\",\n                \"Config\": \"……\",\n                \"AvailableRegions\": [\n                    \"gz\",\n                    \"sh\"\n                ],\n                \"DashboardId\": \"dcchannel\",\n                \"SortId\": 500\n            }\n        ],\n        \"CustomNamespaces\": {\n            \"Id\": \"\",\n            \"Name\": \"\",\n            \"ProductName\": \"\",\n            \"Value\": \"\",\n            \"Config\": \"\",\n            \"AvailableRegions\": [],\n            \"DashboardId\": \"\",\n            \"SortId\": 0\n        },\n        \"CustomNamespacesNew\": [\n            {\n                \"Id\": \"=wenlong_sidecar\",\n                \"Name\": \"=wenlong_sidecar\",\n                \"ProductName\": \"=wenlong_sidecar\",\n                \"Value\": \"=wenlong_sidecar\",\n                \"Config\": \"\",\n                \"AvailableRegions\": [],\n                \"DashboardId\": \"=wenlong_sidecar\",\n                \"SortId\": 0\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QceNamespaces\": {\n            \"Id\": \"\",\n            \"Name\": \"\",\n            \"ProductName\": \"\",\n            \"Value\": \"\",\n            \"Config\": \"\",\n            \"AvailableRegions\": [],\n            \"DashboardId\": \"\",\n            \"SortId\": 0\n        },\n        \"QceNamespacesNew\": [\n            {\n                \"Id\": \"xxxxxxx\",\n                \"Name\": \"专线接入-专用通道\",\n                \"ProductName\": \"专线接入-专用通道\",\n                \"Value\": \"qce/dcx\",\n                \"Config\": \"……\",\n                \"AvailableRegions\": [\n                    \"gz\",\n                    \"sh\"\n                ],\n                \"DashboardId\": \"dcchannel\",\n                \"SortId\": 500\n            }\n        ],\n        \"CustomNamespaces\": {\n            \"Id\": \"\",\n            \"Name\": \"\",\n            \"ProductName\": \"\",\n            \"Value\": \"\",\n            \"Config\": \"\",\n            \"AvailableRegions\": [],\n            \"DashboardId\": \"\",\n            \"SortId\": 0\n        },\n        \"CustomNamespacesNew\": [\n            {\n                \"Id\": \"=wenlong_sidecar\",\n                \"Name\": \"=wenlong_sidecar\",\n                \"ProductName\": \"=wenlong_sidecar\",\n                \"Value\": \"=wenlong_sidecar\",\n                \"Config\": \"\",\n                \"AvailableRegions\": [],\n                \"DashboardId\": \"=wenlong_sidecar\",\n                \"SortId\": 0\n            }\n        ],\n        \"CommonNamespaces\": [\n            {\n                \"Id\": \"performance_metric\",\n                \"MonitorType\": \"MT_TAW\",\n                \"Name\": \"性能指标\",\n                \"Dimensions\": []\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "获得所有名字空间"
       }
     ],
@@ -285,8 +357,8 @@
     "DescribeBasicAlarmList": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeBasicAlarmList\n&Module=monitor\n&StartTime=1573660800\n&EndTime=1573919999\n&Limit=20\n&Offset=0\n&OccurTimeOrder=DESC\n&ProjectIds.0=0\n&ViewNames.0=cvm_device\n&AlarmStatus.0=1\n&MetricNames.0=mem_used\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Alarms\": [\n            {\n                \"AlarmStatus\": \"OK\",\n                \"AlarmType\": \"内存使用量\",\n                \"Content\": \"内存使用量 >  66666 MB\",\n                \"Dimensions\": \"{\\\"unInstanceId\\\":\\\"ins-19a06nn8\\\"}\",\n                \"Duration\": 600,\n                \"FirstOccurTime\": \"2019-11-16T15:50:00+08:00\",\n                \"GroupId\": 1278966,\n                \"GroupName\": \"dddd\",\n                \"Id\": 30057956,\n                \"InstanceGroup\": [\n                    {\n                        \"InstanceGroupId\": 562,\n                        \"InstanceGroupName\": \"barad_nws_cvm\"\n                    }\n                ],\n                \"LastOccurTime\": \"2019-11-16T16:00:00+08:00\",\n                \"MetricId\": 24,\n                \"MetricName\": \"mem_used\",\n                \"NotifyWay\": [\n                    \"EMAIL\",\n                    \"SMS\"\n                ],\n                \"ObjId\": \"a961c198-e0e2-4989-a3b6-7b155b35ff6f\",\n                \"ObjName\": \"10.0.0.14(251008737 vm1)\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"默认项目\",\n                \"Region\": \"gz\",\n                \"Status\": 1,\n                \"ViewName\": \"cvm_device\",\n                \"Vpc\": \"1\"\n            },\n            {\n                \"AlarmStatus\": \"OK\",\n                \"AlarmType\": \"内存使用量\",\n                \"Content\": \"内存使用量 >=  200000 MB\",\n                \"Dimensions\": \"{\\\"unInstanceId\\\":\\\"ins-19a06nn8\\\"}\",\n                \"Duration\": 180,\n                \"FirstOccurTime\": \"2019-11-16T15:45:00+08:00\",\n                \"GroupId\": 1279043,\n                \"GroupName\": \"-\",\n                \"Id\": 30057955,\n                \"InstanceGroup\": [\n                    {\n                        \"InstanceGroupId\": 562,\n                        \"InstanceGroupName\": \"barad_nws_cvm\"\n                    }\n                ],\n                \"LastOccurTime\": \"2019-11-16T15:48:00+08:00\",\n                \"MetricId\": 24,\n                \"MetricName\": \"mem_used\",\n                \"NotifyWay\": [\n                    \"EMAIL\",\n                    \"SMS\",\n                    \"WECHAT\"\n                ],\n                \"ObjId\": \"a961c198-e0e2-4989-a3b6-7b155b35ff6f\",\n                \"ObjName\": \"10.0.0.14(251008737 vm1)\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"默认项目\",\n                \"Region\": \"gz\",\n                \"Status\": 1,\n                \"ViewName\": \"cvm_device\",\n                \"Vpc\": \"1\"\n            }\n        ],\n        \"RequestId\": \"6b64cc24-0c60-483f-bdc3-2e55edbbc68c\",\n        \"Total\": 2\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBasicAlarmList\n<公共请求参数>\n\n{\n    \"AlarmStatus\": [\n        \"1\"\n    ],\n    \"MetricNames\": [\n        \"mem_used\"\n    ],\n    \"Module\": \"monitor\",\n    \"ViewNames\": [\n        \"cvm_device\"\n    ],\n    \"Limit\": \"20\",\n    \"StartTime\": \"1573660800\",\n    \"Offset\": \"0\",\n    \"ProjectIds\": [\n        \"0\"\n    ],\n    \"EndTime\": \"1573919999\",\n    \"OccurTimeOrder\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Alarms\": [\n            {\n                \"AlarmStatus\": \"OK\",\n                \"AlarmType\": \"内存使用量\",\n                \"Content\": \"内存使用量 >  66666 MB\",\n                \"Dimensions\": \"{\\\"unInstanceId\\\":\\\"ins-19a06nn8\\\"}\",\n                \"Duration\": 600,\n                \"FirstOccurTime\": \"2019-11-16T15:50:00+08:00\",\n                \"GroupId\": 1278966,\n                \"GroupName\": \"dddd\",\n                \"Id\": 30057956,\n                \"InstanceGroup\": [\n                    {\n                        \"InstanceGroupId\": 562,\n                        \"InstanceGroupName\": \"barad_nws_cvm\"\n                    }\n                ],\n                \"LastOccurTime\": \"2019-11-16T16:00:00+08:00\",\n                \"MetricId\": 24,\n                \"MetricName\": \"mem_used\",\n                \"NotifyWay\": [\n                    \"EMAIL\",\n                    \"SMS\"\n                ],\n                \"ObjId\": \"a961c198-e0e2-4989-a3b6-7b155b35ff6f\",\n                \"ObjName\": \"10.0.0.14(251008737 vm1)\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"默认项目\",\n                \"Region\": \"gz\",\n                \"Status\": 1,\n                \"ViewName\": \"cvm_device\",\n                \"Vpc\": \"1\"\n            },\n            {\n                \"AlarmStatus\": \"OK\",\n                \"AlarmType\": \"内存使用量\",\n                \"Content\": \"内存使用量 >=  200000 MB\",\n                \"Dimensions\": \"{\\\"unInstanceId\\\":\\\"ins-19a06nn8\\\"}\",\n                \"Duration\": 180,\n                \"FirstOccurTime\": \"2019-11-16T15:45:00+08:00\",\n                \"GroupId\": 1279043,\n                \"GroupName\": \"-\",\n                \"Id\": 30057955,\n                \"InstanceGroup\": [\n                    {\n                        \"InstanceGroupId\": 562,\n                        \"InstanceGroupName\": \"barad_nws_cvm\"\n                    }\n                ],\n                \"LastOccurTime\": \"2019-11-16T15:48:00+08:00\",\n                \"MetricId\": 24,\n                \"MetricName\": \"mem_used\",\n                \"NotifyWay\": [\n                    \"EMAIL\",\n                    \"SMS\",\n                    \"WECHAT\"\n                ],\n                \"ObjId\": \"a961c198-e0e2-4989-a3b6-7b155b35ff6f\",\n                \"ObjName\": \"10.0.0.14(251008737 vm1)\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"默认项目\",\n                \"Region\": \"gz\",\n                \"Status\": 1,\n                \"ViewName\": \"cvm_device\",\n                \"Vpc\": \"1\"\n            }\n        ],\n        \"RequestId\": \"6b64cc24-0c60-483f-bdc3-2e55edbbc68c\",\n        \"Total\": 2,\n        \"Warning\": \"This method is deprecated! Use `DescribeAlarmHistories` instead!\"\n    }\n}",
         "title": "获取基础告警列表"
       }
     ],
@@ -306,12 +378,76 @@
         "title": "获取告警策略模板列表"
       }
     ],
+    "DescribeDNSConfig": [
+      {
+        "document": "列出实例的 DNS 配置",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\",\n        \"NameServers\": [\n            \"114.114.114.114\"\n        ]\n    }\n}",
+        "title": "列出实例的 DNS 配置"
+      }
+    ],
     "DescribeExporterIntegrations": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"KubeType\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\",\n        \"IntegrationSet\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"IntegrationSet\": []\n    }\n}",
         "title": "查询 exporter 集成列表"
+      }
+    ],
+    "DescribeGrafanaConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-mf9ji5jy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Config\": \"{\\\"server\\\":{\\\"root_url\\\":\\\"http://balababbb\\\"}}\",\n        \"RequestId\": \"zcv6drxckn53gb61anxndsckjdwgfw6j\"\n    }\n}",
+        "title": "列出 Grafana 的设置"
+      }
+    ],
+    "DescribeGrafanaEnvironments": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Envs\": \"{}\"\n    }\n}",
+        "title": "列出 Grafana 环境变量"
+      }
+    ],
+    "DescribeGrafanaInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaInstances\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"TagFilters\": [\n        {\n            \"Key\": \"tagKeyTest\",\n            \"Value\": \"tagValueTest\"\n        }\n    ],\n    \"InstanceStatus\": [\n        2\n    ],\n    \"InstanceName\": \"xx\",\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceStatus\": 0,\n                \"VpcId\": \"xx\",\n                \"RootUrl\": \"xx\",\n                \"Version\": \"xx\",\n                \"Zone\": \"xx\",\n                \"TagSpecification\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"InstanceId\": \"xx\",\n                \"SubnetIds\": [\n                    \"xx\"\n                ],\n                \"RegionId\": 0,\n                \"InstanceChargeType\": 0,\n                \"InternalUrl\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"EnableSSOCamCheck\": true,\n                \"SubnetName\": \"xx\",\n                \"InternetUrl\": \"xx\",\n                \"EnableSSO\": true,\n                \"InstanceName\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreatedAt\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Instances\": [\n            {\n                \"InstanceStatus\": 0,\n                \"VpcId\": \"xx\",\n                \"RootUrl\": \"xx\",\n                \"Version\": \"xx\",\n                \"Zone\": \"xx\",\n                \"TagSpecification\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"InstanceId\": \"xx\",\n                \"SubnetIds\": [\n                    \"xx\"\n                ],\n                \"RegionId\": 0,\n                \"InstanceChargeType\": 0,\n                \"InternalUrl\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"EnableSSOCamCheck\": true,\n                \"SubnetName\": \"xx\",\n                \"InternetUrl\": \"xx\",\n                \"EnableSSO\": true,\n                \"InstanceName\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreatedAt\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "列出 Grafana 服务"
+      }
+    ],
+    "DescribeGrafanaIntegrations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaIntegrations\n<公共请求参数>\n\n{\n    \"IntegrationId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationSet\": [\n            {\n                \"IntegrationId\": \"xx\",\n                \"Content\": \"xx\",\n                \"Kind\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Grafana 已安装的集成"
+      }
+    ],
+    "DescribeGrafanaNotificationChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaNotificationChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"xx\",\n    \"ChannelIDs\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ChannelId\": \"xx\",\n                \"UpdatedAt\": \"2020-09-22\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"Receivers\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Grafana 告警通道"
+      }
+    ],
+    "DescribeGrafanaWhiteList": [
+      {
+        "document": "列出 Grafana 白名单",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\",\n        \"WhiteList\": []\n    }\n}",
+        "title": "列出 Grafana 白名单"
+      }
+    ],
+    "DescribeInstalledPlugins": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstalledPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-kleu3gt0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginSet\": [\n            {\n                \"PluginId\": \"grafana-piechart-panel\",\n                \"Version\": \"1.6.1\"\n            },\n            {\n                \"PluginId\": \"grafana-clock-panel\",\n                \"Version\": \"1.1.1\"\n            }\n        ],\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "列出已安装的插件"
       }
     ],
     "DescribeMonitorTypes": [
@@ -320,6 +456,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"MonitorTypeInfos\": [\n            {\n                \"Id\": \"1002\",\n                \"Name\": \"MT_QCE\",\n                \"SortId\": 1\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "查询所有监控类型"
+      }
+    ],
+    "DescribePluginOverviews": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginOverviews\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PluginSet\": [\n            {\n                \"PluginId\": \"grafana-piechart-panel\",\n                \"Version\": \"1.6.1\"\n            },\n            {\n                \"PluginId\": \"grafana-clock-panel\",\n                \"Version\": \"1.1.1\"\n            }\n        ],\n        \"RequestId\": \"zdrpp6r5pl7m349e6o9nc2g525pyxn92\"\n    }\n}",
+        "title": "列出所有可安装的 Grafana 插件"
       }
     ],
     "DescribePolicyConditionList": [
@@ -341,8 +485,8 @@
     "DescribePolicyGroupList": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePolicyGroupList\n&Module=monitor\n&Limit=2\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupList\": [\n            {\n                \"CanSetDefault\": true,\n                \"Conditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 86400,\n                        \"AlarmNotifyType\": 0,\n                        \"CalcType\": 1,\n                        \"CalcValue\": \"0\",\n                        \"ContinueTime\": 60,\n                        \"MetricId\": 33,\n                        \"MetricShowName\": \"CPU利用率\",\n                        \"Period\": 60,\n                        \"RuleId\": 1111111,\n                        \"Unit\": \"%\"\n                    }\n                ],\n                \"ConditionsTemp\": null,\n                \"EventConditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 0,\n                        \"AlarmNotifyType\": 0,\n                        \"EventId\": 42,\n                        \"EventShowName\": \"ping不可达\",\n                        \"RuleId\": 1111112\n                    }\n                ],\n                \"GroupId\": 1111111,\n                \"GroupName\": \"复制-test\",\n                \"InsertTime\": 1531122504,\n                \"InstanceGroup\": null,\n                \"IsDefault\": 0,\n                \"IsOpen\": true,\n                \"LastEditUin\": \"1500000000\",\n                \"NoShieldedSum\": 0,\n                \"ParentGroupId\": 0,\n                \"ProjectId\": 0,\n                \"ReceiverInfos\": [\n                    {\n                        \"EndTime\": 86400,\n                        \"NeedSendNotice\": 1,\n                        \"NotifyWay\": [\n                            \"EMAIL\",\n                            \"SMS\"\n                        ],\n                        \"PersonInterval\": 60,\n                        \"ReceiverGroupList\": [\n                            1111\n                        ],\n                        \"ReceiverType\": \"group\",\n                        \"ReceiverUserList\": [],\n                        \"RecoverNotify\": [\n                            \"SMS\"\n                        ],\n                        \"RoundInterval\": 60,\n                        \"RoundNumber\": 2,\n                        \"SendFor\": [],\n                        \"StartTime\": 0,\n                        \"UidList\": null\n                    }\n                ],\n                \"Remark\": \"\",\n                \"UpdateTime\": 1577689096,\n                \"UseSum\": 0,\n                \"ViewName\": \"cvm_device\"\n            },\n            {\n                \"CanSetDefault\": false,\n                \"Conditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 0,\n                        \"AlarmNotifyType\": 0,\n                        \"CalcType\": 1,\n                        \"CalcValue\": \"0.85\",\n                        \"ContinueTime\": 300,\n                        \"MetricId\": 1220,\n                        \"MetricShowName\": \"磁盘使用百分比\",\n                        \"Period\": 60,\n                        \"RuleId\": 1111113,\n                        \"Unit\": \"\"\n                    }\n                ],\n                \"ConditionsTemp\": null,\n                \"EventConditions\": null,\n                \"GroupId\": 1111112,\n                \"GroupName\": \"默认\",\n                \"InsertTime\": 1565792922,\n                \"InstanceGroup\": null,\n                \"IsDefault\": 1,\n                \"IsOpen\": true,\n                \"LastEditUin\": \"1500000687\",\n                \"NoShieldedSum\": 1,\n                \"ParentGroupId\": 0,\n                \"ProjectId\": 0,\n                \"ReceiverInfos\": null,\n                \"Remark\": \"\",\n                \"UpdateTime\": 1565792922,\n                \"UseSum\": 1,\n                \"ViewName\": \"CKAFKA_INSTANCE\"\n            }\n        ],\n        \"RequestId\": \"5fdf1257-6024-4b59-b924-2b995080f0bd\",\n        \"Total\": 142\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyGroupList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Module\": \"monitor\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupList\": [\n            {\n                \"CanSetDefault\": true,\n                \"Conditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 86400,\n                        \"AlarmNotifyType\": 0,\n                        \"CalcType\": 1,\n                        \"CalcValue\": \"0\",\n                        \"ContinueTime\": 60,\n                        \"MetricId\": 33,\n                        \"MetricShowName\": \"CPU利用率\",\n                        \"Period\": 60,\n                        \"RuleId\": 1111111,\n                        \"Unit\": \"%\"\n                    }\n                ],\n                \"ConditionsTemp\": null,\n                \"EventConditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 0,\n                        \"AlarmNotifyType\": 0,\n                        \"EventId\": 42,\n                        \"EventShowName\": \"ping不可达\",\n                        \"RuleId\": 1111112\n                    }\n                ],\n                \"GroupId\": 1111111,\n                \"GroupName\": \"复制-test\",\n                \"InsertTime\": 1531122504,\n                \"InstanceGroup\": null,\n                \"IsDefault\": 0,\n                \"IsOpen\": true,\n                \"LastEditUin\": \"1500000000\",\n                \"NoShieldedSum\": 0,\n                \"ParentGroupId\": 0,\n                \"ProjectId\": 0,\n                \"ReceiverInfos\": [\n                    {\n                        \"EndTime\": 86400,\n                        \"NeedSendNotice\": 1,\n                        \"NotifyWay\": [\n                            \"EMAIL\",\n                            \"SMS\"\n                        ],\n                        \"PersonInterval\": 60,\n                        \"ReceiverGroupList\": [\n                            1111\n                        ],\n                        \"ReceiverType\": \"group\",\n                        \"ReceiverUserList\": [],\n                        \"RecoverNotify\": [\n                            \"SMS\"\n                        ],\n                        \"RoundInterval\": 60,\n                        \"RoundNumber\": 2,\n                        \"SendFor\": [],\n                        \"StartTime\": 0,\n                        \"UidList\": null\n                    }\n                ],\n                \"Remark\": \"\",\n                \"UpdateTime\": 1577689096,\n                \"UseSum\": 0,\n                \"ViewName\": \"cvm_device\"\n            },\n            {\n                \"CanSetDefault\": false,\n                \"Conditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 0,\n                        \"AlarmNotifyType\": 0,\n                        \"CalcType\": 1,\n                        \"CalcValue\": \"0.85\",\n                        \"ContinueTime\": 300,\n                        \"MetricId\": 1220,\n                        \"MetricShowName\": \"磁盘使用百分比\",\n                        \"Period\": 60,\n                        \"RuleId\": 1111113,\n                        \"Unit\": \"\"\n                    }\n                ],\n                \"ConditionsTemp\": null,\n                \"EventConditions\": null,\n                \"GroupId\": 1111112,\n                \"GroupName\": \"默认\",\n                \"InsertTime\": 1565792922,\n                \"InstanceGroup\": null,\n                \"IsDefault\": 1,\n                \"IsOpen\": true,\n                \"LastEditUin\": \"1500000687\",\n                \"NoShieldedSum\": 1,\n                \"ParentGroupId\": 0,\n                \"ProjectId\": 0,\n                \"ReceiverInfos\": null,\n                \"Remark\": \"\",\n                \"UpdateTime\": 1565792922,\n                \"UseSum\": 1,\n                \"ViewName\": \"CKAFKA_INSTANCE\"\n            }\n        ],\n        \"RequestId\": \"5fdf1257-6024-4b59-b924-2b995080f0bd\",\n        \"Total\": 142,\n        \"Warning\": \"This method is deprecated! Use `DescribeAlarmPolicies` instead!\"\n    }\n}",
         "title": "获取头两个基础策略告警组列表"
       }
     ],
@@ -394,6 +538,14 @@
         "title": "查询预聚合规则"
       }
     ],
+    "DescribeSSOAccount": [
+      {
+        "document": "列出当前grafana实例的所有授权账号",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountSet\": [\n            {\n                \"UserId\": \"100000000\",\n                \"Role\": [\n                    {\n                        \"Organization\": \"org\",\n                        \"Role\": \"Admin\"\n                    }\n                ],\n                \"Notes\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "DescribeSSOAccount"
+      }
+    ],
     "DescribeServiceDiscovery": [
       {
         "document": "",
@@ -416,6 +568,30 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-w3rkj7835b\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "强制释放 Prometheus 实例"
+      }
+    ],
+    "EnableGrafanaInternet": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableGrafanaInternet\n<公共请求参数>\n\n{\n    \"InstanceID\": \"grafana-kleu3gt0\",\n    \"EnableInternet\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "开启公网访问"
+      }
+    ],
+    "EnableGrafanaSSO": [
+      {
+        "document": "开启 Grafana 单点登录",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableGrafanaSSO\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"EnableSSO\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "开启 Grafana 单点登录"
+      }
+    ],
+    "EnableSSOCamCheck": [
+      {
+        "document": "SSO单点登录时，开启cam鉴权",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableSSOCamCheck\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"EnableSSOCamCheck\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "EnableSSOCamCheck"
       }
     ],
     "GetMonitorData": [
@@ -444,6 +620,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPrometheusAgentManagementCommand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-23kdafdf\",\n    \"AgentId\": \"agent-23kdafdf\"\n}",
         "output": "{\n    \"Response\": {\n        \"Command\": {\n            \"Install\": \"xx\",\n            \"Restart\": \"xx\",\n            \"Stop\": \"xx\",\n            \"StatusCheck\": \"xx\",\n            \"LogCheck\": \"xx\"\n        },\n        \"RequestId\": \"as131asfjl23dsf342lxdsf\"\n    }\n}",
         "title": "获取 Prometheus Agent 管理相关的命令行"
+      }
+    ],
+    "InstallPlugins": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"r1xcta1opsb6qipjzb4h4x-kcegta6m2\"\n    }\n}",
+        "title": "安装 Grafana 插件"
       }
     ],
     "ModifyAlarmNotice": [
@@ -502,6 +686,14 @@
         "title": "修改告警接收人"
       }
     ],
+    "ModifyGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"InstanceName\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改 Grafana 实例属性"
+      }
+    ],
     "ModifyPolicyGroup": [
       {
         "document": "",
@@ -524,6 +716,14 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=PutMonitorData\r\n&Version=2018-07-24\r\n&AnnounceIp=10.0.0.1\r\n&AnnounceTimestamp=1569379988\r\n&Metrics.0.MetricName=name1\r\n&Metrics.0.Value=value1\r\n&Metrics.1.MetricName=name2\r\n&Metrics.1.Value=value2\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cc6ae87-2aae-4394-8ccb-29777f5aeadx\"\n    }\n}",
         "title": "客户端上报指标"
+      }
+    ],
+    "ResumeGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "title": "恢复 Grafana 实例"
       }
     ],
     "SendCustomAlarmMsg": [
@@ -577,9 +777,17 @@
     "UninstallGrafanaDashboard": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallGrafanaDashboard\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-c0wy130a\",\n    \"IntegrationCodes\": [\n        \"spring-mvc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49h8tychqjqzl63wzfvxfkyucee87tmz\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallGrafanaDashboard\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xyz\",\n    \"IntegrationCodes\": [\n        \"spring-mvc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\"\n    }\n}",
         "title": "删除 Grafana Dashboard"
+      }
+    ],
+    "UninstallGrafanaPlugins": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallGrafanaPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefg\",\n    \"PluginIds\": [\n        \"grafana-clock-panel\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"kq9u37984eql5yyp8fyilbb83nrtlca1\"\n    }\n}",
+        "title": "删除指定插件"
       }
     ],
     "UpdateAlertRule": [
@@ -598,12 +806,60 @@
         "title": "更新报警策略状态"
       }
     ],
+    "UpdateDNSConfig": [
+      {
+        "document": "更新 Grafana 的 DNS 配置",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"NameServers\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "title": "更新 Grafana 的 DNS 配置"
+      }
+    ],
     "UpdateExporterIntegration": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"xx\\\"]}}}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
         "title": "更新 exporter 集成配置"
+      }
+    ],
+    "UpdateGrafanaConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Config\": \"{\\\"server\\\":{\\\"root_url\\\":\\\"http://balaba\\\"},\\\"server_haha\\\":\\\"heihei\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新 Grafana 配置"
+      }
+    ],
+    "UpdateGrafanaEnvironments": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Envs\": \"{}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新 Grafana 环境变量"
+      }
+    ],
+    "UpdateGrafanaIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"IntegrationId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"Content\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新 Grafana 集成配置"
+      }
+    ],
+    "UpdateGrafanaNotificationChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新 Grafana 告警通道"
+      }
+    ],
+    "UpdateGrafanaWhiteList": [
+      {
+        "document": "更新 Grafana 白名单",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Whitelist\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "title": "更新 Grafana 白名单"
       }
     ],
     "UpdatePrometheusAgentStatus": [
@@ -630,6 +886,14 @@
         "title": "更新预聚合规则"
       }
     ],
+    "UpdateSSOAccount": [
+      {
+        "document": "更新权限和备注",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "title": "更新账号信息"
+      }
+    ],
     "UpdateServiceDiscovery": [
       {
         "document": "",
@@ -644,6 +908,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaDashboard\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-gds3q53s\",\n    \"IntegrationCodes\": [\n        \"spring-mvc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "升级 Grafana Dashboard"
+      }
+    ],
+    "UpgradeGrafanaInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Alias\": \"v7.4.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "升级 Grafana 实例"
       }
     ]
   },

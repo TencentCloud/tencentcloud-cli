@@ -8,7 +8,7 @@ Input:
 tccli acp DescribeScanTaskStatus --cli-unfold-argument  \
     --Platform 0 \
     --Source 2 \
-    --TaskID 299914248752992256 \
+    --TaskID 299***256 \
     --TaskType 0
 ```
 

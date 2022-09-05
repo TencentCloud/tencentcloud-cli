@@ -459,6 +459,62 @@
       ],
       "usage": "out"
     },
+    "DescribeInstanceRegionInfo": {
+      "document": "实例地域信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎部署地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎在该地域的副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Replica",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎在该地域的规格id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spec-xxx",
+          "member": "string",
+          "name": "SpecId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "IntranetVpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开公网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableClientInternet",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeNacosReplicasRequest": {
       "document": "DescribeNacosReplicas请求参数结构体",
       "members": [
@@ -1595,6 +1651,16 @@
           "name": "IsolateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例地域相关的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeInstanceRegionInfo",
+          "name": "RegionInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

@@ -1693,6 +1693,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指定消息中的某字段内容作为cls日志的时间。\n字段内容格式需要是秒级时间戳",
+          "example": "time",
+          "member": "string",
+          "name": "TimeField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -9429,6 +9439,15 @@
           "name": "DynamicDiskConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例级别单条消息大小（单位byte)",
+          "example": "8388680",
+          "member": "uint64",
+          "name": "MaxMessageByte",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10239,6 +10258,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是自建的集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10462,6 +10491,16 @@
           "example": "false",
           "member": "bool",
           "name": "IncludeQuery",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带",
+          "example": "false",
+          "member": "bool",
+          "name": "RecordWithSchema",
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -10728,6 +10767,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10783,6 +10832,56 @@
           "name": "SnapshotMode",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填",
+          "example": "xxx",
+          "member": "string",
+          "name": "DataFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"INSERT\" 表示使用 Insert 模式插入，\"UPSERT\" 表示使用 Upsert 模式插入",
+          "example": "INSERT",
+          "member": "string",
+          "name": "DataTargetInsertMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 \"DataInsertMode\"=\"UPSERT\" 时，传入当前 upsert 时依赖的主键",
+          "example": "id",
+          "member": "string",
+          "name": "DataTargetPrimaryKeyField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表与消息间的映射关系",
+          "example": "xxx",
+          "member": "RecordMapping",
+          "name": "DataTargetRecordMapping",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否抛弃解析失败的消息，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "DropInvalidMessage",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -11162,6 +11261,42 @@
         }
       ],
       "usage": "out"
+    },
+    "RowParam": {
+      "document": "数据处理ROW输出格式配置",
+      "members": [
+        {
+          "default": "",
+          "document": "行内容，KEY_VALUE，VALUE",
+          "example": "KEY_VALUE",
+          "member": "string",
+          "name": "RowContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key和value间的分隔符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "=",
+          "member": "string",
+          "name": "KeyValueDelimiter",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "元素建的分隔符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "&",
+          "member": "string",
+          "name": "EntryDelimiter",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SMTParam": {
       "document": "数据处理——数据处理参数",
@@ -12541,12 +12676,22 @@
         },
         {
           "default": "",
-          "document": "输出格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出格式，JSON，ROW，默认为JSON\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
           "name": "OutputFormat",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出格式为ROW必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RowParam",
+          "name": "RowParam",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

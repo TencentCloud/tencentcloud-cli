@@ -2203,7 +2203,7 @@
         },
         {
           "default": "",
-          "document": "达到阈值后的操作\nRESOLVE_DNS_TO_ORIGIN：直接回源，仅自有源站域名支持\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "达到阈值后的操作\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RETURN_404",
           "member": "string",
           "name": "CounterMeasure",
@@ -14373,7 +14373,7 @@
       "usage": "both"
     },
     "ServerCert": {
-      "document": "https 加速服务端证书配置：\n+ 支持使用托管至 SSL 证书管理的证书进行部署\n+ 支持上传 PEM 格式的证书进行部署\n注意：上传 PEM 证书时，需要进行 Base 64 编码",
+      "document": "https 加速服务端证书配置：\n+ 支持使用托管至 SSL 证书管理的证书进行部署\n+ 支持上传 PEM 格式的证书进行部署",
       "members": [
         {
           "default": "",

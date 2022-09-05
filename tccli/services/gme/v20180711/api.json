@@ -54,18 +54,6 @@
       "name": "获取数据详情",
       "output": "DescribeApplicationDataResponse"
     },
-    "DescribeFilterResult": {
-      "document": "根据应用ID和文件ID查询识别结果",
-      "input": "DescribeFilterResultRequest",
-      "name": "查询识别结果",
-      "output": "DescribeFilterResultResponse"
-    },
-    "DescribeFilterResultList": {
-      "document": "根据日期查询识别结果列表",
-      "input": "DescribeFilterResultListRequest",
-      "name": "查询识别结果列表",
-      "output": "DescribeFilterResultListResponse"
-    },
     "DescribeRealtimeScanConfig": {
       "document": "获取用户自定义送检信息",
       "input": "DescribeRealtimeScanConfigRequest",
@@ -143,12 +131,6 @@
       "input": "UpdateScanUsersRequest",
       "name": "更新送检用户号",
       "output": "UpdateScanUsersResponse"
-    },
-    "VoiceFilter": {
-      "document": "本接口用于识别涉黄等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：色情，2：谩骂",
-      "input": "VoiceFilterRequest",
-      "name": "语音过滤",
-      "output": "VoiceFilterResponse"
     }
   },
   "metadata": {
@@ -1027,119 +1009,6 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFilterResultListRequest": {
-      "document": "DescribeFilterResultList请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "应用ID",
-          "member": "uint64",
-          "name": "BizId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "开始时间，格式为 年-月-日，如: 2018-07-11",
-          "member": "string",
-          "name": "StartDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "结束时间，格式为 年-月-日，如: 2018-07-11",
-          "member": "string",
-          "name": "EndDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认值为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认值为10，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFilterResultListResponse": {
-      "document": "DescribeFilterResultList返回参数结构体",
-      "members": [
-        {
-          "document": "过滤结果总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "当前分页过滤结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "VoiceFilterInfo",
-          "name": "Data",
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFilterResultRequest": {
-      "document": "DescribeFilterResult请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "应用ID",
-          "member": "uint64",
-          "name": "BizId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "文件ID",
-          "member": "string",
-          "name": "FileId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeFilterResultResponse": {
-      "document": "DescribeFilterResult返回参数结构体",
-      "members": [
-        {
-          "document": "过滤结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "VoiceFilterInfo",
-          "name": "Data",
-          "type": "object",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2525,32 +2394,6 @@
       ],
       "usage": "in"
     },
-    "VoiceFilter": {
-      "document": "过滤结果",
-      "members": [
-        {
-          "default": "",
-          "document": "过滤类型，1：色情，2：涉毒，3：谩骂\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Type",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "过滤命中关键词\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "色情",
-          "member": "string",
-          "name": "Word",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "VoiceFilterConf": {
       "document": "语音过滤服务配置数据",
       "members": [
@@ -2565,138 +2408,6 @@
         }
       ],
       "usage": "both"
-    },
-    "VoiceFilterInfo": {
-      "document": "语音文件过滤详情",
-      "members": [
-        {
-          "default": "",
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "uint64",
-          "name": "BizId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "文件ID，表示文件唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "FileId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "OpenId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "数据创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Timestamp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "过滤结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "VoiceFilter",
-          "name": "Data",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "VoiceFilterRequest": {
-      "document": "VoiceFilter请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
-          "example": "0",
-          "member": "uint64",
-          "name": "BizId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "文件ID，表示文件唯一ID",
-          "example": "test_file_id",
-          "member": "string",
-          "name": "FileId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件名",
-          "example": "test_file_name",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件url，urlencode编码，FileUrl和FileContent二选一",
-          "example": "http%3a%2f%2ftest_file_url.com%2ffile",
-          "member": "string",
-          "name": "FileUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "文件内容，base64编码，FileUrl和FileContent二选一",
-          "example": "无",
-          "member": "string",
-          "name": "FileContent",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "用户ID",
-          "example": "无",
-          "member": "string",
-          "name": "OpenId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VoiceFilterResponse": {
-      "document": "VoiceFilter返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "VoiceFilterStatisticsItem": {
       "document": "语音过滤用量统计数据",

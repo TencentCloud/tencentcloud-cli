@@ -210,6 +210,12 @@
       "name": "查询集群列表",
       "output": "DescribeExclusiveClustersResponse"
     },
+    "DescribeIdleLoadBalancers": {
+      "document": "闲置实例是指创建超过7天后付费实例，且没有创建规则或创建规则没有绑定子机的负载均衡实例。",
+      "input": "DescribeIdleLoadBalancersRequest",
+      "name": "查询负载均衡闲置实例",
+      "output": "DescribeIdleLoadBalancersResponse"
+    },
     "DescribeLBListeners": {
       "document": "查询后端云主机或弹性网卡绑定的负载均衡，支持弹性网卡和cvm查询。",
       "input": "DescribeLBListenersRequest",
@@ -3127,7 +3133,7 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
@@ -3136,7 +3142,7 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的转发路径。",
           "example": "/bar2",
           "member": "string",
           "name": "Url",
@@ -3994,6 +4000,69 @@
         {
           "document": "集群总数量。",
           "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdleLoadBalancersRequest": {
+      "document": "DescribeIdleLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回负载均衡实例的数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "LoadBalancerRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdleLoadBalancersResponse": {
+      "document": "DescribeIdleLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "闲置实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IdleLoadBalancer",
+          "name": "IdleLoadBalancers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所有闲置实例数目",
+          "example": "5",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -5207,7 +5276,7 @@
         },
         {
           "default": "",
-          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。注意：TCP监听器的HTTP健康检查方式，只支持指定一种健康检查状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "504",
           "member": "int64",
           "name": "HttpCode",
@@ -5327,6 +5396,82 @@
         }
       ],
       "usage": "both"
+    },
+    "IdleLoadBalancer": {
+      "document": "闲置实例。",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-abcedf",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡名字",
+          "example": "test-name",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡的vip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "闲置原因。NO_RULES：没有规则，NO_RS：有规则没有绑定子机。",
+          "example": "NO_RULES",
+          "member": "string",
+          "name": "IdleReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的状态，包括\n0：创建中，1：正常运行。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡类型标识，1：负载均衡，0：传统型负载均衡。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Forward",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InternetAccessible": {
       "document": "网络计费模式，最大出带宽",

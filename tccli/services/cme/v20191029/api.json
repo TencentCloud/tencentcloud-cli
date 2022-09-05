@@ -2819,7 +2819,7 @@
       "members": [
         {
           "default": "",
-          "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件；</li>\n<li>Task.VideoExportCompleted：视频导出完成事件。 </li>",
+          "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件；</li>\n<li>Task.VideoExportCompleted：视频导出完成事件； </li>\n<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>",
           "example": "Storage.NewFileCreated",
           "member": "string",
           "name": "EventType",
@@ -2953,6 +2953,16 @@
           "example": "无",
           "member": "VideoExportCompletedEvent",
           "name": "VideoExportCompletedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectMediaCastStatusChangedEvent",
+          "name": "ProjectMediaCastStatusChangedEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -4816,6 +4826,304 @@
       ],
       "usage": "both"
     },
+    "MediaCastDestinationInfo": {
+      "document": "点播转直播输出信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出源序号。由系统进行分配。",
+          "example": "无",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出源的名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出直播流地址。支持的直播流类型为 RTMP 和 SRT。",
+          "example": "无",
+          "member": "string",
+          "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MediaCastDestinationInterruptInfo": {
+      "document": "点播转直播输出断流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发生断流的输出源信息。",
+          "example": "无",
+          "member": "MediaCastDestinationInfo",
+          "name": "DestinationInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出源断流原因，取值有：\n<li>SystemError：系统错误；</li>\n<li>Unknown：未知错误。</li>",
+          "example": "SystemError",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaCastOutputMediaSetting": {
+      "document": "点播转直播输出媒体配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频配置。",
+          "example": "无",
+          "member": "MediaCastVideoSetting",
+          "name": "VideoSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MediaCastPlaySetting": {
+      "document": "播放控制参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。",
+          "example": "1",
+          "member": "int64",
+          "name": "LoopCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2022-12-10T15:00:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MediaCastProjectInfo": {
+      "document": "点播转直播项目信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "点播转直播项目状态，取值有：\n<li>Working ：运行中；</li>\n<li>Idle ：空闲。</li>",
+          "example": "Working",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入源列表。",
+          "example": "无",
+          "member": "MediaCastSourceInfo",
+          "name": "SourceInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出源列表。",
+          "example": "无",
+          "member": "MediaCastDestinationInfo",
+          "name": "DestinationInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出媒体配置。",
+          "example": "无",
+          "member": "MediaCastOutputMediaSetting",
+          "name": "OutputMediaSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放参数。",
+          "example": "无",
+          "member": "MediaCastPlaySetting",
+          "name": "PlaySetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目启动时间。采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目结束时间。采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如果项目还在运行中，改字段为空。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "StopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaCastSourceInfo": {
+      "document": "点播转直播输入源信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入源的媒体类型，取值有：\n<li>CME：多媒体创作引擎的媒体文件；</li>\n<li>VOD：云点播的媒资文件。</li>",
+          "example": "CME",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "多媒体创作引擎的媒体 ID。当 Type = CME  时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒体文件 ID。当 Type = VOD 时必填。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "序号，位于输入源列表中的序号，由系统分配。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCastSourceInterruptInfo": {
+      "document": "点播转直播输入断流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发生断流的输入源信息。",
+          "example": "无",
+          "member": "MediaCastSourceInfo",
+          "name": "SourceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入源断开原因。取值有：\n<li>SystemError：系统错误；</li>\n<li>Unknown：未知错误。</li>",
+          "example": "SystemError",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaCastVideoSetting": {
+      "document": "点播转直播视频配置",
+      "members": [
+        {
+          "default": "",
+          "document": "视频宽度，单位：px，默认值为1280。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频高度，单位：px，默认值为720。支持的视频分辨率最大为1920*1080。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频码率，单位：kbps，默认值为2500。最大值为10000 kbps。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频帧率，单位：Hz，默认值为25。最大值为60。",
+          "example": "25",
+          "member": "float",
+          "name": "FrameRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MediaImageSpriteInfo": {
       "document": "雪碧图",
       "members": [
@@ -5904,13 +6212,13 @@
         },
         {
           "default": "",
-          "document": "项目创建时间，格式按照 ISO 8601 标准表示。",
-          "example": "2021-03-23T07:51:18.029Z",
-          "member": "string",
-          "name": "CreateTime",
+          "document": "点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaCastProjectInfo",
+          "name": "MediaCastProjectInfo",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -5920,6 +6228,62 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectMediaCastStatusChangedEvent": {
+      "document": " 点播转直播项目状态变更事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目状态，取值有：\n<li>Started：点播转直播开始；</li>\n<li>Stopped：点播转直播结束；</li>\n<li>SourceInterrupted：点播转直播输入断流；</li>\n<li>DestinationInterrupted：点播转直播输出断流。</li>",
+          "example": "Started",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。",
+          "example": "无",
+          "member": "MediaCastSourceInterruptInfo",
+          "name": "SourceInterruptInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。",
+          "example": "无",
+          "member": "MediaCastDestinationInterruptInfo",
+          "name": "DestinationInterruptInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

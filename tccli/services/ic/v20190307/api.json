@@ -30,6 +30,12 @@
       "name": "编辑卡片备注",
       "output": "ModifyUserCardRemarkResponse"
     },
+    "PayForExtendData": {
+      "document": "购买套外流量包",
+      "input": "PayForExtendDataRequest",
+      "name": "购买套外流量包",
+      "output": "PayForExtendDataResponse"
+    },
     "RenewCards": {
       "document": "批量为卡片续费，此接口建议调用至少间隔10s,如果出现返回deal lock failed相关的错误，请过10s再重试。\n续费的必要条件：\n1、单次续费的卡片不可以超过 100张。\n2、接口只支持在控制台购买的卡片进行续费\n3、销户和未激活的卡片不支持续费。\n4、每张物联网卡，续费总周期不能超过24个月",
       "input": "RenewCardsRequest",
@@ -722,6 +728,60 @@
       ],
       "type": "object"
     },
+    "PayForExtendDataRequest": {
+      "document": "PayForExtendData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "卡片ICCID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "套外流量,单位MB",
+          "example": "10",
+          "member": "uint64",
+          "name": "ExtentData",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1111111",
+          "member": "uint64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PayForExtendDataResponse": {
+      "document": "PayForExtendData返回参数结构体",
+      "members": [
+        {
+          "document": "订单号",
+          "example": "无",
+          "member": "ResOrderIds",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RenewCardsRequest": {
       "document": "RenewCards请求参数结构体",
       "members": [
@@ -775,6 +835,22 @@
         }
       ],
       "type": "object"
+    },
+    "ResOrderIds": {
+      "document": "订单ID集合",
+      "members": [
+        {
+          "default": "",
+          "document": "每一张续费卡片的订单ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ResRenew": {
       "document": "云api 卡片续费",

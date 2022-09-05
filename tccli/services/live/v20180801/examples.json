@@ -123,7 +123,7 @@
     "CreateLiveSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveSnapshotTemplate\n&TemplateName=testName\n&Description=testDesc\n&SnapshotInterval=10\n&Width=250\n&Height=250\n&PornFlag=0\n&CosAppId=123\n&CosBucket=bucket\n&CosRegion=beijing\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -139,7 +139,7 @@
     "CreateLiveTranscodeTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeTemplate\n&Vcodec=h264\n&Acodec=aac\n&AudioBitrate=500\n&TemplateName=900m\n&Description=test\n&VideoBitrate=900\n&Width=250\n&NeedVideo=1\n&NeedAudio=1\n&Height=250\n&Fps=30\n&Gop=3\n&Rotate=0\n&Profile=main\n&BitrateToOrig=0\n&HeightToOrig=0\n&FpsToOrig=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"500\",\n    \"Rotate\": \"0\",\n    \"Description\": \"test\",\n    \"TemplateName\": \"900m\",\n    \"VideoBitrate\": \"900\",\n    \"Vcodec\": \"h264\",\n    \"Height\": \"250\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -627,15 +627,15 @@
     "DescribeLiveTranscodeTemplates": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeTemplates\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"Profile\": \"xx\",\n                \"AudioBitrate\": 15,\n                \"Rotate\": 0,\n                \"BitrateToOrig\": 0,\n                \"TemplateName\": \"xx\",\n                \"VideoBitrate\": 30,\n                \"ShortEdgeAsHeight\": 0,\n                \"Vcodec\": \"xx\",\n                \"AdaptBitratePercent\": 0.0,\n                \"AiTransCode\": 0,\n                \"Height\": 250,\n                \"Width\": 250,\n                \"NeedAudio\": 1,\n                \"FpsToOrig\": 0,\n                \"Fps\": 30,\n                \"TemplateId\": 1000,\n                \"Description\": \"xx\",\n                \"HeightToOrig\": 0,\n                \"NeedVideo\": 1,\n                \"Gop\": 3,\n                \"Acodec\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTranscodeTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"Width\": 250,\n                \"Fps\": 30,\n                \"TemplateId\": 1000,\n                \"Gop\": 3,\n                \"Acodec\": \"xx\",\n                \"Profile\": \"xx\",\n                \"Description\": \"xx\",\n                \"VideoBitrate\": 30,\n                \"BitrateToOrig\": 0,\n                \"AiTransCode\": 0,\n                \"HeightToOrig\": 0,\n                \"AudioBitrate\": 15,\n                \"Rotate\": 0,\n                \"TemplateName\": \"xx\",\n                \"AdaptBitratePercent\": 0.0,\n                \"Vcodec\": \"xx\",\n                \"NeedAudio\": 1,\n                \"DRMTracks\": \"xx\",\n                \"NeedVideo\": 1,\n                \"DRMType\": \"xx\",\n                \"ShortEdgeAsHeight\": 0,\n                \"Height\": 250,\n                \"FpsToOrig\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeLiveTranscodeTotalInfo": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeTotalInfo\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTranscodeTotalInfo\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-03-01 12:00:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Duration\": 100,\n                \"ModuleCodec\": \"\",\n                \"Resolution\": \"540*480\"\n            }\n        ],\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
         "title": "请求示例"
       }
@@ -755,7 +755,7 @@
     "DescribeStreamPlayInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPlayInfoList\n&PlayDomain=5000.playdomain.com\n&StreamName=stream1\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 00:03:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPlayInfoList\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"5000.playdomain.com\",\n    \"StreamName\": \"stream1\",\n    \"EndTime\": \"2019-03-01 00:03:00\",\n    \"StartTime\": \"2019-03-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Bandwidth\": 10.0,\n                \"Flux\": 75.0,\n                \"Request\": 50,\n                \"Online\": 10\n            },\n            {\n                \"Time\": \"2019-03-01 00:02:00\",\n                \"Bandwidth\": 20.0,\n                \"Flux\": 150.0,\n                \"Request\": 50,\n                \"Online\": 20\n            },\n            {\n                \"Time\": \"2019-03-01 00:03:00\",\n                \"Bandwidth\": 30.0,\n                \"Flux\": 225.0,\n                \"Request\": 50,\n                \"Online\": 30\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
@@ -891,7 +891,7 @@
     "ModifyLiveSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveSnapshotTemplate\n&TemplateId=1000\n&TemplateName=testName\n&Description=testDesc\n&SnapshotInterval=10\n&Width=250\n&Height=250\n&PornFlag=0\n&CosAppId=123\n&CosBucket=bucket\n&CosRegion=beijing\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\",\n    \"TemplateId\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -899,7 +899,7 @@
     "ModifyLiveTranscodeTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveTranscodeTemplate\n&TemplateId=1001\n&Vcodec=h265\n&Acodec=aac\n&AudioBitrate=600\n&Description=test\n&VideoBitrate=1500\n&Width=250\n&NeedVideo=1\n&NeedAudio=1\n&Height=240\n&Fps=30\n&Gop=3\n&Rotate=0\n&Profile=main\n&BitrateToOrig=0\n&HeightToOrig=0\n&FpsToOrig=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Profile\": \"main\",\n    \"AudioBitrate\": \"600\",\n    \"Rotate\": \"0\",\n    \"Description\": \"test\",\n    \"VideoBitrate\": \"1500\",\n    \"Vcodec\": \"h265\",\n    \"Height\": \"240\",\n    \"Width\": \"250\",\n    \"NeedAudio\": \"1\",\n    \"FpsToOrig\": \"0\",\n    \"Fps\": \"30\",\n    \"TemplateId\": \"1001\",\n    \"BitrateToOrig\": \"0\",\n    \"HeightToOrig\": \"0\",\n    \"NeedVideo\": \"1\",\n    \"Gop\": \"3\",\n    \"Acodec\": \"aac\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

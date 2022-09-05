@@ -120,6 +120,12 @@
       "name": "自定义树状结构",
       "output": "DescribeTreeJobsResponse"
     },
+    "DescribeTreeResources": {
+      "document": "查询树状结构资源列表",
+      "input": "DescribeTreeResourcesRequest",
+      "name": "查询树状结构资源列表",
+      "output": "DescribeTreeResourcesResponse"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
@@ -938,6 +944,15 @@
           "name": "LogLevel",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRecover",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2160,6 +2175,33 @@
       ],
       "type": "object"
     },
+    "DescribeTreeResourcesRequest": {
+      "document": "DescribeTreeResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTreeResourcesResponse": {
+      "document": "DescribeTreeResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询作业列表时的过滤器",
       "members": [
@@ -2373,6 +2415,26 @@
           "example": "Python-3.7",
           "member": "string",
           "name": "PythonVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRecover",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INFO",
+          "member": "string",
+          "name": "LogLevel",
           "required": true,
           "type": "string",
           "value_allowed_null": true

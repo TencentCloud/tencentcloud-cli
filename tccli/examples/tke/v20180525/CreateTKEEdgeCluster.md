@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tke CreateTKEEdgeCluster --cli-unfold-argument  \
-    --K8SVersion 1.12.4 \
-    --VpcId vpc-xxx \
     --ClusterName for_test \
     --PodCIDR 172.16.0.0/20 \
-    --ServiceCIDR 192.168.0.0/18
+    --VpcId vpc-xxx \
+    --ServiceCIDR 192.168.0.0/18 \
+    --K8SVersion 1.12.4
 ```
 
 Output: 

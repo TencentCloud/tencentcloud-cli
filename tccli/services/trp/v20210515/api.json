@@ -459,6 +459,15 @@
           "name": "MpTpl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "克隆批次ID",
+          "example": "10000",
+          "member": "string",
+          "name": "CloneId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -936,6 +945,24 @@
           "name": "TraceItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "溯源状态 0: 无效, 1: 有效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环节数据",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2424,12 +2451,21 @@
         },
         {
           "default": "",
-          "document": "[无效] 溯源状态",
+          "document": "溯源状态 0: 无效, 1: 有效",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环节数据",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2486,6 +2522,72 @@
           "name": "Amount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PhaseData": {
+      "document": "环节数据",
+      "members": [
+        {
+          "default": "",
+          "document": "启用头",
+          "example": "false",
+          "member": "bool",
+          "name": "HeadEnabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标题",
+          "example": "标题",
+          "member": "string",
+          "name": "HeadTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识符",
+          "example": "product",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序AppId",
+          "example": "AppId",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序AppPath",
+          "example": "AppPath",
+          "member": "string",
+          "name": "AppPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序名称AppName",
+          "example": "AppName",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2930,6 +3032,16 @@
           "name": "Values",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "类型标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ID",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

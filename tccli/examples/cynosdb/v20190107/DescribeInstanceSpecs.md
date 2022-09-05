@@ -13,21 +13,41 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "114114",
         "InstanceSpecSet": [
             {
-                "MinStorageSize": 100,
-                "MaxStorageSize": 100,
-                "Cpu": 2,
-                "Memory": 4
+                "MaxStorageSize": 1,
+                "ZoneStockInfos": [
+                    {
+                        "HasStock": true,
+                        "Zone": "xx"
+                    }
+                ],
+                "MachineType": "xx",
+                "HasStock": true,
+                "Memory": 1,
+                "MinStorageSize": 1,
+                "MaxIoBandWidth": 0,
+                "Cpu": 1,
+                "MaxIops": 0
             },
             {
-                "MinStorageSize": 100,
-                "MaxStorageSize": 100,
-                "Cpu": 4,
-                "Memory": 8
+                "MaxStorageSize": 1,
+                "ZoneStockInfos": [
+                    {
+                        "HasStock": true,
+                        "Zone": "xx"
+                    }
+                ],
+                "MachineType": "xx",
+                "HasStock": true,
+                "Memory": 1,
+                "MinStorageSize": 1,
+                "MaxIoBandWidth": 0,
+                "Cpu": 1,
+                "MaxIops": 0
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

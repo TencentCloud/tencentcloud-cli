@@ -12,7 +12,8 @@ tccli teo DescribeWebManagedRulesTopData --cli-unfold-argument  \
     --Domains www.baidu.com \
     --Limit 1 \
     --StartTime 2020-09-22T00:00:00+00:00 \
-    --EndTime 2020-09-22T00:00:00+00:00
+    --EndTime 2020-09-22T00:00:00+00:00 \
+    --Area overseas
 ```
 
 Output: 

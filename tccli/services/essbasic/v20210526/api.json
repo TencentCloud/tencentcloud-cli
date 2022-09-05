@@ -42,6 +42,12 @@
       "name": "渠道版查询转换任务状态",
       "output": "ChannelGetTaskResultApiResponse"
     },
+    "CreateChannelFlowEvidenceReport": {
+      "document": "创建出证报告，返回报告 URL",
+      "input": "CreateChannelFlowEvidenceReportRequest",
+      "name": "创建并返回出证报告",
+      "output": "CreateChannelFlowEvidenceReportResponse"
+    },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
       "input": "CreateConsoleLoginUrlRequest",
@@ -517,7 +523,7 @@
         },
         {
           "default": "",
-          "document": "签署文件中的控件，如：填写控件等",
+          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -882,6 +888,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "预览文件Url，有效期30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1076,6 +1091,60 @@
       ],
       "usage": "both"
     },
+    "CreateChannelFlowEvidenceReportRequest": {
+      "document": "CreateChannelFlowEvidenceReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelFlowEvidenceReportResponse": {
+      "document": "CreateChannelFlowEvidenceReport返回参数结构体",
+      "members": [
+        {
+          "document": "出证报告 URL（有效五分钟）",
+          "example": "无",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConsoleLoginUrlRequest": {
       "document": "CreateConsoleLoginUrl请求参数结构体",
       "members": [
@@ -1261,6 +1330,15 @@
           "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "PreviewUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "复杂文档合成任务的任务信息数组",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfos",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2394,7 +2472,7 @@
         },
         {
           "default": "",
-          "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空；\nCreateFlowsByTemplates 接口不使用此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "391963b9d3cb2de35dedc6eb0a60e535",
           "member": "string",
           "name": "ComponentId",
@@ -3260,6 +3338,32 @@
         }
       ],
       "type": "object"
+    },
+    "TaskInfo": {
+      "document": "复杂文档合成任务的任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态：READY - 任务已完成；NOTREADY - 任务未完成；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTREADY",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TemplateInfo": {
       "document": "此结构体 (TemplateInfo) 用于描述模板的信息。",

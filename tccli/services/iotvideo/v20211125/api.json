@@ -222,6 +222,12 @@
       "name": "获取云存套餐包消耗统计",
       "output": "DescribeCloudStoragePackageConsumeStatsResponse"
     },
+    "DescribeCloudStorageStreamData": {
+      "document": "获取设备图片流数据",
+      "input": "DescribeCloudStorageStreamDataRequest",
+      "name": "获取设备图片流数据",
+      "output": "DescribeCloudStorageStreamDataResponse"
+    },
     "DescribeCloudStorageThumbnail": {
       "document": "拉取云存事件缩略图",
       "input": "DescribeCloudStorageThumbnailRequest",
@@ -3634,6 +3640,69 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageStreamDataRequest": {
+      "document": "DescribeCloudStorageStreamData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "user",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片流事件开始时间",
+          "example": "1660561529",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageStreamDataResponse": {
+      "document": "DescribeCloudStorageStreamData返回参数结构体",
+      "members": [
+        {
+          "document": "图片流视频地址",
+          "example": "https://test.cos.ap-guangzhou.myqcloud.com/test.mjpg",
+          "member": "string",
+          "name": "VideoStream",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片流音频地址",
+          "example": "https://test.cos.ap-guangzhou.myqcloud.com/test.aac",
+          "member": "string",
+          "name": "AudioStream",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8550,6 +8619,16 @@
           "name": "NetType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "113",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

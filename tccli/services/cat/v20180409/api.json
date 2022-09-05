@@ -1533,6 +1533,15 @@
           "name": "Cron",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费套餐id\n需要与taskId对应",
+          "example": "[\"presub-xx\"]",
+          "member": "string",
+          "name": "ResourceIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

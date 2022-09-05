@@ -60,6 +60,16 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Unschedulable 0 \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.UserScript xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DesiredPodNumber 0 \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.MIGEnable True \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CustomDriver.Address xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Version xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Name xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Version xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Name xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DocName xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Version xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Name xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DevName xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.MountTarget xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.DiskPartition xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.DiskType xx \
@@ -83,6 +93,14 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --InstanceAdvancedSettings.Unschedulable 0 \
     --InstanceAdvancedSettings.UserScript xx \
     --InstanceAdvancedSettings.DesiredPodNumber 0 \
+    --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
+    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address xx \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version xx \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name xx \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName xx \
     --InstanceAdvancedSettings.MountTarget xx \
     --InstanceAdvancedSettings.DataDisks.0.DiskPartition xx \
     --InstanceAdvancedSettings.DataDisks.0.DiskType xx \
@@ -101,6 +119,12 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Unschedulable 0 \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.UserScript xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DesiredPodNumber 0 \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.MIGEnable True \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CustomDriver.Address xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.DocName xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.Version xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.Name xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.DevName xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.MountTarget xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.DiskPartition xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.DiskType xx \

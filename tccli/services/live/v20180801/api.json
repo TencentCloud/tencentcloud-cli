@@ -73,7 +73,7 @@
       "output": "CreateLiveSnapshotRuleResponse"
     },
     "CreateLiveSnapshotTemplate": {
-      "document": "创建截图模板，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。",
+      "document": "创建截图模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveSnapshotRule](/document/product/267/32625)接口，将模板id绑定到流使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。",
       "input": "CreateLiveSnapshotTemplateRequest",
       "name": "创建截图模板",
       "output": "CreateLiveSnapshotTemplateResponse"
@@ -457,7 +457,7 @@
       "output": "DescribeLiveTranscodeTemplatesResponse"
     },
     "DescribeLiveTranscodeTotalInfo": {
-      "document": "查询转码总量数据，可查询近30天内数据。\n注意：\n如果是查询某一天内，则返回5分钟粒度数据；\n如果是查询跨天或指定域名， 则返回1小时粒度数据。",
+      "document": "查询转码总量数据，可查询近三个月内的数据。\n注意：\n如果是查询某一天内，则返回5分钟粒度数据；\n如果是查询跨天或指定域名， 则返回1小时粒度数据。",
       "input": "DescribeLiveTranscodeTotalInfoRequest",
       "name": "查询转码总量数据",
       "output": "DescribeLiveTranscodeTotalInfoResponse"
@@ -991,7 +991,8 @@
       "members": [
         {
           "default": "",
-          "document": "大区名称",
+          "document": "大区名称。",
+          "example": "中东/非洲",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1000,7 +1001,8 @@
         },
         {
           "default": "",
-          "document": "国家明细数据",
+          "document": "国家或地区明细数据。",
+          "example": "无",
           "member": "BillCountryInfo",
           "name": "Countrys",
           "required": true,
@@ -2185,7 +2187,7 @@
         },
         {
           "default": "",
-          "document": "完整目标 URL 地址。\n用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。\n\n注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。",
+          "document": "完整目标 URL 地址。\n用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。\n\n注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。",
           "example": "无",
           "member": "string",
           "name": "ToUrl",
@@ -2209,6 +2211,15 @@
           "name": "BackupSourceUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印信息列表。\n注意：\n1. 最多支持4个不同位置的水印。\n2. 水印图片 URL 请使用合法外网可访问地址。\n3. 支持的水印图片格式：png，jpg，gif 等。",
+          "example": "无",
+          "member": "PullPushWatermarkInfo",
+          "name": "WatermarkList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7826,7 +7837,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间15天内的数据查询。",
+          "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。",
           "example": "2019-03-01 00:03:00",
           "member": "string",
           "name": "EndTime",
@@ -9713,6 +9724,15 @@
           "name": "BackupSourceUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印信息列表。\n注意：\n1. 最多支持4个不同位置的水印。\n2. 水印图片 URL 请使用合法外网可访问地址。\n3. 支持的水印图片格式：png，jpg等。\n4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。\n5. 直播源任务修改水印后，水印立即生效。\n6. 清除水印时，需携带该水印列表参数，内容为空数组。\n7. 暂不支持动图水印。",
+          "example": "无",
+          "member": "PullPushWatermarkInfo",
+          "name": "WatermarkList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10705,6 +10725,72 @@
       ],
       "usage": "out"
     },
+    "PullPushWatermarkInfo": {
+      "document": "云转推水印信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印图片 URL。\nURL中禁止包含的字符：\n;(){}$>`#\"'|",
+          "example": "http://xxx.gifshow/pic.jpg",
+          "member": "string",
+          "name": "PictureUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "XPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "YPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
+          "example": "100",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
+          "example": "100",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印位置，默认 0。\n0：左上角。\n1：右上角。\n2：右下角。\n3：左下角。",
+          "example": "0",
+          "member": "int64",
+          "name": "Location",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PullStreamConfig": {
       "document": "拉流配置。",
       "members": [
@@ -11015,6 +11101,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备源类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PullLivePushLive",
+          "member": "string",
+          "name": "BackupSourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备源URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://test.domain/live/test.flv?txSecret=xx&txTime=xxx",
+          "member": "string",
+          "name": "BackupSourceUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "水印信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PullPushWatermarkInfo",
+          "name": "WatermarkList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12094,6 +12210,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "123",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -12103,6 +12220,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "test",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -12112,6 +12230,7 @@
         {
           "default": "",
           "document": "截图时间间隔，5-300秒。",
+          "example": "5",
           "member": "int64",
           "name": "SnapshotInterval",
           "required": true,
@@ -12121,6 +12240,7 @@
         {
           "default": "",
           "document": "截图宽度，范围：0-3000。 \n0：原始宽度并适配原始比例。",
+          "example": "5",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -12130,6 +12250,7 @@
         {
           "default": "",
           "document": "截图高度，范围：0-2000。\n0：原始高度并适配原始比例。",
+          "example": "5",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -12139,6 +12260,7 @@
         {
           "default": "",
           "document": "是否开启鉴黄，0：不开启，1：开启。",
+          "example": "0",
           "member": "int64",
           "name": "PornFlag",
           "required": true,
@@ -12148,6 +12270,7 @@
         {
           "default": "",
           "document": "Cos 应用 ID。",
+          "example": "123456",
           "member": "int64",
           "name": "CosAppId",
           "required": true,
@@ -12157,6 +12280,7 @@
         {
           "default": "",
           "document": "Cos Bucket名称。",
+          "example": "test",
           "member": "string",
           "name": "CosBucket",
           "required": true,
@@ -12166,6 +12290,7 @@
         {
           "default": "",
           "document": "Cos 地域。",
+          "example": "ap-nanjing",
           "member": "string",
           "name": "CosRegion",
           "required": true,
@@ -12175,6 +12300,7 @@
         {
           "default": "",
           "document": "模板描述。",
+          "example": "测试模板",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -12184,6 +12310,7 @@
         {
           "default": "",
           "document": "Cos Bucket文件夹前缀。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prefix_",
           "member": "string",
           "name": "CosPrefix",
           "required": true,
@@ -12193,6 +12320,7 @@
         {
           "default": "",
           "document": "Cos 文件名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
           "member": "string",
           "name": "CosFileName",
           "required": true,

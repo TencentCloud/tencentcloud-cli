@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DetectFraudKOL": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectFraudKOL\n<公共请求参数>\n\n{\n    \"BspData\": {\n        \"DataList\": [\n            {\n                \"Type\": 1,\n                \"Id\": \"xxxx\",\n                \"Name\": \"xxxx\"\n            }\n        ]\n    },\n    \"BusinessEncryptData\": {}\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"Id\": \"dgxyx0769\",\n                    \"IsCheck\": 1,\n                    \"FraudPScore\": 23,\n                    \"EvilPScore\": 56\n                }\n            ]\n        },\n        \"RequestId\": \"19f4cd87-29b3-4fac-bf36-62cd7e785e27\"\n    }\n}",
-        "title": "DetectFraudKOL-识别假量"
-      }
-    ],
     "RecognizeCustomizedAudience": [
       {
         "document": "",

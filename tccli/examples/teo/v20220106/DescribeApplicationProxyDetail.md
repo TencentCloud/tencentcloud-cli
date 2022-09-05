@@ -21,6 +21,7 @@ Output:
         "Ipv6": {
             "Switch": "on"
         },
+        "Area": "overseas",
         "PlatType": "domain",
         "ProxyId": "proxy-f11f7ab4-1632-11ed-9fe6-52540033158e",
         "ProxyName": "test-ipv6-l4",

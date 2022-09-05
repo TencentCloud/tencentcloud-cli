@@ -108,7 +108,7 @@
       {
         "document": "任务完成",
         "input": "POST / HTTP/1.1\nHost: mmps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskReportUrl\n<公共请求参数>\n\n{\n    \"Source\": \"0\",\n    \"TaskType\": \"0\",\n    \"ReportType\": \"0\",\n    \"TaskID\": \"1701438134******0\",\n    \"Platform\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"ReportUrl\": \"诊断报告下载链接url\",\n        \"ReportTitle\": \"诊断报告名称\",\n        \"ReportResult\": \"诊断json结果内容\"\n    }\n}",
         "title": "查询小程序隐私合规诊断任务状态"
       }
     ],

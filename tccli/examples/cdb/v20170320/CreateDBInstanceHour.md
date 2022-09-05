@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
-    --Memory 1000 \
-    --Volume 25 \
-    --GoodsNum 1 \
+    --ResourceTags.0.TagKey marchtest \
+    --ResourceTags.0.TagValue test1 \
     --Zone ap-guangzhou-3 \
     --UniqVpcId vpc-0akbol5v \
-    --UniqSubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
-    --InstanceRole master \
-    --EngineVersion 5.6 \
-    --ProtectMode 0 \
-    --DeployMode 0 \
     --SlaveZone ap-guangzhou-3 \
-    --ResourceTags.0.TagKey marchtest \
-    --ResourceTags.0.TagValue test1
+    --InstanceRole master \
+    --GoodsNum 1 \
+    --DeployMode 0 \
+    --Volume 25 \
+    --EngineVersion 5.6 \
+    --UniqSubnetId subnet-fyrtjbqw \
+    --Memory 1000 \
+    --ProtectMode 0
 ```
 
 Output: 

@@ -34,7 +34,8 @@ Output:
                 "Content": {
                     "Format": "json"
                 },
-                "CreateTime": "2020-10-01 17:10:32"
+                "CreateTime": "2020-10-01 17:10:32",
+                "FilenameMode": 0
             }
         ],
         "TotalCount": 1,

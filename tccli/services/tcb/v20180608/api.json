@@ -7707,6 +7707,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -7716,6 +7717,7 @@
         {
           "default": "",
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
+          "example": "default",
           "member": "string",
           "name": "PackageId",
           "required": true,
@@ -7725,6 +7727,7 @@
         {
           "default": "",
           "document": "自动续费标记",
+          "example": "true",
           "member": "bool",
           "name": "IsAutoRenew",
           "required": true,
@@ -7734,6 +7737,7 @@
         {
           "default": "",
           "document": "状态。包含以下取值：\n<li> 空字符串：初始化中</li>\n<li> NORMAL：正常</li>\n<li> ISOLATE：隔离</li>",
+          "example": "NORMAL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -7743,6 +7747,7 @@
         {
           "default": "",
           "document": "支付方式。包含以下取值：\n<li> PREPAYMENT：预付费</li>\n<li> POSTPAID：后付费</li>",
+          "example": "PREPAYMENT",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -7752,6 +7757,7 @@
         {
           "default": "",
           "document": "隔离时间，最近一次隔离的时间",
+          "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "IsolatedTime",
           "required": true,
@@ -7761,6 +7767,7 @@
         {
           "default": "",
           "document": "过期时间，套餐即将到期的时间",
+          "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -7770,6 +7777,7 @@
         {
           "default": "",
           "document": "创建时间，第一次接入计费方案的时间。",
+          "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7779,6 +7787,7 @@
         {
           "default": "",
           "document": "更新时间，计费信息最近一次更新的时间。",
+          "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -7788,6 +7797,7 @@
         {
           "default": "",
           "document": "true表示从未升级过付费版。",
+          "example": "false",
           "member": "bool",
           "name": "IsAlwaysFree",
           "required": true,
@@ -7797,6 +7807,7 @@
         {
           "default": "",
           "document": "付费渠道。\n<li> miniapp：小程序</li>\n<li> qcloud：腾讯云</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "miniapp",
           "member": "string",
           "name": "PaymentChannel",
           "required": true,
@@ -7806,6 +7817,7 @@
         {
           "default": "",
           "document": "最新的订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OrderInfo",
           "name": "OrderInfo",
           "required": true,
@@ -7815,8 +7827,29 @@
         {
           "default": "",
           "document": "免费配额信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic",
           "member": "string",
           "name": "FreeQuota",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启 `超过套餐额度部分转按量付费`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableOverrun",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "baas",
+          "member": "string",
+          "name": "ExtPackageType",
           "required": true,
           "type": "string",
           "value_allowed_null": true

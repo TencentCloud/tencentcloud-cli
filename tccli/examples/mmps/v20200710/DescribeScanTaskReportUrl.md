@@ -20,7 +20,8 @@ Output:
         "RequestId": "5e93a212-ca01-0fdc-eedd-5a1fce5e83e6",
         "Result": 0,
         "ReportUrl": "诊断报告下载链接url",
-        "ReportTitle": "诊断报告名称"
+        "ReportTitle": "诊断报告名称",
+        "ReportResult": "诊断json结果内容"
     }
 }
 ```

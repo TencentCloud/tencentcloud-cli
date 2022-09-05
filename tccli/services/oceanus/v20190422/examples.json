@@ -178,6 +178,14 @@
         "title": "分类中的自定义树状结构并筛选"
       }
     ],
+    "DescribeTreeResources": [
+      {
+        "document": "用户点击作业管理页面中的分类的自定义树状结构并点击分类旁的筛选按钮选择作业类型",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTreeResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分类中的自定义树状结构并筛选"
+      }
+    ],
     "ModifyJob": [
       {
         "document": "",

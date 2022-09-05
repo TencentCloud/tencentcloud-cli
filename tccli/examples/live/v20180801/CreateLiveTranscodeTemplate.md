@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli live CreateLiveTranscodeTemplate --cli-unfold-argument  \
-    --Vcodec h264 \
-    --Acodec aac \
-    --AudioBitrate 500 \
-    --TemplateName 900m \
-    --Description test \
-    --VideoBitrate 900 \
-    --Width 250 \
-    --NeedVideo 1 \
-    --NeedAudio 1 \
-    --Height 250 \
-    --Fps 30 \
-    --Gop 3 \
-    --Rotate 0 \
     --Profile main \
+    --AudioBitrate 500 \
+    --Rotate 0 \
+    --Description test \
+    --TemplateName 900m \
+    --VideoBitrate 900 \
+    --Vcodec h264 \
+    --Height 250 \
+    --Width 250 \
+    --NeedAudio 1 \
+    --FpsToOrig 0 \
+    --Fps 30 \
     --BitrateToOrig 0 \
     --HeightToOrig 0 \
-    --FpsToOrig 0
+    --NeedVideo 1 \
+    --Gop 3 \
+    --Acodec aac
 ```
 
 Output: 

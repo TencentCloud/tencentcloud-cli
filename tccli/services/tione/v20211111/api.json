@@ -402,7 +402,7 @@
         },
         {
           "default": "",
-          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)",
+          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)",
           "example": "a2",
           "member": "string",
           "name": "AlgorithmFramework",
@@ -501,7 +501,7 @@
         },
         {
           "default": "",
-          "document": "自动学习任务ID",
+          "document": "自动学习任务ID（已废弃）",
           "example": "rodftv7u3gg",
           "member": "string",
           "name": "AutoMLTaskId",

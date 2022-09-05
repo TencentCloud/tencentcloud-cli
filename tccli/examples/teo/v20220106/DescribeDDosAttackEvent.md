@@ -13,7 +13,8 @@ tccli teo DescribeDDosAttackEvent --cli-unfold-argument  \
     --ZoneIds zone-21xfqlh4qjee \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-22T00:00:00+00:00 \
-    --IsShowDetail N
+    --IsShowDetail N \
+    --Area overseas
 ```
 
 Output: 

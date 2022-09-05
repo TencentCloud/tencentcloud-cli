@@ -24,6 +24,7 @@ Output:
             "State": 2,
             "DataAmount": 850363,
             "UsedTime": 1761,
+            "TotalTime": 2000,
             "OutputPath": "cosn://dlc-nj-1258469122/test/DLCQueryResults/2021/09/30/9e20f9c021cb11ec835f5254006c64af/",
             "CreateTime": "1632991895728",
             "OutputMessage": "success",

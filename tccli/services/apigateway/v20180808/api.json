@@ -426,6 +426,12 @@
       "name": "生成文档和 SDK",
       "output": "GenerateApiDocumentResponse"
     },
+    "ImportOpenApi": {
+      "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 ",
+      "input": "ImportOpenApiRequest",
+      "name": "导入OpenAPI",
+      "output": "ImportOpenApiResponse"
+    },
     "ModifyAPIDoc": {
       "document": "修改 API 文档",
       "input": "ModifyAPIDocRequest",
@@ -3630,6 +3636,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateApiRspSet": {
+      "document": "CreateApiRsp  返回加TotalCount",
+      "members": [
+        {
+          "default": "",
+          "document": "个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回的数组",
+          "example": "[]",
+          "member": "CreateApiRsp",
+          "name": "ApiSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8248,6 +8280,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ImportOpenApiRequest": {
+      "document": "ImportOpenApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API所在的服务唯一ID。",
+          "example": "service-xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "openAPI正文内容。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Content格式，只能是YAML或者JSON，默认是YAML。",
+          "example": "YAML",
+          "member": "string",
+          "name": "EncodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Content版本，默认是openAPI，目前只支持openAPI。",
+          "example": "openAPI",
+          "member": "string",
+          "name": "ContentVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportOpenApiResponse": {
+      "document": "ImportOpenApi返回参数结构体",
+      "members": [
+        {
+          "document": "导入OpenApi返回参数。",
+          "example": "无",
+          "member": "CreateApiRspSet",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstanceChargePrepaid": {
       "document": "独享实例预付费详情",

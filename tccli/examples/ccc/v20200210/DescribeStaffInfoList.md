@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ccc DescribeStaffInfoList --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
-    --StaffMail “121223@qq.com” \
     --ModifiedTime 1590147606 \
     --PageSize 10 \
-    --PageNumber 0
+    --PageNumber 0 \
+    --StaffMail “121223@qq.com” \
+    --SdkAppId 1400000000
 ```
 
 Output: 

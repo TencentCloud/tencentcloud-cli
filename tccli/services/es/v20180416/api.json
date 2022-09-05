@@ -889,6 +889,15 @@
           "name": "OperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启存算分离",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridStorage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3503,6 +3512,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持存储计算分离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridStorage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5187,6 +5206,7 @@
         {
           "default": "",
           "document": "子任务名",
+          "example": "xx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5196,6 +5216,7 @@
         {
           "default": "",
           "document": "子任务结果",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -5205,6 +5226,7 @@
         {
           "default": "",
           "document": "子任务错误信息",
+          "example": "xx",
           "member": "string",
           "name": "ErrMsg",
           "required": true,
@@ -5214,6 +5236,7 @@
         {
           "default": "",
           "document": "子任务类型",
+          "example": "xx",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5223,6 +5246,7 @@
         {
           "default": "",
           "document": "子任务状态，0处理中 1成功 -1失败",
+          "example": "10",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5232,6 +5256,7 @@
         {
           "default": "",
           "document": "升级检查失败的索引名",
+          "example": "xx",
           "member": "string",
           "name": "FailedIndices",
           "required": true,
@@ -5241,6 +5266,7 @@
         {
           "default": "",
           "document": "子任务结束时间",
+          "example": "xx",
           "member": "string",
           "name": "FinishTime",
           "required": true,
@@ -5250,6 +5276,7 @@
         {
           "default": "",
           "document": "子任务等级，1警告 2失败",
+          "example": "10",
           "member": "int64",
           "name": "Level",
           "required": true,
@@ -5289,6 +5316,7 @@
         {
           "default": "",
           "document": "任务名",
+          "example": "xx",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5298,6 +5326,7 @@
         {
           "default": "",
           "document": "任务进度",
+          "example": "1.2",
           "member": "float",
           "name": "Progress",
           "required": true,
@@ -5307,6 +5336,7 @@
         {
           "default": "",
           "document": "任务完成时间",
+          "example": "xx",
           "member": "string",
           "name": "FinishTime",
           "required": true,
@@ -5316,6 +5346,7 @@
         {
           "default": "",
           "document": "子任务",
+          "example": "xx",
           "member": "SubTaskDetail",
           "name": "SubTasks",
           "required": true,

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp DescribeMachines --cli-unfold-argument  \
-    --MachineType CVM \
-    --MachineRegion ap-shanghai \
-    --Filters.0.Name Keywords \
-    --Filters.0.Values 10.0.1.1 \
     --Limit 10 \
+    --MachineRegion ap-shanghai \
+    --MachineType CVM \
+    --Filters.0.Values 10.0.1.1 \
+    --Filters.0.Name Keywords \
     --Offset 0
 ```
 
@@ -49,7 +49,8 @@ Output:
                 },
                 "MachineType": "CVM",
                 "KernelVersion": "xxx.xxx",
-                "ProtectType": "BASIC_VERSION"
+                "ProtectType": "BASIC_VERSION",
+                "CloudTags": []
             }
         ],
         "TotalCount": 1,

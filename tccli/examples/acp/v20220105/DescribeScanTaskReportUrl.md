@@ -9,7 +9,7 @@ tccli acp DescribeScanTaskReportUrl --cli-unfold-argument  \
     --Source 2 \
     --TaskType 0 \
     --ReportType 0 \
-    --TaskID 1701438134******0 \
+    --TaskID 170******340 \
     --Platform 0
 ```
 
@@ -17,10 +17,39 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5e93a212-***-0fdc-****-5a1fce5e83e6",
+        "RequestId": "5*********3e6",
         "Result": 0,
         "ReportUrl": "诊断报告下载链接url",
-        "ReportTitle": "诊断报告名称"
+        "ReportTitle": "诊断报告名称",
+        "ReportResult": "诊断报告内容"
+    }
+}
+```
+
+**Example 2: 获取漏洞扫描诊断报告url**
+
+
+
+Input: 
+
+```
+tccli acp DescribeScanTaskReportUrl --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --ReportType 0 \
+    --TaskID 347***496 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d9357*********a512b39ee",
+        "Result": 0,
+        "ReportUrl": "http://apk***f3x_00yY",
+        "ReportTitle": "",
+        "ReportResult": ""
     }
 }
 ```

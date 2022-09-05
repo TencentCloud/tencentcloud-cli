@@ -1686,16 +1686,6 @@
       "members": [
         {
           "default": "",
-          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
-          "example": "null",
-          "member": "string",
-          "name": "CiphertextBlob",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段",
           "example": "null",
           "member": "string",
@@ -1706,12 +1696,42 @@
         },
         {
           "default": "",
+          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
+          "example": "null",
+          "member": "string",
+          "name": "CiphertextBlob",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。",
           "example": "null",
           "member": "string",
           "name": "Iv",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'",
+          "example": "SM4-GCM",
+          "member": "string",
+          "name": "Algorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SM4-GCM算法生成的消息摘要（校验消息完整性时使用）",
+          "example": "null",
+          "member": "string",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1809,12 +1829,21 @@
         },
         {
           "default": "",
-          "document": "是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
+          "document": "已弃用。",
           "example": "false",
           "member": "bool",
           "name": "IsEncrypt",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2098,6 +2127,16 @@
           "name": "IntentionQuestions",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认不开启。",
+          "example": "true",
+          "member": "bool",
+          "name": "IntentionRecognition",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

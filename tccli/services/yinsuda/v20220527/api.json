@@ -6,6 +6,18 @@
       "name": "批量获取歌曲详情",
       "output": "BatchDescribeKTVMusicDetailsResponse"
     },
+    "CreateKTVRobot": {
+      "document": "创建机器人，支持进入 RTC 房间，播放曲库歌曲。",
+      "input": "CreateKTVRobotRequest",
+      "name": "创建机器人",
+      "output": "CreateKTVRobotResponse"
+    },
+    "DescribeKTVMatchMusics": {
+      "document": "根据输入的规则匹配曲库中的歌曲。",
+      "input": "DescribeKTVMatchMusicsRequest",
+      "name": "匹配歌曲",
+      "output": "DescribeKTVMatchMusicsResponse"
+    },
     "DescribeKTVPlaylistDetail": {
       "document": "根据歌单 Id 获取歌单详情。",
       "input": "DescribeKTVPlaylistDetailRequest",
@@ -18,17 +30,35 @@
       "name": "获取推荐歌单列表",
       "output": "DescribeKTVPlaylistsResponse"
     },
+    "DescribeKTVRobots": {
+      "document": "获取机器人列表，支持 Id、状态等过滤条件。",
+      "input": "DescribeKTVRobotsRequest",
+      "name": "获取机器人信息",
+      "output": "DescribeKTVRobotsResponse"
+    },
     "DescribeKTVSuggestions": {
       "document": "根据关键词获取联想词列表。",
       "input": "DescribeKTVSuggestionsRequest",
       "name": "获取联想词",
       "output": "DescribeKTVSuggestionsResponse"
     },
+    "DestroyKTVRobot": {
+      "document": "销毁机器人，机器人退出 RTC 房间。",
+      "input": "DestroyKTVRobotRequest",
+      "name": "销毁机器人",
+      "output": "DestroyKTVRobotResponse"
+    },
     "SearchKTVMusics": {
       "document": "根据关键词搜索歌曲，返回相关歌曲列表。",
       "input": "SearchKTVMusicsRequest",
       "name": "搜索歌曲",
       "output": "SearchKTVMusicsResponse"
+    },
+    "SyncKTVRobotCommand": {
+      "document": "下发操作机器人指令，支持播放、暂停、恢复、歌单设置等操作指令，实现对机器人行为的控制。",
+      "input": "SyncKTVRobotCommandRequest",
+      "name": "同步机器人指令",
+      "output": "SyncKTVRobotCommandResponse"
     }
   },
   "metadata": {
@@ -126,6 +156,141 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateKTVRobotRequest": {
+      "document": "CreateKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进房参数。",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "创建机器人时初始化参数。",
+          "example": "无",
+          "member": "SyncRobotCommand",
+          "name": "SyncRobotCommands",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKTVRobotResponse": {
+      "document": "CreateKTVRobot返回参数结构体",
+      "members": [
+        {
+          "document": "机器人Id。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMatchMusicsRequest": {
+      "document": "DescribeKTVMatchMusics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "匹配规则列表。",
+          "example": "无",
+          "member": "KTVMatchRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMatchMusicsResponse": {
+      "document": "DescribeKTVMatchMusics返回参数结构体",
+      "members": [
+        {
+          "document": "匹配到的歌曲列表。",
+          "example": "\"\"",
+          "member": "KTVMatchMusic",
+          "name": "MatchMusicSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未匹配的规则列表。",
+          "example": "\"\"",
+          "member": "KTVMatchRule",
+          "name": "NotMatchRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeKTVPlaylistDetailRequest": {
       "document": "DescribeKTVPlaylistDetail请求参数结构体",
@@ -271,6 +436,105 @@
       ],
       "type": "object"
     },
+    "DescribeKTVRobotsRequest": {
+      "document": "DescribeKTVRobots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人Id列表。",
+          "example": "无",
+          "member": "string",
+          "name": "RobotIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVRobotsResponse": {
+      "document": "DescribeKTVRobots返回参数结构体",
+      "members": [
+        {
+          "document": "机器人总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器人信息集合。",
+          "example": "无",
+          "member": "KTVRobotInfo",
+          "name": "KTVRobotInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeKTVSuggestionsRequest": {
       "document": "DescribeKTVSuggestions请求参数结构体",
       "members": [
@@ -324,6 +588,145 @@
         }
       ],
       "type": "object"
+    },
+    "DestroyKTVRobotRequest": {
+      "document": "DestroyKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "10001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyKTVRobotResponse": {
+      "document": "DestroyKTVRobot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "JoinRoomInput": {
+      "document": "直播进房输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC进房参数",
+          "example": "无",
+          "member": "TRTCJoinRoomInput",
+          "name": "TRTCJoinRoomInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KTVMatchMusic": {
+      "document": "匹配歌曲信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配到的歌曲基础信息。",
+          "example": "\"\"",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则。",
+          "example": "\"\"",
+          "member": "KTVMatchRule",
+          "name": "MatchRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMatchRule": {
+      "document": "歌曲匹配规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "AME 曲库 Id。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AMEMusicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "KTVMatchRuleMusicInfo",
+          "name": "MusicInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KTVMatchRuleMusicInfo": {
+      "document": "歌曲信息匹配。",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MusicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "KTVMusicBaseInfo": {
       "document": "歌曲基础信息。",
@@ -513,6 +916,102 @@
       ],
       "usage": "out"
     },
+    "KTVRobotInfo": {
+      "document": "机器人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "Play",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Playlists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前歌单索引位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放进度，单位：毫秒。",
+          "example": "120000",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频参数。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进房信息。",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KTVSuggestionInfo": {
       "document": "联想词信息。",
       "members": [
@@ -580,6 +1079,22 @@
         }
       ],
       "usage": "out"
+    },
+    "PlayCommandInput": {
+      "document": "播放指令输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲位置索引。",
+          "example": "2",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SearchKTVMusicsRequest": {
       "document": "SearchKTVMusics请求参数结构体",
@@ -670,6 +1185,364 @@
         }
       ],
       "type": "object"
+    },
+    "SeekCommandInput": {
+      "document": "调整播放进度指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "播放位置，单位：毫秒。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SendMessageCommandInput": {
+      "document": "发送自定义信息指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义消息，json格式字符串。",
+          "example": "{\"field\":\"value\"}",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息重复次数，默认为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Repeat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetAudioParamCommandInput": {
+      "document": "音频参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
+          "example": "Original",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetDestroyModeCommandInput": {
+      "document": "设置销毁模式",
+      "members": [
+        {
+          "default": "",
+          "document": "销毁模式，取值有：\n<li>Auto：房间没人时自动销毁</li>\n<li>Expire：房间没人时过期自动销毁</li>\n<li>Never：不自动销毁，需手动销毁</li>默认为：Auto。",
+          "example": "Auto",
+          "member": "string",
+          "name": "DestroyMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期销毁时间，单位：秒，当DestroyMode取Expire时必填。",
+          "example": "120",
+          "member": "int64",
+          "name": "DestroyExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetPlayModeCommandInput": {
+      "document": "设置播放模式",
+      "members": [
+        {
+          "default": "",
+          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "RepeatPlaylist",
+          "member": "string",
+          "name": "PlayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetPlaylistCommandInput": {
+      "document": "设置播放列表指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>\n<li>ClearList：清空歌曲列表</li>\n<li>Move：移动歌曲</li>",
+          "example": "Add",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示待删除歌曲的位置；\n当 Type 取 Move 时，表示待调整歌曲的位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当 Type 取 Move 时，必填，表示移动歌曲的目标位置。",
+          "example": "2",
+          "member": "int64",
+          "name": "ChangedIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "MusicIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SyncKTVRobotCommandRequest": {
+      "document": "SyncKTVRobotCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "ktv",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "100001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指令及指令参数数组。",
+          "example": "无",
+          "member": "SyncRobotCommand",
+          "name": "SyncRobotCommands",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncKTVRobotCommandResponse": {
+      "document": "SyncKTVRobotCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncRobotCommand": {
+      "document": "KTV 机器人初始化参数，在创建后自动完成相关初始化工作。",
+      "members": [
+        {
+          "default": "",
+          "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放参数。",
+          "example": "无",
+          "member": "PlayCommandInput",
+          "name": "PlayCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
+          "example": "无",
+          "member": "SetPlaylistCommandInput",
+          "name": "SetPlaylistCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放进度，当Command取Seek时，必填。",
+          "example": "无",
+          "member": "SeekCommandInput",
+          "name": "SeekCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频参数，当Command取SetAudioParam时，必填。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义消息，当Command取SendMessage时，必填。",
+          "example": "无",
+          "member": "SendMessageCommandInput",
+          "name": "SendMessageCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放模式，当Command取SetPlayMode时，必填。",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销毁模式，当Command取SetDestroyMode时，必填。",
+          "example": "无",
+          "member": "SetDestroyModeCommandInput",
+          "name": "SetDestroyModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TRTCJoinRoomInput": {
+      "document": "TRTC推流进房信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签名。",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "example": "1234",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流应用ID。",
+          "example": "140000001",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户唯一标识。",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TimeRange": {
+      "document": "时间范围",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "Before",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "After",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

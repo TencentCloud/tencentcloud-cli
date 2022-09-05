@@ -1,66 +1,27 @@
-**Example 1: 修改DDoS防护分区**
+**Example 1: 修改DDoS防护分区-连接防护**
 
-
+源站新建连接限速10000个/秒
 
 Input: 
 
 ```
 tccli teo ModifyDDoSPolicy --cli-unfold-argument  \
-    --DdosRule.DdosAntiPly.DestinationConnectLimit 0 \
-    --DdosRule.DdosAntiPly.AbnormalSynNum 0 \
-    --DdosRule.DdosAntiPly.ConnectTimeout 0 \
-    --DdosRule.DdosAntiPly.DropOther xx \
+    --PolicyId 1 \
+    --ZoneId zone-27filz8zp3vi \
     --DdosRule.DdosAntiPly.AbnormalConnectNum 0 \
-    --DdosRule.DdosAntiPly.SourceCreateLimit 0 \
-    --DdosRule.DdosAntiPly.DropTcp xx \
-    --DdosRule.DdosAntiPly.DropUdp xx \
-    --DdosRule.DdosAntiPly.EmptyConnectProtect xx \
-    --DdosRule.DdosAntiPly.DropIcmp xx \
-    --DdosRule.DdosAntiPly.SourceConnectLimit 0 \
-    --DdosRule.DdosAntiPly.DestinationCreateLimit 1 \
+    --DdosRule.DdosAntiPly.AbnormalSynNum 0 \
     --DdosRule.DdosAntiPly.AbnormalSynRatio 0 \
-    --DdosRule.DdosStatusInfo.AiStatus xx \
-    --DdosRule.DdosStatusInfo.PlyLevel xx \
-    --DdosRule.DdosStatusInfo.Appid xx \
-    --DdosRule.Switch xx \
-    --DdosRule.DdosAcl.Switch xx \
-    --DdosRule.DdosAcl.Acl.0.Protocol xx \
-    --DdosRule.DdosAcl.Acl.0.DportStart 0 \
-    --DdosRule.DdosAcl.Acl.0.SportEnd 0 \
-    --DdosRule.DdosAcl.Acl.0.Action xx \
-    --DdosRule.DdosAcl.Acl.0.DportEnd 0 \
-    --DdosRule.DdosAcl.Acl.0.SportStart 0 \
-    --DdosRule.DdosGeoIp.Switch xx \
-    --DdosRule.DdosGeoIp.RegionId 0 \
-    --DdosRule.DdosPacketFilter.Switch xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.DportStart 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.MatchType2 xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.MatchBegin2 xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.DportEnd 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.MatchLogic xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Offset2 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Str2 xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.PacketMax 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.IsNot2 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Depth2 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Depth 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.MatchBegin xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.SportEnd 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Str xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Offset 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Action xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.Protocol xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.IsNot 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.SportStart 0 \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.MatchType xx \
-    --DdosRule.DdosPacketFilter.PacketFilter.0.PacketMin 0 \
-    --DdosRule.DdosAllowBlock.Switch xx \
-    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Ip xx \
-    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.UpdateTime 0 \
-    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Type xx \
-    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Mask 0 \
-    --PolicyId 542 \
-    --ZoneId xx
+    --DdosRule.DdosAntiPly.ConnectTimeout 0 \
+    --DdosRule.DdosAntiPly.DestinationConnectLimit 0 \
+    --DdosRule.DdosAntiPly.DestinationCreateLimit 0 \
+    --DdosRule.DdosAntiPly.DropIcmp on \
+    --DdosRule.DdosAntiPly.DropOther off \
+    --DdosRule.DdosAntiPly.DropTcp off \
+    --DdosRule.DdosAntiPly.DropUdp off \
+    --DdosRule.DdosAntiPly.EmptyConnectProtect 0 \
+    --DdosRule.DdosAntiPly.SourceConnectLimit 0 \
+    --DdosRule.DdosAntiPly.SourceCreateLimit 10000 \
+    --DdosRule.DdosAntiPly.UdpShard off
 ```
 
 Output: 
@@ -68,7 +29,35 @@ Output:
 {
     "Response": {
         "RequestId": "cb1f63d0-9173-4a1e-adb9-bd1ee2642b58",
-        "PolicyId": 542
+        "PolicyId": 1
+    }
+}
+```
+
+**Example 2: 修改DDoS防护分区-IP黑白名单**
+
+1.1.1.1 拉黑
+
+Input: 
+
+```
+tccli teo ModifyDDoSPolicy --cli-unfold-argument  \
+    --PolicyId 1 \
+    --ZoneId zone-27filz8zp3vi \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Ip 1.1.1.1 \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Mask 0 \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Ip2  \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Mask2 0 \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.Type block \
+    --DdosRule.DdosAllowBlock.UserAllowBlockIp.0.UpdateTime 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "cb1f63d0-9173-4a1e-adb9-bd1ee2642b58",
+        "PolicyId": 1
     }
 }
 ```
