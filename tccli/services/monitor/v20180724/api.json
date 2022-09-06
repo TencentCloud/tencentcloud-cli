@@ -2877,6 +2877,15 @@
       "document": "CreateGrafanaNotificationChannel返回参数结构体",
       "members": [
         {
+          "document": "通道 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "channel-xxxxxxxx",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3423,6 +3432,15 @@
     "CreateSSOAccountResponse": {
       "document": "CreateSSOAccount返回参数结构体",
       "members": [
+        {
+          "document": "已添加的用户 UIN",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6418,6 +6436,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按插件 ID 过滤",
+          "example": "grafana-piechart",
+          "member": "string",
+          "name": "PluginId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9012,6 +9039,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按账号 UIN 进行过滤",
+          "example": "10000",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10087,6 +10123,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认生效组织",
+          "example": "1",
+          "member": "string",
+          "name": "OrgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2\", \"3\"]",
+          "member": "string",
+          "name": "ExtraOrgIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\", \"2\", \"3\"]",
+          "member": "string",
+          "name": "OrgIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10142,6 +10208,15 @@
     "InstallPluginsResponse": {
       "document": "InstallPlugins返回参数结构体",
       "members": [
+        {
+          "document": "已安装插件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"grafana-piechart\"]",
+          "member": "string",
+          "name": "PluginIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

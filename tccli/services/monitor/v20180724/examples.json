@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 告警通道"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "Grafana实例授权其他腾讯云用户",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "授权腾讯云用户"
       }
     ],
@@ -626,7 +626,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"r1xcta1opsb6qipjzb4h4x-kcegta6m2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "安装 Grafana 插件"
       }
     ],

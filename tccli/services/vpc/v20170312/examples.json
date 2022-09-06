@@ -213,14 +213,14 @@
     "CheckAssistantCidr": [
       {
         "document": "CIDR与VPC现存信息不存在冲突。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [],\n        \"RequestId\": \"e906fed4-292c-44ba-a240-f5bde9fd84c7\"\n    }\n}",
         "title": "检查辅助CIDR冲突-2"
       },
       {
         "document": "CIDR与VPC现存信息存在冲突。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpc-12345678\",\n                \"SourceItem\": \"172.16.0.0/24\",\n                \"ConflictItemSet\": [\n                    {\n                        \"DestinationItem\": \"172.16.0.0/16\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6e57b8db-4307-4135-b513-8c3d0e12aa4e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpc-xxx\",\n                \"SourceItem\": \"xxx\",\n                \"ConflictItemSet\": [\n                    {\n                        \"ConfilctId\": \"xxx\",\n                        \"DestinationItem\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "检查辅助CIDR冲突"
       }
     ],
@@ -287,7 +287,7 @@
     "CreateAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAssistantCidr\n&VpcId=vpc-12345678\n&CidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"CidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "创建辅助CIDR"
       }
@@ -543,7 +543,7 @@
     "CreateVpc": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpc\n&VpcName=TestVPC\n&CidrBlock=10.8.0.0/16\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpc\n<公共请求参数>\n\n{\n    \"VpcName\": \"TestVPC\",\n    \"CidrBlock\": \"10.8.0.0/16\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-4tboefn3\",\n            \"VpcName\": \"TestVPC\",\n            \"CidrBlock\": \"10.8.0.0/16\",\n            \"Ipv6CidrBlock\": \"\",\n            \"IsDefault\": false,\n            \"EnableMulticast\": false,\n            \"CreatedTime\": \"2020-09-24 15:57:39\",\n            \"EnableDhcp\": true,\n            \"DhcpOptionsId\": \"dopt-5f5lzouo\",\n            \"DnsServerSet\": [\n                \"183.60.82.98\",\n                \"183.60.83.1\"\n            ],\n            \"DomainName\": \"\",\n            \"TagSet\": [],\n            \"AssistantCidrSet\": [\n                {\n                    \"CidrBlock\": \"172.16.0.0/16\",\n                    \"AssistantType\": 0,\n                    \"SubnetSet\": []\n                }\n            ]\n        },\n        \"RequestId\": \"680f4013-31a3-440a-bc09-fd9348a90900\"\n    }\n}",
         "title": "创建VPC"
       }
@@ -631,7 +631,7 @@
     "DeleteAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteAssistantCidr\n&VpcId=vpc-12345678\n&CidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"CidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2fd3d9b3-42cb-4d80-9e19-d97e978df80b\"\n    }\n}",
         "title": "删除辅助CIDR"
       }
@@ -993,7 +993,7 @@
     "DescribeAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAssistantCidr\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssistantCidr\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c65ffbe5-512a-44fd-9611-99d12f4e565d\"\n    }\n}",
         "title": "查询辅助CIDR列表"
       }
@@ -2031,13 +2031,13 @@
     "ModifyAssistantCidr": [
       {
         "document": "添加辅助CIDR：172.16.1.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": [\n                    {\n                        \"VpcId\": \"vpc-12345678\",\n                        \"SubnetId\": \"subnet-12345678\",\n                        \"SubnetName\": \"xxx\",\n                        \"CidrBlock\": \"10.0.4.0/24\",\n                        \"Ipv6CidrBlock\": \"\",\n                        \"IsDefault\": false,\n                        \"IsRemoteVpcSnat\": false,\n                        \"EnableBroadcast\": false,\n                        \"Zone\": \"xx\",\n                        \"RouteTableId\": \"rtb-xx\",\n                        \"NetworkAclId\": \"\",\n                        \"TotalIpAddressCount\": \"xx\",\n                        \"AvailableIpAddressCount\": \"xx\",\n                        \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\n                        \"TagSet\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "仅修改辅助CIDR"
       },
       {
         "document": "添加辅助CIDR：172.16.1.0/24，同时删除辅助CIDR：172.16.0.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.1.0/24\n&OldCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"OldCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ],\n    \"NewCidrBlocks\": [\n        \"172.16.1.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.1.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": [\n                    {\n                        \"VpcId\": \"vpc-12345678\",\n                        \"SubnetId\": \"subnet-12345678\",\n                        \"SubnetName\": \"xxx\",\n                        \"CidrBlock\": \"10.0.4.0/24\",\n                        \"Ipv6CidrBlock\": \"\",\n                        \"IsDefault\": false,\n                        \"IsRemoteVpcSnat\": false,\n                        \"EnableBroadcast\": false,\n                        \"Zone\": \"xx\",\n                        \"RouteTableId\": \"rtb-xx\",\n                        \"NetworkAclId\": \"\",\n                        \"TotalIpAddressCount\": \"xx\",\n                        \"AvailableIpAddressCount\": \"xx\",\n                        \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\n                        \"TagSet\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "修改（添加和删除）辅助CIDR"
       }

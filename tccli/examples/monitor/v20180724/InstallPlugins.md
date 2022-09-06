@@ -15,7 +15,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "r1xcta1opsb6qipjzb4h4x-kcegta6m2"
+        "PluginIds": [
+            "xx"
+        ],
+        "RequestId": "xx"
     }
 }
 ```

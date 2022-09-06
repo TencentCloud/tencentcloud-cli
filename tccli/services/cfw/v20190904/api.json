@@ -378,12 +378,6 @@
       "name": "修改规则表状态",
       "output": "ModifyTableStatusResponse"
     },
-    "ModifyVPCSwitchStatus": {
-      "document": "单个修改VPC火墙开关",
-      "input": "ModifyVPCSwitchStatusRequest",
-      "name": "单个修改VPC防火墙开关",
-      "output": "ModifyVPCSwitchStatusResponse"
-    },
     "RemoveAcRule": {
       "document": "删除互联网边界规则",
       "input": "RemoveAcRuleRequest",
@@ -578,7 +572,7 @@
         },
         {
           "default": "",
-          "document": "访问控制策略中的源地址。取值：\n当SourceType为net时，SourceContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当SourceType为template时，SourceContent为源地址模板名称。\n\n当SourceType为location时，SourceContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当SourceType为instance时，SourceContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
+          "document": "访问控制策略中的源地址。取值：\n当SourceType为net时，SourceContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当SourceType为template时，SourceContent为源地址模板id。\n\n当SourceType为location时，SourceContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当SourceType为instance时，SourceContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
           "example": "1.1.1.1",
           "member": "string",
           "name": "SourceContent",
@@ -596,7 +590,7 @@
         },
         {
           "default": "",
-          "document": "访问控制策略中的目的地址。取值：\n当DestType为net时，DestContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当DestType为template时，DestContent为源地址模板名称。\n\n当DestType为location时，DestContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当DestType为instance时，DestContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当DestType为domain时，DestContent为该实例id对应的域名规则。\n例如*.qq.com\n\n当DestType为vendor时，DestContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
+          "document": "访问控制策略中的目的地址。取值：\n当DestType为net时，DestContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当DestType为template时，DestContent为源地址模板id。\n\n当DestType为location时，DestContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当DestType为instance时，DestContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当DestType为domain时，DestContent为该实例id对应的域名规则。\n例如*.qq.com\n\n当DestType为vendor时，DestContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
           "example": "*.qq.com",
           "member": "string",
           "name": "DestContent",
@@ -5215,60 +5209,6 @@
           "name": "Status",
           "type": "int",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyVPCSwitchStatusRequest": {
-      "document": "ModifyVPCSwitchStatus请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "公网IP",
-          "example": "1.2.3.4",
-          "member": "string",
-          "name": "FirewallVpcId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "状态值，0: 关闭 ,1:开启",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyVPCSwitchStatusResponse": {
-      "document": "ModifyVPCSwitchStatus返回参数结构体",
-      "members": [
-        {
-          "document": "接口返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "scuess",
-          "member": "string",
-          "name": "ReturnMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "接口返回错误码，0请求成功  非0失败",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

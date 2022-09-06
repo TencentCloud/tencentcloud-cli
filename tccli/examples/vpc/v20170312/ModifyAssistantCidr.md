@@ -54,8 +54,8 @@ Input:
 ```
 tccli vpc ModifyAssistantCidr --cli-unfold-argument  \
     --VpcId vpc-12345678 \
-    --NewCidrBlocks 172.16.1.0/24 \
-    --OldCidrBlocks 172.16.0.0/24
+    --OldCidrBlocks 172.16.0.0/24 \
+    --NewCidrBlocks 172.16.1.0/24
 ```
 
 Output: 

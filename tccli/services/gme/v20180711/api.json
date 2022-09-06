@@ -1363,6 +1363,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "1400440313",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -1371,6 +1372,7 @@
         {
           "default": "",
           "document": "房间ID",
+          "example": "12675079",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -1379,10 +1381,29 @@
         {
           "default": "",
           "document": "用户ID",
+          "example": "112675079",
           "member": "int64",
           "name": "UserId",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字符串类型用户ID",
+          "example": "112675079",
+          "member": "string",
+          "name": "UserIdStr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字符串类型房间ID",
+          "example": "12675079",
+          "member": "string",
+          "name": "RoomIdStr",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1392,15 +1413,19 @@
       "members": [
         {
           "document": "用户在房间得进出时间列表",
+          "example": "无",
           "member": "InOutTimeInfo",
           "name": "InOutList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "用户在房间中总时长",
+          "example": "2615453",
           "member": "int64",
           "name": "Duration",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

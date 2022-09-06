@@ -8,8 +8,8 @@ Input:
 tccli vpc CreateVpc --cli-unfold-argument  \
     --VpcName TestVPC \
     --CidrBlock 10.8.0.0/16 \
-    --Tags.0.Key city \
-    --Tags.0.Value shanghai
+    --Tags.0.Value shanghai \
+    --Tags.0.Key city
 ```
 
 Output: 

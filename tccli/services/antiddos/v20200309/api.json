@@ -522,12 +522,6 @@
       "name": "修改智能解析域名名称",
       "output": "ModifyDomainUsrNameResponse"
     },
-    "ModifyL7RulesEdge": {
-      "document": "修改边界防护L7转发规则",
-      "input": "ModifyL7RulesEdgeRequest",
-      "name": "修改边界防护L7转发规则",
-      "output": "ModifyL7RulesEdgeResponse"
-    },
     "ModifyNewDomainRules": {
       "document": "修改7层转发规则",
       "input": "ModifyNewDomainRulesRequest",
@@ -9042,60 +9036,6 @@
     "ModifyDomainUsrNameResponse": {
       "document": "ModifyDomainUsrName返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyL7RulesEdgeRequest": {
-      "document": "ModifyL7RulesEdge请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "大禹子产品代号（edge表示边界防护产品）",
-          "example": "edge",
-          "member": "string",
-          "name": "Business",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "资源ID",
-          "example": "edge-000000xe",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "规则",
-          "example": "无",
-          "member": "L7RuleEntry",
-          "name": "Rule",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyL7RulesEdgeResponse": {
-      "document": "ModifyL7RulesEdge返回参数结构体",
-      "members": [
-        {
-          "document": "成功码",
-          "example": "无",
-          "member": "SuccessCode",
-          "name": "Success",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

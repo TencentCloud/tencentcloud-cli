@@ -180,6 +180,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话ID列表",
+          "example": "[\"aaaa-xxxx\"]",
+          "member": "string",
+          "name": "Sessions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

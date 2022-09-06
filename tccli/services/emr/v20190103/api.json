@@ -970,6 +970,7 @@
         {
           "default": "",
           "document": "付费方式。\nPREPAID 包年包月。\nPOSTPAID_BY_HOUR 按量计费，默认方式。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -979,6 +980,7 @@
         {
           "default": "",
           "document": "是否为HA集群。",
+          "example": "true",
           "member": "bool",
           "name": "SupportHA",
           "required": true,
@@ -988,6 +990,7 @@
         {
           "default": "",
           "document": "集群所使用的安全组，目前仅支持一个。",
+          "example": "sg-xxxxxxxx",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -997,6 +1000,7 @@
         {
           "default": "",
           "document": "实例位置。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -1006,6 +1010,7 @@
         {
           "default": "",
           "document": "实例所在VPC。",
+          "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": true,
@@ -1015,6 +1020,7 @@
         {
           "default": "",
           "document": "实例登录配置。",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": true,
@@ -1023,7 +1029,8 @@
         },
         {
           "default": "",
-          "document": "实例标签。",
+          "document": "实例标签，示例：[\"{\\\"TagKey\\\":\\\"test-tag1\\\",\\\"TagValue\\\":\\\"001\\\"}\",\"{\\\"TagKey\\\":\\\"test-tag2\\\",\\\"TagValue\\\":\\\"002\\\"}\"]。",
+          "example": "[\"{\\\"TagKey\\\":\\\"test-tag1\\\",\\\"TagValue\\\":\\\"001\\\"}\",\"{\\\"TagKey\\\":",
           "member": "string",
           "name": "TagSpecification",
           "required": true,
@@ -1033,6 +1040,7 @@
         {
           "default": "",
           "document": "元数据库配置。",
+          "example": "无",
           "member": "MetaDbInfo",
           "name": "MetaDB",
           "required": true,
@@ -1042,6 +1050,7 @@
         {
           "default": "",
           "document": "实例硬件配置。",
+          "example": "无",
           "member": "JobFlowResourceSpec",
           "name": "ResourceSpec",
           "required": true,
@@ -1051,6 +1060,7 @@
         {
           "default": "",
           "document": "是否申请公网IP，默认为false。",
+          "example": "false",
           "member": "bool",
           "name": "PublicIpAssigned",
           "required": false,
@@ -1060,6 +1070,7 @@
         {
           "default": "",
           "document": "包年包月配置，只对包年包月集群生效。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -1069,6 +1080,7 @@
         {
           "default": "",
           "document": "集群置放群组。",
+          "example": "无",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -1078,6 +1090,7 @@
         {
           "default": "",
           "document": "是否使用cbs加密。",
+          "example": "false",
           "member": "bool",
           "name": "CbsEncryptFlag",
           "required": false,
@@ -1087,6 +1100,7 @@
         {
           "default": "",
           "document": "是否使用远程登录，默认为false。",
+          "example": "false",
           "member": "bool",
           "name": "RemoteTcpDefaultPort",
           "required": false,
@@ -1553,6 +1567,24 @@
           "name": "SearchFields",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Asc",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3780,6 +3812,7 @@
         {
           "default": "",
           "document": "任务步骤名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-job",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3789,6 +3822,7 @@
         {
           "default": "",
           "document": "任务步骤失败时的处理策略，可以为以下值：\n\"CONTINUE\"，跳过当前失败步骤，继续后续步骤。\n“TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。\n“CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONTINUE",
           "member": "string",
           "name": "ActionOnFailure",
           "required": true,
@@ -3798,9 +3832,20 @@
         {
           "default": "",
           "document": "当前步骤的状态，可以为以下值：\n“JobFlowStepStatusInit”，初始化状态，等待执行。\n“JobFlowStepStatusRunning”，任务步骤正在执行。\n“JobFlowStepStatusFailed”，任务步骤执行失败。\n“JobFlowStepStatusSucceed”，任务步骤执行成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JobFlowStepStatusRunning",
           "member": "string",
           "name": "JobState",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "YARN任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application_1658300000000_0001",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4666,6 +4711,46 @@
           "example": "\"\"",
           "member": "string",
           "name": "Clients",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统当前时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否用于联邦\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsFederation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceClient",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6146,6 +6231,7 @@
         {
           "default": "",
           "document": "执行步骤名称。",
+          "example": "step1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6155,6 +6241,7 @@
         {
           "default": "",
           "document": "执行动作。",
+          "example": "无",
           "member": "Execution",
           "name": "ExecutionStep",
           "required": true,
@@ -6163,7 +6250,8 @@
         },
         {
           "default": "",
-          "document": "执行失败策略。\n1. TERMINATE_CLUSTER 执行失败时退出并销毁集群。\n2. CANCEL_AND_WAIT 执行失败时阻塞等待。\n3. CONTINUE 执行失败时跳过并执行后续步骤。",
+          "document": "执行失败策略。\n1. TERMINATE_CLUSTER 执行失败时退出并销毁集群。\n2. CONTINUE 执行失败时跳过并执行后续步骤。",
+          "example": "CONTINUE",
           "member": "string",
           "name": "ActionOnFailure",
           "required": true,
@@ -6173,6 +6261,7 @@
         {
           "default": "",
           "document": "指定执行Step时的用户名，非必须，默认为hadoop。",
+          "example": "hadoop",
           "member": "string",
           "name": "User",
           "required": false,
