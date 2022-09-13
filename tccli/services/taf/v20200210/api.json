@@ -17,12 +17,6 @@
       "input": "RecognizeTargetAudienceRequest",
       "name": "流量反欺诈-流量验准",
       "output": "RecognizeTargetAudienceResponse"
-    },
-    "SendTrafficSecuritySmsMessage": {
-      "document": "流量安选产品，短信发送接口",
-      "input": "SendTrafficSecuritySmsMessageRequest",
-      "name": "流量安选-短信发送接口",
-      "output": "SendTrafficSecuritySmsMessageResponse"
     }
   },
   "metadata": {
@@ -469,82 +463,6 @@
       ],
       "usage": "in"
     },
-    "InputSendTrafficSecuritySmsMsg": {
-      "document": "业务入参",
-      "members": [
-        {
-          "default": "",
-          "document": "投放任务ID",
-          "example": "0",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "手机号码列表（号码量<=200）",
-          "example": "[\"\"]",
-          "member": "string",
-          "name": "Mobiles",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否授权，1：已授权",
-          "example": "1",
-          "member": "int64",
-          "name": "IsAuthorized",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "加密方式，0：AES加密；1：DES加密",
-          "example": "0",
-          "member": "int64",
-          "name": "EncryptMethod",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "加密算法中的块处理模式，0：ECB模式；1：CBC模式；2：CTR模式；3：CFB模式；4：OFB模式；",
-          "example": "1",
-          "member": "int64",
-          "name": "EncryptMode",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "填充模式，0：ZeroPadding；1：PKCS5Padding；2：PKCS7Padding；",
-          "example": "1",
-          "member": "int64",
-          "name": "PaddingType",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "加密数据",
-          "example": "aad26a0218fc",
-          "member": "string",
-          "name": "EncryptData",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
     "OutputRecognizeTargetAudience": {
       "document": "流量反欺诈-验准返回值",
       "members": [
@@ -606,39 +524,6 @@
           "name": "Score",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputSendTrafficSecuritySmsMsg": {
-      "document": "返回结果",
-      "members": [
-        {
-          "default": "",
-          "document": "返回码（0：接口调用成功 非0：接口调用失败）",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "返回码对应的信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "发送失败的号码列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Value",
-          "required": true,
-          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -741,42 +626,6 @@
           "document": "回包数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutputRecognizeTargetAudience",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SendTrafficSecuritySmsMessageRequest": {
-      "document": "SendTrafficSecuritySmsMessage请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "业务入参",
-          "example": "无",
-          "member": "InputSendTrafficSecuritySmsMsg",
-          "name": "BspData",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "SendTrafficSecuritySmsMessageResponse": {
-      "document": "SendTrafficSecuritySmsMessage返回参数结构体",
-      "members": [
-        {
-          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OutputSendTrafficSecuritySmsMsg",
           "name": "Data",
           "required": true,
           "type": "object",

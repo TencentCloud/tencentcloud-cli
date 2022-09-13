@@ -126,6 +126,12 @@
       "name": "查询防火墙弹性公网IP",
       "output": "DescribeCfwEipsResponse"
     },
+    "DescribeDefenseSwitch": {
+      "document": "获取入侵防御按钮列表",
+      "input": "DescribeDefenseSwitchRequest",
+      "name": "获取入侵防御按钮列表",
+      "output": "DescribeDefenseSwitchResponse"
+    },
     "DescribeEnterpriseSecurityGroupRule": {
       "document": "查询新企业安全组规则",
       "input": "DescribeEnterpriseSecurityGroupRuleRequest",
@@ -2376,6 +2382,86 @@
           "name": "NatFwEipList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefenseSwitchRequest": {
+      "document": "DescribeDefenseSwitch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDefenseSwitchResponse": {
+      "document": "DescribeDefenseSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "基础防御开关",
+          "example": "1",
+          "member": "int64",
+          "name": "BasicRuleSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全基线开关",
+          "example": "1",
+          "member": "int64",
+          "name": "BaselineAllSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "威胁情报开关",
+          "example": "1",
+          "member": "int64",
+          "name": "TiSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "虚拟补丁开关",
+          "example": "1",
+          "member": "int64",
+          "name": "VirtualPatchSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否历史开启",
+          "example": "1",
+          "member": "int64",
+          "name": "HistoryOpen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态值，0：查询成功，非0：查询失败",
+          "example": "success",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态信息，success：查询成功，fail：查询失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5469,6 +5555,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华南地区",
+          "member": "string",
+          "name": "RegionDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州六区",
+          "member": "string",
+          "name": "ZoneZh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州七区",
+          "member": "string",
+          "name": "ZoneZhBak",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5854,7 +5970,7 @@
       "members": [
         {
           "default": "",
-          "document": "暴漏漏洞数量",
+          "document": "暴露漏洞数量",
           "example": "5",
           "member": "uint64",
           "name": "LeakNum",
@@ -5874,7 +5990,7 @@
         },
         {
           "default": "",
-          "document": "暴漏端口数量",
+          "document": "暴露端口数量",
           "example": "10",
           "member": "uint64",
           "name": "PortNum",

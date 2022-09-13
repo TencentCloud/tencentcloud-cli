@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc CreateVpcEndPoint --cli-unfold-argument  \
-    --VpcId vpc-coekkqtd \
     --SubnetId subnet-4t7fr3fi \
     --EndPointName point_002 \
+    --VpcId vpc-coekkqtd \
     --EndPointServiceId vpcsvc-kngiybxl
 ```
 

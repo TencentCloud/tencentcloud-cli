@@ -282,6 +282,12 @@
       "name": "查询 exporter 集成列表",
       "output": "DescribeExporterIntegrationsResponse"
     },
+    "DescribeGrafanaChannels": {
+      "document": "列出 Grafana 所有告警通道",
+      "input": "DescribeGrafanaChannelsRequest",
+      "name": "列出 Grafana 所有告警通道",
+      "output": "DescribeGrafanaChannelsResponse"
+    },
     "DescribeGrafanaConfig": {
       "document": "列出 Grafana 的设置，即 grafana.ini 文件内容",
       "input": "DescribeGrafanaConfigRequest",
@@ -433,7 +439,7 @@
       "output": "EnableSSOCamCheckResponse"
     },
     "GetMonitorData": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse"
@@ -2814,6 +2820,15 @@
       "document": "CreateGrafanaIntegration返回参数结构体",
       "members": [
         {
+          "document": "集成 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "integration-xxxxxxxx",
+          "member": "string",
+          "name": "IntegrationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2845,7 +2860,7 @@
         },
         {
           "default": "",
-          "document": "组织 ID",
+          "document": "默认为1，已废弃，请使用 OrganizationIds",
           "example": "1",
           "member": "int64",
           "name": "OrgId",
@@ -2863,10 +2878,19 @@
         },
         {
           "default": "",
-          "document": "额外组织 ID 数组",
+          "document": "额外组织 ID 数组，已废弃，请使用 OrganizationIds",
           "example": "[]",
           "member": "string",
           "name": "ExtraOrgIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生效的所有组织 ID 数组，默认为 [\"1\"]",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "OrganizationIds",
           "required": false,
           "type": "list"
         }
@@ -6070,6 +6094,87 @@
           "example": "[]",
           "member": "IntegrationConfiguration",
           "name": "IntegrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaChannelsRequest": {
+      "document": "DescribeGrafanaChannels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "my-channel",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道 ID",
+          "example": "[\"crule-123\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ChannelState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaChannelsResponse": {
+      "document": "DescribeGrafanaChannels返回参数结构体",
+      "members": [
+        {
+          "document": "告警通道数组",
+          "example": "[]",
+          "member": "GrafanaChannel",
+          "name": "NotificationChannelSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9799,6 +9904,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grafana-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户主账号 UIN",
+          "example": "11111",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9828,6 +9953,72 @@
         }
       ],
       "usage": "both"
+    },
+    "GrafanaChannel": {
+      "document": "Grafana 告警渠道",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道 ID",
+          "example": "channel-id",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "channel-name",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通道模板 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "Receivers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-03-11T16:54:33+08:00",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\", \"2\", \"3\"]",
+          "member": "string",
+          "name": "OrganizationIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GrafanaInstanceInfo": {
       "document": "查询 Grafana 实例时的实例类型",
@@ -10067,6 +10258,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "GrafanaURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10126,7 +10327,7 @@
         },
         {
           "default": "",
-          "document": "默认生效组织",
+          "document": "默认生效组织，已废弃，请使用 OrganizationIds",
           "example": "1",
           "member": "string",
           "name": "OrgId",
@@ -10136,7 +10337,7 @@
         },
         {
           "default": "",
-          "document": "额外生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "额外生效组织，已废弃，请使用 OrganizationIds\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2\", \"3\"]",
           "member": "string",
           "name": "ExtraOrgIds",
@@ -10146,10 +10347,20 @@
         },
         {
           "default": "",
-          "document": "生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效组织，已废弃，请使用 OrganizationIds\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
           "member": "string",
           "name": "OrgIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\", \"2\", \"3\"]",
+          "member": "string",
+          "name": "OrganizationIds",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12811,6 +13022,7 @@
         {
           "default": "",
           "document": "规则 ID",
+          "example": "arule-xxx",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -12820,6 +13032,7 @@
         {
           "default": "",
           "document": "规则状态码",
+          "example": "1",
           "member": "int64",
           "name": "RuleState",
           "required": true,
@@ -12828,7 +13041,8 @@
         },
         {
           "default": "",
-          "document": "规则名称",
+          "document": "分组名称",
+          "example": "groupname",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -12838,6 +13052,7 @@
         {
           "default": "",
           "document": "规则内容组",
+          "example": "groupname",
           "member": "string",
           "name": "Group",
           "required": true,
@@ -12847,6 +13062,7 @@
         {
           "default": "",
           "document": "规则数量",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "required": true,
@@ -12856,6 +13072,7 @@
         {
           "default": "",
           "document": "规则创建时间",
+          "example": "\"\"",
           "member": "string",
           "name": "CreatedAt",
           "required": true,
@@ -12865,11 +13082,22 @@
         {
           "default": "",
           "document": "规则最近更新时间",
+          "example": "\"\"",
           "member": "string",
           "name": "UpdatedAt",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "examplename",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13975,10 +14203,19 @@
         },
         {
           "default": "",
-          "document": "额外组织 ID 数组",
+          "document": "已废弃，请使用 OrganizationIds",
           "example": "[]",
           "member": "string",
           "name": "ExtraOrgIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生效的组织 ID 数组",
+          "example": "[\"1\", \"2\"]",
+          "member": "string",
+          "name": "OrganizationIds",
           "required": false,
           "type": "list"
         }

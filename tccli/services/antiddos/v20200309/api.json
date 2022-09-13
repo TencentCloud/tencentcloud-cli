@@ -1316,6 +1316,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击封堵套餐标记",
+          "example": "1",
+          "member": "uint64",
+          "name": "VitalityVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

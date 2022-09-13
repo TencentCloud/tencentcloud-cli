@@ -30,6 +30,12 @@
       "name": "应急漏洞扫描",
       "output": "CreateEmergencyVulScanResponse"
     },
+    "CreateLicenseOrder": {
+      "document": "CreateLicenseOrder 该接口可以创建专业版/旗舰版订单\n支持预付费后付费创建\n后付费订单直接闯将成功\n预付费订单仅下单不支付,需要调用计费支付接口进行支付",
+      "input": "CreateLicenseOrderRequest",
+      "name": "创建授权订单",
+      "output": "CreateLicenseOrderResponse"
+    },
     "CreateProtectServer": {
       "document": "添加网站防护服务器",
       "input": "CreateProtectServerRequest",
@@ -83,6 +89,12 @@
       "input": "DeleteBruteAttacksRequest",
       "name": "删除暴力破解记录",
       "output": "DeleteBruteAttacksResponse"
+    },
+    "DeleteLicenseRecord": {
+      "document": "对授权管理-订单列表内已过期的订单进行删除.(删除后的订单不在统计范畴内)",
+      "input": "DeleteLicenseRecordRequest",
+      "name": "删除授权记录",
+      "output": "DeleteLicenseRecordResponse"
     },
     "DeleteLoginWhiteList": {
       "document": "本接口用于删除异地登录白名单规则。",
@@ -576,6 +588,30 @@
       "name": "获取索引列表",
       "output": "DescribeIndexListResponse"
     },
+    "DescribeLicenseBindList": {
+      "document": "该接口可以获取设置中心-授权管理,某个授权下已绑定的授权机器列表",
+      "input": "DescribeLicenseBindListRequest",
+      "name": "查看授权绑定列表",
+      "output": "DescribeLicenseBindListResponse"
+    },
+    "DescribeLicenseBindSchedule": {
+      "document": "查询授权绑定任务的进度",
+      "input": "DescribeLicenseBindScheduleRequest",
+      "name": "查询授权绑定进度",
+      "output": "DescribeLicenseBindScheduleResponse"
+    },
+    "DescribeLicenseGeneral": {
+      "document": "授权管理-授权概览信息",
+      "input": "DescribeLicenseGeneralRequest",
+      "name": "授权概览信息",
+      "output": "DescribeLicenseGeneralResponse"
+    },
+    "DescribeLicenseList": {
+      "document": "获取用户所有授权订单信息",
+      "input": "DescribeLicenseListRequest",
+      "name": "获取授权订单列表",
+      "output": "DescribeLicenseListResponse"
+    },
     "DescribeLogStorageStatistic": {
       "document": "获取日志检索容量使用统计",
       "input": "DescribeLogStorageStatisticRequest",
@@ -954,6 +990,12 @@
       "name": "查询网站防篡改服务信息",
       "output": "DescribeWebPageServiceInfoResponse"
     },
+    "DestroyOrder": {
+      "document": "DestroyOrder  该接口可以对资源销毁.",
+      "input": "DestroyOrderRequest",
+      "name": "销毁订单",
+      "output": "DestroyOrderResponse"
+    },
     "EditBashRules": {
       "document": "新增或修改高危命令规则",
       "input": "EditBashRulesRequest",
@@ -1019,6 +1061,12 @@
       "input": "ExportIgnoreRuleEffectHostListRequest",
       "name": "忽略检测项影响主机列表导出",
       "output": "ExportIgnoreRuleEffectHostListResponse"
+    },
+    "ExportLicenseDetail": {
+      "document": "导出授权列表对应的绑定信息",
+      "input": "ExportLicenseDetailRequest",
+      "name": "导出授权详情",
+      "output": "ExportLicenseDetailResponse"
     },
     "ExportMaliciousRequests": {
       "document": "本接口 (ExportMaliciousRequests) 用于导出下载恶意请求文件。",
@@ -1134,11 +1182,29 @@
       "name": "修改暴力破解规则",
       "output": "ModifyBruteAttackRulesResponse"
     },
+    "ModifyLicenseBinds": {
+      "document": "设置中心-授权管理 对某个授权批量绑定机器",
+      "input": "ModifyLicenseBindsRequest",
+      "name": "授权批量绑定",
+      "output": "ModifyLicenseBindsResponse"
+    },
+    "ModifyLicenseUnBinds": {
+      "document": "设置中心-授权管理 对某个授权批量解绑机器",
+      "input": "ModifyLicenseUnBindsRequest",
+      "name": "授权批量解绑",
+      "output": "ModifyLicenseUnBindsResponse"
+    },
     "ModifyMalwareTimingScanSettings": {
       "document": "定时扫描设置",
       "input": "ModifyMalwareTimingScanSettingsRequest",
       "name": "定时扫描设置",
       "output": "ModifyMalwareTimingScanSettingsResponse"
+    },
+    "ModifyOrderAttribute": {
+      "document": "对订单属性编辑",
+      "input": "ModifyOrderAttributeRequest",
+      "name": "编辑订单属性",
+      "output": "ModifyOrderAttributeResponse"
     },
     "ModifyWarningSetting": {
       "document": "修改告警设置",
@@ -1295,20 +1361,20 @@
         },
         {
           "default": "",
-          "document": "主机外网IP",
-          "example": "1",
+          "document": "主机名称",
+          "example": "test",
           "member": "string",
-          "name": "MachineWanIp",
+          "name": "MachineName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "主机Quuid",
+          "document": "主机外网IP",
           "example": "1",
           "member": "string",
-          "name": "Quuid",
+          "name": "MachineWanIp",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1325,10 +1391,10 @@
         },
         {
           "default": "",
-          "document": "操作系统信息",
+          "document": "主机Quuid",
           "example": "1",
           "member": "string",
-          "name": "OsInfo",
+          "name": "Quuid",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1385,10 +1451,10 @@
         },
         {
           "default": "",
-          "document": "配置文件路径",
+          "document": "操作系统信息",
           "example": "1",
           "member": "string",
-          "name": "ConfigPath",
+          "name": "OsInfo",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1425,12 +1491,42 @@
         },
         {
           "default": "",
+          "document": "配置文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1644,6 +1740,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器外网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2002,6 +2128,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "test",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2374,6 +2530,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器外网IP",
+          "example": "43.156.40.46",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2523,6 +2709,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器外网IP",
+          "example": "43.156.40.46",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2659,6 +2875,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器外网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2785,6 +3031,7 @@
         {
           "default": "",
           "document": "标签",
+          "example": "app",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -2794,6 +3041,7 @@
         {
           "default": "",
           "document": "数量",
+          "example": "21",
           "member": "int64",
           "name": "Value",
           "required": true,
@@ -2803,10 +3051,21 @@
         {
           "default": "",
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
           "member": "string",
           "name": "Desc",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "今日新增数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "NewCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2984,6 +3243,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3522,6 +3801,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器外网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3768,6 +4077,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4034,6 +4363,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4130,6 +4479,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4396,6 +4765,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4914,6 +5303,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5092,6 +5501,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5287,6 +5716,26 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5580,6 +6029,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次采集时间",
+          "example": "2022-07-15 11:27:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否新增[0:否|1:是]",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7134,6 +7603,123 @@
       ],
       "type": "object"
     },
+    "CreateLicenseOrderRequest": {
+      "document": "CreateLicenseOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签数组, 空则表示不需要绑定标签",
+          "example": "[]",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月\n默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "授权数量 , 需要购买的数量.\n默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买订单地域,这里仅支持 1 广州,9 新加坡. 推荐选择广州. 新加坡地域为白名单用户购买.\n默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID .\n默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时间长度,默认1 , 可选值为1,2,3,4,5,6,7,8,9,10,11,12,24,36\n该参数仅包年包月生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否自动续费, 默认不自动续费.\n该参数仅包年包月生效",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自动防护授权配置值, 不空则表示开启",
+          "example": "''",
+          "member": "string",
+          "name": "AutoProtectOpenConfig",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLicenseOrderResponse": {
+      "document": "CreateLicenseOrder返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表",
+          "example": "[]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID列表,预付费订单该字段空值",
+          "example": "[]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "大订单号 , 后付费该字段空值",
+          "example": "''",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateProtectServerRequest": {
       "document": "CreateProtectServer请求参数结构体",
       "members": [
@@ -7562,6 +8148,51 @@
     },
     "DeleteBruteAttacksResponse": {
       "document": "DeleteBruteAttacks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLicenseRecordRequest": {
+      "document": "DeleteLicenseRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "授权ID ,可以用授权订单列表获取.",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "''",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLicenseRecordResponse": {
+      "document": "DeleteLicenseRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8061,6 +8692,24 @@
       "members": [
         {
           "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>AppName- string - 是否必填：否 - 应用名搜索</li>\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Type - int - 是否必填：否 - 类型\t: 仅linux\n0: 全部\n1: 运维\n2 : 数据库\n3 : 安全\n4 : 可疑应用\n5 : 系统架构\n6 : 系统应用\n7 : WEB服务\n99:其他</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -8079,24 +8728,6 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>AppName- string - 是否必填：否 - 应用名搜索</li>\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Type - int - 是否必填：否 - 类型\t: 仅linux\n0: 全部\n1: 运维\n2 : 数据库\n3 : 安全\n4 : 可疑应用\n5 : 系统架构\n6 : 系统应用\n7 : WEB服务\n99:其他</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
-          "example": "1",
-          "member": "AssetFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "排序方式：ProcessCount",
-          "example": "1",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "asc",
           "member": "string",
@@ -8106,10 +8737,10 @@
         },
         {
           "default": "",
-          "document": "查询指定Quuid主机的信息",
+          "document": "排序方式：[FirstTime|ProcessCount]",
           "example": "1",
           "member": "string",
-          "name": "Quuid",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8286,51 +8917,6 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "1",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
-          "example": "1",
-          "member": "AssetFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "排序方式，asc升序 或 desc降序",
-          "example": "1",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "排序依据:Size,ProcessCount,ModuleCount",
-          "example": "1",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "服务器Uuid",
           "example": "1",
           "member": "string",
@@ -8344,6 +8930,51 @@
           "example": "1",
           "member": "string",
           "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序依据[Size|FirstTime|ProcessCount|ModuleCount]",
+          "example": "1",
+          "member": "string",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8439,21 +9070,12 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "查询指定Quuid主机的信息",
           "example": "1",
-          "member": "uint64",
-          "name": "Limit",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -8466,10 +9088,37 @@
         },
         {
           "default": "",
-          "document": "查询指定Quuid主机的信息",
+          "document": "偏移量，默认为0。",
           "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "desc",
           "member": "string",
-          "name": "Quuid",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：[FirstTime]",
+          "example": "FirstTime",
+          "member": "string",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8511,21 +9160,21 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -8547,19 +9196,37 @@
         },
         {
           "default": "",
-          "document": "服务器Uuid",
-          "example": "xx",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "desc",
           "member": "string",
-          "name": "Uuid",
+          "name": "Order",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "服务器Quuid",
-          "example": "xx",
+          "document": "排序方式：[FirstTime]",
+          "example": "FirstTime",
           "member": "string",
-          "name": "Quuid",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8695,6 +9362,96 @@
           "value_allowed_null": false
         },
         {
+          "document": "账号今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "AccountNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "端口今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "PortNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进程今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "软件今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "SoftwareNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "DatabaseNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web应用今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "WebAppNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web框架今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "WebFrameNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web服务今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "WebServiceNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Web站点今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "WebLocationNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机今日新增",
+          "example": "1",
+          "member": "int64",
+          "name": "MachineNewCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -8706,33 +9463,6 @@
     "DescribeAssetInitServiceListRequest": {
       "document": "DescribeAssetInitServiceList请求参数结构体",
       "members": [
-        {
-          "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "1",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "11",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- string - 是否必填：否 - 默认启用状态：0未启用， 1启用 仅linux</li>\n<li>Type- string - 是否必填：否 - 类型：类型 仅windows：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录</li>",
-          "example": "1",
-          "member": "AssetFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
         {
           "default": "",
           "document": "服务器Uuid",
@@ -8748,6 +9478,51 @@
           "example": "1",
           "member": "string",
           "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- string - 是否必填：否 - 默认启用状态：0未启用， 1启用 仅linux</li>\n<li>Type- string - 是否必填：否 - 类型：类型 仅windows：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "11",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：[FirstTime]",
+          "example": "FirstTime",
+          "member": "string",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8843,33 +9618,6 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "1",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>Type- uint - 是否必填：否 - 类型\t\n1: 应用程序\n2 : 系统类库\n3 : Web服务自带库\n4 : 其他依赖包</li>\n<li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>",
-          "example": "1",
-          "member": "AssetFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "服务器Uuid",
           "example": "1",
           "member": "string",
@@ -8883,6 +9631,51 @@
           "example": "1",
           "member": "string",
           "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>Type- uint - 是否必填：否 - 类型\t\n1: 应用程序\n2 : 系统类库\n3 : Web服务自带库\n4 : 其他依赖包</li>\n<li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：[FirstTime]",
+          "example": "FirstTime",
+          "member": "string",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -8969,6 +9762,15 @@
       "members": [
         {
           "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -8987,28 +9789,19 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "可选排序：PartitionCount",
-          "example": "1",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "asc",
           "member": "string",
-          "name": "By",
+          "name": "Order",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "排序方式，asc升序 或 desc降序",
-          "example": "asc",
+          "document": "可选排序[FirstTime|PartitionCount]",
+          "example": "1",
           "member": "string",
-          "name": "Order",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -9050,33 +9843,6 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "1",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- int - 是否必填：否 - 默认启用状态：0未启用， 1启用 </li>",
-          "example": "1",
-          "member": "AssetFilters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "服务器Uuid",
           "example": "1",
           "member": "string",
@@ -9090,6 +9856,51 @@
           "example": "1",
           "member": "string",
           "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- int - 是否必填：否 - 默认启用状态：0未启用， 1启用 </li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：[FirstTime]",
+          "example": "FirstTime",
+          "member": "string",
+          "name": "By",
           "required": false,
           "type": "string"
         }
@@ -9131,6 +9942,24 @@
       "members": [
         {
           "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Port - uint64 - 是否必填：否 - 端口</li>\n<li>Ip - String - 是否必填：否 - 绑定IP</li>\n<li>ProcessName - String - 是否必填：否 - 监听进程</li>\n<li>Pid - uint64 - 是否必填：否 - PID</li>\n<li>User - String - 是否必填：否 - 运行用户</li>\n<li>Group - String - 是否必填：否 - 所属用户组</li>\n<li>Ppid - uint64 - 是否必填：否 - PPID</li>\n<li>Proto - string - 是否必填：否 - tcp/udp或“”(空字符串筛选未知状态)</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -9149,15 +9978,6 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Port - uint64 - 是否必填：否 - 端口</li>\n<li>Ip - String - 是否必填：否 - 绑定IP</li>\n<li>ProcessName - String - 是否必填：否 - 监听进程</li>\n<li>Pid - uint64 - 是否必填：否 - PID</li>\n<li>User - String - 是否必填：否 - 运行用户</li>\n<li>Group - String - 是否必填：否 - 所属用户组</li>\n<li>Ppid - uint64 - 是否必填：否 - PPID</li>\n<li>Proto - string - 是否必填：否 - tcp/udp或“”(空字符串筛选未知状态)</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -9167,19 +9987,10 @@
         },
         {
           "default": "",
-          "document": "排序方式：StartTime",
+          "document": "排序方式：[FirstTime|StartTime]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -9221,6 +10032,24 @@
       "members": [
         {
           "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 进程名</li>\n<li>User - String - 是否必填：否 - 进程用户</li>\n<li>Group - String - 是否必填：否 - 进程用户组</li>\n<li>Pid - uint64 - 是否必填：否 - 进程ID</li>\n<li>Ppid - uint64 - 是否必填：否 - 父进程ID</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Status - string - 是否必填：否 - 进程状态：\n1:R 可执行\n2:S 可中断\n3:D 不可中断\n4:T 暂停状态或跟踪状态\n5:Z 僵尸状态\n6:X 将被销毁</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -9239,24 +10068,6 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 进程名</li>\n<li>User - String - 是否必填：否 - 进程用户</li>\n<li>Group - String - 是否必填：否 - 进程用户组</li>\n<li>Pid - uint64 - 是否必填：否 - 进程ID</li>\n<li>Ppid - uint64 - 是否必填：否 - 父进程ID</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Status - string - 是否必填：否 - 进程状态：\n1:R 可执行\n2:S 可中断\n3:D 不可中断\n4:T 暂停状态或跟踪状态\n5:Z 僵尸状态\n6:X 将被销毁</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "xx",
-          "member": "string",
-          "name": "Quuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -9266,7 +10077,7 @@
         },
         {
           "default": "",
-          "document": "排序方式：StartTime",
+          "document": "排序方式：[FirstTime|StartTime]",
           "example": "1",
           "member": "string",
           "name": "By",
@@ -9401,12 +10212,12 @@
         },
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rmp\n2:dpkg\n3:java\n4:system</li>",
           "example": "1",
-          "member": "uint64",
-          "name": "Limit",
+          "member": "Filter",
+          "name": "Filters",
           "required": false,
-          "type": "int"
+          "type": "list"
         },
         {
           "default": "",
@@ -9419,12 +10230,12 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rmp\n2:dpkg\n3:java\n4:system</li>",
+          "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
-          "member": "Filter",
-          "name": "Filters",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
-          "type": "list"
+          "type": "int"
         },
         {
           "default": "",
@@ -9437,7 +10248,7 @@
         },
         {
           "default": "",
-          "document": "排序方式可选：InstallTime 安装时间",
+          "document": "排序方式可选：[FistTime|InstallTime:安装时间]",
           "example": "1",
           "member": "string",
           "name": "By",
@@ -9536,6 +10347,24 @@
       "members": [
         {
           "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 账户名（模糊匹配）</li>\n<li>NameStrict - String - 是否必填：否 - 账户名（严格匹配）</li>\n<li>Uid - uint64 - 是否必填：否 - Uid</li>\n<li>Guid - uint64 - 是否必填：否 - Guid</li>\n<li>LoginTimeStart - String - 是否必填：否 - 开始时间，如：2021-01-11</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 结束时间，如：2021-01-11</li>\n<li>LoginType - uint64 - 是否必填：否 - 0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码 仅linux</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>Status - uint64 - 是否必填：否 - 账号状态：0-禁用；1-启用</li>\n<li>UserType - uint64 - 是否必填：否 - 账号类型：0访客用户，1标准用户，2管理员用户 仅windows</li>\n<li>IsDomain - uint64 - 是否必填：否 - 是否域账号：0 不是，1是 仅windows\n<li>IsRoot - uint64 - 是否必填：否 - 是否Root权限：0 不是，1是 仅linux\n<li>IsSudo - uint64 - 是否必填：否 - 是否Sudo权限：0 不是，1是 仅linux</li>\n<li>IsSshLogin - uint64 - 是否必填：否 - 是否ssh登录：0 不是，1是 仅linux</li>\n<li>ShellLoginStatus - uint64 - 是否必填：否 - 是否shell登录性，0不是；1是 仅linux</li>\n<li>PasswordStatus - uint64 - 是否必填：否 - 密码状态：1正常 2即将过期 3已过期 4已锁定 仅linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "example": "1",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "1",
           "member": "uint64",
@@ -9554,15 +10383,6 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 账户名（模糊匹配）</li>\n<li>NameStrict - String - 是否必填：否 - 账户名（严格匹配）</li>\n<li>Uid - uint64 - 是否必填：否 - Uid</li>\n<li>Guid - uint64 - 是否必填：否 - Guid</li>\n<li>LoginTimeStart - String - 是否必填：否 - 开始时间，如：2021-01-11</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 结束时间，如：2021-01-11</li>\n<li>LoginType - uint64 - 是否必填：否 - 0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码 仅linux</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>Status - uint64 - 是否必填：否 - 账号状态：0-禁用；1-启用</li>\n<li>UserType - uint64 - 是否必填：否 - 账号类型：0访客用户，1标准用户，2管理员用户 仅windows</li>\n<li>IsDomain - uint64 - 是否必填：否 - 是否域账号：0 不是，1是 仅windows\n<li>IsRoot - uint64 - 是否必填：否 - 是否Root权限：0 不是，1是 仅linux\n<li>IsSudo - uint64 - 是否必填：否 - 是否Sudo权限：0 不是，1是 仅linux</li>\n<li>IsSshLogin - uint64 - 是否必填：否 - 是否ssh登录：0 不是，1是 仅linux</li>\n<li>ShellLoginStatus - uint64 - 是否必填：否 - 是否shell登录性，0不是；1是 仅linux</li>\n<li>PasswordStatus - uint64 - 是否必填：否 - 密码状态：1正常 2即将过期 3已过期 4已锁定 仅linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
-          "example": "1",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "asc",
           "member": "string",
@@ -9572,19 +10392,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：\nLoginTime\nPasswordChangeTime\nPasswordDuaTime\nPasswordLockDays",
+          "document": "可选排序：[FirstTime|LoginTime|PasswordChangeTime|PasswordDuaTime]\nPasswordLockDays",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -9626,21 +10437,12 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -9653,6 +10455,24 @@
         },
         {
           "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -9662,19 +10482,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：PluginCount",
+          "document": "可选排序：[FirstTime|PluginCount]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "xx",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -9797,21 +10608,12 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "查询指定Quuid主机的信息",
           "example": "1",
-          "member": "uint64",
-          "name": "Limit",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -9824,6 +10626,24 @@
         },
         {
           "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -9833,19 +10653,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：JarCount",
+          "document": "可选排序：[FirstTime|JarCount]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -9941,21 +10752,12 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -9968,6 +10770,24 @@
         },
         {
           "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -9977,19 +10797,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：PathCount",
+          "document": "可选排序：[FirstTime|PathCount]",
           "example": "PathCount",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "xx",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -10031,21 +10842,12 @@
       "members": [
         {
           "default": "",
-          "document": "需要返回的数量，默认为10，最大值为100",
+          "document": "查询指定Quuid主机的信息",
           "example": "1",
-          "member": "uint64",
-          "name": "Limit",
+          "member": "string",
+          "name": "Quuid",
           "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -10058,6 +10860,24 @@
         },
         {
           "default": "",
+          "document": "偏移量，默认为0。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "排序方式，asc升序 或 desc降序",
           "example": "1",
           "member": "string",
@@ -10067,19 +10887,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：ProcessCount",
+          "document": "可选排序：[FirstTime|ProcessCount]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -12380,6 +13191,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "15天内新增的主机数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "AddedOnTheFifteen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12852,6 +13672,401 @@
           "name": "Data",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseBindListRequest": {
+      "document": "DescribeLicenseBindList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "授权ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "''",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<li>Keywords 机器别名/公私IP 模糊查询</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10.",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0.",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseBindListResponse": {
+      "document": "DescribeLicenseBindList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定机器列表信息",
+          "example": "[]",
+          "member": "LicenseBindDetail",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseBindScheduleRequest": {
+      "document": "DescribeLicenseBindSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10.",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数\nStatus 绑定进度状态 0 进行中 1 已完成 2 失败",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseBindScheduleResponse": {
+      "document": "DescribeLicenseBindSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "进度",
+          "example": "20",
+          "member": "uint64",
+          "name": "Schedule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定任务详情",
+          "example": "[]",
+          "member": "LicenseBindTaskDetail",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseGeneralRequest": {
+      "document": "DescribeLicenseGeneral请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLicenseGeneralResponse": {
+      "document": "DescribeLicenseGeneral返回参数结构体",
+      "members": [
+        {
+          "document": "总授权数 (包含隔离,过期等不可用状态)",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用专业版授权数(包含后付费).",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableProVersionLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用旗舰版授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableFlagshipVersionLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "即将到期授权数 (15天内到期的)",
+          "example": "0",
+          "member": "uint64",
+          "name": "NearExpiryLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已到期授权数(不包含已删除的记录)",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动升级开关状态,默认 false,  ture 开启, false 关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoOpenStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费",
+          "example": "PROVERSION_POSTPAY ",
+          "member": "string",
+          "name": "ProtectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "历史是否开通过自动升级开关",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOpenStatusHistory",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已使用授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未到期授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "NotExpiredLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "旗舰版总授权数(有效订单)",
+          "example": "0",
+          "member": "uint64",
+          "name": "FlagshipVersionLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "专业版总授权数(有效订单)",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProVersionLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "普惠版总授权数(有效订单的授权数)",
+          "example": "0",
+          "member": "uint64",
+          "name": "CwpVersionLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用惠普版授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AvailableLHLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseListRequest": {
+      "document": "DescribeLicenseList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集\n<li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>\n<li> BuyTime 购买时间</li>\n<li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>\n<li>DeadlineStatus 到期状态 NotExpired 未过期, Expire 已过期(包含已销毁) NearExpiry 即将到期</li>\n<li>ResourceId 资源ID</li>\n<li>Keywords IP筛选</li>\n<li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>\n<li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10.",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0.",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象",
+          "example": "[]",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseListResponse": {
+      "document": "DescribeLicenseList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权数列表信息",
+          "example": "[]",
+          "member": "LicenseDetail",
+          "name": "List",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13459,7 +14674,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -17498,6 +18713,42 @@
       ],
       "type": "object"
     },
+    "DestroyOrderRequest": {
+      "document": "DestroyOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource_id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyOrderResponse": {
+      "document": "DestroyOrder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EditBashRulesRequest": {
       "document": "EditBashRules请求参数结构体",
       "members": [
@@ -18074,6 +19325,24 @@
       "members": [
         {
           "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "过滤条件。\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
           "example": "1",
           "member": "AssetFilters",
@@ -18092,28 +19361,10 @@
         },
         {
           "default": "",
-          "document": "排序依据:Size,ProcessCount,ModuleCount",
+          "document": "排序依据[FirstTime|Size|ProcessCount|ModuleCount]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "服务器Uuid",
-          "example": "1",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "服务器Quuid",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -18146,6 +19397,15 @@
       "members": [
         {
           "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "过滤条件。\n<li>User- string - 是否必填：否 - 运行用户</li>\n<li>Name- string - 是否必填：否 - Web服务名：\n1:Tomcat\n2:Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:WildFly\n8:Jetty\n9:IHS\n10:Tengine</li>\n<li>OsType- string - 是否必填：否 - Windows/linux</li>",
           "example": "[]",
           "member": "AssetFilters",
@@ -18164,19 +19424,10 @@
         },
         {
           "default": "",
-          "document": "可选排序：ProcessCount",
+          "document": "可选排序：[FirstTime|ProcessCount]",
           "example": "1",
           "member": "string",
           "name": "By",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询指定Quuid主机的信息",
-          "example": "1",
-          "member": "string",
-          "name": "Quuid",
           "required": false,
           "type": "string"
         }
@@ -18580,6 +19831,78 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportLicenseDetailRequest": {
+      "document": "ExportLicenseDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集\n<li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>\n<li>ResourceId 资源ID</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否导出全部授权详情",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHistory",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象",
+          "example": "[]",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出月份, 该参数仅在IsHistory 时可选.",
+          "example": "2022-03",
+          "member": "string",
+          "name": "ExportMonth",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportLicenseDetailResponse": {
+      "document": "ExportLicenseDetail返回参数结构体",
+      "members": [
+        {
+          "document": "下载地址,该字段废弃",
+          "example": "url",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务ID,可通过任务ID去查下载任务",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -19820,6 +21143,294 @@
       ],
       "usage": "out"
     },
+    "LicenseBindDetail": {
+      "document": "授权绑定详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器别名",
+          "example": "云镜",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器公网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器内网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云服务器UUID",
+          "example": "xxx-xxxx-xx-xxx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云镜客户端UUID",
+          "example": "xxx-xxxx-xx-xxx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签信息",
+          "example": "[\"标签\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "AgentStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许解绑,false 不允许解绑",
+          "example": "false",
+          "member": "bool",
+          "name": "IsUnBind",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许换绑,false 不允许换绑",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSwitchBind",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseBindTaskDetail": {
+      "document": "授权绑定任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "云服务器UUID",
+          "example": "''",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息",
+          "example": "''",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0 执行中, 1 成功,2失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseDetail": {
+      "document": "授权订单列表对象",
+      "members": [
+        {
+          "default": "",
+          "document": "授权ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权类型,0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用授权数",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedLicenseCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态 1 正常 2隔离, 3销毁",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截止日期",
+          "example": "2018-02-28 00:00:00",
+          "member": "string",
+          "name": "Deadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单资源ID",
+          "example": "1c007adc2f0bb9f7c052860e2d3703fa",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0 初始化,1 自动续费,2 不自动续费",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID ,默认0 ,查询绑定进度用",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间",
+          "example": "2018-02-28 00:00:00",
+          "member": "string",
+          "name": "BuyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否试用订单.",
+          "example": "0",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源别名",
+          "example": "资源名称",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "Tags",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LicenseOrder": {
       "document": "授权订单对象内容",
       "members": [
@@ -19869,6 +21480,32 @@
           "example": "resource_id",
           "member": "string",
           "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseUnBindRsp": {
+      "document": "授权解绑信息",
+      "members": [
+        {
+          "default": "",
+          "document": "QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid",
+          "example": "''",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "''",
+          "member": "string",
+          "name": "ErrMsg",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20388,6 +22025,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAddedOnTheFifteen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20586,6 +22233,26 @@
           "name": "FileExists",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cvm quuid",
+          "example": "xxx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "木马样本md5",
+          "example": "xxxx",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -21102,6 +22769,132 @@
       ],
       "type": "object"
     },
+    "ModifyLicenseBindsRequest": {
+      "document": "ModifyLicenseBinds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)",
+          "example": "ture",
+          "member": "bool",
+          "name": "IsAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数. 最大长度=2000",
+          "example": "[]",
+          "member": "string",
+          "name": "QuuidList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseBindsResponse": {
+      "document": "ModifyLicenseBinds返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseUnBindsRequest": {
+      "document": "ModifyLicenseUnBinds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "''",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否全部机器(当全部机器数大于当前订单可用授权数时,多余机器会被跳过)",
+          "example": "ture",
+          "member": "bool",
+          "name": "IsAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的机器quuid列表, 当IsAll = false 时必填,反之忽略该参数.\n最大长度=100",
+          "example": "[]",
+          "member": "string",
+          "name": "QuuidList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseUnBindsResponse": {
+      "document": "ModifyLicenseUnBinds返回参数结构体",
+      "members": [
+        {
+          "document": "只有解绑失败的才有该值.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "LicenseUnBindRsp",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMalwareTimingScanSettingsRequest": {
       "document": "ModifyMalwareTimingScanSettings请求参数结构体",
       "members": [
@@ -21218,6 +23011,60 @@
     },
     "ModifyMalwareTimingScanSettingsResponse": {
       "document": "ModifyMalwareTimingScanSettings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrderAttributeRequest": {
+      "document": "ModifyOrderAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "授权类型 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource_id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可编辑的属性名称 ,当前支持的有: alias 资源别名",
+          "example": "alias",
+          "member": "string",
+          "name": "AttrName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "属性值",
+          "example": "资源名称",
+          "member": "string",
+          "name": "AttrValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrderAttributeResponse": {
+      "document": "ModifyOrderAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

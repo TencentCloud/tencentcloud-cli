@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 获取资产数量概况**
 
 
 
@@ -11,17 +11,27 @@ Output:
 ```
 {
     "Response": {
-        "MachineCount": 1,
-        "SoftwareCount": 1,
-        "PortCount": 1,
-        "WebFrameCount": 1,
-        "AccountCount": 1,
-        "WebAppCount": 1,
-        "WebLocationCount": 1,
-        "RequestId": "cb69c62c-7edc-4f01-8fb8-c1d3f9180d66",
-        "ProcessCount": 1,
-        "DatabaseCount": 1,
-        "WebServiceCount": 1
+        "RequestId": "xx",
+        "MachineCount": 100,
+        "AccountCount": 100,
+        "PortCount": 100,
+        "ProcessCount": 100,
+        "SoftwareCount": 100,
+        "DatabaseCount": 100,
+        "WebAppCount": 100,
+        "WebFrameCount": 100,
+        "WebServiceCount": 100,
+        "WebLocationCount": 100,
+        "AccountNewCount": 100,
+        "PortNewCount": 100,
+        "ProcessNewCount": 100,
+        "SoftwareNewCount": 100,
+        "DatabaseNewCount": 100,
+        "WebAppNewCount": 100,
+        "WebFrameNewCount": 100,
+        "WebServiceNewCount": 100,
+        "WebLocationNewCount": 100,
+        "MachineNewCount": 100
     }
 }
 ```

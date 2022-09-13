@@ -64,6 +64,14 @@
         "title": "根据ItemId对加固实例进行删除"
       }
     ],
+    "DescribeApkDetectionResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApkDetectionResult\n<公共请求参数>\n\n{\n    \"ApkUrl\": \"http://xxx.xxx\",\n    \"ApkMd5\": \"2751xxxxxd1d203d6621ea28a0axxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Reason\": \"xx\",\n        \"ResultList\": [\n            {\n                \"SafeType\": \"xx\",\n                \"BoutiqueRecommand\": \"xx\",\n                \"OptPluginList\": [\n                    {\n                        \"PluginDesc\": \"xx\",\n                        \"PluginName\": \"xx\",\n                        \"PluginType\": \"xx\"\n                    }\n                ],\n                \"Sid\": \"xx\",\n                \"VirusDesc\": \"xx\",\n                \"Official\": \"xx\",\n                \"Spot\": \"xx\",\n                \"Errno\": \"xx\",\n                \"SoftName\": \"xx\",\n                \"RepackageStatus\": \"xx\",\n                \"PluginList\": [\n                    {\n                        \"PluginDesc\": \"xx\",\n                        \"PluginName\": \"xx\",\n                        \"PluginType\": \"xx\"\n                    }\n                ],\n                \"IntegralWall\": \"xx\",\n                \"NotifyBar\": \"xx\",\n                \"FloatWindows\": \"xx\",\n                \"Md5\": \"xx\",\n                \"Banner\": \"xx\",\n                \"ErrMsg\": \"xx\",\n                \"VirusName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Result\": \"xx\"\n    }\n}",
+        "title": "环境安全检测-apk检测"
+      }
+    ],
     "DescribeResourceInstances": [
       {
         "document": "获取某个用户的加固资源信息",

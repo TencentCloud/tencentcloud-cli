@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
-    --Filters.0.Name image-id \
-    --Filters.0.Values img-9qabwvbn
+    --Filters.0.Values img-9qabwvbn \
+    --Filters.0.Name image-id
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
             {
                 "ImageId": "img-9qabwvbn",
                 "OsName": "CentOS 7.6 64位",
-                "ImageSize": 10,
+                "ImageSize": 50,
                 "ImageType": "PUBLIC_IMAGE",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "ImageState": "NORMAL",
@@ -53,8 +53,8 @@ Input:
 
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
-    --Filters.0.Name image-type \
-    --Filters.0.Values PRIVATE_IMAGE
+    --Filters.0.Values PRIVATE_IMAGE \
+    --Filters.0.Name image-type
 ```
 
 Output: 

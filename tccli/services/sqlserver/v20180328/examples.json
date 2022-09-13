@@ -16,6 +16,14 @@
         "title": "克隆数据库"
       }
     ],
+    "CloseInterCommunication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseInterCommunication\n<公共请求参数>\n\n{\n    \"InstanceIdSet\": [\n        \"mssql-hlh6yka1\",\n        \"mssql-gfh54fg2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InterInstanceFlowSet\": [\n            {\n                \"FlowId\": 0,\n                \"InstanceId\": \"mssql-hlh6yka1\"\n            },\n            {\n                \"FlowId\": 1253,\n                \"InstanceId\": \"mssql-gfh54fg2\"\n            }\n        ],\n        \"RequestId\": \"fc3376a3-4585-4442-87cd-6076d3b510bc\"\n    }\n}",
+        "title": "设置实例移出互通组"
+      }
+    ],
     "CompleteExpansion": [
       {
         "document": "立即完成实例状态为“升级待切换”的升级操作。",
@@ -62,6 +70,22 @@
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBasicDBInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-huew581t\",\n    \"AutoRenewFlag\": \"0\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"GoodsNum\": \"1\",\n    \"TimeZone\": \"China Standard Time\",\n    \"DBVersion\": \"2008R2\",\n    \"Storage\": \"20\",\n    \"Period\": \"1\",\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Collation\": \"Chinese_PRC_CI_AS\",\n    \"InstanceChargeType\": \"PREPAID\",\n    \"StartTime\": \"00:00\",\n    \"Memory\": \"2\",\n    \"SubnetId\": \"subnet-pudyecyk\",\n    \"Span\": \"6\",\n    \"Cpu\": \"1\",\n    \"Weekly\": [\n        \"1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"20200713383000001111250\",\n        \"RequestId\": \"d84adfca-3ff0-46d2-b400-b5527446df72\"\n    }\n}",
         "title": "创建基础版实例"
+      }
+    ],
+    "CreateBusinessDBInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBusinessDBInstances\n<公共请求参数>\n\n{\n    \"Storage\": 50,\n    \"Cpu\": 1,\n    \"Zone\": \"ap-guangzhou-1\",\n    \"Memory\": 2,\n    \"ProjectId\": 1,\n    \"GoodsNum\": 1,\n    \"SubnetId\": \"subnet-xxxx\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"DBVersion\": 201703,\n    \"StartTime\": \"01:34\",\n    \"Span\": 4,\n    \"MachineType\": \"CLOUD_PREMIUM\",\n    \"Weekly\": [\n        1,\n        5\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20200318114212\",\n        \"RequestId\": \"2b6f7e2a-e909-4753-84b7-0db3e6099877\"\n    }\n}",
+        "title": "创建商业智能服务实例"
+      }
+    ],
+    "CreateBusinessIntelligenceFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBusinessIntelligenceFile\n<公共请求参数>\n\n{\n    \"Remark\": \"aa\",\n    \"FileURL\": \"http://xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test.xlsx\",\n    \"InstanceId\": \"mssqlbi-fo2dwujt\",\n    \"FileType\": \"FLAT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileTaskId\": \"test.xlsx\",\n        \"RequestId\": \"9f36fb2e-ae6b-4d18-b1b3-a79111ce4b33\"\n    }\n}",
+        "title": "创建商业智能平面文件"
       }
     ],
     "CreateDB": [
@@ -126,6 +150,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteBackupMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0c186aa-b171-4a96-b176-b8e8ff23994d\"\n    }\n}",
         "title": "删除全量备份导入任务"
+      }
+    ],
+    "DeleteBusinessIntelligenceFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBusinessIntelligenceFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssqlbi-fo2dwujt\",\n    \"FileNameSet\": [\n        \"test.xlsx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2231cb2-9415-46af-b48f-bab65e06b091\"\n    }\n}",
+        "title": "删除商业智能平面文件"
       }
     ],
     "DeleteDB": [
@@ -248,6 +280,14 @@
         "title": "查询备份列表"
       }
     ],
+    "DescribeBusinessIntelligenceFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBusinessIntelligenceFile\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderByType\": \"desc\",\n    \"OrderBy\": \"create_time\",\n    \"InstanceId\": \"mssqlbi-fo2dwujt\",\n    \"FileName\": \"test\",\n    \"FileType\": \"FLAT\",\n    \"StatusSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMigrationSet\": [\n            {\n                \"Action\": {\n                    \"AllAction\": [\n                        \"view\",\n                        \"remark\",\n                        \"delete\"\n                    ],\n                    \"AllowedAction\": [\n                        \"view\",\n                        \"remark\",\n                        \"delete\"\n                    ]\n                },\n                \"CreateTime\": \"2022-08-05 14:14:17\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"FileMd5\": \"\",\n                \"FileName\": \"test.xlsx\",\n                \"FilePath\": \"D:\\\\SSIS\\\\\",\n                \"FileSize\": 0,\n                \"FileType\": \"FLAT\",\n                \"FileURL\": \"http://sqlserver-gz-test-1251966477.cos.ap-guangzhou.myqcloud.com/test.xlsx\",\n                \"InstanceId\": \"mssqlbi-fo2dwujt\",\n                \"Message\": \"\",\n                \"Remark\": \"Remark\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"13903852-75f7-4977-9965-aa4babeadbd5\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询商业智能服务需要的文件"
+      }
+    ],
     "DescribeCrossRegionZone": [
       {
         "document": "",
@@ -262,6 +302,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDBCharsets\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DatabaseCharsets\": [\n            \"SQL_EBCDIC1141_CP1_CS_AS\",\n            \"SQL_EBCDIC277_2_CP1_CS_AS\",\n            \"SQL_Ukrainian_CP1251_CI_AS\",\n            \"SQL_Ukrainian_CP1251_CS_AS\"\n        ],\n        \"RequestId\": \"b28ec299-0063-4195-9273-ebac5cdc485c\"\n    }\n}",
         "title": "查询数据库字符集"
+      }
+    ],
+    "DescribeDBInstanceInter": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceInter\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"InstanceId\": \"mssqlbi-q1atet3b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InterInstanceSet\": [\n            {\n                \"InstanceId\": \"mssql-30vft2ix\",\n                \"InterPort\": 1028,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2012SP3\",\n                \"VersionName\": \"SQL Server 2012 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"InstanceId\": \"mssql-iqnuxv3j\",\n                \"InterPort\": 1026,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2017\",\n                \"VersionName\": \"SQL Server 2017 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"InstanceId\": \"mssql-ngc6786l\",\n                \"InterPort\": 1029,\n                \"InterVip\": \"192.168.0.1\",\n                \"Name\": \"xxxx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 1,\n                \"Version\": \"2008R2\",\n                \"VersionName\": \"SQL Server 2008 Enterprise\",\n                \"Vip\": \"192.168.0.2\",\n                \"Vport\": 1433,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"ff9c5a56-1d33-4707-b656-a715240635ad\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询实例再互通组中的状态"
       }
     ],
     "DescribeDBInstances": [
@@ -668,6 +716,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyReadOnlyGroupDetails\n&InstanceId=mssql-6f4ddx2f\n&ReadOnlyGroupId=mssqlrg-552tyamb\n&ReadOnlyGroupName=change_name\n&IsOfflineDelay=1\n&ReadOnlyMaxDelayTime=18\n&MinReadOnlyInGroup=1\n&AutoWeight=0\n&BalanceWeight=1\n&WeightPairs.0.ReadOnlyInstanceId=mssqlro-5k508n7p\n&WeightPairs.0.ReadOnlyWeight=50\n&WeightPairs.1.ReadOnlyInstanceId=mssqlro-91masbl1\n&WeightPairs.1.ReadOnlyWeight=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4db4cc07-920a-4d04-8627-d45c582e96e7\"\n    }\n}",
         "title": "修改只读组详情"
+      }
+    ],
+    "OpenInterCommunication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenInterCommunication\n<公共请求参数>\n\n{\n    \"InstanceIdSet\": [\n        \"mssql-hlh6yka1\",\n        \"mssql-gfh54fg2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InterInstanceFlowSet\": [\n            {\n                \"FlowId\": 0,\n                \"InstanceId\": \"mssql-hlh6yka1\"\n            },\n            {\n                \"FlowId\": 1253,\n                \"InstanceId\": \"mssql-gfh54fg2\"\n            }\n        ],\n        \"RequestId\": \"fc3376a3-4585-4442-87cd-6076d3b510bc\"\n    }\n}",
+        "title": "设置实例加入互通组"
       }
     ],
     "QueryMigrationCheckProcess": [

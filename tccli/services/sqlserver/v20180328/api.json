@@ -12,6 +12,12 @@
       "name": "克隆数据库",
       "output": "CloneDBResponse"
     },
+    "CloseInterCommunication": {
+      "document": "本接口（CloseInterCommunication）用于关闭实例互通。",
+      "input": "CloseInterCommunicationRequest",
+      "name": "关闭实例互通",
+      "output": "CloseInterCommunicationResponse"
+    },
     "CompleteExpansion": {
       "document": "本接口（CompleteExpansion）在实例发起扩容后，实例状态处于“升级待切换”时，可立即完成实例升级切换操作，无需等待可维护时间窗。本接口需要在实例低峰时调用，在完全切换成功前，存在部分库不可访问的风险。",
       "input": "CompleteExpansionRequest",
@@ -47,6 +53,18 @@
       "input": "CreateBasicDBInstancesRequest",
       "name": "创建基础版实例",
       "output": "CreateBasicDBInstancesResponse"
+    },
+    "CreateBusinessDBInstances": {
+      "document": "本接口（CreateBusinessDBInstances）用于创建商业智能服务实例。",
+      "input": "CreateBusinessDBInstancesRequest",
+      "name": "创建商业智能服务实例",
+      "output": "CreateBusinessDBInstancesResponse"
+    },
+    "CreateBusinessIntelligenceFile": {
+      "document": "本接口（CreateBusinessIntelligenceFile）用于添加商业智能服务文件。",
+      "input": "CreateBusinessIntelligenceFileRequest",
+      "name": "创建商业智能服务文件",
+      "output": "CreateBusinessIntelligenceFileResponse"
     },
     "CreateDB": {
       "document": "本接口（CreateDB）用于创建数据库。",
@@ -95,6 +113,12 @@
       "input": "DeleteBackupMigrationRequest",
       "name": "删除备份导入任务",
       "output": "DeleteBackupMigrationResponse"
+    },
+    "DeleteBusinessIntelligenceFile": {
+      "document": "本接口（DeleteBusinessIntelligenceFile）用于删除商业智能文件。",
+      "input": "DeleteBusinessIntelligenceFileRequest",
+      "name": "删除商业智能文件",
+      "output": "DeleteBusinessIntelligenceFileResponse"
     },
     "DeleteDB": {
       "document": "本接口(DeleteDB)用于删除数据库。",
@@ -168,6 +192,12 @@
       "name": "查询备份列表",
       "output": "DescribeBackupsResponse"
     },
+    "DescribeBusinessIntelligenceFile": {
+      "document": "本接口（DescribeBusinessIntelligenceFile）用于查询商业智能服务需要的文件。",
+      "input": "DescribeBusinessIntelligenceFileRequest",
+      "name": "查询商业智能服务需要的文件",
+      "output": "DescribeBusinessIntelligenceFileResponse"
+    },
     "DescribeCrossRegionZone": {
       "document": "本接口(DescribeCrossRegionZone)根据主实例查询备机的容灾地域和可用区。",
       "input": "DescribeCrossRegionZoneRequest",
@@ -179,6 +209,12 @@
       "input": "DescribeDBCharsetsRequest",
       "name": "查询数据库字符集",
       "output": "DescribeDBCharsetsResponse"
+    },
+    "DescribeDBInstanceInter": {
+      "document": "本接口（DescribeDBInstanceInter）用于查询互通实例的信息。",
+      "input": "DescribeDBInstanceInterRequest",
+      "name": "查询互通实例的信息",
+      "output": "DescribeDBInstanceInterResponse"
     },
     "DescribeDBInstances": {
       "document": "本接口(DescribeDBInstances)用于查询实例列表。",
@@ -479,6 +515,12 @@
       "input": "ModifyReadOnlyGroupDetailsRequest",
       "name": "修改只读组详情",
       "output": "ModifyReadOnlyGroupDetailsResponse"
+    },
+    "OpenInterCommunication": {
+      "document": "本接口（OpenInterCommunication）用于打开实例的互通，实例互通可以实现商业智能服务相互联通。",
+      "input": "OpenInterCommunicationRequest",
+      "name": "打开实例的互通",
+      "output": "OpenInterCommunicationResponse"
     },
     "QueryMigrationCheckProcess": {
       "document": "本接口（QueryMigrationCheckProcess）的作用是查询迁移检查任务的进度，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式",
@@ -1168,6 +1210,152 @@
       ],
       "usage": "out"
     },
+    "BusinessIntelligenceFile": {
+      "document": "商业智能服务文件类型",
+      "members": [
+        {
+          "default": "",
+          "document": "文件名称",
+          "example": "FileName",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件类型",
+          "example": "FLAT",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件的COS_URL",
+          "example": "http://bucket/file.txt",
+          "member": "string",
+          "name": "FileURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件在服务器上的路径",
+          "example": "D:\\SISI\\",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小，单位时Byte",
+          "example": "0",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件md5值",
+          "example": "sdfgefdgrferw",
+          "member": "string",
+          "name": "FileMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署文件状态 1-初始化待部署 2-部署中 3-部署成功 4-部署失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "Remark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件创建时间",
+          "example": "2020-04-09 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件部署开始时间",
+          "example": "2020-04-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件部署结束时间",
+          "example": "2020-04-09 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报错信息返回",
+          "example": "Message",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商业智能实例ID",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作相关信息",
+          "example": "无",
+          "member": "FileAction",
+          "name": "Action",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloneDBRequest": {
       "document": "CloneDB请求参数结构体",
       "members": [
@@ -1202,6 +1390,42 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseInterCommunicationRequest": {
+      "document": "CloseInterCommunication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "关闭互通的实例ID集合",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseInterCommunicationResponse": {
+      "document": "CloseInterCommunication返回参数结构体",
+      "members": [
+        {
+          "document": "实例和异步流程ID",
+          "example": "无",
+          "member": "InterInstanceFlow",
+          "name": "InterInstanceFlowSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1701,6 +1925,231 @@
           "example": "20200713383000001111250",
           "member": "string",
           "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBusinessDBInstancesRequest": {
+      "document": "CreateBusinessDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例内存大小，单位GB",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例磁盘大小，单位GB",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预购买实例的CPU核心数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买实例的宿主机类型，CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1003",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次购买几个实例，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "subnet-bdoe83fa",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "vpc-dsp338hz",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商业智能服务器版本，目前只支持：201603（SQL Server 2016 Integration Services），201703（SQL Server 2017 Integration Services），201903（SQL Server 2019 Integration Services）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本201903。",
+          "example": "2008R2",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组列表，填写形如sg-xxx的安全组ID",
+          "example": "sg-xxxx",
+          "member": "string",
+          "name": "SecurityGroupList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
+          "example": "1",
+          "member": "int64",
+          "name": "Weekly",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可维护时间窗配置，每天可维护的开始时间",
+          "example": "2020-04-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可维护时间窗配置，持续时间，单位：小时",
+          "example": "2",
+          "member": "int64",
+          "name": "Span",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新建实例绑定的标签集合",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBusinessDBInstancesResponse": {
+      "document": "CreateBusinessDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "订单名称",
+          "example": "20200318114212",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBusinessIntelligenceFileRequest": {
+      "document": "CreateBusinessIntelligenceFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "COS_URL",
+          "example": "http://bucket/file.txt",
+          "member": "string",
+          "name": "FileURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包",
+          "example": "FLAT",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "Remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBusinessIntelligenceFileResponse": {
+      "document": "CreateBusinessIntelligenceFile返回参数结构体",
+      "members": [
+        {
+          "document": "文件名称",
+          "example": "FileName",
+          "member": "string",
+          "name": "FileTaskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3615,6 +4064,42 @@
       ],
       "type": "object"
     },
+    "DeleteBusinessIntelligenceFileRequest": {
+      "document": "DeleteBusinessIntelligenceFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件名称集合",
+          "example": "无",
+          "member": "string",
+          "name": "FileNameSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBusinessIntelligenceFileResponse": {
+      "document": "DeleteBusinessIntelligenceFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDBInstanceRequest": {
       "document": "DeleteDBInstance请求参数结构体",
       "members": [
@@ -4515,6 +5000,114 @@
       ],
       "type": "object"
     },
+    "DescribeBusinessIntelligenceFileRequest": {
+      "document": "DescribeBusinessIntelligenceFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件名称",
+          "example": "file.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "迁移任务状态集合,1-初始化待部署 2-部署中 3-部署成功 4-部署失败",
+          "example": "1",
+          "member": "int64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "文件类型 FLAT-平面文件，SSIS商业智能服务项目文件",
+          "example": "FLAT",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页，页大小，范围1-100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页,页数，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，可选值file_name,create_time,start_time",
+          "example": "file_name",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc,asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBusinessIntelligenceFileResponse": {
+      "document": "DescribeBusinessIntelligenceFile返回参数结构体",
+      "members": [
+        {
+          "document": "文件部署任务总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件部署任务集合",
+          "example": "无",
+          "member": "BusinessIntelligenceFile",
+          "name": "BackupMigrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCrossRegionZoneRequest": {
       "document": "DescribeCrossRegionZone请求参数结构体",
       "members": [
@@ -4583,6 +5176,96 @@
           "example": "[\"SQL_EBCDIC1141_CP1_CS_AS\"]",
           "member": "string",
           "name": "DatabaseCharsets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceInterRequest": {
+      "document": "DescribeDBInstanceInter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页，页大小，范围是1-100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照实例ID筛选",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照状态筛选 1-互通ip prot打开中；2-互通ip prot已经打开；3-加入到互通组中；4-已加入到互通组；5-互通ip prot回收中；6-互通ip prot已回收；7-从互通组移除中；8-已从互通组中移除",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例版本代号列表",
+          "example": "无",
+          "member": "string",
+          "name": "VersionSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所在可用区，格式如：ap-guangzhou-2",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页，页数，默认是0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceInterResponse": {
+      "document": "DescribeDBInstanceInter返回参数结构体",
+      "members": [
+        {
+          "document": "互通组内总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "互通组内实例信息详情",
+          "example": "无",
+          "member": "InterInstance",
+          "name": "InterInstanceSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6592,6 +7275,32 @@
       ],
       "type": "object"
     },
+    "FileAction": {
+      "document": "允许动作信息",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的所有操作，值包括：view(查看列表) remark(修改备注)，deploy(部署)，delete(删除文件)",
+          "example": "view",
+          "member": "string",
+          "name": "AllAction",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
+          "example": "无",
+          "member": "string",
+          "name": "AllowedAction",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InquiryPriceCreateDBInstancesRequest": {
       "document": "InquiryPriceCreateDBInstances请求参数结构体",
       "members": [
@@ -6900,6 +7609,148 @@
         }
       ],
       "usage": "in"
+    },
+    "InterInstance": {
+      "document": "互通组内实例信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例互通IP，用于加入互通组后访问",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "InterVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例互通端口，用于加入互通组后访问",
+          "example": "1433",
+          "member": "int64",
+          "name": "InterPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例互通状态，1 -互通ipprot打开中 2 -互通ipprot已经打开 3 -已经打开互通ip的实例加入到互通组中 4 -已经打开互通ip的实例已加入到互通组 5 -互通ipprot回收中 6 -互通ipprot已回收 7 -已回收的实例从互通组中移除中 8 -已回收的实例从互通组中已经移除",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所在地域名称，如 ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所在可用区名称，如 ap-guangzhou-1",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本代号",
+          "example": "2008R2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本",
+          "example": "SQL Server 2008 R2 Enterprise",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例访问IP",
+          "example": "192.168.0.2",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例访问端口",
+          "example": "1433",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InterInstanceFlow": {
+      "document": "实例开通或者关闭互通组后的状态",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，例如：mssql-sdf32n1d",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。",
+          "example": "558800",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MigrateDB": {
       "document": "需要迁移的DB列表",
@@ -8645,6 +9496,42 @@
     "ModifyReadOnlyGroupDetailsResponse": {
       "document": "ModifyReadOnlyGroupDetails返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenInterCommunicationRequest": {
+      "document": "OpenInterCommunication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "打开互通组的实例ID集合",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenInterCommunicationResponse": {
+      "document": "OpenInterCommunication返回参数结构体",
+      "members": [
+        {
+          "document": "实例和异步流程ID",
+          "example": "无",
+          "member": "InterInstanceFlow",
+          "name": "InterInstanceFlowSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

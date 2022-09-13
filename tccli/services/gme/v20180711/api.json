@@ -30,6 +30,12 @@
       "name": "删除语音消息转文本自学习模型",
       "output": "DeleteCustomizationResponse"
     },
+    "DeleteRoomMember": {
+      "document": "本接口(DeleteRoomMember)用户删除房间或者剔除房间内用户",
+      "input": "DeleteRoomMemberRequest",
+      "name": "剔除房间或房间成员",
+      "output": "DeleteRoomMemberResponse"
+    },
     "DeleteScanUser": {
       "document": "删除自定义送检用户",
       "input": "DeleteScanUserRequest",
@@ -776,6 +782,93 @@
           "name": "ErrorCode",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResult": {
+      "document": "剔除房间操作结果",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码，0-剔除成功 其他-剔除失败",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误描述",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteRoomMemberRequest": {
+      "document": "DeleteRoomMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要操作的房间id",
+          "example": "100",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要剔除的用户列表",
+          "example": "[\"1\\r\\n\",\"2\\r\\n\"]",
+          "member": "string",
+          "name": "Uids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "剔除类型 1-删除房间 2-剔除用户",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeleteType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "140014556",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoomMemberResponse": {
+      "document": "DeleteRoomMember返回参数结构体",
+      "members": [
+        {
+          "document": "剔除房间或成员的操作结果",
+          "example": "无",
+          "member": "DeleteResult",
+          "name": "DeleteResult",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

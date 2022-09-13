@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateDhcpIp --cli-unfold-argument  \
-    --VpcId vpc-12345678 \
     --SubnetId subnet-12345678 \
+    --VpcId vpc-12345678 \
     --DhcpIpName test \
     --SecondaryPrivateIpAddressCount 1
 ```

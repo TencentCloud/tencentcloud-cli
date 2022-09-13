@@ -180,6 +180,14 @@
         "title": "查询防火墙弹性公网ip"
       }
     ],
+    "DescribeDefenseSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDefenseSwitch\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"BasicRuleSwitch\": 1,\n        \"BaselineAllSwitch\": 1,\n        \"VirtualPatchSwitch\": 1,\n        \"TiSwitch\": 1,\n        \"HistoryOpen\": 1\n    }\n}",
+        "title": "获取入侵防御按钮列表"
+      }
+    ],
     "DescribeEnterpriseSecurityGroupRule": [
       {
         "document": "查询新企业安全组规则",
@@ -232,7 +240,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInstancesInfo\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"FilterType\": \"NatinsId\",\n            \"FilterContent\": \"cfwnat-65d0d823,cfwnat-65d0d824\"\n        },\n        {\n            \"FilterType\": \"NatinsName\",\n            \"FilterContent\": \"wytest\"\n        },\n        {\n            \"FilterType\": \"FwMode\",\n            \"FilterContent\": \"1\"\n        },\n        {\n            \"FilterType\": \"Region\",\n            \"FilterContent\": \"ap-guangzhou\"\n        },\n        {\n            \"FilterType\": \"EipAddress\",\n            \"FilterContent\": \"1.13.19.217,1.13.16.20\"\n        },\n        {\n            \"FilterType\": \"VpcIp\",\n            \"FilterContent\": \"10.255.0.20,10.255.0.5\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"NatinsLst\": [\n            {\n                \"BandWidth\": 30,\n                \"EipAddress\": [\n                    \"1.117.4.229\",\n                    \"121.5.27.250\"\n                ],\n                \"FwMode\": 0,\n                \"InFlowMax\": 4985,\n                \"NatinsId\": \"cfwnat-f3250045\",\n                \"NatinsName\": \"yw\",\n                \"OutFlowMax\": 14642,\n                \"Region\": \"ap-shanghai\",\n                \"RegionZh\": \"上海\",\n                \"Subnets\": [\n                    \"subnet-cjxihpy1\",\n                    \"subnet-1e34182d\",\n                    \"subnet-5sx5vrcj\",\n                    \"subnet-he9ba55f\",\n                    \"subnet-0yd4fk0j\",\n                    \"subnet-kdu0qj4t\"\n                ],\n                \"VpcIp\": [\n                    \"10.255.6.36\",\n                    \"10.255.6.37\",\n                    \"10.255.6.21\",\n                    \"10.255.6.18\",\n                    \"10.255.6.19\",\n                    \"10.255.5.28\",\n                    \"10.255.5.18\",\n                    \"10.255.5.19\"\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NatinsLst\": [\n            {\n                \"BandWidth\": 30,\n                \"EipAddress\": [\n                    \"1.117.4.229\",\n                    \"121.5.27.250\"\n                ],\n                \"FwMode\": 0,\n                \"InFlowMax\": 4985,\n                \"NatinsId\": \"cfwnat-f3250045\",\n                \"NatinsName\": \"yw\",\n                \"OutFlowMax\": 14642,\n                \"Region\": \"ap-shanghai\",\n                \"RegionZh\": \"上海\",\n                \"Subnets\": [\n                    \"subnet-cjxihpy1\",\n                    \"subnet-1e34182d\",\n                    \"subnet-5sx5vrcj\",\n                    \"subnet-he9ba55f\",\n                    \"subnet-0yd4fk0j\",\n                    \"subnet-kdu0qj4t\"\n                ],\n                \"VpcIp\": [\n                    \"10.255.6.36\",\n                    \"10.255.6.37\",\n                    \"10.255.6.21\",\n                    \"10.255.6.18\",\n                    \"10.255.6.19\",\n                    \"10.255.5.28\",\n                    \"10.255.5.18\",\n                    \"10.255.5.19\"\n                ],\n                \"RegionDetail\": \"西南地区\",\n                \"ZoneZh\": \"重庆一区\",\n                \"ZoneZhBak\": \"重庆一区\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
         "title": "GetNatInstance 获取租户所有NAT实例"
       }
     ],

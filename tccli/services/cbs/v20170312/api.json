@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ApplyDiskBackup": {
+      "document": "本接口（ApplyDiskBackup）用于回滚备份点到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用 CreateSnapshot 将备份点转换为快照，然后使用 CreateDisks 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。\n* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过DescribeDiskBackups接口查询，见输出参数中BackupState字段解释。\n* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通过DescribeDisks接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过DescribeInstancesStatus接口查询。",
+      "input": "ApplyDiskBackupRequest",
+      "name": "回滚备份点",
+      "output": "ApplyDiskBackupResponse"
+    },
     "ApplySnapshot": {
       "document": "本接口（ApplySnapshot）用于回滚快照到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘快照，如果您需要复制快照数据到其它云硬盘上，请使用[CreateDisks](/document/product/362/16312)接口创建新的弹性云盘，将快照数据复制到新购云盘上。 \n* 用于回滚的快照必须处于NORMAL状态。快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 如果是弹性云盘，则云盘必须处于未挂载状态，云硬盘挂载状态可以通过[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云盘，则实例必须处于关机状态，实例状态可以通过[DescribeInstancesStatus](/document/product/213/15738)接口查询。",
       "input": "ApplySnapshotRequest",
@@ -48,6 +54,12 @@
       "name": "删除定期快照策略",
       "output": "DeleteAutoSnapshotPoliciesResponse"
     },
+    "DeleteDiskBackups": {
+      "document": "批量删除指定的云硬盘备份点。",
+      "input": "DeleteDiskBackupsRequest",
+      "name": "删除云硬盘备份点",
+      "output": "DeleteDiskBackupsResponse"
+    },
     "DeleteSnapshots": {
       "document": "本接口（DeleteSnapshots）用于删除快照。\n\n* 快照必须处于NORMAL状态，快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 支持批量操作。如果多个快照存在无法删除的快照，则操作不执行，以特定的错误码返回。",
       "input": "DeleteSnapshotsRequest",
@@ -65,6 +77,12 @@
       "input": "DescribeDiskAssociatedAutoSnapshotPolicyRequest",
       "name": "查询云硬盘关联定期快照策略",
       "output": "DescribeDiskAssociatedAutoSnapshotPolicyResponse"
+    },
+    "DescribeDiskBackups": {
+      "document": "本接口（DescribeDiskBackups）用于查询备份点的详细信息。\n\n根据备份点ID、创建备份点的云硬盘ID、创建备份点的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器Filter。\n如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的备份点列表。",
+      "input": "DescribeDiskBackupsRequest",
+      "name": "查询备份点列表",
+      "output": "DescribeDiskBackupsResponse"
     },
     "DescribeDiskConfigQuota": {
       "document": "本接口（DescribeDiskConfigQuota）用于查询云硬盘配额。",
@@ -132,6 +150,12 @@
       "name": "重新初始化云硬盘",
       "output": "InitializeDisksResponse"
     },
+    "InquirePriceModifyDiskBackupQuota": {
+      "document": "本接口（InquirePricePriceModifyDiskBackupQuota）用于修改云硬盘备份点配额询价。",
+      "input": "InquirePriceModifyDiskBackupQuotaRequest",
+      "name": "修改云硬盘备份点配额询价",
+      "output": "InquirePriceModifyDiskBackupQuotaResponse"
+    },
     "InquirePriceModifyDiskExtraPerformance": {
       "document": "本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。",
       "input": "InquirePriceModifyDiskExtraPerformanceRequest",
@@ -167,6 +191,12 @@
       "input": "ModifyDiskAttributesRequest",
       "name": "修改云硬盘属性",
       "output": "ModifyDiskAttributesResponse"
+    },
+    "ModifyDiskBackupQuota": {
+      "document": "此接口 (ModifyDiskBackupQuota) 用于修改云硬盘备份点配额。",
+      "input": "ModifyDiskBackupQuotaRequest",
+      "name": "调整云硬盘备份点配额",
+      "output": "ModifyDiskBackupQuotaResponse"
     },
     "ModifyDiskExtraPerformance": {
       "document": "本接口（ModifyDiskExtraPerformance）用于调整云硬盘额外的性能。\n\n* 目前仅支持极速型SSD云硬盘（CLOUD_TSSD）和高性能SSD云硬盘(CLOUD_HSSD)。",
@@ -230,6 +260,42 @@
     "serviceShortName": "cbs"
   },
   "objects": {
+    "ApplyDiskBackupRequest": {
+      "document": "ApplyDiskBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点ID，可通过 DescribeDiskBackups 查询。",
+          "example": "dbp-xxxxxxxx",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyDiskBackupResponse": {
+      "document": "ApplyDiskBackup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplySnapshotRequest": {
       "document": "ApplySnapshot请求参数结构体",
       "members": [
@@ -1107,6 +1173,33 @@
       ],
       "type": "object"
     },
+    "DeleteDiskBackupsRequest": {
+      "document": "DeleteDiskBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的云硬盘备份点ID。",
+          "example": "[\"dbp-xxxxxxxx\"]",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDiskBackupsResponse": {
+      "document": "DeleteDiskBackups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSnapshotsRequest": {
       "document": "DeleteSnapshots请求参数结构体",
       "members": [
@@ -1251,6 +1344,96 @@
           "document": "云盘绑定的定期快照列表。",
           "member": "AutoSnapshotPolicy",
           "name": "AutoSnapshotPolicySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsRequest": {
+      "document": "DescribeDiskBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。",
+          "example": "[\"dbp-xxxxxxxx\"]",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定 DiskBackupIds 和 Filters。过滤条件：<br><li>disk-backup-id - Array of String - 是否必填：否 -（过滤条件）按照备份点的ID过滤。备份点ID形如：dbp-11112222。\n<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照创建备份点的云硬盘ID过滤。\n<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按创建备份点的云硬盘类型过滤。 (SYSTEM_DISK：代表系统盘 | DATA_DISK：代表数据盘。)",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云硬盘备份点的创建时间排序<br>默认按创建时间排序。",
+          "example": "CREATE_TIME",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsResponse": {
+      "document": "DescribeDiskBackups返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的云硬盘备份点数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云硬盘备份点的详细信息列表。",
+          "example": "无",
+          "member": "DiskBackup",
+          "name": "DiskBackupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2207,6 +2390,102 @@
       ],
       "usage": "out"
     },
+    "DiskBackup": {
+      "document": "云硬盘备份点。",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点的ID。",
+          "example": "dbp-xxxxxxxx",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点关联的云硬盘ID。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘大小，单位GB。",
+          "example": "50",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "example": "DATA_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份点名称。",
+          "example": "Untitled",
+          "member": "string",
+          "name": "DiskBackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DiskBackupState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘创建进度百分比。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点的创建时间。",
+          "example": "2022-01-01T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DiskChargePrepaid": {
       "document": "描述了实例的计费模式",
       "members": [
@@ -2540,6 +2819,51 @@
     "InitializeDisksResponse": {
       "document": "InitializeDisks返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyDiskBackupQuotaRequest": {
+      "document": "InquirePriceModifyDiskBackupQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过DescribeDisks（查询云硬盘信息）接口查询。",
+          "example": "disk-xxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改后的云硬盘备份点配额，即云盘可以拥有的备份点数量，单位为个。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyDiskBackupQuotaResponse": {
+      "document": "InquirePriceModifyDiskBackupQuota返回参数结构体",
+      "members": [
+        {
+          "document": "描述了修改云硬盘备份点之后的云盘价格。",
+          "example": "无",
+          "member": "Price",
+          "name": "DiskPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2935,6 +3259,42 @@
     },
     "ModifyDiskAttributesResponse": {
       "document": "ModifyDiskAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskBackupQuotaRequest": {
+      "document": "ModifyDiskBackupQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调整之后的云硬盘备份点配额。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskBackupQuotaResponse": {
+      "document": "ModifyDiskBackupQuota返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

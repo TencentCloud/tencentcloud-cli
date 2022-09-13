@@ -29,6 +29,8 @@ Output:
             }
         ],
         "ProxyOrganizationOpenId": "渠道测第三方id",
+        "FlowGroupName": "",
+        "FlowGroupId": "",
         "RequestId": "s1639904010686603599"
     }
 }

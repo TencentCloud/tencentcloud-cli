@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli redis CreateInstances --cli-unfold-argument  \
-    --ZoneId 100002 \
     --TypeId 6 \
-    --MemSize 1024 \
+    --Password ********** \
     --GoodsNum 1 \
     --Period 1 \
     --BillingMode 0 \
-    --Password **********
+    --MemSize 1024 \
+    --ZoneId 100002
 ```
 
 Output: 
@@ -36,17 +36,17 @@ Input:
 
 ```
 tccli redis CreateInstances --cli-unfold-argument  \
-    --ZoneId 200002 \
     --TypeId 9 \
-    --MemSize 2048 \
+    --VpcId vpc-fmh***** \
     --GoodsNum 1 \
+    --RedisShardNum 3 \
     --Period 3 \
     --BillingMode 1 \
-    --VpcId vpc-fmh***** \
+    --NoAuth true \
+    --MemSize 2048 \
     --SubnetId subnet-680c**** \
-    --RedisShardNum 3 \
     --RedisReplicasNum 1 \
-    --NoAuth true
+    --ZoneId 200002
 ```
 
 Output: 

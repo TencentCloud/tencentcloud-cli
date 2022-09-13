@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Kind\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 集成配置"
       }
     ],
@@ -392,6 +392,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"KubeType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"IntegrationSet\": []\n    }\n}",
         "title": "查询 exporter 集成列表"
+      }
+    ],
+    "DescribeGrafanaChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"xx\",\n    \"ChannelIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"xx\",\n                \"OrganizationIds\": [\n                    \"xx\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Grafana 告警通道"
       }
     ],
     "DescribeGrafanaConfig": [

@@ -34,7 +34,8 @@ Output:
                 "SignId": "xx",
                 "IdCardNumber": "xxxxxxx",
                 "OpenId": "xx",
-                "FlowId": "test-flow-id"
+                "FlowId": "test-flow-id",
+                "FlowGroupId": ""
             }
         ],
         "RequestId": "xx"

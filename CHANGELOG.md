@@ -1,3 +1,5 @@
+# Release 3.0.718.1
+
 # Release 3.0.717.1
 
 ## DDoS 防护(antiddos) 版本：2020-03-09

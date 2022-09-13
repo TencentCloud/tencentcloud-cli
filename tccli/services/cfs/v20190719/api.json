@@ -1,5 +1,17 @@
 {
   "actions": {
+    "BindAutoSnapshotPolicy": {
+      "document": "文件系统绑定快照策略，可以同时绑定多个fs，一个fs 只能跟一个策略绑定",
+      "input": "BindAutoSnapshotPolicyRequest",
+      "name": "文件系统绑定快照策略",
+      "output": "BindAutoSnapshotPolicyResponse"
+    },
+    "CreateAutoSnapshotPolicy": {
+      "document": "创建定期快照策略",
+      "input": "CreateAutoSnapshotPolicyRequest",
+      "name": "创建定期快照策略",
+      "output": "CreateAutoSnapshotPolicyResponse"
+    },
     "CreateCfsFileSystem": {
       "document": "用于添加新文件系统",
       "input": "CreateCfsFileSystemRequest",
@@ -17,6 +29,18 @@
       "input": "CreateCfsRuleRequest",
       "name": "创建权限组规则",
       "output": "CreateCfsRuleResponse"
+    },
+    "CreateCfsSnapshot": {
+      "document": "创建文件系统快照",
+      "input": "CreateCfsSnapshotRequest",
+      "name": "创建文件系统快照",
+      "output": "CreateCfsSnapshotResponse"
+    },
+    "DeleteAutoSnapshotPolicy": {
+      "document": "删除快照定期策略",
+      "input": "DeleteAutoSnapshotPolicyRequest",
+      "name": "删除快照策略",
+      "output": "DeleteAutoSnapshotPolicyResponse"
     },
     "DeleteCfsFileSystem": {
       "document": "用于删除文件系统",
@@ -36,11 +60,23 @@
       "name": "删除权限组规则",
       "output": "DeleteCfsRuleResponse"
     },
+    "DeleteCfsSnapshot": {
+      "document": "删除文件系统快照",
+      "input": "DeleteCfsSnapshotRequest",
+      "name": "删除文件系统快照",
+      "output": "DeleteCfsSnapshotResponse"
+    },
     "DeleteMountTarget": {
       "document": "本接口（DeleteMountTarget）用于删除挂载点",
       "input": "DeleteMountTargetRequest",
       "name": "删除挂载点",
       "output": "DeleteMountTargetResponse"
+    },
+    "DescribeAutoSnapshotPolicies": {
+      "document": "查询文件系统快照d定期策略列表信息",
+      "input": "DescribeAutoSnapshotPoliciesRequest",
+      "name": "查询文件系统快照策略列表信息",
+      "output": "DescribeAutoSnapshotPoliciesResponse"
     },
     "DescribeAvailableZoneInfo": {
       "document": "本接口（DescribeAvailableZoneInfo）用于查询区域的可用情况。",
@@ -78,17 +114,47 @@
       "name": "查询CFS服务状态",
       "output": "DescribeCfsServiceStatusResponse"
     },
+    "DescribeCfsSnapshotOverview": {
+      "document": "文件系统快照概览",
+      "input": "DescribeCfsSnapshotOverviewRequest",
+      "name": "文件系统快照概览",
+      "output": "DescribeCfsSnapshotOverviewResponse"
+    },
+    "DescribeCfsSnapshots": {
+      "document": "查询文件系统快照列表",
+      "input": "DescribeCfsSnapshotsRequest",
+      "name": "查询快照列表",
+      "output": "DescribeCfsSnapshotsResponse"
+    },
     "DescribeMountTargets": {
       "document": "本接口（DescribeMountTargets）用于查询文件系统挂载点信息",
       "input": "DescribeMountTargetsRequest",
       "name": "查询文件系统挂载点",
       "output": "DescribeMountTargetsResponse"
     },
+    "DescribeSnapshotOperationLogs": {
+      "document": "查询快照操作日志",
+      "input": "DescribeSnapshotOperationLogsRequest",
+      "name": "查询快照操作日志",
+      "output": "DescribeSnapshotOperationLogsResponse"
+    },
     "SignUpCfsService": {
       "document": "本接口（SignUpCfsService）用于开通CFS服务。",
       "input": "SignUpCfsServiceRequest",
       "name": "开通CFS服务",
       "output": "SignUpCfsServiceResponse"
+    },
+    "UnbindAutoSnapshotPolicy": {
+      "document": "解除文件系统绑定的快照策略",
+      "input": "UnbindAutoSnapshotPolicyRequest",
+      "name": "解绑快照策略",
+      "output": "UnbindAutoSnapshotPolicyResponse"
+    },
+    "UpdateAutoSnapshotPolicy": {
+      "document": "更新定期自动快照策略",
+      "input": "UpdateAutoSnapshotPolicyRequest",
+      "name": "更新定期快照策略",
+      "output": "UpdateAutoSnapshotPolicyResponse"
     },
     "UpdateCfsFileSystemName": {
       "document": "本接口（UpdateCfsFileSystemName）用于更新文件系统名",
@@ -119,6 +185,12 @@
       "input": "UpdateCfsRuleRequest",
       "name": "更新权限组规则",
       "output": "UpdateCfsRuleResponse"
+    },
+    "UpdateCfsSnapshotAttribute": {
+      "document": "更新文件系统快照名称及保留时长",
+      "input": "UpdateCfsSnapshotAttributeRequest",
+      "name": "更新文件系统快照信息",
+      "output": "UpdateCfsSnapshotAttributeResponse"
     }
   },
   "metadata": {
@@ -128,6 +200,142 @@
     "serviceShortName": "cfs"
   },
   "objects": {
+    "AutoSnapshotPolicyInfo": {
+      "document": "快照策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "xx",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略创建时间",
+          "example": "xx",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的文件系统个数",
+          "example": "2",
+          "member": "uint64",
+          "name": "FileSystemNums",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照定期备份在一星期哪一天",
+          "example": "['1','2']",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照定期备份在一天的哪一小时",
+          "example": "['3','4']",
+          "member": "string",
+          "name": "Hour",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否激活定期快照功能",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsActivated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一次触发快照时间",
+          "example": "xx",
+          "member": "string",
+          "name": "NextActiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "example": "122445",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留时间",
+          "example": "3",
+          "member": "uint64",
+          "name": "AliveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "xx",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统信息",
+          "example": "112",
+          "member": "FileSystemByPolicy",
+          "name": "FileSystems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AvailableProtoStatus": {
       "document": "版本控制-协议详情\n",
       "members": [
@@ -286,6 +494,114 @@
         }
       ],
       "usage": "out"
+    },
+    "BindAutoSnapshotPolicyRequest": {
+      "document": "BindAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统列表",
+          "example": "cfs-abc,cfs-bdc.",
+          "member": "string",
+          "name": "FileSystemIds",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAutoSnapshotPolicyResponse": {
+      "document": "BindAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoSnapshotPolicyRequest": {
+      "document": "CreateAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照重复日期，星期一到星期日",
+          "example": "xx",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照重复时间点",
+          "example": "xx",
+          "member": "string",
+          "name": "Hour",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "xx",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照保留时长",
+          "example": "3",
+          "member": "uint64",
+          "name": "AliveDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoSnapshotPolicyResponse": {
+      "document": "CreateAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCfsFileSystemRequest": {
       "document": "CreateCfsFileSystem请求参数结构体",
@@ -701,6 +1017,96 @@
       ],
       "type": "object"
     },
+    "CreateCfsSnapshotRequest": {
+      "document": "CreateCfsSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统id",
+          "example": "cfs-gagaggag",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照名称",
+          "example": "xx",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照标签",
+          "example": "[\"TagKey\":\"a\",\"TagValue\":1]",
+          "member": "TagInfo",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsSnapshotResponse": {
+      "document": "CreateCfsSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统快照id",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoSnapshotPolicyRequest": {
+      "document": "DeleteAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoSnapshotPolicyResponse": {
+      "document": "DeleteAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCfsFileSystemRequest": {
       "document": "DeleteCfsFileSystem请求参数结构体",
       "members": [
@@ -827,6 +1233,42 @@
       ],
       "type": "object"
     },
+    "DeleteCfsSnapshotRequest": {
+      "document": "DeleteCfsSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统快照id",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsSnapshotResponse": {
+      "document": "DeleteCfsSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteMountTargetRequest": {
       "document": "DeleteMountTarget请求参数结构体",
       "members": [
@@ -854,6 +1296,96 @@
     "DeleteMountTargetResponse": {
       "document": "DeleteMountTarget返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoSnapshotPoliciesRequest": {
+      "document": "DescribeAutoSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页码",
+          "example": "2",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页面长",
+          "example": "2",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "升序，降序",
+          "example": "ASC,DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "xx",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoSnapshotPoliciesResponse": {
+      "document": "DescribeAutoSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略总个数",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照策略信息",
+          "example": "无",
+          "member": "AutoSnapshotPolicyInfo",
+          "name": "AutoSnapshotPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1076,6 +1608,140 @@
       ],
       "type": "object"
     },
+    "DescribeCfsSnapshotOverviewRequest": {
+      "document": "DescribeCfsSnapshotOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCfsSnapshotOverviewResponse": {
+      "document": "DescribeCfsSnapshotOverview返回参数结构体",
+      "members": [
+        {
+          "document": "统计信息",
+          "example": "xx",
+          "member": "SnapshotStatistics",
+          "name": "StatisticsList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsSnapshotsRequest": {
+      "document": "DescribeCfsSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "cfs-gagaggag",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始位置",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页面长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序取值",
+          "example": "xx",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序 升序或者降序",
+          "example": "ASC，DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsSnapshotsResponse": {
+      "document": "DescribeCfsSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "总个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照信息描述",
+          "example": "fsf",
+          "member": "SnapshotInfo",
+          "name": "Snapshots",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照列表快照汇总",
+          "example": "333",
+          "member": "uint64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMountTargetsRequest": {
       "document": "DescribeMountTargets请求参数结构体",
       "members": [
@@ -1120,6 +1786,145 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeSnapshotOperationLogsRequest": {
+      "document": "DescribeSnapshotOperationLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2021-08-11 11:51:xx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-08-11 11:51:xx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotOperationLogsResponse": {
+      "document": "DescribeSnapshotOperationLogs返回参数结构体",
+      "members": [
+        {
+          "document": "快照ID",
+          "example": "xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作日志",
+          "example": "无",
+          "member": "SnapshotOperateLog",
+          "name": "SnapshotOperates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileSystemByPolicy": {
+      "document": "绑定快照策略的文件系统信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统名称",
+          "example": "xx",
+          "member": "string",
+          "name": "CreationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "cfs-xx",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "SizeByte",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储类型",
+          "example": "HP",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照总大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalSnapshotSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统创建时间",
+          "example": "2022-08-20 11:22:33",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统所在区ID",
+          "example": "100001",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FileSystemClient": {
       "document": "文件系统客户端信息",
@@ -1386,6 +2191,32 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "条件过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "值",
+          "example": "xx",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "MountInfo": {
       "document": "挂载点信息",
@@ -1665,6 +2496,234 @@
       ],
       "type": "object"
     },
+    "SnapshotInfo": {
+      "document": "快照信息",
+      "members": [
+        {
+          "default": "",
+          "document": "创建快照时间",
+          "example": "xx",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称",
+          "example": "xx",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照状态",
+          "example": "available ",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "example": "beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "cfs-xx",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照大小",
+          "example": "11",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留时长天",
+          "example": "12",
+          "member": "uint64",
+          "name": "AliveDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照进度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "example": "21211",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照删除时间",
+          "example": "xx",
+          "member": "string",
+          "name": "DeleteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统名称",
+          "example": "xx",
+          "member": "string",
+          "name": "FsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotOperateLog": {
+      "document": "快照操作日志",
+      "members": [
+        {
+          "default": "",
+          "document": "操作类型",
+          "example": "create",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间",
+          "example": "xx",
+          "member": "string",
+          "name": "ActionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ActionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者",
+          "example": "xx",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果",
+          "example": "xx",
+          "member": "uint64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotStatistics": {
+      "document": "文件系统快照统计",
+      "members": [
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照总个数",
+          "example": "2",
+          "member": "uint64",
+          "name": "SnapshotNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照总容量",
+          "example": "33",
+          "member": "uint64",
+          "name": "SnapshotSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TagInfo": {
       "document": "Tag信息单元",
       "members": [
@@ -1690,6 +2749,132 @@
         }
       ],
       "usage": "in"
+    },
+    "UnbindAutoSnapshotPolicyRequest": {
+      "document": "UnbindAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要解绑的文件系统ID列表，用\",\" 分割",
+          "example": "cfs-abc,cfs-dbc",
+          "member": "string",
+          "name": "FileSystemIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解绑的快照ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindAutoSnapshotPolicyResponse": {
+      "document": "UnbindAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAutoSnapshotPolicyRequest": {
+      "document": "UpdateAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照策略名称",
+          "example": "xx",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照定期备份在一星期哪一天",
+          "example": "['0','1']",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照定期备份在一天的哪一小时",
+          "example": "['0','1']",
+          "member": "string",
+          "name": "Hour",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照保留日期",
+          "example": "20",
+          "member": "uint64",
+          "name": "AliveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否激活定期快照功能",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsActivated",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAutoSnapshotPolicyResponse": {
+      "document": "UpdateAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略ID",
+          "example": "asp-xx",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateCfsFileSystemNameRequest": {
       "document": "UpdateCfsFileSystemName请求参数结构体",
@@ -2031,6 +3216,60 @@
           "name": "Priority",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsSnapshotAttributeRequest": {
+      "document": "UpdateCfsSnapshotAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统快照名称",
+          "example": "xx",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统快照保留天数",
+          "example": "xx",
+          "member": "uint64",
+          "name": "AliveDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsSnapshotAttributeResponse": {
+      "document": "UpdateCfsSnapshotAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统快照ID",
+          "example": "snapcfs-xx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

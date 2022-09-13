@@ -141,7 +141,7 @@
     "CreateTopic": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateTopic\n&TopicName=clb-topic\n&PartitionCount=3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"PartitionCount\": \"3\",\n    \"TopicName\": \"clb-topic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b6xy\",\n        \"RequestId\": \"dccf2ce3-0277-465a-9c60-260cfb141d65\"\n    }\n}",
         "title": "创建主题。"
       }

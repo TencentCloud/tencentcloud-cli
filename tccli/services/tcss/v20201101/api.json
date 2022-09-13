@@ -3291,6 +3291,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检查项验证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/etc/kubenetes/ca.key  600",
+          "member": "string",
+          "name": "VerifyInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3666,6 +3676,16 @@
           "example": "2021-04-07 14:38:00",
           "member": "string",
           "name": "LastCheckTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "验证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/etc/kubernetes/kube-scheduler/kubeconfig ownership is root:root",
+          "member": "string",
+          "name": "VerifyInfo",
           "required": true,
           "type": "string",
           "value_allowed_null": true

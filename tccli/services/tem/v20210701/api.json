@@ -1823,6 +1823,33 @@
           "name": "EnableMetrics",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像部署时，选择的tcr实例id",
+          "example": "tcr-123",
+          "member": "string",
+          "name": "TcrInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像部署时，选择的镜像服务器地址",
+          "example": "ccr.ccs.tencentcryun.com",
+          "member": "string",
+          "name": "RepoServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库",
+          "example": "0",
+          "member": "int64",
+          "name": "RepoType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -15,6 +15,7 @@ Output:
 ```
 {
     "Response": {
+        "IntegrationId": "xx",
         "RequestId": "xx"
     }
 }

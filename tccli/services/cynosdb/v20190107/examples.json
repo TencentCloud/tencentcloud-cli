@@ -40,6 +40,14 @@
         "title": "创建新账号"
       }
     ],
+    "CreateBackup": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateBackup\n&ClusterId=cynosdbpg-45knmnra\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 12345\n    }\n}",
+        "title": "创建备份"
+      }
+    ],
     "CreateClusters": [
       {
         "document": "",
@@ -342,6 +350,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"OldSlaveZone\": \"xx\",\n    \"NewSlaveZone\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "修改从可用区"
+      }
+    ],
+    "ModifyClusterStorage": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterStorage\n&ClusterId=cynosdbmysql-xxxxxxxx\n&NewStorageLimit=20\n&OldStorageLimit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
+        "title": "升级预付费存储"
       }
     ],
     "ModifyDBInstanceSecurityGroups": [

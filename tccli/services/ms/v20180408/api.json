@@ -48,6 +48,12 @@
       "name": "批量删除提交过的app信息",
       "output": "DeleteShieldInstancesResponse"
     },
+    "DescribeApkDetectionResult": {
+      "document": "该接口采用同步模式请求腾讯APK云检测服务，即时返回检测数据，需要用户用轮询的方式调用本接口来进行样本送检并获取检测结果(每隔60s发送一次请求，传相同的参数，重试30次)，一般情况下0.5h内会出检测结果，最长时间是3h。当Result为ok并且ResultList数组非空有值时，代表检测完毕，若长时间获取不到检测结果，请联系客服。",
+      "input": "DescribeApkDetectionResultRequest",
+      "name": "环境安全检测-apk检测",
+      "output": "DescribeApkDetectionResultResponse"
+    },
     "DescribeResourceInstances": {
       "document": "获取某个用户的所有资源信息",
       "input": "DescribeResourceInstancesRequest",
@@ -1060,6 +1066,69 @@
       ],
       "type": "object"
     },
+    "DescribeApkDetectionResultRequest": {
+      "document": "DescribeApkDetectionResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "软件包的下载链接",
+          "example": "\"https://xxx.xxx.xx\"",
+          "member": "string",
+          "name": "ApkUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。",
+          "example": "\"2751xxxxxd1d203d6621ea28a0axxxxx\"",
+          "member": "string",
+          "name": "ApkMd5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApkDetectionResultResponse": {
+      "document": "DescribeApkDetectionResult返回参数结构体",
+      "members": [
+        {
+          "document": "响应结果，ok表示正常，error表示错误",
+          "example": "\"ok\"",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Result为error错误时的原因说明",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "APK检测结果数组",
+          "example": "无",
+          "member": "ResultListItem",
+          "name": "ResultList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceInstancesRequest": {
       "document": "DescribeResourceInstances请求参数结构体",
       "members": [
@@ -1705,6 +1774,42 @@
       ],
       "usage": "in"
     },
+    "OptPluginListItem": {
+      "document": "APK检测服务：非广告插件结果列表(SDK、风险插件等)",
+      "members": [
+        {
+          "default": "",
+          "document": "非广告类型",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PluginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "非广告插件名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "非广告插件描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PluginDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PlanDetailInfo": {
       "document": "加固策略具体信息",
       "members": [
@@ -1930,6 +2035,42 @@
       ],
       "usage": "out"
     },
+    "PluginListItem": {
+      "document": "APK检测服务：广告插件结果结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数字类型，分别为 1-通知栏广告，2-积分墙广告，3-banner广告，4- 悬浮窗图标广告，5-精品推荐列表广告, 6-插播广告",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "PluginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告插件名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告插件描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PluginDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceInfo": {
       "document": "拉取某个用户的所有资源信息",
       "members": [
@@ -2025,6 +2166,192 @@
           "document": "资源名称，如应用加固，源码混淆",
           "member": "string",
           "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultListItem": {
+      "document": "APK检测服务参数返回具体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "banner广告软件标记，分别为-1-不确定，0-否，1-是",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Banner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "精品推荐列表广告标记，分别为-1-不确定，0-否，1-是",
+          "example": "\"\"",
+          "member": "string",
+          "name": "BoutiqueRecommand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "悬浮窗图标广告标记,分别为-1-不确定，0-否，1-是",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FloatWindows",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "积分墙广告软件标记，分别为 -1 -不确定，0-否，1-是",
+          "example": "\"\"",
+          "member": "string",
+          "name": "IntegralWall",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安装包的md5",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知栏广告软件标记，分别为-1-不确定，0-否，1-是",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NotifyBar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1表示官方，0表示非官方",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Official",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告插件结果列表",
+          "example": "无",
+          "member": "PluginListItem",
+          "name": "PluginList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "非广告插件结果列表(SDK、风险插件等)",
+          "example": "无",
+          "member": "OptPluginListItem",
+          "name": "OptPluginList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字类型，分别为0-未知， 1-安全软件，2-风险软件，3-病毒软件",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "SafeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Session id，合作方可以用来区分回调数据，需要唯一。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安装包名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SoftName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插播广告软件标记，取值：-1 不确定，0否， 1 是",
+          "example": "\"-1\"",
+          "member": "string",
+          "name": "Spot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "病毒名称，utf8编码",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VirusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "病毒描述，utf8编码",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VirusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二次打包状态：0-表示默认；1-表示二次",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RepackageStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用错误码：0、1-表示正常；                  \n\n2表示System Error(engine analysis error).\n\n3表示App analysis error, please confirm it.\n\n4表示App have not cert, please confirm it.\n\n5表示App size is zero, please confirm it.\n\n6表示App have not package name, please confirm it.\n\n7表示App build time is empty, please confirm it.\n\n8表示App have not valid cert, please confirm it.\n\n99表示Other error.\n\n1000表示App downloadlink download fail, please confirm it.\n\n1001表示APP md5 different between real md5, please confirm it.\n\n1002表示App md5 uncollect, please offer downloadlink.",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Errno",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应errno的错误信息描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrMsg",
           "required": true,
           "type": "string",
           "value_allowed_null": false

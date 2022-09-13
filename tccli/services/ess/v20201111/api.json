@@ -49,7 +49,7 @@
       "output": "CreateFlowByFilesResponse"
     },
     "CreateFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 URL",
+      "document": "【描述】：创建出证报告，返回报告 URL\n【注意】：此接口需要通过添加白名单获取调用权限，请联系运营人员加白",
       "input": "CreateFlowEvidenceReportRequest",
       "name": "创建并返回出证报告",
       "output": "CreateFlowEvidenceReportResponse"

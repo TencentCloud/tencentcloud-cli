@@ -37,7 +37,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否命中\n0 未命中\n1 命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "HitFlag",
@@ -47,7 +47,7 @@
         },
         {
           "default": "",
-          "document": "命中的标签\nPorn 色情\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\nMoan 呻吟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Label",
@@ -57,7 +57,7 @@
         },
         {
           "default": "",
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Suggestion",
@@ -67,7 +67,7 @@
         },
         {
           "default": "",
-          "document": "得分，0-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Score",
@@ -77,7 +77,7 @@
         },
         {
           "default": "",
-          "document": "音频ASR文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Text",
@@ -87,7 +87,7 @@
         },
         {
           "default": "",
-          "document": "音频片段存储URL，有效期为1天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频片段存储的链接地址，该地址有效期为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Url",
@@ -97,7 +97,7 @@
         },
         {
           "default": "",
-          "document": "音频时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频文件的时长，单位为毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Duration",
@@ -107,7 +107,7 @@
         },
         {
           "default": "",
-          "document": "拓展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回输入参数中的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",
@@ -117,7 +117,7 @@
         },
         {
           "default": "",
-          "document": "文本审核结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "AudioResultDetailTextResult",
           "name": "TextResults",
@@ -127,7 +127,7 @@
         },
         {
           "default": "",
-          "document": "音频呻吟审核结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "AudioResultDetailMoanResult",
           "name": "MoanResults",
@@ -137,10 +137,30 @@
         },
         {
           "default": "",
-          "document": "音频语种检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "AudioResultDetailLanguageResult",
           "name": "LanguageResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecognitionResult",
+          "name": "RecognitionResults",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -209,7 +229,7 @@
       "members": [
         {
           "default": "",
-          "document": "固定为Moan\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Label",
@@ -219,7 +239,7 @@
         },
         {
           "default": "",
-          "document": "分数",
+          "document": "该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。",
           "example": "1",
           "member": "int64",
           "name": "Score",
@@ -229,7 +249,7 @@
         },
         {
           "default": "",
-          "document": "开始时间",
+          "document": "该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。",
           "example": "1",
           "member": "float",
           "name": "StartTime",
@@ -239,7 +259,7 @@
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。",
           "example": "1",
           "member": "float",
           "name": "EndTime",
@@ -249,10 +269,30 @@
         },
         {
           "default": "",
-          "document": "子标签码",
+          "document": "*内测中，敬请期待*",
           "example": "1",
           "member": "string",
           "name": "SubLabelCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
+          "example": "Block",
+          "member": "string",
+          "name": "Suggestion",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1227,6 +1267,32 @@
       ],
       "usage": "out"
     },
+    "RecognitionResult": {
+      "document": "识别类标签结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可能的取值有：Teenager 、Gender\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StorageInfo": {
       "document": " 数据存储信息",
       "members": [
@@ -1262,6 +1328,52 @@
         }
       ],
       "usage": "in"
+    },
+    "Tag": {
+      "document": "音频切片识别标签",
+      "members": [
+        {
+          "default": "",
+          "document": "根据Label字段确定具体名称：\n当Label 为Teenager 时 Name可能取值有：Teenager \n当Label 为Gender 时 Name可能取值有：Male 、Female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别开始偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "float",
+          "name": "StartTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别结束偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "float",
+          "name": "EndTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaskData": {
       "document": "任务数据",

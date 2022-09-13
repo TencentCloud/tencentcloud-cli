@@ -4843,6 +4843,15 @@
           "name": "DataDisk",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。其中：\n0，按资源维度后付费，计算当日用量峰值，例如CPU，内存，硬盘等，仅适用于非GNR系列机型；\n1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；\n2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；\n该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

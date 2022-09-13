@@ -1380,6 +1380,14 @@
         "title": "使用极速模式解冻媒体文件"
       }
     ],
+    "ReviewAudioVideo": [
+      {
+        "document": "对 fileId 为 5285485487985271487 的视频发起音视频审核任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReviewAudioVideo\n<公共请求参数>\n\n{\n    \"FileId\": \"5285485487985271487\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-ReviewAudioVideo-bffb15f07530b57bc1aabb01fac74bcb\"\n    }\n}",
+        "title": "发起音视频审核任务"
+      }
+    ],
     "ReviewImage": [
       {
         "document": "",

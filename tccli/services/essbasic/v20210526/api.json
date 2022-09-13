@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ChannelBatchCancelFlows": {
+      "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息",
+      "input": "ChannelBatchCancelFlowsRequest",
+      "name": "电子签渠道版-根据签署流程id批量撤销合同",
+      "output": "ChannelBatchCancelFlowsResponse"
+    },
     "ChannelCancelMultiFlowSignQRCode": {
       "document": "此接口（ChannelCancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。",
       "input": "ChannelCancelMultiFlowSignQRCodeRequest",
@@ -24,6 +30,12 @@
       "name": "渠道版通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse"
     },
+    "ChannelCreateFlowGroupByFiles": {
+      "document": "接口（ChannelCreateFlowGroupByFiles）用于通过多文件创建合同组签署流程。",
+      "input": "ChannelCreateFlowGroupByFilesRequest",
+      "name": "通过多文件创建合同组签署流程",
+      "output": "ChannelCreateFlowGroupByFilesResponse"
+    },
     "ChannelCreateFlowSignReview": {
       "document": "提交企业签署流程审批结果\n\n在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "ChannelCreateFlowSignReviewRequest",
@@ -43,7 +55,7 @@
       "output": "ChannelGetTaskResultApiResponse"
     },
     "CreateChannelFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 URL",
+      "document": "【描述】：创建出证报告，返回报告 URL\n【注意】：此接口需要通过添加白名单获取调用权限，请联系运营人员加白",
       "input": "CreateChannelFlowEvidenceReportRequest",
       "name": "创建并返回出证报告",
       "output": "CreateChannelFlowEvidenceReportResponse"
@@ -283,6 +295,60 @@
         }
       ],
       "usage": "in"
+    },
+    "ChannelBatchCancelFlowsRequest": {
+      "document": "ChannelBatchCancelFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署流程Id数组，最多100个，超过100不处理",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelBatchCancelFlowsResponse": {
+      "document": "ChannelBatchCancelFlows返回参数结构体",
+      "members": [
+        {
+          "document": "签署流程批量撤销失败原因，错误信息与流程Id一一对应，如果部分流程不可撤销，不会返回错误信息，只会撤销可撤销流程",
+          "example": "无",
+          "member": "string",
+          "name": "FailMessages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ChannelCancelMultiFlowSignQRCodeRequest": {
       "document": "ChannelCancelMultiFlowSignQRCode请求参数结构体",
@@ -624,6 +690,78 @@
           "name": "FlowId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowGroupByFilesRequest": {
+      "document": "ChannelCreateFlowGroupByFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每个子合同的发起所需的信息，数量限制2-100",
+          "example": "无",
+          "member": "FlowFileInfo",
+          "name": "FlowFileInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "合同组名称，长度不超过200个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowGroupByFilesResponse": {
+      "document": "ChannelCreateFlowGroupByFiles返回参数结构体",
+      "members": [
+        {
+          "document": "合同组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子合同ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -1429,11 +1567,11 @@
         },
         {
           "default": "",
-          "document": "签署流程编号数组，最多支持100个。",
+          "document": "签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)",
           "example": "[\"xxx\", \"yyy\"]",
           "member": "string",
           "name": "FlowIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -1525,6 +1663,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同组编号(备注：该参数和合同(流程)编号数组必须二选一)",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1573,11 +1720,11 @@
         },
         {
           "default": "",
-          "document": "合同(流程)编号数组，最多支持100个。",
+          "document": "合同(流程)编号数组，最多支持100个。\n（备注：该参数和合同组编号必须二选一）",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -1588,6 +1735,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同组编号（备注：该参数和合同(流程)编号数组必须二选一）",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1620,6 +1776,24 @@
           "name": "FlowInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合同组编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合同组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1750,6 +1924,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否返回所有组件信息",
+          "example": "无",
+          "member": "bool",
+          "name": "QueryAllComponents",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索模版名称",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2304,6 +2496,122 @@
         }
       ],
       "usage": "out"
+    },
+    "FlowFileInfo": {
+      "document": "合同组中每个子合同的发起信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署文件资源Id列表，目前仅支持单个文件",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程名称，长度不超过200个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程签约方列表，最多不超过5个参与方",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
+          "example": "1662110622",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程的描述，长度不超过1000个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程的类型，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程回调地址，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CustomerData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署",
+          "example": "false",
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CustomShowMap",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本企业(发起方企业)是否需要签署审批",
+          "example": "flase",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "FlowInfo": {
       "document": "此结构体 (FlowInfo) 用于描述签署流程信息。\n\n【动态表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充动态表格（支持内容的单元格合并）\n输入示例\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n",
@@ -3171,6 +3479,16 @@
           "example": "test_open_id",
           "member": "string",
           "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同组签署链接对应的合同组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test-flow-group-id\"",
+          "member": "string",
+          "name": "FlowGroupId",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -8,10 +8,10 @@ Input:
 tccli cdb DescribeDBPrice --cli-unfold-argument  \
     --Zone ap-guangzhou-1 \
     --GoodsNum 1 \
-    --Memory 1000 \
-    --Volume 25 \
     --PayType PRE_PAID \
-    --Period 24
+    --Period 24 \
+    --Volume 25 \
+    --Memory 1000
 ```
 
 Output: 
@@ -19,6 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "Currency": "CNY",
         "Price": 48000,
         "OriginalPrice": 460800
     }
@@ -42,6 +43,7 @@ Output:
 {
     "Response": {
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "Currency": "CNY",
         "Price": 48000,
         "OriginalPrice": 460800
     }

@@ -258,6 +258,12 @@
       "name": "查询数据库代理",
       "output": "DescribeCDBProxyResponse"
     },
+    "DescribeCdbZoneConfig": {
+      "document": "本接口(DescribeCdbZoneConfig)用于查询云数据库各地域可售卖的规格配置。",
+      "input": "DescribeCdbZoneConfigRequest",
+      "name": "查询数据库可用区及售卖规格",
+      "output": "DescribeCdbZoneConfigResponse"
+    },
     "DescribeCloneList": {
       "document": "本接口(DescribeCloneList) 用于查询用户实例的克隆任务列表。",
       "input": "DescribeCloneListRequest",
@@ -2126,6 +2132,466 @@
           "name": "BinlogFinishTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdbRegionSellConf": {
+      "document": "地域售卖配置",
+      "members": [
+        {
+          "default": "",
+          "document": "地域中文名称",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属大区",
+          "example": "华南地区",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认地域",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDefaultRegion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域的可用区售卖配置",
+          "example": "[]",
+          "member": "CdbZoneSellConf",
+          "name": "RegionConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdbSellConfig": {
+      "document": "售卖配置详情",
+      "members": [
+        {
+          "default": "",
+          "document": "内存大小，单位为MB",
+          "example": "1000",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU核心数",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘最小规格，单位为GB",
+          "example": "50",
+          "member": "int64",
+          "name": "VolumeMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘最大规格，单位为GB",
+          "example": "3000",
+          "member": "int64",
+          "name": "VolumeMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘步长，单位为GB",
+          "example": "5",
+          "member": "int64",
+          "name": "VolumeStep",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每秒IO数量",
+          "example": "6000",
+          "member": "int64",
+          "name": "Iops",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用场景描述",
+          "example": "***",
+          "member": "string",
+          "name": "Info",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态值，0 表示该规格对外售卖",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型，可能的取值范围有：UNIVERSAL (通用型), EXCLUSIVE (独享型), BASIC (基础型)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UNIVERSAL",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎类型描述，可能的取值范围有：Innodb，RocksDB",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖规格Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdbSellType": {
+      "document": "售卖实例类型",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖实例名称",
+          "example": "Z3",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎版本号",
+          "example": "[\"5.6\",\"5.7\"]",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖规格Id",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "ConfigIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdbZoneDataResult": {
+      "document": "各地域可售卖的规格配置",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格所有集合",
+          "example": "[]",
+          "member": "CdbSellConfig",
+          "name": "Configs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖地域可用区集合",
+          "example": "[]",
+          "member": "CdbRegionSellConf",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdbZoneSellConf": {
+      "document": "可用区售卖配置",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中文名称",
+          "example": "广州二区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型是否为自定义类型",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCustom",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持灾备",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportDr",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持私有网络",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportVpc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小时计费实例最大售卖数量",
+          "example": "100",
+          "member": "int64",
+          "name": "HourInstanceSaleMaxNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认可用区",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefaultZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为黑石区",
+          "example": "true",
+          "member": "bool",
+          "name": "IsBm",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的付费类型。可能的返回值为：0-包年包月；1-小时计费；2-后付费",
+          "example": "[\"0\",\"1\"]",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据复制类型。0-异步复制；1-半同步复制；2-强同步复制",
+          "example": "[\"0\",\"1\",\"2\"]",
+          "member": "string",
+          "name": "ProtectMode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区名称",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "多可用区信息",
+          "example": "{}",
+          "member": "ZoneConf",
+          "name": "ZoneConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可支持的灾备可用区信息",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "DrZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持跨可用区只读",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportRemoteRo",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可支持的跨可用区只读区信息",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "RemoteRoZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
+          "member": "int64",
+          "name": "ExClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享型可支持的跨可用区只读区信息",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "ExClusterRemoteRoZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享型多可用区信息",
+          "example": "{}",
+          "member": "ZoneConf",
+          "name": "ExClusterZoneConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖实例类型数组，其中configIds的值与configs结构体中的id一一对应。",
+          "example": "[]",
+          "member": "CdbSellType",
+          "name": "SellType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区id",
+          "example": "200001",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持ipv6",
+          "example": "fasle",
+          "member": "bool",
+          "name": "IsSupportIpv6",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可支持的售卖数据库引擎类型",
+          "example": "[\"InnoDB\",\"RocksDB\"]",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5734,6 +6200,32 @@
       ],
       "type": "object"
     },
+    "DescribeCdbZoneConfigRequest": {
+      "document": "DescribeCdbZoneConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCdbZoneConfigResponse": {
+      "document": "DescribeCdbZoneConfig返回参数结构体",
+      "members": [
+        {
+          "document": "售卖规格和地域信息集合",
+          "example": "{}",
+          "member": "CdbZoneDataResult",
+          "name": "DataResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloneListRequest": {
       "document": "DescribeCloneList请求参数结构体",
       "members": [
@@ -6571,6 +7063,15 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按量计费阶梯。仅PayType=HOUR_PAID有效，支持值包括：1，2，3。阶梯时长见https://cloud.tencent.com/document/product/236/18335。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Ladder",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6579,7 +7080,7 @@
       "document": "DescribeDBPrice返回参数结构体",
       "members": [
         {
-          "document": "实例价格，单位：分（人民币）。",
+          "document": "实例价格，单位：分。",
           "example": "48000",
           "member": "int64",
           "name": "Price",
@@ -6588,12 +7089,21 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例原价，单位：分（人民币）。",
+          "document": "实例原价，单位：分。",
           "example": "460800",
           "member": "int64",
           "name": "OriginalPrice",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "货币单位。CNY-人民币，USD-美元。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9593,6 +10103,26 @@
           "name": "TagList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大延迟阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxDelayTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

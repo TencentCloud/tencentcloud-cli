@@ -17928,6 +17928,15 @@
           "name": "GridDaemon",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘集群开启自动升配",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoUpgradeClusterLevel",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

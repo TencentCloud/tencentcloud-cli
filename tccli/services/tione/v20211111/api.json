@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateBatchTask": {
+      "document": "创建跑批任务",
+      "input": "CreateBatchTaskRequest",
+      "name": "创建跑批任务",
+      "output": "CreateBatchTaskResponse"
+    },
     "CreateDataset": {
       "document": "创建数据集",
       "input": "CreateDatasetRequest",
@@ -17,6 +23,12 @@
       "input": "CreateTrainingTaskRequest",
       "name": "创建模型训练任务",
       "output": "CreateTrainingTaskResponse"
+    },
+    "DeleteBatchTask": {
+      "document": "删除跑批任务",
+      "input": "DeleteBatchTaskRequest",
+      "name": "删除跑批任务",
+      "output": "DeleteBatchTaskResponse"
     },
     "DeleteDataset": {
       "document": "删除数据集",
@@ -42,11 +54,35 @@
       "name": "删除训练任务",
       "output": "DeleteTrainingTaskResponse"
     },
+    "DescribeBatchTask": {
+      "document": "查询跑批任务",
+      "input": "DescribeBatchTaskRequest",
+      "name": "查询跑批任务",
+      "output": "DescribeBatchTaskResponse"
+    },
+    "DescribeBatchTaskInstances": {
+      "document": "查询跑批实例列表",
+      "input": "DescribeBatchTaskInstancesRequest",
+      "name": "跑批实例列表",
+      "output": "DescribeBatchTaskInstancesResponse"
+    },
+    "DescribeBatchTasks": {
+      "document": "批量预测任务列表信息",
+      "input": "DescribeBatchTasksRequest",
+      "name": "跑批任务列表",
+      "output": "DescribeBatchTasksResponse"
+    },
     "DescribeBillingResourceGroups": {
       "document": "查询资源组详情",
       "input": "DescribeBillingResourceGroupsRequest",
       "name": "查询资源组详情",
       "output": "DescribeBillingResourceGroupsResponse"
+    },
+    "DescribeBillingSpecs": {
+      "document": "本接口(DescribeBillingSpecs)用于查询计费项列表",
+      "input": "DescribeBillingSpecsRequest",
+      "name": "查询计费项列表",
+      "output": "DescribeBillingSpecsResponse"
     },
     "DescribeBillingSpecsPrice": {
       "document": "本接口(DescribeBillingSpecsPrice)用于查询计费项价格。",
@@ -150,6 +186,12 @@
       "name": "启动模型训练任务",
       "output": "StartTrainingTaskResponse"
     },
+    "StopBatchTask": {
+      "document": "停止跑批任务",
+      "input": "StopBatchTaskRequest",
+      "name": "停止跑批任务",
+      "output": "StopBatchTaskResponse"
+    },
     "StopTrainingTask": {
       "document": "停止模型训练任务",
       "input": "StopTrainingTaskRequest",
@@ -164,6 +206,574 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "BatchTaskDetail": {
+      "document": "跑批任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务ID",
+          "example": "123123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跑批任务名称",
+          "example": "test",
+          "member": "string",
+          "name": "BatchTaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号uin",
+          "example": "1000000001",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子账号uin",
+          "example": "1000000002",
+          "member": "string",
+          "name": "SubUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费专用资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource_group",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfigInfo",
+          "name": "ResourceConfigInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务对应的模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代码包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "CodePackagePath",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sh start.sh",
+          "member": "string",
+          "name": "StartCmd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出数据配置",
+          "example": "无",
+          "member": "DataConfig",
+          "name": "Outputs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否上报日志",
+          "example": "false",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-fgb3u1kx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-jhzi2m3j",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "STOPPING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
+          "example": "BILLING",
+          "member": "string",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
+          "member": "string",
+          "name": "LatestInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailureReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.00元/小时",
+          "member": "string",
+          "name": "BillingInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchTaskInstance": {
+      "document": "批处理任务实例",
+      "members": [
+        {
+          "default": "",
+          "document": "任务实例id",
+          "example": "JOB-123-123",
+          "member": "string",
+          "name": "BatchTaskInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchTaskSetItem": {
+      "document": "出参类型",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务ID",
+          "example": "JOB-123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跑批任务名称",
+          "example": "test",
+          "member": "string",
+          "name": "BatchTaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像信息",
+          "example": "[]",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
+          "example": "NOT_BILLING",
+          "member": "string",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfigInfo",
+          "name": "ResourceConfigInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "Outputs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailureReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费金额信息，eg：2.00元/小时 (for后付费)",
+          "example": "2.00元/小时",
+          "member": "string",
+          "name": "BillingInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CFSConfig": {
       "document": "CFS存储的配置",
       "members": [
@@ -225,6 +835,195 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateBatchTaskRequest": {
+      "document": "CreateBatchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "example": "test",
+          "member": "string",
+          "name": "BatchTaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfigInfo",
+          "name": "ResourceConfigInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "结果输出",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "Outputs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否上报日志",
+          "example": "false",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "工作类型 1:单次 2:周期",
+          "example": "1",
+          "member": "uint64",
+          "name": "JobType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务周期描述",
+          "example": "无",
+          "member": "CronInfo",
+          "name": "CronInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "预付费专用资源组",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签配置",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务对应的模型信息，有模型文件时需要填写",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "代码包",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "CodePackage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "启动命令",
+          "example": "sh start.sh",
+          "member": "string",
+          "name": "StartCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据配置",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "VPC Id",
+          "example": "vpc-fgb3u1kx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Id",
+          "example": "subnet-jhzi2m3j",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchTaskResponse": {
+      "document": "CreateBatchTask返回参数结构体",
+      "members": [
+        {
+          "document": "跑批任务ID",
+          "example": "123123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDatasetRequest": {
       "document": "CreateDataset请求参数结构体",
@@ -348,7 +1147,7 @@
       "members": [
         {
           "default": "",
-          "document": "导入方式（MODEL/VERSION）",
+          "document": "导入方式\nMODEL：导入新模型\nVERSION：导入新版本\nEXIST：导入现有版本",
           "example": "a1",
           "member": "string",
           "name": "ImportMethod",
@@ -543,6 +1342,33 @@
           "name": "ReasoningEnvironmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型",
+          "example": "false",
+          "member": "string",
+          "name": "AutoClean",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)",
+          "example": "24",
+          "member": "uint64",
+          "name": "MaxReservedModels",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModelCleanPeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -784,6 +1610,42 @@
       ],
       "type": "object"
     },
+    "CronInfo": {
+      "document": "跑批任务周期描述",
+      "members": [
+        {
+          "default": "",
+          "document": "cron配置",
+          "example": "1/* * * * * *",
+          "member": "string",
+          "name": "CronConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "周期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-01",
+          "member": "date",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "周期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-01",
+          "member": "date",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CustomTrainingData": {
       "document": "自定义指标",
       "members": [
@@ -877,7 +1739,7 @@
         },
         {
           "default": "",
-          "document": "DATASET、COS、CFS、HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DATASET、COS、CFS、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
           "name": "DataSourceType",
@@ -1432,6 +2294,33 @@
       ],
       "usage": "out"
     },
+    "DeleteBatchTaskRequest": {
+      "document": "DeleteBatchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务ID",
+          "example": "123123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchTaskResponse": {
+      "document": "DeleteBatchTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDatasetRequest": {
       "document": "DeleteDataset请求参数结构体",
       "members": [
@@ -1585,6 +2474,168 @@
       ],
       "type": "object"
     },
+    "DescribeBatchTaskInstancesRequest": {
+      "document": "DescribeBatchTaskInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务id",
+          "example": "JOB-123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchTaskInstancesResponse": {
+      "document": "DescribeBatchTaskInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchTaskInstance",
+          "name": "BatchInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchTaskRequest": {
+      "document": "DescribeBatchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务ID",
+          "example": "123123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchTaskResponse": {
+      "document": "DescribeBatchTask返回参数结构体",
+      "members": [
+        {
+          "document": "跑批任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchTaskDetail",
+          "name": "BatchTaskDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchTasksRequest": {
+      "document": "DescribeBatchTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
+          "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大为50",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC（升序排列）/ DESC（降序排列），默认为DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchTasksResponse": {
+      "document": "DescribeBatchTasks返回参数结构体",
+      "members": [
+        {
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchTaskSetItem",
+          "name": "BatchTaskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBillingResourceGroupsRequest": {
       "document": "DescribeBillingResourceGroups请求参数结构体",
       "members": [
@@ -1707,6 +2758,60 @@
           "example": "无",
           "member": "SpecPrice",
           "name": "SpecsPrice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingSpecsRequest": {
+      "document": "DescribeBillingSpecs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "枚举值：TRAIN、NOTEBOOK、INFERENCE",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式：POSTPAID_BY_HOUR后付费、PREPAID预付费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型：CALC 计算资源、CPU CPU资源、GPU GPU资源、CBS云硬盘",
+          "example": "CALC",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingSpecsResponse": {
+      "document": "DescribeBillingSpecs返回参数结构体",
+      "members": [
+        {
+          "document": "计费项列表",
+          "example": "无",
+          "member": "Spec",
+          "name": "Specs",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3358,6 +4463,92 @@
       ],
       "usage": "both"
     },
+    "ModelInfo": {
+      "document": "模型描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模型版本id, DescribeTrainingModelVersion查询模型接口时的id\n自动学习类型的模型填写自动学习的任务id",
+          "example": "m-dddd-1",
+          "member": "string",
+          "name": "ModelVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型id",
+          "example": "m-dddd",
+          "member": "string",
+          "name": "ModelId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型名",
+          "example": "test",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型版本",
+          "example": "1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型来源",
+          "example": "COS",
+          "member": "string",
+          "name": "ModelSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos路径信息",
+          "example": "{}",
+          "member": "CosPathInfo",
+          "name": "CosPathInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型对应的算法框架，预留\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pmml",
+          "member": "string",
+          "name": "AlgorithmFramework",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认为 NORMAL, 已加速模型: ACCELERATE, 自动学习模型 AUTO_ML\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACCELERATE",
+          "member": "string",
+          "name": "ModelType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OcrLabelInfo": {
       "document": "OCR场景标签列表",
       "members": [
@@ -3829,6 +5020,42 @@
       ],
       "usage": "out"
     },
+    "Spec": {
+      "document": "计费项内容",
+      "members": [
+        {
+          "default": "",
+          "document": "计费项标签",
+          "example": "sv_tio_platform_cloud_post_gpu_8c40g_1v100",
+          "member": "string",
+          "name": "SpecId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费项名称",
+          "example": "TI.GN10.2XLARGE40.POST",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费项显示名称",
+          "example": "8核40GB V100*1",
+          "member": "string",
+          "name": "SpecAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SpecPrice": {
       "document": "计费项询价结果",
       "members": [
@@ -3944,6 +5171,33 @@
     },
     "StartTrainingTaskResponse": {
       "document": "StartTrainingTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopBatchTaskRequest": {
+      "document": "StopBatchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跑批任务ID",
+          "example": "123123",
+          "member": "string",
+          "name": "BatchTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopBatchTaskResponse": {
+      "document": "StopBatchTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4341,6 +5595,66 @@
           "name": "TrainingModelFormat",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型版本类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "VersionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T4",
+          "member": "string",
+          "name": "GPUType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型自动清理开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "AutoClean",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型清理周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModelCleanPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型数量保留上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "uint64",
+          "name": "MaxReservedModels",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型热更新目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelHotUpdatePath",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

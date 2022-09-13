@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb CreateTopic --cli-unfold-argument  \
-    --TopicName clb-topic \
-    --PartitionCount 3
+    --PartitionCount 3 \
+    --TopicName clb-topic
 ```
 
 Output: 

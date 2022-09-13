@@ -156,6 +156,12 @@
       "name": "查询redis实例大key列表",
       "output": "DescribeRedisTopBigKeysResponse"
     },
+    "DescribeRedisTopKeyPrefixList": {
+      "document": "查询redis实例top key前缀列表。",
+      "input": "DescribeRedisTopKeyPrefixListRequest",
+      "name": "查询redis实例top key前缀列表",
+      "output": "DescribeRedisTopKeyPrefixListResponse"
+    },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
       "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
@@ -2299,6 +2305,78 @@
           "example": "无",
           "member": "RedisKeySpaceData",
           "name": "TopKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采集时间戳（秒）。",
+          "example": "1618890295",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopKeyPrefixListRequest": {
+      "document": "DescribeRedisTopKeyPrefixList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询日期，如2021-05-27，最早可为前30天的日期。",
+          "example": "2022-04-12",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询数目，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopKeyPrefixListResponse": {
+      "document": "DescribeRedisTopKeyPrefixList返回参数结构体",
+      "members": [
+        {
+          "document": "top key前缀列表。",
+          "example": "无",
+          "member": "RedisPreKeySpaceData",
+          "name": "Items",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -4725,6 +4803,72 @@
           "default": "",
           "document": "最大元素长度。",
           "example": "10",
+          "member": "int64",
+          "name": "MaxElementSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisPreKeySpaceData": {
+      "document": "redis key前缀空间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "平均元素长度。",
+          "example": "10",
+          "member": "int64",
+          "name": "AveElementSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总占用内存（Byte）。",
+          "example": "590",
+          "member": "int64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key前缀。",
+          "example": "dbb47cd0",
+          "member": "string",
+          "name": "KeyPreIndex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元素数量。",
+          "example": "14",
+          "member": "int64",
+          "name": "ItemCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key个数。",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大元素长度。",
+          "example": "36",
           "member": "int64",
           "name": "MaxElementSize",
           "required": true,

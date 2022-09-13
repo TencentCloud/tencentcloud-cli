@@ -30,6 +30,12 @@
       "name": "创建账号",
       "output": "CreateAccountsResponse"
     },
+    "CreateBackup": {
+      "document": "为集群创建手动备份",
+      "input": "CreateBackupRequest",
+      "name": "创建手动备份",
+      "output": "CreateBackupResponse"
+    },
     "CreateClusters": {
       "document": "创建集群",
       "input": "CreateClustersRequest",
@@ -257,6 +263,12 @@
       "input": "ModifyClusterSlaveZoneRequest",
       "name": "修改从可用区",
       "output": "ModifyClusterSlaveZoneResponse"
+    },
+    "ModifyClusterStorage": {
+      "document": "升级预付费存储",
+      "input": "ModifyClusterStorageRequest",
+      "name": "升级预付费存储",
+      "output": "ModifyClusterStorageResponse"
     },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
@@ -1101,6 +1113,78 @@
     "CreateAccountsResponse": {
       "document": "CreateAccounts返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupRequest": {
+      "document": "CreateBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-45knmnra",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份类型, 可选值：logic，逻辑备份；snapshot，物理备份",
+          "example": "logic",
+          "member": "string",
+          "name": "BackupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份的库, 只在 BackupType 为 logic 时有效",
+          "example": "无",
+          "member": "string",
+          "name": "BackupDatabases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备份的表, 只在 BackupType 为 logic 时有效",
+          "example": "无",
+          "member": "DatabaseTables",
+          "name": "BackupTables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备注名",
+          "example": "备份备注",
+          "member": "string",
+          "name": "BackupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupResponse": {
+      "document": "CreateBackup返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务流ID",
+          "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3027,6 +3111,32 @@
         }
       ],
       "usage": "in"
+    },
+    "DatabaseTables": {
+      "document": "数据库表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tables",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DbTable": {
       "document": "数据库表",
@@ -5411,6 +5521,87 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterStorageRequest": {
+      "document": "ModifyClusterStorage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosmysql-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群新存储大小（单位G）",
+          "example": "20",
+          "member": "int64",
+          "name": "NewStorageLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群原存储大小（单位G）",
+          "example": "10",
+          "member": "int64",
+          "name": "OldStorageLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "交易模式 0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterStorageResponse": {
+      "document": "ModifyClusterStorage返回参数结构体",
+      "members": [
+        {
+          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "TranId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "BigDealIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

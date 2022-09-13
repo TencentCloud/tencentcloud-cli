@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tke UpdateTKEEdgeCluster --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
     --ClusterName test_cluster1 \
-    --ClusterDesc my_test_cluster888
+    --ClusterDesc my_test_cluster888 \
+    --ClusterId cls-xxxxxx
 ```
 
 Output: 

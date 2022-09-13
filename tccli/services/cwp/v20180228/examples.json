@@ -40,6 +40,14 @@
         "title": "漏洞管理 -应急漏洞检测"
       }
     ],
+    "CreateLicenseOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLicenseOrder\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"订单号xxxx\"\n        ],\n        \"RequestId\": \"1bb6cbfb-572d-4f29-b6e0-017acd8659f0\",\n        \"ResourceIds\": [\n            \"资源ID\"\n        ],\n        \"BigDealId\": \"大订单号xxx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateProtectServer": [
       {
         "document": "",
@@ -110,6 +118,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DeleteBruteAttacks\n&Ids.0=1\n&Ids.1=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除暴力破解记录"
+      }
+    ],
+    "DeleteLicenseRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLicenseRecord\n<公共请求参数>\n\n{\n    \"LicenseId\": 1,\n    \"LicenseType\": 0,\n    \"ResourceId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f877b6e-f1d8-4a99-887c-3479bb086ee7\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteLoginWhiteList": [
@@ -300,8 +316,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"MachineCount\": 1,\n        \"SoftwareCount\": 1,\n        \"PortCount\": 1,\n        \"WebFrameCount\": 1,\n        \"AccountCount\": 1,\n        \"WebAppCount\": 1,\n        \"WebLocationCount\": 1,\n        \"RequestId\": \"cb69c62c-7edc-4f01-8fb8-c1d3f9180d66\",\n        \"ProcessCount\": 1,\n        \"DatabaseCount\": 1,\n        \"WebServiceCount\": 1\n    }\n}",
-        "title": "示例"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"MachineCount\": 100,\n        \"AccountCount\": 100,\n        \"PortCount\": 100,\n        \"ProcessCount\": 100,\n        \"SoftwareCount\": 100,\n        \"DatabaseCount\": 100,\n        \"WebAppCount\": 100,\n        \"WebFrameCount\": 100,\n        \"WebServiceCount\": 100,\n        \"WebLocationCount\": 100,\n        \"AccountNewCount\": 100,\n        \"PortNewCount\": 100,\n        \"ProcessNewCount\": 100,\n        \"SoftwareNewCount\": 100,\n        \"DatabaseNewCount\": 100,\n        \"WebAppNewCount\": 100,\n        \"WebFrameNewCount\": 100,\n        \"WebServiceNewCount\": 100,\n        \"WebLocationNewCount\": 100,\n        \"MachineNewCount\": 100\n    }\n}",
+        "title": "获取资产数量概况"
       }
     ],
     "DescribeAssetInitServiceList": [
@@ -707,8 +723,8 @@
     "DescribeGeneralStat": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeGeneralStat\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MachinesAll\": 87,\n        \"MachinesUninstalled\": 37,\n        \"AgentsAll\": 50,\n        \"AgentsOnline\": 7,\n        \"AgentsOffline\": 43,\n        \"AgentsPro\": 12,\n        \"AgentsBasic\": 38,\n        \"AgentsProExpireWithInSevenDays\": 1,\n        \"RiskMachine\": 0,\n        \"Shutdown\": 0,\n        \"Offline\": 0,\n        \"ProtectDays\": 1,\n        \"FlagshipMachineCnt\": 1,\n        \"RequestId\": \"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGeneralStat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"MachinesAll\": 87,\n        \"MachinesUninstalled\": 37,\n        \"AgentsAll\": 50,\n        \"AgentsOnline\": 7,\n        \"AgentsOffline\": 43,\n        \"AgentsPro\": 12,\n        \"AgentsBasic\": 38,\n        \"AgentsProExpireWithInSevenDays\": 1,\n        \"RiskMachine\": 0,\n        \"Shutdown\": 0,\n        \"Offline\": 0,\n        \"ProtectDays\": 1,\n        \"FlagshipMachineCnt\": 1,\n        \"AddedOnTheFifteen\": 1,\n        \"RequestId\": \"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\n    }\n}",
         "title": "获取主机安全相关统计"
       }
     ],
@@ -766,6 +782,38 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeIndexList\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"indexSort\\\":{\\\"资产管理\\\":[\\\"userlog-asset_component\\\"],\\\"入侵检测\\\":[\\\"userlog-malware\\\"],\\\"网络防御\\\":[\\\"userlog-network_attack\\\"]},\\\"indexArr\\\":[\\\"userlog-asset_component\\\",\\\"userlog-malware\\\",\\\"userlog-network_attack\\\"],\\\"fieldArr\\\":[{\\\"quuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"hostip\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"user_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"modify_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"pid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"proc_tree\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"dst_ip\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"parent_proc_path\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"process_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"id\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"full_path\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"user_group\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"create_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"ppid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"find_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"parent_proc_group\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"parent_proc_user\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"cmd_line\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"parent_proc_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"dst_port\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"status\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}}},{\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"hostip\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"modify_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"filemodifiertime\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"filesize\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"virusname\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"filepath\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"id\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"create_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"fileaccesstime\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"pathmd5\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"bwtype\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"filecreatetime\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"status\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"md5\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}}},{\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"component_id\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"quuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"create_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"hostip\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"modify_time\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"remark\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"type\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"version\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"path\\\":{\\\"text\\\":{\\\"type\\\":\\\"text\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"id\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}}}]}\",\n        \"RequestId\": \"49082d4a-71b4-4e32-9ca1-b33872a4a63a\"\n    }\n}",
         "title": "获取索引列表"
+      }
+    ],
+    "DescribeLicenseBindList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseBindList\n<公共请求参数>\n\n{\n    \"LicenseId\": 1,\n    \"LicenseType\": 0,\n    \"ResourceId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"de41ce31-f2c0-49a9-a476-57051a5c7c6c\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"MachineName\": \"云服务器\",\n                \"MachineWanIp\": \"1.1.1.1\",\n                \"MachineIp\": \"1.1.1.1\",\n                \"Quuid\": \"xxxx-xxxx-xxx-xxxx\",\n                \"Uuid\": \"xxxx-xxxx-xxx-xxxx\",\n                \"Tags\": [\n                    \"标签\"\n                ],\n                \"AgentStatus\": \"OFFLINE\",\n                \"IsUnBind\": true,\n                \"IsSwitchBind\": true\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLicenseBindSchedule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseBindSchedule\n<公共请求参数>\n\n{\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db15d3f0-5573-4409-a75e-04d54b8c564c\",\n        \"Schedule\": 100,\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Quuid\": \"xxx-xxxx-xxxx-xxx\",\n                \"Status\": 1,\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLicenseGeneral": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseGeneral\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLicenseList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"de41ce31-f2c0-49a9-a476-57051a5c7c6c\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"LicenseId\": 1,\n                \"LicenseType\": 0,\n                \"LicenseStatus\": 0,\n                \"LicenseCnt\": 0,\n                \"UsedLicenseCnt\": 0,\n                \"OrderStatus\": 1,\n                \"BuyTime\": \"2018-02-28 00:00:00\",\n                \"Deadline\": \"2018-02-28 00:00:00\",\n                \"ResourceId\": \"1c007adc2f0bb9f7c052860e2d3703fa\",\n                \"AutoRenewFlag\": 0,\n                \"ProjectId\": 1,\n                \"TaskId\": 1,\n                \"SourceType\": 0,\n                \"Alias\": \"资源别名\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"标签键\",\n                        \"TagValue\": \"标签值\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeLogStorageStatistic": [
@@ -828,7 +876,7 @@
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachines\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"MachineRegion\": \"ap-shanghai\",\n    \"MachineType\": \"CVM\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"10.0.1.1\"\n            ],\n            \"Name\": \"Keywords\"\n        }\n    ],\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"0.0.0.0\",\n                \"MachineWanIp\": \"0.0.0.0\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1,\n                \"HasAssetScan\": 1,\n                \"LicenseStatus\": 0,\n                \"InvasionNum\": 0,\n                \"BaselineNum\": 0,\n                \"RegionInfo\": {\n                    \"RegionCode\": \"gz\",\n                    \"Region\": \"ap-guangzhuo\",\n                    \"RegionId\": 1,\n                    \"RegionName\": \"广州\",\n                    \"RegionNameEn\": \"chine guangzhou\"\n                },\n                \"MachineType\": \"CVM\",\n                \"KernelVersion\": \"xxx.xxx\",\n                \"ProtectType\": \"BASIC_VERSION\",\n                \"CloudTags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"0.0.0.0\",\n                \"MachineWanIp\": \"0.0.0.0\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"IsAddedOnTheFifteen\": 1,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1,\n                \"HasAssetScan\": 1,\n                \"LicenseStatus\": 0,\n                \"InvasionNum\": 0,\n                \"BaselineNum\": 0,\n                \"RegionInfo\": {\n                    \"RegionCode\": \"gz\",\n                    \"Region\": \"ap-guangzhuo\",\n                    \"RegionId\": 1,\n                    \"RegionName\": \"广州\",\n                    \"RegionNameEn\": \"chine guangzhou\"\n                },\n                \"MachineType\": \"CVM\",\n                \"KernelVersion\": \"xxx.xxx\",\n                \"ProtectType\": \"BASIC_VERSION\",\n                \"CloudTags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
         "title": "获取区域主机列表"
       }
     ],
@@ -1272,6 +1320,14 @@
         "title": "示例"
       }
     ],
+    "DestroyOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyOrder\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource_xxxxx\",\n    \"LicenseType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac82ff0-b562-46fc-bbcf-a55cc62f8205\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "EditBashRules": [
       {
         "document": "新增/修改高危命令规则，之前的EditBashRule只支持用户输入单个IP去新增或修改高危命令规则，而该接口EditBashRules支持多服务器选择。",
@@ -1358,6 +1414,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=ExportIgnoreRuleEffectHostList\n&RuleId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
         "title": "导出忽略检测项影响主机列表"
+      }
+    ],
+    "ExportLicenseDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportLicenseDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d09cfcae-fab2-4cb7-a41e-5fd4c12d69f4\",\n        \"DownloadUrl\": \"\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "示例"
       }
     ],
     "ExportMaliciousRequests": [
@@ -1512,12 +1576,36 @@
         "title": "修改爆破阻断模式"
       }
     ],
+    "ModifyLicenseBinds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicenseBinds\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxxxxxxx\",\n    \"LicenseType\": 0,\n    \"IsAll\": true,\n    \"QuuidList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11d268f-1601-4f63-9131-0382537b9ebf\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyLicenseUnBinds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicenseUnBinds\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxx-xxxx-xx-xxx\",\n    \"LicenseType\": 0,\n    \"IsAll\": true,\n    \"QuuidList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11d268f-1601-4f63-9131-0382537b9e55\",\n        \"ErrMsg\": []\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyMalwareTimingScanSettings": [
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=ModifyMalwareTimingScanSettings\n&CheckPattern=0\n&StartTime=02:00:00\n&EndTime=04:00:00\n&IsGlobal=1\n&EnableScan=1\n&MonitoringPattern=0\n&Cycle=1\n&RealTimeMonitoring=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
         "title": "定时扫描设置"
+      }
+    ],
+    "ModifyOrderAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrderAttribute\n<公共请求参数>\n\n{\n    \"LicenseType\": 1,\n    \"ResourceId\": \"resource_id\",\n    \"AttrName\": \"alias\",\n    \"AttrValue\": \"资源别名\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d09cfcae-fab2-4cb7-a41e-5fd4c12d69f4\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyWarningSetting": [

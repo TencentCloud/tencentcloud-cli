@@ -6344,6 +6344,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域码表 id",
+          "example": "1",
+          "member": "string",
+          "name": "AreaRegionID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域码表 code 如 ap-xxx（xxx 为地域词）",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "AreaRegionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域缩写",
+          "example": "gz",
+          "member": "string",
+          "name": "AreaAbbr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

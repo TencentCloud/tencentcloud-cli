@@ -15353,7 +15353,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EO-dsfdsf",
           "member": "string",
           "name": "CertId",
@@ -15363,7 +15363,7 @@
         },
         {
           "default": "",
-          "document": "证书备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书备注名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认证书",
           "member": "string",
           "name": "Alias",
@@ -15373,7 +15373,7 @@
         },
         {
           "default": "",
-          "document": "证书类型:\ndefault: 默认证书\nupload:用户上传\nmanaged:腾讯云托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书类型，取值有：\n<li>default: 默认证书;</li>\n<li>upload:用户上传;</li>\n<li>managed:腾讯云托管。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "Type",
@@ -15383,7 +15383,7 @@
         },
         {
           "default": "",
-          "document": "证书过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
@@ -15393,7 +15393,7 @@
         },
         {
           "default": "",
-          "document": "证书部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书部署时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "DeployTime",
@@ -15403,10 +15403,20 @@
         },
         {
           "default": "",
-          "document": "部署状态:\nprocessing: 部署中\ndeployed: 已部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署状态，取值有：\n<li>processing: 部署中;</li>\n<li>deployed: 已部署。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "deployed",
           "member": "string",
           "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书算法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RSA 128",
+          "member": "string",
+          "name": "SignAlgo",
           "required": false,
           "type": "string",
           "value_allowed_null": true

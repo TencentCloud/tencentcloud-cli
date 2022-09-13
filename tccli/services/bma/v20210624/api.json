@@ -1394,6 +1394,15 @@
           "name": "Content",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xx",
+          "member": "string",
+          "name": "MonitorEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
