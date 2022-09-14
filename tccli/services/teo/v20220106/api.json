@@ -265,7 +265,7 @@
       "output": "DescribeOriginGroupDetailResponse"
     },
     "DescribeOverviewL7Data": {
-      "document": "查询七层监控类时序流量数据",
+      "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
       "input": "DescribeOverviewL7DataRequest",
       "name": "查询七层监控类时序流量数据",
       "output": "DescribeOverviewL7DataResponse"
@@ -7372,8 +7372,8 @@
       "members": [
         {
           "default": "",
-          "document": "RFC3339格式，客户端时间",
-          "example": "无",
+          "document": "开始时间。",
+          "example": "2020-04-20T00:00:00Z",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -7381,8 +7381,8 @@
         },
         {
           "default": "",
-          "document": "RFC3339格式，客户端时间",
-          "example": "无",
+          "document": "结束时间。",
+          "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -7390,8 +7390,8 @@
         },
         {
           "default": "",
-          "document": "指标列表，支持的指标\nl7Flow_outFlux: 访问流量\nl7Flow_request: 访问请求数\nl7Flow_outBandwidth: 访问带宽\n l7Flow_hit_outFlux: 缓存命中流量",
-          "example": "无",
+          "document": "查询的指标，取值有：\n<li>l7Flow_outFlux: 访问流量；</li>\n<li>l7Flow_request: 访问请求数；</li>\n<li>l7Flow_outBandwidth: 访问带宽；</li>\n<li>l7Flow_hit_outFlux: 缓存命中流量。</li>",
+          "example": "[\"l7Flow_outFlux\"]",
           "member": "string",
           "name": "MetricNames",
           "required": true,
@@ -7399,8 +7399,8 @@
         },
         {
           "default": "",
-          "document": "时间间隔，选填{min, 5min, hour, day, week}",
-          "example": "无",
+          "document": "查询时间粒度，取值有：\n<li>min ：1分钟 ；</li>\n<li>5min ：5分钟 ；</li>\n<li>hour ：1小时 ；</li>\n<li>day ：1天 。</li>",
+          "example": "min",
           "member": "string",
           "name": "Interval",
           "required": true,
@@ -7408,8 +7408,8 @@
         },
         {
           "default": "",
-          "document": "ZoneId列表，仅在zone/domain维度下查询时该参数有效",
-          "example": "无",
+          "document": "查询的站点集合，不填默认查询所有站点。",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -7417,8 +7417,8 @@
         },
         {
           "default": "",
-          "document": "Domain列表，仅在domain维度下查询时该参数有效",
-          "example": "无",
+          "document": "查询的域名集合，不填默认查询所有子域名。",
+          "example": "[\"www.baidu.com\",\"www.google.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -7426,7 +7426,7 @@
         },
         {
           "default": "",
-          "document": "协议类型， 选填{http,http2,https,all}",
+          "document": "查询的协议类型，取值有：\n<li>http: http协议；</li>\n<li>https: https协议；</li>\n<li>http2: http2协议；</li>\n<li>all:  所有协议。</li>不填默认为: all，表示查询所有协议。",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -7441,6 +7441,15 @@
           "name": "Area",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否",
+          "example": "无",
+          "member": "QueryCondition",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7449,7 +7458,7 @@
       "document": "DescribeOverviewL7Data返回参数结构体",
       "members": [
         {
-          "document": "查询维度",
+          "document": "查询维度。",
           "example": "user",
           "member": "string",
           "name": "Type",
@@ -7458,7 +7467,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "时间间隔",
+          "document": "查询时间间隔。",
           "example": "无",
           "member": "string",
           "name": "Interval",
@@ -7467,7 +7476,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "详细数据",
+          "document": "七层监控类时序流量数据列表。",
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
@@ -13882,7 +13891,7 @@
       "members": [
         {
           "default": "",
-          "document": "维度",
+          "document": "筛选条件的key。",
           "example": "查询键",
           "member": "string",
           "name": "Key",
@@ -13892,8 +13901,8 @@
         },
         {
           "default": "",
-          "document": "操作符",
-          "example": "equals '等于',notEquals '不等于',include '包含',notInclude '不包含',startW",
+          "document": "查询条件操作符，操作类型有：\n<li>equals: 等于；</li>\n<li>notEquals: 不等于；</li>\n<li>include: 包含；</li>\n<li>notInclude: 不包含; </li>\n<li>startWith: 开始于；</li>\n<li>notStartWith: 不开始于；</li>\n<li>endWith: 结尾是；</li>\n<li>notEndWith: 不结尾是。</li>",
+          "example": "equals",
           "member": "string",
           "name": "Operator",
           "required": true,
@@ -13902,7 +13911,7 @@
         },
         {
           "default": "",
-          "document": "维度值",
+          "document": "筛选条件的值。",
           "example": "查询值",
           "member": "string",
           "name": "Value",

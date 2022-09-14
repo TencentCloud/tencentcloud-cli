@@ -564,6 +564,12 @@
       "name": "查询某段时间top n客户端ip汇总信息",
       "output": "DescribeTopClientIpSumInfoListResponse"
     },
+    "DescribeTranscodeTaskNum": {
+      "document": "查询转码任务数。",
+      "input": "DescribeTranscodeTaskNumRequest",
+      "name": "查询转码任务数。",
+      "output": "DescribeTranscodeTaskNumResponse"
+    },
     "DescribeUploadStreamNums": {
       "document": "直播上行路数查询",
       "input": "DescribeUploadStreamNumsRequest",
@@ -8120,6 +8126,60 @@
       ],
       "type": "object"
     },
+    "DescribeTranscodeTaskNumRequest": {
+      "document": "DescribeTranscodeTaskNum请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间，格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2022-01-09 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2022-01-09 23:00:0",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名列表，不填表示总体数据。",
+          "example": "[\"5000.livepush.com\"]",
+          "member": "string",
+          "name": "PushDomains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTranscodeTaskNumResponse": {
+      "document": "DescribeTranscodeTaskNum返回参数结构体",
+      "members": [
+        {
+          "document": "任务数列表。",
+          "example": "无",
+          "member": "TranscodeTaskNum",
+          "name": "DataInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUploadStreamNumsRequest": {
       "document": "DescribeUploadStreamNums请求参数结构体",
       "members": [
@@ -13032,6 +13092,42 @@
           "name": "Resolution",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TranscodeTaskNum": {
+      "document": "转码任务数。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点。",
+          "example": "2022-01-09 21:45",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率。",
+          "example": "2000",
+          "member": "uint64",
+          "name": "CodeRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -768,7 +768,8 @@
       "members": [
         {
           "default": "",
-          "document": "快照文件ID，用于回滚",
+          "document": "快照文件ID，已废弃，请使用BackupId",
+          "example": "无",
           "member": "uint64",
           "name": "SnapshotId",
           "required": true,
@@ -777,7 +778,8 @@
         },
         {
           "default": "",
-          "document": "快照文件名",
+          "document": "备份文件名",
+          "example": "无",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -786,7 +788,8 @@
         },
         {
           "default": "",
-          "document": "快照文件大小",
+          "document": "备份文件大小",
+          "example": "无",
           "member": "uint64",
           "name": "FileSize",
           "required": true,
@@ -795,7 +798,8 @@
         },
         {
           "default": "",
-          "document": "快照备份开始时间",
+          "document": "备份开始时间",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -804,7 +808,8 @@
         },
         {
           "default": "",
-          "document": "快照备份完成时间",
+          "document": "备份完成时间",
+          "example": "无",
           "member": "string",
           "name": "FinishTime",
           "required": true,
@@ -813,7 +818,8 @@
         },
         {
           "default": "",
-          "document": "备份类型：snapshot，快照备份；timepoint，时间点备份",
+          "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
+          "example": "无",
           "member": "string",
           "name": "BackupType",
           "required": true,
@@ -823,6 +829,7 @@
         {
           "default": "",
           "document": "备份方式：auto，自动备份；manual，手动备份",
+          "example": "无",
           "member": "string",
           "name": "BackupMethod",
           "required": true,
@@ -832,6 +839,7 @@
         {
           "default": "",
           "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
+          "example": "无",
           "member": "string",
           "name": "BackupStatus",
           "required": true,
@@ -841,11 +849,42 @@
         {
           "default": "",
           "document": "备份文件时间",
+          "example": "无",
           "member": "string",
           "name": "SnapshotTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapShotType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3421,20 +3460,20 @@
         },
         {
           "default": "",
-          "document": "备份文件列表偏移",
+          "document": "备份文件列表大小，取值范围(0,100]",
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "default": "",
-          "document": "备份文件列表起始",
+          "document": "备份文件列表偏移，取值范围[0,INF)",
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -3445,6 +3484,78 @@
           "name": "DbType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份ID",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备份类型，可选值：snapshot，快照备份； logic，逻辑备份",
+          "example": "snapshot",
+          "member": "string",
+          "name": "BackupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份方式，可选值：auto，自动备份；manual，手动备",
+          "example": "auto",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照类型，可选值：full，全量；increment，增量",
+          "example": "full",
+          "member": "string",
+          "name": "SnapShotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份开始时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份结束时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件名，模糊查询",
+          "example": "无",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备份备注名，模糊查询",
+          "example": "无",
+          "member": "string",
+          "name": "BackupNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

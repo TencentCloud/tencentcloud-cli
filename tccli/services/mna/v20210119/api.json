@@ -1,10 +1,22 @@
 {
   "actions": {
+    "AddDevice": {
+      "document": "新建设备记录",
+      "input": "AddDeviceRequest",
+      "name": "新建设备",
+      "output": "AddDeviceResponse"
+    },
     "CreateQos": {
       "document": "移动网络发起Qos加速过程",
       "input": "CreateQosRequest",
       "name": "发起Qos加速过程",
       "output": "CreateQosResponse"
+    },
+    "DeleteDevice": {
+      "document": "删除设备信息",
+      "input": "DeleteDeviceRequest",
+      "name": "删除设备",
+      "output": "DeleteDeviceResponse"
     },
     "DeleteQos": {
       "document": "移动网络停止Qos加速过程",
@@ -17,6 +29,30 @@
       "input": "DescribeQosRequest",
       "name": "获取Qos加速状态",
       "output": "DescribeQosResponse"
+    },
+    "GetDevice": {
+      "document": "通过指定设备的ID查找设备详细信息",
+      "input": "GetDeviceRequest",
+      "name": "获取设备详细信息",
+      "output": "GetDeviceResponse"
+    },
+    "GetDevices": {
+      "document": "获取设备信息列表",
+      "input": "GetDevicesRequest",
+      "name": "设备信息列表",
+      "output": "GetDevicesResponse"
+    },
+    "GetStatisticData": {
+      "document": "在用量统计页面下载流量数据",
+      "input": "GetStatisticDataRequest",
+      "name": "下载用量统计数据",
+      "output": "GetStatisticDataResponse"
+    },
+    "UpdateDevice": {
+      "document": "更新设备信息",
+      "input": "UpdateDeviceRequest",
+      "name": "更新设备",
+      "output": "UpdateDeviceResponse"
     }
   },
   "metadata": {
@@ -26,6 +62,69 @@
     "serviceShortName": "mna"
   },
   "objects": {
+    "AddDeviceRequest": {
+      "document": "AddDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "新建设备的名称",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建设备的备注",
+          "example": "mobile",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "DataKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddDeviceResponse": {
+      "document": "AddDevice返回参数结构体",
+      "members": [
+        {
+          "document": "后台生成的base64字符串密钥",
+          "example": "dasdfrfwer32e4r",
+          "member": "string",
+          "name": "DataKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Capacity": {
       "document": "接口能力扩展，用于填充电信的加速Token，并为未来参数提供兼容空间",
       "members": [
@@ -214,6 +313,33 @@
       ],
       "type": "object"
     },
+    "DeleteDeviceRequest": {
+      "document": "DeleteDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "删除设备的唯一ID",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResponse": {
+      "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteQosRequest": {
       "document": "DeleteQos请求参数结构体",
       "members": [
@@ -347,6 +473,88 @@
       ],
       "usage": "in"
     },
+    "DeviceBaseInfo": {
+      "document": "设备的基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备唯一ID",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备创建的时间，单位：ms",
+          "example": "169043203113091072",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备最后在线时间，单位：ms",
+          "example": "169043203113091072",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备的备注",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceDetails": {
+      "document": "设备详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备基本信息",
+          "example": "无",
+          "member": "DeviceBaseInfo",
+          "name": "DeviceBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceNetInfo",
+          "name": "DeviceNetInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeviceInfo": {
       "document": "设备信息结构体",
       "members": [
@@ -403,6 +611,132 @@
       ],
       "usage": "in"
     },
+    "DeviceNetInfo": {
+      "document": "设备网络状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网络类型：\n0:数据\n1:Wi-Fi\n2:有线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启用/禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DataEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上行限速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "string",
+          "name": "UploadLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下行限速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "string",
+          "name": "DownloadLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接收实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "DataRx",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发送实时速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "DataTx",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运营商类型：\n1: 中国移动；\n2: 中国电信; \n3: 中国联通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Vendor",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接状态：\n0:无连接\n1:连接中\n2:已连接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx.xxx.xxx.xx\"",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "信号强度/单位：dbm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-85",
+          "member": "int64",
+          "name": "SignalStrength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据网络类型：\n-1 ：无效值   \n2：2G \n3：3G \n4：4G \n5：5G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Rat",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "NetInfoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ExpectedThreshold": {
       "document": "用户期望门限",
       "members": [
@@ -438,6 +772,177 @@
         }
       ],
       "usage": "in"
+    },
+    "GetDeviceRequest": {
+      "document": "GetDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索指定设备的id",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceResponse": {
+      "document": "GetDevice返回参数结构体",
+      "members": [
+        {
+          "document": "设备详细信息",
+          "example": "无",
+          "member": "DeviceDetails",
+          "name": "DeviceDetails",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesRequest": {
+      "document": "GetDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索设备的关键字（ID或者设备名），为空时匹配所有设备",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicesResponse": {
+      "document": "GetDevices返回参数结构体",
+      "members": [
+        {
+          "document": "设备信息列表",
+          "example": "无",
+          "member": "DeviceBaseInfo",
+          "name": "DeviceInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备总记录条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticDataRequest": {
+      "document": "GetStatisticData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID，设备ID=\"-1\"获取所有设备流量统计",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间，单位：s",
+          "example": "1661212800",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间，单位：s",
+          "example": "1661587200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "聚合粒度：\n1:按小时统计\n2:按天统计",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticDataResponse": {
+      "document": "GetStatisticData返回参数结构体",
+      "members": [
+        {
+          "document": "文件地址url",
+          "example": "\"http://xxxx\"",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NetworkData": {
       "document": "测速数据",
@@ -514,6 +1019,116 @@
           "example": "1050:0:0:0:5:600:300c:326b",
           "member": "string",
           "name": "SrcIpv6",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateDeviceRequest": {
+      "document": "UpdateDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备id",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "\"dev\"",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备备注",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新设备网络信息",
+          "example": "无",
+          "member": "UpdateNetInfo",
+          "name": "UpdateNetInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceResponse": {
+      "document": "UpdateDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNetInfo": {
+      "document": "更新设备网络状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网络类型：\n0:数据\n1:Wi-Fi",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启用/禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "DataEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上行限速：bit",
+          "example": "10000",
+          "member": "uint64",
+          "name": "UploadLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下行限速：bit",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DownloadLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡名",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "NetInfoName",
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -2034,6 +2034,7 @@
         {
           "default": "",
           "document": "下载文件的URL",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -2043,6 +2044,7 @@
         {
           "default": "",
           "document": "下载文件的附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Option",
           "required": true,
@@ -2749,6 +2751,7 @@
         {
           "default": "",
           "document": "签署参与者ID",
+          "example": "无",
           "member": "string",
           "name": "RecipientId",
           "required": false,
@@ -2758,6 +2761,7 @@
         {
           "default": "",
           "document": "参与者类型（ENTERPRISE/INDIVIDUAL）",
+          "example": "无",
           "member": "string",
           "name": "RecipientType",
           "required": false,
@@ -2767,6 +2771,7 @@
         {
           "default": "",
           "document": "描述信息",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2776,6 +2781,7 @@
         {
           "default": "",
           "document": "角色名称",
+          "example": "无",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -2785,6 +2791,7 @@
         {
           "default": "",
           "document": "是否需要验证，默认为false",
+          "example": "无",
           "member": "bool",
           "name": "RequireValidation",
           "required": false,
@@ -2794,6 +2801,7 @@
         {
           "default": "",
           "document": "是否需要签署，默认为true",
+          "example": "无",
           "member": "bool",
           "name": "RequireSign",
           "required": false,
@@ -2803,6 +2811,7 @@
         {
           "default": "",
           "document": "添加序列",
+          "example": "无",
           "member": "int64",
           "name": "RoutingOrder",
           "required": false,
@@ -2812,6 +2821,7 @@
         {
           "default": "",
           "document": "是否需要发送，默认为true",
+          "example": "无",
           "member": "bool",
           "name": "RequireDelivery",
           "required": false,
@@ -2821,6 +2831,7 @@
         {
           "default": "",
           "document": "邮箱地址",
+          "example": "无",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -2830,6 +2841,7 @@
         {
           "default": "",
           "document": "电话号码",
+          "example": "无",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -2839,6 +2851,7 @@
         {
           "default": "",
           "document": "关联的用户ID",
+          "example": "无",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -2848,6 +2861,7 @@
         {
           "default": "",
           "document": "发送方式（EMAIL/MOBILE）",
+          "example": "无",
           "member": "string",
           "name": "DeliveryMethod",
           "required": false,
@@ -2857,6 +2871,7 @@
         {
           "default": "",
           "document": "附属信息",
+          "example": "无",
           "member": "string",
           "name": "RecipientExtra",
           "required": false,
@@ -3007,6 +3022,7 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "无",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -3016,6 +3032,7 @@
         {
           "default": "",
           "document": "模板名字",
+          "example": "无",
           "member": "string",
           "name": "TemplateName",
           "required": false,
@@ -3025,6 +3042,7 @@
         {
           "default": "",
           "document": "模板描述信息",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3034,6 +3052,7 @@
         {
           "default": "",
           "document": "模板关联的资源IDs",
+          "example": "无",
           "member": "string",
           "name": "DocumentResourceIds",
           "required": false,
@@ -3043,6 +3062,7 @@
         {
           "default": "",
           "document": "返回的文件信息结构",
+          "example": "无",
           "member": "FileInfo",
           "name": "FileInfos",
           "required": false,
@@ -3052,6 +3072,7 @@
         {
           "default": "",
           "document": "附件关联的资源ID是",
+          "example": "无",
           "member": "string",
           "name": "AttachmentResourceIds",
           "required": false,
@@ -3061,6 +3082,7 @@
         {
           "default": "",
           "document": "签署顺序",
+          "example": "无",
           "member": "int64",
           "name": "SignOrder",
           "required": false,
@@ -3070,6 +3092,7 @@
         {
           "default": "",
           "document": "签署参与者的信息",
+          "example": "无",
           "member": "Recipient",
           "name": "Recipients",
           "required": false,
@@ -3079,6 +3102,7 @@
         {
           "default": "",
           "document": "模板信息结构",
+          "example": "无",
           "member": "Component",
           "name": "Components",
           "required": false,
@@ -3088,6 +3112,7 @@
         {
           "default": "",
           "document": "签署区模板信息结构",
+          "example": "无",
           "member": "Component",
           "name": "SignComponents",
           "required": false,
@@ -3097,6 +3122,7 @@
         {
           "default": "",
           "document": "模板状态(-1:不可用；0:草稿态；1:正式态)",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -3106,6 +3132,7 @@
         {
           "default": "",
           "document": "模板的创建人",
+          "example": "无",
           "member": "string",
           "name": "Creator",
           "required": false,
@@ -3115,6 +3142,7 @@
         {
           "default": "",
           "document": "模板创建的时间戳（精确到秒）",
+          "example": "无",
           "member": "int64",
           "name": "CreatedOn",
           "required": false,
@@ -3124,6 +3152,7 @@
         {
           "default": "",
           "document": "发起人角色信息",
+          "example": "无",
           "member": "Recipient",
           "name": "Promoter",
           "required": false,

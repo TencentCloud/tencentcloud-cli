@@ -148,7 +148,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRWorkInfo\n<公共请求参数>\n\n{\n    \"WorkId\": 111\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorStatus\": 1,\n        \"IsProducer\": 0,\n        \"WorkName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"AuthStatus\": 1,\n        \"CommStatus\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EvidenceStatus\": 0,\n        \"MonitorStatus\": 1,\n        \"AuthorizationEndTime\": \"xx\",\n        \"Commission\": \"xx\",\n        \"AuthStatus\": 1,\n        \"Authorization\": \"xx\",\n        \"AuthorizationStartTime\": \"xx\",\n        \"IsOriginal\": \"xx\",\n        \"EvidenceStartTime\": \"xx\",\n        \"CommissionStartTime\": \"xx\",\n        \"EvidenceEndTime\": \"xx\",\n        \"IsRelease\": \"xx\",\n        \"WorkDesc\": \"xx\",\n        \"EvidenceUrl\": \"xx\",\n        \"ProduceTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ProducerName\": \"xx\",\n        \"IsProducer\": 0,\n        \"WhiteLists\": [\n            \"xx\"\n        ],\n        \"WorkName\": \"xx\",\n        \"CommissionEndTime\": \"xx\",\n        \"CommStatus\": 1,\n        \"WorkCategory\": \"xx\"\n    }\n}",
         "title": "查询作品基本信息"
       }
     ],

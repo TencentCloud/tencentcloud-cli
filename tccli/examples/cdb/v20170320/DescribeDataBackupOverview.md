@@ -19,6 +19,8 @@ Output:
         "DataBackupVolume": 5000,
         "ManualBackupCount": 2,
         "ManualBackupVolume": 2000,
+        "RemoteBackupVolume": 1000,
+        "RemoteBackupCount": 1,
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }

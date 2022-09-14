@@ -1941,6 +1941,159 @@
           "value_allowed_null": false
         },
         {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "EvidenceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsOriginal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsRelease",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProducerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WhiteLists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Authorization",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorizationEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "Commission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommissionStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CommissionEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

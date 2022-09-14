@@ -776,6 +776,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeTranscodeTaskNum": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeTaskNum\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-10-12 00:00:00\",\n    \"EndTime\": \"2020-10-12 00:10:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"CodeRate\": 2000,\n                \"Num\": 1,\n                \"Time\": \"2022-01-09 00:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeUploadStreamNums": [
       {
         "document": "",

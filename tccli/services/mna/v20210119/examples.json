@@ -1,11 +1,27 @@
 {
   "actions": {
+    "AddDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx\",\n    \"Remark\": \"xxx\",\n    \"DataKey\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"DeviceId\": \"xx\",\n        \"DataKey\": \"xxx\"\n    }\n}",
+        "title": "新建设备"
+      }
+    ],
     "CreateQos": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQos\n<公共请求参数>\n\n{\n    \"QosMenu\": \"T100K\",\n    \"Duration\": 30,\n    \"SrcAddressInfo\": {\n        \"SrcIpv4\": \"10.168.2.11\",\n        \"SrcPublicIpv4\": \"119.29.29.29\"\n    },\n    \"DestAddressInfo\": {\n        \"DestIp\": [\n            \"114.114.114.114\"\n        ]\n    },\n    \"TemplateId\": \"app-1abacedf\",\n    \"DeviceInfo\": {\n        \"OS\": 1,\n        \"Vendor\": 2,\n        \"DeviceId\": \"357315094232545\",\n        \"Wireless\": 1,\n        \"PhoneNum\": \"12847584945\"\n    },\n    \"Capacity\": {\n        \"CTCCToken\": \"177cc9c4ab0-7b93546\",\n        \"Province\": \"广东省\"\n    },\n    \"Protocol\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Duration\": 1790\n    }\n}",
         "title": "移动网络发起加速"
+      }
+    ],
+    "DeleteDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除设备接口"
       }
     ],
     "DeleteQos": [
@@ -22,6 +38,38 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQos\n<公共请求参数>\n\n{\n    \"SessionId\": \"abcdefg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"SrcPublicIpv4\": \"114.114.114.114\",\n        \"DestIpv4\": [\n            \"8.8.8.8\",\n            \"8.8.8.9\"\n        ],\n        \"Duration\": 1790,\n        \"QosMenu\": \"T100K\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取Qos加速状态"
+      }
+    ],
+    "GetDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceDetails\": {\n            \"DeviceBaseInfo\": {\n                \"DeviceName\": \"dev\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": \"1\",\n                \"CreateTime\": \"1\"\n            },\n            \"DeviceNetInfo\": [\n                {\n                    \"SignalStrength\": -85,\n                    \"Vendor\": 1,\n                    \"DataTx\": 10,\n                    \"UploadLimit\": 100,\n                    \"DownloadLimit\": 100,\n                    \"Rat\": 2,\n                    \"PublicIp\": \"xxx.xxx.xxx.xx\",\n                    \"State\": 0,\n                    \"DataRx\": 10,\n                    \"DataEnable\": true,\n                    \"Type\": 0,\n                    \"NetInfoName\": \"xx\"\n                },\n                {\n                    \"SignalStrength\": -90,\n                    \"Vendor\": 1,\n                    \"DataTx\": 10,\n                    \"UploadLimit\": 100,\n                    \"DownloadLimit\": 100,\n                    \"Rat\": 2,\n                    \"PublicIp\": \"xxx.xxx.xxx.xx\",\n                    \"State\": 0,\n                    \"DataRx\": 10,\n                    \"DataEnable\": true,\n                    \"Type\": 1,\n                    \"NetInfoName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取指定id设备信息"
+      }
+    ],
+    "GetDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"mna-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"DeviceName\": \"dev\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": 1,\n                \"CreateTime\": 1\n            },\n            {\n                \"DeviceName\": \"dev1\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"Length\": 10,\n        \"TotalPage\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取设备基本信息列表"
+      }
+    ],
+    "GetStatisticData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStatisticData\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"DeviceId\": \"xx\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FilePath\": \"http://geekyang-cos-1257943044.cos-internal.ap-guangzhou.tencentcos.cn/test/175527768616861696.xlsx\"\n    }\n}",
+        "title": "获取指定id的设备流量用量统计文件"
+      }
+    ],
+    "UpdateDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"Remark\": \"xx\",\n    \"DeviceId\": \"mna-xxx\",\n    \"UpdateNetInfo\": [\n        {\n            \"DownloadLimit\": 100,\n            \"UploadLimit\": 100,\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"NetInfoName\": \"xx\"\n        },\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"NetInfoName\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a400ac72-8f93-4340-a862-f74b56942703\"\n    }\n}",
+        "title": "更新设备"
       }
     ]
   },

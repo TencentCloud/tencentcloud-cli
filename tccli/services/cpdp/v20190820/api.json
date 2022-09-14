@@ -3883,7 +3883,7 @@
       "members": [
         {
           "default": "",
-          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING“签约中",
+          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING：签约中",
           "example": "SUCCESS",
           "member": "string",
           "name": "SignStatus",
@@ -29481,7 +29481,7 @@
       "members": [
         {
           "default": "",
-          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING“签约中",
+          "document": "处理状态\n  SUCCESS：签约成功\n  FAILED：签约失败\n  PROCESSING：签约中",
           "example": "SUCCESS",
           "member": "string",
           "name": "SignStatus",
