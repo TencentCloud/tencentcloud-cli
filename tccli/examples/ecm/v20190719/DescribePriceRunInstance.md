@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ecm DescribePriceRunInstance --cli-unfold-argument  \
-    --InstanceType "SN3ne.LARGE8" \
-    --InstanceCount 2 \
-    --SystemDisk.DiskType "234" \
+    --SystemDisk.DiskSize 50 \
     --SystemDisk.DiskId "123" \
-    --SystemDisk.DiskSize 50
+    --SystemDisk.DiskType "234" \
+    --InstanceCount 2 \
+    --InstanceType "SN3ne.LARGE8"
 ```
 
 Output: 

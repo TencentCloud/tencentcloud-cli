@@ -713,6 +713,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "拨测点编码",
+          "example": "[10001]",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"

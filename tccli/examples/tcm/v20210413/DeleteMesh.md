@@ -6,7 +6,11 @@ Input:
 
 ```
 tccli tcm DeleteMesh --cli-unfold-argument  \
-    --MeshId xx
+    --MeshId xx \
+    --NeedDeleteCLS false \
+    --NeedDeleteTMP false \
+    --NeedDeleteAPM false \
+    --NeedDeleteGrafana false
 ```
 
 Output: 

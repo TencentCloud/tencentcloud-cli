@@ -555,7 +555,7 @@
     "DescribePriceRunInstance": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=DescribePriceRunInstance\n&InstanceType=\"SN3ne.LARGE8\"\n&InstanceCount=2\n&SystemDisk.DiskType=\"234\"\n&SystemDisk.DiskId=\"123\"\n&SystemDisk.DiskSize=50\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePriceRunInstance\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskId\": \"\\\"123\\\"\",\n        \"DiskType\": \"\\\"234\\\"\"\n    },\n    \"InstanceCount\": \"2\",\n    \"InstanceType\": \"\\\"SN3ne.LARGE8\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"testreq.1634816636\",\n        \"InstancePrice\": {\n            \"InstancePricesPartDetail\": {\n                \"DisksPrice\": {\n                    \"OriginalPrice\": 116,\n                    \"DiscountPrice\": 75,\n                    \"Discount\": 64\n                },\n                \"MemPrice\": {\n                    \"OriginalPrice\": 8106,\n                    \"DiscountPrice\": 5269,\n                    \"Discount\": 65\n                },\n                \"CpuPrice\": {\n                    \"OriginalPrice\": 12800,\n                    \"DiscountPrice\": 8320,\n                    \"Discount\": 65\n                }\n            },\n            \"OriginalPrice\": 21023,\n            \"DiscountPrice\": 13665,\n            \"Discount\": 65\n        }\n    }\n}",
         "title": "查询实例价格"
       }

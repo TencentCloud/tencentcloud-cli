@@ -100,6 +100,14 @@
         "title": "用于从指定 VPC 中申请一个可用 IP"
       }
     ],
+    "ApplyIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyIpv6Internal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"IpType\": \"41\",\n    \"SubnetAddress\": \"2402:4e00:20:111::\",\n    \"Owner\": \"2323232\",\n    \"Address\": \"2402:4e00:20:111:0:8cce:1556:ccb9\",\n    \"SubnetId\": \"1\",\n    \"SubnetIntPrefix\": \"64\",\n    \"UniqueVpcId\": \"vpc-xxx\",\n    \"UniqueSubnetId\": \"subnet-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MappedMarkerId\": \"58.0.0.2\",\n        \"VpcId\": 79996,\n        \"IpType\": 41,\n        \"UniqueVpcId\": \"vpc-r9u93oo3\",\n        \"VpcIntPrefix\": 56,\n        \"PublicIpFlag\": 0,\n        \"SubnetAddress\": \"2402:4e00:1001:2f05::\",\n        \"Flag\": 1,\n        \"UniqueSubnetId\": \"subnet-9txzarp8\",\n        \"VpcAddress\": \"2402:4e00:1001:2f00::\",\n        \"Address\": \"2402:4e00:1001:2f05:0:96a8:110d:3589\",\n        \"SubnetId\": 1995599,\n        \"SubnetIntPrefix\": 64,\n        \"CreateTime\": \"2022-06-29 14:57:27\",\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于申请IPv6地址"
+      }
+    ],
     "AssignIpv6Addresses": [
       {
         "document": "",
@@ -133,7 +141,7 @@
     "AssignPrivateIpAddresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssignPrivateIpAddresses\n&NetworkInterfaceId=eni-afo43z61\n&SecondaryPrivateIpAddressCount=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignPrivateIpAddresses\n<公共请求参数>\n\n{\n    \"NetworkInterfaceId\": \"eni-afo43z61\",\n    \"SecondaryPrivateIpAddressCount\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"PrivateIpAddressSet\": [\n            {\n                \"PrivateIpAddress\": \"172.16.32.237\"\n            },\n            {\n                \"PrivateIpAddress\": \"172.16.32.84\"\n            }\n        ],\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡申请内网 IP"
       }
@@ -237,14 +245,14 @@
     "CheckAssistantCidr": [
       {
         "document": "CIDR与VPC现存信息不存在冲突。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [],\n        \"RequestId\": \"e906fed4-292c-44ba-a240-f5bde9fd84c7\"\n    }\n}",
         "title": "检查辅助CIDR冲突-2"
       },
       {
         "document": "CIDR与VPC现存信息存在冲突。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpc-12345678\",\n                \"SourceItem\": \"172.16.0.0/24\",\n                \"ConflictItemSet\": [\n                    {\n                        \"DestinationItem\": \"172.16.0.0/16\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6e57b8db-4307-4135-b513-8c3d0e12aa4e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpc-xxx\",\n                \"SourceItem\": \"xxx\",\n                \"ConflictItemSet\": [\n                    {\n                        \"ConfilctId\": \"xxx\",\n                        \"DestinationItem\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "检查辅助CIDR冲突"
       }
     ],
@@ -254,6 +262,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=CheckDefaultSubnet\r\n&Zone=ap-guangzhou-1\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true\n    }\n}",
         "title": "预判是否可建默认子网"
+      }
+    ],
+    "CheckIpInSubnetInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIpInSubnetInternal\n<公共请求参数>\n\n{\n    \"SubnetId\": \"123123\",\n    \"Ip\": [\n        \"2.2.2.2\",\n        \"1.1.1.1\"\n    ],\n    \"UniqueSubnetId\": \"subnet-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckIpInSubnetResult\": [\n            {\n                \"Ip\": \"10.4.128.0\",\n                \"CheckCode\": 302\n            },\n            {\n                \"Ip\": \"10.4.127.0\",\n                \"CheckCode\": 301\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于检查某个IP是否在子网里面"
       }
     ],
     "CheckNetDetectState": [
@@ -292,6 +308,14 @@
         "title": "克隆安全组，指定项目ID"
       }
     ],
+    "CreateAddrToSvcInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAddrToSvcInternal\n<公共请求参数>\n\n{\n    \"AddAddrToSvcRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Vip\": \"12.2.2.3\",\n            \"VpcId\": \"1200\",\n            \"Protocol\": \"0\",\n            \"VirtualPort\": \"3600\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddAddrToSvcResult\": [\n            {\n                \"SvcId\": \"78202_12.2.2.3_3600_0\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "SVC新增地址"
+      }
+    ],
     "CreateAddressTemplate": [
       {
         "document": "",
@@ -311,15 +335,15 @@
     "CreateAndAttachNetworkInterface": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAndAttachNetworkInterface\n&VpcId=vpc-0akbol5v\n&SubnetId=subnet-76r802pg\n&NetworkInterfaceName=TestNIC\n&NetworkInterfaceDescription=TestDesc\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.64.13\n&PrivateIpAddresses.0.Primary=true\n&SecondaryPrivateIpAddressCount=1\n&SecurityGroupIds.0=sg-05bb4upy\n&InstanceId=ins-12345678\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndAttachNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"InstanceId\": \"ins-12345678\",\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"SubNetworkInterfaces\": [],\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡并绑定云服务器"
       }
     ],
     "CreateAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAssistantCidr\n&VpcId=vpc-12345678\n&CidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"CidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "创建辅助CIDR"
       }
@@ -338,6 +362,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcn\n<公共请求参数>\n\n{\n    \"CcnDescription\": \"test+description\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"CcnName\": \"test+name\",\n    \"QosLevel\": \"PT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ccn\": {\n            \"CcnId\": \"ccn-gjug0kul\",\n            \"CcnName\": \"test name\",\n            \"RoutePriorityFlag\": false,\n            \"CcnDescription\": \"test description\",\n            \"InstanceCount\": 0,\n            \"QosLevel\": \"PT\",\n            \"State\": 1,\n            \"InstanceChargeType\": \"POSTPAID\",\n            \"BandwidthLimitType\": \"OUTER_REGION_LIMIT\",\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RouteTableFlag\": null,\n            \"RouteTableCount\": null,\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个CCN"
+      }
+    ],
+    "CreateCdcInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateCdcInternal\n&CdcRequestSet.0.Owner=123456\n&CdcRequestSet.0.UniqCdcSiteId=vpc-xxxxxxxx\n&CdcRequestSet.0.UniqCdcId=10.0.0.0\n&CdcRequestSet.0.NetType=2\n&CdcRequestSet.0.ZoneId=16\n&CdcRequestSet.0.Description=desc\n&CdcRequestSet.0.DataPlaneVpngwBandwidth=100\n&CdcRequestSet.0.CdcDataPlaneVpngwBandwidth=100\n&CdcRequestSet.0.ControlVpngwBandwidth=100\n&CdcRequestSet.0.OobVpngwBandwidth=100\n&CdcRequestSet.0.CdcIdcVip=10.0.0.0\n&CdcRequestSet.0.CdcDcVip=10.0.0.0\n&CdcRequestSet.0.CdcLocalWanVip=10.0.0.0\n&CdcRequestSet.0.CdcLocalWanSnatCidr=10.0.0.0\n&CdcRequestSet.0.CdcVpngwVlan=3\n&CdcRequestSet.0.CdcNormalVlan=4\n&CdcRequestSet.0.CdcVpngwConnConf=ssss\n&CdcRequestSet.0.CdcNormalConnConf=ssss\n&CdcRequestSet.0.CdcControlVpngwVip=10.0.0.0\n&CdcRequestSet.0.CdcOobVpngwVip=10.0.0.0\n&CdcRequestSet.0.CdcControlCidr=10.0.0.0\n&CdcRequestSet.0.CdcOobCidr=10.0.0.0\n&CdcRequestSet.0.CdcControlVpngwAddress=10.0.0.0\n&CdcRequestSet.0.CdcOobVpngwAddress=10.0.0.0\n&CdcRequestSet.0.CdcP4gwAddress=10.0.0.0\n&CdcRequestSet.0.CdcHostAddress=10.0.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CdcSet\": [\n            {\n                \"OobVpngwBandwidth\": 1000,\n                \"ControlVpngwBandwidth\": 1000,\n                \"Description\": \"\",\n                \"OobVpcId\": 80566,\n                \"UniqueCdcId\": \"cdc-aisoqjsi\",\n                \"ProxyGroup\": [\n                    {},\n                    {}\n                ],\n                \"ZoneId\": 800005,\n                \"UniqCdcSiteId\": \"cdcsite-8e0ypm3z\",\n                \"UniqControlVpcId\": \"vpc-obqs41yl\",\n                \"CdcId\": 81,\n                \"NetType\": 0,\n                \"Owner\": \"251197522\",\n                \"UniqOobVpcId\": \"vpc-2uiynkpt\",\n                \"ControlVpcId\": 80505,\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "创建cdc实体"
       }
     ],
     "CreateCustomerGateway": [
@@ -379,7 +411,7 @@
     "CreateDhcpIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDhcpIp\n&VpcId=vpc-12345678\n&SubnetId=subnet-12345678\n&DhcpIpName=test\n&SecondaryPrivateIpAddressCount=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDhcpIp\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-12345678\",\n    \"VpcId\": \"vpc-12345678\",\n    \"DhcpIpName\": \"test\",\n    \"SecondaryPrivateIpAddressCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "创建DhcpIp"
       }
@@ -412,6 +444,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDockerInternal\n&DockerRequestSet.0.VpcId=1\n&DockerRequestSet.0.Subnet=10.0.0.0\n&DockerRequestSet.0.IntMask=16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "添加DOCKER"
+      }
+    ],
+    "CreateEndPointInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndPointInternal\n<公共请求参数>\n\n{\n    \"AddEndPointSet\": [\n        {\n            \"ServiceType\": \"1\",\n            \"VpcId\": \"1\",\n            \"Name\": \"test\",\n            \"ServiceVip\": \"1.1.1.1\",\n            \"Owner\": \"123123\",\n            \"SubnetId\": \"123123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddEndPointResult\": [\n            {\n                \"ServiceVpcId\": 0,\n                \"UniqueServiceVpcId\": \"vpc_0\",\n                \"VpcId\": 16769060,\n                \"Name\": \"testt\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Vip\": \"10.0.0.4\",\n                \"ServiceType\": 1,\n                \"Owner\": \"251197522\",\n                \"ServiceVip\": \"10.0.0.17\",\n                \"State\": 0,\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"UniqueEndPointId\": \"vpce-d2cthiv2\",\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"EndPointId\": 1141,\n                \"SubnetId\": 2007467,\n                \"UniqueEndPointServiceId\": \"\",\n                \"EndPointServiceId\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加endpoint"
       }
     ],
     "CreateEniLimitInternal": [
@@ -454,12 +494,44 @@
         "title": "创建IPV6转换实例"
       }
     ],
+    "CreateLbBypassVipInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLbBypassVipInternal\n<公共请求参数>\n\n{\n    \"AddLbBypassVipSet\": [\n        {\n            \"Owner\": \"123456\",\n            \"Vip\": \"10.19.165.3\",\n            \"VpcId\": \"1\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于添加安全组自动放通的VIP"
+      }
+    ],
+    "CreateLbNatInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLbNatInternal\n<公共请求参数>\n\n{\n    \"AddLbNatSet\": [\n        {\n            \"Owner\": \"251197522\",\n            \"LbVip\": \"1.1.1.1\",\n            \"VpcId\": \"16769060\",\n            \"Name\": \"test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddLbNatResult\": [\n            {\n                \"VpcId\": 16769060,\n                \"Name\": \"test\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"UniqueLbNatId\": \"lbnat-j6xkxsqc\",\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"VpcOwnerLevel\": -1,\n                \"OwnerLevel\": -1,\n                \"Owner\": \"251197522\",\n                \"GatewayIp\": \"9.198.109.113\",\n                \"LbVip\": \"1.1.1.1\",\n                \"LbNatId\": 515,\n                \"GroupId\": 0\n            }\n        ],\n        \"RequestId\": \"fb04215d-c669-48cb-a5f7-363b2063af02\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "CreateLbNatSnatInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLbNatSnatInternal\n<公共请求参数>\n\n{\n    \"AddLbNatSnatSet\": [\n        {\n            \"Owner\": \"251197522\",\n            \"LbNatId\": \"510\",\n            \"VpcId\": \"16769060\",\n            \"SnatIp\": \"10.0.0.17\",\n            \"UniqueSubnetId\": \"subnet-1ufvulum\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddLbNatSnatResult\": [\n            {\n                \"Subnet\": \"10.0.0.0\",\n                \"VpcId\": 16769060,\n                \"IntMask\": 24,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"UniqueLbNatId\": \"lbnat-1bymwtjo\",\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"SubnetId\": 2007467,\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"SnatIp\": \"10.0.0.17\",\n                \"Owner\": \"251197522\",\n                \"GatewayIp\": \"9.198.109.113\",\n                \"LbVip\": \"10.0.123.11\",\n                \"LbNatId\": 510,\n                \"GroupId\": 0,\n                \"SameFlag\": 0\n            }\n        ],\n        \"RequestId\": \"bd4b1d98-da0e-4a6f-90b3-08ecc789b2a9\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CreateLocalGateway": [
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateLocalGateway\n&CdcId=cluster-1234dert\n&VpcId=vpc-m0c2kcun\n&LocalGatewayName=TEST\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LocalGateway\": {\n            \"CdcId\": \"cluster-1234dert\",\n            \"VpcId\": \"vpc-m0c2kcun\",\n            \"UniqLocalGwId\": \"lgw-1234edfr\",\n            \"LocalGatewayName\": \"TEST\",\n            \"LocalGwIp\": \"10.0.0.0\",\n            \"CreateTime\": \"2021-03-24 15:31:56\"\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "创建本地网关"
+      }
+    ],
+    "CreateMonitorInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitorInternal\n<公共请求参数>\n\n{\n    \"AddMonitorSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"ActiveFlag\": \"0\",\n            \"Ip\": \"10.6.2.3\",\n            \"Interval\": \"3\",\n            \"Port\": \"8181\",\n            \"BadLimit\": \"3\",\n            \"Timeout\": \"3\",\n            \"GroupId\": \"1\",\n            \"GoodLimit\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加监控信息"
       }
     ],
     "CreateNatGateway": [
@@ -521,7 +593,7 @@
     "CreateNetworkInterface": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNetworkInterface\n&VpcId=vpc-0akbol5v\n&SubnetId=subnet-76r802pg\n&NetworkInterfaceName=TestNIC\n&NetworkInterfaceDescription=TestDesc\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.64.13\n&PrivateIpAddresses.0.Primary=true\n&SecondaryPrivateIpAddressCount=1\n&SecurityGroupIds.0=sg-05bb4upy\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"xx\",\n            \"CdcId\": \"xx\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"Attachment\": null,\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡"
       }
@@ -556,6 +628,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateRoutes\n&RouteTableId=rtb-n0yejvje\n&Routes.0.DestinationCidrBlock=192.168.0.0/16\n&Routes.0.GatewayType=NORMAL_CVM\n&Routes.0.GatewayId=172.16.16.37\n&Routes.0.RouteDescription=TEST-CVM-ROUTE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RouteTableSet\": [\n            {\n                \"RouteSet\": [\n                    {\n                        \"CreatedTime\": \"2020-09-22 00:00:00\",\n                        \"DestinationCidrBlock\": \"10.0.0.0/24\",\n                        \"RouteTableId\": \"rtb-1234derf\",\n                        \"RouteItemId\": \"xx\",\n                        \"RouteDescription\": \"erty\",\n                        \"Enabled\": true,\n                        \"RouteId\": 1,\n                        \"GatewayType\": \"xx\",\n                        \"PublishedToVbc\": true,\n                        \"GatewayId\": \"xx\",\n                        \"DestinationIpv6CidrBlock\": \"xx\",\n                        \"RouteType\": \"xx\"\n                    }\n                ],\n                \"RouteTableId\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"RouteTableName\": \"xx\",\n                \"TagSet\": [\n                    {\n                        \"Value\": \"test\",\n                        \"Key\": \"ee\"\n                    }\n                ],\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"AssociationSet\": [\n                    {\n                        \"SubnetId\": \"xx\",\n                        \"RouteTableId\": \"xx\"\n                    }\n                ],\n                \"Main\": false,\n                \"LocalCidrForCcn\": [\n                    {\n                        \"Cidr\": \"10.0.0.0/16\",\n                        \"PublishedToVbc\": true\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建路由规则"
+      }
+    ],
+    "CreateRtDetectInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRtDetectInternal\n<公共请求参数>\n\n{\n    \"AddRtDetectSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"Ip\": \"10.6.2.3\",\n            \"Interval\": \"3\",\n            \"Port\": \"8181\",\n            \"Sample\": \"0\",\n            \"Timeout\": \"3\",\n            \"Type\": \"1\",\n            \"GroupId\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddRtDetectResult\": [\n            {\n                \"GroupId\": 0,\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Protocol\": \"tcp\",\n                \"Ip\": \"10.0.0.2\",\n                \"Interval\": 3,\n                \"Sample\": 0,\n                \"ReturnCode\": 1,\n                \"ReturnMsg\": \"success\",\n                \"Timeout\": 3,\n                \"Res\": [\n                    {\n                        \"Ip\": \"1.1.1.1\",\n                        \"Delay\": 0,\n                        \"State\": 0,\n                        \"VpcGateway\": \"1.1.1.1\"\n                    }\n                ],\n                \"VpcGatewayInstance\": [\n                    \"9.170.232.10\"\n                ],\n                \"Port\": 80\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加实时探测"
       }
     ],
     "CreateSecurityGroup": [
@@ -596,6 +676,14 @@
         "title": "用于添加vpc内的服务"
       }
     ],
+    "CreateServiceIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceIpv6Internal\n<公共请求参数>\n\n{\n    \"AddServiceIpv6Set\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"Route\": [\n                {\n                    \"Weight\": \"1\",\n                    \"RemoteVpcId\": \"1\",\n                    \"ZoneId\": \"100002\",\n                    \"HostIp\": \"1.1.1.1\",\n                    \"ProtocolPort\": \"80\",\n                    \"PrivateIp\": \"1.1.1.1\"\n                }\n            ],\n            \"RstFlag\": \"1\",\n            \"Vip\": \"10.6.2.3\",\n            \"VirtualPort\": \"80\",\n            \"StickyMaxCount\": \"100\",\n            \"UniqueVpcId\": \"vpc-asdasd\",\n            \"StickyFlag\": \"1\",\n            \"StickyTimeout\": \"30\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加ServiceIPv6"
+      }
+    ],
     "CreateServiceTemplate": [
       {
         "document": "",
@@ -628,10 +716,50 @@
         "title": "批量创建子网"
       }
     ],
+    "CreateSvcToUsgInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSvcToUsgInternal\n<公共请求参数>\n\n{\n    \"AddSvcToUsgRequest\": [\n        {\n            \"VpcId\": \"1200\",\n            \"Protocol\": \"0\",\n            \"UsgIdList\": [\n                \"sg-asdqkq\"\n            ],\n            \"UniqCdcId\": \"cdc-aosq293w\",\n            \"SvcId\": \"123123\",\n            \"VirtualPort\": \"3600\",\n            \"Vip\": \"12.2.2.3\",\n            \"Location\": \"tgw\",\n            \"AppId\": \"123122\",\n            \"Type\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddSvcToUsgResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "SVC新建规则"
+      }
+    ],
+    "CreateUSGInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUSGInternal\n<公共请求参数>\n\n{\n    \"CreateUSGRequest\": [\n        {\n            \"ProjectId\": \"123\",\n            \"UsgRemark\": \"remark\",\n            \"Sys\": \"1\",\n            \"UsgName\": \"test\",\n            \"SgId\": \"123123\",\n            \"Os\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateUSGResult\": [\n            {\n                \"SgId\": \"251197522\",\n                \"UsgId\": \"sg-ispsj3ah\",\n                \"UsgName\": \"test_sdk\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "新建USG"
+      }
+    ],
+    "CreateUSGRuleInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUSGRuleInternal\n<公共请求参数>\n\n{\n    \"InsertUSGRuleRequest\": [\n        {\n            \"UsgId\": \"123123\",\n            \"Direction\": \"inbound\",\n            \"Version\": \"12\",\n            \"Policies\": [\n                {\n                    \"Protocol\": \"tcp\",\n                    \"Ip\": \"10.0.0.0/8\",\n                    \"Id\": \"sg-e5qrs5d9\",\n                    \"ServiceModule\": \"ppm-ni1v9ozg\",\n                    \"AddressModule\": \"ipmg-liaueln6\",\n                    \"Action\": \"ACCEPT\",\n                    \"Port\": \"80\",\n                    \"Desc\": \"test\"\n                }\n            ],\n            \"Index\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InsertUSGRuleResult\": [\n            {\n                \"UsgId\": \"sg-dn7qcw21\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "USG插入规则"
+      }
+    ],
+    "CreateUpdateMonitorInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUpdateMonitorInternal\n<公共请求参数>\n\n{\n    \"AddUpdateMonitorSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"ActiveFlag\": \"0\",\n            \"Ip\": \"10.6.2.3\",\n            \"Interval\": \"3\",\n            \"Port\": \"8181\",\n            \"BadLimit\": \"3\",\n            \"Timeout\": \"3\",\n            \"GroupId\": \"1\",\n            \"GoodLimit\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加更新监控信息"
+      }
+    ],
+    "CreateVipTgwAndInstanceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVipTgwAndInstanceInternal\n<公共请求参数>\n\n{\n    \"AddVipTgwAndInstanceSet\": [\n        {\n            \"Instance\": [\n                {\n                    \"TsvIp\": \"1.1.1.1\",\n                    \"ZoneId\": \"100001\"\n                }\n            ],\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加VIP的TGW以及实例"
+      }
+    ],
     "CreateVpc": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpc\n&VpcName=TestVPC\n&CidrBlock=10.8.0.0/16\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpc\n<公共请求参数>\n\n{\n    \"VpcName\": \"TestVPC\",\n    \"CidrBlock\": \"10.8.0.0/16\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-4tboefn3\",\n            \"VpcName\": \"TestVPC\",\n            \"CidrBlock\": \"10.8.0.0/16\",\n            \"Ipv6CidrBlock\": \"\",\n            \"IsDefault\": false,\n            \"EnableMulticast\": false,\n            \"EnableRouteVpcPublish\": false,\n            \"CreatedTime\": \"2020-09-24 15:57:39\",\n            \"EnableDhcp\": true,\n            \"DhcpOptionsId\": \"dopt-5f5lzouo\",\n            \"DnsServerSet\": [\n                \"183.60.82.98\",\n                \"183.60.83.1\"\n            ],\n            \"DomainName\": \"\",\n            \"TagSet\": [],\n            \"AssistantCidrSet\": [\n                {\n                    \"CidrBlock\": \"172.16.0.0/16\",\n                    \"AssistantType\": 0,\n                    \"SubnetSet\": []\n                }\n            ]\n        },\n        \"RequestId\": \"680f4013-31a3-440a-bc09-fd9348a90900\"\n    }\n}",
         "title": "创建VPC"
       }
@@ -639,7 +767,7 @@
     "CreateVpcEndPoint": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpcEndPoint\n&VpcId=vpc-coekkqtd\n&SubnetId=subnet-4t7fr3fi\n&EndPointName=point_002\n&EndPointServiceId=vpcsvc-kngiybxl\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcEndPoint\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4t7fr3fi\",\n    \"EndPointName\": \"point_002\",\n    \"VpcId\": \"vpc-coekkqtd\",\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
         "output": "{\n    \"Response\": {\n        \"EndPoint\": {\n            \"ServiceVpcId\": \"vpc-hj3he929\",\n            \"VpcId\": \"vpc-coekkqtd\",\n            \"State\": \"PENDING\",\n            \"ServiceVip\": \"10.101.1.11\",\n            \"EndPointName\": \"point_002\",\n            \"GroupSet\": [],\n            \"EndPointOwner\": \"1302384414\",\n            \"EndPointId\": \"vpce-h0fk8lfc\",\n            \"SubnetId\": \"subnet-4t7fr3fi\",\n            \"CreateTime\": \"0000-00-00 00:00:00\",\n            \"EndPointServiceId\": \"vpcsvc-kngiybxl\",\n            \"EndPointVip\": \"10.0.0.8\",\n            \"ServiceName\": \"服务\"\n        },\n        \"RequestId\": \"fefb383a-7394-46c9-ba34-6b21e8fb3ac1\"\n    }\n}",
         "title": "创建终端节点"
       }
@@ -700,6 +828,36 @@
         "title": "创建SSL-VPN-SERVER"
       }
     ],
+    "CreateWanIpPropertyInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWanIpPropertyInternal\n<公共请求参数>\n\n{\n    \"AddWanIpPropertySet\": [\n        {\n            \"WanIp\": \"1.1.1.1\",\n            \"VpcId\": \"1\",\n            \"Type\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加外网属性"
+      }
+    ],
+    "CreateWanServiceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWanServiceInternal\n<公共请求参数>\n\n{\n    \"AddWanServiceSet\": [\n        {\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"GroupId\": \"1\",\n            \"VirtualPort\": \"8181\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddWanServiceResult\": [\n            {\n                \"Vip\": \"10.133.192.110\",\n                \"VpcId\": 1,\n                \"UniqueVpcId\": \"vpc-5k6fot41\",\n                \"Protocol\": \"tcp\",\n                \"VirtualPort\": 81,\n                \"VpcGatewayIp\": \"9.30.232.100\",\n                \"Type\": 1,\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加外网服务"
+      }
+    ],
+    "DeleteAddrFromSvcInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddrFromSvcInternal\n<公共请求参数>\n\n{\n    \"DelAddrFromSvcRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Vip\": \"12.2.2.3\",\n            \"VpcId\": \"1200\",\n            \"Protocol\": \"0\",\n            \"VirtualPort\": \"3600\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelAddrFromSvcResult\": [\n            {\n                \"SvcId\": \"78202_12.2.2.3_3600_0\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "SVC删除地址"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddrFromSvcInternal\n<公共请求参数>\n\n{\n    \"DelAddrFromSvcRequest\": [\n        {\n            \"SvcId\": \"vpce-kifyia9o\",\n            \"Vip\": \"12.2.2.3\",\n            \"VpcId\": \"78202\",\n            \"Protocol\": \"0\",\n            \"VirtualPort\": \"3600\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelAddrFromSvcResult\": [\n            {\n                \"SvcId\": \"78202_12.2.2.3_3600_0\",\n                \"ErrorCode\": 514,\n                \"ErrorInfo\": \"Svc does't exist.\"\n            }\n        ],\n        \"ReturnCode\": 514,\n        \"RequestId\": \"d025f464-d089-402e-afd8-12d0c9444d1c\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DeleteAddressTemplate": [
       {
         "document": "",
@@ -719,7 +877,7 @@
     "DeleteAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteAssistantCidr\n&VpcId=vpc-12345678\n&CidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"CidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2fd3d9b3-42cb-4d80-9e19-d97e978df80b\"\n    }\n}",
         "title": "删除辅助CIDR"
       }
@@ -772,6 +930,20 @@
         "title": "删除专线网关云联网路由"
       }
     ],
+    "DeleteDockerInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDockerInternal\n<公共请求参数>\n\n{\n    \"DockerRequestSet\": [\n        {\n            \"IntMask\": \"16\",\n            \"Subnet\": \"10.0.0.0\",\n            \"VpcId\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除DOCKER"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDockerInternal\n<公共请求参数>\n\n{\n    \"DockerRequestSet\": [\n        {\n            \"IntMask\": \"16\",\n            \"Subnet\": \"10.0.0.10\",\n            \"UniqueVpcId\": \"vpc-7zayowkt\",\n            \"VpcId\": \"16769060\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35b3feac-c2d9-4d27-b394-26ce72c4bfd7\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DeleteEniLimitInternal": [
       {
         "document": "",
@@ -812,12 +984,44 @@
         "title": "释放IPV6转换实例"
       }
     ],
+    "DeleteLbBypassVipInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLbBypassVipInternal\n<公共请求参数>\n\n{\n    \"DelLbBypassVipSet\": [\n        {\n            \"Owner\": \"123456\",\n            \"Vip\": \"10.19.165.3\",\n            \"VpcId\": \"1\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于删除安全组自动放通的VIP"
+      }
+    ],
+    "DeleteLbNatInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLbNatInternal\n<公共请求参数>\n\n{\n    \"DelLbNatSet\": [\n        {\n            \"Owner\": \"251197522\",\n            \"LbNatId\": \"514\",\n            \"UniqueLbNatId\": \"lbnat-9d8ubjkq\",\n            \"VpcId\": \"16769060\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelLbNatResult\": [\n            {\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"GwRelayFlag\": 0,\n                \"UniqueLbNatId\": \"lbnat-9d8ubjkq\",\n                \"ToaFlag\": 1,\n                \"Owner\": \"251197522\",\n                \"GatewayIp\": \"9.198.109.113\",\n                \"GroupId\": 0,\n                \"Name\": \"test\",\n                \"CreateTime\": \"2022-09-06 15:35:19\",\n                \"ZoneId\": 0,\n                \"AutoLearningFlag\": 0,\n                \"State\": 0,\n                \"VpcOwnerLevel\": -1,\n                \"OwnerLevel\": -1,\n                \"LbVip\": \"1.1.1.1\",\n                \"LbNatId\": 514\n            }\n        ],\n        \"RequestId\": \"9c2c86da-9b06-4ff2-bd9d-e43d667a702d\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DeleteLbNatSnatInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLbNatSnatInternal\n<公共请求参数>\n\n{\n    \"DelLbNatSnatSet\": [\n        {\n            \"SubnetId\": \"2007467\",\n            \"Owner\": \"251197522\",\n            \"VpcId\": \"16769060\",\n            \"SnatIp\": \"10.0.0.17\",\n            \"LbNatId\": \"510\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelLbNatSnatResult\": [\n            {\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"UniqueLbNatId\": \"lbnat-1bymwtjo\",\n                \"SubnetId\": 2007467,\n                \"SnatIp\": \"10.0.0.17\",\n                \"Owner\": \"251197522\",\n                \"GatewayIp\": \"9.198.109.113\",\n                \"LbVip\": \"10.0.123.11\",\n                \"LbNatId\": 510,\n                \"GroupId\": 0\n            }\n        ],\n        \"RequestId\": \"e905e482-424f-4340-9513-3d8ce064529e\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DeleteLocalGateway": [
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteLocalGateway\n&CdcId=cluster-1234dert\n&LocalGatewayId=lgw-1234edfr\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "删除本地网关"
+      }
+    ],
+    "DeleteMonitorInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMonitorInternal\n<公共请求参数>\n\n{\n    \"DelMonitorSet\": [\n        {\n            \"Ip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"GroupId\": \"1\",\n            \"Port\": \"8181\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除监控信息"
       }
     ],
     "DeleteNatGateway": [
@@ -916,6 +1120,22 @@
         "title": "用于删除vpc内的服务的Route信息"
       }
     ],
+    "DeleteRouteKeyIPv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRouteKeyIPv6Internal\n<公共请求参数>\n\n{\n    \"DelRouteKeyIPv6Set\": [\n        {\n            \"VpcId\": \"123123\",\n            \"Protocol\": \"tcp\",\n            \"RemoteVpcId\": \"123\",\n            \"Vip\": \"10.6.2.3\",\n            \"VirtualPort\": \"8181\",\n            \"ProtocolPort\": \"80\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\",\n            \"PrivateIp\": \"1.1.1.1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于删除vpc内的服务的Route信息"
+      }
+    ],
+    "DeleteRouteKeyInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRouteKeyInternal\n<公共请求参数>\n\n{\n    \"DelRouteKeySet\": [\n        {\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"VirtualPort\": \"8181\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除路由key"
+      }
+    ],
     "DeleteRouteTable": [
       {
         "document": "",
@@ -974,6 +1194,14 @@
         "title": "用于删除vpc内的服务"
       }
     ],
+    "DeleteServiceIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceIpv6Internal\n<公共请求参数>\n\n{\n    \"DelServiceIpv6Set\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"Route\": [\n                {\n                    \"Weight\": \"1\",\n                    \"RemoteVpcId\": \"1\",\n                    \"ZoneId\": \"100002\",\n                    \"HostIp\": \"1.1.1.1\",\n                    \"ProtocolPort\": \"80\",\n                    \"PrivateIp\": \"1.1.1.1\"\n                }\n            ],\n            \"RstFlag\": \"1\",\n            \"DeleteRouteFlag\": \"True\",\n            \"Vip\": \"10.6.2.3\",\n            \"VirtualPort\": \"80\",\n            \"StickyMaxCount\": \"100\",\n            \"UniqueVpcId\": \"vpc-asdasd\",\n            \"StickyFlag\": \"1\",\n            \"StickyTimeout\": \"30\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除ServiceIPv6"
+      }
+    ],
     "DeleteServiceTemplate": [
       {
         "document": "",
@@ -996,6 +1224,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteSubnet\r\n&Version=2017-03-12\r\n&SubnetId=subnet-pxir56ns\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除子网"
+      }
+    ],
+    "DeleteSvcFromUsgInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSvcFromUsgInternal\n<公共请求参数>\n\n{\n    \"DelSvcFromUsgRequest\": [\n        {\n            \"SvcId\": \"123123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelSvcFromUsgResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "SVC删除规则"
       }
     ],
     "DeleteTemplateMember": [
@@ -1022,6 +1258,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppmg-test1234\n&TemplateMember.0.Member=ppm-test1234\n&TemplateMember.1.Member=ppm-demo1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "添加协议端口组模板成员"
+      }
+    ],
+    "DeleteUSGInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUSGInternal\n<公共请求参数>\n\n{\n    \"DeleteUSGRequest\": [\n        {\n            \"UsgId\": \"123123\",\n            \"ProjectId\": \"123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteUSGResult\": [\n            {\n                \"UsgId\": \"sg-an7f7qxx\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除USG"
+      }
+    ],
+    "DeleteUSGRuleInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUSGRuleInternal\n<公共请求参数>\n\n{\n    \"DeleteUSGRuleRequest\": [\n        {\n            \"UsgId\": \"123123\",\n            \"Direction\": \"inbound\",\n            \"Version\": \"12\",\n            \"Indexes\": [\n                \"2\",\n                \"1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteUSGRuleResult\": [\n            {\n                \"UsgId\": \"sg-dn7qcw21\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "USG删除规则"
       }
     ],
     "DeleteVpc": [
@@ -1096,6 +1348,14 @@
         "title": "删除SSL-VPN-SERVER"
       }
     ],
+    "DeleteWanServiceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWanServiceInternal\n<公共请求参数>\n\n{\n    \"DelWanServiceSet\": [\n        {\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"GroupId\": \"1\",\n            \"VirtualPort\": \"8181\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DelWanServiceResult\": [\n            {\n                \"VpcId\": 1,\n                \"UniqueVpcId\": \"vpc-5k6fot41\",\n                \"Protocol\": \"tcp\",\n                \"VpcGatewayIp\": \"9.30.232.100\",\n                \"CreateTime\": \"2022-06-29 16:54:19\",\n                \"Vip\": \"10.133.192.110\",\n                \"VirtualPort\": 81,\n                \"Type\": 1\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除外网服务"
+      }
+    ],
     "DescribeAccountAttributes": [
       {
         "document": "只支持VPC",
@@ -1145,7 +1405,7 @@
     "DescribeAssistantCidr": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAssistantCidr\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssistantCidr\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c65ffbe5-512a-44fd-9611-99d12f4e565d\"\n    }\n}",
         "title": "查询辅助CIDR列表"
       }
@@ -1366,6 +1626,14 @@
         "title": "demo"
       }
     ],
+    "DescribeEndPointInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEndPointInternal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"UniqueEndPointServiceId\": \"vpcesvc-60gjk01t\",\n    \"SubnetId\": \"123123\",\n    \"Vip\": \"1.1.1.1\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\",\n    \"Owner\": \"1231231\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"EndPointServiceId\": \"1213123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"GetEndPointResult\": [\n            {\n                \"ServiceVpcId\": 0,\n                \"UniqueServiceVpcId\": \"vpc_0\",\n                \"VpcId\": 16769060,\n                \"Name\": \"testt\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Vip\": \"10.0.0.4\",\n                \"UniqueEndPointId\": \"vpce-d2cthiv2\",\n                \"ServiceType\": 1,\n                \"Owner\": \"251197522\",\n                \"State\": 0,\n                \"IsolateTime\": \"2022-06-29 14:45:03\",\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"IsolateFlag\": 0,\n                \"EndPointId\": 1141,\n                \"ServiceVip\": \"10.0.0.17\",\n                \"SubnetId\": 2007467,\n                \"UniqueEndPointServiceId\": \"\",\n                \"CreateTime\": \"2022-06-29 14:45:03\",\n                \"EndPointServiceId\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取终端节点信息"
+      }
+    ],
     "DescribeEniAllInternal": [
       {
         "document": "",
@@ -1380,6 +1648,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniInternal\n<公共请求参数>\n\n{\n    \"Limit\": \"100\",\n    \"UniqueEniId\": \"eniid\",\n    \"VpcId\": \"1\",\n    \"EniId\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"EniSet\": [\n            {\n                \"VpcId\": 78257,\n                \"EniId\": 2660066,\n                \"UniqueEniId\": \"eni-kj7karc5\",\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"Description\": \"xxx\",\n                \"Mac\": \"20:90:6F:BF:08:D2\",\n                \"Business\": \"xxx\",\n                \"Owner\": \"251198225\",\n                \"State\": 1,\n                \"UniqueSubnetId\": \"subnet-dbrazzr0\",\n                \"ElasticNetworkCardName\": \"veni_vFspLEfU\",\n                \"SubnetId\": 1990867,\n                \"BusinessOwner\": \"xxx\",\n                \"ArpLearningFlag\": 1,\n                \"Type\": 0,\n                \"CreateTime\": \"2021-07-06 09:52:34\",\n                \"Name\": \"TEST\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于获取弹性网卡的信息"
+      }
+    ],
+    "DescribeEniIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniIpv6Internal\n<公共请求参数>\n\n{\n    \"WanIp\": \"1.1.1.1\",\n    \"VpcId\": \"1\",\n    \"EniId\": \"1\",\n    \"Description\": \"desc\",\n    \"Mac\": \"52:54:00:31:13:96\",\n    \"PrivateIp\": \"1.1.1.1\",\n    \"UniqueEniId\": \"eniid\",\n    \"State\": \"1\",\n    \"PublicIpFlag\": \"0\",\n    \"BlockedFlag\": \"0\",\n    \"Owner\": \"123123123\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"Type\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GetEniIPv6Result\": [\n            {\n                \"MappedMarkerId\": \"58.0.0.5\",\n                \"VpcId\": 74664,\n                \"EniId\": 28892,\n                \"UniqueEniId\": \"eni-poxpxmdf\",\n                \"UniqueVpcId\": \"vpc-ih5wn2ub\",\n                \"PublicIpFlag\": 1,\n                \"HavIpFlag\": 0,\n                \"Owner\": \"251005839\",\n                \"Mac\": \"20:90:6F:4E:4A:D1\",\n                \"PrivateIp\": \"2402:4e00:1000:7400:0:9028:a2c9:85b2\",\n                \"State\": 1,\n                \"WanIp\": \"\",\n                \"Type\": 0,\n                \"CreateTime\": \"2020-03-24 17:27:22\",\n                \"BlockedFlag\": 0,\n                \"Description\": \"\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于查询弹性网卡IPv6地址"
       }
     ],
     "DescribeEniLimitAllInternal": [
@@ -1490,6 +1766,14 @@
         "title": "获取Instance相关的VPC信息"
       }
     ],
+    "DescribeInstanceAllListInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAllListInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": [\n        \"ins-yn79rou1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"WanInLimit\": 0,\n                \"LanInLimit\": 1610612736,\n                \"UniqueCdcId\": \"\",\n                \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\",\n                \"CdcFlag\": 0,\n                \"LanOutLimit\": 1610612736,\n                \"InstanceId\": \"ins-yn79rou1\",\n                \"Eni\": [\n                    {\n                        \"VpcId\": 16769060,\n                        \"EniId\": 2609655,\n                        \"UniqueVpcId\": \"vpc-7zayowkt\",\n                        \"TrunkingFlag\": 0,\n                        \"SubnetId\": 2018313,\n                        \"PrivateIpSet\": [\n                            {\n                                \"Description\": \"\",\n                                \"State\": 1,\n                                \"DhcpIpFlag\": 0,\n                                \"WanIp\": \"0.0.0.0\",\n                                \"HavIpFlag\": 0,\n                                \"PrivateIp\": \"10.4.128.5\",\n                                \"Type\": 1,\n                                \"CreateTime\": \"2021-06-17 11:24:24\",\n                                \"BlockedFlag\": 0\n                            }\n                        ],\n                        \"EniQos\": {\n                            \"RdmaFlag\": 0,\n                            \"PortMax\": 65535,\n                            \"DirectSend\": 0,\n                            \"NSHType\": 0,\n                            \"PortMin\": 1025,\n                            \"DiffAzStatsFlag\": 1,\n                            \"QosType\": 0,\n                            \"DetailDiffAzStatsFlag\": 0,\n                            \"QosQualityLevel\": 26\n                        },\n                        \"Owner\": \"251197522\",\n                        \"AttachType\": 0,\n                        \"UniqueEniId\": \"eni-nl6govs9\",\n                        \"FlushSubEniHavipFlag\": 0,\n                        \"State\": 1,\n                        \"ArpLearningFlag\": 1,\n                        \"BusinessOwner\": \"\",\n                        \"BridgeName\": \"vbr16769060\",\n                        \"Type\": 1,\n                        \"IfnIndex\": 0,\n                        \"Description\": \"\",\n                        \"Business\": \"\",\n                        \"Mac\": \"52:54:00:51:48:6B\",\n                        \"TagProto\": \"vlan\",\n                        \"CreateTime\": \"2021-06-17 11:24:24\",\n                        \"Name\": \"ins-yn79rou1 Primary ENI\",\n                        \"AttachTime\": \"2021-06-17 11:24:24\",\n                        \"UniqueSubnetId\": \"subnet-oiqmspv4\",\n                        \"ElasticNetworkCardName\": \"veth_51486Bf0\"\n                    },\n                    {\n                        \"VpcId\": 80216,\n                        \"EniId\": 3825148,\n                        \"UniqueVpcId\": \"vpc-q2nxods9\",\n                        \"TrunkingFlag\": 0,\n                        \"SubnetId\": 1873271,\n                        \"PrivateIpSet\": [\n                            {\n                                \"Description\": \"\",\n                                \"State\": 1,\n                                \"DhcpIpFlag\": 0,\n                                \"WanIp\": \"0.0.0.0\",\n                                \"HavIpFlag\": 0,\n                                \"PrivateIp\": \"10.0.1.2\",\n                                \"Type\": 0,\n                                \"CreateTime\": \"2022-03-25 16:46:21\",\n                                \"BlockedFlag\": 0\n                            },\n                            {\n                                \"Description\": \"\",\n                                \"State\": 1,\n                                \"DhcpIpFlag\": 0,\n                                \"WanIp\": \"0.0.0.0\",\n                                \"HavIpFlag\": 0,\n                                \"PrivateIp\": \"10.0.1.4\",\n                                \"Type\": 1,\n                                \"CreateTime\": \"2022-03-25 16:46:21\",\n                                \"BlockedFlag\": 0\n                            }\n                        ],\n                        \"EniQos\": {\n                            \"RdmaFlag\": 0,\n                            \"PortMax\": 65535,\n                            \"DirectSend\": 0,\n                            \"NSHType\": 0,\n                            \"PortMin\": 1025,\n                            \"DiffAzStatsFlag\": 1,\n                            \"QosType\": 0,\n                            \"DetailDiffAzStatsFlag\": 0,\n                            \"QosQualityLevel\": 26\n                        },\n                        \"Owner\": \"251010724_skip\",\n                        \"AttachType\": 0,\n                        \"UniqueEniId\": \"eni-bmsu454f\",\n                        \"FlushSubEniHavipFlag\": 0,\n                        \"State\": 1,\n                        \"ArpLearningFlag\": 1,\n                        \"BusinessOwner\": \"TKE\",\n                        \"BridgeName\": \"vbr80216\",\n                        \"Type\": 0,\n                        \"IfnIndex\": 0,\n                        \"Description\": \"\",\n                        \"Business\": \"TKE\",\n                        \"Mac\": \"20:90:6F:6A:9D:4A\",\n                        \"TagProto\": \"\",\n                        \"CreateTime\": \"2022-03-25 16:46:21\",\n                        \"Name\": \"12345\",\n                        \"AttachTime\": \"2022-03-25 16:46:22\",\n                        \"UniqueSubnetId\": \"subnet-l82vfhw4\",\n                        \"ElasticNetworkCardName\": \"veni_vFspoqZc\"\n                    }\n                ],\n                \"InstanceFamily\": \"\",\n                \"Owner\": \"251197522\",\n                \"HostType\": \"\",\n                \"VMem\": 0,\n                \"Bandwidth\": 1,\n                \"HostIp\": \"100.99.164.201\",\n                \"WanOutLimit\": 1048576,\n                \"SnHypervisor\": \"\",\n                \"VCpu\": 0,\n                \"CreateTime\": \"2021-06-17 11:24:24\"\n            }\n        ],\n        \"RequestId\": \"7986da7d-a967-4d6b-9950-4c8a75f4a0ba\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeIp6Addresses": [
       {
         "document": "",
@@ -1556,6 +1840,30 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpv6SubnetInternal\n<公共请求参数>\n\n{\n    \"VpcId\": \"123123\",\n    \"VpcIntPrefix\": \"60\",\n    \"Address\": \"2402:4e00:20:111::\",\n    \"IntPrefix\": \"64\",\n    \"Owner\": \"251198225\",\n    \"PublicIpFlag\": \"1\",\n    \"Limit\": \"100\",\n    \"VpcAddress\": \"2402:4e00:20:110::\",\n    \"Offset\": \"0\",\n    \"SubnetId\": \"123123\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"UniqueSubnetId\": \"subnet-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"Ipv6SubnetSet\": [\n            {\n                \"VpcId\": 79996,\n                \"UniqueVpcId\": \"vpc-r9u93oo3\",\n                \"VpcIntPrefix\": 56,\n                \"PublicIpFlag\": 0,\n                \"IntPrefix\": 64,\n                \"SubnetId\": 1995599,\n                \"UniqueSubnetId\": \"subnet-9txzarp8\",\n                \"VpcAddress\": \"2402:4e00:1001:2f00::\",\n                \"Address\": \"2402:4e00:1001:2f05::\",\n                \"Owner\": \"251197522\",\n                \"CreateTime\": \"2021-04-02 10:11:41\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于查询IPv6子网段"
+      }
+    ],
+    "DescribeIpv6VpcInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpv6VpcInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GetIPv6VpcResult\": [\n            {\n                \"VpcId\": 79996,\n                \"UniqueVpcId\": \"vpc-r9u93oo3\",\n                \"IntPrefix\": 56,\n                \"ZoneId\": 100002,\n                \"Flag\": 1,\n                \"Address\": \"2402:4e00:1001:2f00::\",\n                \"Owner\": \"251197522\",\n                \"Type\": 0,\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            },\n            {\n                \"VpcId\": 78202,\n                \"UniqueVpcId\": \"vpc-g6z0p6bv\",\n                \"IntPrefix\": 56,\n                \"ZoneId\": 100002,\n                \"Flag\": 1,\n                \"Address\": \"2402:4e00:1001:3200::\",\n                \"Owner\": \"251197522\",\n                \"Type\": 0,\n                \"CreateTime\": \"0000-00-00 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"3ae6fef5-2654-4a9a-8e07-0346133087e9\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeJNSGatewayPoolSnatIpInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJNSGatewayPoolSnatIpInternal\n<公共请求参数>\n\n{\n    \"SubnetId\": \"2007466\",\n    \"Owner\": \"251197522\",\n    \"UniqueVpcId\": \"vpc-7zayowkt\",\n    \"Limit\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"GetJNSGatewayPoolSnatIpResult\": [\n            {\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Owner\": \"251197522\",\n                \"UniqueSubnetId\": \"subnet-oqocm8m6\",\n                \"SNATIp\": \"169.254.128.12\",\n                \"PoolId\": 39285,\n                \"SubnetId\": 2007466,\n                \"GatewayIp\": \"9.241.203.205\",\n                \"CreateTime\": \"2022-06-16 19:52:01\"\n            }\n        ],\n        \"RequestId\": \"ec37ad59-06c9-490b-97f6-227b62839725\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeLbNatSnatInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLbNatSnatInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\",\n    \"Limit\": \"1\",\n    \"SnatIp\": \"10.0.0.6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"GetLbNatSnatResult\": [\n            {\n                \"VpcId\": 16769060,\n                \"SameFlag\": 0,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"VpcGatewayIp\": \"0.0.0.0\",\n                \"UniqueLbNatId\": \"lbnat-pbnqx1w2\",\n                \"Owner\": \"251197522\",\n                \"UniqueVpcGatewayId\": \"\",\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"SnatIp\": \"10.0.0.6\",\n                \"SubnetId\": 2007467,\n                \"LbNatId\": 512,\n                \"CreateTime\": \"2022-07-04 15:47:16\",\n                \"AutoApplyFlag\": 1\n            }\n        ],\n        \"RequestId\": \"4aea4e3c-6e9e-4e13-98a4-957c05935943\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeLocalGateway": [
@@ -1690,6 +1998,14 @@
         "title": "查询绑定了标签的网卡列表"
       }
     ],
+    "DescribePipInstanceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePipInstanceInternal\n<公共请求参数>\n\n{\n    \"WanIp\": \"1.1.1.1\",\n    \"VpcId\": \"1\",\n    \"EniId\": \"1\",\n    \"EniType\": \"1\",\n    \"PrivateIp\": \"1.1.1.1\",\n    \"UniqueEniId\": \"eniid\",\n    \"Mac\": \"255.255.255.255\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\",\n    \"Owner\": \"123123123\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"PrivateIpType\": \"1\",\n    \"UniqueSubnetId\": \"subnet-asdasda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 12,\n        \"GetPipInstanceResult\": [\n            {\n                \"WanInLimit\": 0,\n                \"VpcId\": 81292,\n                \"EniId\": 2225667,\n                \"UniqueVpcId\": \"vpc-7f2w7dl7\",\n                \"InstanceId\": \"\",\n                \"LanInLimit\": 0,\n                \"PrivateIp\": \"10.0.0.12\",\n                \"Bandwidth\": 0,\n                \"UniqueSubnetId\": \"subnet-fjfixflc\",\n                \"Owner\": \"251197522\",\n                \"Uuid\": \"\",\n                \"LanOutLimit\": 0,\n                \"EniPipId\": 40615,\n                \"State\": 1,\n                \"WanIp\": \"0.0.0.0\",\n                \"Type\": 1,\n                \"EniType\": 0,\n                \"HavIpFlag\": 0,\n                \"HostIp\": \"\",\n                \"CreateTime\": \"2021-04-25 14:45:56\",\n                \"UniqueEniId\": \"eni-kr5u4sbl\",\n                \"Mac\": \"20:90:6F:8D:9E:70\",\n                \"DhcpIpFlag\": 0,\n                \"WanOutLimit\": 0,\n                \"BlockedFlag\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取弹性网卡ip绑定的弹性网卡信息和子机信息"
+      }
+    ],
     "DescribeProductQuota": [
       {
         "document": "",
@@ -1747,7 +2063,7 @@
     "DescribeSecurityGroupPolicies": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroupPolicies\n&SecurityGroupId=sg-ohuuioma\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-ohuuioma\"\n}",
         "output": "{\n    \"Response\": {\n        \"SecurityGroupPolicySet\": {\n            \"Ingress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"ModifyPolicies\"\n                },\n                {\n                    \"PolicyIndex\": 1,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"2\"\n                }\n            ],\n            \"Egress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"E1\"\n                }\n            ],\n            \"Version\": 60\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询安全组规则"
       }
@@ -1788,6 +2104,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceInternal\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-e3t30r8t\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ServiceSet\": [\n            {\n                \"IpType\": 1,\n                \"VpcGatewayIp\": \"10.0.0.1\",\n                \"VpcGatewayId\": \"vpcgw-12efr432\",\n                \"RsZoneVpcGatewayId\": 1,\n                \"VpcGatewayAttrFlag\": 1,\n                \"SetId\": 1,\n                \"Type\": 1,\n                \"SubnetRouteAlgorithm\": 1,\n                \"VpcId\": \"xx\",\n                \"VipSetId\": 1,\n                \"Business\": \"xx\",\n                \"ToaHostIpFlag\": 1,\n                \"ClassicVpcGatewayId\": \"vpcgw-12efr432\",\n                \"LbType\": 1,\n                \"SnatFlag\": 1,\n                \"StickyFlag\": 1,\n                \"VpcGatewayZoneId\": 1,\n                \"BypassFlag\": 1,\n                \"ResetFlag\": 1,\n                \"RemoteVpcId\": 1,\n                \"HealthFlag\": 1,\n                \"StickyTimeout\": 1,\n                \"RouteSet\": [\n                    {\n                        \"Weight\": 1,\n                        \"PrivateIP\": \"123.0.0.0\",\n                        \"HostIp\": \"196.0.0.1\",\n                        \"ProtocolPort\": 1,\n                        \"ForwardingMode\": 1,\n                        \"ZoneId\": 1\n                    }\n                ],\n                \"Protocol\": \"tcp\",\n                \"VipVpcGatewayId\": \"vpcgw-3rft532\",\n                \"Vip\": \"10.0.0.1\",\n                \"VirtualPort\": 1,\n                \"StickyMaxCount\": 1,\n                \"GroupId\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询接口"
+      }
+    ],
+    "DescribeServiceIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceIpv6Internal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"Protocol\": \"tcp\",\n    \"RstFlag\": \"1\",\n    \"Vip\": \"10.6.2.3\",\n    \"VirtualPort\": \"80\",\n    \"StickyMaxCount\": \"100\",\n    \"UniqueVpcId\": \"vpc-asdasd\",\n    \"StickyFlag\": \"1\",\n    \"StickyTimeout\": \"30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GetServiceIpv6Result\": [\n            {\n                \"VpcId\": 77471,\n                \"UniqueVpcId\": \"vpc-hagn831r\",\n                \"Protocol\": \"tcp\",\n                \"RouteSet\": [\n                    {\n                        \"PrivateIp\": \"2402:4e00:2190:e100::1e\",\n                        \"ZoneId\": 1,\n                        \"ProtocolPort\": 3306,\n                        \"Weight\": 19,\n                        \"RemoteVpcId\": 0\n                    }\n                ],\n                \"ResetFlag\": 0,\n                \"Vip\": \"2402:4e00:1000:600:0:906c:917e:4aab\",\n                \"StickyMaxCount\": 3000,\n                \"VirtualPort\": 3306,\n                \"StickyFlag\": 1,\n                \"StickyTimeout\": 300\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询ServiceIPv6"
+      }
+    ],
+    "DescribeServiceStateInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceStateInternal\n<公共请求参数>\n\n{\n    \"GetServiceStateSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"HostIp\": \"1.1.1.1\",\n            \"State\": \"1\",\n            \"Vip\": \"10.6.2.3\",\n            \"VirtualPort\": \"8181\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\",\n            \"GroupId\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GetServiceStateResult\": [\n            {\n                \"VpcId\": 80509,\n                \"Protocol\": \"tcp\",\n                \"State\": [\n                    {\n                        \"ServiceInfo\": \"Tcp:11.145.98.76:80\",\n                        \"State\": 0\n                    }\n                ],\n                \"Vip\": \"10.3.153.1\",\n                \"VirtualPort\": 80,\n                \"GroupId\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询路由健康状态"
       }
     ],
     "DescribeServiceTemplateGroups": [
@@ -1880,6 +2212,36 @@
         "title": "根据is-security-lock过滤查询"
       }
     ],
+    "DescribeTrafficPackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",
+        "title": "查询某个账号所有的共享流量包信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",
+        "title": "查询某一个账号所有的共享流量包信息"
+      }
+    ],
+    "DescribeUSGCountFromSgInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUSGCountFromSgInternal\n<公共请求参数>\n\n{\n    \"GetUSGCountFromSGRequest\": [\n        {\n            \"SgId\": \"132131231\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GetUSGCountFromSGResult\": [\n            {\n                \"SgId\": \"251197522\",\n                \"USGCount\": 17\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "根据APPID查询安全组数量(测试时注意)"
+      }
+    ],
+    "DescribeUSGFromSvcInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUSGFromSvcInternal\n<公共请求参数>\n\n{\n    \"GetUsgFromSvcRequest\": [\n        {\n            \"SvcId\": \"vpce-kifyia9o\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GetUsgFromSvcResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"UsgIdList\": [\n                    \"sg-h4q2qsjv\"\n                ],\n                \"UsgInfo\": [\n                    {\n                        \"Sys\": 0,\n                        \"UpdateTime\": \"2021-12-02 15:37:28\",\n                        \"ProjectId\": \"0\",\n                        \"SafeGroupId\": \"sg-h4q2qsjv\",\n                        \"AppId\": \"251197522\",\n                        \"Os\": 0,\n                        \"SgName\": \"test_pro\",\n                        \"SgRemark\": \"自定义\",\n                        \"CreateTime\": \"2021-12-02 11:03:42\"\n                    }\n                ]\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询SVC关联的USG"
+      }
+    ],
     "DescribeUSGFromVmInternal": [
       {
         "document": "",
@@ -1902,12 +2264,36 @@
         "title": "demo"
       }
     ],
+    "DescribeUSGListFromSgInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUSGListFromSgInternal\n<公共请求参数>\n\n{\n    \"GetUSGListFromSGRequest\": [\n        {\n            \"ProjectList\": [\n                \"4567\",\n                \"1234\"\n            ],\n            \"EndNum\": \"10\",\n            \"Default\": \"0\",\n            \"StartNum\": \"1\",\n            \"InstanceList\": [\n                \"sg-qwekasd\",\n                \"sg-asdasd\"\n            ],\n            \"Project\": \"123\",\n            \"InstanceId\": \"sg-asdasd\",\n            \"SgId\": \"12312312\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GetUSGListFromSGResult\": [\n            {\n                \"SgId\": \"251197522\",\n                \"Sys\": 0,\n                \"UpdateTime\": \"2022-06-23 18:06:37\",\n                \"ProjectId\": \"0\",\n                \"SafeGroupId\": \"sg-dn7qcw21\",\n                \"AppId\": \"251197522\",\n                \"Os\": 0,\n                \"SgName\": \"test_sdk\",\n                \"SgRemark\": \"ream\",\n                \"CreateTime\": \"2022-06-23 17:01:26\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "根据APPID查询安全组列表"
+      }
+    ],
     "DescribeUSGPolicyInternal": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUSGPolicyInternal\n<公共请求参数>\n\n{\n    \"GetUSGPolicyRequest\": [\n        {\n            \"UsgId\": \"sg-5q4brrmt\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"USGPolicySet\": [\n            {\n                \"UsgId\": \"sg-5q4brrmt\",\n                \"ErrorCode\": 0,\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"ServiceModule\": \"ppm-ni1v9ozg\",\n                        \"Id\": \"sg-e5qrs5d9\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"ServiceModule\": \"ppmg-necqdtow\",\n                        \"AddressModule\": \"ipmg-liaueln6\"\n                    },\n                    {\n                        \"Ip\": \"10.0.0.0/8\",\n                        \"Action\": \"ACCEPT\",\n                        \"ServiceModule\": \"ppm-rj2pjaz4\",\n                        \"Desc\": \"test\"\n                    },\n                    {\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Action\": \"ACCEPT\",\n                        \"Port\": \"80\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"ServiceModule\": \"ppmg-jyb8z7o4\",\n                        \"Id\": \"sg-e5qrs5d9\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"ServiceModule\": \"ppm-5xfsih5i\",\n                        \"AddressModule\": \"ipm-4yl03a0s\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"Ip\": \"10.0.0.0/8\",\n                        \"ServiceModule\": \"ppm-rj2pjaz4\"\n                    },\n                    {\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Action\": \"ACCEPT\",\n                        \"Port\": \"3389\",\n                        \"Desc\": \"Windows登陆(3389)\"\n                    },\n                    {\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Action\": \"ACCEPT\",\n                        \"Port\": \"22\",\n                        \"Desc\": \"Linux登陆(22)\"\n                    }\n                ],\n                \"Version\": 17\n            }\n        ],\n        \"RequestId\": \"f2d132b3-d893-496e-b8b3-a9dedcbfc739\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeUSGQuotaInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUSGQuotaInternal\n<公共请求参数>\n\n{\n    \"GetUSGQuotaRequest\": [\n        {\n            \"SgId\": \"12345566\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"USGQuotaResult\": [\n            {\n                \"SgId\": \"251197522\",\n                \"Quota\": {\n                    \"PolicyCount\": 100,\n                    \"SvcCount\": 2000,\n                    \"UsgInstanceCount\": 2000,\n                    \"UsgCount\": 50,\n                    \"InstanceUsgCount\": 5,\n                    \"ReferedUsgCount\": 10,\n                    \"CvmVifCount\": 2000,\n                    \"ExtendedPolicyCount\": 30000\n                }\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询SG当前的安全组配额"
+      }
+    ],
+    "DescribeVMInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVMInternal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"Offset\": \"0\",\n    \"Limit\": \"100\",\n    \"HostIp\": \"1.1.1.1\",\n    \"VmIp\": \"1.1.1.1\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"TsvIp\": \"1.1.1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 9,\n        \"GetVmResult\": [\n            {\n                \"WanInLimit\": 0,\n                \"VpcId\": 1141,\n                \"VmEip\": \"0.0.0.0\",\n                \"LanInLimit\": 0,\n                \"EipType\": 0,\n                \"VmIp\": \"10.0.2.10\",\n                \"AlgFtpFlag\": 0,\n                \"UniqueVpcId\": \"vpc-puh8eykn\",\n                \"GreTunnelName\": \"gre1141\",\n                \"SlaveHostIp\": \"1.1.1.1\",\n                \"TsvIp\": \"1.1.1.1\",\n                \"UniqueCdcId\": \"cdc-asdasda\",\n                \"GroupId\": [\n                    0\n                ],\n                \"CdcFlag\": 0,\n                \"AlgSipFlag\": 0,\n                \"EipOutLimit\": 0,\n                \"BridgeName\": \"vbr1141\",\n                \"VpcGatewayIp\": \"10.204.204.47\",\n                \"Subnet\": \"10.0.2.0\",\n                \"PeerIp\": \"0.0.0.0\",\n                \"AliasVpcId\": 0,\n                \"Mac\": \"52:54:00:12:4a:95\",\n                \"HostIp\": \"10.0.2.1\",\n                \"GatewayIp\": \"100.88.168.50\",\n                \"CreateTime\": \"2018-08-07 06:51:35\",\n                \"ModuleId\": -1,\n                \"Eip\": \"0.0.0.0\",\n                \"DhcpFlag\": 0,\n                \"ForwardHostIp\": \"0.0.0.0\",\n                \"LanOutLimit\": 0,\n                \"Mask\": \"255.255.255.0\",\n                \"MonitorVmFlag\": 0,\n                \"ElasticNetworkCardName\": \"\",\n                \"WanOutLimit\": 0,\n                \"SetId\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取vm的信息"
       }
     ],
     "DescribeVmPolicyInternal": [
@@ -2042,6 +2428,14 @@
         "title": "查询绑定了标签的VPC列表"
       }
     ],
+    "DescribeVpgListDetailInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpgListDetailInternal\n<公共请求参数>\n\n{\n    \"Owner\": [\n        \"251197522\"\n    ],\n    \"Limit\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"GetVpgListDetailResult\": [\n            {\n                \"VbcId\": 0,\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"PublishDockerCidrFlag\": 0,\n                \"ECMPVpgFlag\": 0,\n                \"VpcDefaultFlag\": 0,\n                \"VpgId\": 53786,\n                \"PublishVbcRouteInNoneIdcSubnetFlag\": 1,\n                \"VpcName\": \"cissytest\",\n                \"Owner\": \"251197522\",\n                \"UniqueNatId\": \"\",\n                \"VpgIp\": \"9.96.75.194\",\n                \"DnatNum\": 0,\n                \"CasFlag\": 0,\n                \"NatId\": 0,\n                \"RealVpcId\": 0,\n                \"FlowDetailsUpdateTime\": \"\",\n                \"VpcIntMask\": 16,\n                \"VpcMask\": \"255.255.0.0\",\n                \"ZoneId\": 0,\n                \"UniqueVpgId\": \"dcg-5q9vlvpn\",\n                \"VbcDcFlag\": 0,\n                \"SrcNAPTNum\": 0,\n                \"DestNAPTNum\": 0,\n                \"VbcRouteTableType\": 0,\n                \"UniqVbcId\": \"\",\n                \"NatType\": 0,\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"ZoneVpgFlag\": 0,\n                \"PublishVbcVpcCidrFlag\": 1,\n                \"BgpFlag\": 0,\n                \"PublishVbcVpcCommunityFlag\": 0,\n                \"BgpVTwoFlag\": 0,\n                \"CreateTime\": \"2021-12-29 11:50:49\",\n                \"Name\": \"tsssss\",\n                \"RealUniqVpcId\": \"\",\n                \"NewAfcFlag\": 1,\n                \"FlowDetailsFlag\": 0,\n                \"VbcFlag\": 0,\n                \"PublishPublicServiceSubnetFlag\": 0,\n                \"BgpVTwoSyncFlag\": 0,\n                \"LocalZoneVpgFlag\": 0,\n                \"SnatNum\": 0\n            }\n        ],\n        \"RequestId\": \"c8a814ac-2ed5-49a2-8170-5641eab8e75f\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeVpnConnections": [
       {
         "document": "",
@@ -2094,6 +2488,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGateways\r\n&Version=2017-03-12\r\n&Offset=0\r\n&Limit=2\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-2\r\n&Filters.0.Values.0=ap-guangzhou-3\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"VpnGatewaySet\": [\n            {\n                \"VpcId\": \"vpc-ah9e9qu9\",\n                \"VpnGatewayId\": \"vpngw-5aluhh9t\",\n                \"VpnGatewayName\": \"joantest\",\n                \"Type\": \"IPSEC\",\n                \"State\": \"DELETING\",\n                \"PublicIpAddress\": \"\",\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InternetMaxBandwidthOut\": 0,\n                \"CreatedTime\": \"2015-08-20 19:39:01\",\n                \"ExpiredTime\": \"0000-00-00 00:00:00\",\n                \"IsAddressBlocked\": false,\n                \"NewPurchasePlan\": \"\",\n                \"RestrictState\": \"NORMAL\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"VpnGatewayQuotaSet\": [\n                    {\n                        \"Bandwidth\": 5,\n                        \"Cname\": \"微小型\",\n                        \"Name\": \"mini\"\n                    },\n                    {\n                        \"Bandwidth\": 20,\n                        \"Cname\": \"中型\",\n                        \"Name\": \"middle\"\n                    },\n                    {\n                        \"Bandwidth\": 100,\n                        \"Cname\": \"超大型\",\n                        \"Name\": \"superLarge\"\n                    },\n                    {\n                        \"Bandwidth\": 10,\n                        \"Cname\": \"小型\",\n                        \"Name\": \"small\"\n                    },\n                    {\n                        \"Bandwidth\": 50,\n                        \"Cname\": \"大型\",\n                        \"Name\": \"large\"\n                    }\n                ]\n            },\n            {\n                \"VpcId\": \"vpc-5rkcp0wb\",\n                \"VpnGatewayId\": \"vpngw-97yhzme3\",\n                \"VpnGatewayName\": \"leohli-simulate3\",\n                \"Type\": \"IPSEC\",\n                \"State\": \"AVAILABLE\",\n                \"PublicIpAddress\": \"\",\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InternetMaxBandwidthOut\": 10,\n                \"CreatedTime\": \"2017-07-03 14:39:16\",\n                \"ExpiredTime\": \"2018-05-31 13:03:47\",\n                \"IsAddressBlocked\": false,\n                \"NewPurchasePlan\": \"PREPAID_TO_POSTPAID\",\n                \"RestrictState\": \"PROTECTIVELY_ISOLATED\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"VpnGatewayQuotaSet\": [\n                    {\n                        \"Bandwidth\": 5,\n                        \"Cname\": \"微小型\",\n                        \"Name\": \"mini\"\n                    },\n                    {\n                        \"Bandwidth\": 20,\n                        \"Cname\": \"中型\",\n                        \"Name\": \"middle\"\n                    },\n                    {\n                        \"Bandwidth\": 100,\n                        \"Cname\": \"超大型\",\n                        \"Name\": \"superLarge\"\n                    },\n                    {\n                        \"Bandwidth\": 10,\n                        \"Cname\": \"小型\",\n                        \"Name\": \"small\"\n                    },\n                    {\n                        \"Bandwidth\": 50,\n                        \"Cname\": \"大型\",\n                        \"Name\": \"large\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"feb949ef-8eb8-4eda-ba73-4fc5705bf8f5\"\n    }\n}",
         "title": "查询VPN网关"
+      }
+    ],
+    "DescribeVpngwListDetailInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpngwListDetailInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\",\n    \"Limit\": \"1\",\n    \"ImageId\": \"img2021011305837244\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"GetVpngwListDetailResult\": [\n            {\n                \"VpcId\": 81292,\n                \"UniqueVpcId\": \"vpc-7f2w7dl7\",\n                \"HotHaMac\": \"50:54:A9:FE:80:07\",\n                \"VpcDefaultFlag\": 0,\n                \"InternalHotHaMask\": \"\",\n                \"ImageId\": \"img2021011305837244\",\n                \"HotHaMask\": \"255.255.128.0\",\n                \"Bandwidth\": 5,\n                \"VpcName\": \"new_test\",\n                \"Owner\": \"251197522\",\n                \"VpnConnectNum\": 0,\n                \"MaxConnection\": 5,\n                \"Zone\": \"ap-guangzhou-2\",\n                \"UniqueCdcId\": \"\",\n                \"VpcIntMask\": 16,\n                \"VpcMask\": \"255.255.0.0\",\n                \"ZoneId\": 100002,\n                \"VpngwDomainIpPoolNum\": 0,\n                \"State\": 3,\n                \"WanIp\": \"\",\n                \"InternalHotHaSubnet\": \"\",\n                \"VpnType\": 0,\n                \"AutoRenewalsFlag\": 1,\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"Quota\": \"qc_mini\",\n                \"DealId\": \"20210323292000292232301\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"InternalHotHaMac\": \"\",\n                \"VpngwDomainRtNum\": 0,\n                \"VpngwId\": 12201,\n                \"UniqVpngwId\": \"vpngw-eavy145z\",\n                \"HotHaSubnet\": \"169.254.128.0\",\n                \"CreateTime\": \"2021-03-23 16:01:01\",\n                \"VpngwDomainNum\": 0,\n                \"InternalHotHaIp\": \"\",\n                \"SlaLocalIp\": \"0.0.0.0\",\n                \"Name\": \"new_t_vpn_gw\",\n                \"NewAfcFlag\": 0,\n                \"HotHaFlag\": 1,\n                \"VpngwDomainAclNum\": 0,\n                \"HotHaIp\": \"169.254.128.7\",\n                \"SSLVpnPort\": 443,\n                \"BlockedFlag\": 0\n            }\n        ],\n        \"RequestId\": \"0f6d3987-1b1d-4607-9782-614d03b63275\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeWanServiceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWanServiceInternal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"Protocol\": \"tcp\",\n    \"Vip\": \"10.6.2.3\",\n    \"VirtualPort\": \"8181\",\n    \"UniqueVpcId\": \"vpc-jmaywf6r\",\n    \"Type\": \"1\",\n    \"GroupId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GetWanServiceResult\": [\n            {\n                \"VpcId\": 1,\n                \"UniqueVpcId\": \"vpc-5k6fot41\",\n                \"Protocol\": \"tcp\",\n                \"VpcGatewayIp\": \"9.30.232.100\",\n                \"GroupId\": [\n                    0\n                ],\n                \"Vip\": \"10.133.192.110\",\n                \"VirtualPort\": 81,\n                \"Type\": 1,\n                \"CreateTime\": \"2022-06-29 16:54:19\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询外网服务"
       }
     ],
     "DescribeWhiteServiceInternal": [
@@ -2451,13 +2861,13 @@
     "ModifyAssistantCidr": [
       {
         "document": "添加辅助CIDR：172.16.1.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.0.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": [\n                    {\n                        \"VpcId\": \"vpc-12345678\",\n                        \"SubnetId\": \"subnet-12345678\",\n                        \"SubnetName\": \"xxx\",\n                        \"CidrBlock\": \"10.0.4.0/24\",\n                        \"Ipv6CidrBlock\": \"\",\n                        \"IsDefault\": false,\n                        \"IsRemoteVpcSnat\": false,\n                        \"EnableBroadcast\": false,\n                        \"Zone\": \"xx\",\n                        \"RouteTableId\": \"rtb-xx\",\n                        \"NetworkAclId\": \"\",\n                        \"TotalIpAddressCount\": \"xx\",\n                        \"AvailableIpAddressCount\": \"xx\",\n                        \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\n                        \"TagSet\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "仅修改辅助CIDR"
       },
       {
         "document": "添加辅助CIDR：172.16.1.0/24，同时删除辅助CIDR：172.16.0.0/24。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAssistantCidr\n&VpcId=vpc-12345678\n&NewCidrBlocks.0=172.16.1.0/24\n&OldCidrBlocks.0=172.16.0.0/24\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"OldCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ],\n    \"NewCidrBlocks\": [\n        \"172.16.1.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-12345678\",\n                \"CidrBlock\": \"172.16.1.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": [\n                    {\n                        \"VpcId\": \"vpc-12345678\",\n                        \"SubnetId\": \"subnet-12345678\",\n                        \"SubnetName\": \"xxx\",\n                        \"CidrBlock\": \"10.0.4.0/24\",\n                        \"Ipv6CidrBlock\": \"\",\n                        \"IsDefault\": false,\n                        \"IsRemoteVpcSnat\": false,\n                        \"EnableBroadcast\": false,\n                        \"Zone\": \"xx\",\n                        \"RouteTableId\": \"rtb-xx\",\n                        \"NetworkAclId\": \"\",\n                        \"TotalIpAddressCount\": \"xx\",\n                        \"AvailableIpAddressCount\": \"xx\",\n                        \"CreatedTime\": \"xxxx-xx-xx xx:xx:xx\",\n                        \"TagSet\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "修改（添加和删除）辅助CIDR"
       }
@@ -2728,6 +3138,14 @@
         "title": "修改子网属性"
       }
     ],
+    "ModifySvcLocationInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySvcLocationInternal\n<公共请求参数>\n\n{\n    \"SetSvcLocationRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Client\": \"0\",\n            \"Gateway\": \"0\",\n            \"Rs\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SetSvcLocationResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "设置SVC下发方式"
+      }
+    ],
     "ModifyTemplateMember": [
       {
         "document": "",
@@ -2752,6 +3170,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTemplateMember\n&TemplateId=ppmg-test1234\n&OriginalTemplateMember.0.Member=ppm-test1234\n&OriginalTemplateMember.0.Description=test\n&OriginalTemplateMember.1.Member=ppm-demo1234\n&TemplateMember.0.Member=ppm-test5678\n&TemplateMember.0.Description=test modify\n&TemplateMember.1.Member=ppm-demo5678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "修改协议端口组模板成员"
+      }
+    ],
+    "ModifyVmIsolationInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVmIsolationInternal\n<公共请求参数>\n\n{\n    \"IsolateVMRequest\": [\n        {\n            \"Uuid\": \"ssssss\",\n            \"IsolateLevel\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsolateVMResult\": [\n            {\n                \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "设置CVM隔离级别"
       }
     ],
     "ModifyVpcAttribute": [
@@ -2982,6 +3408,14 @@
         "title": "用于退还 VPC IP"
       }
     ],
+    "ReturnIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReturnIpv6Internal\n<公共请求参数>\n\n{\n    \"VpcId\": \"1\",\n    \"SubnetId\": \"1\",\n    \"Address\": \"2402:4e00:20:111:0:8cce:1556:ccb9\",\n    \"Owner\": \"121212\",\n    \"UniqueVpcId\": \"vpc-xxx\",\n    \"DeletedFlag\": \"1\",\n    \"UniqueSubnetId\": \"subnet-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MappedMarkerId\": \"58.0.0.2\",\n        \"VpcId\": 79996,\n        \"UniqueVpcId\": \"vpc-r9u93oo3\",\n        \"SubnetId\": 1995599,\n        \"UniqueSubnetId\": \"subnet-9txzarp8\",\n        \"Address\": \"2402:4e00:1001:2f05:0:96a8:110d:3589\",\n        \"Owner\": \"251197522\",\n        \"DeleteFlag\": 1,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于退还IPv6地址"
+      }
+    ],
     "ReturnPrivateIpAddress": [
       {
         "document": "",
@@ -3060,12 +3494,52 @@
         "title": "解封云联网实例"
       }
     ],
+    "UpdateAddrOfSvcInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddrOfSvcInternal\n<公共请求参数>\n\n{\n    \"UpdateAddrOfSvcRequest\": [\n        {\n            \"SvcId\": \"123123\",\n            \"Vip\": \"12.2.2.3\",\n            \"OldVirtualPort\": \"3700\",\n            \"OldVip\": \"12.2.2.3\",\n            \"VirtualPort\": \"3600\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UpdateAddrOfSvcResult\": [\n            {\n                \"SvcId\": \"vpce-kifyia9o\",\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"success\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "SVC更新地址"
+      }
+    ],
     "UpdateEniLimitInternal": [
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=UpdateEniLimitInternal\n&EniLimitRequestSet.0.Owner=251198225\n&EniLimitRequestSet.0.InstanceId=ins-y5gh3gq8\n&EniLimitRequestSet.0.Type=1\n&EniLimitRequestSet.0.Val=3\n&EniLimitRequestSet.0.LowerCpu=2\n&EniLimitRequestSet.0.UpperCpu=4\n&EniLimitRequestSet.0.LowerMem=1\n&EniLimitRequestSet.0.UpperMem=3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "更新ENI限制"
+      }
+    ],
+    "UpdateIpUniqInstanceIdInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIpUniqInstanceIdInternal\n<公共请求参数>\n\n{\n    \"UpdateIpUniqInstanceIdSet\": [\n        {\n            \"OldUniqueInstanceId\": \"ins-asdasdas\",\n            \"Ip\": \"1.1.1.1\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\",\n            \"VpcId\": \"1\",\n            \"UniqueInstanceId\": \"ins-asdadas\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UpdateIpUniqInstanceIdResult\": [\n            {\n                \"OriginUniqInstanceId\": \"cdb-czpmp66w\",\n                \"VpcId\": 1141,\n                \"UniqueVpcId\": \"vpc-puh8eykn\",\n                \"Ip\": \"10.19.165.10\",\n                \"UniqueInstanceId\": \"cdb-e2073faq\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于更新ip地址绑定的资源id"
+      }
+    ],
+    "UpdateMonitorInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMonitorInternal\n<公共请求参数>\n\n{\n    \"UpdateMonitorSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"ActiveFlag\": \"0\",\n            \"Ip\": \"10.6.2.3\",\n            \"Interval\": \"3\",\n            \"Port\": \"8181\",\n            \"BadLimit\": \"3\",\n            \"Timeout\": \"3\",\n            \"GroupId\": \"1\",\n            \"GoodLimit\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "更新监控信息"
+      }
+    ],
+    "UpdateRouteInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRouteInternal\n<公共请求参数>\n\n{\n    \"UpdateRouteSet\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"Update\": [\n                {\n                    \"ProtocolPort\": \"80\",\n                    \"Weight\": \"16\",\n                    \"PrivateIp\": \"1.1.1.1\"\n                }\n            ],\n            \"Vip\": \"172.16.0.18\",\n            \"VirtualPort\": \"22\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\",\n            \"Type\": \"1\",\n            \"GroupId\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于更新vpc内的服务的Route信息"
+      }
+    ],
+    "UpdateRouteIpv6Internal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRouteIpv6Internal\n<公共请求参数>\n\n{\n    \"UpdateRouteIpv6Set\": [\n        {\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"Update\": [\n                {\n                    \"Weight\": \"1\",\n                    \"RemoteVpcId\": \"1\",\n                    \"ZoneId\": \"100002\",\n                    \"HostIp\": \"1.1.1.1\",\n                    \"ProtocolPort\": \"80\",\n                    \"PrivateIp\": \"1.1.1.1\"\n                }\n            ],\n            \"Vip\": \"10.6.2.3\",\n            \"VirtualPort\": \"80\",\n            \"UniqueVpcId\": \"vpc-asdasd\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "更新RouteIPv6"
       }
     ],
     "UpdateRouteWeightInternal": [
@@ -3076,11 +3550,55 @@
         "title": "用于更新vpc内的服务的Route信息的权重"
       }
     ],
+    "UpdateServicePropertyInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServicePropertyInternal\n<公共请求参数>\n\n{\n    \"ServicePropertyRequestSet\": [\n        {\n            \"StickMaxCount\": \"0\",\n            \"VpcId\": \"1\",\n            \"Protocol\": \"tcp\",\n            \"ToaHostIpFlag\": \"1\",\n            \"BypassFlag\": \"1\",\n            \"StickTimeout\": \"1\",\n            \"StickFlag\": \"0\",\n            \"LbType\": \"1\",\n            \"Vip\": \"172.16.0.18\",\n            \"RouteGroupFlag\": \"1\",\n            \"RealServerAllDeadAsAliveFlag\": \"1\",\n            \"VirtualPort\": \"22\",\n            \"UniqueRouteGroupId\": \"xxx\",\n            \"UniqueVpcId\": \"vpc-jmaywf6r\",\n            \"RouteGroupId\": \"1\",\n            \"GroupId\": \"1\",\n            \"ResetFlag\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于更新vpc内的服务的属性"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServicePropertyInternal\n<公共请求参数>\n\n{\n    \"ServicePropertyRequestSet\": [\n        {\n            \"ResetFlag\": \"1\",\n            \"VpcId\": \"16769060\",\n            \"Protocol\": \"tcp\",\n            \"Vip\": \"172.16.0.18\",\n            \"VirtualPort\": \"22\",\n            \"UniqueVpcId\": \"vpc-7zayowkt\",\n            \"GroupId\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d49ea9de-6ed3-449d-a259-cb8666761470\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "UpdateServiceVpcGatewayInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceVpcGatewayInternal\n<公共请求参数>\n\n{\n    \"UpdateServiceVpcGatewaySet\": [\n        {\n            \"Vip\": \"10.19.0.186\",\n            \"VpcId\": \"1141\",\n            \"VipVpcGatewayId\": \"vpcgw-fxu02n4l\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UpdateServiceVpcGatewayResult\": [\n            {\n                \"VipVpcGatewayId\": \"vpcgw-fxu02n4l\",\n                \"Vip\": \"10.19.0.186\",\n                \"VpcId\": 1141,\n                \"GroupId\": 0,\n                \"HasUniqVpcGatewayIpVpcGatewayId\": true\n            }\n        ],\n        \"RequestId\": \"cadfe7bf-01b0-40b6-9f51-8336de8957d7\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "UpdateVipTgwAndInstanceInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVipTgwAndInstanceInternal\n<公共请求参数>\n\n{\n    \"UpdateVipTgwAndInstanceSet\": [\n        {\n            \"Instance\": [\n                {\n                    \"TsvIp\": \"1.1.1.1\",\n                    \"ZoneId\": \"100001\"\n                }\n            ],\n            \"Vip\": \"10.6.2.3\",\n            \"VpcId\": \"1\",\n            \"TsvIp\": \"1.1.1.1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "更新VIP的TGW"
+      }
+    ],
     "UpdateVmToUSGInternal": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVmToUSGInternal\n<公共请求参数>\n\n{\n    \"BindVMToUSGRequest\": [\n        {\n            \"UsgIds\": [\n                \"sg-5q4brrm1\"\n            ],\n            \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\",\n            \"SgId\": \"251197522\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BindVMToUSGResult\": [\n            {\n                \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\",\n                \"ErrorCode\": 511,\n                \"ErrorInfo\": \"No Record\"\n            }\n        ],\n        \"ReturnCode\": 504,\n        \"RequestId\": \"b3a7f48c-dbdf-429e-b4c1-ca616463c97c\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "UpdateVpcAssistCidrInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVpcAssistCidrInternal\n<公共请求参数>\n\n{\n    \"VpcCidrSet\": [\n        {\n            \"Subnet\": \"172.16.0.0\",\n            \"VpcId\": \"78257\",\n            \"OperationRouteToVbcFlag\": \"1\",\n            \"IntMask\": \"20\",\n            \"Owner\": \"251198225\",\n            \"UniqueVpcId\": \"vpc-fjknwrrj\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcCidrSet\": [\n            {\n                \"VpcId\": 78257,\n                \"UniqueVpcId\": \"vpc-fjknwrrj\",\n                \"Owner\": \"251198225\",\n                \"Subnet\": \"172.16.0.0\",\n                \"IntMask\": 20,\n                \"OperationRouteToVbcFlag\": 1\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于更新vpc的辅助CIDR"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVpcAssistCidrInternal\n<公共请求参数>\n\n{\n    \"VpcCidrSet\": [\n        {\n            \"Subnet\": \"10.4.0.0\",\n            \"VpcId\": \"16769060\",\n            \"OperationRouteToVbcFlag\": \"1\",\n            \"IntMask\": \"16\",\n            \"Owner\": \"251197522\",\n            \"UniqueVpcId\": \"vpc-7zayowkt\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcCidrSet\": [\n            {\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"VpgId\": 53786,\n                \"ZoneVpgFlag\": 0,\n                \"OldPublishVpgFlag\": 1,\n                \"Owner\": \"251197522\",\n                \"AssistType\": 0,\n                \"Subnet\": \"10.4.0.0\",\n                \"NewAfcFlag\": 1,\n                \"Mask\": \"255.255.0.0\",\n                \"CreateTime\": \"2021-05-17 19:55:20\",\n                \"OwnedFlag\": 0,\n                \"VpcIntMask\": 16,\n                \"OldOperationRouteToVbcFlag\": 1,\n                \"IntMask\": 16,\n                \"OperationRouteToVbcFlag\": 1,\n                \"VpcAssistCidrId\": 22811\n            }\n        ],\n        \"RequestId\": \"0ad42d3d-cfee-4c4e-b01e-d0b4f3d9d871\"\n    }\n}",
         "title": "demo"
       }
     ],

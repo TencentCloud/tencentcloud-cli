@@ -59,6 +59,7 @@ Output:
                 "Deployable": true,
                 "IsIgnore": true,
                 "IsSM": true,
+                "EncryptAlgorithm": "RSA 2048",
                 "Tags": [
                     {
                         "TagKey": "testtag",
@@ -126,6 +127,7 @@ Output:
                 "Deployable": true,
                 "IsIgnore": false,
                 "IsSM": true,
+                "EncryptAlgorithm": "ECC 256",
                 "ProjectInfo": {
                     "ProjectId": "0",
                     "OwnerUin": 0,

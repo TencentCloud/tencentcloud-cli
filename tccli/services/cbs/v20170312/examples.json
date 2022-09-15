@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyDiskBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyDiskBackup\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\",\n    \"DiskBackupId\": \"dbp-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d41fd68-372a-4c90-81c6-a6f982328058\"\n    }\n}",
+        "title": "回滚备份点到原云硬盘"
+      }
+    ],
     "ApplySnapshot": [
       {
         "document": "",
@@ -63,7 +71,7 @@
     "CreateSnapshot": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=CreateSnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotName=snap_201711301015\n&Deadline=2022-01-08T09:47:55+00:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotName\": \"snap_201711301015\",\n    \"Deadline\": \"2022-01-08T09:47:55+00:00\",\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
         "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"snap-gybrif0z\",\n        \"RequestId\": \"1bd35eca-0c9a-6e0b-938a-5a1f80511c19\"\n    }\n}",
         "title": "创建快照"
       }
@@ -74,6 +82,14 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=DeleteAutoSnapshotPolicies\n&AutoSnapshotPolicyIds.0=asp-mrsrn243\n&AutoSnapshotPolicyIds.1=asp-3lpl7ev3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"60874256-0230-6c3b-371d-5a1fa64e6b8c\"\n    }\n}",
         "title": "批量删除定期快照策略"
+      }
+    ],
+    "DeleteDiskBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDiskBackups\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"dbp-xxxxxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a79a4333-ac8e-426c-8cfe-2923c4010d64\"\n    }\n}",
+        "title": "删除云硬盘备份点"
       }
     ],
     "DeleteSnapshots": [
@@ -98,6 +114,14 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskAssociatedAutoSnapshotPolicy\r\n&DiskId=disk-dw0bbzws\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicySet\": [\n            {\n                \"IsActivated\": 1,\n                \"AutoSnapshotPolicyName\": \"sds\",\n                \"IsPermanent\": 0,\n                \"NextTriggerTime\": \"2017-12-03 00:00:00\",\n                \"AutoSnapshotPolicyId\": \"asp-mrsrn243\",\n                \"Policy\": [\n                    {\n                        \"DayOfWeek\": [\n                            0\n                        ],\n                        \"Hour\": [\n                            0\n                        ]\n                    }\n                ],\n                \"CreateTime\": \"2017-11-17 15:09:12\",\n                \"RetentionDays\": 7\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8612f14a-fd07-85b5-39f9-5a1fa51efa14\"\n    }\n}",
         "title": "查询云盘disk-dw0bbzws绑定的定期快照策略"
+      }
+    ],
+    "DescribeDiskBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskBackups\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskBackupSet\": [\n            {\n                \"DiskBackupName\": \"11111\",\n                \"Encrypt\": false,\n                \"Percent\": 100,\n                \"DiskBackupId\": \"dbp-xxxxxxxx\",\n                \"DiskSize\": 100,\n                \"DiskBackupState\": \"NORMAL\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"CreateTime\": \"2022-04-02T17:44:55+00:00\",\n                \"DiskId\": \"disk-xxxxxxxx\"\n            }\n        ],\n        \"RequestId\": \"6cd062f5-aa65-4477-a253-1ab41ab963fd\"\n    }\n}",
+        "title": "查询备份点列表"
       }
     ],
     "DescribeDiskConfigQuota": [
@@ -188,6 +212,14 @@
         "title": "重新初始化云硬盘"
       }
     ],
+    "InquirePriceModifyDiskBackupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModifyDiskBackupQuota\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\",\n    \"DiskBackupQuota\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0195b2d8-fec5-490a-ace9-579f49435e69\",\n        \"DiskPrice\": {\n            \"UnitPriceDiscountHigh\": \"0.059\",\n            \"DiscountPrice\": null,\n            \"UnitPriceHigh\": \"0.059\",\n            \"OriginalPriceHigh\": null,\n            \"ChargeUnit\": \"HOUR\",\n            \"OriginalPrice\": null,\n            \"UnitPriceDiscount\": 0.06,\n            \"DiscountPriceHigh\": null,\n            \"UnitPrice\": 0.06\n        }\n    }\n}",
+        "title": "修改云硬盘备份点配额询价"
+      }
+    ],
     "InquirePriceModifyDiskExtraPerformance": [
       {
         "document": "",
@@ -258,6 +290,14 @@
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskAttributes\n<公共请求参数>\n\n{\n    \"DiskName\": \"test_data_disk\",\n    \"DiskIds\": [\n        \"disk-fyctkqsf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf84fb00-6949-c0f6-aea8-5a1f806401c2\"\n    }\n}",
         "title": "修改云硬盘名称"
+      }
+    ],
+    "ModifyDiskBackupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskBackupQuota\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\",\n    \"DiskBackupQuota\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d41fd68-372a-4c90-81c6-a6f982328058\"\n    }\n}",
+        "title": "调整云硬盘备份点配额"
       }
     ],
     "ModifyDiskExtraPerformance": [

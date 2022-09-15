@@ -11,7 +11,7 @@
     "CreateInstance": [
       {
         "document": "根据输入参数创建ES集群实例",
-        "input": "https://es.tencentcloudapi.com/?Action=CreateInstance\n&InstanceName=es_test\n&EsVersion=6.4.3\n&ChargeType=POSTPAID_BY_HOUR\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&Zone=ap-guangzhou-3\n&Password=xxxxxx\n&NodeInfoList.0.Type=hotData\n&NodeInfoList.0.NodeNum=2\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\n&NodeInfoList.0.DiskType=CLOUD_SSD\n&NodeInfoList.0.DiskSize=100\n&NodeInfoList.1.Type=dedicatedMaster\n&NodeInfoList.1.NodeNum=3\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"EsVersion\": \"6.4.3\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"Password\": \"xxxxxx\",\n    \"InstanceName\": \"es_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "创建ES集群实例"
       }

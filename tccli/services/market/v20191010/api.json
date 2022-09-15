@@ -30,7 +30,8 @@
           "member": "string",
           "name": "ProviderUin",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -39,7 +40,8 @@
           "member": "string",
           "name": "SignId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -48,7 +50,8 @@
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -57,7 +60,8 @@
           "member": "string",
           "name": "TotalFlow",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -66,7 +70,8 @@
           "member": "string",
           "name": "LeftFlow",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -75,7 +80,8 @@
           "member": "string",
           "name": "FlowUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -90,7 +96,8 @@
           "name": "Success",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "流水号",
@@ -99,7 +106,8 @@
           "name": "FlowId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -108,7 +116,8 @@
           "name": "Info",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

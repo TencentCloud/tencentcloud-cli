@@ -932,6 +932,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启存算分离",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridStorage",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3882,6 +3892,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否支持存储计算分离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridStorage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5601,74 +5622,90 @@
         {
           "default": "",
           "document": "子任务名",
+          "example": "xx",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务结果",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务错误信息",
+          "example": "xx",
           "member": "string",
           "name": "ErrMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务类型",
+          "example": "xx",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务状态，0处理中 1成功 -1失败",
+          "example": "10",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "升级检查失败的索引名",
+          "example": "xx",
           "member": "string",
           "name": "FailedIndices",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务结束时间",
+          "example": "xx",
           "member": "string",
           "name": "FinishTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务等级，1警告 2失败",
+          "example": "10",
           "member": "int64",
           "name": "Level",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5703,38 +5740,46 @@
         {
           "default": "",
           "document": "任务名",
+          "example": "xx",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务进度",
+          "example": "1.2",
           "member": "float",
           "name": "Progress",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务完成时间",
+          "example": "xx",
           "member": "string",
           "name": "FinishTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子任务",
+          "example": "xx",
           "member": "SubTaskDetail",
           "name": "SubTasks",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

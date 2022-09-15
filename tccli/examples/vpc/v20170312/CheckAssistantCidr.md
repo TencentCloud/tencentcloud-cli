@@ -38,16 +38,17 @@ Output:
     "Response": {
         "ConflictSourceSet": [
             {
-                "ConflictSourceId": "vpc-12345678",
-                "SourceItem": "172.16.0.0/24",
+                "ConflictSourceId": "vpc-xxx",
+                "SourceItem": "xxx",
                 "ConflictItemSet": [
                     {
-                        "DestinationItem": "172.16.0.0/16"
+                        "ConfilctId": "xxx",
+                        "DestinationItem": "xxx"
                     }
                 ]
             }
         ],
-        "RequestId": "6e57b8db-4307-4135-b513-8c3d0e12aa4e"
+        "RequestId": "xxx"
     }
 }
 ```

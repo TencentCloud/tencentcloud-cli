@@ -51,7 +51,7 @@
     "DescribeAgentDealsByCache": {
       "document": "供代理商拉取缓存的全量客户订单",
       "input": "DescribeAgentDealsByCacheRequest",
-      "name": "代理商缓存订单查询接口（新）",
+      "name": "代理商缓存订单查询接口",
       "output": "DescribeAgentDealsByCacheResponse"
     },
     "DescribeAgentDealsCache": {
@@ -1878,7 +1878,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1887,7 +1888,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1896,7 +1898,8 @@
           "member": "datetime",
           "name": "CreatTimeRangeStart",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1905,7 +1908,8 @@
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1914,7 +1918,8 @@
           "member": "uint64",
           "name": "Order",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1923,7 +1928,8 @@
           "member": "uint64",
           "name": "Status",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1932,7 +1938,8 @@
           "member": "string",
           "name": "OwnerUins",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1941,7 +1948,8 @@
           "member": "string",
           "name": "DealNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1950,7 +1958,8 @@
           "member": "string",
           "name": "BigDealIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1959,7 +1968,8 @@
           "member": "uint64",
           "name": "PayerMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1974,7 +1984,8 @@
           "name": "AgentDealSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的订单总数量",
@@ -1983,7 +1994,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

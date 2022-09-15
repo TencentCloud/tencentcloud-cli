@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cbs CreateSnapshot --cli-unfold-argument  \
-    --DiskId disk-lzrg2pwi \
     --SnapshotName snap_201711301015 \
-    --Deadline 2022-01-08T09:47:55+00:00
+    --Deadline 2022-01-08T09:47:55+00:00 \
+    --DiskId disk-lzrg2pwi
 ```
 
 Output: 

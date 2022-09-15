@@ -78,6 +78,22 @@
         "title": "单笔交易回单申请"
       }
     ],
+    "ApplyOpenBankSettleOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelName\": \"HELIPAY\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"OutSettleId\": \"test21212328671312312120361\",\n    \"SettleAmount\": 5000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_DISABLED\",\n        \"ErrMessage\": \"\"\n    }\n}",
+        "title": "正常返回"
+      }
+    ],
+    "ApplyOpenBankSubMerchantSignOnline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankSubMerchantSignOnline\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM614829654947741696\",\n    \"ChannelName\": \"HELIPAY\",\n    \"OutSubMerchantId\": \"\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notfiy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111111\",\n        \"Result\": {\n            \"SignStatus\": \"PROCESSING\",\n            \"ExternalReturnData\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
+      }
+    ],
     "ApplyOutwardOrder": [
       {
         "document": "",
@@ -245,7 +261,7 @@
     "CreateAcct": [
       {
         "document": "用于子商户入驻的场景。",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=CreateAcct\n&MidasAppId=your_midas_app_id\n&SubMchId=your_sub_mch_id\n&SubMchName=商户名称\n&Address=商户地址\n&Contact=encrypted_contact_information\n&Mobile=encrypted_mobile_no\n&Email=encrypted_email\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcct\n<公共请求参数>\n\n{\n    \"MidasAppId\": \"your_midas_app_id\",\n    \"Mobile\": \"encrypted_mobile_no\",\n    \"MidasSignature\": \"your_midas_signature\",\n    \"MidasSecretId\": \"your_midas_secret_id\",\n    \"SubMchName\": \"商户名称\",\n    \"SubMchId\": \"your_sub_mch_id\",\n    \"Contact\": \"encrypted_contact_information\",\n    \"Address\": \"商户地址\",\n    \"Email\": \"encrypted_email\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"SubAppId\": \"sub_app_id_used_for_payment\",\n        \"SubAcctNo\": \"sub_account_no_from_bank\"\n    }\n}",
         "title": "子商户入驻请求示例"
       }
@@ -1300,6 +1316,14 @@
         "title": "查询结果：退款成功"
       }
     ],
+    "QueryOpenBankSettleOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"OutSettleId\": \"test21212328671312312120360\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": {\n            \"OutSettleId\": \"test21212328671312312120360\",\n            \"ChannelSettleId\": \"ST20220805641342942690410496\",\n            \"SettleStatus\": \"SUCCESS\",\n            \"SettleAmount\": 5,\n            \"SettleFee\": \"1\",\n            \"SettleDate\": \"20220805\",\n            \"SettleType\": \"D1\",\n            \"FailReason\": \"\",\n            \"TimeFinish\": \"2022-08-05 18:27:56\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
+      }
+    ],
     "QueryOpenBankSubMerchantCredential": [
       {
         "document": "",
@@ -1314,6 +1338,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSubMerchantRateConfigure\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM123456\",\n    \"ChannelSubMerchantId\": \"CM345678\",\n    \"ChannelRegistrationNo\": \"R123456\",\n    \"ChannelName\": \"HELIPAY\",\n    \"ChannelProductFeeNo\": \"P345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"DealStatus\": \"SUCCESS\",\n            \"DealMessage\": \"success\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "QueryOpenBankSubMerchantRateConfigure"
+      }
+    ],
+    "QueryOpenBankSubMerchantSignOnline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSubMerchantSignOnline\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM614829654947741696\",\n    \"ChannelName\": \"HELIPAY\",\n    \"OutSubMerchantId\": \"\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111111\",\n        \"Result\": {\n            \"SignStatus\": \"PROCESSING\",\n            \"SignMessage\": \"进行中\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
       }
     ],
     "QueryOpenBankSupportBankList": [

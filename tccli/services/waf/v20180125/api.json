@@ -842,7 +842,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -851,7 +852,8 @@
           "member": "int64",
           "name": "CertType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -860,7 +862,8 @@
           "member": "int64",
           "name": "IsCdn",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -869,7 +872,8 @@
           "member": "int64",
           "name": "UpstreamType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -878,7 +882,8 @@
           "member": "int64",
           "name": "IsWebsocket",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -887,7 +892,8 @@
           "member": "string",
           "name": "LoadBalance",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -896,7 +902,8 @@
           "member": "string",
           "name": "Cert",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -905,7 +912,8 @@
           "member": "string",
           "name": "PrivateKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -914,7 +922,8 @@
           "member": "string",
           "name": "SSLId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -923,7 +932,8 @@
           "member": "string",
           "name": "ResourceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -932,7 +942,8 @@
           "member": "string",
           "name": "UpstreamScheme",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -941,7 +952,8 @@
           "member": "string",
           "name": "HttpsUpstreamPort",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -950,7 +962,8 @@
           "member": "int64",
           "name": "IsGray",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -959,7 +972,8 @@
           "member": "string",
           "name": "GrayAreas",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -968,7 +982,8 @@
           "member": "string",
           "name": "UpstreamDomain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -977,7 +992,8 @@
           "member": "string",
           "name": "SrcList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -986,7 +1002,8 @@
           "member": "int64",
           "name": "IsHttp2",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -995,7 +1012,8 @@
           "member": "int64",
           "name": "HttpsRewrite",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1004,7 +1022,8 @@
           "member": "PortItem",
           "name": "Ports",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1013,7 +1032,8 @@
           "member": "string",
           "name": "Edition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1022,7 +1042,8 @@
           "member": "string",
           "name": "IsKeepAlive",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1031,7 +1052,8 @@
           "member": "string",
           "name": "InstanceID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1040,7 +1062,8 @@
           "member": "int64",
           "name": "Anycast",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1049,7 +1072,48 @@
           "member": "int64",
           "name": "Weights",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启主动健康检测，1表示开启，0表示不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveCheck",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "TLS版本信息",
+          "example": "1",
+          "member": "int64",
+          "name": "TLSVersion",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "加密套件信息",
+          "example": "[1，1]",
+          "member": "int64",
+          "name": "Ciphers",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
+          "example": "0",
+          "member": "int64",
+          "name": "CipherTemplate",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1137,7 +1201,8 @@
           "name": "ResourceIds",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1147,7 +1212,8 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1157,7 +1223,8 @@
           "name": "Region",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1167,7 +1234,8 @@
           "name": "BeginTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1177,7 +1245,8 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1187,7 +1256,8 @@
           "name": "InquireNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1197,10 +1267,83 @@
           "name": "UsedNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子产品code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_wsm_waf_bot",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
+    },
+    "BotQPS": {
+      "document": "bot的qps详情",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id",
+          "example": "waf_2kuj8hls00b7bo99_bot",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "有效时间",
+          "example": "2022-08-11 17:39:53",
+          "member": "string",
+          "name": "ValidTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源所在地区",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "使用qps的最大值",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxBotQPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "BotStatPointItem": {
       "document": "bot的趋势图对象",
@@ -1709,7 +1852,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1718,7 +1862,8 @@
           "member": "string",
           "name": "Items",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1727,7 +1872,18 @@
           "member": "bool",
           "name": "DeleteAll",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否为多域名黑白名单",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1742,7 +1898,8 @@
           "name": "FailedItems",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "删除失败的条目数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1751,7 +1908,8 @@
           "name": "FailedCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4001,7 +4159,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4011,7 +4170,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4021,7 +4181,8 @@
           "name": "ResourceIds",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4031,7 +4192,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4041,7 +4203,8 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4051,7 +4214,8 @@
           "name": "RenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4061,7 +4225,8 @@
           "name": "Mode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4071,7 +4236,8 @@
           "name": "Level",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4081,7 +4247,8 @@
           "name": "ValidTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4091,7 +4258,8 @@
           "name": "BeginTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4101,7 +4269,8 @@
           "name": "DomainCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4111,7 +4280,8 @@
           "name": "SubDomainLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4121,7 +4291,8 @@
           "name": "MainDomainCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4131,7 +4302,8 @@
           "name": "MainDomainLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4141,7 +4313,8 @@
           "name": "MaxQPS",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4151,7 +4324,8 @@
           "name": "QPS",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4161,7 +4335,8 @@
           "name": "DomainPkg",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4171,7 +4346,8 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4181,7 +4357,8 @@
           "name": "Edition",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4191,7 +4368,8 @@
           "name": "FraudPkg",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4201,7 +4379,30 @@
           "name": "BotPkg",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "bot的qps详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotQPS",
+          "name": "BotQPS",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "qps弹性计费上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ElasticBilling",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -5761,7 +5962,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5770,7 +5972,8 @@
           "member": "string",
           "name": "Items",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5779,7 +5982,18 @@
           "member": "string",
           "name": "Edition",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否为多域名黑白名单",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5794,7 +6008,8 @@
           "name": "FailedItems",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "添加或修改失败的数目\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5803,7 +6018,8 @@
           "name": "FailedCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -2820,7 +2820,8 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2829,7 +2830,8 @@
           "member": "uint64",
           "name": "PartitionCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2838,7 +2840,8 @@
           "member": "string",
           "name": "TopicType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2847,7 +2850,18 @@
           "member": "uint64",
           "name": "Period",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。",
+          "example": "HOT",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2862,7 +2876,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3158,7 +3173,8 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3167,7 +3183,8 @@
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3176,25 +3193,28 @@
           "member": "string",
           "name": "LocationIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的转发路径。",
           "example": "/bar2",
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3203,7 +3223,8 @@
           "member": "string",
           "name": "NewDefaultServerDomain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

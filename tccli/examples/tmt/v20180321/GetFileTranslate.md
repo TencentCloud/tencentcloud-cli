@@ -17,7 +17,8 @@ Output:
             "Status": "Wait",
             "FileData": "",
             "TaskId": "100001",
-            "Message": ""
+            "Message": "",
+            "Progress": "80"
         },
         "RequestId": "xx"
     }

@@ -1,3 +1,386 @@
+# Release 3.0.611.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 30 次发布
+
+发布时间：2022-09-15 06:14:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDBZoneConfig
+
+修改接口：
+
+* [DescribeBinlogBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41227)
+
+	* 新增出参：RemoteBinlogVolume, RemoteBinlogCount
+
+* [DescribeDataBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41226)
+
+	* 新增出参：RemoteBackupVolume, RemoteBackupCount
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* RegionSellConf
+* SellConfig
+* SellType
+* ZoneSellConf
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 14 次发布
+
+发布时间：2022-09-15 06:39:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateSecurityGroupApiRules
+* DescribeAddrTemplateList
+* DescribeSyncAssetStatus
+* ModifyAllSwitchStatus
+* ModifyItemSwitchStatus
+* ModifySecurityGroupAllRuleStatus
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SecurityGroupApiRuleData
+* TemplateListInfo
+
+
+
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 14 次发布
+
+发布时间：2022-09-15 06:07:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupList](http://document.tencentcloudapi.woa.com/document/product/1003/48093)
+
+	* 新增入参：BackupIds, BackupType, BackupMethod, SnapShotType, StartTime, EndTime, FileNames, BackupNames
+
+	* <font color="#dd0000">**修改入参**：</font>Limit, Offset
+
+
+修改数据结构：
+
+* [BackupFileInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BackupFileInfo)
+
+	* 新增成员：BackupId, SnapShotType, BackupName
+
+
+
+
+## 数据湖计算(dlc) 版本：2021-01-25
+
+### 第 29 次发布
+
+发布时间：2022-09-15 06:04:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：CmdArgs
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 15 次发布
+
+发布时间：2022-09-15 06:07:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
+
+	* 新增成员：CommunityUrl, GuideUrl, SceneIdSet
+
+
+
+
+## 云直播(live) 版本：2018-08-01
+
+### 第 18 次发布
+
+发布时间：2022-09-15 06:22:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTranscodeTaskNum](http://document.tencentcloudapi.woa.com/document/product/267/76066)
+
+新增数据结构：
+
+* [TranscodeTaskNum](http://document.tencentcloudapi.woa.com/document/product/267/20474#TranscodeTaskNum)
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 28 次发布
+
+发布时间：2022-09-15 06:23:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeConditionsTemplateList](http://document.tencentcloudapi.woa.com/document/product/248/70250)
+
+	* 新增入参：PolicyCountOrder
+
+
+修改数据结构：
+
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/248/30354#Condition)
+
+	* 新增成员：IsAdvanced, IsOpen, ProductId
+
+
+
+
+## 视频处理(mps) 版本：2019-06-12
+
+### 第 9 次发布
+
+发布时间：2022-09-15 06:24:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EditMediaOutputConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#EditMediaOutputConfig)
+
+	* 新增成员：Type
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 28 次发布
+
+发布时间：2022-09-15 06:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecognizeHealthCodeOCR](http://document.tencentcloudapi.woa.com/document/product/866/68580)
+
+	* 新增出参：SpotName
+
+
+
+
+## 服务网格(tcm) 版本：2021-04-13
+
+### 第 10 次发布
+
+发布时间：2022-09-15 06:41:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteMesh](http://document.tencentcloudapi.woa.com/document/product/1593/75046)
+
+	* 新增入参：NeedDeleteCLS, NeedDeleteTMP, NeedDeleteAPM, NeedDeleteGrafana
+
+
+新增数据结构：
+
+* [SmartDNSConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#SmartDNSConfig)
+
+修改数据结构：
+
+* [CLS](http://document.tencentcloudapi.woa.com/document/product/1593/75052#CLS)
+
+	* 新增成员：NeedDelete
+
+* [IstioConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#IstioConfig)
+
+	* 新增成员：EnablePilotHTTP, DisableHTTPRetry, SmartDNS
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 43 次发布
+
+发布时间：2022-09-15 06:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+	* 新增入参：ClusterLevel
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 13 次发布
+
+发布时间：2022-09-15 06:33:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecordParams)
+
+	* 新增成员：AvMerge
+
+* [TencentVod](http://document.tencentcloudapi.woa.com/document/product/647/44055#TencentVod)
+
+	* 新增成员：MediaType
+
+
+
+
+## 视频内容安全(vm) 版本：2021-09-22
+
+### 第 3 次发布
+
+发布时间：2022-09-15 06:06:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1265/74818)
+
+	* 新增出参：Label, AudioText, Asrs
+
+
+新增数据结构：
+
+* [RcbAsr](http://document.tencentcloudapi.woa.com/document/product/1265/74821#RcbAsr)
+
+修改数据结构：
+
+* [MediaInfo](http://document.tencentcloudapi.woa.com/document/product/1265/74821#MediaInfo)
+
+	* 新增成员：Thumbnail
+
+
+
+
+## 视频内容安全(vm) 版本：2020-12-29
+
+
+
+## 视频内容安全(vm) 版本：2020-07-09
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 35 次发布
+
+发布时间：2022-09-15 06:30:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGateway)
+
+	* 新增成员：RestrictState
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 18 次发布
+
+发布时间：2022-09-15 06:40:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：ActiveCheck, TLSVersion, Ciphers, CipherTemplate
+
+* [DeleteIpAccessControl](http://document.tencentcloudapi.woa.com/document/product/627/72648)
+
+	* 新增入参：SourceType
+
+* [UpsertIpAccessControl](http://document.tencentcloudapi.woa.com/document/product/627/72636)
+
+	* 新增入参：SourceType
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
+
+	* 新增成员：ElasticBilling
+
+
+
+
 # 本版本更新包含以下内容：
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

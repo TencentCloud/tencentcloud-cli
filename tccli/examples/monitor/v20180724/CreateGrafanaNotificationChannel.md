@@ -16,6 +16,7 @@ Output:
 ```
 {
     "Response": {
+        "ChannelId": "xx",
         "RequestId": "xx"
     }
 }

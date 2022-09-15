@@ -4837,7 +4837,8 @@
           "member": "string",
           "name": "InstanceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4846,7 +4847,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4855,7 +4857,8 @@
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4864,7 +4867,18 @@
           "member": "DataDisk",
           "name": "DataDisk",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。其中：\n0，按资源维度后付费，计算当日用量峰值，例如CPU，内存，硬盘等，仅适用于非GNR系列机型；\n1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；\n2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；\n该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4879,7 +4893,8 @@
           "name": "InstancePrice",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

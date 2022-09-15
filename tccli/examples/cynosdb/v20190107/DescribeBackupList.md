@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cynosdb DescribeBackupList --cli-unfold-argument  \
+    --Limit 10 \
     --ClusterId cynosdbpg-ilgo90hu \
-    --Offset 0 \
-    --Limit 10
+    --Offset 0
 ```
 
 Output: 
@@ -26,7 +26,10 @@ Output:
                 "FinishTime": "2019-01-20 02:10:12",
                 "BackupType": "snapshot",
                 "BackupMethod": "auto",
-                "BackupStatus": "success"
+                "BackupStatus": "success",
+                "SnapShotType": "full",
+                "BackupName": "desc123",
+                "BackupId": 100
             }
         ],
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"

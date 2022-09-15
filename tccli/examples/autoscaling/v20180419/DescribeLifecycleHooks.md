@@ -20,7 +20,7 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_TOPIC",
+                    "TargetType": "TDMQ_TOPIC",
                     "TopicName": "one-topic",
                     "QueueName": ""
                 },
@@ -40,7 +40,7 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_QUEUE",
+                    "TargetType": "TDMQ_QUEUE",
                     "TopicName": "",
                     "QueueName": "one-queue"
                 },
@@ -122,7 +122,7 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "topic",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_TOPIC",
+                    "TargetType": "TDMQ_TOPIC",
                     "TopicName": "one-topic",
                     "QueueName": ""
                 },
@@ -138,7 +138,7 @@ Output:
                 "HeartbeatTimeout": 120,
                 "NotificationMetadata": "queue",
                 "NotificationTarget": {
-                    "TargetType": "CMQ_QUEUE",
+                    "TargetType": "TDMQ_QUEUE",
                     "TopicName": "",
                     "QueueName": "one-queue"
                 },

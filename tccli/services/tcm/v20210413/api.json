@@ -320,7 +320,8 @@
           "name": "Enable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -330,7 +331,8 @@
           "name": "LogSet",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -340,7 +342,19 @@
           "name": "Topic",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDelete",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -945,7 +959,48 @@
           "member": "string",
           "name": "MeshId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CLS组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteCLS",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "TMP组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteTMP",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "APM组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteAPM",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Grafana组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteGrafana",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1575,7 +1630,8 @@
           "name": "OutboundTrafficPolicy",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1585,7 +1641,8 @@
           "name": "Tracing",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1595,7 +1652,41 @@
           "name": "DisablePolicyChecks",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "支持HTTP1.0协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePilotHTTP",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "禁用HTTP重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableHTTPRetry",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SmartDNS策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartDNSConfig",
+          "name": "SmartDNS",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -2690,6 +2781,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartDNSConfig": {
+      "document": "智能DNS配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开启DNS代理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IstioMetaDNSCapture",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启自动地址分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IstioMetaDNSAutoAllocate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

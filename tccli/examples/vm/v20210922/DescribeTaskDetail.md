@@ -13,184 +13,210 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "DataId": "xx",
-        "ErrorType": "xx",
-        "Name": "xx",
-        "InputInfo": {
-            "Url": "xx",
-            "BucketInfo": "xx",
-            "Type": "xx"
-        },
-        "BizType": "xx",
+        "TaskId": "task-video-XwxJtbkKXWgCt8AZ",
+        "DataId": "data_test_01",
+        "BizType": "1001",
+        "Name": "",
+        "Status": "FINISH",
+        "Type": "VIDEO",
+        "Suggestion": "Block",
         "Labels": [
             {
-                "Score": 99,
-                "Suggestion": "xx",
-                "Label": "xx"
+                "Label": "Porn",
+                "Suggestion": "Block",
+                "Score": 99
             },
             {
-                "Score": 70,
-                "Suggestion": "xx",
-                "Label": "xx"
+                "Label": "Hot",
+                "Suggestion": "Block",
+                "Score": 70
             }
         ],
         "MediaInfo": {
+            "Codecs": "h264 aac",
             "Duration": 36,
             "Width": 352,
-            "Height": 640,
-            "Codecs": "xx"
+            "Height": 640
         },
+        "InputInfo": {
+            "Type": "URL",
+            "Url": "https://cms-video-segments-1256309736.cos.ap-guangzhou.myqcloud.co/huang.mp4",
+            "BucketInfo": null
+        },
+        "CreatedAt": "2020-07-13T11:47:01.925Z",
+        "UpdatedAt": "2020-07-13T11:47:25.840Z",
         "ImageSegments": [
             {
-                "OffsetTime": "xx",
                 "Result": {
-                    "Extra": "xx",
-                    "Url": "xx",
+                    "HitFlag": 1,
+                    "Label": "Porn",
+                    "Suggestion": "Block",
+                    "Score": 85,
                     "Results": [
                         {
-                            "Text": "xx",
-                            "Scene": "xx",
-                            "Label": "xx",
-                            "SubLabel": "xx",
-                            "Score": 85,
-                            "Names": [
-                                "xx"
-                            ],
-                            "Suggestion": "xx",
+                            "Scene": "Porn",
                             "HitFlag": 1,
-                            "Details": [
-                                {
-                                    "LibName": "xx",
-                                    "Name": "xx",
-                                    "Text": "xx",
-                                    "Score": 0,
-                                    "Label": "xx",
-                                    "SubLabelCode": "xx",
-                                    "Location": {
-                                        "Y": 0.0,
-                                        "X": 0.0,
-                                        "Rotate": 0.0,
-                                        "Height": 0,
-                                        "Width": 0
-                                    },
-                                    "Suggestion": "xx",
-                                    "Keywords": [
-                                        "xx"
-                                    ],
-                                    "LibId": "xx"
-                                }
-                            ]
+                            "Suggestion": "Block",
+                            "Label": "Porn",
+                            "SubLabel": "",
+                            "Score": 85,
+                            "Names": [],
+                            "Text": "",
+                            "Details": []
                         }
                     ],
-                    "Label": "xx",
-                    "Score": 85,
-                    "Suggestion": "xx",
-                    "HitFlag": 1
-                }
+                    "Url": "https://cos.ap-zhou.myqcloud.com/c019/image_1.jpg"
+                },
+                "OffsetTime": "1"
             },
             {
-                "OffsetTime": "xx",
                 "Result": {
-                    "Extra": "xx",
-                    "Url": "xx",
+                    "HitFlag": 1,
+                    "Label": "Porn",
+                    "Suggestion": "Block",
+                    "Score": 77,
                     "Results": [
                         {
-                            "Text": "xx",
-                            "Scene": "xx",
-                            "Label": "xx",
-                            "SubLabel": "xx",
-                            "Score": 77,
-                            "Names": [
-                                "xx"
-                            ],
-                            "Suggestion": "xx",
+                            "Scene": "Porn",
                             "HitFlag": 1,
-                            "Details": [
-                                {
-                                    "SubLabelCode": "xx",
-                                    "Name": "xx",
-                                    "Text": "xx",
-                                    "Score": 0,
-                                    "Label": "xx",
-                                    "LibName": "xx",
-                                    "Location": {
-                                        "Y": 0.0,
-                                        "X": 0.0,
-                                        "Rotate": 0.0,
-                                        "Width": 0,
-                                        "Height": 0
-                                    },
-                                    "Suggestion": "xx",
-                                    "Keywords": [
-                                        "xx"
-                                    ],
-                                    "LibId": "xx"
-                                }
-                            ]
+                            "Suggestion": "Block",
+                            "Label": "Porn",
+                            "SubLabel": "",
+                            "Score": 77,
+                            "Names": [],
+                            "Text": "",
+                            "Details": []
                         }
                     ],
-                    "Label": "xx",
-                    "Score": 77,
-                    "Suggestion": "xx",
-                    "HitFlag": 1
-                }
+                    "Url": "https://cos.ap-guau.myqcloud.com/cc49b5b90a5d6802b7c019/image_2.jpg"
+                },
+                "OffsetTime": "2"
             }
         ],
-        "TaskId": "xx",
         "AudioSegments": [
             {
-                "OffsetTime": "xx",
                 "Result": {
-                    "TextResults": [
-                        {
-                            "LibName": "xx",
-                            "Score": 0,
-                            "Label": "xx",
-                            "LibId": "xx",
-                            "Suggestion": "xx",
-                            "Keywords": [
-                                "xx"
-                            ],
-                            "LibType": 0
-                        }
-                    ],
-                    "Extra": "xx",
-                    "Url": "xx",
-                    "Text": "xx",
-                    "MoanResults": [
-                        {
-                            "EndTime": 0.0,
-                            "Score": 0,
-                            "SubLabelCode": "xx",
-                            "StartTime": 0.0,
-                            "Label": "xx"
-                        }
-                    ],
-                    "Label": "xx",
-                    "Score": 0,
-                    "Suggestion": "xx",
-                    "Duration": "xx",
                     "HitFlag": 0,
-                    "LanguageResults": [
-                        {
-                            "EndTime": 0.0,
-                            "Score": 0,
-                            "SubLabelCode": "xx",
-                            "StartTime": 0.0,
-                            "Label": "xx"
-                        }
-                    ]
-                }
+                    "Label": "Normal",
+                    "SubLabel": "",
+                    "Suggestion": "Pass",
+                    "Score": 0,
+                    "Text": "测试音频文本",
+                    "Url": "https://xxx.com/7c019/audio_0.mp3",
+                    "Duration": "36398"
+                },
+                "OffsetTime": "0"
             }
         ],
-        "Suggestion": "xx",
-        "UpdatedAt": "xx",
+        "RequestId": "8d3e4765-48db-40b5-8fdb-aaf1d7225a60",
+        "ErrorType": "",
+        "ErrorDescription": "",
         "TryInSeconds": 0,
-        "Type": "xx",
-        "ErrorDescription": "xx",
-        "CreatedAt": "xx",
-        "RequestId": "xx"
+        "Label": "Porn",
+        "AudioText": "",
+        "Asrs": []
+    }
+}
+```
+
+**Example 2: ok**
+
+
+
+Input: 
+
+```
+tccli vm DescribeTaskDetail --cli-unfold-argument  \
+    --ShowAllSegments true \
+    --TaskId w-video-YyBIZHP6L4buPOcg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": "w-video-YyBIZHP6L4buPOcg",
+        "DataId": "1111",
+        "BizType": "default",
+        "Name": "111",
+        "Status": "RUNNING",
+        "Type": "VIDEO",
+        "Suggestion": "UNSPECIFIED",
+        "Labels": [],
+        "InputInfo": {
+            "Type": "URL",
+            "Url": "https://test-resources-1306254157.cos.ap-guangzhou.myqcloud.com/audio_policy_test/4%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF.m4a",
+            "BucketInfo": null
+        },
+        "MediaInfo": {
+            "Codecs": "",
+            "Duration": 0,
+            "Width": 0,
+            "Height": 0,
+            "Thumbnail": ""
+        },
+        "AudioText": "",
+        "ImageSegments": [],
+        "AudioSegments": [],
+        "TryInSeconds": 0,
+        "CreatedAt": "2022-09-13T09:07:48.926Z",
+        "UpdatedAt": "2022-09-13T09:07:49.059Z",
+        "ErrorType": "",
+        "ErrorDescription": "",
+        "Asrs": [],
+        "Label": "",
+        "RequestId": "ba257e71-a04b-4ba9-9d67-0717a39b6a96"
+    }
+}
+```
+
+**Example 3: vm详情返回示例**
+
+
+
+Input: 
+
+```
+tccli vm DescribeTaskDetail --cli-unfold-argument  \
+    --ShowAllSegments true \
+    --TaskId w-live_audio-YyBybeJJPvjum5DP
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": "w-live_audio-YyBybeJJPvjum5DP",
+        "DataId": "1111",
+        "BizType": "default",
+        "Name": "111",
+        "Status": "RUNNING",
+        "Type": "LIVE_AUDIO",
+        "Suggestion": "UNSPECIFIED",
+        "Labels": [],
+        "InputInfo": {
+            "Type": "URL",
+            "Url": "https://test-resources-1306254157.cos.ap-guangzhou.myqcloud.com/audio_policy_test/4%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF.m4a",
+            "BucketInfo": null
+        },
+        "MediaInfo": {
+            "Codecs": "",
+            "Duration": 0,
+            "Width": 0,
+            "Height": 0,
+            "Thumbnail": ""
+        },
+        "AudioText": "",
+        "ImageSegments": [],
+        "AudioSegments": [],
+        "TryInSeconds": 120,
+        "CreatedAt": "2022-09-13T12:07:09.338Z",
+        "UpdatedAt": "2022-09-13T12:07:09.623Z",
+        "ErrorType": "",
+        "ErrorDescription": "",
+        "Asrs": [],
+        "Label": "",
+        "RequestId": "08895eaa-2c51-4dc6-94fc-7b9bad51632b"
     }
 }
 ```

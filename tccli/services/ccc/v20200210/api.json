@@ -169,7 +169,8 @@
           "name": "Callee",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -179,7 +180,19 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "会话ID列表",
+          "example": "[\"aaaa-xxxx\"]",
+          "member": "string",
+          "name": "Sessions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

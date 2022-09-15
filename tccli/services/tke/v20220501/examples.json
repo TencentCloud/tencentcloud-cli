@@ -11,7 +11,7 @@
     "DescribeInstantInspectTask": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeInstantInspectTask\n&JobName=job-test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstantInspectTask\n<公共请求参数>\n\n{\n    \"JobName\": \"job-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": \"waiting\",\n        \"Data\": []\n    }\n}",
         "title": "获得集群巡检结果"
       }

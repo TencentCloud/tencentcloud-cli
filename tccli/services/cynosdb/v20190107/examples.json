@@ -32,12 +32,28 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "CheckAccountPasswordValidation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAccountPasswordValidation\n<公共请求参数>\n\n{\n    \"AccountPassword\": \"abc@12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff3f4e74-2841-11ed-9ac2-525400542aa6\"\n    }\n}",
+        "title": "校验参数是否符合规范"
+      }
+    ],
     "CreateAccounts": [
       {
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=xxx\n&Accounts.0.AccountName=xx\n&Accounts.0.AccountPassword=xxx\n&Accounts.0.Description=xxx\n&Accounts.0.Host=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
         "title": "创建新账号"
+      }
+    ],
+    "CreateBackup": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateBackup\n&ClusterId=cynosdbpg-45knmnra\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 12345\n    }\n}",
+        "title": "创建备份"
       }
     ],
     "CreateClusters": [
@@ -83,8 +99,8 @@
     "DescribeBackupList": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeBackupList\n&ClusterId=cynosdbpg-ilgo90hu\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"xx\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"ClusterId\": \"cynosdbpg-ilgo90hu\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"xx\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\",\n                \"SnapShotType\": \"full\",\n                \"BackupName\": \"desc123\",\n                \"BackupId\": 100\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份文件列表"
       }
     ],
@@ -342,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"OldSlaveZone\": \"xx\",\n    \"NewSlaveZone\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "修改从可用区"
+      }
+    ],
+    "ModifyClusterStorage": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterStorage\n&ClusterId=cynosdbmysql-xxxxxxxx\n&NewStorageLimit=20\n&OldStorageLimit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
+        "title": "升级预付费存储"
       }
     ],
     "ModifyDBInstanceSecurityGroups": [

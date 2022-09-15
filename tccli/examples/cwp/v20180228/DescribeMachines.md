@@ -33,6 +33,7 @@ Output:
                 "Tag": [],
                 "MalwareNum": 0,
                 "CyberAttackNum": 0,
+                "IsAddedOnTheFifteen": 1,
                 "SecurityStatus": "SAFE",
                 "InstanceState": "TERMINATED_PRO_VERSION",
                 "ProjectId": 1,

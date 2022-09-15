@@ -115,7 +115,7 @@
     "CreateInstancePre": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePre\n&InstanceName=test\n&MsgRetentionTime=1440\n&InstanceType=1\n&ZoneId=100003\n&Period=1m\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePre\n<公共请求参数>\n\n{\n    \"MsgRetentionTime\": \"1440\",\n    \"Period\": \"1m\",\n    \"InstanceName\": \"test\",\n    \"InstanceType\": \"1\",\n    \"ZoneId\": \"100003\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"DeleteRouteTimestamp\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\n    }\n}",
         "title": "创建实例(预付费包年包月)"
       }

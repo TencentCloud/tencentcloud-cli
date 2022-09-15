@@ -2,7 +2,7 @@
   "actions": {
     "CreateCloudRecording": [
       {
-        "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为混流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n第三方存储设置为腾讯云存储，存储的文件前缀为directory1/directory2/。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。",
+        "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为混流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"StorageParams\": {\n        \"CloudVod\": {\n            \"TencentVod\": {\n                \"ExpireTime\": 0\n            }\n        }\n    },\n    \"UserSig\": \"xx\",\n    \"UserId\": \"xx\",\n    \"RecordParams\": {\n        \"MaxIdleTime\": 60,\n        \"StreamType\": 0,\n        \"RecordMode\": 2\n    },\n    \"RoomIdType\": 1,\n    \"MixTranscodeParams\": {\n        \"VideoParams\": {\n            \"Width\": 360,\n            \"BitRate\": 500000,\n            \"Fps\": 15,\n            \"Height\": 640,\n            \"Gop\": 10\n        }\n    },\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"3560\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "启动云端录制"

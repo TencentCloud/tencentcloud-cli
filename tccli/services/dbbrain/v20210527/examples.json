@@ -208,6 +208,14 @@
         "title": "查询redis实例大key列表"
       }
     ],
+    "DescribeRedisTopKeyPrefixList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedisTopKeyPrefixList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Date\": \"2022-04-12\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"Items\": [\n            {\n                \"AveElementSize\": 44,\n                \"Length\": 864,\n                \"KeyPreIndex\": \"2028567046\",\n                \"ItemCount\": 5,\n                \"Count\": 5,\n                \"MaxElementSize\": 66\n            }\n        ],\n        \"Timestamp\": 162072183\n    }\n}",
+        "title": "查询redis实例top key前缀列表"
+      }
+    ],
     "DescribeSecurityAuditLogDownloadUrls": [
       {
         "document": "",

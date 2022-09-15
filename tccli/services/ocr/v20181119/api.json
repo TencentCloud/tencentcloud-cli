@@ -211,7 +211,7 @@
       "output": "MLIDCardOCRResponse"
     },
     "MLIDPassportOCR": {
-      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n",
+      "document": "本接口支持中国港澳台地区以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n\n默认接口请求频率限制：5次/秒。\n",
       "input": "MLIDPassportOCRRequest",
       "name": "护照识别（港澳台地区及境外护照）",
       "output": "MLIDPassportOCRResponse"
@@ -307,7 +307,7 @@
       "output": "RecognizeIndonesiaIDOCRResponse"
     },
     "RecognizeMedicalInvoiceOCR": {
-      "document": "医疗票据识别",
+      "document": "医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。\n",
       "input": "RecognizeMedicalInvoiceOCRRequest",
       "name": "医疗票据识别",
       "output": "RecognizeMedicalInvoiceOCRResponse"
@@ -4614,7 +4614,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4623,7 +4624,8 @@
           "member": "bool",
           "name": "RetImage",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4638,7 +4640,8 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "姓名",
@@ -4647,7 +4650,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "出生日期",
@@ -4656,7 +4660,8 @@
           "name": "DateOfBirth",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "性别（F女，M男）",
@@ -4665,7 +4670,8 @@
           "name": "Sex",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "有效期",
@@ -4674,7 +4680,8 @@
           "name": "DateOfExpiration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发行国",
@@ -4683,16 +4690,18 @@
           "name": "IssuingCountry",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "国籍",
+          "document": "国家地区代码",
           "example": "SGP",
           "member": "string",
           "name": "Nationality",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警",
@@ -4701,7 +4710,8 @@
           "name": "Warn",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "证件图片",
@@ -4710,7 +4720,8 @@
           "name": "Image",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "扩展字段:\n{\n    ID:{\n        Confidence:0.9999\n    },\n    Name:{\n        Confidence:0.9996\n    }\n}",
@@ -4719,7 +4730,8 @@
           "name": "AdvancedInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "最下方第一行 MRZ Code 序列",
@@ -4728,7 +4740,8 @@
           "name": "CodeSet",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "最下方第二行 MRZ Code 序列",
@@ -4737,7 +4750,8 @@
           "name": "CodeCrc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6510,6 +6524,16 @@
           "example": "无",
           "member": "string",
           "name": "Vaccination",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "场所名称（允许返回空值）",
+          "example": "无",
+          "member": "string",
+          "name": "SpotName",
           "required": true,
           "type": "string",
           "value_allowed_null": false,

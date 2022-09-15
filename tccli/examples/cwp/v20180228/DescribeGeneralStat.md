@@ -24,6 +24,7 @@ Output:
         "Offline": 0,
         "ProtectDays": 1,
         "FlagshipMachineCnt": 1,
+        "AddedOnTheFifteen": 1,
         "RequestId": "cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4"
     }
 }

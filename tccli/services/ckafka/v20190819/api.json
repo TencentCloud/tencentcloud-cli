@@ -2847,16 +2847,18 @@
           "member": "string",
           "name": "InstanceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "可用区",
+          "document": "可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值",
           "example": "100003",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2865,7 +2867,8 @@
           "member": "string",
           "name": "Period",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2874,7 +2877,8 @@
           "member": "int64",
           "name": "InstanceType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2883,7 +2887,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2892,7 +2897,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2901,7 +2907,8 @@
           "member": "int64",
           "name": "MsgRetentionTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2910,7 +2917,8 @@
           "member": "int64",
           "name": "ClusterId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2919,7 +2927,8 @@
           "member": "int64",
           "name": "RenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2928,7 +2937,8 @@
           "member": "string",
           "name": "KafkaVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2937,7 +2947,8 @@
           "member": "string",
           "name": "SpecificationsType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2946,7 +2957,8 @@
           "member": "int64",
           "name": "DiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2955,7 +2967,8 @@
           "member": "int64",
           "name": "BandWidth",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2964,7 +2977,8 @@
           "member": "int64",
           "name": "Partition",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2973,7 +2987,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2982,7 +2997,8 @@
           "member": "string",
           "name": "DiskType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2991,16 +3007,18 @@
           "member": "bool",
           "name": "MultiZoneFlag",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "可用区列表",
+          "document": "可用区列表，购买多可用区实例时为必填项",
           "example": "[100006,100007]",
           "member": "int64",
           "name": "ZoneIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3061,7 +3079,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

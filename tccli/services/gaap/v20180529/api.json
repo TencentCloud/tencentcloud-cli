@@ -7314,119 +7314,156 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-xxxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器名称",
+          "example": "test",
           "member": "string",
           "name": "ListenerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器端口",
+          "example": "443",
           "member": "uint64",
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTPS",
+          "example": "HTTPS",
           "member": "string",
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器状态，其中：\n0表示运行中；\n1表示创建中；\n2表示销毁中；\n3表示源站调整中；\n4表示配置变更中。",
+          "example": "0",
           "member": "uint64",
           "name": "ListenerStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器服务器SSL证书ID",
+          "example": "cert-xxxx",
           "member": "string",
           "name": "CertificateId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器后端转发源站协议",
+          "example": "HTTPS",
           "member": "string",
           "name": "ForwardProtocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器创建时间，Unix时间戳",
+          "example": "1661788772",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "服务器SSL证书的别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testcert",
           "member": "string",
           "name": "CertificateAlias",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器客户端CA证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cert-xxxx",
           "member": "string",
           "name": "ClientCertificateId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器认证方式。其中，\n0表示单向认证；\n1表示双向认证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AuthType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "客户端CA证书别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testcert",
           "member": "string",
           "name": "ClientCertificateAlias",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "多客户端CA证书别名信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "CertificateAliasInfo",
           "name": "PolyClientCertificateAliasInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否支持Http3，其中：\n0，不支持Http3接入；\n1，持Http3接入。\n注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

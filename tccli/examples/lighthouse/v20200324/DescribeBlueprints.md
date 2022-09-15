@@ -31,7 +31,10 @@ Output:
                 "BlueprintName": "Wordpress",
                 "SupportAutomationTools": true,
                 "RequiredMemorySize": 1,
-                "ImageId": ""
+                "ImageId": "",
+                "SceneIdSet": [],
+                "CommunityUrl": "CommunityUrl_test",
+                "GuideUrl": "GuideUrl_test"
             }
         ],
         "RequestId": "3df9cd92-cec1-4864-a2a1-358084f41551"

@@ -118,6 +118,7 @@ Output:
         "IsWildcard": false,
         "Deployable": false,
         "EncryptCert": "xx",
+        "EncryptAlgorithm": "RSA 2048",
         "VulnerabilityStatus": "xx"
     }
 }
@@ -243,6 +244,7 @@ Output:
         "IsWildcard": false,
         "Deployable": false,
         "EncryptCert": "xx",
+        "EncryptAlgorithm": "RSA 2048",
         "VulnerabilityStatus": "xx"
     }
 }

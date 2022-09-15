@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Kind\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 集成配置"
       }
     ],
@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 告警通道"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "Grafana实例授权其他腾讯云用户",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "授权腾讯云用户"
       }
     ],
@@ -373,7 +373,7 @@
     "DescribeConditionsTemplateList": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeConditionsTemplateList\n&Module=monitor\n&ViewName=cvm_device\n&GroupName=test\n&GroupID= 1998658\n&UpdateTimeOrder=desc\n&Limit=1\n&Offset=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConditionsTemplateList\n<公共请求参数>\n\n{\n    \"ViewName\": \"cvm_device\",\n    \"Module\": \"monitor\",\n    \"UpdateTimeOrder\": \"desc\",\n    \"GroupName\": \"test\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\",\n    \"GroupID\": \" 1998658\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"853dafdc-22d4-4e9d-88a7-ebc43abf7cef\",\n        \"TemplateGroupList\": [\n            {\n                \"Conditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": 0,\n                        \"AlarmNotifyType\": 0,\n                        \"CalcType\": \"\",\n                        \"CalcValue\": \"\",\n                        \"ContinueTime\": \"\",\n                        \"MetricDisplayName\": \"机器重启\",\n                        \"MetricID\": 25,\n                        \"Period\": 60,\n                        \"RuleID\": 5001158,\n                        \"Unit\": \"\"\n                    }\n                ],\n                \"EventConditions\": [\n                    {\n                        \"AlarmNotifyPeriod\": \"0\",\n                        \"AlarmNotifyType\": \"0\",\n                        \"EventDisplayName\": \"ping不可达\",\n                        \"EventID\": \"42\",\n                        \"RuleID\": \"5001160\"\n                    }\n                ],\n                \"GroupID\": 1998664,\n                \"GroupName\": \"test\",\n                \"InsertTime\": 1567074714,\n                \"LastEditUin\": 1500000687,\n                \"IsUnionRule\": 0,\n                \"PolicyGroups\": [\n                    {\n                        \"CanSetDefault\": true,\n                        \"Enable\": true,\n                        \"GroupID\": 1998665,\n                        \"GroupName\": \"test2\",\n                        \"InsertTime\": 1567075011,\n                        \"IsDefault\": 0,\n                        \"LastEditUin\": 1500000687,\n                        \"NoShieldedInstanceCount\": 1,\n                        \"ParentGroupID\": 1998664,\n                        \"ProjectID\": 0,\n                        \"ReceiverInfos\": [\n                            {\n                                \"EndTime\": 57599,\n                                \"NeedSendNotice\": 1,\n                                \"NotifyWay\": [\n                                    \"EMAIL\",\n                                    \"SMS\"\n                                ],\n                                \"PersonInterval\": 60,\n                                \"ReceiverGroupList\": null,\n                                \"ReceiverType\": \"group\",\n                                \"ReceiverUserList\": null,\n                                \"RecoverNotify\": [\n                                    \"SMS\"\n                                ],\n                                \"RoundInterval\": 60,\n                                \"RoundNumber\": 2,\n                                \"SendFor\": null,\n                                \"StartTime\": 57600,\n                                \"UIDList\": null\n                            }\n                        ],\n                        \"Remark\": \"test2\",\n                        \"TotalInstanceCount\": 1,\n                        \"UpdateTime\": 1567075012,\n                        \"ViewName\": \"cvm_device\"\n                    }\n                ],\n                \"Remark\": \"test\",\n                \"UpdateTime\": 1567074881,\n                \"ViewName\": \"cvm_device\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取告警策略模板列表"
       }
@@ -392,6 +392,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"KubeType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"IntegrationSet\": []\n    }\n}",
         "title": "查询 exporter 集成列表"
+      }
+    ],
+    "DescribeGrafanaChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"xx\",\n    \"ChannelIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"xx\",\n                \"OrganizationIds\": [\n                    \"xx\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Grafana 告警通道"
       }
     ],
     "DescribeGrafanaConfig": [
@@ -626,7 +634,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"r1xcta1opsb6qipjzb4h4x-kcegta6m2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "安装 Grafana 插件"
       }
     ],

@@ -762,6 +762,12 @@
       "name": "解冻媒体文件",
       "output": "RestoreMediaResponse"
     },
+    "ReviewAudioVideo": {
+      "document": "对点播中的音视频媒体发起审核任务，智能检测视频画面、画面中的文字、语音中的文字出现的违规内容。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。\n",
+      "input": "ReviewAudioVideoRequest",
+      "name": "音视频审核",
+      "output": "ReviewAudioVideoResponse"
+    },
     "ReviewImage": {
       "document": "对点播中的图片文件发起审核（令人反感的信息、不安全的信息、不适宜的信息）任务。\n\n><li>图片文件大小支持：文件 < 5M；</li>\n><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响审核效果；</li>\n><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>\n",
       "input": "ReviewImageRequest",
@@ -12742,7 +12748,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li> ReviewAudioVideo：音视频审核任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -12916,6 +12922,16 @@
           "example": "无",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewAudioVideoTask",
+          "name": "ReviewAudioVideoTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -14156,7 +14172,7 @@
         },
         {
           "default": "",
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成；</li>\n<li>ReviewAudioVideoComplete：音视频审核完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -14336,6 +14352,17 @@
           "example": "null",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ReviewAudioVideoTask",
+          "name": "ReviewAudioVideoCompleteEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -22816,7 +22843,8 @@
           "name": "ProductType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22826,7 +22854,8 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22836,7 +22865,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22846,7 +22876,8 @@
           "name": "ProductInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22856,7 +22887,8 @@
           "name": "LastConsumeDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22866,7 +22898,8 @@
           "name": "BindStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22876,7 +22909,8 @@
           "name": "ProductInstanceResourceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22886,7 +22920,8 @@
           "name": "ProductInstanceStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22896,7 +22931,19 @@
           "name": "RefundStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自动续费状态，取值有：\n<li>Never：不自动续费。</li>\n<li>Expire：到期自动续费。</li>\n<li>ExpireOrUseOut：到期或用完自动续费。</li>\n<li>NotSupport：不支持。</li>",
+          "example": "Expire",
+          "member": "string",
+          "name": "RenewStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -24052,6 +24099,393 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoRequest": {
+      "document": "ReviewAudioVideo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，音视频审核完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "保留字段，特殊用途时使用。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ReviewAudioVideoResponse": {
+      "document": "ReviewAudioVideo返回参数结构体",
+      "members": [
+        {
+          "document": "任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReviewAudioVideoSegmentItem": {
+      "document": "音视频审核片段。",
+      "members": [
+        {
+          "default": "",
+          "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段涉及令人反感的信息的分数。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段鉴别涉及违规信息的结果建议，取值范围：\n<li>review：疑似违规，建议复审；</li>\n<li>block：确认违规，建议封禁。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terrorism：暴恐；</li>\n<li>Political：令人不适宜的信息。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 Image 或 Voice 时有效，表示当前标签（Label）下的二级标签。\n当 Form 为 Image 且 Label 为 Porn 时，取值范围：\n<li>porn：色情；</li>\n<li>vulgar：低俗。</li>\n\n当 Form 为 Image 且 Label 为 Terrorism 时，取值范围：\n<li>guns：武器枪支；</li>\n<li>bloody：血腥画面；</li>\n<li>banners：暴恐旗帜；</li>\n<li> scenario：暴恐画面；</li>\n<li>explosion：爆炸火灾。</li>\n\n当 Form 为 Image 且 Label 为 Political 时，取值范围：\n<li>violation_photo：违规图标；</li>\n<li>nation_politician：国家领导人；</li>\n<li>province_politician：省部级领导人；</li>\n<li>county_politician：市/县级领导人；</li>\n<li>sensitive_politician：敏感相关人物；</li>\n<li>foreign_politician：国外政治人物；</li>\n<li>sensitive_entertainment：敏感娱乐明星；</li>\n<li>sensitive_military：敏感军事人物。</li>\n\n当 Form 为 Voice 且 Label 为 Porn 时，取值范围：\n<li>moan：娇喘。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "嫌疑片段违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Form",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 Image 或 OCR 时有效，表示嫌疑人物、图标或文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 OCR 或 ASR 时有效，表示识别出来的 OCR 或 ASR 文本内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Form 为 OCR 或 ASR 时有效，表示嫌疑片段命中的违规关键词列表。",
+          "example": "无",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoTask": {
+      "document": "音视频审核任务信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "任务状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "音视频审核任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewAudioVideoTaskInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "音视频审核任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewAudioVideoTaskOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "来源上下文，用于透传用户请求信息，音视频审核完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoTaskInput": {
+      "document": "音视频审核任务的输入。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewAudioVideoTaskOutput": {
+      "document": "音视频审核任务的输出。",
+      "members": [
+        {
+          "default": "",
+          "document": "音视频内容审核的结果建议，取值范围：\n<li>pass：建议通过；</li>\n<li>review：建议复审；</li>\n<li>block：建议封禁。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违规的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terrorism：暴恐；</li>\n<li>Political：令人不适宜的信息。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当 Suggestion 为 review 或 block 时有效，表示音视频最可能的违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Form",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "有违规信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 10个 元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
+          "member": "ReviewAudioVideoSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "涉及违规信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "涉及违规信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -25987,83 +26421,101 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频 ID。",
+          "example": "无",
           "member": "string",
           "name": "FileId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务</li>\n<li>WechatDistribute：微信发布任务。</li>\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。",
+          "example": "无",
           "member": "string",
           "name": "BeginProcessTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。",
+          "example": "无",
           "member": "string",
           "name": "FinishTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
