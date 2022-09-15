@@ -42,6 +42,12 @@
       "name": "设备信息列表",
       "output": "GetDevicesResponse"
     },
+    "GetFlowStatistic": {
+      "document": "获取指定设备Id，指定时间点数据流量使用情况",
+      "input": "GetFlowStatisticRequest",
+      "name": "获取数据流量统计数据",
+      "output": "GetFlowStatisticResponse"
+    },
     "GetStatisticData": {
       "document": "在用量统计页面下载流量数据",
       "input": "GetStatisticDataRequest",
@@ -881,6 +887,105 @@
       ],
       "type": "object"
     },
+    "GetFlowStatisticRequest": {
+      "document": "GetFlowStatistic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID，ID=\"-1\"时默认查找所有设备",
+          "example": "245aee95-f37e-55d0-5258-19520bdf4b53",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始查找时间",
+          "example": "1659514436",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "截止时间",
+          "example": "1659515436",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流量种类（1：上行流量，2：下行流量）",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticResponse": {
+      "document": "GetFlowStatistic返回参数结构体",
+      "members": [
+        {
+          "document": "流量详细信息",
+          "example": "无",
+          "member": "NetDetails",
+          "name": "NetDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查找时间段流量使用最大值（单位：bit）",
+          "example": "216516",
+          "member": "float",
+          "name": "MaxValue",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查找时间段流量使用平均值（单位：bit）",
+          "example": "25151",
+          "member": "float",
+          "name": "AvgValue",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查找时间段流量使用总量（单位：bit）",
+          "example": "35465464",
+          "member": "float",
+          "name": "TotalValue",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetStatisticDataRequest": {
       "document": "GetStatisticData请求参数结构体",
       "members": [
@@ -943,6 +1048,32 @@
         }
       ],
       "type": "object"
+    },
+    "NetDetails": {
+      "document": "网络详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点，单位：s",
+          "example": "1662622200",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量值（bit）",
+          "example": "98",
+          "member": "float",
+          "name": "Current",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "NetworkData": {
       "document": "测速数据",

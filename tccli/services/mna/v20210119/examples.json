@@ -56,6 +56,14 @@
         "title": "获取设备基本信息列表"
       }
     ],
+    "GetFlowStatistic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"xx\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
+        "output": "{\n    \"Response\": {\n        \"MaxValue\": 51548,\n        \"AvgValue\": 15441,\n        \"TotalValue\": 656546,\n        \"NetDetails\": [\n            {\n                \"Time\": 1659513692,\n                \"Current\": 3546545\n            },\n            {\n                \"Time\": 1659513692,\n                \"Current\": 4454864\n            },\n            {\n                \"Time\": 1659513692,\n                \"Current\": 4848941\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "获取指定id设备流量使用信息"
+      }
+    ],
     "GetStatisticData": [
       {
         "document": "",

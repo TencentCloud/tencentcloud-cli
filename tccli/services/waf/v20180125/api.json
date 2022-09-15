@@ -942,6 +942,42 @@
           "name": "Weights",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启主动健康检测，1表示开启，0表示不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveCheck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "TLS版本信息",
+          "example": "1",
+          "member": "int64",
+          "name": "TLSVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加密套件信息",
+          "example": "[1，1]",
+          "member": "int64",
+          "name": "Ciphers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
+          "example": "0",
+          "member": "int64",
+          "name": "CipherTemplate",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1508,6 +1544,15 @@
           "name": "DeleteAll",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否为多域名黑白名单",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3205,6 +3250,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "qps弹性计费上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ElasticBilling",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4148,6 +4203,15 @@
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为多域名黑白名单",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
           "required": false,
           "type": "string"
         }

@@ -2147,6 +2147,7 @@
         {
           "default": "",
           "document": "告警通知频率",
+          "example": "7200",
           "member": "int64",
           "name": "AlarmNotifyPeriod",
           "required": true,
@@ -2156,6 +2157,7 @@
         {
           "default": "",
           "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）",
+          "example": "0",
           "member": "int64",
           "name": "AlarmNotifyType",
           "required": true,
@@ -2165,6 +2167,7 @@
         {
           "default": "",
           "document": "检测方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1\"",
           "member": "string",
           "name": "CalcType",
           "required": true,
@@ -2174,6 +2177,7 @@
         {
           "default": "",
           "document": "检测值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"95\"",
           "member": "string",
           "name": "CalcValue",
           "required": true,
@@ -2182,7 +2186,8 @@
         },
         {
           "default": "",
-          "document": "持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "持续时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"300\"",
           "member": "string",
           "name": "ContinueTime",
           "required": true,
@@ -2192,6 +2197,7 @@
         {
           "default": "",
           "document": "指标ID",
+          "example": "33",
           "member": "int64",
           "name": "MetricID",
           "required": true,
@@ -2201,6 +2207,7 @@
         {
           "default": "",
           "document": "指标展示名称（对外）",
+          "example": "\"CPU利用率\"",
           "member": "string",
           "name": "MetricDisplayName",
           "required": true,
@@ -2210,6 +2217,7 @@
         {
           "default": "",
           "document": "周期",
+          "example": "60",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -2219,6 +2227,7 @@
         {
           "default": "",
           "document": "规则ID",
+          "example": "623123",
           "member": "int64",
           "name": "RuleID",
           "required": true,
@@ -2228,11 +2237,42 @@
         {
           "default": "",
           "document": "指标单位",
+          "example": "\"%\"",
           "member": "string",
           "name": "Unit",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为高级指标，0：否；1：是",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAdvanced",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开通高级指标，0：否；1：是",
+          "example": "0",
+          "member": "int64",
+          "name": "IsOpen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5963,6 +6003,15 @@
           "example": "desc",
           "member": "string",
           "name": "UpdateTimeOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定按绑定策略数目的排序方式，asc=升序, desc=降序",
+          "example": "desc",
+          "member": "string",
+          "name": "PolicyCountOrder",
           "required": false,
           "type": "string"
         }

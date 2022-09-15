@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli monitor DescribeConditionsTemplateList --cli-unfold-argument  \
-    --Module monitor \
     --ViewName cvm_device \
-    --GroupName test \
-    --GroupID ' 1998658' \
+    --Module monitor \
     --UpdateTimeOrder desc \
+    --GroupName test \
     --Limit 1 \
-    --Offset 0
+    --Offset 0 \
+    --GroupID  1998658
 ```
 
 Output: 

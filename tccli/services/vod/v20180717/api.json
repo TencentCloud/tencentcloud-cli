@@ -25212,6 +25212,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -25221,6 +25222,7 @@
         {
           "default": "",
           "document": "任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -25230,6 +25232,7 @@
         {
           "default": "",
           "document": "视频 ID。",
+          "example": "无",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -25239,6 +25242,7 @@
         {
           "default": "",
           "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务</li>\n<li>WechatDistribute：微信发布任务。</li>\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -25248,6 +25252,7 @@
         {
           "default": "",
           "document": "任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -25257,6 +25262,7 @@
         {
           "default": "",
           "document": "任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未开始，该字段为空。",
+          "example": "无",
           "member": "string",
           "name": "BeginProcessTime",
           "required": true,
@@ -25266,6 +25272,7 @@
         {
           "default": "",
           "document": "任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。若任务尚未完成，该字段为空。",
+          "example": "无",
           "member": "string",
           "name": "FinishTime",
           "required": true,
@@ -25275,6 +25282,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -25284,6 +25292,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": true,

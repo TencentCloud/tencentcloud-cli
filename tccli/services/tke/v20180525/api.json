@@ -17937,6 +17937,15 @@
           "name": "AutoUpgradeClusterLevel",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "边缘集群的集群规模",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -7,20 +7,20 @@ Input:
 ```
 tccli waf AddSpartaProtection --cli-unfold-argument  \
     --Domain test1.qcloud.com \
-    --CertType 0 \
-    --IsCdn 0 \
-    --IsGray 0 \
-    --UpstreamType 0 \
-    --IsHttp2 0 \
-    --IsWebsocket 0 \
     --LoadBalance 0 \
-    --SrcList 1.1.1.1 \
-    --Ports.0.Port 80 \
+    --Edition clb-waf \
+    --UpstreamType 0 \
+    --CertType 0 \
+    --Ports.0.NginxServerId 0 \
     --Ports.0.Protocol http \
+    --Ports.0.Port 80 \
     --Ports.0.UpstreamPort 80 \
     --Ports.0.UpstreamProtocol http \
-    --Ports.0.NginxServerId 0 \
-    --Edition clb-waf
+    --SrcList 1.1.1.1 \
+    --IsCdn 0 \
+    --IsWebsocket 0 \
+    --IsGray 0 \
+    --IsHttp2 0
 ```
 
 Output: 
@@ -41,20 +41,20 @@ Input:
 ```
 tccli waf AddSpartaProtection --cli-unfold-argument  \
     --Domain test.qcloud.com \
-    --CertType 0 \
-    --IsCdn 0 \
-    --IsGray 0 \
-    --UpstreamType 0 \
-    --IsHttp2 0 \
-    --IsWebsocket 0 \
     --LoadBalance 0 \
-    --SrcList 1.1.1.1 \
-    --Ports.0.Port 80 \
+    --Edition clb-waf \
+    --UpstreamType 0 \
+    --CertType 0 \
+    --Ports.0.NginxServerId 0 \
     --Ports.0.Protocol http \
+    --Ports.0.Port 80 \
     --Ports.0.UpstreamPort 80 \
     --Ports.0.UpstreamProtocol http \
-    --Ports.0.NginxServerId 0 \
-    --Edition clb-waf
+    --SrcList 1.1.1.1 \
+    --IsCdn 0 \
+    --IsWebsocket 0 \
+    --IsGray 0 \
+    --IsHttp2 0
 ```
 
 Output: 
@@ -62,6 +62,49 @@ Output:
 {
     "Response": {
         "RequestId": "4f284280-a493-4932-95f4-3d87e7320b3e"
+    }
+}
+```
+
+**Example 3: 添加域名**
+
+
+
+Input: 
+
+```
+tccli waf AddSpartaProtection --cli-unfold-argument  \
+    --UpstreamScheme http \
+    --IsGray 1 \
+    --Domain lucas0621.qcloudwaf.com \
+    --LoadBalance 1 \
+    --HttpsUpstreamPort 80 \
+    --InstanceID lucas \
+    --UpstreamType 1 \
+    --UpstreamDomain lucas0622.qcloudwaf.com \
+    --IsWebsocket 1 \
+    --IsHttp2 1 \
+    --Edition sass \
+    --CertType 0 \
+    --Weights 1 \
+    --IsKeepAlive 1 \
+    --ActiveCheck 1 \
+    --IsCdn 1 \
+    --TLSVersion 1 \
+    --Anycast 1 \
+    --Ports.0.NginxServerId 0 \
+    --Ports.0.Protocol http \
+    --Ports.0.Port 80 \
+    --Ports.0.UpstreamPort 80 \
+    --Ports.0.UpstreamProtocol http \
+    --HttpsRewrite 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "87c8499e-3748-4bb0-9740-b2683a003975"
     }
 }
 ```
