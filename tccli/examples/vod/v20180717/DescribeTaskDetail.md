@@ -72,6 +72,8 @@ Output:
         "PullUploadTask": null,
         "RemoveWatermarkTask": null,
         "ReviewAudioVideoTask": null,
+        "ReduceMediaBitrateTask": null,
+        "ExtractTraceWatermarkTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -135,6 +137,8 @@ Output:
         "PullUploadTask": null,
         "RemoveWatermarkTask": null,
         "ReviewAudioVideoTask": null,
+        "ReduceMediaBitrateTask": null,
+        "ExtractTraceWatermarkTask": null,
         "RequestId": "62597d15-3fad-4234-af1a-ed33602a6118"
     }
 }
@@ -207,6 +211,8 @@ Output:
         "PullUploadTask": null,
         "RemoveWatermarkTask": null,
         "ReviewAudioVideoTask": null,
+        "ReduceMediaBitrateTask": null,
+        "ExtractTraceWatermarkTask": null,
         "RequestId": "sdfadf"
     }
 }
@@ -254,6 +260,8 @@ Output:
         "CreateImageSpriteTask": null,
         "RemoveWatermarkTask": null,
         "ReviewAudioVideoTask": null,
+        "ReduceMediaBitrateTask": null,
+        "ExtractTraceWatermarkTask": null,
         "RequestId": "04db7d25-f590-414a-a341-8f1584f15f84"
     }
 }

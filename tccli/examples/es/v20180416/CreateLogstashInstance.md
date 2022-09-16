@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli es CreateLogstashInstance --cli-unfold-argument  \
-    --InstanceName logstash_test \
-    --LogstashVersion 6.8.13 \
-    --ChargeType POSTPAID_BY_HOUR \
     --VpcId vpc-xxxxxx \
-    --SubnetId subnet-xxxxxx \
+    --LogstashVersion 6.8.13 \
     --Zone ap-guangzhou-3 \
     --DiskType CLOUD_SSD \
-    --DiskSize 100 \
     --NodeNum 3 \
-    --NodeType LOGSTASH.S1.SMALL2
+    --DiskSize 100 \
+    --ChargeType POSTPAID_BY_HOUR \
+    --SubnetId subnet-xxxxxx \
+    --NodeType LOGSTASH.S1.SMALL2 \
+    --InstanceName logstash_test
 ```
 
 Output: 

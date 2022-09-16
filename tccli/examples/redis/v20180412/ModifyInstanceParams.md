@@ -7,8 +7,8 @@ Input:
 ```
 tccli redis ModifyInstanceParams --cli-unfold-argument  \
     --InstanceId crs-5a4py64p \
-    --InstanceParams.0.Key timeout \
-    --InstanceParams.0.Value 120
+    --InstanceParams.0.Value 120 \
+    --InstanceParams.0.Key timeout
 ```
 
 Output: 

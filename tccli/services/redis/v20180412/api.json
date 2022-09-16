@@ -403,7 +403,7 @@
       "output": "ModifyInstanceAccountResponse"
     },
     "ModifyInstanceParams": {
-      "document": "本接口(ModifyInstanceParams)用于修改实例参数。",
+      "document": "本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。",
       "input": "ModifyInstanceParamsRequest",
       "name": "修改实例参数",
       "output": "ModifyInstanceParamsResponse"
@@ -5492,7 +5492,8 @@
       "members": [
         {
           "default": "",
-          "document": "设置参数的名字",
+          "document": "设置参数的名称。例如timeout。",
+          "example": "timeout",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -5501,7 +5502,8 @@
         },
         {
           "default": "",
-          "document": "设置参数的值",
+          "document": "设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。",
+          "example": "120",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -6947,7 +6949,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -6956,7 +6958,7 @@
         },
         {
           "default": "",
-          "document": "实例修改的参数列表",
+          "document": "实例修改的参数列表。",
           "example": "无",
           "member": "InstanceParam",
           "name": "InstanceParams",
@@ -6970,7 +6972,7 @@
       "document": "ModifyInstanceParams返回参数结构体",
       "members": [
         {
-          "document": "修改是否成功。",
+          "document": "修改是否成功。修改成功为true，失败为false。",
           "example": "true",
           "member": "bool",
           "name": "Changed",
@@ -6979,7 +6981,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "任务ID",
+          "document": "任务ID。",
           "example": "327",
           "member": "int64",
           "name": "TaskId",

@@ -90,6 +90,12 @@
       "name": "域名解析量统计",
       "output": "DescribeDomainAnalyticsResponse"
     },
+    "DescribeDomainGroupList": {
+      "document": "获取域名分组列表",
+      "input": "DescribeDomainGroupListRequest",
+      "name": "获取域名分组列表",
+      "output": "DescribeDomainGroupListResponse"
+    },
     "DescribeDomainList": {
       "document": "获取域名列表",
       "input": "DescribeDomainListRequest",
@@ -1823,6 +1829,32 @@
       ],
       "type": "object"
     },
+    "DescribeDomainGroupListRequest": {
+      "document": "DescribeDomainGroupList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDomainGroupListResponse": {
+      "document": "DescribeDomainGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "分组列表",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "GroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainListRequest": {
       "document": "DescribeDomainList请求参数结构体",
       "members": [
@@ -3360,6 +3392,52 @@
           "name": "Status",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupInfo": {
+      "document": "域名分组列表",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组名称",
+          "example": "很少修改",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组类型",
+          "example": "system",
+          "member": "string",
+          "name": "GroupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该分组中域名个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

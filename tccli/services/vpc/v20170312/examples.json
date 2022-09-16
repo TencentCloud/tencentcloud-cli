@@ -1110,6 +1110,14 @@
         "title": "查询合规化审批单"
       }
     ],
+    "DescribeCrossBorderFlowMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderFlowMonitor\n<公共请求参数>\n\n{\n    \"CcnId\": 1246,\n    \"CcnUin\": \"251223380\",\n    \"SourceRegion\": \"ap-guangzhou\",\n    \"DestinationRegion\": \"ap-shanghai\",\n    \"Period\": 60,\n    \"StartTime\": \"2022-08-20 00:00:00\",\n    \"EndTime\": \"2022-08-20 00:10:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CrossBorderFlowMonitorData\": [\n            {\n                \"InBandwidth\": [\n                    1,\n                    1\n                ],\n                \"InPkg\": [\n                    1,\n                    2\n                ],\n                \"OutBandwidth\": [\n                    1,\n                    3\n                ],\n                \"OutPkg\": [\n                    1,\n                    4\n                ]\n            }\n        ],\n        \"RequestId\": \"ff8a76ff-8900-4169-b126-ff59fdb39b6c\"\n    }\n}",
+        "title": "查询跨境带宽监控数据"
+      }
+    ],
     "DescribeCustomerGatewayVendors": [
       {
         "document": "",

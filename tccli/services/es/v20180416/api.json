@@ -1087,6 +1087,15 @@
           "name": "TagList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4083,6 +4092,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可维护时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5997,6 +6016,15 @@
           "name": "DiskSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDurationUpdated",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -30,6 +30,14 @@
         "title": "匹配 AME 歌曲"
       }
     ],
+    "DescribeKTVMusicsByTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicsByTag\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"Limit\": 10,\n    \"TagId\": \"1111\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVMusicInfoSet\": [\n            {\n                \"AlbumInfo\": {\n                    \"CoverInfoSet\": [\n                        {\n                            \"Dimension\": \"Mini\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/150/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Small\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/240/20191125/20191125163409414057.jpg\"\n                        },\n                        {\n                            \"Dimension\": \"Medium\",\n                            \"Url\": \"http://imge.xxxx.com/stdmusic/480/20191125/20191125163409414057.jpg\"\n                        }\n                    ],\n                    \"Name\": \"等\"\n                },\n                \"Duration\": 216000,\n                \"MusicId\": \"mid-11x9dj3\",\n                \"Name\": \"等\",\n                \"SingerImageUrl\": \"http://singerimg.xxxxx.com/uploadpic/softhead/150/20210326/20210326145830248137.jpg\",\n                \"SingerSet\": [\n                    \"贾振峰\"\n                ],\n                \"RecommendType\": \"Other\",\n                \"RightSet\": [\n                    \"Play\",\n                    \"Sing\"\n                ]\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\",\n        \"ScrollToken\": \"eyJDdXJQYWdlTnVtIjozLCJDdXJJbmRleCI6MH0=\"\n    }\n}",
+        "title": "获取标签歌曲"
+      }
+    ],
     "DescribeKTVPlaylistDetail": [
       {
         "document": "获取歌单详情",
@@ -60,6 +68,14 @@
         "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSuggestions\n<公共请求参数>\n\n{\n    \"UserId\": \"11113451\",\n    \"KeyWord\": \"等\",\n    \"AppName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"KTVSuggestionInfoSet\": [\n            {\n                \"Suggestion\": \"等\"\n            },\n            {\n                \"Suggestion\": \"等一分钟\"\n            },\n            {\n                \"Suggestion\": \"等的太久\"\n            },\n            {\n                \"Suggestion\": \"等你归来\"\n            },\n            {\n                \"Suggestion\": \"等不来花开\"\n            },\n            {\n                \"Suggestion\": \"等你等了那么久\"\n            },\n            {\n                \"Suggestion\": \"等你下课\"\n            },\n            {\n                \"Suggestion\": \"等什么君\"\n            },\n            {\n                \"Suggestion\": \"等不到花开\"\n            },\n            {\n                \"Suggestion\": \"等风来\"\n            }\n        ],\n        \"RequestId\": \"bddc6a88-eec8-485b-aa12-6a133cd3268d\"\n    }\n}",
         "title": "获取曲库联想词"
+      }
+    ],
+    "DescribeKTVTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVTags\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"AppName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TagGroupInfoSet\": [\n            {\n                \"GroupId\": \"1\",\n                \"TagInfoSet\": [\n                    {\n                        \"TagId\": \"11\",\n                        \"Name\": \"嘻哈\"\n                    }\n                ],\n                \"Name\": \"风格\"\n            }\n        ],\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\"\n    }\n}",
+        "title": "获取标签列表"
       }
     ],
     "DestroyKTVRobot": [

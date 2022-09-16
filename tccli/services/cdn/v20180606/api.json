@@ -9188,7 +9188,7 @@
         },
         {
           "default": "",
-          "document": "http2 配置开关\non：开启\noff：关闭\n初次启用 https 加速会默认开启 http2 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rewrew",
           "member": "string",
           "name": "Http2",

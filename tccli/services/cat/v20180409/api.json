@@ -163,7 +163,7 @@
         },
         {
           "default": "",
-          "document": "客户度ID",
+          "document": "客户端ID",
           "example": "3198058",
           "member": "string",
           "name": "ClientNum",

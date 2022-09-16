@@ -19,7 +19,7 @@
     "CreateLogstashInstance": [
       {
         "document": "根据输入参数创建Logstash实例",
-        "input": "https://es.tencentcloudapi.com/?Action=CreateLogstashInstance\n&InstanceName=logstash_test\n&LogstashVersion=6.8.13\n&ChargeType=POSTPAID_BY_HOUR\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&Zone=ap-guangzhou-3\n&DiskType=CLOUD_SSD\n&DiskSize=100\n&NodeNum=3\n&NodeType=LOGSTASH.S1.SMALL2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogstashInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"LogstashVersion\": \"6.8.13\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"NodeNum\": \"3\",\n    \"DiskSize\": \"100\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"NodeType\": \"LOGSTASH.S1.SMALL2\",\n    \"InstanceName\": \"logstash_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ls-xxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
         "title": "创建Logstash实例"
       }
@@ -275,7 +275,7 @@
     "UpdateLogstashInstance": [
       {
         "document": "用以修改指定Logstash实例的名称",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateLogstashInstance\n&InstanceId=ls-xxxxxx\n&InstanceName=newName\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLogstashInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ls-xxxxxx\",\n    \"InstanceName\": \"newName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "修改Logstash实例名称"
       }

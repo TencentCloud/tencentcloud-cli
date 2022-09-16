@@ -61,7 +61,7 @@
       "output": "CreateChannelFlowEvidenceReportResponse"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建渠道子客企业控制台Web端登录链接。Web端登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程,首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。\n",
       "input": "CreateConsoleLoginUrlRequest",
       "name": "生成控制台链接",
       "output": "CreateConsoleLoginUrlResponse"
@@ -127,13 +127,13 @@
       "output": "PrepareFlowsResponse"
     },
     "SyncProxyOrganization": {
-      "document": "此接口（SyncProxyOrganization）用于同步渠道侧企业信息",
+      "document": "此接口（SyncProxyOrganization）用于同步渠道子客企业信息，主要是子客企业的营业执照，便于子客企业开通过程中不用手动上传。若有需要调用此接口，需要在创建控制链接CreateConsoleLoginUrl之后即刻进行调用。",
       "input": "SyncProxyOrganizationRequest",
       "name": "同步企业信息",
       "output": "SyncProxyOrganizationResponse"
     },
     "SyncProxyOrganizationOperators": {
-      "document": "此接口（SyncProxyOrganizationOperators）用于同步渠道合作企业经办人列表",
+      "document": "此接口（SyncProxyOrganizationOperators）用于同步渠道子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于渠道平台的，无法针对员工做新增/更新/离职等操作。\n若经办人信息有误，或者需要修改，也可以先将之前的经办人做离职操作，然后重新使用控制台链接CreateConsoleLoginUrl让经办人重新实名。",
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "同步企业经办人列表",
       "output": "SyncProxyOrganizationOperatorsResponse"
@@ -1297,7 +1297,7 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业名称，最大长度64个字符",
+          "document": "渠道子客企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -1306,7 +1306,7 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业经办人的姓名，最大长度50个字符",
+          "document": "渠道子客企业经办人的姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOperatorName",
@@ -1333,7 +1333,7 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业统一社会信用代码，最大长度200个字符",
+          "document": "渠道子客企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -1365,7 +1365,7 @@
       "document": "CreateConsoleLoginUrl返回参数结构体",
       "members": [
         {
-          "document": "控制台url，此链接5分钟内有效，且只能访问一次",
+          "document": "子客Web控制台url，此链接5分钟内有效，且只能访问一次",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -1374,7 +1374,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "渠道合作企业是否认证开通腾讯电子签。\n当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。",
+          "document": "渠道子客企业是否已开通腾讯电子签。",
           "example": "无",
           "member": "bool",
           "name": "IsActivated",

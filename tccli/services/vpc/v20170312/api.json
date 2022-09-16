@@ -720,6 +720,12 @@
       "name": "查询合规化审批单",
       "output": "DescribeCrossBorderComplianceResponse"
     },
+    "DescribeCrossBorderFlowMonitor": {
+      "document": "查询跨境带宽监控数据，该接口特提供给联通使用",
+      "input": "DescribeCrossBorderFlowMonitorRequest",
+      "name": "查询跨境带宽监控数据",
+      "output": "DescribeCrossBorderFlowMonitorResponse"
+    },
     "DescribeCustomerGatewayVendors": {
       "document": "本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。",
       "input": "DescribeCustomerGatewayVendorsRequest",
@@ -7499,6 +7505,52 @@
       ],
       "usage": "out"
     },
+    "CrossBorderFlowMonitorData": {
+      "document": "跨境带宽监控数据",
+      "members": [
+        {
+          "default": "",
+          "document": "入带宽",
+          "example": "无",
+          "member": "int64",
+          "name": "InBandwidth",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出带宽",
+          "example": "无",
+          "member": "int64",
+          "name": "OutBandwidth",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入包",
+          "example": "无",
+          "member": "int64",
+          "name": "InPkg",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出包",
+          "example": "无",
+          "member": "int64",
+          "name": "OutPkg",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CustomerGateway": {
       "document": "对端网关",
       "members": [
@@ -9922,6 +9974,96 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossBorderFlowMonitorRequest": {
+      "document": "DescribeCrossBorderFlowMonitor请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "源地域",
+          "example": "无",
+          "member": "string",
+          "name": "SourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的地域",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网Id",
+          "example": "无",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网所属账号",
+          "example": "无",
+          "member": "string",
+          "name": "CcnUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间粒度",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossBorderFlowMonitorResponse": {
+      "document": "DescribeCrossBorderFlowMonitor返回参数结构体",
+      "members": [
+        {
+          "document": "云联网跨境带宽监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossBorderFlowMonitorData",
+          "name": "CrossBorderFlowMonitorData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

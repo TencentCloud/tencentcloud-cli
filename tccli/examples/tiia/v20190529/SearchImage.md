@@ -18,36 +18,52 @@ Output:
 ```
 {
     "Response": {
-        "Count": 2,
+        "RequestId": "8bab9614-3f62-4b1d-bc9b-e773703c727e",
+        "Count": 1,
         "ImageInfos": [
             {
+                "EntityId": "test1",
+                "PicName": "test2",
+                "Score": 100,
                 "CustomContent": "",
-                "EntityId": "test2",
-                "PicName": "3001",
-                "Score": 0,
-                "Tags": "{\"value\": 15}"
-            },
-            {
-                "CustomContent": "",
-                "EntityId": "test2",
-                "PicName": "3002",
-                "Score": 0,
-                "Tags": "{\"value\": 20}"
+                "Tags": "{}"
             }
         ],
         "Object": {
             "Box": {
-                "Score": 0.0,
                 "Rect": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
-                }
+                    "Width": 447,
+                    "Height": 816,
+                    "X": 88,
+                    "Y": 264
+                },
+                "Score": 53
             },
-            "CategoryId": 0
-        },
-        "RequestId": "2d658a05-62d5-4f82-913c-50832146f6f3"
+            "Colors": [
+                {
+                    "Color": "0A0A0A",
+                    "Percentage": 15,
+                    "Label": "Black-black"
+                },
+                {
+                    "Color": "8B4513",
+                    "Percentage": 11,
+                    "Label": "Brown-saddlebrown"
+                },
+                {
+                    "Percentage": 7,
+                    "Label": "Yellow-khaki",
+                    "Color": "D8C59D"
+                },
+                {
+                    "Label": "Yellow-darkkhaki",
+                    "Color": "BDB76B",
+                    "Percentage": 6
+                }
+            ],
+            "CategoryId": 5,
+            "Attributes": []
+        }
     }
 }
 ```

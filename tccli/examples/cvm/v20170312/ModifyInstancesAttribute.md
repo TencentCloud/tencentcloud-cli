@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm ModifyInstancesAttribute --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs \
-    --InstanceName Mysql_Server
+    --InstanceName Mysql_Server \
+    --InstanceIds ins-5d8a23rs ins-r8hr2upy
 ```
 
 Output: 

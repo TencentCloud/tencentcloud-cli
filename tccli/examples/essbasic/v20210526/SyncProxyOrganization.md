@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli essbasic SyncProxyOrganization --cli-unfold-argument  \
-    --ProxyOrganizationName 渠道侧合作企业名称 \
+    --ProxyOrganizationName 渠道子客企业名称 \
     --UniformSocialCreditCode xxxxxxxxxxxxxxxxxxxx \
     --BusinessLicense xxxxxxxxxxxxx \
     --Agent.ProxyOperator.OpenId proxy-operator-openid \

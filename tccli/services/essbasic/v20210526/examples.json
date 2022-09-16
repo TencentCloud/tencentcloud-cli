@@ -83,9 +83,15 @@
     "CreateConsoleLoginUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道侧企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\",\n    \"MenuStatus\": \"ENABLE\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "title": "生成默认的控制台链接"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\",\n    \"MenuStatus\": \"ENABLE\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
-        "title": "生成控制台链接"
+        "title": "生成到模板详情的控制台链接"
       }
     ],
     "CreateFlowsByTemplates": [
@@ -195,7 +201,7 @@
     "SyncProxyOrganization": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道侧合作企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"proxy-operator-openid\"\n        },\n        \"ProxyOrganizationOpenId\": \"proxy-organization-openid\",\n        \"AppId\": \"test-appid\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"proxy-operator-openid\"\n        },\n        \"ProxyOrganizationOpenId\": \"proxy-organization-openid\",\n        \"AppId\": \"test-appid\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "同步企业信息"
       }
@@ -203,7 +209,7 @@
     "SyncProxyOrganizationOperators": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganizationOperators\n<公共请求参数>\n\n{\n    \"OperatorType\": \"CREATE\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"ProxyOrganizationOperators\": [\n        {\n            \"IdCardNumber\": \"610126198003130000\",\n            \"Name\": \"张三\",\n            \"Mobile\": \"18740000000\",\n            \"IdCardType\": \"ID_CARD\",\n            \"Id\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        {\n            \"IdCardNumber\": \"610126198003130001\",\n            \"Name\": \"李四\",\n            \"Mobile\": \"1000000000000\",\n            \"IdCardType\": \"ID_CARD\",\n            \"Id\": \"11498cc8500be9cxxxxxxx3aff766cac\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganizationOperators\n<公共请求参数>\n\n{\n    \"OperatorType\": \"CREATE\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdxxxx11f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8bxxxx9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c5910xxx0aa382cc5ed0e\"\n    },\n    \"ProxyOrganizationOperators\": [\n        {\n            \"IdCardNumber\": \"61012xxxxx30000\",\n            \"Name\": \"张三\",\n            \"Mobile\": \"187xxxxx000\",\n            \"IdCardType\": \"ID_CARD\",\n            \"Id\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        {\n            \"IdCardNumber\": \"61012xxxxx03130001\",\n            \"Name\": \"李四\",\n            \"Mobile\": \"1000xxxxx000000\",\n            \"IdCardType\": \"ID_CARD\",\n            \"Id\": \"11498cc8500be9cxxxxxxx3aff766cac\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedList\": [\n            {\n                \"Id\": \"11498cc8500be9cxxxxxxx3aff766cac\",\n                \"Message\": \"手机号码不合法\"\n            }\n        ],\n        \"RequestId\": \"s1631673278484637219\",\n        \"Status\": 2\n    }\n}",
         "title": "同步渠道合作企业经办人列表"
       }

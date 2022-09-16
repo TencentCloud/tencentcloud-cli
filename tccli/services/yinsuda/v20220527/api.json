@@ -18,6 +18,12 @@
       "name": "匹配歌曲",
       "output": "DescribeKTVMatchMusicsResponse"
     },
+    "DescribeKTVMusicsByTag": {
+      "document": "通过标签过滤歌曲列表。",
+      "input": "DescribeKTVMusicsByTagRequest",
+      "name": "获取标签歌曲",
+      "output": "DescribeKTVMusicsByTagResponse"
+    },
     "DescribeKTVPlaylistDetail": {
       "document": "根据歌单 Id 获取歌单详情。",
       "input": "DescribeKTVPlaylistDetailRequest",
@@ -41,6 +47,12 @@
       "input": "DescribeKTVSuggestionsRequest",
       "name": "获取联想词",
       "output": "DescribeKTVSuggestionsResponse"
+    },
+    "DescribeKTVTags": {
+      "document": "获取标签分组及分组下的标签列表信息。",
+      "input": "DescribeKTVTagsRequest",
+      "name": "获取标签列表",
+      "output": "DescribeKTVTagsResponse"
     },
     "DestroyKTVRobot": {
       "document": "销毁机器人，机器人退出 RTC 房间。",
@@ -281,6 +293,96 @@
           "name": "NotMatchRuleSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicsByTagRequest": {
+      "document": "DescribeKTVMusicsByTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回条数限制，默认 20，最大 50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicsByTagResponse": {
+      "document": "DescribeKTVMusicsByTag返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -589,6 +691,51 @@
       ],
       "type": "object"
     },
+    "DescribeKTVTagsRequest": {
+      "document": "DescribeKTVTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTagsResponse": {
+      "document": "DescribeKTVTags返回参数结构体",
+      "members": [
+        {
+          "document": "标签分组列表。",
+          "example": "无",
+          "member": "KTVTagGroupInfo",
+          "name": "TagGroupInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroyKTVRobotRequest": {
       "document": "DestroyKTVRobot请求参数结构体",
       "members": [
@@ -649,6 +796,32 @@
         }
       ],
       "usage": "both"
+    },
+    "KTVBPMInfo": {
+      "document": "节拍信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "节拍类型，取值有：\n<li>Slow：慢；</li>\n<li>Middle：中等；</li>\n<li>Fast：快；</li>\n<li>Unknown：未知。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BPM 值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "KTVMatchMusic": {
       "document": "匹配歌曲信息。",
@@ -886,6 +1059,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KTVBPMInfo",
+          "name": "BPMInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1021,6 +1204,68 @@
           "example": "无",
           "member": "string",
           "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVTagGroupInfo": {
+      "document": "标签分组信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "分组 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表。",
+          "example": "无",
+          "member": "KTVTagInfo",
+          "name": "TagInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVTagInfo": {
+      "document": "标签信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "标签 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": false

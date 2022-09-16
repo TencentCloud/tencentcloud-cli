@@ -138,7 +138,7 @@
       "members": [
         {
           "default": "",
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -1037,7 +1037,7 @@
         },
         {
           "default": "",
-          "document": "是否需要预览，true：预览模式，false：非预览（默认）；\n预览链接有效期300秒；",
+          "document": "是否需要预览，true：预览模式，false：非预览（默认）；\n预览链接有效期300秒；\n\n注：如果使用“预览模式”，出参会返回合同预览链接 PreviewUrl，不会正式发起合同，且出参不会返回签署流程编号 FlowId；如果使用“非预览”，则会正常返回签署流程编号 FlowId，不会生成合同预览链接 PreviewUrl。",
           "example": "无",
           "member": "bool",
           "name": "NeedPreview",
@@ -1082,7 +1082,7 @@
         },
         {
           "default": "",
-          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n若设置为true，审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -1105,7 +1105,7 @@
       "document": "CreateFlowByFiles返回参数结构体",
       "members": [
         {
-          "document": "签署流程编号",
+          "document": "签署流程编号。\n\n注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -1114,7 +1114,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "合同预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同预览链接。\n\n注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PreviewUrl",
@@ -2331,7 +2331,7 @@
       "members": [
         {
           "default": "",
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -2477,6 +2477,16 @@
           "name": "CustomApproverTag",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快速注册相关信息，目前暂未开放！",
+          "example": "无",
+          "member": "RegisterInfo",
+          "name": "RegisterInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -2880,6 +2890,32 @@
         }
       ],
       "usage": "both"
+    },
+    "RegisterInfo": {
+      "document": "发起流程快速注册相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "法人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "社会统一信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "Uscc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SignQrCode": {
       "document": "一码多扫签署二维码对象",

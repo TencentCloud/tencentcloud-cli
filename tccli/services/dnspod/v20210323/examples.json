@@ -138,6 +138,14 @@
         "title": "域名解析量统计"
       }
     ],
+    "DescribeDomainGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainGroupList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"GroupList\": [\n            {\n                \"GroupId\": 1,\n                \"GroupName\": \"默认分组\",\n                \"GroupType\": \"system\",\n                \"Size\": 3\n            }\n        ]\n    }\n}",
+        "title": "获取域名分组列表"
+      }
+    ],
     "DescribeDomainList": [
       {
         "document": "",

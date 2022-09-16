@@ -545,7 +545,7 @@
     "ModifyInstanceParams": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceParams\n&InstanceId=crs-5a4py64p\n&InstanceParams.0.Key=timeout\n&InstanceParams.0.Value=120\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"InstanceParams\": [\n        {\n            \"Value\": \"120\",\n            \"Key\": \"timeout\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Changed\": false,\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
         "title": "修改实例参数"
       }

@@ -107,7 +107,7 @@
     "DescribeDedicatedSupportedZones": [
       {
         "document": "",
-        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedSupportedZones\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDedicatedSupportedZones\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"RegionId\": 1,\n                \"Zones\": [\n                    {\n                        \"Zone\": \"ap-guangzhou-1\",\n                        \"ZoneName\": \"广州一区\",\n                        \"ZoneId\": \"100001\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-2\",\n                        \"ZoneName\": \"广州二区\",\n                        \"ZoneId\": \"100002\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-3\",\n                        \"ZoneName\": \"广州三区\",\n                        \"ZoneId\": \"100003\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Zone\": \"ap-guangzhou-4\",\n                        \"ZoneName\": \"广州四区\",\n                        \"ZoneId\": \"100004\",\n                        \"ZoneState\": \"AVAILABLE\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e3d77a1b-dc45-49b0-a9ee-2e97807b8f8e\"\n    }\n}",
         "title": "查询专用集群支持的可用区列表"
       }

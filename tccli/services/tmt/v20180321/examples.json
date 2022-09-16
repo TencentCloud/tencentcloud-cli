@@ -43,7 +43,7 @@
     "TextTranslate": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslate\n&ProjectId=0\n&Source=en\n&SourceText=hello\n&Target=zh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslate\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"ProjectId\": \"0\",\n    \"Target\": \"zh\",\n    \"Source\": \"en\"\n}",
         "output": "{\n    \"Response\": {\n        \"TargetText\": \"你好\",\n        \"Source\": \"en\",\n        \"Target\": \"zh\",\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\n    }\n}",
         "title": "API调用"
       }
