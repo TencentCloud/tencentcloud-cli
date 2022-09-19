@@ -1,91 +1,49 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络(cdn) 版本：2018-06-06
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 35 次发布
+### 第 15 次发布
 
-发布时间：2022-09-19 06:10:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [PushUrlsCache](http://document.tencentcloudapi.woa.com/document/product/228/37869)
-
-	* 新增入参：Headers
-
-
-新增数据结构：
-
-* [HTTPHeader](http://document.tencentcloudapi.woa.com/document/product/228/30987#HTTPHeader)
-
-
-
-## 消息队列 Ckafka(ckafka) 版本：2019-08-19
-
-### 第 35 次发布
-
-发布时间：2022-09-19 06:12:41
+发布时间：2022-09-20 06:11:19
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
-
-	* 新增入参：CtsdbConnectParam
+* DescribeVpcRuleOverview
 
 
-新增数据结构：
 
-* [CtsdbConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbConnectParam)
-* [CtsdbModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbModifyConnectParam)
-* [CtsdbParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbParam)
-* [KVParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KVParam)
-* [SplitParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#SplitParam)
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 18 次发布
+
+发布时间：2022-09-20 06:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [DatahubResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubResource)
+* [DetectDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectDetail)
 
-	* 新增成员：CtsdbParam
+	* 新增成员：LivenessMode
 
-* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
 
-	* 新增成员：MariaDBConnectParam, SQLServerConnectParam, CtsdbConnectParam
-
-* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
-
-	* 新增成员：MariaDBConnectParam, SQLServerConnectParam, CtsdbConnectParam
-
-* [MariaDBParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MariaDBParam)
-
-	* 新增成员：KeyColumns, IsTablePrefix, OutputFormat, IncludeContentChanges, IncludeQuery, RecordWithSchema
-
-* [PostgreSQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#PostgreSQLParam)
-
-	* 新增成员：IsTableRegular, KeyColumns, RecordWithSchema
-
-* [TransformsParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#TransformsParam)
-
-	* 新增成员：KeepMetadata
-
-* [ValueParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#ValueParam)
-
-	* 新增成员：Split, KV, Result
+	* 新增成员：LivenessMode
 
 
 
 
-## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+## 视频处理(mps) 版本：2019-06-12
 
 ### 第 10 次发布
 
-发布时间：2022-09-19 06:36:33
+发布时间：2022-09-20 06:32:11
 
 本次发布包含了以下内容：
 
@@ -93,79 +51,9 @@
 
 修改数据结构：
 
-* [MetricData](http://document.tencentcloudapi.woa.com/document/product/1338/55947#MetricData)
+* [TaskSimpleInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskSimpleInfo)
 
-	* 新增成员：MetricCount
-
-
-
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 9 次发布
-
-发布时间：2022-09-19 06:36:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [NotificationHook](http://document.tencentcloudapi.woa.com/document/product/1597/75228#NotificationHook)
-
-修改数据结构：
-
-* [AlertChannelRecord](http://document.tencentcloudapi.woa.com/document/product/1597/75228#AlertChannelRecord)
-
-	* 新增成员：AppId, Uin, SubAccountUin
-
-* [AlertRecord](http://document.tencentcloudapi.woa.com/document/product/1597/75228#AlertRecord)
-
-	* 新增成员：AppId, Uin, SubAccountUin, ScenarioName, Target, JobSLAId, JobSLADescription
-
-* [CronJob](http://document.tencentcloudapi.woa.com/document/product/1597/75228#CronJob)
-
-	* 新增成员：AppId, Uin, SubAccountUin
-
-* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
-
-	* 新增成员：CreatedAt, ProjectId
-
-* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
-
-	* 新增成员：Type, DomainNameConfig, Debug, AbortReason, CreatedAt, ProjectId, NotificationHooks
-
-* [RequestSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RequestSummary)
-
-	* 新增成员：P99, Status, Result
-
-* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
-
-	* 新增成员：NotificationHooks
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 37 次发布
-
-发布时间：2022-09-19 06:49:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [VpcOssNatServiceRequestForCreateNatGatewayServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNatServiceRequestForCreateNatGatewayServiceInternal)
-
-	* 新增成员：GwType, IpType
-
-* [VpcOssSubnetUseInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssSubnetUseInfo)
-
-	* 新增成员：SyncAclToTgwFlag
+	* 新增成员：SubTaskTypes
 
 
 
@@ -6145,7 +6033,7 @@
 
 新增数据结构：
 
-* [[HTTPHeader](http://document.tencentcloudapi.woa.com/document/product/228/30987#HTTPHeader)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[HTTPHeader](http://document.tencentcloudapi.woa.com/document/product/228/30987#HTTPHeader))
+* [HTTPHeader](http://document.tencentcloudapi.woa.com/document/product/228/30987#HTTPHeader)
 
 ### 第 34 次发布
 
@@ -7282,6 +7170,18 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 15 次发布
+
+发布时间：2022-09-20 06:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeVpcRuleOverview
+
 ### 第 14 次发布
 
 发布时间：2022-09-15 06:39:14
@@ -8032,11 +7932,11 @@
 
 新增数据结构：
 
-* [[CtsdbConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[CtsdbConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbConnectParam))
-* [[CtsdbModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbModifyConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[CtsdbModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbModifyConnectParam))
-* [[CtsdbParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[CtsdbParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbParam))
-* [[KVParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KVParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[KVParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KVParam))
-* [[SplitParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#SplitParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[SplitParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#SplitParam))
+* [CtsdbConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbConnectParam)
+* [CtsdbModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbModifyConnectParam)
+* [CtsdbParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbParam)
+* [KVParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KVParam)
+* [SplitParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#SplitParam)
 
 修改数据结构：
 
@@ -18416,6 +18316,25 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 18 次发布
+
+发布时间：2022-09-20 06:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectDetail)
+
+	* 新增成员：LivenessMode
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：LivenessMode
+
+
 ### 第 17 次发布
 
 发布时间：2022-09-09 06:20:15
@@ -24766,6 +24685,21 @@
 
 ## 视频处理(mps) 版本：2019-06-12
 
+### 第 10 次发布
+
+发布时间：2022-09-20 06:32:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskSimpleInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskSimpleInfo)
+
+	* 新增成员：SubTaskTypes
+
+
 ### 第 9 次发布
 
 发布时间：2022-09-15 06:24:42
@@ -27533,7 +27467,7 @@
 
 新增数据结构：
 
-* [[NotificationHook](http://document.tencentcloudapi.woa.com/document/product/1597/75228#NotificationHook)](http://document.tencentcloudapi.woa.com/document/product/1597/75228#[NotificationHook](http://document.tencentcloudapi.woa.com/document/product/1597/75228#NotificationHook))
+* [NotificationHook](http://document.tencentcloudapi.woa.com/document/product/1597/75228#NotificationHook)
 
 修改数据结构：
 

@@ -1,3 +1,63 @@
+# Release 3.0.613.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 15 次发布
+
+发布时间：2022-09-20 06:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeVpcRuleOverview
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 18 次发布
+
+发布时间：2022-09-20 06:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectDetail)
+
+	* 新增成员：LivenessMode
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* 新增成员：LivenessMode
+
+
+
+
+## 视频处理(mps) 版本：2019-06-12
+
+### 第 10 次发布
+
+发布时间：2022-09-20 06:32:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskSimpleInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskSimpleInfo)
+
+	* 新增成员：SubTaskTypes
+
+
+
+
 # Release 3.0.612.1
 
 ## 内容分发网络(cdn) 版本：2018-06-06
