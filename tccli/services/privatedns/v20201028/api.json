@@ -1300,6 +1300,7 @@
         {
           "default": "",
           "document": "资源描述",
+          "example": "无",
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -1309,6 +1310,7 @@
         {
           "default": "",
           "document": "表名",
+          "example": "无",
           "member": "string",
           "name": "Metric",
           "required": true,
@@ -1318,11 +1320,22 @@
         {
           "default": "",
           "document": "表数据",
+          "example": "无",
           "member": "DatePoint",
           "name": "DataSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询范围内的请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "MetricCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

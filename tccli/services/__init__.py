@@ -177,6 +177,9 @@ SERVICE_VERSIONS = {
     "cloudhsm": [
         "2019-11-12"
     ],
+    "cloudstudio": [
+        "2021-05-24"
+    ],
     "cls": [
         "2020-10-16"
     ],

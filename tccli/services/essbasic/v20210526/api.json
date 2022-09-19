@@ -1576,7 +1576,16 @@
         },
         {
           "default": "",
-          "document": "签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；",
+          "document": "合同组编号(备注：该参数和合同(流程)编号数组必须二选一)",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；\"LONGURL2WEIXINAPP\"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -1663,15 +1672,6 @@
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "合同组编号(备注：该参数和合同(流程)编号数组必须二选一)",
-          "example": "无",
-          "member": "string",
-          "name": "FlowGroupId",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -1900,7 +1900,7 @@
         },
         {
           "default": "",
-          "document": "查询个数，默认20，最大100",
+          "document": "查询个数，默认20，最大100；在查询列表的时候有效",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -1909,7 +1909,7 @@
         },
         {
           "default": "",
-          "document": "查询偏移位置，默认0",
+          "document": "查询偏移位置，默认0；在查询列表的时候有效",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -1936,7 +1936,7 @@
         },
         {
           "default": "",
-          "document": "模糊搜索模版名称",
+          "document": "模糊搜索模板名称",
           "example": "无",
           "member": "string",
           "name": "TemplateName",

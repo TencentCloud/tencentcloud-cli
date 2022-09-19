@@ -3482,6 +3482,164 @@
       ],
       "type": "object"
     },
+    "CtsdbConnectParam": {
+      "document": "Ctsdb连接源参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Ctsdb的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的实例vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CtsdbModifyConnectParam": {
+      "document": "Ctsdb连接源参数(更新)",
+      "members": [
+        {
+          "default": "",
+          "document": "Ctsdb的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的实例vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CtsdbParam": {
+      "document": "Ctsdb类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "连接管理实例资源",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ctsdb的metric",
+          "example": "xxx",
+          "member": "string",
+          "name": "CtsdbMetric",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "DatahubResource": {
       "document": "Datahub资源配置",
       "members": [
@@ -3631,6 +3789,16 @@
           "example": "xxx",
           "member": "SQLServerParam",
           "name": "SQLServerParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb配置，Type为CTSDB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "CtsdbParam",
+          "name": "CtsdbParam",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -4654,7 +4822,7 @@
         },
         {
           "default": "",
-          "document": "MySQL配置，Type为MYSQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
@@ -4664,10 +4832,40 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MariaDBConnectParam",
+          "name": "MariaDBConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "SQLServerConnectParam",
+          "name": "SQLServerConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "CtsdbConnectParam",
+          "name": "CtsdbConnectParam",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -4785,7 +4983,7 @@
         },
         {
           "default": "",
-          "document": "MySQL配置，Type为MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
@@ -4839,6 +5037,36 @@
           "example": "xxx",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "MariaDBConnectParam",
+          "name": "MariaDBConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "SQLServerConnectParam",
+          "name": "SQLServerConnectParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "CtsdbConnectParam",
+          "name": "CtsdbConnectParam",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -8693,6 +8921,42 @@
       ],
       "usage": "out"
     },
+    "KVParam": {
+      "document": "key-value二次解析",
+      "members": [
+        {
+          "default": "",
+          "document": "分隔符",
+          "example": ";",
+          "member": "string",
+          "name": "Delimiter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key-value二次解析分隔符",
+          "example": "=",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留源Key，默认为false不保留\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "KeepOriginalKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KafkaParam": {
       "document": "Ckafka配置",
       "members": [
@@ -9059,6 +9323,66 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键",
+          "example": "db1.table2.k1,k2",
+          "member": "string",
+          "name": "KeyColumns",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Table输入的是前缀时，该项值为true，否则为false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTablePrefix",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出格式，DEFAULT、CANAL_1、CANAL_2",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "OutputFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic",
+          "example": "all",
+          "member": "string",
+          "name": "IncludeContentChanges",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为true，且MySQL中\"binlog_rows_query_log_events\"配置项的值为\"ON\"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeQuery",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带",
+          "example": "false",
+          "member": "bool",
+          "name": "RecordWithSchema",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -9171,6 +9495,15 @@
           "example": "xxx",
           "member": "SQLServerModifyConnectParam",
           "name": "SQLServerConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Ctsdb配置，Type为CTSDB",
+          "example": "xxx",
+          "member": "CtsdbModifyConnectParam",
+          "name": "CtsdbConnectParam",
           "required": false,
           "type": "object"
         }
@@ -10883,6 +11216,36 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的table是否为正则表达式",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTableRegular",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键",
+          "example": "db1.table2.k1,k2",
+          "member": "string",
+          "name": "KeyColumns",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带",
+          "example": "false",
+          "member": "bool",
+          "name": "RecordWithSchema",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -11678,6 +12041,22 @@
         }
       ],
       "type": "object"
+    },
+    "SplitParam": {
+      "document": "值支持一拆多，即将一个值拆为一个数组",
+      "members": [
+        {
+          "default": "",
+          "document": "分隔符",
+          "example": "xx",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SubscribedInfo": {
       "document": "订阅信息实体",
@@ -12693,6 +13072,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepMetadata",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12768,7 +13157,7 @@
       "members": [
         {
           "default": "",
-          "document": "处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换",
+          "document": "处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写",
           "example": "TRIM",
           "member": "string",
           "name": "Type",
@@ -12814,6 +13203,36 @@
           "name": "RegexReplace",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "值支持一拆多，TYPE=SPLIT时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "SplitParam",
+          "name": "Split",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "key-value二次解析，TYPE=KV时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "KVParam",
+          "name": "KV",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

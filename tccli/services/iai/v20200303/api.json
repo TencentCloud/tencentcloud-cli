@@ -4186,7 +4186,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "是否为同一人的判断。",
+          "document": "是否为同一人判断，固定阈值分数为60分，若想更灵活地调整阈值可取Score参数返回进行判断",
           "example": "1",
           "member": "bool",
           "name": "IsMatch",

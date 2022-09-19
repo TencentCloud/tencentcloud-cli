@@ -9001,6 +9001,32 @@
       ],
       "usage": "both"
     },
+    "HTTPHeader": {
+      "document": "HTTP 请求头",
+      "members": [
+        {
+          "default": "",
+          "document": "请求头名称",
+          "example": "User-Agent",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求头值",
+          "example": "TencentCDN",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HeaderKey": {
       "document": "组成CacheKey",
       "members": [
@@ -12353,6 +12379,15 @@
           "name": "DisableRange",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节",
+          "example": "无",
+          "member": "HTTPHeader",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
         },
         {
           "default": "",

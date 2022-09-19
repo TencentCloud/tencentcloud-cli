@@ -33,7 +33,9 @@ Output:
                 "ResponseTimeMax": 0.8703224,
                 "ResponseTimeMin": 0.2167055,
                 "JobId": "job-o5u4k8es",
+                "ProjectId": "project-m51m6h0a",
                 "ScenarioId": "scenario-piekhfoc",
+                "Type": "pts-js",
                 "Load": {
                     "LoadSpec": {
                         "Concurrency": {

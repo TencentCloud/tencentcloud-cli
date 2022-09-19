@@ -1,0 +1,2416 @@
+{
+  "actions": {
+    "CreateCustomizeTemplates": {
+      "document": "添加自定义模板",
+      "input": "CreateCustomizeTemplatesRequest",
+      "name": "添加自定义模板",
+      "output": "CreateCustomizeTemplatesResponse"
+    },
+    "CreateWorkspaceByAgent": {
+      "document": "云主机方式创建工作空间",
+      "input": "CreateWorkspaceByAgentRequest",
+      "name": "云主机方式创建工作空间",
+      "output": "CreateWorkspaceByAgentResponse"
+    },
+    "CreateWorkspaceByTemplate": {
+      "document": "快速开始, 基于模版创建工作空间",
+      "input": "CreateWorkspaceByTemplateRequest",
+      "name": "基于模版创建工作空间",
+      "output": "CreateWorkspaceByTemplateResponse"
+    },
+    "CreateWorkspaceByVersionControl": {
+      "document": "根据模板创建工作空间",
+      "input": "CreateWorkspaceByVersionControlRequest",
+      "name": "根据模板创建工作空间",
+      "output": "CreateWorkspaceByVersionControlResponse"
+    },
+    "DeleteCustomizeTemplatesById": {
+      "document": "删除自定义模板",
+      "input": "DeleteCustomizeTemplatesByIdRequest",
+      "name": "删除自定义模板",
+      "output": "DeleteCustomizeTemplatesByIdResponse"
+    },
+    "DescribeCustomizeTemplates": {
+      "document": "获取所有模版列表",
+      "input": "DescribeCustomizeTemplatesRequest",
+      "name": "获取所有模版列表",
+      "output": "DescribeCustomizeTemplatesResponse"
+    },
+    "DescribeCustomizeTemplatesById": {
+      "document": "获取特定模板信息",
+      "input": "DescribeCustomizeTemplatesByIdRequest",
+      "name": "获取特定模板信息",
+      "output": "DescribeCustomizeTemplatesByIdResponse"
+    },
+    "DescribeCustomizeTemplatesPresets": {
+      "document": "获取创建模板的预置参数",
+      "input": "DescribeCustomizeTemplatesPresetsRequest",
+      "name": "获取创建模板的预置参数",
+      "output": "DescribeCustomizeTemplatesPresetsResponse"
+    },
+    "DescribeWorkspaceEnvList": {
+      "document": "环境列表接口返回信息",
+      "input": "DescribeWorkspaceEnvListRequest",
+      "name": "环境列表接口",
+      "output": "DescribeWorkspaceEnvListResponse"
+    },
+    "DescribeWorkspaceNameExist": {
+      "document": "检查工作空间是否存在",
+      "input": "DescribeWorkspaceNameExistRequest",
+      "name": "检查工作空间是否存在",
+      "output": "DescribeWorkspaceNameExistResponse"
+    },
+    "DescribeWorkspaceStatus": {
+      "document": "获取工作空间元信息",
+      "input": "DescribeWorkspaceStatusRequest",
+      "name": "获取工作空间元信息",
+      "output": "DescribeWorkspaceStatusResponse"
+    },
+    "DescribeWorkspaceStatusList": {
+      "document": "获取用户工作空间列表",
+      "input": "DescribeWorkspaceStatusListRequest",
+      "name": "获取用户工作空间列表",
+      "output": "DescribeWorkspaceStatusListResponse"
+    },
+    "ModifyCustomizeTemplateVersionControl": {
+      "document": "修改模版默认代码仓库",
+      "input": "ModifyCustomizeTemplateVersionControlRequest",
+      "name": "修改模版默认代码仓库",
+      "output": "ModifyCustomizeTemplateVersionControlResponse"
+    },
+    "ModifyCustomizeTemplatesFullById": {
+      "document": "全量修改自定义模板，不忽略空",
+      "input": "ModifyCustomizeTemplatesFullByIdRequest",
+      "name": "全量修改自定义模板，不忽略空",
+      "output": "ModifyCustomizeTemplatesFullByIdResponse"
+    },
+    "ModifyCustomizeTemplatesPartById": {
+      "document": "全量修改自定义模板，忽略空",
+      "input": "ModifyCustomizeTemplatesPartByIdRequest",
+      "name": "全量修改自定义模板，忽略空",
+      "output": "ModifyCustomizeTemplatesPartByIdResponse"
+    },
+    "ModifyWorkspaceAttributes": {
+      "document": "修改工作空间的名称和描述",
+      "input": "ModifyWorkspaceAttributesRequest",
+      "name": "修改工作空间的名称和描述",
+      "output": "ModifyWorkspaceAttributesResponse"
+    },
+    "RecoverWorkspace": {
+      "document": "恢复工作空间\n",
+      "input": "RecoverWorkspaceRequest",
+      "name": "恢复工作空间",
+      "output": "RecoverWorkspaceResponse"
+    },
+    "RemoveWorkspace": {
+      "document": "删除工作空间",
+      "input": "RemoveWorkspaceRequest",
+      "name": "删除工作空间",
+      "output": "RemoveWorkspaceResponse"
+    },
+    "RunWorkspace": {
+      "document": "运行空间",
+      "input": "RunWorkspaceRequest",
+      "name": "运行空间",
+      "output": "RunWorkspaceResponse"
+    },
+    "StopWorkspace": {
+      "document": "停止运行空间",
+      "input": "StopWorkspaceRequest",
+      "name": "停止运行空间",
+      "output": "StopWorkspaceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-05-24",
+    "api_brief": "提供对 云端 IDE 工作空间和空间模板相关的操作，包括创建工作空间、启动工作空间、停止工作空间、删除工作空间、拉取工作空间模板列表、置顶工作空间模板等。",
+    "serviceNameCN": "云端 IDE",
+    "serviceShortName": "cloudstudio"
+  },
+  "objects": {
+    "AgentSpaceDTO": {
+      "document": "云主机创建工作空间DTO",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云主机登录名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RemoteUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云主机登录地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "RemoteHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云主机登录端口",
+          "example": "xxx",
+          "member": "string",
+          "name": "RemotePort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkspaceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间版本",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkspaceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间资源结构",
+          "example": "xxx",
+          "member": "WorkspaceResourceDTO",
+          "name": "WorkspaceResourceDTO",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCustomizeTemplatesRequest": {
+      "document": "CreateCustomizeTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "UserDefinedTemplateParams",
+          "name": "UserDefinedTemplateParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomizeTemplatesResponse": {
+      "document": "CreateCustomizeTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByAgentRequest": {
+      "document": "CreateWorkspaceByAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "AgentSpaceDTO",
+          "name": "AgentSpaceDTO",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByAgentResponse": {
+      "document": "CreateWorkspaceByAgent返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceInfoDTO",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByTemplateRequest": {
+      "document": "CreateWorkspaceByTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByTemplateResponse": {
+      "document": "CreateWorkspaceByTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "创建工作空间返回的信息",
+          "example": "无",
+          "member": "WorkspaceInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByVersionControlRequest": {
+      "document": "CreateWorkspaceByVersionControl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间结构",
+          "example": "xxx",
+          "member": "WorkspaceDTO",
+          "name": "WorkspaceDTO",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "xxx",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceByVersionControlResponse": {
+      "document": "CreateWorkspaceByVersionControl返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceInfoDTO",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomizeTemplatesPresetsInfo": {
+      "document": "模板的预置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "模板tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板图标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Icons",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserDefinedTemplateParams",
+          "name": "Templates",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteCustomizeTemplatesByIdRequest": {
+      "document": "DeleteCustomizeTemplatesById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomizeTemplatesByIdResponse": {
+      "document": "DeleteCustomizeTemplatesById返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesByIdRequest": {
+      "document": "DescribeCustomizeTemplatesById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesByIdResponse": {
+      "document": "DescribeCustomizeTemplatesById返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesPresetsRequest": {
+      "document": "DescribeCustomizeTemplatesPresets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "空间标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesPresetsResponse": {
+      "document": "DescribeCustomizeTemplatesPresets返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomizeTemplatesPresetsInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesRequest": {
+      "document": "DescribeCustomizeTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizeTemplatesResponse": {
+      "document": "DescribeCustomizeTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceEnvListRequest": {
+      "document": "DescribeWorkspaceEnvList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "xxx",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceEnvListResponse": {
+      "document": "DescribeWorkspaceEnvList返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageUserDTO",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceNameExistRequest": {
+      "document": "DescribeWorkspaceNameExist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间名称",
+          "example": "Go2-kubsff",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceNameExistResponse": {
+      "document": "DescribeWorkspaceNameExist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceStatusListRequest": {
+      "document": "DescribeWorkspaceStatusList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceStatusListResponse": {
+      "document": "DescribeWorkspaceStatusList返回参数结构体",
+      "members": [
+        {
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "WorkspaceStatusInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceStatusRequest": {
+      "document": "DescribeWorkspaceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "空间标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceStatusResponse": {
+      "document": "DescribeWorkspaceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceStatusInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageUserDTO": {
+      "document": "可用镜像模板列表",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像模板ID",
+          "example": "46749",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像模板名称",
+          "example": "All in One",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag时间",
+          "example": "2022.2.1",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "支持 Java、Go、Python 等多种语言",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文描述",
+          "example": "支持 Java、Go、Python 等多种语言",
+          "member": "string",
+          "name": "DescriptionCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图标地址",
+          "example": "https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg",
+          "member": "string",
+          "name": "IconUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建人",
+          "example": "admin",
+          "member": "string",
+          "name": "Author",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问状态",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "Visible",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "2",
+          "member": "int64",
+          "name": "WorkspaceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类",
+          "example": "99999",
+          "member": "int64",
+          "name": "Sort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyCustomizeTemplateVersionControlRequest": {
+      "document": "ModifyCustomizeTemplateVersionControl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仓库地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代码仓库分支/标签",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代码仓库 ref 类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "RefType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizeTemplateVersionControlResponse": {
+      "document": "ModifyCustomizeTemplateVersionControl返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizeTemplatesFullByIdRequest": {
+      "document": "ModifyCustomizeTemplatesFullById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义模板参数",
+          "example": "无",
+          "member": "UserDefinedTemplateParams",
+          "name": "UserDefinedTemplateParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizeTemplatesFullByIdResponse": {
+      "document": "ModifyCustomizeTemplatesFullById返回参数结构体",
+      "members": [
+        {
+          "document": "自定义模板返回值",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizeTemplatesPartByIdRequest": {
+      "document": "ModifyCustomizeTemplatesPartById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义模板Patched参数",
+          "example": "无",
+          "member": "UserDefinedTemplatePatchedParams",
+          "name": "UserDefinedTemplatePatchedParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizeTemplatesPartByIdResponse": {
+      "document": "ModifyCustomizeTemplatesPartById返回参数结构体",
+      "members": [
+        {
+          "document": "自定义模板返回值",
+          "example": "无",
+          "member": "WorkspaceTemplateInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspaceAttributesRequest": {
+      "document": "ModifyWorkspaceAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PriceId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspaceAttributesResponse": {
+      "document": "ModifyWorkspaceAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverWorkspaceRequest": {
+      "document": "RecoverWorkspace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverWorkspaceResponse": {
+      "document": "RecoverWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceRequest": {
+      "document": "RemoveWorkspace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "cloudstudio-devops",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制，true或者false",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceResponse": {
+      "document": "RemoveWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunWorkspaceRequest": {
+      "document": "RunWorkspace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "空间标识",
+          "example": "xx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "xxx",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunWorkspaceResponse": {
+      "document": "RunWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkspaceRequest": {
+      "document": "StopWorkspace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "空间标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户所属组",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CloudStudioSessionTeam",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制终止，true或者false",
+          "example": "true",
+          "member": "string",
+          "name": "Force",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkspaceResponse": {
+      "document": "StopWorkspace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserDefinedTemplateParams": {
+      "document": "用户自定义模板参数",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cs-res.codehub.cn/vscode/go.svg",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Go 1.16.7",
+          "member": "string",
+          "name": "Icon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Go",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jqfcxx",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "VersionControlType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "VersionControlUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserDefinedTemplatePatchedParams": {
+      "document": "用户自定义模板Patched参数",
+      "members": [
+        {
+          "default": "",
+          "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jqfcxx",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cs-res.codehub.cn/vscode/go.svg",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Go 1.16.7",
+          "member": "string",
+          "name": "Icon",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Go",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserInfoRsp": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户验证信息",
+          "example": "xxx",
+          "member": "UserSubInfo",
+          "name": "AuthenticationUserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "头像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Avatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "介绍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Features",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状况",
+          "example": "0",
+          "member": "int64",
+          "name": "PreviewStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserSubInfo": {
+      "document": "用户验证信息",
+      "members": [
+        {
+          "default": "",
+          "document": "团队名称",
+          "example": "programmer-frank",
+          "member": "string",
+          "name": "Team",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "cEbpeXHnQI",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "example": "Programmer_frank",
+          "member": "string",
+          "name": "NickName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为管理员",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAdmin",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "bool",
+          "name": "IsTrial",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceDTO": {
+      "document": "工作空间结构",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码来源类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间版本",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkspaceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间资源结构",
+          "example": "xxx",
+          "member": "WorkspaceResourceDTO",
+          "name": "WorkspaceResourceDTO",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码仓库地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码Ref是分支还是标签",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRef",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代码Ref地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRefType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照Uid",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotUid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "价格id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "PriceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化状态",
+          "example": "xxx",
+          "member": "int64",
+          "name": "InitializeStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkspaceInfo": {
+      "document": "工作空间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作空间标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceInfoDTO": {
+      "document": "工作空间基本信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间创建时间",
+          "example": "null",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空间key",
+          "example": "null",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间id",
+          "example": "null",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceResourceDTO": {
+      "document": "工作空间资源结构",
+      "members": [
+        {
+          "default": "",
+          "document": "CPU核心数",
+          "example": "0",
+          "member": "uint64",
+          "name": "CpuCoreNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一般内存",
+          "example": "0",
+          "member": "uint64",
+          "name": "NormalMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统存储",
+          "example": "0",
+          "member": "uint64",
+          "name": "SystemStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户存储",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU数",
+          "example": "0",
+          "member": "uint64",
+          "name": "GpuNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU内存",
+          "example": "0",
+          "member": "uint64",
+          "name": "GpuMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkspaceShareInfo": {
+      "document": "用户空间共享信息",
+      "members": [
+        {
+          "default": "",
+          "document": "共享或不共享状态",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否与我共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "WithMe",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "BeginDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停止共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停止共享的时间",
+          "example": "[]",
+          "member": "UserInfoRsp",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceStatusInfo": {
+      "document": "获取用户工作空间返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "空间ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空间名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属人",
+          "example": "xxx",
+          "member": "UserInfoRsp",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空间标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpaceKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastOpsDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共享状态",
+          "example": "xxx",
+          "member": "WorkspaceShareInfo",
+          "name": "Share",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空间类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkspaceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "空间版本",
+          "example": "xxx",
+          "member": "int64",
+          "name": "WorkspaceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图标地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ImageIcon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本控制地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本控制描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本控制引用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRef",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本控制引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRefType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本控制类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SpecDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceTemplateInfo": {
+      "document": "工作空间模板信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板分类",
+          "example": "xxx",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DescriptionEN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Icon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库所属人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库引用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRef",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认仓库引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VersionControlRefType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserVersionControlUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserVersionControlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义仓库引用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserVersionControlRef",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义仓库引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserVersionControlRefType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DevFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "PluginFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrebuildFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否标记",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Marked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标记状态",
+          "example": "xxx",
+          "member": "int64",
+          "name": "MarkAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastModified",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编号",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Sort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SnapshotUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "UserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Author",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否属于当前用户",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Me",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthorAvatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

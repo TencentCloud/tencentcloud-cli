@@ -1,0 +1,189 @@
+{
+  "actions": {
+    "CreateCustomizeTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomizeTemplates\n<公共请求参数>\n\n{\n    \"UserDefinedTemplateParams\": {\n        \"Source\": \"pmtoue\",\n        \"Icon\": \"https://cs-res.codehub.cn/vscode/go.svg\",\n        \"Name\": \"test-template-123\",\n        \"Description\": \"Go1.16.7\",\n        \"Tags\": [\n            \"Go\"\n        ]\n    },\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 39,\n            \"Category\": \"userDefined\",\n            \"Name\": \"test-template-123\",\n            \"Description\": \"Go1.16.7\",\n            \"DescriptionEN\": \"Go1.16.7\",\n            \"Tags\": \"Go\",\n            \"Icon\": \"https://cs-res.codehub.cn/vscode/go.svg\",\n            \"VersionControlType\": \"CUSTOM\",\n            \"VersionControlUrl\": \"\",\n            \"VersionControlDesc\": null,\n            \"VersionControlOwner\": \"system\",\n            \"VersionControlRef\": \"\",\n            \"VersionControlRefType\": null,\n            \"UserVersionControlUrl\": null,\n            \"UserVersionControlType\": null,\n            \"UserVersionControlRef\": null,\n            \"UserVersionControlRefType\": null,\n            \"DevFile\": null,\n            \"PluginFile\": null,\n            \"PrebuildFile\": null,\n            \"Marked\": false,\n            \"MarkAt\": 0,\n            \"CreateDate\": \"2022-06-15T11:52:25.221Z\",\n            \"LastModified\": \"2022-06-15T11:52:25.221Z\",\n            \"Sort\": 0,\n            \"SnapshotUid\": \"HRFOYcbwNR\",\n            \"UserId\": 27,\n            \"Author\": \"frankzyfeng_test\",\n            \"Me\": true,\n            \"AuthorAvatar\": null\n        },\n        \"RequestId\": \"cf457d4a-bc75-477c-b2ad-dc02779d798c\"\n    }\n}",
+        "title": "CreateCustomizeTemplates"
+      }
+    ],
+    "CreateWorkspaceByAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceByAgent\n<公共请求参数>\n\n{\n    \"AgentSpaceDTO\": {\n        \"RemotePort\": \"22\",\n        \"Name\": \"openapi_test_agent1\",\n        \"RemoteUser\": \"root\",\n        \"RemoteHost\": \"43.132.171.34\",\n        \"ImageId\": \"1\",\n        \"ImageName\": \"Agent\",\n        \"WorkspaceVersion\": \"2\",\n        \"WorkspaceResourceDTO\": {\n            \"NormalMemory\": \"0\",\n            \"GpuNumber\": \"0\",\n            \"SystemStorage\": \"0\",\n            \"CpuCoreNumber\": \"0\",\n            \"GpuMemory\": \"0\",\n            \"UserStorage\": \"0\"\n        },\n        \"WorkspaceType\": \"NORMAL\"\n    },\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateDate\": \"2022-06-15T11:39:49.087Z\",\n            \"SpaceKey\": \"pmtoue\",\n            \"WorkspaceId\": 25\n        },\n        \"RequestId\": \"2764d976-c5d5-482c-b22d-4f980b0dd980\"\n    }\n}",
+        "title": "CreateWorkspaceByAgent"
+      }
+    ],
+    "CreateWorkspaceByTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceByTemplate\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"TemplateId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkspaceId\": 26,\n            \"SpaceKey\": \"tfyiyw\"\n        },\n        \"RequestId\": \"26881c75-375d-48ad-9a24-7270176e4fab\"\n    }\n}",
+        "title": "CreateWorkspaceByTemplate"
+      }
+    ],
+    "CreateWorkspaceByVersionControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceByVersionControl\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"xx\",\n    \"WorkspaceDTO\": {\n        \"VersionControlType\": \"xx\",\n        \"Name\": \"xx\",\n        \"VersionControlRefType\": \"xx\",\n        \"InitializeStatus\": 0,\n        \"VersionControlUrl\": \"xx\",\n        \"ImageId\": 46749,\n        \"SnapshotUid\": \"xx\",\n        \"ImageName\": \"All in One\",\n        \"WorkspaceVersion\": 0,\n        \"WorkspaceResourceDTO\": {\n            \"NormalMemory\": 0,\n            \"GpuNumber\": 0,\n            \"SystemStorage\": 0,\n            \"CpuCoreNumber\": 0,\n            \"GpuMemory\": 0,\n            \"UserStorage\": 0\n        },\n        \"TemplateId\": 0,\n        \"VersionControlRef\": \"xx\",\n        \"PriceId\": 0,\n        \"Description\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateDate\": \"2020-09-22T00:00:00+00:00\",\n            \"WorkspaceId\": 0,\n            \"SpaceKey\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateWorkspaceByVersionControl"
+      }
+    ],
+    "DeleteCustomizeTemplatesById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomizeTemplatesById\n<公共请求参数>\n\n{\n    \"Id\": \"37\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20ba9c45-9638-4da0-b0d0-0075651821e6\"\n    }\n}",
+        "title": "DescribeCustomizeTemplatesById"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomizeTemplatesById\n<公共请求参数>\n\n{\n    \"Id\": \"38\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6727846f-8f48-40d2-b42e-081a3fa0febd\"\n    }\n}",
+        "title": "DeleteCustomizeTemplatesById"
+      }
+    ],
+    "DescribeCustomizeTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomizeTemplates\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 1,\n                \"Category\": \"general\",\n                \"Name\": \"All in One\",\n                \"Description\": \"支持 Java、Go、Python 等多种语言\",\n                \"DescriptionEN\": \"支持 Java、Go、Python 等多种语言\",\n                \"Tags\": \"Java,Go,Python,Node.js\",\n                \"Icon\": \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n                \"VersionControlType\": \"NONE\",\n                \"VersionControlUrl\": \"\",\n                \"VersionControlDesc\": \"\",\n                \"VersionControlOwner\": \"system\",\n                \"VersionControlRef\": null,\n                \"VersionControlRefType\": null,\n                \"UserVersionControlUrl\": null,\n                \"UserVersionControlType\": \"NONE\",\n                \"UserVersionControlRef\": null,\n                \"UserVersionControlRefType\": null,\n                \"DevFile\": null,\n                \"PluginFile\": null,\n                \"PrebuildFile\": null,\n                \"Marked\": false,\n                \"MarkAt\": 0,\n                \"CreateDate\": \"2022-06-07T23:49:53Z\",\n                \"LastModified\": \"2022-06-07T23:49:53Z\",\n                \"Sort\": 99999,\n                \"SnapshotUid\": null,\n                \"UserId\": 0,\n                \"Author\": null,\n                \"Me\": false,\n                \"AuthorAvatar\": null\n            }\n        ],\n        \"RequestId\": \"e7e64332-1419-4951-acf5-10dd886c96ee\"\n    }\n}",
+        "title": "DescribeCustomizeTemplates"
+      }
+    ],
+    "DescribeCustomizeTemplatesById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomizeTemplatesById\n<公共请求参数>\n\n{\n    \"Id\": \"2\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 2,\n            \"Category\": \"general\",\n            \"Name\": \"Ubuntu 18.04\",\n            \"Description\": \"内置 Python 2.7\",\n            \"DescriptionEN\": \"内置 Python 2.7\",\n            \"Tags\": \"Ubuntu,Python\",\n            \"Icon\": \"https://cs-res.codehub.cn/vscode/default.svg\",\n            \"VersionControlType\": \"GIT\",\n            \"VersionControlUrl\": \"https://e.coding.net/coding-public/cloud-studio-samples/cpp-quickstart.git\",\n            \"VersionControlDesc\": \"快速开始\",\n            \"VersionControlOwner\": \"system\",\n            \"VersionControlRef\": null,\n            \"VersionControlRefType\": null,\n            \"UserVersionControlUrl\": null,\n            \"UserVersionControlType\": null,\n            \"UserVersionControlRef\": null,\n            \"UserVersionControlRefType\": null,\n            \"DevFile\": null,\n            \"PluginFile\": null,\n            \"PrebuildFile\": null,\n            \"Marked\": false,\n            \"MarkAt\": 0,\n            \"CreateDate\": \"2022-06-07T23:49:53Z\",\n            \"LastModified\": \"2022-06-07T23:49:53Z\",\n            \"Sort\": 98999,\n            \"SnapshotUid\": null,\n            \"UserId\": 0,\n            \"Author\": null,\n            \"Me\": false,\n            \"AuthorAvatar\": null\n        },\n        \"RequestId\": \"734551f9-1653-4dc2-a95e-9e20e266428e\"\n    }\n}",
+        "title": "DescribeCustomizeTemplatesById"
+      }
+    ],
+    "DescribeCustomizeTemplatesPresets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomizeTemplatesPresets\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Icons\": [\n                \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n                \"https://cs-res.codehub.cn/vscode/default.svg\",\n                \"https://cs-res.codehub.cn/vscode/java.svg\",\n                \"https://cs-res.codehub.cn/vscode/go.svg\",\n                \"https://cs-res.codehub.cn/vscode/node.svg\",\n                \"https://cs-res.codehub.cn/vscode/dotNet.svg\",\n                \"https://cs-res.codehub.cn/vscode/serverless.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/python.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/spring-boot.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/angular.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/vuejs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/reactjs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/vite.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/svelte.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/emberjs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/preact.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/umijs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/ionic-react.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/ionic-angular.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/hexo.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/nuxtjs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/expressjs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/koajs.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/nest.svg\",\n                \"https://cs-res.codehub.cn/workspace/assets/icons/fastifyjs.svg\"\n            ],\n            \"Tags\": [\n                \"Java\",\n                \"Go\",\n                \"Python\",\n                \"Node.js\",\n                \"Ubuntu\",\n                \".NET\",\n                \"云函数\",\n                \"腾讯云\",\n                \"Spring Boot\",\n                \"Angular\",\n                \"Vue.js\",\n                \"React\",\n                \"Vite\",\n                \"Svelte\",\n                \"Ember.js\",\n                \"Preact\",\n                \"UmiJS\",\n                \"Ionic React\",\n                \"Ionic Angular\",\n                \"Hexo\",\n                \"Nuxt.js\",\n                \"Express\",\n                \"Koa\",\n                \"Nest\",\n                \"Fastify\"\n            ]\n        },\n        \"RequestId\": \"9abd8472-33e1-4f21-8316-f764731d6d80\"\n    }\n}",
+        "title": "DescribeCustomizeTemplatesPresets"
+      }
+    ],
+    "DescribeWorkspaceEnvList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceEnvList\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeWorkspaceEnvList"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceEnvList\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": \"2\",\n                \"Name\": \"All in One\",\n                \"Tag\": \"20210719.1\",\n                \"Description\": \"支持 Java、Go、Python 等多种语言\",\n                \"DescriptionCN\": \"支持 Java、Go、Python 等多种语言\",\n                \"IconUrl\": \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n                \"Author\": \"admin\",\n                \"Visible\": \"PUBLIC\",\n                \"WorkspaceVersion\": 2,\n                \"Sort\": 99999\n            }\n        ],\n        \"RequestId\": \"d4bb9a0f-5d27-4780-81c4-4ca88690eddb\"\n    }\n}",
+        "title": "DescribeWorkspaceStatusList"
+      }
+    ],
+    "DescribeWorkspaceNameExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceNameExist\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d6a1d78-9c62-4e5d-92fb-5e1361425b7e\"\n    }\n}",
+        "title": "DescribeWorkspaceNameExist"
+      }
+    ],
+    "DescribeWorkspaceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceStatus\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"ryvzki\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 9,\n            \"Name\": \"open_api_test-1\",\n            \"Owner\": {\n                \"Id\": 8,\n                \"AuthenticationUserInfo\": {\n                    \"Team\": \"qcloud\",\n                    \"UserName\": \"600000560939\",\n                    \"NickName\": \"frankzyfeng@tencent.com\",\n                    \"IsAdmin\": false,\n                    \"IsTrial\": null\n                },\n                \"Avatar\": null,\n                \"Features\": null,\n                \"PreviewStatus\": 0\n            },\n            \"SpaceKey\": \"ryvzki\",\n            \"Status\": \"CREATING\",\n            \"LastOpsDate\": \"2022-06-10T06:55:45Z\",\n            \"Description\": \"\",\n            \"Share\": {\n                \"Status\": false,\n                \"WithMe\": false,\n                \"BeginDate\": null,\n                \"EndDate\": null,\n                \"Users\": []\n            },\n            \"WorkspaceType\": \"NORMAL\",\n            \"Label\": \"支持 Java、Go、Python 等多种语言\",\n            \"WorkspaceVersion\": 3,\n            \"ImageIcon\": \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n            \"CreateDate\": \"2022-06-10T06:55:45Z\",\n            \"VersionControlUrl\": \"\",\n            \"VersionControlDesc\": null,\n            \"VersionControlRef\": null,\n            \"VersionControlRefType\": null,\n            \"VersionControlType\": \"GIT\",\n            \"TemplateId\": null,\n            \"SnapshotUid\": null,\n            \"SpecDesc\": null,\n            \"Cpu\": 0,\n            \"Memory\": 0\n        },\n        \"RequestId\": \"9313fef5-5c9e-4b9b-ba09-411b11e4f7af\"\n    }\n}",
+        "title": "DescribeWorkspaceStatus"
+      }
+    ],
+    "DescribeWorkspaceStatusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceStatusList\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 9,\n                \"Name\": \"open_api_test-1\",\n                \"Owner\": {\n                    \"Id\": 8,\n                    \"AuthenticationUserInfo\": {\n                        \"Team\": \"qcloud\",\n                        \"UserName\": \"600000560939\",\n                        \"NickName\": \"frankzyfeng@tencent.com\",\n                        \"IsAdmin\": false,\n                        \"IsTrial\": null\n                    },\n                    \"Avatar\": null,\n                    \"Features\": null,\n                    \"PreviewStatus\": 0\n                },\n                \"SpaceKey\": \"ryvzki\",\n                \"Status\": \"CREATING\",\n                \"LastOpsDate\": \"2022-06-10T06:55:45Z\",\n                \"Description\": \"\",\n                \"Share\": {\n                    \"Status\": false,\n                    \"WithMe\": false,\n                    \"BeginDate\": null,\n                    \"EndDate\": null,\n                    \"Users\": []\n                },\n                \"WorkspaceType\": \"NORMAL\",\n                \"Label\": \"支持 Java、Go、Python 等多种语言\",\n                \"WorkspaceVersion\": 3,\n                \"ImageIcon\": \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n                \"CreateDate\": \"2022-06-10T06:55:45Z\",\n                \"VersionControlUrl\": \"\",\n                \"VersionControlDesc\": null,\n                \"VersionControlRef\": null,\n                \"VersionControlRefType\": null,\n                \"VersionControlType\": \"GIT\",\n                \"TemplateId\": null,\n                \"SnapshotUid\": null,\n                \"SpecDesc\": null,\n                \"Cpu\": 0,\n                \"Memory\": 0\n            },\n            {\n                \"Id\": 8,\n                \"Name\": \"open_api_test5\",\n                \"Owner\": {\n                    \"Id\": 8,\n                    \"AuthenticationUserInfo\": {\n                        \"Team\": \"qcloud\",\n                        \"UserName\": \"600000560939\",\n                        \"NickName\": \"frankzyfeng@tencent.com\",\n                        \"IsAdmin\": false,\n                        \"IsTrial\": null\n                    },\n                    \"Avatar\": null,\n                    \"Features\": null,\n                    \"PreviewStatus\": 0\n                },\n                \"SpaceKey\": \"wvqlyf\",\n                \"Status\": \"CREATING\",\n                \"LastOpsDate\": \"2022-06-10T04:21:56Z\",\n                \"Description\": \"\",\n                \"Share\": {\n                    \"Status\": false,\n                    \"WithMe\": false,\n                    \"BeginDate\": null,\n                    \"EndDate\": null,\n                    \"Users\": []\n                },\n                \"WorkspaceType\": \"NORMAL\",\n                \"Label\": \"支持 Java、Go、Python 等多种语言\",\n                \"WorkspaceVersion\": 3,\n                \"ImageIcon\": \"https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg\",\n                \"CreateDate\": \"2022-06-10T04:21:56Z\",\n                \"VersionControlUrl\": \"\",\n                \"VersionControlDesc\": null,\n                \"VersionControlRef\": null,\n                \"VersionControlRefType\": null,\n                \"VersionControlType\": \"GIT\",\n                \"TemplateId\": null,\n                \"SnapshotUid\": null,\n                \"SpecDesc\": null,\n                \"Cpu\": 0,\n                \"Memory\": 0\n            }\n        ],\n        \"RequestId\": \"ff57bfab-60d0-47ce-883c-f5230245636a\"\n    }\n}",
+        "title": "DescribeWorkspaceStatusList"
+      }
+    ],
+    "ModifyCustomizeTemplateVersionControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizeTemplateVersionControl\n<公共请求参数>\n\n{\n    \"Url\": \"https:%2F%2Fgithub.com%2Fformulahendry%2F955.WLB.git\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"TemplateId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"57aaf569-f428-4593-a200-4072023d5377\"\n    }\n}",
+        "title": "ModifyCustomizeTemplateVersionControl"
+      }
+    ],
+    "ModifyCustomizeTemplatesFullById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizeTemplatesFullById\n<公共请求参数>\n\n{\n    \"UserDefinedTemplateParams\": {\n        \"Source\": \"yueuli\",\n        \"Icon\": \"https://cs-res.codehub.cn/vscode/go.svg\",\n        \"Name\": \"hanley_666\",\n        \"Description\": \"aaaaaa\",\n        \"Tags\": [\n            \"GO\"\n        ]\n    },\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"Id\": \"38\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 38,\n            \"Category\": \"userDefined\",\n            \"Name\": \"hanley_666\",\n            \"Description\": \"aaaaaa\",\n            \"DescriptionEN\": \"aaaaaa\",\n            \"Tags\": \"GO\",\n            \"Icon\": \"https://cs-res.codehub.cn/vscode/go.svg\",\n            \"VersionControlType\": \"CUSTOM\",\n            \"VersionControlUrl\": \"\",\n            \"VersionControlDesc\": \"\",\n            \"VersionControlOwner\": \"system\",\n            \"VersionControlRef\": \"\",\n            \"VersionControlRefType\": null,\n            \"UserVersionControlUrl\": null,\n            \"UserVersionControlType\": null,\n            \"UserVersionControlRef\": null,\n            \"UserVersionControlRefType\": null,\n            \"DevFile\": null,\n            \"PluginFile\": null,\n            \"PrebuildFile\": null,\n            \"Marked\": false,\n            \"MarkAt\": 0,\n            \"CreateDate\": \"2022-06-15T07:51:05Z\",\n            \"LastModified\": \"2022-06-15T07:52:45.585Z\",\n            \"Sort\": 0,\n            \"SnapshotUid\": \"H8fDAMSDKU\",\n            \"UserId\": 27,\n            \"Author\": \"frankzyfeng_test\",\n            \"Me\": true,\n            \"AuthorAvatar\": null\n        },\n        \"RequestId\": \"a9fea1de-fc85-4e87-afaf-89d390691ca2\"\n    }\n}",
+        "title": "ModifyCustomizeTemplatesFullById"
+      }
+    ],
+    "ModifyCustomizeTemplatesPartById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizeTemplatesPartById\n<公共请求参数>\n\n{\n    \"UserDefinedTemplatePatchedParams\": {\n        \"Source\": \"yueuli\",\n        \"Name\": \"test-case-2\"\n    },\n    \"Id\": \"38\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 38,\n            \"Category\": \"userDefined\",\n            \"Name\": \"test-case-2\",\n            \"Description\": \"aaaaaa\",\n            \"DescriptionEN\": \"aaaaaa\",\n            \"Tags\": \"GO\",\n            \"Icon\": \"https://cs-res.codehub.cn/vscode/go.svg\",\n            \"VersionControlType\": \"CUSTOM\",\n            \"VersionControlUrl\": \"\",\n            \"VersionControlDesc\": \"\",\n            \"VersionControlOwner\": \"system\",\n            \"VersionControlRef\": \"\",\n            \"VersionControlRefType\": null,\n            \"UserVersionControlUrl\": null,\n            \"UserVersionControlType\": null,\n            \"UserVersionControlRef\": null,\n            \"UserVersionControlRefType\": null,\n            \"DevFile\": null,\n            \"PluginFile\": null,\n            \"PrebuildFile\": null,\n            \"Marked\": false,\n            \"MarkAt\": 0,\n            \"CreateDate\": \"2022-06-15T07:51:05Z\",\n            \"LastModified\": \"2022-06-15T07:53:29.081Z\",\n            \"Sort\": 0,\n            \"SnapshotUid\": \"H8fDAMSDKU\",\n            \"UserId\": 27,\n            \"Author\": \"frankzyfeng_test\",\n            \"Me\": true,\n            \"AuthorAvatar\": null\n        },\n        \"RequestId\": \"7f02e8bc-48ac-4af0-9a0e-20e94715945a\"\n    }\n}",
+        "title": "ModifyCustomizeTemplatesPartById"
+      }
+    ],
+    "ModifyWorkspaceAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceAttributes\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"9\",\n    \"Name\": \"openapi_test_m1\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"Description\": \"api-test-midofy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"437093fd-a231-4ec9-83f3-ae38ea917f8e\"\n    }\n}",
+        "title": "ModifyWorkspaceAttributes"
+      }
+    ],
+    "RecoverWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverWorkspace\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"iqybry\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d6df27d-a47c-412d-9a8f-d2d3e5da1c4f\"\n    }\n}",
+        "title": "RecoverWorkspace"
+      }
+    ],
+    "RemoveWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveWorkspace\n<公共请求参数>\n\n{\n    \"Force\": \"true\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"iqybry\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd62f2ad-9fd4-41f7-9cdb-b98cece5d879\"\n    }\n}",
+        "title": "RemoveWorkspace"
+      }
+    ],
+    "RunWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunWorkspace\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"ryvzki\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27197783-bce1-40db-909e-2b852f77047e\"\n    }\n}",
+        "title": "RunWorkspace"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunWorkspace\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"yueuli\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc649dad-02d3-4e4d-8756-56382848c6f2\"\n    }\n}",
+        "title": "RunWorkspace - 运行工作空间"
+      }
+    ],
+    "StopWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWorkspace\n<公共请求参数>\n\n{\n    \"Force\": \"字符串\",\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"iqybry\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"87986804-92d8-469f-b2fe-b7bb0b0eaef5\"\n    }\n}",
+        "title": "StopWorkspace"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWorkspace\n<公共请求参数>\n\n{\n    \"CloudStudioSessionTeam\": \"cloudstudio-devops\",\n    \"SpaceKey\": \"yueuli\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae3d09af-e2a2-454a-a5d7-a95af8b7cd0e\"\n    }\n}",
+        "title": "StopWorkspace - 停止工作空间"
+      }
+    ]
+  },
+  "version": "1.0"
+}

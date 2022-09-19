@@ -250,22 +250,22 @@
       "members": [
         {
           "default": "",
-          "document": "*表示所有数据库,db.name表示特定的name数据库。",
-          "example": "\"db_test\"",
-          "member": "string",
-          "name": "NameSpace",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用于控制权限,0无权限，1只读，2只写，3读写。",
+          "document": "当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "Mask",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指具有当前账号权限的数据库名。\n<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>",
+          "example": "\"db_test\"",
+          "member": "string",
+          "name": "NameSpace",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

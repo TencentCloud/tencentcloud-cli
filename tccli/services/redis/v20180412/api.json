@@ -5492,7 +5492,7 @@
       "members": [
         {
           "default": "",
-          "document": "设置参数的名称。例如timeout。",
+          "document": "设置参数的名称。例如timeout。当前支持自定义的参数，请参见<a href=\"https://cloud.tencent.com/document/product/239/49925\">参数配置</a>。",
           "example": "timeout",
           "member": "string",
           "name": "Key",
@@ -5502,7 +5502,7 @@
         },
         {
           "default": "",
-          "document": "设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。",
+          "document": "设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。更多参数取值信息，请参见<a href=\"https://cloud.tencent.com/document/product/239/49925\">参数配置</a>。",
           "example": "120",
           "member": "string",
           "name": "Value",
@@ -6972,7 +6972,7 @@
       "document": "ModifyInstanceParams返回参数结构体",
       "members": [
         {
-          "document": "修改是否成功。修改成功为true，失败为false。",
+          "document": "说明修改参数配置是否成功。<br><li>true：指修改成功；<br><li>false：指修改失败。<br>",
           "example": "true",
           "member": "bool",
           "name": "Changed",

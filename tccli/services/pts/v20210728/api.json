@@ -516,6 +516,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -589,6 +619,76 @@
           "example": "job-xx",
           "member": "string",
           "name": "JobId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ScenarioName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sla-xx",
+          "member": "string",
+          "name": "JobSLAId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SLA规则: 请求的错误百分比 > 5.00 % | 当前值: 7.61 %",
+          "member": "string",
+          "name": "JobSLADescription",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1522,6 +1622,36 @@
           "example": "任务发起人",
           "member": "string",
           "name": "JobOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SubAccountUin",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2620,13 +2750,13 @@
       "document": "DescribeMetricLabelWithValues返回参数结构体",
       "members": [
         {
-          "document": "指标所有的label和values数组",
+          "document": "指标所有的label和values数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MetricLabelWithValues",
           "name": "MetricLabelWithValuesSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3857,6 +3987,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4446,6 +4596,76 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "js",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名绑定配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainNameConfig",
+          "name": "DomainNameConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "是否为调试型的压测任务",
+          "member": "bool",
+          "name": "Debug",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "中断原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AbortReason",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-09T10:27:22+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知事件回调\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationHook",
+          "name": "NotificationHooks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4773,6 +4993,32 @@
         }
       ],
       "usage": "in"
+    },
+    "NotificationHook": {
+      "document": "事件通知回调",
+      "members": [
+        {
+          "default": "",
+          "document": "通知事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Events",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回调 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.com/notify",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Project": {
       "document": "项目",
@@ -5139,6 +5385,36 @@
           "name": "ErrorPercentage",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求p99耗时，单位秒",
+          "example": "0.55",
+          "member": "float",
+          "name": "P99",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应状态码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应详情",
+          "example": "ok",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5713,6 +5989,16 @@
           "name": "DomainNameConfig",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知事件回调\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationHook",
+          "name": "NotificationHooks",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

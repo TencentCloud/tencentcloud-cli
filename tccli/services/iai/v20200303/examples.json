@@ -465,7 +465,7 @@
     "VerifyFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=VerifyFace\n&Url=http://test.image.myqcloud.com/testA.jpg\n&PersonId=11111111\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyFace\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.image.myqcloud.com/testA.jpg\",\n    \"PersonId\": \"11111111\"\n}",
         "output": "{\n    \"Response\": {\n        \"Score\": 100,\n        \"IsMatch\": true,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\n    }\n}",
         "title": "人脸验证接口"
       }

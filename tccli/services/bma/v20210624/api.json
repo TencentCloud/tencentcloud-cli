@@ -1280,7 +1280,7 @@
         },
         {
           "default": "",
-          "document": "是否启用存证0：不启用 1：启用 默认为1",
+          "document": "是否启用存证0：不存证  2：存证 默认为0",
           "example": "1",
           "member": "string",
           "name": "IsCert",
@@ -1316,7 +1316,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "白名单",
           "example": "xxx",
           "member": "string",
           "name": "WhiteLists",
@@ -1325,7 +1325,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "作品ID",
           "example": "x",
           "member": "int64",
           "name": "WorkId",
@@ -1334,7 +1334,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "著作权人姓名",
           "example": "xx",
           "member": "string",
           "name": "ProducerName",
@@ -1343,7 +1343,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "作者",
           "example": "x x",
           "member": "string",
           "name": "Nickname",
@@ -1352,7 +1352,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "授权书",
           "example": "x",
           "member": "string",
           "name": "Authorization",
@@ -1361,7 +1361,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "授权书开始时间",
           "example": "x",
           "member": "string",
           "name": "AuthorizationStartTime",
@@ -1370,7 +1370,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "授权书结束时间",
           "example": "x",
           "member": "string",
           "name": "AuthorizationEndTime",
@@ -1379,7 +1379,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "内容格式",
           "example": "x",
           "member": "string",
           "name": "ContentType",
@@ -1388,7 +1388,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "文件内容",
           "example": "x",
           "member": "string",
           "name": "Content",
@@ -1397,7 +1397,7 @@
         },
         {
           "default": "",
-          "document": "x",
+          "document": "监测结束时间",
           "example": "xx",
           "member": "string",
           "name": "MonitorEndTime",
