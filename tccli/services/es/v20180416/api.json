@@ -1150,6 +1150,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4223,7 +4233,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4233,7 +4244,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4243,7 +4255,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4253,7 +4266,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4263,7 +4277,8 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4273,7 +4288,8 @@
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4283,7 +4299,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4293,7 +4310,8 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4303,7 +4321,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4313,7 +4332,8 @@
           "name": "ChargeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4323,7 +4343,8 @@
           "name": "ChargePeriod",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4333,7 +4354,8 @@
           "name": "RenewFlag",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4343,7 +4365,8 @@
           "name": "NodeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4353,7 +4376,8 @@
           "name": "NodeNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4363,7 +4387,8 @@
           "name": "DiskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4373,7 +4398,8 @@
           "name": "DiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4383,7 +4409,8 @@
           "name": "LogstashVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4393,7 +4420,8 @@
           "name": "LicenseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4403,7 +4431,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4413,7 +4442,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4423,7 +4453,8 @@
           "name": "Deadline",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4433,7 +4464,8 @@
           "name": "Nodes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4443,7 +4475,8 @@
           "name": "BindedESInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4453,7 +4486,8 @@
           "name": "YMLConfig",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4463,7 +4497,19 @@
           "name": "ExtendedFiles",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可维护时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6481,6 +6527,16 @@
           "name": "DiskSize",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDurationUpdated",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tmt TextTranslate --cli-unfold-argument  \
-    --ProjectId 0 \
-    --Source en \
     --SourceText hello \
-    --Target zh
+    --ProjectId 0 \
+    --Target zh \
+    --Source en
 ```
 
 Output: 

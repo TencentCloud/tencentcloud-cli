@@ -24,6 +24,14 @@
         "title": "请求示例"
       }
     ],
+    "AuthenticateDomainOwner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthenticateDomainOwner\n<公共请求参数>\n\n{\n    \"VerifyType\": \"dnsCheck\",\n    \"DomainName\": \"akxynt.cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"cssauth_da06159efa92c365182ba5d453a7b65b\",\n        \"MainDomain\": \"akxynt.cn\",\n        \"RequestId\": \"20a9d1c1-7b2a-48b5-9a78-c0bccab3dfb6\",\n        \"Status\": 0\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CancelCommonMixStream": [
       {
         "document": "根据session id取消混流。",

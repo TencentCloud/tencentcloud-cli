@@ -23,10 +23,15 @@ Output:
             {
                 "CreatedAt": "2021-12-22T15:04:36+08:00",
                 "UpdatedAt": "2021-12-22T15:04:36+08:00",
+                "AppId": 123,
+                "Uin": "123",
+                "SubAccountUin": "123",
                 "AlertRecordId": "alert-q5qn20zy",
                 "ProjectId": "project-cphgtuvq",
                 "ScenarioId": "scenario-lkbg8f20",
+                "ScenarioName": "my-scenario",
                 "JobId": "job-b8eklbx8",
+                "JobSLADescription": "this is a test",
                 "Status": 1
             }
         ],

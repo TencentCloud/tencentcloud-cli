@@ -89,6 +89,7 @@ Output:
                         "ResponseTimeP90": 0,
                         "JobId": "job-j4j0t76k",
                         "ScenarioId": "scenario-44dlxys2",
+                        "Type": "pts-js",
                         "Load": {
                             "LoadSpec": {
                                 "Concurrency": {

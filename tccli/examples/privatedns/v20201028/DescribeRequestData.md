@@ -8,6 +8,10 @@ Input:
 tccli privatedns DescribeRequestData --cli-unfold-argument  \
     --Filters.0.Name Vpc \
     --Filters.0.Values vpc-qxxxxx5 \
+    --Filters.1.Name ZoneId \
+    --Filters.1.Values vpc-asdfasdf \
+    --Filters.2.Name Region \
+    --Filters.2.Values ap-guangzhou \
     --TimeRangeBegin 2020-11-22 00:00:00 \
     --TimeRangeEnd 2020-11-23 23:59:59
 ```

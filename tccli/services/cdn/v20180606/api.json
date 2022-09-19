@@ -9089,6 +9089,32 @@
       ],
       "usage": "both"
     },
+    "HTTPHeader": {
+      "document": "HTTP 请求头",
+      "members": [
+        {
+          "default": "",
+          "document": "请求头名称",
+          "example": "User-Agent",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求头值",
+          "example": "TencentCDN",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HeaderKey": {
       "document": "组成CacheKey",
       "members": [
@@ -9272,17 +9298,19 @@
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "http2 配置开关\non：开启\noff：关闭\n初次启用 https 加速会默认开启 http2 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rewrew",
           "member": "string",
           "name": "Http2",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9292,7 +9320,8 @@
           "name": "OcspStapling",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9302,7 +9331,8 @@
           "name": "VerifyClient",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9312,7 +9342,8 @@
           "name": "CertInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9322,7 +9353,8 @@
           "name": "ClientCertInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9332,7 +9364,8 @@
           "name": "Spdy",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9342,7 +9375,8 @@
           "name": "SslStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9352,7 +9386,8 @@
           "name": "Hsts",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9362,7 +9397,8 @@
           "name": "TlsVersion",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -12470,6 +12506,16 @@
           "name": "DisableRange",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节",
+          "example": "无",
+          "member": "HTTPHeader",
+          "name": "Headers",
+          "required": false,
+          "type": "list",
           "visibility": 1
         },
         {

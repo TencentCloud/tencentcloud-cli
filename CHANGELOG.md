@@ -1,3 +1,175 @@
+# Release 3.0.612.1
+
+## 内容分发网络(cdn) 版本：2018-06-06
+
+### 第 35 次发布
+
+发布时间：2022-09-19 06:10:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PushUrlsCache](http://document.tencentcloudapi.woa.com/document/product/228/37869)
+
+	* 新增入参：Headers
+
+
+新增数据结构：
+
+* [HTTPHeader](http://document.tencentcloudapi.woa.com/document/product/228/30987#HTTPHeader)
+
+
+
+## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+
+### 第 35 次发布
+
+发布时间：2022-09-19 06:12:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
+
+	* 新增入参：CtsdbConnectParam
+
+
+新增数据结构：
+
+* [CtsdbConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbConnectParam)
+* [CtsdbModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbModifyConnectParam)
+* [CtsdbParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#CtsdbParam)
+* [KVParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KVParam)
+* [SplitParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#SplitParam)
+
+修改数据结构：
+
+* [DatahubResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubResource)
+
+	* 新增成员：CtsdbParam
+
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+
+	* 新增成员：MariaDBConnectParam, SQLServerConnectParam, CtsdbConnectParam
+
+* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
+
+	* 新增成员：MariaDBConnectParam, SQLServerConnectParam, CtsdbConnectParam
+
+* [MariaDBParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MariaDBParam)
+
+	* 新增成员：KeyColumns, IsTablePrefix, OutputFormat, IncludeContentChanges, IncludeQuery, RecordWithSchema
+
+* [PostgreSQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#PostgreSQLParam)
+
+	* 新增成员：IsTableRegular, KeyColumns, RecordWithSchema
+
+* [TransformsParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#TransformsParam)
+
+	* 新增成员：KeepMetadata
+
+* [ValueParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#ValueParam)
+
+	* 新增成员：Split, KV, Result
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 10 次发布
+
+发布时间：2022-09-19 06:36:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MetricData](http://document.tencentcloudapi.woa.com/document/product/1338/55947#MetricData)
+
+	* 新增成员：MetricCount
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 9 次发布
+
+发布时间：2022-09-19 06:36:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [NotificationHook](http://document.tencentcloudapi.woa.com/document/product/1597/75228#NotificationHook)
+
+修改数据结构：
+
+* [AlertChannelRecord](http://document.tencentcloudapi.woa.com/document/product/1597/75228#AlertChannelRecord)
+
+	* 新增成员：AppId, Uin, SubAccountUin
+
+* [AlertRecord](http://document.tencentcloudapi.woa.com/document/product/1597/75228#AlertRecord)
+
+	* 新增成员：AppId, Uin, SubAccountUin, ScenarioName, Target, JobSLAId, JobSLADescription
+
+* [CronJob](http://document.tencentcloudapi.woa.com/document/product/1597/75228#CronJob)
+
+	* 新增成员：AppId, Uin, SubAccountUin
+
+* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
+
+	* 新增成员：CreatedAt, ProjectId
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：Type, DomainNameConfig, Debug, AbortReason, CreatedAt, ProjectId, NotificationHooks
+
+* [RequestSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RequestSummary)
+
+	* 新增成员：P99, Status, Result
+
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
+
+	* 新增成员：NotificationHooks
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 37 次发布
+
+发布时间：2022-09-19 06:49:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpcOssNatServiceRequestForCreateNatGatewayServiceInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNatServiceRequestForCreateNatGatewayServiceInternal)
+
+	* 新增成员：GwType, IpType
+
+* [VpcOssSubnetUseInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssSubnetUseInfo)
+
+	* 新增成员：SyncAclToTgwFlag
+
+
+
+
 # Release 3.0.611.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
