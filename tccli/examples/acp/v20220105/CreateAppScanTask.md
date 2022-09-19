@@ -174,3 +174,33 @@ Output:
 }
 ```
 
+**Example 7: 提交app隐私诊断任务(appSha1和隐私文本md5值)**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --PrivacyTextName 隐私文本.txt \
+    --AppSha1 fbcb5873fedaeec4f4c2d2d09be117eb \
+    --Source 2 \
+    --AppName 测试app \
+    --PrivacyTextUrl https://privacy.e.qq.com/inner?appid \
+    --Platform 0 \
+    --PrivacyTextMD5 a8c8890dec7496ef0514a976a984a1c7 \
+    --AppDownloadUrl https://union.gdtimg.com/apk/unionAppPkg/fbcb5873fedaeec4f4c2d2d09be117eb.apk \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "8bf4b3***5500e49fb8",
+        "Result": 0,
+        "TaskID": "357***816"
+    }
+}
+```
+

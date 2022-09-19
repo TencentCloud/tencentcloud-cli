@@ -364,6 +364,24 @@
           "name": "PrivacyTextName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "软件Sha1值(PrivacyTextMD5不为空时必填)",
+          "example": "软件Sha1值",
+          "member": "string",
+          "name": "AppSha1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "隐私申明文本md5(AppSha1不为空时必填)",
+          "example": "隐私申明文本md5",
+          "member": "string",
+          "name": "PrivacyTextMD5",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -439,7 +457,7 @@
         },
         {
           "default": "",
-          "document": "App名称",
+          "document": "App名称(任务来源为2时必填)",
           "example": "测试App",
           "member": "string",
           "name": "AppName",
@@ -551,6 +569,24 @@
           "example": "隐私申明文本.txt",
           "member": "string",
           "name": "PrivacyTextName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "软件Sha1值(PrivacyTextMD5不为空时必填)",
+          "example": "软件Sha1值",
+          "member": "string",
+          "name": "AppSha1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "隐私申明文本md5(AppSha1不为空时必填)",
+          "example": "隐私申明文本md5",
+          "member": "string",
+          "name": "PrivacyTextMD5",
           "required": false,
           "type": "string"
         }

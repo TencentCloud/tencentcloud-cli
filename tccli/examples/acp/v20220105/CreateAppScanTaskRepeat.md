@@ -101,3 +101,34 @@ Output:
 }
 ```
 
+**Example 5: 重新提交诊断任务(appSha1和PrivacyTextMD5不为空)**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
+    --PrivacyTextName 隐私.txt \
+    --AppSha1 fbcb5873fedaeec4f4c2d2d09be117eb \
+    --Source 2 \
+    --AppName 测试app \
+    --PrivacyTextUrl https://privacy.e.qq.com/inner?appid \
+    --Platform 0 \
+    --OrgTaskID 357944078337314816 \
+    --PrivacyTextMD5 a8c8890dec7496ef0514a976a984a1c7 \
+    --AppDownloadUrl https://union.gdtimg.com/apk/unionAppPkg/fbcb5873fedaeec4f4c2d2d09be117eb.apk \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "61cfc***8119",
+        "Result": 0,
+        "TaskID": "357***48"
+    }
+}
+```
+
