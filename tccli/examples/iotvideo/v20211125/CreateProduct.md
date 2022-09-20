@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli iotvideo CreateProduct --cli-unfold-argument  \
-    --ProductDescription test \
-    --Features test1 \
-    --ChipId chip1 \
-    --ProductName test \
-    --DeviceType 1 \
-    --ProductVaildYears 1 \
-    --ChipManufactureId x86 \
-    --ChipOs linux \
+    --ProductVaildYears 5 \
+    --ProductDescription binky_test \
     --EncryptionType 2 \
-    --NetType wifi
+    --ChipId default \
+    --ProductName test_lock6 \
+    --DeviceType 1 \
+    --NetType cellular \
+    --ChipManufactureId default \
+    --ChipOs default \
+    --CategoryId 595 \
+    --Features xxx
 ```
 
 Output: 
@@ -23,22 +24,24 @@ Output:
 {
     "Response": {
         "Data": {
-            "UpdateTime": 1,
-            "ProductDescription": "test",
-            "EncryptionType": 2,
-            "ChipId": "chip1",
-            "ProductName": "test",
+            "ProductId": "L5N2BC8Q04",
+            "ProductName": "test_lock6",
             "DeviceType": 1,
-            "ChipManufactureId": "x86",
-            "ChipOs": "linux",
-            "ProductId": "ZPDHQH7YHR",
-            "CreateTime": 1612216201,
+            "ProductVaildYears": 5,
+            "EncryptionType": 2,
             "Features": [
-                "test1"
+                "unused"
             ],
-            "NetType": "wifi"
+            "CategoryId": 595,
+            "ChipOs": "default",
+            "ChipManufactureId": "default",
+            "ChipId": "default",
+            "ProductDescription": "binky_test",
+            "NetType": "cellular",
+            "CreateTime": 1661152125,
+            "UpdateTime": 1661152125
         },
-        "RequestId": "055cdcffeed5"
+        "RequestId": "210e261e-5ab9-4b47-bfdf-68c63fb26a20"
     }
 }
 ```

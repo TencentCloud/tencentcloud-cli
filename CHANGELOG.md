@@ -1,3 +1,106 @@
+# Release 3.0.614.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 31 次发布
+
+发布时间：2022-09-21 06:09:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/236/32663)
+
+	* 新增入参：EngineType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 14 次发布
+
+发布时间：2022-09-21 06:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelVerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1595/76372)
+
+新增数据结构：
+
+* [PdfVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PdfVerifyResult)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 3 次发布
+
+发布时间：2022-09-21 06:27:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75360)
+
+	* 新增入参：CategoryId
+
+
+修改数据结构：
+
+* [VideoProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75389#VideoProduct)
+
+	* 新增成员：ProductVaildYears
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 11 次发布
+
+发布时间：2022-09-21 06:30:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAccountUsers](http://document.tencentcloudapi.woa.com/document/product/240/76373)
+
+新增数据结构：
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#UserInfo)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
 # Release 3.0.613.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

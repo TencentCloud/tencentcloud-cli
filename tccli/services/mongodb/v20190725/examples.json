@@ -40,6 +40,14 @@
         "title": "创建云数据库实例（按量计费）"
       }
     ],
+    "DescribeAccountUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountUsers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"UserName\": \"xx\",\n                \"AuthRole\": [\n                    {\n                        \"Mask\": 0,\n                        \"NameSpace\": \"xx\"\n                    }\n                ],\n                \"UserDesc\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询当前实例的全部账户信息；"
+      }
+    ],
     "DescribeAsyncRequestInfo": [
       {
         "document": "",

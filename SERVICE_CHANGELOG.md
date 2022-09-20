@@ -1,60 +1,103 @@
 # 本版本更新包含以下内容：
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 15 次发布
+### 第 31 次发布
 
-发布时间：2022-09-20 06:11:19
+发布时间：2022-09-21 06:09:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/236/32663)
+
+	* 新增入参：EngineType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 14 次发布
+
+发布时间：2022-09-21 06:23:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+新增接口：
 
-* DescribeVpcRuleOverview
+* [ChannelVerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1595/76372)
+
+新增数据结构：
+
+* [PdfVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PdfVerifyResult)
 
 
 
-## 人脸核身(faceid) 版本：2018-03-01
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-### 第 18 次发布
 
-发布时间：2022-09-20 06:23:59
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 3 次发布
+
+发布时间：2022-09-21 06:27:19
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [CreateProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75360)
+
+	* 新增入参：CategoryId
+
 
 修改数据结构：
 
-* [DetectDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectDetail)
+* [VideoProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75389#VideoProduct)
 
-	* 新增成员：LivenessMode
-
-* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
-
-	* 新增成员：LivenessMode
+	* 新增成员：ProductVaildYears
 
 
 
 
-## 视频处理(mps) 版本：2019-06-12
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
 
-### 第 10 次发布
 
-发布时间：2022-09-20 06:32:11
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 11 次发布
+
+发布时间：2022-09-21 06:30:55
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [TaskSimpleInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskSimpleInfo)
+* [DescribeAccountUsers](http://document.tencentcloudapi.woa.com/document/product/240/76373)
 
-	* 新增成员：SubTaskTypes
+新增数据结构：
 
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#UserInfo)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
 
 
 
@@ -5162,6 +5205,21 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 31 次发布
+
+发布时间：2022-09-21 06:09:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateParamTemplate](http://document.tencentcloudapi.woa.com/document/product/236/32663)
+
+	* 新增入参：EngineType
+
 
 ### 第 30 次发布
 
@@ -17940,6 +17998,22 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 14 次发布
+
+发布时间：2022-09-21 06:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ChannelVerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1595/76372)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[PdfVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PdfVerifyResult)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[PdfVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PdfVerifyResult))
+
 ### 第 13 次发布
 
 发布时间：2022-09-12 06:01:17
@@ -21525,6 +21599,28 @@
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
+### 第 3 次发布
+
+发布时间：2022-09-21 06:27:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75360)
+
+	* 新增入参：CategoryId
+
+
+修改数据结构：
+
+* [VideoProduct](http://document.tencentcloudapi.woa.com/document/product/1131/75389#VideoProduct)
+
+	* 新增成员：ProductVaildYears
+
+
 ### 第 2 次发布
 
 发布时间：2022-08-29 15:51:44
@@ -23694,6 +23790,22 @@
 
 
 ## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 11 次发布
+
+发布时间：2022-09-21 06:30:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAccountUsers](http://document.tencentcloudapi.woa.com/document/product/240/76373)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[UserInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#UserInfo)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[UserInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#UserInfo))
 
 ### 第 10 次发布
 

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cdb CreateParamTemplate --cli-unfold-argument  \
-    --EngineVersion 5.7 \
+    --TemplateType HIGH_STABILITY \
     --Name test \
-    --ParamList.0.Name auto_increment_increment \
-    --ParamList.0.CurrentValue 1 \
-    --ParamList.1.Name binlog_format \
-    --ParamList.1.CurrentValue MIXED \
-    --TemplateType HIGH_STABILITY
+    --ParamList.0.CurrentValue MIXED \
+    --ParamList.0.Name binlog_format \
+    --ParamList.1.CurrentValue 1 \
+    --ParamList.1.Name auto_increment_increment \
+    --EngineVersion 5.7
 ```
 
 Output: 

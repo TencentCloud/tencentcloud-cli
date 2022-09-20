@@ -4483,7 +4483,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4492,7 +4493,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4501,7 +4503,8 @@
           "member": "string",
           "name": "EngineVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4510,7 +4513,8 @@
           "member": "int64",
           "name": "TemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4519,7 +4523,8 @@
           "member": "Parameter",
           "name": "ParamList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4528,7 +4533,18 @@
           "member": "string",
           "name": "TemplateType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例引擎类型，默认为\"InnoDB\"，支持值包括：\"InnoDB\"，\"RocksDB\"。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4543,7 +4559,8 @@
           "name": "TemplateId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7136,7 +7153,7 @@
           "visibility": 1
         },
         {
-          "document": "实例详细信息。",
+          "document": "实例详细信息列表。",
           "example": "无",
           "member": "InstanceInfo",
           "name": "Items",
