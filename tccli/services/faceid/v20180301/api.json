@@ -1103,6 +1103,7 @@
         {
           "default": "",
           "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReqTime",
           "required": true,
@@ -1112,6 +1113,7 @@
         {
           "default": "",
           "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Seq",
           "required": true,
@@ -1121,6 +1123,7 @@
         {
           "default": "",
           "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Idcard",
           "required": true,
@@ -1130,6 +1133,7 @@
         {
           "default": "",
           "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1139,6 +1143,7 @@
         {
           "default": "",
           "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Sim",
           "required": true,
@@ -1148,6 +1153,7 @@
         {
           "default": "",
           "document": "本次活体一比一是否收费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "IsNeedCharge",
           "required": true,
@@ -1157,6 +1163,7 @@
         {
           "default": "",
           "document": "本次活体一比一最终结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Errcode",
           "required": true,
@@ -1166,6 +1173,7 @@
         {
           "default": "",
           "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Errmsg",
           "required": true,
@@ -1175,6 +1183,7 @@
         {
           "default": "",
           "document": "本次活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Livestatus",
           "required": true,
@@ -1184,6 +1193,7 @@
         {
           "default": "",
           "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Livemsg",
           "required": true,
@@ -1193,6 +1203,7 @@
         {
           "default": "",
           "document": "本次一比一结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Comparestatus",
           "required": true,
@@ -1202,6 +1213,7 @@
         {
           "default": "",
           "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Comparemsg",
           "required": true,
@@ -1211,10 +1223,21 @@
         {
           "default": "",
           "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CompareLibType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "枚举活体检测类型：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LivenessMode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1543,6 +1566,16 @@
           "name": "CompareLibType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次流程最终活体类型。包括：\n0：未知\n1：数字活体\n2：动作活体\n3：静默活体\n4：一闪活体（动作+光线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LivenessMode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

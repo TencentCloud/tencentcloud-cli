@@ -223,7 +223,7 @@
       "output": "DescribeTaskDetailResponse"
     },
     "DescribeTasks": {
-      "document": "* 该接口用于查询任务列表；\n* 当列表数据比较多时，单次接口调用无法拉取整个列表，可通过 ScrollToken 参数，分批拉取；\n* 只能查询到最近三天（72 小时）内的任务。",
+      "document": "* 该接口用于查询任务列表；\n* 当列表数据比较多时，单次接口调用无法拉取整个列表，可通过 ScrollToken 参数，分批拉取；\n* 只能查询到最近七天（168小时）内的任务。",
       "input": "DescribeTasksRequest",
       "name": "获取任务列表",
       "output": "DescribeTasksResponse"
@@ -14797,6 +14797,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -14806,6 +14807,7 @@
         {
           "default": "",
           "document": "任务类型，包含：\n<li> WorkflowTask：工作流处理任务；</li>\n<li> EditMediaTask：视频编辑任务；</li>\n<li> LiveProcessTask：直播处理任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -14815,6 +14817,7 @@
         {
           "default": "",
           "document": "任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -14824,6 +14827,7 @@
         {
           "default": "",
           "document": "任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。",
+          "example": "无",
           "member": "string",
           "name": "BeginProcessTime",
           "required": true,
@@ -14833,10 +14837,21 @@
         {
           "default": "",
           "document": "任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。",
+          "example": "无",
           "member": "string",
           "name": "FinishTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务类型。",
+          "example": "无",
+          "member": "string",
+          "name": "SubTaskTypes",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -7,9 +7,7 @@ Input:
 ```
 tccli mps DescribeTasks --cli-unfold-argument  \
     --Status FINISH \
-    --Limit 5 \
-    --OrderBy CreateTime \
-    --OrderType 1
+    --Limit 5
 ```
 
 Output: 
@@ -101,8 +99,8 @@ Input:
 ```
 tccli mps DescribeTasks --cli-unfold-argument  \
     --Status FINISH \
-    --Limit 5 \
-    --ScrollToken taskId6
+    --ScrollToken taskId6 \
+    --Limit 5
 ```
 
 Output: 

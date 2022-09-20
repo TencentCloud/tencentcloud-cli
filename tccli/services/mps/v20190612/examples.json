@@ -371,19 +371,19 @@
     "DescribeTasks": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\n&Status=FINISH\n&Limit=5\n&OrderBy=CreateTime\n&OrderType=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Status\": \"FINISH\",\n    \"Limit\": \"5\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 12,\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId1\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId2\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId3\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId4\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId5\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            }\n        ],\n        \"ScrollToken\": \"taskId6\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表"
       },
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\n&Status=PROCESSING\n&Limit=5\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Status\": \"PROCESSING\",\n    \"Limit\": \"5\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId7\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"0000-00-00T00:00:00Z\"\n            }\n        ],\n        \"ScrollToken\": \"\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表-处理中"
       },
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\n&Status=FINISH\n&Limit=5\n&ScrollToken=taskId6\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Status\": \"FINISH\",\n    \"ScrollToken\": \"taskId6\",\n    \"Limit\": \"5\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            }\n        ],\n        \"ScrollToken\": \"\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表-翻页"
       }

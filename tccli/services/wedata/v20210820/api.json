@@ -18,6 +18,12 @@
       "name": "批量停止任务【Beta版本】",
       "output": "BatchStopTasksNewResponse"
     },
+    "CreateDataSource": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建数据源",
+      "input": "CreateDataSourceRequest",
+      "name": "数据源管理-创建数据源【Beta版本】",
+      "output": "CreateDataSourceResponse"
+    },
     "CreateFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建文件夹",
       "input": "CreateFolderRequest",
@@ -36,6 +42,12 @@
       "name": "创建工作流【Beta版本】",
       "output": "CreateWorkflowResponse"
     },
+    "DeleteDataSources": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除数据源",
+      "input": "DeleteDataSourcesRequest",
+      "name": "数据源管理-删除数据源【Beta版本】",
+      "output": "DeleteDataSourcesResponse"
+    },
     "DeleteFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除文件夹",
       "input": "DeleteFolderRequest",
@@ -47,6 +59,12 @@
       "input": "DeleteWorkflowNewRequest",
       "name": "删除工作流【Beta版本】",
       "output": "DeleteWorkflowNewResponse"
+    },
+    "DescribeDatasource": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源详情",
+      "input": "DescribeDatasourceRequest",
+      "name": "数据源管理-数据源详情【Beta版本】",
+      "output": "DescribeDatasourceResponse"
     },
     "DescribeDependTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据层级查找上/下游任务节点",
@@ -143,6 +161,12 @@
       "input": "MakeUpWorkflowNewRequest",
       "name": "工作流任务补录【Beta版本】",
       "output": "MakeUpWorkflowNewResponse"
+    },
+    "ModifyDataSource": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n修改数据源",
+      "input": "ModifyDataSourceRequest",
+      "name": "数据源管理-修改数据源【Beta版本】",
+      "output": "ModifyDataSourceResponse"
     },
     "ModifyFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n文件夹更新",
@@ -680,6 +704,186 @@
       ],
       "usage": "both"
     },
+    "CreateDataSourceRequest": {
+      "document": "CreateDataSource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据源名称，在相同SpaceName下，数据源名称不能为空",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类别：绑定引擎、绑定数据库",
+          "example": "DB",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类型:枚举值",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属项目ID",
+          "example": "123",
+          "member": "string",
+          "name": "OwnerProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属项目Name",
+          "example": "123",
+          "member": "string",
+          "name": "OwnerProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属项目Name中文",
+          "example": "234",
+          "member": "string",
+          "name": "OwnerProjectIdent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务侧数据源的配置信息扩展",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "BizParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源描述信息",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源展示名，为了可视化查看",
+          "example": "test",
+          "member": "string",
+          "name": "Display",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "若数据源列表为绑定数据库，则为db名称",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源引擎的实例ID，如CDB实例ID",
+          "example": "uuid",
+          "member": "string",
+          "name": "Instance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源数据源的可见性，1为可见、0为不可见。默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源所属的业务空间名称",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否采集",
+          "example": "true",
+          "member": "string",
+          "name": "Collect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos桶信息",
+          "example": "123",
+          "member": "string",
+          "name": "COSBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos region",
+          "example": "app-guangzhou",
+          "member": "string",
+          "name": "COSRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataSourceResponse": {
+      "document": "CreateDataSource返回参数结构体",
+      "members": [
+        {
+          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFolderRequest": {
       "document": "CreateFolder请求参数结构体",
       "members": [
@@ -860,6 +1064,338 @@
       ],
       "type": "object"
     },
+    "DataSourceInfo": {
+      "document": "数据源对象",
+      "members": [
+        {
+          "default": "",
+          "document": "若数据源列表为绑定数据库，则为db名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源引擎的实例ID，如CDB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid",
+          "member": "string",
+          "name": "Instance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源名称，在相同SpaceName下，数据源名称不能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源引擎所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源所属的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "87654321345678",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务侧数据源的配置信息扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "BizParams",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源类别：绑定引擎、绑定数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DB",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源展示名，为了可视化查看\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Display",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源责任人账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "Params",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源数据源的可见性，1为可见、0为不可见。默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源责任人账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "OwnerAccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-7ih89qvf",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "归属项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OwnerProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "归属项目Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "OwnerProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "归属项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_ident",
+          "member": "string",
+          "name": "OwnerProjectIdent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "AuthorityProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "AuthorityUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有编辑权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Edit",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有授权权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Author",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有转交权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Deliver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Available",
+          "member": "string",
+          "name": "DataSourceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Params json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ParamsString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "BizParams json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "BizParamsString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteDataSourcesRequest": {
+      "document": "DeleteDataSources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "id列表",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataSourcesResponse": {
+      "document": "DeleteDataSources返回参数结构体",
+      "members": [
+        {
+          "document": "是否删除成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFolderRequest": {
       "document": "DeleteFolder请求参数结构体",
       "members": [
@@ -1023,6 +1559,42 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeDatasourceRequest": {
+      "document": "DescribeDatasource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对象唯一ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatasourceResponse": {
+      "document": "DescribeDatasource返回参数结构体",
+      "members": [
+        {
+          "document": "数据源对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDependTasksNewRequest": {
       "document": "DescribeDependTasksNew请求参数结构体",
@@ -2671,6 +3243,195 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataSourceRequest": {
+      "document": "ModifyDataSource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据源名称，在相同SpaceName下，数据源名称不能为空",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类别：绑定引擎、绑定数据库",
+          "example": "DB",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类型:枚举值",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源ID",
+          "example": "1111",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务侧数据源的配置信息扩展",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "BizParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源描述信息",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源展示名，为了可视化查看",
+          "example": "test",
+          "member": "string",
+          "name": "Display",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "若数据源列表为绑定数据库，则为db名称",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源引擎的实例ID，如CDB实例ID",
+          "example": "uuid",
+          "member": "string",
+          "name": "Instance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源数据源的可见性，1为可见、0为不可见。默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源所属的业务空间名称",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否采集",
+          "example": "true",
+          "member": "string",
+          "name": "Collect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "OwnerProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "atasd",
+          "member": "string",
+          "name": "OwnerProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目中文名",
+          "example": "a",
+          "member": "string",
+          "name": "OwnerProjectIdent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos bucket",
+          "example": "123",
+          "member": "string",
+          "name": "COSBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos region",
+          "example": "app-guangzhou",
+          "member": "string",
+          "name": "COSRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataSourceResponse": {
+      "document": "ModifyDataSource返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

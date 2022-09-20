@@ -25,7 +25,7 @@
       "output": "ChannelCreateConvertTaskApiResponse"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建签署流程。此接口不可直接使用，需要运营申请",
+      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建签署流程。此接口静默签能力不可直接使用，需要运营申请",
       "input": "ChannelCreateFlowByFilesRequest",
       "name": "渠道版通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse"

@@ -7074,7 +7074,7 @@
         },
         {
           "default": "",
-          "document": "续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。",
+          "document": "询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。",
           "example": "\"cdb-xxx\"",
           "member": "string",
           "name": "InstanceId",

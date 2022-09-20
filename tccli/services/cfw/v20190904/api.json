@@ -228,12 +228,6 @@
       "name": "告警中心伪攻击链事件未处置接口",
       "output": "DescribeUnHandleEventTabListResponse"
     },
-    "DescribeVpcRuleOverview": {
-      "document": "vpc规则列表概况",
-      "input": "DescribeVpcRuleOverviewRequest",
-      "name": "vpc规则列表概况",
-      "output": "DescribeVpcRuleOverviewResponse"
-    },
     "ExpandCfwVertical": {
       "document": "防火墙垂直扩容",
       "input": "ExpandCfwVerticalRequest",
@@ -3531,60 +3525,6 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVpcRuleOverviewRequest": {
-      "document": "DescribeVpcRuleOverview请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "EdgeId值两个vpc间的边id  不是必填项可以为空，就是所有vpc间的访问控制规则",
-          "example": "cfws-0c61d56ba6",
-          "member": "string",
-          "name": "EdgeId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVpcRuleOverviewResponse": {
-      "document": "DescribeVpcRuleOverview返回参数结构体",
-      "members": [
-        {
-          "document": "阻断策略规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "70",
-          "member": "uint64",
-          "name": "StrategyNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "启用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "70",
-          "member": "uint64",
-          "name": "StartRuleNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "规则总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "70",
-          "member": "uint64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

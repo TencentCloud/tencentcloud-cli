@@ -316,14 +316,6 @@
         "title": "DescribeUnHandleEventTabList"
       }
     ],
-    "DescribeVpcRuleOverview": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleOverview\n<公共请求参数>\n\n{\n    \"EdgeId\": \"cfws-0c61d56ba6\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StrategyNum\": 70,\n        \"StartRuleNum\": 70,\n        \"Total\": 70,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
-        "title": "vpc规则列表概况"
-      }
-    ],
     "ExpandCfwVertical": [
       {
         "document": "",
