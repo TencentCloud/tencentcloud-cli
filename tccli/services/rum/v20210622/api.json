@@ -109,9 +109,9 @@
       "output": "DescribeDataEventUrlResponse"
     },
     "DescribeDataFetchProject": {
-      "document": "获取DescribeDataFetchProject信息",
+      "document": "获取DescribeDataFetchProject信息。已下线，请使用DescribeDataFetchUrl",
       "input": "DescribeDataFetchProjectRequest",
-      "name": "获取DescribeDataFetchProject信息",
+      "name": "获取DescribeDataFetchProject信息（已下线，请使用DescribeDataFetchUrl）",
       "output": "DescribeDataFetchProjectResponse"
     },
     "DescribeDataFetchUrl": {

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka DescribeDatahubTasks --cli-unfold-argument  \
+    --TaskType SINK \
     --Limit 20 \
-    --Offset 0 \
-    --TaskType SINK
+    --Offset 0
 ```
 
 Output: 

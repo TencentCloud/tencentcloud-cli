@@ -8994,7 +8994,8 @@
           "member": "string",
           "name": "StreamName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9003,7 +9004,8 @@
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9012,7 +9014,8 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

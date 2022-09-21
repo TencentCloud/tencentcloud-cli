@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --WithRs 1 \
-    --BackendPrivateIps 172.26.0.11
+    --BackendPrivateIps 172.26.0.11 \
+    --WithRs 1
 ```
 
 Output: 
@@ -196,10 +196,10 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --LoadBalancerType OPEN \
     --ProjectId 0 \
-    --LoadBalancerName test_LB \
-    --LoadBalancerVips XX.XX.XX.XX
+    --LoadBalancerType OPEN \
+    --LoadBalancerVips XX.XX.XX.XX \
+    --LoadBalancerName test_LB
 ```
 
 Output: 
@@ -262,11 +262,11 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --LoadBalancerType OPEN \
     --ProjectId 0 \
-    --LoadBalancerName test_LB \
+    --LoadBalancerType OPEN \
+    --Filters.0.Values test_tag_value2 test_tag_value1 \
     --Filters.0.Name tag:test_tag_key \
-    --Filters.0.Values test_tag_value1 test_tag_value2
+    --LoadBalancerName test_LB
 ```
 
 Output: 
