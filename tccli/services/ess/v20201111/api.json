@@ -119,6 +119,12 @@
       "input": "UploadFilesRequest",
       "name": "多文件上传",
       "output": "UploadFilesResponse"
+    },
+    "VerifyPdf": {
+      "document": "验证合同文件",
+      "input": "VerifyPdfRequest",
+      "name": "合同文件验签",
+      "output": "VerifyPdfResponse"
     }
   },
   "metadata": {
@@ -1227,9 +1233,9 @@
         {
           "default": "",
           "document": "暂未开放",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
-          "name": "CallbackUrl",
+          "name": "RelatedFlowId",
           "required": false,
           "type": "string"
         },
@@ -1290,9 +1296,9 @@
         {
           "default": "",
           "document": "暂未开放",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
-          "name": "RelatedFlowId",
+          "name": "CallbackUrl",
           "required": false,
           "type": "string"
         },
@@ -2755,6 +2761,142 @@
       ],
       "usage": "both"
     },
+    "PdfVerifyResult": {
+      "document": "合同文件验签单个结果结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验签结果",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifyResult",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署平台",
+          "example": "无",
+          "member": "string",
+          "name": "SignPlatform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人名称",
+          "example": "无",
+          "member": "string",
+          "name": "SignerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署时间",
+          "example": "无",
+          "member": "int64",
+          "name": "SignTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名算法",
+          "example": "无",
+          "member": "string",
+          "name": "SignAlgorithm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名证书序列号",
+          "example": "无",
+          "member": "string",
+          "name": "CertSn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书起始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CertNotBefore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CertNotAfter",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域横坐标",
+          "example": "无",
+          "member": "float",
+          "name": "ComponentPosX",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域纵坐标",
+          "example": "无",
+          "member": "float",
+          "name": "ComponentPosY",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域宽度",
+          "example": "无",
+          "member": "float",
+          "name": "ComponentWidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域高度",
+          "example": "无",
+          "member": "float",
+          "name": "ComponentHeight",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域所在页码",
+          "example": "无",
+          "member": "int64",
+          "name": "ComponentPage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Recipient": {
       "document": "签署参与者信息",
       "members": [
@@ -3373,6 +3515,60 @@
         }
       ],
       "usage": "both"
+    },
+    "VerifyPdfRequest": {
+      "document": "VerifyPdf请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "合同Id，流程Id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyPdfResponse": {
+      "document": "VerifyPdf返回参数结构体",
+      "members": [
+        {
+          "document": "验签结果，1-文件未被篡改，全部签名在腾讯电子签完成； 2-文件未被篡改，部分签名在腾讯电子签完成；3-文件被篡改；4-异常：文件内没有签名域；5-异常：文件签名格式错误",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifyResult",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域\n；5-文件签名格式错误",
+          "example": "无",
+          "member": "PdfVerifyResult",
+          "name": "PdfVerifyResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

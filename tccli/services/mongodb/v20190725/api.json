@@ -30,6 +30,12 @@
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse"
     },
+    "DescribeAccountUsers": {
+      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号列表。",
+      "input": "DescribeAccountUsersRequest",
+      "name": "全部账号列表",
+      "output": "DescribeAccountUsersResponse"
+    },
     "DescribeAsyncRequestInfo": {
       "document": "查询异步任务状态接口",
       "input": "DescribeAsyncRequestInfoRequest",
@@ -1290,6 +1296,42 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeAccountUsersRequest": {
+      "document": "DescribeAccountUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cmgo-******",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountUsersResponse": {
+      "document": "DescribeAccountUsers返回参数结构体",
+      "members": [
+        {
+          "document": "实例账号列表。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAsyncRequestInfoRequest": {
       "document": "DescribeAsyncRequestInfo请求参数结构体",
@@ -4410,6 +4452,62 @@
         }
       ],
       "type": "object"
+    },
+    "UserInfo": {
+      "document": "账户基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账号名。",
+          "example": "mongo_test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号权限详情。",
+          "example": "无",
+          "member": "Auth",
+          "name": "AuthRole",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号创建时间。",
+          "example": "2021-09-28 14:25:38",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号更新时间。",
+          "example": "2021-09-28 14:25:38",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息。",
+          "example": "mongodb测试账号",
+          "member": "string",
+          "name": "UserDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

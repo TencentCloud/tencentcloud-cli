@@ -2230,21 +2230,12 @@
         },
         {
           "default": "",
-          "document": "设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频",
+          "document": "设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频\n注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传[\"ypsxth\",\"spdxth\"]，儿童手表传[\"ypsxth\",\"spdxth\",\"sxysp\"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)",
           "example": "无",
           "member": "string",
           "name": "Features",
           "required": true,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "设备操作系统，通用设备填default",
-          "example": "linux",
-          "member": "string",
-          "name": "ChipOs",
-          "required": true,
-          "type": "string"
         },
         {
           "default": "",
@@ -2275,10 +2266,28 @@
         },
         {
           "default": "",
+          "document": "设备操作系统，通用设备填default",
+          "example": "linux",
+          "member": "string",
+          "name": "ChipOs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "认证方式 只支持取值为2 psk认证",
           "example": "2",
           "member": "uint64",
           "name": "EncryptionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁\n注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)",
+          "example": "113",
+          "member": "uint64",
+          "name": "CategoryId",
           "required": false,
           "type": "int"
         },
@@ -8627,6 +8636,16 @@
           "example": "113",
           "member": "uint64",
           "name": "CategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品有效年限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ProductVaildYears",
           "required": true,
           "type": "int",
           "value_allowed_null": true

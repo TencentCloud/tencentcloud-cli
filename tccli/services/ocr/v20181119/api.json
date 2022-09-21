@@ -162,6 +162,12 @@
       "name": "身份证识别",
       "output": "IDCardOCRResponse"
     },
+    "ImageEnhancement": {
+      "document": "图像增强",
+      "input": "ImageEnhancementRequest",
+      "name": "图像增强",
+      "output": "ImageEnhancementResponse"
+    },
     "InstitutionOCR": {
       "document": "本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。",
       "input": "InstitutionOCRRequest",
@@ -3354,6 +3360,78 @@
           "example": "{}",
           "member": "string",
           "name": "AdvancedInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageEnhancementRequest": {
+      "document": "ImageEnhancement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为空，ReturnImage的取值以及含义如下：\n“preprocess”: 返回预处理后的图片数据\n“origin”：返回原图片数据\n\" \":不返回图片数据",
+          "example": "preprocess",
+          "member": "string",
+          "name": "ReturnImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认值为1，指定图像增强方法：\n1：切边增强\n2：弯曲矫正\n202：黑白模式\n204：提亮模式\n205：灰度模式\n207：省墨模式\n208：文字锐化（适合非彩色图片）\n301：去摩尔纹\n302：去除阴影",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageEnhancementResponse": {
+      "document": "ImageEnhancement返回参数结构体",
+      "members": [
+        {
+          "document": "图片数据标识：\n“origin”：原图\n“preprocess”:预处理后的图",
+          "example": "无",
+          "member": "string",
+          "name": "ImageTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片数据，返回预处理后图像或原图像base64字符",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
           "required": true,
           "type": "string",
           "value_allowed_null": false

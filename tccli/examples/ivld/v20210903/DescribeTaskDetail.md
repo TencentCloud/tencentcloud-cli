@@ -13,6 +13,9 @@ Output:
 ```
 {
     "Response": {
+        "AudioTaskData": null,
+        "ImageTaskData": null,
+        "TextTaskData": null,
         "RequestId": "a18b2219-445f-43b9-b844-077d72ebcb85",
         "TaskData": {
             "ShowInfo": {

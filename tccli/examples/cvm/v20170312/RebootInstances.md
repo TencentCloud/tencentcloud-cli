@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm RebootInstances --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs \
-    --ForceReboot FALSE
+    --StopType SOFT \
+    --InstanceIds ins-5d8a23rs ins-r8hr2upy
 ```
 
 Output: 

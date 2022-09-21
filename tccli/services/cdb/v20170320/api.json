@@ -4396,6 +4396,15 @@
           "name": "TemplateType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例引擎类型，默认为\"InnoDB\"，支持值包括：\"InnoDB\"，\"RocksDB\"。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6953,7 +6962,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例详细信息。",
+          "document": "实例详细信息列表。",
           "example": "无",
           "member": "InstanceInfo",
           "name": "Items",

@@ -283,6 +283,32 @@
       ],
       "usage": "out"
     },
+    "AudioData": {
+      "document": "音频文件分析结果数据",
+      "members": [
+        {
+          "default": "",
+          "document": "音频识别文本结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioInfo",
+          "name": "AudioInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频识别标签数据",
+          "example": "无",
+          "member": "MultiLevelTag",
+          "name": "TextTagSet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AudioInfo": {
       "document": "音频识别结果信息",
       "members": [
@@ -325,6 +351,72 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioMetadata": {
+      "document": "音频文件元信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资音频文件大小，单位为Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频时长，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.00",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频采样率，单位为khz\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44.1",
+          "member": "float",
+          "name": "SampleRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频码率，单位为kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128",
+          "member": "int64",
+          "name": "BitRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp3",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1274,13 +1366,40 @@
           "value_allowed_null": true
         },
         {
-          "document": "任务结果数据，只在任务结束时返回",
+          "document": "视频任务结果数据，只在视频任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Data",
           "name": "TaskData",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "document": "图片任务结果数据，只在图片任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageData",
+          "name": "ImageTaskData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "音频任务结果数据，只在音频任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioData",
+          "name": "AudioTaskData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文本任务结果数据，只在文本任务结束时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextData",
+          "name": "TextTaskData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1399,6 +1518,170 @@
       ],
       "type": "object"
     },
+    "ImageData": {
+      "document": "图片文件标签结果",
+      "members": [
+        {
+          "default": "",
+          "document": "图片中出现的可视文本识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageOcr",
+          "name": "OcrSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片中出现的帧标签识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelTag",
+          "name": "FrameTagSet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片中出现的层级人物识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelPersonInfo",
+          "name": "MultiLevelPersonInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片中出现的台标识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageLogo",
+          "name": "TvLogo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片中出现的来源信息识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageLogo",
+          "name": "SourceLogo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageLogo": {
+      "document": "图片中出现的Logo信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片中出现的Logo识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“山东卫视”",
+          "member": "string",
+          "name": "Logo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Logo在图片中出现的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rectf",
+          "name": "AppearRect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageMetadata": {
+      "document": "图片文件元信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资图片文件大小，单位为Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资图片文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资图片文件宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资图片文件高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资图片文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageOcr": {
+      "document": "图片OCR识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "图片中可视文本识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“欢迎收看测试新闻”",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可视文本在图片中的位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rectf",
+          "name": "AppearRect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ImportMediaRequest": {
       "document": "ImportMedia请求参数结构体",
       "members": [
@@ -1422,7 +1705,7 @@
         },
         {
           "default": "",
-          "document": "待分析视频的名称，指定后可支持筛选，最多100个中文字符",
+          "document": "待分析视频的名称，指定后可支持筛选，最多64B",
           "example": "新闻30分",
           "member": "string",
           "name": "Name",
@@ -1455,6 +1738,15 @@
           "name": "CallbackURL",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n默认为2(视频)",
+          "example": "2",
+          "member": "int64",
+          "name": "MediaType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1650,6 +1942,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MediaType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1709,7 +2011,7 @@
         },
         {
           "default": "",
-          "document": "媒资视频元信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒资视频元信息，仅在MediaType=VIDEO时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetadata",
           "name": "Metadata",
@@ -1746,6 +2048,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频元信息，仅在MediaType=Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioMetadata",
+          "name": "AudioMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资图片文件元信息，仅在MediaType=Image时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageMetadata",
+          "name": "ImageMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文本文件元信息，仅在MediaType=Text时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextMetadata",
+          "name": "TextMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1755,7 +2097,7 @@
       "members": [
         {
           "default": "",
-          "document": "媒资视频文件大小",
+          "document": "媒资视频文件大小，单位为字节",
           "example": "340000",
           "member": "int64",
           "name": "FileSize",
@@ -1837,7 +2179,7 @@
       "usage": "out"
     },
     "MediaPreknownInfo": {
-      "document": "描述输入媒资的先验知识，例如文件类型(视频)，媒体类型(新闻/综艺等)\n\nMediaPreknownInfo.MediaType:\n\n| MediaType 名称|  MediaType取值 | MediaType描述 |\n|---|---|---|\n| MEDIA_TYPE_INVALID | 0 | 非法的媒资文件类型 | \n| MEDIA_TYPE_IMAGE | 1 | 图片，当前不支持 |\n| MEDIA_TYPE_VIDEO | 2 | 视频，当前只支持此类型媒资文件 |\n\nMediaPreknownInfo.MediaLabel:\n\n| MediaLabel名称 | MediaLabel取值 | MediaLabel描述 |\n|---|---|---|\n| MEDIA_LABEL_INVALID | 0 | 非法的一级媒资素材类型 |\n| MEDIA_LABEL_NEWS | 1 | 新闻 |\n| MEDIA_LABEL_ENTERTAINMENT | 2 | 综艺|\n| MEDIA_LABEL_INTERNET_INFO | 3 | 互联网资讯 | \n| MEDIA_LABEL_MOVIE | 4 | 电影 |\n| MEDIA_LABEL_SERIES | 5 | 电视连续剧 |\n| MEDIA_LABEL_SPECIAL | 6 | 专题 |\n| MEDIA_LABEL_SPORT | 7 | 体育 |\n\nMediaPreknownInfo.MediaSecondLabel\n请注意：**当且仅当MediaLabel=2(综艺)时MediaSecondLabel才有意义**\n\n| MediaSecondLabel名称 | MediaSecondLabel取值 | MediaSecondLabel 描述|\n|---|---|---|\n| MEDIA_SECOND_LABEL_INVALID |  0  | 非法的MediaSecondLabel |\n| MEDIA_SECOND_LABEL_EVENING | 1 | 综艺晚会 |\n| MEDIA_SECOND_LABEL_OTHERS | 2 | 其他 |\n\nMediaMeta.MediaLang\n\n| MediaLang名称 | MediaLang取值 | MediaLang描述 |\n|---|---|---|\n| MEDIA_LANG_INVALID | 0 | 非法的MediaLang |\n| MEDIA_LANG_MANDARIN | 1 | 普通话 |\n| MEDIA_LANG_CANTONESE | 2 | 粤语 | ",
+      "document": "描述输入媒资的先验知识，例如文件类型(视频)，媒体类型(新闻/综艺等)\n\nMediaPreknownInfo.MediaType:\n\n| MediaType 名称|  MediaType取值 | MediaType描述 |\n|---|---|---|\n| MEDIA_TYPE_INVALID | 0 | 非法的媒资文件类型 | \n| MEDIA_TYPE_IMAGE | 1 | 图片 |\n| MEDIA_TYPE_VIDEO | 2 | 视频 |\n| MEDIA_TYPE_AUDIO | 3 | 音频 |\n| MEDIA_TYPE_VIDEO_STREAM | 4 | 视频流，暂不支持 |\n| MEDIA_TYPE_TEXT | 5 | 文本 |\n\nMediaPreknownInfo.MediaLabel:\n\n| MediaLabel名称 | MediaLabel取值 | MediaLabel描述 |\n|---|---|---|\n| MEDIA_LABEL_INVALID | 0 | 非法的一级媒资素材类型 |\n| MEDIA_LABEL_NEWS | 1 | 新闻 |\n| MEDIA_LABEL_ENTERTAINMENT | 2 | 综艺|\n| MEDIA_LABEL_INTERNET_INFO | 3 | 互联网资讯 | \n| MEDIA_LABEL_MOVIE | 4 | 电影 |\n| MEDIA_LABEL_SERIES | 5 | 电视连续剧 |\n| MEDIA_LABEL_SPECIAL | 6 | 专题 |\n| MEDIA_LABEL_SPORT | 7 | 体育 |\n\nMediaPreknownInfo.MediaSecondLabel\n请注意：**当且仅当MediaLabel=2(综艺)时MediaSecondLabel才有意义**\n\n| MediaSecondLabel名称 | MediaSecondLabel取值 | MediaSecondLabel 描述|\n|---|---|---|\n| MEDIA_SECOND_LABEL_INVALID |  0  | 非法的MediaSecondLabel |\n| MEDIA_SECOND_LABEL_EVENING | 1 | 综艺晚会 |\n| MEDIA_SECOND_LABEL_OTHERS | 2 | 其他 |\n\nMediaMeta.MediaLang\n\n| MediaLang名称 | MediaLang取值 | MediaLang描述 |\n|---|---|---|\n| MEDIA_LANG_INVALID | 0 | 非法的MediaLang |\n| MEDIA_LANG_MANDARIN | 1 | 普通话 |\n| MEDIA_LANG_CANTONESE | 2 | 粤语 | ",
       "members": [
         {
           "default": "",
@@ -1917,6 +2259,42 @@
         }
       ],
       "type": "object"
+    },
+    "MultiLevelPersonInfo": {
+      "document": "带类型树的已分类人物信息",
+      "members": [
+        {
+          "default": "",
+          "document": "一级分类名称(分类信息参见自定义人物类型)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "明星",
+          "member": "string",
+          "name": "L1ClassifyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已分类人物信息数组(所有分类类型为二级分类)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassifiedPersonInfo",
+          "name": "L2ClassifiedPersonInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测结果来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MultiLevelTag": {
       "document": "标签信息结构体\n\n包含多级(最多三级)标签结果，以及这些标签在识别结果中的出现位置",
@@ -2071,6 +2449,52 @@
       ],
       "type": "object"
     },
+    "Rectf": {
+      "document": "矩形内容框",
+      "members": [
+        {
+          "default": "",
+          "document": "矩形框左上角水平座标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "float",
+          "name": "X",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "矩形框左上角竖直座标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "float",
+          "name": "Y",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "矩形框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "float",
+          "name": "Width",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "矩形框长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "float",
+          "name": "Height",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ShowInfo": {
       "document": "视频结构化结果",
       "members": [
@@ -2220,6 +2644,26 @@
           "example": "[\"全运会\"]",
           "member": "string",
           "name": "SummaryTagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未知人物信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UnknownPerson",
+          "name": "UnknownPersonSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "树状已分类人物信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelPersonInfo",
+          "name": "MultiLevelPersonInfoSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -2471,6 +2915,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioMetadata",
+          "name": "AudioMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务对应的媒资文件元信息，仅在MediaType为Audio时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageMetadata",
+          "name": "ImageMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务对应的媒资文件元信息，仅在MediaType为Text时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextMetadata",
+          "name": "TextMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务对应的媒资文件元信息，仅在MediaType为Video时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetadata",
+          "name": "Metadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2507,6 +2991,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextData": {
+      "document": "文本文件标签识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "文本内容信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“欢迎收看测试新闻”",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本概要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“欢迎”",
+          "member": "string",
+          "name": "Summary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelTag",
+          "name": "TextTagSet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2553,6 +3073,78 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextMetadata": {
+      "document": "文本文件元信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资文本文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文本文件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bbc3f6c9fb18d80dedf28239f9a86fac",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文本文件字符数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文本文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "txt",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UnknownPerson": {
+      "document": "未知人物信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视觉出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoAppearInfo",
+          "name": "VideoAppearSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未知人物是否可以入库(只有当未知人物人脸小图质量分符合要求时才可入库)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "是",
+          "member": "bool",
+          "name": "PutLibraryAllowed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

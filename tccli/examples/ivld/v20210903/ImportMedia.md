@@ -20,3 +20,26 @@ Output:
 }
 ```
 
+**Example 2: 导入图片**
+
+
+
+Input: 
+
+```
+tccli ivld ImportMedia --cli-unfold-argument  \
+    --URL https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/phye-debug/male.png \
+    --Name male.png \
+    --MediaType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "MediaId": "media-9DfyyCOZ",
+        "RequestId": "a642b499-9ebd-4601-a57e-a8cf5c2bee49"
+    }
+}
+```
+
