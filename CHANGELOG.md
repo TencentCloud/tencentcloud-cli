@@ -1,3 +1,125 @@
+# Release 3.0.616.1
+
+## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+
+### 第 37 次发布
+
+发布时间：2022-09-23 06:12:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75538)
+
+	* 新增入参：DorisConnectParam
+
+
+新增数据结构：
+
+* [DorisConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisConnectParam)
+
+修改数据结构：
+
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+
+	* 新增成员：DorisConnectParam
+
+* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
+
+	* 新增成员：DorisConnectParam
+
+
+
+
+## 云直播(live) 版本：2018-08-01
+
+### 第 20 次发布
+
+发布时间：2022-09-23 06:30:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLiveSnapshotTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32618)
+
+	* <font color="#dd0000">**修改入参**：</font>CosAppId, CosBucket, CosRegion
+
+
+
+
+## 企业组织(organization) 版本：2021-03-31
+
+### 第 11 次发布
+
+发布时间：2022-09-23 06:34:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeOrganization](http://document.tencentcloudapi.woa.com/document/product/850/67059)
+
+	* 新增出参：IsAuthManager
+
+
+
+
+## 企业组织(organization) 版本：2018-12-25
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 15 次发布
+
+发布时间：2022-09-23 06:35:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
+
+	* 新增出参：DBInstanceId
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+
+	* 新增入参：DBEngine, DBEngineConfig
+
+* [CreateReadOnlyDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/52602)
+
+	* <font color="#dd0000">**修改入参**：</font>DBVersion
+
+* [DescribeProductConfig](http://document.tencentcloudapi.woa.com/document/product/409/16776)
+
+	* 新增入参：DBEngine
+
+* [InquiryPriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/409/16777)
+
+	* 新增入参：InstanceType, DBEngine
+
+	* <font color="#dd0000">**修改入参**：</font>Pid
+
+
+修改数据结构：
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
+
+	* 新增成员：DBEngine, DBEngineConfig
+
+
+
+
 # Release 3.0.615.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

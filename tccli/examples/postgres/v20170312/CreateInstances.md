@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli postgres CreateInstances --cli-unfold-argument  \
-    --SpecCode cdb.pg.z1.2g \
-    --Storage 10 \
     --InstanceCount 1 \
-    --Period 1 \
-    --InstanceChargeType prepaid \
-    --Zone ap-guangzhou-2 \
-    --DBVersion 12.4 \
-    --AutoVoucher 0 \
     --AutoRenewFlag 1 \
-    --Charset UTF8 \
     --AdminName test2313 \
-    --AdminPassword ' xxxxxxx'
+    --Zone ap-guangzhou-2 \
+    --AdminPassword  xxxxxxx \
+    --DBVersion 12.4 \
+    --DBEngine postgresql \
+    --Storage 10 \
+    --Period 1 \
+    --SpecCode cdb.pg.z1.2g \
+    --InstanceChargeType prepaid \
+    --AutoVoucher 0 \
+    --Charset UTF8
 ```
 
 Output: 
@@ -44,22 +45,22 @@ Input:
 
 ```
 tccli postgres CreateInstances --cli-unfold-argument  \
-    --SpecCode cdb.pg.z1.2g \
-    --Storage 10 \
     --InstanceCount 1 \
-    --Period 1 \
-    --InstanceChargeType prepaid \
-    --Zone ap-guangzhou-2 \
-    --DBMajorVersion 12 \
-    --AutoVoucher 0 \
     --AutoRenewFlag 1 \
+    --DBMajorVersion 12 \
+    --Zone ap-guangzhou-2 \
+    --AdminPassword  xxxxxxx \
     --Charset UTF8 \
-    --AdminName test2313 \
-    --AdminPassword ' xxxxxxx' \
-    --DBNodeSet.0.Role Primary \
-    --DBNodeSet.0.Zone ap-guangzhou-2 \
-    --DBNodeSet.1.Role Standby \
-    --DBNodeSet.1.Zone ap-guangzhou-3
+    --Storage 10 \
+    --Period 1 \
+    --SpecCode cdb.pg.z1.2g \
+    --InstanceChargeType prepaid \
+    --AutoVoucher 0 \
+    --DBNodeSet.0.Role Standby \
+    --DBNodeSet.0.Zone ap-guangzhou-3 \
+    --DBNodeSet.1.Role Primary \
+    --DBNodeSet.1.Zone ap-guangzhou-2 \
+    --AdminName test2313
 ```
 
 Output: 
@@ -86,18 +87,19 @@ Input:
 
 ```
 tccli postgres CreateInstances --cli-unfold-argument  \
-    --SpecCode cdb.pg.z1.2g \
-    --Storage 10 \
     --InstanceCount 1 \
-    --Period 1 \
-    --InstanceChargeType prepaid \
-    --Zone ap-guangzhou-2 \
-    --DBKernelVersion v12.4_r1.0 \
-    --AutoVoucher 0 \
     --AutoRenewFlag 1 \
-    --Charset UTF8 \
     --AdminName test2313 \
-    --AdminPassword ' xxxxxxx'
+    --Zone ap-guangzhou-2 \
+    --AdminPassword  xxxxxxx \
+    --Charset UTF8 \
+    --Storage 10 \
+    --Period 1 \
+    --SpecCode cdb.pg.z1.2g \
+    --DBKernelVersion v12.4_r1.0 \
+    --DBEngine postgresql \
+    --InstanceChargeType prepaid \
+    --AutoVoucher 0
 ```
 
 Output: 

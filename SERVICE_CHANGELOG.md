@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云呼叫中心(ccc) 版本：2020-02-10
-
-### 第 16 次发布
-
-发布时间：2022-09-22 06:09:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)
-
-
-
 ## 消息队列 Ckafka(ckafka) 版本：2019-08-19
 
-### 第 36 次发布
+### 第 37 次发布
 
-发布时间：2022-09-22 06:12:32
+发布时间：2022-09-23 06:12:34
 
 本次发布包含了以下内容：
 
@@ -28,64 +12,111 @@
 
 修改接口：
 
-* [CreateDatahubTask](http://document.tencentcloudapi.woa.com/document/product/597/75537)
+* [CreateConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75538)
 
-	* 新增入参：Tags
+	* 新增入参：DorisConnectParam
 
 
 新增数据结构：
 
-* [JsonPathReplaceParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#JsonPathReplaceParam)
+* [DorisConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisConnectParam)
 
 修改数据结构：
 
-* [DescribeDatahubTaskRes](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeDatahubTaskRes)
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
 
-	* 新增成员：Tags
+	* 新增成员：DorisConnectParam
 
-* [ValueParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#ValueParam)
+* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
 
-	* 新增成员：JsonPathReplace
-
-
+	* 新增成员：DorisConnectParam
 
 
-## 日志服务(cls) 版本：2020-10-16
 
-### 第 21 次发布
 
-发布时间：2022-09-22 06:14:01
+## 云直播(live) 版本：2018-08-01
+
+### 第 20 次发布
+
+发布时间：2022-09-23 06:30:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [ExtractRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExtractRuleInfo)
+* [ModifyLiveSnapshotTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32618)
 
-	* 新增成员：Protocol, Address, ParseProtocol
-
-
+	* <font color="#dd0000">**修改入参**：</font>CosAppId, CosBucket, CosRegion
 
 
-## 分布式消息队列(tdmq) 版本：2020-02-17
 
-### 第 21 次发布
 
-发布时间：2022-09-22 06:42:09
+## 企业组织(organization) 版本：2021-03-31
+
+### 第 11 次发布
+
+发布时间：2022-09-23 06:34:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeRocketMQVipInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76376)
+* [DescribeOrganization](http://document.tencentcloudapi.woa.com/document/product/850/67059)
 
-新增数据结构：
+	* 新增出参：IsAuthManager
 
-* [RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)
+
+
+
+## 企业组织(organization) 版本：2018-12-25
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 15 次发布
+
+发布时间：2022-09-23 06:35:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
+
+	* 新增出参：DBInstanceId
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+
+	* 新增入参：DBEngine, DBEngineConfig
+
+* [CreateReadOnlyDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/52602)
+
+	* <font color="#dd0000">**修改入参**：</font>DBVersion
+
+* [DescribeProductConfig](http://document.tencentcloudapi.woa.com/document/product/409/16776)
+
+	* 新增入参：DBEngine
+
+* [InquiryPriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/409/16777)
+
+	* 新增入参：InstanceType, DBEngine
+
+	* <font color="#dd0000">**修改入参**：</font>Pid
+
+
+修改数据结构：
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
+
+	* 新增成员：DBEngine, DBEngineConfig
+
 
 
 
@@ -4882,7 +4913,7 @@
 
 新增接口：
 
-* [[DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DisableCCCPhoneNumber](http://document.tencentcloudapi.woa.com/document/product/679/76374)
 
 ### 第 15 次发布
 
@@ -7973,6 +8004,36 @@
 
 ## 消息队列 Ckafka(ckafka) 版本：2019-08-19
 
+### 第 37 次发布
+
+发布时间：2022-09-23 06:12:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75538)
+
+	* 新增入参：DorisConnectParam
+
+
+新增数据结构：
+
+* [[DorisConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[DorisConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisConnectParam))
+
+修改数据结构：
+
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+
+	* 新增成员：DorisConnectParam
+
+* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
+
+	* 新增成员：DorisConnectParam
+
+
 ### 第 36 次发布
 
 发布时间：2022-09-22 06:12:32
@@ -7990,7 +8051,7 @@
 
 新增数据结构：
 
-* [[JsonPathReplaceParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#JsonPathReplaceParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[JsonPathReplaceParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#JsonPathReplaceParam))
+* [JsonPathReplaceParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#JsonPathReplaceParam)
 
 修改数据结构：
 
@@ -22612,6 +22673,21 @@
 
 ## 云直播(live) 版本：2018-08-01
 
+### 第 20 次发布
+
+发布时间：2022-09-23 06:30:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLiveSnapshotTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32618)
+
+	* <font color="#dd0000">**修改入参**：</font>CosAppId, CosBucket, CosRegion
+
+
 ### 第 19 次发布
 
 发布时间：2022-09-16 10:24:25
@@ -26747,6 +26823,21 @@
 
 ## 企业组织(organization) 版本：2021-03-31
 
+### 第 11 次发布
+
+发布时间：2022-09-23 06:34:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeOrganization](http://document.tencentcloudapi.woa.com/document/product/850/67059)
+
+	* 新增出参：IsAuthManager
+
+
 ### 第 10 次发布
 
 发布时间：2022-07-21 06:12:32
@@ -27028,6 +27119,46 @@
 
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 15 次发布
+
+发布时间：2022-09-23 06:35:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
+
+	* 新增出参：DBInstanceId
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+
+	* 新增入参：DBEngine, DBEngineConfig
+
+* [CreateReadOnlyDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/52602)
+
+	* <font color="#dd0000">**修改入参**：</font>DBVersion
+
+* [DescribeProductConfig](http://document.tencentcloudapi.woa.com/document/product/409/16776)
+
+	* 新增入参：DBEngine
+
+* [InquiryPriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/409/16777)
+
+	* 新增入参：InstanceType, DBEngine
+
+	* <font color="#dd0000">**修改入参**：</font>Pid
+
+
+修改数据结构：
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
+
+	* 新增成员：DBEngine, DBEngineConfig
+
 
 ### 第 14 次发布
 
@@ -32880,11 +33011,11 @@
 
 新增接口：
 
-* [[DescribeRocketMQVipInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76376)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRocketMQVipInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76376)
 
 新增数据结构：
 
-* [[RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance))
+* [RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)
 
 ### 第 20 次发布
 

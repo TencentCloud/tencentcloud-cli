@@ -25,7 +25,7 @@
 | bmvpc | [黑石私有网络](http://document.tencentcloudapi.woa.com/document/product/1024) | 2022-04-15 08:05:29 |
 | bsca | [二进制软件成分分析](http://document.tencentcloudapi.woa.com/document/product/1483) | 2021-11-18 08:00:03 |
 | btoe | [区块链可信取证](http://document.tencentcloudapi.woa.com/document/product/1259) | 2022-03-08 08:01:25 |
-| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2022-07-21 06:06:42 |
+| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2022-09-23 06:08:32 |
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2022-08-29 16:13:12 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2022-09-16 10:02:11 |
 | cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2022-09-12 06:13:48 |
@@ -38,7 +38,7 @@
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2022-09-20 06:11:19 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2022-07-04 06:06:47 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2022-06-27 06:17:15 |
-| ckafka | [消息队列 Ckafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-09-22 06:12:32 |
+| ckafka | [消息队列 Ckafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-09-23 06:12:34 |
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2022-09-22 06:13:13 |
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2022-07-19 06:18:47 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2022-06-22 06:15:13 |
@@ -92,7 +92,7 @@
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2022-08-29 15:42:36 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2022-08-05 06:09:28 |
 | lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2022-09-15 06:07:47 |
-| live | [云直播](http://document.tencentcloudapi.woa.com/document/product/267) | 2022-09-22 06:29:59 |
+| live | [云直播](http://document.tencentcloudapi.woa.com/document/product/267) | 2022-09-23 06:30:10 |
 | lowcode | [云开发低码](http://document.tencentcloudapi.woa.com/document/product/1301) | 2022-03-08 08:17:35 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2022-03-08 08:03:08 |
 | mariadb | [云数据库 MariaDB](http://document.tencentcloudapi.woa.com/document/product/237) | 2022-07-27 06:10:00 |
@@ -107,13 +107,13 @@
 | nlp | [自然语言处理](http://document.tencentcloudapi.woa.com/document/product/271) | 2022-06-17 06:18:16 |
 | oceanus | [流计算 Oceanus](http://document.tencentcloudapi.woa.com/document/product/849) | 2022-08-30 11:17:57 |
 | ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2022-09-22 06:33:59 |
-| organization | [企业组织](http://document.tencentcloudapi.woa.com/document/product/850) | 2022-07-21 06:12:32 |
+| organization | [企业组织](http://document.tencentcloudapi.woa.com/document/product/850) | 2022-09-23 06:34:54 |
 | partners | [渠道合作伙伴](http://document.tencentcloudapi.woa.com/document/product/563) | 2022-09-09 06:26:53 |
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | 2022-03-08 08:00:14 |
-| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | 2022-08-29 16:46:09 |
+| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | 2022-09-23 06:35:11 |
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2022-09-19 06:36:33 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | 2022-09-19 06:36:45 |
-| rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2022-08-05 06:17:13 |
+| rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2022-09-23 06:36:20 |
 | redis | [云数据库 Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2022-09-16 10:30:39 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2022-03-08 08:16:14 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |

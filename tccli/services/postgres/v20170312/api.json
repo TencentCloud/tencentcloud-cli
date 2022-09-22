@@ -253,7 +253,7 @@
       "output": "InquiryPriceRenewDBInstanceResponse"
     },
     "InquiryPriceUpgradeDBInstance": {
-      "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。",
+      "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。只支持按量计费实例。",
       "input": "InquiryPriceUpgradeDBInstanceRequest",
       "name": "查询升级实例价格",
       "output": "InquiryPriceUpgradeDBInstanceResponse"
@@ -641,7 +641,8 @@
           "name": "BackupPeriod",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -651,7 +652,8 @@
           "name": "BaseBackupRetentionPeriod",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -661,7 +663,8 @@
           "name": "MinBackupStartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -671,7 +674,8 @@
           "name": "MaxBackupStartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -880,6 +884,16 @@
           "example": "无",
           "member": "string",
           "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "克隆出的新实例ID，当前只支持后付费返回该值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBInstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
@@ -1578,6 +1592,26 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库引擎的配置信息，配置格式如下：\n{\"$key1\":\"$value1\", \"$key2\":\"$value2\"}\n\n各引擎支持如下：\n1、mssql_compatible引擎：\nmigrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。\ndefaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：\n\"af_ZA\", \"sq_AL\", \"ar_DZ\", \"ar_BH\", \"ar_EG\", \"ar_IQ\", \"ar_JO\", \"ar_KW\", \"ar_LB\", \"ar_LY\", \"ar_MA\", \"ar_OM\", \"ar_QA\", \"ar_SA\", \"ar_SY\", \"ar_TN\", \"ar_AE\", \"ar_YE\", \"hy_AM\", \"az_Cyrl_AZ\", \"az_Latn_AZ\", \"eu_ES\", \"be_BY\", \"bg_BG\", \"ca_ES\", \"zh_HK\", \"zh_MO\", \"zh_CN\", \"zh_SG\", \"zh_TW\", \"hr_HR\", \"cs_CZ\", \"da_DK\", \"nl_BE\", \"nl_NL\", \"en_AU\", \"en_BZ\", \"en_CA\", \"en_IE\", \"en_JM\", \"en_NZ\", \"en_PH\", \"en_ZA\", \"en_TT\", \"en_GB\", \"en_US\", \"en_ZW\", \"et_EE\", \"fo_FO\", \"fa_IR\", \"fi_FI\", \"fr_BE\", \"fr_CA\", \"fr_FR\", \"fr_LU\", \"fr_MC\", \"fr_CH\", \"mk_MK\", \"ka_GE\", \"de_AT\", \"de_DE\", \"de_LI\", \"de_LU\", \"de_CH\", \"el_GR\", \"gu_IN\", \"he_IL\", \"hi_IN\", \"hu_HU\", \"is_IS\", \"id_ID\", \"it_IT\", \"it_CH\", \"ja_JP\", \"kn_IN\", \"kok_IN\", \"ko_KR\", \"ky_KG\", \"lv_LV\", \"lt_LT\", \"ms_BN\", \"ms_MY\", \"mr_IN\", \"mn_MN\", \"nb_NO\", \"nn_NO\", \"pl_PL\", \"pt_BR\", \"pt_PT\", \"pa_IN\", \"ro_RO\", \"ru_RU\", \"sa_IN\", \"sr_Cyrl_RS\", \"sr_Latn_RS\", \"sk_SK\", \"sl_SI\", \"es_AR\", \"es_BO\", \"es_CL\", \"es_CO\", \"es_CR\", \"es_DO\", \"es_EC\", \"es_SV\", \"es_GT\", \"es_HN\", \"es_MX\", \"es_NI\", \"es_PA\", \"es_PY\",\"es_PE\", \"es_PR\", \"es_ES\", \"es_TRADITIONAL\", \"es_UY\", \"es_VE\", \"sw_KE\", \"sv_FI\", \"sv_SE\", \"tt_RU\", \"te_IN\", \"th_TH\", \"tr_TR\", \"uk_UA\", \"ur_IN\", \"ur_PK\", \"uz_Cyrl_UZ\", \"uz_Latn_UZ\", \"vi_VN\"。\nserverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下：\n\"bbf_unicode_general_ci_as\", \"bbf_unicode_cp1_ci_as\", \"bbf_unicode_CP1250_ci_as\", \"bbf_unicode_CP1251_ci_as\", \"bbf_unicode_cp1253_ci_as\", \"bbf_unicode_cp1254_ci_as\", \"bbf_unicode_cp1255_ci_as\", \"bbf_unicode_cp1256_ci_as\", \"bbf_unicode_cp1257_ci_as\", \"bbf_unicode_cp1258_ci_as\", \"bbf_unicode_cp874_ci_as\", \"sql_latin1_general_cp1250_ci_as\", \"sql_latin1_general_cp1251_ci_as\", \"sql_latin1_general_cp1_ci_as\", \"sql_latin1_general_cp1253_ci_as\", \"sql_latin1_general_cp1254_ci_as\", \"sql_latin1_general_cp1255_ci_as\",\"sql_latin1_general_cp1256_ci_as\", \"sql_latin1_general_cp1257_ci_as\", \"sql_latin1_general_cp1258_ci_as\", \"chinese_prc_ci_as\", \"cyrillic_general_ci_as\", \"finnish_swedish_ci_as\", \"french_ci_as\", \"japanese_ci_as\", \"korean_wansung_ci_as\", \"latin1_general_ci_as\", \"modern_spanish_ci_as\", \"polish_ci_as\", \"thai_ci_as\", \"traditional_spanish_ci_as\", \"turkish_ci_as\", \"ukrainian_ci_as\", \"vietnamese_ci_as\"。",
+          "example": "无",
+          "member": "string",
+          "name": "DBEngineConfig",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1633,16 +1667,6 @@
           "example": "SpecCode",
           "member": "string",
           "name": "SpecCode",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
-          "document": "PostgreSQL内核版本，目前强制和主实例保持一致",
-          "example": "DBVersion",
-          "member": "string",
-          "name": "DBVersion",
           "required": true,
           "type": "string",
           "visibility": 1
@@ -1709,7 +1733,17 @@
         },
         {
           "default": "",
-          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "document": "【废弃】不再需要指定，内核版本号与主实例保持一致",
+          "example": "DBVersion",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。",
           "example": "InstanceChargeType",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2343,7 +2377,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2353,7 +2388,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2363,7 +2399,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2373,7 +2410,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2383,7 +2421,8 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2393,7 +2432,8 @@
           "name": "DBInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2403,7 +2443,8 @@
           "name": "DBInstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2413,7 +2454,8 @@
           "name": "DBInstanceStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2423,7 +2465,8 @@
           "name": "DBInstanceMemory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2433,7 +2476,8 @@
           "name": "DBInstanceStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2443,7 +2487,8 @@
           "name": "DBInstanceCpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2453,7 +2498,8 @@
           "name": "DBInstanceClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2463,7 +2509,8 @@
           "name": "DBInstanceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2473,7 +2520,8 @@
           "name": "DBInstanceVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2483,7 +2531,8 @@
           "name": "DBCharset",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2493,7 +2542,8 @@
           "name": "DBVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2503,7 +2553,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2513,7 +2564,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2523,7 +2575,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2533,7 +2586,8 @@
           "name": "IsolatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2543,7 +2597,8 @@
           "name": "PayType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2553,7 +2608,8 @@
           "name": "AutoRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2563,7 +2619,8 @@
           "name": "DBInstanceNetInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2573,7 +2630,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2583,7 +2641,8 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2593,7 +2652,8 @@
           "name": "Uid",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2603,7 +2663,8 @@
           "name": "SupportIpv6",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2613,7 +2674,8 @@
           "name": "TagList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2623,7 +2685,8 @@
           "name": "MasterDBInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2633,7 +2696,8 @@
           "name": "ReadOnlyInstanceNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2643,7 +2707,8 @@
           "name": "StatusInReadonlyGroup",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2653,7 +2718,8 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2663,7 +2729,8 @@
           "name": "DBKernelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2673,7 +2740,8 @@
           "name": "NetworkAccessList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2683,7 +2751,8 @@
           "name": "DBMajorVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2693,7 +2762,8 @@
           "name": "DBNodeSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2703,7 +2773,30 @@
           "name": "IsSupportTDE",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库引擎的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBEngineConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2795,7 +2888,8 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2805,7 +2899,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4044,6 +4139,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库引擎，支持：\n1、postgresql（云数据库PostgreSQL）；\n2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；\n如不指定默认使用postgresql。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5079,11 +5184,11 @@
         },
         {
           "default": "",
-          "document": "计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。",
+          "document": "【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。",
           "example": "11004",
           "member": "uint64",
           "name": "Pid",
-          "required": true,
+          "required": false,
           "type": "int",
           "visibility": 1
         },
@@ -5096,6 +5201,26 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例类型，默认primary，支持如下：\nprimary（双机高可用（一主一从））\nreadonly（只读实例）",
+          "example": "primary",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "DB引擎，默认postgresql，支持如下：\npostgresql（云数据库PostgreSQL）\nmssql_compatible（MSSQL兼容-云数据库PostgreSQL）",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5104,7 +5229,7 @@
       "document": "InquiryPriceCreateDBInstances返回参数结构体",
       "members": [
         {
-          "document": "原始价格，单位：分",
+          "document": "刊例价，单位：分",
           "example": "27600",
           "member": "uint64",
           "name": "OriginalPrice",
@@ -5114,7 +5239,7 @@
           "visibility": 1
         },
         {
-          "document": "折后价格，单位：分",
+          "document": "折后实际付款金额，单位：分",
           "example": "27600",
           "member": "uint64",
           "name": "Price",
@@ -5245,7 +5370,7 @@
         },
         {
           "default": "",
-          "document": "实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。",
+          "document": "【废弃参数，不再生效】，实例计费类型。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7467,7 +7592,8 @@
           "name": "SpecCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7477,7 +7603,8 @@
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7487,7 +7614,8 @@
           "name": "VersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7497,7 +7625,8 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7507,7 +7636,8 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7517,7 +7647,8 @@
           "name": "MaxStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7527,7 +7658,8 @@
           "name": "MinStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7537,17 +7669,19 @@
           "name": "Qps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "该规格对应的计费ID",
+          "document": "【该字段废弃】",
           "example": "1",
           "member": "uint64",
           "name": "Pid",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7557,7 +7691,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7567,7 +7702,8 @@
           "name": "MajorVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7577,7 +7713,8 @@
           "name": "KernelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7587,7 +7724,8 @@
           "name": "IsSupportTDE",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

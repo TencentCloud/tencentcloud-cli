@@ -2589,25 +2589,28 @@
           "member": "uint64",
           "name": "PolicyId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "document": "角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一",
           "example": "4611686018427397905",
           "member": "string",
           "name": "DetachRoleId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "document": "角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一",
           "example": "QCS_RoleName",
           "member": "string",
           "name": "DetachRoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2616,7 +2619,8 @@
           "member": "string",
           "name": "PolicyName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
