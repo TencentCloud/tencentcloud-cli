@@ -193,7 +193,7 @@
       "output": "SetAccountUserPrivilegeResponse"
     },
     "TerminateDBInstances": {
-      "document": "包年包月实例隔离接口",
+      "document": "本接口（TerminateDBInstances）可将包年包月实例退还隔离。",
       "input": "TerminateDBInstancesRequest",
       "name": "包年包月隔离接口",
       "output": "TerminateDBInstancesResponse"
@@ -4431,7 +4431,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例Id列表",
+          "document": "指定预隔离实例ID。格式如：cmgo-p8vnipr5。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",

@@ -4406,7 +4406,7 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例ID。",
+          "document": "负载均衡实例ID。实例ID数量上限为20个。",
           "example": "无",
           "member": "string",
           "name": "LoadBalancerIds",

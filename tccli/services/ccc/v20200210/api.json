@@ -132,6 +132,12 @@
       "name": "获取 PSTN 会话信息",
       "output": "DescribeTelSessionResponse"
     },
+    "DisableCCCPhoneNumber": {
+      "document": "停用号码",
+      "input": "DisableCCCPhoneNumberRequest",
+      "name": "停用号码",
+      "output": "DisableCCCPhoneNumberResponse"
+    },
     "ModifyStaff": {
       "document": "修改客服账号",
       "input": "ModifyStaffRequest",
@@ -2088,6 +2094,51 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableCCCPhoneNumberRequest": {
+      "document": "DisableCCCPhoneNumber请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "号码列表，0086开头",
+          "example": "['00860755XXXX','0086021XXXX']",
+          "member": "string",
+          "name": "PhoneNumbers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "停用开关，0启用 1停用",
+          "example": "1",
+          "member": "int64",
+          "name": "Disabled",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableCCCPhoneNumberResponse": {
+      "document": "DisableCCCPhoneNumber返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

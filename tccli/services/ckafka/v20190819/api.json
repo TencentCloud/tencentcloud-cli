@@ -61,9 +61,9 @@
       "output": "CreateConsumerResponse"
     },
     "CreateDatahubTask": {
-      "document": "创建Datahub转储任务",
+      "document": "创建DIP转储任务",
       "input": "CreateDatahubTaskRequest",
-      "name": "创建Datahub转储任务",
+      "name": "创建DIP转储任务",
       "output": "CreateDatahubTaskResponse"
     },
     "CreateInstancePre": {
@@ -2665,6 +2665,15 @@
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "xxx",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5477,6 +5486,16 @@
           "name": "ErrorMessage",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -8920,6 +8939,32 @@
         }
       ],
       "usage": "out"
+    },
+    "JsonPathReplaceParam": {
+      "document": "数据处理——Value处理参数——Jsonpath替换参数",
+      "members": [
+        {
+          "default": "",
+          "document": "被替换值，Jsonpath表达式",
+          "example": "$.old",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换值，Jsonpath表达式或字符串",
+          "example": "$.new",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "KVParam": {
       "document": "key-value二次解析",
@@ -13233,6 +13278,16 @@
           "name": "Result",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JsonPath替换，TYPE=JSON_PATH_REPLACE时必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "JsonPathReplaceParam",
+          "name": "JsonPathReplace",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

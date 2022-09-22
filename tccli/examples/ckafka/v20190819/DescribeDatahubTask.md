@@ -16,6 +16,7 @@ Output:
         "Result": {
             "Status": 0,
             "TransformsParam": {
+                "KeepMetadata": true,
                 "OutputFormat": "xx",
                 "SourceType": "xx",
                 "FilterParam": [
@@ -28,8 +29,12 @@ Output:
                 ],
                 "FailureParam": {
                     "RetryInterval": 1,
-                    "Type": "xx",
-                    "MaxRetryAttempts": 1,
+                    "TopicParam": {
+                        "TopicId": "xx",
+                        "OffsetType": "xx",
+                        "Resource": "xx",
+                        "StartTime": 1
+                    },
                     "KafkaParam": {
                         "TopicId": "xx",
                         "Resource": "xx",
@@ -40,9 +45,21 @@ Output:
                         "Topic": "xx",
                         "OffsetType": "xx",
                         "StartTime": 1,
+                        "UseTableMapping": true,
                         "ResourceName": "xx",
-                        "ZoneId": 0
-                    }
+                        "ZoneId": 0,
+                        "TableMappings": [
+                            {
+                                "Topic": "xx",
+                                "Table": "xx",
+                                "TopicId": "xx",
+                                "Database": "xx"
+                            }
+                        ]
+                    },
+                    "MaxRetryAttempts": 1,
+                    "Type": "xx",
+                    "DlqType": "xx"
                 },
                 "Content": "xx",
                 "Result": "xx",
@@ -60,19 +77,32 @@ Output:
                             {
                                 "ValueOperates": [
                                     {
-                                        "Date": {
-                                            "TargetType": "xx",
-                                            "TimeZone": "xx",
-                                            "Format": "xx"
+                                        "Result": "xx",
+                                        "Replace": {
+                                            "NewValue": "xx",
+                                            "OldValue": "xx"
                                         },
                                         "Substr": {
                                             "Start": 0,
                                             "End": 0
                                         },
+                                        "Split": {
+                                            "Regex": "xx"
+                                        },
+                                        "KV": {
+                                            "Regex": "xx",
+                                            "KeepOriginalKey": "xx",
+                                            "Delimiter": "xx"
+                                        },
+                                        "Date": {
+                                            "TargetType": "xx",
+                                            "TimeZone": "xx",
+                                            "Format": "xx"
+                                        },
                                         "Type": "xx",
-                                        "Replace": {
-                                            "NewValue": "xx",
-                                            "OldValue": "xx"
+                                        "RegexReplace": {
+                                            "Regex": "xx",
+                                            "NewValue": "xx"
                                         }
                                     }
                                 ],
@@ -82,19 +112,32 @@ Output:
                                 "Key": "xx",
                                 "Operate": "xx",
                                 "ValueOperate": {
-                                    "Date": {
-                                        "TargetType": "xx",
-                                        "TimeZone": "xx",
-                                        "Format": "xx"
+                                    "Result": "xx",
+                                    "Replace": {
+                                        "NewValue": "xx",
+                                        "OldValue": "xx"
                                     },
                                     "Substr": {
                                         "Start": 0,
                                         "End": 0
                                     },
+                                    "Split": {
+                                        "Regex": "xx"
+                                    },
+                                    "KV": {
+                                        "Regex": "xx",
+                                        "KeepOriginalKey": "xx",
+                                        "Delimiter": "xx"
+                                    },
+                                    "Date": {
+                                        "TargetType": "xx",
+                                        "TimeZone": "xx",
+                                        "Format": "xx"
+                                    },
                                     "Type": "xx",
-                                    "Replace": {
-                                        "NewValue": "xx",
-                                        "OldValue": "xx"
+                                    "RegexReplace": {
+                                        "Regex": "xx",
+                                        "NewValue": "xx"
                                     }
                                 }
                             }
@@ -103,19 +146,32 @@ Output:
                             {
                                 "ValueOperates": [
                                     {
-                                        "Date": {
-                                            "TargetType": "xx",
-                                            "TimeZone": "xx",
-                                            "Format": "xx"
+                                        "Result": "xx",
+                                        "Replace": {
+                                            "NewValue": "xx",
+                                            "OldValue": "xx"
                                         },
                                         "Substr": {
                                             "Start": 0,
                                             "End": 0
                                         },
+                                        "Split": {
+                                            "Regex": "xx"
+                                        },
+                                        "KV": {
+                                            "Regex": "xx",
+                                            "KeepOriginalKey": "xx",
+                                            "Delimiter": "xx"
+                                        },
+                                        "Date": {
+                                            "TargetType": "xx",
+                                            "TimeZone": "xx",
+                                            "Format": "xx"
+                                        },
                                         "Type": "xx",
-                                        "Replace": {
-                                            "NewValue": "xx",
-                                            "OldValue": "xx"
+                                        "RegexReplace": {
+                                            "Regex": "xx",
+                                            "NewValue": "xx"
                                         }
                                     }
                                 ],
@@ -140,10 +196,21 @@ Output:
                             }
                         ]
                     }
-                ]
+                ],
+                "RowParam": {
+                    "RowContent": "xx",
+                    "KeyValueDelimiter": "xx",
+                    "EntryDelimiter": "xx"
+                }
             },
+            "Tags": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xx"
+                }
+            ],
             "SchemaId": "xx",
-            "DatahubId": "xx",
+            "ErrorMessage": "xx",
             "TargetResource": {
                 "EventBusParam": {
                     "Resource": "xx",
@@ -156,6 +223,13 @@ Output:
                 "ClickHouseParam": {
                     "UserName": "xx",
                     "Resource": "xx",
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsTopicId": "xx",
+                        "DropClsRegion": "xx",
+                        "DropClsLogSet": "xx",
+                        "DropClsOwneruin": "xx"
+                    },
                     "UniqVpcId": "xx",
                     "Database": "xx",
                     "Ip": "xx",
@@ -176,26 +250,72 @@ Output:
                         }
                     ]
                 },
+                "CtsdbParam": {
+                    "Resource": "xx",
+                    "CtsdbMetric": "xx"
+                },
                 "TdwParam": {
                     "Tid": "xx",
-                    "Bid": "xx"
+                    "Bid": "xx",
+                    "TdwHost": "xx",
+                    "IsDomestic": true,
+                    "TdwPort": 0
                 },
                 "MySQLParam": {
-                    "DdlTopic": "xx",
-                    "Database": "xx",
+                    "OutputFormat": "xx",
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsTopicId": "xx",
+                        "DropClsRegion": "xx",
+                        "DropClsLogSet": "xx",
+                        "DropClsOwneruin": "xx"
+                    },
+                    "DataSourceIncrementMode": "xx",
+                    "DataSourceMonitorMode": "xx",
+                    "IncludeContentChanges": "xx",
+                    "DataTargetPrimaryKeyField": "xx",
+                    "TopicReplacement": "xx",
+                    "TopicRegex": "xx",
+                    "DataTargetInsertMode": "xx",
+                    "DataSourceIncrementColumn": "xx",
                     "Resource": "xx",
+                    "Database": "xx",
+                    "DdlTopic": "xx",
+                    "IncludeQuery": true,
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "xx",
+                            "ColumnName": "xx",
+                            "AutoIncrement": true,
+                            "DefaultValue": "xx",
+                            "ExtraInfo": "xx",
+                            "AllowNull": true,
+                            "ColumnSize": "xx",
+                            "Type": "xx",
+                            "DecimalDigits": "xx"
+                        }
+                    ],
+                    "DataSourceMonitorResource": "xx",
+                    "KeyColumns": "xx",
+                    "RecordWithSchema": true,
+                    "DropInvalidMessage": true,
+                    "SnapshotMode": "xx",
+                    "IsTablePrefix": true,
                     "Table": "xx",
-                    "SnapshotMode": "xx"
+                    "DataSourceStartFrom": "xx"
                 },
                 "CosParam": {
                     "FormatOutputType": "xx",
+                    "DirectoryTimeFormat": "xx",
                     "ObjectKey": "xx",
                     "BucketName": "xx",
                     "AggregateBatchSize": 1,
+                    "ObjectKeyPrefix": "xx",
                     "Region": "xx",
                     "AggregateInterval": 1
                 },
                 "TopicParam": {
+                    "TopicId": "xx",
                     "OffsetType": "xx",
                     "Resource": "xx",
                     "StartTime": 1
@@ -210,27 +330,46 @@ Output:
                     "Topic": "xx",
                     "OffsetType": "xx",
                     "StartTime": 1,
+                    "UseTableMapping": true,
                     "ResourceName": "xx",
-                    "ZoneId": 0
+                    "ZoneId": 0,
+                    "TableMappings": [
+                        {
+                            "Topic": "xx",
+                            "Table": "xx",
+                            "TopicId": "xx",
+                            "Database": "xx"
+                        }
+                    ]
                 },
                 "EsParam": {
                     "UserName": "xx",
                     "Index": "xx",
                     "Resource": "xx",
+                    "IndexType": "xx",
                     "UniqVpcId": "xx",
                     "DropInvalidMessage": true,
                     "DateFormat": "xx",
                     "SelfBuilt": true,
-                    "ServiceVip": "xx",
-                    "Password": "xx",
                     "DropInvalidJsonMessage": true,
+                    "ServiceVip": "xx",
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsTopicId": "xx",
+                        "DropClsRegion": "xx",
+                        "DropClsLogSet": "xx",
+                        "DropClsOwneruin": "xx"
+                    },
+                    "Password": "xx",
                     "Port": 0,
+                    "DatabasePrimaryKey": "xx",
                     "ContentKey": "xx",
                     "DocumentIdField": "xx"
                 },
                 "DtsParam": {
                     "Resource": "xx",
                     "Ip": "xx",
+                    "TranSql": true,
                     "GroupId": "xx",
                     "Topic": "xx",
                     "GroupUser": "xx",
@@ -252,20 +391,60 @@ Output:
                     "Port": 0
                 },
                 "PostgreSQLParam": {
-                    "Table": "xx",
-                    "PluginName": "xx",
+                    "DataTargetInsertMode": "xx",
                     "Resource": "xx",
+                    "Database": "xx",
+                    "DropInvalidMessage": true,
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "xx",
+                            "ColumnName": "xx",
+                            "AutoIncrement": true,
+                            "DefaultValue": "xx",
+                            "ExtraInfo": "xx",
+                            "AllowNull": true,
+                            "ColumnSize": "xx",
+                            "Type": "xx",
+                            "DecimalDigits": "xx"
+                        }
+                    ],
                     "SnapshotMode": "xx",
+                    "PluginName": "xx",
+                    "DataFormat": "xx",
+                    "KeyColumns": "xx",
+                    "RecordWithSchema": true,
+                    "DataTargetPrimaryKeyField": "xx",
+                    "Table": "xx",
+                    "IsTableRegular": true
+                },
+                "SQLServerParam": {
+                    "Table": "xx",
+                    "SnapshotMode": "xx",
+                    "Resource": "xx",
                     "Database": "xx"
+                },
+                "MariaDBParam": {
+                    "OutputFormat": "xx",
+                    "Resource": "xx",
+                    "Database": "xx",
+                    "IncludeQuery": true,
+                    "SnapshotMode": "xx",
+                    "KeyColumns": "xx",
+                    "IsTablePrefix": true,
+                    "IncludeContentChanges": "xx",
+                    "Table": "xx",
+                    "RecordWithSchema": true
                 },
                 "Type": "xx",
                 "ClsParam": {
                     "LogSet": "xx",
+                    "TimeField": "xx",
                     "Resource": "xx",
                     "ContentKey": "xx",
                     "DecodeJson": true
                 }
             },
+            "TaskType": "xx",
             "Connections": [
                 {
                     "TopicId": "xx",
@@ -288,8 +467,12 @@ Output:
                 "UseEventBus": true,
                 "FailureParam": {
                     "RetryInterval": 1,
-                    "Type": "xx",
-                    "MaxRetryAttempts": 1,
+                    "TopicParam": {
+                        "TopicId": "xx",
+                        "OffsetType": "xx",
+                        "Resource": "xx",
+                        "StartTime": 1
+                    },
                     "KafkaParam": {
                         "TopicId": "xx",
                         "Resource": "xx",
@@ -300,9 +483,21 @@ Output:
                         "Topic": "xx",
                         "OffsetType": "xx",
                         "StartTime": 1,
+                        "UseTableMapping": true,
                         "ResourceName": "xx",
-                        "ZoneId": 0
-                    }
+                        "ZoneId": 0,
+                        "TableMappings": [
+                            {
+                                "Topic": "xx",
+                                "Table": "xx",
+                                "TopicId": "xx",
+                                "Database": "xx"
+                            }
+                        ]
+                    },
+                    "MaxRetryAttempts": 1,
+                    "Type": "xx",
+                    "DlqType": "xx"
                 },
                 "Content": "xx",
                 "AnalysisFormat": "xx",
@@ -323,7 +518,7 @@ Output:
                 "Result": "xx"
             },
             "TaskId": "xx",
-            "TaskType": "xx",
+            "DatahubId": "xx",
             "SourceResource": {
                 "EventBusParam": {
                     "Resource": "xx",
@@ -356,39 +551,74 @@ Output:
                         }
                     ]
                 },
+                "CtsdbParam": {
+                    "Resource": "xx",
+                    "CtsdbMetric": "xx"
+                },
                 "TdwParam": {
                     "Tid": "xx",
-                    "Bid": "xx"
+                    "Bid": "xx",
+                    "TdwHost": "xx",
+                    "IsDomestic": true,
+                    "TdwPort": 0
                 },
                 "MySQLParam": {
-                    "DdlTopic": "xx",
-                    "Database": "xx",
+                    "OutputFormat": "xx",
+                    "DataSourceIncrementMode": "xx",
+                    "DataSourceMonitorMode": "xx",
+                    "IncludeContentChanges": "xx",
+                    "DataTargetPrimaryKeyField": "xx",
+                    "TopicReplacement": "xx",
+                    "TopicRegex": "xx",
+                    "DataTargetInsertMode": "xx",
+                    "DataSourceIncrementColumn": "xx",
                     "Resource": "xx",
+                    "Database": "xx",
+                    "DdlTopic": "xx",
+                    "IncludeQuery": true,
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "xx",
+                            "ColumnName": "xx",
+                            "AutoIncrement": true,
+                            "DefaultValue": "xx",
+                            "ExtraInfo": "xx",
+                            "AllowNull": true,
+                            "ColumnSize": "xx",
+                            "Type": "xx",
+                            "DecimalDigits": "xx"
+                        }
+                    ],
+                    "DataSourceMonitorResource": "xx",
+                    "KeyColumns": "xx",
+                    "RecordWithSchema": true,
+                    "DropInvalidMessage": true,
+                    "SnapshotMode": "xx",
+                    "IsTablePrefix": true,
                     "Table": "xx",
-                    "SnapshotMode": "xx"
+                    "DataSourceStartFrom": "xx"
                 },
                 "CosParam": {
                     "FormatOutputType": "xx",
+                    "DirectoryTimeFormat": "xx",
                     "ObjectKey": "xx",
                     "BucketName": "xx",
                     "AggregateBatchSize": 1,
+                    "ObjectKeyPrefix": "xx",
                     "Region": "xx",
                     "AggregateInterval": 1
-                },
-                "TopicParam": {
-                    "OffsetType": "xx",
-                    "Resource": "xx",
-                    "StartTime": 1
                 },
                 "EsParam": {
                     "UserName": "xx",
                     "Index": "xx",
                     "Resource": "xx",
+                    "IndexType": "xx",
                     "UniqVpcId": "xx",
                     "DropInvalidMessage": true,
                     "DateFormat": "xx",
                     "SelfBuilt": true,
                     "ServiceVip": "xx",
+                    "DatabasePrimaryKey": "xx",
                     "Password": "xx",
                     "DropInvalidJsonMessage": true,
                     "Port": 0,
@@ -398,6 +628,7 @@ Output:
                 "DtsParam": {
                     "Resource": "xx",
                     "Ip": "xx",
+                    "TranSql": true,
                     "GroupId": "xx",
                     "Topic": "xx",
                     "GroupUser": "xx",
@@ -419,15 +650,41 @@ Output:
                     "Port": 0
                 },
                 "PostgreSQLParam": {
-                    "Table": "xx",
-                    "PluginName": "xx",
+                    "DataTargetInsertMode": "xx",
                     "Resource": "xx",
+                    "Database": "xx",
+                    "DropInvalidMessage": true,
                     "SnapshotMode": "xx",
+                    "PluginName": "xx",
+                    "DataFormat": "xx",
+                    "KeyColumns": "xx",
+                    "RecordWithSchema": true,
+                    "DataTargetPrimaryKeyField": "xx",
+                    "Table": "xx",
+                    "IsTableRegular": true
+                },
+                "SQLServerParam": {
+                    "Table": "xx",
+                    "SnapshotMode": "xx",
+                    "Resource": "xx",
                     "Database": "xx"
+                },
+                "MariaDBParam": {
+                    "OutputFormat": "xx",
+                    "Resource": "xx",
+                    "Database": "xx",
+                    "IncludeQuery": true,
+                    "SnapshotMode": "xx",
+                    "KeyColumns": "xx",
+                    "IsTablePrefix": true,
+                    "IncludeContentChanges": "xx",
+                    "Table": "xx",
+                    "RecordWithSchema": true
                 },
                 "Type": "xx",
                 "ClsParam": {
                     "LogSet": "xx",
+                    "TimeField": "xx",
                     "Resource": "xx",
                     "ContentKey": "xx",
                     "DecodeJson": true

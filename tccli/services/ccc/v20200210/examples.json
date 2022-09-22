@@ -176,6 +176,14 @@
         "title": "获取 PSTN 会话信息"
       }
     ],
+    "DisableCCCPhoneNumber": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableCCCPhoneNumber\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"PhoneNumbers\": [\n        \"0086020123456\"\n    ],\n    \"Disabled\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
+        "title": "停用号码"
+      }
+    ],
     "ModifyStaff": [
       {
         "document": "",

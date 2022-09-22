@@ -80,6 +80,22 @@
         "title": "删除工作流"
       }
     ],
+    "DescribeDataSourceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": {\n            \"TotalCount\": 10\n        }\n    }\n}",
+        "title": "样例"
+      }
+    ],
+    "DescribeDataSourceWithoutInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceWithoutInfo\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": {}\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "DescribeDatasource": [
       {
         "document": "",

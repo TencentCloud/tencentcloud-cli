@@ -60,6 +60,18 @@
       "name": "删除工作流【Beta版本】",
       "output": "DeleteWorkflowNewResponse"
     },
+    "DescribeDataSourceList": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源详情",
+      "input": "DescribeDataSourceListRequest",
+      "name": "数据源管理-查询数据源分页列表【Beta版本】",
+      "output": "DescribeDataSourceListResponse"
+    },
+    "DescribeDataSourceWithoutInfo": {
+      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源列表",
+      "input": "DescribeDataSourceWithoutInfoRequest",
+      "name": "查看数据源列表不带额外信息【Beta版本】",
+      "output": "DescribeDataSourceWithoutInfoResponse"
+    },
     "DescribeDatasource": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n数据源详情",
       "input": "DescribeDatasourceRequest",
@@ -1360,6 +1372,62 @@
       ],
       "usage": "out"
     },
+    "DataSourceInfoPage": {
+      "document": "查询数据源分页列表",
+      "members": [
+        {
+          "default": "",
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteDataSourcesRequest": {
       "document": "DeleteDataSources请求参数结构体",
       "members": [
@@ -1559,6 +1627,114 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeDataSourceListRequest": {
+      "document": "DescribeDataSourceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序配置",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选过滤条件，Filter可选配置(参考): \"Name\": { \"type\": \"string\", \"description\": \"数据源名称\" }, \"Type\": { \"type\": \"string\", \"description\": \"类型\" }, \"ClusterId\": { \"type\": \"string\", \"description\": \"集群id\" }, \"CategoryId\": { \"type\": \"string\", \"description\": \"分类，项目或空间id\" }",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourceListResponse": {
+      "document": "DescribeDataSourceList返回参数结构体",
+      "members": [
+        {
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceInfoPage",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourceWithoutInfoRequest": {
+      "document": "DescribeDataSourceWithoutInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "1",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourceWithoutInfoResponse": {
+      "document": "DescribeDataSourceWithoutInfo返回参数结构体",
+      "members": [
+        {
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDatasourceRequest": {
       "document": "DescribeDatasource请求参数结构体",
@@ -2489,6 +2665,32 @@
         }
       ],
       "type": "object"
+    },
+    "Filter": {
+      "document": "通用过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名称",
+          "example": "SearchWord",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤值列表",
+          "example": "default",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Folder": {
       "document": "文件夹信息",
