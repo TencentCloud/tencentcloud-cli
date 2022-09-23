@@ -57,6 +57,8 @@ include tccli/services/bmlb/v20180625/api.json
 include tccli/services/bmlb/v20180625/examples.json
 include tccli/services/bmvpc/v20180625/api.json
 include tccli/services/bmvpc/v20180625/examples.json
+include tccli/services/bpaas/v20181217/api.json
+include tccli/services/bpaas/v20181217/examples.json
 include tccli/services/bri/v20190328/api.json
 include tccli/services/bri/v20190328/examples.json
 include tccli/services/bsca/v20210811/api.json
@@ -257,6 +259,8 @@ include tccli/services/ivld/v20210903/api.json
 include tccli/services/ivld/v20210903/examples.json
 include tccli/services/kms/v20190118/api.json
 include tccli/services/kms/v20190118/examples.json
+include tccli/services/lcic/v20220817/api.json
+include tccli/services/lcic/v20220817/examples.json
 include tccli/services/lighthouse/v20200324/api.json
 include tccli/services/lighthouse/v20200324/examples.json
 include tccli/services/live/v20180801/api.json

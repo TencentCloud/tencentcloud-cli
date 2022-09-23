@@ -47,6 +47,7 @@ Output:
         "PayUin": "",
         "PayName": "",
         "IsAssignManager": false,
+        "IsAuthManager": false,
         "RequestId": "e5c09721-236b-4a55-a5d1-0513ac506245"
     }
 }

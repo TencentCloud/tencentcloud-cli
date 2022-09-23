@@ -10076,6 +10076,33 @@
         },
         {
           "default": "",
+          "document": "Cos 应用 ID。\n**注：此参数现在须必选。**",
+          "example": "123",
+          "member": "int64",
+          "name": "CosAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。\n**注：此参数现在须必选。**",
+          "example": "bucket",
+          "member": "string",
+          "name": "CosBucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Cos 地域。\n**注：此参数现在须必选。**",
+          "example": "beijing",
+          "member": "string",
+          "name": "CosRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "模板名称。\n长度上限：255字节。",
           "example": "testName",
           "member": "string",
@@ -10127,33 +10154,6 @@
           "name": "PornFlag",
           "required": false,
           "type": "int"
-        },
-        {
-          "default": "",
-          "document": "Cos 应用 ID。",
-          "example": "123",
-          "member": "int64",
-          "name": "CosAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。",
-          "example": "bucket",
-          "member": "string",
-          "name": "CosBucket",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Cos 地域。",
-          "example": "beijing",
-          "member": "string",
-          "name": "CosRegion",
-          "required": false,
-          "type": "string"
         },
         {
           "default": "",

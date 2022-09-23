@@ -2417,7 +2417,7 @@
         },
         {
           "default": "",
-          "document": "是否发送短信，sms--短信通知，none--不通知，默认为sms",
+          "document": "是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信",
           "example": "无",
           "member": "string",
           "name": "NotifyType",

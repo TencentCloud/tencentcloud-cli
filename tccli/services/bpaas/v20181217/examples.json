@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "GetBpaasApproveDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bpaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBpaasApproveDetail\n<公共请求参数>\n\n{\n    \"ApproveId\": 1000000001\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplyUin\": 123456,\n        \"ApplyOwnUin\": 123456,\n        \"ApplyUinNick\": \"\",\n        \"BpaasId\": 1000000001,\n        \"BpaasName\": \"qqqq\",\n        \"ApplicationParams\": [],\n        \"Reason\": \"1\",\n        \"CreateTime\": \"2020-06-09 18:48:43\",\n        \"Status\": 1,\n        \"ApprovingNodeId\": \"\",\n        \"Nodes\": [\n            {\n                \"NodeId\": \"1\",\n                \"NodeName\": \"审批节点1\",\n                \"NodeType\": 1,\n                \"NextNode\": \"-1\",\n                \"Opinion\": [],\n                \"ScfName\": \"\",\n                \"SubStatus\": 8,\n                \"ApprovedUin\": [],\n                \"CreateTime\": \"\",\n                \"Msg\": \"success\",\n                \"Users\": [],\n                \"IsApprove\": false,\n                \"ApproveId\": 0,\n                \"ApproveType\": 2,\n                \"ApproveMethod\": -1\n            }\n        ],\n        \"RequestId\": \"fe080a39-3644-4070-94c5-460001281ec7\"\n    }\n}",
+        "title": "查看审批详情"
+      }
+    ],
+    "OutApproveBpaasApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bpaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OutApproveBpaasApplication\n<公共请求参数>\n\n{\n    \"ApproveId\": 1000000001,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "审批申请单"
+      }
+    ]
+  },
+  "version": "1.0"
+}

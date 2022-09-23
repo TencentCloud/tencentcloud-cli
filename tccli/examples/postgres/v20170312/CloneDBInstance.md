@@ -28,7 +28,8 @@ Output:
     "Response": {
         "RequestId": "6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90",
         "DealName": "20211225711000768276461",
-        "BillId": "20211225711000768276471"
+        "BillId": "20211225711000768276471",
+        "DBInstanceId": "postgres-xxxx"
     }
 }
 ```

@@ -358,7 +358,7 @@
         },
         {
           "default": "",
-          "document": "产品简称（查询是否集团服务委派管理员必须）",
+          "document": "产品简称（查询是否集团服务委派管理员必填）",
           "example": "test",
           "member": "string",
           "name": "Product",
@@ -502,6 +502,15 @@
           "example": "false",
           "member": "bool",
           "name": "IsAssignManager",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否主体管理员 true-是、false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAuthManager",
           "required": true,
           "type": "bool",
           "value_allowed_null": true

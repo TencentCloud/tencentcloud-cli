@@ -1,0 +1,585 @@
+{
+  "actions": {
+    "CreateRoom": {
+      "document": "创建房间",
+      "input": "CreateRoomRequest",
+      "name": "创建房间",
+      "output": "CreateRoomResponse"
+    },
+    "CreateSupervisor": {
+      "document": "创建巡课",
+      "input": "CreateSupervisorRequest",
+      "name": "创建巡课",
+      "output": "CreateSupervisorResponse"
+    },
+    "DescribeRoom": {
+      "document": "获取房间信息",
+      "input": "DescribeRoomRequest",
+      "name": "房间信息",
+      "output": "DescribeRoomResponse"
+    },
+    "DescribeUser": {
+      "document": "获取用户信息",
+      "input": "DescribeUserRequest",
+      "name": "获取用户信息",
+      "output": "DescribeUserResponse"
+    },
+    "LoginOriginId": {
+      "document": "使用源账号登录，源账号为注册时填入的originId",
+      "input": "LoginOriginIdRequest",
+      "name": "源账号登录",
+      "output": "LoginOriginIdResponse"
+    },
+    "LoginUser": {
+      "document": "登录",
+      "input": "LoginUserRequest",
+      "name": "登录",
+      "output": "LoginUserResponse"
+    },
+    "RegisterUser": {
+      "document": "注册用户",
+      "input": "RegisterUserRequest",
+      "name": "注册用户",
+      "output": "RegisterUserResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-08-17",
+    "api_brief": "介绍如何使用API对低代码互动课堂进行操作，包括课堂管理，用户管理，应用管理等",
+    "serviceNameCN": "低代码互动课堂",
+    "serviceShortName": "lcic"
+  },
+  "objects": {
+    "CreateRoomRequest": {
+      "document": "CreateRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预定的房间开始时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预定的房间结束时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师",
+          "example": "abc",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "老师ID。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "助教Id列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "录制布局。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordLayout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoomResponse": {
+      "document": "CreateRoom返回参数结构体",
+      "members": [
+        {
+          "document": "房间ID。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSupervisorRequest": {
+      "document": "CreateSupervisor请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateSupervisorResponse": {
+      "document": "CreateSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomRequest": {
+      "document": "DescribeRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间Id。",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomResponse": {
+      "document": "DescribeRoom返回参数结构体",
+      "members": [
+        {
+          "document": "房间名称。",
+          "example": "房间名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预定的房间开始时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预定的房间结束时间，unix时间戳。",
+          "example": "1659600138",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "老师ID。",
+          "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
+          "member": "string",
+          "name": "TeacherId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "example": "1",
+          "member": "uint64",
+          "name": "Resolution",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxMicNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoMic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioQuality",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师",
+          "example": "video",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisableRecord",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "助教Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Assistants",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRequest": {
+      "document": "DescribeUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户Id。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResponse": {
+      "document": "DescribeUser返回参数结构体",
+      "members": [
+        {
+          "document": "应用Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户昵称。",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户头像Url。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOriginIdRequest": {
+      "document": "LoginOriginId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。",
+          "example": "userid",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOriginIdResponse": {
+      "document": "LoginOriginId返回参数结构体",
+      "members": [
+        {
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abae3faef12345",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserRequest": {
+      "document": "LoginUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "注册获取的用户id。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginUserResponse": {
+      "document": "LoginUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abc",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterUserRequest": {
+      "document": "RegisterUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户名称。",
+          "example": "nickname",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。",
+          "example": "id12345",
+          "member": "string",
+          "name": "OriginId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户头像。",
+          "example": "abc",
+          "member": "string",
+          "name": "Avatar",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterUserResponse": {
+      "document": "RegisterUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户Id。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "登录/注册成功后返回登录态token。有效期7天。",
+          "example": "abae3faef12345",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}
