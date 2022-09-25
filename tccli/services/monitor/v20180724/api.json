@@ -471,7 +471,7 @@
     "ModifyAlarmPolicyInfo": {
       "document": "告警2.0编辑告警策略基本信息，包括策略名、备注",
       "input": "ModifyAlarmPolicyInfoRequest",
-      "name": "编辑告警策略基本信息",
+      "name": "修改告警策略基本信息",
       "output": "ModifyAlarmPolicyInfoResponse"
     },
     "ModifyAlarmPolicyNotice": {
@@ -1155,6 +1155,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "通知模版绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1524,6 +1535,28 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略是否是全部对象策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsBindAll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1745,6 +1778,28 @@
           "name": "ProductId",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ValueMax",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ValueMin",
+          "required": false,
+          "type": "float",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -2420,7 +2475,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2429,7 +2485,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2438,7 +2495,8 @@
           "member": "string",
           "name": "NoticeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2447,7 +2505,8 @@
           "member": "string",
           "name": "NoticeLanguage",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2456,7 +2515,8 @@
           "member": "UserNotice",
           "name": "UserNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2465,7 +2525,8 @@
           "member": "URLNotice",
           "name": "URLNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2474,7 +2535,18 @@
           "member": "CLSNotice",
           "name": "CLSNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模版绑定的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2489,7 +2561,8 @@
           "name": "NoticeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2510,7 +2583,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2519,7 +2593,8 @@
           "member": "string",
           "name": "PolicyName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2528,7 +2603,8 @@
           "member": "string",
           "name": "MonitorType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2537,7 +2613,8 @@
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2546,7 +2623,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2555,7 +2633,8 @@
           "member": "int64",
           "name": "Enable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2564,7 +2643,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2573,7 +2653,8 @@
           "member": "int64",
           "name": "ConditionTemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2582,7 +2663,8 @@
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2591,7 +2673,8 @@
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2600,7 +2683,8 @@
           "member": "string",
           "name": "NoticeIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2609,7 +2693,8 @@
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2618,7 +2703,8 @@
           "member": "AlarmPolicyFilter",
           "name": "Filter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2627,7 +2713,28 @@
           "member": "string",
           "name": "GroupBy",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模版绑定的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志告警信息",
+          "example": "无",
+          "member": "LogAlarmReq",
+          "name": "LogAlarmReqInfo",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2642,7 +2749,8 @@
           "name": "PolicyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
@@ -2651,7 +2759,8 @@
           "name": "OriginId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3767,18 +3876,22 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警通知模板id列表",
+          "example": "[\"notice-235h325y\",\"notice-h25hj534h\"]",
           "member": "string",
           "name": "NoticeIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3801,18 +3914,22 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略 ID 列表",
+          "example": "[\"policy-289ghn129\",\"policy-3u3h90h3j\"]",
           "member": "string",
           "name": "PolicyIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4814,7 +4931,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4823,7 +4941,8 @@
           "member": "string",
           "name": "NoticeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4838,7 +4957,8 @@
           "name": "Notice",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4859,7 +4979,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4868,7 +4989,8 @@
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4877,7 +4999,8 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4886,7 +5009,8 @@
           "member": "string",
           "name": "Order",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4895,7 +5019,8 @@
           "member": "int64",
           "name": "OwnerUid",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4904,7 +5029,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4913,7 +5039,8 @@
           "member": "string",
           "name": "ReceiverType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4922,7 +5049,8 @@
           "member": "int64",
           "name": "UserIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4931,7 +5059,8 @@
           "member": "int64",
           "name": "GroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4940,7 +5069,18 @@
           "member": "string",
           "name": "NoticeIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模版根据标签过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4955,7 +5095,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "告警通知模板列表",
@@ -4964,7 +5105,8 @@
           "name": "Notices",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4985,7 +5127,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4994,7 +5137,8 @@
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5003,7 +5147,8 @@
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5012,7 +5157,8 @@
           "member": "string",
           "name": "PolicyName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5021,7 +5167,8 @@
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5030,7 +5177,8 @@
           "member": "string",
           "name": "Namespaces",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5039,7 +5187,8 @@
           "member": "string",
           "name": "Dimensions",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5048,7 +5197,8 @@
           "member": "int64",
           "name": "ReceiverUids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5057,7 +5207,8 @@
           "member": "int64",
           "name": "ReceiverGroups",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5066,7 +5217,8 @@
           "member": "string",
           "name": "PolicyType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5075,7 +5227,8 @@
           "member": "string",
           "name": "Field",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5084,7 +5237,8 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5093,7 +5247,8 @@
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5102,7 +5257,8 @@
           "member": "string",
           "name": "NoticeIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5111,7 +5267,8 @@
           "member": "string",
           "name": "RuleTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5120,7 +5277,8 @@
           "member": "int64",
           "name": "Enable",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5129,7 +5287,8 @@
           "member": "int64",
           "name": "NotBindingNoticeRule",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5138,7 +5297,8 @@
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5147,7 +5307,8 @@
           "member": "int64",
           "name": "NeedCorrespondence",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5156,7 +5317,8 @@
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5165,7 +5327,38 @@
           "member": "string",
           "name": "OneClickPolicyType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤",
+          "example": "1",
+          "member": "int64",
+          "name": "NotBindAll",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤",
+          "example": "1",
+          "member": "int64",
+          "name": "NotInstanceGroup",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略根据标签过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5180,7 +5373,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "策略数组",
@@ -5189,7 +5383,8 @@
           "name": "Policies",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5206,18 +5401,22 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略ID",
+          "example": "policy-t1pvz47f",
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5227,10 +5426,13 @@
       "members": [
         {
           "document": "策略详情",
+          "example": "无",
           "member": "AlarmPolicy",
           "name": "Policy",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11073,6 +11275,95 @@
       ],
       "usage": "out"
     },
+    "LogAlarmReq": {
+      "document": "日志告警请求信息",
+      "members": [
+        {
+          "default": "",
+          "document": "apm实例id",
+          "example": "fake-instanceId",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "检索条件信息",
+          "example": "无",
+          "member": "LogFilterInfo",
+          "name": "Filter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警合并开启/暂停",
+          "example": "1",
+          "member": "string",
+          "name": "AlarmMerge",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警合并时间",
+          "example": "30",
+          "member": "string",
+          "name": "AlarmMergeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "LogFilterInfo": {
+      "document": "日志告警检索条件结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名",
+          "example": "k1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "比较符号",
+          "example": "eq",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "字段值",
+          "example": "val1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ManagementCommand": {
       "document": "Prometheus Agent 管理命令行",
       "members": [
@@ -11529,7 +11820,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11538,7 +11830,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11547,7 +11840,8 @@
           "member": "string",
           "name": "NoticeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11556,7 +11850,8 @@
           "member": "string",
           "name": "NoticeLanguage",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11565,7 +11860,8 @@
           "member": "string",
           "name": "NoticeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11574,7 +11870,8 @@
           "member": "UserNotice",
           "name": "UserNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11583,7 +11880,8 @@
           "member": "URLNotice",
           "name": "URLNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11592,7 +11890,8 @@
           "member": "CLSNotice",
           "name": "CLSNotices",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11619,7 +11918,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11628,7 +11928,8 @@
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11637,7 +11938,8 @@
           "member": "int64",
           "name": "ConditionTemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11646,7 +11948,8 @@
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11655,7 +11958,8 @@
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11664,7 +11968,8 @@
           "member": "AlarmPolicyFilter",
           "name": "Filter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11673,7 +11978,18 @@
           "member": "string",
           "name": "GroupBy",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志告警创建请求参数信息",
+          "example": "无",
+          "member": "LogAlarmReq",
+          "name": "LogAlarmReqInfo",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11696,34 +12012,42 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-298gn92",
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "要修改的字段 NAME=策略名称 REMARK=策略备注",
+          "example": "NAME",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "修改后的值",
+          "example": "新的云服务器告警策略",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11750,7 +12074,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11759,7 +12084,8 @@
           "member": "string",
           "name": "PolicyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11768,7 +12094,8 @@
           "member": "string",
           "name": "NoticeIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11777,7 +12104,8 @@
           "member": "string",
           "name": "PolicyIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11800,26 +12128,32 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-2g22g82",
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "启停状态 0=停用 1=启用",
+          "example": "0",
           "member": "int64",
           "name": "Enable",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11842,26 +12176,32 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-29ng82fs",
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略触发任务列表，空数据代表解绑",
+          "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13888,18 +14228,22 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-jfg9hg2g2",
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13915,6 +14259,34 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签key",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签value",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "TagInstance": {
       "document": "策略列表详情标签返回体",

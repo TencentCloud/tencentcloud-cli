@@ -90,6 +90,12 @@
       "name": "域名解析量统计",
       "output": "DescribeDomainAnalyticsResponse"
     },
+    "DescribeDomainAndUin": {
+      "document": "获取域名信息及归属账号",
+      "input": "DescribeDomainAndUinRequest",
+      "name": "获取域名信息及归属账号",
+      "output": "DescribeDomainAndUinResponse"
+    },
     "DescribeDomainGroupList": {
       "document": "获取域名分组列表",
       "input": "DescribeDomainGroupListRequest",
@@ -1870,6 +1876,74 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAndUinRequest": {
+      "document": "DescribeDomainAndUin请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAndUinResponse": {
+      "document": "DescribeDomainAndUin返回参数结构体",
+      "members": [
+        {
+          "document": "域名归属uin",
+          "example": "11111111111",
+          "member": "string",
+          "name": "QcloudUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "是否是使用DNSPod做解析服务",
+          "example": "yes",
+          "member": "string",
+          "name": "IsDNSPodNS",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "系统为域名分配的有效DNS",
+          "example": "[\"ns3.dnsv2.com\", \"ns4.dnsv2.com\"]",
+          "member": "string",
+          "name": "EffectiveDNS",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "域名的状态，正常：enbale，暂停：pause，封禁：spam，回滚中：rollback",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

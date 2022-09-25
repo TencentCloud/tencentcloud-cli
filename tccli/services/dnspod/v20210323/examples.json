@@ -138,6 +138,14 @@
         "title": "域名解析量统计"
       }
     ],
+    "DescribeDomainAndUin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAndUin\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"QcloudUin\": \"11111111111\",\n        \"IsDNSPodNS\": \"yes\",\n        \"EffectiveDNS\": [\n            \"ns3.dnsv2.com\",\n            \"ns4.dnsv2.com\"\n        ],\n        \"Status\": \"enable\"\n    }\n}",
+        "title": "获取域名信息及归属账号"
+      }
+    ],
     "DescribeDomainGroupList": [
       {
         "document": "",

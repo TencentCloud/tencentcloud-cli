@@ -2173,26 +2173,42 @@
         {
           "default": "",
           "document": "实例 Id",
+          "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "触发器参数",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "命名空间",
+          "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "产品名称，非空时创建的 webhook 将被隐藏",
+          "example": "eks.imc",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2202,10 +2218,13 @@
       "members": [
         {
           "document": "新建的触发器",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5398,34 +5417,52 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分页单页数量",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "分页偏移量",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "命名空间",
+          "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -5435,17 +5472,23 @@
       "members": [
         {
           "document": "触发器总数",
+          "example": "130",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "触发器列表",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Triggers",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

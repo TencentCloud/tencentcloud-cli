@@ -12,7 +12,8 @@ tccli monitor DescribeAlarmNotices --cli-unfold-argument  \
     --ReceiverType  \
     --PageNumber 1 \
     --PageSize 20 \
-    --Order DESC
+    --Order DESC \
+    --NoticeIds notice-ah28cv9d
 ```
 
 Output: 
@@ -21,40 +22,75 @@ Output:
     "Response": {
         "Notices": [
             {
-                "Id": "notice-lc0bjcrq",
-                "Name": "系统预设通知模板",
-                "UpdatedAt": "2020-10-15 22:42:32",
-                "UpdatedBy": "789789789",
-                "NoticeType": "ALL",
+                "AMPConsumerId": "xx",
+                "URLNotices": [
+                    {
+                        "ValidationCode": "xx",
+                        "URL": "xx",
+                        "IsValid": 0,
+                        "Weekday": [
+                            0
+                        ],
+                        "StartTime": 0,
+                        "EndTime": 0
+                    }
+                ],
+                "Name": "xx",
+                "NoticeType": "xx",
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "CLSNotices": [
+                    {
+                        "TopicId": "xx",
+                        "Region": "xx",
+                        "Enable": 0,
+                        "LogSetId": "xx"
+                    }
+                ],
+                "PolicyIds": [
+                    "xx"
+                ],
                 "UserNotices": [
                     {
-                        "ReceiverType": "USER",
-                        "UserIds": [
-                            1234567
-                        ],
-                        "GroupIds": null,
-                        "StartTime": 0,
-                        "EndTime": 86399,
                         "NoticeWay": [
                             "SMS",
                             "EMAIL"
                         ],
-                        "PhoneOrder": null,
-                        "PhoneCircleTimes": 0,
-                        "PhoneInnerInterval": 0,
-                        "PhoneCircleInterval": 0,
                         "NeedPhoneArriveNotice": 0,
-                        "PhoneCallType": "CIRCLE"
+                        "PhoneOrder": [
+                            0
+                        ],
+                        "PhoneCallType": "xx",
+                        "UserIds": [
+                            1234567
+                        ],
+                        "ReceiverType": "xx",
+                        "PhoneCircleInterval": 0,
+                        "GroupIds": [
+                            0
+                        ],
+                        "StartTime": 0,
+                        "PhoneCircleTimes": 0,
+                        "EndTime": 86399,
+                        "PhoneInnerInterval": 0,
+                        "Weekday": [
+                            0
+                        ]
                     }
                 ],
-                "URLNotices": [],
                 "IsPreset": 1,
-                "NoticeLanguage": "zh-CN",
-                "PolicyIds": []
+                "UpdatedBy": "xx",
+                "UpdatedAt": "xx",
+                "NoticeLanguage": "xx",
+                "Id": "xx"
             }
         ],
-        "RequestId": "mcy414ov4yom5l9lcam6phul347qqv41",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```

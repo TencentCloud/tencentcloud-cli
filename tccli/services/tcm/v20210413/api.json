@@ -805,6 +805,45 @@
       ],
       "type": "object"
     },
+    "CrossRegionConfig": {
+      "document": "负载均衡跨域设置",
+      "members": [
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "CrossRegionID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "跨地域类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CrossTarget",
+          "member": "string",
+          "name": "CrossType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "CrossVpcID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "CustomPromConfig": {
       "document": "第三方 Prometheus 配置参数",
       "members": [
@@ -1899,6 +1938,17 @@
           "example": "无",
           "member": "ExtensiveClusters",
           "name": "ExtensiveClusters",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "负载均衡跨地域配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossRegionConfig",
+          "name": "CrossRegionConfig",
           "required": false,
           "type": "object",
           "value_allowed_null": true,
