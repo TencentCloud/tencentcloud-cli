@@ -16,6 +16,14 @@
         "title": "创建弹性伸缩策略组合"
       }
     ],
+    "CreateApplicationService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationService\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"Service\": {\n        \"ExternalIp\": \"xx\",\n        \"VpcId\": \"xx\",\n        \"PortMappingItemList\": [\n            {\n                \"Protocol\": \"xx\",\n                \"TargetPort\": 0,\n                \"Port\": 0\n            }\n        ],\n        \"Yaml\": \"xx\",\n        \"LoadBalanceId\": \"xx\",\n        \"ServiceName\": \"xx\",\n        \"ClusterIp\": \"xx\",\n        \"SubnetId\": \"xx\",\n        \"Type\": \"xx\",\n        \"Ports\": [\n            0\n        ]\n    },\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增访问方式"
+      }
+    ],
     "CreateConfigData": [
       {
         "document": "创建配置",
@@ -72,6 +80,14 @@
         "title": "修改版本规格"
       }
     ],
+    "DeleteApplicationService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationService\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除一条访问方式"
+      }
+    ],
     "DeleteIngress": [
       {
         "document": "删除 Ingress 规则",
@@ -116,6 +132,14 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationPods\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"Offset\": 0,\n    \"SourceChannel\": 0,\n    \"Limit\": 0,\n    \"PodName\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Limit\": 0,\n            \"RequestId\": \"xx\",\n            \"PodList\": [\n                {\n                    \"Webshell\": \"xx\",\n                    \"Status\": \"xx\",\n                    \"RestartCount\": 0,\n                    \"Zone\": \"xx\",\n                    \"PodId\": \"xx\",\n                    \"DeployVersion\": \"xx\",\n                    \"PodIp\": \"xx\",\n                    \"ContainerState\": \"xx\",\n                    \"Ready\": true,\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"Offset\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取应用实例列表"
+      }
+    ],
+    "DescribeApplicationServiceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationServiceList\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ApplicationId\": \"xx\",\n    \"SourceChannel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ApplicationName\": \"xx\",\n            \"ExternalIp\": \"xx\",\n            \"Name\": \"xx\",\n            \"ApplicationId\": \"xx\",\n            \"AllIpDone\": true,\n            \"PortMappings\": [\n                {\n                    \"Protocol\": \"xx\",\n                    \"ServiceName\": \"xx\",\n                    \"TargetPort\": 0,\n                    \"Port\": 0\n                }\n            ],\n            \"Yaml\": \"xx\",\n            \"LoadBalanceId\": \"xx\",\n            \"ServicePortMappingList\": [\n                {\n                    \"ExternalIp\": \"xx\",\n                    \"VpcId\": \"xx\",\n                    \"PortMappingItemList\": [\n                        {\n                            \"Protocol\": \"xx\",\n                            \"TargetPort\": 0,\n                            \"Port\": 0\n                        }\n                    ],\n                    \"Yaml\": \"xx\",\n                    \"LoadBalanceId\": \"xx\",\n                    \"ServiceName\": \"xx\",\n                    \"ClusterIp\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Ports\": [\n                        0\n                    ]\n                }\n            ],\n            \"VersionName\": \"xx\",\n            \"ClusterIp\": [\n                \"xx\"\n            ],\n            \"SubnetId\": \"xx\",\n            \"Type\": \"xx\",\n            \"Ports\": [\n                0\n            ],\n            \"EnableRegistryNextDeploy\": 0,\n            \"FlushAll\": true\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询应用访问方式列表"
       }
     ],
     "DescribeApplications": [
@@ -292,6 +316,14 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationReplicas\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Replicas\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改版本规格"
+      }
+    ],
+    "ModifyApplicationService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationService\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"Service\": {\n        \"ApplicationName\": \"xx\",\n        \"ExternalIp\": \"xx\",\n        \"Name\": \"xx\",\n        \"ApplicationId\": \"xx\",\n        \"AllIpDone\": true,\n        \"PortMappings\": [\n            {\n                \"Protocol\": \"xx\",\n                \"ServiceName\": \"xx\",\n                \"TargetPort\": 0,\n                \"Port\": 0\n            }\n        ],\n        \"Yaml\": \"xx\",\n        \"LoadBalanceId\": \"xx\",\n        \"ServicePortMappingList\": [\n            {\n                \"ExternalIp\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"PortMappingItemList\": [\n                    {\n                        \"Protocol\": \"xx\",\n                        \"TargetPort\": 0,\n                        \"Port\": 0\n                    }\n                ],\n                \"Yaml\": \"xx\",\n                \"LoadBalanceId\": \"xx\",\n                \"ServiceName\": \"xx\",\n                \"ClusterIp\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"Type\": \"xx\",\n                \"Ports\": [\n                    0\n                ]\n            }\n        ],\n        \"VersionName\": \"xx\",\n        \"ClusterIp\": [\n            \"xx\"\n        ],\n        \"SubnetId\": \"xx\",\n        \"Type\": \"xx\",\n        \"Ports\": [\n            0\n        ],\n        \"EnableRegistryNextDeploy\": 0,\n        \"FlushAll\": true\n    },\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改服务访问方式列表"
       }
     ],
     "ModifyConfigData": [

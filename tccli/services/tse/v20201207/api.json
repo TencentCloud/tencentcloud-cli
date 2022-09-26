@@ -439,12 +439,12 @@
         },
         {
           "default": "",
-          "document": "翻页从第几个开始获取",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
+          "document": "实例分组id",
+          "example": "group-xxx2345s",
+          "member": "string",
+          "name": "GroupId",
           "required": false,
-          "type": "int",
+          "type": "string",
           "visibility": 1
         },
         {
@@ -453,6 +453,16 @@
           "example": "100",
           "member": "int64",
           "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "翻页从第几个开始获取",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
           "required": false,
           "type": "int",
           "visibility": 1

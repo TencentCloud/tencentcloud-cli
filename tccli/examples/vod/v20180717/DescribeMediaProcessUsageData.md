@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vod DescribeMediaProcessUsageData --cli-unfold-argument  \
-    --StartTime 2020-09-07T00:00:00+08:00 \
     --EndTime 2020-09-09T23:59:59+08:00 \
-    --Type Transcoding-TESHD
+    --Type Transcoding-TESHD \
+    --StartTime 2020-09-07T00:00:00+08:00
 ```
 
 Output: 

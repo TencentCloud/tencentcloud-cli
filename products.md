@@ -38,14 +38,14 @@
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2022-09-20 06:11:19 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2022-07-04 06:06:47 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2022-06-27 06:17:15 |
-| ckafka | [消息队列 Ckafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-09-23 06:12:34 |
+| ckafka | [消息队列 Ckafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-09-27 06:11:12 |
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2022-09-22 06:13:13 |
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2022-07-19 06:18:47 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2022-06-22 06:15:13 |
 | cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2022-09-22 06:14:01 |
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | 2022-08-29 15:55:29 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2022-03-08 08:03:46 |
-| cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2022-09-15 06:36:15 |
+| cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2022-09-27 06:13:14 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2022-09-21 06:15:59 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2022-09-15 10:39:40 |
 | cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-09-22 06:18:38 |
@@ -105,8 +105,8 @@
 | mrs | [医疗报告结构化](http://document.tencentcloudapi.woa.com/document/product/1314) | 2022-06-28 06:00:58 |
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | 2022-03-08 08:10:37 |
 | nlp | [自然语言处理](http://document.tencentcloudapi.woa.com/document/product/271) | 2022-06-17 06:18:16 |
-| oceanus | [流计算 Oceanus](http://document.tencentcloudapi.woa.com/document/product/849) | 2022-08-30 11:17:57 |
-| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2022-09-22 06:33:59 |
+| oceanus | [流计算 Oceanus](http://document.tencentcloudapi.woa.com/document/product/849) | 2022-09-27 06:29:37 |
+| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2022-09-27 06:29:48 |
 | organization | [企业组织](http://document.tencentcloudapi.woa.com/document/product/850) | 2022-09-23 06:34:54 |
 | partners | [渠道合作伙伴](http://document.tencentcloudapi.woa.com/document/product/563) | 2022-09-09 06:26:53 |
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | 2022-03-08 08:00:14 |
@@ -141,7 +141,7 @@
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2022-09-26 06:44:39 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2022-03-08 08:00:15 |
 | tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-09-22 06:42:09 |
-| tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2022-09-08 11:48:07 |
+| tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2022-09-27 06:37:12 |
 | tic | [腾讯云IaC平台](http://document.tencentcloudapi.woa.com/document/product/1213) | 2022-03-08 08:02:10 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2022-03-08 08:12:22 |
 | tiems | [腾讯云 TI 平台 TI-EMS ](http://document.tencentcloudapi.woa.com/document/product/1120) | 2022-07-19 06:12:58 |
@@ -152,14 +152,14 @@
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2022-03-08 08:03:00 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2022-09-16 10:39:08 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2022-09-20 06:43:16 |
-| tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2022-08-29 15:41:37 |
+| tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2022-09-27 06:38:37 |
 | tsf | [腾讯微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2022-07-29 10:48:01 |
 | tsw | [腾讯微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2022-03-08 08:17:14 |
 | tts | [语音合成](http://document.tencentcloudapi.woa.com/document/product/1073) | 2022-09-09 06:32:01 |
 | ump | [客流数字化平台](http://document.tencentcloudapi.woa.com/document/product/1320) | 2022-03-08 08:02:13 |
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | 2022-09-16 10:41:19 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | 2022-03-08 08:02:05 |
-| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2022-09-16 10:41:28 |
+| vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2022-09-27 06:40:12 |
 | vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2022-09-26 06:51:13 |
 | waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2022-09-15 06:40:09 |
 | wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2022-04-04 08:00:44 |

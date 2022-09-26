@@ -1,3 +1,89 @@
+# Release 3.0.618.1
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 39 次发布
+
+发布时间：2022-09-27 06:13:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：ChannelOrderId
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 18 次发布
+
+发布时间：2022-09-27 06:29:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：IsNeedManageNode
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 21 次发布
+
+发布时间：2022-09-27 06:37:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)
+* [DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)
+* [DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)
+* [ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 腾讯云微服务引擎(tse) 版本：2020-12-07
+
+### 第 16 次发布
+
+发布时间：2022-09-27 06:38:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudNativeAPIGatewayNodes](http://document.tencentcloudapi.woa.com/document/product/1364/75621)
+
+	* 新增入参：GroupId
+
+
+
+
 # Release 3.0.617.1
 
 ## DNSPod(dnspod) 版本：2021-03-23

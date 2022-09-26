@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## DNSPod(dnspod) 版本：2021-03-23
+## 企业收付平台(cpdp) 版本：2019-08-20
 
-### 第 10 次发布
+### 第 39 次发布
 
-发布时间：2022-09-26 06:22:50
+发布时间：2022-09-27 06:13:14
 
 本次发布包含了以下内容：
 
@@ -12,15 +12,22 @@
 
 新增接口：
 
-* [DescribeDomainAndUin](http://document.tencentcloudapi.woa.com/document/product/1427/76377)
+* [QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：ChannelOrderId
 
 
 
-## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 19 次发布
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-发布时间：2022-09-26 06:25:39
+### 第 18 次发布
+
+发布时间：2022-09-27 06:29:37
 
 本次发布包含了以下内容：
 
@@ -28,18 +35,41 @@
 
 修改数据结构：
 
-* [TaskDetail](http://document.tencentcloudapi.woa.com/document/product/845/30634#TaskDetail)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
 
-	* 新增成员：ElapsedTime
-
-
+	* 新增成员：IsNeedManageNode
 
 
-## 云监控(monitor) 版本：2018-07-24
 
-### 第 29 次发布
 
-发布时间：2022-09-26 06:34:24
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 21 次发布
+
+发布时间：2022-09-27 06:37:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)
+* [DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)
+* [DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)
+* [ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 腾讯云微服务引擎(tse) 版本：2020-12-07
+
+### 第 16 次发布
+
+发布时间：2022-09-27 06:38:37
 
 本次发布包含了以下内容：
 
@@ -47,115 +77,9 @@
 
 修改接口：
 
-* [CreateAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/51288)
+* [DescribeCloudNativeAPIGatewayNodes](http://document.tencentcloudapi.woa.com/document/product/1364/75621)
 
-	* 新增入参：Tags
-
-* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
-
-	* 新增入参：Tags, LogAlarmReqInfo
-
-* [DescribeAlarmNotices](http://document.tencentcloudapi.woa.com/document/product/248/51280)
-
-	* 新增入参：Tags
-
-* [DescribeAlarmPolicies](http://document.tencentcloudapi.woa.com/document/product/248/51279)
-
-	* 新增入参：NotBindAll, NotInstanceGroup, Tags
-
-* [ModifyAlarmPolicyCondition](http://document.tencentcloudapi.woa.com/document/product/248/51276)
-
-	* 新增入参：LogAlarmReqInfo
-
-
-新增数据结构：
-
-* [LogAlarmReq](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogAlarmReq)
-* [LogFilterInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogFilterInfo)
-* [Tag](http://document.tencentcloudapi.woa.com/document/product/248/30354#Tag)
-
-修改数据结构：
-
-* [AlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmNotice)
-
-	* 新增成员：Tags
-
-* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
-
-	* 新增成员：IsBindAll, Tags
-
-* [AlarmPolicyRule](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicyRule)
-
-	* 新增成员：ValueMax, ValueMin
-
-
-
-
-## 服务网格(tcm) 版本：2021-04-13
-
-### 第 11 次发布
-
-发布时间：2022-09-26 06:44:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [CrossRegionConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#CrossRegionConfig)
-
-修改数据结构：
-
-* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/1593/75052#LoadBalancer)
-
-	* 新增成员：CrossRegionConfig
-
-
-
-
-## 容器镜像服务(tcr) 版本：2019-09-24
-
-### 第 9 次发布
-
-发布时间：2022-09-26 06:44:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateWebhookTrigger](http://document.tencentcloudapi.woa.com/document/product/1141/43531)
-
-	* 新增入参：Product
-
-* [DescribeWebhookTrigger](http://document.tencentcloudapi.woa.com/document/product/1141/43529)
-
-	* 新增入参：Product
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 38 次发布
-
-发布时间：2022-09-26 06:51:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
-
-	* 新增成员：Egress, BusinessType
-
-* [BandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/15824#BandwidthPackage)
-
-	* 新增成员：Egress
+	* 新增入参：GroupId
 
 
 
@@ -10585,6 +10509,25 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 39 次发布
+
+发布时间：2022-09-27 06:13:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：ChannelOrderId
+
+
 ### 第 38 次发布
 
 发布时间：2022-09-09 06:38:10
@@ -15707,7 +15650,7 @@
 
 新增接口：
 
-* [[DescribeDomainAndUin](http://document.tencentcloudapi.woa.com/document/product/1427/76377)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDomainAndUin](http://document.tencentcloudapi.woa.com/document/product/1427/76377)
 
 ### 第 9 次发布
 
@@ -24248,9 +24191,9 @@
 
 新增数据结构：
 
-* [[LogAlarmReq](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogAlarmReq)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[LogAlarmReq](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogAlarmReq))
-* [[LogFilterInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogFilterInfo)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[LogFilterInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogFilterInfo))
-* [[Tag](http://document.tencentcloudapi.woa.com/document/product/248/30354#Tag)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[Tag](http://document.tencentcloudapi.woa.com/document/product/248/30354#Tag))
+* [LogAlarmReq](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogAlarmReq)
+* [LogFilterInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#LogFilterInfo)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/248/30354#Tag)
 
 修改数据结构：
 
@@ -25924,6 +25867,21 @@
 
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 18 次发布
+
+发布时间：2022-09-27 06:29:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：IsNeedManageNode
+
 
 ### 第 17 次发布
 
@@ -32467,7 +32425,7 @@
 
 新增数据结构：
 
-* [[CrossRegionConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#CrossRegionConfig)](http://document.tencentcloudapi.woa.com/document/product/1593/75052#[CrossRegionConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#CrossRegionConfig))
+* [CrossRegionConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#CrossRegionConfig)
 
 修改数据结构：
 
@@ -33797,6 +33755,21 @@
 
 
 ## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 21 次发布
+
+发布时间：2022-09-27 06:37:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 20 次发布
 
@@ -36615,6 +36588,21 @@
 
 
 ## 腾讯云微服务引擎(tse) 版本：2020-12-07
+
+### 第 16 次发布
+
+发布时间：2022-09-27 06:38:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudNativeAPIGatewayNodes](http://document.tencentcloudapi.woa.com/document/product/1364/75621)
+
+	* 新增入参：GroupId
+
 
 ### 第 15 次发布
 
