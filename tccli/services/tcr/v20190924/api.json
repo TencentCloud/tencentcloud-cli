@@ -2133,6 +2133,7 @@
         {
           "default": "",
           "document": "实例 Id",
+          "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2141,6 +2142,7 @@
         {
           "default": "",
           "document": "触发器参数",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "required": true,
@@ -2149,6 +2151,7 @@
         {
           "default": "",
           "document": "命名空间",
+          "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -2162,8 +2165,10 @@
       "members": [
         {
           "document": "新建的触发器",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5253,6 +5258,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5261,6 +5267,7 @@
         {
           "default": "",
           "document": "分页单页数量",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5269,6 +5276,7 @@
         {
           "default": "",
           "document": "分页偏移量",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5277,6 +5285,7 @@
         {
           "default": "",
           "document": "命名空间",
+          "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5290,15 +5299,19 @@
       "members": [
         {
           "document": "触发器总数",
+          "example": "130",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "触发器列表",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Triggers",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

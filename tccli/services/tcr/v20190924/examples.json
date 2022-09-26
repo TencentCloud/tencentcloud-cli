@@ -214,9 +214,9 @@
     ],
     "CreateWebhookTrigger": [
       {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateWebhookTrigger\r\n&<公共请求参数>\r\n&RegistryId=tcr-7s2d14fn\r\n&Namespace=someNs\r\n&Trigger.Name=someTrigger&Trigger.Description=触发器描述\r\n&Trigger.Targets.0.Address=http://httpbin.org/post\r\n&Trigger.Targets.0.Headers.0.Key=X-Custom-Header\r\n&Trigger.Targets.0.Headers.0.Values.0=abc\r\n&Trigger.EventTypes.0=pullImage\r\n&Trigger.Condition=.*\r\n&Trigger.Enabled=true",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db4441cd-1027-4f95-9fe1-df4b85470925\"\n    }\n}",
+        "document": "创建触发器",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebhookTrigger\n<公共请求参数>\n\n{\n    \"Namespace\": \"someNs\",\n    \"Trigger\": {\n        \"Name\": \"sometrigger\",\n        \"Enabled\": \"true\",\n        \"EventTypes\": [\n            \"pullImage\"\n        ],\n        \"Targets\": [\n            {\n                \"Headers\": [\n                    {\n                        \"Values\": [\n                            \"abc\"\n                        ],\n                        \"Key\": \"X-Custom-Header\"\n                    }\n                ],\n                \"Address\": \"http://httpbin.org/post\"\n            }\n        ],\n        \"Condition\": \".*\",\n        \"Description\": \"触发器描述\"\n    },\n    \"RegistryId\": \"tcr-7s2d14fn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6942d117-55bb-4aad-9ed0-af8fd4664402\",\n        \"Trigger\": {\n            \"Id\": 20,\n            \"Name\": \"sometrigger\",\n            \"NamespaceId\": 30,\n            \"Description\": \"触发器描述\",\n            \"Targets\": [\n                {\n                    \"Address\": \"http://httpbin.org/post\",\n                    \"Headers\": [\n                        {\n                            \"Key\": \"X-Custom-Header\",\n                            \"Values\": [\n                                \"abc\"\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"EventTypes\": [\n                \"pullImage\"\n            ],\n            \"Enabled\": true,\n            \"Condition\": \".*\"\n        }\n    }\n}",
         "title": "创建触发器"
       }
     ],
@@ -695,7 +695,7 @@
     "DescribeWebhookTrigger": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeWebhookTrigger\r\n&<公共请求参数>\r\n&RegistryId=tcr-7s2d14fn\r\n&Namespace=someNs\r\n&Limit=1",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebhookTrigger\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Namespace\": \"someNs\",\n    \"RegistryId\": \"tcr-7s2d14fn\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7549286-ffb6-486c-98b6-30a4001da260\",\n        \"TotalCount\": 130,\n        \"Triggers\": [\n            {\n                \"Id\": 152,\n                \"Name\": \"someTrigger\",\n                \"Description\": \"触发器描述\",\n                \"Targets\": [\n                    {\n                        \"Address\": \"http://httpbin.org/post\",\n                        \"Headers\": [\n                            {\n                                \"Key\": \"X-Header1\",\n                                \"Values\": [\n                                    \"abc\"\n                                ]\n                            }\n                        ]\n                    }\n                ],\n                \"EventTypes\": [\n                    \"pullImage\"\n                ],\n                \"Enabled\": true,\n                \"Condition\": \".*\"\n            }\n        ]\n    }\n}",
         "title": "查询触发器"
       }

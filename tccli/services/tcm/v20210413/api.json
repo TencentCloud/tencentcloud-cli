@@ -468,6 +468,11 @@
       ],
       "usage": "out"
     },
+    "CrossRegionConfig": {
+      "document": "负载均衡跨域设置",
+      "members": [],
+      "usage": "both"
+    },
     "CustomPromConfig": {
       "document": "第三方 Prometheus 配置参数",
       "members": [
@@ -1184,6 +1189,16 @@
           "example": "无",
           "member": "ExtensiveClusters",
           "name": "ExtensiveClusters",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡跨地域配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossRegionConfig",
+          "name": "CrossRegionConfig",
           "required": false,
           "type": "object",
           "value_allowed_null": true

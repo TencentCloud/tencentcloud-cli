@@ -14,56 +14,80 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fasdfaghash434stsi579ah",
         "Notice": {
-            "Id": "notice-2g892hg8",
-            "Name": "测试-告警通知规则1",
-            "UpdatedAt": "2020-05-01 12:00:00",
-            "UpdatedBy": "112051051047",
-            "NoticeType": "ALL",
-            "NoticeLanguage": "zh-CN",
+            "AMPConsumerId": "xx",
+            "URLNotices": [
+                {
+                    "ValidationCode": "xx",
+                    "URL": "xx",
+                    "IsValid": 0,
+                    "Weekday": [
+                        0
+                    ],
+                    "StartTime": 0,
+                    "EndTime": 0
+                },
+                {
+                    "ValidationCode": "xx",
+                    "URL": "xx",
+                    "IsValid": 0,
+                    "Weekday": [
+                        0
+                    ],
+                    "StartTime": 0,
+                    "EndTime": 0
+                }
+            ],
+            "Name": "xx",
+            "NoticeType": "xx",
+            "CLSNotices": [
+                {
+                    "TopicId": "xx",
+                    "Region": "xx",
+                    "Enable": 0,
+                    "LogSetId": "xx"
+                }
+            ],
+            "UpdatedBy": "xx",
+            "PolicyIds": [
+                "policy-58hbt18"
+            ],
             "UserNotices": [
                 {
-                    "ReceiverType": "USER",
-                    "UserIds": [
-                        168105,
-                        162208
-                    ],
-                    "GroupIds": [],
-                    "StartTime": 0,
-                    "EndTime": 3600,
                     "NoticeWay": [
                         "EMAIL",
                         "CALL"
                     ],
+                    "NeedPhoneArriveNotice": 1,
                     "PhoneOrder": [
                         162208,
                         168105
                     ],
-                    "PhoneCircleTimes": 2,
-                    "PhoneInnerInterval": 60,
+                    "PhoneCallType": "xx",
+                    "UserIds": [
+                        168105,
+                        162208
+                    ],
+                    "ReceiverType": "xx",
                     "PhoneCircleInterval": 60,
-                    "NeedPhoneArriveNotice": 1,
-                    "PhoneCallType": "CIRCLE"
-                }
-            ],
-            "URLNotices": [
-                {
-                    "URL": "http://www.baidu.com/validate",
-                    "IsValid": 0,
-                    "ValidationCode": "1r51tg3"
-                },
-                {
-                    "URL": "https://www.googe.com/validate",
-                    "IsValid": 0,
-                    "ValidationCode": "h4224"
+                    "GroupIds": [
+                        0
+                    ],
+                    "StartTime": 0,
+                    "PhoneCircleTimes": 2,
+                    "EndTime": 3600,
+                    "PhoneInnerInterval": 60,
+                    "Weekday": [
+                        0
+                    ]
                 }
             ],
             "IsPreset": 0,
-            "PolicyIds": [
-                "policy-58hbt18"
-            ]
-        }
+            "UpdatedAt": "xx",
+            "NoticeLanguage": "xx",
+            "Id": "xx"
+        },
+        "RequestId": "xx"
     }
 }
 ```

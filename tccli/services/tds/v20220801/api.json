@@ -1,0 +1,435 @@
+{
+  "actions": {
+    "DescribeFraudBase": {
+      "document": "查询设备风险",
+      "input": "DescribeFraudBaseRequest",
+      "name": "查询设备风险",
+      "output": "DescribeFraudBaseResponse"
+    },
+    "DescribeFraudPremium": {
+      "document": "查询设备标识及风险",
+      "input": "DescribeFraudPremiumRequest",
+      "name": "查询设备标识及风险",
+      "output": "DescribeFraudPremiumResponse"
+    },
+    "DescribeTrustedID": {
+      "document": "查询设备标识",
+      "input": "DescribeTrustedIDRequest",
+      "name": "查询设备标识",
+      "output": "DescribeTrustedIDResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-08-01",
+    "api_brief": "腾讯设备安全服务接口，供企业及用户集成调用，设备安全产品基于实时风险模型、信誉库，通过对可信设备标识多纬度分析，有效识别业务方在业务过程中的欺诈风险，基于接口返回风险标签，联动业务系统进行安全处理。",
+    "serviceNameCN": "设备安全",
+    "serviceShortName": "tds"
+  },
+  "objects": {
+    "DescribeFraudBaseRequest": {
+      "document": "DescribeFraudBase请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端通过SDK获取的设备Token",
+          "example": "eHh4eHh4eHg=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFraudBaseResponse": {
+      "document": "DescribeFraudBase返回参数结构体",
+      "members": [
+        {
+          "document": "App版本信息",
+          "example": "6.8.50",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "品牌",
+          "example": "OPPO",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端IP",
+          "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机型",
+          "example": "PEMM00",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络类型",
+          "example": "1",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用包名",
+          "example": "com.xx.xxx",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "系统版本",
+          "example": "11",
+          "member": "string",
+          "name": "SystemVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SDK版本号",
+          "example": "74",
+          "member": "string",
+          "name": "SdkBuildNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实时风险信息",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "RiskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "离线风险信息",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "HistRiskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFraudPremiumRequest": {
+      "document": "DescribeFraudPremium请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端通过SDK获取的设备Token",
+          "example": "eHh4eHh4eHg=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFraudPremiumResponse": {
+      "document": "DescribeFraudPremium返回参数结构体",
+      "members": [
+        {
+          "document": "App版本信息",
+          "example": "6.8.50",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "品牌",
+          "example": "OPPO",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端IP",
+          "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机型",
+          "example": "PEMM00",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络类型",
+          "example": "1",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用包名",
+          "example": "com.xx.xxx",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "系统版本",
+          "example": "11",
+          "member": "string",
+          "name": "SystemVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SDK版本号",
+          "example": "74",
+          "member": "string",
+          "name": "SdkBuildNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实时风险信息",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "RiskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "离线风险信息",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "HistRiskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备匿名标识",
+          "example": "85ADB490D96D6A0044D00798",
+          "member": "string",
+          "name": "Openid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrustedIDRequest": {
+      "document": "DescribeTrustedID请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端通过SDK获取的设备Token",
+          "example": "eHh4eHh4eHg=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrustedIDResponse": {
+      "document": "DescribeTrustedID返回参数结构体",
+      "members": [
+        {
+          "document": "设备匿名标识",
+          "example": "85ADB490D96D6A0044D00798",
+          "member": "string",
+          "name": "Openid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "App版本信息",
+          "example": "6.8.50",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "品牌",
+          "example": "OPPO",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端IP",
+          "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机型",
+          "example": "PEMM00",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络类型",
+          "example": "1",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用包名",
+          "example": "com.xx.xxx",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "系统版本",
+          "example": "11",
+          "member": "string",
+          "name": "SystemVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SDK版本号",
+          "example": "74",
+          "member": "string",
+          "name": "SdkBuildNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RiskInfo": {
+      "document": "风险信息",
+      "members": [
+        {
+          "default": "",
+          "document": "风险类型",
+          "example": "201",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

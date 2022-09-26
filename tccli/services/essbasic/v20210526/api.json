@@ -1996,7 +1996,7 @@
         },
         {
           "default": "",
-          "document": "是否返回所有组件信息",
+          "document": "是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件",
           "example": "无",
           "member": "bool",
           "name": "QueryAllComponents",
@@ -2005,7 +2005,7 @@
         },
         {
           "default": "",
-          "document": "模糊搜索模板名称",
+          "document": "模糊搜索模板名称，最大长度200",
           "example": "无",
           "member": "string",
           "name": "TemplateName",

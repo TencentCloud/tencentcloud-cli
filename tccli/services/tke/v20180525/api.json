@@ -4212,7 +4212,7 @@
       "members": [
         {
           "default": "",
-          "document": "k8s版本号。可为1.14.4, 1.12.8。",
+          "document": "k8s版本号。可为1.18.4 1.20.6。",
           "example": "1.12.8",
           "member": "string",
           "name": "K8SVersion",
@@ -4257,8 +4257,8 @@
         },
         {
           "default": "",
-          "document": "Serivce 所在子网Id",
-          "example": "subnet-i9sqn2mq",
+          "document": "Service CIDR 或 Serivce 所在子网Id",
+          "example": "192.168.0.0/20 或者 subnet-i9sqn2mq",
           "member": "string",
           "name": "ServiceSubnetId",
           "required": false,

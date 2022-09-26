@@ -401,6 +401,8 @@ include tccli/services/tdid/v20210519/api.json
 include tccli/services/tdid/v20210519/examples.json
 include tccli/services/tdmq/v20200217/api.json
 include tccli/services/tdmq/v20200217/examples.json
+include tccli/services/tds/v20220801/api.json
+include tccli/services/tds/v20220801/examples.json
 include tccli/services/tem/v20210701/api.json
 include tccli/services/tem/v20210701/examples.json
 include tccli/services/tem/v20201221/api.json

@@ -143,7 +143,7 @@
     "CreateEKSCluster": [
       {
         "document": "创建托管集群",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateEKSCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEKSCluster\n<公共请求参数>\n\n{\n    \"ServiceSubnetId\": \"subnet-xxxx\",\n    \"VpcId\": \"vpc-xxx\",\n    \"K8SVersion\": \"1.12.4\",\n    \"ClusterName\": \"for_test\",\n    \"SubnetIds\": [\n        \"subnet-xxxx\"\n    ],\n    \"DnsServers\": [\n        {\n            \"Domain\": \"exam.com\",\n            \"DnsServers\": [\n                \"10.2.2.88:53\"\n            ]\n        }\n    ],\n    \"ClusterDesc\": \"my_test_cluster\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建弹性集群示例"
       }

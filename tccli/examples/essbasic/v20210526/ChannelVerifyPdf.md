@@ -9,7 +9,7 @@ tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
     --Operator.OpenId testxxxx_test1 \
     --FlowId yDRvzUUgxxxxygxxxx4zjEuYdDnsxeT \
     --Agent.ProxyAppId xxxx \
-    --Agent.ProxyOperator.OpenId test1_clara_test1 \
+    --Agent.ProxyOperator.OpenId test1_xxxxx_test1 \
     --Agent.AppId 7f3497f01xxxa35e0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_cxxxx_organization1
 ```
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "PdfVerifyResults": [],
-        "RequestId": "8709904e-cc5b-4f2d-bf67-d1bc7420345f",
+        "RequestId": "8709904xxxxxx7-d1bc7420345f",
         "VerifyResult": 4
     }
 }
@@ -145,42 +145,6 @@ Output:
         ],
         "RequestId": "9c683673-a5f7-4beb-b042-648f67d46fad",
         "VerifyResult": 1
-    }
-}
-```
-
-**Example 3: 示例1**
-
-
-
-Input: 
-
-```
-tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
-    --Operator.OpenId test1_clara_test1 \
-    --Operator.ClientIp  \
-    --Operator.CustomUserId  \
-    --Operator.ProxyIp  \
-    --Operator.Channel  \
-    --FlowId yDR06UUgygq6a3y0UuO4zjEB2A3vK3Pc \
-    --Agent.ProxyAppId  \
-    --Agent.ProxyOperator.OpenId test1_clara_test1 \
-    --Agent.ProxyOperator.ClientIp  \
-    --Agent.ProxyOperator.CustomUserId  \
-    --Agent.ProxyOperator.ProxyIp  \
-    --Agent.ProxyOperator.Channel  \
-    --Agent.AppId 7f3497f015042c9a35e0984a9657b0ec \
-    --Agent.ProxyOrganizationOpenId test1_clara_open_organization1 \
-    --Agent.ProxyOrganizationId 
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PdfVerifyResults": [],
-        "RequestId": "0c1b6a35-7a45-4304-af61-772fe82beaba",
-        "VerifyResult": 4
     }
 }
 ```

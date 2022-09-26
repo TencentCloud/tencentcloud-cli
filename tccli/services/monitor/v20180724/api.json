@@ -471,7 +471,7 @@
     "ModifyAlarmPolicyInfo": {
       "document": "告警2.0编辑告警策略基本信息，包括策略名、备注",
       "input": "ModifyAlarmPolicyInfoRequest",
-      "name": "编辑告警策略基本信息",
+      "name": "修改告警策略基本信息",
       "output": "ModifyAlarmPolicyInfoResponse"
     },
     "ModifyAlarmPolicyNotice": {
@@ -1137,6 +1137,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知模版绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1473,6 +1483,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略是否是全部对象策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsBindAll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1681,6 +1711,26 @@
           "name": "ProductId",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ValueMax",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ValueMin",
+          "required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -2375,6 +2425,15 @@
           "name": "CLSNotices",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版绑定的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2528,6 +2587,24 @@
           "name": "GroupBy",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版绑定的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志告警信息",
+          "example": "无",
+          "member": "LogAlarmReq",
+          "name": "LogAlarmReqInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3618,6 +3695,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3626,6 +3704,7 @@
         {
           "default": "",
           "document": "告警通知模板id列表",
+          "example": "[\"notice-235h325y\",\"notice-h25hj534h\"]",
           "member": "string",
           "name": "NoticeIds",
           "required": true,
@@ -3652,6 +3731,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3660,6 +3740,7 @@
         {
           "default": "",
           "document": "告警策略 ID 列表",
+          "example": "[\"policy-289ghn129\",\"policy-3u3h90h3j\"]",
           "member": "string",
           "name": "PolicyIds",
           "required": true,
@@ -4761,6 +4842,15 @@
           "name": "NoticeIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版根据标签过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4986,6 +5076,33 @@
           "name": "OneClickPolicyType",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤",
+          "example": "1",
+          "member": "int64",
+          "name": "NotBindAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤",
+          "example": "1",
+          "member": "int64",
+          "name": "NotInstanceGroup",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略根据标签过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5026,6 +5143,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -5034,6 +5152,7 @@
         {
           "default": "",
           "document": "告警策略ID",
+          "example": "policy-t1pvz47f",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -5047,8 +5166,10 @@
       "members": [
         {
           "document": "策略详情",
+          "example": "无",
           "member": "AlarmPolicy",
           "name": "Policy",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10625,6 +10746,88 @@
       ],
       "usage": "out"
     },
+    "LogAlarmReq": {
+      "document": "日志告警请求信息",
+      "members": [
+        {
+          "default": "",
+          "document": "apm实例id",
+          "example": "fake-instanceId",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索条件信息",
+          "example": "无",
+          "member": "LogFilterInfo",
+          "name": "Filter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警合并开启/暂停",
+          "example": "1",
+          "member": "string",
+          "name": "AlarmMerge",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警合并时间",
+          "example": "30",
+          "member": "string",
+          "name": "AlarmMergeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogFilterInfo": {
+      "document": "日志告警检索条件结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名",
+          "example": "k1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "比较符号",
+          "example": "eq",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段值",
+          "example": "val1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ManagementCommand": {
       "document": "Prometheus Agent 管理命令行",
       "members": [
@@ -11215,6 +11418,15 @@
           "name": "GroupBy",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志告警创建请求参数信息",
+          "example": "无",
+          "member": "LogAlarmReq",
+          "name": "LogAlarmReqInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11237,6 +11449,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -11245,6 +11458,7 @@
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-298gn92",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -11253,6 +11467,7 @@
         {
           "default": "",
           "document": "要修改的字段 NAME=策略名称 REMARK=策略备注",
+          "example": "NAME",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -11261,6 +11476,7 @@
         {
           "default": "",
           "document": "修改后的值",
+          "example": "新的云服务器告警策略",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -11341,6 +11557,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -11349,6 +11566,7 @@
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-2g22g82",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -11357,6 +11575,7 @@
         {
           "default": "",
           "document": "启停状态 0=停用 1=启用",
+          "example": "0",
           "member": "int64",
           "name": "Enable",
           "required": true,
@@ -11383,6 +11602,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -11391,6 +11611,7 @@
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-29ng82fs",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -11399,6 +11620,7 @@
         {
           "default": "",
           "document": "告警策略触发任务列表，空数据代表解绑",
+          "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
@@ -13295,6 +13517,7 @@
         {
           "default": "",
           "document": "模块名，固定值 monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -13303,6 +13526,7 @@
         {
           "default": "",
           "document": "告警策略 ID",
+          "example": "policy-jfg9hg2g2",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -13322,6 +13546,32 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签key",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签value",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TagInstance": {
       "document": "策略列表详情标签返回体",

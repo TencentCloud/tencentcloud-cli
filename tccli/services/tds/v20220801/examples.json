@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeFraudBase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudBase\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"xx\",\n        \"SdkBuildNo\": \"xx\",\n        \"AppVersion\": \"xx\",\n        \"Platform\": \"xx\",\n        \"SystemVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"Model\": \"xx\",\n        \"PackageName\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询设备标识"
+      }
+    ],
+    "DescribeFraudPremium": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudPremium\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"xx\",\n        \"SdkBuildNo\": \"xx\",\n        \"AppVersion\": \"xx\",\n        \"Platform\": \"xx\",\n        \"SystemVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"Model\": \"xx\",\n        \"PackageName\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"Openid\": \"xx\"\n    }\n}",
+        "title": "查询设备标识"
+      }
+    ],
+    "DescribeTrustedID": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrustedID\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Openid\": \"xx\",\n        \"Brand\": \"xx\",\n        \"SdkBuildNo\": \"xx\",\n        \"AppVersion\": \"xx\",\n        \"Platform\": \"xx\",\n        \"SystemVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"Model\": \"xx\",\n        \"PackageName\": \"xx\",\n        \"ClientIp\": \"xx\"\n    }\n}",
+        "title": "查询设备标识"
+      }
+    ]
+  },
+  "version": "1.0"
+}

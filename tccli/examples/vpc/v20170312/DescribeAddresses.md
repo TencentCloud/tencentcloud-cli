@@ -127,3 +127,72 @@ Output:
 }
 ```
 
+**Example 3: 查询EIP信息**
+
+
+
+Input: 
+
+```
+tccli vpc DescribeAddresses --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 2,
+        "AddressSet": [
+            {
+                "AddressId": "eip-qhx8udkc",
+                "AddressName": "未命名",
+                "AddressIp": "1.14.91.34",
+                "AddressStatus": "UNBIND",
+                "AddressType": "EIP",
+                "InstanceId": "aa",
+                "NetworkInterfaceId": "bb",
+                "PrivateAddressIp": "cc",
+                "IsArrears": false,
+                "IsBlocked": false,
+                "IsEipDirectConnection": false,
+                "EipAlgType": {
+                    "Ftp": true,
+                    "Sip": true
+                },
+                "LocalBgp": false,
+                "CascadeRelease": false,
+                "CreatedTime": "2022-08-11T03:57:05Z",
+                "TagSet": [],
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "Bandwidth": 1,
+                "InternetServiceProvider": "BGP"
+            },
+            {
+                "AddressId": "eip-qygpzm9y",
+                "AddressName": "未命名",
+                "AddressIp": "1.14.90.212",
+                "AddressStatus": "UNBIND",
+                "AddressType": "EIP",
+                "InstanceId": "aa",
+                "NetworkInterfaceId": "bb",
+                "PrivateAddressIp": "cc",
+                "IsArrears": false,
+                "IsBlocked": false,
+                "IsEipDirectConnection": false,
+                "EipAlgType": {
+                    "Ftp": true,
+                    "Sip": true
+                },
+                "LocalBgp": false,
+                "CascadeRelease": false,
+                "CreatedTime": "2022-08-11T03:47:03Z",
+                "TagSet": [],
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "Bandwidth": 1,
+                "InternetServiceProvider": "BGP"
+            }
+        ],
+        "RequestId": "4ead34c4-3112-40fe-bbde-2295eee9d664"
+    }
+}
+```
+
