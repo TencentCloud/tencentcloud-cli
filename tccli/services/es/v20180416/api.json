@@ -6377,6 +6377,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启Altering 外网告警输出",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaAlteringPublicAccess",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6777,7 +6787,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6786,7 +6797,8 @@
           "member": "string",
           "name": "EsVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6795,7 +6807,8 @@
           "member": "bool",
           "name": "CheckOnly",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6804,7 +6817,8 @@
           "member": "string",
           "name": "LicenseType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6813,7 +6827,8 @@
           "member": "uint64",
           "name": "BasicSecurityType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6822,7 +6837,8 @@
           "member": "string",
           "name": "UpgradeMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6831,7 +6847,18 @@
           "member": "bool",
           "name": "CosBackup",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "滚动模式时，是否跳过检查，进行强制重启。默认值为false",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipCheckForceRestart",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

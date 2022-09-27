@@ -29,14 +29,14 @@ Input:
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
     --InstanceId es-xxxxxx \
-    --NodeInfoList.0.Type hotData \
-    --NodeInfoList.0.NodeNum 2 \
     --NodeInfoList.0.NodeType ES.S1.SMALL2 \
-    --NodeInfoList.0.DiskType CLOUD_SSD \
-    --NodeInfoList.0.DiskSize 100 \
-    --NodeInfoList.1.Type dedicatedMaster \
-    --NodeInfoList.1.NodeNum 3 \
-    --NodeInfoList.1.NodeType ES.S1.SMALL2
+    --NodeInfoList.0.NodeNum 3 \
+    --NodeInfoList.0.Type dedicatedMaster \
+    --NodeInfoList.1.DiskSize 100 \
+    --NodeInfoList.1.NodeType ES.S1.SMALL2 \
+    --NodeInfoList.1.NodeNum 2 \
+    --NodeInfoList.1.Type hotData \
+    --NodeInfoList.1.DiskType CLOUD_SSD
 ```
 
 Output: 
@@ -102,8 +102,8 @@ Input:
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
     --InstanceId es-xxxxxxxx \
-    --NodeType ES.S1.MEDIUM4 \
-    --DiskSize 150
+    --DiskSize 150 \
+    --NodeType ES.S1.MEDIUM4
 ```
 
 Output: 

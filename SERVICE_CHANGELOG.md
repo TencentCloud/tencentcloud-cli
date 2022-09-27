@@ -1,75 +1,26 @@
 # 本版本更新包含以下内容：
 
-## 企业收付平台(cpdp) 版本：2019-08-20
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 39 次发布
+### 第 30 次发布
 
-发布时间：2022-09-27 06:13:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)
-
-修改数据结构：
-
-* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
-
-	* 新增成员：ChannelOrderId
-
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 18 次发布
-
-发布时间：2022-09-27 06:29:37
+发布时间：2022-09-28 06:18:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+<font color="#dd0000">**删除接口**：</font>
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
-
-	* 新增成员：IsNeedManageNode
+* DescribeESHits
 
 
 
+## Elasticsearch Service(es) 版本：2018-04-16
 
-## 弹性微服务(tem) 版本：2021-07-01
+### 第 20 次发布
 
-### 第 21 次发布
-
-发布时间：2022-09-27 06:37:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)
-* [DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)
-* [DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)
-* [ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)
-
-
-
-## 弹性微服务(tem) 版本：2020-12-21
-
-
-
-## 腾讯云微服务引擎(tse) 版本：2020-12-07
-
-### 第 16 次发布
-
-发布时间：2022-09-27 06:38:37
+发布时间：2022-09-28 06:26:16
 
 本次发布包含了以下内容：
 
@@ -77,10 +28,45 @@
 
 修改接口：
 
-* [DescribeCloudNativeAPIGatewayNodes](http://document.tencentcloudapi.woa.com/document/product/1364/75621)
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
 
-	* 新增入参：GroupId
+	* 新增入参：KibanaAlteringPublicAccess
 
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：SkipCheckForceRestart
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 22 次发布
+
+发布时间：2022-09-28 06:46:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)
+
+修改数据结构：
+
+* [NamespacePage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespacePage)
+
+	* 新增成员：Current
+
+* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
+
+	* 新增成员：AppId, Uin, SubAccountUin, ClusterId, Tags
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
 
 
 
@@ -10519,7 +10505,7 @@
 
 新增接口：
 
-* [[QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [QueryFinancialDataUrl](http://document.tencentcloudapi.woa.com/document/product/1122/76379)
 
 修改数据结构：
 
@@ -12436,6 +12422,18 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 30 次发布
+
+发布时间：2022-09-28 06:18:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeESHits
 
 ### 第 29 次发布
 
@@ -17536,6 +17534,25 @@
 
 
 ## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 20 次发布
+
+发布时间：2022-09-28 06:26:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：KibanaAlteringPublicAccess
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：SkipCheckForceRestart
+
 
 ### 第 19 次发布
 
@@ -33756,6 +33773,29 @@
 
 ## 弹性微服务(tem) 版本：2021-07-01
 
+### 第 22 次发布
+
+发布时间：2022-09-28 06:46:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)](http://document.tencentcloudapi.woa.com/document/product/1371/60171#[Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag))
+
+修改数据结构：
+
+* [NamespacePage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespacePage)
+
+	* 新增成员：Current
+
+* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
+
+	* 新增成员：AppId, Uin, SubAccountUin, ClusterId, Tags
+
+
 ### 第 21 次发布
 
 发布时间：2022-09-27 06:37:12
@@ -33766,10 +33806,10 @@
 
 新增接口：
 
-* [[CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76384)
+* [DeleteApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76383)
+* [DescribeApplicationServiceList](http://document.tencentcloudapi.woa.com/document/product/1371/76382)
+* [ModifyApplicationService](http://document.tencentcloudapi.woa.com/document/product/1371/76381)
 
 ### 第 20 次发布
 

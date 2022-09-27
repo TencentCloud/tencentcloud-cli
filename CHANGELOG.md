@@ -1,3 +1,75 @@
+# Release 3.0.619.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 30 次发布
+
+发布时间：2022-09-28 06:18:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeESHits
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 20 次发布
+
+发布时间：2022-09-28 06:26:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：KibanaAlteringPublicAccess
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：SkipCheckForceRestart
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 22 次发布
+
+发布时间：2022-09-28 06:46:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)
+
+修改数据结构：
+
+* [NamespacePage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespacePage)
+
+	* 新增成员：Current
+
+* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
+
+	* 新增成员：AppId, Uin, SubAccountUin, ClusterId, Tags
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
 # Release 3.0.618.1
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
