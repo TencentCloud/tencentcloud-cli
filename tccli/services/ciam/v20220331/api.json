@@ -157,7 +157,7 @@
         },
         {
           "default": "",
-          "document": "导出的数据类型\n\n<li> **JSON** </li>  JSON\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values",
+          "document": "导出的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values",
           "example": "xxx",
           "member": "string",
           "name": "Format",
@@ -298,6 +298,51 @@
           "name": "CustomizationAttributes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "索引字段1",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段2",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute2",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段3",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute3",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段4",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute4",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段5",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute5",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -451,6 +496,15 @@
           "name": "Original",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "排序设置",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -870,6 +924,56 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引字段1",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute1",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引字段2",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引字段3",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute3",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引字段4",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute4",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引字段5",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -919,7 +1023,7 @@
         },
         {
           "default": "",
-          "document": "任务的数据类型\n\n<li> **JSON** </li>  JSON\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务的数据类型\n\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Format",
@@ -1554,6 +1658,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作逻辑符（支持> < = >= <=  != between）",
+          "example": "xxx",
+          "member": "string",
+          "name": "OperateLogic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1716,6 +1830,32 @@
       ],
       "type": "object"
     },
+    "Sort": {
+      "document": "查询用户排序",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段的key，参考自定义属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "PropertyKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "升序或者降序，ASC/DESC",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "UpdateUserRequest": {
       "document": "UpdateUser请求参数结构体",
       "members": [
@@ -1808,6 +1948,51 @@
           "name": "CustomizationAttributes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "索引字段1",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段2",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute2",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段3",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute3",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段4",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute4",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引字段5",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute5",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2239,6 +2424,56 @@
           "name": "LockTime",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引字段1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute1",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引字段2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute2",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引字段3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute3",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引字段4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引字段5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IndexedAttribute5",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -696,6 +696,12 @@
       "name": "跨境-查询汇率",
       "output": "QueryExchangeRateResponse"
     },
+    "QueryFinancialDataUrl": {
+      "document": "财税-查询金融数据文件下载链接",
+      "input": "QueryFinancialDataUrlRequest",
+      "name": "财税-查询金融数据文件下载链接",
+      "output": "QueryFinancialDataUrlResponse"
+    },
     "QueryFlexAmountBeforeTax": {
       "document": "灵云V2-查询税前金额",
       "input": "QueryFlexAmountBeforeTaxRequest",
@@ -20866,6 +20872,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道支付订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24283,6 +24299,69 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryFinancialDataUrlRequest": {
+      "document": "QueryFinancialDataUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据查询范围:结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据查询范围:开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据",
+          "example": "无",
+          "member": "string",
+          "name": "DataType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFinancialDataUrlResponse": {
+      "document": "QueryFinancialDataUrl返回参数结构体",
+      "members": [
+        {
+          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryFlexAmountBeforeTaxRequest": {
       "document": "QueryFlexAmountBeforeTax请求参数结构体",

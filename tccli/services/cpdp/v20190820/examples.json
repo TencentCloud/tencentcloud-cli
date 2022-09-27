@@ -976,6 +976,14 @@
         "title": "QueryExchangeRate"
       }
     ],
+    "QueryFinancialDataUrl": [
+      {
+        "document": "查询金融数据文件下载链接",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFinancialDataUrl\n<公共请求参数>\n\n{\n    \"DataType\": \"INVOICE\",\n    \"StartTime\": \"2022-02-01 00:00:00\",\n    \"EndTime\": \"2022-02-28 23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"xxxxx\",\n        \"ExpireTime\": \"2022-06-07 00:00:00\",\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "QueryFinancialDataUrl"
+      }
+    ],
     "QueryFlexAmountBeforeTax": [
       {
         "document": "",

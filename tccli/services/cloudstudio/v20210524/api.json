@@ -7,15 +7,15 @@
       "output": "CreateCustomizeTemplatesResponse"
     },
     "CreateWorkspaceByAgent": {
-      "document": "云主机方式创建工作空间",
+      "document": "云服务器方式创建工作空间",
       "input": "CreateWorkspaceByAgentRequest",
-      "name": "云主机方式创建工作空间",
+      "name": "云服务器方式创建工作空间",
       "output": "CreateWorkspaceByAgentResponse"
     },
     "CreateWorkspaceByTemplate": {
-      "document": "快速开始, 基于模版创建工作空间",
+      "document": "快速开始, 基于模板创建工作空间",
       "input": "CreateWorkspaceByTemplateRequest",
-      "name": "基于模版创建工作空间",
+      "name": "基于模板创建工作空间",
       "output": "CreateWorkspaceByTemplateResponse"
     },
     "CreateWorkspaceByVersionControl": {
@@ -31,9 +31,9 @@
       "output": "DeleteCustomizeTemplatesByIdResponse"
     },
     "DescribeCustomizeTemplates": {
-      "document": "获取所有模版列表",
+      "document": "获取所有模板列表",
       "input": "DescribeCustomizeTemplatesRequest",
-      "name": "获取所有模版列表",
+      "name": "获取所有模板列表",
       "output": "DescribeCustomizeTemplatesResponse"
     },
     "DescribeCustomizeTemplatesById": {
@@ -73,9 +73,9 @@
       "output": "DescribeWorkspaceStatusListResponse"
     },
     "ModifyCustomizeTemplateVersionControl": {
-      "document": "修改模版默认代码仓库",
+      "document": "修改模板默认代码仓库",
       "input": "ModifyCustomizeTemplateVersionControlRequest",
-      "name": "修改模版默认代码仓库",
+      "name": "修改模板默认代码仓库",
       "output": "ModifyCustomizeTemplateVersionControlResponse"
     },
     "ModifyCustomizeTemplatesFullById": {
@@ -163,7 +163,7 @@
         },
         {
           "default": "",
-          "document": "云主机登录名称",
+          "document": "云服务器登录名称",
           "example": "xxx",
           "member": "string",
           "name": "RemoteUser",
@@ -173,7 +173,7 @@
         },
         {
           "default": "",
-          "document": "云主机登录地址",
+          "document": "云服务器登录地址",
           "example": "xxx",
           "member": "string",
           "name": "RemoteHost",
@@ -183,7 +183,7 @@
         },
         {
           "default": "",
-          "document": "云主机登录端口",
+          "document": "云服务器登录端口",
           "example": "xxx",
           "member": "string",
           "name": "RemotePort",
@@ -338,7 +338,7 @@
         },
         {
           "default": "",
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "xxx",
           "member": "int64",
           "name": "TemplateId",
@@ -894,7 +894,7 @@
         },
         {
           "default": "",
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",

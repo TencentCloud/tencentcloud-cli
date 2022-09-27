@@ -11358,7 +11358,7 @@
         },
         {
           "default": "",
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -25884,7 +25884,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "example": "无",
           "member": "string",
           "name": "TaskType",

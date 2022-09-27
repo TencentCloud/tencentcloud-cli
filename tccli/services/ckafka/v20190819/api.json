@@ -6344,7 +6344,7 @@
         },
         {
           "default": "",
-          "document": "返回数量，不填则默认为10，最大值为50",
+          "document": "返回数量，不填则默认为20，最大值为50",
           "example": "50",
           "member": "int64",
           "name": "Limit",
