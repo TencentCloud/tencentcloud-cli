@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli cdb ModifyInstanceParam --cli-unfold-argument  \
+    --NotSyncDr True \
+    --NotSyncRo True \
+    --ParamList.0.CurrentValue xx \
+    --ParamList.0.Name xx \
+    --TemplateId 0 \
     --InstanceIds cdb-atjl8gns \
-    --ParamList.0.Name auto_increment_increment \
-    --ParamList.0.CurrentValue 1 \
-    --TemplateId 99 \
-    --InTimeWindow true
+    --WaitSwitch 0
 ```
 
 Output: 

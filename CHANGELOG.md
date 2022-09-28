@@ -1,3 +1,67 @@
+# Release 3.0.620.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 32 次发布
+
+发布时间：2022-09-29 06:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/236/15860)
+
+	* 新增入参：NotSyncRo, NotSyncDr
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 15 次发布
+
+发布时间：2022-09-29 06:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelDescribeEmployees](http://document.tencentcloudapi.woa.com/document/product/1595/76386)
+
+新增数据结构：
+
+* [Department](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Department)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Filter)
+* [Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff)
+* [StaffRole](http://document.tencentcloudapi.woa.com/document/product/1595/75258#StaffRole)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 39 次发布
+
+发布时间：2022-09-29 06:52:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetVpnGatewaysRenewFlag](http://document.tencentcloudapi.woa.com/document/product/215/76387)
+
+
+
 # Release 3.0.619.1
 
 ## 主机安全(cwp) 版本：2018-02-28

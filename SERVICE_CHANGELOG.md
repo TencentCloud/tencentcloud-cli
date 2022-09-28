@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 30 次发布
+### 第 32 次发布
 
-发布时间：2022-09-28 06:18:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeESHits
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 20 次发布
-
-发布时间：2022-09-28 06:26:16
+发布时间：2022-09-29 06:10:33
 
 本次发布包含了以下内容：
 
@@ -28,45 +12,53 @@
 
 修改接口：
 
-* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/236/15860)
 
-	* 新增入参：KibanaAlteringPublicAccess
-
-* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
-
-	* 新增入参：SkipCheckForceRestart
+	* 新增入参：NotSyncRo, NotSyncDr
 
 
 
 
-## 弹性微服务(tem) 版本：2021-07-01
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 22 次发布
+### 第 15 次发布
 
-发布时间：2022-09-28 06:46:32
+发布时间：2022-09-29 06:26:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [ChannelDescribeEmployees](http://document.tencentcloudapi.woa.com/document/product/1595/76386)
+
 新增数据结构：
 
-* [Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)
-
-修改数据结构：
-
-* [NamespacePage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespacePage)
-
-	* 新增成员：Current
-
-* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
-
-	* 新增成员：AppId, Uin, SubAccountUin, ClusterId, Tags
+* [Department](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Department)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Filter)
+* [Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff)
+* [StaffRole](http://document.tencentcloudapi.woa.com/document/product/1595/75258#StaffRole)
 
 
 
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-## 弹性微服务(tem) 版本：2020-12-21
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 39 次发布
+
+发布时间：2022-09-29 06:52:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetVpnGatewaysRenewFlag](http://document.tencentcloudapi.woa.com/document/product/215/76387)
 
 
 
@@ -5186,6 +5178,21 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 32 次发布
+
+发布时间：2022-09-29 06:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/236/15860)
+
+	* 新增入参：NotSyncRo, NotSyncDr
+
 
 ### 第 31 次发布
 
@@ -18131,6 +18138,25 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 15 次发布
+
+发布时间：2022-09-29 06:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ChannelDescribeEmployees](http://document.tencentcloudapi.woa.com/document/product/1595/76386)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Department](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Department)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[Department](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Department))
+* [[Filter](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Filter)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[Filter](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Filter))
+* [[Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff))
+* [[StaffRole](http://document.tencentcloudapi.woa.com/document/product/1595/75258#StaffRole)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[StaffRole](http://document.tencentcloudapi.woa.com/document/product/1595/75258#StaffRole))
+
 ### 第 14 次发布
 
 发布时间：2022-09-21 06:23:43
@@ -20438,7 +20464,7 @@
 
 
 
-## 图片内容检测(ims) 版本：2020-07-13
+## 图片内容安全(ims) 版本：2020-07-13
 
 ### 第 3 次发布
 
@@ -20517,7 +20543,7 @@
 
 
 
-## 图片内容检测(ims) 版本：2020-12-29
+## 图片内容安全(ims) 版本：2020-12-29
 
 ### 第 3 次发布
 
@@ -33783,7 +33809,7 @@
 
 新增数据结构：
 
-* [[Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)](http://document.tencentcloudapi.woa.com/document/product/1371/60171#[Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag))
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1371/60171#Tag)
 
 修改数据结构：
 
@@ -39378,6 +39404,18 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 39 次发布
+
+发布时间：2022-09-29 06:52:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[SetVpnGatewaysRenewFlag](http://document.tencentcloudapi.woa.com/document/product/215/76387)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 38 次发布
 

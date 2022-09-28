@@ -223,9 +223,9 @@
       "output": "DescribeLogContextResponse"
     },
     "DescribeLogHistogram": {
-      "document": "本接口用于构建直方图",
+      "document": "本接口用于构建日志数量直方图",
       "input": "DescribeLogHistogramRequest",
-      "name": "获取直方图",
+      "name": "获取日志数量直方图",
       "output": "DescribeLogHistogramResponse"
     },
     "DescribeLogsets": {
@@ -660,7 +660,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -670,7 +671,8 @@
           "name": "Query",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -680,7 +682,8 @@
           "name": "Number",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -690,7 +693,8 @@
           "name": "StartTimeOffset",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -700,7 +704,8 @@
           "name": "EndTimeOffset",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -710,7 +715,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -726,7 +732,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -736,7 +743,8 @@
           "name": "LogsetName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -746,7 +754,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -756,7 +765,8 @@
           "name": "TopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -766,7 +776,8 @@
           "name": "Query",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -776,7 +787,8 @@
           "name": "Number",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -786,7 +798,8 @@
           "name": "StartTimeOffset",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -796,7 +809,8 @@
           "name": "EndTimeOffset",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2749,7 +2763,7 @@
         },
         {
           "default": "",
-          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
+          "document": "生命周期，单位天，标准存储取值范围1~3600，低频存储取值范围7~3600天。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -4041,7 +4055,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4050,7 +4065,8 @@
           "member": "int64",
           "name": "From",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4059,7 +4075,8 @@
           "member": "int64",
           "name": "To",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4068,16 +4085,18 @@
           "member": "string",
           "name": "Query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "时间间隔: 单位ms",
+          "document": "时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200",
           "example": "10",
           "member": "int64",
           "name": "Interval",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4092,7 +4111,8 @@
           "name": "Interval",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "命中关键字的日志总条数",
@@ -4101,7 +4121,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "周期内统计结果详情",
@@ -4110,7 +4131,8 @@
           "name": "HistogramInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5543,7 +5565,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5553,7 +5576,8 @@
           "name": "LogsetName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5563,7 +5587,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5573,7 +5598,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5583,7 +5609,8 @@
           "name": "TopicCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5593,7 +5620,8 @@
           "name": "RoleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

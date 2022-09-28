@@ -48,6 +48,12 @@
       "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse"
     },
+    "ChannelDescribeEmployees": {
+      "document": "查询企业员工",
+      "input": "ChannelDescribeEmployeesRequest",
+      "name": "查询企业员工",
+      "output": "ChannelDescribeEmployeesResponse"
+    },
     "ChannelGetTaskResultApi": {
       "document": "渠道版查询转换任务状态",
       "input": "ChannelGetTaskResultApiRequest",
@@ -1016,6 +1022,114 @@
       ],
       "type": "object"
     },
+    "ChannelDescribeEmployeesRequest": {
+      "document": "ChannelDescribeEmployees请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回最大数量，最大为20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "查询过滤实名用户，key为Status，Values为[\"IsVerified\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0，最大为20000",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeEmployeesResponse": {
+      "document": "ChannelDescribeEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "员工数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Staff",
+          "name": "Employees",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "偏移量，默认为0，最大为20000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "返回最大数量，最大为20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "符合条件的员工数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelGetTaskResultApiRequest": {
       "document": "ChannelGetTaskResultApi请求参数结构体",
       "members": [
@@ -1926,6 +2040,34 @@
       ],
       "type": "object"
     },
+    "Department": {
+      "document": "渠道版员工部门信息",
+      "members": [
+        {
+          "default": "",
+          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeFlowDetailInfoRequest": {
       "document": "DescribeFlowDetailInfo请求参数结构体",
       "members": [
@@ -2372,6 +2514,32 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": "此结构体 (Filter) 用于描述查询过滤条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "查询过滤条件的Key",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询过滤条件的Value列表",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -4004,6 +4172,150 @@
           "example": "\"test-flow-group-id\"",
           "member": "string",
           "name": "FlowGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "Staff": {
+      "document": "企业员工信息",
+      "members": [
+        {
+          "default": "",
+          "document": "员工在电子签平台的id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "显示的员工名",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工在第三方平台id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaffRole",
+          "name": "Roles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工是否实名",
+          "example": "无",
+          "member": "bool",
+          "name": "Verified",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工创建时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "员工实名时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifiedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "StaffRole": {
+      "document": "渠道版员工角色信息",
+      "members": [
+        {
+          "default": "",
+          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
