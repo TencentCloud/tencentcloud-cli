@@ -18,6 +18,7 @@ Output:
                 "Status": "online",
                 "Host": "test.example.com",
                 "ZoneId": "zone-27q0p0bali16",
+                "ZoneName": "example.com",
                 "Cname": "test.example.com.acc.edgeonedy1.com.",
                 "Id": "edge-ja6yyfjh",
                 "InstanceId": "edge-ja6yyfjh",

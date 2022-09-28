@@ -28,7 +28,11 @@ Output:
                 "OriginalNameServers": [
                     "ns1.example.com",
                     "ns2.example.com"
-                ]
+                ],
+                "FileAscription": {
+                    "IdentifyContent": "88v24mnnljwbhaohrpfx80f63duhdnjx",
+                    "IdentifyPath": "/.well-known/teo-verification/vd4ewuqa9n.txt"
+                }
             }
         ],
         "TotalCount": 1,

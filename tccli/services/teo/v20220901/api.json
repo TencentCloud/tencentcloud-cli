@@ -306,12 +306,6 @@
       "name": "查询 DNSSEC 信息",
       "output": "DescribeDnssecResponse"
     },
-    "DescribeHostCertificates": {
-      "document": "查询域名证书列表，支持搜索、分页、排序、过滤。",
-      "input": "DescribeHostCertificatesRequest",
-      "name": "查询域名证书列表",
-      "output": "DescribeHostCertificatesResponse"
-    },
     "DescribeHostsSetting": {
       "document": "用于查询域名配置信息",
       "input": "DescribeHostsSettingRequest",
@@ -1023,6 +1017,42 @@
         }
       ],
       "usage": "in"
+    },
+    "AdvancedOriginGroup": {
+      "document": "高级回源配置",
+      "members": [
+        {
+          "default": "",
+          "document": "高级回源配置的匹配条件。其中相同的Target只能出现一次。",
+          "example": "无",
+          "member": "OriginGroupCondition",
+          "name": "OriginGroupConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主源站组ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "OriginGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备用源站组ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "BackupOriginGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AiRule": {
       "document": "AI规则引擎防护",
@@ -2026,6 +2056,32 @@
       ],
       "type": "object"
     },
+    "ClientIpCountry": {
+      "document": "回源时携带客户端IP所属地域信息，值的格式为ISO-3166-1两位字母代码。",
+      "members": [
+        {
+          "default": "",
+          "document": "配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。\n为空则使用默认值：EO-Client-IPCountry。",
+          "example": "EO-Client-IPCountry",
+          "member": "string",
+          "name": "HeaderName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClientIpHeader": {
       "document": "存储客户端请求IP的头部信息配置",
       "members": [
@@ -2257,6 +2313,16 @@
           "example": "\"mainland\"",
           "member": "string",
           "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推送任务类型，取值有：\n<li>cls：推送到cls；</li>\n<li>custom_endpoint：推送到自定义接口。</li>",
+          "example": "cls",
+          "member": "string",
+          "name": "LogSetType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2794,6 +2860,24 @@
           "name": "TTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>为空表示使用主备回源。",
+          "example": "normal",
+          "member": "string",
+          "name": "OriginType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高级回源配置，当OriginType=advanced时有效。",
+          "example": "无",
+          "member": "AdvancedOriginGroup",
+          "name": "AdvancedOriginGroups",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3028,6 +3112,15 @@
           "name": "OriginRecords",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回源Host，仅当OriginType=self时可以设置。",
+          "example": "www.tencent.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4672,7 +4765,7 @@
         },
         {
           "default": "",
-          "document": "部署状态，取值有：\n<li>processing: 部署中;</li>\n<li>deployed: 已部署。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署状态，取值有：\n<li>processing: 部署中；</li>\n<li>deployed: 已部署；</li>\n<li>failed: 部署失败。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "deployed",
           "member": "string",
           "name": "Status",
@@ -4686,6 +4779,16 @@
           "example": "失败",
           "member": "string",
           "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书算法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RSA",
+          "member": "string",
+          "name": "SignAlgo",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4860,11 +4963,11 @@
         },
         {
           "default": "",
-          "document": "推送任务所属日志集地域。",
+          "document": "推送任务所属日志集地域，此字段仅用于CLS推送任务。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "LogSetRegion",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -5058,7 +5161,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>proxy-id<br>   按照【<strong>代理ID</strong>】进行过滤。代理ID形如：proxy-ev2sawbwfd。<br>   类型：String<br>   必选：否<li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-vawer2vadg。<br>   类型：String<br>   必选：否",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>proxy-id<br>   按照【<strong>代理ID</strong>】进行过滤。代理ID形如：proxy-ev2sawbwfd。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-vawer2vadg。<br>   类型：String<br>   必选：否</li>",
           "example": "[{\"Name\": \"proxy-id\", [\"proxy-124521xfqlh4qjee\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -7068,78 +7171,6 @@
       ],
       "type": "object"
     },
-    "DescribeHostCertificatesRequest": {
-      "document": "DescribeHostCertificates请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是<li>host<br>   按照【<strong>域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>cert-id<br>   按照【<strong>证书ID</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>cert-alias<br>   按照【<strong>证书名称</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>cert-type<br>   按照【<strong>证书类型</strong>】进行过滤。<br>   类型：String<br>   必选：否",
-          "example": "无",
-          "member": "AdvancedFilter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "分页查询偏移量，默认为 0。",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "分页查询限制数目，默认为 100，最大可设置为 1000。",
-          "example": "100",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "排序方式。详细排序条件如下：\n<li>create-time：域名创建时间；</li>\n<li>cert-expire-time：证书过期时间；</li>\n<li>cert-deploy-time：证书部署时间。</li>",
-          "example": "无",
-          "member": "Sort",
-          "name": "Sort",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeHostCertificatesResponse": {
-      "document": "DescribeHostCertificates返回参数结构体",
-      "members": [
-        {
-          "document": "总数，用于分页查询。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "域名证书配置列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "HostsCertificate",
-          "name": "HostCertificates",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeHostsSettingRequest": {
       "document": "DescribeHostsSetting请求参数结构体",
       "members": [
@@ -7172,7 +7203,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>host<br>   按照【<strong>域名</strong>】进行过滤。<br>   类型：string<br>   必选：否",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>host<br>   按照【<strong>域名</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7217,7 +7248,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：是",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：是</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7730,7 +7761,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点 ID</strong>】进行过滤。zone-id形如：zone-1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。<li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。<li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。<li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。<li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点 ID</strong>】进行过滤。zone-id形如：zone-1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -7820,7 +7851,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。<li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。<li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。<li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<li>type<br>   按照【<strong>清除缓存类型</strong>】进行过滤，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li><li>type<br>   按照【<strong>清除缓存类型</strong>】进行过滤，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -10042,7 +10073,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否<li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否<li>Fuzzy<br>   按照【<strong>是否模糊查询</strong>】进行过滤。仅支持过滤字段名为zone-name。模糊查询时，Values长度最小为1。<br>   类型：Boolean<br>   必选：否<br>   默认值：false",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>Fuzzy<br>   按照【<strong>是否模糊查询</strong>】进行过滤。仅支持过滤字段名为zone-name。模糊查询时，Values长度最小为1。<br>   类型：Boolean<br>   必选：否<br>   默认值：false</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -10301,6 +10332,16 @@
           "example": "无",
           "member": "Ipv6",
           "name": "Ipv6",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源时是否携带客户端IP所属地域信息的配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIpCountry",
+          "name": "ClientIpCountry",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -10901,51 +10942,51 @@
       "usage": "both"
     },
     "ExceptUserRule": {
-      "document": "例外规则的配置，包含生效的条件，生效的范围",
+      "document": "例外规则的配置，包含生效的条件，生效的范围。",
       "members": [
         {
           "default": "",
-          "document": "规则名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称，不可使用中文。",
           "example": "rule1",
           "member": "string",
           "name": "RuleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "规则的处置方式，当前仅支持skip：跳过全部托管规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则的处置方式，当前仅支持skip：跳过全部托管规则。",
           "example": "skip",
           "member": "string",
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "规则生效状态，取值有：\n<li>on：生效；</li>\n<li>off：失效。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则生效状态，取值有：\n<li>on：生效；</li>\n<li>off：失效。</li>",
           "example": "on",
           "member": "string",
           "name": "RuleStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "规则ID。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则ID。仅出参使用。默认由底层生成。",
           "example": "1",
           "member": "int64",
           "name": "RuleID",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "更新时间。仅出参使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，如果为null，默认由底层按当前时间生成。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "datetime_iso",
           "name": "UpdateTime",
@@ -10975,33 +11016,33 @@
         },
         {
           "default": "",
-          "document": "优先级，取值范围0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优先级，取值范围0-100。如果为null，默认由底层设置为0。",
           "example": "0",
           "member": "int64",
           "name": "RulePriority",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
     },
     "ExceptUserRuleCondition": {
-      "document": "例外规则生效的具体条件",
+      "document": "例外规则生效的具体条件。",
       "members": [
         {
           "default": "",
-          "document": "匹配项，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>sip_proto：网络层协议。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配项，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>sip_proto：网络层协议。</li>",
           "example": "host",
           "member": "string",
           "name": "MatchFrom",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。",
+          "document": "匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。",
           "example": "Accept-Encoding",
           "member": "string",
           "name": "MatchParam",
@@ -11011,36 +11052,66 @@
         },
         {
           "default": "",
-          "document": "匹配操作符，取值有：\n<li>equal：字符串等于；</li>\n<li>not_equal：数值不等于；</li>\n<li>include：字符包含；</li>\n<li>not_include：字符不包含；</li>\n<li>match：ip匹配；</li>\n<li>not_match：ip不匹配；</li>\n<li>include_area：地域包含；</li>\n<li>is_empty：存在字段但值为空；</li>\n<li>not_exists：不存在关键字段；</li>\n<li>regexp：正则匹配；</li>\n<li>len_gt：数值大于；</li>\n<li>len_lt：数值小于；</li>\n<li>len_eq：数值等于；</li>\n<li>match_prefix：前缀匹配；</li>\n<li>match_suffix：后缀匹配；</li>\n<li>wildcard：通配符。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配操作符，取值有：\n<li>equal：字符串等于；</li>\n<li>not_equal：数值不等于；</li>\n<li>include：字符包含；</li>\n<li>not_include：字符不包含；</li>\n<li>match：ip匹配；</li>\n<li>not_match：ip不匹配；</li>\n<li>include_area：地域包含；</li>\n<li>is_empty：存在字段但值为空；</li>\n<li>not_exists：不存在关键字段；</li>\n<li>regexp：正则匹配；</li>\n<li>len_gt：数值大于；</li>\n<li>len_lt：数值小于；</li>\n<li>len_eq：数值等于；</li>\n<li>match_prefix：前缀匹配；</li>\n<li>match_suffix：后缀匹配；</li>\n<li>wildcard：通配符。</li>",
           "example": "match",
           "member": "string",
           "name": "Operator",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "匹配值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配值。",
           "example": "www.example.com",
           "member": "string",
           "name": "MatchContent",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
     },
     "ExceptUserRuleScope": {
-      "document": "例外规则的生效范围",
+      "document": "例外规则的生效范围。",
       "members": [
         {
           "default": "",
-          "document": "生效的模块。当前仅支持waf：托管规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：\n<li>complete：完全跳过模式；</li>\n<li>partial：部分跳过模式。</li>",
+          "example": "complete",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效的模块，该字段取值有：\n<li>waf：托管规则；</li>\n<li>cc：速率限制规则；</li>\n<li>bot：Bot防护。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"waf\"]",
           "member": "string",
           "name": "Modules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PartialModule",
+          "name": "PartialModules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SkipCondition",
+          "name": "SkipConditions",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11069,6 +11140,32 @@
           "name": "Targets",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FileAscriptionInfo": {
+      "document": "站点归属权校验——文件校验信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文件校验目录。",
+          "example": "/.well-known/teo-verification/vd4ewuqa9n.txt",
+          "member": "string",
+          "name": "IdentifyPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件校验内容。",
+          "example": "88v24mnnljwbhaohrpfx80f63duhdnjx",
+          "member": "string",
+          "name": "IdentifyContent",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -11193,7 +11290,7 @@
       "members": [
         {
           "default": "",
-          "document": "HTTP头部。",
+          "document": "HTTP头部名称。",
           "example": "User-Agent",
           "member": "string",
           "name": "Name",
@@ -11213,108 +11310,6 @@
         }
       ],
       "usage": "in"
-    },
-    "HostCertInfo": {
-      "document": "https 服务端证书配置",
-      "members": [
-        {
-          "default": "",
-          "document": "服务器证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "EO-dsfdsf",
-          "member": "string",
-          "name": "CertId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "证书备注名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "默认证书",
-          "member": "string",
-          "name": "Alias",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "证书类型，取值有：\n<li>default：默认证书；</lil>\n<li>upload：用户上传；</li>\n<li>managed:腾讯云托管。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2014-08-03T12:00:00+08:00",
-          "member": "datetime_iso",
-          "name": "ExpireTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "证书部署时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2014-08-03T12:00:00+08:00",
-          "member": "datetime_iso",
-          "name": "DeployTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "签名算法。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RSA",
-          "member": "string",
-          "name": "SignAlgo",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "证书状态，取值有：\n<li>deployed：已部署;</li>\n<li>process：部署中。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "deployed",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "HostsCertificate": {
-      "document": "域名证书配置",
-      "members": [
-        {
-          "default": "",
-          "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx.test.com",
-          "member": "string",
-          "name": "Host",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "服务端证书配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "HostCertInfo",
-          "name": "HostCertInfo",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "Hsts": {
       "document": "Hsts配置",
@@ -11443,7 +11438,7 @@
         },
         {
           "default": "",
-          "document": "站点归属信息。",
+          "document": "站点归属权校验：Dns校验信息。",
           "example": "无",
           "member": "AscriptionInfo",
           "name": "Ascription",
@@ -11460,6 +11455,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点归属权校验：文件校验信息。",
+          "example": "无",
+          "member": "FileAscriptionInfo",
+          "name": "FileAscription",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11483,10 +11488,19 @@
       "document": "IdentifyZone返回参数结构体",
       "members": [
         {
-          "document": "站点归属信息。",
+          "document": "站点归属校验：Dns校验信息。",
           "example": "无",
           "member": "AscriptionInfo",
           "name": "Ascription",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点归属权校验：文件校验信息。",
+          "example": "无",
+          "member": "FileAscriptionInfo",
+          "name": "FileAscription",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -11884,6 +11898,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置。</li>",
+          "example": "normal",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高级回源配置，当OriginType=advanced时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedOriginGroup",
+          "name": "AdvancedOriginGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12883,6 +12917,24 @@
           "name": "TTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。",
+          "example": "normal",
+          "member": "string",
+          "name": "OriginType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高级回源配置，当OriginType=advanced时有效。\n不填写表示不使用高级回源配置。",
+          "example": "无",
+          "member": "AdvancedOriginGroup",
+          "name": "AdvancedOriginGroups",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13117,6 +13169,15 @@
           "name": "OriginRecords",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回源Host，仅当OriginType=self时可以设置。\n不填写，表示使用已有配置。",
+          "example": "www.tencent.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13612,6 +13673,15 @@
           "name": "Ipv6",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回源时是否携带客户端IP所属地域信息的配置。\n不填写表示保持原有配置。",
+          "example": "无",
+          "member": "ClientIpCountry",
+          "name": "ClientIpCountry",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13896,9 +13966,55 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当OriginType=self时，表示回源Host。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.tencent.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "OriginGroupCondition": {
+      "document": "回源配置的条件参数",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配类型，取值有：\n<li>url：当前站点下匹配URL路径的请求，例如：/example 或 /example/foo.jpg。支持*表示通配符，支持?表示匹配一个字符。\n</li>",
+          "example": "url",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运算符，取值有：\n<li>equal：等于。</li>",
+          "example": "equal",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应匹配类型的取值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OriginRecord": {
       "document": "源站组记录",
@@ -13982,6 +14098,32 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PartialModule": {
+      "document": "例外规则的详细模块配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名称，取值为：\n<li>waf：托管规则。</li>",
+          "example": "waf",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模块下的需要例外的具体规则ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "Include",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14195,7 +14337,7 @@
         },
         {
           "default": "",
-          "document": "查询条件操作符，操作类型有：\n<li>equals: 等于；</li>\n<li>notEquals: 不等于；</li>\n<li>include: 包含；</li>\n<li>notInclude: 不包含; </li>\n<li>startWith: 开始于；</li>\n<li>notStartWith: 不开始于；</li>\n<li>endWith: 结尾是；</li>\n<li>notEndWith: 不结尾是。</li>",
+          "document": "查询条件操作符，操作类型有：\n<li>equals: 等于；</li>\n<li>notEquals: 不等于；</li>\n<li>include: 包含；</li>\n<li>notInclude: 不包含; </li>\n<li>startWith: 开始的值是value；</li>\n<li>notStartWith: 不以value的值开始；</li>\n<li>endWith: 结尾是value值；</li>\n<li>notEndWith: 不以value的值结尾。</li>",
           "example": "equals",
           "member": "string",
           "name": "Operator",
@@ -15907,6 +16049,72 @@
       ],
       "usage": "out"
     },
+    "SkipCondition": {
+      "document": "例外规则的跳过匹配条件，即在例外时根据本匹配条件，略过指定字段及内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "例外跳过类型，取值为：\n<li>header_fields：HTTP请求Header；</li>\n<li>cookie：HTTP请求Cookie；</li>\n<li>query_string：HTTP请求URL中的Query参数；</li>\n<li>uri：HTTP请求URI；</li>\n<li>body_raw：HTTP请求Body；</li>\n<li>body_json： JSON格式的HTTP Body。</li>",
+          "example": "body_json",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "选择跳过的字段，取值为：\n<li>args：uri 下选择 query 参数: ?name1=jack&age=12；</li>\n<li>path：uri 下选择部分路径：/path/to/resource.jpg；</li>\n<li>full：uri 下选择完整路径：example.com/path/to/resource.jpg?name1=jack&age=12；</li>\n<li>upload_filename：分段文件名，即分段传输文件时；</li>\n<li>keys：所有的Key；</li>\n<li>values：匹配Key对应的值；</li>\n<li>key_value：匹配Key及匹配Value。</li>",
+          "example": "keys",
+          "member": "string",
+          "name": "Selector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配Key所使用的匹配方式，取值为：\n<li>equal：精准匹配，等于；</li>\n<li>wildcard：通配符匹配，支持 * 通配。</li>",
+          "example": "equal",
+          "member": "string",
+          "name": "MatchFromType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配Key的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "MatchFrom",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配Content所使用的匹配方式，取值为：\n<li>equal：精准匹配，等于；</li>\n<li>wildcard：通配符匹配，支持 * 通配。</li>",
+          "example": "equal",
+          "member": "string",
+          "name": "MatchContentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配Value的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "MatchContent",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SmartRouting": {
       "document": "智能加速配置",
       "members": [
@@ -15922,32 +16130,6 @@
         }
       ],
       "usage": "both"
-    },
-    "Sort": {
-      "document": "查询结果排序条件。",
-      "members": [
-        {
-          "default": "",
-          "document": "排序字段，当前支持：\ncreateTime，域名创建时间\ncertExpireTime，证书过期时间\ncertDeployTime,  证书部署时间",
-          "example": "certExpireTime",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "asc/desc，默认desc。",
-          "example": "desc",
-          "member": "string",
-          "name": "Sequence",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "SpeedTestingConfig": {
       "document": "站点拨测配置",
@@ -17400,7 +17582,7 @@
         },
         {
           "default": "",
-          "document": "是否开启cname加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
+          "document": "是否开启 CNAME 加速，取值有：\n<li> enabled：开启；</li>\n<li> disabled：关闭。</li>",
           "example": "无",
           "member": "string",
           "name": "CnameSpeedUp",
@@ -17410,7 +17592,7 @@
         },
         {
           "default": "",
-          "document": "cname 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
+          "document": "CNAME 接入状态，取值有：\n<li> finished：站点已验证；</li>\n<li> pending：站点验证中。</li>",
           "example": "finished",
           "member": "string",
           "name": "CnameStatus",
@@ -17670,6 +17852,16 @@
           "example": "无",
           "member": "Https",
           "name": "Https",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源时是否携带客户端IP所属地域信息的配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIpCountry",
+          "name": "ClientIpCountry",
           "required": true,
           "type": "object",
           "value_allowed_null": true

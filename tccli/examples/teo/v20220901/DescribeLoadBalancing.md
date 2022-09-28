@@ -30,7 +30,9 @@ Output:
                 "UpdateTime": "2022-02-14T08:48:03Z",
                 "ZoneId": "zone-20hzkd4rdmy0",
                 "Status": "online",
-                "Cname": "test.tencent.com.acc.edgeonedy1.com"
+                "Cname": "test.tencent.com.acc.edgeonedy1.com",
+                "OriginType": "normal",
+                "AdvancedOriginGroups": []
             }
         ]
     }
@@ -72,7 +74,9 @@ Output:
                 "UpdateTime": "2022-02-14T08:48:03Z",
                 "ZoneId": "zone-20hzkd4rdmy0",
                 "Status": "online",
-                "Cname": "test.tencent.com.acc.edgeonedy1.com"
+                "Cname": "test.tencent.com.acc.edgeonedy1.com",
+                "OriginType": "normal",
+                "AdvancedOriginGroups": []
             }
         ]
     }
@@ -114,7 +118,9 @@ Output:
                 "UpdateTime": "2022-02-14T08:48:03Z",
                 "ZoneId": "zone-20hzkd4rdmy0",
                 "Status": "online",
-                "Cname": "test.tencent.com.acc.edgeonedy1.com"
+                "Cname": "test.tencent.com.acc.edgeonedy1.com",
+                "OriginType": "normal",
+                "AdvancedOriginGroups": []
             }
         ]
     }

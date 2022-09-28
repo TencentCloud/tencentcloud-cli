@@ -129,7 +129,7 @@
   },
   "objects": {
     "AgentSpaceDTO": {
-      "document": "云主机创建工作空间DTO",
+      "document": "云服务器创建工作空间 DTO",
       "members": [
         {
           "default": "",
