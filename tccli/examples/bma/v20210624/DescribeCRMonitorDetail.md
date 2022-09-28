@@ -20,19 +20,31 @@ Output:
         "RequestId": "xx",
         "Torts": [
             {
-                "TortId": 0,
-                "DetectTime": "xx",
+                "IsOverseas": 0,
                 "WorkTitle": "xx",
+                "RightNote": "xx",
                 "Author": "xx",
-                "BlockStatus": 0,
-                "TortURL": "xx",
+                "ObtainType": 0,
+                "BlockNote": "xx",
+                "TortNum": "xx",
+                "AuthStatus": 0,
+                "DetectTime": "xx",
+                "EvidenceStatus": 0,
                 "TortTitle": "xx",
                 "PubTime": "xx",
-                "TortNum": "xx",
-                "ObtainNote": "xx",
                 "TortPlat": "xx",
+                "TortId": 0,
                 "RightStatus": 0,
-                "ObtainStatus": 0
+                "WorkId": 0,
+                "TortURL": "xx",
+                "ICP": "xx",
+                "ObtainStatus": 0,
+                "BlockStatus": 0,
+                "IsProducer": 0,
+                "WorkName": "xx",
+                "TortSite": "xx",
+                "ObtainNote": "xx",
+                "CommStatus": 0
             }
         ]
     }

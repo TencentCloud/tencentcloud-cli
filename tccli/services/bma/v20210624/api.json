@@ -584,6 +584,33 @@
           "name": "IsProducer",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xx",
+          "member": "string",
+          "name": "EvidenceFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xx",
+          "member": "string",
+          "name": "EvidenceValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xx",
+          "member": "string",
+          "name": "EvidenceValidEndDate",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -906,6 +933,33 @@
           "example": "xxx",
           "member": "string",
           "name": "IsProducer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceFileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceValidStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "x",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceValidEndDate",
           "required": false,
           "type": "string"
         }
@@ -1401,6 +1455,24 @@
           "example": "xx",
           "member": "string",
           "name": "MonitorEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请人ID",
+          "example": "xx",
+          "member": "string",
+          "name": "ApplierId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请人姓名",
+          "example": "xx",
+          "member": "string",
+          "name": "ApplierName",
           "required": false,
           "type": "string"
         }
@@ -2871,6 +2943,126 @@
           "name": "WorkTitle",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "TortSite",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "ICP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "RightNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "ObtainType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "BlockNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "WorkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "CommStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "EvidenceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "IsProducer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1",
+          "example": "1",
+          "member": "int64",
+          "name": "IsOverseas",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

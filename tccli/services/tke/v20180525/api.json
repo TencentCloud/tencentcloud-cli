@@ -337,7 +337,7 @@
       "output": "DescribeAvailableClusterVersionResponse"
     },
     "DescribeAvailableTKEEdgeVersion": {
-      "document": "边缘计算支持的k8s版本",
+      "document": "边缘计算支持版本和k8s版本",
       "input": "DescribeAvailableTKEEdgeVersionRequest",
       "name": "边缘计算支持的k8s版本",
       "output": "DescribeAvailableTKEEdgeVersionResponse"
@@ -5290,6 +5290,24 @@
           "name": "ChargeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘组件镜像仓库前缀",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6401,7 +6419,17 @@
     },
     "DescribeAvailableTKEEdgeVersionRequest": {
       "document": "DescribeAvailableTKEEdgeVersion请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "填写ClusterId获取当前集群各个组件版本和最新版本",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeAvailableTKEEdgeVersionResponse": {
@@ -6409,10 +6437,30 @@
       "members": [
         {
           "document": "版本列表",
+          "example": "[\"1.14.1\",\"1.16.1\"]",
           "member": "string",
           "name": "Versions",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "边缘集群最新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionLatest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "边缘集群当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionCurrent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -235,31 +235,31 @@
     "UpdateInstance": [
       {
         "document": "用以修改指定ES集群实例的名称",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxx\n&InstanceName=newName\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"InstanceName\": \"newName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "修改ES集群实例名称"
       },
       {
         "document": "用以对指定ES集群实例进行横向扩缩容，纵向扩缩容，增加专用主节点，专用主节点横向扩缩容，纵向扩缩容等操作，NodeInfoList要传递目标的全量节点信息",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxx\n&NodeInfoList.0.Type=hotData\n&NodeInfoList.0.NodeNum=2\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\n&NodeInfoList.0.DiskType=CLOUD_SSD\n&NodeInfoList.0.DiskSize=100\n&NodeInfoList.1.Type=dedicatedMaster\n&NodeInfoList.1.NodeNum=3\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "ES集群节点规格变更"
       },
       {
         "document": "用以对指定的ES集群实例的配置进行修改操作",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&EsConfig={\"action.destructive_requires_name\":\"true\"}\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"EsConfig\": \"{\\\"action.destructive_requires_name\\\":\\\"true\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "修改ES集群实例配置"
       },
       {
         "document": "重置指定ES集群实例Kibana密码",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&Password=newPwd_123\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "重置Kibana密码"
       },
       {
         "document": "用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）",
-        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&NodeType=ES.S1.MEDIUM4\n&DiskSize=150\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"DiskSize\": \"150\",\n    \"NodeType\": \"ES.S1.MEDIUM4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DealName\": \"xx\"\n    }\n}",
         "title": "ES集群纵向扩缩容"
       }
@@ -313,7 +313,7 @@
     "UpgradeInstance": [
       {
         "document": "",
-        "input": "https://es.tencentcloudapi.com/?Action=UpgradeInstance\n&InstanceId=es-xxxxxxxx\n&EsVersion=6.4.3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"EsVersion\": \"6.4.3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "升级ES集群版本"
       }

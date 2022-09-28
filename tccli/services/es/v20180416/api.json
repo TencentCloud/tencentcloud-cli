@@ -5873,6 +5873,15 @@
           "name": "OperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启Altering 外网告警输出",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaAlteringPublicAccess",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6265,6 +6274,15 @@
           "example": "false",
           "member": "bool",
           "name": "CosBackup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "滚动模式时，是否跳过检查，进行强制重启。默认值为false",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipCheckForceRestart",
           "required": false,
           "type": "bool"
         }
