@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Hit": true,
         "PURLList": [
             {
                 "Name": "log4j-core",

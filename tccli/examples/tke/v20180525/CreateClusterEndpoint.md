@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke CreateClusterEndpoint --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
-    --SubnetId subnet-xxxxxx
+    --SubnetId subnet-xxxxxx \
+    --ClusterId cls-xxxxxxxx
 ```
 
 Output: 

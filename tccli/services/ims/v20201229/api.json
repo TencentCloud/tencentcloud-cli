@@ -9,8 +9,8 @@
   },
   "metadata": {
     "apiVersion": "2020-12-29",
-    "api_brief": "介绍如何使用API对图片内容检测进行操作，包括识别图片中的不适宜内容等。",
-    "serviceNameCN": "图片内容检测",
+    "api_brief": "介绍如何使用API对图片内容安全进行操作，包括识别图片中的不适宜内容等。",
+    "serviceNameCN": "图片内容安全",
     "serviceShortName": "ims"
   },
   "objects": {

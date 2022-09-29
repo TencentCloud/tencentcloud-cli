@@ -60,6 +60,12 @@
       "name": "提交企业签署流程审批结果",
       "output": "CreateFlowSignReviewResponse"
     },
+    "CreateIntegrationEmployees": {
+      "document": "创建员工",
+      "input": "CreateIntegrationEmployeesRequest",
+      "name": "创建员工",
+      "output": "CreateIntegrationEmployeesResponse"
+    },
     "CreateMultiFlowSignQRCode": {
       "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。",
       "input": "CreateMultiFlowSignQRCodeRequest",
@@ -71,6 +77,12 @@
       "input": "CreateSchemeUrlRequest",
       "name": "获取小程序跳转链接",
       "output": "CreateSchemeUrlResponse"
+    },
+    "DeleteIntegrationEmployees": {
+      "document": "移除员工",
+      "input": "DeleteIntegrationEmployeesRequest",
+      "name": "移除员工",
+      "output": "DeleteIntegrationEmployeesResponse"
     },
     "DescribeFileUrls": {
       "document": "查询文件下载URL\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。",
@@ -95,6 +107,12 @@
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板",
       "output": "DescribeFlowTemplatesResponse"
+    },
+    "DescribeIntegrationEmployees": {
+      "document": "查询员工信息，每次返回的数据量最大为20",
+      "input": "DescribeIntegrationEmployeesRequest",
+      "name": "查询员工信息",
+      "output": "DescribeIntegrationEmployeesResponse"
     },
     "DescribeThirdPartyAuthCode": {
       "document": "通过AuthCode查询用户是否实名",
@@ -1398,6 +1416,51 @@
       ],
       "type": "object"
     },
+    "CreateIntegrationEmployeesRequest": {
+      "document": "CreateIntegrationEmployees请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作人信息，userId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "待创建员工的信息，Mobile和DisplayName必填",
+          "example": "无",
+          "member": "Staff",
+          "name": "Employees",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntegrationEmployeesResponse": {
+      "document": "CreateIntegrationEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "创建员工的结果",
+          "example": "无",
+          "member": "CreateStaffResult",
+          "name": "CreateEmployeeResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMultiFlowSignQRCodeRequest": {
       "document": "CreateMultiFlowSignQRCode请求参数结构体",
       "members": [
@@ -1622,6 +1685,129 @@
         }
       ],
       "type": "object"
+    },
+    "CreateStaffResult": {
+      "document": "创建员工的结果",
+      "members": [
+        {
+          "default": "",
+          "document": "创建员工的成功列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuccessCreateStaffData",
+          "name": "SuccessEmployeeData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建员工的失败列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FailedCreateStaffData",
+          "name": "FailedEmployeeData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteIntegrationEmployeesRequest": {
+      "document": "DeleteIntegrationEmployees请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作人信息，userId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "待移除员工的信息，userId和openId二选一，必填一个",
+          "example": "无",
+          "member": "Staff",
+          "name": "Employees",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIntegrationEmployeesResponse": {
+      "document": "DeleteIntegrationEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "员工删除数据",
+          "example": "无",
+          "member": "DeleteStaffsResult",
+          "name": "DeleteEmployeeResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStaffsResult": {
+      "document": "删除员工结果",
+      "members": [
+        {
+          "default": "",
+          "document": "删除员工的成功数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SuccessDeleteStaffData",
+          "name": "SuccessEmployeeData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除员工的失败数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FailedDeleteStaffData",
+          "name": "FailedEmployeeData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Department": {
+      "document": "集成版员工部门信息",
+      "members": [
+        {
+          "default": "",
+          "document": "部门id",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部门名称",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeFileUrlsRequest": {
       "document": "DescribeFileUrls请求参数结构体",
@@ -1956,6 +2142,96 @@
       ],
       "type": "object"
     },
+    "DescribeIntegrationEmployeesRequest": {
+      "document": "DescribeIntegrationEmployees请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作人信息，userId必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，最大为20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询过滤实名用户，key为Status，Values为[\"IsVerified\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0，最大为20000",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrationEmployeesResponse": {
+      "document": "DescribeIntegrationEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "员工数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Staff",
+          "name": "Employees",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "偏移量，默认为0，最大为20000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回最大数量，最大为20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的员工数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeThirdPartyAuthCodeRequest": {
       "document": "DescribeThirdPartyAuthCode请求参数结构体",
       "members": [
@@ -1991,6 +2267,78 @@
         }
       ],
       "type": "object"
+    },
+    "FailedCreateStaffData": {
+      "document": "创建员工的失败数据",
+      "members": [
+        {
+          "default": "",
+          "document": "员工名",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FailedDeleteStaffData": {
+      "document": "删除员工失败数据",
+      "members": [
+        {
+          "default": "",
+          "document": "员工在电子签的userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "员工在第三方平台的openId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FileInfo": {
       "document": "二期接口返回的模板中文件的信息结构",
@@ -3131,6 +3479,138 @@
       ],
       "usage": "out"
     },
+    "Staff": {
+      "document": "企业员工信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在电子签平台的id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示的用户名/昵称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户在第三方平台id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "员工角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaffRole",
+          "name": "Roles",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "员工部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "员工是否实名",
+          "example": "无",
+          "member": "bool",
+          "name": "Verified",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工创建时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工实名时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifiedOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StaffRole": {
+      "document": "集成版企业角色信息",
+      "members": [
+        {
+          "default": "",
+          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StartFlowRequest": {
       "document": "StartFlow请求参数结构体",
       "members": [
@@ -3193,6 +3673,78 @@
         }
       ],
       "type": "object"
+    },
+    "SuccessCreateStaffData": {
+      "document": "创建员工的成功数据",
+      "members": [
+        {
+          "default": "",
+          "document": "员工名",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工在电子签平台的id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SuccessDeleteStaffData": {
+      "document": "删除员工的成功数据",
+      "members": [
+        {
+          "default": "",
+          "document": "员工名",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工在电子签平台的id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TemplateInfo": {
       "document": "二期接口返回的模板的信息结构",

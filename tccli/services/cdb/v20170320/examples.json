@@ -851,7 +851,7 @@
     "ModifyInstanceParam": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyInstanceParam\r\n&InstanceIds.0=cdb-atjl8gns\r\n&ParamList.0.Name=auto_increment_increment\r\n&ParamList.0.CurrentValue=1\r\n&TemplateId=99\r\n&InTimeWindow=true\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParam\n<公共请求参数>\n\n{\n    \"NotSyncDr\": true,\n    \"NotSyncRo\": true,\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"TemplateId\": 0,\n    \"InstanceIds\": [\n        \"cdb-atjl8gns\"\n    ],\n    \"WaitSwitch\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"38265324-dd030463-3d46a793-4a0420b1\"\n    }\n}",
         "title": "修改实例参数"
       }

@@ -55,9 +55,9 @@
       "output": "ApplyOpenBankOrderDetailReceiptResponse"
     },
     "ApplyOpenBankSettleOrder": {
-      "document": "云企付结算申请接口",
+      "document": "云企付-结算申请接口",
       "input": "ApplyOpenBankSettleOrderRequest",
-      "name": "云企付结算申请接口",
+      "name": "云企付-结算申请接口",
       "output": "ApplyOpenBankSettleOrderResponse"
     },
     "ApplyOpenBankSubMerchantSignOnline": {
@@ -919,9 +919,9 @@
       "output": "QueryOpenBankRefundOrderResponse"
     },
     "QueryOpenBankSettleOrder": {
-      "document": "云企付结算单查询结果",
+      "document": "云企付-结算单查询结果",
       "input": "QueryOpenBankSettleOrderRequest",
-      "name": "云企付结算单查询结果",
+      "name": "云企付-结算单查询结果",
       "output": "QueryOpenBankSettleOrderResponse"
     },
     "QueryOpenBankSubMerchantCredential": {
@@ -28695,7 +28695,7 @@
         },
         {
           "default": "",
-          "document": "外部商户订单号。与ChannelOrderId不能同时为空。",
+          "document": "外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。",
           "example": "202022167824350112001",
           "member": "string",
           "name": "OutOrderId",
@@ -28704,7 +28704,7 @@
         },
         {
           "default": "",
-          "document": "云平台订单号。与OutOrderId不能同时为空。",
+          "document": "云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可",
           "example": "202022167824350112001",
           "member": "string",
           "name": "ChannelOrderId",

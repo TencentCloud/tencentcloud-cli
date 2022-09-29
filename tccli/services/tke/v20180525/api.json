@@ -49,7 +49,7 @@
       "output": "CreateClusterResponse"
     },
     "CreateClusterEndpoint": {
-      "document": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "document": "创建集群访问端口",
       "input": "CreateClusterEndpointRequest",
       "name": "创建集群访问端口",
       "output": "CreateClusterEndpointResponse"
@@ -199,7 +199,7 @@
       "output": "DeleteClusterAsGroupsResponse"
     },
     "DeleteClusterEndpoint": {
-      "document": "删除集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "document": "删除集群访问端口",
       "input": "DeleteClusterEndpointRequest",
       "name": "删除集群访问端口",
       "output": "DeleteClusterEndpointResponse"
@@ -3554,7 +3554,7 @@
         },
         {
           "default": "",
-          "document": "使用的安全组，只有外网访问需要传递",
+          "document": "使用的安全组，只有外网访问需要传递（开启外网访问时必传）",
           "example": "sg-xxx",
           "member": "string",
           "name": "SecurityGroup",
@@ -5523,6 +5523,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5531,6 +5532,7 @@
         {
           "default": "",
           "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "example": "false",
           "member": "bool",
           "name": "IsExtranet",
           "required": false,

@@ -2582,6 +2582,14 @@
         "title": "设置云联网地域间带宽上限"
       }
     ],
+    "SetVpnGatewaysRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVpnGatewaysRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenewFlag\": 0,\n    \"Type\": \"IPSEC\",\n    \"VpnGatewayIds\": [\n        \"vpn-xxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "TransformAddress": [
       {
         "document": "",

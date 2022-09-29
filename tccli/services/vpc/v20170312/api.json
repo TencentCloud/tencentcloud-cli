@@ -1662,6 +1662,12 @@
       "name": "设置云联网各地域出带宽上限或地域间上限",
       "output": "SetCcnRegionBandwidthLimitsResponse"
     },
+    "SetVpnGatewaysRenewFlag": {
+      "document": "设置VPNGW续费标记",
+      "input": "SetVpnGatewaysRenewFlagRequest",
+      "name": "设置VPNGW续费标记",
+      "output": "SetVpnGatewaysRenewFlagResponse"
+    },
     "TransformAddress": {
       "document": "本接口 (TransformAddress) 用于将实例的普通公网 IP 转换为[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 平台对用户每地域每日解绑 EIP 重新分配普通公网 IP 次数有所限制（可参见 [EIP 产品简介](/document/product/213/1941)）。上述配额可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。",
       "input": "TransformAddressRequest",
@@ -22422,6 +22428,51 @@
     },
     "SetCcnRegionBandwidthLimitsResponse": {
       "document": "SetCcnRegionBandwidthLimits返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetVpnGatewaysRenewFlagRequest": {
+      "document": "SetVpnGatewaysRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPNGW字符型ID列表",
+          "example": "['vpngw-m6hhy6or']",
+          "member": "string",
+          "name": "VpnGatewayIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动续费标记[0, 1, 2]\n0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费",
+          "example": "2",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VPNGW类型['IPSEC', 'SSL']",
+          "example": "IPSEC",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetVpnGatewaysRenewFlagResponse": {
+      "document": "SetVpnGatewaysRenewFlag返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -73,7 +73,7 @@
     "CreateClusterEndpoint": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpoint\n&ClusterId=cls-xxxxxxxx\n&SubnetId=subnet-xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterEndpoint\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建集群访问端口"
       }
@@ -291,7 +291,7 @@
     "DeleteClusterEndpoint": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterEndpoint\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterEndpoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除集群访问端口"
       }
