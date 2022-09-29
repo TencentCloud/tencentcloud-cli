@@ -36,7 +36,8 @@ Output:
                 "DownloadRGBUrl": ""
             }
         ],
-        "RequestId": "db00dce1-5cb9-4072-96ce-24ce2433f21c"
+        "RequestId": "db00dce1-5cb9-4072-96ce-24ce2433f21c",
+        "RowTexts": []
     }
 }
 ```

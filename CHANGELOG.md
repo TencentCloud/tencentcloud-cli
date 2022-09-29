@@ -1,3 +1,88 @@
+# Release 3.0.621.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 34 次发布
+
+发布时间：2022-09-30 06:17:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：DisableApiTermination
+
+
+
+
+## 云数据库 Redis(redis) 版本：2018-04-12
+
+### 第 20 次发布
+
+发布时间：2022-09-30 06:40:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
+
+	* 新增入参：Role
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 5 次发布
+
+发布时间：2022-09-30 06:48:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataset](http://document.tencentcloudapi.woa.com/document/product/851/74843)
+
+	* 新增入参：ContentType
+
+* [DescribeDatasetDetailUnstructured](http://document.tencentcloudapi.woa.com/document/product/851/74840)
+
+	* 新增入参：TextClassificationLabels
+
+	* 新增出参：RowTexts
+
+
+新增数据结构：
+
+* [TextLabelDistributionDetailInfoFifthClass](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionDetailInfoFifthClass)
+* [TextLabelDistributionDetailInfoFirstClass](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionDetailInfoFirstClass)
+* [TextLabelDistributionDetailInfoFourthClass](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionDetailInfoFourthClass)
+* [TextLabelDistributionDetailInfoSecondClass](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionDetailInfoSecondClass)
+* [TextLabelDistributionDetailInfoThirdClass](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionDetailInfoThirdClass)
+* [TextLabelDistributionInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#TextLabelDistributionInfo)
+
+修改数据结构：
+
+* [FilterLabelInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#FilterLabelInfo)
+
+	* 新增成员：OcrLabelInfo, TextClassificationLabelList, RowText, ContentOmit
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.620.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

@@ -283,7 +283,7 @@
       "output": "DescribeReplicationGroupResponse"
     },
     "DescribeSlowLog": {
-      "document": "查询实例慢查询记录",
+      "document": "本接口（DescribeSlowLog）查询实例慢查询记录。",
       "input": "DescribeSlowLogRequest",
       "name": "查询实例慢查询记录",
       "output": "DescribeSlowLogResponse"
@@ -4037,57 +4037,73 @@
       "members": [
         {
           "default": "",
-          "document": "实例Id",
+          "document": "实例Id。",
           "example": "crs-asdasdas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开始时间",
+          "document": "开始时间。",
           "example": "2019-09-08 12:12:41",
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "结束时间。",
           "example": "2019-09-09 12:12:41",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "慢查询阈值（单位：微秒）",
+          "document": "慢查询平均执行时间阈值（单位：微秒）。",
           "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "页面大小",
+          "document": "每个页面展示的慢查询条数，默认值为20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "偏移量，取Limit整数倍",
+          "document": "慢查询条数的偏移量，取Limit整数倍。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>",
+          "example": "master",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4096,22 +4112,24 @@
       "document": "DescribeSlowLog返回参数结构体",
       "members": [
         {
-          "document": "慢查询总数",
+          "document": "慢查询总数。",
           "example": "30",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "慢查询详情",
+          "document": "慢查询详情。",
           "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowlogDetail",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

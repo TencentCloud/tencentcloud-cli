@@ -17,7 +17,8 @@ tccli tione CreateDataset --cli-unfold-argument  \
     --StorageLabelPath.Region ap-guangzhou \
     --StorageLabelPath.Bucket test-1256580188 \
     --DatasetType TYPE_DATASET_TEXT \
-    --IsSchemaExisted False
+    --IsSchemaExisted False \
+    --ContentType TYPE_TEXT_LINE
 ```
 
 Output: 
