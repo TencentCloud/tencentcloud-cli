@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm TerminateInstances --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy ins-5d8a23rs
+    --InstanceIds ins-5d8a23rs ins-r8hr2upy
 ```
 
 Output: 

@@ -1117,6 +1117,15 @@
           "name": "IsSchemaExisted",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "导入文件粒度，按行或者按文件",
+          "example": "TYPE_TEXT_LINE",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2962,6 +2971,15 @@
           "name": "DatasetIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要筛选的文本分类场景标签信息",
+          "example": "无",
+          "member": "TextLabelDistributionInfo",
+          "name": "TextClassificationLabels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3001,6 +3019,15 @@
           "example": "无",
           "member": "FilterLabelInfo",
           "name": "FilterLabelList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据文本行，默认返回前1000行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RowTexts",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -3936,6 +3963,46 @@
           "name": "OcrLabels",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OCR场景标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OcrLabelInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本分类场景标签结果，内容是json结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TextClassificationLabelList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本内容，返回50字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "RowText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本内容是否完全返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ContentOmit",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -5283,6 +5350,252 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionDetailInfoFifthClass": {
+      "document": "五级标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "LabelValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LabelCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "LabelPercentage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionDetailInfoFirstClass": {
+      "document": "一级标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "LabelValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LabelCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "LabelPercentage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子标签分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextLabelDistributionDetailInfoSecondClass",
+          "name": "ChildLabelList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionDetailInfoFourthClass": {
+      "document": "四级标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "LabelValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LabelCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "LabelPercentage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子标签分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextLabelDistributionDetailInfoFifthClass",
+          "name": "ChildLabelList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionDetailInfoSecondClass": {
+      "document": "二级标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "LabelValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LabelCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "LabelPercentage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子标签分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextLabelDistributionDetailInfoThirdClass",
+          "name": "ChildLabelList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionDetailInfoThirdClass": {
+      "document": "三级标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dog",
+          "member": "string",
+          "name": "LabelValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LabelCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "LabelPercentage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子标签分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextLabelDistributionDetailInfoFourthClass",
+          "name": "ChildLabelList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextLabelDistributionInfo": {
+      "document": "文本标签",
+      "members": [
+        {
+          "default": "",
+          "document": "文本分类题目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "theme1",
+          "member": "string",
+          "name": "Theme",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "一级标签分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextLabelDistributionDetailInfoFirstClass",
+          "name": "ClassLabelList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -8,7 +8,8 @@ Input:
 tccli teo CreateZone --cli-unfold-argument  \
     --JumpStart False \
     --Type full \
-    --ZoneName example.com
+    --ZoneName example.com \
+    --AllowDuplicates False
 ```
 
 Output: 

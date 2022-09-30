@@ -124,6 +124,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动态获取Scf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "Scf",
+          "name": "Scf",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -298,6 +308,98 @@
         }
       ],
       "type": "object"
+    },
+    "Scf": {
+      "document": "云函数SCF",
+      "members": [
+        {
+          "default": "",
+          "document": "Scf函数地域id",
+          "example": "1",
+          "member": "string",
+          "name": "ScfRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Scf函数地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ScfRegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ScfName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Scf函数入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ScfParam",
+          "name": "Params",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScfParam": {
+      "document": "Scf函数入参",
+      "members": [
+        {
+          "default": "",
+          "document": "参数Key",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型 1用户输入 2预设参数 3表单参数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值",
+          "example": "[]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StatusNode": {
       "document": "状态节点",

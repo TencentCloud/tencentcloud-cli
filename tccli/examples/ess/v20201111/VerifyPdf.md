@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess VerifyPdf --cli-unfold-argument  \
-    --Operator.UserId yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR \
-    --FlowId yDRINUUgygs3yr3pUuO4zjEReF3rOOwb
+    --Operator.UserId yDxoQUxxxxxxjEyd1h2hnnR \
+    --FlowId yDRINUUgxxxx4zjEReF3rOOwb
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
     "Response": {
         "PdfVerifyResults": [
             {
-                "CertNotAfter": 1663275732000,
-                "CertNotBefore": 1663275732000,
-                "CertSn": "100000000712",
+                "CertNotAfter": 166300032000,
+                "CertNotBefore": 16630002000,
+                "CertSn": "166300032000",
                 "ComponentHeight": 33.340026855469,
                 "ComponentPage": 1,
                 "ComponentPosX": 160,
@@ -27,13 +27,13 @@ Output:
                 "SignAlgorithm": "SHA1withRSA",
                 "SignPlatform": "腾讯电子签",
                 "SignTime": 1663304532000,
-                "SignerName": "ESS@xxx二@410403199607276635@666744",
+                "SignerName": "ESS@xxx二@41xxxxx6635@666744",
                 "VerifyResult": 1
             },
             {
                 "CertNotAfter": 1663304655000,
                 "CertNotBefore": 1663304655000,
-                "CertSn": "2b42298dca7010443a377657527eaa1017e254e8",
+                "CertSn": "2b42298dcxxxxx7527eaa1017e254e8",
                 "ComponentHeight": 75.680023193359,
                 "ComponentPage": 1,
                 "ComponentPosX": 260,
@@ -46,7 +46,7 @@ Output:
                 "VerifyResult": 1
             }
         ],
-        "RequestId": "79900a28-edd7-4cdf-8ed8-4af8a90f7292",
+        "RequestId": "79900a28xxxxxx-4af8a90f7292",
         "VerifyResult": 1
     }
 }
@@ -60,12 +60,8 @@ Input:
 
 ```
 tccli ess VerifyPdf --cli-unfold-argument  \
-    --Operator.ProxyIp  \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR \
-    --Operator.Channel  \
-    --Operator.OpenId  \
-    --FlowId yDRIKUUgygs1jw2sUuO4zjExhs82XeuX
+    --Operator.UserId yDxoQUUgydjfxxxxEyd1h2hnnR \
+    --FlowId yDRIKUUgyxxxxUuO4zjExhs82XeuX
 ```
 
 Output: 
@@ -74,9 +70,9 @@ Output:
     "Response": {
         "PdfVerifyResults": [
             {
-                "CertNotAfter": 1669172034000,
-                "CertNotBefore": 1637549634000,
-                "CertSn": "5255f51c76425eb30882c4d66f2a9eb8fb3d2bc1",
+                "CertNotAfter": 16691000034000,
+                "CertNotBefore": 163700034000,
+                "CertSn": "5255f51cxxxxxx4d66f2a9eb8fb3d2bc1",
                 "ComponentHeight": 43,
                 "ComponentPage": 1,
                 "ComponentPosX": 210.25,
@@ -89,9 +85,9 @@ Output:
                 "VerifyResult": 1
             },
             {
-                "CertNotAfter": 1669172034000,
-                "CertNotBefore": 1637549634000,
-                "CertSn": "5255f51c76425eb30882c4d66f2a9eb8fb3d2bc1",
+                "CertNotAfter": 166300032000,
+                "CertNotBefore": 166300032000,
+                "CertSn": "5255f51c7xxx82c4d66f2a9eb8fb3d2bc1",
                 "ComponentHeight": 12,
                 "ComponentPage": 1,
                 "ComponentPosX": 223.64999389648,
@@ -100,11 +96,11 @@ Output:
                 "SignAlgorithm": "SHA1withRSA",
                 "SignPlatform": "腾讯电子签",
                 "SignTime": 1663238861000,
-                "SignerName": "深圳市腾讯计算机系统有限公司",
+                "SignerName": "深圳xxxxx限公司",
                 "VerifyResult": 1
             }
         ],
-        "RequestId": "57151f15-2270-4f7e-9e17-346418d4b72a",
+        "RequestId": "57151f15-2xxxxxx46418d4b72a",
         "VerifyResult": 1
     }
 }
