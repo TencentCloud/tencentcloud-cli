@@ -49,8 +49,8 @@ Input:
 
 ```
 tccli vpc DescribeCcns --cli-unfold-argument  \
-    --Filters.0.Name ccn-name \
-    --Filters.0.Values test
+    --Filters.0.Values test \
+    --Filters.0.Name ccn-name
 ```
 
 Output: 
@@ -93,8 +93,8 @@ Input:
 
 ```
 tccli vpc DescribeCcns --cli-unfold-argument  \
-    --Filters.0.Name tag:env \
-    --Filters.0.Values test
+    --Filters.0.Values test \
+    --Filters.0.Name tag:env
 ```
 
 Output: 

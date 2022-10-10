@@ -13489,6 +13489,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MigrationType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

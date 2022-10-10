@@ -1,3 +1,124 @@
+# Release 3.0.622.1
+
+## 验证码(captcha) 版本：2019-07-22
+
+### 第 3 次发布
+
+发布时间：2022-10-10 06:11:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCaptchaDataSum](http://document.tencentcloudapi.woa.com/document/product/1110/40478)
+
+	* 新增出参：TicketThroughputSum, TicketInterceptSum
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 31 次发布
+
+发布时间：2022-10-10 06:18:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAssetHostTotalCount](http://document.tencentcloudapi.woa.com/document/product/296/76388)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 12 次发布
+
+发布时间：2022-10-10 06:30:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/240/43666)
+
+	* 新增入参：InstanceChargeType, MongosCpu, MongosMemory, MongosNum, ConfigServerCpu, ConfigServerMemory, ConfigServerVolume
+
+	* <font color="#dd0000">**修改入参**：</font>Period
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 30 次发布
+
+发布时间：2022-10-10 06:30:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusInstancesItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusInstancesItem)
+
+	* 新增成员：MigrationType
+
+
+
+
+## 云数据库 Redis(redis) 版本：2018-04-12
+
+### 第 21 次发布
+
+发布时间：2022-10-10 06:34:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseSSL](http://document.tencentcloudapi.woa.com/document/product/239/76390)
+* [OpenSSL](http://document.tencentcloudapi.woa.com/document/product/239/76389)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 13 次发布
+
+发布时间：2022-10-10 06:35:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataFetchUrl](http://document.tencentcloudapi.woa.com/document/product/1464/68355)
+
+	* 新增入参：NetStatus
+
+* [DescribeDataPerformancePage](http://document.tencentcloudapi.woa.com/document/product/1464/59944)
+
+	* 新增入参：NetStatus
+
+
+
+
 # Release 3.0.621.1
 
 ## 云服务器(cvm) 版本：2017-03-12

@@ -223,7 +223,7 @@
       "output": "CreateBandwidthPackageResponse"
     },
     "CreateCcn": {
-      "document": "本接口（CreateCcn）用于创建云联网（CCN）。<br />\n* 创建云联网同时可以绑定标签, 应答里的标签列表代表添加成功的标签。\n每个账号能创建的云联网实例个数是有限的，详请参考产品文档。如果需要扩充请联系在线客服。",
+      "document": "本接口（CreateCcn）用于创建云联网（CCN）。<br />\n* 创建云联网同时可以绑定标签, 应答里的标签列表代表添加成功的标签。\n* 每个账号能创建的云联网实例个数是有限的，详请参考产品文档。如果需要扩充请联系在线客服。",
       "input": "CreateCcnRequest",
       "name": "创建CCN",
       "output": "CreateCcnResponse"
@@ -12774,7 +12774,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12783,7 +12784,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12792,7 +12794,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12801,7 +12804,8 @@
           "member": "string",
           "name": "CcnId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12810,16 +12814,18 @@
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
+          "document": "排序方法。升序：`ASC`，倒序：`DESC`。",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12834,7 +12840,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "关联实例列表。",
@@ -12843,7 +12850,8 @@
           "name": "InstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12978,7 +12986,8 @@
           "member": "string",
           "name": "CcnIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12987,7 +12996,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12996,7 +13006,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13005,7 +13016,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13014,16 +13026,18 @@
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
+          "document": "排序方法。升序：`ASC`，倒序：`DESC`。",
           "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13038,7 +13052,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CCN对象。",
@@ -13047,7 +13062,8 @@
           "name": "CcnSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

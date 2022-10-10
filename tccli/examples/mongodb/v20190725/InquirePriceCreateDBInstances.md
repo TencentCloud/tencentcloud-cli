@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli mongodb InquirePriceCreateDBInstances --cli-unfold-argument  \
-    --Zone ap-guangzhou-4 \
-    --NodeNum 3 \
-    --Memory 4 \
-    --Volume 100 \
-    --MongoVersion MONGO_36_WT \
-    --MachineCode HIO10G \
     --GoodsNum 2 \
+    --Zone ap-guangzhou-4 \
+    --Memory 4 \
     --Period 1 \
     --ClusterType REPLSET \
-    --ReplicateSetNum 1
+    --Volume 100 \
+    --NodeNum 3 \
+    --ReplicateSetNum 1 \
+    --MachineCode HIO10G \
+    --MongoVersion MONGO_36_WT
 ```
 
 Output: 

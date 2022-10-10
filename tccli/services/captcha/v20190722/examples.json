@@ -20,7 +20,7 @@
       {
         "document": "",
         "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaDataSum\n&CaptchaAppId=2010000000\n&Start=20191201\n&End=20191202\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7151640-8351-46d5-86f9-ce886cf37111\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"OK\",\n        \"GetSum\": 123,\n        \"VfySuccSum\": 112,\n        \"VfySum\": 110,\n        \"AttackSum\": 13,\n        \"CheckTicketSum\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7151640-8351-46d5-86f9-ce886cf37111\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"OK\",\n        \"GetSum\": 123,\n        \"VfySuccSum\": 112,\n        \"VfySum\": 110,\n        \"AttackSum\": 13,\n        \"CheckTicketSum\": 100,\n        \"TicketThroughputSum\": 90,\n        \"TicketInterceptSum\": 10\n    }\n}",
         "title": "请求和返回示例"
       }
     ],

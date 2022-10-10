@@ -567,6 +567,7 @@
         {
           "default": "",
           "document": "验证码应用ID",
+          "example": "2010000",
           "member": "int64",
           "name": "CaptchaAppId",
           "required": true,
@@ -575,6 +576,7 @@
         {
           "default": "",
           "document": "查询开始时间",
+          "example": "20191201",
           "member": "int64",
           "name": "Start",
           "required": true,
@@ -583,6 +585,7 @@
         {
           "default": "",
           "document": "查询结束时间",
+          "example": "20191202",
           "member": "int64",
           "name": "End",
           "required": true,
@@ -596,50 +599,82 @@
       "members": [
         {
           "document": "请求总量",
+          "example": "123",
           "member": "int64",
           "name": "GetSum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求验证成功量",
+          "example": "112",
           "member": "int64",
           "name": "VfySuccSum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求验证量",
+          "example": "110",
           "member": "int64",
           "name": "VfySum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "拦截攻击量",
+          "example": "13",
           "member": "int64",
           "name": "AttackSum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "成功返回0  其它失败",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "票据校验量",
+          "document": "票据校验总量",
+          "example": "100",
           "member": "int64",
           "name": "CheckTicketSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "票据验证通过量",
+          "example": "90",
+          "member": "int64",
+          "name": "TicketThroughputSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "票据验证拦截量",
+          "example": "10",
+          "member": "int64",
+          "name": "TicketInterceptSum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -63,3 +63,27 @@ Output:
 }
 ```
 
+**Example 3: 1**
+
+
+
+Input: 
+
+```
+tccli rum DescribeDataFetchUrl --cli-unfold-argument  \
+    --EndTime 1658390700 \
+    --Type allcount \
+    --ID 1 \
+    --StartTime 1658304300
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d446c290-7034-47d3-8d72-46e7a692f5ac",
+        "Result": "{\"request_id\":\"d446c290-7034-47d3-8d72-46e7a692f5ac\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0}]}"
+    }
+}
+```
+
