@@ -155,7 +155,7 @@
     "InquirePriceCreateDBInstances": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=InquirePriceCreateDBInstances\n&Zone=ap-guangzhou-4\n&NodeNum=3\n&Memory=4\n&Volume=100\n&MongoVersion=MONGO_36_WT\n&MachineCode=HIO10G\n&GoodsNum=2\n&Period=1\n&ClusterType=REPLSET\n&ReplicateSetNum=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateDBInstances\n<公共请求参数>\n\n{\n    \"GoodsNum\": \"2\",\n    \"Zone\": \"ap-guangzhou-4\",\n    \"Memory\": \"4\",\n    \"Period\": \"1\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": \"100\",\n    \"NodeNum\": \"3\",\n    \"ReplicateSetNum\": \"1\",\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_36_WT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"DiscountPrice\": 1340,\n            \"OriginalPrice\": 1340,\n            \"UnitPrice\": 670\n        },\n        \"RequestId\": \"fb8b4646-389d-44cc-ab8c-98c081cbdad3\"\n    }\n}",
         "title": "查询新购数据库实例价格"
       }

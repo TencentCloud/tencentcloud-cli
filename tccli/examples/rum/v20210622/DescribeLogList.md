@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli rum DescribeLogList --cli-unfold-argument  \
+    --Sort "desc" \
     --StartTime "1" \
-    --EndTime "20" \
-    --Query "xxx" \
+    --ActionType "searchlog" \
     --Limit 10 \
     --Context "xxx" \
-    --Sort "desc" \
-    --ActionType "searchlog" \
+    --Query "xxx" \
+    --EndTime "20" \
     --ID 10
 ```
 

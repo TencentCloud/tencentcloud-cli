@@ -54,6 +54,12 @@
       "name": "清空Redis实例",
       "output": "ClearInstanceResponse"
     },
+    "CloseSSL": {
+      "document": "关闭SSL",
+      "input": "CloseSSLRequest",
+      "name": "关闭SSL",
+      "output": "CloseSSLResponse"
+    },
     "CreateInstanceAccount": {
       "document": "创建实例子账号",
       "input": "CreateInstanceAccountRequest",
@@ -432,6 +438,12 @@
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse"
     },
+    "OpenSSL": {
+      "document": "开启SSL",
+      "input": "OpenSSLRequest",
+      "name": "开启SSL",
+      "output": "OpenSSLResponse"
+    },
     "ReleaseWanAddress": {
       "document": "关闭外网",
       "input": "ReleaseWanAddressRequest",
@@ -577,7 +589,7 @@
       "members": [
         {
           "default": "",
-          "document": "复制组ID",
+          "document": "复制组ID。",
           "example": "crs-rpl-267khx71",
           "member": "string",
           "name": "GroupId",
@@ -586,7 +598,7 @@
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "InstanceId",
@@ -595,7 +607,7 @@
         },
         {
           "default": "",
-          "document": "实例角色，rw可读写，r只读",
+          "document": "给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>",
           "example": "rw",
           "member": "string",
           "name": "InstanceRole",
@@ -609,7 +621,7 @@
       "document": "AddReplicationInstance返回参数结构体",
       "members": [
         {
-          "document": "异步流程ID",
+          "document": "异步流程ID。",
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
@@ -1125,6 +1137,42 @@
       ],
       "type": "object"
     },
+    "CloseSSLRequest": {
+      "document": "CloseSSL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseSSLResponse": {
+      "document": "CloseSSL返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CommandTake": {
       "document": "命令耗时",
       "members": [
@@ -1568,7 +1616,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "指定复制组中的主实例ID。",
           "example": "crs-dvchdv5",
           "member": "string",
           "name": "InstanceId",
@@ -1577,7 +1625,7 @@
         },
         {
           "default": "",
-          "document": "复制组名称",
+          "document": "复制组名称。",
           "example": "无",
           "member": "string",
           "name": "GroupName",
@@ -1586,7 +1634,7 @@
         },
         {
           "default": "",
-          "document": "备注信息",
+          "document": "备注信息。",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -1600,7 +1648,7 @@
       "document": "CreateReplicationGroup返回参数结构体",
       "members": [
         {
-          "document": "异步流程ID",
+          "document": "异步流程ID。",
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
@@ -7358,6 +7406,42 @@
       ],
       "type": "object"
     },
+    "OpenSSLRequest": {
+      "document": "OpenSSL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenSSLResponse": {
+      "document": "OpenSSL返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID。",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Outbound": {
       "document": "安全组出站规则",
       "members": [
@@ -9344,7 +9428,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceId",
@@ -9353,7 +9437,7 @@
         },
         {
           "default": "",
-          "document": "是否升级proxy和redis内核版本，升级后可支持就近接入",
+          "document": "升级多可用区之后是否支持就近访问功能。\n<ul><li>true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。</li><li>false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "UpgradeProxyAndRedisServer",

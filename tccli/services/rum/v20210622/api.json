@@ -147,7 +147,7 @@
     "DescribeDataPerformanceProject": {
       "document": "获取PerformanceProject信息",
       "input": "DescribeDataPerformanceProjectRequest",
-      "name": "获取PerformanceProject信息",
+      "name": "获取PerformanceProject信息（已停用，请使用DescribeDataPerformancePage）",
       "output": "DescribeDataPerformanceProjectResponse"
     },
     "DescribeDataPvUrlInfo": {
@@ -2332,6 +2332,15 @@
           "name": "Ret",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络状态",
+          "example": "1",
+          "member": "string",
+          "name": "NetStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2825,6 +2834,15 @@
           "example": "prod",
           "member": "string",
           "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络状态",
+          "example": "1",
+          "member": "string",
+          "name": "NetStatus",
           "required": false,
           "type": "string"
         }
@@ -4891,7 +4909,7 @@
       "members": [
         {
           "default": "",
-          "document": "排序方式  desc  asc",
+          "document": "排序方式  desc  asc（必填）",
           "example": "asc",
           "member": "string",
           "name": "Sort",
@@ -4900,7 +4918,7 @@
         },
         {
           "default": "",
-          "document": "searchlog  histogram",
+          "document": "searchlog  histogram（必填）",
           "example": "searchlog",
           "member": "string",
           "name": "ActionType",
@@ -4909,7 +4927,7 @@
         },
         {
           "default": "",
-          "document": "项目ID",
+          "document": "项目ID（必填）",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -4918,7 +4936,7 @@
         },
         {
           "default": "",
-          "document": "开始时间",
+          "document": "开始时间（必填）",
           "example": "2021-09-26 21:01:46",
           "member": "string",
           "name": "StartTime",
@@ -4927,7 +4945,7 @@
         },
         {
           "default": "",
-          "document": "单次查询返回的原始日志条数，最大值为100",
+          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -4945,7 +4963,7 @@
         },
         {
           "default": "",
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096",
+          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
           "example": "id:100",
           "member": "string",
           "name": "Query",
@@ -4954,7 +4972,7 @@
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "结束时间（必填）",
           "example": "2021-09-26 21:01:46",
           "member": "string",
           "name": "EndTime",

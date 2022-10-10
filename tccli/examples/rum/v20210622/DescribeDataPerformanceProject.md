@@ -6,27 +6,27 @@ Input:
 
 ```
 tccli rum DescribeDataPerformanceProject --cli-unfold-argument  \
-    --ID 1 \
-    --StartTime 1625444040 \
-    --EndTime 1625454840 \
-    --Type pagepv \
-    --Level 1 \
-    --Isp 中国移动 \
+    --ExtSecond 自定义2 \
+    --Engine ie2 \
+    --IsAbroad 1 \
     --Area 中国 \
     --NetType 2 \
-    --Platform 2 \
-    --Device 三星 \
-    --VersionNum 版本 \
-    --ExtFirst 自定义1 \
-    --ExtSecond 自定义2 \
-    --ExtThird 自定义3 \
-    --IsAbroad 1 \
-    --Browser ie \
+    --CostType avg \
+    --Level 1 \
     --Os apple \
-    --Engine ie2 \
     --Brand apple \
+    --Isp 中国移动 \
+    --VersionNum 版本 \
+    --Platform 2 \
+    --ExtThird 自定义3 \
+    --ExtFirst 自定义1 \
+    --StartTime 1625444040 \
+    --Device 三星 \
     --From index.html \
-    --CostType avg
+    --EndTime 1625454840 \
+    --Type pagepv \
+    --ID 1 \
+    --Browser ie
 ```
 
 Output: 

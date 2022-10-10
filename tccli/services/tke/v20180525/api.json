@@ -516,6 +516,12 @@
       "name": "查询边缘计算集群的节点信息",
       "output": "DescribeEdgeClusterInstancesResponse"
     },
+    "DescribeEdgeClusterUpgradeInfo": {
+      "document": "可以查询边缘集群升级信息，包含可以升级的组件，当前升级状态和升级错误信息",
+      "input": "DescribeEdgeClusterUpgradeInfoRequest",
+      "name": "查询边缘集群升级信息",
+      "output": "DescribeEdgeClusterUpgradeInfoResponse"
+    },
     "DescribeEdgeLogSwitches": {
       "document": "获取事件、审计和日志的状态接口",
       "input": "DescribeEdgeLogSwitchesRequest",
@@ -1001,6 +1007,12 @@
       "input": "UpdateEKSContainerInstanceRequest",
       "name": "更新容器实例",
       "output": "UpdateEKSContainerInstanceResponse"
+    },
+    "UpdateEdgeClusterVersion": {
+      "document": "升级边缘集群组件到指定版本，此版本为TKEEdge专用版本。",
+      "input": "UpdateEdgeClusterVersionRequest",
+      "name": "升级边缘集群",
+      "output": "UpdateEdgeClusterVersionResponse"
     },
     "UpdateImageCache": {
       "document": "更新镜像缓存接口",
@@ -8103,6 +8115,87 @@
           "name": "InstanceInfoSet",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterUpgradeInfoRequest": {
+      "document": "DescribeEdgeClusterUpgradeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要升级到的TKEEdge版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterUpgradeInfoResponse": {
+      "document": "DescribeEdgeClusterUpgradeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "可升级的集群组件和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"x\":{\"ImageName\":\"x\",\"ImageVersion\":\"v1\"}}",
+          "member": "string",
+          "name": "ComponentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "边缘集群当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionCurrent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "边缘组件镜像仓库地址前缀，包含域名和命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群升级状态，可能值：running、updating、failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "ClusterUpgradeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群升级中状态或者失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tunnel: image pulling",
+          "member": "string",
+          "name": "ClusterUpgradeStatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -17835,6 +17928,60 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEdgeClusterVersionRequest": {
+      "document": "UpdateEdgeClusterVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要升级到的版本",
+          "example": "1.0.2",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义边缘组件镜像仓库前缀",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否跳过预检查阶段",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipPreCheck",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEdgeClusterVersionResponse": {
+      "document": "UpdateEdgeClusterVersion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

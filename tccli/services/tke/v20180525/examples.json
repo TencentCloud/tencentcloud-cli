@@ -712,6 +712,14 @@
         "title": "查询边缘计算集群的节点信息"
       }
     ],
+    "DescribeEdgeClusterUpgradeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeClusterUpgradeInfo\n<公共请求参数>\n\n{\n    \"EdgeVersion\": \"1.0.2\",\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67a0dd10-ef28-49a1-8834-7a5fa7a9bac0\",\n        \"EdgeVersionCurrent\": \"1.1.0\",\n        \"ComponentVersion\": \"{\\\"hyperkube\\\":{},\\\"kube-proxy\\\":{},\\\"coredns\\\":{\\\"InitImageName\\\":\\\"\\\",\\\"InitImageVersion\\\":\\\"\\\",\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.6.7\\\"},\\\"flannel\\\":{\\\"InitImageName\\\":\\\"\\\",\\\"InitImageVersion\\\":\\\"\\\",\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.12.0-edge-2.0\\\"},\\\"gpu-plugin\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.9.0\\\"},\\\"site-manager\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.6.0\\\"},\\\"application-grid-controller\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.21.1\\\"},\\\"application-grid-wrapper\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.20.3\\\"},\\\"tunnel\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.8.0\\\"},\\\"edge-health\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"edge-health-admission\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"event\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"griddaemon\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"metric-server\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"standalone-metrics\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"hpa-metrics-server\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"tke-monitor-agent\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"20220714-3b31e8d2\\\"}}\",\n        \"RegistryPrefix\": \"\",\n        \"ClusterUpgradeStatus\": \"updating\",\n        \"ClusterUpgradeStatusReason\": \"component application-grid-controller:Back-off pulling image \\\"ccr.ccs.tencentyun.com/tkeedge/application-grid-controller:1.21.1-x\\\"\"\n    }\n}",
+        "title": "查询边缘集群升级信息"
+      }
+    ],
     "DescribeEdgeLogSwitches": [
       {
         "document": "",
@@ -1364,6 +1372,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEKSContainerInstance\n<公共请求参数>\n\n{\n    \"Name\": \"helloworld\",\n    \"RestartPolicy\": \"Always\",\n    \"EksCiId\": \"eksci-123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e133246\",\n        \"EksCiId\": \"eksci-rkkrzy4o\"\n    }\n}",
         "title": "更新容器实例"
+      }
+    ],
+    "UpdateEdgeClusterVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEdgeClusterVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"EdgeVersion\": \"1.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "title": "升级边缘集群"
       }
     ],
     "UpdateImageCache": [
