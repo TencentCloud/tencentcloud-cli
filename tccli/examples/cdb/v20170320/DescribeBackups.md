@@ -24,13 +24,23 @@ Output:
                 "Creator": "SYSTEM",
                 "BackupId": 12445233,
                 "Date": "2017-04-29 00:01:34",
+                "StartTime": "2017-07-22 00:01:34",
                 "InternetUrl": "http://gz.xxxxxxxxxxxxxxxxx",
                 "Type": "logical",
-                "Size": 653226
+                "Way": "automatic",
+                "ManualBackupName": "xx",
+                "SaveMode": "save_mode_regular",
+                "RemoteInfo": [],
+                "Region": "ap-guangzhou",
+                "Method": "full",
+                "CosStorageType": 0,
+                "Size": 653226,
+                "InstanceId": "cdb-xxx"
             },
             {
                 "Status": "SUCCESS",
                 "FinishTime": "2017-07-23 12:03:42",
+                "StartTime": "2017-07-23 00:01:34",
                 "Name": "ivansqwutestdr_backup_20170430000129",
                 "IntranetUrl": "http://gz.xxxxxxxxxxxxxxxxx",
                 "Creator": "SYSTEM",
@@ -38,7 +48,15 @@ Output:
                 "Date": "2017-04-30 00:01:29",
                 "InternetUrl": "http://gz.xxxxxxxxxxxxxxxxx",
                 "Type": "logical",
-                "Size": 653226
+                "Way": "automatic",
+                "ManualBackupName": "xx",
+                "SaveMode": "save_mode_regular",
+                "RemoteInfo": [],
+                "Region": "ap-guangzhou",
+                "Method": "full",
+                "CosStorageType": 0,
+                "Size": 653226,
+                "InstanceId": "cdb-xxx"
             }
         ]
     }

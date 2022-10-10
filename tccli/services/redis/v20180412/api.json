@@ -737,12 +737,13 @@
       "members": [
         {
           "default": "",
-          "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。",
+          "document": "数据库引擎名称，本接口取值：redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -751,7 +752,8 @@
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -760,7 +762,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2168,7 +2171,8 @@
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2177,7 +2181,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2186,31 +2191,34 @@
       "document": "DescribeDBSecurityGroups返回参数结构体",
       "members": [
         {
-          "document": "安全组规则",
+          "document": "安全组规则。",
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "安全组生效内网地址",
+          "document": "安全组生效内网地址。",
           "example": "10.10.0.1",
           "member": "string",
           "name": "VIP",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "安全组生效内网端口",
+          "document": "安全组生效内网端口。",
           "example": "6379",
           "member": "string",
           "name": "VPort",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4631,30 +4639,33 @@
       "members": [
         {
           "default": "",
-          "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。",
+          "document": "数据库引擎名称，本接口取值：redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "安全组Id。",
+          "document": "安全组 ID。",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例ID列表，一个或者多个实例Id组成的数组。",
+          "document": "实例ID列表，一个或者多个实例 ID 组成的数组。",
           "example": "[\"crs-eb2w7dto\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7026,30 +7037,33 @@
       "members": [
         {
           "default": "",
-          "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。",
+          "document": "数据库引擎名称，本接口取值：redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "要修改的安全组ID列表，一个或者多个安全组Id组成的数组。",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "crs-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

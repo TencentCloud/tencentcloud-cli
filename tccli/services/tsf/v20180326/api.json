@@ -1435,6 +1435,34 @@
       ],
       "usage": "in"
     },
+    "AgentProfile": {
+      "document": "部署javaagent的类型、版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Agent类型",
+          "example": "SERVICE_AGENT/OT_AGENT",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Agent版本号",
+          "example": "release/1.0",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "ApiDefinitionDescr": {
       "document": "API 对象类型描述",
       "members": [
@@ -7420,7 +7448,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7429,7 +7458,8 @@
           "member": "string",
           "name": "TagName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7438,7 +7468,8 @@
           "member": "int64",
           "name": "InstanceNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7447,7 +7478,8 @@
           "member": "string",
           "name": "Server",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7456,7 +7488,8 @@
           "member": "string",
           "name": "Reponame",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7465,7 +7498,8 @@
           "member": "string",
           "name": "CpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7474,7 +7508,8 @@
           "member": "string",
           "name": "MemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7483,7 +7518,8 @@
           "member": "string",
           "name": "JvmOpts",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7492,7 +7528,8 @@
           "member": "string",
           "name": "CpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7501,7 +7538,8 @@
           "member": "string",
           "name": "MemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7510,7 +7548,8 @@
           "member": "bool",
           "name": "DoNotStart",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7519,7 +7558,8 @@
           "member": "string",
           "name": "RepoName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7528,7 +7568,8 @@
           "member": "int64",
           "name": "UpdateType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7537,7 +7578,8 @@
           "member": "int64",
           "name": "UpdateIvl",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7546,7 +7588,8 @@
           "member": "string",
           "name": "AgentCpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7555,7 +7598,8 @@
           "member": "string",
           "name": "AgentCpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7564,7 +7608,8 @@
           "member": "string",
           "name": "AgentMemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7573,7 +7618,8 @@
           "member": "string",
           "name": "AgentMemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7582,7 +7628,8 @@
           "member": "string",
           "name": "IstioCpuRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7591,7 +7638,8 @@
           "member": "string",
           "name": "IstioCpuLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7600,7 +7648,8 @@
           "member": "string",
           "name": "IstioMemRequest",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7609,7 +7658,8 @@
           "member": "string",
           "name": "IstioMemLimit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7618,7 +7668,8 @@
           "member": "string",
           "name": "MaxSurge",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7627,7 +7678,8 @@
           "member": "string",
           "name": "MaxUnavailable",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7636,7 +7688,8 @@
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7645,7 +7698,8 @@
           "member": "Env",
           "name": "Envs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7654,7 +7708,8 @@
           "member": "ServiceSetting",
           "name": "ServiceSetting",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7663,7 +7718,8 @@
           "member": "bool",
           "name": "DeployAgent",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7672,7 +7728,8 @@
           "member": "SchedulingStrategy",
           "name": "SchedulingStrategy",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7681,7 +7738,8 @@
           "member": "bool",
           "name": "IncrementalDeployment",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7690,7 +7748,8 @@
           "member": "string",
           "name": "RepoType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7699,7 +7758,8 @@
           "member": "VolumeInfo",
           "name": "VolumeInfos",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7708,7 +7768,8 @@
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfos",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7717,7 +7778,8 @@
           "member": "VolumeInfo",
           "name": "VolumeInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7726,7 +7788,8 @@
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7735,7 +7798,28 @@
           "member": "bool",
           "name": "VolumeClean",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "javaagent信息: SERVICE_AGENT/OT_AGENT",
+          "example": "无",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预热配置信息",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7744,13 +7828,14 @@
       "document": "DeployContainerGroup返回参数结构体",
       "members": [
         {
-          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。",
+          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7771,7 +7856,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7780,7 +7866,8 @@
           "member": "string",
           "name": "PkgId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7789,7 +7876,8 @@
           "member": "string",
           "name": "StartupParameters",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7798,7 +7886,8 @@
           "member": "string",
           "name": "DeployDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7807,7 +7896,8 @@
           "member": "bool",
           "name": "ForceStart",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7816,7 +7906,8 @@
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7825,7 +7916,8 @@
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7834,7 +7926,8 @@
           "member": "uint64",
           "name": "UpdateType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7843,7 +7936,8 @@
           "member": "bool",
           "name": "DeployBetaEnable",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7852,7 +7946,8 @@
           "member": "float",
           "name": "DeployBatch",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7861,7 +7956,8 @@
           "member": "string",
           "name": "DeployExeMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7870,7 +7966,8 @@
           "member": "uint64",
           "name": "DeployWaitTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7879,7 +7976,8 @@
           "member": "string",
           "name": "StartScript",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7888,7 +7986,8 @@
           "member": "string",
           "name": "StopScript",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7897,7 +7996,8 @@
           "member": "bool",
           "name": "IncrementalDeployment",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7906,7 +8006,8 @@
           "member": "string",
           "name": "JdkName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7915,7 +8016,28 @@
           "member": "string",
           "name": "JdkVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "部署agent的类型、版本",
+          "example": "无",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预热参数配置",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7930,7 +8052,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10168,10 +10291,12 @@
         {
           "default": "",
           "document": "部署组ID",
+          "example": "group-oydzed8v",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10181,10 +10306,13 @@
       "members": [
         {
           "document": "虚拟机部署组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VmGroup",
           "name": "Result",
+          "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23810,7 +23938,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23820,7 +23949,8 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23830,7 +23960,8 @@
           "name": "GroupStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23840,7 +23971,8 @@
           "name": "PackageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23850,7 +23982,8 @@
           "name": "PackageName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23860,7 +23993,8 @@
           "name": "PackageVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23870,7 +24004,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23880,7 +24015,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23890,7 +24026,8 @@
           "name": "NamespaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23900,7 +24037,8 @@
           "name": "NamespaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23910,7 +24048,8 @@
           "name": "ApplicationId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23920,7 +24059,8 @@
           "name": "ApplicationName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23930,7 +24070,8 @@
           "name": "InstanceCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23940,7 +24081,8 @@
           "name": "RunInstanceCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23950,7 +24092,8 @@
           "name": "StartupParameters",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23960,7 +24103,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23970,7 +24114,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23980,7 +24125,8 @@
           "name": "OffInstanceCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23990,7 +24136,8 @@
           "name": "GroupDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24000,7 +24147,8 @@
           "name": "MicroserviceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24010,7 +24158,8 @@
           "name": "ApplicationType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24020,7 +24169,8 @@
           "name": "GroupResourceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24030,7 +24180,8 @@
           "name": "UpdatedTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24040,7 +24191,8 @@
           "name": "DeployDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24050,7 +24202,8 @@
           "name": "UpdateType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24060,7 +24213,8 @@
           "name": "DeployBetaEnable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24070,7 +24224,8 @@
           "name": "DeployBatch",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24080,7 +24235,8 @@
           "name": "DeployExeMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24090,7 +24246,8 @@
           "name": "DeployWaitTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24100,7 +24257,8 @@
           "name": "EnableHealthCheck",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24110,7 +24268,8 @@
           "name": "HealthCheckSettings",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24120,7 +24279,8 @@
           "name": "PackageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24130,7 +24290,8 @@
           "name": "StartScript",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24140,7 +24301,8 @@
           "name": "StopScript",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24150,7 +24312,30 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "javaagent信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SERVICE_AGENT/OT_AGENT",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预热属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -24518,6 +24703,56 @@
         }
       ],
       "usage": "in"
+    },
+    "WarmupSetting": {
+      "document": "预热配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启预热",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预热时间",
+          "example": "120",
+          "member": "uint64",
+          "name": "WarmupTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预热曲率，取值 1~5",
+          "example": "2",
+          "member": "uint64",
+          "name": "Curvature",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启预热保护，在开启保护的情况下，超过 50% 的节点处于预热中，则会中止预热",
+          "example": "false",
+          "member": "bool",
+          "name": "EnabledProtection",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

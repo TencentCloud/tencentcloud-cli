@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tsf DeployContainerGroup --cli-unfold-argument  \
-    --GroupId group-xxxxxxx \
-    --CpuRequest 0.54 \
+    --DoNotStart false \
     --MemRequest 1024 \
+    --UpdateType 1 \
     --Server ccr.ccs.tencentyun.com \
+    --InstanceNum 1 \
     --RepoName tsf_10000617xxxx/test \
     --TagName xxxx \
-    --DoNotStart false \
-    --InstanceNum 1 \
-    --JvmOpts -Xms128m-Xmx512m-XX:MetaspaceSize \
-    --UpdateType 1 \
-    --UpdateIvl 10
+    --CpuRequest 0.54 \
+    --JvmOpts -Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m \
+    --UpdateIvl 10 \
+    --GroupId group-xxxxxxx
 ```
 
 Output: 

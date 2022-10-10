@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 验证码(captcha) 版本：2019-07-22
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 3 次发布
+### 第 33 次发布
 
-发布时间：2022-10-10 06:11:54
+发布时间：2022-10-11 06:10:39
 
 本次发布包含了以下内容：
 
@@ -12,18 +12,49 @@
 
 修改接口：
 
-* [DescribeCaptchaDataSum](http://document.tencentcloudapi.woa.com/document/product/1110/40478)
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15837)
 
-	* 新增出参：TicketThroughputSum, TicketInterceptSum
+	* 新增出参：EnableBackupArchive, BackupArchiveDays, EnableBinlogArchive, BinlogArchiveDays
+
+* [DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41229)
+
+	* 新增出参：RemoteBackupVolume, BackupArchiveVolume
+
+* [DescribeBinlogBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41227)
+
+	* 新增出参：BinlogArchiveVolume, BinlogArchiveCount
+
+* [DescribeDataBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41226)
+
+	* 新增出参：DataBackupArchiveVolume, DataBackupArchiveCount
+
+* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15839)
+
+	* 新增入参：EnableBackupArchive, BackupArchiveDays, BinlogArchiveDays, EnableBinlogArchive
+
+
+新增数据结构：
+
+* [RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：Region, RemoteInfo, CosStorageType, InstanceId
+
+* [BinlogInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BinlogInfo)
+
+	* 新增成员：Region, Status, RemoteInfo, CosStorageType, InstanceId
 
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
+## 企业收付平台(cpdp) 版本：2019-08-20
 
-### 第 31 次发布
+### 第 40 次发布
 
-发布时间：2022-10-10 06:18:37
+发布时间：2022-10-11 06:16:31
 
 本次发布包含了以下内容：
 
@@ -31,76 +62,19 @@
 
 新增接口：
 
-* [DescribeAssetHostTotalCount](http://document.tencentcloudapi.woa.com/document/product/296/76388)
+* [QueryCompanyTitle](http://document.tencentcloudapi.woa.com/document/product/1122/76391)
 
+新增数据结构：
 
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 12 次发布
-
-发布时间：2022-10-10 06:30:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [InquirePriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/240/43666)
-
-	* 新增入参：InstanceChargeType, MongosCpu, MongosMemory, MongosNum, ConfigServerCpu, ConfigServerMemory, ConfigServerVolume
-
-	* <font color="#dd0000">**修改入参**：</font>Period
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+* [CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult)
 
 
 
 ## 云监控(monitor) 版本：2018-07-24
 
-### 第 30 次发布
+### 第 31 次发布
 
-发布时间：2022-10-10 06:30:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PrometheusInstancesItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusInstancesItem)
-
-	* 新增成员：MigrationType
-
-
-
-
-## 云数据库 Redis(redis) 版本：2018-04-12
-
-### 第 21 次发布
-
-发布时间：2022-10-10 06:34:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CloseSSL](http://document.tencentcloudapi.woa.com/document/product/239/76390)
-* [OpenSSL](http://document.tencentcloudapi.woa.com/document/product/239/76389)
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
-### 第 13 次发布
-
-发布时间：2022-10-10 06:35:17
+发布时间：2022-10-11 06:35:35
 
 本次发布包含了以下内容：
 
@@ -108,13 +82,44 @@
 
 修改接口：
 
-* [DescribeDataFetchUrl](http://document.tencentcloudapi.woa.com/document/product/1464/68355)
+* [GetMonitorData](http://document.tencentcloudapi.woa.com/document/product/248/31014)
 
-	* 新增入参：NetStatus
+	* 新增出参：Msg
 
-* [DescribeDataPerformancePage](http://document.tencentcloudapi.woa.com/document/product/1464/59944)
 
-	* 新增入参：NetStatus
+
+
+## 腾讯微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 24 次发布
+
+发布时间：2022-10-11 06:49:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployContainerGroup](http://document.tencentcloudapi.woa.com/document/product/649/36071)
+
+	* 新增入参：AgentProfileList, WarmupSetting
+
+* [DeployGroup](http://document.tencentcloudapi.woa.com/document/product/649/36070)
+
+	* 新增入参：AgentProfileList, WarmupSetting
+
+
+新增数据结构：
+
+* [AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile)
+* [WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting)
+
+修改数据结构：
+
+* [VmGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroup)
+
+	* 新增成员：AgentProfileList, WarmupSetting
 
 
 
@@ -5250,6 +5255,52 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 33 次发布
+
+发布时间：2022-10-11 06:10:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15837)
+
+	* 新增出参：EnableBackupArchive, BackupArchiveDays, EnableBinlogArchive, BinlogArchiveDays
+
+* [DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41229)
+
+	* 新增出参：RemoteBackupVolume, BackupArchiveVolume
+
+* [DescribeBinlogBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41227)
+
+	* 新增出参：BinlogArchiveVolume, BinlogArchiveCount
+
+* [DescribeDataBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41226)
+
+	* 新增出参：DataBackupArchiveVolume, DataBackupArchiveCount
+
+* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15839)
+
+	* 新增入参：EnableBackupArchive, BackupArchiveDays, BinlogArchiveDays, EnableBinlogArchive
+
+
+新增数据结构：
+
+* [[RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo))
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：Region, RemoteInfo, CosStorageType, InstanceId
+
+* [BinlogInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BinlogInfo)
+
+	* 新增成员：Region, Status, RemoteInfo, CosStorageType, InstanceId
+
 
 ### 第 32 次发布
 
@@ -10574,6 +10625,22 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 40 次发布
+
+发布时间：2022-10-11 06:16:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryCompanyTitle](http://document.tencentcloudapi.woa.com/document/product/1122/76391)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult))
+
 ### 第 39 次发布
 
 发布时间：2022-09-27 06:13:14
@@ -12527,7 +12594,7 @@
 
 新增接口：
 
-* [[DescribeAssetHostTotalCount](http://document.tencentcloudapi.woa.com/document/product/296/76388)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAssetHostTotalCount](http://document.tencentcloudapi.woa.com/document/product/296/76388)
 
 ### 第 30 次发布
 
@@ -24317,6 +24384,21 @@
 
 ## 云监控(monitor) 版本：2018-07-24
 
+### 第 31 次发布
+
+发布时间：2022-10-11 06:35:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetMonitorData](http://document.tencentcloudapi.woa.com/document/product/248/31014)
+
+	* 新增出参：Msg
+
+
 ### 第 30 次发布
 
 发布时间：2022-10-10 06:30:57
@@ -28510,8 +28592,8 @@
 
 新增接口：
 
-* [[CloseSSL](http://document.tencentcloudapi.woa.com/document/product/239/76390)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[OpenSSL](http://document.tencentcloudapi.woa.com/document/product/239/76389)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CloseSSL](http://document.tencentcloudapi.woa.com/document/product/239/76390)
+* [OpenSSL](http://document.tencentcloudapi.woa.com/document/product/239/76389)
 
 ### 第 20 次发布
 
@@ -37201,6 +37283,37 @@
 
 
 ## 腾讯微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 24 次发布
+
+发布时间：2022-10-11 06:49:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployContainerGroup](http://document.tencentcloudapi.woa.com/document/product/649/36071)
+
+	* 新增入参：AgentProfileList, WarmupSetting
+
+* [DeployGroup](http://document.tencentcloudapi.woa.com/document/product/649/36070)
+
+	* 新增入参：AgentProfileList, WarmupSetting
+
+
+新增数据结构：
+
+* [[AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile))
+* [[WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting))
+
+修改数据结构：
+
+* [VmGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroup)
+
+	* 新增成员：AgentProfileList, WarmupSetting
+
 
 ### 第 23 次发布
 

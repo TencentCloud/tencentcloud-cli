@@ -32,6 +32,10 @@ Output:
         "BackupPeriodSaveInterval": "monthly",
         "BackupPeriodSaveCount": 1,
         "StartBackupPeriodSaveDate": "2021-12-12 00:00:00",
+        "EnableBackupArchive": "on",
+        "BackupArchiveDays": 180,
+        "EnableBinlogArchive": "on",
+        "BinlogArchiveDays": 180,
         "RequestId": "9d73ec37-89b8-4d36-9f40-123123123"
     }
 }

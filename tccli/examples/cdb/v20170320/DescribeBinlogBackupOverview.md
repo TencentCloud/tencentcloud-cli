@@ -17,6 +17,8 @@ Output:
         "BinlogBackupVolume": 6000,
         "RemoteBinlogCount": 5,
         "RemoteBinlogVolume": 2000,
+        "BinlogArchiveCount": 5,
+        "BinlogArchiveVolume": 2000,
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }
