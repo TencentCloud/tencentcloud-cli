@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli essbasic ChannelCreateFlowSignReview --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId 622201199508023314 \
-    --Agent.ProxyOrganizationOpenId sharpezhang-testorg-pay \
-    --Agent.AppId 15edb41f2ee412f5ff533ac0185ebb0b \
+    --Agent.ProxyOperator.OpenId 622201xxxx508023314 \
+    --Agent.ProxyOrganizationOpenId shaxxxxang-testorg-pay \
+    --Agent.AppId 15edb41xxxxff533ac0185ebb0b \
     --FlowId xxxx \
     --ReviewType PASS \
     --ReviewMessage 企业内部审核通过，允许签署

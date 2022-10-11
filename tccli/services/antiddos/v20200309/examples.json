@@ -411,8 +411,8 @@
     "DescribeDDoSTrend": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Business\": \"bgp\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"EndTime\": \"2018-08-27 16:05:10\",\n        \"Id\": \"bgp-00000010\",\n        \"Ip\": \"3.3.3.3\",\n        \"MetricName\": \"bps\",\n        \"Period\": 3600,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2018-08-27 15:05:10\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgpip\",\n    \"Ip\": \"1.1.1.1\",\n    \"Period\": 330,\n    \"StartTime\": \"2022-10-10 01:08:00\",\n    \"EndTime\": \"2022-10-10 01:13:00\",\n    \"Id\": \"bgpip-00000xxx\",\n    \"MetricName\": \"pps\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgpip\",\n        \"Count\": 2,\n        \"Data\": [\n            30,\n            20\n        ],\n        \"EndTime\": \"2022-10-10 01:13:00\",\n        \"Id\": \"bgpip-00000xxx\",\n        \"Ip\": \"1.1.1.1\",\n        \"MetricName\": \"pps\",\n        \"Period\": 300,\n        \"RequestId\": \"xxxxxxx\",\n        \"StartTime\": \"2022-10-10 01:05:00\"\n    }\n}",
         "title": "获取DDoS攻击指标数据"
       }
     ],

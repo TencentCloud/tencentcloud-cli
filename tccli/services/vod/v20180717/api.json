@@ -28586,6 +28586,17 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：\n<li>hvc1 表示 hvc1 标签；</li>\n<li>hev1 表示 hev1 标签。 </li>\n默认值：hvc1。",
+          "example": "hev1",
+          "member": "string",
+          "name": "CodecTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -28698,6 +28709,17 @@
           "example": "ON",
           "member": "string",
           "name": "PreserveHDRSwitch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：\n<li>hvc1 表示 hvc1 标签；</li>\n<li>hev1 表示 hev1 标签。 </li>\n默认值：hvc1。",
+          "example": "hev1",
+          "member": "string",
+          "name": "CodecTag",
           "required": false,
           "type": "string",
           "value_allowed_null": false,

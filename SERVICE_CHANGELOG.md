@@ -1,60 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 33 次发布
+### 第 32 次发布
 
-发布时间：2022-10-11 06:10:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15837)
-
-	* 新增出参：EnableBackupArchive, BackupArchiveDays, EnableBinlogArchive, BinlogArchiveDays
-
-* [DescribeBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41229)
-
-	* 新增出参：RemoteBackupVolume, BackupArchiveVolume
-
-* [DescribeBinlogBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41227)
-
-	* 新增出参：BinlogArchiveVolume, BinlogArchiveCount
-
-* [DescribeDataBackupOverview](http://document.tencentcloudapi.woa.com/document/product/236/41226)
-
-	* 新增出参：DataBackupArchiveVolume, DataBackupArchiveCount
-
-* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/236/15839)
-
-	* 新增入参：EnableBackupArchive, BackupArchiveDays, BinlogArchiveDays, EnableBinlogArchive
-
-
-新增数据结构：
-
-* [RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)
-
-修改数据结构：
-
-* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
-
-	* 新增成员：Region, RemoteInfo, CosStorageType, InstanceId
-
-* [BinlogInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BinlogInfo)
-
-	* 新增成员：Region, Status, RemoteInfo, CosStorageType, InstanceId
-
-
-
-
-## 企业收付平台(cpdp) 版本：2019-08-20
-
-### 第 40 次发布
-
-发布时间：2022-10-11 06:16:31
+发布时间：2022-10-12 06:18:50
 
 本次发布包含了以下内容：
 
@@ -62,64 +12,96 @@
 
 新增接口：
 
-* [QueryCompanyTitle](http://document.tencentcloudapi.woa.com/document/product/1122/76391)
+* [DescribeBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76396)
+* [DescribeBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/76395)
+* [StartBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76394)
+* [SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)
 
 新增数据结构：
 
-* [CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult)
+* [BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam)
+* [BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)
+* [BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect)
 
 
 
-## 云监控(monitor) 版本：2018-07-24
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 31 次发布
+### 第 17 次发布
 
-发布时间：2022-10-11 06:35:35
+发布时间：2022-10-12 06:34:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [GetMonitorData](http://document.tencentcloudapi.woa.com/document/product/248/31014)
+* DescribeDBPerformance
+* DescribeDBPerformanceDetails
+* DescribeSqlLogs
 
-	* 新增出参：Msg
+<font color="#dd0000">**删除数据结构**：</font>
+
+* PerformanceMonitorSet
+* SqlLogItem
 
 
 
+## 腾讯云微服务引擎(tse) 版本：2020-12-07
 
-## 腾讯微服务平台 TSF(tsf) 版本：2018-03-26
+### 第 17 次发布
 
-### 第 24 次发布
-
-发布时间：2022-10-11 06:49:46
+发布时间：2022-10-12 06:49:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DeployContainerGroup](http://document.tencentcloudapi.woa.com/document/product/649/36071)
-
-	* 新增入参：AgentProfileList, WarmupSetting
-
-* [DeployGroup](http://document.tencentcloudapi.woa.com/document/product/649/36070)
-
-	* 新增入参：AgentProfileList, WarmupSetting
+* [UpdateEngineInternetAccess](http://document.tencentcloudapi.woa.com/document/product/1364/76397)
 
 
-新增数据结构：
 
-* [AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile)
-* [WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting)
+## 云点播(vod) 版本：2018-07-17
+
+### 第 28 次发布
+
+发布时间：2022-10-12 06:51:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [VmGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroup)
+* [VideoTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfo)
 
-	* 新增成员：AgentProfileList, WarmupSetting
+	* 新增成员：CodecTag
+
+* [VideoTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfoForUpdate)
+
+	* 新增成员：CodecTag
+
+
+
+
+## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 6 次发布
+
+发布时间：2022-10-12 06:56:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+
+	* 新增成员：UserName
 
 
 
@@ -5289,7 +5271,7 @@
 
 新增数据结构：
 
-* [[RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo))
+* [RemoteBackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RemoteBackupInfo)
 
 修改数据结构：
 
@@ -10635,11 +10617,11 @@
 
 新增接口：
 
-* [[QueryCompanyTitle](http://document.tencentcloudapi.woa.com/document/product/1122/76391)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [QueryCompanyTitle](http://document.tencentcloudapi.woa.com/document/product/1122/76391)
 
 新增数据结构：
 
-* [[CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult))
+* [CompanyTitleResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CompanyTitleResult)
 
 ### 第 39 次发布
 
@@ -12583,6 +12565,27 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 32 次发布
+
+发布时间：2022-10-12 06:18:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76396)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/76395)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76394)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam))
+* [[BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem))
+* [[BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect))
 
 ### 第 31 次发布
 
@@ -23550,6 +23553,25 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 17 次发布
+
+发布时间：2022-10-12 06:34:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDBPerformance
+* DescribeDBPerformanceDetails
+* DescribeSqlLogs
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* PerformanceMonitorSet
+* SqlLogItem
 
 ### 第 16 次发布
 
@@ -36952,6 +36974,18 @@
 
 ## 腾讯云微服务引擎(tse) 版本：2020-12-07
 
+### 第 17 次发布
+
+发布时间：2022-10-12 06:49:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpdateEngineInternetAccess](http://document.tencentcloudapi.woa.com/document/product/1364/76397)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 16 次发布
 
 发布时间：2022-09-27 06:38:37
@@ -37305,8 +37339,8 @@
 
 新增数据结构：
 
-* [[AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile))
-* [[WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting))
+* [AgentProfile](http://document.tencentcloudapi.woa.com/document/product/649/36099#AgentProfile)
+* [WarmupSetting](http://document.tencentcloudapi.woa.com/document/product/649/36099#WarmupSetting)
 
 修改数据结构：
 
@@ -38624,6 +38658,25 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 28 次发布
+
+发布时间：2022-10-12 06:51:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VideoTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfo)
+
+	* 新增成员：CodecTag
+
+* [VideoTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfoForUpdate)
+
+	* 新增成员：CodecTag
+
 
 ### 第 27 次发布
 
@@ -41649,6 +41702,21 @@
 
 
 ## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 6 次发布
+
+发布时间：2022-10-12 06:56:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+
+	* 新增成员：UserName
+
 
 ### 第 5 次发布
 
