@@ -1,5 +1,17 @@
 {
   "actions": {
+    "CreateMesh": {
+      "document": "创建网格",
+      "input": "CreateMeshRequest",
+      "name": "创建网格",
+      "output": "CreateMeshResponse"
+    },
+    "DeleteMesh": {
+      "document": "删除网格",
+      "input": "DeleteMeshRequest",
+      "name": "删除网格",
+      "output": "DeleteMeshResponse"
+    },
     "DescribeMesh": {
       "document": "查询网格详情",
       "input": "DescribeMeshRequest",
@@ -11,6 +23,12 @@
       "input": "DescribeMeshListRequest",
       "name": "查询网格列表",
       "output": "DescribeMeshListResponse"
+    },
+    "ModifyMesh": {
+      "document": "修改网格",
+      "input": "ModifyMeshRequest",
+      "name": "修改网格",
+      "output": "ModifyMeshResponse"
     }
   },
   "metadata": {
@@ -468,6 +486,87 @@
       ],
       "usage": "out"
     },
+    "CreateMeshRequest": {
+      "document": "CreateMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Mesh名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh版本",
+          "example": "1.8.1",
+          "member": "string",
+          "name": "MeshVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh类型，取值范围：\n- HOSTED：托管网格",
+          "example": "HOSTED",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh配置",
+          "example": "无",
+          "member": "MeshConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "关联集群",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMeshResponse": {
+      "document": "CreateMesh返回参数结构体",
+      "members": [
+        {
+          "document": "创建的Mesh的Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CrossRegionConfig": {
       "document": "负载均衡跨域设置",
       "members": [],
@@ -538,6 +637,69 @@
         }
       ],
       "usage": "in"
+    },
+    "DeleteMeshRequest": {
+      "document": "DeleteMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的MeshId",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLS组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteCLS",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "TMP组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteTMP",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "APM组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteAPM",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "Grafana组件是否被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDeleteGrafana",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMeshResponse": {
+      "document": "DeleteMesh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeployConfig": {
       "document": "部署配置",
@@ -1525,6 +1687,60 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyMeshRequest": {
+      "document": "ModifyMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改的网格Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的网格名称",
+          "example": "name",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的网格配置",
+          "example": "无",
+          "member": "MeshConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "修改的集群配置",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMeshResponse": {
+      "document": "ModifyMesh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PodsMetricSource": {
       "document": "PodsMetricSource 定义了如何根据特定指标进行扩缩容",

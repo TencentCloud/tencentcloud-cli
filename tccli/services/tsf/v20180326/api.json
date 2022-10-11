@@ -1435,6 +1435,32 @@
       ],
       "usage": "in"
     },
+    "AgentProfile": {
+      "document": "部署javaagent的类型、版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Agent类型",
+          "example": "SERVICE_AGENT/OT_AGENT",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Agent版本号",
+          "example": "release/1.0",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ApiDefinitionDescr": {
       "document": "API 对象类型描述",
       "members": [
@@ -7700,6 +7726,24 @@
           "name": "VolumeClean",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "javaagent信息: SERVICE_AGENT/OT_AGENT",
+          "example": "无",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预热配置信息",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7708,13 +7752,13 @@
       "document": "DeployContainerGroup返回参数结构体",
       "members": [
         {
-          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。",
+          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "bool",
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7880,6 +7924,24 @@
           "name": "JdkVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署agent的类型、版本",
+          "example": "无",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预热参数配置",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10103,6 +10165,7 @@
         {
           "default": "",
           "document": "部署组ID",
+          "example": "group-oydzed8v",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -10116,8 +10179,10 @@
       "members": [
         {
           "document": "虚拟机部署组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VmGroup",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -24011,6 +24076,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "javaagent信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SERVICE_AGENT/OT_AGENT",
+          "member": "AgentProfile",
+          "name": "AgentProfileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预热属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24378,6 +24463,52 @@
         }
       ],
       "usage": "in"
+    },
+    "WarmupSetting": {
+      "document": "预热配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启预热",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预热时间",
+          "example": "120",
+          "member": "uint64",
+          "name": "WarmupTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预热曲率，取值 1~5",
+          "example": "2",
+          "member": "uint64",
+          "name": "Curvature",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启预热保护，在开启保护的情况下，超过 50% 的节点处于预热中，则会中止预热",
+          "example": "false",
+          "member": "bool",
+          "name": "EnabledProtection",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

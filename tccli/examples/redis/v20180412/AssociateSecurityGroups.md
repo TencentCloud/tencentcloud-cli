@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli redis AssociateSecurityGroups --cli-unfold-argument  \
+    --Product redis \
     --SecurityGroupId sg-ajr1jzgj \
-    --InstanceIds crs-eb2w7dto \
-    --Product redis
+    --InstanceIds crs-eb2w7dto
 ```
 
 Output: 

@@ -22,7 +22,12 @@ Output:
                 "IntranetUrl": "https://*****",
                 "Name": "cdb73977_binlog_mysqlbin.000004",
                 "Size": 505,
-                "Type": "binlog"
+                "Status": "FINISHED",
+                "Region": "ap-guangzhou",
+                "CosStorageType": 0,
+                "RemoteInfo": [],
+                "Type": "binlog",
+                "InstanceId": "cdb-xxx"
             },
             {
                 "BinlogFinishTime": "2020-11-12 21:13:04",
@@ -32,7 +37,12 @@ Output:
                 "IntranetUrl": "https://*****",
                 "Name": "cdb73977_binlog_mysqlbin.000003",
                 "Size": 4537,
-                "Type": "binlog"
+                "Status": "FINISHED",
+                "Region": "ap-guangzhou",
+                "CosStorageType": 0,
+                "RemoteInfo": [],
+                "Type": "binlog",
+                "InstanceId": "cdb-xxx"
             }
         ],
         "RequestId": "2d8504a5-157d-4753-a060-6464b0e875e5",

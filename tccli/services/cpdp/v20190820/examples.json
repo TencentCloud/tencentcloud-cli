@@ -912,6 +912,14 @@
         "title": "QueryCommonTransferRecharge"
       }
     ],
+    "QueryCompanyTitle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCompanyTitle\n<公共请求参数>\n\n{\n    \"Profile\": \"test\",\n    \"CompanyTitleKeyword\": \"公司\",\n    \"SellerTaxpayerNum\": \"xx\",\n    \"InvoicePlatformId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585106014055\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"请求成功\",\n        \"Result\": {\n            \"CompanyName\": \"xx\",\n            \"CompanyAddress\": \"xx\",\n            \"CompanyPhone\": \"xx\",\n            \"CompanyTaxpayerNum\": \"xx\",\n            \"CompanyBankAccount\": \"xx\",\n            \"CompanyBankName\": \"xx\"\n        }\n    }\n}",
+        "title": "QueryCompanyTitle"
+      }
+    ],
     "QueryContract": [
       {
         "document": "",

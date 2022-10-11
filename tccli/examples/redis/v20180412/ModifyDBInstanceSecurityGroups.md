@@ -7,8 +7,8 @@ Input:
 ```
 tccli redis ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
     --InstanceId crs-eb2w7dto \
-    --SecurityGroupIds sg-ajr1jzgj \
-    --Product redis
+    --Product redis \
+    --SecurityGroupIds sg-ajr1jzgj
 ```
 
 Output: 

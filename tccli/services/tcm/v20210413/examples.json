@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateMesh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMesh\n<公共请求参数>\n\n{\n    \"DisplayName\": \"test\",\n    \"MeshVersion\": \"1.8.1\",\n    \"Type\": \"HOSTED\",\n    \"Config\": {\n        \"Istio\": {\n            \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n            \"Tracing\": {\n                \"Sampling\": 1\n            }\n        }\n    },\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"MeshId\": \"mesh-xxxxxxxx\"\n    }\n}",
+        "title": "CreateMesh"
+      }
+    ],
+    "DeleteMesh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMesh\n<公共请求参数>\n\n{\n    \"MeshId\": \"xx\",\n    \"NeedDeleteCLS\": \"false\",\n    \"NeedDeleteTMP\": \"false\",\n    \"NeedDeleteAPM\": \"false\",\n    \"NeedDeleteGrafana\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "DeleteMesh"
+      }
+    ],
     "DescribeMesh": [
       {
         "document": "",
@@ -14,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeshList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"MeshList\": [\n            {\n                \"MeshId\": \"xxxxx\",\n                \"DisplayName\": \"test\",\n                \"Region\": \"xx\",\n                \"Type\": \"HOSTED\",\n                \"State\": \"xx\",\n                \"Version\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"Config\": {\n                    \"Istio\": {\n                        \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n                        \"Tracing\": {\n                            \"Sampling\": 1\n                        }\n                    }\n                },\n                \"ClusterList\": [\n                    {\n                        \"ClusterId\": \"{{clusterId}}\",\n                        \"DisplayName\": \"\",\n                        \"Region\": \"sh\",\n                        \"Role\": \"MASTER\",\n                        \"VpcId\": \"{{vpcId}}\",\n                        \"SubnetId\": \"{{subnetId}}\",\n                        \"Config\": {\n                            \"AutoInjectionNamespaceList\": [\n                                \"default\"\n                            ]\n                        }\n                    }\n                ],\n                \"Status\": {\n                    \"CanaryVersion\": \"xx\",\n                    \"ServiceCount\": 0,\n                    \"Prometheus\": null\n                }\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "DescribeMeshList"
+      }
+    ],
+    "ModifyMesh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMesh\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"DisplayName\": \"newName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "ModifyMesh"
       }
     ]
   },

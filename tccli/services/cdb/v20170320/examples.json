@@ -285,8 +285,8 @@
     "DescribeBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"EnableBackupArchive\": \"on\",\n        \"BackupArchiveDays\": 180,\n        \"EnableBinlogArchive\": \"on\",\n        \"BinlogArchiveDays\": 180,\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
         "title": "查询云数据库备份配置信息"
       }
     ],
@@ -309,8 +309,8 @@
     "DescribeBackupOverview": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupOverview\n&Product=mysql\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BackupCount\": 15,\n        \"BackupVolume\": 90000,\n        \"BillingVolume\": 20000,\n        \"FreeVolume\": 70000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupCount\": 15,\n        \"BackupVolume\": 90000,\n        \"BillingVolume\": 20000,\n        \"FreeVolume\": 70000,\n        \"RemoteBackupVolume\": 1000,\n        \"BackupArchiveVolume\": 1000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份概览"
       }
     ],
@@ -333,24 +333,24 @@
     "DescribeBackups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackups\r\n&InstanceId=cdb-c1nl9rpv\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"Status\": \"SUCCESS\",\n                \"FinishTime\": \"2017-07-23 12:03:42\",\n                \"Name\": \"ivansqwutestdr_backup_20170429000134\",\n                \"IntranetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Creator\": \"SYSTEM\",\n                \"BackupId\": 12445233,\n                \"Date\": \"2017-04-29 00:01:34\",\n                \"InternetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Type\": \"logical\",\n                \"Size\": 653226\n            },\n            {\n                \"Status\": \"SUCCESS\",\n                \"FinishTime\": \"2017-07-23 12:03:42\",\n                \"Name\": \"ivansqwutestdr_backup_20170430000129\",\n                \"IntranetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Creator\": \"SYSTEM\",\n                \"BackupId\": 436184134,\n                \"Date\": \"2017-04-30 00:01:29\",\n                \"InternetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Type\": \"logical\",\n                \"Size\": 653226\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"Status\": \"SUCCESS\",\n                \"FinishTime\": \"2017-07-23 12:03:42\",\n                \"Name\": \"ivansqwutestdr_backup_20170429000134\",\n                \"IntranetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Creator\": \"SYSTEM\",\n                \"BackupId\": 12445233,\n                \"Date\": \"2017-04-29 00:01:34\",\n                \"StartTime\": \"2017-07-22 00:01:34\",\n                \"InternetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Type\": \"logical\",\n                \"Way\": \"automatic\",\n                \"ManualBackupName\": \"xx\",\n                \"SaveMode\": \"save_mode_regular\",\n                \"RemoteInfo\": [],\n                \"Region\": \"ap-guangzhou\",\n                \"Method\": \"full\",\n                \"CosStorageType\": 0,\n                \"Size\": 653226,\n                \"InstanceId\": \"cdb-xxx\"\n            },\n            {\n                \"Status\": \"SUCCESS\",\n                \"FinishTime\": \"2017-07-23 12:03:42\",\n                \"StartTime\": \"2017-07-23 00:01:34\",\n                \"Name\": \"ivansqwutestdr_backup_20170430000129\",\n                \"IntranetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Creator\": \"SYSTEM\",\n                \"BackupId\": 436184134,\n                \"Date\": \"2017-04-30 00:01:29\",\n                \"InternetUrl\": \"http://gz.xxxxxxxxxxxxxxxxx\",\n                \"Type\": \"logical\",\n                \"Way\": \"automatic\",\n                \"ManualBackupName\": \"xx\",\n                \"SaveMode\": \"save_mode_regular\",\n                \"RemoteInfo\": [],\n                \"Region\": \"ap-guangzhou\",\n                \"Method\": \"full\",\n                \"CosStorageType\": 0,\n                \"Size\": 653226,\n                \"InstanceId\": \"cdb-xxx\"\n            }\n        ]\n    }\n}",
         "title": "查询数据备份文件列表"
       }
     ],
     "DescribeBinlogBackupOverview": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBinlogBackupOverview\n&Product=mysql\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BinlogBackupCount\": 15,\n        \"BinlogBackupVolume\": 6000,\n        \"RemoteBinlogCount\": 5,\n        \"RemoteBinlogVolume\": 2000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BinlogBackupCount\": 15,\n        \"BinlogBackupVolume\": 6000,\n        \"RemoteBinlogCount\": 5,\n        \"RemoteBinlogVolume\": 2000,\n        \"BinlogArchiveCount\": 5,\n        \"BinlogArchiveVolume\": 2000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "DescribeBinlogBackupOverview"
       }
     ],
     "DescribeBinlogs": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBinlogs\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BinlogFinishTime\": \"2020-11-12 21:13:12\",\n                \"BinlogStartTime\": \"2020-11-12 21:13:04\",\n                \"Date\": \"2020-11-12 21:13:35\",\n                \"InternetUrl\": \"https://*****\",\n                \"IntranetUrl\": \"https://*****\",\n                \"Name\": \"cdb73977_binlog_mysqlbin.000004\",\n                \"Size\": 505,\n                \"Type\": \"binlog\"\n            },\n            {\n                \"BinlogFinishTime\": \"2020-11-12 21:13:04\",\n                \"BinlogStartTime\": \"2020-11-02 11:38:49\",\n                \"Date\": \"2020-11-12 21:13:25\",\n                \"InternetUrl\": \"https://*****\",\n                \"IntranetUrl\": \"https://*****\",\n                \"Name\": \"cdb73977_binlog_mysqlbin.000003\",\n                \"Size\": 4537,\n                \"Type\": \"binlog\"\n            }\n        ],\n        \"RequestId\": \"2d8504a5-157d-4753-a060-6464b0e875e5\",\n        \"TotalCount\": 2\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BinlogFinishTime\": \"2020-11-12 21:13:12\",\n                \"BinlogStartTime\": \"2020-11-12 21:13:04\",\n                \"Date\": \"2020-11-12 21:13:35\",\n                \"InternetUrl\": \"https://*****\",\n                \"IntranetUrl\": \"https://*****\",\n                \"Name\": \"cdb73977_binlog_mysqlbin.000004\",\n                \"Size\": 505,\n                \"Status\": \"FINISHED\",\n                \"Region\": \"ap-guangzhou\",\n                \"CosStorageType\": 0,\n                \"RemoteInfo\": [],\n                \"Type\": \"binlog\",\n                \"InstanceId\": \"cdb-xxx\"\n            },\n            {\n                \"BinlogFinishTime\": \"2020-11-12 21:13:04\",\n                \"BinlogStartTime\": \"2020-11-02 11:38:49\",\n                \"Date\": \"2020-11-12 21:13:25\",\n                \"InternetUrl\": \"https://*****\",\n                \"IntranetUrl\": \"https://*****\",\n                \"Name\": \"cdb73977_binlog_mysqlbin.000003\",\n                \"Size\": 4537,\n                \"Status\": \"FINISHED\",\n                \"Region\": \"ap-guangzhou\",\n                \"CosStorageType\": 0,\n                \"RemoteInfo\": [],\n                \"Type\": \"binlog\",\n                \"InstanceId\": \"cdb-xxx\"\n            }\n        ],\n        \"RequestId\": \"2d8504a5-157d-4753-a060-6464b0e875e5\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询二进制日志"
       }
     ],
@@ -467,8 +467,8 @@
     "DescribeDataBackupOverview": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDataBackupOverview\n&Product=mysql\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AutoBackupCount\": 3,\n        \"AutoBackupVolume\": 3000,\n        \"DataBackupCount\": 5,\n        \"DataBackupVolume\": 5000,\n        \"ManualBackupCount\": 2,\n        \"ManualBackupVolume\": 2000,\n        \"RemoteBackupVolume\": 1000,\n        \"RemoteBackupCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoBackupCount\": 3,\n        \"AutoBackupVolume\": 3000,\n        \"DataBackupCount\": 5,\n        \"DataBackupVolume\": 5000,\n        \"ManualBackupCount\": 2,\n        \"ManualBackupVolume\": 2000,\n        \"RemoteBackupVolume\": 1000,\n        \"RemoteBackupCount\": 1,\n        \"DataBackupArchiveVolume\": 1000,\n        \"DataBackupArchiveCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "DescribeDataBackupOverview"
       }
     ],

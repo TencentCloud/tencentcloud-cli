@@ -648,6 +648,12 @@
       "name": "云鉴-查询普通转账充值明细",
       "output": "QueryCommonTransferRechargeResponse"
     },
+    "QueryCompanyTitle": {
+      "document": "智慧零售-查询公司抬头",
+      "input": "QueryCompanyTitleRequest",
+      "name": "智慧零售-查询公司抬头",
+      "output": "QueryCompanyTitleResponse"
+    },
     "QueryContract": {
       "document": "通过此接口查询签约数据",
       "input": "QueryContractRequest",
@@ -7723,6 +7729,72 @@
           "example": "无",
           "member": "string",
           "name": "ChannelSubRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CompanyTitleResult": {
+      "document": "公司抬头结果",
+      "members": [
+        {
+          "default": "",
+          "document": "公司银行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyBankAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司税号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyTaxpayerNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司银行名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyBankName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公司电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyPhone",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -23062,6 +23134,87 @@
           "member": "string",
           "name": "ReservedMsg",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCompanyTitleRequest": {
+      "document": "QueryCompanyTitle请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公司抬头关键字",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyTitleKeyword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开票平台ID。0：高灯，1：票易通",
+          "example": "无",
+          "member": "int64",
+          "name": "InvoicePlatformId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "销方纳税人识别号",
+          "example": "无",
+          "member": "string",
+          "name": "SellerTaxpayerNum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入环境。沙箱环境填sandbox。",
+          "example": "无",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCompanyTitleResponse": {
+      "document": "QueryCompanyTitle返回参数结构体",
+      "members": [
+        {
+          "document": "错误码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "请求成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公司抬头结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompanyTitleResult",
+          "name": "Result",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {

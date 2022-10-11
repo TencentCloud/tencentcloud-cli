@@ -371,7 +371,7 @@
     "DeployContainerGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeployContainerGroup\n&GroupId=group-xxxxxxx\n&CpuRequest=0.54\n&MemRequest=1024\n&Server=ccr.ccs.tencentyun.com\n&RepoName=tsf_10000617xxxx/test\n&TagName=xxxx\n&DoNotStart=false\n&InstanceNum=1\n&JvmOpts=-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\n&UpdateType=1\n&UpdateIvl=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployContainerGroup\n<公共请求参数>\n\n{\n    \"DoNotStart\": \"false\",\n    \"MemRequest\": \"1024\",\n    \"UpdateType\": \"1\",\n    \"Server\": \"ccr.ccs.tencentyun.com\",\n    \"InstanceNum\": \"1\",\n    \"RepoName\": \"tsf_10000617xxxx/test\",\n    \"TagName\": \"xxxx\",\n    \"CpuRequest\": \"0.54\",\n    \"JvmOpts\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\",\n    \"UpdateIvl\": \"10\",\n    \"GroupId\": \"group-xxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b481cffd-6b00-463f-a1ae-7afe5fd5fa2e\",\n        \"Result\": true\n    }\n}",
         "title": "部署容器应用"
       }
@@ -379,7 +379,7 @@
     "DeployGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeployGroup\n&GroupId=group-xxxxxxx\n&PkgId=pkg-xxxxxxx\n&StartupParameters=-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployGroup\n<公共请求参数>\n\n{\n    \"PkgId\": \"pkg-xxxxxxx\",\n    \"GroupId\": \"group-xxxxxxx\",\n    \"StartupParameters\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48994bff-70ed-43b9-ae0e-8d3b4d6e72cd\",\n        \"Result\": {\n            \"TaskId\": \"task-xxxxxxx\"\n        }\n    }\n}",
         "title": "部署虚拟机部署组应用"
       }
@@ -671,7 +671,7 @@
     "DescribeGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroup\n&GroupId=group-oydzed8v\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-oydzed8v\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d303489f-e1a0-41d4-8044-dc8cd42a3ae6\",\n        \"Result\": {\n            \"ApplicationType\": \"V\",\n            \"MicroserviceType\": \"N\",\n            \"GroupId\": \"group-oydzed8v\",\n            \"ClusterId\": \"cluster-by8n8rmy\",\n            \"StartupParameters\": \"-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m\",\n            \"ClusterName\": \"test\",\n            \"PackageName\": \"travel-passenger-api-1.0-SNAPSHOT.jar\",\n            \"RunInstanceCount\": 1,\n            \"ApplicationName\": \"ruqitest_travel_clientapi\",\n            \"NamespaceName\": \"test-connection-group\",\n            \"GroupDesc\": null,\n            \"PackageId\": \"pkg-b430b6a2\",\n            \"UpdateTime\": \"2019-03-11 16:52:15\",\n            \"PackageVersion\": \"20190529173949\",\n            \"GroupStatus\": \"Updating\",\n            \"GroupName\": \"ruqitest-clientapi-dep\",\n            \"CreateTime\": \"2019-03-11 16:52:15\",\n            \"NamespaceId\": \"namespace-6yogoqdv\",\n            \"InstanceCount\": 1,\n            \"ApplicationId\": \"application-6a7eog6y\",\n            \"OffInstanceCount\": 0,\n            \"UpdateType\": 1,\n            \"DeployBetaEnable\": false,\n            \"DeployBatch\": [\n                0.2,\n                0.8\n            ],\n            \"DeployExeMode\": \"auto/manual\",\n            \"DeployWaitTime\": 0,\n            \"DeployDesc\": \"desc\",\n            \"GroupResourceType\": \"DEF\",\n            \"UpdatedTime\": 1602770765000\n        }\n    }\n}",
         "title": "查询虚拟机部署组详情"
       }
