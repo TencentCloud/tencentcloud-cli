@@ -18,6 +18,12 @@
       "name": "批量停止任务【Beta版本】",
       "output": "BatchStopTasksNewResponse"
     },
+    "CreateCustomFunction": {
+      "document": " 创建用户自定义函数",
+      "input": "CreateCustomFunctionRequest",
+      "name": "创建用户自定义函数",
+      "output": "CreateCustomFunctionResponse"
+    },
     "CreateDataSource": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n创建数据源",
       "input": "CreateDataSourceRequest",
@@ -715,6 +721,96 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateCustomFunctionRequest": {
+      "document": "CreateCustomFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "类型：HIVE、SPARK",
+          "example": "HIVE",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分类：窗口函数、聚合函数、日期函数......",
+          "example": "ANALYSIS",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群实例引擎 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdentifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomFunctionResponse": {
+      "document": "CreateCustomFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDataSourceRequest": {
       "document": "CreateDataSource请求参数结构体",

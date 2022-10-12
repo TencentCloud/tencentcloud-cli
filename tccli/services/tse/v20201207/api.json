@@ -53,6 +53,12 @@
       "input": "DescribeZookeeperServerInterfacesRequest",
       "name": "查询zookeeper服务接口列表",
       "output": "DescribeZookeeperServerInterfacesResponse"
+    },
+    "UpdateEngineInternetAccess": {
+      "document": "修改引擎公网访问配置",
+      "input": "UpdateEngineInternetAccessRequest",
+      "name": "修改引擎公网访问配置",
+      "output": "UpdateEngineInternetAccessResponse"
     }
   },
   "metadata": {
@@ -1750,6 +1756,51 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateEngineInternetAccessRequest": {
+      "document": "UpdateEngineInternetAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎ID",
+          "example": "ins-389a8c12",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎类型",
+          "example": "eureka",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启客户端公网访问，true开 false关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableClientInternetAccess",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEngineInternetAccessResponse": {
+      "document": "UpdateEngineInternetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VpcInfo": {
       "document": "私有网络信息",

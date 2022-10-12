@@ -438,6 +438,18 @@
       "name": "服务器风险top接口",
       "output": "DescribeBaselineHostTopResponse"
     },
+    "DescribeBaselineItemDetectList": {
+      "document": "获取基线检测项的列表",
+      "input": "DescribeBaselineItemDetectListRequest",
+      "name": "获取基线检测项的列表",
+      "output": "DescribeBaselineItemDetectListResponse"
+    },
+    "DescribeBaselineItemList": {
+      "document": "获取基线项检测结果列表",
+      "input": "DescribeBaselineItemListRequest",
+      "name": "获取基线项检测结果列表",
+      "output": "DescribeBaselineItemListResponse"
+    },
     "DescribeBaselineList": {
       "document": "查询基线列表信息",
       "input": "DescribeBaselineListRequest",
@@ -1272,6 +1284,12 @@
       "name": "设置高危命令事件状态",
       "output": "SetBashEventsStatusResponse"
     },
+    "StartBaselineDetect": {
+      "document": "检测基线",
+      "input": "StartBaselineDetectRequest",
+      "name": "检测基线",
+      "output": "StartBaselineDetectResponse"
+    },
     "StopNoticeBanTips": {
       "document": "不再提醒爆破阻断提示弹窗",
       "input": "StopNoticeBanTipsRequest",
@@ -1289,6 +1307,12 @@
       "input": "SyncAssetScanRequest",
       "name": "同步资产扫描信息",
       "output": "SyncAssetScanResponse"
+    },
+    "SyncBaselineDetectSummary": {
+      "document": "同步基线检测进度概要",
+      "input": "SyncBaselineDetectSummaryRequest",
+      "name": "同步基线检测进度概要",
+      "output": "SyncBaselineDetectSummaryResponse"
     },
     "TrustMalwares": {
       "document": "本接口(TrustMalwares)将被识别木马文件设为信任。",
@@ -6233,6 +6257,52 @@
       ],
       "usage": "out"
     },
+    "BaselineDetectParam": {
+      "document": "基线扫描参数",
+      "members": [
+        {
+          "default": "",
+          "document": "检测的策略集合",
+          "example": "无",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测的规则集合",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测项集合",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测的主机ID集合",
+          "example": "无",
+          "member": "string",
+          "name": "HostIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "BaselineEffectHost": {
       "document": "基线影响主机信息",
       "members": [
@@ -6485,6 +6555,328 @@
           "document": "基线风险项\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "BaselineFailCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineItem": {
+      "document": "基线项",
+      "members": [
+        {
+          "default": "",
+          "document": "项Id",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项名称",
+          "example": "无",
+          "member": "string",
+          "name": "ItemName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测项分类",
+          "example": "无",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项描述",
+          "example": "无",
+          "member": "string",
+          "name": "ItemDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修复方法",
+          "example": "无",
+          "member": "string",
+          "name": "FixMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属规则",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DetectResultDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "危险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测状态：0 未通过，1：忽略，3：通过，5：检测中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DetectStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "HostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "WanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第一次出现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近出现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可以修复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CanBeFixed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机安全uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineItemDetect": {
+      "document": "基线检测项",
+      "members": [
+        {
+          "default": "",
+          "document": "项Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修复方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FixMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:未通过 1:忽略 3:通过 5:检测中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DetectStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "影响服务器数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测结果,Json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通过的服务器数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PassedHostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未通过的服务器数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NotPassedHostCount",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -11840,6 +12232,168 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineItemDetectListRequest": {
+      "document": "DescribeBaselineItemDetectList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>PolicyId - int64 - 是否必填：否 - 规则Id</li>\n<li>ItemName - string - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开时时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10,最大100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序列: [HostCount|FirstTime|LastTime]",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineItemDetectListResponse": {
+      "document": "DescribeBaselineItemDetectList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "BaselineItemDetect",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineItemListRequest": {
+      "document": "DescribeBaselineItemList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>HostName - string - 是否必填：否 - 主机名</li>\n<li>HostIp - string - 是否必填：否 - 主机IP</li>\n<li>ItemId - String - 是否必填：否 - 检测项Id</li>\n<li>ItemName - String - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态[0:未通过|3:通过|5:检测中]</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开时时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10,最大100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序列",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineItemListResponse": {
+      "document": "DescribeBaselineItemList返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "BaselineItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25622,6 +26176,42 @@
       ],
       "usage": "out"
     },
+    "StartBaselineDetectRequest": {
+      "document": "StartBaselineDetect请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "基线检测参数",
+          "example": "无",
+          "member": "BaselineDetectParam",
+          "name": "Param",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartBaselineDetectResponse": {
+      "document": "StartBaselineDetect返回参数结构体",
+      "members": [
+        {
+          "document": "扫描任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopNoticeBanTipsRequest": {
       "document": "StopNoticeBanTips请求参数结构体",
       "members": [],
@@ -25824,6 +26414,95 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncBaselineDetectSummaryRequest": {
+      "document": "SyncBaselineDetectSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SyncBaselineDetectSummaryResponse": {
+      "document": "SyncBaselineDetectSummary返回参数结构体",
+      "members": [
+        {
+          "document": "处理进度",
+          "example": "无",
+          "member": "int64",
+          "name": "ProgressRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未通过策略总数",
+          "example": "无",
+          "member": "int64",
+          "name": "NotPassPolicyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机总数",
+          "example": "无",
+          "member": "int64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "1:即将进行首次扫描   0:已经扫描过了",
+          "example": "0",
+          "member": "int64",
+          "name": "WillFirstScan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "正在检测的任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DetectingTaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扫描中剩余时间(分钟)",
+          "example": "1",
+          "member": "int64",
+          "name": "LeftMins",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

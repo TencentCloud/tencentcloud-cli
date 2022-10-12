@@ -1,4 +1,4 @@
-**Example 1: 个人认证接口**
+**Example 1: 个人认证**
 
 
 
@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli bma CreateCRUserVerify --cli-unfold-argument  \
-    --UserName xxx \
-    --UserID xxx \
-    --UserPhone xxx \
-    --VerificationCode xxx
+    --UserName xx \
+    --Type xx \
+    --UserPhone xx \
+    --UserID xx \
+    --VerificationCode xx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": 1,
-        "Note": "xxx",
-        "RequestId": "xxx"
+        "Status": 0,
+        "Note": "xx",
+        "RequestId": "xx"
     }
 }
 ```

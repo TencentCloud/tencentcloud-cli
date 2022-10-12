@@ -24,6 +24,14 @@
         "title": "批量停止任务"
       }
     ],
+    "CreateCustomFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"xx\",\n    \"Type\": \"xx\",\n    \"Kind\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建用户自定义函数"
+      }
+    ],
     "CreateDataSource": [
       {
         "document": "",

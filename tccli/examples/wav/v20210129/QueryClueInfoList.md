@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wav QueryClueInfoList --cli-unfold-argument  \
-    --Cursor sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU \
+    --Cursor sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU= \
     --Limit 1
 ```
 
@@ -23,6 +23,7 @@ Output:
                 "EnquireTime": 1618556502,
                 "UnionId": "wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA",
                 "Name": "微信昵称",
+                "UserName": "客户姓名",
                 "Phone": "134xxxx1234",
                 "SeriesCode": "车系编号",
                 "ModelCode": "车型编号",

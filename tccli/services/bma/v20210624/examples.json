@@ -69,7 +69,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRRightFile\n<公共请求参数>\n\n{\n    \"WorkId\": 1,\n    \"FileList\": [\n        {\n            \"FileUrl\": \"xxx\",\n            \"FileType\": 1,\n            \"ValidStartDate\": \"xxx\",\n            \"ValidEndDate\": \"xxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"FileIds\": [\n            1,\n            2,\n            3\n        ]\n    }\n}",
-        "title": "新增权属文件"
+        "title": "权属文件添加"
       }
     ],
     "CreateCRTort": [
@@ -83,9 +83,9 @@
     "CreateCRUserVerify": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRUserVerify\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\",\n    \"UserID\": \"xxx\",\n    \"UserPhone\": \"xxx\",\n    \"VerificationCode\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"Note\": \"xxx\",\n        \"RequestId\": \"xxx\"\n    }\n}",
-        "title": "个人认证接口"
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRUserVerify\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"Type\": \"xx\",\n    \"UserPhone\": \"xx\",\n    \"UserID\": \"xx\",\n    \"VerificationCode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Note\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "个人认证"
       }
     ],
     "CreateCRWork": [
@@ -93,7 +93,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRWork\n<公共请求参数>\n\n{\n    \"WhiteLists\": [\n        \"xx\"\n    ],\n    \"IsMonitor\": \"xx\",\n    \"MonitorUrl\": \"xx\",\n    \"IsOriginal\": \"xx\",\n    \"SampleDownloadURL\": \"xx\",\n    \"ProducerID\": 0,\n    \"IsRelease\": \"xx\",\n    \"WorkCategory\": \"xx\",\n    \"WorkDesc\": \"xx\",\n    \"WorkName\": \"xx\",\n    \"SamplePublicURL\": \"xx\",\n    \"ProduceTime\": \"xx\",\n    \"CertUrl\": \"xx\",\n    \"ProduceType\": \"xx\",\n    \"IsCert\": \"xx\",\n    \"SampleContentURL\": \"xx\",\n    \"GrantType\": \"xx\",\n    \"WorkSign\": \"xx\",\n    \"WorkPic\": \"xx\",\n    \"WorkType\": \"xx\",\n    \"ProducerName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EvidenceId\": 0,\n        \"RequestId\": \"xx\",\n        \"WorkId\": 0\n    }\n}",
-        "title": "添加作品"
+        "title": "新建作品"
       }
     ],
     "DescribeBPCompanyInfo": [
@@ -173,7 +173,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRMonitor\n<公共请求参数>\n\n{\n    \"MonitorStatus\": \"xx\",\n    \"WorkId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "修改监测状态"
+        "title": "开启/关闭监测"
       }
     ],
     "ModifyCRObtainStatus": [
@@ -186,10 +186,10 @@
     ],
     "ModifyCRRightStatus": [
       {
-        "document": "维权申请",
+        "document": "发函申请",
         "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCRRightStatus\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"RightUrl\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "维权申请"
+        "title": "发函申请"
       }
     ],
     "ModifyCRWhiteList": [

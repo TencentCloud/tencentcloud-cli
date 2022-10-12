@@ -223,7 +223,7 @@
       "output": "DescribeLaunchTemplatesResponse"
     },
     "DescribeRegions": {
-      "document": "本接口(DescribeRegions)用于查询地域信息。因平台策略原因，该接口暂时停止更新，为确保您正常调用，可切换至新链接：https://cloud.tencent.com/document/product/1278/55255。",
+      "document": "本接口(DescribeRegions)用于查询地域信息。因平台策略原因，该接口暂时停止更新，为确保您正常调用，可切换至新链接：https://cloud.tencent.com/document/product/1596/77929。",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
@@ -3444,16 +3444,22 @@
       "document": "DescribeRegions返回参数结构体",
       "members": [
         {
-          "document": "地域数量",
+          "document": "地域数量。",
+          "example": "9",
           "member": "uint64",
           "name": "TotalCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
-          "document": "地域列表信息",
+          "document": "地域列表信息。",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
