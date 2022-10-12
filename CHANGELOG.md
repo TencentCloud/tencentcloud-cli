@@ -1,3 +1,93 @@
+# Release 3.0.625.1
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 13 次发布
+
+发布时间：2022-10-13 06:08:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 17 次发布
+
+发布时间：2022-10-13 06:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [TCPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#TCPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [UDPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#UDPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 18 次发布
+
+发布时间：2022-10-13 06:30:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDBResourceUsage
+* DescribeDBResourceUsageDetails
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* MonitorData
+* ResourceUsageMonitorSet
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 29 次发布
+
+发布时间：2022-10-13 06:45:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* 新增成员：CodecTag
+
+
+
+
 # Release 3.0.624.1
 
 ## 主机安全(cwp) 版本：2018-02-28

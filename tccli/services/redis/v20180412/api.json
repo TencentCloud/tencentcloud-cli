@@ -3860,48 +3860,53 @@
       "members": [
         {
           "default": "",
-          "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb",
+          "document": "数据库引擎名称，本接口取值：redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "项目Id。",
+          "document": "项目 ID。",
           "example": "11954",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "偏移量。",
+          "document": "偏移量，取值为Limit的整数倍。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "拉取数量限制，默认20",
+          "document": "拉取数量限制，默认 20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "搜索条件，支持安全组id或者安全组名称。",
+          "document": "搜索条件，支持安全组 ID 或者安全组名称。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3916,7 +3921,8 @@
           "name": "Groups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的安全组总数量。",
@@ -3925,7 +3931,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

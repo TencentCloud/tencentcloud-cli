@@ -48,6 +48,12 @@
       "name": "分页查询拨测任务列表",
       "output": "DescribeProbeTasksResponse"
     },
+    "DescribeProbeTasksEstimate": {
+      "document": "查询拨测任务的预估价格",
+      "input": "DescribeProbeTasksEstimateRequest",
+      "name": "查询拨测任务的预估价格",
+      "output": "DescribeProbeTasksEstimateResponse"
+    },
     "ResumeProbeTask": {
       "document": "恢复拨测任务",
       "input": "ResumeProbeTaskRequest",
@@ -1099,6 +1105,141 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeTasksEstimateRequest": {
+      "document": "DescribeProbeTasksEstimate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量任务名-地址",
+          "example": "无",
+          "member": "ProbeTaskBasicConfiguration",
+          "name": "BatchTasks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "探测节点",
+          "example": "[\"10001\"]",
+          "member": "string",
+          "name": "Nodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "探测间隔",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "探测参数",
+          "example": "{}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskCategory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "使用的时长，用于计算预估的价格，单位为小时",
+          "example": "24",
+          "member": "int64",
+          "name": "HourTimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定时任务cron表达式",
+          "example": "* 0-5 * * *",
+          "member": "string",
+          "name": "Cron",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeTasksEstimateResponse": {
+      "document": "DescribeProbeTasksEstimate返回参数结构体",
+      "members": [
+        {
+          "document": "总费用，不包含优惠",
+          "example": "155520",
+          "member": "int64",
+          "name": "TotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "优惠后的总价，单位分",
+          "example": "155520",
+          "member": "int64",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用多少个小时, 如:一天则填24/一个月则填720",
+          "example": "720",
+          "member": "int64",
+          "name": "HourTimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计费周期内组件的基础拨测次数",
+          "example": "12",
+          "member": "float",
+          "name": "BaseNum",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计费周期内组件的高级拨测次数",
+          "example": "12",
+          "member": "float",
+          "name": "AdvanceNum",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

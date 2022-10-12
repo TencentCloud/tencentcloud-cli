@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
+## 云拨测(cat) 版本：2018-04-09
 
-### 第 32 次发布
+### 第 13 次发布
 
-发布时间：2022-10-12 06:18:50
+发布时间：2022-10-13 06:08:59
 
 本次发布包含了以下内容：
 
@@ -12,24 +12,46 @@
 
 新增接口：
 
-* [DescribeBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76396)
-* [DescribeBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/76395)
-* [StartBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76394)
-* [SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)
+* [DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)
 
-新增数据结构：
 
-* [BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam)
-* [BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)
-* [BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect)
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 17 次发布
+
+发布时间：2022-10-13 06:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [TCPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#TCPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [UDPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#UDPListener)
+
+	* 新增成员：ProxyId, GroupId
+
 
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 17 次发布
+### 第 18 次发布
 
-发布时间：2022-10-12 06:34:25
+发布时间：2022-10-13 06:30:13
 
 本次发布包含了以下内容：
 
@@ -37,61 +59,21 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* DescribeDBPerformance
-* DescribeDBPerformanceDetails
-* DescribeSqlLogs
+* DescribeDBResourceUsage
+* DescribeDBResourceUsageDetails
 
 <font color="#dd0000">**删除数据结构**：</font>
 
-* PerformanceMonitorSet
-* SqlLogItem
-
-
-
-## 腾讯云微服务引擎(tse) 版本：2020-12-07
-
-### 第 17 次发布
-
-发布时间：2022-10-12 06:49:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [UpdateEngineInternetAccess](http://document.tencentcloudapi.woa.com/document/product/1364/76397)
+* MonitorData
+* ResourceUsageMonitorSet
 
 
 
 ## 云点播(vod) 版本：2018-07-17
 
-### 第 28 次发布
+### 第 29 次发布
 
-发布时间：2022-10-12 06:51:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [VideoTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfo)
-
-	* 新增成员：CodecTag
-
-* [VideoTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/266/31773#VideoTemplateInfoForUpdate)
-
-	* 新增成员：CodecTag
-
-
-
-
-## 企业微信汽车行业版(wav) 版本：2021-01-29
-
-### 第 6 次发布
-
-发布时间：2022-10-12 06:56:00
+发布时间：2022-10-13 06:45:09
 
 本次发布包含了以下内容：
 
@@ -99,9 +81,9 @@
 
 修改数据结构：
 
-* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
 
-	* 新增成员：UserName
+	* 新增成员：CodecTag
 
 
 
@@ -4271,6 +4253,18 @@
 
 
 ## 云拨测(cat) 版本：2018-04-09
+
+### 第 13 次发布
+
+发布时间：2022-10-13 06:08:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 12 次发布
 
@@ -12576,16 +12570,16 @@
 
 新增接口：
 
-* [[DescribeBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76396)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/76395)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StartBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76394)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76396)
+* [DescribeBaselineItemList](http://document.tencentcloudapi.woa.com/document/product/296/76395)
+* [StartBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76394)
+* [SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)
 
 新增数据结构：
 
-* [[BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam))
-* [[BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem))
-* [[BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect))
+* [BaselineDetectParam](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineDetectParam)
+* [BaselineItem](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItem)
+* [BaselineItemDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemDetect)
 
 ### 第 31 次发布
 
@@ -19173,6 +19167,33 @@
 
 ## 全球应用加速(gaap) 版本：2018-05-29
 
+### 第 17 次发布
+
+发布时间：2022-10-13 06:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [TCPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#TCPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+* [UDPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#UDPListener)
+
+	* 新增成员：ProxyId, GroupId
+
+
 ### 第 16 次发布
 
 发布时间：2022-09-09 06:20:30
@@ -23553,6 +23574,24 @@
 
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 18 次发布
+
+发布时间：2022-10-13 06:30:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDBResourceUsage
+* DescribeDBResourceUsageDetails
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* MonitorData
+* ResourceUsageMonitorSet
 
 ### 第 17 次发布
 
@@ -36984,7 +37023,7 @@
 
 新增接口：
 
-* [[UpdateEngineInternetAccess](http://document.tencentcloudapi.woa.com/document/product/1364/76397)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateEngineInternetAccess](http://document.tencentcloudapi.woa.com/document/product/1364/76397)
 
 ### 第 16 次发布
 
@@ -38658,6 +38697,21 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 29 次发布
+
+发布时间：2022-10-13 06:45:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* 新增成员：CodecTag
+
 
 ### 第 28 次发布
 

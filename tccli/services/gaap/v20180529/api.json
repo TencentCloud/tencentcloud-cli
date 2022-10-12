@@ -7254,56 +7254,90 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "listener-015erzbt",
           "member": "string",
           "name": "ListenerId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器名称",
+          "example": "listener1",
           "member": "string",
           "name": "ListenerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器端口",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器创建时间，Unix时间戳",
+          "example": "1658235563",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器协议， HTTP表示HTTP，HTTPS表示HTTPS，此结构取值HTTP",
+          "example": "HTTP",
           "member": "string",
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "监听器状态，其中：\n0表示运行中；\n1表示创建中；\n2表示销毁中；\n3表示源站调整中；\n4表示配置变更中。",
+          "example": "0",
           "member": "uint64",
           "name": "ListenerStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道ID，如果监听器属于通道组，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "link-bjkpdum1",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lg-qz6ntod5",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7462,6 +7496,28 @@
           "name": "Http3Supported",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道ID，如果监听器属于通道组，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "link-bjkpdum1",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lg-qz6ntod5",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -11222,6 +11278,28 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道ID，如果监听器属于通道组，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "link-bjkpdum1",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lg-qz6ntod5",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -11527,6 +11605,28 @@
           "example": "helloworld",
           "member": "string",
           "name": "RecvContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道ID，如果监听器属于通道组，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "link-bjkpdum1",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "监听器的通道组ID，如果监听器属于通道，则为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lg-qz6ntod5",
+          "member": "string",
+          "name": "GroupId",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
