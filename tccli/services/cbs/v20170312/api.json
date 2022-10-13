@@ -3157,7 +3157,8 @@
           "member": "string",
           "name": "DiskIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3166,7 +3167,8 @@
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3175,7 +3177,8 @@
           "member": "string",
           "name": "NewDeadline",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3184,7 +3187,18 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点配额，目前仅允许设置最多一个备份点。随续费处理只允许升配。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -3199,7 +3213,8 @@
           "name": "DiskPrice",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3755,53 +3770,14 @@
       "members": [
         {
           "default": "",
-          "document": "预付费云盘或快照预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "OriginalPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "预付费云盘或快照预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "高精度预付费云盘或快照预支费用的原价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
-          "member": "string",
-          "name": "OriginalPriceHigh",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1.00\"",
-          "member": "string",
-          "name": "DiscountPriceHigh",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "UnitPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3811,17 +3787,8 @@
           "name": "ChargeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.0",
-          "member": "float",
-          "name": "UnitPriceDiscount",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3831,7 +3798,41 @@
           "name": "UnitPriceHigh",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的原价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预付费云盘或快照预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3841,7 +3842,30 @@
           "name": "UnitPriceDiscountHigh",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3948,18 +3972,32 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的续费时长。<br>在云盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时云盘会按对齐到实例续费后的到期时间来续费。",
+          "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-jwk0zvrg",
           "member": "string",
           "name": "DiskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点配额，目前仅允许设置最多一个备份点。随续费处理只允许升配。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"

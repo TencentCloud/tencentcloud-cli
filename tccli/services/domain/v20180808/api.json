@@ -330,7 +330,8 @@
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -339,7 +340,8 @@
           "member": "string",
           "name": "Period",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -354,7 +356,8 @@
           "name": "DomainName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否能够注册",
@@ -363,7 +366,8 @@
           "name": "Available",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "不能注册原因",
@@ -372,7 +376,8 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否是溢价词",
@@ -381,7 +386,8 @@
           "name": "Premium",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "域名价格",
@@ -390,7 +396,8 @@
           "name": "Price",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否是敏感词",
@@ -399,7 +406,8 @@
           "name": "BlackWord",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -408,7 +416,8 @@
           "name": "Describe",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "溢价词的续费价格\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -417,7 +426,8 @@
           "name": "FeeRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -426,7 +436,8 @@
           "name": "RealPrice",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "溢价词的转入价格\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -435,7 +446,8 @@
           "name": "FeeTransfer",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "溢价词的赎回价格",
@@ -444,7 +456,8 @@
           "name": "FeeRestore",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "检测年限",
@@ -453,7 +466,8 @@
           "name": "Period",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否支持北京备案  true 支持  false 不支持",
@@ -462,7 +476,8 @@
           "name": "RecordSupport",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

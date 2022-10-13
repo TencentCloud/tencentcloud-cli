@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs InquiryPriceRenewDisks --cli-unfold-argument  \
-    --DiskIds disk-jwk0zvrg \
-    --DiskChargePrepaids.0.Period 1
+    --DiskChargePrepaids.0.Period 1 \
+    --DiskIds disk-jwk0zvrg
 ```
 
 Output: 
@@ -38,9 +38,9 @@ Input:
 
 ```
 tccli cbs InquiryPriceRenewDisks --cli-unfold-argument  \
-    --DiskIds disk-jwk0zvrg \
+    --DiskChargePrepaids.0.CurInstanceDeadline 2018-03-17 15:15:03 \
     --DiskChargePrepaids.0.Period 1 \
-    --DiskChargePrepaids.0.CurInstanceDeadline '2018-03-17 15:15:03'
+    --DiskIds disk-jwk0zvrg
 ```
 
 Output: 

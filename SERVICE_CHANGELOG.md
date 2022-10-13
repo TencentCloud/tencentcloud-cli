@@ -1,10 +1,155 @@
 # 本版本更新包含以下内容：
 
-## 云拨测(cat) 版本：2018-04-09
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 13 次发布
+### 第 16 次发布
 
-发布时间：2022-10-13 06:08:59
+发布时间：2022-10-14 06:12:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRenewDisks](http://document.tencentcloudapi.woa.com/document/product/362/16317)
+
+	* 新增入参：DiskBackupQuota
+
+* [RenewDisk](http://document.tencentcloudapi.woa.com/document/product/362/16319)
+
+	* 新增入参：DiskBackupQuota
+
+
+
+
+## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+
+### 第 38 次发布
+
+发布时间：2022-10-14 06:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
+
+	* 新增入参：DorisConnectParam
+
+
+新增数据结构：
+
+* [DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam)
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 41 次发布
+
+发布时间：2022-10-14 06:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateOpenBankOrderRechargeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankOrderRechargeResult)
+
+	* 新增成员：DealStatus, DealMessage, PcWebUrl
+
+* [CreateSinglePaymentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateSinglePaymentData)
+
+	* 新增成员：AgentId, AgentName
+
+
+
+
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 15 次发布
+
+发布时间：2022-10-14 06:20:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryFilter)
+
+	* 新增成员：Operator
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 3 次发布
+
+发布时间：2022-10-14 06:22:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DirectConnectTunnelExtra](http://document.tencentcloudapi.woa.com/document/product/216/18418#DirectConnectTunnelExtra)
+
+	* 新增成员：HighPrecisionBFDEnable
+
+
+
+
+## 云数据库 Redis(redis) 版本：2018-04-12
+
+### 第 22 次发布
+
+发布时间：2022-10-14 06:37:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+	* 新增成员：WanAddress, PolarisServer, CurrentProxyVersion, CurrentRedisVersion, UpgradeProxyVersion, UpgradeRedisVersion
+
+
+
+
+## 证书(ssl) 版本：2019-12-05
+
+### 第 12 次发布
+
+发布时间：2022-10-14 06:40:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplyCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41678)
+
+	* 新增入参：PackageId
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 14 次发布
+
+发布时间：2022-10-14 06:45:28
 
 本次发布包含了以下内容：
 
@@ -12,78 +157,20 @@
 
 新增接口：
 
-* [DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)
+* [DescribeMixTranscodingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76403)
+* [DescribeRecordingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76402)
+* [DescribeRelayUsage](http://document.tencentcloudapi.woa.com/document/product/647/76401)
+* [DescribeTrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/76400)
 
+新增数据结构：
 
-
-## 全球应用加速(gaap) 版本：2018-05-29
-
-### 第 17 次发布
-
-发布时间：2022-10-13 06:24:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)
 
 修改数据结构：
 
-* [HTTPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPListener)
+* [SdkAppIdTrtcMcuTranscodeTimeUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#SdkAppIdTrtcMcuTranscodeTimeUsage)
 
-	* 新增成员：ProxyId, GroupId
-
-* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
-
-	* 新增成员：ProxyId, GroupId
-
-* [TCPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#TCPListener)
-
-	* 新增成员：ProxyId, GroupId
-
-* [UDPListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#UDPListener)
-
-	* 新增成员：ProxyId, GroupId
-
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 18 次发布
-
-发布时间：2022-10-13 06:30:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeDBResourceUsage
-* DescribeDBResourceUsageDetails
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* MonitorData
-* ResourceUsageMonitorSet
-
-
-
-## 云点播(vod) 版本：2018-07-17
-
-### 第 29 次发布
-
-发布时间：2022-10-13 06:45:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
-
-	* 新增成员：CodecTag
+	* 新增成员：Flux
 
 
 
@@ -4264,7 +4351,7 @@
 
 新增接口：
 
-* [[DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeProbeTasksEstimate](http://document.tencentcloudapi.woa.com/document/product/280/76398)
 
 ### 第 12 次发布
 
@@ -4571,6 +4658,25 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 16 次发布
+
+发布时间：2022-10-14 06:12:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRenewDisks](http://document.tencentcloudapi.woa.com/document/product/362/16317)
+
+	* 新增入参：DiskBackupQuota
+
+* [RenewDisk](http://document.tencentcloudapi.woa.com/document/product/362/16319)
+
+	* 新增入参：DiskBackupQuota
+
 
 ### 第 15 次发布
 
@@ -8060,6 +8166,25 @@
 
 ## 消息队列 Ckafka(ckafka) 版本：2019-08-19
 
+### 第 38 次发布
+
+发布时间：2022-10-14 06:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
+
+	* 新增入参：DorisConnectParam
+
+
+新增数据结构：
+
+* [[DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam))
+
 ### 第 37 次发布
 
 发布时间：2022-09-23 06:12:34
@@ -10600,6 +10725,25 @@
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 41 次发布
+
+发布时间：2022-10-14 06:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateOpenBankOrderRechargeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankOrderRechargeResult)
+
+	* 新增成员：DealStatus, DealMessage, PcWebUrl
+
+* [CreateSinglePaymentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateSinglePaymentData)
+
+	* 新增成员：AgentId, AgentName
+
 
 ### 第 40 次发布
 
@@ -13670,6 +13814,21 @@
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
 
+### 第 15 次发布
+
+发布时间：2022-10-14 06:20:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryFilter)
+
+	* 新增成员：Operator
+
+
 ### 第 14 次发布
 
 发布时间：2022-09-15 06:07:16
@@ -14595,6 +14754,21 @@
 
 
 ## 专线接入(dc) 版本：2018-04-10
+
+### 第 3 次发布
+
+发布时间：2022-10-14 06:22:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DirectConnectTunnelExtra](http://document.tencentcloudapi.woa.com/document/product/216/18418#DirectConnectTunnelExtra)
+
+	* 新增成员：HighPrecisionBFDEnable
+
 
 ### 第 2 次发布
 
@@ -28643,6 +28817,21 @@
 
 ## 云数据库 Redis(redis) 版本：2018-04-12
 
+### 第 22 次发布
+
+发布时间：2022-10-14 06:37:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+	* 新增成员：WanAddress, PolarisServer, CurrentProxyVersion, CurrentRedisVersion, UpgradeProxyVersion, UpgradeRedisVersion
+
+
 ### 第 21 次发布
 
 发布时间：2022-10-10 06:34:36
@@ -30943,6 +31132,21 @@
 
 
 ## 证书(ssl) 版本：2019-12-05
+
+### 第 12 次发布
+
+发布时间：2022-10-14 06:40:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplyCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41678)
+
+	* 新增入参：PackageId
+
 
 ### 第 11 次发布
 
@@ -36692,6 +36896,32 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 14 次发布
+
+发布时间：2022-10-14 06:45:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeMixTranscodingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76403)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRecordingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76402)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRelayUsage](http://document.tencentcloudapi.woa.com/document/product/647/76401)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/76400)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage))
+
+修改数据结构：
+
+* [SdkAppIdTrtcMcuTranscodeTimeUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#SdkAppIdTrtcMcuTranscodeTimeUsage)
+
+	* 新增成员：Flux
+
 
 ### 第 13 次发布
 

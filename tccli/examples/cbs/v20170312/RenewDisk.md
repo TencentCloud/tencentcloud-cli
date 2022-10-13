@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cbs RenewDisk --cli-unfold-argument  \
-    --DiskId disk-jwk0zvrg \
+    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
     --DiskChargePrepaid.Period 1 \
-    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
+    --DiskId disk-jwk0zvrg
 ```
 
 Output: 
@@ -28,17 +28,17 @@ Input:
 
 ```
 tccli cbs RenewDisk --cli-unfold-argument  \
-    --DiskId disk-jwk0zvrg \
+    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
+    --DiskChargePrepaid.CurInstanceDeadline 2018-03-30 20:15:03 \
     --DiskChargePrepaid.Period 1 \
-    --DiskChargePrepaid.CurInstanceDeadline '2018-03-30 20:15:03' \
-    --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
+    --DiskId disk-jwk0zvrg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "55db49cf-b9d7-da27-825b-5a02ba6884ca"
+        "RequestId": "6e2e5089-244a-4102-d347-5a1f8058b1db"
     }
 }
 ```

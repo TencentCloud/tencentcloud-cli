@@ -292,6 +292,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "权益包ID，用于免费证书扩容包使用",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
