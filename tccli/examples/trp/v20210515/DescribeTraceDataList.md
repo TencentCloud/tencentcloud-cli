@@ -28,6 +28,7 @@ Output:
                         "Name": "xx",
                         "ReadOnly": true,
                         "Value": "xx",
+                        "Ext": "xx",
                         "Values": [
                             "xx"
                         ],

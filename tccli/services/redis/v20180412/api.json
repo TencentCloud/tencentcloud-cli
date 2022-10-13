@@ -3787,7 +3787,7 @@
       "members": [
         {
           "default": "",
-          "document": "数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb",
+          "document": "数据库引擎名称，本接口取值：redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
@@ -3796,7 +3796,7 @@
         },
         {
           "default": "",
-          "document": "项目Id。",
+          "document": "项目 ID。",
           "example": "11954",
           "member": "uint64",
           "name": "ProjectId",
@@ -3805,7 +3805,7 @@
         },
         {
           "default": "",
-          "document": "偏移量。",
+          "document": "偏移量，取值为Limit的整数倍。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -3814,7 +3814,7 @@
         },
         {
           "default": "",
-          "document": "拉取数量限制，默认20",
+          "document": "拉取数量限制，默认 20。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -3823,7 +3823,7 @@
         },
         {
           "default": "",
-          "document": "搜索条件，支持安全组id或者安全组名称。",
+          "document": "搜索条件，支持安全组 ID 或者安全组名称。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",

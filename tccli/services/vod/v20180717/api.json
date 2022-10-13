@@ -18098,6 +18098,7 @@
         {
           "default": "",
           "document": "视频流的码率，单位：bps。",
+          "example": "100",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -18107,6 +18108,7 @@
         {
           "default": "",
           "document": "视频流的高度，单位：px。",
+          "example": "1080",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -18116,6 +18118,7 @@
         {
           "default": "",
           "document": "视频流的宽度，单位：px。",
+          "example": "720",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -18125,6 +18128,7 @@
         {
           "default": "",
           "document": "视频流的编码格式，例如 h264。",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -18134,10 +18138,21 @@
         {
           "default": "",
           "document": "帧率，单位：hz。",
+          "example": "25",
           "member": "int64",
           "name": "Fps",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码标签，仅当 Codec 为 hevc 时有效。",
+          "example": "hev1",
+          "member": "string",
+          "name": "CodecTag",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
