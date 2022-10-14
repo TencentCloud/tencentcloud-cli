@@ -19,7 +19,7 @@
     "CheckDomain": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=CheckDomain\n&DomainName=字符串\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"字符串\"\n}",
         "output": "{\n    \"Response\": {\n        \"Available\": true,\n        \"Premium\": false,\n        \"RecordSupport\": true,\n        \"DomainName\": \"的国防生的国防生.show\",\n        \"FeeTransfer\": 0,\n        \"Describe\": \"\",\n        \"FeeRestore\": 0,\n        \"Period\": 1,\n        \"Reason\": \"\",\n        \"RequestId\": \"cc5af1aa-544c-11ea-9bcb-525400f1e866\",\n        \"RealPrice\": 10,\n        \"BlackWord\": false,\n        \"Price\": 35,\n        \"FeeRenew\": 0\n    }\n}",
         "title": "检测域名是否可注册"
       }

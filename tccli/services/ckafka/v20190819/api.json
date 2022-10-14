@@ -6672,6 +6672,102 @@
       ],
       "usage": "both"
     },
+    "DorisModifyConnectParam": {
+      "document": "Doris 连接源修改参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Doris 连接源的实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9030",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 连接源的实例vip，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 连接源的vpcId，当为腾讯云实例时，必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 连接源的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 连接源的密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpdate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 连接源是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8040",
+          "member": "int64",
+          "name": "BePort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DropCls": {
       "document": "dip失败消息写入cls的配置",
       "members": [
@@ -9674,6 +9770,15 @@
           "example": "xxx",
           "member": "CtsdbModifyConnectParam",
           "name": "CtsdbConnectParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Doris配置，Type为DORIS",
+          "example": "xxx",
+          "member": "DorisModifyConnectParam",
+          "name": "DorisConnectParam",
           "required": false,
           "type": "object"
         }

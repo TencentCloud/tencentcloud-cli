@@ -169,7 +169,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "商标名称",
           "example": "xxx",
           "member": "string",
           "name": "BrandName",
@@ -179,7 +179,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "商标证明",
           "example": "xxx",
           "member": "string",
           "name": "BrandCertificateName",
@@ -189,7 +189,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "商标审核状态 1-审核中 2-审核未通过 3-审核通过",
           "example": "xxx",
           "member": "int64",
           "name": "BrandStatus",
@@ -199,7 +199,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "审核说明",
           "example": "xxx",
           "member": "string",
           "name": "BrandNote",
@@ -209,7 +209,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "商标转让证明",
           "example": "xxx",
           "member": "string",
           "name": "TransferName",
@@ -219,7 +219,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "商标转让证明审核状态",
           "example": "xxx",
           "member": "int64",
           "name": "TransferStatus",
@@ -229,7 +229,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "审核说明 1-审核中 2-审核未通过 3-审核通过",
           "example": "xxx",
           "member": "string",
           "name": "TransferNote",
@@ -245,7 +245,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网址ID",
           "example": "xxx",
           "member": "int64",
           "name": "ProtectURLId",
@@ -254,7 +254,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址",
           "example": "xxx",
           "member": "string",
           "name": "FakeURL",
@@ -263,7 +263,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "截图",
           "example": "xxx",
           "member": "string",
           "name": "SnapshotNames",
@@ -272,7 +272,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "举报说明",
           "example": "xxx",
           "member": "string",
           "name": "Note",
@@ -299,7 +299,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址",
           "example": "xxx",
           "member": "string",
           "name": "FakeURL",
@@ -326,7 +326,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "品牌名字",
           "example": "xxx",
           "member": "string",
           "name": "BrandName",
@@ -335,7 +335,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "商标证明",
           "example": "xxx",
           "member": "string",
           "name": "BrandCertificateName",
@@ -344,7 +344,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "商标转让证明",
           "example": "xxx",
           "member": "string",
           "name": "TransferName",
@@ -353,7 +353,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "授权书",
           "example": "xxx",
           "member": "string",
           "name": "AuthorizationName",
@@ -380,7 +380,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址ID",
           "example": "xxx",
           "member": "int64",
           "name": "FakeURLId",
@@ -407,7 +407,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "企业名称",
           "example": "xxx",
           "member": "string",
           "name": "CompanyName",
@@ -416,7 +416,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "电话号码",
           "example": "xxx",
           "member": "string",
           "name": "Phone",
@@ -425,7 +425,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "营业执照",
           "example": "xxx",
           "member": "string",
           "name": "LicenseName",
@@ -434,7 +434,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站",
           "example": "xxx",
           "member": "string",
           "name": "ProtectURLs",
@@ -443,7 +443,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "网站名称",
           "example": "xxx",
           "member": "string",
           "name": "ProtectWebs",
@@ -1518,7 +1518,7 @@
       "document": "DescribeBPCompanyInfo返回参数结构体",
       "members": [
         {
-          "document": "xx",
+          "document": "企业名称",
           "example": "xxx",
           "member": "string",
           "name": "CompanyName",
@@ -1527,7 +1527,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "电话号码",
           "example": "xxx",
           "member": "string",
           "name": "Phone",
@@ -1536,7 +1536,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "营业执照",
           "example": "xx",
           "member": "string",
           "name": "LicenseName",
@@ -1545,7 +1545,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "营业执照审核状态 1-审核中 2-审核未通过，3、审核通过",
           "example": "xx",
           "member": "int64",
           "name": "LicenseStatus",
@@ -1554,7 +1554,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "营业执照备注",
           "example": "xx",
           "member": "string",
           "name": "LicenseNote",
@@ -1563,7 +1563,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "授权书",
           "example": "xx",
           "member": "string",
           "name": "AuthorizationName",
@@ -1572,7 +1572,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "授权书审核状态",
           "example": "xx",
           "member": "int64",
           "name": "AuthorizationStatus",
@@ -1581,7 +1581,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "授权书备注",
           "example": "xx",
           "member": "string",
           "name": "AuthorizationNote",
@@ -1590,7 +1590,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "品牌信息",
           "example": "xx",
           "member": "BrandData",
           "name": "BrandDatas",
@@ -1599,7 +1599,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xx",
+          "document": "企业ID",
           "example": "xxx",
           "member": "int64",
           "name": "CompanyId",
@@ -1621,7 +1621,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "过滤条件",
           "example": "xxx",
           "member": "Filter",
           "name": "Filters",
@@ -1630,7 +1630,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "页数",
           "example": "xxx",
           "member": "int64",
           "name": "PageSize",
@@ -1639,7 +1639,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "页码",
           "example": "xxx",
           "member": "int64",
           "name": "PageNumber",
@@ -1693,7 +1693,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "页数",
           "example": "xxx",
           "member": "int64",
           "name": "PageSize",
@@ -1702,7 +1702,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "页码",
           "example": "xxx",
           "member": "int64",
           "name": "PageNumber",
@@ -1747,7 +1747,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "过滤条件",
           "example": "xxx",
           "member": "Filter",
           "name": "Filters",
@@ -1756,7 +1756,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "页数",
           "example": "xxx",
           "member": "int64",
           "name": "PageSize",
@@ -1765,7 +1765,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "页码",
           "example": "xxx",
           "member": "int64",
           "name": "PageNumber",
@@ -2179,7 +2179,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址ID",
           "example": "xxx",
           "member": "int64",
           "name": "FakeURLId",
@@ -2189,7 +2189,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站",
           "example": "xxx",
           "member": "string",
           "name": "ProtectWeb",
@@ -2199,7 +2199,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "检测时间",
           "example": "xxx",
           "member": "string",
           "name": "DetectTime",
@@ -2209,7 +2209,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址",
           "example": "xxx",
           "member": "string",
           "name": "FakeURL",
@@ -2219,7 +2219,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "截图",
           "example": "xxx",
           "member": "string",
           "name": "Snapshot",
@@ -2229,7 +2229,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "IP地址",
           "example": "xxx",
           "member": "string",
           "name": "IP",
@@ -2239,7 +2239,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "IP地理位置",
           "example": "xxx",
           "member": "string",
           "name": "IPLoc",
@@ -2249,7 +2249,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "热度",
           "example": "xxx",
           "member": "int64",
           "name": "Heat",
@@ -2259,7 +2259,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "网址状态",
           "example": "xxx",
           "member": "int64",
           "name": "Status",
@@ -2269,7 +2269,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "备注",
           "example": "xxx",
           "member": "string",
           "name": "Note",
@@ -2279,7 +2279,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站所属单位",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLCompany",
@@ -2289,7 +2289,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站性质",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLAttr",
@@ -2299,7 +2299,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站名称",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLName",
@@ -2309,7 +2309,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站备案号",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLICP",
@@ -2319,7 +2319,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站创建时间",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLCreateTime",
@@ -2329,7 +2329,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站过期时间",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLExpireTime",
@@ -2345,7 +2345,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "文件下载地址",
           "example": "xxx",
           "member": "string",
           "name": "FileUrl",
@@ -2355,7 +2355,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照",
           "example": "xxx",
           "member": "int64",
           "name": "FileType",
@@ -2365,7 +2365,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "文件有效开始日期",
           "example": "xxx",
           "member": "string",
           "name": "ValidStartDate",
@@ -2375,7 +2375,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "文件有效截止日期",
           "example": "xxx",
           "member": "string",
           "name": "ValidEndDate",
@@ -2396,7 +2396,7 @@
       "members": [
         {
           "default": "",
-          "document": "xx",
+          "document": "营业执照",
           "example": "xxx",
           "member": "string",
           "name": "LicenseName",
@@ -2405,7 +2405,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "授权书",
           "example": "xxx",
           "member": "string",
           "name": "AuthorizationName",
@@ -2414,7 +2414,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "商标名称",
           "example": "xxx",
           "member": "string",
           "name": "BrandName",
@@ -2423,7 +2423,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "商标证明",
           "example": "xxx",
           "member": "string",
           "name": "BrandCertificateName",
@@ -2432,7 +2432,7 @@
         },
         {
           "default": "",
-          "document": "xx",
+          "document": "商标转让证明",
           "example": "xxx",
           "member": "string",
           "name": "TransferName",
@@ -2567,7 +2567,7 @@
         },
         {
           "default": "",
-          "document": "结果回调地址",
+          "document": "取证结果回调地址",
           "example": "https://test.com",
           "member": "string",
           "name": "ObtainUrl",
@@ -3057,7 +3057,7 @@
         },
         {
           "default": "",
-          "document": "是否海外网址",
+          "document": "是否境外网址",
           "example": "1",
           "member": "int64",
           "name": "IsOverseas",
@@ -3073,7 +3073,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站ID",
           "example": "xxx",
           "member": "int64",
           "name": "ProtectURLId",
@@ -3083,7 +3083,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站",
           "example": "xxx",
           "member": "string",
           "name": "ProtectURL",
@@ -3093,7 +3093,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站名称",
           "example": "xxx",
           "member": "string",
           "name": "ProtectWeb",
@@ -3103,7 +3103,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站审核状态 1-审核中 2-审核不通过 3-审核通过",
           "example": "xxx",
           "member": "int64",
           "name": "ProtectURLStatus",
@@ -3113,7 +3113,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "网站审核不通过原因",
           "example": "xxx",
           "member": "string",
           "name": "ProtectURLNote",
@@ -3123,7 +3123,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "创建时间",
           "example": "xxx",
           "member": "string",
           "name": "CreateTime",
@@ -3139,7 +3139,7 @@
       "members": [
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址ID",
           "example": "xxx",
           "member": "int64",
           "name": "FakeURLId",
@@ -3149,7 +3149,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "检测时间",
           "example": "xxx",
           "member": "string",
           "name": "DetectTime",
@@ -3159,7 +3159,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站",
           "example": "xxx",
           "member": "string",
           "name": "ProtectURL",
@@ -3169,7 +3169,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "保护网站名称",
           "example": "xxx",
           "member": "string",
           "name": "ProtectWeb",
@@ -3179,7 +3179,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网址",
           "example": "xxx",
           "member": "string",
           "name": "FakeURL",
@@ -3189,7 +3189,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "截图",
           "example": "xxx",
           "member": "string",
           "name": "Snapshot",
@@ -3199,7 +3199,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "IP地址",
           "example": "xxx",
           "member": "string",
           "name": "IP",
@@ -3209,7 +3209,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "IP地理位置",
           "example": "xxx",
           "member": "string",
           "name": "IPLoc",
@@ -3219,7 +3219,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "热度",
           "example": "xxx",
           "member": "int64",
           "name": "Heat",
@@ -3229,7 +3229,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "网站状态",
           "example": "xxx",
           "member": "int64",
           "name": "Status",
@@ -3239,7 +3239,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "网站不处理原因",
           "example": "xxx",
           "member": "string",
           "name": "Note",
@@ -3249,7 +3249,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站的企业名称",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLCompany",
@@ -3259,7 +3259,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站的网站性质",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLAttr",
@@ -3269,7 +3269,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站的网站名称",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLName",
@@ -3279,7 +3279,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站的备案",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLICP",
@@ -3289,7 +3289,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站创建时间",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLCreateTime",
@@ -3299,7 +3299,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "仿冒网站过期时间",
           "example": "xxx",
           "member": "string",
           "name": "FakeURLExpireTime",
@@ -3309,7 +3309,7 @@
         },
         {
           "default": "",
-          "document": "xxx",
+          "document": "协查处置时间",
           "example": "xxx",
           "member": "string",
           "name": "BlockTime",
@@ -3334,7 +3334,7 @@
         },
         {
           "default": "",
-          "document": "文件的扩展名，比如txt，docx",
+          "document": "文件的扩展名，例如txt，docx",
           "example": "txt",
           "member": "string",
           "name": "ContentType",

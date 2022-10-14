@@ -12247,7 +12247,7 @@
       "members": [
         {
           "default": "",
-          "document": "<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>PolicyId - int64 - 是否必填：否 - 规则Id</li>\n<li>ItemName - string - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开时时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
+          "document": "<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>PolicyId - int64 - 是否必填：否 - 规则Id</li>\n<li>ItemName - string - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开始时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12328,7 +12328,7 @@
       "members": [
         {
           "default": "",
-          "document": "<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>HostName - string - 是否必填：否 - 主机名</li>\n<li>HostIp - string - 是否必填：否 - 主机IP</li>\n<li>ItemId - String - 是否必填：否 - 检测项Id</li>\n<li>ItemName - String - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态[0:未通过|3:通过|5:检测中]</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开时时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
+          "document": "<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>HostName - string - 是否必填：否 - 主机名</li>\n<li>HostIp - string - 是否必填：否 - 主机IP</li>\n<li>ItemId - String - 是否必填：否 - 检测项Id</li>\n<li>ItemName - String - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态[0:未通过|3:通过|5:检测中]</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开始时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

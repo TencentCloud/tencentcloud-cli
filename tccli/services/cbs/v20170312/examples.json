@@ -245,13 +245,13 @@
     "InquiryPriceRenewDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\n&DiskIds.0=disk-jwk0zvrg\n&DiskChargePrepaids.0.Period=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewDisks\n<公共请求参数>\n\n{\n    \"DiskChargePrepaids\": [\n        {\n            \"Period\": \"1\"\n        }\n    ],\n    \"DiskIds\": [\n        \"disk-jwk0zvrg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86f40e10-8b5e-4085-8aea-6188283e38de\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": 7,\n            \"UnitPrice\": null,\n            \"UnitPriceHigh\": null,\n            \"OriginalPriceHigh\": \"7\",\n            \"OriginalPrice\": 7,\n            \"UnitPriceDiscount\": null,\n            \"UnitPriceDiscountHigh\": null,\n            \"DiscountPriceHigh\": \"7\",\n            \"ChargeUnit\": null\n        }\n    }\n}",
         "title": "查询云盘续费1个月的价格"
       },
       {
         "document": "实例当前到期时间为：2018-03-17 15:15:03，需续费一个月，调用本接口续费实例挂载的预付费云盘，使云盘与实例的到期时间对齐。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=InquiryPriceRenewDisks\n&DiskIds.0=disk-jwk0zvrg\n&DiskChargePrepaids.0.Period=1\n&DiskChargePrepaids.0.CurInstanceDeadline=2018-03-17 15:15:03\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewDisks\n<公共请求参数>\n\n{\n    \"DiskChargePrepaids\": [\n        {\n            \"CurInstanceDeadline\": \"2018-03-17 15:15:03\",\n            \"Period\": \"1\"\n        }\n    ],\n    \"DiskIds\": [\n        \"disk-jwk0zvrg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86f40e10-8b5e-4085-8aea-6188283e38de\",\n        \"DiskPrice\": {\n            \"DiscountPrice\": 7,\n            \"UnitPrice\": null,\n            \"UnitPriceHigh\": null,\n            \"OriginalPriceHigh\": \"7\",\n            \"OriginalPrice\": 7,\n            \"UnitPriceDiscount\": null,\n            \"UnitPriceDiscountHigh\": null,\n            \"DiscountPriceHigh\": \"7\",\n            \"ChargeUnit\": null\n        }\n    }\n}",
         "title": "续费实例时，需续费挂载的预付费云盘，使云盘与实例的到期时间对齐。"
       }
@@ -343,14 +343,14 @@
     "RenewDisk": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=RenewDisk\r\n&DiskId=disk-jwk0zvrg\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
         "title": "给云盘续费一个月，并设置自动续费标识"
       },
       {
         "document": "实例当前到期时间为：2018-03-30 20:15:03，需续费一个月，调用本接口续费实例挂载的预付费云盘，使云盘与实例的到期时间对齐，并设置云盘为自动续费。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=RenewDisk\r\n&DiskId=disk-jwk0zvrg\r\n&DiskChargePrepaid.Period=1\r\n&DiskChargePrepaid.CurInstanceDeadline=2018-03-30 20:15:03\r\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"CurInstanceDeadline\": \"2018-03-30 20:15:03\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
         "title": "续费实例时，需续费挂载的预付费云盘，使云盘与实例的到期时间对齐。"
       }
     ],

@@ -42,6 +42,12 @@
       "name": "查询音视频用量计费时长",
       "output": "DescribeExternalTrtcMeasureResponse"
     },
+    "DescribeMixTranscodingUsage": {
+      "document": "获取TRTC混流转码的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
+      "input": "DescribeMixTranscodingUsageRequest",
+      "name": "查询TRTC混流转码用量",
+      "output": "DescribeMixTranscodingUsageResponse"
+    },
     "DescribePicture": {
       "document": "如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁查找自定义背景图或水印信息，可通过此接口查找已上传的图片信息。无需频繁查找图片信息的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中查看。",
       "input": "DescribePictureRequest",
@@ -51,8 +57,20 @@
     "DescribeRecordStatistic": {
       "document": "查询云端录制计费时长。\n\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeRecordStatisticRequest",
-      "name": "查询云端录制计费时长",
+      "name": "查询云端录制计费时长（旧）",
       "output": "DescribeRecordStatisticResponse"
+    },
+    "DescribeRecordingUsage": {
+      "document": "获取TRTC录制的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
+      "input": "DescribeRecordingUsageRequest",
+      "name": "查询TRTC录制用量",
+      "output": "DescribeRecordingUsageResponse"
+    },
+    "DescribeRelayUsage": {
+      "document": "获取TRTC旁路转推的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
+      "input": "DescribeRelayUsageRequest",
+      "name": "查询TRTC旁路转推用量",
+      "output": "DescribeRelayUsageResponse"
     },
     "DescribeRoomInfo": {
       "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口目前免费提供中，监控仪表盘商业化计费后该接口需要订阅付费版后方可调用，仪表盘商业化说明请见：https://cloud.tencent.com/document/product/647/77735",
@@ -71,6 +89,12 @@
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
       "name": "查询旁路转码计费时长(旧)",
       "output": "DescribeTrtcMcuTranscodeTimeResponse"
+    },
+    "DescribeTrtcUsage": {
+      "document": "获取TRTC音视频互动的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
+      "input": "DescribeTrtcUsageRequest",
+      "name": "查询TRTC音视频用量",
+      "output": "DescribeTrtcUsageResponse"
     },
     "DescribeUnusualEvent": {
       "document": "查询SdkAppId下任意20条异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询14天内数据，查询起止时间不超过1个小时。支持跨天查询。（同老接口DescribeAbnormalEvent）\n异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916",
@@ -900,6 +924,69 @@
       ],
       "type": "object"
     },
+    "DescribeMixTranscodingUsageRequest": {
+      "document": "DescribeMixTranscodingUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
+          "example": "1400123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMixTranscodingUsageResponse": {
+      "document": "DescribeMixTranscodingUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量类型，与UsageValue中各个位置的值对应。",
+          "example": "无",
+          "member": "string",
+          "name": "UsageKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各个时间点用量明细。",
+          "example": "无",
+          "member": "TrtcUsage",
+          "name": "UsageList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePictureRequest": {
       "document": "DescribePicture请求参数结构体",
       "members": [
@@ -1013,6 +1100,141 @@
           "example": "无",
           "member": "SdkAppIdRecordUsage",
           "name": "SdkAppIdUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingUsageRequest": {
+      "document": "DescribeRecordingUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询单流录制或合流录制，值为\"single\"或\"multi\"。",
+          "example": "\"single\"",
+          "member": "string",
+          "name": "MixType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
+          "example": "1400123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingUsageResponse": {
+      "document": "DescribeRecordingUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量类型，与UsageValue中各个位置的值对应。",
+          "example": "无",
+          "member": "string",
+          "name": "UsageKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各个时间点用量明细。",
+          "example": "无",
+          "member": "TrtcUsage",
+          "name": "UsageList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelayUsageRequest": {
+      "document": "DescribeRelayUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
+          "example": "1400123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelayUsageResponse": {
+      "document": "DescribeRelayUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量类型，与UsageValue中各个位置的值对应。",
+          "example": "无",
+          "member": "string",
+          "name": "UsageKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各个时间点用量明细。",
+          "example": "无",
+          "member": "TrtcUsage",
+          "name": "UsageList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1220,6 +1442,69 @@
           "example": "无",
           "member": "OneSdkAppIdTranscodeTimeUsagesInfo",
           "name": "Usages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcUsageRequest": {
+      "document": "DescribeTrtcUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
+          "example": "1400123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrtcUsageResponse": {
+      "document": "DescribeTrtcUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量类型，与UsageValue中各个位置的值对应。",
+          "example": "无",
+          "member": "string",
+          "name": "UsageKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各个时间点用量明细。",
+          "example": "无",
+          "member": "TrtcUsage",
+          "name": "UsageList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2925,6 +3210,7 @@
         {
           "default": "",
           "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
+          "example": "2020-09-07 00:05:05",
           "member": "string",
           "name": "TimeKey",
           "required": true,
@@ -2934,6 +3220,7 @@
         {
           "default": "",
           "document": "语音时长，单位：秒。",
+          "example": "100",
           "member": "uint64",
           "name": "AudioTime",
           "required": true,
@@ -2943,6 +3230,7 @@
         {
           "default": "",
           "document": "视频时长-标清SD，单位：秒。",
+          "example": "100",
           "member": "uint64",
           "name": "VideoTimeSd",
           "required": true,
@@ -2952,6 +3240,7 @@
         {
           "default": "",
           "document": "视频时长-高清HD，单位：秒。",
+          "example": "100",
           "member": "uint64",
           "name": "VideoTimeHd",
           "required": true,
@@ -2961,10 +3250,21 @@
         {
           "default": "",
           "document": "视频时长-全高清FHD，单位：秒。",
+          "example": "100",
           "member": "uint64",
           "name": "VideoTimeFhd",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽，单位：Mbps。",
+          "example": " 100.12",
+          "member": "float",
+          "name": "Flux",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -3571,6 +3871,32 @@
           "name": "Video4KTime",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrtcUsage": {
+      "document": "实时音视频用量在某一时间段的统计信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量数组。每个数值含义与UsageKey对应。单位：分钟。",
+          "example": "无",
+          "member": "float",
+          "name": "UsageValue",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli trtc DescribeRecordStatistic --cli-unfold-argument  \
-    --SdkAppId 1400123456 \
+    --EndTime 2019-10-13 \
     --StartTime 2019-10-11 \
-    --EndTime 2019-10-13
+    --SdkAppId 1400123456
 ```
 
 Output: 

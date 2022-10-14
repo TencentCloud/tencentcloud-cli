@@ -680,6 +680,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -815,7 +825,7 @@
         },
         {
           "default": "",
-          "document": "集群付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费",
+          "document": "实例付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费",
           "example": "PREPAID",
           "member": "string",
           "name": "PayMode",
@@ -902,6 +912,24 @@
           "name": "DBKernelVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "StoragePayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置",
+          "example": "100",
+          "member": "uint64",
+          "name": "Storage",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateDocument": {
+      "document": "创建房间内可以使用的文档。",
+      "input": "CreateDocumentRequest",
+      "name": "创建文档",
+      "output": "CreateDocumentResponse"
+    },
     "CreateRoom": {
       "document": "创建房间",
       "input": "CreateRoomRequest",
@@ -41,6 +47,12 @@
       "input": "RegisterUserRequest",
       "name": "注册用户",
       "output": "RegisterUserResponse"
+    },
+    "SetAppCustomContent": {
+      "document": "设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口",
+      "input": "SetAppCustomContentRequest",
+      "name": "设置应用自定义内容",
+      "output": "SetAppCustomContentResponse"
     }
   },
   "metadata": {
@@ -50,6 +62,161 @@
     "serviceShortName": "lcic"
   },
   "objects": {
+    "AppCustomContent": {
+      "document": "应用自定义内容",
+      "members": [
+        {
+          "default": "",
+          "document": "场景参数，一个应用下可以设置多个不同场景。",
+          "example": "abc",
+          "member": "string",
+          "name": "Scene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "logo地址。",
+          "example": "abc",
+          "member": "string",
+          "name": "LogoUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主页地址，可设置用于跳转。",
+          "example": "abc",
+          "member": "string",
+          "name": "HomeUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义的js。",
+          "example": "abc",
+          "member": "string",
+          "name": "JsUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义的css。",
+          "example": "abc",
+          "member": "string",
+          "name": "CssUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateDocumentRequest": {
+      "document": "CreateDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文档地址。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文档名称。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文档所有者的Id",
+          "example": "abc",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
+          "example": "1",
+          "member": "uint64",
+          "name": "TranscodeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权限，可以有如下取值：\n0 私有文档（默认）\n1 公共文档",
+          "example": "1",
+          "member": "uint64",
+          "name": "Permission",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文档后缀名。",
+          "example": "doc",
+          "member": "string",
+          "name": "DocumentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文档大小，单位 字节",
+          "example": "123",
+          "member": "uint64",
+          "name": "DocumentSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDocumentResponse": {
+      "document": "CreateDocument返回参数结构体",
+      "members": [
+        {
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRoomRequest": {
       "document": "CreateRoom请求参数结构体",
       "members": [
@@ -571,6 +738,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAppCustomContentRequest": {
+      "document": "SetAppCustomContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义内容。",
+          "example": "无",
+          "member": "AppCustomContent",
+          "name": "CustomContent",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAppCustomContentResponse": {
+      "document": "SetAppCustomContent返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
