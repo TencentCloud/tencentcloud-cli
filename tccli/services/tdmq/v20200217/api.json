@@ -3803,7 +3803,8 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3812,16 +3813,18 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。",
+          "document": "订阅者名称，不超过128个字符。",
           "example": "cloud_sub",
           "member": "string",
           "name": "SubscriptionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3830,7 +3833,8 @@
           "member": "bool",
           "name": "IsIdempotent",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3839,7 +3843,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3848,7 +3853,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3857,7 +3863,8 @@
           "member": "bool",
           "name": "AutoCreatePolicyTopic",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3866,7 +3873,8 @@
           "member": "string",
           "name": "PostFixPattern",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3881,7 +3889,8 @@
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

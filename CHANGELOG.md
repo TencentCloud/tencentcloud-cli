@@ -1,3 +1,122 @@
+# Release 3.0.627.1
+
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 16 次发布
+
+发布时间：2022-10-17 06:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76408)
+* [DeleteAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76407)
+* [DescribeAuditLogFiles](http://document.tencentcloudapi.woa.com/document/product/1003/76406)
+* [DescribeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/1003/76405)
+
+新增数据结构：
+
+* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog)
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFile)
+* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFilter)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 16 次发布
+
+发布时间：2022-10-17 06:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateChannelFlowEvidenceReport
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 19 次发布
+
+发布时间：2022-10-17 06:24:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyLivenessToken](http://document.tencentcloudapi.woa.com/document/product/1007/76410)
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+* [ApplyWebVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76414)
+* [CreateUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1007/76409)
+* [DetectReflectLivenessAndCompare](http://document.tencentcloudapi.woa.com/document/product/1007/66076)
+* [GenerateReflectSequence](http://document.tencentcloudapi.woa.com/document/product/1007/76417)
+* [GetLivenessResult](http://document.tencentcloudapi.woa.com/document/product/1007/76413)
+* [GetSdkVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76412)
+* [GetWebVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76411)
+* [VideoLivenessCompare](http://document.tencentcloudapi.woa.com/document/product/1007/76416)
+
+新增数据结构：
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+* [CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult)
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#FileInfo)
+* [VerificationDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#VerificationDetail)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 15 次发布
+
+发布时间：2022-10-17 06:44:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76420)
+* [StopPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76419)
+* [UpdatePublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76418)
+
+新增数据结构：
+
+* [AgentParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentParams)
+* [AudioEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncode)
+* [MaxVideoUser](http://document.tencentcloudapi.woa.com/document/product/647/44055#MaxVideoUser)
+* [McuAudioParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuAudioParams)
+* [McuCustomCrop](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuCustomCrop)
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+* [McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams)
+* [McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume)
+* [McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough)
+* [McuPublishCdnParam](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPublishCdnParam)
+* [McuSeiParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuSeiParams)
+* [McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams)
+* [McuVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuVideoParams)
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+* [MixUserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixUserInfo)
+* [SingleSubscribeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SingleSubscribeParams)
+* [UserMediaStream](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserMediaStream)
+* [VideoEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncode)
+
+
+
 # Release 3.0.626.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

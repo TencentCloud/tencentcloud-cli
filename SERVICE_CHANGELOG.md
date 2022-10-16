@@ -1,155 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
 
 ### 第 16 次发布
 
-发布时间：2022-10-14 06:12:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [InquiryPriceRenewDisks](http://document.tencentcloudapi.woa.com/document/product/362/16317)
-
-	* 新增入参：DiskBackupQuota
-
-* [RenewDisk](http://document.tencentcloudapi.woa.com/document/product/362/16319)
-
-	* 新增入参：DiskBackupQuota
-
-
-
-
-## 消息队列 Ckafka(ckafka) 版本：2019-08-19
-
-### 第 38 次发布
-
-发布时间：2022-10-14 06:15:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
-
-	* 新增入参：DorisConnectParam
-
-
-新增数据结构：
-
-* [DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam)
-
-
-
-## 企业收付平台(cpdp) 版本：2019-08-20
-
-### 第 41 次发布
-
-发布时间：2022-10-14 06:17:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CreateOpenBankOrderRechargeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankOrderRechargeResult)
-
-	* 新增成员：DealStatus, DealMessage, PcWebUrl
-
-* [CreateSinglePaymentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateSinglePaymentData)
-
-	* 新增成员：AgentId, AgentName
-
-
-
-
-## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
-
-### 第 15 次发布
-
-发布时间：2022-10-14 06:20:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryFilter)
-
-	* 新增成员：Operator
-
-
-
-
-## 专线接入(dc) 版本：2018-04-10
-
-### 第 3 次发布
-
-发布时间：2022-10-14 06:22:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DirectConnectTunnelExtra](http://document.tencentcloudapi.woa.com/document/product/216/18418#DirectConnectTunnelExtra)
-
-	* 新增成员：HighPrecisionBFDEnable
-
-
-
-
-## 云数据库 Redis(redis) 版本：2018-04-12
-
-### 第 22 次发布
-
-发布时间：2022-10-14 06:37:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
-
-	* 新增成员：WanAddress, PolarisServer, CurrentProxyVersion, CurrentRedisVersion, UpgradeProxyVersion, UpgradeRedisVersion
-
-
-
-
-## 证书(ssl) 版本：2019-12-05
-
-### 第 12 次发布
-
-发布时间：2022-10-14 06:40:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ApplyCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41678)
-
-	* 新增入参：PackageId
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 14 次发布
-
-发布时间：2022-10-14 06:45:28
+发布时间：2022-10-17 06:18:47
 
 本次发布包含了以下内容：
 
@@ -157,21 +12,108 @@
 
 新增接口：
 
-* [DescribeMixTranscodingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76403)
-* [DescribeRecordingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76402)
-* [DescribeRelayUsage](http://document.tencentcloudapi.woa.com/document/product/647/76401)
-* [DescribeTrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/76400)
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76408)
+* [DeleteAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76407)
+* [DescribeAuditLogFiles](http://document.tencentcloudapi.woa.com/document/product/1003/76406)
+* [DescribeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/1003/76405)
 
 新增数据结构：
 
-* [TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)
+* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog)
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFile)
+* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFilter)
 
-修改数据结构：
 
-* [SdkAppIdTrtcMcuTranscodeTimeUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#SdkAppIdTrtcMcuTranscodeTimeUsage)
 
-	* 新增成员：Flux
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 16 次发布
+
+发布时间：2022-10-17 06:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateChannelFlowEvidenceReport
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 19 次发布
+
+发布时间：2022-10-17 06:24:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyLivenessToken](http://document.tencentcloudapi.woa.com/document/product/1007/76410)
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+* [ApplyWebVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76414)
+* [CreateUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1007/76409)
+* [DetectReflectLivenessAndCompare](http://document.tencentcloudapi.woa.com/document/product/1007/66076)
+* [GenerateReflectSequence](http://document.tencentcloudapi.woa.com/document/product/1007/76417)
+* [GetLivenessResult](http://document.tencentcloudapi.woa.com/document/product/1007/76413)
+* [GetSdkVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76412)
+* [GetWebVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76411)
+* [VideoLivenessCompare](http://document.tencentcloudapi.woa.com/document/product/1007/76416)
+
+新增数据结构：
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+* [CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult)
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#FileInfo)
+* [VerificationDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#VerificationDetail)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 15 次发布
+
+发布时间：2022-10-17 06:44:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76420)
+* [StopPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76419)
+* [UpdatePublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76418)
+
+新增数据结构：
+
+* [AgentParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentParams)
+* [AudioEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncode)
+* [MaxVideoUser](http://document.tencentcloudapi.woa.com/document/product/647/44055#MaxVideoUser)
+* [McuAudioParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuAudioParams)
+* [McuCustomCrop](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuCustomCrop)
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+* [McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams)
+* [McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume)
+* [McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough)
+* [McuPublishCdnParam](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPublishCdnParam)
+* [McuSeiParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuSeiParams)
+* [McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams)
+* [McuVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuVideoParams)
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+* [MixUserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixUserInfo)
+* [SingleSubscribeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SingleSubscribeParams)
+* [UserMediaStream](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserMediaStream)
+* [VideoEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncode)
 
 
 
@@ -8183,7 +8125,7 @@
 
 新增数据结构：
 
-* [[DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam))
+* [DorisModifyConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#DorisModifyConnectParam)
 
 ### 第 37 次发布
 
@@ -13814,6 +13756,27 @@
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
 
+### 第 16 次发布
+
+发布时间：2022-10-17 06:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAuditLogFiles](http://document.tencentcloudapi.woa.com/document/product/1003/76406)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/1003/76405)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog))
+* [[AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFile)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFile))
+* [[AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFilter)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLogFilter))
+
 ### 第 15 次发布
 
 发布时间：2022-10-14 06:20:45
@@ -18475,6 +18438,18 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 16 次发布
+
+发布时间：2022-10-17 06:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateChannelFlowEvidenceReport
+
 ### 第 15 次发布
 
 发布时间：2022-09-29 06:26:38
@@ -18885,6 +18860,34 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 19 次发布
+
+发布时间：2022-10-17 06:24:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ApplyLivenessToken](http://document.tencentcloudapi.woa.com/document/product/1007/76410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ApplyWebVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76414)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1007/76409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DetectReflectLivenessAndCompare](http://document.tencentcloudapi.woa.com/document/product/1007/66076)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GenerateReflectSequence](http://document.tencentcloudapi.woa.com/document/product/1007/76417)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetLivenessResult](http://document.tencentcloudapi.woa.com/document/product/1007/76413)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetSdkVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76412)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetWebVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/76411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[VideoLivenessCompare](http://document.tencentcloudapi.woa.com/document/product/1007/76416)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult))
+* [[CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult))
+* [[FileInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#FileInfo)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[FileInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#FileInfo))
+* [[VerificationDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#VerificationDetail)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[VerificationDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#VerificationDetail))
 
 ### 第 18 次发布
 
@@ -36897,6 +36900,42 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 15 次发布
+
+发布时间：2022-10-17 06:44:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[StartPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76420)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76419)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdatePublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76418)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AgentParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[AgentParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentParams))
+* [[AudioEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncode)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[AudioEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncode))
+* [[MaxVideoUser](http://document.tencentcloudapi.woa.com/document/product/647/44055#MaxVideoUser)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[MaxVideoUser](http://document.tencentcloudapi.woa.com/document/product/647/44055#MaxVideoUser))
+* [[McuAudioParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuAudioParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuAudioParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuAudioParams))
+* [[McuCustomCrop](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuCustomCrop)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuCustomCrop](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuCustomCrop))
+* [[McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout))
+* [[McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams))
+* [[McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume))
+* [[McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough))
+* [[McuPublishCdnParam](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPublishCdnParam)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuPublishCdnParam](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPublishCdnParam))
+* [[McuSeiParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuSeiParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuSeiParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuSeiParams))
+* [[McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams))
+* [[McuVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuVideoParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuVideoParams))
+* [[McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage))
+* [[McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams))
+* [[MixUserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixUserInfo)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[MixUserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixUserInfo))
+* [[SingleSubscribeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SingleSubscribeParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[SingleSubscribeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SingleSubscribeParams))
+* [[UserMediaStream](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserMediaStream)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[UserMediaStream](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserMediaStream))
+* [[VideoEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncode)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[VideoEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncode))
+
 ### 第 14 次发布
 
 发布时间：2022-10-14 06:45:28
@@ -36907,14 +36946,14 @@
 
 新增接口：
 
-* [[DescribeMixTranscodingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76403)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRecordingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76402)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRelayUsage](http://document.tencentcloudapi.woa.com/document/product/647/76401)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/76400)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeMixTranscodingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76403)
+* [DescribeRecordingUsage](http://document.tencentcloudapi.woa.com/document/product/647/76402)
+* [DescribeRelayUsage](http://document.tencentcloudapi.woa.com/document/product/647/76401)
+* [DescribeTrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/76400)
 
 新增数据结构：
 
-* [[TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage))
+* [TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)
 
 修改数据结构：
 

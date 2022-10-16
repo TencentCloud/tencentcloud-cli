@@ -7,11 +7,11 @@ Input:
 ```
 tccli tdmq CreateSubscription --cli-unfold-argument  \
     --EnvironmentId default \
+    --Remark 创建订阅关系 \
+    --IsIdempotent true \
     --TopicName cloud_test \
     --SubscriptionName cloud_sub \
-    --IsIdempotent true \
-    --AutoCreatePolicyTopic true \
-    --Remark 创建订阅关系
+    --AutoCreatePolicyTopic true
 ```
 
 Output: 

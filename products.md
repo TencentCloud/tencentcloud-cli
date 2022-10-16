@@ -44,11 +44,11 @@
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2022-06-22 06:15:13 |
 | cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2022-10-13 06:13:32 |
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | 2022-08-29 15:55:29 |
-| cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2022-03-08 08:03:46 |
+| cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2022-10-17 06:14:58 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2022-10-14 06:17:25 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2022-10-12 06:18:08 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2022-10-14 06:19:24 |
-| cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-10-14 06:20:45 |
+| cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-10-17 06:18:47 |
 | dasb | [堡垒机](http://document.tencentcloudapi.woa.com/document/product/1025) | 2022-08-29 15:29:33 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2022-07-29 10:41:16 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2022-09-29 06:21:38 |
@@ -68,9 +68,9 @@
 | eis | [企业集成服务](http://document.tencentcloudapi.woa.com/document/product/1270) | 2022-08-29 15:39:40 |
 | emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2022-09-09 06:19:43 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2022-09-28 06:26:16 |
-| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2022-10-11 06:26:54 |
+| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2022-10-17 06:24:27 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2022-06-15 06:08:14 |
-| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2022-09-20 06:23:59 |
+| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2022-10-17 06:24:45 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | 2022-03-23 08:04:19 |
 | ft | [人像变换](http://document.tencentcloudapi.woa.com/document/product/1202) | 2022-03-08 08:04:21 |
 | gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2022-10-13 06:24:03 |
@@ -140,7 +140,7 @@
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | 2022-09-26 06:44:26 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2022-09-26 06:44:39 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2022-03-08 08:00:15 |
-| tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-09-22 06:42:09 |
+| tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-10-17 06:42:54 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2022-09-28 06:46:32 |
 | tic | [腾讯云IaC平台](http://document.tencentcloudapi.woa.com/document/product/1213) | 2022-03-08 08:02:10 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2022-03-08 08:12:22 |
@@ -151,7 +151,7 @@
 | tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2022-09-09 06:30:19 |
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2022-03-08 08:03:00 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2022-09-16 10:39:08 |
-| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2022-10-14 06:45:28 |
+| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2022-10-17 06:44:59 |
 | tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2022-10-12 06:49:10 |
 | tsf | [腾讯微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2022-10-11 06:49:46 |
 | tsw | [腾讯微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2022-03-08 08:17:14 |
