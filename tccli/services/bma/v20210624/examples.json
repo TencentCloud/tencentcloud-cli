@@ -56,6 +56,14 @@
         "title": "企业认证接口"
       }
     ],
+    "CreateCRObtain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRObtain\n<公共请求参数>\n\n{\n    \"WorkTitle\": \"xx\",\n    \"ObtainDuration\": 0,\n    \"ObtainType\": 0,\n    \"WorkId\": 0,\n    \"TortUrl\": \"xx\",\n    \"TortPlat\": \"xx\",\n    \"ObtainUrl\": \"xx\",\n    \"WorkCategory\": \"xx\",\n    \"WorkType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"TortNum\": \"xxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateCRObtain"
+      }
+    ],
     "CreateCRRight": [
       {
         "document": "",

@@ -12,6 +12,18 @@
       "name": "生成普通码包",
       "output": "CreateCodePackResponse"
     },
+    "CreateCustomPack": {
+      "document": "生成自定义码包",
+      "input": "CreateCustomPackRequest",
+      "name": "生成自定义码包",
+      "output": "CreateCustomPackResponse"
+    },
+    "CreateCustomRule": {
+      "document": "新建自定义码规则",
+      "input": "CreateCustomRuleRequest",
+      "name": "新建自定义码规则",
+      "output": "CreateCustomRuleResponse"
+    },
     "CreateMerchant": {
       "document": "新建商户",
       "input": "CreateMerchantRequest",
@@ -35,6 +47,12 @@
       "input": "CreateTraceCodesRequest",
       "name": "批量导入二维码",
       "output": "CreateTraceCodesResponse"
+    },
+    "CreateTraceCodesAsync": {
+      "document": "异步导入激活码包，如果是第三方码包，需要域名跟配置的匹配",
+      "input": "CreateTraceCodesAsyncRequest",
+      "name": "异步导入激活码包",
+      "output": "CreateTraceCodesAsyncResponse"
     },
     "CreateTraceData": {
       "document": "新增溯源信息",
@@ -78,6 +96,18 @@
       "name": "查询批次列表",
       "output": "DescribeCodeBatchsResponse"
     },
+    "DescribeCodePackStatus": {
+      "document": "查询码包状态",
+      "input": "DescribeCodePackStatusRequest",
+      "name": "查询码包状态",
+      "output": "DescribeCodePackStatusResponse"
+    },
+    "DescribeCodePackUrl": {
+      "document": "查询码包地址",
+      "input": "DescribeCodePackUrlRequest",
+      "name": "查询码包地址",
+      "output": "DescribeCodePackUrlResponse"
+    },
     "DescribeCodePacks": {
       "document": "查询码包列表",
       "input": "DescribeCodePacksRequest",
@@ -89,6 +119,24 @@
       "input": "DescribeCodesByPackRequest",
       "name": "查询码包的二维码列表",
       "output": "DescribeCodesByPackResponse"
+    },
+    "DescribeCustomRuleById": {
+      "document": "查自定义码规则",
+      "input": "DescribeCustomRuleByIdRequest",
+      "name": "查自定义码规则",
+      "output": "DescribeCustomRuleByIdResponse"
+    },
+    "DescribeCustomRules": {
+      "document": "查自定义码规则列表",
+      "input": "DescribeCustomRulesRequest",
+      "name": "查自定义码规则列表",
+      "output": "DescribeCustomRulesResponse"
+    },
+    "DescribeJobFileUrl": {
+      "document": "获取异步任务的输出地址",
+      "input": "DescribeJobFileUrlRequest",
+      "name": "获取异步任务的输出地址",
+      "output": "DescribeJobFileUrlResponse"
     },
     "DescribeMerchantById": {
       "document": "查询商户信息",
@@ -137,6 +185,18 @@
       "input": "ModifyCodeBatchRequest",
       "name": "修改批次",
       "output": "ModifyCodeBatchResponse"
+    },
+    "ModifyCustomRule": {
+      "document": "修改自定义码规则",
+      "input": "ModifyCustomRuleRequest",
+      "name": "修改自定义码规则",
+      "output": "ModifyCustomRuleResponse"
+    },
+    "ModifyCustomRuleStatus": {
+      "document": "更新自定义码规则状态",
+      "input": "ModifyCustomRuleStatusRequest",
+      "name": "更新自定义码规则状态",
+      "output": "ModifyCustomRuleStatusResponse"
     },
     "ModifyMerchant": {
       "document": "编辑商户",
@@ -404,6 +464,62 @@
       ],
       "usage": "both"
     },
+    "CodePart": {
+      "document": "码段配置",
+      "members": [
+        {
+          "default": "",
+          "document": "码段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "码段",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码段内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码段长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "str",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateCodeBatchRequest": {
       "document": "CreateCodeBatch请求参数结构体",
       "members": [
@@ -592,6 +708,168 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPackRequest": {
+      "document": "CreateCustomPack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生码数量, 普通码包时必填",
+          "example": "10",
+          "member": "uint64",
+          "name": "Amount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "码包类型 0: 普通码包 1: 层级码包",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "码包层级",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "层级码包规则 [{ Level, Rate, Amount, CustomId }]",
+          "example": "无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "码规则ID,  普通码包时必填",
+          "example": "customidx",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPackResponse": {
+      "document": "CreateCustomPack返回参数结构体",
+      "members": [
+        {
+          "document": "码包ID",
+          "example": "abc",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomRuleRequest": {
+      "document": "CreateCustomRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户ID",
+          "example": "MerchantId",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "码长度",
+          "example": "36",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "码段配置",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomRuleResponse": {
+      "document": "CreateCustomRule返回参数结构体",
+      "members": [
+        {
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -818,6 +1096,60 @@
       ],
       "type": "object"
     },
+    "CreateTraceCodesAsyncRequest": {
+      "document": "CreateTraceCodesAsync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批次ID",
+          "example": "batchid",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传文件Key，仅支持 csv 或者 zip 类型",
+          "example": "anxin/filename.zip",
+          "member": "string",
+          "name": "FileKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTraceCodesAsyncResponse": {
+      "document": "CreateTraceCodesAsync返回参数结构体",
+      "members": [
+        {
+          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batchid",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTraceCodesRequest": {
       "document": "CreateTraceCodes请求参数结构体",
       "members": [
@@ -1015,6 +1347,102 @@
         }
       ],
       "type": "object"
+    },
+    "CustomRule": {
+      "document": "码规则",
+      "members": [
+        {
+          "default": "",
+          "document": "码规则ID",
+          "example": "xxxid",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MerchantId",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码ID长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码段配置",
+          "example": "[]",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-09-19T11:46:53.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2022-09-19T11:46:53.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteCodeBatchRequest": {
       "document": "DeleteCodeBatch请求参数结构体",
@@ -1340,6 +1768,87 @@
       ],
       "type": "object"
     },
+    "DescribeCodePackStatusRequest": {
+      "document": "DescribeCodePackStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码包ID",
+          "example": "PackId",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackStatusResponse": {
+      "document": "DescribeCodePackStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackUrlRequest": {
+      "document": "DescribeCodePackUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码包ID",
+          "example": "PackId",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodePackUrlResponse": {
+      "document": "DescribeCodePackUrl返回参数结构体",
+      "members": [
+        {
+          "document": "文字码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCodePacksRequest": {
       "document": "DescribeCodePacks请求参数结构体",
       "members": [
@@ -1430,6 +1939,177 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleByIdRequest": {
+      "document": "DescribeCustomRuleById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码规则ID",
+          "example": "xxxxid",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleByIdResponse": {
+      "document": "DescribeCustomRuleById返回参数结构体",
+      "members": [
+        {
+          "document": "码规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomRule",
+          "name": "CustomRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesRequest": {
+      "document": "DescribeCustomRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商户ID",
+          "example": "商户ID",
+          "member": "string",
+          "name": "MerchantId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesResponse": {
+      "document": "DescribeCustomRules返回参数结构体",
+      "members": [
+        {
+          "document": "码规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomRule",
+          "name": "CustomRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFileUrlRequest": {
+      "document": "DescribeJobFileUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调度ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFileUrlResponse": {
+      "document": "DescribeJobFileUrl返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2123,6 +2803,123 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleRequest": {
+      "document": "ModifyCustomRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码规则ID",
+          "example": "CustomId",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "码长度",
+          "example": "36",
+          "member": "uint64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "码段配置",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleResponse": {
+      "document": "ModifyCustomRule返回参数结构体",
+      "members": [
+        {
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusRequest": {
+      "document": "ModifyCustomRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "码规则ID",
+          "example": "CustomId",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "码规则状态 0:未生效 1:已生效 -1:已失效",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusResponse": {
+      "document": "ModifyCustomRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "awai9jd37ne73t",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

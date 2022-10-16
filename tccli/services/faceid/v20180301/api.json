@@ -1,5 +1,23 @@
 {
   "actions": {
+    "ApplyLivenessToken": {
+      "document": "每次调用活体服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。",
+      "input": "ApplyLivenessTokenRequest",
+      "name": "申请活体检测流程令牌",
+      "output": "ApplyLivenessTokenResponse"
+    },
+    "ApplySdkVerificationToken": {
+      "document": "每次调用Web核验服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。",
+      "input": "ApplySdkVerificationTokenRequest",
+      "name": "申请SDK核验令牌",
+      "output": "ApplySdkVerificationTokenResponse"
+    },
+    "ApplyWebVerificationToken": {
+      "document": "每次调用Web核验服务前，需要先调用本接口获取BizToken，需要保存此BizToken用来发起核验流程，并且在核验完成后获取结果信息。",
+      "input": "ApplyWebVerificationTokenRequest",
+      "name": "申请Web核验令牌",
+      "output": "ApplyWebVerificationTokenResponse"
+    },
     "BankCard2EVerification": {
       "document": "本接口用于校验姓名和银行卡号的真实性和一致性。",
       "input": "BankCard2EVerificationRequest",
@@ -48,17 +66,35 @@
       "name": "手机号二要素核验",
       "output": "CheckPhoneAndNameResponse"
     },
+    "CreateUploadUrl": {
+      "document": "生成一个临时的UploadUrl用于上传资源文件，客户需要使用HTTP PUT方法上传，上传完成后将ResourceUrl传给TargetAction对应接口完成资源传递（具体字段由使用场景确定）。\n数据存储于Region参数对应地域的腾讯云COS Bucket，存储有效期2小时。",
+      "input": "CreateUploadUrlRequest",
+      "name": "生成上传链接",
+      "output": "CreateUploadUrlResponse"
+    },
     "DetectAuth": {
       "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "DetectAuthRequest",
       "name": "实名核身鉴权",
       "output": "DetectAuthResponse"
     },
+    "DetectReflectLivenessAndCompare": {
+      "document": "使用活体比对（光线）SDK生成的数据包检测活体，并和传入的图片进行比对。\n图片和SDK生成的数据内容必须存储在腾讯云COS，COS Bucket所在的Region需要和本接口请求的Region保持一致，推荐使用生成上传链接接口来完成资源传递。",
+      "input": "DetectReflectLivenessAndCompareRequest",
+      "name": "光线活体比对",
+      "output": "DetectReflectLivenessAndCompareResponse"
+    },
     "EncryptedPhoneVerification": {
       "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持明文、MD5和SHA256加密传输。",
       "input": "EncryptedPhoneVerificationRequest",
       "name": "运营商三要素核验（加密）",
       "output": "EncryptedPhoneVerificationResponse"
+    },
+    "GenerateReflectSequence": {
+      "document": "根据活体比对（光线）SDK采集的机器信息生成适合的光线序列，将光线序列传入SDK后开启核身。\nSDK生成的数据内容必须存储在腾讯云COS，COS Bucket所在的Region需要和本接口请求的Region保持一致，推荐使用生成上传链接接口来完成资源传递。",
+      "input": "GenerateReflectSequenceRequest",
+      "name": "获取光线序列",
+      "output": "GenerateReflectSequenceResponse"
     },
     "GetActionSequence": {
       "document": "使用动作活体检测模式前，需调用本接口获取动作顺序。",
@@ -108,6 +144,12 @@
       "name": "获取数字验证码",
       "output": "GetLiveCodeResponse"
     },
+    "GetLivenessResult": {
+      "document": "完成活体检测流程后，用核验令牌（SdkToken）调用本接口查询对应核验结果信息。Token申请后2小时内有效，可多次调用。",
+      "input": "GetLivenessResultRequest",
+      "name": "获取活体检测结果",
+      "output": "GetLivenessResultResponse"
+    },
     "GetRealNameAuthResult": {
       "document": "获取微信实名认证结果",
       "input": "GetRealNameAuthResultRequest",
@@ -120,11 +162,23 @@
       "name": "微信实名认证授权",
       "output": "GetRealNameAuthTokenResponse"
     },
+    "GetSdkVerificationResult": {
+      "document": "完成Sdk核验流程后，用核验令牌（Token）调用本接口查询对应核验结果信息。Token申请后三天内有效，可多次调用。",
+      "input": "GetSdkVerificationResultRequest",
+      "name": "获取SDK验证结果",
+      "output": "GetSdkVerificationResultResponse"
+    },
     "GetWeChatBillDetails": {
       "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
       "input": "GetWeChatBillDetailsRequest",
       "name": "查询账单明细（微信渠道）",
       "output": "GetWeChatBillDetailsResponse"
+    },
+    "GetWebVerificationResult": {
+      "document": "完成Web核验流程后，用核验令牌（BizToken）调用本接口查询对应核验结果信息。BizToken申请后三天内（3\\*24\\*3,600秒）有效，可多次调用。",
+      "input": "GetWebVerificationResultRequest",
+      "name": "获取Web核验结果",
+      "output": "GetWebVerificationResultResponse"
     },
     "IdCardOCRVerification": {
       "document": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。",
@@ -209,6 +263,12 @@
       "input": "PhoneVerificationCUCCRequest",
       "name": "手机号三要素核验（联通）",
       "output": "PhoneVerificationCUCCResponse"
+    },
+    "VideoLivenessCompare": {
+      "document": "传入视频和照片地址，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
+      "input": "VideoLivenessCompareRequest",
+      "name": "视频活体人脸比对",
+      "output": "VideoLivenessCompareResponse"
     }
   },
   "metadata": {
@@ -218,6 +278,177 @@
     "serviceShortName": "faceid"
   },
   "objects": {
+    "ApplyLivenessTokenRequest": {
+      "document": "ApplyLivenessToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "枚举值，取值范围：1、2、3、4\n各个含义如下\n1-静默\n2-眨眼\n3-光线\n4-眨眼+光线 （默认）",
+          "example": "1",
+          "member": "string",
+          "name": "SecureLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyLivenessTokenResponse": {
+      "document": "ApplyLivenessToken返回参数结构体",
+      "members": [
+        {
+          "document": "标识一次SDK核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。",
+          "example": "A561B769-C347-4724-A69A-6C3B3483E107",
+          "member": "string",
+          "name": "SdkToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplySdkVerificationTokenRequest": {
+      "document": "ApplySdkVerificationToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedVerifyIdCard",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "卡证类型，当前仅支持HK（香港身份证），ML（马来西亚身份证），PhilippinesVoteID（菲律宾选民卡），PhilippinesDrivingLicense（菲律宾驾驶证）。默认为HK。",
+          "example": "HK",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否允许用户修改ocr结果，默认false，允许。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableChangeOcrResult",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否关闭OCR告警，默认false，不关闭。如果为false开启OCR告警，我们会根据Ocr的告警信息进行拦截，当NeedVerifyIdCard为true时该字段将为true。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableCheckOcrWarnings",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "透传字段，在获取验证结果时返回，最长1024位。",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplySdkVerificationTokenResponse": {
+      "document": "ApplySdkVerificationToken返回参数结构体",
+      "members": [
+        {
+          "document": "标识一次SDK核验流程的令牌，有效时间为7,200秒。流程结束后可用该令牌获取核验结果信息。",
+          "example": "A561B769-C347-4724-A69A-6C3B3483E107",
+          "member": "string",
+          "name": "SdkToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyWebVerificationTokenRequest": {
+      "document": "ApplyWebVerificationToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "核验结束后重定向的Web回跳地址。",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "RedirectUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人脸比对照片的腾讯云对象存储地址，可以使用以下两种方式：\n1. 调用CreateUploadUrl接口生成，确保成功上传照片后再调用此接口。\n2. 使用已有的腾讯云对象存储地址，如果是私有读写桶，请使用预签名URL授予下载权限，对象存储地域需要和入参Region保持一致。",
+          "example": "https://singapore-1257237511.cos.ap-singapore.myqcloud.com",
+          "member": "string",
+          "name": "CompareImageUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人脸比对照片（CompareImageUrl）内容的MD5散列值。",
+          "example": "1",
+          "member": "string",
+          "name": "CompareImageMd5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyWebVerificationTokenResponse": {
+      "document": "ApplyWebVerificationToken返回参数结构体",
+      "members": [
+        {
+          "document": "用户浏览器需要打开此地址开始核验流程。",
+          "example": "无",
+          "member": "string",
+          "name": "VerificationUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标识一次Web核验流程的令牌，有效时间为7,200秒。流程结束后可用该令牌获取核验结果信息。",
+          "example": "无",
+          "member": "string",
+          "name": "BizToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BankCard2EVerificationRequest": {
       "document": "BankCard2EVerification请求参数结构体",
       "members": [
@@ -451,6 +682,62 @@
         }
       ],
       "type": "object"
+    },
+    "CardVerifyResult": {
+      "document": "核身过程中，鉴伪或OCR单次结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴伪或OCR是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPass",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证鉴伪视频，仅开启证件视频鉴伪功能时返回，url链接有效期10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "CardVideo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证件照图片，url链接有效期10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "CardImage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\nIdCardType为HK时：\n- CnName string 中文姓名\n- EnName string 英文姓名\n- TelexCode string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- IdNum string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"***AZ\"\n- FirstIssueDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\nIdCardType为ML时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- ID string 证号\n- Name string 名字\n- Address string 地址\n- Type string 证件类型\n\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "CardInfoOcrJson",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单次流程请求标示。",
+          "example": "c6df4b3d-d1aa-4d49-a676-d44baf379613",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ChargeDetail": {
       "document": "计费详情",
@@ -960,6 +1247,206 @@
           "name": "Description",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CompareResult": {
+      "document": "单次比对结果描述",
+      "members": [
+        {
+          "default": "",
+          "document": "最终比对结果",
+          "example": "0",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最终比对结果描述",
+          "example": "success",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次活体SDK生成的活体算法数据包",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "LiveData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次用户活体验证过程的视频，url链接有效期10分钟。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "LiveVideo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活体认证结果码",
+          "example": "0",
+          "member": "string",
+          "name": "LiveErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活体认证结果描述",
+          "example": "success",
+          "member": "string",
+          "name": "LiveErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次活体的最佳人像截图，url链接有效期10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "BestFrame",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证件照头像截图，url链接有效期10分钟。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "ProfileImage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸比对结果码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CompareErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人脸比对结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "CompareErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "相似度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "52.77",
+          "member": "float",
+          "name": "Sim",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段废弃",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNeedCharge",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户编辑后的证件照信息，如果DisableChangeOcrResult为true禁用编辑无该值。url链接有效期10分钟。格式为json文本信息。\nIdCardType为HK时：\n- CnName string 中文姓名\n- EnName string 英文姓名\n- TelexCode string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- IdNum string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"***AZ\"\n- FirstIssueDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\nIdCardType为ML时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string\n- ID string\n- Name string\n- Address string\n- Type string 证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "CardInfoInputJson",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次认证的请求标识。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateUploadUrlRequest": {
+      "document": "CreateUploadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于的接口",
+          "example": "ApplyReflectVerificationToken",
+          "member": "string",
+          "name": "TargetAction",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUploadUrlResponse": {
+      "document": "CreateUploadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "用于上传内容的链接，使用HTTP PUT方法上传。",
+          "example": "https://example.com",
+          "member": "string",
+          "name": "UploadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "完成上传后将该链接用于后续需要传入资源URL的地方。",
+          "example": "https://example.com",
+          "member": "string",
+          "name": "ResourceUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传和下载链接过期时间点，10位unix时间戳。",
+          "example": "1637066164",
+          "member": "int64",
+          "name": "ExpiredTimestamp",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1596,6 +2083,105 @@
       ],
       "usage": "out"
     },
+    "DetectReflectLivenessAndCompareRequest": {
+      "document": "DetectReflectLivenessAndCompare请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SDK生成的活体检测数据包的资源地址。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "LiveDataUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SDK生成的活体检测数据包的资源内容MD5（32位，用于校验LiveData的一致性）。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "LiveDataMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于比对的目标图片的资源地址。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于比对的目标图片的资源MD5（32位，用于校验Image的一致性）。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "ImageMd5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectReflectLivenessAndCompareResponse": {
+      "document": "DetectReflectLivenessAndCompare返回参数结构体",
+      "members": [
+        {
+          "document": "验证通过后的视频最佳截图资源临时地址，jpg格式，资源和链接有效期2小时，务必在有效期内下载。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "BestFrameUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证通过后的视频最佳截图资源MD5（32位，用于校验BestFrame的一致性）。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "BestFrameMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success，错误情况请参考下方错误码 列表中FailedOperation部分。",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "Success",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "example": "95.3",
+          "member": "float",
+          "name": "Sim",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EidInfo": {
       "document": "Eid出参，包括商户方用户的标识和加密的用户姓名身份证信息。",
       "members": [
@@ -1769,6 +2355,105 @@
         }
       ],
       "usage": "in"
+    },
+    "FileInfo": {
+      "document": "用于描述一个文件内容，包括一个下载链接和与文件内容对应的MD5和大小。",
+      "members": [
+        {
+          "default": "",
+          "document": "用于下载文件的URL",
+          "example": "http://example.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件的32位MD5",
+          "example": "c4f217871aaeb0180e40152f61658835",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件字节数",
+          "example": "344443",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GenerateReflectSequenceRequest": {
+      "document": "GenerateReflectSequence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SDK生成的打包数据的资源链接。",
+          "example": "1",
+          "member": "string",
+          "name": "DeviceDataUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SDK生成的打包数据的MD5值。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "DeviceDataMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1-静默\n2-眨眼\n3-光线\n4-眨眼+光线 （默认）",
+          "example": "2",
+          "member": "string",
+          "name": "SecurityLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateReflectSequenceResponse": {
+      "document": "GenerateReflectSequence返回参数结构体",
+      "members": [
+        {
+          "document": "光线序列的资源链接，下载后透传给SDK即可开始核身。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "ReflectSequenceUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "光线序列的资源MD5值，用于校验改序列是否被篡改。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "ReflectSequenceMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetActionSequenceRequest": {
       "document": "GetActionSequence请求参数结构体",
@@ -2523,6 +3208,69 @@
       ],
       "type": "object"
     },
+    "GetLivenessResultRequest": {
+      "document": "GetLivenessResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标识一次Sdk核验流程的令牌。",
+          "example": "无",
+          "member": "string",
+          "name": "SdkToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLivenessResultResponse": {
+      "document": "GetLivenessResult返回参数结构体",
+      "members": [
+        {
+          "document": "流程的最终结果",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程的最终结果描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人像截图",
+          "example": "4",
+          "member": "FileInfo",
+          "name": "BestFrame",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "检测过程视频",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "Video",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRealNameAuthResultRequest": {
       "document": "GetRealNameAuthResult请求参数结构体",
       "members": [
@@ -2612,6 +3360,87 @@
       ],
       "type": "object"
     },
+    "GetSdkVerificationResultRequest": {
+      "document": "GetSdkVerificationResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标识一次Sdk核验流程的令牌。",
+          "example": "无",
+          "member": "string",
+          "name": "SdkToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSdkVerificationResultResponse": {
+      "document": "GetSdkVerificationResult返回参数结构体",
+      "members": [
+        {
+          "document": "整个核验结果",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计费次数",
+          "example": "4",
+          "member": "int64",
+          "name": "ChargeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "多次证照识别的结果（有序），取最终一次结果为有效结果",
+          "example": "无",
+          "member": "CardVerifyResult",
+          "name": "CardVerifyResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "多次活体认证的结果信息（有序），取最终一次结果为有效结果",
+          "example": "无",
+          "member": "CompareResult",
+          "name": "CompareResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "获取token时传入的",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetWeChatBillDetailsRequest": {
       "document": "GetWeChatBillDetails请求参数结构体",
       "members": [
@@ -2674,6 +3503,96 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWebVerificationResultRequest": {
+      "document": "GetWebVerificationResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Web核验令牌，由ApplyWebVerificationToken接口生成。",
+          "example": "C3451931-19A5-4E41-AB65-15E694A54F69",
+          "member": "string",
+          "name": "BizToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWebVerificationResultResponse": {
+      "document": "GetWebVerificationResult返回参数结构体",
+      "members": [
+        {
+          "document": "本次核验最终结果。0为核验通过，是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次核验最终结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频流中采集的最佳人脸照片临时地址，下载有效时间10分钟，如果需要存储请及时下载。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoBestFrameUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频流中采集的最佳人脸照片内容MD5散列值，可以使用此值校验文件内容是否一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoBestFrameMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次核验流程的详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VerificationDetail",
+          "name": "VerificationDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频流中采集的视频临时地址，下载有效时间10分钟，如果需要存储请及时下载。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "视频流中采集的视频内容MD5散列值，可以使用此值校验文件内容是否一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4224,6 +5143,210 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerificationDetail": {
+      "document": "核验流程详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "本次核验最终结果。0为核验通过，是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验最终结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LivenessErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验活体结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "LivenessErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验比对结果。0为视频流中采集的最佳人脸照片和上传的比对照片是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompareErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验比对结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "CompareErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1634884881441",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验视频流中采集的最佳人脸照片和上传的比对照片的相似度， 范围[0.00, 100.00]，默认大于等于70时判断为同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.00",
+          "member": "float",
+          "name": "Similarity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次核验的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
+          "member": "string",
+          "name": "Seq",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoLivenessCompareRequest": {
+      "document": "VideoLivenessCompare请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于人脸比对照片的URL地址；图片下载后经Base64编码后的数据大小不超过3M，仅支持jpg、png格式。\n\n图片仅支持腾讯云同region的Cos地址，可保障更高的下载速度和稳定性，可使用CreateUploadUrl生成或自行购买Cos。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "比对图片的32位Md5值。",
+          "example": "682e24b207acf1825286c1fceef5631c",
+          "member": "string",
+          "name": "ImageMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于活体检测的视频Url 地址。视频下载后经Base64编码后不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。\n\n视频仅支持腾讯云同region的Cos地址，可保障更高的下载速度和稳定性，可使用CreateUploadUrl生成或自行购买Cos。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频的32位Md5值。",
+          "example": "682e24b207acf1825286c1fceef5631c",
+          "member": "string",
+          "name": "VideoMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LivenessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数字模式传参：传数字验证码，需自定义四位数字验证码；\n动作模式传参：传动作顺序，需自定义动作顺序(2,1 or 1,2)；\n静默模式传参：空。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ValidateData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoLivenessCompareResponse": {
+      "document": "VideoLivenessCompare返回参数结构体",
+      "members": [
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "example": "\"\"",
+          "member": "float",
+          "name": "Sim",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证通过后的视频最佳截图照片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "FileInfo",
+          "name": "BestFrame",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -167,7 +167,7 @@
     "CreateSubscription": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateSubscription\n&EnvironmentId=default\n&TopicName=cloud_test\n&SubscriptionName=cloud_sub\n&IsIdempotent=true\n&AutoCreatePolicyTopic=true\n&Remark=创建订阅关系\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubscription\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"default\",\n    \"Remark\": \"创建订阅关系\",\n    \"IsIdempotent\": \"true\",\n    \"TopicName\": \"cloud_test\",\n    \"SubscriptionName\": \"cloud_sub\",\n    \"AutoCreatePolicyTopic\": \"true\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"15288803-dadb-4499-9b5b-ff2f631ca68e\"\n    }\n}",
         "title": "创建订阅关系"
       }

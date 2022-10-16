@@ -42,6 +42,12 @@
       "name": "企业认证",
       "output": "CreateCRCompanyVerifyResponse"
     },
+    "CreateCRObtain": {
+      "document": "版权保护-新建取证接口",
+      "input": "CreateCRObtainRequest",
+      "name": "新建取证",
+      "output": "CreateCRObtainResponse"
+    },
     "CreateCRRight": {
       "document": "版权保护-新建发函接口",
       "input": "CreateCRRightRequest",
@@ -740,6 +746,123 @@
           "example": "认证成功",
           "member": "string",
           "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRObtainRequest": {
+      "document": "CreateCRObtain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "已存证的作品ID",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "侵权链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取证类型 1-网页取证 2-过程取证",
+          "example": "1",
+          "member": "int64",
+          "name": "ObtainType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "侵权标题",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "侵权平台",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortPlat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过程取证的取证时长 6-300分钟",
+          "example": "15",
+          "member": "int64",
+          "name": "ObtainDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "取证回调地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRObtainResponse": {
+      "document": "CreateCRObtain返回参数结构体",
+      "members": [
+        {
+          "document": "侵权ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortNum",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1653,7 +1776,7 @@
       "document": "DescribeBPFakeURLs返回参数结构体",
       "members": [
         {
-          "document": "xxx",
+          "document": "仿冒网址列表",
           "example": "xxx",
           "member": "FakeURLInfo",
           "name": "FakeURLInfos",
@@ -1662,7 +1785,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xxx",
+          "document": "总量",
           "example": "xxx",
           "member": "int64",
           "name": "TotalCount",
@@ -1671,7 +1794,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xxx",
+          "document": "导出量",
           "example": "xxx",
           "member": "string",
           "name": "ExportURL",
@@ -1716,7 +1839,7 @@
       "document": "DescribeBPProtectURLs返回参数结构体",
       "members": [
         {
-          "document": "xxx",
+          "document": "保护网址列表",
           "example": "xxx",
           "member": "ProtectURLInfo",
           "name": "ProtectURLInfos",
@@ -1725,7 +1848,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xxx",
+          "document": "总量",
           "example": "xxx",
           "member": "int64",
           "name": "TotalCount",
@@ -1779,7 +1902,7 @@
       "document": "DescribeBPReportFakeURLs返回参数结构体",
       "members": [
         {
-          "document": "xxx",
+          "document": "举报网站列表",
           "example": "xxx",
           "member": "ReportFakeURLInfo",
           "name": "ReportFakeURLInfos",
@@ -1788,7 +1911,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "xxx",
+          "document": "总量",
           "example": "xxx",
           "member": "int64",
           "name": "TotalCount",

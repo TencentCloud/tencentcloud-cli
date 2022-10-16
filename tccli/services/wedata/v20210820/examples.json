@@ -64,6 +64,14 @@
         "title": "范例"
       }
     ],
+    "DeleteCustomFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户自定义函数"
+      }
+    ],
     "DeleteDataSources": [
       {
         "document": "",
@@ -136,12 +144,36 @@
         "title": "范例"
       }
     ],
+    "DescribeFunctionKinds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionKinds\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"Kinds\": [\n            {\n                \"Name\": \"xx\",\n                \"EnName\": \"xx\",\n                \"ZhName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询函数分类"
+      }
+    ],
+    "DescribeFunctionTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Types\": [\n            {\n                \"Name\": \"xx\",\n                \"EnName\": \"xx\",\n                \"ZhName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询函数类型"
+      }
+    ],
     "DescribeInstanceLogs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\",\n    \"CurRunDate\": \"2022-07-29 13:40:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dad51553-30cd-49a0-8e34-0574b6d8bd06\",\n        \"Data\": []\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DescribeOrganizationalFunctions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationalFunctions\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Type\": \"xx\",\n    \"Name\": \"xx\",\n    \"DisplayName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Category\": \"xx\",\n                \"Status\": \"xx\",\n                \"Kind\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"Name\": \"xx\",\n                \"OwnerUserIds\": [\n                    0\n                ],\n                \"ReturnDesc\": \"xx\",\n                \"FuncId\": \"xx\",\n                \"ParamDesc\": \"xx\",\n                \"Example\": \"xx\",\n                \"ClassName\": \"xx\",\n                \"ResourceList\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"UserName\": \"xx\",\n                        \"Timestamp\": \"xx\",\n                        \"UserId\": \"xx\",\n                        \"Content\": \"xx\",\n                        \"Tag\": \"xx\",\n                        \"Type\": \"xx\"\n                    }\n                ],\n                \"OperatorUserIds\": [\n                    0\n                ],\n                \"Usage\": \"xx\",\n                \"ClusterIdentifier\": \"xx\",\n                \"LayerPath\": \"xx\",\n                \"Type\": \"xx\",\n                \"ParentLayerPath\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"ErrorMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询全量函数（层级化）接口"
       }
     ],
     "DescribeProject": [
@@ -364,12 +396,28 @@
         "title": "范例"
       }
     ],
+    "SaveCustomFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveCustomFunction\n<公共请求参数>\n\n{\n    \"Kind\": \"xx\",\n    \"Description\": \"xx\",\n    \"ReturnDesc\": \"xx\",\n    \"ParamDesc\": \"xx\",\n    \"Example\": \"xx\",\n    \"ClassName\": \"xx\",\n    \"Usage\": \"xx\",\n    \"ResourceList\": [\n        {\n            \"Path\": \"xx\",\n            \"Id\": \"xx\",\n            \"Type\": \"xx\",\n            \"Name\": \"xx\",\n            \"Md5\": \"xx\"\n        }\n    ],\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "保存用户自定义函数"
+      }
+    ],
     "SetTaskAlarmNew": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetTaskAlarmNew\n<公共请求参数>\n\n{\n    \"AlarmInfoList\": [\n        {\n            \"AlarmId\": \"yyyy\",\n            \"TaskIds\": \"xxx,12323\",\n            \"Status\": 1,\n            \"AlarmType\": \"overtime\",\n            \"AlarmWay\": \"SMS,Email\",\n            \"AlarmRecipient\": \"wang;ming\",\n            \"AlarmRecipientId\": \"1;2\",\n            \"Hours\": 0,\n            \"Minutes\": 59,\n            \"TriggerType\": \"1\"\n        }\n    ],\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "设置任务告警"
+      }
+    ],
+    "SubmitCustomFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitCustomFunction\n<公共请求参数>\n\n{\n    \"Comment\": \"xx\",\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "提交自定义函数"
       }
     ],
     "SubmitTask": [

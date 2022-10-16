@@ -16,6 +16,22 @@
         "title": "生成普通码包"
       }
     ],
+    "CreateCustomPack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomPack\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"Amount\": 10,\n    \"CustomId\": \"xxxx\",\n    \"PackType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"PackId\": \"i655d7d68dzbbc4edi\",\n        \"RequestId\": \"384f8d0c-0c15-4dce-9b23-85ca839364ad\"\n    }\n}",
+        "title": "生成自定义码包"
+      }
+    ],
+    "CreateCustomRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomRule\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"MerchantId\": \"xx\",\n    \"CodeParts\": [\n        {\n            \"Ext\": \"xx\",\n            \"Type\": \"0\",\n            \"Length\": 1,\n            \"Value\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"CodeLength\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomId\": \"awai9g3de7p3t\",\n        \"RequestId\": \"233c09fe-7ba7-42e1-8801-acaca177582b\"\n    }\n}",
+        "title": "新建自定义码规则"
+      }
+    ],
     "CreateMerchant": [
       {
         "document": "",
@@ -46,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceCodes\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Codes\": [\n        {\n            \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_021351149823032923\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"ActiveCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"CodeCnt\": 1\n    }\n}",
         "title": "批量导入二维码"
+      }
+    ],
+    "CreateTraceCodesAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceCodesAsync\n<公共请求参数>\n\n{\n    \"BatchId\": \"eqdmnz7020bmtvi9\",\n    \"FileKey\": \"anxin/filekeyname.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"eqdmnz7020bmtvi9\",\n        \"RequestId\": \"384f8d0c-0c15-4dce-9b23-85ca839364ad\"\n    }\n}",
+        "title": "异步导入激活码包"
       }
     ],
     "CreateTraceData": [
@@ -104,6 +128,22 @@
         "title": "查询批次列表"
       }
     ],
+    "DescribeCodePackStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodePackStatus\n<公共请求参数>\n\n{\n    \"PackId\": \"1d7288c8-e1d8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8dca787-f07a-40ce-acd5-3c0eda11cac2\"\n    }\n}",
+        "title": "查询码包状态"
+      }
+    ],
+    "DescribeCodePackUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodePackUrl\n<公共请求参数>\n\n{\n    \"PackId\": \"1d7288c8-e1d8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://anxin-private-test-1251316161.cos.ap-guangzhou.myqcloud.com/anxin/1d8-4460-a039-81f6e509e048.zip?q-sign-algorithm=sha1&q-ak=AKIDoYHWTpHj7LNDqIWfhiggou6e8YptkMjq&q-sign-time=1623316306;1623317206&q-key-time=1623316306;1623317206&q-header-list=&q-url-param-list=&q-signature=81401fa00e4b81f2d4c75e81c73fb5cca9b438ea\",\n        \"RequestId\": \"d8dca787-f07a-40ce-acd5-3c0eda11cac2\"\n    }\n}",
+        "title": "查询码包地址"
+      }
+    ],
     "DescribeCodePacks": [
       {
         "document": "",
@@ -118,6 +158,30 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodesByPack\n<公共请求参数>\n\n{\n    \"PackId\": \"6w26rg8booqnjfumnu\"\n}",
         "output": "{\n    \"Response\": {\n        \"Codes\": [\n            {\n                \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_008353371080418270\"\n            }\n        ],\n        \"RequestId\": \"590de8f6-fb28-4c35-89da-e31bca7cc7ac\"\n    }\n}",
         "title": "查询码包的二维码列表"
+      }
+    ],
+    "DescribeCustomRuleById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleById\n<公共请求参数>\n\n{\n    \"CustomId\": \"gss06ki67crv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomRule\": {\n            \"CustomId\": \"gss06ki67crv\",\n            \"Name\": \"demo2\",\n            \"CorpId\": 10000,\n            \"MerchantId\": \"6b1tvtwfve3n\",\n            \"CodeLength\": 16,\n            \"Status\": 1,\n            \"CodeParts\": [],\n            \"CreateTime\": \"2022-09-19T11:46:53.000Z\",\n            \"UpdateTime\": \"2022-09-19T11:48:06.000Z\"\n        },\n        \"RequestId\": \"14b0a199-42cc-405c-984a-b5bcffe56009\"\n    }\n}",
+        "title": "查自定义码规则"
+      }
+    ],
+    "DescribeCustomRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRules\n<公共请求参数>\n\n{\n    \"Keyword\": \"\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"CustomRules\": [\n            {\n                \"CustomId\": \"gss06ki67crv\",\n                \"Name\": \"demo2\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"6b1tvtwfve3n\",\n                \"CodeLength\": 16,\n                \"Status\": 1,\n                \"CodeParts\": [],\n                \"CreateTime\": \"2022-09-19T11:46:53.000Z\",\n                \"UpdateTime\": \"2022-09-19T11:48:06.000Z\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查自定义码规则列表"
+      }
+    ],
+    "DescribeJobFileUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobFileUrl\n<公共请求参数>\n\n{\n    \"JobId\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8dca787-f07a-40ce-acd5-3c0eda11cac2\"\n    }\n}",
+        "title": "获取异步任务的输出地址"
       }
     ],
     "DescribeMerchantById": [
@@ -182,6 +246,22 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改批次状态"
+      }
+    ],
+    "ModifyCustomRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomRule\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"CustomId\": \"xx\",\n    \"CodeParts\": [\n        {\n            \"Ext\": \"xx\",\n            \"Type\": \"0\",\n            \"Length\": 1,\n            \"Value\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"CodeLength\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomId\": \"awai9g3de7p3t\",\n        \"RequestId\": \"233c09fe-7ba7-42e1-8801-acaca177582b\"\n    }\n}",
+        "title": "修改自定义码规则"
+      }
+    ],
+    "ModifyCustomRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomRuleStatus\n<公共请求参数>\n\n{\n    \"CustomId\": \"awai9g3de7p3t\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomId\": \"awai9g3de7p3t\",\n        \"RequestId\": \"233c09fe-7ba7-42e1-8801-acaca177582b\"\n    }\n}",
+        "title": "更新自定义码规则状态"
       }
     ],
     "ModifyMerchant": [

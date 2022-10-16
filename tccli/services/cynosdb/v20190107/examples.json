@@ -40,6 +40,14 @@
         "title": "创建新账号"
       }
     ],
+    "CreateAuditLogFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FileName\": \"test.csv\"\n    }\n}",
+        "title": "创建审计日志文件"
+      }
+    ],
     "CreateBackup": [
       {
         "document": "",
@@ -56,6 +64,14 @@
         "title": "创建集群"
       }
     ],
+    "DeleteAuditLogFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"FileName\": \"aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "删除审计日志文件"
+      }
+    ],
     "DescribeAccountAllGrantPrivileges": [
       {
         "document": "",
@@ -70,6 +86,22 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeAccounts\n&ClusterId=cynosdbpg-on5xw0ni\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"150918\",\n        \"AccountSet\": [\n            {\n                \"UpdateTime\": \"2018-06-28 23:28:52\",\n                \"Host\": \"xx\",\n                \"CreateTime\": \"2018-06-28 23:28:52\",\n                \"Description\": \"默认用户asdf\",\n                \"AccountName\": \"admin\"\n            }\n        ]\n    }\n}",
         "title": "查询数据库管理账号"
+      }
+    ],
+    "DescribeAuditLogFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"creating\",\n                \"FileName\": \"audit_log_file\",\n                \"DownloadUrl\": \"xx\",\n                \"FileSize\": 123,\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "创建审计日志文件"
+      }
+    ],
+    "DescribeAuditLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"1\",\n        \"Items\": [\n            {\n                \"PolicyName\": \"xx\",\n                \"ExecTime\": 0,\n                \"Timestamp\": \"xx\",\n                \"AffectRows\": 0,\n                \"ThreadId\": 0,\n                \"TableName\": \"xx\",\n                \"ErrCode\": 0,\n                \"Host\": \"xx\",\n                \"SentRows\": 0,\n                \"User\": \"xx\",\n                \"Sql\": \"xx\",\n                \"SqlType\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"DBName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "创建审计日志文件"
       }
     ],
     "DescribeBackupConfig": [

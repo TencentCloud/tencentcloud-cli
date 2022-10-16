@@ -66,12 +66,6 @@
       "name": "合同文件验签",
       "output": "ChannelVerifyPdfResponse"
     },
-    "CreateChannelFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 URL。此接口暂未开放，有问题请联系运营人员。\n",
-      "input": "CreateChannelFlowEvidenceReportRequest",
-      "name": "创建并返回出证报告",
-      "output": "CreateChannelFlowEvidenceReportResponse"
-    },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建渠道子客企业控制台Web端登录链接。Web端登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程,首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。\n",
       "input": "CreateConsoleLoginUrlRequest",
@@ -1402,60 +1396,6 @@
         }
       ],
       "usage": "both"
-    },
-    "CreateChannelFlowEvidenceReportRequest": {
-      "document": "CreateChannelFlowEvidenceReport请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "签署流程编号",
-          "example": "无",
-          "member": "string",
-          "name": "FlowId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateChannelFlowEvidenceReportResponse": {
-      "document": "CreateChannelFlowEvidenceReport返回参数结构体",
-      "members": [
-        {
-          "document": "出证报告 URL（有效五分钟）",
-          "example": "无",
-          "member": "string",
-          "name": "ReportUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CreateConsoleLoginUrlRequest": {
       "document": "CreateConsoleLoginUrl请求参数结构体",

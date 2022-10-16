@@ -48,6 +48,12 @@
       "name": "创建工作流【Beta版本】",
       "output": "CreateWorkflowResponse"
     },
+    "DeleteCustomFunction": {
+      "document": "删除用户自定义函数",
+      "input": "DeleteCustomFunctionRequest",
+      "name": "删除用户自定义函数",
+      "output": "DeleteCustomFunctionResponse"
+    },
     "DeleteDataSources": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除数据源",
       "input": "DeleteDataSourcesRequest",
@@ -102,11 +108,29 @@
       "name": "拉取文件夹下的工作流【Beta版本】",
       "output": "DescribeFolderWorkflowListResponse"
     },
+    "DescribeFunctionKinds": {
+      "document": "查询函数分类",
+      "input": "DescribeFunctionKindsRequest",
+      "name": "查询函数分类",
+      "output": "DescribeFunctionKindsResponse"
+    },
+    "DescribeFunctionTypes": {
+      "document": "查询函数类型",
+      "input": "DescribeFunctionTypesRequest",
+      "name": "查询函数类型",
+      "output": "DescribeFunctionTypesResponse"
+    },
     "DescribeInstanceLogs": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n获取实例日志列表",
       "input": "DescribeInstanceLogsRequest",
       "name": "获取实例日志列表【Beta版本】",
       "output": "DescribeInstanceLogsResponse"
+    },
+    "DescribeOrganizationalFunctions": {
+      "document": "查询全量函数",
+      "input": "DescribeOrganizationalFunctionsRequest",
+      "name": "查询全量函数（层级化）接口",
+      "output": "DescribeOrganizationalFunctionsResponse"
     },
     "DescribeProject": {
       "document": "获取项目信息",
@@ -246,11 +270,23 @@
       "name": "运行任务【Beta版本】",
       "output": "RunTaskResponse"
     },
+    "SaveCustomFunction": {
+      "document": "保存用户自定义函数",
+      "input": "SaveCustomFunctionRequest",
+      "name": "保存用户自定义函数",
+      "output": "SaveCustomFunctionResponse"
+    },
     "SetTaskAlarmNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n设置任务告警，新建/更新告警信息（最新）",
       "input": "SetTaskAlarmNewRequest",
       "name": "设置任务告警【Beta版本】",
       "output": "SetTaskAlarmNewResponse"
+    },
+    "SubmitCustomFunction": {
+      "document": "提交自定义函数",
+      "input": "SubmitCustomFunctionRequest",
+      "name": "提交自定义函数",
+      "output": "SubmitCustomFunctionResponse"
     },
     "SubmitTask": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交任务",
@@ -1524,6 +1560,60 @@
       ],
       "usage": "out"
     },
+    "DeleteCustomFunctionRequest": {
+      "document": "DeleteCustomFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdentifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数 ID",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomFunctionResponse": {
+      "document": "DeleteCustomFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDataSourcesRequest": {
       "document": "DeleteDataSources请求参数结构体",
       "members": [
@@ -2176,6 +2266,76 @@
       ],
       "type": "object"
     },
+    "DescribeFunctionKindsRequest": {
+      "document": "DescribeFunctionKinds请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFunctionKindsResponse": {
+      "document": "DescribeFunctionKinds返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionTypeOrKind",
+          "name": "Kinds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFunctionTypesRequest": {
+      "document": "DescribeFunctionTypes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFunctionTypesResponse": {
+      "document": "DescribeFunctionTypes返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionTypeOrKind",
+          "name": "Types",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceLogsRequest": {
       "document": "DescribeInstanceLogs请求参数结构体",
       "members": [
@@ -2219,6 +2379,78 @@
           "name": "Data",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationalFunctionsRequest": {
+      "document": "DescribeOrganizationalFunctions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "场景类型：开发、使用",
+          "example": "FUNC_DEVELOP、USE_SPACE",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationalFunctionsResponse": {
+      "document": "DescribeOrganizationalFunctions返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrganizationalFunction",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -2969,6 +3201,174 @@
         }
       ],
       "type": "object"
+    },
+    "FunctionResource": {
+      "document": "函数资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源 MD5 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Md5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认是 hdfs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos / hdfs",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionTypeOrKind": {
+      "document": "函数类型或函数分类",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ZhName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "EnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionVersion": {
+      "document": "函数提交版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本号：V0 V1 V2",
+          "example": "V0",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交人 ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变更类型：ADD、MODIFY",
+          "example": "ADD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交时间: UTC 秒数",
+          "example": "无",
+          "member": "string",
+          "name": "Timestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本内容：json string 格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GeneralTaskParam": {
       "document": "Spark SQL配置参数",
@@ -4576,6 +4976,222 @@
       ],
       "usage": "in"
     },
+    "OrganizationalFunction": {
+      "document": "包含层级信息的函数",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "层级路径",
+          "example": "/SPARK/CUSTOM",
+          "member": "string",
+          "name": "LayerPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上级层级路径",
+          "example": "/SPARK",
+          "member": "string",
+          "name": "ParentLayerPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE、SPARK",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数分类：窗口函数、聚合函数、日期函数......\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ANALYSIS、ENCRYPTION",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数种类：系统函数、自定义函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BUILD_IN、CUSTOM",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NEW、SAVED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数用法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Usage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数参数说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParamDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数返回值说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Example",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群实例引擎 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdentifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuncId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数类名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionVersion",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作人 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OperatorUserIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公有云 Owner ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OwnerUserIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提交失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubmitErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ParamInfo": {
       "document": "参数参数",
       "members": [
@@ -4952,6 +5568,132 @@
       ],
       "type": "object"
     },
+    "SaveCustomFunctionRequest": {
+      "document": "SaveCustomFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分类：窗口函数、聚合函数、日期函数......",
+          "example": "ANALYSIS",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群引擎实例",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdentifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类名",
+          "example": "无",
+          "member": "string",
+          "name": "ClassName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源列表",
+          "example": "无",
+          "member": "FunctionResource",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "函数说明",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用法",
+          "example": "无",
+          "member": "string",
+          "name": "Usage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数说明",
+          "example": "无",
+          "member": "string",
+          "name": "ParamDesc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回值说明",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnDesc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "示例",
+          "example": "无",
+          "member": "string",
+          "name": "Example",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveCustomFunctionResponse": {
+      "document": "SaveCustomFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SetTaskAlarmNewRequest": {
       "document": "SetTaskAlarmNew请求参数结构体",
       "members": [
@@ -5022,6 +5764,69 @@
         }
       ],
       "usage": "in"
+    },
+    "SubmitCustomFunctionRequest": {
+      "document": "SubmitCustomFunction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群实例 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdentifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitCustomFunctionResponse": {
+      "document": "SubmitCustomFunction返回参数结构体",
+      "members": [
+        {
+          "document": "函数唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubmitTaskRequest": {
       "document": "SubmitTask请求参数结构体",
