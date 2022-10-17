@@ -16,12 +16,15 @@ Output:
     "Response": {
         "InstanceSet": [
             {
+                "WanAddress": "xx",
                 "RedisShardSize": 1024,
                 "RedisShardNum": 3,
                 "MonitorVersion": "xx",
-                "AutoRenewFlag": 0,
+                "UpgradeProxyVersion": "xx",
                 "InstanceTitle": "xx",
                 "ProductType": "xx",
+                "UpgradeRedisVersion": "xx",
+                "NoAuth": true,
                 "PriceId": 13380,
                 "Type": 7,
                 "Status": 2,
@@ -57,6 +60,7 @@ Output:
                 "RegionId": 1,
                 "SubStatus": 19,
                 "SlaveReadWeight": 0,
+                "AutoRenewFlag": 0,
                 "OfflineTime": "xx",
                 "SubnetId": 0,
                 "NodeSet": [
@@ -67,6 +71,7 @@ Output:
                         "ZoneId": 1
                     }
                 ],
+                "DiskSize": 0,
                 "Engine": "xx",
                 "SizeUsed": 0.0,
                 "InstanceTags": [
@@ -81,14 +86,15 @@ Output:
                 "CloseTime": "xx",
                 "ZoneId": 100002,
                 "PasswordFree": 0,
-                "DiskSize": 0,
-                "NoAuth": true,
                 "Appid": 1251006373,
                 "WanIp": "xx",
                 "NetLimit": 0,
                 "InstanceName": "xx",
                 "Createtime": "xx",
                 "ClientLimit": 0,
+                "PolarisServer": "xx",
+                "CurrentRedisVersion": "xx",
+                "CurrentProxyVersion": "xx",
                 "UniqVpcId": "xx",
                 "DtsStatus": 0,
                 "ProjectName": "xx",

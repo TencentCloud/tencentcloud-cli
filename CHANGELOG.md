@@ -1,3 +1,133 @@
+# Release 3.0.628.1
+
+## 验证码(captcha) 版本：2019-07-22
+
+### 第 4 次发布
+
+发布时间：2022-10-18 06:09:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 20 次发布
+
+发布时间：2022-10-18 06:24:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ApplyLivenessToken
+* ApplySdkVerificationToken
+* ApplyWebVerificationToken
+* CreateUploadUrl
+* DetectReflectLivenessAndCompare
+* GenerateReflectSequence
+* GetLivenessResult
+* GetSdkVerificationResult
+* GetWebVerificationResult
+* VideoLivenessCompare
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CardVerifyResult
+* CompareResult
+* FileInfo
+* VerificationDetail
+
+
+
+## 云数据库 Redis(redis) 版本：2018-04-12
+
+### 第 23 次发布
+
+发布时间：2022-10-18 06:35:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/239/20018)
+
+	* 新增入参：AzMode
+
+
+
+
+## 证书(ssl) 版本：2019-12-05
+
+### 第 13 次发布
+
+发布时间：2022-10-18 06:38:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePackages](http://document.tencentcloudapi.woa.com/document/product/400/76423)
+
+新增数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageInfo)
+* [PackageTransferOutInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageTransferOutInfo)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 16 次发布
+
+发布时间：2022-10-18 06:43:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* StartPublishCdnStream
+* StopPublishCdnStream
+* UpdatePublishCdnStream
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AgentParams
+* AudioEncode
+* MaxVideoUser
+* McuAudioParams
+* McuCustomCrop
+* McuLayout
+* McuLayoutParams
+* McuLayoutVolume
+* McuPassThrough
+* McuPublishCdnParam
+* McuSeiParams
+* McuUserInfoParams
+* McuVideoParams
+* McuWaterMarkImage
+* McuWaterMarkParams
+* MixUserInfo
+* SingleSubscribeParams
+* UserMediaStream
+* VideoEncode
+
+
+
 # Release 3.0.627.1
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
