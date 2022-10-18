@@ -132,6 +132,14 @@
         "title": "查询管理人列表"
       }
     ],
+    "DescribePackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePackages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Packages\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Total\": 1,\n                \"SourceType\": \"xx\",\n                \"TransferOutInfos\": [\n                    {\n                        \"UpdateTime\": \"xx\",\n                        \"ReceiverUin\": 1,\n                        \"ReceivePackageId\": \"xx\",\n                        \"TransferCount\": 1,\n                        \"ReceiveTime\": \"xx\",\n                        \"ExpireTime\": \"xx\",\n                        \"TransferCode\": \"xx\",\n                        \"PackageId\": \"xx\",\n                        \"TransferStatus\": \"xx\",\n                        \"CreateTime\": \"xx\"\n                    }\n                ],\n                \"SourceUin\": 1,\n                \"ExpireTime\": \"xx\",\n                \"PackageId\": \"xx\",\n                \"Balance\": 1,\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalBalance\": 1\n    }\n}",
+        "title": "获得权益包列表"
+      }
+    ],
     "DownloadCertificate": [
       {
         "document": "",

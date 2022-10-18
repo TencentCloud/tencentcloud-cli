@@ -6627,6 +6627,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "OIDC认证配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OIDCConfigAuthenticationOptions",
+          "name": "OIDCConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13751,6 +13760,15 @@
           "name": "ServiceAccounts",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "OIDC认证配置",
+          "example": "无",
+          "member": "OIDCConfigAuthenticationOptions",
+          "name": "OIDCConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -14682,6 +14700,42 @@
         }
       ],
       "usage": "in"
+    },
+    "OIDCConfigAuthenticationOptions": {
+      "document": "OIDC认证相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "创建身份提供商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateOIDCConfig",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建身份提供商的ClientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxxx\",\"yyyy\"]",
+          "member": "string",
+          "name": "AutoCreateClientId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建PodIdentityWebhook组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoInstallPodIdentityWebhookAddon",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PodLimitsByType": {
       "document": "某机型可支持的最大 VPC-CNI 模式的 Pod 数量",

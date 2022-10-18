@@ -18,6 +18,12 @@
       "name": "创建巡课",
       "output": "CreateSupervisorResponse"
     },
+    "DeleteRoom": {
+      "document": "删除房间",
+      "input": "DeleteRoomRequest",
+      "name": "删除房间",
+      "output": "DeleteRoomResponse"
+    },
     "DescribeRoom": {
       "document": "获取房间信息",
       "input": "DescribeRoomRequest",
@@ -368,6 +374,33 @@
     },
     "CreateSupervisorResponse": {
       "document": "CreateSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoomRequest": {
+      "document": "DeleteRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间ID。",
+          "example": "3123456789",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoomResponse": {
+      "document": "DeleteRoom返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

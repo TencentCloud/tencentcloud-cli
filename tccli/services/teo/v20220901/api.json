@@ -5444,7 +5444,7 @@
       "members": [
         {
           "default": "",
-          "document": "分页查询偏移量，默认为0。",
+          "document": "分页查询偏移量。默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",

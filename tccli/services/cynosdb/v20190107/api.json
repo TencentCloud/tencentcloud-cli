@@ -75,7 +75,7 @@
     "DescribeAuditLogs": {
       "document": "本接口(DescribeAuditLogs)用于查询数据库审计日志。",
       "input": "DescribeAuditLogsRequest",
-      "name": "询数据库审计日志",
+      "name": "查询数据库审计日志",
       "output": "DescribeAuditLogsResponse"
     },
     "DescribeBackupConfig": {

@@ -500,7 +500,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\"\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\"\n        },\n        \"OIDCConfig\": {\n            \"AutoCreateOIDCConfig\": true,\n            \"AutoInstallPodIdentityWebhookAddon\": true,\n            \"AutoCreateClientId\": [\n                \"xx\"\n            ]\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
         "title": "查看集群认证配置"
       }
     ],

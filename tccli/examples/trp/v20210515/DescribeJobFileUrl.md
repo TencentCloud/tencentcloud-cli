@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Url": "https://anxin-private-1251316161.cos.ap-guangzhou.myqcloud.com/anxin/1d8-4460-a039.zip",
         "RequestId": "d8dca787-f07a-40ce-acd5-3c0eda11cac2"
     }
 }

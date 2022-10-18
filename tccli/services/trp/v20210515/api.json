@@ -162,6 +162,12 @@
       "name": "查询商品列表",
       "output": "DescribeProductsResponse"
     },
+    "DescribeTmpToken": {
+      "document": "查询临时Token，主要用于上传接口",
+      "input": "DescribeTmpTokenRequest",
+      "name": "查询临时Token",
+      "output": "DescribeTmpTokenResponse"
+    },
     "DescribeTraceCodeById": {
       "document": "查询二维码信息",
       "input": "DescribeTraceCodeByIdRequest",
@@ -297,7 +303,7 @@
         },
         {
           "default": "",
-          "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次编码(未使用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20121212000001",
           "member": "string",
           "name": "BatchCode",
@@ -367,7 +373,7 @@
         },
         {
           "default": "",
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -463,6 +469,212 @@
         }
       ],
       "usage": "both"
+    },
+    "CodePack": {
+      "document": "码包类型",
+      "members": [
+        {
+          "default": "",
+          "document": "码id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-06T07:13:35.000Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "‘’",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CodeLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否暗码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cipher",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文字码地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "TextUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二维码地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "PackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aba",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码规则类型 0: 默认, 1: 自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码包类型 0: 普通码包 1: 层级码包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PackType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生码层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "层级码配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " 无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CodePart": {
       "document": "码段配置",
@@ -768,7 +980,7 @@
         },
         {
           "default": "",
-          "document": "层级码包规则 [{ Level, Rate, Amount, CustomId }]",
+          "document": "层级码包规则",
           "example": "无",
           "member": "PackSpec",
           "name": "PackSpec",
@@ -777,12 +989,21 @@
         },
         {
           "default": "",
-          "document": "码规则ID,  普通码包时必填",
+          "document": "码规则ID,  和CodeParts二选一必填",
           "example": "customidx",
           "member": "string",
           "name": "CustomId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "码段配置，和CustomId二选一必填",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1796,6 +2017,15 @@
       "document": "DescribeCodePackStatus返回参数结构体",
       "members": [
         {
+          "document": "码包状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1836,6 +2066,24 @@
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
           "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "图片码包地址，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "ImgUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "文字码包Key，用于上传导入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "anxin/xxx.zip",
+          "member": "string",
+          "name": "FileKey",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1894,6 +2142,24 @@
     "DescribeCodePacksResponse": {
       "document": "DescribeCodePacks返回参数结构体",
       "members": [
+        {
+          "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CodePack",
+          "name": "CodePacks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "131",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2110,6 +2376,15 @@
     "DescribeJobFileUrlResponse": {
       "document": "DescribeJobFileUrl返回参数结构体",
       "members": [
+        {
+          "document": "码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cdn.xx/xxx.zip",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2360,6 +2635,42 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTmpTokenRequest": {
+      "document": "DescribeTmpToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTmpTokenResponse": {
+      "document": "DescribeTmpToken返回参数结构体",
+      "members": [
+        {
+          "document": "临时token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AbXtx",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -3431,6 +3742,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodePart",
+          "name": "CodeParts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3768,7 +4089,7 @@
         },
         {
           "default": "",
-          "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码类型 0: 批次, 1: 码, 2: 生产任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "码类型",
           "member": "uint64",
           "name": "Type",
@@ -3778,7 +4099,7 @@
         },
         {
           "default": "",
-          "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码值，跟码类型一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
           "name": "Code",
@@ -3788,7 +4109,7 @@
         },
         {
           "default": "",
-          "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "排序，在Phase相同情况下，值越小排名靠前\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Rank",
@@ -3868,12 +4189,32 @@
         },
         {
           "default": "",
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChainData",
           "name": "ChainData",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "溯源阶段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhaseData",
+          "name": "PhaseData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "溯源阶段状态 0: 无效, 1: 有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

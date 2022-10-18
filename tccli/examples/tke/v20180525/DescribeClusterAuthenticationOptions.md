@@ -18,6 +18,13 @@ Output:
             "JWKSURI": "https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks",
             "Issuer": "https://cls-xxxxxxxx.ccs.tencent-cloud.com"
         },
+        "OIDCConfig": {
+            "AutoCreateOIDCConfig": true,
+            "AutoInstallPodIdentityWebhookAddon": true,
+            "AutoCreateClientId": [
+                "xx"
+            ]
+        },
         "LatestOperationState": "Updating"
     }
 }

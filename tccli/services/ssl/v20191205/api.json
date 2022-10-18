@@ -90,6 +90,12 @@
       "name": "查询管理人列表",
       "output": "DescribeManagersResponse"
     },
+    "DescribePackages": {
+      "document": "获得权益包列表",
+      "input": "DescribePackagesRequest",
+      "name": "获得权益包列表",
+      "output": "DescribePackagesResponse"
+    },
     "DownloadCertificate": {
       "document": "本接口（DownloadCertificate）用于下载证书。",
       "input": "DownloadCertificateRequest",
@@ -2415,6 +2421,114 @@
       ],
       "type": "object"
     },
+    "DescribePackagesRequest": {
+      "document": "DescribePackages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目，默认20。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按状态筛选。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按过期时间升序或降序排列。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按权益包ID搜索。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按权益包类型搜索。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子产品编号",
+          "example": "无",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackagesResponse": {
+      "document": "DescribePackages返回参数结构体",
+      "members": [
+        {
+          "document": "权益包列表。",
+          "example": "无",
+          "member": "PackageInfo",
+          "name": "Packages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权益点总余额。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalBalance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DownloadCertificateRequest": {
       "document": "DownloadCertificate请求参数结构体",
       "members": [
@@ -2894,6 +3008,228 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageInfo": {
+      "document": "权益包基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "权益包ID。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权益包内权益点总量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权益包内权益点余量。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权益包名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权益点是转入时，来源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SourceUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权益点状态。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源类型。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转移信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PackageTransferOutInfo",
+          "name": "TransferOutInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageTransferOutInfo": {
+      "document": "权益包转出详情",
+      "members": [
+        {
+          "default": "",
+          "document": "权益包ID。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转移码。",
+          "example": "无",
+          "member": "string",
+          "name": "TransferCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次转移点数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TransferCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转入的PackageID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReceivePackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次转移过期时间。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次转移生成时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次转移更新时间。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转移状态。",
+          "example": "无",
+          "member": "string",
+          "name": "TransferStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收者uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ReceiverUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接收时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

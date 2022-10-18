@@ -24,6 +24,14 @@
         "title": "创建巡课"
       }
     ],
+    "DeleteRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "title": "删除房间"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "",

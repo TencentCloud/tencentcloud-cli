@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Status": "done",
         "RequestId": "d8dca787-f07a-40ce-acd5-3c0eda11cac2"
     }
 }
