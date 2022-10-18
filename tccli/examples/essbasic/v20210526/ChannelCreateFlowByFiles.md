@@ -18,6 +18,7 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.ApproverType xx \
     --FlowApprovers.0.Mobile xx \
     --FlowApprovers.0.OrganizationOpenId xx \
+    --FlowApprovers.0.SignComponents.0.ComponentRecipientId xx \
     --FlowApprovers.0.SignComponents.0.ComponentValue xx \
     --FlowApprovers.0.SignComponents.0.GenerateMode xx \
     --FlowApprovers.0.SignComponents.0.ComponentWidth 0.0 \
@@ -34,6 +35,7 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.SignComponents.0.ComponentId xx \
     --FlowApprovers.0.SignComponents.0.DocumentId xx \
     --FlowApprovers.0.SignComponents.0.ComponentHeight 0.0 \
+    --Components.0.ComponentRecipientId xx \
     --Components.0.ComponentValue xx \
     --Components.0.GenerateMode xx \
     --Components.0.ComponentWidth 0.0 \

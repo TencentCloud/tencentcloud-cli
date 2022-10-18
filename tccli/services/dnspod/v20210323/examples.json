@@ -186,12 +186,28 @@
         "title": "获取域名共享信息"
       }
     ],
+    "DescribeDomainStatusListBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainStatusListBatch\n<公共请求参数>\n\n{\n    \"DomainIdList\": [\n        123123,\n        412312\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66ddb097-ea5f-4b9c-a3aa-7dd044b6ab34\",\n        \"DomainList\": [\n            {\n                \"Status\": \"enable\",\n                \"IsDNSPodNS\": \"yes\",\n                \"EffectiveDNS\": [\n                    \"ns3.dnsv2.com\",\n                    \"ns4.dnsv2.com\"\n                ],\n                \"NowDNS\": [\n                    \"ns3.dnsv2.com\",\n                    \"ns4.dnsv2.com\"\n                ],\n                \"GradeTitle\": \"专业版\",\n                \"VipEndAt\": \"2025-01-06 13:11:48\",\n                \"Name\": \"magicszhao.vip\",\n                \"Punycode\": \"magicszhao.vip\",\n                \"DomainId\": \"12615056\"\n            }\n        ]\n    }\n}",
+        "title": "批量获取指定域名状态等信息"
+      }
+    ],
     "DescribeRecord": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordInfo\": {\n            \"Id\": 158,\n            \"SubDomain\": \"wwww\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"百度\",\n            \"RecordLineId\": \"90=0\",\n            \"Value\": \"129.23.32.32\",\n            \"Weight\": null,\n            \"MX\": 0,\n            \"TTL\": 10,\n            \"Enabled\": 1,\n            \"MonitorStatus\": \"Ok\",\n            \"Remark\": \"以下参数列表仅列出了此接口响应代码，除此接口请求响应代码外\",\n            \"UpdatedOn\": \"2021-03-31 11:38:02\",\n            \"DomainId\": 62\n        }\n    }\n}",
         "title": "获取记录信息"
+      }
+    ],
+    "DescribeRecordCountByRoll": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordCountByRoll\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"SubDomain\": \"www\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"NowRoll\": 2,\n        \"MaxRoll\": 10,\n        \"GradeTitle\": \"专业版\"\n    }\n}",
+        "title": "获取记录负载均衡信息"
       }
     ],
     "DescribeRecordLineList": [
@@ -208,6 +224,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"Domain\": \"shenjianing.com\",\n    \"DomainId\": 123,\n    \"Subdomain\": \"www\",\n    \"Keyword\": \"dnspod\",\n    \"RecordType\": \"NS\",\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"SortField\": \"type\",\n    \"SortType\": \"ASC\",\n    \"GroupId\": 34\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\",\n        \"RecordCountInfo\": {\n            \"SubdomainCount\": 2,\n            \"TotalCount\": 2,\n            \"ListCount\": 2\n        },\n        \"RecordList\": [\n            {\n                \"RecordId\": 556507778,\n                \"Value\": \"f1g1ns1.dnspod.net.\",\n                \"Status\": \"ENABLE\",\n                \"UpdatedOn\": \"2021-03-28 11:27:09\",\n                \"Name\": \"@\",\n                \"Line\": \"默认\",\n                \"LineId\": \"0\",\n                \"Type\": \"NS\",\n                \"Weight\": null,\n                \"MonitorStatus\": \"\",\n                \"Remark\": \"\",\n                \"TTL\": 86400,\n                \"MX\": 0\n            },\n            {\n                \"RecordId\": 556507779,\n                \"Value\": \"f1g1ns2.dnspod.net.\",\n                \"Status\": \"ENABLE\",\n                \"UpdatedOn\": \"2021-03-28 11:27:09\",\n                \"Name\": \"@\",\n                \"Line\": \"默认\",\n                \"LineId\": \"0\",\n                \"Type\": \"NS\",\n                \"Weight\": null,\n                \"MonitorStatus\": \"\",\n                \"Remark\": \"\",\n                \"TTL\": 86400,\n                \"MX\": 0\n            }\n        ]\n    }\n}",
         "title": "查询域名的解析记录"
+      }
+    ],
+    "DescribeRecordListInfoBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordListInfoBatch\n<公共请求参数>\n\n{\n    \"RecordIdList\": [\n        123123,\n        412312\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66ddb097-ea5f-4b9c-a3aa-7dd044b6ab34\",\n        \"DomainList\": [\n            {\n                \"Status\": \"enable\",\n                \"IsDNSPodNS\": \"yes\",\n                \"EffectiveDNS\": [\n                    \"ns3.dnsv2.com\",\n                    \"ns4.dnsv2.com\"\n                ],\n                \"NowDNS\": [\n                    \"ns3.dnsv2.com\",\n                    \"ns4.dnsv2.com\"\n                ],\n                \"GradeTitle\": \"专业版\",\n                \"VipEndAt\": \"2025-01-06 13:11:48\",\n                \"Name\": \"magicszhao.vip\",\n                \"Punycode\": \"magicszhao.vip\",\n                \"DomainId\": \"12615056\"\n            }\n        ],\n        \"RecordList\": [\n            {\n                \"DomainId\": \"12615056\",\n                \"RecordType\": \"URL\",\n                \"TTL\": \"120\",\n                \"Value\": \"http://www.baidu.com\",\n                \"Status\": \"enable\",\n                \"UpdatedOn\": \"2022-03-17 10:30:56\",\n                \"LineId\": \"0\",\n                \"Weight\": \"\",\n                \"RecordId\": \"13763177\",\n                \"Name\": \"baidu\"\n            },\n            {\n                \"DomainId\": \"12615056\",\n                \"RecordType\": \"CNAME\",\n                \"TTL\": \"600\",\n                \"Value\": \"baidu.com.\",\n                \"Status\": \"enable\",\n                \"UpdatedOn\": \"2022-04-13 14:20:31\",\n                \"LineId\": \"0\",\n                \"Weight\": \"20\",\n                \"RecordId\": \"15678812\",\n                \"Name\": \"cname\"\n            }\n        ]\n    }\n}",
+        "title": "批量获取指定解析记录信息"
       }
     ],
     "DescribeRecordType": [

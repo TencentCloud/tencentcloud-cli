@@ -126,11 +126,23 @@
       "name": "获取域名共享信息",
       "output": "DescribeDomainShareInfoResponse"
     },
+    "DescribeDomainStatusListBatch": {
+      "document": "批量获取指定域名状态等信息",
+      "input": "DescribeDomainStatusListBatchRequest",
+      "name": "批量获取指定域名状态等信息",
+      "output": "DescribeDomainStatusListBatchResponse"
+    },
     "DescribeRecord": {
       "document": "获取记录信息",
       "input": "DescribeRecordRequest",
       "name": "获取记录信息",
       "output": "DescribeRecordResponse"
+    },
+    "DescribeRecordCountByRoll": {
+      "document": "获取记录负载均衡信息",
+      "input": "DescribeRecordCountByRollRequest",
+      "name": "获取记录负载均衡信息",
+      "output": "DescribeRecordCountByRollResponse"
     },
     "DescribeRecordLineList": {
       "document": "获取等级允许的线路",
@@ -143,6 +155,12 @@
       "input": "DescribeRecordListRequest",
       "name": "获取域名的解析记录",
       "output": "DescribeRecordListResponse"
+    },
+    "DescribeRecordListInfoBatch": {
+      "document": "批量获取指定解析记录信息",
+      "input": "DescribeRecordListInfoBatchRequest",
+      "name": "批量获取指定解析记录信息",
+      "output": "DescribeRecordListInfoBatchResponse"
     },
     "DescribeRecordType": {
       "document": "获取等级允许的记录类型",
@@ -2289,6 +2307,152 @@
       ],
       "type": "object"
     },
+    "DescribeDomainStatusListBatchRequest": {
+      "document": "DescribeDomainStatusListBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID列表",
+          "example": "[133131,234234]",
+          "member": "int64",
+          "name": "DomainIdList",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名名称列表",
+          "example": "['test.com','test.cn']",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainStatusListBatchResponse": {
+      "document": "DescribeDomainStatusListBatch返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "example": "无",
+          "member": "DomainListItemByRecordId",
+          "name": "DomainList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordCountByRollRequest": {
+      "document": "DescribeRecordCountByRoll请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子域名",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "1923",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "记录类型，默认：A",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "线路ID，默认：0",
+          "example": "0",
+          "member": "string",
+          "name": "LineId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordCountByRollResponse": {
+      "document": "DescribeRecordCountByRoll返回参数结构体",
+      "members": [
+        {
+          "document": "当前记录已使用负载均衡数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "NowRoll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "当前记录最大可使用负载均衡数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxRoll",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "当前套餐等级",
+          "example": "专业版",
+          "member": "string",
+          "name": "GradeTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordLineListRequest": {
       "document": "DescribeRecordLineList请求参数结构体",
       "members": [
@@ -2342,6 +2506,54 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordListInfoBatchRequest": {
+      "document": "DescribeRecordListInfoBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "记录ID列表",
+          "example": "[133131,234234]",
+          "member": "int64",
+          "name": "RecordIdList",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordListInfoBatchResponse": {
+      "document": "DescribeRecordListInfoBatch返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "example": "无",
+          "member": "DomainListItemByRecordId",
+          "name": "DomainList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "记录信息",
+          "example": "无",
+          "member": "RecordListItemById",
+          "name": "RecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3508,6 +3720,122 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainListItemByRecordId": {
+      "document": "通过记录id获取域名列表元素",
+      "members": [
+        {
+          "default": "",
+          "document": "系统分配给域名的唯一标识",
+          "example": "12",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名的原始格式",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名的状态，正常：enbale，暂停：pause，封禁：spam，回滚中：rollback",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否是使用DNSPod做解析服务，如果域名是封禁状态，这个字段表示封禁前的状态",
+          "example": "yes",
+          "member": "string",
+          "name": "IsDNSPodNS",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "域名的套餐等级代码",
+          "example": "DP_Free",
+          "member": "string",
+          "name": "Grade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "经过punycode编码后的域名格式",
+          "example": "xn--a9.com",
+          "member": "string",
+          "name": "Punycode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "系统为域名分配的有效DNS",
+          "example": "[\"f1g1ns1.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
+          "member": "string",
+          "name": "EffectiveDNS",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "套餐名称",
+          "example": "免费版",
+          "member": "string",
+          "name": "GradeTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "付费套餐到期时间",
+          "example": "2022-04-07 13:34:20",
+          "member": "string",
+          "name": "VipEndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "当前域名注册侧DNS",
+          "example": "[\"f1g1ns1.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
+          "member": "string",
+          "name": "NowDNS",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -5032,6 +5360,122 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordListItemById": {
+      "document": "通过记录id查询到的记录列表元素",
+      "members": [
+        {
+          "default": "",
+          "document": "记录Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录状态，启用：enable，暂停：disable",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主机名",
+          "example": "www",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "线路Id",
+          "example": "0",
+          "member": "string",
+          "name": "LineId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录缓存时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "权重",
+          "example": "15",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2022-03-17 10:30:56",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

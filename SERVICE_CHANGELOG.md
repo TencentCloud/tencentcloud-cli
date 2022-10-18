@@ -2,57 +2,9 @@
 
 ## 验证码(captcha) 版本：2019-07-22
 
-### 第 4 次发布
+### 第 5 次发布
 
-发布时间：2022-10-18 06:09:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 20 次发布
-
-发布时间：2022-10-18 06:24:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ApplyLivenessToken
-* ApplySdkVerificationToken
-* ApplyWebVerificationToken
-* CreateUploadUrl
-* DetectReflectLivenessAndCompare
-* GenerateReflectSequence
-* GetLivenessResult
-* GetSdkVerificationResult
-* GetWebVerificationResult
-* VideoLivenessCompare
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* CardVerifyResult
-* CompareResult
-* FileInfo
-* VerificationDetail
-
-
-
-## 云数据库 Redis(redis) 版本：2018-04-12
-
-### 第 23 次发布
-
-发布时间：2022-10-18 06:35:31
+发布时间：2022-10-19 06:06:55
 
 本次发布包含了以下内容：
 
@@ -60,18 +12,27 @@
 
 修改接口：
 
-* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/239/20018)
+* [GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)
 
-	* 新增入参：AzMode
+	* 新增入参：StartTimeStr, EndTimeStr, Dimension
+
+	* 新增出参：Data, CaptchaCode, CaptchaMsg
+
+
+新增数据结构：
+
+* [CaptchaStatisticObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#CaptchaStatisticObj)
+* [InterceptPerTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#InterceptPerTrendObj)
+* [RequestTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#RequestTrendObj)
+* [TicketCheckTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#TicketCheckTrendObj)
 
 
 
+## 企业收付平台(cpdp) 版本：2019-08-20
 
-## 证书(ssl) 版本：2019-12-05
+### 第 42 次发布
 
-### 第 13 次发布
-
-发布时间：2022-10-18 06:38:27
+发布时间：2022-10-19 06:08:07
 
 本次发布包含了以下内容：
 
@@ -79,52 +40,106 @@
 
 新增接口：
 
-* [DescribePackages](http://document.tencentcloudapi.woa.com/document/product/400/76423)
+* [CreateOpenBankGlobalPaymentOrder](http://document.tencentcloudapi.woa.com/document/product/1122/76424)
 
 新增数据结构：
 
-* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageInfo)
-* [PackageTransferOutInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageTransferOutInfo)
+* [CreateOpenBankUnifiedOrderPaymentResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankUnifiedOrderPaymentResult)
+* [OpenBankBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankBillingInfo)
+* [OpenBankOrderRedirectInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankOrderRedirectInfo)
+* [OpenBankShippingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankShippingInfo)
+
+修改数据结构：
+
+* [OpenBankGoodsInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankGoodsInfo)
+
+	* 新增成员：Sku, Price, Quantity, ProductImage, ProductUrl
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 16 次发布
+## DNSPod(dnspod) 版本：2021-03-23
 
-发布时间：2022-10-18 06:43:38
+### 第 11 次发布
+
+发布时间：2022-10-19 06:09:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+新增接口：
 
-* StartPublishCdnStream
-* StopPublishCdnStream
-* UpdatePublishCdnStream
+* [DescribeDomainStatusListBatch](http://document.tencentcloudapi.woa.com/document/product/1427/76427)
+* [DescribeRecordCountByRoll](http://document.tencentcloudapi.woa.com/document/product/1427/76426)
+* [DescribeRecordListInfoBatch](http://document.tencentcloudapi.woa.com/document/product/1427/76425)
 
-<font color="#dd0000">**删除数据结构**：</font>
+新增数据结构：
 
-* AgentParams
-* AudioEncode
-* MaxVideoUser
-* McuAudioParams
-* McuCustomCrop
-* McuLayout
-* McuLayoutParams
-* McuLayoutVolume
-* McuPassThrough
-* McuPublishCdnParam
-* McuSeiParams
-* McuUserInfoParams
-* McuVideoParams
-* McuWaterMarkImage
-* McuWaterMarkParams
-* MixUserInfo
-* SingleSubscribeParams
-* UserMediaStream
-* VideoEncode
+* [DomainListItemByRecordId](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItemByRecordId)
+* [RecordListItemById](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItemById)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 17 次发布
+
+发布时间：2022-10-19 06:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+
+	* 新增成员：ComponentRecipientId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 32 次发布
+
+发布时间：2022-10-19 06:11:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AlarmHierarchicalValue](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalValue)
+
+修改数据结构：
+
+* [AlarmPolicyRule](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicyRule)
+
+	* 新增成员：HierarchicalValue
+
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 23 次发布
+
+发布时间：2022-10-19 06:14:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClsTopic](http://document.tencentcloudapi.woa.com/document/product/876/76428)
 
 
 
@@ -4212,6 +4227,30 @@
 
 ## 验证码(captcha) 版本：2019-07-22
 
+### 第 5 次发布
+
+发布时间：2022-10-19 06:06:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)
+
+	* 新增入参：StartTimeStr, EndTimeStr, Dimension
+
+	* 新增出参：Data, CaptchaCode, CaptchaMsg
+
+
+新增数据结构：
+
+* [[CaptchaStatisticObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#CaptchaStatisticObj)](http://document.tencentcloudapi.woa.com/document/product/1110/40481#[CaptchaStatisticObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#CaptchaStatisticObj))
+* [[InterceptPerTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#InterceptPerTrendObj)](http://document.tencentcloudapi.woa.com/document/product/1110/40481#[InterceptPerTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#InterceptPerTrendObj))
+* [[RequestTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#RequestTrendObj)](http://document.tencentcloudapi.woa.com/document/product/1110/40481#[RequestTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#RequestTrendObj))
+* [[TicketCheckTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#TicketCheckTrendObj)](http://document.tencentcloudapi.woa.com/document/product/1110/40481#[TicketCheckTrendObj](http://document.tencentcloudapi.woa.com/document/product/1110/40481#TicketCheckTrendObj))
+
 ### 第 4 次发布
 
 发布时间：2022-10-18 06:09:07
@@ -4222,7 +4261,7 @@
 
 新增接口：
 
-* [[GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetTotalTicketStatistics](http://document.tencentcloudapi.woa.com/document/product/1110/76422)
 
 ### 第 3 次发布
 
@@ -10691,6 +10730,32 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 42 次发布
+
+发布时间：2022-10-19 06:08:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateOpenBankGlobalPaymentOrder](http://document.tencentcloudapi.woa.com/document/product/1122/76424)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CreateOpenBankUnifiedOrderPaymentResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankUnifiedOrderPaymentResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[CreateOpenBankUnifiedOrderPaymentResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CreateOpenBankUnifiedOrderPaymentResult))
+* [[OpenBankBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankBillingInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OpenBankBillingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankBillingInfo))
+* [[OpenBankOrderRedirectInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankOrderRedirectInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OpenBankOrderRedirectInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankOrderRedirectInfo))
+* [[OpenBankShippingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankShippingInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OpenBankShippingInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankShippingInfo))
+
+修改数据结构：
+
+* [OpenBankGoodsInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankGoodsInfo)
+
+	* 新增成员：Sku, Price, Quantity, ProductImage, ProductUrl
+
+
 ### 第 41 次发布
 
 发布时间：2022-10-14 06:17:25
@@ -15968,6 +16033,25 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 11 次发布
+
+发布时间：2022-10-19 06:09:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDomainStatusListBatch](http://document.tencentcloudapi.woa.com/document/product/1427/76427)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRecordCountByRoll](http://document.tencentcloudapi.woa.com/document/product/1427/76426)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRecordListInfoBatch](http://document.tencentcloudapi.woa.com/document/product/1427/76425)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DomainListItemByRecordId](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItemByRecordId)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[DomainListItemByRecordId](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItemByRecordId))
+* [[RecordListItemById](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItemById)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[RecordListItemById](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItemById))
+
 ### 第 10 次发布
 
 发布时间：2022-09-26 06:22:50
@@ -18460,6 +18544,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 17 次发布
+
+发布时间：2022-10-19 06:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+
+	* 新增成员：ComponentRecipientId
+
 
 ### 第 16 次发布
 
@@ -24672,6 +24771,25 @@
 
 
 ## 云监控(monitor) 版本：2018-07-24
+
+### 第 32 次发布
+
+发布时间：2022-10-19 06:11:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AlarmHierarchicalValue](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalValue)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[AlarmHierarchicalValue](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalValue))
+
+修改数据结构：
+
+* [AlarmPolicyRule](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicyRule)
+
+	* 新增成员：HierarchicalValue
+
 
 ### 第 31 次发布
 
@@ -31212,12 +31330,12 @@
 
 新增接口：
 
-* [[DescribePackages](http://document.tencentcloudapi.woa.com/document/product/400/76423)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePackages](http://document.tencentcloudapi.woa.com/document/product/400/76423)
 
 新增数据结构：
 
-* [[PackageInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageInfo)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[PackageInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageInfo))
-* [[PackageTransferOutInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageTransferOutInfo)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[PackageTransferOutInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageTransferOutInfo))
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageInfo)
+* [PackageTransferOutInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PackageTransferOutInfo)
 
 ### 第 12 次发布
 
@@ -32518,6 +32636,18 @@
 
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 23 次发布
+
+发布时间：2022-10-19 06:14:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyClsTopic](http://document.tencentcloudapi.woa.com/document/product/876/76428)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 22 次发布
 

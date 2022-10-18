@@ -617,7 +617,7 @@ def doQueryOrder(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryOpenBankRefundOrder(args, parsed_globals):
+def doUploadExternalAnchorInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -644,11 +644,11 @@ def doQueryOpenBankRefundOrder(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryOpenBankRefundOrderRequest()
+    model = models.UploadExternalAnchorInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryOpenBankRefundOrder(model)
+        rsp = client.UploadExternalAnchorInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2517,7 +2517,7 @@ def doQuerySinglePaymentResult(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplyOpenBankOrderDetailReceipt(args, parsed_globals):
+def doApplyOpenBankSubMerchantSignOnline(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2544,11 +2544,61 @@ def doApplyOpenBankOrderDetailReceipt(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyOpenBankOrderDetailReceiptRequest()
+    model = models.ApplyOpenBankSubMerchantSignOnlineRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ApplyOpenBankOrderDetailReceipt(model)
+        rsp = client.ApplyOpenBankSubMerchantSignOnline(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryReconciliationDocument(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryReconciliationDocumentRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.QueryReconciliationDocument(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3267,6 +3317,56 @@ def doCreatePayRollPreOrder(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateOpenBankGlobalPaymentOrder(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateOpenBankGlobalPaymentOrderRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateOpenBankGlobalPaymentOrder(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateCloudSubMerchant(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3417,7 +3517,7 @@ def doCreateAgentTaxPaymentInfos(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAgentTaxPaymentInfos(args, parsed_globals):
+def doQueryOpenBankRefundOrder(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3444,11 +3544,11 @@ def doDeleteAgentTaxPaymentInfos(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAgentTaxPaymentInfosRequest()
+    model = models.QueryOpenBankRefundOrderRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteAgentTaxPaymentInfos(model)
+        rsp = client.QueryOpenBankRefundOrder(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3717,56 +3817,6 @@ def doQueryMerchantBalance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUploadExternalAnchorInfo(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UploadExternalAnchorInfoRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UploadExternalAnchorInfo(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doQueryMemberBind(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3817,7 +3867,7 @@ def doQueryMemberBind(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doApplyOpenBankSubMerchantSignOnline(args, parsed_globals):
+def doApplyOpenBankOrderDetailReceipt(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3844,11 +3894,11 @@ def doApplyOpenBankSubMerchantSignOnline(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ApplyOpenBankSubMerchantSignOnlineRequest()
+    model = models.ApplyOpenBankOrderDetailReceiptRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ApplyOpenBankSubMerchantSignOnline(model)
+        rsp = client.ApplyOpenBankOrderDetailReceipt(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10467,7 +10517,7 @@ def doBindRelateAccReUnionPay(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryReconciliationDocument(args, parsed_globals):
+def doDeleteAgentTaxPaymentInfos(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -10494,11 +10544,11 @@ def doQueryReconciliationDocument(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryReconciliationDocumentRequest()
+    model = models.DeleteAgentTaxPaymentInfosRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryReconciliationDocument(model)
+        rsp = client.DeleteAgentTaxPaymentInfos(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10690,7 +10740,7 @@ ACTION_MAP = {
     "DeduceQuota": doDeduceQuota,
     "CreateExternalAnchor": doCreateExternalAnchor,
     "QueryOrder": doQueryOrder,
-    "QueryOpenBankRefundOrder": doQueryOpenBankRefundOrder,
+    "UploadExternalAnchorInfo": doUploadExternalAnchorInfo,
     "QueryCloudOrder": doQueryCloudOrder,
     "WithdrawCashMembership": doWithdrawCashMembership,
     "GetPayRollAuthResult": doGetPayRollAuthResult,
@@ -10728,7 +10778,8 @@ ACTION_MAP = {
     "UnbindRelateAcct": doUnbindRelateAcct,
     "CreatePayMerchant": doCreatePayMerchant,
     "QuerySinglePaymentResult": doQuerySinglePaymentResult,
-    "ApplyOpenBankOrderDetailReceipt": doApplyOpenBankOrderDetailReceipt,
+    "ApplyOpenBankSubMerchantSignOnline": doApplyOpenBankSubMerchantSignOnline,
+    "QueryReconciliationDocument": doQueryReconciliationDocument,
     "QueryFlexPaymentOrderList": doQueryFlexPaymentOrderList,
     "CreateOpenBankSingleSubMerchant": doCreateOpenBankSingleSubMerchant,
     "ViewMerchant": doViewMerchant,
@@ -10743,18 +10794,18 @@ ACTION_MAP = {
     "RegisterBillSupportWithdraw": doRegisterBillSupportWithdraw,
     "QueryContractPayWayList": doQueryContractPayWayList,
     "CreatePayRollPreOrder": doCreatePayRollPreOrder,
+    "CreateOpenBankGlobalPaymentOrder": doCreateOpenBankGlobalPaymentOrder,
     "CreateCloudSubMerchant": doCreateCloudSubMerchant,
     "CloseCloudOrder": doCloseCloudOrder,
     "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
-    "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
+    "QueryOpenBankRefundOrder": doQueryOpenBankRefundOrder,
     "ContractOrder": doContractOrder,
     "QueryOpenBankSettleOrder": doQueryOpenBankSettleOrder,
     "GetPayRollAuthList": doGetPayRollAuthList,
     "QueryFlexPayeeAccountInfo": doQueryFlexPayeeAccountInfo,
     "QueryMerchantBalance": doQueryMerchantBalance,
-    "UploadExternalAnchorInfo": doUploadExternalAnchorInfo,
     "QueryMemberBind": doQueryMemberBind,
-    "ApplyOpenBankSubMerchantSignOnline": doApplyOpenBankSubMerchantSignOnline,
+    "ApplyOpenBankOrderDetailReceipt": doApplyOpenBankOrderDetailReceipt,
     "UnifiedOrder": doUnifiedOrder,
     "QueryOpenBankUnbindExternalSubMerchantBankAccount": doQueryOpenBankUnbindExternalSubMerchantBankAccount,
     "ConfirmOrder": doConfirmOrder,
@@ -10887,7 +10938,7 @@ ACTION_MAP = {
     "QueryOpenBankOrderDetailReceiptInfo": doQueryOpenBankOrderDetailReceiptInfo,
     "QueryAcctInfoList": doQueryAcctInfoList,
     "BindRelateAccReUnionPay": doBindRelateAccReUnionPay,
-    "QueryReconciliationDocument": doQueryReconciliationDocument,
+    "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
     "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "QueryExceedingInfo": doQueryExceedingInfo,
     "RefundOrder": doRefundOrder,
