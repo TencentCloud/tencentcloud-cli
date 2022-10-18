@@ -40,6 +40,7 @@ Output:
                 "TemplateName": "测试模板",
                 "SignComponents": [
                     {
+                        "ComponentRecipientId": "yDxlTUyK***********Ha7uB",
                         "ComponentValue": "",
                         "GenerateMode": "xx",
                         "ComponentWidth": 1.1,
@@ -62,6 +63,7 @@ Output:
                 "IsPromoter": true,
                 "Components": [
                     {
+                        "ComponentRecipientId": "yDxlTUyK***********jeCFWBefS",
                         "ComponentValue": "yDxlTUyK***********xe8mbiVR",
                         "GenerateMode": "",
                         "ComponentWidth": 1.1,
@@ -100,7 +102,7 @@ Input:
 ```
 tccli essbasic DescribeTemplates --cli-unfold-argument  \
     --QueryAllComponents true \
-    --Agent.ProxyOperator.OpenId test1_clara_test1 \
+    --Agent.ProxyOperator.OpenId test1xxxxx_test1 \
     --Agent.AppId 7f3497fxxx35e0984a9657b0ec \
     --Agent.ProxyOrganizationOpenId test1_clarxxxnization1 \
     --Agent.ProxyOrganizationId yDxHwUyKxxxBNLMLjthsmk \
@@ -127,6 +129,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 453.49572753906,
                         "ComponentPosY": 312.78833580017,
+                        "ComponentRecipientId": "yDR0JUUxxxx4zjEE9SSKGgNe",
                         "ComponentRequired": true,
                         "ComponentType": "TEXT",
                         "ComponentValue": "",
@@ -145,6 +148,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 453.49572753906,
                         "ComponentPosY": 312.78833580017,
+                        "ComponentRecipientId": "yDR0JUxxxxERyDQZICyF",
                         "ComponentRequired": true,
                         "ComponentType": "TEXT",
                         "ComponentValue": "",
@@ -193,6 +197,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 327.49572753906,
                         "ComponentPosY": 552.09656333923,
+                        "ComponentRecipientId": "yDR0JUxxxxjECvKyhk7jT",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SEAL",
                         "ComponentValue": "",
@@ -211,6 +216,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 386.49572753906,
                         "ComponentPosY": 730.18323326111,
+                        "ComponentRecipientId": "yDR0JUUgxxxxxRyDQZICyF",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SIGNATURE",
                         "ComponentValue": "",
@@ -220,7 +226,7 @@ Output:
                         "GenerateMode": ""
                     }
                 ],
-                "TemplateId": "yDR0JUUgygspbi8uUuO4zjESIpKDSkE9",
+                "TemplateId": "yDR0JUUgygxxxxO4zjESIpKDSkE9",
                 "TemplateName": "xxxxx模板",
                 "TemplateType": 3
             }
@@ -296,6 +302,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 330.49572753906,
                         "ComponentPosY": 384.09656333923,
+                        "ComponentRecipientId": "yDR0JUxxx4zjERwT0dL9xs",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SEAL",
                         "ComponentValue": "",
@@ -314,6 +321,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 252.49572753906,
                         "ComponentPosY": 632.18323326111,
+                        "ComponentRecipientId": "yDR0JUUxxxx4zjEyDHvECsDZ",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SIGNATURE",
                         "ComponentValue": "",
@@ -368,6 +376,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 413.49572753906,
                         "ComponentPosY": 348.75421714783,
+                        "ComponentRecipientId": "yDR0JUUgxxxzjETakC1TTWY",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SIGNATURE",
                         "ComponentValue": "",
@@ -386,6 +395,7 @@ Output:
                         "ComponentPage": 3,
                         "ComponentPosX": 318.49572753906,
                         "ComponentPosY": 497.16193199158,
+                        "ComponentRecipientId": "yDR0Jxxxx4zjESF9B8DCsK",
                         "ComponentRequired": true,
                         "ComponentType": "SIGN_SEAL",
                         "ComponentValue": "",

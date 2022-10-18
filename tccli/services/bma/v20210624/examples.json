@@ -152,6 +152,14 @@
         "title": "查询监测列表"
       }
     ],
+    "DescribeCRObtainDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCRObtainDetail\n<公共请求参数>\n\n{\n    \"TortId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TortId\": 0,\n        \"ObtainTime\": \"xx\",\n        \"ObtainDuration\": \"xx\",\n        \"ObtainType\": \"xx\",\n        \"DepositCert\": \"xx\",\n        \"ObtainNum\": \"xx\",\n        \"TortURL\": \"xx\",\n        \"WorkName\": \"xx\",\n        \"WorkCategory\": \"xx\",\n        \"ObtainName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TortNum\": \"xx\",\n        \"ObtainNote\": \"xx\",\n        \"DepositFile\": \"xx\",\n        \"ObtainStatus\": 0,\n        \"WorkType\": \"xx\"\n    }\n}",
+        "title": "查询取证详情"
+      }
+    ],
     "DescribeCRWorkInfo": [
       {
         "document": "",

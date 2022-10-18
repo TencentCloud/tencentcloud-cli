@@ -17562,6 +17562,7 @@
         {
           "default": "",
           "document": "步骤名称",
+          "example": "preCheck",
           "member": "string",
           "name": "Step",
           "required": true,
@@ -17571,6 +17572,7 @@
         {
           "default": "",
           "document": "生命周期\npending : 步骤未开始\nrunning: 步骤执行中\nsuccess: 步骤成功完成\nfailed: 步骤失败",
+          "example": "success",
           "member": "string",
           "name": "LifeState",
           "required": true,
@@ -17580,6 +17582,7 @@
         {
           "default": "",
           "document": "步骤开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-19T07:29:46Z",
           "member": "string",
           "name": "StartAt",
           "required": true,
@@ -17589,6 +17592,7 @@
         {
           "default": "",
           "document": "步骤结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-19T07:29:46Z",
           "member": "string",
           "name": "EndAt",
           "required": true,
@@ -17598,6 +17602,7 @@
         {
           "default": "",
           "document": "若步骤生命周期为failed,则此字段显示错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "显示错误信息",
           "member": "string",
           "name": "FailedMsg",
           "required": true,

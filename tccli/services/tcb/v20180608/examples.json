@@ -558,6 +558,14 @@
         "title": "示例"
       }
     ],
+    "ModifyClsTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClsTopic\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"Period\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定自定义日志"
+      }
+    ],
     "ModifyDatabaseACL": [
       {
         "document": "",

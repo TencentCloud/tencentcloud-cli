@@ -370,6 +370,14 @@
         "title": "CreateOpenBankExternalSubMerchantRegistration"
       }
     ],
+    "CreateOpenBankGlobalPaymentOrder": [
+      {
+        "document": "订单已受理",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankGlobalPaymentOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM641220368383868928\",\n    \"ChannelName\": \"CNP\",\n    \"OutOrderId\": \"test21210337\",\n    \"TotalAmount\": 1000,\n    \"PayType\": \"CREDIT_GATEWAY\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"FrontLanguage\": \"zh\",\n    \"Remark\": \"test\",\n    \"Currency\": \"HKD\",\n    \"FrontUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"GoodsInfos\": [\n        {\n            \"Sku\": \"123121\",\n            \"GoodsName\": \"test测试\",\n            \"Price\": \"113.9989\",\n            \"Quantity\": \"800\",\n            \"ProductImage\": \"imageUrl\",\n            \"ProductUrl\": \"goodsUrl\"\n        }\n    ],\n    \"ShippingInfo\": {\n        \"AddressOne\": \"广东省广州市测试 测试 测试测试 测试 测试*\",\n        \"AddressTwo\": \"广东省广州市测试 Another\",\n        \"City\": \"shagnhai\",\n        \"Country\": \"CN\",\n        \"FirstName\": \"Peter 三\",\n        \"LastName\": \"zh张\",\n        \"Phone\": \"1231230080\",\n        \"State\": \"shagnhai\",\n        \"ZipCode\": \"440000\"\n    },\n    \"BillingInfo\": {\n        \"AddressOne\": \"广东省广州市测试 测试 测试测试 测试 测试*\",\n        \"AddressTwo\": \"广东省广州市测试 测试 测试测试 测试RRRRRRRRRR\",\n        \"City\": \"shagnhai\",\n        \"Country\": \"CN\",\n        \"FirstName\": \"杰伦\",\n        \"LastName\": \"周\",\n        \"Phone\": \"1231230080\",\n        \"State\": \"shanghai\",\n        \"ZipCode\": \"440000\"\n    },\n    \"ExternalPaymentData\": \"{\\\"Email\\\":\\\"961836760@qq.com\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": {\n            \"OutOrderId\": \"test21210337\",\n            \"ChannelOrderId\": \"657611110534541312\",\n            \"ThirdPayOrderId\": null,\n            \"RedirectInfo\": {\n                \"Url\": \"https://test.allinpayhk.com/pay-web-h5/cnp_payxxxx\",\n                \"ExpireTime\": null,\n                \"MpPath\": null,\n                \"MpAppId\": null,\n                \"MpUserName\": null,\n                \"FormInfo\": null,\n                \"QRCodeUrl\": null,\n                \"QRCodeKey\": null\n            },\n            \"PayInfo\": null,\n            \"PayInfoType\": null\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "订单已受理"
+      }
+    ],
     "CreateOpenBankMerchant": [
       {
         "document": "",

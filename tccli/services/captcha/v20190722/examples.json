@@ -99,8 +99,8 @@
     "GetTotalTicketStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTotalTicketStatistics\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57765b5a-8ac8-4598-a00d-080a7a530300\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTotalTicketStatistics\n<公共请求参数>\n\n{\n    \"EndTimeStr\": \"\\\"2022-08-14 14:00\\\"\",\n    \"StartTimeStr\": \"“2022-05-14 10:00”\",\n    \"Dimension\": \"\\\"3\\\"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6e4b75e504c43b88fd9db327df6d2b5\",\n        \"Data\": {\n            \"ActionTotal\": 0,\n            \"VerifyTotal\": 0,\n            \"VerifyThroughTotal\": 0,\n            \"VerifyInterceptTotal\": 0,\n            \"TicketTotal\": 2,\n            \"TicketThroughTotal\": 2,\n            \"TicketInterceptTotal\": 0,\n            \"RequestTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"RequestAction\": 0,\n                    \"RequestVerify\": 0,\n                    \"RequestThroughput\": 0,\n                    \"RequestIntercept\": 0\n                }\n            ],\n            \"InterceptPerTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"RequestInterceptPer\": 0,\n                    \"AnswerInterceptPer\": 0,\n                    \"PolicyInterceptPer\": 0\n                }\n            ],\n            \"TicketCheckTrend\": [\n                {\n                    \"Ftime\": \"10-18 11:11\",\n                    \"TicketCount\": 0,\n                    \"TicketThroughput\": 0,\n                    \"TicketIntercept\": 0\n                }\n            ]\n        },\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"success\"\n    }\n}",
         "title": "请求和返回示例"
       }
     ],

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindDocumentToRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDocumentToRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\",\n    \"RoomId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定文档到房间"
+      }
+    ],
     "CreateDocument": [
       {
         "document": "",
@@ -36,8 +44,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"EndTime\": 1,\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"Resolution\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"RequestId\": \"213das\",\n        \"SdkAppId\": 1,\n        \"TeacherId\": \"xx\",\n        \"StartTime\": 1,\n        \"DisableRecord\": 1,\n        \"Assistants\": [\n            \"xx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"xx\",\n        \"Name\": \"xx\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1,\n        \"TeacherId\": \"xx\",\n        \"Assistants\": [\n            \"xx\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1\n    }\n}",
         "title": "房间信息"
+      }
+    ],
+    "DescribeRoomStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomStatistics\n<公共请求参数>\n\n{\n    \"RoomId\": 123,\n    \"Page\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"PeakMemberNumber\": 1,\n        \"RequestId\": \"xx\",\n        \"MemberRecords\": [\n            {\n                \"UserName\": \"xx\",\n                \"Mic\": 1,\n                \"UserId\": \"xx\",\n                \"Rewords\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"Camera\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"PresentTime\": 1,\n                \"Silence\": 1\n            }\n        ]\n    }\n}",
+        "title": "获取房间统计信息"
       }
     ],
     "DescribeUser": [
@@ -64,6 +80,14 @@
         "title": "登录"
       }
     ],
+    "ModifyApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"Callback\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ],
     "RegisterUser": [
       {
         "document": "",
@@ -78,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"CustomContent\": [\n        {\n            \"Scene\": \"default\",\n            \"LogoUrl\": \"https://yourdomain.com/logo.png\",\n            \"HomeUrl\": \"https://yourdomain.com/login\",\n            \"JsUrl\": \"https://yourdomain.com/default.js\",\n            \"CssUrl\": \"https://yourdomain.com/default.css\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "设置应用自定义内容"
+      }
+    ],
+    "UnbindDocumentFromRoom": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindDocumentFromRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\",\n    \"RoomId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "文档从房间解绑"
       }
     ]
   },

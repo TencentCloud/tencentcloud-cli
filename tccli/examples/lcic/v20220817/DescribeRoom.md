@@ -14,20 +14,21 @@ Output:
 {
     "Response": {
         "AutoMic": 1,
-        "EndTime": 1,
+        "RecordUrl": "xx",
         "Name": "xx",
         "AudioQuality": 1,
-        "Resolution": 1,
         "MaxMicNumber": 1,
         "SubType": "xx",
-        "RequestId": "213das",
         "SdkAppId": 1,
-        "TeacherId": "xx",
+        "RequestId": "xx",
         "StartTime": 1,
-        "DisableRecord": 1,
+        "TeacherId": "xx",
         "Assistants": [
             "xx"
-        ]
+        ],
+        "EndTime": 1,
+        "Resolution": 1,
+        "DisableRecord": 1
     }
 }
 ```

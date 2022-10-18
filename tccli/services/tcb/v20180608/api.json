@@ -414,6 +414,12 @@
       "name": "修改服务版本信息",
       "output": "ModifyCloudBaseRunServerVersionResponse"
     },
+    "ModifyClsTopic": {
+      "document": "修改日志主题",
+      "input": "ModifyClsTopicRequest",
+      "name": "修改日志主题",
+      "output": "ModifyClsTopicResponse"
+    },
     "ModifyDatabaseACL": {
       "document": "修改数据库权限",
       "input": "ModifyDatabaseACLRequest",
@@ -8955,6 +8961,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClsTopicRequest": {
+      "document": "ModifyClsTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env-xxxxxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存",
+          "example": "10",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClsTopicResponse": {
+      "document": "ModifyClsTopic返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

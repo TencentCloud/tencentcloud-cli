@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindDocumentToRoom": {
+      "document": "绑定文档到房间",
+      "input": "BindDocumentToRoomRequest",
+      "name": "绑定文档到房间",
+      "output": "BindDocumentToRoomResponse"
+    },
     "CreateDocument": {
       "document": "创建房间内可以使用的文档。",
       "input": "CreateDocumentRequest",
@@ -30,6 +36,12 @@
       "name": "房间信息",
       "output": "DescribeRoomResponse"
     },
+    "DescribeRoomStatistics": {
+      "document": "获取房间统计信息，仅可在房间结束后调用。",
+      "input": "DescribeRoomStatisticsRequest",
+      "name": "获取房间统计信息",
+      "output": "DescribeRoomStatisticsResponse"
+    },
     "DescribeUser": {
       "document": "获取用户信息",
       "input": "DescribeUserRequest",
@@ -48,6 +60,12 @@
       "name": "登录",
       "output": "LoginUserResponse"
     },
+    "ModifyApp": {
+      "document": "修改应用",
+      "input": "ModifyAppRequest",
+      "name": "修改应用",
+      "output": "ModifyAppResponse"
+    },
     "RegisterUser": {
       "document": "注册用户",
       "input": "RegisterUserRequest",
@@ -59,6 +77,12 @@
       "input": "SetAppCustomContentRequest",
       "name": "设置应用自定义内容",
       "output": "SetAppCustomContentResponse"
+    },
+    "UnbindDocumentFromRoom": {
+      "document": "文档从房间解绑",
+      "input": "UnbindDocumentFromRoomRequest",
+      "name": "文档从房间解绑",
+      "output": "UnbindDocumentFromRoomResponse"
     }
   },
   "metadata": {
@@ -123,6 +147,51 @@
         }
       ],
       "usage": "in"
+    },
+    "BindDocumentToRoomRequest": {
+      "document": "BindDocumentToRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BindType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDocumentToRoomResponse": {
+      "document": "BindDocumentToRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDocumentRequest": {
       "document": "CreateDocument请求参数结构体",
@@ -538,6 +607,96 @@
           "value_allowed_null": true
         },
         {
+          "document": "录制地址。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "RecordUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomStatisticsRequest": {
+      "document": "DescribeRoomStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间Id。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询当前页数，从1开始递增。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数据量，最大1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomStatisticsResponse": {
+      "document": "DescribeRoomStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "峰值在线成员人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PeakMemberNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "累计在线人数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MemberNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录总数。包含进入房间或者应到未到的。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成员记录列表。",
+          "example": "无",
+          "member": "MemberRecord",
+          "name": "MemberRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -708,6 +867,158 @@
       ],
       "type": "object"
     },
+    "MemberRecord": {
+      "document": "成员记录信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名称。",
+          "example": "abc",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在线时长，单位秒。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PresentTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启摄像头。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Camera",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启麦克风。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否禁言。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Silence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回答问题数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AnswerQuestions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "举手数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandUps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次进入房间的unix时间戳。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "FirstJoinTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后一次退出房间的unix时间戳。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "LastQuitTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "奖励次数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rewords",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAppRequest": {
+      "document": "ModifyApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "123467",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回调地址。",
+          "example": "abc",
+          "member": "string",
+          "name": "Callback",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppResponse": {
+      "document": "ModifyApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegisterUserRequest": {
       "document": "RegisterUser请求参数结构体",
       "members": [
@@ -806,6 +1117,42 @@
     },
     "SetAppCustomContentResponse": {
       "document": "SetAppCustomContent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDocumentFromRoomRequest": {
+      "document": "UnbindDocumentFromRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "房间ID。",
+          "example": "1234657",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文档ID。",
+          "example": "abc",
+          "member": "string",
+          "name": "DocumentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDocumentFromRoomResponse": {
+      "document": "UnbindDocumentFromRoom返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

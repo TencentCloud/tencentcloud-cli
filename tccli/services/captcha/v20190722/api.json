@@ -290,6 +290,112 @@
       ],
       "usage": "both"
     },
+    "CaptchaStatisticObj": {
+      "document": "验证码统计图Obj",
+      "members": [
+        {
+          "default": "",
+          "document": "请求总量",
+          "example": "0",
+          "member": "int64",
+          "name": "ActionTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证总量",
+          "example": "0",
+          "member": "int64",
+          "name": "VerifyTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证通过总量",
+          "example": "0",
+          "member": "int64",
+          "name": "VerifyThroughTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证拦截总量",
+          "example": "0",
+          "member": "int64",
+          "name": "VerifyInterceptTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据校验总量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据通过总量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketThroughTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据拦截总量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketInterceptTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [                 {                     \"Ftime\": \"2022-05-14\", ",
+          "member": "RequestTrendObj",
+          "name": "RequestTrend",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拦截率趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                 {                     \"Ftime\": \"2022-05-14\",  ",
+          "member": "InterceptPerTrendObj",
+          "name": "InterceptPerTrend",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "票据校验趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                 {                     \"Ftime\": \"2022-05-14\",  ",
+          "member": "TicketCheckTrendObj",
+          "name": "TicketCheckTrend",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CaptchaTicketDataRes": {
       "document": "DescribeCaptchaTicketData 接口 返回数据类型集合",
       "members": [
@@ -1567,12 +1673,67 @@
     },
     "GetTotalTicketStatisticsRequest": {
       "document": "GetTotalTicketStatistics请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "\"2022-05-14 01:00\"",
+          "member": "string",
+          "name": "StartTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "\"2022-06-15 20:00\"",
+          "member": "string",
+          "name": "EndTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询粒度\n分钟：“1”\n小时：“2”\n天：“3”",
+          "example": "\"3\"",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetTotalTicketStatisticsResponse": {
       "document": "GetTotalTicketStatistics返回参数结构体",
       "members": [
+        {
+          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
+          "member": "CaptchaStatisticObj",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回码",
+          "example": "11000",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "\"success\"",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1581,6 +1742,52 @@
         }
       ],
       "type": "object"
+    },
+    "InterceptPerTrendObj": {
+      "document": "拦截率趋势obj",
+      "members": [
+        {
+          "default": "",
+          "document": "时间参数",
+          "example": "\"2022-05-15\"",
+          "member": "string",
+          "name": "Ftime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拦截率",
+          "example": "0",
+          "member": "float",
+          "name": "RequestInterceptPer",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "答案拦截率",
+          "example": "0",
+          "member": "float",
+          "name": "AnswerInterceptPer",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略拦截率",
+          "example": "0",
+          "member": "float",
+          "name": "PolicyInterceptPer",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OutputManageMarketingRiskValue": {
       "document": "拦截策略返回信息",
@@ -1642,6 +1849,62 @@
       ],
       "usage": "out"
     },
+    "RequestTrendObj": {
+      "document": "验证码请求趋势图obj",
+      "members": [
+        {
+          "default": "",
+          "document": "时间参数",
+          "example": "\"2022-05-14\"",
+          "member": "string",
+          "name": "Ftime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求量",
+          "example": "0",
+          "member": "int64",
+          "name": "RequestAction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证量",
+          "example": "0",
+          "member": "int64",
+          "name": "RequestVerify",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通过量",
+          "example": "0",
+          "member": "int64",
+          "name": "RequestThroughput",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拦截量",
+          "example": "0",
+          "member": "uint64",
+          "name": "RequestIntercept",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TicketAmountUnit": {
       "document": "DescribeCaptchaTicketData 返回的数据结构",
       "members": [
@@ -1659,6 +1922,52 @@
           "document": "票据验证总量",
           "member": "int64",
           "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TicketCheckTrendObj": {
+      "document": "验证码票据校验趋势obj",
+      "members": [
+        {
+          "default": "",
+          "document": "时间参数",
+          "example": "\"2022-05-14\"",
+          "member": "string",
+          "name": "Ftime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据校验量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据通过量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketThroughput",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "票据拦截量",
+          "example": "0",
+          "member": "int64",
+          "name": "TicketIntercept",
           "required": true,
           "type": "int",
           "value_allowed_null": false

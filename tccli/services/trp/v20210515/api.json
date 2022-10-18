@@ -525,7 +525,7 @@
         },
         {
           "default": "",
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
           "name": "Status",
@@ -535,8 +535,8 @@
         },
         {
           "default": "",
-          "document": "记录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "‘’",
+          "document": "执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[time] xx",
           "member": "string",
           "name": "Log",
           "required": true,
@@ -595,7 +595,7 @@
         },
         {
           "default": "",
-          "document": "文字码地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "[弃用] 文字码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
           "name": "TextUrl",
@@ -605,7 +605,7 @@
         },
         {
           "default": "",
-          "document": "二维码地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "[弃用] 二维码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aba",
           "member": "string",
           "name": "PackUrl",
@@ -3953,7 +3953,7 @@
       "members": [
         {
           "default": "",
-          "document": "码",
+          "document": "二维码",
           "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
           "name": "Code",
@@ -3973,7 +3973,7 @@
         },
         {
           "default": "",
-          "document": "包ID",
+          "document": "码包ID",
           "example": "z1vt4ma2jpladh362o",
           "member": "string",
           "name": "PackId",
@@ -4013,7 +4013,7 @@
         },
         {
           "default": "",
-          "document": "状态",
+          "document": "码状态 0: 冻结 1: 激活",
           "example": "0",
           "member": "uint64",
           "name": "Status",

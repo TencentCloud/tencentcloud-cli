@@ -622,7 +622,7 @@
         {
           "default": "",
           "document": "超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "18988888888",
+          "example": "+86-18988888888",
           "member": "string",
           "name": "SuperAdminAccount",
           "required": true,

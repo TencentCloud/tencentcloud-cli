@@ -31,9 +31,9 @@
       "output": "CreateBPProtectURLsResponse"
     },
     "CreateCRBlock": {
-      "document": "新建拦截\n",
+      "document": "新建协查处置\n",
       "input": "CreateCRBlockRequest",
-      "name": "新建拦截",
+      "name": "新建协查处置",
       "output": "CreateCRBlockResponse"
     },
     "CreateCRCompanyVerify": {
@@ -114,6 +114,12 @@
       "name": "查询监测列表",
       "output": "DescribeCRMonitorsResponse"
     },
+    "DescribeCRObtainDetail": {
+      "document": "查询取证详情",
+      "input": "DescribeCRObtainDetailRequest",
+      "name": "查询取证详情",
+      "output": "DescribeCRObtainDetailResponse"
+    },
     "DescribeCRWorkInfo": {
       "document": "查询作品基本信息",
       "input": "DescribeCRWorkInfoRequest",
@@ -127,9 +133,9 @@
       "output": "ModifyBPOfflineAttachmentResponse"
     },
     "ModifyCRBlockStatus": {
-      "document": "拦截申请",
+      "document": "协查处置申请",
       "input": "ModifyCRBlockStatusRequest",
-      "name": "拦截申请",
+      "name": "协查处置申请",
       "output": "ModifyCRBlockStatusResponse"
     },
     "ModifyCRMonitor": {
@@ -2072,6 +2078,168 @@
       ],
       "type": "object"
     },
+    "DescribeCRObtainDetailRequest": {
+      "document": "DescribeCRObtainDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "侵权ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCRObtainDetailResponse": {
+      "document": "DescribeCRObtainDetail返回参数结构体",
+      "members": [
+        {
+          "document": "作品名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "侵权链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证号",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证据地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "DepositFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公证信息地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "DepositCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内容类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "WorkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "作品类型",
+          "example": "xxxx",
+          "member": "string",
+          "name": "WorkCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "侵权ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "侵权编号",
+          "example": "xxx",
+          "member": "string",
+          "name": "TortNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证状态",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ObtainStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证状态说明",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证时长",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainDuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ObtainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCRWorkInfoRequest": {
       "document": "DescribeCRWorkInfo请求参数结构体",
       "members": [
@@ -2672,7 +2840,7 @@
         },
         {
           "default": "",
-          "document": "取证类型：1-网页取证 2-过程取证",
+          "document": "取证类型：1-网页取证 2-过程取证(暂不提供)",
           "example": "1",
           "member": "int64",
           "name": "ObtainType",

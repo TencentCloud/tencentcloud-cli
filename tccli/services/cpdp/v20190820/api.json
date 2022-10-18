@@ -264,6 +264,12 @@
       "name": "云企付-子商户进件",
       "output": "CreateOpenBankExternalSubMerchantRegistrationResponse"
     },
+    "CreateOpenBankGlobalPaymentOrder": {
+      "document": "云企付-跨境支付下单",
+      "input": "CreateOpenBankGlobalPaymentOrderRequest",
+      "name": "云企付-跨境支付下单",
+      "output": "CreateOpenBankGlobalPaymentOrderResponse"
+    },
     "CreateOpenBankMerchant": {
       "document": "云企付-创建商户",
       "input": "CreateOpenBankMerchantRequest",
@@ -11717,6 +11723,186 @@
       ],
       "usage": "out"
     },
+    "CreateOpenBankGlobalPaymentOrderRequest": {
+      "document": "CreateOpenBankGlobalPaymentOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户号",
+          "example": "CM572433237990035456",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称",
+          "example": "CNP",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付款方式",
+          "example": "CREDIT_GATEWAY",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部商户订单号,只能是数字、大小写字母，且在同一个接入平台下唯一",
+          "example": "202002011200001",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付款金额，单位分",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "支付币种，参考附录：货币代码",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道子商户号",
+          "example": "CM572433237990035456",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付成功回调地址。",
+          "example": "https://xxxx.com/notify/pay",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "前端跳转地址。通联支付成功后，支付网关跳回商户的地址",
+          "example": "https://xxxx.com/page",
+          "member": "string",
+          "name": "FrontUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网站语言。收银台显示语言，见附录网站语言",
+          "example": "zh",
+          "member": "string",
+          "name": "FrontLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付款备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "第三方拓展信息信息",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPaymentData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品信息",
+          "example": "无",
+          "member": "OpenBankGoodsInfo",
+          "name": "GoodsInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "邮寄信息",
+          "example": "无",
+          "member": "OpenBankShippingInfo",
+          "name": "ShippingInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "账单信息",
+          "example": "无",
+          "member": "OpenBankBillingInfo",
+          "name": "BillingInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOpenBankGlobalPaymentOrderResponse": {
+      "document": "CreateOpenBankGlobalPaymentOrder返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码，SUCCESS表示成功，其他表示失败。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统一下单响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateOpenBankUnifiedOrderPaymentResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOpenBankMerchantRequest": {
       "document": "CreateOpenBankMerchant请求参数结构体",
       "members": [
@@ -12591,6 +12777,72 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateOpenBankUnifiedOrderPaymentResult": {
+      "document": "云企付-支付下单返回响应",
+      "members": [
+        {
+          "default": "",
+          "document": "云企付平台订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方支付平台返回支付订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ThirdPayOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跳转参数\u000b渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankOrderRedirectInfo",
+          "name": "RedirectInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道扩展支付信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道扩展支付信息类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayInfoType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18599,6 +18851,102 @@
       ],
       "usage": "out"
     },
+    "OpenBankBillingInfo": {
+      "document": "云企付-账单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账单人名字",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单人姓氏",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址1",
+          "example": "无",
+          "member": "string",
+          "name": "AddressOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址1",
+          "example": "无",
+          "member": "string",
+          "name": "AddressTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址所在城市",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址所在州/省，当国家是美国或加拿大时，使用ISO-3166-2:US或ISO -3166-2:CA 中该国家地区编 码标准中的两位字母编码。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址所在国家，使用ISO-3166-1标准中的两位字母编码。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单地址邮编",
+          "example": "无",
+          "member": "string",
+          "name": "ZipCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单人手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "OpenBankFormInfo": {
       "document": "网银页面提交html",
       "members": [
@@ -18667,9 +19015,145 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品编号。",
+          "example": "123121",
+          "member": "string",
+          "name": "Sku",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品单价。",
+          "example": "10.12",
+          "member": "string",
+          "name": "Price",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品数量",
+          "example": "1",
+          "member": "string",
+          "name": "Quantity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品图片url",
+          "example": "无",
+          "member": "string",
+          "name": "ProductImage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品链接url",
+          "example": "无",
+          "member": "string",
+          "name": "ProductUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
+    },
+    "OpenBankOrderRedirectInfo": {
+      "document": "云企付-下单跳转参数，用于小程序前端跳转",
+      "members": [
+        {
+          "default": "",
+          "document": "生成二维码，引导用户扫码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QRCodeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二维码凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QRCodeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跳转 URL,用于客户端跳转，订单未支付时返回该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跳转凭证过期时间,yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "小程序 appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MpAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "小程序路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MpPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "小程序原始 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MpUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网银支付提交页面信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankFormInfo",
+          "name": "FormInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OpenBankPayLimitInfo": {
       "document": "云企付-支付限制",
@@ -19349,6 +19833,102 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "OpenBankShippingInfo": {
+      "document": "云企付-邮寄信息",
+      "members": [
+        {
+          "default": "",
+          "document": "收货人名字",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货人姓氏",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货地址1",
+          "example": "无",
+          "member": "string",
+          "name": "AddressOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货地址2",
+          "example": "无",
+          "member": "string",
+          "name": "AddressTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货地址所在城市",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货地址所在州，当国家是美国或加拿大时，使用ISO-3166-2:US或ISO -3166-2:CA 中该\n国家地区编码标准中的两位字母编码",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用ISO-3166-1标准中的两位字母编码",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货地址邮编",
+          "example": "无",
+          "member": "string",
+          "name": "ZipCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收货联系电话",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
