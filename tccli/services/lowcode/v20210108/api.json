@@ -2386,23 +2386,47 @@
       "members": [
         {
           "default": "",
-          "document": "可读",
+          "document": "可读，当非ConditionPermission时使用",
           "example": "false",
           "member": "bool",
           "name": "Readable",
-          "required": true,
+          "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "可写",
+          "document": "可写，当非ConditionPermission时使用",
           "example": "true",
           "member": "bool",
           "name": "Writable",
-          "required": true,
+          "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "读条件数组，当ConditionPermission时使用",
+          "example": "无",
+          "member": "QueryWhere",
+          "name": "WritableCondition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "写条件数组，当ConditionPermission时使用",
+          "example": "无",
+          "member": "QueryWhere",
+          "name": "ReadableCondition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -3307,6 +3331,42 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryWhere": {
+      "document": "用于自定义查询条件",
+      "members": [
+        {
+          "default": "",
+          "document": "查询key",
+          "example": "\"key\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "search 表示模糊搜索 字段key 中包含 value 的记录, 使用正则匹配实现\n 'eq' | 'neq' | 'lt' | 'gt' | 'gte' | 'lte' | 'in' | 'nin' | 'search'",
+          "example": " \"eq\"",
+          "member": "string",
+          "name": "Rel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询值",
+          "example": "\"val\"",
+          "member": "string",
+          "name": "Val",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResourceInfo": {
       "document": "资源信息",

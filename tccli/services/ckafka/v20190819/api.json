@@ -11738,6 +11738,17 @@
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "存放信令表的数据库名称",
+          "example": "databaseName",
+          "member": "string",
+          "name": "SignalDatabase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

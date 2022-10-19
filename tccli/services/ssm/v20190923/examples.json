@@ -19,7 +19,7 @@
     "CreateSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=CreateSecret\n&SecretName=test_secret\n&VersionId=v1.0\n&Description=test create secret\n&SecretString=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecret\n<公共请求参数>\n\n{\n    \"VersionId\": \"v1.0\",\n    \"SecretString\": \"test\",\n    \"Description\": \"test create secret\",\n    \"SecretName\": \"test_secret\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"TagCode\": 1,\n        \"TagMsg\": \"xx\"\n    }\n}",
         "title": "创建新的凭据信息"
       }

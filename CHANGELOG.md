@@ -1,3 +1,122 @@
+# Release 3.0.630.1
+
+## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+
+### 第 39 次发布
+
+发布时间：2022-10-20 06:10:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MySQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MySQLParam)
+
+	* 新增成员：SignalDatabase
+
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 43 次发布
+
+发布时间：2022-10-20 06:12:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOpenBankGlobalPaymentOrder](http://document.tencentcloudapi.woa.com/document/product/1122/76424)
+
+	* 新增入参：Environment
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 18 次发布
+
+发布时间：2022-10-20 06:19:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75252)
+
+	* 新增入参：Restrictions
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 2 次发布
+
+发布时间：2022-10-20 06:24:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere)
+
+修改数据结构：
+
+* [GroupPermission](http://document.tencentcloudapi.woa.com/document/product/1599/75496#GroupPermission)
+
+	* 新增成员：WritableCondition, ReadableCondition
+
+	* <font color="#dd0000">**修改成员**：</font>Readable, Writable
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 10 次发布
+
+发布时间：2022-10-20 06:28:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
+
+	* 新增成员：GracefulStopSeconds
+
+* [CustomSample](http://document.tencentcloudapi.woa.com/document/product/1597/75228#CustomSample)
+
+	* 新增成员：Name
+
+* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
+
+	* 新增成员：AppID, Uin, SubAccountUin
+
+* [RequestsPerSecond](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RequestsPerSecond)
+
+	* 新增成员：GracefulStopSeconds
+
+
+
+
 # Release 3.0.629.1
 
 ## 验证码(captcha) 版本：2019-07-22
