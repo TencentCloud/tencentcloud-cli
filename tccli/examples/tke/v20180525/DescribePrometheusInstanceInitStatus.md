@@ -5,12 +5,67 @@
 Input: 
 
 ```
-tccli tke DescribePrometheusInstanceInitStatus --cli-unfold-argument ```
+tccli tke DescribePrometheusInstanceInitStatus --cli-unfold-argument  \
+    --InstanceId xx
+```
 
 Output: 
 ```
 {
     "Response": {
+        "Status": "xx",
+        "EksClusterId": "xx",
+        "Steps": [
+            {
+                "StartAt": "xx",
+                "Step": "xx",
+                "LifeState": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            }
+        ],
         "RequestId": "xx"
     }
 }
@@ -23,13 +78,68 @@ Output:
 Input: 
 
 ```
-tccli tke DescribePrometheusInstanceInitStatus --cli-unfold-argument ```
+tccli tke DescribePrometheusInstanceInitStatus --cli-unfold-argument  \
+    --InstanceId prom-7vp71ppt
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "7bfa1653-e199-4c46-ba0b-2a6b89203a3f"
+        "Status": "xx",
+        "EksClusterId": "xx",
+        "Steps": [
+            {
+                "StartAt": "xx",
+                "Step": "xx",
+                "LifeState": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            },
+            {
+                "LifeState": "xx",
+                "Step": "xx",
+                "StartAt": "xx",
+                "EndAt": "xx",
+                "FailedMsg": "xx"
+            }
+        ],
+        "RequestId": "xx"
     }
 }
 ```

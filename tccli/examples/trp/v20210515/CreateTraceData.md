@@ -17,15 +17,17 @@ tccli trp CreateTraceData --cli-unfold-argument  \
     --PhaseData.HeadEnabled False \
     --CorpId 1 \
     --TraceItems.0.Name xx \
-    --TraceItems.0.Value xx \
     --TraceItems.0.ReadOnly True \
+    --TraceItems.0.Value xx \
+    --TraceItems.0.Ext xx \
     --TraceItems.0.Values xx \
     --TraceItems.0.Key xx \
     --TraceItems.0.Hidden True \
     --TraceItems.0.Type xx \
     --TraceItems.1.Name xx \
-    --TraceItems.1.Value xx \
     --TraceItems.1.ReadOnly True \
+    --TraceItems.1.Value xx \
+    --TraceItems.1.Ext xx \
     --TraceItems.1.Values https://webcdn.m.qq.com/dpsw/cdn/xxx.jpg \
     --TraceItems.1.Key xx \
     --TraceItems.1.Hidden True \

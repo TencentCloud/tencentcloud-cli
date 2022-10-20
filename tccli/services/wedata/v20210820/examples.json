@@ -48,6 +48,14 @@
         "title": "范例"
       }
     ],
+    "CreateOrUpdateResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrUpdateResource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1171938931991703552\",\n    \"Files\": [\n        \"wedata-udf-1.0_v1.jar\"\n    ],\n    \"FilePath\": \"/datastudio/resource\",\n    \"CosBucketName\": \"hannahtest-1257305158\",\n    \"CosRegion\": \"ap-guangzhou\",\n    \"NewFile\": true,\n    \"FilesSize\": [\n        \"3167\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ResourceId\": \"75431931-7d27-4034-b3de-3dc3348a220e\",\n                \"FileName\": \"wedata-spark-1.0-SNAPSHOT.jar\",\n                \"FileExtensionType\": \"jar\",\n                \"Md5Value\": null,\n                \"CreateTime\": 1665648126363,\n                \"UpdateTime\": 1665648126363,\n                \"Size\": 8148,\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"OwnerName\": \"fe\",\n                \"Owner\": \"100022256608\",\n                \"PathDepth\": 5,\n                \"ProjectId\": \"1171938931991703552\",\n                \"ExtraInfo\": null,\n                \"LocalTmpPath\": \"/tmp//datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"ZipPath\": null,\n                \"Bucket\": \"agent-test-1257305158\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateTask": [
       {
         "document": "",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFolder\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"FolderId\": \"670f2048-0cc9-11ed-8909-bc97e105ba60\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b54d36be-2dc5-49ae-8f50-71ffb9ab7ee7\",\n        \"Data\": true\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DeleteResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1171938931991703552\",\n    \"ResourceId\": \"968a2cd4-fc1b-44eb-994f-8d99f95cf854\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteWorkflowNew": [
@@ -208,6 +224,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelatedInstances\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"CurRunDate\": \"2022-06-30 00:00:00\",\n    \"ProjectId\": \"1\",\n    \"Depth\": \"1\",\n    \"PageNumber\": \"1\",\n    \"TaskId\": \"20220506192333449\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ada6cc-83c2-45f1-b5dc-0887e4fb751d\",\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"Items\": [\n                {\n                    \"ProjectId\": \"1\",\n                    \"ProjectName\": null,\n                    \"ProjectIdent\": null,\n                    \"FolderId\": \"e989c626-9f70-11ec-8909-bc97e105ba60\",\n                    \"FolderName\": \"txyuwang_test\",\n                    \"WorkflowId\": \"a183fd74-c243-11ec-8909-bc97e105ba60\",\n                    \"WorkflowName\": \"txyuwang_wf1\",\n                    \"TaskId\": \"20220506192401374\",\n                    \"TaskName\": \"txyuwang_shell2\",\n                    \"InCharge\": \"TBDS\",\n                    \"CycleType\": \"D\",\n                    \"TryLimit\": 5,\n                    \"Tries\": 0,\n                    \"State\": 1,\n                    \"TaskTypeId\": 35,\n                    \"TaskTypeDesc\": \"Shell\",\n                    \"StartTime\": null,\n                    \"EndTime\": null,\n                    \"CostTime\": \"00:00:00.000\",\n                    \"SchedulerDateTime\": \"2022-06-30 00:00:00\",\n                    \"SchedulerDesc\": \"每天00:00执行一次\",\n                    \"InstanceType\": 1\n                }\n            ]\n        }\n    }\n}",
         "title": "真实案例"
+      }
+    ],
+    "DescribeResourceManagePathTrees": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceManagePathTrees\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11719389319917035521\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234567811\",\n        \"Data\": [\n            {\n                \"Name\": \"jaydenjhu\",\n                \"IsLeaf\": false,\n                \"ResourceId\": \"e2a6dd6e-6372-4e4e-995c-e318958da175\",\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu\",\n                \"FileExtensionType\": null,\n                \"Size\": null,\n                \"Md5Value\": null,\n                \"OwnerName\": \"fe\",\n                \"UpdateUser\": null,\n                \"UpdateUserId\": null,\n                \"CreateTime\": 1657704560000,\n                \"UpdateTime\": 1657704560000,\n                \"CosBucket\": null,\n                \"CosRegion\": null,\n                \"ExtraInfo\": null\n            },\n            {\n                \"Name\": \"1-201111193502.zip\",\n                \"IsLeaf\": true,\n                \"ResourceId\": \"03343a77-b586-4b78-8e3e-2f1c30ba273a\",\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu/xxxx/1-201111193502.zip\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/1-201111193502.zip\",\n                \"FileExtensionType\": \"zip\",\n                \"Size\": 4015960,\n                \"Md5Value\": null,\n                \"OwnerName\": \"fe\",\n                \"UpdateUser\": null,\n                \"UpdateUserId\": null,\n                \"CreateTime\": 1663299308000,\n                \"UpdateTime\": 1663299308000,\n                \"CosBucket\": \"jaydenjhu-1257305158\",\n                \"CosRegion\": \"ap-guangzhou\",\n                \"ExtraInfo\": null\n            },\n            {\n                \"Name\": \"cos_token_1.jar\",\n                \"IsLeaf\": true,\n                \"ResourceId\": \"bdf74f83-4f63-47d2-89b2-26c3c08b735f\",\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu/cos_token_1.jar\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu/cos_token_1.jar\",\n                \"FileExtensionType\": \"jar\",\n                \"Size\": 4292177,\n                \"Md5Value\": null,\n                \"OwnerName\": \"fe\",\n                \"UpdateUser\": null,\n                \"UpdateUserId\": null,\n                \"CreateTime\": 1660627885000,\n                \"UpdateTime\": 1660630699000,\n                \"CosBucket\": \"jaydenjhu-1257305158\",\n                \"CosRegion\": \"ap-guangzhou\",\n                \"ExtraInfo\": null\n            },\n            {\n                \"Name\": \"wedata-udf-1.0-SNAPSHOT.jar\",\n                \"IsLeaf\": true,\n                \"ResourceId\": \"32d46df4-5316-4758-9c6d-1a841d8d91f8\",\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu/wedata-udf-1.0-SNAPSHOT.jar\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu/wedata-udf-1.0-SNAPSHOT.jar\",\n                \"FileExtensionType\": \"jar\",\n                \"Size\": 3167,\n                \"Md5Value\": null,\n                \"OwnerName\": \"fe\",\n                \"UpdateUser\": null,\n                \"UpdateUserId\": null,\n                \"CreateTime\": 1657704602000,\n                \"UpdateTime\": 1657704602000,\n                \"CosBucket\": \"jaydenjhu-1257305158\",\n                \"CosRegion\": \"ap-guangzhou\",\n                \"ExtraInfo\": null\n            }\n        ]\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DescribeTaskDetail": [

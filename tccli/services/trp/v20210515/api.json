@@ -1475,7 +1475,7 @@
         },
         {
           "default": "",
-          "document": "溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源",
+          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "1",
           "member": "uint64",
           "name": "Phase",
@@ -3597,7 +3597,7 @@
         },
         {
           "default": "",
-          "document": "[无效] 溯源阶段 0:商品 1:通用 2:物流",
+          "document": "[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源",
           "example": "1",
           "member": "uint64",
           "name": "Phase",
@@ -4119,7 +4119,7 @@
         },
         {
           "default": "",
-          "document": "溯源阶段 0:商品 1:通用 2:物流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Phase",
@@ -4129,7 +4129,7 @@
         },
         {
           "default": "",
-          "document": "环节名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源环节名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "环节名称",
           "member": "string",
           "name": "PhaseName",
@@ -4139,7 +4139,7 @@
         },
         {
           "default": "",
-          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
           "name": "TraceTime",

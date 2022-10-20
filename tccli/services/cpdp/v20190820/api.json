@@ -11860,6 +11860,15 @@
           "name": "BillingInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

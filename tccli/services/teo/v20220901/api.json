@@ -987,7 +987,7 @@
       "members": [
         {
           "default": "",
-          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> TlsVersion；</li>\n<li> OcspStapling。</li>\n<li> HTTP/2 访问（Http2）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> TlsVersion；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NormalAction",
           "name": "NormalAction",
@@ -3610,6 +3610,15 @@
           "member": "Rule",
           "name": "Rules",
           "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则标签。",
+          "example": "[]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
           "type": "list"
         }
       ],
@@ -11510,6 +11519,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站未返回 Cache-Control 头时, 设置默认的缓存时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultCacheTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站未返回 Cache-Control 头时, 设置缓存/不缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "DefaultCache",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13695,6 +13724,15 @@
           "name": "Status",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则标签。",
+          "example": "[]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15440,6 +15478,16 @@
       "members": [
         {
           "default": "",
+          "document": "执行的功能。",
+          "example": "[]",
+          "member": "Action",
+          "name": "Actions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "执行功能判断条件。\n注意：满足该数组内任意一项条件，功能即可执行。",
           "example": "[]",
           "member": "RuleAndConditions",
@@ -15450,11 +15498,11 @@
         },
         {
           "default": "",
-          "document": "执行的功能。",
+          "document": "嵌套规则。",
           "example": "[]",
-          "member": "Action",
-          "name": "Actions",
-          "required": true,
+          "member": "SubRuleItem",
+          "name": "SubRules",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -15742,6 +15790,16 @@
           "name": "RulePriority",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则标签。",
+          "example": "[]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17036,6 +17094,58 @@
         }
       ],
       "usage": "out"
+    },
+    "SubRule": {
+      "document": "嵌套规则信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行功能判断条件。\n注意：满足该数组内任意一项条件，功能即可执行。",
+          "example": "[]",
+          "member": "RuleAndConditions",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行的功能。",
+          "example": "[]",
+          "member": "Action",
+          "name": "Actions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SubRuleItem": {
+      "document": "规则引擎嵌套规则",
+      "members": [
+        {
+          "default": "",
+          "document": "嵌套规则信息。",
+          "example": "[]",
+          "member": "SubRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则标签。",
+          "example": "[]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Sv": {
       "document": "询价参数",

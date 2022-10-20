@@ -42,6 +42,12 @@
       "name": "企业认证",
       "output": "CreateCRCompanyVerifyResponse"
     },
+    "CreateCRDesktopCode": {
+      "document": "新建过程取证码",
+      "input": "CreateCRDesktopCodeRequest",
+      "name": "新建过程取证码",
+      "output": "CreateCRDesktopCodeResponse"
+    },
     "CreateCRObtain": {
       "document": "版权保护-新建取证接口",
       "input": "CreateCRObtainRequest",
@@ -171,7 +177,7 @@
   },
   "metadata": {
     "apiVersion": "2021-06-24",
-    "api_brief": "介绍如何使用API对品牌经营管家相关数据进行操作，例如获取热点商品信息等",
+    "api_brief": "        ",
     "serviceNameCN": "品牌经营管家",
     "serviceShortName": "bma"
   },
@@ -756,6 +762,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRDesktopCodeRequest": {
+      "document": "CreateCRDesktopCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "int64",
+          "name": "TortId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "xxx",
+          "example": "xxx",
+          "member": "string",
+          "name": "DesktopCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCRDesktopCodeResponse": {
+      "document": "CreateCRDesktopCode返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

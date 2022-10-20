@@ -56,6 +56,14 @@
         "title": "企业认证接口"
       }
     ],
+    "CreateCRDesktopCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCRDesktopCode\n<公共请求参数>\n\n{\n    \"TortId\": 0,\n    \"DesktopCode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建过程取证码"
+      }
+    ],
     "CreateCRObtain": [
       {
         "document": "",

@@ -943,9 +943,9 @@
       "output": "RestartEKSContainerInstancesResponse"
     },
     "RunPrometheusInstance": {
-      "document": "初始化与云监控融合的2.0版本实例，开启集成中心时调用",
+      "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
-      "name": "初始化2.0实例",
+      "name": "初始化TMP实例",
       "output": "RunPrometheusInstanceResponse"
     },
     "ScaleInClusterMaster": {
@@ -9257,12 +9257,49 @@
     },
     "DescribePrometheusInstanceInitStatusRequest": {
       "document": "DescribePrometheusInstanceInitStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribePrometheusInstanceInitStatusResponse": {
       "document": "DescribePrometheusInstanceInitStatus返回参数结构体",
       "members": [
+        {
+          "document": "实例初始化状态，取值：\nuninitialized 未初始化 \ninitializing 初始化中\nrunning 初始化完成，运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "初始化任务步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskStepInfo",
+          "name": "Steps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EksClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -17080,7 +17117,26 @@
     },
     "RunPrometheusInstanceRequest": {
       "document": "RunPrometheusInstance请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化",
+          "example": "xx-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RunPrometheusInstanceResponse": {

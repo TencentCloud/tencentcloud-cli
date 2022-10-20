@@ -6,13 +6,12 @@ Input:
 
 ```
 tccli essbasic ChannelCreateConvertTaskApi --cli-unfold-argument  \
+    --Agent.ProxyAppId d2b****b66f954d7cc \
+    --Agent.ProxyOrganizationOpenId yDxAyUyK****cb7u0jQn0Zh7f7 \
+    --Agent.ProxyOperator.OpenId 732aaef****541b89c49e0cc \
+    --Agent.AppId ed68bc6***********0214e4e \
     --ResourceType docx \
     --ResourceName hello.docx \
-    --Operator.OpenId test1_clara_test1 \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.ProxyIp  \
-    --Agent.ProxyOrganizationOpenId test1_clara_open_organization1 \
-    --Agent.AppId 7f3497*********84a9657b0ec \
     --ResourceId yDRvQUUg*********zjERW6iCFCEl
 ```
 
@@ -20,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "0218bd4e-541e-45e8-8d1f-76efef6c83d2",
+        "RequestId": "0218bd4xxxxefef6c83d2",
         "TaskId": "20220*********589282"
     }
 }

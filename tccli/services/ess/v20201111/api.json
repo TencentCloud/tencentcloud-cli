@@ -635,7 +635,7 @@
         },
         {
           "default": "",
-          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo\nSIGN_SEAL - 印章Id，于控制台查询获取",
           "example": "无",
           "member": "string",
           "name": "ComponentValue",
@@ -1466,6 +1466,15 @@
       "members": [
         {
           "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "模板ID",
           "example": "无",
           "member": "string",
@@ -1480,33 +1489,6 @@
           "member": "string",
           "name": "FlowName",
           "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "用户信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "应用信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "回调地址,最大长度1000字符串\n回调时机：\n用户通过签署二维码发起签署流程时，企业额度不足导致失败",
-          "example": "无",
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": false,
           "type": "string"
         },
         {
@@ -1539,6 +1521,33 @@
         {
           "default": "",
           "document": "限制二维码用户条件",
+          "example": "无",
+          "member": "ApproverRestriction",
+          "name": "Restrictions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调地址,最大长度1000字符串\n回调时机：\n用户通过签署二维码发起签署流程时，企业额度不足导致失败",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "限制二维码用户条件（已弃用）",
           "example": "无",
           "member": "ApproverRestriction",
           "name": "ApproverRestrictions",

@@ -1,5 +1,21 @@
 {
   "actions": {
+    "AddAndPublishNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAndPublishNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"CustomPolicy\": [\n        {\n            \"Peer\": \"xx\",\n            \"Direction\": \"xx\",\n            \"Ports\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"FromPolicyRule\": 0,\n    \"Namespace\": \"xx\",\n    \"ToPolicyRule\": 0,\n    \"PodSelector\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略添加并发布任务务示例"
+      }
+    ],
+    "AddAndPublishNetworkFirewallPolicyYamlDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAndPublishNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Yaml\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建yaml网络策略添加任务示例"
+      }
+    ],
     "AddAssetImageRegistryRegistryDetail": [
       {
         "document": "",
@@ -44,6 +60,14 @@
         "title": "编辑规则"
       }
     ],
+    "AddEditImageAutoAuthorizedRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditImageAutoAuthorizedRule\n&RangeType=\"MANUAL\"\n&HostIdSet.0=\"xx\"\n&MaxDailyCount=1\n&RuleId=1\n&IsEnabled=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增或编辑本地镜像自动授权规则"
+      }
+    ],
     "AddEditReverseShellWhiteList": [
       {
         "document": "",
@@ -68,12 +92,60 @@
         "title": "保存告警策略"
       }
     ],
+    "AddEscapeWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddEscapeWhiteList\n<公共请求参数>\n\n{\n    \"ImageIDs\": [\n        \"xx\"\n    ],\n    \"EventType\": [\n        \"\\\"ESCAPE_DOCKER_API\\\"\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增逃逸白名单"
+      }
+    ],
+    "AddIgnoreVul": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddIgnoreVul\n&List.0.PocID=\"xx\"\n&List.0.ImageIDs.0=\"xx\"\n&List.0.ImageType=\"xx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增漏洞扫描忽略漏洞"
+      }
+    ],
+    "AddNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"CustomPolicy\": [\n        {\n            \"Peer\": \"xx\",\n            \"Direction\": \"xx\",\n            \"Ports\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"FromPolicyRule\": 0,\n    \"Namespace\": \"xx\",\n    \"ToPolicyRule\": 0,\n    \"PodSelector\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略添加任务示例"
+      }
+    ],
+    "AddNetworkFirewallPolicyYamlDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Yaml\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建yaml网络策略添加任务示例"
+      }
+    ],
+    "CheckNetworkFirewallPolicyYaml": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckNetworkFirewallPolicyYaml\n<公共请求参数>\n\n{\n    \"PolicyName\": \"xx\",\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Yaml\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建检查Yaml网络策略任务示例"
+      }
+    ],
     "CheckRepeatAssetImageRegistry": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=CheckRepeatAssetImageRegistry\n&Name=xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRepeatAssetImageRegistry\n<公共请求参数>\n\n{\n    \"Name\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"IsRepeat\": true\n    }\n}",
         "title": "检查单个镜像仓库名是否重复"
+      }
+    ],
+    "ConfirmNetworkFirewallPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfirmNetworkFirewallPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Id\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略确认任务示例"
       }
     ],
     "CreateAssetImageRegistryScanTask": [
@@ -108,6 +180,14 @@
         "title": "创建镜像扫描任务"
       }
     ],
+    "CreateAssetImageVirusExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageVirusExportJob\n<公共请求参数>\n\n{\n    \"By\": \"xx\",\n    \"ExportField\": [\n        \"xx\"\n    ],\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"ImageID\": \"xx\",\n    \"Order\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建主机列表导出任务"
+      }
+    ],
     "CreateCheckComponent": [
       {
         "document": "",
@@ -132,12 +212,100 @@
         "title": "创建合规检查任务"
       }
     ],
+    "CreateComponentExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateComponentExportJob\n&ImageID=xx\n&Limit=10\n&Offset=0\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "查询本地镜像组件列表导出"
+      }
+    ],
+    "CreateDefenceVulExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDefenceVulExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建支持防御的漏洞导出任务"
+      }
+    ],
+    "CreateEmergencyVulExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateEmergencyVulExportJob\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建应急漏洞导出任务"
+      }
+    ],
+    "CreateEscapeEventsExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateEscapeEventsExportJob\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建逃逸事件导出异步任务"
+      }
+    ],
+    "CreateEscapeWhiteListExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEscapeWhiteListExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建逃逸白名单导出任务"
+      }
+    ],
     "CreateExportComplianceStatusListJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportComplianceStatusListJob\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\",\n    \"ExportByAsset\": false,\n    \"ExportAll\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"JobId\": \"xxxx\"\n    }\n}",
         "title": "创建一个导出安全合规信息的任务"
+      }
+    ],
+    "CreateHostExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateHostExportJob\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建主机列表导出任务"
+      }
+    ],
+    "CreateImageExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageExportJob\n<公共请求参数>\n\n{\n    \"ExportField\": [\n        \"ImageName\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"sfsfsfsfsfs\",\n        \"JobId\": \"xxx\",\n        \"RequestId\": \"7c07629e-58ff-4e8a-b63d-679698cf295a\"\n    }\n}",
+        "title": "创建镜像导出任务"
+      }
+    ],
+    "CreateNetworkFirewallClusterRefresh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkFirewallClusterRefresh\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建刷新任务示例"
+      }
+    ],
+    "CreateNetworkFirewallPolicyDiscover": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkFirewallPolicyDiscover\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络集群网络策略创建自动发现任务示例"
+      }
+    ],
+    "CreateNetworkFirewallPublish": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkFirewallPublish\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Id\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略发布任务示例"
+      }
+    ],
+    "CreateNetworkFirewallUndoPublish": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkFirewallUndoPublish\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Id\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略撤销任务示例"
       }
     ],
     "CreateOrModifyPostPayCores": [
@@ -148,12 +316,36 @@
         "title": "创建或者编辑弹性计费上限"
       }
     ],
+    "CreateProcessEventsExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateProcessEventsExportJob\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建异常进程事件导出异步任务"
+      }
+    ],
     "CreateRefreshTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRefreshTask\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"CreateResult\": \"Succ\"\n    }\n}",
         "title": "创建刷新任务示例"
+      }
+    ],
+    "CreateSearchTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSearchTemplate\n<公共请求参数>\n\n{\n    \"SearchTemplate\": {\n        \"Id\": 1,\n        \"Name\": \"test1\",\n        \"DisplayData\": \"[{\\\"id\\\":449375484687,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"10.0.0.1\\\"}]\",\n        \"TimeRange\": \"2020-06-1300:00:00至2020-07-1323:59:59\",\n        \"LogType\": \"malware\",\n        \"Flag\": \"simple\",\n        \"Query\": \"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1591977600000,\\\"lte\\\":1594655999999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"10.0.0.1\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"12h\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n        \"Condition\": \"src_ip匹配字符:10.0.0.1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49082d4a-71b4-4e32-9ca1-b33872a4a63a\"\n    }\n}",
+        "title": "添加检索模板"
+      }
+    ],
+    "CreateSystemVulExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateSystemVulExportJob\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建系统漏洞导出任务"
       }
     ],
     "CreateVirusScanAgain": [
@@ -170,6 +362,62 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVirusScanTask\n<公共请求参数>\n\n{\n    \"ScanRangeAll\": true,\n    \"ScanPathAll\": true,\n    \"ScanRangeType\": 1,\n    \"Timeout\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6d8d540-940f-47d9-8d7f-daac832ba5b4\",\n        \"TaskID\": \"6013a6c334b9a9000cf519be\"\n    }\n}",
         "title": "运行时文件查杀一键扫描"
+      }
+    ],
+    "CreateVulContainerExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateVulContainerExportJob\n&PocID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建受漏洞影响的容器导出任务"
+      }
+    ],
+    "CreateVulDefenceEventExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVulDefenceEventExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建漏洞防御导出任务"
+      }
+    ],
+    "CreateVulDefenceHostExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVulDefenceHostExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建漏洞防御主机导出任务"
+      }
+    ],
+    "CreateVulExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateVulExportJob\n&ImageID=xx\n&Limit=10\n&Offset=0\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "查询本地镜像组件列表导出"
+      }
+    ],
+    "CreateVulImageExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateVulImageExportJob\n&PocID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建受漏洞影响的镜像导出任务"
+      }
+    ],
+    "CreateVulScanTask": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateVulScanTask\n&LocalImageScanType=ALL\n&RegistryImageScanType=ALL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LocalTaskID\": 0,\n        \"RegistryTaskID\": 0\n    }\n}",
+        "title": "创建漏洞扫描任务"
+      }
+    ],
+    "CreateWebVulExportJob": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateWebVulExportJob\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建web漏洞导出任务"
       }
     ],
     "DeleteAbnormalProcessRules": [
@@ -196,12 +444,60 @@
         "title": "取消忽略检测项列表"
       }
     ],
+    "DeleteEscapeWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEscapeWhiteList\n<公共请求参数>\n\n{\n    \"IDSet\": [\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "删除逃逸白名单"
+      }
+    ],
+    "DeleteIgnoreVul": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteIgnoreVul\n&List.0.PocID=\"xx\"\n&List.0.ImageIDs.0=\"xx\"\n&List.0.ImageType=\"xx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取消漏洞扫描忽略漏洞"
+      }
+    ],
+    "DeleteMachine": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteMachine\n&Uuid=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "卸载Agent客户端"
+      }
+    ],
+    "DeleteNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Id\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略删除任务示例"
+      }
+    ],
+    "DeleteReverseShellEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteReverseShellEvents\n&EventIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行时反弹shell事件"
+      }
+    ],
     "DeleteReverseShellWhiteLists": [
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DeleteReverseShellWhiteLists\n&WhiteListIdSet.0=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除运行时反弹shell白名单"
+      }
+    ],
+    "DeleteRiskSyscallEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteRiskSyscallEvents\n&EventIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行时高危系统调用事件"
       }
     ],
     "DeleteRiskSyscallWhiteLists": [
@@ -212,12 +508,36 @@
         "title": "删除运行时高危系统调用白名单"
       }
     ],
+    "DeleteSearchTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSearchTemplate\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49082d4a-71b4-4e32-9ca1-b33872a4a63a\"\n    }\n}",
+        "title": "删除检索模板"
+      }
+    ],
+    "DescribeABTestConfig": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeABTestConfig\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Config\": [\n            {\n                \"ProjectName\": \"tcss_pro\",\n                \"Status\": true\n            },\n            {\n                \"ProjectName\": \"ban_switch\",\n                \"Status\": true\n            },\n            {\n                \"ProjectName\": \"v20200715\",\n                \"Status\": true\n            }\n        ],\n        \"RequestId\": \"8fa9bf5e-a0dc-d89d-9ece-d68c2232a4c6\"\n    }\n}",
+        "title": "获取用户当前灰度配置"
+      }
+    ],
     "DescribeAbnormalProcessDetail": [
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessDetail\n&EventId=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventCount\": 0,\n            \"EventType\": \"xx\",\n            \"HostIP\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ClientIP\": \"xx\",\n            \"LatestFoundTime\": \"xx\",\n            \"NodeName\": \"xx\",\n            \"ContainerNetStatus\": \"xx\",\n            \"ContainerNetSubStatus\": \"xx\",\n            \"ContainerIsolateOperationSrc\": \"xx\"\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"EventDetail\": {\n            \"Remark\": \"xx\",\n            \"MatchRule\": {\n                \"ProcessPath\": \"xx\",\n                \"RuleMode\": \"xx\",\n                \"RuleLevel\": \"xx\",\n                \"RuleId\": \"xx\"\n            },\n            \"Description\": \"xx\",\n            \"RuleId\": \"xx\",\n            \"Solution\": \"xx\",\n            \"GroupName\": \"xx\",\n            \"RuleName\": \"xx\",\n            \"OperationTime\": \"xx\"\n        },\n        \"AncestorProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessStartUser\": \"xx\",\n            \"ProcessUserGroup\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ParentProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        }\n    }\n}",
         "title": "运行时异常进程事件详细信息"
+      }
+    ],
+    "DescribeAbnormalProcessEventTendency": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessEventTendency\n&EndTime=2021-05-01\n&StartTime=2021-05-07\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ProxyToolEventCount\": 0,\n                \"RiskCmdEventCount\": 0,\n                \"AttackCmdEventCount\": 0,\n                \"UserDefinedRuleEventCount\": 0,\n                \"TransferControlEventCount\": 0,\n                \"AbnormalChildProcessEventCount\": 0,\n                \"ReverseShellEventCount\": 0,\n                \"FilelessEventCount\": 0,\n                \"Date\": \"2020-09-22\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询待处理异常进程事件趋势"
       }
     ],
     "DescribeAbnormalProcessEvents": [
@@ -234,6 +554,14 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
         "title": "查询运行时异常进程事件列表信息导出"
+      }
+    ],
+    "DescribeAbnormalProcessLevelSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessLevelSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MediumLevelEventCount\": 0,\n        \"HighLevelEventCount\": 0,\n        \"RequestId\": \"xx\",\n        \"LowLevelEventCount\": 0\n    }\n}",
+        "title": "统计异常进程各威胁等级待处理事件数"
       }
     ],
     "DescribeAbnormalProcessRuleDetail": [
@@ -366,6 +694,22 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedWorkloadList\n<公共请求参数>\n\n{\n    \"CheckItemId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea73ee35-ec93-4d94-b2fc-979a58f34be1\",\n        \"TotalCount\": 0,\n        \"AffectedWorkloadList\": []\n    }\n}",
         "title": "查询workload类型的影响范围示例"
+      }
+    ],
+    "DescribeAgentDaemonSetCmd": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAgentDaemonSetCmd\n&IsCloud=true\n&NetType=\"basic\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询平行容器安装命令"
+      }
+    ],
+    "DescribeAgentInstallCommand": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAgentInstallCommand\n&IsCloud=true\n&NetType=\"basic\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"WindowsCommand\": \"xx\",\n        \"LinuxCommand\": \"xx\",\n        \"WindowsDownloadUrl\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"WindowsStepOne\": \"xx\",\n        \"WindowsStepTwo\": \"xx\"\n    }\n}",
+        "title": "查询agent安装命令"
       }
     ],
     "DescribeAssetAppServiceList": [
@@ -505,7 +849,7 @@
     "DescribeAssetImageRegistryRegistryDetail": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAssetImageRegistryRegistryDetail\n&RegistryId=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5187d432-1753-4376-81b6-12e1f7e6ecf5\",\n        \"Name\": \"test\",\n        \"Username\": \"xxx\",\n        \"Password\": \"xxx\",\n        \"Url\": \"https://127.0.0.1:8080\",\n        \"RegistryType\": \"harbor\",\n        \"RegistryVersion\": \"v2\",\n        \"NetType\": \"public\",\n        \"RegistryRegion\": \"default\",\n        \"SpeedLimit\": 1,\n        \"Insecure\": 0\n    }\n}",
         "title": "运行时访问控制事件详细信息"
       }
@@ -686,12 +1030,28 @@
         "title": "查询账户容器、镜像等统计信息"
       }
     ],
+    "DescribeAssetSyncLastTime": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAssetSyncLastTime\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetSyncLastTime\": \"2006-01-02 15:04:05\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产同步最近时间"
+      }
+    ],
     "DescribeAssetWebServiceList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebServiceList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"ContainerName\": \"xx\",\n                \"Parameter\": \"xx\",\n                \"HostID\": \"xx\",\n                \"Version\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"AccessLog\": \"xx\",\n                \"Config\": \"xx\",\n                \"RunAs\": \"xx\",\n                \"HostName\": \"xx\",\n                \"ErrorLog\": \"xx\",\n                \"DataPath\": \"xx\",\n                \"MainType\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"WebRoot\": \"xx\",\n                \"ProcessCnt\": 1,\n                \"Exe\": \"xx\",\n                \"ServiceID\": \"xx\",\n                \"HostIP\": \"xx\",\n                \"Pids\": [\n                    1,\n                    1,\n                    1,\n                    1,\n                    1,\n                    1\n                ],\n                \"Type\": \"xx\",\n                \"Listen\": [\n                    \"tcp://0.0.0.0:80\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询web服务列表"
+      }
+    ],
+    "DescribeAutoAuthorizedRuleHost": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAutoAuthorizedRuleHost\n&RuleId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Status\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"HostID\": \"xx\",\n                \"MachineType\": \"xx\",\n                \"DockerVersion\": \"xx\",\n                \"InstanceID\": \"xx\",\n                \"HostName\": \"xx\",\n                \"ImageCnt\": 1,\n                \"HostIP\": \"xx\",\n                \"ContainerCnt\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询自动授权规则授权范围主机信息"
       }
     ],
     "DescribeCheckItemList": [
@@ -814,6 +1174,30 @@
         "title": "查询待处理安全事件"
       }
     ],
+    "DescribeESAggregations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeESAggregations\n<公共请求参数>\n\n{\n    \"Query\": \"{\\\"index\\\":[\\\"netflow\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1597075200000,\\\"lte\\\":1597161599999}}},\\\"must\\\":[],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"src_port\\\":{\\\"terms\\\":{\\\"field\\\":\\\"src_port\\\",\\\"size\\\":500,\\\"order\\\":{\\\"_count\\\":\\\"desc\\\"}}},\\\"dst_port\\\":{\\\"terms\\\":{\\\"field\\\":\\\"dst_port\\\",\\\"size\\\":500,\\\"order\\\":{\\\"_count\\\":\\\"desc\\\"}}}}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"took\\\":114,\\\"total\\\":352317,\\\"aggs\\\":{\\\"dst_port\\\":{\\\"doc_count_error_upper_bound\\\":30,\\\"sum_other_doc_count\\\":116350,\\\"buckets\\\":[{\\\"key\\\":445,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":53456},{\\\"key\\\":80,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":33405},{\\\"key\\\":443,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":17870}]},\\\"src_port\\\":{\\\"doc_count_error_upper_bound\\\":40,\\\"sum_other_doc_count\\\":233518,\\\"buckets\\\":[{\\\"key\\\":43957,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":9878},{\\\"key\\\":40416,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":4187},{\\\"key\\\":49892,\\\"key_as_string\\\":null,\\\"KeyNumber\\\":0,\\\"doc_count\\\":4100}]}},\\\"code\\\":0,\\\"message\\\":\\\"success\\\"}\",\n        \"RequestId\": \"e4ee7f6c-a036-43e7-b98f-96f174827fea\"\n    }\n}",
+        "title": "获取ES字段聚合结果"
+      }
+    ],
+    "DescribeESHits": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeESHits\n<公共请求参数>\n\n{\n    \"Query\": \"{\\\"index\\\":[\\\"netflow\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1597075200000,\\\"lte\\\":1597161599999}}},\\\"must\\\":[],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"took\\\":0,\\\"timed_out\\\":false,\\\"_shards\\\":{\\\"total\\\":1,\\\"successful\\\":1,\\\"skipped\\\":0,\\\"failed\\\":0},\\\"hits\\\":{\\\"total\\\":{\\\"value\\\":938,\\\"relation\\\":\\\"eq\\\"},\\\"max_score\\\":1.0,\\\"hits\\\":[{\\\"_index\\\":\\\"userlog-1256299843-asset_account-202026\\\",\\\"_type\\\":\\\"_doc\\\",\\\"_id\\\":\\\"PsAsunMBxgMcMHXNMzGL\\\",\\\"_score\\\":1.0,\\\"_source\\\":{\\\"id\\\":12900000007108,\\\"create_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"modify_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"uuid\\\":\\\"454a07be-8f21-11e9-818b-5cb9019b3cb0\\\",\\\"hostip\\\":\\\"172.21.0.14\\\",\\\"guid\\\":\\\"14f7981c-48f3-4d58-846e-fb2c86e9c7e2\\\",\\\"appid\\\":1256953985,\\\"user_name\\\":\\\"root\\\",\\\"groups\\\":\\\"root\\\",\\\"account_create_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"last_login_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"shell_path\\\":\\\"/bin/bash\\\",\\\"is_login_account\\\":1,\\\"is_hidden_account\\\":0,\\\"is_without_pwd\\\":0,\\\"account_privilege\\\":0,\\\"platform\\\":4,\\\"status\\\":0}},{\\\"_index\\\":\\\"userlog-1256299843-asset_account-202026\\\",\\\"_type\\\":\\\"_doc\\\",\\\"_id\\\":\\\"XMgsunMBuMj9w9DkMwS1\\\",\\\"_score\\\":1.0,\\\"_source\\\":{\\\"id\\\":12900000007109,\\\"create_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"modify_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"uuid\\\":\\\"454a07be-8f21-11e9-818b-5cb9019b3cb0\\\",\\\"hostip\\\":\\\"172.21.0.14\\\",\\\"guid\\\":\\\"14f7981c-48f3-4d58-846e-fb2c86e9c7e2\\\",\\\"appid\\\":1256953985,\\\"user_name\\\":\\\"bin\\\",\\\"groups\\\":\\\"bin\\\",\\\"account_create_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"last_login_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"shell_path\\\":\\\"/sbin/nologin\\\",\\\"is_login_account\\\":0,\\\"is_hidden_account\\\":0,\\\"is_without_pwd\\\":1,\\\"account_privilege\\\":1,\\\"platform\\\":4,\\\"status\\\":0}},{\\\"_index\\\":\\\"userlog-1256299843-asset_account-202026\\\",\\\"_type\\\":\\\"_doc\\\",\\\"_id\\\":\\\"aMgsunMBuMj9w9DkMwS-\\\",\\\"_score\\\":1.0,\\\"_source\\\":{\\\"id\\\":12900000007110,\\\"create_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"modify_time\\\":\\\"2020-07-02T09:18:45+08:00\\\",\\\"uuid\\\":\\\"454a07be-8f21-11e9-818b-5cb9019b3cb0\\\",\\\"hostip\\\":\\\"172.21.0.14\\\",\\\"guid\\\":\\\"14f7981c-48f3-4d58-846e-fb2c86e9c7e2\\\",\\\"appid\\\":1256953985,\\\"user_name\\\":\\\"daemon\\\",\\\"groups\\\":\\\"daemon\\\",\\\"account_create_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"last_login_time\\\":\\\"1970-01-01T08:00:00+08:00\\\",\\\"shell_path\\\":\\\"/sbin/nologin\\\",\\\"is_login_account\\\":0,\\\"is_hidden_account\\\":0,\\\"is_without_pwd\\\":1,\\\"account_privilege\\\":1,\\\"platform\\\":4,\\\"status\\\":0}}]}}\",\n        \"RequestId\": \"e4ee7f6c-a036-43e7-b98f-96f174827fea\"\n    }\n}",
+        "title": "获取ES查询文档列表"
+      }
+    ],
+    "DescribeEmergencyVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEmergencyVulList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Category\": \"xx\",\n                \"Status\": \"xx\",\n                \"CVEID\": \"xx\",\n                \"DefenceScope\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"CVSSV3Score\": 0.0,\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"DefenceStatus\": \"xx\",\n                \"SubmitTime\": \"xx\",\n                \"DefendedCount\": 0,\n                \"PocID\": \"xx\",\n                \"LatestFoundTime\": \"xx\",\n                \"ID\": 0,\n                \"DefenceHostCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询应急漏洞列表"
+      }
+    ],
     "DescribeEscapeEventDetail": [
       {
         "document": "",
@@ -828,6 +1212,22 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventInfo\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"Status\": \"xx\",\n                \"EventId\": \"xx\",\n                \"HostID\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"EventType\": \"xx\",\n                \"EventCount\": 0,\n                \"Solution\": \"xx\",\n                \"FoundTime\": \"2020-09-22 00:00:00\",\n                \"ImageId\": \"xx\",\n                \"EventName\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"Description\": \"xx\",\n                \"PodName\": \"xx\",\n                \"NodeIP\": \"xx\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"NodeName\": \"xx\",\n                \"ContainerNetStatus\": \"xx\",\n                \"ContainerNetSubStatus\": \"xx\",\n                \"ContainerIsolateOperationSrc\": \"xx\",\n                \"ContainerStatus\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "getescapeInfo"
+      }
+    ],
+    "DescribeEscapeEventTendency": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventTendency\n&EndTime=2021-05-01\n&StartTime=2021-05-07\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"ContainerEscapeEventCount\": 0,\n                \"ProcessPrivilegeEventCount\": 0,\n                \"RiskContainerEventCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询待处理逃逸事件趋势"
+      }
+    ],
+    "DescribeEscapeEventTypeSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventTypeSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RiskContainerEventCount\": 0,\n        \"ProcessPrivilegeEventCount\": 0,\n        \"ContainerEscapeEventCount\": 0,\n        \"RequestId\": \"xx\",\n        \"PendingEscapeEventCount\": 0\n    }\n}",
+        "title": "统计容器逃逸各事件类型和待处理事件数"
       }
     ],
     "DescribeEscapeEventsExport": [
@@ -854,6 +1254,14 @@
         "title": "查询容器逃逸安全状态"
       }
     ],
+    "DescribeEscapeWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEscapeWhiteList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"ImageSize\": 0,\n                \"EventType\": [\n                    \"xx\"\n                ],\n                \"HostCount\": 0,\n                \"ImageID\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"ContainerCount\": 0,\n                \"InsertTime\": \"xx\",\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询逃逸白名单"
+      }
+    ],
     "DescribeExportJobResult": [
       {
         "document": "",
@@ -868,6 +1276,38 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAuthorizedInfo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ScannedImageCnt\": 1,\n        \"TotalAuthorizedCnt\": 1,\n        \"NotScannedLocalImageCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"UsedAuthorizedCnt\": 1,\n        \"NotScannedImageCnt\": 1\n    }\n}",
         "title": "查询镜像授权信息"
+      }
+    ],
+    "DescribeImageAutoAuthorizedLogList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAutoAuthorizedLogList\n&TaskId=1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"List\": [\n            {\n                \"Status\": \"SUCCESS\",\n                \"AuthorizedTime\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"IsAuthorized\": 1,\n                \"ImageId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询镜像自动授权结果列表"
+      }
+    ],
+    "DescribeImageAutoAuthorizedRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAutoAuthorizedRule\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaxDailyCount\": 0,\n        \"RangeType\": \"xx\",\n        \"RuleId\": 1,\n        \"HostCount\": 0,\n        \"RequestId\": \"xx\",\n        \"IsEnabled\": 0\n    }\n}",
+        "title": "查询本地镜像自动授权规则"
+      }
+    ],
+    "DescribeImageAutoAuthorizedTaskList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAutoAuthorizedTaskList\n&StartTime=2022-01-01\n&EndTime=2022-01-07\n\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"LastAuthorizedTime\": \"xx\",\n                \"AuthorizedDate\": \"2020-09-22\",\n                \"LatestFailCode\": \"xx\",\n                \"SuccessCount\": 0,\n                \"FailCount\": 0,\n                \"Source\": \"xx\",\n                \"TaskId\": 1,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeImageAutoAuthorizedTaskList"
+      }
+    ],
+    "DescribeImageComponentList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageComponentList\n&ImageID=xx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Name\": \"xx\",\n                \"ImageID\": \"xx\",\n                \"Version\": \"xx\",\n                \"VulCount\": 1,\n                \"Path\": \"xx\",\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询本地镜像组件列表"
       }
     ],
     "DescribeImageRegistryTimingScanTask": [
@@ -902,6 +1342,138 @@
         "title": "查询全部镜像列表"
       }
     ],
+    "DescribeIndexList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIndexList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"indexSort\\\":{\\\"k8sapi日志\\\":[\\\"userlog-k8s-api\\\"],\\\"容器bash日志\\\":[\\\"userlog-container-bash\\\"],\\\"容器启动日志\\\":[\\\"userlog-container-start\\\"]},\\\"indexArr\\\":[\\\"userlog-container-bash\\\",\\\"userlog-container-start\\\",\\\"userlog-k8s-api\\\"],\\\"fieldArr\\\":[{\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"annotations\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"annotations.authorization\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"annotations.authorization.k8s\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"annotations.authorization.k8s.io/decision\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"annotations.authorization.k8s.io/reason\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"apiVersion\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"auditID\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"event_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"insert_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"kind\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"level\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"objectRef\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"objectRef.apiVersion\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"objectRef.namespace\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"objectRef.resource\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"quuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"requestReceivedTimestamp\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"requestURI\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"responseStatus\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"responseStatus.code\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"sourceIPs\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"stage\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"stageTimestamp\\\":{\\\"date\\\":{\\\"type\\\":\\\"date\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"user\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"user.groups\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"user.uid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"user.username\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"userAgent\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"verb\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}}},{\\\"Action\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"Actor.Attributes\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"Actor.Attributes.image\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.org\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"Actor.Attributes.org.label-schema\\\":{\\\"object\\\":{\\\"type\\\":\\\"object\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"Actor.Attributes.org.label-schema.build-date\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.org.label-schema.license\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.org.label-schema.name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.org.label-schema.schema-version\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.Attributes.org.label-schema.vendor\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Actor.ID\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"Type\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"event_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"from\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"insert_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"quuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"scope\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"status\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"time\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"timeNano\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}}},{\\\"_feature\\\":{\\\"_feature\\\":{\\\"type\\\":\\\"_feature\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_field_names\\\":{\\\"_field_names\\\":{\\\"type\\\":\\\"_field_names\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_id\\\":{\\\"_id\\\":{\\\"type\\\":\\\"_id\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_ignored\\\":{\\\"_ignored\\\":{\\\"type\\\":\\\"_ignored\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_index\\\":{\\\"_index\\\":{\\\"type\\\":\\\"_index\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_routing\\\":{\\\"_routing\\\":{\\\"type\\\":\\\"_routing\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":false}},\\\"_seq_no\\\":{\\\"_seq_no\\\":{\\\"type\\\":\\\"_seq_no\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_source\\\":{\\\"_source\\\":{\\\"type\\\":\\\"_source\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"_type\\\":{\\\"_type\\\":{\\\"type\\\":\\\"_type\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"_version\\\":{\\\"_version\\\":{\\\"type\\\":\\\"_version\\\",\\\"searchable\\\":false,\\\"aggregatable\\\":false}},\\\"appid\\\":{\\\"long\\\":{\\\"type\\\":\\\"long\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"cmd\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"container_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"event_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_id\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"image_name\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"insert_time\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"quuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}},\\\"uuid\\\":{\\\"keyword\\\":{\\\"type\\\":\\\"keyword\\\",\\\"searchable\\\":true,\\\"aggregatable\\\":true}}}]}\",\n        \"RequestId\": \"49082d4a-71b4-4e32-9ca1-b33872a4a63a\"\n    }\n}",
+        "title": "获取索引列表"
+      }
+    ],
+    "DescribeInspectionReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInspectionReport\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ReportName\": \"xxx\",\n        \"ReportUrl\": \"xxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询检查报告"
+      }
+    ],
+    "DescribeLogStorageStatistic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStorageStatistic\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UsedSize\": 89546766804,\n        \"TotalSize\": 1073741824000,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "获取日志检索容量使用统计"
+      }
+    ],
+    "DescribeNetworkFirewallAuditRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallAuditRecord\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuditList\": [\n            {\n                \"ClusterName\": \"xx\",\n                \"Region\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"NetworkPolicyName\": \"xx\",\n                \"AppId\": 0,\n                \"Action\": \"xx\",\n                \"Operation\": \"xx\",\n                \"OperationTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询集群策略审计列表示例"
+      }
+    ],
+    "DescribeNetworkFirewallClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallClusterList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterInfoList\": [\n            {\n                \"ClusterVersion\": \"xx\",\n                \"EnableRuleCount\": 8,\n                \"ClusterName\": \"xx\",\n                \"NetworkPolicyPluginError\": \"xx\",\n                \"Region\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\",\n                \"NetworkPolicyPlugin\": \"xx\",\n                \"NetworkPolicyPluginStatus\": \"xx\",\n                \"ClusterStatus\": \"xx\",\n                \"ClusterOs\": \"xx\",\n                \"TotalRuleCount\": 5\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询结果"
+      }
+    ],
+    "DescribeNetworkFirewallClusterRefreshStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallClusterRefreshStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"34702\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed202021-696e-4c03-a726-ca459c47c4ea\",\n        \"TaskStatus\": \"Task_Succ\"\n    }\n}",
+        "title": "容器网络查询资产任务进度示例"
+      }
+    ],
+    "DescribeNetworkFirewallNamespaceLabelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallNamespaceLabelList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-new\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6405e01-bf4f-4044-abe9-4458783a3066\",\n        \"TotalCount\": 9,\n        \"ClusterNamespaceLabelList\": [\n            {\n                \"Name\": \"hello\",\n                \"Labels\": \"new=test\"\n            }\n        ]\n    }\n}",
+        "title": "查询集群网络空间标签列表示例"
+      }
+    ],
+    "DescribeNetworkFirewallNamespaceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallNamespaceList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-new\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6405e01-bf4f-4044-abe9-4458783a3066\",\n        \"TotalCount\": 9,\n        \"ClusterNamespaceList\": [\n            {\n                \"Name\": \"hello\",\n                \"Labels\": \"new=test\"\n            }\n        ]\n    }\n}",
+        "title": "查询结果"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallNamespaceList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-o9mfjg0i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dee2fbd3-3114-4b17-9cf7-5c456cd703b1\",\n        \"TotalCount\": 14,\n        \"ClusterNamespaceList\": [\n            {\n                \"Labels\": \"\",\n                \"Name\": \"app-team1\"\n            },\n            {\n                \"Labels\": \"ns=backend,\",\n                \"Name\": \"backend\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"backend1\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"default\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"dosec\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"foo\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"front\"\n            },\n            {\n                \"Labels\": \"app.kubernetes.io/name=ingress-nginx,app.kubernetes.io/part-of=ingress-nginx,\",\n                \"Name\": \"ingress-nginx\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"kube-node-lease\"\n            },\n            {\n                \"Labels\": \"\",\n                \"Name\": \"kube-public\"\n            }\n        ]\n    }\n}",
+        "title": "命名空间列表"
+      }
+    ],
+    "DescribeNetworkFirewallPodLabelsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPodLabelsList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-new\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6405e01-bf4f-4044-abe9-4458783a3066\",\n        \"TotalCount\": 9,\n        \"PodList\": [\n            {\n                \"PodName\": \"hello\",\n                \"Namespace\": \"default\",\n                \"Labels\": \"new=test\"\n            }\n        ]\n    }\n}",
+        "title": "查询结果"
+      }
+    ],
+    "DescribeNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyName\": \"xx\",\n        \"CustomPolicy\": [\n            {\n                \"Peer\": [\n                    {\n                        \"NamespaceSelector\": \"xx\",\n                        \"PeerType\": \"xx\",\n                        \"PodSelector\": \"xx\",\n                        \"IPBlock\": \"xx\"\n                    }\n                ],\n                \"Direction\": \"xx\",\n                \"Ports\": [\n                    {\n                        \"Protocol\": \"xx\",\n                        \"Port\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Description\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"FromPolicyRule\": 0,\n        \"PublishResult\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"NetworkPolicyPlugin\": \"xx\",\n        \"PodSelector\": \"xx\",\n        \"PublishStatus\": \"xx\",\n        \"ToPolicyRule\": 0,\n        \"RequestId\": \"xx\",\n        \"PolicyCreateTime\": \"xx\",\n        \"PolicySourceType\": \"xx\"\n    }\n}",
+        "title": "容器网络集群查看策略详情示例"
+      }
+    ],
+    "DescribeNetworkFirewallPolicyDiscover": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyDiscover\n<公共请求参数>\n\n{\n    \"TaskId\": \"34702\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed202021-696e-4c03-a726-ca459c47c4ea\",\n        \"TaskStatus\": \"Task_Succ\"\n    }\n}",
+        "title": "容器网络查询网络策略自动发现任务进度示例"
+      }
+    ],
+    "DescribeNetworkFirewallPolicyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ee\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6405e01-bf4f-4044-abe9-4458783a3066\",\n        \"TotalCount\": 9,\n        \"NetPolicy\": [\n            {\n                \"PolicySourceType\": \"xx\",\n                \"FromPolicyRule\": 0,\n                \"PublishResult\": \"xx\",\n                \"Namespace\": \"xx\",\n                \"NetworkPolicyPlugin\": \"xx\",\n                \"PolicyCreateTime\": \"xx\",\n                \"PublishStatus\": \"xx\",\n                \"ToPolicyRule\": 0,\n                \"PodSelector\": \"xx\",\n                \"Description\": \"xx\",\n                \"Id\": 1,\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询结果"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-o9mfjg0i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f209045-f906-4ba4-9f61-105b73ecfcc6\",\n        \"TotalCount\": 0,\n        \"NetPolicy\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"backend-ingress-deny\",\n                \"Description\": \"\",\n                \"PolicySourceType\": \"System\",\n                \"PodSelector\": \"new=roopingliu\",\n                \"Namespace\": \"default\",\n                \"FromPolicyRule\": 0,\n                \"ToPolicyRule\": 0,\n                \"NetworkPolicyPlugin\": \"KubeRouter\",\n                \"PublishStatus\": \"PublishedNoConfirm\",\n                \"PublishResult\": \"\",\n                \"PolicyCreateTime\": \"2022-05-10 03:04:34\"\n            },\n            {\n                \"Id\": 8,\n                \"Name\": \"policy_test_add\",\n                \"Description\": \"\",\n                \"PolicySourceType\": \"Manual\",\n                \"PodSelector\": \"good=labeld\",\n                \"Namespace\": \"default\",\n                \"FromPolicyRule\": 3,\n                \"ToPolicyRule\": 0,\n                \"NetworkPolicyPlugin\": \"KubeRouter\",\n                \"PublishStatus\": \"unPublishEdit\",\n                \"PublishResult\": \"\",\n                \"PolicyCreateTime\": \"2022-06-23 05:40:13\"\n            },\n            {\n                \"Id\": 2,\n                \"Name\": \"test-network-policy\",\n                \"Description\": \"\",\n                \"PolicySourceType\": \"System\",\n                \"PodSelector\": \"role=db\",\n                \"Namespace\": \"default\",\n                \"FromPolicyRule\": 0,\n                \"ToPolicyRule\": 0,\n                \"NetworkPolicyPlugin\": \"KubeRouter\",\n                \"PublishStatus\": \"PublishedNoConfirm\",\n                \"PublishResult\": \"\",\n                \"PolicyCreateTime\": \"2022-06-13 08:33:35\"\n            }\n        ]\n    }\n}",
+        "title": "策略列表"
+      }
+    ],
+    "DescribeNetworkFirewallPolicyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"34702\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed202021-696e-4c03-a726-ca459c47c4ea\",\n        \"TaskResult\": [\n            \"xx\"\n        ],\n        \"TaskStatus\": \"Task_Succ\"\n    }\n}",
+        "title": "容器网络查询网络策略策略执行状态示例"
+      }
+    ],
+    "DescribeNetworkFirewallPolicyYamlDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyName\": \"xx\",\n        \"PolicySourceType\": \"xx\",\n        \"NetworkPolicyPlugin\": \"xx\",\n        \"PublishResult\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"Yaml\": \"xx\",\n        \"PublishStatus\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"PolicyCreateTime\": \"xx\",\n        \"Description\": \"xx\"\n    }\n}",
+        "title": "容器网络集群查看Yaml网络策略详情示例"
+      }
+    ],
+    "DescribeNewestVul": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeNewestVul\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"CVEID\": \"xx\",\n        \"VulName\": \"xx\",\n        \"SubmitTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"PocID\": \"xx\"\n    }\n}",
+        "title": "查询最新披露漏洞列表"
+      }
+    ],
     "DescribePostPayDetail": [
       {
         "document": "",
@@ -916,6 +1488,22 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeProVersionInfo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EndTime\": \"2021-05-01 00:00:00\",\n        \"CoresCnt\": 1,\n        \"MaxPostPayCoresCnt\": 1,\n        \"StartTime\": \"2021-05-31 00:00:00\",\n        \"ResourceId\": \"xx\",\n        \"BuyStatus\": \"Normal\",\n        \"IsPurchased\": false,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询专业版需购买信息"
+      }
+    ],
+    "DescribePromotionActivity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePromotionActivity\n<公共请求参数>\n\n{\n    \"ActiveID\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"MonthNum\": 1,\n                \"ProfessionalDiscount\": 1,\n                \"CoresCountLimit\": 1,\n                \"ImageAuthorizationNum\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询促销活动"
+      }
+    ],
+    "DescribePublicKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PublicKey\": \"testpublickey\",\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "获取公钥"
       }
     ],
     "DescribePurchaseStateInfo": [
@@ -1030,6 +1618,38 @@
         "title": "运行时高危系统调用白名单列表"
       }
     ],
+    "DescribeScanIgnoreVulList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeScanIgnoreVulList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"IsIgnoreAll\": 0,\n                \"CVEID\": \"xx\",\n                \"RegistryImageCount\": 0,\n                \"VulName\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"PocID\": \"xx\",\n                \"LocalImageCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询扫描忽略的漏洞列表"
+      }
+    ],
+    "DescribeSearchExportList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchExportList\n<公共请求参数>\n\n{\n    \"Query\": \"{\\\"index\\\":[\\\"netflow\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1597075200000,\\\"lte\\\":1597161599999}}},\\\"must\\\":[],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1223\",\n        \"RequestId\": \"e4ee7f6c-a036-43e7-b98f-96f174827fea\"\n    }\n}",
+        "title": "导出ES查询文档列表"
+      }
+    ],
+    "DescribeSearchLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchLogs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"test\",\n            \"106.55.40.250\",\n            \"106.55.35.160\"\n        ],\n        \"RequestId\": \"498e4cab-e95d-430b-bc4c-f5821bb278d4\"\n    }\n}",
+        "title": "获取历史搜索记录"
+      }
+    ],
+    "DescribeSearchTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchTemplates\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"List\": [\n            {\n                \"Id\": 17,\n                \"Name\": \"kbtest\",\n                \"LogType\": \"malware\",\n                \"Condition\": \"src_ip 匹配字符: 193.27.228.98\",\n                \"TimeRange\": \"2020-07-31 00:00:00 至 2020-07-31 23:59:59\",\n                \"Query\": \"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1596124800000,\\\"lte\\\":1596211199999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"193.27.228.98\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"30m\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n                \"Flag\": \"simple\",\n                \"DisplayData\": \"[{\\\"id\\\":14401398135,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"193.27.228.98\\\"}]\"\n            },\n            {\n                \"Id\": 13,\n                \"Name\": \"test\",\n                \"LogType\": \"malware\",\n                \"Condition\": \"src_ip 匹配字符: 10.0.0.1\",\n                \"TimeRange\": \"2020-06-13 00:00:00 至 2020-07-13 23:59:59\",\n                \"Query\": \"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1591977600000,\\\"lte\\\":1594655999999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"10.0.0.1\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"12h\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n                \"Flag\": \"simple\",\n                \"DisplayData\": \"[{\\\"id\\\":449375484687,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"10.0.0.1\\\"}]\"\n            }\n        ],\n        \"RequestId\": \"252ab6a8-3d45-414d-a31e-fb668e99864c\"\n    }\n}",
+        "title": "获取快速检索列表"
+      }
+    ],
     "DescribeSecEventsTendency": [
       {
         "document": "",
@@ -1038,12 +1658,124 @@
         "title": "获取运行时安全事件新增趋势"
       }
     ],
+    "DescribeSecLogAlertMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogAlertMsg\n<公共请求参数>\n\n{\n    \"Type\": [\n        \"log_reserve_full\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"MsgValue\": \"xx\",\n                \"MsgType\": \"xx\",\n                \"State\": true\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志告警信息"
+      }
+    ],
+    "DescribeSecLogCleanSettingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogCleanSettingInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ReservesLimit\": 80,\n        \"ReservesDeadline\": 60,\n        \"DayLimit\": 180,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "DescribeSecLogCleanSettingInfo"
+      }
+    ],
+    "DescribeSecLogDeliveryClsOptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryClsOptions\n<公共请求参数>\n\n{\n    \"ClsRegion\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogSetList\": [\n            {\n                \"LogsetName\": \"xx\",\n                \"TopicList\": [\n                    {\n                        \"TopicName\": \"xx\",\n                        \"TopicID\": \"xx\"\n                    }\n                ],\n                \"LogsetID\": \"xx\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询安全日志投递cls可选项"
+      }
+    ],
+    "DescribeSecLogDeliveryClsSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryClsSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"LogTypeList\": [\n            {\n                \"LogSet\": \"xx\",\n                \"LogType\": \"xx\",\n                \"State\": true,\n                \"Region\": \"xx\",\n                \"TopicID\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志投递Cls配置"
+      }
+    ],
+    "DescribeSecLogDeliveryKafkaOptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryKafkaOptions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceID\": \"xx\",\n                \"TopicList\": [\n                    {\n                        \"TopicID\": \"xx\",\n                        \"TopicName\": \"xx\"\n                    }\n                ],\n                \"RouteList\": [\n                    {\n                        \"Domain\": \"xx\",\n                        \"AccessType\": 0,\n                        \"RouteID\": 0,\n                        \"Vip\": \"xx\",\n                        \"DomainPort\": 1,\n                        \"VipType\": 0\n                    }\n                ],\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志投递kafka可选项"
+      }
+    ],
+    "DescribeSecLogDeliveryKafkaSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryKafkaSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceID\": \"实例ID\",\n        \"InstanceName\": \"实例名称\",\n        \"Domain\": \"域名\",\n        \"LogTypeList\": [\n            {\n                \"LogType\": \"container_bash\",\n                \"TopicID\": \"主题ID\",\n                \"TopicName\": \"主题名称\",\n                \"State\": true\n            }\n        ],\n        \"User\": \"test\",\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志投递kafka配置"
+      }
+    ],
+    "DescribeSecLogJoinObjectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogJoinObjectList\n<公共请求参数>\n\n{\n    \"By\": \"xx\",\n    \"LogType\": \"container_bash\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"UNINSTALL\"\n            ],\n            \"Name\": \"HostState\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Order\": \"asc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 15,\n        \"List\": [\n            {\n                \"ClusterMainAddress\": \"xx\",\n                \"HostID\": \"xx\",\n                \"ClusterVersion\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"HostName\": \"xx\",\n                \"ClusterID\": \"xx\",\n                \"PublicIP\": \"xx\",\n                \"JoinState\": true,\n                \"HostIP\": \"xx\",\n                \"HostStatus\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志接入对象列表"
+      }
+    ],
+    "DescribeSecLogJoinTypeList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogJoinTypeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"LogType\": \"container_bash\",\n                \"Count\": 10,\n                \"IsJoined\": true\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志接入列表"
+      }
+    ],
+    "DescribeSecLogKafkaUIN": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogKafkaUIN\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DstUIN\": \"xxxx\",\n        \"Status\": true,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志KafkaUIN"
+      }
+    ],
+    "DescribeSecLogVasInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogVasInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"LogSaveMonth\": 1,\n        \"EndTime\": \"xxx\",\n        \"StartTime\": \"xxx\",\n        \"BuyStatus\": \"Pending\",\n        \"LogCapacity\": 10,\n        \"TrialCapacity\": 10,\n        \"ResourceID\": \"xxx\",\n        \"IsPurchased\": false,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询安全日志商品信息"
+      }
+    ],
+    "DescribeSupportDefenceVul": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportDefenceVul\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"CVEID\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"CVSSV3Score\": 0.0,\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"SubmitTime\": \"xx\",\n                \"PocID\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询支持防御的漏洞列表"
+      }
+    ],
+    "DescribeSystemVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemVulList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Category\": \"xx\",\n                \"CVEID\": \"xx\",\n                \"RegistryImageCount\": 0,\n                \"DefenceScope\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"CVSSV3Score\": 0.0,\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"FoundTime\": \"xx\",\n                \"DefenceStatus\": \"xx\",\n                \"DefendedCount\": 0,\n                \"ContainerCount\": 0,\n                \"PocID\": \"xx\",\n                \"LocalImageCount\": 0,\n                \"LatestFoundTime\": \"xx\",\n                \"ID\": 0,\n                \"DefenceHostCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询系统漏洞列表"
+      }
+    ],
     "DescribeTaskResultSummary": [
       {
         "document": "请求成功获取的实例",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResultSummary\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"SeriousRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"HighRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"MiddleRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"HintRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "常规请求"
+      }
+    ],
+    "DescribeTcssSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTcssSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RiskLocalImageCnt\": 1,\n        \"RiskRepositoryImageCnt\": 1,\n        \"RuntimeUnhandleEventCnt\": 1,\n        \"RiskBaseLineCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"RiskVulCnt\": 1,\n        \"RiskContainerCnt\": 1,\n        \"ImageCnt\": 1,\n        \"ContainerCnt\": 1,\n        \"UnScannedVulCnt\": 1,\n        \"UnScannedBaseLineCnt\": 1,\n        \"RiskClusterCnt\": 1,\n        \"ClusterCnt\": 1,\n        \"UnScannedImageCnt\": 1,\n        \"LocalImageCnt\": 1,\n        \"RepositoryImageCnt\": 1,\n        \"UnScannedClusterCnt\": 1,\n        \"ScanImageStatus\": true,\n        \"ScanClusterStatus\": true,\n        \"ScanBaseLineStatus\": true,\n        \"ScanVulStatus\": true,\n        \"VulRiskImageCnt\": 10,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询容器安全概览信息"
+      }
+    ],
+    "DescribeUnauthorizedCoresTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnauthorizedCoresTendency\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DateTime\": \"2020-09-22 00:00:00\",\n                \"CoresCount\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞防御攻击事件趋势"
       }
     ],
     "DescribeUnfinishRefreshTask": [
@@ -1070,12 +1802,52 @@
         "title": "查询增值服务需购买信息"
       }
     ],
+    "DescribeVirusAutoIsolateSampleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusAutoIsolateSampleDetail\n<公共请求参数>\n\n{\n    \"MD5\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"RiskLevel\": \"xx\",\n        \"VirusName\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ReferenceLink\": \"xx\",\n        \"MD5\": \"xx\",\n        \"KillEngine\": [\n            \"xx\"\n        ],\n        \"HarmDescribe\": \"xx\",\n        \"SuggestScheme\": \"xx\",\n        \"Size\": 1\n    }\n}",
+        "title": "查询木马自动隔离样本详情"
+      }
+    ],
+    "DescribeVirusAutoIsolateSampleDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusAutoIsolateSampleDownloadURL\n<公共请求参数>\n\n{\n    \"MD5\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrl\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询木马自动隔离样本下载链接"
+      }
+    ],
+    "DescribeVirusAutoIsolateSampleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusAutoIsolateSampleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"VirusName\": \"xx\",\n                \"AutoIsolateSwitch\": true,\n                \"MD5\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询木马自动隔离样本列表"
+      }
+    ],
+    "DescribeVirusAutoIsolateSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusAutoIsolateSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AutoIsolateSwitch\": true,\n        \"IsKillProgress\": true,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询木马自动隔离设置"
+      }
+    ],
     "DescribeVirusDetail": [
       {
         "document": "运行时查询木马文件信息",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusDetail\n<公共请求参数>\n\n{\n    \"Id\": \"dskaldjskld\"\n}",
         "output": "{\n    \"Response\": {\n        \"ContainerName\": \"xx\",\n        \"ProcessStartAccount\": \"xx\",\n        \"RiskLevel\": \"xx\",\n        \"VirusName\": \"xx\",\n        \"FileMd5\": \"xx\",\n        \"ProcessChan\": \"xx\",\n        \"ProcessAccountGroup\": \"xx\",\n        \"Status\": \"xx\",\n        \"ProcessId\": 1,\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"EventType\": \"xx\",\n        \"HostName\": \"xx\",\n        \"HostIP\": \"xx\",\n        \"SubStatus\": \"xx\",\n        \"ImageId\": \"xx\",\n        \"PProcessParam\": \"xx\",\n        \"ClientIP\": \"xx\",\n        \"AncestorProcessStartUser\": \"xx\",\n        \"HarmDescribe\": \"xx\",\n        \"SuggestScheme\": \"xx\",\n        \"AncestorProcessParam\": \"xx\",\n        \"ProcessName\": \"xx\",\n        \"ProcessArgv\": \"xx\",\n        \"ProcessMd5\": \"xx\",\n        \"ProcessFileAuthority\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"PProcessPath\": \"xx\",\n        \"ModifyTime\": \"xx\",\n        \"Mark\": \"xx\",\n        \"SourceType\": 1,\n        \"ProcessPath\": \"xx\",\n        \"HostId\": \"xx\",\n        \"ContainerId\": \"xx\",\n        \"FilePath\": \"xx\",\n        \"AncestorProcessUserGroup\": \"xx\",\n        \"OperationTime\": \"xx\",\n        \"AncestorProcessPath\": \"xx\",\n        \"PProcessStartUser\": \"xx\",\n        \"FileName\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"PProcessUserGroup\": \"xx\",\n        \"PodName\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Size\": 1,\n        \"ContainerNetStatus\": \"xx\",\n        \"ContainerNetSubStatus\": \"xx\",\n        \"ContainerIsolateOperationSrc\": \"xx\",\n        \"CheckPlatform\": [\n            \"1\",\n            \"2\"\n        ]\n    }\n}",
         "title": "运行时查询木马文件信息"
+      }
+    ],
+    "DescribeVirusEventTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusEventTendency\n<公共请求参数>\n\n{\n    \"TendencyPeriod\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"PendingEventCount\": 1,\n                \"RiskContainerCount\": 1,\n                \"EventCount\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时木马趋势数据获取"
       }
     ],
     "DescribeVirusList": [
@@ -1086,12 +1858,28 @@
         "title": "查询运行时文件查杀事件列表"
       }
     ],
+    "DescribeVirusManualScanEstimateTimeout": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusManualScanEstimateTimeout\n<公共请求参数>\n\n{\n    \"ScanIds\": [\n        \"xx\"\n    ],\n    \"ScanRangeAll\": true,\n    \"ScanRangeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Timeout\": 5,\n        \"ContainerScanConcurrencyCount\": 2,\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "查询木马一键检测预估超时时间"
+      }
+    ],
     "DescribeVirusMonitorSetting": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorSetting\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"ScanPath\": []\n    }\n}",
         "title": "运行时查询文件查杀实时监控设置"
+      }
+    ],
+    "DescribeVirusSampleDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusSampleDownloadUrl\n<公共请求参数>\n\n{\n    \"ID\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"FileUrl\": \"xxx\"\n    }\n}",
+        "title": "查询木马样本下载url"
       }
     ],
     "DescribeVirusScanSetting": [
@@ -1134,12 +1922,180 @@
         "title": "运行时查询文件查杀任务列表"
       }
     ],
+    "DescribeVulContainerList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulContainerList\n&PocID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"HostID\": \"xx\",\n                \"HostName\": \"xx\",\n                \"ContainerID\": \"xx\",\n                \"PublicIP\": \"xx\",\n                \"PodIP\": \"xx\",\n                \"PodName\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"HostIP\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询受漏洞的容器列表"
+      }
+    ],
+    "DescribeVulDefenceEvent": [
+      {
+        "document": "DescribeVulDefenceEvent",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceEvent\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"City\": \"xx\",\n                \"CVEID\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"ImageID\": \"xx\",\n                \"PocID\": \"xx\",\n                \"EventCount\": 0,\n                \"Status\": \"xx\",\n                \"EventType\": \"xx\",\n                \"HostName\": \"xx\",\n                \"MergeTime\": \"xx\",\n                \"SourceIP\": \"xx\",\n                \"ContainerID\": \"xx\",\n                \"VulName\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"HostIP\": \"xx\",\n                \"ContainerNetStatus\": \"xx\",\n                \"EventID\": 0,\n                \"ContainerStatus\": \"xx\",\n                \"ContainerNetSubStatus\": \"xx\",\n                \"QUUID\": \"xx\",\n                \"ContainerIsolateOperationSrc\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞防御事件列表"
+      }
+    ],
+    "DescribeVulDefenceEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceEventDetail\n<公共请求参数>\n\n{\n    \"EventID\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"City\": \"xx\",\n            \"CVEID\": \"xx\",\n            \"StackTrace\": \"xx\",\n            \"ImageID\": \"xx\",\n            \"PocID\": \"xx\",\n            \"NetworkPayload\": \"xx\",\n            \"ServerArg\": \"xx\",\n            \"EventCount\": 0,\n            \"Status\": \"xx\",\n            \"Description\": \"xx\",\n            \"EventType\": \"xx\",\n            \"HostName\": \"xx\",\n            \"PID\": 0,\n            \"ServerPort\": \"xx\",\n            \"ServerAccount\": \"xx\",\n            \"SourceIP\": \"xx\",\n            \"ContainerID\": \"xx\",\n            \"VulName\": \"xx\",\n            \"ServerExe\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"JNDIUrl\": \"xx\",\n            \"PublicIP\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"MainClass\": \"xx\",\n            \"OfficialSolution\": \"xx\",\n            \"HostIP\": \"xx\",\n            \"ContainerNetStatus\": \"xx\",\n            \"EventID\": 0,\n            \"ContainerStatus\": \"xx\",\n            \"ContainerNetSubStatus\": \"xx\",\n            \"QUUID\": \"xx\",\n            \"PodName\": \"xx\",\n            \"SourcePort\": [\n                \"xx\"\n            ],\n            \"ContainerIsolateOperationSrc\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞防御事件详情"
+      }
+    ],
+    "DescribeVulDefenceEventTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceEventTendency\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-05-01\",\n    \"StartTime\": \"2021-05-07\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AttackList\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"EventCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"DefendedList\": [\n            {\n                \"Date\": \"2020-09-22\",\n                \"EventCount\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询漏洞防御攻击事件趋势"
+      }
+    ],
+    "DescribeVulDefenceHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceHost\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Status\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"HostName\": \"xx\",\n                \"PublicIP\": \"xx\",\n                \"HostIP\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞防御的主机列表"
+      }
+    ],
+    "DescribeVulDefencePlugin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefencePlugin\n<公共请求参数>\n\n{\n    \"HostID\": \"xx\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Status\": \"xx\",\n                \"MainClass\": \"xx\",\n                \"ErrorLog\": \"xx\",\n                \"PID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞防御插件列表"
+      }
+    ],
+    "DescribeVulDefenceSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDefenceSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsEnabled\": 0,\n        \"SupportDefenseVulCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Scope\": 0,\n        \"HostIDs\": [\n            \"xx\"\n        ],\n        \"ExceptionHostCount\": 0,\n        \"HostCount\": 0,\n        \"HostTotalCount\": 0\n    }\n}",
+        "title": "查询漏洞防御设置信息"
+      }
+    ],
+    "DescribeVulDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulDetail\n<公共请求参数>\n\n{\n    \"PocID\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VulInfo\": {\n            \"Category\": \"xx\",\n            \"CVEID\": \"xx\",\n            \"RegistryImageCount\": 0,\n            \"LocalNewestImageCount\": 0,\n            \"PocID\": \"xx\",\n            \"CategoryType\": \"xx\",\n            \"RegistryNewestImageCount\": 0,\n            \"Description\": \"xx\",\n            \"Tags\": [\n                \"xx\"\n            ],\n            \"DefendedCount\": 0,\n            \"DefenceHostCount\": 0,\n            \"DefenceScope\": \"xx\",\n            \"Name\": \"xx\",\n            \"Level\": \"xx\",\n            \"CVSSV3Score\": 0.0,\n            \"OfficialSolution\": \"xx\",\n            \"LocalImageCount\": 0,\n            \"ComponentList\": [\n                {\n                    \"Version\": [\n                        \"xx\"\n                    ],\n                    \"Name\": \"xx\",\n                    \"FixedVersion\": [\n                        \"xx\"\n                    ]\n                }\n            ],\n            \"ScanStatus\": \"xx\",\n            \"CVSSV3Desc\": \"xx\",\n            \"DefenseSolution\": \"xx\",\n            \"DefenceStatus\": \"xx\",\n            \"SubmitTime\": \"xx\",\n            \"ContainerCount\": 0,\n            \"Reference\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞详情"
+      }
+    ],
+    "DescribeVulIgnoreLocalImageList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulIgnoreLocalImageList\n&PocID=\"xx\"\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"PocID\": \"xx\",\n                \"ID\": 0,\n                \"ImageName\": \"xx\",\n                \"ImageSize\": 0,\n                \"ImageID\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞扫描忽略的本地镜像列表"
+      }
+    ],
+    "DescribeVulIgnoreRegistryImageList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulIgnoreRegistryImageList\n&PocID=\"xx\"\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"ImageID\": \"xx\",\n                \"RegistryName\": \"xx\",\n                \"PocID\": \"xx\",\n                \"ImageVersion\": \"xx\",\n                \"RegistryPath\": \"xx\",\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞扫描忽略的本地镜像列表"
+      }
+    ],
+    "DescribeVulImageList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulImageList\n&PocID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"ComponentList\": [\n                    {\n                        \"Path\": \"xx\",\n                        \"Version\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"FixedVersion\": \"xx\"\n                    }\n                ],\n                \"HostCount\": 0,\n                \"ImageName\": \"xx\",\n                \"ContainerCount\": 0,\n                \"ImageID\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞影响的镜像列表"
+      }
+    ],
+    "DescribeVulImageSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulImageSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AllAuthorizedImageCount\": 0,\n        \"VulLibraryUpdateTime\": \"xx\",\n        \"WebVulCount\": 0,\n        \"SupportVulTotalCount\": 0,\n        \"ScannedImageCount\": 0,\n        \"VulTotalCount\": 0,\n        \"EmergencyVulCount\": 0,\n        \"RequestId\": \"xx\",\n        \"SysTemVulCount\": 0,\n        \"SeriousVulImageCount\": 0\n    }\n}",
+        "title": "查询受漏洞影响的镜像统计"
+      }
+    ],
+    "DescribeVulLevelImageSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulLevelImageSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LowLevelVulLocalImagePercent\": 0.0,\n        \"HighLevelVulLocalImagePercent\": 0.0,\n        \"LocalNewestImageCount\": 0,\n        \"LowLevelVulRegistryImagePercent\": 0.0,\n        \"MediumLevelVulRegistryImagePercent\": 0.0,\n        \"HighLevelVulRegistryImagePercent\": 0.0,\n        \"MediumLevelVulLocalImagePercent\": 0.0,\n        \"RequestId\": \"xx\",\n        \"CriticalLevelVulLocalImagePercent\": 0.0,\n        \"CriticalLevelVulRegistryImagePercent\": 0.0,\n        \"RegistryNewestImageCount\": 0\n    }\n}",
+        "title": "查询应急漏洞各威胁等级统计镜像数"
+      }
+    ],
+    "DescribeVulLevelSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulLevelSummary\n&CategoryType=SYSTEM\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MediumLevelVulCount\": 0,\n        \"CriticalLevelVulCount\": 0,\n        \"HighLevelVulCount\": 0,\n        \"LowLevelVulCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询各类型漏洞各威胁等级统计数"
+      }
+    ],
+    "DescribeVulScanAuthorizedImageSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulScanAuthorizedImageSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AllAuthorizedImageCount\": 0,\n        \"RequestId\": \"xx\",\n        \"UnScanAuthorizedImageCount\": 0\n    }\n}",
+        "title": "统计漏洞扫描页已授权和未扫描镜像数"
+      }
+    ],
+    "DescribeVulScanInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulScanInfo\n&LocalTaskID=1\n&RegistryTaskID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"IgnoreVulCount\": 0,\n        \"LocalImageScanCount\": 1,\n        \"ScanEndTime\": \"xx\",\n        \"ScanProgress\": 0.0,\n        \"ScanStartTime\": \"xx\",\n        \"RegistryImageScanCount\": 1,\n        \"RegistryTaskID\": 0,\n        \"RemainingTime\": 0.0,\n        \"RegistryFoundVulCount\": 0,\n        \"RequestId\": \"xx\",\n        \"LocalTaskID\": 0,\n        \"FoundRiskImageCount\": 0,\n        \"FoundVulCount\": 0\n    }\n}",
+        "title": "查询漏洞扫描任务信息"
+      }
+    ],
+    "DescribeVulScanLocalImageList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulScanLocalImageList\n&TaskID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"MediumLevelVulCount\": 0,\n                \"ScanStatus\": \"xx\",\n                \"ScanEndTime\": \"xx\",\n                \"ScanStartTime\": \"xx\",\n                \"ErrorStatus\": \"xx\",\n                \"ImageID\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"CriticalLevelVulCount\": 0,\n                \"TaskID\": 0,\n                \"ScanDuration\": 0.0,\n                \"HighLevelVulCount\": 0,\n                \"LowLevelVulCount\": 0,\n                \"Size\": 0.0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞扫描任务的本地镜像列表"
+      }
+    ],
+    "DescribeVulSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulSummary\n&Filters.0.Name=CategoryType\n&Filters.0.Values.0=ALL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SeriousVulCount\": 0,\n        \"VulTotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"SeriousVulNewestImageCount\": 0,\n        \"SuggestVulCount\": 0,\n        \"PocExpLevelVulCount\": 0,\n        \"RemoteExpLevelVulCount\": 0\n    }\n}",
+        "title": "查询漏洞风险统计概览"
+      }
+    ],
+    "DescribeVulTendency": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulTendency\n&EndTime=2020-09-22\n&StartTime=2020-09-22\n&SphereOfInfluence=LATEST\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VulTendencySet\": [\n            {\n                \"VulSet\": [\n                    {\n                        \"Cnt\": 1,\n                        \"CurTime\": \"2020-09-22\"\n                    }\n                ],\n                \"ImageType\": \"Local\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "严重&高危的漏洞趋势"
+      }
+    ],
+    "DescribeVulTopRanking": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeVulTopRanking\n&CategoryType=SYSTEM\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Level\": \"xx\",\n                \"AffectedImageCount\": 0,\n                \"VulName\": \"xx\",\n                \"PocID\": \"xx\",\n                \"AffectedContainerCount\": 0,\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询漏洞Top排名列表"
+      }
+    ],
     "DescribeWarningRules": [
       {
         "document": "获取告警策略列表",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWarningRules\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"WarningRules\": [\n            {\n                \"Type\": \"IMG_VIRUS\",\n                \"Switch\": \"ON\",\n                \"BeginTime\": \"10:00\",\n                \"EndTime\": \"20:00\",\n                \"ControlBits\": \"110\"\n            }\n        ],\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
         "title": "获取告警策略列表"
+      }
+    ],
+    "DescribeWebVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebVulList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"List\": [\n            {\n                \"Category\": \"xx\",\n                \"CVEID\": \"xx\",\n                \"RegistryImageCount\": 0,\n                \"DefenceScope\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"CVSSV3Score\": 0.0,\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"FoundTime\": \"xx\",\n                \"DefenceStatus\": \"xx\",\n                \"DefendedCount\": 0,\n                \"ContainerCount\": 0,\n                \"PocID\": \"xx\",\n                \"LocalImageCount\": 0,\n                \"LatestFoundTime\": \"xx\",\n                \"ID\": 0,\n                \"DefenceHostCount\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询web应用漏洞列表"
       }
     ],
     "ExportVirusList": [
@@ -1230,6 +2186,14 @@
         "title": "编辑定时任务"
       }
     ],
+    "ModifyContainerNetStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContainerNetStatus\n<公共请求参数>\n\n{\n    \"ContainerID\": \"xxxx\",\n    \"Status\": \"EVENT_ISOLATE_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "隔离容器网络状态"
+      }
+    ],
     "ModifyEscapeEventStatus": [
       {
         "document": "",
@@ -1246,6 +2210,22 @@
         "title": "updataEscape"
       }
     ],
+    "ModifyEscapeWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEscapeWhiteList\n<公共请求参数>\n\n{\n    \"EventType\": [\n        \"\\\"ESCAPE_DOCKER_API\\\"\"\n    ],\n    \"IDSet\": [\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改逃逸白名单"
+      }
+    ],
+    "ModifyImageAuthorized": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyImageAuthorized\n&AllLocalImages=false\n&UpdatedLocalImageCnt=1\n&LocalImageIds.0=xx\n&AllRegistryImages=false\n&UpdatedRegistryImageCnt=1\n&RegistryImageIds.0=xx\n&ImageSourceType=ASSETIMAGE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量授权镜像扫描V2.0"
+      }
+    ],
     "ModifyReverseShellStatus": [
       {
         "document": "",
@@ -1260,6 +2240,70 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=ModifyRiskSyscallStatus\n&EventIdSet.0=61c396cb85a03485f10c353e\n&Status=EVENT_INGNORE\n&Remark=备注\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改高危系统调用事件状态"
+      }
+    ],
+    "ModifySecLogCleanSettingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogCleanSettingInfo\n<公共请求参数>\n\n{\n    \"DayLimit\": 180,\n    \"ReservesDeadline\": 60,\n    \"ReservesLimit\": 80\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改安全日志清理设置信息"
+      }
+    ],
+    "ModifySecLogDeliveryClsSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogDeliveryClsSetting\n<公共请求参数>\n\n{\n    \"List\": [\n        {\n            \"LogType\": \"xx\",\n            \"State\": true,\n            \"LogSet\": \"xx\",\n            \"Region\": \"xx\",\n            \"TopicID\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "更新安全日志-日志投递cls配置"
+      }
+    ],
+    "ModifySecLogDeliveryKafkaSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogDeliveryKafkaSetting\n<公共请求参数>\n\n{\n    \"InstanceID\": \"实例ID\",\n    \"InstanceName\": \"实例名称\",\n    \"Domain\": \"域名\",\n    \"User\": \"用户名\",\n    \"Password\": \"密码\",\n    \"LogTypeList\": [\n        {\n            \"LogType\": \"container_bash\",\n            \"TopicID\": \"主题ID\",\n            \"TopicName\": \"主题名称\",\n            \"State\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "更新安全日志投递kafka设置"
+      }
+    ],
+    "ModifySecLogJoinObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogJoinObjects\n<公共请求参数>\n\n{\n    \"LogType\": \"container_bash\",\n    \"BindList\": [\n        \"xxxxx\",\n        \"xxxxx\"\n    ],\n    \"UnBindList\": [\n        \"xxxxx\",\n        \"xxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改安全日志接入对象"
+      }
+    ],
+    "ModifySecLogJoinState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogJoinState\n<公共请求参数>\n\n{\n    \"LogType\": \"container_bash\",\n    \"State\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改安全日志接入状态"
+      }
+    ],
+    "ModifySecLogKafkaUIN": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogKafkaUIN\n<公共请求参数>\n\n{\n    \"DstUIN\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改安全日志KafkaUIN"
+      }
+    ],
+    "ModifyVirusAutoIsolateExampleSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusAutoIsolateExampleSwitch\n<公共请求参数>\n\n{\n    \"MD5\": \"xxxxxxxxxxxx\",\n    \"Status\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改木马自动隔离样本开关"
+      }
+    ],
+    "ModifyVirusAutoIsolateSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusAutoIsolateSetting\n<公共请求参数>\n\n{\n    \"AutoIsolateSwitch\": true,\n    \"IsKillProgress\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "修改木马自动隔离设置"
       }
     ],
     "ModifyVirusFileStatus": [
@@ -1294,10 +2338,34 @@
         "title": "运行时文件扫描超时设置"
       }
     ],
+    "ModifyVulDefenceEventStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVulDefenceEventStatus\n<公共请求参数>\n\n{\n    \"Status\": \"EVENT_DEALED\",\n    \"EventIDs\": [\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改漏洞防御事件状态"
+      }
+    ],
+    "ModifyVulDefenceSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVulDefenceSetting\n<公共请求参数>\n\n{\n    \"Scope\": \"1\",\n    \"IsEnabled\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑漏洞防御设置"
+      }
+    ],
+    "OpenTcssTrial": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=OpenTcssTrial\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"EndTime\": \"xx\",\n        \"StartTime\": \"xx\"\n    }\n}",
+        "title": "开通容器安全服务试用"
+      }
+    ],
     "RemoveAssetImageRegistryRegistryDetail": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=RemoveAssetImageRegistryRegistryDetail\n&RegistryId=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"RegistryId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除单个镜像仓库详细信息"
       }
@@ -1308,6 +2376,14 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=RenewImageAuthorizeState\n&AllImages=false\n&ImageIds.0=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "授权镜像扫描"
+      }
+    ],
+    "ResetSecLogTopicConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetSecLogTopicConfig\n<公共请求参数>\n\n{\n    \"ConfigType\": \"ckafka\",\n    \"LogType\": \"k8s_api\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "title": "重置安全日志主题设置"
       }
     ],
     "ScanComplianceAssets": [
@@ -1358,12 +2434,44 @@
         "title": "运行时停止木马查杀任务"
       }
     ],
+    "StopVulScanTask": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=StopVulScanTask\n&LocalTaskID=1\n&RegistryTaskID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "停止漏洞扫描任务"
+      }
+    ],
+    "SwitchImageAutoAuthorizedRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=SwitchImageAutoAuthorizedRule\n&IsEnabled=1\n&RuleId=1\n\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑本地镜像自动授权开关"
+      }
+    ],
     "SyncAssetImageRegistryAsset": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncAssetImageRegistryAsset\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\"\n    }\n}",
         "title": "镜像仓库资产刷新"
+      }
+    ],
+    "UpdateAndPublishNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAndPublishNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"Id\": 22,\n    \"CustomPolicy\": [\n        {\n            \"Peer\": \"xx\",\n            \"Direction\": \"xx\",\n            \"Ports\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"FromPolicyRule\": 0,\n    \"Namespace\": \"xx\",\n    \"ToPolicyRule\": 0,\n    \"PodSelector\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略更新并发布任务示例"
+      }
+    ],
+    "UpdateAndPublishNetworkFirewallPolicyYamlDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAndPublishNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Id\": 1,\n    \"Yaml\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络更新Yaml网络策略并发布任务任务示例"
       }
     ],
     "UpdateAssetImageRegistryRegistryDetail": [
@@ -1380,6 +2488,22 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageRegistryTimingScanTask\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"Enable\": true,\n    \"ScanPeriod\": 1,\n    \"ScanTime\": \"19:35:20\",\n    \"ScanType\": [\n        \"RISK\",\n        \"VIRUS\",\n        \"CVE\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dc14a3b-9238-40b7-aa68-425db89964fa\"\n    }\n}",
         "title": "镜像仓库更新定时任务"
+      }
+    ],
+    "UpdateNetworkFirewallPolicyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateNetworkFirewallPolicyDetail\n<公共请求参数>\n\n{\n    \"Id\": 22,\n    \"CustomPolicy\": [\n        {\n            \"Peer\": \"xx\",\n            \"Direction\": \"xx\",\n            \"Ports\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"FromPolicyRule\": 0,\n    \"Namespace\": \"xx\",\n    \"ToPolicyRule\": 0,\n    \"PodSelector\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络创建网络策略更新任务示例"
+      }
+    ],
+    "UpdateNetworkFirewallPolicyYamlDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateNetworkFirewallPolicyYamlDetail\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Id\": 1,\n    \"Yaml\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"Result\": \"Succ\"\n    }\n}",
+        "title": "容器网络更新Yaml网络策略任务示例"
       }
     ]
   },

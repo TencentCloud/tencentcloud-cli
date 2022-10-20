@@ -27,8 +27,8 @@
     "ChannelCreateConvertTaskApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"hello.docx\",\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f3497*********84a9657b0ec\"\n    },\n    \"ResourceId\": \"yDRvQUUg*********zjERW6iCFCEl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0218bd4e-541e-45e8-8d1f-76efef6c83d2\",\n        \"TaskId\": \"20220*********589282\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateConvertTaskApi\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"ResourceType\": \"docx\",\n    \"ResourceName\": \"hello.docx\",\n    \"ResourceId\": \"yDRvQUUg*********zjERW6iCFCEl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0218bd4xxxxefef6c83d2\",\n        \"TaskId\": \"20220*********589282\"\n    }\n}",
         "title": "test示例"
       }
     ],
@@ -59,7 +59,7 @@
     "ChannelCreateMultiFlowSignQRCode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"FlowEffectiveDay\": 0,\n    \"TemplateId\": \"xx\",\n    \"MaxFlowNum\": 0,\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"FlowEffectiveDay\": 0,\n    \"TemplateId\": \"xx\",\n    \"MaxFlowNum\": 0,\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"xx\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"xx\"\n        },\n        \"SignUrls\": {\n            \"EffectiveTime\": \"xx\",\n            \"HttpSignUrl\": \"xx\",\n            \"AppSignUrl\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "ChannelCreateMultiFlowSignQRCode"
       }
@@ -75,7 +75,7 @@
     "ChannelGetTaskResultApi": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelGetTaskResultApi\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"test1_clara_test1\",\n        \"ClientIp\": \"8.8.8.8\",\n        \"ProxyIp\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f349*********984a9657b0ec\"\n    },\n    \"TaskId\": \"2022*********589282\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelGetTaskResultApi\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"d2b****b66f954d7cc\",\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"TaskId\": \"2022*********589282\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f08b529-f13e-4129-85a4-9585fd794656\",\n        \"ResourceId\": \"yDRt2*********EytoAXw44x\",\n        \"TaskId\": \"2022*********4589282\",\n        \"TaskMessage\": \"任务处理完成\",\n        \"TaskStatus\": 8,\n        \"PreviewUrl\": \"xxxxxx\"\n    }\n}",
         "title": "test示例"
       }
@@ -97,14 +97,14 @@
     "CreateConsoleLoginUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xxx\",\n        \"AppId\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成默认的控制台链接"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs\",\n    \"MenuStatus\": \"ENABLE\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzUyKQDlWe6UuO4zjE8oTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"xx\",\n    \"MenuStatus\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成到模板详情的控制台链接"
       }
     ],
@@ -125,15 +125,15 @@
     "CreateSealByImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf*****200fef3d\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8*********xxx3aff766cac\",\n            \"ClientIp\": \"8.8.8.8\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8*********968c0ee248f04\",\n        \"AppId\": \"65fb0c59*********382cc5ed0e\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"\",\n        \"RequestId\": \"s1629442787650001803\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf*****200fef3d\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8*********xxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8*********968c0ee248f04\",\n        \"AppId\": \"65fb0c59*********382cc5ed0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"\",\n        \"RequestId\": \"s16294xxxxx0001803\"\n    }\n}",
         "title": "渠道通过图片为子客代创建印章"
       }
     ],
     "CreateSignUrls": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrls\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"test-flow-id\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c 2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"AppId\": \"xx\"\n    },\n    \"Endpoint\": \"CHANNEL\"\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrls\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"test-flow-id\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"AppId\": \"xx\"\n    },\n    \"Endpoint\": \"CHANNEL\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"xx\"\n        ],\n        \"SignUrlInfos\": [\n            {\n                \"SignUrl\": \"xx\",\n                \"OrganizationName\": \"xx\",\n                \"Name\": \"xx\",\n                \"ApproverType\": \"xx\",\n                \"Mobile\": \"xx\",\n                \"CustomUserId\": \"xx\",\n                \"Deadline\": 0,\n                \"SignOrder\": 0,\n                \"SignId\": \"xx\",\n                \"IdCardNumber\": \"xxxxxxx\",\n                \"OpenId\": \"xx\",\n                \"FlowId\": \"test-flow-id\",\n                \"FlowGroupId\": \"\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量创建签署参与者签署H5链接"
       }
@@ -149,7 +149,7 @@
     "DescribeResourceUrlsByFlows": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUrlsByFlows\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"CustomUserId\": \"xx\",\n        \"ProxyIp\": \"xx\",\n        \"Channel\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"xx\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUrlsByFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowResourceUrlInfos\": [\n            {\n                \"FlowId\": \"xx\",\n                \"ResourceUrlInfos\": [\n                    {\n                        \"Url\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"ErrorMessages\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "根据签署流程信息批量获取资源下载链接"
       }
@@ -191,8 +191,8 @@
     "GetDownloadFlowUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDownloadFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"DownLoadFlows\": [\n        {\n            \"FlowIdList\": [\n                \"test-flow-id1\",\n                \"test-flow-id2\"\n            ],\n            \"FileName\": \"文件夹1\"\n        },\n        {\n            \"FlowIdList\": [\n                \"test-flow-id3\",\n                \"test-flow-id4\"\n            ],\n            \"FileName\": \"文件夹2\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DownLoadUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1639587153&code=yDxjKUUgydjf9pruUuO4zjES4adWk38k&token=yDxjKUUgydjf9pruUuO4zjES4adWk38k&operate=downloadFlow\",\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDownloadFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2xxxxx1f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8xxxxe9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c5910xxxxaa382cc5ed0e\"\n    },\n    \"DownLoadFlows\": [\n        {\n            \"FlowIdList\": [\n                \"test-flow-id1\",\n                \"test-flow-id2\"\n            ],\n            \"FileName\": \"文件夹1\"\n        },\n        {\n            \"FlowIdList\": [\n                \"test-flow-id3\",\n                \"test-flow-id4\"\n            ],\n            \"FileName\": \"文件夹2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownLoadUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1639587153&code=yDxjKUUgydjf9pxxxx4adWk38k&token=yDxjKxxxpruUuO4zjES4adWk38k&operate=downloadFlow\",\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成批量下载控制连接地址"
       }
     ],

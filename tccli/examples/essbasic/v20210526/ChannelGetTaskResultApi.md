@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli essbasic ChannelGetTaskResultApi --cli-unfold-argument  \
-    --Operator.OpenId test1_clara_test1 \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.ProxyIp  \
-    --Agent.ProxyOrganizationOpenId test1_clara_open_organization1 \
-    --Agent.AppId 7f349*********984a9657b0ec \
+    --Agent.ProxyAppId d2b****b66f954d7cc \
+    --Agent.ProxyOrganizationOpenId yDxAyUyK****cb7u0jQn0Zh7f7 \
+    --Agent.ProxyOperator.OpenId 732aaef****541b89c49e0cc \
+    --Agent.AppId ed68bc6***********0214e4e \
     --TaskId 2022*********589282
 ```
 

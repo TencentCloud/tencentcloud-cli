@@ -24,11 +24,23 @@
       "name": "查询网格列表",
       "output": "DescribeMeshListResponse"
     },
+    "LinkClusterList": {
+      "document": "关联集群",
+      "input": "LinkClusterListRequest",
+      "name": "关联集群",
+      "output": "LinkClusterListResponse"
+    },
     "ModifyMesh": {
       "document": "修改网格",
       "input": "ModifyMeshRequest",
       "name": "修改网格",
       "output": "ModifyMeshResponse"
+    },
+    "UnlinkCluster": {
+      "document": "解关联集群",
+      "input": "UnlinkClusterRequest",
+      "name": "解关联集群",
+      "output": "UnlinkClusterResponse"
     }
   },
   "metadata": {
@@ -1252,6 +1264,42 @@
       ],
       "usage": "both"
     },
+    "LinkClusterListRequest": {
+      "document": "LinkClusterList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格Id",
+          "example": "mesh-xxxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关联集群",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkClusterListResponse": {
+      "document": "LinkClusterList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoadBalancer": {
       "document": "负载均衡配置",
       "members": [
@@ -2229,6 +2277,42 @@
         }
       ],
       "usage": "both"
+    },
+    "UnlinkClusterRequest": {
+      "document": "UnlinkCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取消关联的集群Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkClusterResponse": {
+      "document": "UnlinkCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "WorkloadConfig": {
       "document": "工作负载配置",

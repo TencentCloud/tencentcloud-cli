@@ -32,12 +32,28 @@
         "title": "DescribeMeshList"
       }
     ],
+    "LinkClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LinkClusterList\n<公共请求参数>\n\n{\n    \"MeshId\": \"xx\",\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"DisplayName\": \"\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "LinkClusterList"
+      }
+    ],
     "ModifyMesh": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMesh\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"DisplayName\": \"newName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "ModifyMesh"
+      }
+    ],
+    "UnlinkCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlinkCluster\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"ClusterId\": \"{{clusterId}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "UnlinkCluster"
       }
     ]
   },

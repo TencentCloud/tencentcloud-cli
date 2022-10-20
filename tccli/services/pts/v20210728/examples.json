@@ -228,7 +228,7 @@
       {
         "document": "查询请求速率&请求总数",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleBatchQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Queries\": [\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Rate\"\n        },\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSampleSet\": [\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Rate\",\n                \"Unit\": \"reqs/s\",\n                \"Labels\": null,\n                \"Value\": \"30.34732915216155\",\n                \"Timestamp\": 1631694009709\n            },\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Count\",\n                \"Unit\": \"reqs\",\n                \"Labels\": null,\n                \"Value\": \"1193277\",\n                \"Timestamp\": 1631694009709\n            }\n        ],\n        \"RequestId\": \"semjcc9-oo8wbqbuabqkddg-lipuuvmz\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSampleSet\": [\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Rate\",\n                \"Unit\": \"reqs/s\",\n                \"Labels\": null,\n                \"Value\": \"30.34732915216155\",\n                \"Timestamp\": 1631694009709\n            },\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Count\",\n                \"Unit\": \"reqs\",\n                \"Labels\": null,\n                \"Value\": \"1193277\",\n                \"Timestamp\": 1631694009709\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量查询指标"
       }
     ],
@@ -260,7 +260,7 @@
       {
         "document": "查询某个任务总的请求数",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"Aggregation\": \"Count\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSample\": {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\",\n            \"Unit\": \"reqs\",\n            \"Labels\": null,\n            \"Value\": \"1159362\",\n            \"Timestamp\": 1631693039208\n        },\n        \"RequestId\": \"jqlhs725if7tqgfnb2snytlm22-f3our\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSample\": {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\",\n            \"Unit\": \"reqs\",\n            \"Labels\": null,\n            \"Value\": \"1159362\",\n            \"Timestamp\": 1631693039208\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询总请求数"
       }
     ],

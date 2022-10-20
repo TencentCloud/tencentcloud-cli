@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tke RunPrometheusInstance --cli-unfold-argument ```
+tccli tke RunPrometheusInstance --cli-unfold-argument  \
+    --InstanceId prom-xxx
+```
 
 Output: 
 ```
