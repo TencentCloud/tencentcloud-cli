@@ -480,6 +480,12 @@
       "name": "企业四要素核验",
       "output": "VerifyEnterpriseFourFactorsResponse"
     },
+    "VerifyHKIDCard": {
+      "document": "香港身份证视频鉴伪",
+      "input": "VerifyHKIDCardRequest",
+      "name": "香港身份证视频鉴伪",
+      "output": "VerifyHKIDCardResponse"
+    },
     "VerifyMultiPermit": {
       "document": "证照类多图鉴伪识别，支持基于输入多张证照图片，判断证照的真伪并反馈鉴别结果。支持鉴别伪证场景：遮挡、翻拍件、复印件。",
       "input": "VerifyMultiPermitRequest",
@@ -12477,6 +12483,129 @@
           "name": "Detail",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyHKIDCardItem": {
+      "document": "香港身份证鉴伪结果",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴伪字段；\nKineprintHK 动感印刷\nChipCheck 晶片检测\nFlashCheck 材质反光\nTamperCheck 篡改检测\nSoftenPhotoArea 渐淡色背景\nInkWithVariableProperties 变色油墨\nLaserFaceImage 动感印刷头像\nSwitchID 换证检测\nHologram 全息图, 镭射花标\nRainbowPrinting 彩虹印刷",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐标",
+          "member": "ItemCoord",
+          "name": "ItemCoord",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴伪结果；Fail鉴定不通过 Pass鉴定通过",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifyHKIDCardRequest": {
+      "document": "VerifyHKIDCard请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频的 Url 地址\n支持的视频大小：不超过 20M。下载时间不超过 5秒。\n视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频的 Base64 值。\n支持的视频大小：视频经过Base64编码后不超过 20M。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否返回预处理后的身份证照片，默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "ReturnImage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyHKIDCardResponse": {
+      "document": "VerifyHKIDCard返回参数结构体",
+      "members": [
+        {
+          "document": "视频质量分 取值范围[0.0,1.0]",
+          "example": "0.81000000238419",
+          "member": "float",
+          "name": "VideoScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "置信度 取值范围[0.0,1.0]",
+          "example": "0.94891780614853",
+          "member": "float",
+          "name": "ResultConf",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "鉴伪结果，输出值:Pass/Fail",
+          "example": "Pass",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "场景鉴伪结果\nKineprintHK 动感印刷\nChipCheck 晶片检测\nFlashCheck 材质反光\nTamperCheck 篡改检测\nSoftenPhotoArea 渐淡色背景\nInkWithVariableProperties 变色油墨\nLaserFaceImage 动感印刷\nSwitchID 换证检测\nHologram 镭射花标\nRainbowPrinting 彩虹印刷",
+          "example": "无",
+          "member": "VerifyHKIDCardItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预处理后的身份证照片的base64编码，请求 ReturnImage 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

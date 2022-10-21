@@ -240,6 +240,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeLightInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLightInstances\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"Status\": \"xx\",\n    \"DbType\": \"xx\",\n    \"OrderByType\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cynosdbmysql-ins-bzkxxrmt\"\n            ],\n            \"Names\": [\n                \"xx\"\n            ],\n            \"ExactMatch\": true,\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"Status\": \"xx\",\n                \"Zone\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"ProjectId\": 0,\n                \"ClusterId\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"AppId\": 251007582,\n                \"StatusDesc\": \"xx\",\n                \"InstanceName\": \"xx\"\n            },\n            {\n                \"Status\": \"xx\",\n                \"Zone\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"ProjectId\": 0,\n                \"ClusterId\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"AppId\": 251007582,\n                \"StatusDesc\": \"xx\",\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 26,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询轻量级实例列表"
+      }
+    ],
     "DescribeMaintainPeriod": [
       {
         "document": "",

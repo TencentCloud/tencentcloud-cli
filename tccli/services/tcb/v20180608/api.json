@@ -3732,7 +3732,8 @@
           "member": "string",
           "name": "AccountPassword",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3741,7 +3742,8 @@
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3750,7 +3752,8 @@
           "member": "string",
           "name": "WxAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3759,7 +3762,18 @@
           "member": "string",
           "name": "DbVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0: 非大小写敏感\n1: 大小写敏感\n默认 0",
+          "example": "“1”",
+          "member": "string",
+          "name": "LowerCaseTableName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

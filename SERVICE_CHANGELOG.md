@@ -1,29 +1,57 @@
 # 本版本更新包含以下内容：
 
-## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 39 次发布
+### 第 33 次发布
 
-发布时间：2022-10-20 06:10:16
+发布时间：2022-10-21 06:15:46
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [MySQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MySQLParam)
+* [DeleteBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76434)
+* [DeleteScanTask](http://document.tencentcloudapi.woa.com/document/product/296/76435)
+* [DescribeBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76433)
+* [DescribeJavaMemShellList](http://document.tencentcloudapi.woa.com/document/product/296/76436)
+* [ModifyBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76432)
+* [StopBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76431)
 
-	* 新增成员：SignalDatabase
+新增数据结构：
+
+* [BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)
+* [BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy)
+* [JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)
 
 
 
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
 
-## 企业收付平台(cpdp) 版本：2019-08-20
+### 第 17 次发布
 
-### 第 43 次发布
+发布时间：2022-10-21 06:17:17
 
-发布时间：2022-10-20 06:12:12
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLightInstances](http://document.tencentcloudapi.woa.com/document/product/1003/76437)
+
+新增数据结构：
+
+* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 33 次发布
+
+发布时间：2022-10-21 06:28:30
 
 本次发布包含了以下内容：
 
@@ -31,18 +59,42 @@
 
 修改接口：
 
-* [CreateOpenBankGlobalPaymentOrder](http://document.tencentcloudapi.woa.com/document/product/1122/76424)
+* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
 
-	* 新增入参：Environment
-
-
+	* 新增入参：HierarchicalNotices, MigrateFlag
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+新增数据结构：
 
-### 第 18 次发布
+* [AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)
 
-发布时间：2022-10-20 06:19:22
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 29 次发布
+
+发布时间：2022-10-21 06:30:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VerifyHKIDCard](http://document.tencentcloudapi.woa.com/document/product/866/76438)
+
+新增数据结构：
+
+* [VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem)
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 24 次发布
+
+发布时间：2022-10-21 06:36:06
 
 本次发布包含了以下内容：
 
@@ -50,22 +102,18 @@
 
 修改接口：
 
-* [ChannelCreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75252)
+* [CreateWxCloudBaseRunServerDBCluster](http://document.tencentcloudapi.woa.com/document/product/876/55636)
 
-	* 新增入参：Restrictions
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+	* 新增入参：LowerCaseTableName
 
 
 
-## 云开发低码(lowcode) 版本：2021-01-08
 
-### 第 2 次发布
+## 服务网格(tcm) 版本：2021-04-13
 
-发布时间：2022-10-20 06:24:37
+### 第 12 次发布
+
+发布时间：2022-10-21 06:36:35
 
 本次发布包含了以下内容：
 
@@ -73,46 +121,21 @@
 
 新增数据结构：
 
-* [QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere)
+* [EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus)
 
 修改数据结构：
 
-* [GroupPermission](http://document.tencentcloudapi.woa.com/document/product/1599/75496#GroupPermission)
+* [EgressGateway](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGateway)
 
-	* 新增成员：WritableCondition, ReadableCondition
+	* 新增成员：Status
 
-	* <font color="#dd0000">**修改成员**：</font>Readable, Writable
+* [IngressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#IngressGatewayStatus)
 
+	* 新增成员：CurrentVersion, DesiredVersion, State
 
+* [Mesh](http://document.tencentcloudapi.woa.com/document/product/1593/75052#Mesh)
 
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 10 次发布
-
-发布时间：2022-10-20 06:28:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Concurrency](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Concurrency)
-
-	* 新增成员：GracefulStopSeconds
-
-* [CustomSample](http://document.tencentcloudapi.woa.com/document/product/1597/75228#CustomSample)
-
-	* 新增成员：Name
-
-* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
-
-	* 新增成员：AppID, Uin, SubAccountUin
-
-* [RequestsPerSecond](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RequestsPerSecond)
-
-	* 新增成员：GracefulStopSeconds
+	* 新增成员：TagList
 
 
 
@@ -12738,6 +12761,29 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 33 次发布
+
+发布时间：2022-10-21 06:15:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76434)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteScanTask](http://document.tencentcloudapi.woa.com/document/product/296/76435)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76433)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeJavaMemShellList](http://document.tencentcloudapi.woa.com/document/product/296/76436)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76432)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76431)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect))
+* [[BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy))
+* [[JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo))
+
 ### 第 32 次发布
 
 发布时间：2022-10-12 06:18:50
@@ -13847,6 +13893,22 @@
 
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 17 次发布
+
+发布时间：2022-10-21 06:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeLightInstances](http://document.tencentcloudapi.woa.com/document/product/1003/76437)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance))
 
 ### 第 16 次发布
 
@@ -23848,7 +23910,7 @@
 
 新增数据结构：
 
-* [[QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere))
+* [QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere)
 
 修改数据结构：
 
@@ -24811,6 +24873,25 @@
 
 
 ## 云监控(monitor) 版本：2018-07-24
+
+### 第 33 次发布
+
+发布时间：2022-10-21 06:28:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
+
+	* 新增入参：HierarchicalNotices, MigrateFlag
+
+
+新增数据结构：
+
+* [[AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice))
 
 ### 第 32 次发布
 
@@ -26974,6 +27055,22 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 29 次发布
+
+发布时间：2022-10-21 06:30:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[VerifyHKIDCard](http://document.tencentcloudapi.woa.com/document/product/866/76438)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem))
 
 ### 第 28 次发布
 
@@ -32704,6 +32801,21 @@
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
 
+### 第 24 次发布
+
+发布时间：2022-10-21 06:36:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWxCloudBaseRunServerDBCluster](http://document.tencentcloudapi.woa.com/document/product/876/55636)
+
+	* 新增入参：LowerCaseTableName
+
+
 ### 第 23 次发布
 
 发布时间：2022-10-19 06:14:01
@@ -33265,6 +33377,33 @@
 
 
 ## 服务网格(tcm) 版本：2021-04-13
+
+### 第 12 次发布
+
+发布时间：2022-10-21 06:36:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus)](http://document.tencentcloudapi.woa.com/document/product/1593/75052#[EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus))
+
+修改数据结构：
+
+* [EgressGateway](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGateway)
+
+	* 新增成员：Status
+
+* [IngressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#IngressGatewayStatus)
+
+	* 新增成员：CurrentVersion, DesiredVersion, State
+
+* [Mesh](http://document.tencentcloudapi.woa.com/document/product/1593/75052#Mesh)
+
+	* 新增成员：TagList
+
 
 ### 第 11 次发布
 

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
-    --Agent.ProxyAppId xxx \
-    --Agent.ProxyOrganizationId xxx \
-    --Agent.ProxyOrganizationOpenId xxx \
-    --Agent.AppId xxx \
+    --Agent.ProxyAppId xx \
+    --Agent.ProxyOrganizationOpenId xx \
+    --Agent.ProxyOperator.OpenId xx \
+    --Agent.AppId xx \
     --FlowGroupName xxx \
     --FlowFileInfos.0.FlowName  \
     --FlowFileInfos.0.FlowApprovers.0.ApproverType xxx \

@@ -108,6 +108,12 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"DbVersion\": \"字符串\",\n    \"WxAppId\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"AccountPassword\": \"字符串\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1210cbf-f738-47f7-8e6d-2af814acece6\"\n    }\n}",
         "title": "success"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"DbVersion\": \"字符串\",\n    \"WxAppId\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"LowerCaseTableName\": \"字符串\",\n    \"AccountPassword\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1faa7da-a58b-44e1-9647-4782d8c11321\"\n    }\n}",
+        "title": "success-20221010"
       }
     ],
     "DeleteCloudBaseProjectLatestVersion": [

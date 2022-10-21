@@ -180,6 +180,12 @@
       "name": "查询实例列表",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeLightInstances": {
+      "document": "本接口(DescribeLightInstances)作为轻量级接口，仅返回实例基础信息，用于查询实例列表。",
+      "input": "DescribeLightInstancesRequest",
+      "name": "查询轻量级实例列表",
+      "output": "DescribeLightInstancesResponse"
+    },
     "DescribeMaintainPeriod": {
       "document": "查询实例维护时间窗",
       "input": "DescribeMaintainPeriodRequest",
@@ -3717,6 +3723,111 @@
       ],
       "usage": "out"
     },
+    "CynosdbLightInstance": {
+      "document": "轻量级实例列表接口查询返回对象",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345678",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdb-ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "实例名",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdb-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "集群名",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例状态中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "DatabasePrivileges": {
       "document": "数据库权限列表",
       "members": [
@@ -5242,6 +5353,124 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLightInstancesRequest": {
+      "document": "DescribeLightInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
+          "example": "xx",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
+          "example": "xx",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "引擎类型：目前支持“MYSQL”， “POSTGRESQL”",
+          "example": "xx",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例状态, 可选值:\ncreating 创建中\nrunning 运行中\nisolating 隔离中\nisolated 已隔离\nactivating 恢复中\nofflining 下线中\nofflined 已下线",
+          "example": "xx",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例id列表",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLightInstancesResponse": {
+      "document": "DescribeLightInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例个数",
+          "example": "26",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "CynosdbLightInstance",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
