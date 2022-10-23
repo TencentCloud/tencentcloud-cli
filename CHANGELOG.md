@@ -1,3 +1,21 @@
+# Release 3.0.632.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 34 次发布
+
+发布时间：2022-10-24 06:14:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBaselinePolicyList](http://document.tencentcloudapi.woa.com/document/product/296/76439)
+
+
+
 # Release 3.0.631.1
 
 ## 主机安全(cwp) 版本：2018-02-28

@@ -474,6 +474,12 @@
       "name": "查询基线列表",
       "output": "DescribeBaselineListResponse"
     },
+    "DescribeBaselinePolicyList": {
+      "document": "获取基线策略列表",
+      "input": "DescribeBaselinePolicyListRequest",
+      "name": "获取基线策略列表",
+      "output": "DescribeBaselinePolicyListResponse"
+    },
     "DescribeBaselineRule": {
       "document": "根据基线id查询下属检测项信息",
       "input": "DescribeBaselineRuleRequest",
@@ -13468,6 +13474,94 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselinePolicyListRequest": {
+      "document": "DescribeBaselinePolicyList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>PolicyName - String - 是否必填：否 - 策略名称</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "限制条数,默认10,最大100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式: [ASC:升序|DESC:降序]",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可选排序列: [RuleCount|ItemCount|HostCount]",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselinePolicyListResponse": {
+      "document": "DescribeBaselinePolicyList返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "BaselinePolicy",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -47,7 +47,7 @@
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2022-10-17 06:14:58 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2022-10-20 06:12:12 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2022-10-12 06:18:08 |
-| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2022-10-21 06:15:46 |
+| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2022-10-24 06:14:46 |
 | cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-10-21 06:17:17 |
 | dasb | [堡垒机](http://document.tencentcloudapi.woa.com/document/product/1025) | 2022-08-29 15:29:33 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2022-07-29 10:41:16 |

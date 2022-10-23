@@ -2,36 +2,9 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 33 次发布
+### 第 34 次发布
 
-发布时间：2022-10-21 06:15:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76434)
-* [DeleteScanTask](http://document.tencentcloudapi.woa.com/document/product/296/76435)
-* [DescribeBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76433)
-* [DescribeJavaMemShellList](http://document.tencentcloudapi.woa.com/document/product/296/76436)
-* [ModifyBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76432)
-* [StopBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76431)
-
-新增数据结构：
-
-* [BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)
-* [BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy)
-* [JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)
-
-
-
-## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
-
-### 第 17 次发布
-
-发布时间：2022-10-21 06:17:17
+发布时间：2022-10-24 06:14:46
 
 本次发布包含了以下内容：
 
@@ -39,104 +12,7 @@
 
 新增接口：
 
-* [DescribeLightInstances](http://document.tencentcloudapi.woa.com/document/product/1003/76437)
-
-新增数据结构：
-
-* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
-
-
-
-## 云监控(monitor) 版本：2018-07-24
-
-### 第 33 次发布
-
-发布时间：2022-10-21 06:28:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
-
-	* 新增入参：HierarchicalNotices, MigrateFlag
-
-
-新增数据结构：
-
-* [AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)
-
-
-
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 29 次发布
-
-发布时间：2022-10-21 06:30:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [VerifyHKIDCard](http://document.tencentcloudapi.woa.com/document/product/866/76438)
-
-新增数据结构：
-
-* [VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 24 次发布
-
-发布时间：2022-10-21 06:36:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateWxCloudBaseRunServerDBCluster](http://document.tencentcloudapi.woa.com/document/product/876/55636)
-
-	* 新增入参：LowerCaseTableName
-
-
-
-
-## 服务网格(tcm) 版本：2021-04-13
-
-### 第 12 次发布
-
-发布时间：2022-10-21 06:36:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus)
-
-修改数据结构：
-
-* [EgressGateway](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGateway)
-
-	* 新增成员：Status
-
-* [IngressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#IngressGatewayStatus)
-
-	* 新增成员：CurrentVersion, DesiredVersion, State
-
-* [Mesh](http://document.tencentcloudapi.woa.com/document/product/1593/75052#Mesh)
-
-	* 新增成员：TagList
-
+* [DescribeBaselinePolicyList](http://document.tencentcloudapi.woa.com/document/product/296/76439)
 
 
 
@@ -12761,6 +12637,18 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 34 次发布
+
+发布时间：2022-10-24 06:14:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBaselinePolicyList](http://document.tencentcloudapi.woa.com/document/product/296/76439)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 33 次发布
 
 发布时间：2022-10-21 06:15:46
@@ -12771,18 +12659,18 @@
 
 新增接口：
 
-* [[DeleteBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76434)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteScanTask](http://document.tencentcloudapi.woa.com/document/product/296/76435)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76433)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeJavaMemShellList](http://document.tencentcloudapi.woa.com/document/product/296/76436)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76432)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StopBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76431)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76434)
+* [DeleteScanTask](http://document.tencentcloudapi.woa.com/document/product/296/76435)
+* [DescribeBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/76433)
+* [DescribeJavaMemShellList](http://document.tencentcloudapi.woa.com/document/product/296/76436)
+* [ModifyBaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/76432)
+* [StopBaselineDetect](http://document.tencentcloudapi.woa.com/document/product/296/76431)
 
 新增数据结构：
 
-* [[BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect))
-* [[BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy))
-* [[JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo))
+* [BaselineHostDetect](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineHostDetect)
+* [BaselinePolicy](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselinePolicy)
+* [JavaMemShellInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#JavaMemShellInfo)
 
 ### 第 32 次发布
 
@@ -13904,11 +13792,11 @@
 
 新增接口：
 
-* [[DescribeLightInstances](http://document.tencentcloudapi.woa.com/document/product/1003/76437)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeLightInstances](http://document.tencentcloudapi.woa.com/document/product/1003/76437)
 
 新增数据结构：
 
-* [[CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance))
+* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
 
 ### 第 16 次发布
 
@@ -24891,7 +24779,7 @@
 
 新增数据结构：
 
-* [[AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice))
+* [AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)
 
 ### 第 32 次发布
 
@@ -27066,11 +26954,11 @@
 
 新增接口：
 
-* [[VerifyHKIDCard](http://document.tencentcloudapi.woa.com/document/product/866/76438)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [VerifyHKIDCard](http://document.tencentcloudapi.woa.com/document/product/866/76438)
 
 新增数据结构：
 
-* [[VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem))
+* [VerifyHKIDCardItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#VerifyHKIDCardItem)
 
 ### 第 28 次发布
 
@@ -33388,7 +33276,7 @@
 
 新增数据结构：
 
-* [[EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus)](http://document.tencentcloudapi.woa.com/document/product/1593/75052#[EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus))
+* [EgressGatewayStatus](http://document.tencentcloudapi.woa.com/document/product/1593/75052#EgressGatewayStatus)
 
 修改数据结构：
 
