@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli cpdp DownloadBill --cli-unfold-argument  \
+    --MidasSignature your_midas_signature \
     --StateDate 20191202 \
-    --MidasAppId test_midas_app_id \
     --MidasSecretId your_midas_secret_id \
-    --MidasSignature your_midas_signature
+    --MidasAppId test_midas_app_id
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "StateType": "TRADE",
         "FileName": "appid_20191202.csv",
         "FileMD5": "bef046b73c9e543f7773692ce56def68",
         "DownloadUrl": "download_url",

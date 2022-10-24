@@ -22,6 +22,9 @@ Output:
         "GuetzliAdapter": {
             "Switch": "on/off"
         },
+        "AvifAdapter": {
+            "Switch": "on/off"
+        },
         "RequestId": "29699aac-9898-4baf-b645-7cc31d972674"
     }
 }

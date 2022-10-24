@@ -19,7 +19,7 @@
     "CreateMediaQualityRestorationTask": [
       {
         "document": "对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。",
-        "input": "https://ie.tencentcloudapi.com/?Action=CreateMediaQualityRestorationTask\n&DownInfo.Type=0\n&DownInfo.UrlInfo.Url=http://test.video.myqcloud.com/testA.mp4\n&TransInfo.0.TaskName=src_file.mp4\n&TransInfo.0.TargetInfo.FileName=dst_file.mp4\n&TransInfo.0.VideoInfo.VideoEnhance.ColorEnhance.Type=strong\n&SaveInfo.Type=1\n&SaveInfo.CosInfo.Region=ap-beijing\n&SaveInfo.CosInfo.Bucket=test-123456\n&SaveInfo.CosInfo.Path=/out_file/\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ie.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMediaQualityRestorationTask\n<公共请求参数>\n\n{\n    \"DownInfo\": {\n        \"UrlInfo\": {\n            \"Url\": \"http://test.video.myqcloud.com/testA.mp4\"\n        },\n        \"Type\": \"0\"\n    },\n    \"SaveInfo\": {\n        \"CosInfo\": {\n            \"Path\": \"/out_file/\",\n            \"Region\": \"ap-beijing\",\n            \"Bucket\": \"test-123456\"\n        },\n        \"Type\": \"1\"\n    },\n    \"TransInfo\": [\n        {\n            \"TargetInfo\": {\n                \"FileName\": \"dst_file.mp4\"\n            },\n            \"TaskName\": \"src_file.mp4\",\n            \"VideoInfo\": {\n                \"VideoEnhance\": {\n                    \"ColorEnhance\": {\n                        \"Type\": \"strong\"\n                    }\n                }\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e3\",\n        \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\n    }\n}",
         "title": "创建画质重生任务"
       }

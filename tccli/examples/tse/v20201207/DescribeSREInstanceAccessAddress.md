@@ -21,6 +21,11 @@ Output:
                 "ConfigInternetServiceIp": "xx"
             }
         ],
+        "LimiterAddressInfos": [
+            {
+                "IntranetAddress": "xx"
+            }
+        ],
         "IntranetAddress": "xx",
         "InternetAddress": "xx",
         "ConsoleInternetBandWidth": 0,

@@ -163,7 +163,7 @@
     "CreatePullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreatePullStreamConfig\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\n&AreaId=1\n&IspId=1\n&StartTime=2018-12-31T11:02:00Z\n&EndTime=2018-12-31T12:02:00Z\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePullStreamConfig\n<公共请求参数>\n\n{\n    \"AreaId\": \"1\",\n    \"ToUrl\": \"rtmp://5000.livepush.myqcloud.com/live/stream2\",\n    \"FromUrl\": \"rtmp://5000.liveplay.myqcloud.com/live/stream1\",\n    \"IspId\": \"1\",\n    \"StartTime\": \"2018-12-31T11:02:00Z\",\n    \"EndTime\": \"2018-12-31T12:02:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConfigId\": \"123\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

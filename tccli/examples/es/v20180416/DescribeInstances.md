@@ -91,6 +91,7 @@ Output:
                 "PublicAccess": "CLOSE",
                 "KibanaPublicAccess": "OPEN",
                 "KibanaPrivateAccess": "CLOSE",
+                "KibanaAlteringPublicAccess": "CLOSE",
                 "Protocol": "",
                 "SecurityGroups": [],
                 "EsPublicUrl": "",

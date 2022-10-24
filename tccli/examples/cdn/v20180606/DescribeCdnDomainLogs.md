@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdn DescribeCdnDomainLogs --cli-unfold-argument  \
-    --StartTime '2019-09-04 00:00:00' \
-    --EndTime '2019-09-04 12:00:00' \
-    --Domain www.test.com
+    --Domain www.test.com \
+    --EndTime 2019-09-04 12:00:00 \
+    --StartTime 2019-09-04 00:00:00
 ```
 
 Output: 

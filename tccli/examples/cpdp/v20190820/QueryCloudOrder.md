@@ -34,11 +34,13 @@ Output:
                 "ProductId": "1183110364214208944",
                 "TransactionId": "202204120001300008",
                 "ChannelOrderId": "202204120001300008",
+                "PayScene": "1",
                 "SettleInfo": {
                     "ProfitSharing": 0,
                     "NeedToBeConfirmed": 0
                 },
                 "AttachmentInfoList": null,
+                "PaymentMethod": "PAYMENT_METHOD_WECHAT_APP",
                 "CouponAmt": "",
                 "OutTradeNo": "1183110364214208944",
                 "PayTime": "1649778083",
@@ -51,6 +53,7 @@ Output:
                             "ProfitSharing": 0
                         },
                         "Amt": 562,
+                        "ProductId": "",
                         "Metadata": "1183110364415535792",
                         "ProductDetail": "",
                         "SettleCheck": 0,
@@ -66,6 +69,7 @@ Output:
                 "Amt": 562,
                 "RefundFlag": "1",
                 "UserId": "66661877211",
+                "SubAppId": "",
                 "ProductName": "商品",
                 "Metadata": "xxx"
             }

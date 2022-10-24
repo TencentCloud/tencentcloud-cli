@@ -6,19 +6,37 @@ Input:
 
 ```
 tccli cpdp QueryRefund --cli-unfold-argument  \
-    --UserId your_user_id \
-    --RefundId refund_id_00001 \
-    --MidasAppId your_midas_app_id \
+    --MidasSignature your_midas_signature \
     --MidasSecretId your_midas_secret_id \
-    --MidasSignature your_midas_signature
+    --MidasAppId your_midas_app_id \
+    --UserId your_user_id \
+    --RefundId refund_id_000001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "State": "2",
-        "RequestId": "665464d4-67fc-4ca0-847e-183508710681"
+        "TotalRefundAmt": 1,
+        "MidasAppId": "xx",
+        "ChannelOrderId": "xx",
+        "RefundId": "xx",
+        "OutTradeNo": "xx",
+        "State": "xx",
+        "RequestId": "xx",
+        "UsedRefundId": "xx",
+        "ChannelExternalOrderId": "xx",
+        "ChannelExternalRefundId": "xx",
+        "CurrencyType": "xx",
+        "SubRefundList": [
+            {
+                "ChannelExternalOrderId": "xx",
+                "ChannelExternalRefundId": "xx",
+                "ChannelRefundId": "xx",
+                "SubOutTradeNo": "xx",
+                "RefundAmt": "xx"
+            }
+        ]
     }
 }
 ```

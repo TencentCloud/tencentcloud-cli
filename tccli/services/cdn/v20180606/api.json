@@ -151,7 +151,7 @@
       "output": "DescribeEventLogDataResponse"
     },
     "DescribeImageConfig": {
-      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 ",
+      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
       "input": "DescribeImageConfigRequest",
       "name": "获取图片优化的配置",
       "output": "DescribeImageConfigResponse"
@@ -445,7 +445,7 @@
       "output": "UpdateDomainConfigResponse"
     },
     "UpdateImageConfig": {
-      "document": "UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG 和 Guetzli。 ",
+      "document": "UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
       "input": "UpdateImageConfigRequest",
       "name": "更新图片优化配置",
       "output": "UpdateImageConfigResponse"
@@ -2169,6 +2169,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AvifAdapter": {
+      "document": "图片优化-AvifAdapter配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4939,7 +4956,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4948,7 +4966,8 @@
           "member": "datetime",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4957,7 +4976,8 @@
           "member": "datetime",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4966,7 +4986,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4975,7 +4996,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4984,16 +5006,18 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "指定下载日志的类型。\naccess：获取访问日志",
+          "document": "指定下载日志的类型，目前仅支持访问日志（access）。\naccess：访问日志",
           "example": "access",
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5002,13 +5026,14 @@
       "document": "DescribeCdnDomainLogs返回参数结构体",
       "members": [
         {
-          "document": "日志包下载链接",
+          "document": "日志包下载链接。\n下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。",
           "example": "无",
           "member": "DomainLog",
           "name": "DomainLogs",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查询到的总条数",
@@ -5017,7 +5042,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5694,7 +5720,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5709,7 +5736,8 @@
           "name": "WebpAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5718,7 +5746,8 @@
           "name": "TpgAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5727,7 +5756,18 @@
           "name": "GuetzliAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "AvifAdapter配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9455,29 +9495,46 @@
         {
           "default": "",
           "document": "WebpAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "WebpAdapter",
           "name": "WebpAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "TpgAdapter",
           "name": "TpgAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "AvifAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -11308,7 +11365,8 @@
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11318,7 +11376,47 @@
           "name": "MaxAgeRules",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "MaxAge 状态码相关规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAgeCodeRule",
+          "name": "MaxAgeCodeRule",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "MaxAgeCodeRule": {
+      "document": "MaxAge 状态码相关规则配置",
+      "members": [
+        {
+          "default": "",
+          "document": "处理动作\nclear：清除 cache-control 头部",
+          "example": "clear",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定HTTP状态码生效，当前仅支持填写\"400-599\"",
+          "example": "[\"400-599\"]",
+          "member": "string",
+          "name": "StatusCodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -16063,7 +16161,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16072,7 +16171,8 @@
           "member": "WebpAdapter",
           "name": "WebpAdapter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16081,7 +16181,8 @@
           "member": "TpgAdapter",
           "name": "TpgAdapter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16090,7 +16191,18 @@
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "AvifAdapter配置项",
+          "example": "无",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

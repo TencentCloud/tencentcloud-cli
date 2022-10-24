@@ -15,13 +15,18 @@ Output:
 {
     "Response": {
         "Result": {
-            "Region": "ap-shanghai",
-            "VpcId": "vpc-xxx",
+            "EnvironmentId": "xx",
+            "VpcId": "xx",
+            "Locked": 0,
+            "Description": "xx",
+            "EnvironmentName": "xx",
+            "NamespaceName": "xx",
+            "Region": "xx",
+            "ApmInstanceId": "xx",
+            "CreatedDate": "xx",
             "SubnetIds": [
                 "subnet-xxx"
-            ],
-            "Description": "vpc-xxx",
-            "CreatedDate": "2011-11-11"
+            ]
         },
         "RequestId": "xx"
     }
