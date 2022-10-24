@@ -35,6 +35,12 @@
       "input": "DescribeClustersRequest",
       "name": "查询集群列表",
       "output": "DescribeClustersResponse"
+    },
+    "SetAutoScalingConfiguration": {
+      "document": "本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。",
+      "input": "SetAutoScalingConfigurationRequest",
+      "name": "设置弹性伸缩配置信息",
+      "output": "SetAutoScalingConfigurationResponse"
     }
   },
   "metadata": {
@@ -928,6 +934,62 @@
       ],
       "type": "object"
     },
+    "ExpansionNodeConfig": {
+      "document": "弹性扩容节点配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "扩容实例所在的位置。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "example": "S2.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络相关信息配置。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "GooseFSOption": {
       "document": "描述GooseFS挂载信息",
       "members": [
@@ -1231,6 +1293,175 @@
         }
       ],
       "usage": "in"
+    },
+    "QueueConfig": {
+      "document": "扩容队列配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名称。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队列中弹性节点数量最小值。取值范围0～200。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队列中弹性节点数量最大值。取值范围0～200。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启自动扩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoExpansion",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启自动缩容。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoShrink",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩容节点配置信息。",
+          "example": "无",
+          "member": "ExpansionNodeConfig",
+          "name": "ExpansionNodeConfigs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetAutoScalingConfigurationRequest": {
+      "document": "SetAutoScalingConfiguration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpansionBusyTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
+          "example": "300",
+          "member": "int64",
+          "name": "ShrinkIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容队列配置列表。",
+          "example": "无",
+          "member": "QueueConfig",
+          "name": "QueueConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAutoScalingConfigurationResponse": {
+      "document": "SetAutoScalingConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StorageOption": {
       "document": "描述集群文件系统选项",

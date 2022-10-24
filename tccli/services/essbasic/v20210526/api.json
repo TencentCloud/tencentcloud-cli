@@ -127,7 +127,7 @@
       "output": "OperateChannelTemplateResponse"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用。",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用，将会废弃。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse"
@@ -3696,7 +3696,7 @@
       "members": [
         {
           "default": "",
-          "document": "签署链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署链接，过期时间为30天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://essurl.cn/xxxx",
           "member": "string",
           "name": "SignUrl",
@@ -3706,7 +3706,7 @@
         },
         {
           "default": "",
-          "document": "链接失效时间,默认30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Deadline",

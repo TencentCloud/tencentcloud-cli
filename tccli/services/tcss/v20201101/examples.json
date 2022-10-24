@@ -24,6 +24,22 @@
         "title": "新增单个镜像仓库详细信息"
       }
     ],
+    "AddComplianceAssetPolicySetToWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddComplianceAssetPolicySetToWhitelist\n<公共请求参数>\n\n{\n    \"AssetPolicySetList\": [\n        {\n            \"CustomerPolicyItemIdSet\": [\n                1\n            ],\n            \"CustomerAssetItemId\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "忽略检测项+资产列表"
+      }
+    ],
+    "AddCompliancePolicyAssetSetToWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCompliancePolicyAssetSetToWhitelist\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 10001,\n    \"CustomerAssetItemIdSet\": [\n        10001,\n        10002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "忽略检测项+资产列表"
+      }
+    ],
     "AddCompliancePolicyItemToWhitelist": [
       {
         "document": "",
@@ -434,6 +450,22 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DeleteAccessControlRules\n&RuleIdSet.0=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除运行时访问控制策略"
+      }
+    ],
+    "DeleteComplianceAssetPolicySetFromWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteComplianceAssetPolicySetFromWhitelist\n<公共请求参数>\n\n{\n    \"AssetItemId\": 10001,\n    \"CustomerPolicyItemIdSet\": [\n        10001,\n        10002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "忽略检测项+资产列表"
+      }
+    ],
+    "DeleteCompliancePolicyAssetSetFromWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCompliancePolicyAssetSetFromWhitelist\n<公共请求参数>\n\n{\n    \"PolicyAssetSetList\": [\n        {\n            \"CustomerPolicyItemId\": 1,\n            \"CustomerAssetItemIdSet\": [\n                1\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "忽略检测项+资产列表"
       }
     ],
     "DeleteCompliancePolicyItemFromWhitelist": [
@@ -1308,6 +1340,14 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageComponentList\n&ImageID=xx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Name\": \"xx\",\n                \"ImageID\": \"xx\",\n                \"Version\": \"xx\",\n                \"VulCount\": 1,\n                \"Path\": \"xx\",\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询本地镜像组件列表"
+      }
+    ],
+    "DescribeImageRegistryNamespaceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryNamespaceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 2,\n        \"NamespaceList\": [\n            \"online\",\n            \"test\"\n        ]\n    }\n}",
+        "title": "查询用户仓库的项目空间列表"
       }
     ],
     "DescribeImageRegistryTimingScanTask": [

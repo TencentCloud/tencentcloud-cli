@@ -2794,7 +2794,7 @@
         },
         {
           "default": "",
-          "document": "签署前置条件：阅读时长限制，默认为不需要",
+          "document": "签署前置条件：阅读时长限制，单位秒，默认为不需要",
           "example": "无",
           "member": "uint64",
           "name": "PreReadTime",

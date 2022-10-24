@@ -3751,6 +3751,15 @@
           "name": "DbVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0: 非大小写敏感\n1: 大小写敏感\n默认 0",
+          "example": "“1”",
+          "member": "string",
+          "name": "LowerCaseTableName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

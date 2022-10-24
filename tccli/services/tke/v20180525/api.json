@@ -595,9 +595,9 @@
       "output": "DescribePrometheusAlertRuleResponse"
     },
     "DescribePrometheusClusterAgents": {
-      "document": "获取2.0实例关联集群列表",
+      "document": "获取TMP实例关联集群列表",
       "input": "DescribePrometheusClusterAgentsRequest",
-      "name": "获取2.0实例关联集群列表",
+      "name": "获取TMP实例关联集群列表",
       "output": "DescribePrometheusClusterAgentsResponse"
     },
     "DescribePrometheusConfig": {
@@ -10902,6 +10902,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "边缘容器集群级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L5",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14984,6 +14994,36 @@
           "name": "ExternalLabels",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所在VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "记录关联等操作的失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

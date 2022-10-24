@@ -18,6 +18,18 @@
       "name": "新增单个镜像仓库详细信息",
       "output": "AddAssetImageRegistryRegistryDetailResponse"
     },
+    "AddComplianceAssetPolicySetToWhitelist": {
+      "document": "新增安全合规忽略(资产+检测项列表)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
+      "input": "AddComplianceAssetPolicySetToWhitelistRequest",
+      "name": "安全合规忽略资产+检测项列表",
+      "output": "AddComplianceAssetPolicySetToWhitelistResponse"
+    },
+    "AddCompliancePolicyAssetSetToWhitelist": {
+      "document": "新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
+      "input": "AddCompliancePolicyAssetSetToWhitelistRequest",
+      "name": "安全合规忽略检测项+资产列表",
+      "output": "AddCompliancePolicyAssetSetToWhitelistResponse"
+    },
     "AddCompliancePolicyItemToWhitelist": {
       "document": "将指定的检测项添加到白名单中，不显示未通过结果。",
       "input": "AddCompliancePolicyItemToWhitelistRequest",
@@ -317,6 +329,18 @@
       "input": "DeleteAccessControlRulesRequest",
       "name": "删除运行时访问控制策略",
       "output": "DeleteAccessControlRulesResponse"
+    },
+    "DeleteComplianceAssetPolicySetFromWhitelist": {
+      "document": "移除安全合规忽略(资产+检测项)列表，不显示指定的检查项包含的资产内容\n参考的AddCompliancePolicyAssetSetToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对",
+      "input": "DeleteComplianceAssetPolicySetFromWhitelistRequest",
+      "name": "删除安全合规忽略项， 资产+检测项列表",
+      "output": "DeleteComplianceAssetPolicySetFromWhitelistResponse"
+    },
+    "DeleteCompliancePolicyAssetSetFromWhitelist": {
+      "document": "新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容",
+      "input": "DeleteCompliancePolicyAssetSetFromWhitelistRequest",
+      "name": "删除检测项+资产列表的白名单策略",
+      "output": "DeleteCompliancePolicyAssetSetFromWhitelistResponse"
     },
     "DeleteCompliancePolicyItemFromWhitelist": {
       "document": "从白名单中删除将指定的检测项。",
@@ -941,6 +965,12 @@
       "input": "DescribeImageComponentListRequest",
       "name": "查询本地镜像组件列表",
       "output": "DescribeImageComponentListResponse"
+    },
+    "DescribeImageRegistryNamespaceList": {
+      "document": "查询用户镜像仓库下的项目名称列表",
+      "input": "DescribeImageRegistryNamespaceListRequest",
+      "name": "查询用户镜像仓库下的项目名称列表",
+      "output": "DescribeImageRegistryNamespaceListResponse"
     },
     "DescribeImageRegistryTimingScanTask": {
       "document": "镜像仓库查看定时任务",
@@ -3325,6 +3355,69 @@
       ],
       "type": "object"
     },
+    "AddComplianceAssetPolicySetToWhitelistRequest": {
+      "document": "AddComplianceAssetPolicySetToWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产ID+检查项IDs. 列表",
+          "example": "无",
+          "member": "ComplianceAssetPolicySetItem",
+          "name": "AssetPolicySetList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddComplianceAssetPolicySetToWhitelistResponse": {
+      "document": "AddComplianceAssetPolicySetToWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCompliancePolicyAssetSetToWhitelistRequest": {
+      "document": "AddCompliancePolicyAssetSetToWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "检查项ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "CustomerPolicyItemId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要忽略指定检查项内的资产ID列表",
+          "example": "[10001,10002]",
+          "member": "uint64",
+          "name": "CustomerAssetItemIdSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCompliancePolicyAssetSetToWhitelistResponse": {
+      "document": "AddCompliancePolicyAssetSetToWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddCompliancePolicyItemToWhitelistRequest": {
       "document": "AddCompliancePolicyItemToWhitelist请求参数结构体",
       "members": [
@@ -5597,6 +5690,32 @@
       ],
       "usage": "out"
     },
+    "ComplianceAssetPolicySetItem": {
+      "document": "资产+检查项ids 集合单元",
+      "members": [
+        {
+          "default": "",
+          "document": "资产ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "CustomerAssetItemId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要忽略指定资产内的检查项ID列表，为空表示所有",
+          "example": "[10001]",
+          "member": "uint64",
+          "name": "CustomerPolicyItemIdSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ComplianceAssetSummary": {
       "document": "表示一类资产的总览信息。",
       "members": [
@@ -6146,6 +6265,32 @@
         }
       ],
       "usage": "both"
+    },
+    "CompliancePolicyAssetSetItem": {
+      "document": "检查项+资产ids 的集合单元",
+      "members": [
+        {
+          "default": "",
+          "document": "检查项ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "CustomerPolicyItemId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要忽略指定检查项内的资产ID列表，为空表示所有",
+          "example": "[10001,10002]",
+          "member": "uint64",
+          "name": "CustomerAssetItemIdSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CompliancePolicyItemSummary": {
       "document": "表示一条检测项对应的汇总信息。",
@@ -9248,6 +9393,69 @@
     },
     "DeleteAccessControlRulesResponse": {
       "document": "DeleteAccessControlRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteComplianceAssetPolicySetFromWhitelistRequest": {
+      "document": "DeleteComplianceAssetPolicySetFromWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "AssetItemId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要忽略指定资产内的检查项ID列表",
+          "example": "[10001,10002]",
+          "member": "uint64",
+          "name": "CustomerPolicyItemIdSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteComplianceAssetPolicySetFromWhitelistResponse": {
+      "document": "DeleteComplianceAssetPolicySetFromWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCompliancePolicyAssetSetFromWhitelistRequest": {
+      "document": "DeleteCompliancePolicyAssetSetFromWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "（检查项ID+资产ID列表）的列表",
+          "example": "无",
+          "member": "CompliancePolicyAssetSetItem",
+          "name": "PolicyAssetSetList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCompliancePolicyAssetSetFromWhitelistResponse": {
+      "document": "DeleteCompliancePolicyAssetSetFromWhitelist返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -17382,6 +17590,69 @@
           "example": "无",
           "member": "ImageComponent",
           "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageRegistryNamespaceListRequest": {
+      "document": "DescribeImageRegistryNamespaceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本次查询的起始偏移量，默认为0。",
+          "example": "123",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次查询的数据量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的过滤条件。Name字段可取值\"Namespace\"。",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageRegistryNamespaceListResponse": {
+      "document": "DescribeImageRegistryNamespaceList返回参数结构体",
+      "members": [
+        {
+          "document": "可返回的项目空间的总量。",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的项目空间列表",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceList",
           "required": true,
           "type": "list",
           "value_allowed_null": false

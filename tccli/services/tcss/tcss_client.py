@@ -1367,6 +1367,56 @@ def doDescribeVirusAutoIsolateSampleDownloadURL(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeExportJobResult(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeExportJobResultRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeExportJobResult(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeScanIgnoreVulList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2049,6 +2099,56 @@ def doConfirmNetworkFirewallPolicy(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ConfirmNetworkFirewallPolicy(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteComplianceAssetPolicySetFromWhitelist(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteComplianceAssetPolicySetFromWhitelistRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteComplianceAssetPolicySetFromWhitelist(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3967,7 +4067,7 @@ def doDescribeAssetImageBindRuleInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteIgnoreVul(args, parsed_globals):
+def doUpdateNetworkFirewallPolicyDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3994,11 +4094,11 @@ def doDeleteIgnoreVul(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteIgnoreVulRequest()
+    model = models.UpdateNetworkFirewallPolicyDetailRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteIgnoreVul(model)
+        rsp = client.UpdateNetworkFirewallPolicyDetail(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4617,6 +4717,56 @@ def doCreateNetworkFirewallPublish(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAddComplianceAssetPolicySetToWhitelist(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddComplianceAssetPolicySetToWhitelistRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.AddComplianceAssetPolicySetToWhitelist(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifySecLogJoinObjects(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -4867,7 +5017,7 @@ def doDescribeAssetDBServiceList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateNetworkFirewallPolicyDetail(args, parsed_globals):
+def doDescribeVulImageList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4894,11 +5044,11 @@ def doUpdateNetworkFirewallPolicyDetail(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNetworkFirewallPolicyDetailRequest()
+    model = models.DescribeVulImageListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.UpdateNetworkFirewallPolicyDetail(model)
+        rsp = client.DescribeVulImageList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5367,7 +5517,7 @@ def doDescribeAgentInstallCommand(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeExportJobResult(args, parsed_globals):
+def doDescribeImageRegistryNamespaceList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5394,11 +5544,11 @@ def doDescribeExportJobResult(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeExportJobResultRequest()
+    model = models.DescribeImageRegistryNamespaceListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeExportJobResult(model)
+        rsp = client.DescribeImageRegistryNamespaceList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -7217,6 +7367,56 @@ def doDescribeAffectedWorkloadList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doAddCompliancePolicyAssetSetToWhitelist(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.AddCompliancePolicyAssetSetToWhitelistRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.AddCompliancePolicyAssetSetToWhitelist(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteAbnormalProcessRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -7517,7 +7717,7 @@ def doStopVulScanTask(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAssetImageRegistryRiskListExport(args, parsed_globals):
+def doDescribeVulSummary(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -7544,11 +7744,11 @@ def doDescribeAssetImageRegistryRiskListExport(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAssetImageRegistryRiskListExportRequest()
+    model = models.DescribeVulSummaryRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAssetImageRegistryRiskListExport(model)
+        rsp = client.DescribeVulSummary(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8217,7 +8417,7 @@ def doDescribeAssetImageSimpleList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeImageSimpleList(args, parsed_globals):
+def doDeleteIgnoreVul(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -8244,11 +8444,11 @@ def doDescribeImageSimpleList(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeImageSimpleListRequest()
+    model = models.DeleteIgnoreVulRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeImageSimpleList(model)
+        rsp = client.DeleteIgnoreVul(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10467,6 +10667,56 @@ def doModifySecLogJoinState(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteCompliancePolicyAssetSetFromWhitelist(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteCompliancePolicyAssetSetFromWhitelistRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteCompliancePolicyAssetSetFromWhitelist(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doScanComplianceScanFailedAssets(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -11117,7 +11367,7 @@ def doDescribeAssetHostDetail(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteCompliancePolicyItemFromWhitelist(args, parsed_globals):
+def doDescribeImageSimpleList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -11144,11 +11394,11 @@ def doDeleteCompliancePolicyItemFromWhitelist(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteCompliancePolicyItemFromWhitelistRequest()
+    model = models.DescribeImageSimpleListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteCompliancePolicyItemFromWhitelist(model)
+        rsp = client.DescribeImageSimpleList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -11517,7 +11767,7 @@ def doDescribeAccessControlRulesExport(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateOrModifyPostPayCores(args, parsed_globals):
+def doDeleteCompliancePolicyItemFromWhitelist(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -11544,11 +11794,11 @@ def doCreateOrModifyPostPayCores(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateOrModifyPostPayCoresRequest()
+    model = models.DeleteCompliancePolicyItemFromWhitelistRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateOrModifyPostPayCores(model)
+        rsp = client.DeleteCompliancePolicyItemFromWhitelist(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12217,6 +12467,56 @@ def doModifyReverseShellStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeUserCluster(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUserClusterRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeUserCluster(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSecLogJoinTypeList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -12649,56 +12949,6 @@ def doDescribeVirusSampleDownloadUrl(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeVirusSampleDownloadUrl(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeVulSummary(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVulSummaryRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeVulSummary(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13167,7 +13417,7 @@ def doInitializeUserComplianceEnvironment(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUserCluster(args, parsed_globals):
+def doCreateOrModifyPostPayCores(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -13194,11 +13444,11 @@ def doDescribeUserCluster(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserClusterRequest()
+    model = models.CreateOrModifyPostPayCoresRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeUserCluster(model)
+        rsp = client.CreateOrModifyPostPayCores(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13367,7 +13617,7 @@ def doDescribeRiskSyscallNames(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInspectionReport(args, parsed_globals):
+def doScanComplianceAssetsByPolicyItem(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -13394,11 +13644,11 @@ def doDescribeInspectionReport(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInspectionReportRequest()
+    model = models.ScanComplianceAssetsByPolicyItemRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeInspectionReport(model)
+        rsp = client.ScanComplianceAssetsByPolicyItem(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -14017,7 +14267,7 @@ def doDescribeSecLogDeliveryKafkaSetting(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVulImageList(args, parsed_globals):
+def doDescribeInspectionReport(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -14044,11 +14294,11 @@ def doDescribeVulImageList(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVulImageListRequest()
+    model = models.DescribeInspectionReportRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeVulImageList(model)
+        rsp = client.DescribeInspectionReport(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -15017,7 +15267,7 @@ def doDescribeSecLogAlertMsg(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doScanComplianceAssetsByPolicyItem(args, parsed_globals):
+def doDescribeAssetImageRegistryRiskListExport(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -15044,11 +15294,11 @@ def doScanComplianceAssetsByPolicyItem(args, parsed_globals):
     client = mod.TcssClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ScanComplianceAssetsByPolicyItemRequest()
+    model = models.DescribeAssetImageRegistryRiskListExportRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ScanComplianceAssetsByPolicyItem(model)
+        rsp = client.DescribeAssetImageRegistryRiskListExport(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -15305,6 +15555,7 @@ ACTION_MAP = {
     "DescribeReverseShellWhiteLists": doDescribeReverseShellWhiteLists,
     "CreateComponentExportJob": doCreateComponentExportJob,
     "DescribeVirusAutoIsolateSampleDownloadURL": doDescribeVirusAutoIsolateSampleDownloadURL,
+    "DescribeExportJobResult": doDescribeExportJobResult,
     "DescribeScanIgnoreVulList": doDescribeScanIgnoreVulList,
     "DescribeNetworkFirewallPodLabelsList": doDescribeNetworkFirewallPodLabelsList,
     "DescribeAssetComponentList": doDescribeAssetComponentList,
@@ -15319,6 +15570,7 @@ ACTION_MAP = {
     "DescribeSecLogDeliveryKafkaOptions": doDescribeSecLogDeliveryKafkaOptions,
     "DescribeAssetImageRegistryVirusListExport": doDescribeAssetImageRegistryVirusListExport,
     "ConfirmNetworkFirewallPolicy": doConfirmNetworkFirewallPolicy,
+    "DeleteComplianceAssetPolicySetFromWhitelist": doDeleteComplianceAssetPolicySetFromWhitelist,
     "DeleteReverseShellWhiteLists": doDeleteReverseShellWhiteLists,
     "DescribeEscapeEventInfo": doDescribeEscapeEventInfo,
     "DescribeAssetImageRegistryAssetStatus": doDescribeAssetImageRegistryAssetStatus,
@@ -15357,7 +15609,7 @@ ACTION_MAP = {
     "DescribeReverseShellDetail": doDescribeReverseShellDetail,
     "DescribeESAggregations": doDescribeESAggregations,
     "DescribeAssetImageBindRuleInfo": doDescribeAssetImageBindRuleInfo,
-    "DeleteIgnoreVul": doDeleteIgnoreVul,
+    "UpdateNetworkFirewallPolicyDetail": doUpdateNetworkFirewallPolicyDetail,
     "CreateAssetImageVirusExportJob": doCreateAssetImageVirusExportJob,
     "DescribeNetworkFirewallPolicyDiscover": doDescribeNetworkFirewallPolicyDiscover,
     "DescribeSecLogDeliveryClsOptions": doDescribeSecLogDeliveryClsOptions,
@@ -15370,12 +15622,13 @@ ACTION_MAP = {
     "ModifyEscapeEventStatus": doModifyEscapeEventStatus,
     "CreateNetworkFirewallClusterRefresh": doCreateNetworkFirewallClusterRefresh,
     "CreateNetworkFirewallPublish": doCreateNetworkFirewallPublish,
+    "AddComplianceAssetPolicySetToWhitelist": doAddComplianceAssetPolicySetToWhitelist,
     "ModifySecLogJoinObjects": doModifySecLogJoinObjects,
     "DescribeContainerAssetSummary": doDescribeContainerAssetSummary,
     "DescribeImageRegistryTimingScanTask": doDescribeImageRegistryTimingScanTask,
     "DescribeReverseShellEventsExport": doDescribeReverseShellEventsExport,
     "DescribeAssetDBServiceList": doDescribeAssetDBServiceList,
-    "UpdateNetworkFirewallPolicyDetail": doUpdateNetworkFirewallPolicyDetail,
+    "DescribeVulImageList": doDescribeVulImageList,
     "DeleteRiskSyscallWhiteLists": doDeleteRiskSyscallWhiteLists,
     "DescribeAssetSummary": doDescribeAssetSummary,
     "DescribeVulIgnoreRegistryImageList": doDescribeVulIgnoreRegistryImageList,
@@ -15385,7 +15638,7 @@ ACTION_MAP = {
     "ModifyContainerNetStatus": doModifyContainerNetStatus,
     "DescribeImageRiskTendency": doDescribeImageRiskTendency,
     "DescribeAgentInstallCommand": doDescribeAgentInstallCommand,
-    "DescribeExportJobResult": doDescribeExportJobResult,
+    "DescribeImageRegistryNamespaceList": doDescribeImageRegistryNamespaceList,
     "DescribeAgentDaemonSetCmd": doDescribeAgentDaemonSetCmd,
     "CreateEmergencyVulExportJob": doCreateEmergencyVulExportJob,
     "DescribeAssetImageScanTask": doDescribeAssetImageScanTask,
@@ -15422,13 +15675,14 @@ ACTION_MAP = {
     "DescribeAssetPortList": doDescribeAssetPortList,
     "DeleteRiskSyscallEvents": doDeleteRiskSyscallEvents,
     "DescribeAffectedWorkloadList": doDescribeAffectedWorkloadList,
+    "AddCompliancePolicyAssetSetToWhitelist": doAddCompliancePolicyAssetSetToWhitelist,
     "DeleteAbnormalProcessRules": doDeleteAbnormalProcessRules,
     "DescribeVulDetail": doDescribeVulDetail,
     "DescribeRefreshTask": doDescribeRefreshTask,
     "CreateVulScanTask": doCreateVulScanTask,
     "DescribeNetworkFirewallClusterList": doDescribeNetworkFirewallClusterList,
     "StopVulScanTask": doStopVulScanTask,
-    "DescribeAssetImageRegistryRiskListExport": doDescribeAssetImageRegistryRiskListExport,
+    "DescribeVulSummary": doDescribeVulSummary,
     "DescribeSupportDefenceVul": doDescribeSupportDefenceVul,
     "DescribeVulDefenceHost": doDescribeVulDefenceHost,
     "ModifyVulDefenceEventStatus": doModifyVulDefenceEventStatus,
@@ -15442,7 +15696,7 @@ ACTION_MAP = {
     "ModifyAbnormalProcessStatus": doModifyAbnormalProcessStatus,
     "CreateExportComplianceStatusListJob": doCreateExportComplianceStatusListJob,
     "DescribeAssetImageSimpleList": doDescribeAssetImageSimpleList,
-    "DescribeImageSimpleList": doDescribeImageSimpleList,
+    "DeleteIgnoreVul": doDeleteIgnoreVul,
     "ModifyAccessControlStatus": doModifyAccessControlStatus,
     "CreateEscapeWhiteListExportJob": doCreateEscapeWhiteListExportJob,
     "DescribeEscapeRuleInfo": doDescribeEscapeRuleInfo,
@@ -15487,6 +15741,7 @@ ACTION_MAP = {
     "ModifySecLogKafkaUIN": doModifySecLogKafkaUIN,
     "DescribeUnfinishRefreshTask": doDescribeUnfinishRefreshTask,
     "ModifySecLogJoinState": doModifySecLogJoinState,
+    "DeleteCompliancePolicyAssetSetFromWhitelist": doDeleteCompliancePolicyAssetSetFromWhitelist,
     "ScanComplianceScanFailedAssets": doScanComplianceScanFailedAssets,
     "DescribeAccessControlDetail": doDescribeAccessControlDetail,
     "DescribeAssetImageRegistryList": doDescribeAssetImageRegistryList,
@@ -15500,7 +15755,7 @@ ACTION_MAP = {
     "UpdateAndPublishNetworkFirewallPolicyDetail": doUpdateAndPublishNetworkFirewallPolicyDetail,
     "DescribeAssetSyncLastTime": doDescribeAssetSyncLastTime,
     "DescribeAssetHostDetail": doDescribeAssetHostDetail,
-    "DeleteCompliancePolicyItemFromWhitelist": doDeleteCompliancePolicyItemFromWhitelist,
+    "DescribeImageSimpleList": doDescribeImageSimpleList,
     "DescribeVirusScanSetting": doDescribeVirusScanSetting,
     "DescribePromotionActivity": doDescribePromotionActivity,
     "DescribeComplianceAssetList": doDescribeComplianceAssetList,
@@ -15508,7 +15763,7 @@ ACTION_MAP = {
     "DescribeLogStorageStatistic": doDescribeLogStorageStatistic,
     "ModifyAsset": doModifyAsset,
     "DescribeAccessControlRulesExport": doDescribeAccessControlRulesExport,
-    "CreateOrModifyPostPayCores": doCreateOrModifyPostPayCores,
+    "DeleteCompliancePolicyItemFromWhitelist": doDeleteCompliancePolicyItemFromWhitelist,
     "ModifyVirusAutoIsolateSetting": doModifyVirusAutoIsolateSetting,
     "DescribeABTestConfig": doDescribeABTestConfig,
     "DescribeAbnormalProcessDetail": doDescribeAbnormalProcessDetail,
@@ -15522,6 +15777,7 @@ ACTION_MAP = {
     "DescribeVirusScanTaskStatus": doDescribeVirusScanTaskStatus,
     "DescribeAssetImageRiskListExport": doDescribeAssetImageRiskListExport,
     "ModifyReverseShellStatus": doModifyReverseShellStatus,
+    "DescribeUserCluster": doDescribeUserCluster,
     "DescribeSecLogJoinTypeList": doDescribeSecLogJoinTypeList,
     "DescribeVulIgnoreLocalImageList": doDescribeVulIgnoreLocalImageList,
     "DescribeSecLogKafkaUIN": doDescribeSecLogKafkaUIN,
@@ -15531,7 +15787,6 @@ ACTION_MAP = {
     "DescribeAutoAuthorizedRuleHost": doDescribeAutoAuthorizedRuleHost,
     "DescribeRiskList": doDescribeRiskList,
     "DescribeVirusSampleDownloadUrl": doDescribeVirusSampleDownloadUrl,
-    "DescribeVulSummary": doDescribeVulSummary,
     "DescribeESHits": doDescribeESHits,
     "AddAndPublishNetworkFirewallPolicyYamlDetail": doAddAndPublishNetworkFirewallPolicyYamlDetail,
     "DescribeUnauthorizedCoresTendency": doDescribeUnauthorizedCoresTendency,
@@ -15541,11 +15796,11 @@ ACTION_MAP = {
     "DescribeVulScanAuthorizedImageSummary": doDescribeVulScanAuthorizedImageSummary,
     "AddCompliancePolicyItemToWhitelist": doAddCompliancePolicyItemToWhitelist,
     "InitializeUserComplianceEnvironment": doInitializeUserComplianceEnvironment,
-    "DescribeUserCluster": doDescribeUserCluster,
+    "CreateOrModifyPostPayCores": doCreateOrModifyPostPayCores,
     "ModifyCompliancePeriodTask": doModifyCompliancePeriodTask,
     "DescribeAssetImageRegistrySummary": doDescribeAssetImageRegistrySummary,
     "DescribeRiskSyscallNames": doDescribeRiskSyscallNames,
-    "DescribeInspectionReport": doDescribeInspectionReport,
+    "ScanComplianceAssetsByPolicyItem": doScanComplianceAssetsByPolicyItem,
     "DescribeImageAuthorizedInfo": doDescribeImageAuthorizedInfo,
     "DescribeRiskSyscallEvents": doDescribeRiskSyscallEvents,
     "CreateNetworkFirewallUndoPublish": doCreateNetworkFirewallUndoPublish,
@@ -15558,7 +15813,7 @@ ACTION_MAP = {
     "DescribeSecEventsTendency": doDescribeSecEventsTendency,
     "DescribeVulDefenceEvent": doDescribeVulDefenceEvent,
     "DescribeSecLogDeliveryKafkaSetting": doDescribeSecLogDeliveryKafkaSetting,
-    "DescribeVulImageList": doDescribeVulImageList,
+    "DescribeInspectionReport": doDescribeInspectionReport,
     "DeleteNetworkFirewallPolicyDetail": doDeleteNetworkFirewallPolicyDetail,
     "CreateHostExportJob": doCreateHostExportJob,
     "DescribeSearchTemplates": doDescribeSearchTemplates,
@@ -15578,7 +15833,7 @@ ACTION_MAP = {
     "DescribeEscapeEventTypeSummary": doDescribeEscapeEventTypeSummary,
     "DescribeVirusAutoIsolateSampleList": doDescribeVirusAutoIsolateSampleList,
     "DescribeSecLogAlertMsg": doDescribeSecLogAlertMsg,
-    "ScanComplianceAssetsByPolicyItem": doScanComplianceAssetsByPolicyItem,
+    "DescribeAssetImageRegistryRiskListExport": doDescribeAssetImageRegistryRiskListExport,
     "DescribeAssetImageDetail": doDescribeAssetImageDetail,
     "ModifySecLogDeliveryKafkaSetting": doModifySecLogDeliveryKafkaSetting,
     "UpdateNetworkFirewallPolicyYamlDetail": doUpdateNetworkFirewallPolicyYamlDetail,

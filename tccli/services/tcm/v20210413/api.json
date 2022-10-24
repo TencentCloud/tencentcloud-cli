@@ -870,9 +870,55 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载的状态",
+          "example": "无",
+          "member": "EgressGatewayStatus",
+          "name": "Status",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "EgressGatewayStatus": {
+      "document": "egress gateway 的状态",
+      "members": [
+        {
+          "default": "",
+          "document": "egress gateway的当前版本",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "egress gateway的目标版本",
+          "example": "无",
+          "member": "string",
+          "name": "DesiredVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "egress gateway的状态，取值：running，upgrading，rollbacking",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ExtensiveCluster": {
       "document": "内网独占集群配置",
@@ -1141,6 +1187,36 @@
           "name": "LoadBalancer",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ingress gateway 当前的版本",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ingress gateway 目标的版本",
+          "example": "无",
+          "member": "string",
+          "name": "DesiredVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ingress gateway的状态，取值running, upgrading, rollbacking",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1563,6 +1639,16 @@
           "name": "Status",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

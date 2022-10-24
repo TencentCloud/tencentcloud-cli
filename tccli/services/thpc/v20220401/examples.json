@@ -47,6 +47,14 @@
         "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"hpc-qrb7ybn0\",\n                \"ClusterName\": \"unnamed\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"CreateTime\": \"2021-12-07T03:29:09Z\",\n                \"SchedulerType\": \"SGE\",\n                \"ComputeNodeCount\": 1,\n                \"LoginNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-jehc407m\"\n                    }\n                ],\n                \"LoginNodeCount\": 1,\n                \"ComputeNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-jfhc307q\"\n                    }\n                ],\n                \"ManagerNodeCount\": 1,\n                \"ManagerNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-cv6ygpkq\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8a39c8e3-129b-4628-b763-ef96caaa2f4d\"\n    }\n}",
         "title": "查询集群列表"
       }
+    ],
+    "SetAutoScalingConfiguration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"DryRun\": \"false\",\n    \"ShrinkIdleTime\": \"300\",\n    \"ExpansionBusyTime\": \"120\",\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d90874-f565-463d-ba1d-c707517eece1\"\n    }\n}",
+        "title": "设置弹性伸缩配置"
+      }
     ]
   },
   "version": "1.0"

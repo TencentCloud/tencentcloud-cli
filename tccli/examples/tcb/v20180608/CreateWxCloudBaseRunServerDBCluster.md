@@ -43,3 +43,27 @@ Output:
 }
 ```
 
+**Example 3: success-20221010**
+
+
+
+Input: 
+
+```
+tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
+    --DbVersion 字符串 \
+    --WxAppId 字符串 \
+    --EnvId 字符串 \
+    --LowerCaseTableName 字符串 \
+    --AccountPassword 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e1faa7da-a58b-44e1-9647-4782d8c11321"
+    }
+}
+```
+

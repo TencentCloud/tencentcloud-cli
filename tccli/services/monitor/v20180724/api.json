@@ -713,6 +713,32 @@
       ],
       "usage": "out"
     },
+    "AlarmHierarchicalNotice": {
+      "document": "通知模版ID及通知等级列表，[\"Remind\",\"Serious\"]表示该通知模板仅接收提醒和严重类别的告警",
+      "members": [
+        {
+          "default": "",
+          "document": "通知模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NoticeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知等级列表，[\"Remind\",\"Serious\"]表示该通知模板仅接收提醒和严重类别的告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Remind\",\"Serious\"]",
+          "member": "string",
+          "name": "Classification",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AlarmHierarchicalValue": {
       "document": "告警分级阈值配置",
       "members": [
@@ -2651,6 +2677,24 @@
           "name": "LogAlarmReqInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "告警分级通知规则配置",
+          "example": "无",
+          "member": "AlarmHierarchicalNotice",
+          "name": "HierarchicalNotices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑",
+          "example": "1",
+          "member": "int64",
+          "name": "MigrateFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
