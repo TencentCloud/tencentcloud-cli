@@ -7154,6 +7154,34 @@
       ],
       "usage": "in"
     },
+    "CloudExternalAttachmentData": {
+      "document": "渠道透传字段",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道透传字段，由各个渠道自行定义",
+          "example": "无",
+          "member": "string",
+          "name": "AttachmentData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "CloudExternalChannelData": {
       "document": "第三方渠道数据信息",
       "members": [
@@ -7713,7 +7741,8 @@
           "name": "SubOutTradeNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7723,7 +7752,8 @@
           "name": "SubAppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7733,7 +7763,8 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7743,7 +7774,8 @@
           "name": "ProductDetail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7753,7 +7785,8 @@
           "name": "PlatformIncome",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7763,7 +7796,8 @@
           "name": "SubMchIncome",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7773,7 +7807,8 @@
           "name": "Metadata",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7783,7 +7818,8 @@
           "name": "Amt",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7793,7 +7829,8 @@
           "name": "OriginalAmt",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7803,7 +7840,8 @@
           "name": "WxSubMchId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7813,7 +7851,8 @@
           "name": "SettleInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7823,7 +7862,19 @@
           "name": "AttachmentInfoList",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道透传数据列表。",
+          "example": "无",
+          "member": "CloudExternalAttachmentData",
+          "name": "ExternalAttachmentDataList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -40641,6 +40692,16 @@
           "example": "无",
           "member": "CloudExternalUserInfo",
           "name": "ExternalUserInfoList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道透传数据列表",
+          "example": "无",
+          "member": "CloudExternalAttachmentData",
+          "name": "ExternalAttachmentDataList",
           "required": false,
           "type": "list",
           "visibility": 1

@@ -540,7 +540,8 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -549,7 +550,8 @@
           "member": "int64",
           "name": "NotBefore",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -558,7 +560,8 @@
           "member": "string",
           "name": "Callees",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -567,7 +570,8 @@
           "member": "string",
           "name": "Callers",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -576,7 +580,8 @@
           "member": "uint64",
           "name": "IvrId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -585,7 +590,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -594,7 +600,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -603,7 +610,8 @@
           "member": "int64",
           "name": "NotAfter",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -612,7 +620,18 @@
           "member": "uint64",
           "name": "Tries",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自定义变量（仅高级版支持）",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -627,7 +646,8 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4081,6 +4101,34 @@
         }
       ],
       "type": "object"
+    },
+    "Variable": {
+      "document": "变量",
+      "members": [
+        {
+          "default": "",
+          "document": "变量名",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "变量值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

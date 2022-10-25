@@ -921,7 +921,8 @@
           "name": "BeginTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -931,7 +932,19 @@
           "name": "IntervalTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否终止周期，用于任务更新 0否1是",
+          "example": "0",
+          "member": "uint64",
+          "name": "TermCycle",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

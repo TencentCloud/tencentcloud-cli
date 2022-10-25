@@ -11,9 +11,15 @@
     "ApplyInternetAddress": [
       {
         "document": "",
-        "input": "https://dc.tencentcloudapi.com/?Action=ApplyInternetAddress\n&AddrType=0\n&AddrProto=0\n&MaskLen=30\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyInternetAddress\n<公共请求参数>\n\n{\n    \"AddrType\": \"0\",\n    \"MaskLen\": \"30\",\n    \"AddrProto\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ipv4-h2k2jna1\",\n        \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\n    }\n}",
         "title": "申请互联网BGP IPv4地址"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyInternetAddress\n<公共请求参数>\n\n{\n    \"AddrType\": \"1\",\n    \"MaskLen\": \"30\",\n    \"AddrProto\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ipv4-ljm17pbl\",\n        \"RequestId\": \"4a871804-9877-43f3-a2ba-0c213ab72af9\"\n    }\n}",
+        "title": "远程出口公网IP申请示例"
       }
     ],
     "CreateDirectConnect": [

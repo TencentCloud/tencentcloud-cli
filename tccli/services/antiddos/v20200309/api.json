@@ -6157,6 +6157,26 @@
         },
         {
           "default": "",
+          "document": "轻量版搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterLightFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定制版搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterChannelFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "标签搜索",
           "example": "无",
           "member": "TagFilter",

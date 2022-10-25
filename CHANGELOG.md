@@ -1,3 +1,280 @@
+# Release 3.0.634.1
+
+## DDoS 防护(antiddos) 版本：2020-03-09
+
+### 第 31 次发布
+
+发布时间：2022-10-26 06:07:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterLightFlag, FilterChannelFlag
+
+
+
+
+## 计费相关(billing) 版本：2018-07-09
+
+### 第 11 次发布
+
+发布时间：2022-10-26 06:10:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGoodsVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76445)
+* [DescribeVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76443)
+
+新增数据结构：
+
+* [GoodsInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#GoodsInfo)
+* [VoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#VoucherInfo)
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 17 次发布
+
+发布时间：2022-10-26 06:13:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiskConfig](http://document.tencentcloudapi.woa.com/document/product/362/15669#DiskConfig)
+
+	* 新增成员：RecommendDiskSize
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 17 次发布
+
+发布时间：2022-10-26 06:14:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
+
+	* 新增入参：Variables
+
+
+新增数据结构：
+
+* [Variable](http://document.tencentcloudapi.woa.com/document/product/679/47715#Variable)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 22 次发布
+
+发布时间：2022-10-26 06:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：SamplingRate
+
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 45 次发布
+
+发布时间：2022-10-26 06:20:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UnifiedCloudOrder](http://document.tencentcloudapi.woa.com/document/product/1122/72599)
+
+	* 新增入参：ExternalAttachmentDataList
+
+
+新增数据结构：
+
+* [CloudExternalAttachmentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudExternalAttachmentData)
+
+修改数据结构：
+
+* [CloudSubOrder](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudSubOrder)
+
+	* 新增成员：ExternalAttachmentDataList
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 36 次发布
+
+发布时间：2022-10-26 06:22:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
+
+	* 新增出参：EnableInspiredEngine
+
+* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
+
+	* 新增入参：EnableInspiredEngine
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 20 次发布
+
+发布时间：2022-10-26 06:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)
+
+修改数据结构：
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：ApproverOption, ApproverNeedSignReview
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 19 次发布
+
+发布时间：2022-10-26 06:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/237/76448)
+* [ModifyInstanceVip](http://document.tencentcloudapi.woa.com/document/product/237/76447)
+* [ModifyInstanceVport](http://document.tencentcloudapi.woa.com/document/product/237/76446)
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 11 次发布
+
+发布时间：2022-10-26 06:44:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyRecordsStatus](http://document.tencentcloudapi.woa.com/document/product/1338/76449)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 15 次发布
+
+发布时间：2022-10-26 06:47:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CycleEmailParam](http://document.tencentcloudapi.woa.com/document/product/1288/51053#CycleEmailParam)
+
+	* 新增成员：TermCycle
+
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 4 次发布
+
+发布时间：2022-10-26 06:49:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddProject](http://document.tencentcloudapi.woa.com/document/product/651/76451)
+* [UpdateProject](http://document.tencentcloudapi.woa.com/document/product/651/76450)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 40 次发布
+
+发布时间：2022-10-26 06:58:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeOverseaAcceleratorDomains](http://document.tencentcloudapi.woa.com/document/product/215/76453)
+* [DescribeOverseaAcceleratorRegions](http://document.tencentcloudapi.woa.com/document/product/215/76452)
+
+新增数据结构：
+
+* [AccelerateDomain](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccelerateDomain)
+* [AvailableZone](http://document.tencentcloudapi.woa.com/document/product/215/15824#AvailableZone)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo)
+
+
+
 # Release 3.0.633.1
 
 ## 内容分发网络(cdn) 版本：2018-06-06

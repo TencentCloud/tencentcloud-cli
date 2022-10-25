@@ -16806,7 +16806,8 @@
           "name": "CheckPattern",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "检测周期 开始时间",
@@ -16815,7 +16816,8 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "检测周期 超时结束时间",
@@ -16824,7 +16826,8 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否全部服务器 1 全部 2 自选",
@@ -16833,7 +16836,8 @@
           "name": "IsGlobal",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "自选服务器时必须 主机quuid的string数组\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -16842,7 +16846,8 @@
           "name": "QuuidList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "监控模式 0 标准 1深度",
@@ -16851,7 +16856,8 @@
           "name": "MonitoringPattern",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "周期 1每天",
@@ -16860,7 +16866,8 @@
           "name": "Cycle",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "定时检测开关 0 关闭1 开启",
@@ -16869,7 +16876,8 @@
           "name": "EnableScan",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一ID",
@@ -16878,7 +16886,8 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实时监控0 关闭 1开启",
@@ -16887,7 +16896,8 @@
           "name": "RealTimeMonitoring",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否自动隔离：1-是，0-否",
@@ -16896,7 +16906,8 @@
           "name": "AutoIsolation",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "一键扫描超时时长，如：1800秒（s）",
@@ -16905,7 +16916,8 @@
           "name": "ClickTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否杀掉进程 1杀掉 0不杀掉 只有开启自动隔离才生效",
@@ -16914,7 +16926,8 @@
           "name": "KillProcess",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
@@ -16923,7 +16936,18 @@
           "name": "EngineType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "启发引擎 0 关闭 1开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableInspiredEngine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25162,7 +25186,8 @@
           "member": "uint64",
           "name": "CheckPattern",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25171,7 +25196,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25180,7 +25206,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25189,7 +25216,8 @@
           "member": "uint64",
           "name": "IsGlobal",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25198,7 +25226,8 @@
           "member": "uint64",
           "name": "EnableScan",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25207,7 +25236,8 @@
           "member": "uint64",
           "name": "MonitoringPattern",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25216,7 +25246,8 @@
           "member": "uint64",
           "name": "Cycle",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25225,7 +25256,8 @@
           "member": "uint64",
           "name": "RealTimeMonitoring",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25234,7 +25266,8 @@
           "member": "string",
           "name": "QuuidList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25243,7 +25276,8 @@
           "member": "uint64",
           "name": "AutoIsolation",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25252,7 +25286,8 @@
           "member": "uint64",
           "name": "KillProcess",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -25261,7 +25296,18 @@
           "member": "uint64",
           "name": "EngineType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "启发引擎开关 0 关闭 1开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableInspiredEngine",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

@@ -2768,6 +2768,17 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前类型云硬盘的推荐大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "RecommendDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

@@ -2012,6 +2012,22 @@
         "title": "查询绑定了标签的网卡列表"
       }
     ],
+    "DescribeOverseaAcceleratorDomains": [
+      {
+        "document": "查询可加速域名",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverseaAcceleratorDomains\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccelerateDomain\": [\n            {\n                \"Domain\": \"buy.itunes.apple.com\",\n                \"DomainShort\": \"APPLEPAY\"\n            }\n        ],\n        \"RequestId\": \"e4de1feb-adaf-4cfd-ad3c-db9aecfe549d\"\n    }\n}",
+        "title": "查询可加速域名"
+      }
+    ],
+    "DescribeOverseaAcceleratorRegions": [
+      {
+        "document": "查询可加速域名",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverseaAcceleratorRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"ShortName\": \"gz\",\n                \"Name\": \"广州\",\n                \"IsChinaMainland\": true,\n                \"IsFinance\": false,\n                \"WhiteListKey\": [],\n                \"AvailableZoneSet\": []\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionId\": 4,\n                \"ShortName\": \"sh\",\n                \"Name\": \"上海\",\n                \"IsChinaMainland\": true,\n                \"IsFinance\": false,\n                \"WhiteListKey\": [],\n                \"AvailableZoneSet\": []\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"253b82ae-764f-48f4-8301-02a52ae29fe4\"\n    }\n}",
+        "title": "查询可加速域名"
+      }
+    ],
     "DescribePipInstanceInternal": [
       {
         "document": "",

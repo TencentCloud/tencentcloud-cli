@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli antiddos DescribeListBGPInstances --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
-    --FilterIp 1.1.1.1 \
-    --FilterInstanceId bgp-00000001 \
     --FilterRegion ap-guangzhou \
-    --FilterName test
+    --FilterName test \
+    --Limit 25 \
+    --Offset 0 \
+    --FilterInstanceId bgp-00000001 \
+    --FilterIp 1.1.1.1
 ```
 
 Output: 
@@ -43,6 +43,14 @@ Output:
                 },
                 "CreatedTime": "2020-09-22 00:00:00",
                 "ExpiredTime": "2020-09-22 00:00:00",
+                "VitalityVersion": 1,
+                "IpCountNewFlag": 1,
+                "TagInfoList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
                 "Usage": {
                     "ProtectCountUsage": 1,
                     "ProtectIPNumberUsage": 1,
@@ -54,16 +62,16 @@ Output:
                     "PackType": "xx"
                 },
                 "SpecificationLimit": {
+                    "EnterpriseFlag": 1,
+                    "ElasticLimit": 1,
+                    "BattleEditionFlag": 1,
                     "ServiceBandWidth": 1,
                     "AutoRenewFlag": 1,
                     "ProtectBandwidth": 1,
                     "ProtectCountLimit": 1,
                     "UnionPackFlag": 1,
-                    "ProtectIPNumberLimit": 1,
-                    "BattleEditionFlag": 0,
-                    "ElasticLimit": 1,
-                    "ChannelEditionFlag": 0,
-                    "EnterpriseFlag": 0
+                    "ChannelEditionFlag": 1,
+                    "ProtectIPNumberLimit": 1
                 },
                 "BoundStatus": "xx"
             }

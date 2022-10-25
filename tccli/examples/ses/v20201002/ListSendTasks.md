@@ -38,7 +38,8 @@ Output:
                 },
                 "CycleParam": {
                     "IntervalTime": 1,
-                    "BeginTime": "2021-09-09 10:10:10"
+                    "BeginTime": "2021-09-09 10:10:10",
+                    "TermCycle": 1
                 },
                 "CreateTime": "2021-09-09 10:10:10",
                 "Subject": "邮件主题",

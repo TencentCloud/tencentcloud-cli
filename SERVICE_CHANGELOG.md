@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络(cdn) 版本：2018-06-06
+## DDoS 防护(antiddos) 版本：2020-03-09
 
-### 第 36 次发布
+### 第 31 次发布
 
-发布时间：2022-10-25 06:13:03
+发布时间：2022-10-26 06:07:37
 
 本次发布包含了以下内容：
 
@@ -12,38 +12,40 @@
 
 修改接口：
 
-* [DescribeImageConfig](http://document.tencentcloudapi.woa.com/document/product/228/43844)
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
 
-	* 新增出参：AvifAdapter
+	* 新增入参：FilterLightFlag, FilterChannelFlag
 
-* [UpdateImageConfig](http://document.tencentcloudapi.woa.com/document/product/228/43843)
 
-	* 新增入参：AvifAdapter
 
+
+## 计费相关(billing) 版本：2018-07-09
+
+### 第 11 次发布
+
+发布时间：2022-10-26 06:10:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGoodsVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76445)
+* [DescribeVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76443)
 
 新增数据结构：
 
-* [AvifAdapter](http://document.tencentcloudapi.woa.com/document/product/228/30987#AvifAdapter)
-* [MaxAgeCodeRule](http://document.tencentcloudapi.woa.com/document/product/228/30987#MaxAgeCodeRule)
-
-修改数据结构：
-
-* [ImageOptimization](http://document.tencentcloudapi.woa.com/document/product/228/30987#ImageOptimization)
-
-	* 新增成员：AvifAdapter
-
-* [MaxAge](http://document.tencentcloudapi.woa.com/document/product/228/30987#MaxAge)
-
-	* 新增成员：MaxAgeCodeRule
+* [GoodsInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#GoodsInfo)
+* [VoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#VoucherInfo)
 
 
 
+## 云硬盘(cbs) 版本：2017-03-12
 
-## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+### 第 17 次发布
 
-### 第 40 次发布
-
-发布时间：2022-10-25 06:15:09
+发布时间：2022-10-26 06:13:49
 
 本次发布包含了以下内容：
 
@@ -51,113 +53,90 @@
 
 修改数据结构：
 
-* [KafkaParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaParam)
+* [DiskConfig](http://document.tencentcloudapi.woa.com/document/product/362/15669#DiskConfig)
 
-	* 新增成员：UseAutoCreateTopic, CompressionType
+	* 新增成员：RecommendDiskSize
 
-* [MySQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MySQLParam)
 
-	* 新增成员：IsTableRegular
 
-* [TopicParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicParam)
 
-	* 新增成员：CompressionType, UseAutoCreateTopic
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 17 次发布
+
+发布时间：2022-10-26 06:14:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
+
+	* 新增入参：Variables
+
+
+新增数据结构：
+
+* [Variable](http://document.tencentcloudapi.woa.com/document/product/679/47715#Variable)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 22 次发布
+
+发布时间：2022-10-26 06:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：SamplingRate
 
 
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
-### 第 44 次发布
+### 第 45 次发布
 
-发布时间：2022-10-25 06:17:41
+发布时间：2022-10-26 06:20:18
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [BindOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76441)
-* [QueryOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76440)
-
 修改接口：
 
-* [ApplyOpenBankSettleOrder](http://document.tencentcloudapi.woa.com/document/product/1122/75960)
+* [UnifiedCloudOrder](http://document.tencentcloudapi.woa.com/document/product/1122/72599)
 
-	* 新增入参：Remark, ExternalSettleData, Environment
-
-* [CreateCloudSubMerchant](http://document.tencentcloudapi.woa.com/document/product/1122/72604)
-
-	* 新增出参：ChannelAppId
-
-* [DownloadBill](http://document.tencentcloudapi.woa.com/document/product/1122/40672)
-
-	* 新增出参：StateType
-
-* [QueryOpenBankSettleOrder](http://document.tencentcloudapi.woa.com/document/product/1122/75958)
-
-	* 新增入参：Environment
-
-* [QueryRefund](http://document.tencentcloudapi.woa.com/document/product/1122/40660)
-
-	* 新增出参：ChannelExternalOrderId, ChannelExternalRefundId, ChannelOrderId, TotalRefundAmt, CurrencyType, OutTradeNo, RefundId, MidasAppId, UsedRefundId, SubRefundList
+	* 新增入参：ExternalAttachmentDataList
 
 
 新增数据结构：
 
-* [BindOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#BindOpenBankProfitSharePayeeResult)
-* [OldAttachmentInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldAttachmentInfo)
-* [OldChannelExternalUserInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldChannelExternalUserInfo)
-* [OldSubRefund](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldSubRefund)
-* [OpenBankProfitSharePayeeInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankProfitSharePayeeInfo)
-* [QueryOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOpenBankProfitSharePayeeResult)
+* [CloudExternalAttachmentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudExternalAttachmentData)
 
 修改数据结构：
 
-* [CloudOrderReturn](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudOrderReturn)
+* [CloudSubOrder](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudSubOrder)
 
-	* 新增成员：SubAppId, PayScene, PaymentMethod
-
-* [CloudSubOrderReturn](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudSubOrderReturn)
-
-	* 新增成员：ChannelSubPayOrderId, ProductId
-
-* [QueryOpenBankSettleOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOpenBankSettleOrderResult)
-
-	* 新增成员：Currency
-
-* [QueryOrderOutOrderList](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOrderOutOrderList)
-
-	* 新增成员：SettleCheck, ChannelExternalUserInfoList, AttachmentInfoList
+	* 新增成员：ExternalAttachmentDataList
 
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 35 次发布
+### 第 36 次发布
 
-发布时间：2022-10-25 06:20:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [HostLoginList](http://document.tencentcloudapi.woa.com/document/product/296/19867#HostLoginList)
-
-	* 新增成员：Desc
-
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 21 次发布
-
-发布时间：2022-10-25 06:27:40
+发布时间：2022-10-26 06:22:54
 
 本次发布包含了以下内容：
 
@@ -165,43 +144,36 @@
 
 修改接口：
 
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
 
-	* 新增入参：DiskEnhance
+	* 新增出参：EnableInspiredEngine
 
+* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
 
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
-
-	* 新增成员：ProcessPercent, KibanaAlteringPublicAccess
-
-* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeInfo)
-
-	* 新增成员：DiskEnhance
+	* 新增入参：EnableInspiredEngine
 
 
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 19 次发布
+### 第 20 次发布
 
-发布时间：2022-10-25 06:28:03
+发布时间：2022-10-26 06:31:19
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+新增数据结构：
 
-* [ChannelCancelFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76442)
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)
 
-修改接口：
+修改数据结构：
 
-* [ChannelBatchCancelFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75964)
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
 
-	* 新增入参：CancelMessage, CancelMessageFormat
+	* 新增成员：ApproverOption, ApproverNeedSignReview
 
 
 
@@ -210,164 +182,96 @@
 
 
 
-## 智能编辑(ie) 版本：2020-03-04
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 3 次发布
+### 第 19 次发布
 
-发布时间：2022-10-25 06:30:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateMediaQualityRestorationTask](http://document.tencentcloudapi.woa.com/document/product/1186/48451)
-
-	* 新增入参：TopSpeedCodecChannel
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 17 次发布
-
-发布时间：2022-10-25 06:31:30
+发布时间：2022-10-26 06:39:28
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeBindedProducts](http://document.tencentcloudapi.woa.com/document/product/1081/67876)
+* [ModifyInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/237/76448)
+* [ModifyInstanceVip](http://document.tencentcloudapi.woa.com/document/product/237/76447)
+* [ModifyInstanceVport](http://document.tencentcloudapi.woa.com/document/product/237/76446)
 
-	* 新增入参：ProductSource
 
-* [DescribeDeviceBindGateway](http://document.tencentcloudapi.woa.com/document/product/1081/67872)
 
-	* 新增出参：GatewayProductOwnerName, GatewayProductOwnerUin
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
 
-* [DescribeGatewaySubProducts](http://document.tencentcloudapi.woa.com/document/product/1081/67875)
+### 第 11 次发布
 
-	* 新增入参：ProductSource
+发布时间：2022-10-26 06:44:49
 
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyRecordsStatus](http://document.tencentcloudapi.woa.com/document/product/1338/76449)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 15 次发布
+
+发布时间：2022-10-26 06:47:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [BindProductInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#BindProductInfo)
+* [CycleEmailParam](http://document.tencentcloudapi.woa.com/document/product/1288/51053#CycleEmailParam)
 
-	* 新增成员：ProductOwnerName
-
-
+	* 新增成员：TermCycle
 
 
-## 弹性微服务(tem) 版本：2021-07-01
 
-### 第 23 次发布
 
-发布时间：2022-10-25 06:48:13
+## 标签(tag) 版本：2018-08-13
+
+### 第 4 次发布
+
+发布时间：2022-10-26 06:49:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1371/60162)
+* [AddProject](http://document.tencentcloudapi.woa.com/document/product/651/76451)
+* [UpdateProject](http://document.tencentcloudapi.woa.com/document/product/651/76450)
 
-	* 新增入参：Tags
 
-* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60150)
 
-	* 新增入参：Tags
+## 私有网络(vpc) 版本：2017-03-12
 
-* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1371/75588)
+### 第 40 次发布
 
-	* 新增入参：Filters
+发布时间：2022-10-26 06:58:50
 
-* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1371/60149)
+本次发布包含了以下内容：
 
-	* 新增入参：Filters
+改善已有的文档。
 
-* [ModifyApplicationReplicas](http://document.tencentcloudapi.woa.com/document/product/1371/65772)
+新增接口：
 
-	* 新增出参：Result
-
+* [DescribeOverseaAcceleratorDomains](http://document.tencentcloudapi.woa.com/document/product/215/76453)
+* [DescribeOverseaAcceleratorRegions](http://document.tencentcloudapi.woa.com/document/product/215/76452)
 
 新增数据结构：
 
-* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1371/60171#QueryFilter)
-
-修改数据结构：
-
-* [DeployServicePodDetail](http://document.tencentcloudapi.woa.com/document/product/1371/60171#DeployServicePodDetail)
-
-	* 新增成员：Status
-
-* [NamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespaceInfo)
-
-	* 新增成员：Tags
-
-* [RunVersionPod](http://document.tencentcloudapi.woa.com/document/product/1371/60171#RunVersionPod)
-
-	* 新增成员：NodeInfo, StartTime, Unhealthy, UnhealthyWarningMsg, VersionId, ApplicationName
-
-* [ServicePage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#ServicePage)
-
-	* 新增成员：Current
-
-* [ServiceVersionBrief](http://document.tencentcloudapi.woa.com/document/product/1371/60171#ServiceVersionBrief)
-
-	* 新增成员：BatchDeployStatus, Zones, NodeInfos, PodList, WorkloadInfo, CreateDate
-
-* [TemService](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemService)
-
-	* 新增成员：Tags
-
-* [TemServiceVersionInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemServiceVersionInfo)
-
-	* 新增成员：AppId, SubAccountUin, Uin, Region, GroupId, EnableRegistry, AutoscalerList, Modifier, Creator, DeployStrategyConf, PodList, ConfEdited, Tags
-
-* [WorkloadInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#WorkloadInfo)
-
-	* 新增成员：VersionName, ReadyReplicas, Replicas, UpdatedReplicas, UpdatedReadyReplicas, UpdateRevision, CurrentRevision
-
-
-
-
-## 弹性微服务(tem) 版本：2020-12-21
-
-
-
-## 腾讯云微服务引擎(tse) 版本：2020-12-07
-
-### 第 18 次发布
-
-发布时间：2022-10-25 06:50:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeSREInstanceAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54941)
-
-	* 新增出参：LimiterAddressInfos
-
-
-新增数据结构：
-
-* [PolarisLimiterAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PolarisLimiterAddress)
-
-修改数据结构：
-
-* [ServiceGovernanceInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ServiceGovernanceInfo)
-
-	* 新增成员：LimiterVpcInfos
-
+* [AccelerateDomain](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccelerateDomain)
+* [AvailableZone](http://document.tencentcloudapi.woa.com/document/product/215/15824#AvailableZone)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo)
 
 
 
@@ -1224,6 +1128,21 @@
 
 
 ## DDoS 防护(antiddos) 版本：2020-03-09
+
+### 第 31 次发布
+
+发布时间：2022-10-26 06:07:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterLightFlag, FilterChannelFlag
+
 
 ### 第 30 次发布
 
@@ -3388,6 +3307,24 @@
 
 ## 计费相关(billing) 版本：2018-07-09
 
+### 第 11 次发布
+
+发布时间：2022-10-26 06:10:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeGoodsVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76445)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76443)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[GoodsInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#GoodsInfo)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[GoodsInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#GoodsInfo))
+* [[VoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#VoucherInfo)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[VoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#VoucherInfo))
+
 ### 第 10 次发布
 
 发布时间：2022-08-29 15:57:18
@@ -4891,6 +4828,21 @@
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
+### 第 17 次发布
+
+发布时间：2022-10-26 06:13:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiskConfig](http://document.tencentcloudapi.woa.com/document/product/362/15669#DiskConfig)
+
+	* 新增成员：RecommendDiskSize
+
+
 ### 第 16 次发布
 
 发布时间：2022-10-14 06:12:11
@@ -5235,6 +5187,25 @@
 
 
 ## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 17 次发布
+
+发布时间：2022-10-26 06:14:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
+
+	* 新增入参：Variables
+
+
+新增数据结构：
+
+* [[Variable](http://document.tencentcloudapi.woa.com/document/product/679/47715#Variable)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[Variable](http://document.tencentcloudapi.woa.com/document/product/679/47715#Variable))
 
 ### 第 16 次发布
 
@@ -6520,8 +6491,8 @@
 
 新增数据结构：
 
-* [[AvifAdapter](http://document.tencentcloudapi.woa.com/document/product/228/30987#AvifAdapter)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[AvifAdapter](http://document.tencentcloudapi.woa.com/document/product/228/30987#AvifAdapter))
-* [[MaxAgeCodeRule](http://document.tencentcloudapi.woa.com/document/product/228/30987#MaxAgeCodeRule)](http://document.tencentcloudapi.woa.com/document/product/228/30987#[MaxAgeCodeRule](http://document.tencentcloudapi.woa.com/document/product/228/30987#MaxAgeCodeRule))
+* [AvifAdapter](http://document.tencentcloudapi.woa.com/document/product/228/30987#AvifAdapter)
+* [MaxAgeCodeRule](http://document.tencentcloudapi.woa.com/document/product/228/30987#MaxAgeCodeRule)
 
 修改数据结构：
 
@@ -10058,6 +10029,21 @@
 
 ## 日志服务(cls) 版本：2020-10-16
 
+### 第 22 次发布
+
+发布时间：2022-10-26 06:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：SamplingRate
+
+
 ### 第 21 次发布
 
 发布时间：2022-09-22 06:14:01
@@ -11031,6 +11017,32 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 45 次发布
+
+发布时间：2022-10-26 06:20:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UnifiedCloudOrder](http://document.tencentcloudapi.woa.com/document/product/1122/72599)
+
+	* 新增入参：ExternalAttachmentDataList
+
+
+新增数据结构：
+
+* [[CloudExternalAttachmentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudExternalAttachmentData)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[CloudExternalAttachmentData](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudExternalAttachmentData))
+
+修改数据结构：
+
+* [CloudSubOrder](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudSubOrder)
+
+	* 新增成员：ExternalAttachmentDataList
+
+
 ### 第 44 次发布
 
 发布时间：2022-10-25 06:17:41
@@ -11041,8 +11053,8 @@
 
 新增接口：
 
-* [[BindOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76441)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[QueryOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76440)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BindOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76441)
+* [QueryOpenBankProfitSharePayee](http://document.tencentcloudapi.woa.com/document/product/1122/76440)
 
 修改接口：
 
@@ -11069,12 +11081,12 @@
 
 新增数据结构：
 
-* [[BindOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#BindOpenBankProfitSharePayeeResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[BindOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#BindOpenBankProfitSharePayeeResult))
-* [[OldAttachmentInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldAttachmentInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OldAttachmentInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldAttachmentInfo))
-* [[OldChannelExternalUserInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldChannelExternalUserInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OldChannelExternalUserInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldChannelExternalUserInfo))
-* [[OldSubRefund](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldSubRefund)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OldSubRefund](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldSubRefund))
-* [[OpenBankProfitSharePayeeInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankProfitSharePayeeInfo)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[OpenBankProfitSharePayeeInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankProfitSharePayeeInfo))
-* [[QueryOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOpenBankProfitSharePayeeResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[QueryOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOpenBankProfitSharePayeeResult))
+* [BindOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#BindOpenBankProfitSharePayeeResult)
+* [OldAttachmentInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldAttachmentInfo)
+* [OldChannelExternalUserInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldChannelExternalUserInfo)
+* [OldSubRefund](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OldSubRefund)
+* [OpenBankProfitSharePayeeInfo](http://document.tencentcloudapi.woa.com/document/product/1122/40683#OpenBankProfitSharePayeeInfo)
+* [QueryOpenBankProfitSharePayeeResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#QueryOpenBankProfitSharePayeeResult)
 
 修改数据结构：
 
@@ -13113,6 +13125,25 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 36 次发布
+
+发布时间：2022-10-26 06:22:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
+
+	* 新增出参：EnableInspiredEngine
+
+* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
+
+	* 新增入参：EnableInspiredEngine
+
 
 ### 第 35 次发布
 
@@ -19017,6 +19048,25 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 20 次发布
+
+发布时间：2022-10-26 06:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption))
+
+修改数据结构：
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：ApproverOption, ApproverNeedSignReview
+
+
 ### 第 19 次发布
 
 发布时间：2022-10-25 06:28:03
@@ -19027,7 +19077,7 @@
 
 新增接口：
 
-* [[ChannelCancelFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76442)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ChannelCancelFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76442)
 
 修改接口：
 
@@ -24474,6 +24524,20 @@
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
+### 第 19 次发布
+
+发布时间：2022-10-26 06:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/237/76448)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyInstanceVip](http://document.tencentcloudapi.woa.com/document/product/237/76447)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyInstanceVport](http://document.tencentcloudapi.woa.com/document/product/237/76446)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 18 次发布
 
 发布时间：2022-10-13 06:30:13
@@ -28879,6 +28943,18 @@
 
 ## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
 
+### 第 11 次发布
+
+发布时间：2022-10-26 06:44:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyRecordsStatus](http://document.tencentcloudapi.woa.com/document/product/1338/76449)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 10 次发布
 
 发布时间：2022-09-19 06:36:33
@@ -30798,6 +30874,21 @@
 
 ## 邮件推送(ses) 版本：2020-10-02
 
+### 第 15 次发布
+
+发布时间：2022-10-26 06:47:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CycleEmailParam](http://document.tencentcloudapi.woa.com/document/product/1288/51053#CycleEmailParam)
+
+	* 新增成员：TermCycle
+
+
 ### 第 14 次发布
 
 发布时间：2022-08-03 10:46:05
@@ -32711,6 +32802,19 @@
 
 
 ## 标签(tag) 版本：2018-08-13
+
+### 第 4 次发布
+
+发布时间：2022-10-26 06:49:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddProject](http://document.tencentcloudapi.woa.com/document/product/651/76451)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateProject](http://document.tencentcloudapi.woa.com/document/product/651/76450)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 3 次发布
 
@@ -35249,7 +35353,7 @@
 
 新增数据结构：
 
-* [[QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1371/60171#QueryFilter)](http://document.tencentcloudapi.woa.com/document/product/1371/60171#[QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1371/60171#QueryFilter))
+* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1371/60171#QueryFilter)
 
 修改数据结构：
 
@@ -38294,7 +38398,7 @@
 
 新增数据结构：
 
-* [[PolarisLimiterAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PolarisLimiterAddress)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[PolarisLimiterAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PolarisLimiterAddress))
+* [PolarisLimiterAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PolarisLimiterAddress)
 
 修改数据结构：
 
@@ -41129,6 +41233,25 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 40 次发布
+
+发布时间：2022-10-26 06:58:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeOverseaAcceleratorDomains](http://document.tencentcloudapi.woa.com/document/product/215/76453)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeOverseaAcceleratorRegions](http://document.tencentcloudapi.woa.com/document/product/215/76452)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AccelerateDomain](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccelerateDomain)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[AccelerateDomain](http://document.tencentcloudapi.woa.com/document/product/215/15824#AccelerateDomain))
+* [[AvailableZone](http://document.tencentcloudapi.woa.com/document/product/215/15824#AvailableZone)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[AvailableZone](http://document.tencentcloudapi.woa.com/document/product/215/15824#AvailableZone))
+* [[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#RegionInfo))
 
 ### 第 39 次发布
 

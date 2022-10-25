@@ -182,6 +182,14 @@
         "title": "修改私有域关联的VPC"
       }
     ],
+    "ModifyRecordsStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordsStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-mao3y9jo\",\n    \"RecordIds\": [\n        1,\n        2,\n        3\n    ],\n    \"Status\": \"enabled\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"660006f4-8531-46f0-a2ba-05daf4e7932e\",\n        \"ZoneId\": \"zone-mao3y9jo\",\n        \"RecordIds\": [\n            1,\n            2,\n            3\n        ],\n        \"Status\": \"enabled\"\n    }\n}",
+        "title": "修改解析记录状态"
+      }
+    ],
     "SubscribePrivateZoneService": [
       {
         "document": "",

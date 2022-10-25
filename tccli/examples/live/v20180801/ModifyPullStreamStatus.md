@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli live ModifyPullStreamStatus --cli-unfold-argument  \
-    --ConfigIds 123 456 \
-    --Status 2
+    --Status 2 \
+    --ConfigIds 456 123
 ```
 
 Output: 

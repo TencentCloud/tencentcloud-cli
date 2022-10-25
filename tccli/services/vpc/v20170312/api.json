@@ -1320,6 +1320,18 @@
       "name": "查询弹性网卡列表",
       "output": "DescribeNetworkInterfacesResponse"
     },
+    "DescribeOverseaAcceleratorDomains": {
+      "document": "查询可开通的加速域名",
+      "input": "DescribeOverseaAcceleratorDomainsRequest",
+      "name": "查询海外可加速域名",
+      "output": "DescribeOverseaAcceleratorDomainsResponse"
+    },
+    "DescribeOverseaAcceleratorRegions": {
+      "document": "查询可开通海外加速的地域",
+      "input": "DescribeOverseaAcceleratorRegionsRequest",
+      "name": "查询海外加速地域",
+      "output": "DescribeOverseaAcceleratorRegionsResponse"
+    },
     "DescribePipInstanceInternal": {
       "document": "用于获取弹性网卡ip绑定的弹性网卡信息和子机信息 原始VPC OSS接口: GetPipInstance",
       "input": "DescribePipInstanceInternalRequest",
@@ -2432,6 +2444,34 @@
     "serviceShortName": "vpc"
   },
   "objects": {
+    "AccelerateDomain": {
+      "document": "加速域名描述",
+      "members": [
+        {
+          "default": "",
+          "document": "可进行加速的域名",
+          "example": "buy.itunes.apple.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可进行加速的域名简称",
+          "example": "APPLEPAY",
+          "member": "string",
+          "name": "DomainShort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "AcceptAttachCcnInstancesRequest": {
       "document": "AcceptAttachCcnInstances请求参数结构体",
       "members": [
@@ -4757,6 +4797,57 @@
         }
       ],
       "type": "object"
+    },
+    "AvailableZone": {
+      "document": "可用区属性",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区ID，如：ap-guangzhou-2。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区数字ID。",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区名称，如：广州二区。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用网络产品列表。",
+          "member": "string",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单`key`列表。",
+          "member": "string",
+          "name": "WhiteListKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BandwidthPackage": {
       "document": "描述带宽包信息的结构",
@@ -17772,6 +17863,70 @@
         {
           "document": "符合条件的实例数量。",
           "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorDomainsRequest": {
+      "document": "DescribeOverseaAcceleratorDomains请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorDomainsResponse": {
+      "document": "DescribeOverseaAcceleratorDomains返回参数结构体",
+      "members": [
+        {
+          "document": "加速域名描述信息列表",
+          "example": "无",
+          "member": "AccelerateDomain",
+          "name": "AccelerateDomain",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorRegionsRequest": {
+      "document": "DescribeOverseaAcceleratorRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorRegionsResponse": {
+      "document": "DescribeOverseaAcceleratorRegions返回参数结构体",
+      "members": [
+        {
+          "document": "地域信息列表",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "支持的地域总数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -31368,6 +31523,84 @@
         }
       ],
       "type": "object"
+    },
+    "RegionInfo": {
+      "document": "地域对象",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID，如：ap-guangzhou。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域数字ID。",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域简称，如：gz。",
+          "member": "string",
+          "name": "ShortName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称，如：广州。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否中国大陆地域。",
+          "member": "bool",
+          "name": "IsChinaMainland",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否金融地域。",
+          "member": "bool",
+          "name": "IsFinance",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区列表。",
+          "member": "AvailableZone",
+          "name": "AvailableZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单`key`列表。",
+          "member": "string",
+          "name": "WhiteListKey",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RejectAttachCcnInstancesRequest": {
       "document": "RejectAttachCcnInstances请求参数结构体",

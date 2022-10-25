@@ -142,12 +142,28 @@
         "title": "CLB、EIP，视频直播业务按日期获取用量明细"
       }
     ],
+    "DescribeGoodsVoucherList": [
+      {
+        "document": "",
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeGoodsVoucherList\n&Limit=100\n&Offset=1\n&Goods.0.GoodsCategoryId=101444\n&Goods.0.Region=ap-guangzhou\n&Goods.0.Zone=ap-guangzhou-1\n&Goods.0.GoodsNum=1\n&Goods.0.ProjectId=0\n&Goods.0.PayMode=1\n&Goods.0.GoodsDetail={\"buyr\":\"test\",\"productInfo\":[{\"name\":\"计费测试商品\",\"value\":\"jfcs\"}],\"productCode\":\"p_trade_t_s\",\"subProductCode\":\"sp_trade_t_s\",\"pid\":16994,\"timeUnit\":\"m\",\"timeSpan\":1,\"action\":\"purchase\",\"succCheck\":1,\"succ\":1,\"queryFlowType\":1,\"region\":1,\"trade_t_s\":1}\n&MainType=no_price\n&SubType=deduct\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AvailableCount\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"VoucherInfos\": [\n            {\n                \"ProductDefine\": \"xx\",\n                \"PayScene\": \"xx\",\n                \"PolicyId\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Status\": \"xx\",\n                \"GoodsTypeInfo\": \"xx\",\n                \"CouponType\": \"xx\",\n                \"BatchCreateTime\": \"xx\",\n                \"MinPayTime\": \"xx\",\n                \"Available\": true,\n                \"MaxPayTime\": \"xx\",\n                \"ActivityName\": \"xx\",\n                \"BaseAmount\": 0,\n                \"OwnerUin\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"ActivityId\": \"xx\",\n                \"CodeId\": \"xx\",\n                \"UnavailableReason\": [\n                    0\n                ],\n                \"UseDeadLine\": \"xx\",\n                \"Creator\": \"xx\",\n                \"VoucherName\": \"xx\",\n                \"Amount\": 0,\n                \"VoucherId\": \"xx\",\n                \"BeginTime\": \"xx\",\n                \"UsedAmount\": 0,\n                \"ExcludedProduct\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"LeftAmount\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取商品信息"
+      }
+    ],
     "DescribeVoucherInfo": [
       {
         "document": "",
         "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherInfo\n&Limit=10\n&Offset=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TotalBalance\": 0,\n        \"VoucherInfos\": [\n            {\n                \"Status\": \"overdue\",\n                \"OwnerUin\": \"xx\",\n                \"PayMode\": \"*postPay*\",\n                \"NominalValue\": 0,\n                \"PayScene\": \"all\",\n                \"VoucherId\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Balance\": 0,\n                \"BeginTime\": \"xx\",\n                \"ApplicableProducts\": {\n                    \"GoodsName\": \"全产品通用\",\n                    \"PayMode\": \"*\"\n                },\n                \"ExcludedProducts\": [\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    },\n                    {\n                        \"GoodsName\": \"xxx\",\n                        \"PayMode\": \"*\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取代金券相关信息"
+      }
+    ],
+    "DescribeVoucherList": [
+      {
+        "document": "",
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherList\n&Limit=100\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"TotalBalance\": 0,\n        \"VoucherInfos\": [\n            {\n                \"Status\": 0,\n                \"BatchCreateTime\": \"xx\",\n                \"CouponType\": \"xx\",\n                \"PolicyId\": \"xx\",\n                \"ActivityName\": \"xx\",\n                \"Creator\": \"xx\",\n                \"ProductDefine\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"VoucherName\": \"xx\",\n                \"ActivityId\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"Amount\": 0,\n                \"PayScene\": \"xx\",\n                \"VoucherId\": \"xx\",\n                \"CodeId\": \"xx\",\n                \"UsedAmount\": 0,\n                \"EndTime\": \"xx\",\n                \"LeftAmount\": 0,\n                \"BeginTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取代金券列表"
       }
     ],
     "DescribeVoucherUsageDetails": [
