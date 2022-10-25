@@ -33,3 +33,28 @@ Output:
 }
 ```
 
+**Example 2: 记录不存在**
+
+
+
+Input: 
+
+```
+tccli cpdp QueryOpenBankSettleOrder --cli-unfold-argument  \
+    --OutSettleId test21212328671312312120360 \
+    --ChannelSubMerchantId CM615222155219103744 \
+    --ChannelMerchantId CM635846524835979264
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d8d97299-6a10-4475-8ce3-60cb1acc9277",
+        "Result": null,
+        "ErrCode": "COMMON.RECORD_NOT_EXIST",
+        "ErrMessage": "记录不存在:test21212328671312312120360"
+    }
+}
+```
+

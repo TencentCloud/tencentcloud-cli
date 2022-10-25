@@ -7,9 +7,9 @@ Input:
 ```
 tccli iotexplorer DescribeGatewaySubProducts --cli-unfold-argument  \
     --GatewayProductId M5QJPYQ \
-    --Offset 0 \
+    --ProjectId pri_211 \
     --Limit 10 \
-    --ProjectId pri_211
+    --Offset 0
 ```
 
 Output: 
@@ -26,7 +26,8 @@ Output:
                 "ProductName": "xx",
                 "ProductType": 0,
                 "CategoryId": 0,
-                "ProductId": "xx"
+                "ProductId": "xx",
+                "ProductOwnerName": ""
             }
         ],
         "RequestId": "xx"

@@ -930,6 +930,18 @@
       "name": "查询逃逸白名单",
       "output": "DescribeEscapeWhiteListResponse"
     },
+    "DescribeExportJobDownloadURL": {
+      "document": "查询导出任务下载URL",
+      "input": "DescribeExportJobDownloadURLRequest",
+      "name": "查询导出任务下载URL",
+      "output": "DescribeExportJobDownloadURLResponse"
+    },
+    "DescribeExportJobManageList": {
+      "document": "查询导出任务管理列表",
+      "input": "DescribeExportJobManageListRequest",
+      "name": "查询导出任务管理列表",
+      "output": "DescribeExportJobManageListResponse"
+    },
     "DescribeExportJobResult": {
       "document": "查询导出任务的结果",
       "input": "DescribeExportJobResultRequest",
@@ -6444,6 +6456,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测项适用的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "k8s 1.16-1.23",
+          "member": "string",
+          "name": "ApplicableVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8150,15 +8172,6 @@
       "members": [
         {
           "default": "",
-          "document": "导出字段",
-          "example": "xx",
-          "member": "string",
-          "name": "ExportField",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "过滤条件。\n<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>\n<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>\n<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>\n<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>",
           "example": "xx",
           "member": "RunTimeFilters",
@@ -8201,6 +8214,15 @@
           "name": "Order",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "xx",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17155,6 +17177,123 @@
       ],
       "type": "object"
     },
+    "DescribeExportJobDownloadURLRequest": {
+      "document": "DescribeExportJobDownloadURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "xx",
+          "member": "string",
+          "name": "JobID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportJobDownloadURLResponse": {
+      "document": "DescribeExportJobDownloadURL返回参数结构体",
+      "members": [
+        {
+          "document": "下载链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "DownloadURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportJobManageListRequest": {
+      "document": "DescribeExportJobManageList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>ExportStatus- string -是否必填: 否 - 导出状态 RUNNING: 导出中 SUCCESS:导出完成 FAILURE:失败\n<li>ExportSource- string -是否必填: 否 - 导出来源 LocalImage: 本地镜像\n</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "xx",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "xx",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段\nInsertTime: 创建时间",
+          "example": "xx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportJobManageListResponse": {
+      "document": "DescribeExportJobManageList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务列表",
+          "example": "无",
+          "member": "ExportJobInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExportJobResultRequest": {
       "document": "DescribeExportJobResult请求参数结构体",
       "members": [
@@ -20544,7 +20683,17 @@
     },
     "DescribeSecLogDeliveryKafkaOptionsRequest": {
       "document": "DescribeSecLogDeliveryKafkaOptions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "地域，若为空则返回所有可选地域",
+          "example": "xx",
+          "member": "string",
+          "name": "RegionID",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeSecLogDeliveryKafkaOptionsResponse": {
@@ -20555,6 +20704,15 @@
           "example": "无",
           "member": "CKafkaInstanceInfo",
           "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域列表",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "RegionList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -20617,6 +20775,15 @@
           "example": "xxx",
           "member": "string",
           "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "RegionID",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -25115,6 +25282,92 @@
       ],
       "usage": "out"
     },
+    "ExportJobInfo": {
+      "document": "导出任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "xx",
+          "member": "string",
+          "name": "JobID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "xx",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "xx",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出状态",
+          "example": "xx",
+          "member": "string",
+          "name": "ExportStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出进度",
+          "example": "xx",
+          "member": "int64",
+          "name": "ExportProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "xx",
+          "member": "string",
+          "name": "FailureMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时时间",
+          "example": "xx",
+          "member": "string",
+          "name": "Timeout",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插入时间",
+          "example": "xx",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExportVirusListRequest": {
       "document": "ExportVirusList请求参数结构体",
       "members": [
@@ -25237,6 +25490,26 @@
           "example": "2020-1-1 12:00:00",
           "member": "datetime",
           "name": "LatestTamperedFileMTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新文件内容",
+          "example": "kkkkk",
+          "member": "string",
+          "name": "NewFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新旧文件的差异",
+          "example": "file diff",
+          "member": "string",
+          "name": "FileDiff",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -28250,6 +28523,15 @@
           "example": "xxx",
           "member": "string",
           "name": "KafkaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "xx",
+          "member": "string",
+          "name": "RegionID",
           "required": false,
           "type": "string"
         }

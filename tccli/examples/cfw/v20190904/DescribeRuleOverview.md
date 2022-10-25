@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfw DescribeRuleOverview --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2
+    --Direction 0
 ```
 
 Output: 

@@ -1151,12 +1151,32 @@
         },
         {
           "default": "",
-          "document": "别称域名状态，取值有：\n<li> active：已生效； </li>\n<li> pending：未生效；</li>\n<li> not_filed：未备案；</li>\n<li> conflict：被找回。 </li>\n<li> stop：已停用；</li>\n<li> deleted：已删除。 </li>",
+          "document": "别称域名状态，取值有：\n<li> active：已生效； </li>\n<li> pending：部署中；</li>\n<li> conflict：被找回。 </li>\n<li> stop：已停用；</li>\n<li> deleted：已删除。 </li>",
           "example": "active",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封禁模式，取值有：\n<li> 0：未封禁； </li>\n<li> 11：合规封禁；</li>\n<li> 14：未备案封禁。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ForbidMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标域名是否被封禁。",
+          "example": "false",
+          "member": "bool",
+          "name": "TargetForbid",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -5399,7 +5419,7 @@
         },
         {
           "default": "",
-          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
           "example": "1000",
           "member": "int64",
           "name": "Limit",
@@ -5408,7 +5428,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-id<br>   按照【<strong>别称域名ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>Fuzzy<br>   按照【<strong>是否模糊查询</strong>】进行过滤。仅支持过滤字段名为alias-name。模糊查询时，Values长度最小为1。<br>   类型：Boolean<br>   必选：否<br>   默认值：false</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-id<br>   按照【<strong>别称域名ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -10383,7 +10403,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>Fuzzy<br>   按照【<strong>是否模糊查询</strong>】进行过滤。仅支持过滤字段名为zone-name。模糊查询时，Values长度最小为1。<br>   类型：Boolean<br>   必选：否<br>   默认值：false</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：否</li><li>status<br>   按照【<strong>站点状态</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-key<br>   按照【<strong>标签键</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>tag-value<br>   按照【<strong>标签值</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为zone-name。",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -11738,6 +11758,16 @@
           "name": "CertInfo",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "申请类型，取值有：\n<li>apply：托管EdgeOne；</li>\n<li>none：不托管EdgeOne。</li>不填，默认取值为none。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplyType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -16446,6 +16476,16 @@
           "example": "RSA",
           "member": "string",
           "name": "SignAlgo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书归属域名名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencent.cloud",
+          "member": "string",
+          "name": "CommonName",
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -28,13 +28,25 @@ Output:
                     "Webshell": "xx",
                     "Status": "xx",
                     "RestartCount": 0,
+                    "StartTime": "xx",
                     "Zone": "xx",
                     "PodId": "xx",
+                    "NodeInfo": {
+                        "SubnetId": "xx",
+                        "Cidr": "xx",
+                        "AvailableIpCount": "xx",
+                        "Name": "xx",
+                        "Zone": "xx"
+                    },
+                    "VersionId": "xx",
+                    "UnhealthyWarningMsg": "xx",
                     "DeployVersion": "xx",
                     "PodIp": "xx",
                     "ContainerState": "xx",
                     "Ready": true,
-                    "CreateTime": "xx"
+                    "ApplicationName": "xx",
+                    "CreateTime": "xx",
+                    "Unhealthy": true
                 }
             ],
             "Offset": 0

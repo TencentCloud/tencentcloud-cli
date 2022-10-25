@@ -27,7 +27,9 @@ Output:
                 "CreatedOn": "2020-09-22T00:00:00+00:00",
                 "ZoneId": "zone-28569s6od5na",
                 "AliasName": "bbb.test.com",
-                "AliasId": "alias-29j5sz41ib59"
+                "AliasId": "alias-29j5sz41ib59",
+                "TargetForbid": false,
+                "ForbidMode": 0
             }
         ]
     }

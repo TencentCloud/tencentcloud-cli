@@ -269,8 +269,8 @@
     "DescribeBindedProducts": [
       {
         "document": "",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeBindedProducts\n&GatewayProductId=ABCDE12345\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"5SJN3W8XG6\",\n                \"ProductName\": \"nhi7qhcp_StudioProduct101\",\n                \"ProjectId\": \"5SJYTRW8XYT\",\n                \"DataProtocol\": 1,\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0\n            }\n        ],\n        \"RequestId\": \"66245d34-a39b-41b5-85fa-8f8222c3e58e\",\n        \"Total\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBindedProducts\n<公共请求参数>\n\n{\n    \"GatewayProductId\": \"ABCDE12345\",\n    \"ProductSource\": \"0\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"5SJN3W8XG6\",\n                \"ProductName\": \"nhi7qhcp_StudioProduct101\",\n                \"ProjectId\": \"5SJYTRW8XYT\",\n                \"DataProtocol\": 1,\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductOwnerName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"66245d34-a39b-41b5-85fa-8f8222c3e58e\",\n        \"Total\": 1\n    }\n}",
         "title": "获取网关产品已经绑定的子产品"
       }
     ],
@@ -286,7 +286,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceBindGateway\n<公共请求参数>\n\n{\n    \"ProductId\": \"LAEG4YJE\",\n    \"DeviceName\": \"subdev\"\n}",
-        "output": "{\n    \"Response\": {\n        \"GatewayDeviceName\": \"gwdev\",\n        \"GatewayProductId\": \"NJ27OVLZ\",\n        \"GatewayName\": \"xx\",\n        \"RequestId\": \"ef9ec631-7337-481b-a6c3-59a34b500198\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayDeviceName\": \"gwdev\",\n        \"GatewayProductId\": \"NJ27OVLZ\",\n        \"GatewayName\": \"xx\",\n        \"GatewayProductOwnerName\": \"NJ27OVLZ\",\n        \"GatewayProductOwnerUin\": \"xx\",\n        \"RequestId\": \"ef9ec631-7337-481b-a6c3-59a34b500198\"\n    }\n}",
         "title": "查询设备绑定的网关设备"
       }
     ],
@@ -357,8 +357,8 @@
     "DescribeGatewaySubProducts": [
       {
         "document": "",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeGatewaySubProducts\n&GatewayProductId=M5QJPYQ\n&Offset=0\n&Limit=10\n&ProjectId=pri_211\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewaySubProducts\n<公共请求参数>\n\n{\n    \"GatewayProductId\": \"M5QJPYQ\",\n    \"ProjectId\": \"pri_211\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductId\": \"xx\",\n                \"ProductOwnerName\": \"\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "用于获取网关可绑定或解绑的子产品"
       }
     ],

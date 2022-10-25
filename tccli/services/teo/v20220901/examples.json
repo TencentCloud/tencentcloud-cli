@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAliasDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28569s6od5na\",\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"bbb.test.com\"\n            ],\n            \"Name\": \"alias-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"5ce6ee51-cda5-4e0d-a338-cff57a00bb3a\",\n        \"AliasDomains\": [\n            {\n                \"Status\": \"pending\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"TargetName\": \"aaa.example.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ZoneId\": \"zone-28569s6od5na\",\n                \"AliasName\": \"bbb.test.com\",\n                \"AliasId\": \"alias-29j5sz41ib59\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"5ce6ee51-cda5-4e0d-a338-cff57a00bb3a\",\n        \"AliasDomains\": [\n            {\n                \"Status\": \"pending\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"TargetName\": \"aaa.example.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ZoneId\": \"zone-28569s6od5na\",\n                \"AliasName\": \"bbb.test.com\",\n                \"AliasId\": \"alias-29j5sz41ib59\",\n                \"TargetForbid\": false,\n                \"ForbidMode\": 0\n            }\n        ]\n    }\n}",
         "title": "查询别称域名信息列表"
       }
     ],

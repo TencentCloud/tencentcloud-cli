@@ -84,6 +84,12 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelName\": \"HELIPAY\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"OutSettleId\": \"test21212328671312312120361\",\n    \"SettleAmount\": 5000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_DISABLED\",\n        \"ErrMessage\": \"\"\n    }\n}",
         "title": "正常返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"字符串\",\n    \"SettleDetail\": \"字符串\",\n    \"NotifyUrl\": \"字符串\",\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"Environment\": \"字符串\",\n    \"SettleAmount\": \"5000\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"OutSettleId\": \"test2121232867131231212221\",\n    \"ExternalSettleData\": \"字符串\",\n    \"ChannelName\": \"HELIPAY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c3f9260-16f5-4728-b9f6-07d9a031fa7d\",\n        \"Result\": null,\n        \"ErrCode\": \"MERCHANT.INVALID_PARAMETER\",\n        \"ErrMessage\": \"渠道商户信息不存在，请检查参数是否正确\"\n    }\n}",
+        "title": "商户信息不存在"
       }
     ],
     "ApplyOpenBankSubMerchantSignOnline": [
@@ -170,6 +176,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOpenBankExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"ChannelSubMerchantId\": \"CM12345678\",\n    \"ExternalSubMerchantBindBankAccountData\": \"{\\\"AccountBank\\\":\\\"COMM\\\",\\\"AccountName\\\":\\\"测试\\\",\\\"AccountNumber\\\":\\\"12345678\\\",\\\"AccountType\\\":\\\"COLLECT_MONEY\\\",\\\"BankBranchId\\\":\\\"12345678\\\"}\",\n    \"OutApplyId\": \"202102181633\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"93888c91-f4cd-45d0-9bb5-71ad1ee06fb1\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID580433254176370688\",\n            \"BindStatus\": \"SUCCESS\",\n            \"BindMessage\": \"success\",\n            \"BindSerialNo\": null,\n            \"ExternalSubMerchantBankAccountReturnData\": \"{}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "BindOpenBankExternalSubMerchantBankAccount"
+      }
+    ],
+    "BindOpenBankProfitSharePayee": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOpenBankProfitSharePayee\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelName\": \"HELIPAY\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"AccountNo\": \"test21212328671312312120361\",\n    \"NotifyUrl\": \"\",\n    \"ExternalProfitSharingData\": \"\",\n    \"Environment\": \"\",\n    \"ProfitSharePayeeInfo\": {\n        \"Province\": \"xx\",\n        \"City\": \"xx\",\n        \"ExpireDate\": \"xx\",\n        \"TransferBankNo\": \"xx\",\n        \"Address\": \"xx\",\n        \"IsOSA\": \"xx\",\n        \"Nature\": \"xx\",\n        \"LegalIdNo\": \"xx\",\n        \"Country\": \"xx\",\n        \"BicCode\": \"xx\",\n        \"BankName\": \"xx\",\n        \"SwiftCode\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"AccountName\": \"xx\",\n        \"Currency\": \"xx\",\n        \"Cnaps\": \"xx\",\n        \"Fid\": \"xx\",\n        \"Flag\": \"xx\",\n        \"BankAddress\": \"xx\",\n        \"DepositCountry\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_DISABLED\",\n        \"ErrMessage\": \"\"\n    }\n}",
+        "title": "正常返回"
       }
     ],
     "BindRelateAccReUnionPay": [
@@ -294,7 +308,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSubMerchant\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"SubMchDescription\": \"xxx\",\n    \"SubMchName\": \"demos001\",\n    \"SubMchShortName\": \"ds001\",\n    \"OutSubMerchantId\": \"osm001\",\n    \"ParentAppId\": \"demo001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Level\": 1,\n        \"RequestId\": \"dd242838-4241-459b-b138-8f29e4fabbaa\",\n        \"SubAppId\": \"sub-11297\",\n        \"ChannelSubMerchantId\": \"abc001220413\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelAppId\": \"xx\",\n        \"Level\": 1,\n        \"RequestId\": \"dd242838-4241-459b-b138-8f29e4fabbaa\",\n        \"SubAppId\": \"sub-11297\",\n        \"ChannelSubMerchantId\": \"abc001220413\"\n    }\n}",
         "title": "聚鑫-创建子商户"
       }
     ],
@@ -635,8 +649,8 @@
     "DownloadBill": [
       {
         "document": "本接口提供对账单下载功能。调用者根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=DownloadBill\r\n&<公共请求参数>\r\n&StateDate=20191202\r\n&MidasAppId=test_midas_app_id\r\n&MidasSecretId=your_midas_secret_id\r\n&MidasSignature=your_midas_signature",
-        "output": "{\n    \"Response\": {\n        \"FileName\": \"appid_20191202.csv\",\n        \"FileMD5\": \"bef046b73c9e543f7773692ce56def68\",\n        \"DownloadUrl\": \"download_url\",\n        \"RequestId\": \"0c929116-67b6-4396-9d55-ba4a9113822d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadBill\n<公共请求参数>\n\n{\n    \"MidasSignature\": \"your_midas_signature\",\n    \"StateDate\": \"20191202\",\n    \"MidasSecretId\": \"your_midas_secret_id\",\n    \"MidasAppId\": \"test_midas_app_id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StateType\": \"TRADE\",\n        \"FileName\": \"appid_20191202.csv\",\n        \"FileMD5\": \"bef046b73c9e543f7773692ce56def68\",\n        \"DownloadUrl\": \"download_url\",\n        \"RequestId\": \"0c929116-67b6-4396-9d55-ba4a9113822d\"\n    }\n}",
         "title": "下载对账单请求示例"
       }
     ],
@@ -900,7 +914,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudOrder\n<公共请求参数>\n\n{\n    \"Type\": \"by_order\",\n    \"MidasEnvironment\": \"sandbox\",\n    \"UserId\": \"66661875951\",\n    \"MidasAppId\": \"demo001\",\n    \"OutTradeNo\": \"1183110364214208944\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"OrderList\": [\n            {\n                \"SceneInfo\": \"{}\",\n                \"CashAmt\": \"\",\n                \"CallBackTime\": \"\",\n                \"ExternalReturnPromptGroupList\": null,\n                \"OrderTime\": \"\",\n                \"OrderState\": \"4\",\n                \"AppId\": \"demo001\",\n                \"ChannelExternalUserInfoList\": null,\n                \"Channel\": \"wechat\",\n                \"CurrencyType\": \"CNY\",\n                \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n                \"ProductId\": \"1183110364214208944\",\n                \"TransactionId\": \"202204120001300008\",\n                \"ChannelOrderId\": \"202204120001300008\",\n                \"SettleInfo\": {\n                    \"ProfitSharing\": 0,\n                    \"NeedToBeConfirmed\": 0\n                },\n                \"AttachmentInfoList\": null,\n                \"CouponAmt\": \"\",\n                \"OutTradeNo\": \"1183110364214208944\",\n                \"PayTime\": \"1649778083\",\n                \"SubOrderList\": [\n                    {\n                        \"ProductName\": \"商品\",\n                        \"ChannelExternalSubOrderId\": \"\",\n                        \"SettleInfo\": {\n                            \"NeedToBeConfirmed\": 0,\n                            \"ProfitSharing\": 0\n                        },\n                        \"Amt\": 562,\n                        \"Metadata\": \"1183110364415535792\",\n                        \"ProductDetail\": \"\",\n                        \"SettleCheck\": 0,\n                        \"SubMchIncome\": 562,\n                        \"OriginalAmt\": 562,\n                        \"PlatformIncome\": 0,\n                        \"SubAppId\": \"sub-11214\",\n                        \"AttachmentInfoList\": null,\n                        \"WxSubMchId\": \"\",\n                        \"SubOutTradeNo\": \"4805X1183110364415535792X\"\n                    }\n                ],\n                \"Amt\": 562,\n                \"RefundFlag\": \"1\",\n                \"UserId\": \"66661877211\",\n                \"ProductName\": \"商品\",\n                \"Metadata\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"9e7b2c2f-c29f-4bae-9aea-9328b83cc232\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"OrderList\": [\n            {\n                \"SceneInfo\": \"{}\",\n                \"CashAmt\": \"\",\n                \"CallBackTime\": \"\",\n                \"ExternalReturnPromptGroupList\": null,\n                \"OrderTime\": \"\",\n                \"OrderState\": \"4\",\n                \"AppId\": \"demo001\",\n                \"ChannelExternalUserInfoList\": null,\n                \"Channel\": \"wechat\",\n                \"CurrencyType\": \"CNY\",\n                \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n                \"ProductId\": \"1183110364214208944\",\n                \"TransactionId\": \"202204120001300008\",\n                \"ChannelOrderId\": \"202204120001300008\",\n                \"PayScene\": \"1\",\n                \"SettleInfo\": {\n                    \"ProfitSharing\": 0,\n                    \"NeedToBeConfirmed\": 0\n                },\n                \"AttachmentInfoList\": null,\n                \"PaymentMethod\": \"PAYMENT_METHOD_WECHAT_APP\",\n                \"CouponAmt\": \"\",\n                \"OutTradeNo\": \"1183110364214208944\",\n                \"PayTime\": \"1649778083\",\n                \"SubOrderList\": [\n                    {\n                        \"ProductName\": \"商品\",\n                        \"ChannelExternalSubOrderId\": \"\",\n                        \"SettleInfo\": {\n                            \"NeedToBeConfirmed\": 0,\n                            \"ProfitSharing\": 0\n                        },\n                        \"Amt\": 562,\n                        \"ProductId\": \"\",\n                        \"Metadata\": \"1183110364415535792\",\n                        \"ProductDetail\": \"\",\n                        \"SettleCheck\": 0,\n                        \"SubMchIncome\": 562,\n                        \"OriginalAmt\": 562,\n                        \"PlatformIncome\": 0,\n                        \"SubAppId\": \"sub-11214\",\n                        \"AttachmentInfoList\": null,\n                        \"WxSubMchId\": \"\",\n                        \"SubOutTradeNo\": \"4805X1183110364415535792X\"\n                    }\n                ],\n                \"Amt\": 562,\n                \"RefundFlag\": \"1\",\n                \"UserId\": \"66661877211\",\n                \"SubAppId\": \"\",\n                \"ProductName\": \"商品\",\n                \"Metadata\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"9e7b2c2f-c29f-4bae-9aea-9328b83cc232\"\n    }\n}",
         "title": "聚鑫-查询订单"
       }
     ],
@@ -1304,6 +1318,20 @@
         "title": "查询订单结果内部异常"
       }
     ],
+    "QueryOpenBankProfitSharePayee": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankProfitSharePayee\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"AccountId\": \"test2222\",\n    \"AccountNo\": \"\",\n    \"Currency\": \"USD\",\n    \"Environment\": \"sandbox\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_DISABLED\",\n        \"ErrMessage\": \"\"\n    }\n}",
+        "title": "正常返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankProfitSharePayee\n<公共请求参数>\n\n{\n    \"AccountNo\": \"字符串\",\n    \"ChannelMerchantId\": \"字符串\",\n    \"Environment\": \"字符串\",\n    \"Currency\": \"字符串\",\n    \"ChannelSubMerchantId\": \"字符串\",\n    \"AccountId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a70f9f5-a90a-4bd8-85d9-8d7eabba7783\",\n        \"Result\": null,\n        \"ErrCode\": \"FailedOperation.SystemError\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "系统未知异常"
+      }
+    ],
     "QueryOpenBankRefundOrder": [
       {
         "document": "查询成功",
@@ -1330,6 +1358,12 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM635846524835979264\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"OutSettleId\": \"test21212328671312312120360\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Result\": {\n            \"OutSettleId\": \"test21212328671312312120360\",\n            \"ChannelSettleId\": \"ST20220805641342942690410496\",\n            \"SettleStatus\": \"SUCCESS\",\n            \"SettleAmount\": 5,\n            \"SettleFee\": \"1\",\n            \"SettleDate\": \"20220805\",\n            \"SettleType\": \"D1\",\n            \"FailReason\": \"\",\n            \"TimeFinish\": \"2022-08-05 18:27:56\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "正常返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSettleOrder\n<公共请求参数>\n\n{\n    \"OutSettleId\": \"test21212328671312312120360\",\n    \"ChannelSubMerchantId\": \"CM615222155219103744\",\n    \"ChannelMerchantId\": \"CM635846524835979264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8d97299-6a10-4475-8ce3-60cb1acc9277\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"记录不存在:test21212328671312312120360\"\n    }\n}",
+        "title": "记录不存在"
       }
     ],
     "QueryOpenBankSubMerchantCredential": [
@@ -1389,8 +1423,8 @@
     "QueryOrder": [
       {
         "document": "适用于单个订单查询状态的场景",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryOrder\r\n&<公共请求参数>\r\n&MidasAppId=your_midas_app_id\r\n&UserId=your_user_id\r\n&Type=by_order\r\n&OutTradeNo=your_order_no\r\n&MidasSecretId=your_midas_secret_id\r\n&MidasSignature=your_midas_signature",
-        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"OrderList\": [\n            {\n                \"MidasAppId\": \"your_midas_app_id\",\n                \"Amt\": 1,\n                \"UserId\": \"your_user_id\",\n                \"CashAmt\": \"\",\n                \"Metadata\": \"\",\n                \"PayTime\": \"1576225234\",\n                \"CouponAmt\": \"\",\n                \"OrderTime\": \"1576224034\",\n                \"ProductId\": \"product_111\",\n                \"SceneInfo\": \"\",\n                \"OrderState\": \"0\",\n                \"Channel\": \"\",\n                \"RefundFlag\": \"0\",\n                \"OutTradeNo\": \"20191210182602\",\n                \"ProductName\": \"测试商品\",\n                \"CallBackTime\": \"1576230034\",\n                \"CurrencyType\": \"CNY\",\n                \"AcctSubAppId\": \"\",\n                \"TransactionId\": \"E-191213160100048000\",\n                \"ChannelOrderId\": \"\",\n                \"SubOrderList\": [\n                    {\n                        \"Amt\": 1,\n                        \"SubMchIncome\": 1,\n                        \"Metadata\": \"测试透传字段\",\n                        \"OriginalAmt\": 1,\n                        \"PlatformIncome\": 0,\n                        \"ProductDetail\": \"子订单物品描述\",\n                        \"ProductName\": \"子订单物品名称\",\n                        \"SettleCheck\": 0,\n                        \"SubAppId\": \"your_sub_app_id\",\n                        \"SubOutTradeNo\": \"your_sub_out_trade_no\"\n                    }\n                ],\n                \"ChannelExternalOrderId\": \"\"\n            }\n        ],\n        \"RequestId\": \"048b9ee5-7eac-43df-b0e8-d7fb585180aa\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOrder\n<公共请求参数>\n\n{\n    \"MidasAppId\": \"your_midas_app_id\",\n    \"UserId\": \"your_user_id\",\n    \"MidasSignature\": \"your_midas_signature\",\n    \"MidasSecretId\": \"your_midas_secret_id\",\n    \"OutTradeNo\": \"your_order_no\",\n    \"Type\": \"by_order\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderList\": [\n            {\n                \"MidasAppId\": \"xx\",\n                \"AcctSubAppId\": \"xx\",\n                \"ChannelExternalOrderId\": \"xx\",\n                \"TransactionId\": \"xx\",\n                \"CallBackTime\": \"xx\",\n                \"Channel\": \"xx\",\n                \"Metadata\": \"xx\",\n                \"UserId\": \"xx\",\n                \"OutTradeNo\": \"xx\",\n                \"OrderState\": \"xx\",\n                \"ChannelExternalUserInfoList\": [\n                    {\n                        \"ChannelExternalUserType\": \"xx\",\n                        \"ChannelExternalUserId\": \"xx\"\n                    }\n                ],\n                \"Amt\": 183973,\n                \"ChannelOrderId\": \"xx\",\n                \"SubOrderList\": [\n                    {\n                        \"SubMchIncome\": 183973,\n                        \"SubOutTradeNo\": \"xx\",\n                        \"PlatformIncome\": 183973,\n                        \"ProductName\": \"xx\",\n                        \"SettleCheck\": 0,\n                        \"SubAppId\": \"xx\",\n                        \"ProductDetail\": \"xx\",\n                        \"OriginalAmt\": 183973,\n                        \"Amt\": 183973,\n                        \"Metadata\": \"xx\"\n                    }\n                ],\n                \"AttachmentInfoList\": [\n                    {\n                        \"AttachmentType\": \"xx\",\n                        \"AttachmentCode\": \"xx\",\n                        \"AttachmentAmount\": 0,\n                        \"AttachmentName\": \"xx\"\n                    }\n                ],\n                \"SceneInfo\": \"xx\",\n                \"CouponAmt\": \"xx\",\n                \"CurrencyType\": \"xx\",\n                \"CashAmt\": \"xx\",\n                \"ProductId\": \"xx\",\n                \"OrderTime\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"SettleCheck\": 0,\n                \"PayTime\": \"xx\",\n                \"RefundFlag\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "订单查询请求示例"
       }
     ],
@@ -1437,8 +1471,8 @@
     "QueryRefund": [
       {
         "document": "此接口适用于查询退款结果的场景。",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=QueryRefund\n&UserId=your_user_id\n&RefundId=refund_id_00001\n&MidasAppId=your_midas_app_id\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"State\": \"2\",\n        \"RequestId\": \"665464d4-67fc-4ca0-847e-183508710681\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRefund\n<公共请求参数>\n\n{\n    \"MidasSignature\": \"your_midas_signature\",\n    \"MidasSecretId\": \"your_midas_secret_id\",\n    \"MidasAppId\": \"your_midas_app_id\",\n    \"UserId\": \"your_user_id\",\n    \"RefundId\": \"refund_id_000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalRefundAmt\": 1,\n        \"MidasAppId\": \"xx\",\n        \"ChannelOrderId\": \"xx\",\n        \"RefundId\": \"xx\",\n        \"OutTradeNo\": \"xx\",\n        \"State\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"UsedRefundId\": \"xx\",\n        \"ChannelExternalOrderId\": \"xx\",\n        \"ChannelExternalRefundId\": \"xx\",\n        \"CurrencyType\": \"xx\",\n        \"SubRefundList\": [\n            {\n                \"ChannelExternalOrderId\": \"xx\",\n                \"ChannelExternalRefundId\": \"xx\",\n                \"ChannelRefundId\": \"xx\",\n                \"SubOutTradeNo\": \"xx\",\n                \"RefundAmt\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询退款接口请求示例"
       }
     ],

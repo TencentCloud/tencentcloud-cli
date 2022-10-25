@@ -7,6 +7,9 @@ Input:
 ```
 tccli tem ModifyLogConfig --cli-unfold-argument  \
     --EnvironmentId xx \
+    --ApplicationId xx \
+    --Name xx \
+    --Data.ApplicationName xx \
     --Data.TopicId xx \
     --Data.BeginningRegex xx \
     --Data.Name xx \
@@ -16,8 +19,8 @@ tccli tem ModifyLogConfig --cli-unfold-argument  \
     --Data.LogType xx \
     --Data.FilePattern xx \
     --Data.ModifyDate xx \
-    --Data.LogsetId xx \
-    --Name xx
+    --Data.ApplicationId xx \
+    --Data.LogsetId xx
 ```
 
 Output: 

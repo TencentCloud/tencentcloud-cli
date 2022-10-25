@@ -13,9 +13,9 @@
       "output": "AddEnterpriseSecurityGroupRulesResponse"
     },
     "CreateAcRules": {
-      "document": "创建规则",
+      "document": "创建访问控制规则",
       "input": "CreateAcRulesRequest",
-      "name": "创建规则",
+      "name": "创建访问控制规则",
       "output": "CreateAcRulesResponse"
     },
     "CreateChooseVpcs": {
@@ -878,6 +878,7 @@
         {
           "default": "",
           "document": "创建规则数据",
+          "example": "无",
           "member": "RuleInfoData",
           "name": "Data",
           "required": true,
@@ -886,6 +887,7 @@
         {
           "default": "",
           "document": "0：添加（默认），1：插入",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -894,6 +896,7 @@
         {
           "default": "",
           "document": "边id",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -902,6 +905,7 @@
         {
           "default": "",
           "document": "访问控制规则状态",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
           "required": false,
@@ -910,6 +914,7 @@
         {
           "default": "",
           "document": "0：添加，1：覆盖",
+          "example": "无",
           "member": "uint64",
           "name": "Overwrite",
           "required": false,
@@ -918,6 +923,7 @@
         {
           "default": "",
           "document": "NAT实例ID, 参数Area存在的时候这个必传",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -926,6 +932,7 @@
         {
           "default": "",
           "document": "portScan: 来自于端口扫描, patchImport: 来自于批量导入",
+          "example": "无",
           "member": "string",
           "name": "From",
           "required": false,
@@ -934,6 +941,7 @@
         {
           "default": "",
           "document": "NAT地域",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -947,15 +955,19 @@
       "members": [
         {
           "document": "状态值，0:操作成功",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Info",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1470,7 +1482,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -1834,7 +1846,7 @@
       "members": [
         {
           "document": "总条数",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "required": true,
@@ -1852,7 +1864,7 @@
         },
         {
           "document": "不算筛选条数的总条数",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "AllTotal",
           "required": true,
@@ -1883,6 +1895,7 @@
         {
           "default": "",
           "document": "列表偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1891,6 +1904,7 @@
         {
           "default": "",
           "document": "每页记录条数",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1899,6 +1913,7 @@
         {
           "default": "",
           "document": "地域代码（例：ap-guangzhou）,支持腾讯云全地域",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -1907,6 +1922,7 @@
         {
           "default": "",
           "document": "额外检索条件（JSON字符串）",
+          "example": "无",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -1915,6 +1931,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "无",
           "member": "string",
           "name": "By",
           "required": false,
@@ -1923,6 +1940,7 @@
         {
           "default": "",
           "document": "排序方式（asc:升序,desc:降序）",
+          "example": "无",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -1931,6 +1949,7 @@
         {
           "default": "",
           "document": "安全组ID",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
@@ -1939,6 +1958,7 @@
         {
           "default": "",
           "document": "实例类型,'3'是cvm实例,'4'是clb实例,'5'是eni实例,'6'是云数据库",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -1952,15 +1972,19 @@
       "members": [
         {
           "document": "实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssociatedInstanceInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2883,6 +2907,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "无",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -2896,36 +2921,46 @@
       "members": [
         {
           "document": "规则总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "uint64",
           "name": "AllTotal",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "阻断策略规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70",
           "member": "uint64",
           "name": "StrategyNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "启用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70",
           "member": "uint64",
           "name": "StartRuleNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "停用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
           "member": "uint64",
           "name": "StopRuleNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "剩余配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
           "member": "int64",
           "name": "RemainingNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3160,6 +3195,7 @@
         {
           "default": "",
           "document": "防火墙状态  0: 关闭，1：开启",
+          "example": "-1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -3168,6 +3204,7 @@
         {
           "default": "",
           "document": "资产类型 CVM/NAT/VPN/CLB/其它",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -3176,6 +3213,7 @@
         {
           "default": "",
           "document": "地域 上海/重庆/广州，等等",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -3184,6 +3222,7 @@
         {
           "default": "",
           "document": "搜索值  例子：\"{\"common\":\"106.54.189.45\"}\"",
+          "example": "无",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -3192,6 +3231,7 @@
         {
           "default": "",
           "document": "条数  默认值:10",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3200,6 +3240,7 @@
         {
           "default": "",
           "document": "偏移值 默认值: 0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3208,6 +3249,7 @@
         {
           "default": "",
           "document": "排序，desc：降序，asc：升序",
+          "example": "无",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -3216,6 +3258,7 @@
         {
           "default": "",
           "document": "排序字段 PortTimes(风险端口数)",
+          "example": "无",
           "member": "string",
           "name": "By",
           "required": false,
@@ -3229,36 +3272,46 @@
       "members": [
         {
           "document": "总条数",
+          "example": "110",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "列表数据",
+          "example": "无",
           "member": "SwitchListsData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "区域列表",
+          "example": "[]",
           "member": "string",
           "name": "AreaLists",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "打开个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "OnNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "关闭个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "OffNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3412,6 +3465,7 @@
         {
           "default": "",
           "document": "EdgeId值两个vpc间的边id vpc填Edgeid，不要填Area；",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -3420,6 +3474,7 @@
         {
           "default": "",
           "document": "状态值，0：检查表的状态 确实只有一个默认值",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -3428,6 +3483,7 @@
         {
           "default": "",
           "document": "Nat所在地域 NAT填Area，不要填Edgeid；",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -3436,6 +3492,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站 默认值为 0",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -3449,8 +3506,10 @@
       "members": [
         {
           "document": "0：正常，其它：不正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3846,6 +3905,7 @@
         {
           "default": "",
           "document": "规则数组",
+          "example": "无",
           "member": "RuleInfoData",
           "name": "Data",
           "required": true,
@@ -3854,6 +3914,7 @@
         {
           "default": "",
           "document": "EdgeId值",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -3862,6 +3923,7 @@
         {
           "default": "",
           "document": "访问规则状态",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
           "required": false,
@@ -3870,6 +3932,7 @@
         {
           "default": "",
           "document": "NAT地域",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -3883,15 +3946,19 @@
       "members": [
         {
           "document": "状态值，0:操作成功，非0：操作失败",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回多余的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Info",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4738,6 +4805,7 @@
         {
           "default": "",
           "document": "边Id值",
+          "example": "1",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -4746,6 +4814,7 @@
         {
           "default": "",
           "document": "修改数据",
+          "example": "无",
           "member": "SequenceData",
           "name": "Data",
           "required": false,
@@ -4754,6 +4823,7 @@
         {
           "default": "",
           "document": "NAT地域",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -4762,6 +4832,7 @@
         {
           "default": "",
           "document": "方向，0：出向，1：入向",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -4775,8 +4846,10 @@
       "members": [
         {
           "document": "0: 修改成功, 非0: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4795,6 +4868,7 @@
         {
           "default": "",
           "document": "EdgeId值两个vpc间的边id",
+          "example": "无",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -4803,6 +4877,7 @@
         {
           "default": "",
           "document": "状态值，1：锁表，2：解锁表",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -4811,6 +4886,7 @@
         {
           "default": "",
           "document": "Nat所在地域",
+          "example": "无",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -4819,6 +4895,7 @@
         {
           "default": "",
           "document": "0： 出向，1：入向",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -4832,8 +4909,10 @@
       "members": [
         {
           "document": "0：正常，-1：不正常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

@@ -6,6 +6,12 @@
       "name": "电子签渠道版-根据签署流程id批量撤销合同",
       "output": "ChannelBatchCancelFlowsResponse"
     },
+    "ChannelCancelFlow": {
+      "document": "渠道版撤销签署流程接口\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人\n",
+      "input": "ChannelCancelFlowRequest",
+      "name": "渠道版撤销签署流程",
+      "output": "ChannelCancelFlowResponse"
+    },
     "ChannelCancelMultiFlowSignQRCode": {
       "document": "此接口（ChannelCancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。",
       "input": "ChannelCancelMultiFlowSignQRCodeRequest",
@@ -103,7 +109,7 @@
       "output": "DescribeResourceUrlsByFlowsResponse"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该子客企业在电子签拥有的的有效模板，不包括渠道模版",
+      "document": "通过此接口（DescribeTemplates）查询该子客企业在电子签拥有的有效模板，不包括渠道模板",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse"
@@ -325,6 +331,24 @@
         },
         {
           "default": "",
+          "document": "撤销理由",
+          "example": "无",
+          "member": "string",
+          "name": "CancelMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "撤销理由自定义格式；选项：\n0 默认格式\n1 只保留身份信息：展示为【发起方】\n2 保留身份信息+企业名称：展示为【发起方xxx公司】\n3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】",
+          "example": "无",
+          "member": "int64",
+          "name": "CancelMessageFormat",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "操作人信息",
           "example": "无",
           "member": "UserInfo",
@@ -347,6 +371,69 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCancelFlowRequest": {
+      "document": "ChannelCancelFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "签署流程编号",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "撤回原因，最大不超过200字符",
+          "example": "xxx",
+          "member": "string",
+          "name": "CancelMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "撤销理由自定义格式；选项：\n0 默认格式\n1 只保留身份信息：展示为【发起方】\n2 保留身份信息+企业名称：展示为【发起方xxx公司】\n3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】",
+          "example": "无",
+          "member": "int64",
+          "name": "CancelMessageFormat",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCancelFlowResponse": {
+      "document": "ChannelCancelFlow返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2041,7 +2128,7 @@
         },
         {
           "default": "",
-          "document": "模板唯一标识，查询单个模版时使用",
+          "document": "模板唯一标识，查询单个模板时使用",
           "example": "无",
           "member": "string",
           "name": "TemplateId",

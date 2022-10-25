@@ -151,7 +151,7 @@
       "output": "DescribeEventLogDataResponse"
     },
     "DescribeImageConfig": {
-      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 ",
+      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
       "input": "DescribeImageConfigRequest",
       "name": "获取图片优化的配置",
       "output": "DescribeImageConfigResponse"
@@ -445,7 +445,7 @@
       "output": "UpdateDomainConfigResponse"
     },
     "UpdateImageConfig": {
-      "document": "UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG 和 Guetzli。 ",
+      "document": "UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
       "input": "UpdateImageConfigRequest",
       "name": "更新图片优化配置",
       "output": "UpdateImageConfigResponse"
@@ -2115,6 +2115,22 @@
           "example": "-",
           "member": "string",
           "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AvifAdapter": {
+      "document": "图片优化-AvifAdapter配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开关，\"on/off\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4921,7 +4937,7 @@
         },
         {
           "default": "",
-          "document": "指定下载日志的类型。\naccess：获取访问日志",
+          "document": "指定下载日志的类型，目前仅支持访问日志（access）。\naccess：访问日志",
           "example": "access",
           "member": "string",
           "name": "LogType",
@@ -4935,7 +4951,7 @@
       "document": "DescribeCdnDomainLogs返回参数结构体",
       "members": [
         {
-          "document": "日志包下载链接",
+          "document": "日志包下载链接。\n下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。",
           "example": "无",
           "member": "DomainLog",
           "name": "DomainLogs",
@@ -5658,6 +5674,15 @@
           "example": "无",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "AvifAdapter配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -9357,6 +9382,7 @@
         {
           "default": "",
           "document": "WebpAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "WebpAdapter",
           "name": "WebpAdapter",
           "required": true,
@@ -9366,6 +9392,7 @@
         {
           "default": "",
           "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "TpgAdapter",
           "name": "TpgAdapter",
           "required": true,
@@ -9375,8 +9402,19 @@
         {
           "default": "",
           "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AvifAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -11215,6 +11253,42 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MaxAge 状态码相关规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAgeCodeRule",
+          "name": "MaxAgeCodeRule",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MaxAgeCodeRule": {
+      "document": "MaxAge 状态码相关规则配置",
+      "members": [
+        {
+          "default": "",
+          "document": "处理动作\nclear：清除 cache-control 头部",
+          "example": "clear",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定HTTP状态码生效，当前仅支持填写\"400-599\"",
+          "example": "[\"400-599\"]",
+          "member": "string",
+          "name": "StatusCodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15876,6 +15950,15 @@
           "example": "无",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "AvifAdapter配置项",
+          "example": "无",
+          "member": "AvifAdapter",
+          "name": "AvifAdapter",
           "required": false,
           "type": "object"
         }

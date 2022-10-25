@@ -712,6 +712,7 @@
         {
           "default": "",
           "document": "源文件地址。",
+          "example": "无",
           "member": "DownInfo",
           "name": "DownInfo",
           "required": true,
@@ -720,6 +721,7 @@
         {
           "default": "",
           "document": "画质重生任务参数信息。",
+          "example": "无",
           "member": "SubTaskTranscodeInfo",
           "name": "TransInfo",
           "required": true,
@@ -728,6 +730,7 @@
         {
           "default": "",
           "document": "任务结束后文件存储信息。",
+          "example": "无",
           "member": "SaveInfo",
           "name": "SaveInfo",
           "required": true,
@@ -736,10 +739,20 @@
         {
           "default": "",
           "document": "任务结果回调地址信息。",
+          "example": "无",
           "member": "CallbackInfo",
           "name": "CallbackInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "极速高清体验馆渠道标志。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TopSpeedCodecChannel",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -749,8 +762,10 @@
       "members": [
         {
           "document": "画质重生任务ID，可以通过该ID查询任务状态。",
+          "example": "b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e3",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

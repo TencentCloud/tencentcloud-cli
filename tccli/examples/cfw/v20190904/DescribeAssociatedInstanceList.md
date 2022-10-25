@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cfw DescribeAssociatedInstanceList --cli-unfold-argument  \
-    --SearchValue  \
-    --Offset 0 \
-    --Limit 10 \
-    --SecurityGroupId  \
-    --Type  \
-    --By  \
-    --Order  \
-    --Area ap-beijing
+    --Area xx \
+    --SecurityGroupId xx \
+    --SearchValue xx \
+    --By xx \
+    --Limit 1 \
+    --Offset 1 \
+    --Type xx \
+    --Order xx
 ```
 
 Output: 

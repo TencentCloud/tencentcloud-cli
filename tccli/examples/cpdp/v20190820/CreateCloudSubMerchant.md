@@ -19,6 +19,7 @@ Output:
 ```
 {
     "Response": {
+        "ChannelAppId": "xx",
         "Level": 1,
         "RequestId": "dd242838-4241-459b-b138-8f29e4fabbaa",
         "SubAppId": "sub-11297",

@@ -33,6 +33,12 @@ Output:
                 "InstanceName": "xx"
             }
         ],
+        "RegionList": [
+            {
+                "Region": "ap-guangzhou",
+                "RegionName": "广州"
+            }
+        ],
         "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
     }
 }

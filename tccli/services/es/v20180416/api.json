@@ -898,6 +898,15 @@
           "name": "EnableHybridStorage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启essd 增强型云盘",
+          "example": "无",
+          "member": "uint64",
+          "name": "DiskEnhance",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2824,7 +2833,7 @@
         },
         {
           "default": "",
-          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁",
+          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -3530,6 +3539,26 @@
           "name": "EnableHybridStorage",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流程进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "ProcessPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaAlteringPublicAccess",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4499,6 +4528,16 @@
           "example": "0",
           "member": "int64",
           "name": "MemSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskEnhance",
           "required": false,
           "type": "int",
           "value_allowed_null": true

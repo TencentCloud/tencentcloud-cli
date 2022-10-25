@@ -7,8 +7,9 @@ Input:
 ```
 tccli iotexplorer DescribeBindedProducts --cli-unfold-argument  \
     --GatewayProductId ABCDE12345 \
-    --Offset 0 \
-    --Limit 10
+    --ProductSource 0 \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -24,7 +25,8 @@ Output:
                 "DevStatus": "xx",
                 "NetType": "xx",
                 "ProductType": 0,
-                "CategoryId": 0
+                "CategoryId": 0,
+                "ProductOwnerName": "test"
             }
         ],
         "RequestId": "66245d34-a39b-41b5-85fa-8f8222c3e58e",

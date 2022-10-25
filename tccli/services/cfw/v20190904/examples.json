@@ -135,7 +135,7 @@
     "DescribeAssociatedInstanceList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedInstanceList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SecurityGroupId\": \"\",\n    \"Type\": \"\",\n    \"By\": \"\",\n    \"Order\": \"\",\n    \"Area\": \"ap-beijing\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssociatedInstanceList\n<公共请求参数>\n\n{\n    \"Area\": \"xx\",\n    \"SecurityGroupId\": \"xx\",\n    \"SearchValue\": \"xx\",\n    \"By\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Type\": \"xx\",\n    \"Order\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"eni-4ymwnaoe\",\n                \"InstanceName\": \"test-private\",\n                \"Type\": 5,\n                \"VpcId\": \"vpc-406waega\",\n                \"VpcName\": \"vpc---\",\n                \"PublicIp\": \"\",\n                \"Ip\": \"192.168.0.13,192.168.0.3\",\n                \"SecurityGroupCount\": 1\n            },\n            {\n                \"InstanceId\": \"eni-oskydbvm\",\n                \"InstanceName\": \"privat-test\",\n                \"Type\": 5,\n                \"VpcId\": \"vpc-dvc0qmmm\",\n                \"VpcName\": \"Dno\",\n                \"PublicIp\": \"\",\n                \"Ip\": \"172.21.0.12\",\n                \"SecurityGroupCount\": 0\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"8f563b4d-8151-4db0-a822-9bde279d2079\"\n    }\n}",
         "title": "查询安全组关联实例列表"
       }
@@ -255,7 +255,7 @@
     "DescribeRuleOverview": [
       {
         "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeRuleOverview\n&Placement.Zone=ap-guangzhou-2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleOverview\n<公共请求参数>\n\n{\n    \"Direction\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AllTotal\": 100,\n        \"StrategyNum\": 70,\n        \"StartRuleNum\": 70,\n        \"StopRuleNum\": 30,\n        \"RemainingNum\": 30,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "查询规则列表概况"
       }
@@ -435,7 +435,7 @@
     "ModifyRunSyncAsset": [
       {
         "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyRunSyncAsset\n&Type=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRunSyncAsset\n<公共请求参数>\n\n{\n    \"Type\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "同步资产-互联网&VPC"
       }

@@ -1294,6 +1294,22 @@
         "title": "查询逃逸白名单"
       }
     ],
+    "DescribeExportJobDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportJobDownloadURL\n<公共请求参数>\n\n{\n    \"JobID\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"DownloadURL\": \"xxx\"\n    }\n}",
+        "title": "查询导出任务下载URL"
+      }
+    ],
+    "DescribeExportJobManageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportJobManageList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询导出任务管理列表"
+      }
+    ],
     "DescribeExportJobResult": [
       {
         "document": "",
@@ -1734,7 +1750,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryKafkaOptions\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceID\": \"xx\",\n                \"TopicList\": [\n                    {\n                        \"TopicID\": \"xx\",\n                        \"TopicName\": \"xx\"\n                    }\n                ],\n                \"RouteList\": [\n                    {\n                        \"Domain\": \"xx\",\n                        \"AccessType\": 0,\n                        \"RouteID\": 0,\n                        \"Vip\": \"xx\",\n                        \"DomainPort\": 1,\n                        \"VipType\": 0\n                    }\n                ],\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceID\": \"xx\",\n                \"TopicList\": [\n                    {\n                        \"TopicID\": \"xx\",\n                        \"TopicName\": \"xx\"\n                    }\n                ],\n                \"RouteList\": [\n                    {\n                        \"Domain\": \"xx\",\n                        \"AccessType\": 0,\n                        \"RouteID\": 0,\n                        \"Vip\": \"xx\",\n                        \"DomainPort\": 1,\n                        \"VipType\": 0\n                    }\n                ],\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\"\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
         "title": "查询安全日志投递kafka可选项"
       }
     ],
@@ -1742,7 +1758,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogDeliveryKafkaSetting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"InstanceID\": \"实例ID\",\n        \"InstanceName\": \"实例名称\",\n        \"Domain\": \"域名\",\n        \"LogTypeList\": [\n            {\n                \"LogType\": \"container_bash\",\n                \"TopicID\": \"主题ID\",\n                \"TopicName\": \"主题名称\",\n                \"State\": true\n            }\n        ],\n        \"User\": \"test\",\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceID\": \"实例ID\",\n        \"InstanceName\": \"实例名称\",\n        \"Domain\": \"域名\",\n        \"LogTypeList\": [\n            {\n                \"LogType\": \"container_bash\",\n                \"TopicID\": \"主题ID\",\n                \"TopicName\": \"主题名称\",\n                \"State\": true\n            }\n        ],\n        \"User\": \"test\",\n        \"RegionID\": \"xxx\",\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
         "title": "查询安全日志投递kafka配置"
       }
     ],
@@ -2301,7 +2317,7 @@
     "ModifySecLogDeliveryKafkaSetting": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogDeliveryKafkaSetting\n<公共请求参数>\n\n{\n    \"InstanceID\": \"实例ID\",\n    \"InstanceName\": \"实例名称\",\n    \"Domain\": \"域名\",\n    \"User\": \"用户名\",\n    \"Password\": \"密码\",\n    \"LogTypeList\": [\n        {\n            \"LogType\": \"container_bash\",\n            \"TopicID\": \"主题ID\",\n            \"TopicName\": \"主题名称\",\n            \"State\": true\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecLogDeliveryKafkaSetting\n<公共请求参数>\n\n{\n    \"InstanceID\": \"实例ID\",\n    \"InstanceName\": \"实例名称\",\n    \"Domain\": \"域名\",\n    \"User\": \"用户名\",\n    \"Password\": \"密码\",\n    \"RegionID\": \"xxx\",\n    \"LogTypeList\": [\n        {\n            \"LogType\": \"container_bash\",\n            \"TopicID\": \"主题ID\",\n            \"TopicName\": \"主题名称\",\n            \"State\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
         "title": "更新安全日志投递kafka设置"
       }

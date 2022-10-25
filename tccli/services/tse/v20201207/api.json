@@ -688,7 +688,7 @@
         },
         {
           "default": "",
-          "document": "引擎其他组件名称（pushgateway）",
+          "document": "引擎其他组件名称（pushgateway、polaris-limiter）",
           "example": "pushgateway",
           "member": "string",
           "name": "Workload",
@@ -771,6 +771,15 @@
           "name": "ConsoleInternetBandWidth",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "北极星限流server节点接入IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolarisLimiterAddress",
+          "name": "LimiterAddressInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -1375,6 +1384,22 @@
       ],
       "usage": "out"
     },
+    "PolarisLimiterAddress": {
+      "document": "查询Limiter的接入地址",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC接入IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SREInstance": {
       "document": "微服务注册引擎实例",
       "members": [
@@ -1750,6 +1775,16 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "PgwVpcInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务治理限流server引擎绑定的网络信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "LimiterVpcInfos",
           "required": false,
           "type": "list",
           "value_allowed_null": false

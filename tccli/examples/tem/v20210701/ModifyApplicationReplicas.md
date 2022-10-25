@@ -16,6 +16,7 @@ Output:
 ```
 {
     "Response": {
+        "Result": true,
         "RequestId": "xx"
     }
 }

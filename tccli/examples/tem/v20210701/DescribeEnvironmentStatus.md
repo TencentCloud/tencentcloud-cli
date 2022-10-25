@@ -19,7 +19,15 @@ Output:
                 "EnvironmentId": "xx",
                 "EnvironmentName": "xx",
                 "ClusterId": "xx",
-                "ClusterStatus": "xx"
+                "EnvironmentStoppingStatus": {
+                    "StoppedApplicationNum": 0,
+                    "ApplicationNumNeedToStop": 0
+                },
+                "ClusterStatus": "xx",
+                "EnvironmentStartingStatus": {
+                    "ApplicationNumNeedToStart": 0,
+                    "StartedApplicationNum": 0
+                }
             }
         ],
         "RequestId": "xx"

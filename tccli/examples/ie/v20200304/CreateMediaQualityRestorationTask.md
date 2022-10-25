@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ie CreateMediaQualityRestorationTask --cli-unfold-argument  \
-    --DownInfo.Type 0 \
     --DownInfo.UrlInfo.Url http://test.video.myqcloud.com/testA.mp4 \
-    --TransInfo.0.TaskName src_file.mp4 \
-    --TransInfo.0.TargetInfo.FileName dst_file.mp4 \
-    --TransInfo.0.VideoInfo.VideoEnhance.ColorEnhance.Type strong \
-    --SaveInfo.Type 1 \
+    --DownInfo.Type 0 \
+    --SaveInfo.CosInfo.Path /out_file/ \
     --SaveInfo.CosInfo.Region ap-beijing \
     --SaveInfo.CosInfo.Bucket test-123456 \
-    --SaveInfo.CosInfo.Path /out_file/
+    --SaveInfo.Type 1 \
+    --TransInfo.0.TargetInfo.FileName dst_file.mp4 \
+    --TransInfo.0.TaskName src_file.mp4 \
+    --TransInfo.0.VideoInfo.VideoEnhance.ColorEnhance.Type strong
 ```
 
 Output: 
