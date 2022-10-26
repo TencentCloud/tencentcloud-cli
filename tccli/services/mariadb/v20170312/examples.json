@@ -120,6 +120,14 @@
         "title": "查询云数据库实例的备份时间窗口配置"
       }
     ],
+    "DescribeDBInstanceRsip": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceRsip\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d140c889-4cee-474c-8e6c-94ad52b9670c\",\n        \"Rsips\": [\n            {\n                \"Ip\": \"100.98.175.239\",\n                \"Port\": 24414\n            },\n            {\n                \"Ip\": \"100.98.183.235\",\n                \"Port\": 24414\n            }\n        ]\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeDBInstanceSpecs": [
       {
         "document": "",

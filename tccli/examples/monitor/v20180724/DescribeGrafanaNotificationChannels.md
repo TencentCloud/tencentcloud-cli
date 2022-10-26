@@ -18,15 +18,22 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "NotificationChannelSet": [
             {
-                "ChannelId": "xx",
-                "UpdatedAt": "2020-09-22",
-                "ChannelName": "xx",
-                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "ExtraOrgIds": [
+                    "xx"
+                ],
+                "OrgIds": "xx",
                 "Receivers": [
                     "xx"
-                ]
+                ],
+                "ChannelId": "xx",
+                "OrganizationIds": "xx",
+                "OrgId": "xx",
+                "UpdatedAt": "2020-09-22",
+                "ChannelName": "xx",
+                "CreatedAt": "2020-09-22T00:00:00+00:00"
             }
         ],
         "RequestId": "xx"

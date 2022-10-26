@@ -30954,7 +30954,7 @@
           "example": "-",
           "member": "string",
           "name": "NetworkInterfaceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -30965,7 +30965,7 @@
           "example": "-",
           "member": "string",
           "name": "NetworkInterfaceName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -30987,7 +30987,7 @@
           "example": "-",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -30998,7 +30998,7 @@
           "example": "-",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -31031,7 +31031,7 @@
           "example": "-",
           "member": "string",
           "name": "MacAddress",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -31042,7 +31042,7 @@
           "example": "-",
           "member": "string",
           "name": "State",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -31053,7 +31053,7 @@
           "example": "-",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -31097,7 +31097,7 @@
           "example": "-",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -31108,7 +31108,7 @@
           "example": "-",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -31119,7 +31119,7 @@
           "example": "-",
           "member": "uint64",
           "name": "EniType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -31130,7 +31130,7 @@
           "example": "-",
           "member": "string",
           "name": "Business",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -31141,7 +31141,7 @@
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -31152,7 +31152,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AttachType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -31163,7 +31163,7 @@
           "example": "-",
           "member": "string",
           "name": "SubNetworkInterfaces",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 2
@@ -31174,13 +31174,24 @@
           "example": "true",
           "member": "bool",
           "name": "IsRdma",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-j85c20d4-reserved",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "NetworkInterfaceAttachment": {
       "document": "弹性网卡绑定关系",

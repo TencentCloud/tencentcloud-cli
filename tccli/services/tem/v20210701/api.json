@@ -1516,7 +1516,8 @@
           "member": "string",
           "name": "ApplicationId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1525,7 +1526,8 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1534,7 +1536,8 @@
           "member": "int64",
           "name": "SourceChannel",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1543,7 +1546,8 @@
           "member": "bool",
           "name": "DeleteApplicationIfNoRunningVersion",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1558,7 +1562,8 @@
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

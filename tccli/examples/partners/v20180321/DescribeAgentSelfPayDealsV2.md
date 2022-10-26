@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli partners DescribeAgentSelfPayDealsV2 --cli-unfold-argument  \
-    --Offset 0 \
+    --OwnerUin 123456 \
     --Limit 1 \
-    --OwnerUin 123456
+    --Offset 0
 ```
 
 Output: 

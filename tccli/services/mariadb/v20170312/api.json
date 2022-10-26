@@ -90,6 +90,12 @@
       "name": "查询备份时间",
       "output": "DescribeBackupTimeResponse"
     },
+    "DescribeDBInstanceRsip": {
+      "document": "本接口（DescribeDBInstanceRsip）用于获取实例Rsip",
+      "input": "DescribeDBInstanceRsipRequest",
+      "name": "获取实例Rsip",
+      "output": "DescribeDBInstanceRsipResponse"
+    },
     "DescribeDBInstanceSpecs": {
       "document": "本接口(DescribeDBInstanceSpecs)用于查询可创建的云数据库可售卖的规格配置。",
       "input": "DescribeDBInstanceSpecsRequest",
@@ -3060,6 +3066,42 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceRsipRequest": {
+      "document": "DescribeDBInstanceRsip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceRsipResponse": {
+      "document": "DescribeDBInstanceRsip返回参数结构体",
+      "members": [
+        {
+          "document": "后端RS信息",
+          "example": "无",
+          "member": "Rsip",
+          "name": "Rsips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6218,6 +6260,30 @@
         }
       ],
       "type": "object"
+    },
+    "Rsip": {
+      "document": "拉取实例后端RS信息，返回IP和PORT结构体数组",
+      "members": [
+        {
+          "default": "",
+          "document": "Ip地址",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroup": {
       "document": "安全组详情",

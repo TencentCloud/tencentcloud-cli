@@ -357,7 +357,7 @@
     "ResizeDisk": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ResizeDisk\n&DiskId=disk-lzrg2pwi\n&DiskSize=200\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"DiskSize\": \"200\",\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adefc06d-2cf1-29f6-24a6-5a1f81b5c0ac\"\n    }\n}",
         "title": "将云硬盘扩容到200G"
       }

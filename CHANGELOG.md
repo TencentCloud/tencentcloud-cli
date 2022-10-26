@@ -1,3 +1,134 @@
+# Release 3.0.635.1
+
+## 分布式数据库 TDSQL(dcdb) 版本：2018-04-11
+
+### 第 20 次发布
+
+发布时间：2022-10-27 06:22:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceRsip](http://document.tencentcloudapi.woa.com/document/product/557/76454)
+
+新增数据结构：
+
+* [Rsip](http://document.tencentcloudapi.woa.com/document/product/557/16142#Rsip)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 15 次发布
+
+发布时间：2022-10-27 06:26:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34264)
+
+	* 新增入参：AutoRenew
+
+
+修改数据结构：
+
+* [EmrListInstance](http://document.tencentcloudapi.woa.com/document/product/589/33981#EmrListInstance)
+
+	* 新增成员：IsHandsCluster
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 20 次发布
+
+发布时间：2022-10-27 06:34:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceRsip](http://document.tencentcloudapi.woa.com/document/product/237/76455)
+
+新增数据结构：
+
+* [Rsip](http://document.tencentcloudapi.woa.com/document/product/237/16191#Rsip)
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 34 次发布
+
+发布时间：2022-10-27 06:35:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGrafanaChannels](http://document.tencentcloudapi.woa.com/document/product/248/75947)
+
+	* 新增出参：TotalCount
+
+* [DescribeGrafanaNotificationChannels](http://document.tencentcloudapi.woa.com/document/product/248/75684)
+
+	* 新增出参：TotalCount
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 19 次发布
+
+发布时间：2022-10-27 06:37:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WorkSpaceClusterItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#WorkSpaceClusterItem)
+
+	* 新增成员：ProjectId, ProjectIdStr
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 41 次发布
+
+发布时间：2022-10-27 06:53:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：ResourceId
+
+	* <font color="#dd0000">**修改成员**：</font>NetworkInterfaceId, NetworkInterfaceName, SubnetId, VpcId, MacAddress, State, PrivateIpAddressSet, Ipv6AddressSet, TagSet, EniType, Business, CdcId, AttachType, SubNetworkInterfaces, IsRdma
+
+
+
+
 # Release 3.0.634.1
 
 ## DDoS 防护(antiddos) 版本：2020-03-09

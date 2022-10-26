@@ -96,6 +96,14 @@
         "title": "无"
       }
     ],
+    "DescribeDBInstanceRsip": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceRsip\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-21dfpcv1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f16b01-ca70-4097-9acf-7e7a20d79424\",\n        \"Rsips\": [\n            {\n                \"Ip\": \"100.100.34.245\",\n                \"Port\": 24113\n            },\n            {\n                \"Ip\": \"100.100.36.142\",\n                \"Port\": 24113\n            },\n            {\n                \"Ip\": \"100.100.34.245\",\n                \"Port\": 24114\n            },\n            {\n                \"Ip\": \"100.100.36.142\",\n                \"Port\": 24114\n            }\n        ]\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DescribeDBLogFiles": [
       {
         "document": "",
