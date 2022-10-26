@@ -408,6 +408,30 @@
         "title": "修改云数据库实例的同步模式"
       }
     ],
+    "ModifyInstanceNetwork": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyInstanceNetwork\n&InstanceId=tdsql-jv8z8fhl\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxx\n&VipReleaseDelay=168\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "ModifyInstanceVip": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyInstanceVip\n&InstanceId=tdsql-jv8z8fhl\n&VipReleaseDelay=168\n&Vip=10.0.0.2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
+        "title": "修改实例VIP"
+      }
+    ],
+    "ModifyInstanceVport": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyInstanceVport\n&InstanceId=tdsql-rlye31jd\n&Vport=3307\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
+        "title": "修改实例VPORT"
+      }
+    ],
     "ModifyLogFileRetentionPeriod": [
       {
         "document": "",

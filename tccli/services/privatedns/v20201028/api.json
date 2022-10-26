@@ -114,6 +114,12 @@
       "name": "修改私有域关联的VPC",
       "output": "ModifyPrivateZoneVpcResponse"
     },
+    "ModifyRecordsStatus": {
+      "document": "修改解析记录状态",
+      "input": "ModifyRecordsStatusRequest",
+      "name": "修改解析记录状态",
+      "output": "ModifyRecordsStatusResponse"
+    },
     "SubscribePrivateZoneService": {
       "document": "开通私有域解析",
       "input": "SubscribePrivateZoneServiceRequest",
@@ -1545,6 +1551,78 @@
           "name": "AccountVpcSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordsStatusRequest": {
+      "document": "ModifyRecordsStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有域ID",
+          "example": "zone-vcxs31di",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解析记录ID列表",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "RecordIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "enabled：生效，disabled：失效",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRecordsStatusResponse": {
+      "document": "ModifyRecordsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "私有域ID",
+          "example": "zone-sdf1fds3",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析记录ID列表",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "RecordIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "enabled：生效，disabled：失效",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

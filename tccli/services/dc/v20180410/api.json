@@ -282,6 +282,7 @@
         {
           "default": "",
           "document": "CIDR地址掩码长度",
+          "example": "30",
           "member": "int64",
           "name": "MaskLen",
           "required": true,
@@ -290,6 +291,7 @@
         {
           "default": "",
           "document": "0:BGP类型地址\n1：中国电信\n2：中国移动\n3：中国联通",
+          "example": "0",
           "member": "int64",
           "name": "AddrType",
           "required": true,
@@ -298,6 +300,7 @@
         {
           "default": "",
           "document": "0：IPv4\n1:IPv6",
+          "example": "0",
           "member": "int64",
           "name": "AddrProto",
           "required": true,
@@ -311,8 +314,10 @@
       "members": [
         {
           "document": "互联网公网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ipv4-h2k2jna1",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

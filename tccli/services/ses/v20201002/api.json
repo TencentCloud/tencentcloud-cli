@@ -610,6 +610,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否终止周期，用于任务更新 0否1是",
+          "example": "0",
+          "member": "uint64",
+          "name": "TermCycle",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

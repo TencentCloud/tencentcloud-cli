@@ -220,6 +220,22 @@
       ],
       "usage": "in"
     },
+    "ApproverOption": {
+      "document": "签署人个性化能力信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否隐藏一键签署 false-不隐藏,默认 true-隐藏",
+          "example": "true",
+          "member": "bool",
+          "name": "HideOneKeySign",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ApproverRestriction": {
       "document": "指定签署人限制项",
       "members": [
@@ -2508,7 +2524,7 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模版发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：（暂不支持）\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模版下的签署方Recipient列表，根据模版自定义的Rolename在此结构体中确定其RecipientId",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：（暂不支持）\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
       "members": [
         {
           "default": "",
@@ -2592,7 +2608,7 @@
         },
         {
           "default": "",
-          "document": "签署人类型，PERSON-个人；\nPERSON_AUTO_SIGN-个人自动签；\nORGANIZATION-企业；\nENTERPRISESERVER-企业静默签;\n注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；",
+          "document": "签署人类型，PERSON-个人；\nPERSON_AUTO_SIGN-个人自动签；\nORGANIZATION-企业；\nENTERPRISESERVER-企业静默签;\n注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；",
           "example": "PERSON",
           "member": "string",
           "name": "ApproverType",
@@ -2668,6 +2684,26 @@
           "name": "JumpUrl",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人个性化能力值",
+          "example": "无",
+          "member": "ApproverOption",
+          "name": "ApproverOption",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前签署方进行签署操作是否需要企业内部审批，true 则为需要",
+          "example": "false",
+          "member": "bool",
+          "name": "ApproverNeedSignReview",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

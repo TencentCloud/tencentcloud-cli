@@ -153,8 +153,8 @@
   },
   "metadata": {
     "apiVersion": "2021-09-03",
-    "api_brief": "介绍如何使用API对视频智能标签进行操作，包括视频上传、发起分析任务、获取任务分析结果等。",
-    "serviceNameCN": "视频智能标签",
+    "api_brief": "介绍如何使用API对媒体智能标签进行操作，包括视频上传、发起分析任务、获取任务分析结果等。",
+    "serviceNameCN": "媒体智能标签",
     "serviceShortName": "ivld"
   },
   "objects": {
@@ -2410,6 +2410,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸在图片中的位置，仅在图片标签任务有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rectf",
+          "name": "AppearRect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

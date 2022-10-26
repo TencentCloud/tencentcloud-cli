@@ -5857,6 +5857,24 @@
         },
         {
           "default": "",
+          "document": "轻量版搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterLightFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定制版搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterChannelFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "标签搜索",
           "example": "无",
           "member": "TagFilter",

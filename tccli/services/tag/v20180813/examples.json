@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddProject": [
+      {
+        "document": "",
+        "input": "https://tag.tencentcloudapi.com/?Action=AddProject\r\n&ProjectName=tp2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IsNew\": 1,\n        \"ProjectId\": 1024690,\n        \"RequestId\": \"caf5c6ba-b21b-4769-b0bb-0b3090e0c282\"\n    }\n}",
+        "title": "创建项目"
+      }
+    ],
     "AddResourceTag": [
       {
         "document": "",
@@ -234,6 +242,14 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnTagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\",\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\"\n    ],\n    \"TagKeys\": [\n        \"RWFGaltFlR\",\n        \"LbDKGjeagV\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"cbc7b26c-3fff-4a3c-82f0-c6ebc2ff31e3\"\n    }\n}",
         "title": "为资源解绑标签"
+      }
+    ],
+    "UpdateProject": [
+      {
+        "document": "",
+        "input": "https://tag.tencentcloudapi.com/?Action=UpdateProject\r\n&ProjectId=1024690\r\n&ProjectName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f26b281e-0cbc-40ab-a38b-e9e62ef6fd24\"\n    }\n}",
+        "title": "修改项目名称"
       }
     ],
     "UpdateResourceTagValue": [

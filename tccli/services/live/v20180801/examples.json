@@ -291,7 +291,7 @@
     "DeletePullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeletePullStreamConfig\n&ConfigId=123\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePullStreamConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -715,7 +715,7 @@
     "DescribePullStreamConfigs": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribePullStreamConfigs\n&ConfigId=5674\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePullStreamConfigs\n<公共请求参数>\n\n{\n    \"ConfigId\": \"5674\"\n}",
         "output": "{\n    \"Response\": {\n        \"PullStreamConfigs\": [\n            {\n                \"ConfigId\": \"5674\",\n                \"FromUrl\": \"rtmp://3737.liveplay.myqcloud.com/txlive\",\n                \"ToUrl\": \"rtmp://3954.livepush2.myqcloud.com/live/3954_462724865?&txSecret=xx\",\n                \"AreaName\": \"深圳\",\n                \"IspName\": \"电信\",\n                \"StartTime\": \"2018-07-06T14:40:23Z\",\n                \"EndTime\": \"2018-07-06T18:05:23Z\",\n                \"Status\": \"2\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -923,7 +923,7 @@
     "ModifyPullStreamConfig": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamConfig\n&ConfigId=123\n&FromUrl=rtmp://5000.liveplay.myqcloud.com/live/stream1\n&ToUrl=rtmp://5000.livepush.myqcloud.com/live/stream2\n&AreaId=1\n&IspId=1\n&StartTime=2018-12-31T11:02:00Z\n&EndTime=2018-12-31T12:02:00Z\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPullStreamConfig\n<公共请求参数>\n\n{\n    \"AreaId\": \"1\",\n    \"ToUrl\": \"rtmp://5000.livepush.myqcloud.com/live/stream2\",\n    \"FromUrl\": \"rtmp://5000.liveplay.myqcloud.com/live/stream1\",\n    \"IspId\": \"1\",\n    \"StartTime\": \"2018-12-31T11:02:00Z\",\n    \"ConfigId\": \"123\",\n    \"EndTime\": \"2018-12-31T12:02:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -931,7 +931,7 @@
     "ModifyPullStreamStatus": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyPullStreamStatus\n&ConfigIds.0=123\n&ConfigIds.1=456\n&Status=2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPullStreamStatus\n<公共请求参数>\n\n{\n    \"Status\": \"2\",\n    \"ConfigIds\": [\n        \"456\",\n        \"123\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

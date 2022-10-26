@@ -20829,7 +20829,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status- String - 是否必填：否 - 主机状态 /li>\n<li>HostIP- String - 是否必填：否 - 主机内网IP /li>\n<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>\n<li>HostName- String - 是否必填：否 - 主机名称 /li>",
+          "document": "过滤条件。\n<li>Status- String - 是否必填：否 - 主机状态 </li>\n<li>HostIP- String - 是否必填：否 - 主机内网IP </li>\n<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>\n<li>HostName- String - 是否必填：否 - 主机名称 </li>",
           "example": "[]",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -21820,7 +21820,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>MD5- String - 是否必填：否 - md5 /li>\n<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>\n<li>VirusName- String - 是否必填：否 - 病毒名 /li>",
+          "document": "过滤条件。\n<li>MD5- String - 是否必填：否 - md5 </li>\n<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>\n<li>VirusName- String - 是否必填：否 - 病毒名 </li>",
           "example": "[]",
           "member": "RunTimeFilters",
           "name": "Filters",

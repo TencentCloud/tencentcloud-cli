@@ -7032,6 +7032,32 @@
       ],
       "usage": "in"
     },
+    "CloudExternalAttachmentData": {
+      "document": "渠道透传字段",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道名",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道透传字段，由各个渠道自行定义",
+          "example": "无",
+          "member": "string",
+          "name": "AttachmentData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CloudExternalChannelData": {
       "document": "第三方渠道数据信息",
       "members": [
@@ -7669,6 +7695,16 @@
           "example": "无",
           "member": "CloudAttachmentInfo",
           "name": "AttachmentInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道透传数据列表。",
+          "example": "无",
+          "member": "CloudExternalAttachmentData",
+          "name": "ExternalAttachmentDataList",
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -39229,6 +39265,15 @@
           "example": "无",
           "member": "CloudExternalUserInfo",
           "name": "ExternalUserInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "渠道透传数据列表",
+          "example": "无",
+          "member": "CloudExternalAttachmentData",
+          "name": "ExternalAttachmentDataList",
           "required": false,
           "type": "list"
         }

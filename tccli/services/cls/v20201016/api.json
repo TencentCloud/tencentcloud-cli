@@ -6783,6 +6783,15 @@
           "name": "UseNewAnalysis",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。\n0：自动采样;\n0～1：按指定采样率采样，例如0.02;\n1：不采样，即精确分析\n默认值为1",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"

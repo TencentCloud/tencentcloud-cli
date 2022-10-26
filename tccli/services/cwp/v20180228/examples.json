@@ -980,7 +980,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMalwareTimingScanSetting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e96ed81-a2f2-4029-893b-b63ed1328694\",\n        \"CheckPattern\": 1,\n        \"StartTime\": \"2020-05-20 00:00:00\",\n        \"EndTime\": \"2020-05-20 00:00:00\",\n        \"IsGlobal\": 1,\n        \"QuuidList\": [],\n        \"RealTimeMonitoring\": 1,\n        \"MonitoringPattern\": 0,\n        \"Cycle\": 1,\n        \"EnableScan\": 1,\n        \"Id\": 0,\n        \"AutoIsolation\": 1,\n        \"KillProcess\": 1,\n        \"ClickTimeout\": 0,\n        \"EngineType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e96ed81-a2f2-4029-893b-b63ed1328694\",\n        \"CheckPattern\": 1,\n        \"StartTime\": \"2020-05-20 00:00:00\",\n        \"EndTime\": \"2020-05-20 00:00:00\",\n        \"IsGlobal\": 1,\n        \"QuuidList\": [\n            \"972290ce-2e07-4689-8f92-f617239bbf82\"\n        ],\n        \"RealTimeMonitoring\": 1,\n        \"MonitoringPattern\": 0,\n        \"Cycle\": 1,\n        \"EnableScan\": 1,\n        \"Id\": 0,\n        \"AutoIsolation\": 1,\n        \"KillProcess\": 1,\n        \"ClickTimeout\": 0,\n        \"EngineType\": 1,\n        \"EnableInspiredEngine\": 1\n    }\n}",
         "title": "查询定时扫描配置"
       }
     ],
@@ -1665,7 +1665,7 @@
     "ModifyMalwareTimingScanSettings": [
       {
         "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ModifyMalwareTimingScanSettings\n&CheckPattern=0\n&StartTime=02:00:00\n&EndTime=04:00:00\n&IsGlobal=1\n&EnableScan=1\n&MonitoringPattern=0\n&Cycle=1\n&RealTimeMonitoring=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMalwareTimingScanSettings\n<公共请求参数>\n\n{\n    \"EnableScan\": \"1\",\n    \"CheckPattern\": \"0\",\n    \"IsGlobal\": \"1\",\n    \"MonitoringPattern\": \"0\",\n    \"StartTime\": \"02:00:00\",\n    \"RealTimeMonitoring\": \"1\",\n    \"EndTime\": \"04:00:00\",\n    \"Cycle\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
         "title": "定时扫描设置"
       }

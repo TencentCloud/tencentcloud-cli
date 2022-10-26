@@ -303,6 +303,32 @@
       ],
       "usage": "in"
     },
+    "ApproverOption": {
+      "document": "签署人个性化能力信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否可以拒签 false-可以拒签,默认 true-不可以拒签",
+          "example": "true",
+          "member": "bool",
+          "name": "NoRefuse",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可以转发 false-可以转发,默认 true-不可以转发",
+          "example": "true",
+          "member": "bool",
+          "name": "NoTransfer",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ApproverRestriction": {
       "document": "指定签署人限制项",
       "members": [
@@ -2848,6 +2874,16 @@
           "example": "无",
           "member": "RegisterInfo",
           "name": "RegisterInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人个性化能力值",
+          "example": "无",
+          "member": "ApproverOption",
+          "name": "ApproverOption",
           "required": false,
           "type": "object",
           "value_allowed_null": false

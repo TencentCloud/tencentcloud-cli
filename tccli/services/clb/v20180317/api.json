@@ -4460,7 +4460,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡绑定的后端服务的外网 IP。",
+          "document": "负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。",
           "example": "无",
           "member": "string",
           "name": "BackendPublicIps",
@@ -4469,7 +4469,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡绑定的后端服务的内网 IP。",
+          "document": "负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。",
           "example": "无",
           "member": "string",
           "name": "BackendPrivateIps",
