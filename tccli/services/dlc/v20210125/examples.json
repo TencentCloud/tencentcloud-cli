@@ -120,6 +120,14 @@
         "title": "创建数据导入任务"
       }
     ],
+    "CreateResultDownload": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResultDownload\n<公共请求参数>\n\n{\n    \"Force\": true,\n    \"TaskId\": \"xx\",\n    \"Format\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateScript": [
       {
         "document": "",
@@ -277,6 +285,14 @@
         "document": "查询数据库列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"DataLakeCatalog\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1068a137-ed80-4cbd-a7e6-1cd0341db332\",\n        \"TotalCount\": 1,\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"testdb\",\n                \"Comment\": \"create by nick\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"1630486408000\",\n                \"ModifiedTime\": \"1630486408000\",\n                \"UserAlias\": \"testUser\",\n                \"UserSubUin\": \"100019878767\",\n                \"Location\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeResultDownload": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResultDownload\n<公共请求参数>\n\n{\n    \"DownloadId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Token\": \"xx\",\n        \"SecretKey\": \"xx\",\n        \"Reason\": \"xx\",\n        \"SecretId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Path\": \"xx\"\n    }\n}",
         "title": "示例1"
       }
     ],

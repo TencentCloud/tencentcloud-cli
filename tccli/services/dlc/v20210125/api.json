@@ -90,6 +90,12 @@
       "name": "创建导入任务",
       "output": "CreateImportTaskResponse"
     },
+    "CreateResultDownload": {
+      "document": "创建查询结果下载任务",
+      "input": "CreateResultDownloadRequest",
+      "name": "创建查询结果下载任务",
+      "output": "CreateResultDownloadResponse"
+    },
     "CreateScript": {
       "document": "该接口（CreateScript）用于创建sql脚本。",
       "input": "CreateScriptRequest",
@@ -209,6 +215,12 @@
       "input": "DescribeDatabasesRequest",
       "name": "查询数据库列表",
       "output": "DescribeDatabasesResponse"
+    },
+    "DescribeResultDownload": {
+      "document": "查询结果下载任务",
+      "input": "DescribeResultDownloadRequest",
+      "name": "查询结果下载任务",
+      "output": "DescribeResultDownloadResponse"
     },
     "DescribeScripts": {
       "document": "该接口（DescribeScripts）用于获取所有SQL查询。",
@@ -1634,6 +1646,60 @@
           "example": "24343434",
           "member": "string",
           "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResultDownloadRequest": {
+      "document": "CreateResultDownload请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询结果任务Id",
+          "example": "123abc456",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载格式",
+          "example": "CSV",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResultDownloadResponse": {
+      "document": "CreateResultDownload返回参数结构体",
+      "members": [
+        {
+          "document": "下载任务Id",
+          "example": "1234214",
+          "member": "string",
+          "name": "DownloadId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4005,6 +4071,87 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResultDownloadRequest": {
+      "document": "DescribeResultDownload请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询任务Id",
+          "example": "11123",
+          "member": "string",
+          "name": "DownloadId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResultDownloadResponse": {
+      "document": "DescribeResultDownload返回参数结构体",
+      "members": [
+        {
+          "document": "下载文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://bucket/123",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务状态 init | queue | format | compress | success|  timeout | error",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "临时AK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "临时SK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "临时Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
