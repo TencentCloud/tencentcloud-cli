@@ -22,6 +22,12 @@ Output:
             "EnvironmentName": "xx",
             "NamespaceName": "xx",
             "Region": "xx",
+            "Tags": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xx"
+                }
+            ],
             "ApmInstanceId": "xx",
             "CreatedDate": "xx",
             "SubnetIds": [

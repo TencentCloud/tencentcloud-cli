@@ -272,7 +272,7 @@
         },
         {
           "default": "",
-          "document": "签署人userId，非企微场景不使用此字段",
+          "document": "签署人userId，传此字段则不用传姓名、手机号",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -2200,7 +2200,7 @@
         },
         {
           "default": "",
-          "document": "查询过滤实名用户，key为Status，Values为[\"IsVerified\"]",
+          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2830,7 +2830,7 @@
         },
         {
           "default": "",
-          "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段",
+          "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。",
           "example": "无",
           "member": "string",
           "name": "UserId",

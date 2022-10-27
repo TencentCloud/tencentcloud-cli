@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cbs ResizeDisk --cli-unfold-argument  \
-    --DiskId disk-lzrg2pwi \
-    --DiskSize 200
+    --DiskSize 200 \
+    --DiskId disk-lzrg2pwi
 ```
 
 Output: 

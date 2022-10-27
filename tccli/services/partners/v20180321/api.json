@@ -55,33 +55,33 @@
       "output": "DescribeAgentDealsByCacheResponse"
     },
     "DescribeAgentDealsCache": {
-      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentDealsByCache】代理商拉取缓存的全量客户订单",
+      "document": "【该接口已下线，请使用升级版本DescribeAgentDealsByCache】代理商拉取缓存的全量客户订单",
       "input": "DescribeAgentDealsCacheRequest",
-      "name": "代理商缓存订单查询接口（旧）",
+      "name": "代理商缓存订单查询接口（禁止接入）",
       "output": "DescribeAgentDealsCacheResponse"
     },
     "DescribeAgentPayDeals": {
-      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单",
+      "document": "【该接口已下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单",
       "input": "DescribeAgentPayDealsRequest",
-      "name": "代理商代付订单查询接口（旧）",
+      "name": "代理商代付订单查询接口（禁止接入）",
       "output": "DescribeAgentPayDealsResponse"
     },
     "DescribeAgentPayDealsV2": {
       "document": "可以查询代理商代付的所有订单",
       "input": "DescribeAgentPayDealsV2Request",
-      "name": "代理商代付订单查询接口（新）",
+      "name": "代理商代付订单查询接口",
       "output": "DescribeAgentPayDealsV2Response"
     },
     "DescribeAgentSelfPayDeals": {
-      "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
+      "document": "【该接口已下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
       "input": "DescribeAgentSelfPayDealsRequest",
-      "name": "代理商自付订单查询接口（旧）",
+      "name": "代理商自付订单查询接口（禁止接入）",
       "output": "DescribeAgentSelfPayDealsResponse"
     },
     "DescribeAgentSelfPayDealsV2": {
       "document": "查询代理商名下指定代客的自付订单",
       "input": "DescribeAgentSelfPayDealsV2Request",
-      "name": "代理商自付订单查询接口（新）",
+      "name": "代理商自付订单查询接口",
       "output": "DescribeAgentSelfPayDealsV2Response"
     },
     "DescribeClientBalance": {
@@ -97,9 +97,9 @@
       "output": "DescribeClientBalanceNewResponse"
     },
     "DescribeRebateInfos": {
-      "document": "代理商可查询自己名下全部返佣信息",
+      "document": "【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
-      "name": "查询代理商返佣信息",
+      "name": "查询代理商返佣信息（禁止接入）",
       "output": "DescribeRebateInfosResponse"
     },
     "DescribeSalesmans": {
@@ -1844,7 +1844,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大200",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1853,7 +1853,7 @@
         },
         {
           "default": "",
-          "document": "下单时间范围起始点",
+          "document": "下单时间范围起始点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -1862,7 +1862,7 @@
         },
         {
           "default": "",
-          "document": "下单时间范围终止点",
+          "document": "下单时间范围终止点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
@@ -1970,7 +1970,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大200",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -1979,7 +1979,7 @@
         },
         {
           "default": "",
-          "document": "下单时间范围起始点",
+          "document": "下单时间范围起始点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -1988,7 +1988,7 @@
         },
         {
           "default": "",
-          "document": "下单时间范围终止点",
+          "document": "下单时间范围终止点【请保持时间范围最大90天】",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
@@ -2087,7 +2087,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大100",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -2195,7 +2195,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大100",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2321,7 +2321,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大100",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -2429,7 +2429,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目 最大100",
           "example": "1",
           "member": "uint64",
           "name": "Limit",

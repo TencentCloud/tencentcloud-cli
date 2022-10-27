@@ -2669,6 +2669,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否手戳集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHandsCluster",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6114,6 +6124,15 @@
           "name": "ScaleOutServiceConfAssign",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0表示关闭自动续费，1表示开启自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

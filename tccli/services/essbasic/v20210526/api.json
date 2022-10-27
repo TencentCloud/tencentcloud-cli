@@ -1085,7 +1085,7 @@
         },
         {
           "default": "",
-          "document": "查询过滤实名用户，key为Status，Values为[\"IsVerified\"]",
+          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
