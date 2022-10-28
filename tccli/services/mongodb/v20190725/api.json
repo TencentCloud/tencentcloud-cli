@@ -72,6 +72,12 @@
       "name": "获取数据库实例订单详情",
       "output": "DescribeDBInstanceDealResponse"
     },
+    "DescribeDBInstanceNodeProperty": {
+      "document": "本接口用于查询节点的属性，包括节点所在可用区、节点名称、地址、角色、状态、主从延迟、优先级、投票权、标签等属性。",
+      "input": "DescribeDBInstanceNodePropertyRequest",
+      "name": "查询节点属性",
+      "output": "DescribeDBInstanceNodePropertyResponse"
+    },
     "DescribeDBInstances": {
       "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
       "input": "DescribeDBInstancesRequest",
@@ -1799,6 +1805,105 @@
           "name": "Action",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceNodePropertyRequest": {
+      "document": "DescribeDBInstanceNodeProperty请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点ID。",
+          "example": "[\"cmgo-6heje4jp_0-node-slave0\",\"cmgo-6heje4jp_1-node-slave0\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点角色。可选值包括：\n<ul><li>PRIMARY：主节点。</li><li>SECONDARY：从节点。</li><li>READONLY：只读节点。</li><li>ARBITER：仲裁节点。</li></ul>",
+          "example": "PRIMARY",
+          "member": "string",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "该参数指定节点是否为Hidden节点，默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyHidden",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "该参数指定选举新主节点的优先级。其取值范围为[0,100]，数值越高，优先级越高。",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "该参数指定节点投票权。\n<ul><li>1：具有投票权。</li><li>0：无投票权。</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Votes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点标签。",
+          "example": "无",
+          "member": "NodeTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceNodePropertyResponse": {
+      "document": "DescribeDBInstanceNodeProperty返回参数结构体",
+      "members": [
+        {
+          "document": "Mongos节点属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeProperty",
+          "name": "Mongos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "副本集节点信息。",
+          "example": "无",
+          "member": "ReplicateSetInfo",
+          "name": "ReplicateSets",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3656,6 +3761,148 @@
       ],
       "usage": "in"
     },
+    "NodeProperty": {
+      "document": "节点属性",
+      "members": [
+        {
+          "default": "",
+          "document": "节点所在的可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-ocdv2lr7_0-node-primary",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.4.0.7:30000",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "角色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PRIMARY",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为Hidden节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Hidden",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主从延迟，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SlaveDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点投票权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Votes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"TagKey\":\"role-cmgo\",\"TagValue\":\"primary-secondary-group\"}]",
+          "member": "NodeTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "副本集Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-ocdv2lr7_0",
+          "member": "string",
+          "name": "ReplicateSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeTag": {
+      "document": "节点Tag",
+      "members": [
+        {
+          "default": "",
+          "document": "节点Tag key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testKey",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点Tag Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testValue",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OfflineIsolatedDBInstanceRequest": {
       "document": "OfflineIsolatedDBInstance请求参数结构体",
       "members": [
@@ -3812,6 +4059,22 @@
         }
       ],
       "usage": "in"
+    },
+    "ReplicateSetInfo": {
+      "document": "副本集信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeProperty",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ResetDBInstancePasswordRequest": {
       "document": "ResetDBInstancePassword请求参数结构体",

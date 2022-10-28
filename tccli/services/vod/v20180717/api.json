@@ -1310,6 +1310,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "切片类型，仅当 Format 为 HLS 时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7408,6 +7418,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切片类型，当 Format 为 HLS 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>\n默认值：ts。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8733,6 +8752,15 @@
           "name": "TEHDConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "切片类型，当 Container 为 hls 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>\n默认值：ts。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18466,6 +18494,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切片类型，当 Format 为 HLS 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19906,6 +19943,15 @@
           "name": "TEHDConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "切片类型，当 Container 为 hls 时有效，可选值：\n<li>ts：ts 切片；</li>\n<li>fmp4：fmp4 切片。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25330,6 +25376,7 @@
         {
           "default": "",
           "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。\n<li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>\n<li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>",
+          "example": "无",
           "member": "string",
           "name": "Time",
           "required": true,
@@ -25338,7 +25385,8 @@
         },
         {
           "default": "",
-          "document": "数据大小。\n<li>存储空间的数据，单位是字节。</li>\n<li>转码时长的数据，单位是秒。</li>\n<li>流量数据，单位是字节。</li>\n<li>带宽数据，单位是比特每秒。</li>",
+          "document": "数据大小。\n<li>存储空间的数据，单位是字节。</li>\n<li>转码时长的数据，单位是秒。</li>\n<li>流量数据，单位是字节。</li>\n<li>带宽数据，单位是比特每秒。</li>\n<li>直播剪辑数据，单位是秒。</li>",
+          "example": "60",
           "member": "int64",
           "name": "Value",
           "required": true,
@@ -26604,6 +26652,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "101",
           "member": "string",
           "name": "Definition",
           "required": true,
@@ -26613,6 +26662,7 @@
         {
           "default": "",
           "document": "封装格式，取值：mp4、flv、hls、mp3、flac、ogg。",
+          "example": "hls",
           "member": "string",
           "name": "Container",
           "required": true,
@@ -26622,6 +26672,7 @@
         {
           "default": "",
           "document": "转码模板名称。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -26631,6 +26682,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -26640,6 +26692,7 @@
         {
           "default": "",
           "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -26649,6 +26702,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": true,
@@ -26658,6 +26712,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": true,
@@ -26667,6 +26722,7 @@
         {
           "default": "",
           "document": "视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
           "required": true,
@@ -26676,6 +26732,7 @@
         {
           "default": "",
           "document": "音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
           "required": true,
@@ -26685,6 +26742,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
           "required": true,
@@ -26694,6 +26752,7 @@
         {
           "default": "",
           "document": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式板。</li>",
+          "example": "Video",
           "member": "string",
           "name": "ContainerType",
           "required": true,
@@ -26703,6 +26762,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -26712,8 +26772,19 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "切片类型，仅当 Container 为 hls 时有效。",
+          "example": "ts",
+          "member": "string",
+          "name": "SegmentType",
           "required": true,
           "type": "string",
           "value_allowed_null": false

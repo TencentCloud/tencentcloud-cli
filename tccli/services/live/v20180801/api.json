@@ -13115,6 +13115,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -13124,6 +13125,7 @@
         {
           "default": "",
           "document": "开始时间（北京时间），格式：yyyy-mm-dd HH:MM。",
+          "example": "2019-03-01 01:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -13133,6 +13135,7 @@
         {
           "default": "",
           "document": "结束时间（北京时间），格式：yyyy-mm-dd HH:MM。",
+          "example": "2019-03-01 01:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -13142,6 +13145,7 @@
         {
           "default": "",
           "document": "转码时长，单位：分钟。\n注意：因推流过程中可能有中断重推情况，此处时长为真实转码时长累加值，并非结束时间和开始时间的间隔。",
+          "example": "8",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -13151,6 +13155,7 @@
         {
           "default": "",
           "document": "编码方式，带模块，\n示例：\nliveprocessor_H264：直播转码-H264，\nliveprocessor_H265： 直播转码-H265，\ntopspeed_H264：极速高清-H264，\ntopspeed_H265：极速高清-H265。",
+          "example": "liveprocessor_H265",
           "member": "string",
           "name": "ModuleCodec",
           "required": true,
@@ -13160,6 +13165,7 @@
         {
           "default": "",
           "document": "码率。",
+          "example": "1",
           "member": "uint64",
           "name": "Bitrate",
           "required": true,
@@ -13168,7 +13174,8 @@
         },
         {
           "default": "",
-          "document": "类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。",
+          "document": "类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。",
+          "example": "Transcode",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -13178,6 +13185,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "5000.livepush.com",
           "member": "string",
           "name": "PushDomain",
           "required": true,
@@ -13187,8 +13195,19 @@
         {
           "default": "",
           "document": "分辨率。",
+          "example": "720p",
           "member": "string",
           "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域：\nMainland：国内。\nOverseas：海外。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "MainlandOrOversea",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -102,6 +102,12 @@
       "name": "查询代理商返佣信息（禁止接入）",
       "output": "DescribeRebateInfosResponse"
     },
+    "DescribeRebateInfosNew": {
+      "document": "代理商可查询自己名下全部返佣信息",
+      "input": "DescribeRebateInfosNewRequest",
+      "name": "查询代理商返佣信息V2",
+      "output": "DescribeRebateInfosNewResponse"
+    },
     "DescribeSalesmans": {
       "document": "代理商查询名下业务员列表信息",
       "input": "DescribeSalesmansRequest",
@@ -2613,6 +2619,69 @@
       ],
       "type": "object"
     },
+    "DescribeRebateInfosNewRequest": {
+      "document": "DescribeRebateInfosNew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返佣月份，如2018-02",
+          "example": "2018-02",
+          "member": "string",
+          "name": "RebateMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebateInfosNewResponse": {
+      "document": "DescribeRebateInfosNew返回参数结构体",
+      "members": [
+        {
+          "document": "返佣信息列表",
+          "example": "无",
+          "member": "RebateInfoElemNew",
+          "name": "RebateInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件返佣信息数目",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRebateInfosRequest": {
       "document": "DescribeRebateInfos请求参数结构体",
       "members": [
@@ -2966,6 +3035,72 @@
           "name": "ExceptionFlag",
           "required": true,
           "type": "string"
+        }
+      ],
+      "usage": "out"
+    },
+    "RebateInfoElemNew": {
+      "document": "返佣信息定义",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商账号ID",
+          "example": "12345",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返佣月份，如2018-02",
+          "example": "2018-02",
+          "member": "string",
+          "name": "RebateMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返佣金额，单位分",
+          "example": "1",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "月度业绩，单位分",
+          "example": "1",
+          "member": "int64",
+          "name": "MonthSales",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "季度业绩，单位分",
+          "example": "1",
+          "member": "int64",
+          "name": "QuarterSales",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ExceptionFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

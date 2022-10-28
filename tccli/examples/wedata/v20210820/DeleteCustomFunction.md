@@ -7,7 +7,8 @@ Input:
 ```
 tccli wedata DeleteCustomFunction --cli-unfold-argument  \
     --ClusterIdentifier xx \
-    --FunctionId xx
+    --FunctionId xx \
+    --ProjectId xx
 ```
 
 Output: 

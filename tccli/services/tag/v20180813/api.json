@@ -518,7 +518,7 @@
       "members": [
         {
           "default": "",
-          "document": "传1拉取所有项目（包括隐藏项目），不传或传0拉取显示项目",
+          "document": "传1拉取所有项目（包括隐藏项目），传0拉取显示项目",
           "example": "1",
           "member": "uint64",
           "name": "AllList",

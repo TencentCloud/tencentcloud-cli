@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 4,
         "PlaylistBaseInfoSet": [
             {
                 "PlaylistId": "pid-8888",

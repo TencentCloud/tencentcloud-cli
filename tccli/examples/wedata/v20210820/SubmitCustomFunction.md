@@ -8,7 +8,8 @@ Input:
 tccli wedata SubmitCustomFunction --cli-unfold-argument  \
     --Comment xx \
     --ClusterIdentifier xx \
-    --FunctionId xx
+    --FunctionId xx \
+    --ProjectId xxx
 ```
 
 Output: 

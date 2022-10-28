@@ -300,6 +300,24 @@
       "name": "修改同步模式",
       "output": "ModifyDBSyncModeResponse"
     },
+    "ModifyInstanceNetwork": {
+      "document": "本接口（ModifyInstanceNetwork）用于修改实例所属网络。",
+      "input": "ModifyInstanceNetworkRequest",
+      "name": "修改实例所属网络",
+      "output": "ModifyInstanceNetworkResponse"
+    },
+    "ModifyInstanceVip": {
+      "document": "本接口（ModifyInstanceVip）用于修改实例Vip",
+      "input": "ModifyInstanceVipRequest",
+      "name": "修改实例Vip",
+      "output": "ModifyInstanceVipResponse"
+    },
+    "ModifyInstanceVport": {
+      "document": "本接口（ModifyInstanceVport）用于修改实例VPORT",
+      "input": "ModifyInstanceVportRequest",
+      "name": "修改实例VPORT",
+      "output": "ModifyInstanceVportResponse"
+    },
     "ModifyRealServerAccessStrategy": {
       "document": "本接口(ModifyRealServerAccessStrategy)用于修改云数据库的VPCGW到RS的访问策略。\n\n**注意**\n- 修改策略后只对新建立的连接生效，老连接不受影响\n- 就近访问只针对实例是跨可用区部署有用，单可用区部署实例就近与否并无作用\n- DB每个Node对应一个proxy，如果开启就近访问，将会把连接集中到对应可用区的proxy上，可能造成热点问题，这种情况下如果是线上业务，请务必根据自己的业务请求量测试符合预期后再进行就近策略变更",
       "input": "ModifyRealServerAccessStrategyRequest",
@@ -5277,6 +5295,186 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNetworkRequest": {
+      "document": "ModifyInstanceNetwork请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-jv8z8fhl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "希望转到的VPC网络的VpcId",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "希望转到的VPC网络的子网ID",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果需要指定VIP，填上该字段",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果需要指定VIPv6，填上该字段",
+          "example": "2001:0000: 1F 1F :0000:0000:0100: 11A 0:ADDF",
+          "member": "string",
+          "name": "Vipv6",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。",
+          "example": "168",
+          "member": "uint64",
+          "name": "VipReleaseDelay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNetworkResponse": {
+      "document": "ModifyInstanceNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID，根据此FlowId通过DescribeFlow接口查询任务进行状态",
+          "example": "1122",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceVipRequest": {
+      "document": "ModifyInstanceVip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-jv8z8fhl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例VIP",
+          "example": "10.0.0.2",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IPv6标志",
+          "example": "无",
+          "member": "uint64",
+          "name": "Ipv6Flag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VIP保留时长，单位小时，取值范围（0~168），0表示立即释放，有一分钟释放延迟。不传此参数，默认24小时释放VIP。",
+          "example": "164",
+          "member": "uint64",
+          "name": "VipReleaseDelay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceVipResponse": {
+      "document": "ModifyInstanceVip返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务流程ID",
+          "example": "1122",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceVportRequest": {
+      "document": "ModifyInstanceVport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例VPORT",
+          "example": "3307",
+          "member": "uint64",
+          "name": "Vport",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceVportResponse": {
+      "document": "ModifyInstanceVport返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

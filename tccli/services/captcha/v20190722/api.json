@@ -1157,7 +1157,7 @@
       "document": "DescribeCaptchaMiniResult返回参数结构体",
       "members": [
         {
-          "document": "1       ticket verification succeeded     票据验证成功\n7       CaptchaAppId does not match     票据与验证码应用APPID不匹配\n8       ticket expired     票据超时\n10     ticket format error     票据格式不正确\n15     ticket decryption failed     票据解密失败\n16     CaptchaAppId wrong format     检查验证码应用APPID错误\n21     ticket error     票据验证错误\n25     invalid ticket     无效票据\n26     system internal error     系统内部错误\n100   param err     参数校验错误",
+          "document": "1       ticket verification succeeded     票据验证成功\n7       CaptchaAppId does not match     票据与验证码应用APPID不匹配\n8       ticket expired     票据超时\n10     ticket format error     票据格式不正确\n15     ticket decryption failed     票据解密失败\n16     CaptchaAppId wrong format     检查验证码应用APPID错误\n21     ticket error     票据验证错误\n25     invalid ticket     无效票据\n26     system internal error     系统内部错误\n31 \t   UnauthorizedOperation.Unauthorized\t无有效套餐包/账户已欠费\n100   param err     参数校验错误",
           "example": "8",
           "member": "int64",
           "name": "CaptchaCode",

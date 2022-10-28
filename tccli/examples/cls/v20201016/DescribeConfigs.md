@@ -19,6 +19,7 @@ Output:
         "Configs": [
             {
                 "ConfigId": "xxxx-xx-xx-xx-yyyyyyyy",
+                "Name": "testname",
                 "Path": "/abc/log/test.log",
                 "LogType": "delimiter_log",
                 "ExtractRule": {

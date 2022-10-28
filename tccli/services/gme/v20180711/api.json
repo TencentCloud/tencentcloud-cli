@@ -49,7 +49,7 @@
       "output": "DescribeAgeDetectTaskResponse"
     },
     "DescribeAppStatistics": {
-      "document": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近30天。",
+      "document": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近60天。",
       "input": "DescribeAppStatisticsRequest",
       "name": "获取应用用量统计数据",
       "output": "DescribeAppStatisticsResponse"
@@ -224,6 +224,7 @@
         {
           "default": "",
           "document": "实时语音统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"MainLandPcu\":0,\"MainLandDuration\":0,\"OverseaPcu\":0,\"OverseaDur",
           "member": "RealTimeSpeechStatisticsItem",
           "name": "RealtimeSpeechStatisticsItem",
           "required": true,
@@ -233,6 +234,7 @@
         {
           "default": "",
           "document": "语音消息统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Dau\":1018}",
           "member": "VoiceMessageStatisticsItem",
           "name": "VoiceMessageStatisticsItem",
           "required": true,
@@ -242,6 +244,7 @@
         {
           "default": "",
           "document": "语音过滤统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Duration\" : 18000}",
           "member": "VoiceFilterStatisticsItem",
           "name": "VoiceFilterStatisticsItem",
           "required": true,
@@ -251,11 +254,52 @@
         {
           "default": "",
           "document": "统计时间",
+          "example": "2022-10-01",
           "member": "date",
           "name": "Date",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录音转文本用量统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Data\":0}",
+          "member": "AudioTextStatisticsItem",
+          "name": "AudioTextStatisticsItem",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流式转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Data\":0}",
+          "member": "StreamTextStatisticsItem",
+          "name": "StreamTextStatisticsItem",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "海外转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Data\":0}",
+          "member": "OverseaTextStatisticsItem",
+          "name": "OverseaTextStatisticsItem",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实时语音转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Data\":0}",
+          "member": "RealtimeTextStatisticsItem",
+          "name": "RealtimeTextStatisticsItem",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -379,6 +423,22 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioTextStatisticsItem": {
+      "document": "录音转文本用量统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "Data",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1011,7 +1071,7 @@
         },
         {
           "default": "",
-          "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter",
+          "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText",
           "example": "[\"RealTimeSpeech\\r\\n\",\"VoiceMessage\\r\\n\"]",
           "member": "string",
           "name": "Services",
@@ -1914,6 +1974,22 @@
       ],
       "type": "object"
     },
+    "OverseaTextStatisticsItem": {
+      "document": "海外转文本用量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "Data",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RealTimeSpeechStatisticsItem": {
       "document": "实时语音用量统计数据",
       "members": [
@@ -1999,6 +2075,22 @@
         }
       ],
       "usage": "both"
+    },
+    "RealtimeTextStatisticsItem": {
+      "document": "实时语音转文本用量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "Data",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RoomUser": {
       "document": "房间内用户信息",
@@ -2312,6 +2404,22 @@
       ],
       "usage": "out"
     },
+    "StreamTextStatisticsItem": {
+      "document": "流式转文本用量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "Data",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "标签列表",
       "members": [
@@ -2532,7 +2640,8 @@
       "members": [
         {
           "default": "",
-          "document": "语音过滤总时长",
+          "document": "语音过滤总时长，单位为min",
+          "example": "100",
           "member": "uint64",
           "name": "Duration",
           "required": true,

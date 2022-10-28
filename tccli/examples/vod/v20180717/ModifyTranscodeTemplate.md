@@ -9,11 +9,11 @@ tccli vod ModifyTranscodeTemplate --cli-unfold-argument  \
     --Definition 1008 \
     --Container mp4 \
     --VideoTemplate.Codec libx264 \
-    --VideoTemplate.Fps 60 \
     --VideoTemplate.Bitrate 256 \
+    --VideoTemplate.Fps 60 \
+    --AudioTemplate.SampleRate 200 \
     --AudioTemplate.Codec libfdk_aac \
-    --AudioTemplate.Bitrate 200 \
-    --AudioTemplate.SampleRate 200
+    --AudioTemplate.Bitrate 200
 ```
 
 Output: 

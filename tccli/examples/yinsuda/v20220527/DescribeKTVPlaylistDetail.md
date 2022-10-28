@@ -40,6 +40,7 @@ Output:
                 "Duration": 216000,
                 "MusicId": "mid-11x9dj3",
                 "Name": "等",
+                "RecommendType": "Other",
                 "SingerImageUrl": "http://singerimg.xxxxx.com/uploadpic/softhead/150/20210326/20210326145830248137.jpg",
                 "SingerSet": [
                     "贾振峰"

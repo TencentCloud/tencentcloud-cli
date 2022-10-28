@@ -75,7 +75,7 @@
     "DeleteCustomFunction": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\",\n    \"ProjectId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除用户自定义函数"
       }
@@ -439,7 +439,7 @@
     "SubmitCustomFunction": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitCustomFunction\n<公共请求参数>\n\n{\n    \"Comment\": \"xx\",\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitCustomFunction\n<公共请求参数>\n\n{\n    \"Comment\": \"xx\",\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\",\n    \"ProjectId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "提交自定义函数"
       }

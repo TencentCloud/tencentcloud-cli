@@ -1688,6 +1688,15 @@
           "name": "FunctionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID，必须填",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6184,6 +6193,15 @@
           "member": "string",
           "name": "Comment",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
           "type": "string"
         }
       ],
