@@ -943,7 +943,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -952,7 +953,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -967,7 +989,8 @@
           "name": "BankSlipInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -976,7 +999,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1227,7 +1251,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1236,7 +1261,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1251,7 +1297,8 @@
           "name": "BusInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -1260,7 +1307,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1438,7 +1486,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1447,7 +1496,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1462,7 +1532,8 @@
           "name": "CarInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2081,7 +2152,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2090,7 +2162,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2105,7 +2198,8 @@
           "name": "DutyPaidProofInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -2114,7 +2208,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2894,7 +2989,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2903,7 +2999,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2918,7 +3035,8 @@
           "name": "FlightInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4240,7 +4358,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4249,7 +4368,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4264,7 +4404,8 @@
           "name": "InvoiceGeneralInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -4273,7 +4414,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4989,7 +5131,8 @@
           "member": "bool",
           "name": "ReturnImage",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4998,7 +5141,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5007,7 +5151,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5022,7 +5187,8 @@
           "name": "InvoiceDetectInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5119,7 +5285,7 @@
         },
         {
           "default": "",
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n----------------------\n-1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）",
           "example": "无",
           "member": "int64",
           "name": "Types",
@@ -5135,6 +5301,26 @@
           "name": "ReturnOther",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -6144,7 +6330,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6153,7 +6340,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6168,7 +6376,8 @@
           "name": "InvoiceNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票代码",
@@ -6177,7 +6386,8 @@
           "name": "InvoiceCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "大写金额",
@@ -6186,7 +6396,8 @@
           "name": "Rate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "小写金额",
@@ -6195,7 +6406,8 @@
           "name": "RateNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票消费类型",
@@ -6204,7 +6416,8 @@
           "name": "InvoiceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6213,7 +6426,8 @@
           "name": "Province",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6222,7 +6436,8 @@
           "name": "City",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否有公司印章（1有 0无 空为识别不出）\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6231,7 +6446,8 @@
           "name": "HasStamp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7011,6 +7227,26 @@
           "name": "ReturnCoord",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -8555,7 +8791,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8564,7 +8801,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8579,7 +8837,8 @@
           "name": "ShipInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -8588,7 +8847,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8993,7 +9253,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9002,7 +9263,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9017,7 +9299,8 @@
           "name": "InvoiceNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票号码",
@@ -9026,7 +9309,8 @@
           "name": "InvoiceCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日期",
@@ -9035,7 +9319,8 @@
           "name": "Date",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "金额",
@@ -9044,7 +9329,8 @@
           "name": "Fare",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "上车时间",
@@ -9053,7 +9339,8 @@
           "name": "GetOnTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "下车时间",
@@ -9062,7 +9349,8 @@
           "name": "GetOffTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "里程",
@@ -9071,7 +9359,8 @@
           "name": "Distance",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票所在地",
@@ -9080,7 +9369,8 @@
           "name": "Location",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "车牌号",
@@ -9089,7 +9379,8 @@
           "name": "PlateNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票消费类型",
@@ -9098,7 +9389,8 @@
           "name": "InvoiceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9107,7 +9399,8 @@
           "name": "Province",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9116,7 +9409,8 @@
           "name": "City",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9966,7 +10260,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9975,7 +10270,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9990,7 +10306,8 @@
           "name": "TollInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -9999,7 +10316,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10031,6 +10349,26 @@
           "name": "ImageUrl",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -11376,7 +11714,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11385,7 +11724,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11400,7 +11760,8 @@
           "name": "VatRollInvoiceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负。",
@@ -11409,7 +11770,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12989,6 +13351,26 @@
           "name": "EnablePreDetect",
           "required": false,
           "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],

@@ -250,6 +250,14 @@
         "title": "子域名解析量统计"
       }
     ],
+    "DescribeUinByDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUinByDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"xx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"712d3b96-9d12-4c43-972c-7880b5c795c0\",\n        \"Uin\": 11101101101\n    }\n}",
+        "title": "根据域名查UIN"
+      }
+    ],
     "DescribeUserDetail": [
       {
         "document": "",

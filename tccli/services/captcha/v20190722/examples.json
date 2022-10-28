@@ -51,7 +51,7 @@
     "DescribeCaptchaMiniResult": [
       {
         "document": "",
-        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaMiniResult\n&CaptchaType=9\n&Ticket=xxxx\n&UserIp=127.0.0.1\n&CaptchaAppId=201111111\n&AppSecretKey=xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniResult\n<公共请求参数>\n\n{\n    \"UserIp\": \"127.0.0.1\",\n    \"CaptchaAppId\": \"201111111\",\n    \"Ticket\": \"xxxx\",\n    \"AppSecretKey\": \"xxxxxx\",\n    \"CaptchaType\": \"9\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0b3a098-b8f6-4001-764b-47f3843249db\",\n        \"CaptchaCode\": 8,\n        \"CaptchaMsg\": \"ticket expired\"\n    }\n}",
         "title": "请求和返回示例"
       }

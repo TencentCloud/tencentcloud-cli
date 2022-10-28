@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DescribeLiveTranscodeDetailInfo --cli-unfold-argument  \
-    --DayTime 20190307 \
     --PageNum 1 \
-    --PageSize 20
+    --PageSize 20 \
+    --DayTime 20190307
 ```
 
 Output: 
@@ -25,7 +25,8 @@ Output:
                 "Bitrate": 120,
                 "Type": "混流",
                 "PushDomain": "5000.livepush.com",
-                "Resolution": "480P"
+                "Resolution": "480P",
+                "MainlandOrOversea": "Mainland"
             }
         ],
         "PageNum": 1,

@@ -1270,7 +1270,19 @@
           "name": "ConfigId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "采集规则配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1280,7 +1292,8 @@
           "name": "LogFormat",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1290,7 +1303,8 @@
           "name": "Path",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1300,7 +1314,8 @@
           "name": "LogType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1310,7 +1325,8 @@
           "name": "ExtractRule",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1320,7 +1336,8 @@
           "name": "ExcludePaths",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1330,7 +1347,8 @@
           "name": "Output",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1340,7 +1358,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1350,7 +1369,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1360,7 +1380,8 @@
           "name": "UserDefineRule",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4917,7 +4938,7 @@
         },
         {
           "default": "",
-          "document": "syslog传输协议，取值为tcp或者udp。\n该接口适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog传输协议，取值为tcp或者udp。\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -4928,7 +4949,7 @@
         },
         {
           "default": "",
-          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n该接口适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:9000",
           "member": "string",
           "name": "Address",
@@ -4939,7 +4960,7 @@
         },
         {
           "default": "",
-          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议\n该接口适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RFC3164",
           "member": "string",
           "name": "ParseProtocol",

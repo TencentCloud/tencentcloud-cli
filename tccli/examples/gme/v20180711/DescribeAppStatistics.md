@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli gme DescribeAppStatistics --cli-unfold-argument  \
-    --BizId 140000001 \
+    --Services VoiceMessage RealTimeSpeech \
     --StartDate 2019-08-01 \
     --EndDate 2019-08-03 \
-    --Services RealTimeSpeech VoiceMessage
+    --BizId 140000001
 ```
 
 Output: 
@@ -19,53 +19,95 @@ Output:
         "Data": {
             "AppStatistics": [
                 {
-                    "Date": "2019-08-01",
+                    "VoiceFilterStatisticsItem": {
+                        "Duration": 1
+                    },
                     "RealtimeSpeechStatisticsItem": {
-                        "MainLandDau": 10000,
-                        "MainLandPcu": 5000,
-                        "MainLandDuration": 1000000,
-                        "OverseaDau": 5000,
-                        "OverseaPcu": 2000,
-                        "OverseaDuration": 500000
+                        "MainLandPcu": 1,
+                        "OverseaDuration": 1,
+                        "OverseaPcu": 1,
+                        "OverseaDau": 1,
+                        "MainLandDuration": 1,
+                        "MainLandDau": 1
+                    },
+                    "StreamTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "RealtimeTextStatisticsItem": {
+                        "Data": 0.0
                     },
                     "VoiceMessageStatisticsItem": {
-                        "Dau": 68000
+                        "Dau": 1
                     },
-                    "VoiceFilterStatisticsItem": null
+                    "AudioTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "Date": "2020-09-22",
+                    "OverseaTextStatisticsItem": {
+                        "Data": 0.0
+                    }
                 },
                 {
-                    "Date": "2019-08-02",
+                    "VoiceFilterStatisticsItem": {
+                        "Duration": 1
+                    },
                     "RealtimeSpeechStatisticsItem": {
-                        "MainLandDau": 10000,
-                        "MainLandPcu": 5000,
-                        "MainLandDuration": 1000000,
-                        "OverseaDau": 5000,
-                        "OverseaPcu": 2000,
-                        "OverseaDuration": 500000
+                        "MainLandPcu": 1,
+                        "MainLandDuration": 1,
+                        "OverseaPcu": 1,
+                        "OverseaDau": 1,
+                        "OverseaDuration": 1,
+                        "MainLandDau": 1
+                    },
+                    "Date": "2020-09-22",
+                    "StreamTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "RealtimeTextStatisticsItem": {
+                        "Data": 0.0
                     },
                     "VoiceMessageStatisticsItem": {
-                        "Dau": 68000
+                        "Dau": 1
                     },
-                    "VoiceFilterStatisticsItem": null
+                    "AudioTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "OverseaTextStatisticsItem": {
+                        "Data": 0.0
+                    }
                 },
                 {
-                    "Date": "2019-08-03",
+                    "VoiceFilterStatisticsItem": {
+                        "Duration": 1
+                    },
                     "RealtimeSpeechStatisticsItem": {
-                        "MainLandDau": 10000,
-                        "MainLandPcu": 5000,
-                        "MainLandDuration": 1000000,
-                        "OverseaDau": 5000,
-                        "OverseaPcu": 2000,
-                        "OverseaDuration": 500000
+                        "MainLandPcu": 1,
+                        "MainLandDuration": 1,
+                        "OverseaPcu": 1,
+                        "OverseaDau": 1,
+                        "OverseaDuration": 1,
+                        "MainLandDau": 1
+                    },
+                    "Date": "2020-09-22",
+                    "StreamTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "RealtimeTextStatisticsItem": {
+                        "Data": 0.0
                     },
                     "VoiceMessageStatisticsItem": {
-                        "Dau": 68000
+                        "Dau": 1
                     },
-                    "VoiceFilterStatisticsItem": null
+                    "AudioTextStatisticsItem": {
+                        "Data": 0.0
+                    },
+                    "OverseaTextStatisticsItem": {
+                        "Data": 0.0
+                    }
                 }
             ]
         },
-        "RequestId": "9b993045-9fa1-47f4-9d25-79160f305be8"
+        "RequestId": "xx"
     }
 }
 ```

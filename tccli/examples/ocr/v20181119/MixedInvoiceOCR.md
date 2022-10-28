@@ -26,19 +26,23 @@ Output:
                 "SingleInvoiceInfos": [
                     {
                         "Name": "发票号码",
-                        "Value": "27357827"
+                        "Value": "27357827",
+                        "Row": 0
                     },
                     {
                         "Name": "日期",
-                        "Value": "2016年04月11日"
+                        "Value": "2016年04月11日",
+                        "Row": 0
                     },
                     {
                         "Name": "发票代码",
-                        "Value": "440300708461"
+                        "Value": "440300708461",
+                        "Row": 0
                     },
                     {
                         "Name": "金额",
-                        "Value": "778"
+                        "Value": "778",
+                        "Row": 0
                     }
                 ],
                 "Code": "OK"
@@ -55,39 +59,48 @@ Output:
                 "SingleInvoiceInfos": [
                     {
                         "Name": "编号",
-                        "Value": "Z96X809511"
+                        "Value": "Z96X809511",
+                        "Row": 0
                     },
                     {
                         "Name": "出发站",
-                        "Value": "上海"
+                        "Value": "上海",
+                        "Row": 0
                     },
                     {
                         "Name": "到达站",
-                        "Value": "南京"
+                        "Value": "南京",
+                        "Row": 0
                     },
                     {
                         "Name": "出发时间",
-                        "Value": "2018年03月06日18:51"
+                        "Value": "2018年03月06日18:51",
+                        "Row": 0
                     },
                     {
                         "Name": "车次",
-                        "Value": "Z196"
+                        "Value": "Z196",
+                        "Row": 0
                     },
                     {
                         "Name": "座位号",
-                        "Value": ""
+                        "Value": "",
+                        "Row": 0
                     },
                     {
                         "Name": "姓名",
-                        "Value": "周周"
+                        "Value": "周周",
+                        "Row": 0
                     },
                     {
                         "Name": "票价",
-                        "Value": "46.5"
+                        "Value": "46.5",
+                        "Row": 0
                     },
                     {
                         "Name": "席别",
-                        "Value": "新空调硬座"
+                        "Value": "新空调硬座",
+                        "Row": 0
                     }
                 ],
                 "Code": "OK"
@@ -150,43 +163,53 @@ Output:
                 "SingleInvoiceInfos": [
                     {
                         "Name": "编号",
-                        "Value": "Z96X089511"
+                        "Value": "Z96X089511",
+                        "Row": 0
                     },
                     {
                         "Name": "出发站",
-                        "Value": "上海"
+                        "Value": "上海",
+                        "Row": 0
                     },
                     {
                         "Name": "车次",
-                        "Value": "Z196"
+                        "Value": "Z196",
+                        "Row": 0
                     },
                     {
                         "Name": "到达站",
-                        "Value": "南京"
+                        "Value": "南京",
+                        "Row": 0
                     },
                     {
                         "Name": "出发时间",
-                        "Value": "2018年03月06日18:51"
+                        "Value": "2018年03月06日18:51",
+                        "Row": 0
                     },
                     {
                         "Name": "座位号",
-                        "Value": "02车016号"
+                        "Value": "02车016号",
+                        "Row": 0
                     },
                     {
                         "Name": "票价",
-                        "Value": "46.50"
+                        "Value": "46.50",
+                        "Row": 0
                     },
                     {
                         "Name": "席别",
-                        "Value": "新空调硬座"
+                        "Value": "新空调硬座",
+                        "Row": 0
                     },
                     {
                         "Name": "身份证号",
-                        "Value": "3210231991****6666"
+                        "Value": "3210231991****6666",
+                        "Row": 0
                     },
                     {
                         "Name": "姓名",
-                        "Value": "周周"
+                        "Value": "周周",
+                        "Row": 0
                     }
                 ],
                 "Code": "OK",

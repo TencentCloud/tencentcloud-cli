@@ -26,6 +26,7 @@ tccli trtc CreateCloudRecording --cli-unfold-argument  \
     --MixTranscodeParams.VideoParams.Fps 15 \
     --MixTranscodeParams.VideoParams.Height 640 \
     --MixTranscodeParams.VideoParams.Gop 10 \
+    --MixLayoutParams.MixLayoutMode 3 \
     --SdkAppId 1234 \
     --RoomId 3560
 ```
@@ -34,7 +35,7 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "5df46eb2-8e4b-490e-9c3c-dbd3b84faefc",
+        "TaskId": "-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..",
         "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f"
     }
 }

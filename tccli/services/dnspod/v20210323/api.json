@@ -174,6 +174,12 @@
       "name": "子域名解析量统计",
       "output": "DescribeSubdomainAnalyticsResponse"
     },
+    "DescribeUinByDomain": {
+      "document": "根据域名查UIN",
+      "input": "DescribeUinByDomainRequest",
+      "name": "根据域名查UIN",
+      "output": "DescribeUinByDomainResponse"
+    },
     "DescribeUserDetail": {
       "document": "获取帐户信息",
       "input": "DescribeUserDetailRequest",
@@ -2899,6 +2905,54 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUinByDomainRequest": {
+      "document": "DescribeUinByDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "254142",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUinByDomainResponse": {
+      "document": "DescribeUinByDomain返回参数结构体",
+      "members": [
+        {
+          "document": "域名 UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "121212",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
