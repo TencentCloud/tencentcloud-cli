@@ -1,3 +1,138 @@
+# Release 3.0.637.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 12 次发布
+
+发布时间：2022-10-31 06:09:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#VoucherInfo)
+
+	* 新增成员：Reusable, VoucherMainType, VoucherSubType, DiscountRate
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 18 次发布
+
+发布时间：2022-10-31 06:12:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateExtension](http://document.tencentcloudapi.woa.com/document/product/679/76472)
+* [DeleteExtension](http://document.tencentcloudapi.woa.com/document/product/679/76471)
+* [DescribeExtension](http://document.tencentcloudapi.woa.com/document/product/679/76470)
+* [DescribeExtensions](http://document.tencentcloudapi.woa.com/document/product/679/76469)
+* [ModifyExtension](http://document.tencentcloudapi.woa.com/document/product/679/76468)
+* [ResetExtensionPassword](http://document.tencentcloudapi.woa.com/document/product/679/76467)
+
+新增数据结构：
+
+* [ExtensionInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#ExtensionInfo)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 41 次发布
+
+发布时间：2022-10-31 06:15:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [UrlDecodeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#UrlDecodeParam)
+
+修改数据结构：
+
+* [ValueParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#ValueParam)
+
+	* 新增成员：UrlDecode
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 31 次发布
+
+发布时间：2022-10-31 06:23:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：DatasourceConnectionNameSet
+
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：UiURL
+
+
+
+
+## 智聆口语评测(soe) 版本：2018-07-24
+
+### 第 2 次发布
+
+发布时间：2022-10-31 06:40:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InitOralProcess](http://document.tencentcloudapi.woa.com/document/product/884/19319)
+
+	* 新增入参：Keyword
+
+* [TransmitOralProcess](http://document.tencentcloudapi.woa.com/document/product/884/19318)
+
+	* 新增出参：RefTextId, KeyWordHits, UnKeyWordHits
+
+* [TransmitOralProcessWithInit](http://document.tencentcloudapi.woa.com/document/product/884/32605)
+
+	* 新增入参：Keyword
+
+	* 新增出参：RefTextId, KeyWordHits, UnKeyWordHits
+
+
+修改数据结构：
+
+* [SentenceInfo](http://document.tencentcloudapi.woa.com/document/product/884/19320#SentenceInfo)
+
+	* 新增成员：RefTextId, KeyWordHits, UnKeyWordHits
+
+* [WordRsp](http://document.tencentcloudapi.woa.com/document/product/884/19320#WordRsp)
+
+	* 新增成员：KeywordTag
+
+
+
+
 # Release 3.0.636.1
 
 ## 日志服务(cls) 版本：2020-10-16

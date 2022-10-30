@@ -42,7 +42,8 @@
           "member": "string",
           "name": "SessionId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -51,7 +52,8 @@
           "member": "string",
           "name": "RefText",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -60,7 +62,8 @@
           "member": "int64",
           "name": "WorkMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -69,7 +72,8 @@
           "member": "int64",
           "name": "EvalMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -78,7 +82,8 @@
           "member": "float",
           "name": "ScoreCoeff",
           "required": true,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -87,7 +92,8 @@
           "member": "string",
           "name": "SoeAppId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -96,7 +102,8 @@
           "member": "int64",
           "name": "IsLongLifeSession",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -105,7 +112,8 @@
           "member": "int64",
           "name": "StorageMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -114,7 +122,8 @@
           "member": "int64",
           "name": "SentenceInfoEnabled",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -123,7 +132,8 @@
           "member": "int64",
           "name": "ServerType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -132,7 +142,8 @@
           "member": "int64",
           "name": "IsAsync",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -141,7 +152,18 @@
           "member": "int64",
           "name": "TextMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主题词和关键词",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -156,7 +178,8 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -519,56 +542,101 @@
         {
           "default": "",
           "document": "句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.",
+          "example": "1",
           "member": "int64",
           "name": "SentenceId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "详细发音评估结果",
+          "example": "word",
           "member": "WordRsp",
           "name": "Words",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。",
+          "example": "99.9",
           "member": "float",
           "name": "PronAccuracy",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "0.99",
           "member": "float",
           "name": "PronFluency",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "0.99",
           "member": "float",
           "name": "PronCompletion",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "example": "99",
           "member": "float",
           "name": "SuggestedScore",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RefTextId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1]",
+          "member": "float",
+          "name": "KeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1]",
+          "member": "float",
+          "name": "UnKeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -763,6 +831,36 @@
           "visibility": 1
         },
         {
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RefTextId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "float",
+          "name": "KeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "float",
+          "name": "UnKeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -943,6 +1041,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主题词和关键词",
+          "example": "keyword",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1041,6 +1149,36 @@
           "visibility": 1
         },
         {
+          "document": "匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "RefTextId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "KeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "负向主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "UnKeyWordHits",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1055,74 +1193,101 @@
         {
           "default": "",
           "document": "当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。",
+          "example": "100",
           "member": "int64",
           "name": "MemBeginTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。",
+          "example": "200",
           "member": "int64",
           "name": "MemEndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "单词发音准确度，取值范围[-1, 100]，当取-1时指完全不匹配",
+          "example": "99",
           "member": "float",
           "name": "PronAccuracy",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "单词发音流利度，取值范围[0, 1]",
+          "example": "0.8",
           "member": "float",
           "name": "PronFluency",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "当前词",
+          "example": "word",
           "member": "string",
           "name": "Word",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。",
+          "example": "0",
           "member": "int64",
           "name": "MatchTag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "音节评估详情",
+          "example": "phone",
           "member": "PhoneInfo",
           "name": "PhoneInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "参考词，目前为保留字段。",
+          "example": "word",
           "member": "string",
           "name": "ReferenceWord",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主题词命中标志，0表示没命中，1表示命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "KeywordTag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -580,7 +580,7 @@
   "metadata": {
     "apiVersion": "2018-08-08",
     "api_brief": "介绍如何使用API对API网关进行操作，包括自定义域名、限流策略等。",
-    "serviceNameCN": "API网关",
+    "serviceNameCN": "API 网关",
     "serviceShortName": "apigateway"
   },
   "objects": {

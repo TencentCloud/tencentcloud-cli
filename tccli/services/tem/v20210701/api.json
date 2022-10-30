@@ -304,7 +304,7 @@
   "metadata": {
     "apiVersion": "2021-07-01",
     "api_brief": "腾讯云弹性微服务（TEM）相关接口。",
-    "serviceNameCN": "弹性微服务",
+    "serviceNameCN": "弹性微服务 TEM",
     "serviceShortName": "tem"
   },
   "objects": {

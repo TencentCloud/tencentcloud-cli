@@ -118,7 +118,7 @@
   "metadata": {
     "apiVersion": "2020-10-28",
     "api_brief": "介绍腾讯云自动化助手的API，例如使用API创建命令，触发命令，查询指令执行结果等。",
-    "serviceNameCN": "腾讯云自动化助手",
+    "serviceNameCN": "自动化助手",
     "serviceShortName": "tat"
   },
   "objects": {

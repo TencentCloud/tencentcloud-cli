@@ -202,7 +202,7 @@
   "metadata": {
     "apiVersion": "2018-04-16",
     "api_brief": "介绍如何使用API对TBaaS进行操作，包括TrustSQL服务统一、Hyperledger Fabric链状态等。",
-    "serviceNameCN": "TBaaS",
+    "serviceNameCN": "腾讯云区块链服务平台 TBaaS",
     "serviceShortName": "tbaas"
   },
   "objects": {

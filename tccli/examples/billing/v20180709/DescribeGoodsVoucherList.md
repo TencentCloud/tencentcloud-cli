@@ -37,6 +37,7 @@ Output:
                 "CouponType": "xx",
                 "BatchCreateTime": "xx",
                 "MinPayTime": "xx",
+                "Reusable": 0,
                 "Available": true,
                 "MaxPayTime": "xx",
                 "ActivityName": "xx",

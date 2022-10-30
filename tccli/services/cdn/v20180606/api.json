@@ -472,7 +472,7 @@
   "metadata": {
     "apiVersion": "2018-06-06",
     "api_brief": "介绍如何使用API对内容分发网络操作，包括域名管理、配置管理、日志查询等。",
-    "serviceNameCN": "内容分发网络",
+    "serviceNameCN": "内容分发网络 CDN",
     "serviceShortName": "cdn"
   },
   "objects": {

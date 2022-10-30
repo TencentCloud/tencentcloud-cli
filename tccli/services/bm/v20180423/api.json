@@ -322,7 +322,7 @@
   "metadata": {
     "apiVersion": "2018-04-23",
     "api_brief": "介绍如何使用API对黑石物理服务器进行相关操作，包括创建、更改带宽、重启等。",
-    "serviceNameCN": "黑石物理服务器1.0",
+    "serviceNameCN": "黑石物理服务器CPM",
     "serviceShortName": "bm"
   },
   "objects": {

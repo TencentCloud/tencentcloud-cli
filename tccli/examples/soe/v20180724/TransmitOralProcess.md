@@ -6,83 +6,209 @@ Input:
 
 ```
 tccli soe TransmitOralProcess --cli-unfold-argument  \
-    --SessionId stress_test_956938 \
-    --VoiceFileType 1 \
-    --SeqId 1 \
     --VoiceEncodeType 1 \
+    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
     --IsEnd 0 \
-    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5
+    --VoiceFileType 1 \
+    --SessionId stress_test_956938 \
+    --SeqId 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "xx",
+        "SuggestedScore": 99.52305,
+        "PronAccuracy": 99.52305,
+        "PronFluency": 0.93664527,
+        "PronCompletion": 1,
+        "RequestId": "1067cb5d-****-****-b1c6-6b*****72a0e",
+        "RefTextId": 0,
+        "KeyWordHits": [
+            0.0
+        ],
+        "UnKeyWordHits": [
+            0.0
+        ],
+        "Words": [
+            {
+                "KeywordTag": 0,
+                "MemBeginTime": 2330,
+                "MemEndTime": 3170,
+                "PronAccuracy": 99.52305,
+                "PronFluency": 0.93664527,
+                "ReferenceWord": "",
+                "Word": "thankyou",
+                "MatchTag": 0,
+                "PhoneInfos": [
+                    {
+                        "MemBeginTime": 2330,
+                        "MemEndTime": 2530,
+                        "PronAccuracy": 98.37366,
+                        "DetectedStress": false,
+                        "Phone": "th",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2530,
+                        "MemEndTime": 2630,
+                        "PronAccuracy": 99.75654,
+                        "DetectedStress": false,
+                        "Phone": "ae",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2630,
+                        "MemEndTime": 2730,
+                        "PronAccuracy": 99.75149,
+                        "DetectedStress": false,
+                        "Phone": "ng",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2730,
+                        "MemEndTime": 2830,
+                        "PronAccuracy": 99.767265,
+                        "DetectedStress": false,
+                        "Phone": "k",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2830,
+                        "MemEndTime": 2910,
+                        "PronAccuracy": 99.72817,
+                        "DetectedStress": false,
+                        "Phone": "y",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 2910,
+                        "MemEndTime": 3170,
+                        "PronAccuracy": 99.7612,
+                        "DetectedStress": false,
+                        "Phone": "uw",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    }
+                ]
+            }
+        ],
+        "SessionId": "E6B94BA9-6***-B***-8***-9C4B****5176",
+        "AudioUrl": "",
         "SentenceInfoSet": [
             {
-                "SentenceId": 0,
-                "PronFluency": 0.0,
-                "SuggestedScore": 0.0,
-                "PronCompletion": 0.0,
+                "SuggestedScore": 0,
+                "PronAccuracy": 99.52305,
+                "PronFluency": 0.93664527,
+                "PronCompletion": 1,
+                "KeyWordHits": [
+                    0.0
+                ],
                 "Words": [
                     {
-                        "Word": "xx",
+                        "KeywordTag": 0,
+                        "MemBeginTime": 2330,
+                        "MemEndTime": 3170,
+                        "PronAccuracy": 99.52305,
+                        "PronFluency": 0.93664527,
+                        "ReferenceWord": "",
+                        "Word": "thankyou",
                         "MatchTag": 0,
                         "PhoneInfos": [
                             {
-                                "Stress": true,
-                                "ReferencePhone": "xx",
-                                "MatchTag": 0,
-                                "DetectedStress": true,
-                                "Phone": "xx",
-                                "MemBeginTime": 0,
-                                "ReferenceLetter": "xx",
-                                "PronAccuracy": 0.0,
-                                "MemEndTime": 0
+                                "MemBeginTime": 2330,
+                                "MemEndTime": 2530,
+                                "PronAccuracy": 98.37366,
+                                "DetectedStress": false,
+                                "Phone": "th",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2530,
+                                "MemEndTime": 2630,
+                                "PronAccuracy": 99.75654,
+                                "DetectedStress": false,
+                                "Phone": "ae",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2630,
+                                "MemEndTime": 2730,
+                                "PronAccuracy": 99.75149,
+                                "DetectedStress": false,
+                                "Phone": "ng",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2730,
+                                "MemEndTime": 2830,
+                                "PronAccuracy": 99.767265,
+                                "DetectedStress": false,
+                                "Phone": "k",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2830,
+                                "MemEndTime": 2910,
+                                "PronAccuracy": 99.72817,
+                                "DetectedStress": false,
+                                "Phone": "y",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 2910,
+                                "MemEndTime": 3170,
+                                "PronAccuracy": 99.7612,
+                                "DetectedStress": false,
+                                "Phone": "uw",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
                             }
-                        ],
-                        "PronFluency": 0.0,
-                        "MemBeginTime": 0,
-                        "ReferenceWord": "xx",
-                        "PronAccuracy": 0.0,
-                        "MemEndTime": 0
+                        ]
                     }
                 ],
-                "PronAccuracy": 0.0
+                "SentenceId": -1,
+                "RefTextId": 0,
+                "UnKeyWordHits": [
+                    0.0
+                ]
             }
         ],
-        "PronFluency": 0.3,
-        "SessionId": "xx",
-        "SuggestedScore": 0.0,
-        "PronCompletion": 0.0,
-        "Words": [
-            {
-                "Word": "xx",
-                "MatchTag": 1,
-                "PhoneInfos": [
-                    {
-                        "Stress": true,
-                        "ReferencePhone": "xx",
-                        "MatchTag": 0,
-                        "DetectedStress": false,
-                        "Phone": "xx",
-                        "MemBeginTime": 1,
-                        "ReferenceLetter": "xx",
-                        "PronAccuracy": 0.0,
-                        "MemEndTime": 2
-                    }
-                ],
-                "PronFluency": 0.3,
-                "MemBeginTime": 1,
-                "ReferenceWord": "xx",
-                "PronAccuracy": 0.0,
-                "MemEndTime": 2
-            }
-        ],
-        "AudioUrl": "xx",
-        "PronAccuracy": 0.0,
-        "RequestId": "xx"
+        "Status": "Evaluating"
     }
 }
 ```

@@ -32,6 +32,14 @@
         "title": "外呼接口调用示例"
       }
     ],
+    "CreateExtension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
+        "title": "创建话机账号"
+      }
+    ],
     "CreateSDKLoginToken": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSig\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"Uid\": \"staff1@xxx.com\",\n    \"ClientData\": \"abc\",\n    \"ExpiredTime\": 86400\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"UserSig\": \"eJw0jkFPwjAYQP-Ld9Wwfm2HtokHswhK9IBMBtw22uEHbpa1JRrjfzfZ5vW95OX9QP68mtgvR50FrYRSQonrHpKxbaCabAcaEFGmMAhvTqVzZECjZIxPJUc5GjqAho1fJMlpnlfb9iYJx2WZZ*YqnLO1m9Wrh-uXeD48ZR9vkYrl3ZgM1FjQOOXyNkXJ2UCjt10Va9CwLRbH3Xzd7Pi7K5vgqyK97B9n33vxiqY10m4*-1OX-pdPGPz*BQAA--9b7kId\"\n    }\n}",
         "title": "生成用户数据签名"
+      }
+    ],
+    "DeleteExtension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
+        "title": "删除话机账号"
       }
     ],
     "DeleteStaff": [
@@ -102,6 +118,22 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"CdrId\": \"xx\",\n    \"InstanceId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"TotalCount\": 0,\n        \"Messages\": []\n    }\n}",
         "title": "查询聊天记录示例"
+      }
+    ],
+    "DescribeExtension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\",\n        \"ExtensionId\": \"1001\",\n        \"ExtensionDomain\": \"1400000214.tccc.qcloud.com\",\n        \"Password\": \"0pMnxfdsdLT6G\",\n        \"OutboundProxy\": \"sip.tccc.qcloud.com:5061\",\n        \"Transport\": \"tls\"\n    }\n}",
+        "title": "获取话机信息"
+      }
+    ],
+    "DescribeExtensions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtensions\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 35,\n    \"SdkAppId\": 1400264214,\n    \"ExtensionIds\": [\n        \"1001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\",\n        \"Total\": 1,\n        \"ExtensionList\": [\n            {\n                \"SdkAppId\": 1400000014,\n                \"FullExtensionId\": \"1001@140000014.tccc.qcloud.com\",\n                \"ExtensionId\": \"1001\",\n                \"SkillGroupId\": \"1532\",\n                \"ExtensionName\": \"lulu\",\n                \"CreateTime\": 0,\n                \"ModifyTime\": 0,\n                \"Status\": 0,\n                \"Register\": false,\n                \"Relation\": \"xx\",\n                \"RelationName\": \"xxx\"\n            }\n        ]\n    }\n}",
+        "title": "查询话机列表信息"
       }
     ],
     "DescribeIMCdrs": [
@@ -184,12 +216,28 @@
         "title": "停用号码"
       }
     ],
+    "ModifyExtension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\",\n    \"ExtensionName\": \"分机1\",\n    \"SkillGroupIds\": [\n        1000\n    ],\n    \"Relation\": \"xxx@xxxx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
+        "title": "修改话机账号"
+      }
+    ],
     "ModifyStaff": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStaff\n<公共请求参数>\n\n{\n    \"Phone\": \"008618092688910\",\n    \"Email\": \"xxx@tencent.com\",\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\"\n    }\n}",
         "title": "修改客服示例"
+      }
+    ],
+    "ResetExtensionPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetExtensionPassword\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\",\n        \"Password\": \"xxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "重置话机注册密码"
       }
     ],
     "StopAutoCalloutTask": [

@@ -382,7 +382,7 @@
   "metadata": {
     "apiVersion": "2021-01-25",
     "api_brief": "介绍如何通过API接口创/删数据库及表，提交SQL作业分析数据等",
-    "serviceNameCN": "数据湖计算",
+    "serviceNameCN": "数据湖计算 DLC",
     "serviceShortName": "dlc"
   },
   "objects": {
@@ -3572,6 +3572,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ui的跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dlc-xxx.com",
+          "member": "string",
+          "name": "UiURL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4663,7 +4674,7 @@
         },
         {
           "default": "",
-          "document": "若该参数不为空，则返回该数据目录绑定的计算集群",
+          "document": "已废弃，请使用DatasourceConnectionNameSet",
           "example": "数据目录名称",
           "member": "string",
           "name": "DatasourceConnectionName",
@@ -4709,6 +4720,16 @@
           "name": "EngineType",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络配置列表，若传入该参数，则返回网络配置关联的计算引擎",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionNameSet",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],

@@ -34,7 +34,7 @@
   "metadata": {
     "apiVersion": "2021-06-01",
     "api_brief": null,
-    "serviceNameCN": "企业集成服务",
+    "serviceNameCN": "数据连接器",
     "serviceShortName": "eis"
   },
   "objects": {
