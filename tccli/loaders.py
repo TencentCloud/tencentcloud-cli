@@ -54,6 +54,7 @@ HELPER_MAP = {
     "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
                 "`expr` is the inquiry expresion, `to` is the ending status"
                 ".`timeout` and `interval` are optional params.",
+    "--language": "specify an output language, valid choices: [zh-CN, en-US], default value: zh-CN",
 }
 
 class Loader(object):
@@ -159,8 +160,15 @@ class Loader(object):
             },
             'waiter': {
                 'help': HELPER_MAP['--waiter'],
-            }
-
+            },
+            "language": {
+                'help': HELPER_MAP['--language'],
+                "choices": [
+                    "zh-CN",
+                    "en-US"
+                ],
+                "default": "zh-CN",
+            },
         }
 
     def _version_transform(self, version):
