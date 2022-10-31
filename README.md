@@ -36,6 +36,7 @@ TencentCloud API secretId [*afcQ]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
 TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
 region: ap-guangzhou
 output[json]:
+language[zh-CN]:
 ```
 secretId: 云 API 密钥SecretId。
 secretIKey: 云 API 密钥SecretKey。
@@ -63,6 +64,7 @@ secretKey =  OxXj7khcV1234dQSSYNABcdCc1LiArFd
 configure:
 region =  ap-guangzhou
 output =  json
+language = zh-CN
 
 # remove子命令删除配置文件
 tccli configure remove
@@ -77,6 +79,7 @@ TencentCloud API secretId [*BCDP]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
 TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
 region: ap-guangzhou
 output[json]:
+language[zh-CN]:
 
 # set/get/list/remove子命令指定账户名test。
 tccli configure set region ap-guangzhou  output json  --profile test
@@ -135,6 +138,13 @@ tccli configure set cvm.version 2017-03-12
 tccli cvm help --version 2017-03-12
 tccli cvm DescribeZones help --version 2017-03-12
 tccli cvm DescribeZones --version 2017-03-12
+```
+## 指定输出语言
+指定公共参数`language`可以获得接口指定语言的返回，`language`参数也支持在配置文件中配置，默认值为"zh-CN"
+```
+# 在实时使用时指定语言
+tccli cvm DescribeZones --language zh-CN
+tccli cvm DescribeZones --language en-US
 ```
 ## 指定最近的接入点(Endpoint)
 TCCLI默认会请求就近的接口点访问服务，你也可以针对某一产品指定自己的Endpoint(以cvm为例)。
