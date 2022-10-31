@@ -167,7 +167,6 @@ class Loader(object):
                     "zh-CN",
                     "en-US"
                 ],
-                "default": "zh-CN",
             },
         }
 
