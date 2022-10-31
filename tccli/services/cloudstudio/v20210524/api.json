@@ -124,7 +124,7 @@
   "metadata": {
     "apiVersion": "2021-05-24",
     "api_brief": "提供对 云端 IDE 工作空间和空间模板相关的操作，包括创建工作空间、启动工作空间、停止工作空间、删除工作空间、拉取工作空间模板列表、置顶工作空间模板等。",
-    "serviceNameCN": "云端 IDE",
+    "serviceNameCN": "Cloud Studio（云端 IDE）",
     "serviceShortName": "cloudstudio"
   },
   "objects": {

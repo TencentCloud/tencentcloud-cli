@@ -16,7 +16,7 @@
   "metadata": {
     "apiVersion": "2019-11-15",
     "api_brief": "介绍如何使用API对腾讯云搜进行操作，包括数据检索、云搜数据上传等。",
-    "serviceNameCN": "腾讯云搜",
+    "serviceNameCN": "腾讯云搜TCS",
     "serviceShortName": "yunsou"
   },
   "objects": {

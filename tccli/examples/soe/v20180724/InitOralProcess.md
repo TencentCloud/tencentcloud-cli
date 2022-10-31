@@ -7,10 +7,10 @@ Input:
 ```
 tccli soe InitOralProcess --cli-unfold-argument  \
     --SessionId stress_test_956938 \
-    --WorkMode 0 \
+    --ScoreCoeff 3.5 \
     --RefText again \
-    --EvalMode 0 \
-    --ScoreCoeff 3.5
+    --WorkMode 0 \
+    --EvalMode 0
 ```
 
 Output: 

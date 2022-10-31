@@ -24,6 +24,12 @@
       "name": "创建外呼会话（当前仅支持双呼）",
       "output": "CreateCallOutSessionResponse"
     },
+    "CreateExtension": {
+      "document": "创建话机账号",
+      "input": "CreateExtensionRequest",
+      "name": "创建话机账号",
+      "output": "CreateExtensionResponse"
+    },
     "CreateSDKLoginToken": {
       "document": "创建 SDK 登录 Token。",
       "input": "CreateSDKLoginTokenRequest",
@@ -41,6 +47,12 @@
       "input": "CreateUserSigRequest",
       "name": "创建用户数据签名",
       "output": "CreateUserSigResponse"
+    },
+    "DeleteExtension": {
+      "document": "删除话机账号",
+      "input": "DeleteExtensionRequest",
+      "name": "删除话机账号",
+      "output": "DeleteExtensionResponse"
     },
     "DeleteStaff": {
       "document": "删除坐席信息",
@@ -77,6 +89,18 @@
       "input": "DescribeChatMessagesRequest",
       "name": "查询服务的聊天记录",
       "output": "DescribeChatMessagesResponse"
+    },
+    "DescribeExtension": {
+      "document": "获取话机信息",
+      "input": "DescribeExtensionRequest",
+      "name": "获取话机信息",
+      "output": "DescribeExtensionResponse"
+    },
+    "DescribeExtensions": {
+      "document": "查询话机列表信息",
+      "input": "DescribeExtensionsRequest",
+      "name": "查询话机列表信息",
+      "output": "DescribeExtensionsResponse"
     },
     "DescribeIMCdrs": {
       "document": "包括全媒体和文本两种类型",
@@ -138,11 +162,23 @@
       "name": "停用号码",
       "output": "DisableCCCPhoneNumberResponse"
     },
+    "ModifyExtension": {
+      "document": "修改话机账号(绑定技能组、绑定坐席账号)",
+      "input": "ModifyExtensionRequest",
+      "name": "修改话机账号(绑定技能组、绑定坐席账号)",
+      "output": "ModifyExtensionResponse"
+    },
     "ModifyStaff": {
       "document": "修改客服账号",
       "input": "ModifyStaffRequest",
       "name": "修改客服账号",
       "output": "ModifyStaffResponse"
+    },
+    "ResetExtensionPassword": {
+      "document": "重置话机注册密码",
+      "input": "ResetExtensionPasswordRequest",
+      "name": "重置话机注册密码",
+      "output": "ResetExtensionPasswordResponse"
     },
     "StopAutoCalloutTask": {
       "document": "停止自动外呼任务",
@@ -780,6 +816,51 @@
       ],
       "type": "object"
     },
+    "CreateExtensionRequest": {
+      "document": "CreateExtension请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分机名称",
+          "example": "分机1",
+          "member": "string",
+          "name": "ExtensionName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExtensionResponse": {
+      "document": "CreateExtension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSDKLoginTokenRequest": {
       "document": "CreateSDKLoginToken请求参数结构体",
       "members": [
@@ -942,6 +1023,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExtensionRequest": {
+      "document": "DeleteExtension请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExtensionResponse": {
+      "document": "DeleteExtension返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1391,6 +1508,177 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtensionRequest": {
+      "document": "DescribeExtension请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtensionResponse": {
+      "document": "DescribeExtension返回参数结构体",
+      "members": [
+        {
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名",
+          "example": "14000000.tccc.qcloud.com",
+          "member": "string",
+          "name": "ExtensionDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "注册密码",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代理服务器地址",
+          "example": "sip.tcc.qcloud.com",
+          "member": "string",
+          "name": "OutboundProxy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "传输协议",
+          "example": "tls",
+          "member": "string",
+          "name": "Transport",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtensionsRequest": {
+      "document": "DescribeExtensions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页号（从0开始）",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选分机号列表",
+          "example": "无",
+          "member": "string",
+          "name": "ExtensionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）",
+          "example": "xxx",
+          "member": "string",
+          "name": "FuzzingKeyWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回话机当前状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNeedStatus",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtensionsResponse": {
+      "document": "DescribeExtensions返回参数结构体",
+      "members": [
+        {
+          "document": "查询总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "话机信息列表",
+          "example": "无",
+          "member": "ExtensionInfo",
+          "name": "ExtensionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2193,6 +2481,122 @@
       ],
       "usage": "out"
     },
+    "ExtensionInfo": {
+      "document": "话机信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分机全名",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "FullExtensionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属技能组列表",
+          "example": "1000,1001",
+          "member": "string",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分机名称",
+          "example": "分机1",
+          "member": "string",
+          "name": "ExtensionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1617184839",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改时间",
+          "example": "1617184839",
+          "member": "int64",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "话机状态(0 离线、100 空闲、200忙碌）",
+          "example": "100",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否注册",
+          "example": "true",
+          "member": "bool",
+          "name": "Register",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定坐席邮箱",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "Relation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定坐席名称",
+          "example": "坐席1",
+          "member": "string",
+          "name": "RelationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IMCdrInfo": {
       "document": "文本会话服务记录信息",
       "members": [
@@ -2381,6 +2785,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyExtensionRequest": {
+      "document": "ModifyExtension请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分机名称",
+          "example": "分机1",
+          "member": "string",
+          "name": "ExtensionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所属技能组列表",
+          "example": "无",
+          "member": "int64",
+          "name": "SkillGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "绑定坐席邮箱账号",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "Relation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExtensionResponse": {
+      "document": "ModifyExtension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyStaffRequest": {
       "document": "ModifyStaff请求参数结构体",
@@ -2895,6 +3362,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ResetExtensionPasswordRequest": {
+      "document": "ResetExtensionPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分机号",
+          "example": "1001",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetExtensionPasswordResponse": {
+      "document": "ResetExtensionPassword返回参数结构体",
+      "members": [
+        {
+          "document": "重置后密码",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SdkAppIdBuyInfo": {
       "document": "应用购买信息",

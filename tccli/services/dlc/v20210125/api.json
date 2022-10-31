@@ -376,7 +376,7 @@
   "metadata": {
     "apiVersion": "2021-01-25",
     "api_brief": "介绍如何通过API接口创/删数据库及表，提交SQL作业分析数据等",
-    "serviceNameCN": "数据湖计算",
+    "serviceNameCN": "数据湖计算 DLC",
     "serviceShortName": "dlc"
   },
   "objects": {

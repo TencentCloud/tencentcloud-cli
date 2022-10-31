@@ -1,0 +1,299 @@
+{
+  "actions": {
+    "CompleteMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-1kl0iy0v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5268ea15-6636-44d1-89f9-e989d1c82e7d\"\n    }\n}",
+        "title": "完成数据迁移任务"
+      }
+    ],
+    "ConfigureSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureSyncJob\n<公共请求参数>\n\n{\n    \"DstInfo\": {\n        \"Ip\": \"9.123.210.46\",\n        \"Password\": \"Test1234\",\n        \"User\": \"root\",\n        \"Port\": \"30654\"\n    },\n    \"SrcInfo\": {\n        \"Ip\": \"9.123.211.23\",\n        \"Password\": \"Test1234\",\n        \"User\": \"root\",\n        \"Port\": \"30645\"\n    },\n    \"ExpectRunTime\": \"0000-00-00 00:00:01\",\n    \"DstAccessType\": \"noProxy\",\n    \"JobName\": \"truexu-api\",\n    \"RunMode\": \"Immediate\",\n    \"Objects\": {\n        \"Mode\": \"Partial\",\n        \"Databases\": [\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"All\"\n            }\n        ]\n    },\n    \"JobId\": \"sync-7r1cz016\",\n    \"Options\": {\n        \"DealOfExistSameTable\": \"ExecuteAfterIgnore\",\n        \"OpTypes\": [\n            \"Update\"\n        ],\n        \"DdlOptions\": [\n            {\n                \"DdlObject\": \"Database\",\n                \"DdlValue\": [\n                    \"Create\",\n                    \"Alter\"\n                ]\n            }\n        ],\n        \"InitType\": \"Full\",\n        \"ConflictHandleOption\": {\n            \"ConditionColumn\": \"ts\",\n            \"ConditionOperator\": \">\",\n            \"ConditionOrderInSrcAndDst\": \"<\"\n        }\n    },\n    \"SrcAccessType\": \"noProxy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d495a08-5f8f-411b-ae4d-cc6da2475b9c\"\n    }\n}",
+        "title": "配置同步任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureSyncJob\n<公共请求参数>\n\n{\n    \"DstInfo\": {\n        \"Ip\": \"100.88.178.199\",\n        \"Password\": \"Test1234\",\n        \"User\": \"root\",\n        \"Port\": \"20152\"\n    },\n    \"SrcInfo\": {\n        \"Ip\": \"100.88.166.23\",\n        \"Password\": \"Test1234\",\n        \"User\": \"root\",\n        \"Port\": \"20126\"\n    },\n    \"ExpectRunTime\": \"2021-12-08 11:59:05\",\n    \"DstAccessType\": \"noProxy\",\n    \"JobName\": \"truex\",\n    \"RunMode\": \"Immediate\",\n    \"Objects\": {\n        \"Mode\": \"Partial\",\n        \"Databases\": [\n            {\n                \"Tables\": [\n                    {\n                        \"FilterCondition\": \"id>1\",\n                        \"TableName\": \"tb1\",\n                        \"NewTableName\": \"tb2\"\n                    }\n                ],\n                \"Views\": [\n                    {\n                        \"ViewName\": \"vw1\",\n                        \"NewViewName\": \"vw2\"\n                    }\n                ],\n                \"DbName\": \"db1\",\n                \"ViewMode\": \"Partial\",\n                \"TableMode\": \"Partial\",\n                \"DbMode\": \"Partial\"\n            }\n        ]\n    },\n    \"JobId\": \"sync-31t047r6\",\n    \"Options\": {\n        \"DdlOptions\": [\n            {\n                \"DdlObject\": \"Database\",\n                \"DdlValue\": [\n                    \"Drop\"\n                ]\n            }\n        ],\n        \"ConflictHandleType\": \"ReportError\",\n        \"DealOfExistSameTable\": \"ReportErrorAfterCheck\",\n        \"ConflictHandleOption\": {\n            \"ConditionColumn\": \"ts\",\n            \"ConditionOperator\": \">\",\n            \"ConditionOrderInSrcAndDst\": \">\"\n        },\n        \"InitType\": \"Full\",\n        \"OpTypes\": [\n            \"Insert\",\n            \"Update\"\n        ],\n        \"AddAdditionalColumn\": \"false\"\n    },\n    \"SrcAccessType\": \"noProxy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59dd9972-00e7-4ce3-8f33-72d13bc64400\"\n    }\n}",
+        "title": "配置同步任务2"
+      }
+    ],
+    "CreateCheckSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCheckSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2b90690-3f7f-4650-93ab-62f5c4ddfe31\"\n    }\n}",
+        "title": "校验同步任务"
+      }
+    ],
+    "CreateCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-p1sposne\",\n    \"TaskName\": \"test_cmp\",\n    \"ObjectMode\": \"custom\",\n    \"Objects\": {\n        \"ObjectMode\": \"partial\",\n        \"ObjectItems\": [\n            {\n                \"DbName\": \"big100\",\n                \"DbMode\": \"partial\",\n                \"TableMode\": \"partial\",\n                \"Tables\": [\n                    {\n                        \"TableName\": \"sbtest1\"\n                    }\n                ]\n            },\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"all\",\n                \"TableMode\": \"all\",\n                \"ViewMode\": \"all\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CompareTaskId\": \"dts-8yv4w2i1-cmp-37skmii9\",\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "创建一致性校验任务"
+      }
+    ],
+    "CreateMigrateCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrateCheckJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-1kl0iy0v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46b45da1-3e8e-4ef2-8de8-b1bffa027385\"\n    }\n}",
+        "title": "创建校验迁移任务"
+      }
+    ],
+    "CreateMigrationService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationService\n<公共请求参数>\n\n{\n    \"SrcDatabaseType\": \"mysql\",\n    \"DstDatabaseType\": \"mysql\",\n    \"InstanceClass\": \"xlarge\",\n    \"SrcRegion\": \"ap-guangzhou\",\n    \"DstRegion\": \"ap-guangzhou\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"testkey\",\n            \"TagValue\": \"testvalue\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobIds\": [\n            \"dts-1ewjspuw\"\n        ],\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "购买迁移服务"
+      }
+    ],
+    "CreateSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSyncJob\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"Specification\": \"Standard\",\n    \"PayMode\": \"PrePay\",\n    \"DstDatabaseType\": \"mysql\",\n    \"DstRegion\": \"ap-guangzhou\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcRegion\": \"ap-guangzhou\",\n    \"ExistedJobId\": \"sync-xascasas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobIds\": [\n            \"sync-eivc87yk\"\n        ],\n        \"RequestId\": \"03a378be-372a-478b-beb7-19e4dd5027e2\"\n    }\n}",
+        "title": "创建一个同步任务"
+      }
+    ],
+    "DeleteCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "删除一致性校验任务"
+      }
+    ],
+    "DescribeCheckSyncJobResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckSyncJobResult\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"972f5d3e-9144-4ce3-9825-980eccf549a9\",\n        \"Status\": \"success\",\n        \"StepCount\": 12,\n        \"StepCur\": 12,\n        \"StepInfos\": [\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"ConnectDBCheck\",\n                \"StepName\": \"connect db check\",\n                \"StepNo\": 1,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"OptimizeCheck\",\n                \"StepName\": \"necessary check\",\n                \"StepNo\": 2,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"VersionCheck\",\n                \"StepName\": \"version check\",\n                \"StepNo\": 3,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"SrcPrivilegeCheck\",\n                \"StepName\": \"source instance privilege check\",\n                \"StepNo\": 4,\n                \"Warnings\": [\n                    {\n                        \"Code\": \"Warning: SrcPrivilegeCheck\",\n                        \"HelpDoc\": \"\",\n                        \"Message\": \"Your grants is: GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'root'@'%' WITH GRANT OPTION. Tencent Cloud DTS don't need any privilege may modify your source instance data, suggest removing it based on minimization principle: https://cloud.tencent.com/document/product/571/13706\",\n                        \"Solution\": \"\"\n                    }\n                ]\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"SimpleParamCheck\",\n                \"StepName\": \"simpe instance param check\",\n                \"StepNo\": 5,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"DstPrivilegeCheck\",\n                \"StepName\": \"target instance privilege check\",\n                \"StepNo\": 6,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"DstEmptyCheck\",\n                \"StepName\": \"check if target instance has conflict content\",\n                \"StepNo\": 7,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"DstSpaceCheck\",\n                \"StepName\": \"check if there's enough space in target instance\",\n                \"StepNo\": 8,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"BinlogParamCheck\",\n                \"StepName\": \"source instance binlog param check\",\n                \"StepNo\": 9,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"ConstraintCheck\",\n                \"StepName\": \"foreign key constraint check\",\n                \"StepNo\": 10,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"ViewCheck\",\n                \"StepName\": \"view check\",\n                \"StepNo\": 11,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Progress\": 100,\n                \"StartTime\": \"\",\n                \"Status\": \"finished\",\n                \"StepId\": \"WarningParamCheck\",\n                \"StepName\": \"warning param check\",\n                \"StepNo\": 12,\n                \"Warnings\": [\n                    {\n                        \"Code\": \"Warn: WarningParamCheck\",\n                        \"HelpDoc\": \"\",\n                        \"Message\": \"Tables without primary key and unique key without any NULL columns have the risk of data duplication. Reference: https://cloud.tencent.com/document/product/571/58739\",\n                        \"Solution\": \"\"\n                    },\n                    {\n                        \"Code\": \"Error: WarningParamCheck\",\n                        \"HelpDoc\": \"\",\n                        \"Message\": \"Source instance would hold Flush Table With Read Lock for a short time, meanwhile, the MyISAM tables would be locked untill full dump finished. Current wait lock timeout is 70s. Error will be reported if lock can not be acquired within this time. Reference: https://cloud.tencent.com/document/product/571/58739\",\n                        \"Solution\": \"\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询校验任务结果"
+      }
+    ],
+    "DescribeCompareReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompareReport\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Abstract\": {\n            \"CheckedTables\": 4,\n            \"Conclusion\": \"same\",\n            \"DifferentRows\": 0,\n            \"DifferentTables\": 0,\n            \"SkippedTables\": 0,\n            \"Status\": \"success\",\n            \"TotalTables\": 4\n        },\n        \"Detail\": {\n            \"Difference\": {\n                \"Items\": [],\n                \"TotalCount\": 0\n            },\n            \"Skipped\": {\n                \"Items\": [],\n                \"TotalCount\": 0\n            }\n        },\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "查询一致性校验任务详情"
+      }
+    ],
+    "DescribeCompareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompareTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-e7ukka6g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CheckProcess\": {\n                    \"Message\": \"\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Steps\": []\n                },\n                \"CompareProcess\": {\n                    \"Message\": \"done\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Steps\": []\n                },\n                \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\",\n                \"Conclusion\": \"same\",\n                \"Config\": {\n                    \"ObjectItems\": [\n                        {\n                            \"DbMode\": \"partial\",\n                            \"DbName\": \"big100\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"partial\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"none\",\n                            \"Views\": null\n                        },\n                        {\n                            \"DbMode\": \"all\",\n                            \"DbName\": \"db1\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"all\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"all\",\n                            \"Views\": null\n                        }\n                    ],\n                    \"ObjectMode\": \"partial\"\n                },\n                \"CreatedAt\": \"2022-07-11 17:21:02\",\n                \"FinishedAt\": \"2022-07-11 17:24:54\",\n                \"JobId\": \"dts-amm1jw5q\",\n                \"StartedAt\": \"2022-07-11 17:24:09\",\n                \"Status\": \"success\",\n                \"TaskName\": \"defaultCmpTask\"\n            }\n        ],\n        \"RequestId\": \"11d35c90-01bb-11ed-bad9-7b3bbe11abda\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询一致性校验任务列表"
+      }
+    ],
+    "DescribeMigrateDBInstances": [
+      {
+        "document": "查询迁移实例列表",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-eur39922\",\n    \"DatabaseType\": \"mysql\",\n    \"MigrateRole\": \"src\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"cafebabe-848392-di98382-dfu9832\",\n        \"Instances\": []\n    }\n}",
+        "title": "查询迁移实例列表"
+      }
+    ],
+    "DescribeMigrationCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrationCheckJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-1ewjspuw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11d35c90-01bb-11ed-bad9-7b3bbe11abda\",\n        \"CheckFlag\": \"checkPass\",\n        \"BriefMsg\": \"success\",\n        \"Status\": \"success\",\n        \"StepInfo\": [\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"ConnectDBCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"连接DB检查\",\n                \"StepNo\": 0,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"VersionCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"版本检查\",\n                \"StepNo\": 1,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [\n                    {\n                        \"CheckItemName\": \"源实例权限检查\",\n                        \"CheckResult\": \"warning\",\n                        \"Description\": \"\",\n                        \"ErrorLog\": [\n                            \"您的授权情况：GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE ON *.* TO 'root'@'%' WITH GRANT OPTION。 源端账号权限范围大于要求的账号权限范围，腾讯云DTS不会使用超过必要的权限，请按照最小化原则给与授权: https://cloud.tencent.com/document/product/571/58700\"\n                        ],\n                        \"FailureReason\": \"\",\n                        \"HelpDoc\": [\n                            \"\"\n                        ],\n                        \"SkipInfo\": \"\",\n                        \"Solution\": \"\"\n                    }\n                ],\n                \"HasSkipped\": false,\n                \"StepId\": \"SrcPrivilegeCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"源实例权限检查\",\n                \"StepNo\": 2,\n                \"StepStatus\": \"warning\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"SimpleParamCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"部分实例参数检查\",\n                \"StepNo\": 3,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"DstPrivilegeCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"目标实例权限检查\",\n                \"StepNo\": 4,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"DstEmptyCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"目标实例内容冲突检查\",\n                \"StepNo\": 5,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"DstSpaceCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"目标实例空间检查\",\n                \"StepNo\": 6,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"BinlogParamCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"binlog参数检查\",\n                \"StepNo\": 7,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"ConstraintCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"外键依赖检查\",\n                \"StepNo\": 8,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"ConstraintRefCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"外键部分库表依赖检查\",\n                \"StepNo\": 9,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"ViewCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"视图检查\",\n                \"StepNo\": 10,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [],\n                \"HasSkipped\": false,\n                \"StepId\": \"WarningParamCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"警告项检查\",\n                \"StepNo\": 11,\n                \"StepStatus\": \"pass\"\n            },\n            {\n                \"DetailCheckItems\": [\n                    {\n                        \"CheckItemName\": \"周边检查\",\n                        \"CheckResult\": \"warning\",\n                        \"Description\": \"\",\n                        \"ErrorLog\": [\n                            \"skipped\"\n                        ],\n                        \"FailureReason\": \"\",\n                        \"HelpDoc\": [\n                            \"\"\n                        ],\n                        \"SkipInfo\": \"\",\n                        \"Solution\": \"\"\n                    }\n                ],\n                \"HasSkipped\": true,\n                \"StepId\": \"OptimizeCheck\",\n                \"StepMessage\": \"\",\n                \"StepName\": \"周边检查\",\n                \"StepNo\": 12,\n                \"StepStatus\": \"failed\"\n            }\n        ]\n    }\n}",
+        "title": "查询迁移校验任务结果"
+      }
+    ],
+    "DescribeMigrationDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrationDetail\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Action\": {\n            \"AllAction\": [\n                \"view\",\n                \"modify\",\n                \"check\",\n                \"start\",\n                \"configure\",\n                \"stop\",\n                \"complete\",\n                \"resume\",\n                \"createCmpTask\",\n                \"isolate\",\n                \"offline\",\n                \"resize\",\n                \"recover\"\n            ],\n            \"AllowedAction\": [\n                \"view\",\n                \"stop\",\n                \"complete\",\n                \"createCmpTask\",\n                \"view\",\n                \"isolate\",\n                \"resize\"\n            ]\n        },\n        \"CheckStepInfo\": {\n            \"EndAt\": \"2022-07-11 17:19:25\",\n            \"Progress\": {\n                \"Message\": \"success\",\n                \"Percent\": 100,\n                \"Status\": \"success\",\n                \"StepAll\": 12,\n                \"StepNow\": 12\n            },\n            \"StartAt\": \"2022-07-11 17:18:57\"\n        },\n        \"CompareTask\": {\n            \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\",\n            \"Status\": \"consistent\"\n        },\n        \"CreateTime\": \"2022-07-11 16:20:49\",\n        \"DstInfo\": {\n            \"AccessType\": \"cdb\",\n            \"DatabaseType\": \"mysql\",\n            \"ExtraAttr\": [],\n            \"Info\": [\n                {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnGwId\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DbKernel\": \"\",\n                    \"EngineVersion\": \"\",\n                    \"Host\": \"\",\n                    \"InstanceId\": \"cdb-o7uph0cj\",\n                    \"Password\": \"xxx\",\n                    \"Port\": 0,\n                    \"Role\": \"\",\n                    \"SubnetId\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"root\",\n                    \"VpcId\": \"\"\n                }\n            ],\n            \"NodeType\": \"simple\",\n            \"Region\": \"ap-guangzhou\",\n            \"Supplier\": \"\"\n        },\n        \"EndTime\": \"0000-00-00 00:00:00\",\n        \"ErrorInfo\": [],\n        \"ExpectRunTime\": \"2022-07-11 17:16:50\",\n        \"JobId\": \"dts-amm1jw5q\",\n        \"JobName\": \"test_config_api\",\n        \"BriefMsg\": \"\",\n        \"MigrateOption\": {\n            \"Consistency\": {\n                \"Mode\": \"full\"\n            },\n            \"DatabaseTable\": {\n                \"Databases\": [\n                    {\n                        \"DBMode\": \"partial\",\n                        \"DbName\": \"big100\",\n                        \"EventMode\": \"\",\n                        \"FunctionMode\": \"\",\n                        \"NewDbName\": \"\",\n                        \"NewSchemaName\": \"\",\n                        \"ProcedureMode\": \"\",\n                        \"RoleMode\": \"\",\n                        \"Roles\": [],\n                        \"SchemaMode\": \"\",\n                        \"SchemaName\": \"\",\n                        \"TableMode\": \"partial\",\n                        \"Tables\": [\n                            {\n                                \"NewTableName\": \"\",\n                                \"TableEditMode\": \"\",\n                                \"TableName\": \"sbtest1\",\n                                \"TmpTables\": []\n                            },\n                            {\n                                \"NewTableName\": \"new_sbtest10\",\n                                \"TableEditMode\": \"rename\",\n                                \"TableName\": \"sbtest10\",\n                                \"TmpTables\": []\n                            },\n                            {\n                                \"NewTableName\": \"\",\n                                \"TableEditMode\": \"\",\n                                \"TableName\": \"sbtest100\",\n                                \"TmpTables\": []\n                            }\n                        ],\n                        \"TriggerMode\": \"\",\n                        \"ViewMode\": \"none\",\n                        \"Views\": []\n                    },\n                    {\n                        \"DBMode\": \"all\",\n                        \"DbName\": \"db1\",\n                        \"EventMode\": \"\",\n                        \"FunctionMode\": \"\",\n                        \"NewDbName\": \"\",\n                        \"NewSchemaName\": \"\",\n                        \"ProcedureMode\": \"\",\n                        \"RoleMode\": \"\",\n                        \"Roles\": [],\n                        \"SchemaMode\": \"\",\n                        \"SchemaName\": \"\",\n                        \"TableMode\": \"\",\n                        \"Tables\": [],\n                        \"TriggerMode\": \"\",\n                        \"ViewMode\": \"\",\n                        \"Views\": []\n                    }\n                ],\n                \"ObjectMode\": \"partial\"\n            },\n            \"ExtraAttr\": [],\n            \"IsDstReadOnly\": false,\n            \"IsOverrideRoot\": false,\n            \"MigrateType\": \"fullAndIncrement\"\n        },\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\",\n        \"RunMode\": \"immediate\",\n        \"SrcInfo\": {\n            \"AccessType\": \"intranet\",\n            \"DatabaseType\": \"mysql\",\n            \"ExtraAttr\": [],\n            \"Info\": [\n                {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnGwId\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DbKernel\": \"\",\n                    \"EngineVersion\": \"5.7\",\n                    \"Host\": \"9.123.456.789\",\n                    \"InstanceId\": \"\",\n                    \"Password\": \"xxx\",\n                    \"Port\": 31035,\n                    \"Role\": \"\",\n                    \"SubnetId\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"root\",\n                    \"VpcId\": \"\"\n                }\n            ],\n            \"NodeType\": \"simple\",\n            \"Region\": \"ap-guangzhou\",\n            \"Supplier\": \"\"\n        },\n        \"StartTime\": \"2022-07-11 17:20:56\",\n        \"Status\": \"readyComplete\",\n        \"StepInfo\": {\n            \"MasterSlaveDistance\": 0,\n            \"SecondsBehindMaster\": 0,\n            \"StepAll\": 3,\n            \"StepInfo\": [\n                {\n                    \"Errors\": [],\n                    \"StartTime\": \"2022-07-11 17:21:59\",\n                    \"Status\": \"finished\",\n                    \"StepId\": \"dumper\",\n                    \"StepName\": \"源库导出\",\n                    \"StepNo\": 1,\n                    \"Warnings\": []\n                },\n                {\n                    \"Errors\": [],\n                    \"StartTime\": \"2022-07-11 17:22:43\",\n                    \"Status\": \"finished\",\n                    \"StepId\": \"loader\",\n                    \"StepName\": \"数据导入\",\n                    \"StepNo\": 2,\n                    \"Warnings\": []\n                },\n                {\n                    \"Errors\": [],\n                    \"StartTime\": \"2022-07-11 17:23:26\",\n                    \"Status\": \"running\",\n                    \"StepId\": \"sinker\",\n                    \"StepName\": \"同步增量\",\n                    \"StepNo\": 3,\n                    \"Warnings\": []\n                }\n            ],\n            \"StepNow\": 3\n        },\n        \"Tags\": [],\n        \"TradeInfo\": {\n            \"BillingType\": \"billing\",\n            \"DealName\": \"20220711715001047929481\",\n            \"ExpireTime\": \"0000-00-00 00:00:00\",\n            \"InstanceClass\": \"xlarge\",\n            \"IsolateReason\": \"\",\n            \"LastDealName\": \"\",\n            \"OfflineReason\": \"\",\n            \"PayType\": \"postpay\",\n            \"TradeStatus\": \"normal\"\n        },\n        \"UpdateTime\": \"2022-07-11 19:53:03\"\n    }\n}",
+        "title": "查询某个数据迁移任务详情"
+      }
+    ],
+    "DescribeMigrationJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrationJobs\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobList\": [\n            {\n                \"Action\": {\n                    \"AllAction\": [\n                        \"view\",\n                        \"modify\",\n                        \"check\",\n                        \"start\",\n                        \"configure\",\n                        \"stop\",\n                        \"complete\",\n                        \"resume\",\n                        \"createCmpTask\",\n                        \"isolate\",\n                        \"offline\",\n                        \"resize\",\n                        \"recover\"\n                    ],\n                    \"AllowedAction\": [\n                        \"view\",\n                        \"stop\",\n                        \"complete\",\n                        \"createCmpTask\",\n                        \"view\",\n                        \"isolate\",\n                        \"resize\"\n                    ]\n                },\n                \"CompareTask\": {\n                    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\",\n                    \"Status\": \"consistent\"\n                },\n                \"CreateTime\": \"2022-07-11 16:20:49\",\n                \"DstInfo\": {\n                    \"AccessType\": \"cdb\",\n                    \"DatabaseType\": \"mysql\",\n                    \"ExtraAttr\": [],\n                    \"Info\": [\n                        {\n                            \"Account\": \"\",\n                            \"AccountMode\": \"\",\n                            \"AccountRole\": \"\",\n                            \"CcnGwId\": \"\",\n                            \"CvmInstanceId\": \"\",\n                            \"DbKernel\": \"\",\n                            \"EngineVersion\": \"\",\n                            \"Host\": \"\",\n                            \"InstanceId\": \"cdb-o7uph0cj\",\n                            \"Password\": \"Rogerp@ssw0rd\",\n                            \"Port\": 0,\n                            \"Role\": \"\",\n                            \"SubnetId\": \"\",\n                            \"TmpSecretId\": \"\",\n                            \"TmpSecretKey\": \"\",\n                            \"TmpToken\": \"\",\n                            \"UniqDcgId\": \"\",\n                            \"UniqVpnGwId\": \"\",\n                            \"User\": \"root\",\n                            \"VpcId\": \"\"\n                        }\n                    ],\n                    \"NodeType\": \"simple\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"Supplier\": \"\"\n                },\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"ExpectRunTime\": \"\",\n                \"JobId\": \"dts-amm1jw5q\",\n                \"JobName\": \"test_config_api\",\n                \"RunMode\": \"immediate\",\n                \"SrcInfo\": {\n                    \"AccessType\": \"intranet\",\n                    \"DatabaseType\": \"mysql\",\n                    \"ExtraAttr\": [],\n                    \"Info\": [\n                        {\n                            \"Account\": \"\",\n                            \"AccountMode\": \"\",\n                            \"AccountRole\": \"\",\n                            \"CcnGwId\": \"\",\n                            \"CvmInstanceId\": \"\",\n                            \"DbKernel\": \"\",\n                            \"EngineVersion\": \"5.7\",\n                            \"Host\": \"9.123.210.37\",\n                            \"InstanceId\": \"\",\n                            \"Password\": \"Rogerp@ssw0rd\",\n                            \"Port\": 31035,\n                            \"Role\": \"\",\n                            \"SubnetId\": \"\",\n                            \"TmpSecretId\": \"\",\n                            \"TmpSecretKey\": \"\",\n                            \"TmpToken\": \"\",\n                            \"UniqDcgId\": \"\",\n                            \"UniqVpnGwId\": \"\",\n                            \"User\": \"root\",\n                            \"VpcId\": \"\"\n                        }\n                    ],\n                    \"NodeType\": \"simple\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"Supplier\": \"\"\n                },\n                \"StartTime\": \"2022-07-11 17:20:56\",\n                \"Status\": \"readyComplete\",\n                \"Tags\": [],\n                \"TradeInfo\": {\n                    \"BillingType\": \"billing\",\n                    \"DealName\": \"20220711715001047929481\",\n                    \"ExpireTime\": \"0000-00-00 00:00:00\",\n                    \"InstanceClass\": \"xlarge\",\n                    \"IsolateReason\": \"\",\n                    \"LastDealName\": \"\",\n                    \"OfflineReason\": \"\",\n                    \"PayType\": \"postpay\",\n                    \"TradeStatus\": \"normal\"\n                },\n                \"UpdateTime\": \"2022-07-11 17:26:40\"\n            }\n        ],\n        \"RequestId\": \"asdfadfasdfasdf\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询数据迁移任务列表"
+      }
+    ],
+    "DescribeSyncJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncJobs\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-bkm3mppi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobList\": [\n            {\n                \"Actions\": [\n                    \"configure\",\n                    \"release\",\n                    \"view\"\n                ],\n                \"AllActions\": [\n                    \"view\",\n                    \"configure\",\n                    \"check\",\n                    \"start\",\n                    \"stop\",\n                    \"release\",\n                    \"resume\"\n                ],\n                \"CreateTime\": \"2022-01-05 10:40:57\",\n                \"Detail\": {\n                    \"CurrentStepProgress\": -1,\n                    \"MasterSlaveDistance\": -1,\n                    \"Message\": \"\",\n                    \"Progress\": 0,\n                    \"SecondsBehindMaster\": -1,\n                    \"StepAll\": 0,\n                    \"StepInfos\": null,\n                    \"StepNow\": 0\n                },\n                \"DstAccessType\": \"\",\n                \"DstDatabaseType\": \"mysql\",\n                \"DstInfo\": {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnId\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DbKernel\": \"\",\n                    \"DbName\": \"\",\n                    \"EngineVersion\": \"\",\n                    \"Ip\": \"\",\n                    \"Password\": \"\",\n                    \"Port\": 0,\n                    \"SubnetId\": \"\",\n                    \"Supplier\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"\",\n                    \"VpcId\": \"\"\n                },\n                \"DstRegion\": \"ap-guangzhou\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"ExpectRunTime\": \"0000-00-00 00:00:00\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"JobId\": \"sync-bkm3mppi\",\n                \"JobName\": \"è·¨è´¦å<8f>·tdsql-mysql\",\n                \"PayMode\": \"PostPay\",\n                \"RunMode\": \"\",\n                \"SrcAccessType\": \"\",\n                \"SrcDatabaseType\": \"tdsqlmysql\",\n                \"SrcInfo\": {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnId\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DbKernel\": \"\",\n                    \"DbName\": \"\",\n                    \"EngineVersion\": \"\",\n                    \"Ip\": \"\",\n                    \"Password\": \"\",\n                    \"Port\": 0,\n                    \"SubnetId\": \"\",\n                    \"Supplier\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"\",\n                    \"VpcId\": \"\"\n                },\n                \"SrcRegion\": \"ap-guangzhou\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"Status\": \"UnInitialized\",\n                \"Tags\": []\n            }\n        ],\n        \"RequestId\": \"23c18100-6df2-11ec-9c54-0dbb24194274\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询同步任务列表"
+      }
+    ],
+    "DestroyMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "下线数据迁移任务"
+      }
+    ],
+    "DestroySyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-kl5qyyf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"710040d7-3a04-44cb-a56e-0023cf0692ef\"\n    }\n}",
+        "title": "销毁一个同步任务"
+      }
+    ],
+    "IsolateMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "隔离(销毁)数据迁移任务"
+      }
+    ],
+    "IsolateSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-kl5qyyf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"df239e4f-7359-473b-a073-144ab9964350\"\n    }\n}",
+        "title": "隔离一个同步任务"
+      }
+    ],
+    "ModifyCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-p1sposne\",\n    \"CompareTaskId\": \"dts-8yv4w2i1-cmp-37skmii9\",\n    \"TaskName\": \"test_cmp\",\n    \"ObjectMode\": \"custom\",\n    \"Objects\": {\n        \"ObjectMode\": \"partial\",\n        \"ObjectItems\": [\n            {\n                \"DbName\": \"big100\",\n                \"DbMode\": \"partial\",\n                \"TableMode\": \"partial\",\n                \"Tables\": [\n                    {\n                        \"TableName\": \"sbtest1\"\n                    }\n                ]\n            },\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"all\",\n                \"TableMode\": \"all\",\n                \"ViewMode\": \"all\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "修改一致性校验任务"
+      }
+    ],
+    "ModifyCompareTaskName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompareTaskName\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-p1sposne\",\n    \"TaskName\": \"test_cmp\",\n    \"CompareTaskId\": \"dts-p1sposne-cmp-37skmii9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "修改一致性校验任务名称"
+      }
+    ],
+    "ModifyMigrateJobSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrateJobSpec\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\",\n    \"NewInstanceClass\": \"xlarge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "调整实例规格"
+      }
+    ],
+    "ModifyMigrateName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrateName\n<公共请求参数>\n\n{\n    \"JobName\": \"userDefine\",\n    \"JobId\": \"dts-7itt1j4w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "修改迁移名称"
+      }
+    ],
+    "ModifyMigrationJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"JobName\": \"test_config_api\",\n    \"RunMode\": \"immediate\",\n    \"ExpectRunTime\": \"\",\n    \"MigrateOption\": {\n        \"MigrateType\": \"fullAndIncrement\",\n        \"Consistency\": {\n            \"Mode\": \"full\"\n        },\n        \"DatabaseTable\": {\n            \"ObjectMode\": \"partial\",\n            \"Databases\": [\n                {\n                    \"DbName\": \"big100\",\n                    \"NewDbName\": \"\",\n                    \"SchemaName\": \"\",\n                    \"NewSchemaName\": \"\",\n                    \"DBMode\": \"partial\",\n                    \"SchemaMode\": \"\",\n                    \"TableMode\": \"partial\",\n                    \"Tables\": [\n                        {\n                            \"NewTableName\": \"\",\n                            \"TableEditMode\": \"\",\n                            \"TableName\": \"sbtest1\",\n                            \"TmpTables\": []\n                        },\n                        {\n                            \"NewTableName\": \"new_sbtest10\",\n                            \"TableEditMode\": \"rename\",\n                            \"TableName\": \"sbtest10\",\n                            \"TmpTables\": []\n                        },\n                        {\n                            \"NewTableName\": \"\",\n                            \"TableEditMode\": \"\",\n                            \"TableName\": \"sbtest100\",\n                            \"TmpTables\": []\n                        }\n                    ],\n                    \"ViewMode\": \"partial\",\n                    \"Views\": []\n                },\n                {\n                    \"DbName\": \"db1\",\n                    \"DBMode\": \"all\"\n                }\n            ]\n        },\n        \"IsMigrateAccount\": false\n    },\n    \"SrcInfo\": {\n        \"AccessType\": \"intranet\",\n        \"DatabaseType\": \"mysql\",\n        \"Info\": [\n            {\n                \"Account\": \"\",\n                \"AccountMode\": \"\",\n                \"AccountRole\": \"\",\n                \"CcnGwId\": \"\",\n                \"CvmInstanceId\": \"\",\n                \"DbKernel\": \"\",\n                \"EngineVersion\": \"\",\n                \"Host\": \"9.123.456.789\",\n                \"InstanceId\": \"\",\n                \"Password\": \"xxx\",\n                \"Port\": 31035,\n                \"Role\": \"\",\n                \"SubnetId\": \"\",\n                \"TmpSecretId\": \"\",\n                \"TmpSecretKey\": \"\",\n                \"TmpToken\": \"\",\n                \"UniqDcgId\": \"\",\n                \"UniqVpnGwId\": \"\",\n                \"User\": \"root\",\n                \"VpcId\": \"\"\n            }\n        ],\n        \"NodeType\": \"simple\",\n        \"Region\": \"ap-guangzhou\",\n        \"Supplier\": \"\"\n    },\n    \"DstInfo\": {\n        \"AccessType\": \"cdb\",\n        \"DatabaseType\": \"mysql\",\n        \"Info\": [\n            {\n                \"Account\": \"\",\n                \"AccountMode\": \"\",\n                \"AccountRole\": \"\",\n                \"CcnGwId\": \"\",\n                \"CvmInstanceId\": \"\",\n                \"DbKernel\": \"\",\n                \"EngineVersion\": \"\",\n                \"Host\": \"\",\n                \"InstanceId\": \"cdb-o7uph0cj\",\n                \"Password\": \"xxx\",\n                \"Port\": 0,\n                \"Role\": \"\",\n                \"SubnetId\": \"\",\n                \"TmpSecretId\": \"\",\n                \"TmpSecretKey\": \"\",\n                \"TmpToken\": \"\",\n                \"UniqDcgId\": \"\",\n                \"UniqVpnGwId\": \"\",\n                \"User\": \"root\",\n                \"VpcId\": \"\"\n            }\n        ],\n        \"NodeType\": \"\",\n        \"Region\": \"ap-guangzhou\",\n        \"Supplier\": \"\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"tag2\",\n            \"TagValue\": \"tag2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "配置迁移服务"
+      }
+    ],
+    "RecoverMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "解除隔离数据迁移任务"
+      }
+    ],
+    "RecoverSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-kl5qyyf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"710040d7-3a04-44cb-a56e-0023cf0692ef\"\n    }\n}",
+        "title": "解除隔离同步任务"
+      }
+    ],
+    "ResizeSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeSyncJob\n<公共请求参数>\n\n{\n    \"NewInstanceClass\": \"small\",\n    \"JobId\": \"sync-gb3l2lwq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee736d91-eb62-4bd9-8dba-7e3c81350740\"\n    }\n}",
+        "title": "变配一个同步任务"
+      }
+    ],
+    "ResumeMigrateJob": [
+      {
+        "document": "在任务失败时，以覆盖写等模式重试已经失败的数据迁移任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\",\n    \"ResumeOption\": \"normal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\n    }\n}",
+        "title": "重试失败的数据迁移任务"
+      }
+    ],
+    "ResumeSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91f8a1b0-8e41-4696-a24a-95e853da7071\"\n    }\n}",
+        "title": "重试同步任务"
+      }
+    ],
+    "StartCompare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCompare\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-1i9hna5e\",\n    \"CompareTaskId\": \"dts-1i9hna5e-cmp-kjqrl13s\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "启动一致性校验任务"
+      }
+    ],
+    "StartMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\n    }\n}",
+        "title": "启动数据迁移任务"
+      }
+    ],
+    "StartSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31197c38-7764-49f6-845c-edbc5aa9294e\"\n    }\n}",
+        "title": "启动一个同步任务"
+      }
+    ],
+    "StopCompare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCompare\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "终止一致性校验任务"
+      }
+    ],
+    "StopMigrateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\n    }\n}",
+        "title": "停止数据迁移任务"
+      }
+    ],
+    "StopSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ead9fdc1-baa8-4a09-aaa1-c2012690c976\"\n    }\n}",
+        "title": "终止同步任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

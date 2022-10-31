@@ -124,7 +124,7 @@
   "metadata": {
     "apiVersion": "2018-07-09",
     "api_brief": "介绍如何使用API对计费相关进行操作，包括资金管理、账单管理、订单管理等。",
-    "serviceNameCN": "计费相关",
+    "serviceNameCN": "费用中心",
     "serviceShortName": "billing"
   },
   "objects": {

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
-    --SessionId stress_test_956938 \
-    --VoiceFileType 1 \
-    --SeqId 1 \
+    --ScoreCoeff 1.0 \
     --VoiceEncodeType 1 \
-    --IsEnd 0 \
     --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
-    --WorkMode 0 \
-    --RefText thankyou \
+    --IsEnd 0 \
     --ServerType 0 \
-    --EvalMode 1 \
-    --ScoreCoeff 1.0
+    --VoiceFileType 1 \
+    --SessionId stress_test_956938 \
+    --SeqId 1 \
+    --RefText thankyou \
+    --WorkMode 0 \
+    --EvalMode 1
 ```
 
 Output: 
@@ -28,8 +28,16 @@ Output:
         "PronFluency": 0.93664527,
         "PronCompletion": 1,
         "RequestId": "1067cb5d-****-****-b1c6-6b*****72a0e",
+        "RefTextId": 0,
+        "KeyWordHits": [
+            0.0
+        ],
+        "UnKeyWordHits": [
+            0.0
+        ],
         "Words": [
             {
+                "KeywordTag": 0,
                 "MemBeginTime": 2330,
                 "MemEndTime": 3170,
                 "PronAccuracy": 99.52305,
@@ -115,8 +123,12 @@ Output:
                 "PronAccuracy": 99.52305,
                 "PronFluency": 0.93664527,
                 "PronCompletion": 1,
+                "KeyWordHits": [
+                    0.0
+                ],
                 "Words": [
                     {
+                        "KeywordTag": 0,
                         "MemBeginTime": 2330,
                         "MemEndTime": 3170,
                         "PronAccuracy": 99.52305,
@@ -194,7 +206,11 @@ Output:
                         ]
                     }
                 ],
-                "SentenceId": -1
+                "SentenceId": -1,
+                "RefTextId": 0,
+                "UnKeyWordHits": [
+                    0.0
+                ]
             }
         ],
         "Status": "Evaluating"
@@ -210,17 +226,17 @@ Input:
 
 ```
 tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
-    --SessionId stress_test_956938 \
-    --VoiceFileType 1 \
-    --SeqId 1 \
+    --ScoreCoeff 1.0 \
     --VoiceEncodeType 1 \
-    --IsEnd 0 \
     --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
-    --WorkMode 0 \
-    --RefText 叫 \
+    --IsEnd 0 \
     --ServerType 1 \
-    --EvalMode 0 \
-    --ScoreCoeff 1.0
+    --VoiceFileType 1 \
+    --SessionId stress_test_956938 \
+    --SeqId 1 \
+    --RefText 叫 \
+    --WorkMode 0 \
+    --EvalMode 0
 ```
 
 Output: 
@@ -232,8 +248,16 @@ Output:
         "PronFluency": 0.89224815,
         "PronCompletion": 1,
         "RequestId": "59a97be8-4***-4***-b***-8458*****826",
+        "RefTextId": 0,
+        "KeyWordHits": [
+            0.0
+        ],
+        "UnKeyWordHits": [
+            0.0
+        ],
         "Words": [
             {
+                "KeywordTag": 0,
                 "MemBeginTime": 1060,
                 "MemEndTime": 1980,
                 "PronAccuracy": 52.00305,
@@ -286,8 +310,16 @@ Output:
                 "PronAccuracy": 52.00305,
                 "PronFluency": 0.89224815,
                 "PronCompletion": 1,
+                "RefTextId": 0,
+                "KeyWordHits": [
+                    0.0
+                ],
+                "UnKeyWordHits": [
+                    0.0
+                ],
                 "Words": [
                     {
+                        "KeywordTag": 0,
                         "MemBeginTime": 1060,
                         "MemEndTime": 1980,
                         "PronAccuracy": 52.00305,

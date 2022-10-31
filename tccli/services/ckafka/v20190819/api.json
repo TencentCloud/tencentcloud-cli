@@ -394,7 +394,7 @@
   "metadata": {
     "apiVersion": "2019-08-19",
     "api_brief": "介绍如何使用API对消息队列CKafka进行操作，包括管理实例等。",
-    "serviceNameCN": "消息队列 Ckafka",
+    "serviceNameCN": "消息队列 CKafka",
     "serviceShortName": "ckafka"
   },
   "objects": {
@@ -13421,6 +13421,22 @@
       ],
       "usage": "both"
     },
+    "UrlDecodeParam": {
+      "document": "Url解析",
+      "members": [
+        {
+          "default": "",
+          "document": "编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTF-8",
+          "member": "string",
+          "name": "CharsetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "User": {
       "document": "用户实体",
       "members": [
@@ -13576,6 +13592,16 @@
           "example": "null",
           "member": "JsonPathReplaceParam",
           "name": "JsonPathReplace",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Url解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "UrlDecodeParam",
+          "name": "UrlDecode",
           "required": false,
           "type": "object",
           "value_allowed_null": true

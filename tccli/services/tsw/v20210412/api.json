@@ -22,7 +22,7 @@
   "metadata": {
     "apiVersion": "2021-04-12",
     "api_brief": "使用API查看应用、接口、数据库实例被调用的监控数据。\r\n以及展示依赖拓扑图，查询调用链。\r\n修改链路追踪agent的配置参数",
-    "serviceNameCN": "腾讯微服务观测平台 TSW",
+    "serviceNameCN": "微服务观测平台 TSW",
     "serviceShortName": "tsw"
   },
   "objects": {

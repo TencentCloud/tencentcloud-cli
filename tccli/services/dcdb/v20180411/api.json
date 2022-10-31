@@ -364,7 +364,7 @@
   "metadata": {
     "apiVersion": "2018-04-11",
     "api_brief": "介绍如何使用API对分布式数据库TDSQL进行操作，包括新购分布式数据库实例询价、实例管理等。",
-    "serviceNameCN": "分布式数据库 TDSQL",
+    "serviceNameCN": "TDSQL MySQL 版",
     "serviceShortName": "dcdb"
   },
   "objects": {

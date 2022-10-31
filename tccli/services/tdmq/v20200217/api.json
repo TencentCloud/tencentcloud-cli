@@ -598,7 +598,7 @@
   "metadata": {
     "apiVersion": "2020-02-17",
     "api_brief": "介绍如何使用API对消息队列 TDMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
-    "serviceNameCN": "分布式消息队列",
+    "serviceNameCN": "消息队列 TDMQ",
     "serviceShortName": "tdmq"
   },
   "objects": {

@@ -40,7 +40,7 @@
   "metadata": {
     "apiVersion": "2018-04-20",
     "api_brief": "介绍如何使用API对数据安全审计进行操作，包括数据安全审计产品实例询价、获取数据安全审计实例列表等。",
-    "serviceNameCN": "数据安全审计",
+    "serviceNameCN": "T-Sec-数据安全审计（DSA）",
     "serviceShortName": "cds"
   },
   "objects": {

@@ -76,7 +76,7 @@
   "metadata": {
     "apiVersion": "2018-05-23",
     "api_brief": null,
-    "serviceNameCN": "电子合同服务",
+    "serviceNameCN": "文档服务",
     "serviceShortName": "ds"
   },
   "objects": {

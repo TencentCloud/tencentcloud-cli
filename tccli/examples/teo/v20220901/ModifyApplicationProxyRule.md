@@ -10,9 +10,10 @@ tccli teo ModifyApplicationProxyRule --cli-unfold-argument  \
     --ProxyId proxy-19389e5dwwxfs \
     --RuleId rule-5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707 \
     --Proto TCP \
-    --Port 80 90 99-110 \
+    --Port 99-110 \
     --OriginType custom \
-    --OriginValue 1.1.1.1:80 \
+    --OriginValue 1.1.1.1 \
+    --OriginPort 99-110 \
     --ForwardClientIp TOA \
     --SessionPersist False
 ```

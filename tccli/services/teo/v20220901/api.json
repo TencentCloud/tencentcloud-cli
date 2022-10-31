@@ -1393,7 +1393,7 @@
         },
         {
           "default": "",
-          "document": "端口，支持格式：\n单个端口，如：80。\n端口段，如：81-82。表示81，82两个端口。\n注意：一条规则最多可填写20个端口。",
+          "document": "端口，支持格式：\n<li>单个端口，如：80。</li>\n<li>端口段，如：81-82。表示81，82两个端口。</li>\n注意：一条规则最多可填写20个端口。",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -1413,8 +1413,8 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]；\n当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：\nOriginValue=[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]。",
-          "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "OriginValue",
           "required": true,
@@ -1459,6 +1459,16 @@
           "name": "SessionPersist",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站端口，支持格式：\n<li>单端口，如：80。</li>\n<li>端口段：81-82，表示81，82两个端口。</li>",
+          "example": "80-90",
+          "member": "string",
+          "name": "OriginPort",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2726,7 +2736,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
+          "document": "端口，支持格式：\n<li>80：80端口；</li>\n<li>81-90：81至90端口。</li>",
           "example": "[\"80\"]",
           "member": "string",
           "name": "Port",
@@ -2735,7 +2745,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组",
+          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -2744,7 +2754,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]；\n当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：\nOriginValue=[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]。",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -2768,6 +2778,15 @@
           "name": "SessionPersist",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "源站端口，支持格式：\n<li>单端口：80；</li>\n<li>端口段：81-90，81至90端口。</li>",
+          "example": "80-90",
+          "member": "string",
+          "name": "OriginPort",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12848,7 +12867,7 @@
         },
         {
           "default": "",
-          "document": "端口，支持格式：\n80：80端口\n81-90：81至90端口。不填保持原有值。",
+          "document": "端口，支持格式：\n<li>80：80端口；</li>\n<li>81-90：81至90端口。</li>",
           "example": "[\"90\"]",
           "member": "string",
           "name": "Port",
@@ -12866,7 +12885,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]；\n当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：\nOriginValue=[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]。\n不填保持原有值。",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>\n\n不填保持原有值。",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -12884,12 +12903,21 @@
         },
         {
           "default": "",
-          "document": "是否开启会话保持，取值有：\n<li>true：开启；</li>\n<li>false：关闭。</li>不填保持原有值。",
+          "document": "是否开启会话保持，取值有：\n<li>true：开启；</li>\n<li>false：关闭。</li>不填为false。",
           "example": "false",
           "member": "bool",
           "name": "SessionPersist",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "源站端口，支持格式：\n<li>单端口：80；</li>\n<li>端口段：81-90，81至90端口。</li>",
+          "example": "80-90",
+          "member": "string",
+          "name": "OriginPort",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

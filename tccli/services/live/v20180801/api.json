@@ -730,7 +730,7 @@
   "metadata": {
     "apiVersion": "2018-08-01",
     "api_brief": "介绍如何使用API对云直播进行操作，如直播回调、直播混流等。",
-    "serviceNameCN": "云直播",
+    "serviceNameCN": "云直播CSS",
     "serviceShortName": "live"
   },
   "objects": {
