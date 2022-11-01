@@ -7710,6 +7710,16 @@
           "required": false,
           "type": "bool",
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "NAT网关大版本号，默认值`1`",
+          "example": "1",
+          "member": "uint64",
+          "name": "NatProductVersion",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -30263,6 +30273,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "NAT网关大版本号，默认值`1`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NatProductVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

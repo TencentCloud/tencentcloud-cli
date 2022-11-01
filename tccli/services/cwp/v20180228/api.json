@@ -12370,7 +12370,8 @@
           "member": "uint64",
           "name": "Id",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12385,7 +12386,8 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主机ID",
@@ -12394,7 +12396,8 @@
           "name": "Quuid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击来源端口",
@@ -12403,7 +12406,8 @@
           "name": "SrcPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击来源IP",
@@ -12412,7 +12416,8 @@
           "name": "SrcIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击目标端口",
@@ -12421,7 +12426,8 @@
           "name": "DstPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击目标IP",
@@ -12430,7 +12436,8 @@
           "name": "DstIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击方法",
@@ -12439,7 +12446,8 @@
           "name": "HttpMethod",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击目标主机",
@@ -12448,7 +12456,8 @@
           "name": "HttpHost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击头信息",
@@ -12457,7 +12466,8 @@
           "name": "HttpHead",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击者浏览器标识",
@@ -12466,7 +12476,8 @@
           "name": "HttpUserAgent",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "请求源",
@@ -12475,7 +12486,8 @@
           "name": "HttpReferer",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "威胁类型",
@@ -12484,7 +12496,8 @@
           "name": "VulType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击路径",
@@ -12493,7 +12506,8 @@
           "name": "HttpCgi",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击参数",
@@ -12502,7 +12516,8 @@
           "name": "HttpParam",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击时间",
@@ -12511,7 +12526,8 @@
           "name": "CreatedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "攻击内容",
@@ -12520,7 +12536,8 @@
           "name": "HttpContent",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

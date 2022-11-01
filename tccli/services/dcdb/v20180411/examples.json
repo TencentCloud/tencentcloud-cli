@@ -128,6 +128,14 @@
         "title": "示例1 查询实例安全组信息"
       }
     ],
+    "DescribeDBSlowLogAnalysis": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSlowLogAnalysis\n&InstanceId=dcdbt-ige1a5k3\n&StartTime=2018-04-05 00:00:00\n&EndTime=2018-04-05 20:00:00\n&User=test_slow\n&CheckSum=17988922643135866314\n&Db=test\n&ShardId= shard-g7mxngqu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-04-05 11:30:23\",\n        \"RequestId\": \"838e3c36-54d6-4262-981a-50e8746eace6\",\n        \"Data\": [\n            1,\n            1,\n            0,\n            0,\n            0,\n            0,\n            3\n        ],\n        \"Period\": 0,\n        \"EndTime\": \"2018-04-05 14:35:46\"\n    }\n}",
+        "title": "获取慢查询日志分析"
+      }
+    ],
     "DescribeDBSlowLogs": [
       {
         "document": "",
@@ -246,6 +254,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeFlow\n&FlowId=3340\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f63a9e3a-cfe9-4fa3-a690-9671ebdf6bd8\",\n        \"Status\": 1\n    }\n}",
         "title": "查询任务流程执行状态"
+      }
+    ],
+    "DescribeLatestCloudDBAReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLatestCloudDBAReport\n<公共请求参数>\n\n{\n    \"ShardId\": \"shard-ngbrea6b\",\n    \"InstanceId\": \"dcdbt-21dfpcv1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FinishTime\": \"0000-00-00 00:00:00\",\n        \"ReportDetail\": \"\",\n        \"ReportName\": \"\",\n        \"RequestId\": \"efff4400-1bb0-472d-b000-8ffa5f02e00d\",\n        \"Score\": 0\n    }\n}",
+        "title": "无"
       }
     ],
     "DescribeOrders": [
@@ -476,6 +492,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=ResetAccountPassword\n&InstanceId=dcdbt-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&Password=abcd8765_.\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7b1680d-db03-4f20-8684-a865ce7bcd38\"\n    }\n}",
         "title": "修改云数据库账号的密码"
+      }
+    ],
+    "StartSmartDBA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSmartDBA\n<公共请求参数>\n\n{\n    \"ShardId\": \"shard-ngbrea6b\",\n    \"InstanceId\": \"dcdbt-21dfpcv1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 11273818,\n        \"RequestId\": \"fb3df62e-1e32-44aa-a0f7-162e6d456bec\"\n    }\n}",
+        "title": "无"
       }
     ],
     "SwitchDBInstanceHA": [

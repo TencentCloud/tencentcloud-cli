@@ -379,7 +379,7 @@
       "output": "DescribeInstanceAllResponse"
     },
     "DescribeInstanceAllNamespaces": {
-      "document": "查询所有有实例命名空间列表",
+      "document": "查询所有实例命名空间列表",
       "input": "DescribeInstanceAllNamespacesRequest",
       "name": "查询所有实例命名空间",
       "output": "DescribeInstanceAllNamespacesResponse"
@@ -3954,7 +3954,7 @@
           "name": "Limit",
           "required": false,
           "type": "int",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "default": "",
@@ -3964,7 +3964,7 @@
           "name": "Offset",
           "required": false,
           "type": "int",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"

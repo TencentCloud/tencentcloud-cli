@@ -168,6 +168,14 @@
         "title": "示例1 查询实例安全组信息"
       }
     ],
+    "DescribeDBSlowLogAnalysis": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBSlowLogAnalysis\n&InstanceId=tdsql-ige1a5k3\n&StartTime=2018-04-05 00:00:00\n&EndTime=2018-04-05 20:00:00\n&User=test_slow\n&CheckSum=17988922643135866314\n&Db=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-04-05 11:30:23\",\n        \"RequestId\": \"838e3c36-54d6-4262-981a-50e8746eace6\",\n        \"Data\": [\n            1,\n            1,\n            0,\n            0,\n            0,\n            0,\n            3\n        ],\n        \"Period\": 0,\n        \"EndTime\": \"2018-04-05 14:35:46\"\n    }\n}",
+        "title": "获取慢查询记录详情"
+      }
+    ],
     "DescribeDBSlowLogs": [
       {
         "document": "",
@@ -230,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodeInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-b43f8yjl\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"186315\",\n        \"NodesInfo\": [\n            {\n                \"Role\": \"master\",\n                \"NodeId\": \"5c2af09aeeb701fef6d5fef4329bb62d61f211ac\"\n            },\n            {\n                \"Role\": \"slave\",\n                \"NodeId\": \"dbedea66f4ba2b71e6816e3f9d0c2936e5448786\"\n            },\n            {\n                \"Role\": \"slave\",\n                \"NodeId\": \"1b40c8a28bec5c4af666d31b24119e319d68773e\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
         "title": "获取数据库实例主备节点信息"
+      }
+    ],
+    "DescribeLatestCloudDBAReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLatestCloudDBAReport\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FinishTime\": \"0000-00-00 00:00:00\",\n        \"ReportDetail\": \"\",\n        \"ReportName\": \"\",\n        \"RequestId\": \"b8583452-1c7e-4f8b-8faf-53aae28ff05b\",\n        \"Score\": 0\n    }\n}",
+        "title": "无"
       }
     ],
     "DescribeLogFileRetentionPeriod": [
@@ -502,6 +518,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=RestartDBInstances\n&InstanceIds.0=tdsql-fdpjf5zh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1003623,\n        \"RequestId\": \"1ec14227-d149-4b32-8654-01fb6eaf3bfd\"\n    }\n}",
         "title": "重启数据库实例tdsql-fdpjf5zh"
+      }
+    ],
+    "StartSmartDBA": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=StartSmartDBA\n&InstanceId=tdsql-722d255z\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6838d283-fdd9-419c-aabe-df6ee5cf42a7\",\n        \"FlowId\": 234\n    }\n}",
+        "title": "启动性能检测"
       }
     ],
     "SwitchDBInstanceHA": [

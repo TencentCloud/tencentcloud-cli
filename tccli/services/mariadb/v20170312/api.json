@@ -126,6 +126,12 @@
       "name": "查询实例安全组信息",
       "output": "DescribeDBSecurityGroupsResponse"
     },
+    "DescribeDBSlowLogAnalysis": {
+      "document": "本接口(DescribeDBSlowLogAnalysis)用于获取慢查询记录详情。",
+      "input": "DescribeDBSlowLogAnalysisRequest",
+      "name": "获取慢查询记录详情",
+      "output": "DescribeDBSlowLogAnalysisResponse"
+    },
     "DescribeDBSlowLogs": {
       "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
       "input": "DescribeDBSlowLogsRequest",
@@ -173,6 +179,12 @@
       "input": "DescribeInstanceNodeInfoRequest",
       "name": "获取实例节点信息",
       "output": "DescribeInstanceNodeInfoResponse"
+    },
+    "DescribeLatestCloudDBAReport": {
+      "document": "本接口（DescribeLatestCloudDBAReport）用于获取最新的性能检测报告",
+      "input": "DescribeLatestCloudDBAReportRequest",
+      "name": "获取最新的性能检测报告",
+      "output": "DescribeLatestCloudDBAReportResponse"
     },
     "DescribeLogFileRetentionPeriod": {
       "document": "本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。",
@@ -377,6 +389,12 @@
       "input": "RestartDBInstancesRequest",
       "name": "重启实例",
       "output": "RestartDBInstancesResponse"
+    },
+    "StartSmartDBA": {
+      "document": "本接口（StartSmartDBA）用于启动性能检测任务。",
+      "input": "StartSmartDBARequest",
+      "name": "启动性能检测任务",
+      "output": "StartSmartDBAResponse"
     },
     "SwitchDBInstanceHA": {
       "document": "本接口（SwitchDBInstanceHA）用于发起实例主备切换。",
@@ -3543,6 +3561,132 @@
       ],
       "type": "object"
     },
+    "DescribeDBSlowLogAnalysisRequest": {
+      "document": "DescribeDBSlowLogAnalysis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-ige1a5k3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2018-04-05 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的慢查询语句对应的数据库名称",
+          "example": "test",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的慢查询语句对应的用户名称",
+          "example": "test_slow",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的慢查询语句的校验和，可以通过查询慢查询日志列表获得",
+          "example": "17988922643135866314",
+          "member": "string",
+          "name": "CheckSum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2018-04-05 20:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否查询从机的慢查询。0-主机；1-从机",
+          "example": "无",
+          "member": "int64",
+          "name": "Slave",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询慢查询对应的Host",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSlowLogAnalysisResponse": {
+      "document": "DescribeDBSlowLogAnalysis返回参数结构体",
+      "members": [
+        {
+          "document": "慢查询SQL出现的开始时间",
+          "example": "2018-04-05 11:30:23",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢查询SQL出现的结束时间",
+          "example": "2018-04-05 14:35:46",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的慢查询详情数据。每个点代表一个时间段内慢查询SQL出现的记录次数，一个时间段的长度由请求的开始时间和结束时间的差值决定，小于1天是5分钟一段，大于1天小于7天是30分钟一段，大于7天是2个小时一段。",
+          "example": "[1,1,0,0,0,0,3]",
+          "member": "int64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采样周期",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSlowLogsRequest": {
       "document": "DescribeDBSlowLogs请求参数结构体",
       "members": [
@@ -4073,6 +4217,69 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLatestCloudDBAReportRequest": {
+      "document": "DescribeLatestCloudDBAReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLatestCloudDBAReportResponse": {
+      "document": "DescribeLatestCloudDBAReport返回参数结构体",
+      "members": [
+        {
+          "document": "本次检测的有效分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次检测报告的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReportName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次检测报告的详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReportDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次检测报告的完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6682,6 +6889,42 @@
         }
       ],
       "usage": "out"
+    },
+    "StartSmartDBARequest": {
+      "document": "StartSmartDBA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-722d255z",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSmartDBAResponse": {
+      "document": "StartSmartDBA返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID，调用DescribeFlow查询任务状态",
+          "example": "234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchDBInstanceHARequest": {
       "document": "SwitchDBInstanceHA请求参数结构体",

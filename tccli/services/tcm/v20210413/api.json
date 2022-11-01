@@ -72,6 +72,12 @@
       "name": "关联 Namespace",
       "output": "LinkNamespaceListResponse"
     },
+    "LinkPrometheus": {
+      "document": "关联Prometheus",
+      "input": "LinkPrometheusRequest",
+      "name": "关联Prometheus",
+      "output": "LinkPrometheusResponse"
+    },
     "ModifyIngressGateway": {
       "document": "修改IngressGateway",
       "input": "ModifyIngressGatewayRequest",
@@ -90,6 +96,12 @@
       "name": "修改网格",
       "output": "ModifyMeshResponse"
     },
+    "ModifyTracingConfig": {
+      "document": "修改 Tracing 配置",
+      "input": "ModifyTracingConfigRequest",
+      "name": "修改 Tracing 配置",
+      "output": "ModifyTracingConfigResponse"
+    },
     "RelinkCluster": {
       "document": "重新关联集群",
       "input": "RelinkClusterRequest",
@@ -107,6 +119,12 @@
       "input": "UnlinkNamespaceListRequest",
       "name": "解关联 Namespace",
       "output": "UnlinkNamespaceListResponse"
+    },
+    "UnlinkPrometheus": {
+      "document": "解除关联Prometheus",
+      "input": "UnlinkPrometheusRequest",
+      "name": "解除关联Prometheus",
+      "output": "UnlinkPrometheusResponse"
     }
   },
   "metadata": {
@@ -1917,6 +1935,42 @@
       ],
       "type": "object"
     },
+    "LinkPrometheusRequest": {
+      "document": "LinkPrometheus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "example": "无",
+          "member": "PrometheusConfig",
+          "name": "Prometheus",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkPrometheusResponse": {
+      "document": "LinkPrometheus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoadBalancer": {
       "document": "负载均衡配置",
       "members": [
@@ -2517,6 +2571,69 @@
     },
     "ModifyMeshResponse": {
       "document": "ModifyMesh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTracingConfigRequest": {
+      "document": "ModifyTracingConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "mesh名字",
+          "example": "mesh-xxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用调用跟踪",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "腾讯云 APM 服务相关参数",
+          "example": "无",
+          "member": "APM",
+          "name": "APM",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "调用跟踪采样值",
+          "example": "1.0",
+          "member": "float",
+          "name": "Sampling",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "调用追踪Zipkin相关配置",
+          "example": "xxx",
+          "member": "TracingZipkin",
+          "name": "Zipkin",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTracingConfigResponse": {
+      "document": "ModifyTracingConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3134,6 +3251,33 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkPrometheusRequest": {
+      "document": "UnlinkPrometheus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkPrometheusResponse": {
+      "document": "UnlinkPrometheus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

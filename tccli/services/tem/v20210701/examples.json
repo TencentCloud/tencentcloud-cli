@@ -51,7 +51,7 @@
     "CreateLogConfig": [
       {
         "document": "创建日志收集配置",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"xx\",\n    \"BeginningRegex\": \"xx\",\n    \"Name\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"LogPath\": \"xx\",\n    \"InputType\": \"xx\",\n    \"LogType\": \"xx\",\n    \"FilePattern\": \"xx\",\n    \"ApplicationId\": \"xx\",\n    \"LogsetId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"xx\",\n    \"Name\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"LogPath\": \"xx\",\n    \"InputType\": \"xx\",\n    \"LogType\": \"xx\",\n    \"FilePattern\": \"xx\",\n    \"ApplicationId\": \"xx\",\n    \"LogsetId\": \"xx\",\n    \"ExtractRule\": {\n        \"BeginningRegex\": \"xxx\",\n        \"Keys\": [\n            \"xxx\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
         "title": "创建日志收集配置"
       }

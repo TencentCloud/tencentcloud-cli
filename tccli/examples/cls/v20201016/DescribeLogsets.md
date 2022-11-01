@@ -26,6 +26,7 @@ Output:
                 ],
                 "CreateTime": "xx",
                 "RoleName": "xx",
+                "AssumerName": "xx",
                 "TopicCount": 0,
                 "LogsetName": "xx",
                 "LogsetId": "xx"

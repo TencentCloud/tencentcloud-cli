@@ -96,6 +96,14 @@
         "title": "请求和返回示例"
       }
     ],
+    "GetTicketStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTicketStatistics\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"字符串\",\n    \"EndTimeStr\": \"字符串\",\n    \"StartTimeStr\": \"字符串\",\n    \"Dimension\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"458e90ab-4bcb-45ee-b8fd-f5e79e85ffff\",\n        \"Data\": null,\n        \"CaptchaCode\": 11000,\n        \"CaptchaMsg\": \"\"\n    }\n}",
+        "title": "请求和返回示例"
+      }
+    ],
     "GetTotalTicketStatistics": [
       {
         "document": "",

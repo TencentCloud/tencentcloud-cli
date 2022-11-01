@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli kms ScheduleKeyDeletion --cli-unfold-argument  \
-    --KeyId "23e80852-1e38-11e9-b129-5cb9019b4b01" \
-    --PendingWindowInDays 7
+    --PendingWindowInDays 7 \
+    --KeyId "23e80852-1e38-11e9-b129-5cb9019b4b01"
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "8e8f23a7-50b2-4c8e-bd23-0a98cb643f88",
         "DeletionDate": 1559318399,
         "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01"
     }
