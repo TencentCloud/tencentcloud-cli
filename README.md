@@ -36,7 +36,6 @@ TencentCloud API secretId [*afcQ]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
 TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
 region: ap-guangzhou
 output[json]:
-language[zh-CN]:
 ```
 secretId: 云 API 密钥SecretId。
 secretIKey: 云 API 密钥SecretKey。
@@ -50,7 +49,7 @@ output： 可选参数，请求回包输出格式，支持[json table text]三�
 ```bash
 # set子命令可以设置某一配置，也可同时配置多个。
 tccli configure set secretId AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
-tccli configure set region ap-guangzhou  output json
+tccli configure set region ap-guangzhou  output json language zh-CN
 
 # get子命令用于获取配置信息。
 tccli configure get secretKey
@@ -79,10 +78,9 @@ TencentCloud API secretId [*BCDP]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
 TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
 region: ap-guangzhou
 output[json]:
-language[zh-CN]:
 
 # set/get/list/remove子命令指定账户名test。
-tccli configure set region ap-guangzhou  output json  --profile test
+tccli configure set region ap-guangzhou  output json language zh-CN --profile test
 tccli configure get secretKey      --profile test
 tccli configure list      --profile test
 tccli configure remove      --profile test
