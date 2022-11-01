@@ -17,7 +17,9 @@ Output:
         "RequestId": "xx",
         "UnhandledReverseShellCnt": 1,
         "UnhandledAbnormalProcessCnt": 1,
-        "UnhandledVirusEventCnt": 1
+        "UnhandledVirusEventCnt": 1,
+        "UnhandledMaliciousConnectionEventCnt": 1,
+        "UnhandledK8sApiEventCnt": 1
     }
 }
 ```

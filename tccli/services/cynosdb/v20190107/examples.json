@@ -72,6 +72,14 @@
         "title": "删除审计日志文件"
       }
     ],
+    "DeleteBackup": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DeleteBackup\n&ClusterId=cynosdbpg-45knmnra\n&SnapshotIdList.0=4928\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "删除备份"
+      }
+    ],
     "DescribeAccountAllGrantPrivileges": [
       {
         "document": "",

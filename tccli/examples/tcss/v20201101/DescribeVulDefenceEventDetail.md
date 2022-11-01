@@ -33,6 +33,12 @@ Output:
             "ContainerID": "xx",
             "VulName": "xx",
             "ServerExe": "xx",
+            "RaspDetail": [
+                {
+                    "Name": "xx",
+                    "Value": "xx"
+                }
+            ],
             "ContainerName": "xx",
             "JNDIUrl": "xx",
             "PublicIP": "xx",

@@ -600,6 +600,14 @@
         "title": "拉取防护概览指标"
       }
     ],
+    "DescribePendingRiskInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePendingRiskInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredCount\": 144,\n        \"IsPaidUsr\": true,\n        \"AttackingCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Total\": 146,\n        \"BlockingCount\": 2\n    }\n}",
+        "title": "查询账号维度待处理风险信息"
+      }
+    ],
     "DisassociateDDoSEipAddress": [
       {
         "document": "",

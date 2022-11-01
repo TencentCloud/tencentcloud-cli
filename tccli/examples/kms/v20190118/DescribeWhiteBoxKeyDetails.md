@@ -41,7 +41,7 @@ Output:
                 "DeviceFingerprintBind": true
             }
         ],
-        "TotalCount": 1,
+        "TotalCount": 2,
         "RequestId": "xx"
     }
 }

@@ -1097,6 +1097,52 @@
       ],
       "usage": "out"
     },
+    "CertInfo": {
+      "document": "证书信息",
+      "members": [
+        {
+          "default": "",
+          "document": "证书 ID，如果不填写此项则必须上传证书内容，包括CertName, CertContent，若为服务端证书必须包含CertKey。",
+          "example": "zFzZAAIr",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传证书的名称，如果没有 CertId，则此项必传。",
+          "example": "tes-cert",
+          "member": "string",
+          "name": "CertName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传证书的公钥，如果没有 CertId，则此项必传。",
+          "example": " -----BEGIN CERTIFICATE-----",
+          "member": "string",
+          "name": "CertContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传服务端证书的私钥，如果没有 CertId，则此项必传。",
+          "example": "-----BEGIN RSA PRIVATE KEY----- ",
+          "member": "string",
+          "name": "CertKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CertificateInput": {
       "document": "证书信息",
       "members": [
@@ -2246,7 +2292,7 @@
         },
         {
           "default": "",
-          "document": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。",
+          "document": "证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。",
           "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -2324,6 +2370,15 @@
           "name": "DeregisterTargetRst",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。",
+          "example": "无",
+          "member": "MultiCertInfo",
+          "name": "MultiCertInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7193,7 +7248,7 @@
         },
         {
           "default": "",
-          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用。",
+          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。",
           "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -7235,6 +7290,15 @@
           "name": "NewDomains",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。",
+          "example": "无",
+          "member": "MultiCertInfo",
+          "name": "MultiCertInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7355,7 +7419,7 @@
         },
         {
           "default": "",
-          "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。",
+          "document": "证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。",
           "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -7415,6 +7479,15 @@
           "name": "SessionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。",
+          "example": "无",
+          "member": "MultiCertInfo",
+          "name": "MultiCertInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7971,6 +8044,32 @@
       ],
       "type": "object"
     },
+    "MultiCertInfo": {
+      "document": "CLB监听器或规则绑定的多证书信息",
+      "members": [
+        {
+          "default": "",
+          "document": "认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证",
+          "example": "UNIDIRECTIONAL",
+          "member": "string",
+          "name": "SSLMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器或规则证书列表，单双向认证，多本服务端证书算法类型不能重复;若SSLMode为双向认证，证书列表必须包含一本ca证书。",
+          "example": "见起类型示例",
+          "member": "CertInfo",
+          "name": "CertList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Quota": {
       "document": "描述配额信息，所有配额均指当前地域下的配额。",
       "members": [
@@ -8468,7 +8567,7 @@
         },
         {
           "default": "",
-          "document": "证书信息",
+          "document": "证书信息；此参数和MultiCertInfo不能同时传入。",
           "example": "{\"SSLMode\": \"UNIDIRECTIONAL\", \"CertId\": \"fF6AGfxE\"}",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -8564,6 +8663,16 @@
           "name": "Domains",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书；此参数和Certificate不能同时传入。",
+          "example": "无",
+          "member": "MultiCertInfo",
+          "name": "MultiCertInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

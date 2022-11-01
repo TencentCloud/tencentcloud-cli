@@ -64,3 +64,49 @@ Output:
 }
 ```
 
+**Example 2: 创建标准型NAT网关**
+
+
+
+Input: 
+
+```
+tccli vpc CreateNatGateway --cli-unfold-argument  \
+    --SubnetId subnet-q1b8fsg \
+    --AddressCount 1 \
+    --NatGatewayName xiaooliang_test \
+    --VpcId vpc-bohigpb7
+```
+
+Output: 
+```
+{
+    "Response": {
+        "NatGatewaySet": [
+            {
+                "NatGatewayId": "nat-o49t53q2",
+                "NatGatewayName": "xiaooliang_test",
+                "VpcId": "vpc-bohigpb7",
+                "State": "PENDING",
+                "NetworkState": "AVAILABLE",
+                "InternetMaxBandwidthOut": 100,
+                "MaxConcurrentConnection": 1000000,
+                "PublicIpAddressSet": [],
+                "DestinationIpPortTranslationNatRuleSet": [],
+                "CreatedTime": "0000-00-00 00:00:00",
+                "Zone": "",
+                "TagSet": [],
+                "DirectConnectGatewayIds": [],
+                "SubnetId": "subnet-q1b8fsgu",
+                "SecurityGroupSet": [],
+                "SourceIpTranslationNatRuleSet": [],
+                "IsExclusive": false,
+                "ExclusiveGatewayBandwidth": null
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "7b00a07c-7358-4f0a-b81c-8ce5882a87b8"
+    }
+}
+```
+

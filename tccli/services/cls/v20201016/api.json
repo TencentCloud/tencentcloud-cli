@@ -5141,6 +5141,16 @@
         },
         {
           "default": "",
+          "document": "云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCB",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "日志集绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -5161,7 +5171,7 @@
         },
         {
           "default": "",
-          "document": "若AssumerUin非空，则表示创建该日志集的服务方角色",
+          "document": "若AssumerName非空，则表示创建该日志集的服务方角色",
           "example": "TCB_QcsRole",
           "member": "string",
           "name": "RoleName",
@@ -7274,6 +7284,16 @@
         },
         {
           "default": "",
+          "document": "云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "创建时间",
           "example": "无",
           "member": "string",
@@ -7340,6 +7360,26 @@
           "name": "Period",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TKE-Audio",
+          "member": "string",
+          "name": "SubAssumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx部门xx业务topic",
+          "member": "string",
+          "name": "Describes",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

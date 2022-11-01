@@ -1146,7 +1146,7 @@
       "document": "DescribeWhiteBoxKeyDetails返回参数结构体",
       "members": [
         {
-          "document": "白盒密钥信息列表",
+          "document": "白盒密钥信息列表。",
           "example": "无",
           "member": "WhiteboxKeyInfo",
           "name": "KeyInfos",
@@ -1155,7 +1155,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "key总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "白盒密钥总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
@@ -2022,7 +2022,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "旗舰版到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旗舰版到期时间（Epoch Unix Timestamp）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1603701385",
           "member": "uint64",
           "name": "ProExpireTime",

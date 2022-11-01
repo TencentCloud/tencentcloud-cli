@@ -31,6 +31,8 @@ Output:
                 "Period": 0,
                 "AutoSplit": true,
                 "TopicName": "xx",
+                "AssumerName": "xx",
+                "SubAssumerName": "xx",
                 "Index": true,
                 "CreateTime": "xx",
                 "LogsetId": "xx"

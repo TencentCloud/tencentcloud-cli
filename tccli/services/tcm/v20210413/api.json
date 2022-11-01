@@ -30,6 +30,12 @@
       "name": "关联集群",
       "output": "LinkClusterListResponse"
     },
+    "LinkPrometheus": {
+      "document": "关联Prometheus",
+      "input": "LinkPrometheusRequest",
+      "name": "关联Prometheus",
+      "output": "LinkPrometheusResponse"
+    },
     "ModifyMesh": {
       "document": "修改网格",
       "input": "ModifyMeshRequest",
@@ -41,6 +47,12 @@
       "input": "UnlinkClusterRequest",
       "name": "解关联集群",
       "output": "UnlinkClusterResponse"
+    },
+    "UnlinkPrometheus": {
+      "document": "解除关联Prometheus",
+      "input": "UnlinkPrometheusRequest",
+      "name": "解除关联Prometheus",
+      "output": "UnlinkPrometheusResponse"
     }
   },
   "metadata": {
@@ -1376,6 +1388,42 @@
       ],
       "type": "object"
     },
+    "LinkPrometheusRequest": {
+      "document": "LinkPrometheus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "example": "无",
+          "member": "PrometheusConfig",
+          "name": "Prometheus",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkPrometheusResponse": {
+      "document": "LinkPrometheus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoadBalancer": {
       "document": "负载均衡配置",
       "members": [
@@ -2390,6 +2438,33 @@
     },
     "UnlinkClusterResponse": {
       "document": "UnlinkCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkPrometheusRequest": {
+      "document": "UnlinkPrometheus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkPrometheusResponse": {
+      "document": "UnlinkPrometheus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

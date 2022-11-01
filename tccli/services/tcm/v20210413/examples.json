@@ -40,6 +40,14 @@
         "title": "LinkClusterList"
       }
     ],
+    "LinkPrometheus": [
+      {
+        "document": "连接Prometheus实例",
+        "input": "https://tcm.tencentcloudapi.com/?Action=LinkPrometheus\n&MeshID=\"mesh-test\"\n&Prometheus.VpcId=test-vpcid\n&Prometheus.SubnetId=test-subnetid\n&Prometheus.Region=sh\n&Prometheus.InstanceId=\"\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "LinkPrometheus"
+      }
+    ],
     "ModifyMesh": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlinkCluster\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"ClusterId\": \"{{clusterId}}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "UnlinkCluster"
+      }
+    ],
+    "UnlinkPrometheus": [
+      {
+        "document": "解除关联Prometheus实例",
+        "input": "https://tcm.tencentcloudapi.com/?Action=UnlinkPrometheus\n&MeshID=\"mesh-test\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "UnlinkPrometheus"
       }
     ]
   },

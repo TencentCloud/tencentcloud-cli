@@ -450,6 +450,12 @@
       "name": "拉取防护概览指标",
       "output": "DescribeOverviewIndexResponse"
     },
+    "DescribePendingRiskInfo": {
+      "document": "查询账号维度待处理风险信息，包括是否为付费用户，查询攻击中、封堵中、过期资源数量等",
+      "input": "DescribePendingRiskInfoRequest",
+      "name": "查询账号维度待处理风险信息",
+      "output": "DescribePendingRiskInfoResponse"
+    },
     "DisassociateDDoSEipAddress": {
       "document": "本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。",
       "input": "DisassociateDDoSEipAddressRequest",
@@ -7451,6 +7457,68 @@
           "name": "NewAttackType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePendingRiskInfoRequest": {
+      "document": "DescribePendingRiskInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePendingRiskInfoResponse": {
+      "document": "DescribePendingRiskInfo返回参数结构体",
+      "members": [
+        {
+          "document": "是否为付费用户",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPaidUsr",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击中的资源数量",
+          "example": "10",
+          "member": "int64",
+          "name": "AttackingCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "封堵中的资源数量",
+          "example": "10",
+          "member": "int64",
+          "name": "BlockingCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已过期的资源数量",
+          "example": "10",
+          "member": "int64",
+          "name": "ExpiredCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有待处理风险事件总数",
+          "example": "30",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

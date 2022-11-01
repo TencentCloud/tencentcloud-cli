@@ -5926,6 +5926,7 @@
         {
           "default": "",
           "document": "音频片段的媒体素材来源，可以是：\n<li>点播的媒体文件 ID；</li>\n<li>其他媒体文件的下载 URL。</li>\n注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。",
+          "example": "101",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -5935,6 +5936,7 @@
         {
           "default": "",
           "document": "音频片段取自素材文件的起始时间，单位为秒。0 表示从素材开始位置截取。默认为0。",
+          "example": "1",
           "member": "float",
           "name": "SourceMediaStartTime",
           "required": false,
@@ -5944,6 +5946,7 @@
         {
           "default": "",
           "document": "音频片段的时长，单位为秒。默认和素材本身长度一致，表示截取全部素材。",
+          "example": "2",
           "member": "float",
           "name": "Duration",
           "required": false,
@@ -5952,7 +5955,18 @@
         },
         {
           "default": "",
+          "document": "音频片段目标时长，单位为秒。\n<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>\n<li>当 TargetDuration 取大于0的值时，将对音频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>",
+          "example": "2",
+          "member": "float",
+          "name": "TargetDuration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "对音频片段进行的操作，如音量调节等。",
+          "example": "无",
           "member": "AudioTransform",
           "name": "AudioOperations",
           "required": false,
@@ -27465,6 +27479,7 @@
         {
           "default": "",
           "document": "视频片段的媒体素材来源，可以是：\n<li>点播的媒体文件 ID；</li>\n<li>其他媒体文件的下载 URL。</li>\n注意：当使用其他媒体文件的下载 URL 作为素材来源，且开启了访问控制（如防盗链）时，需要在 URL 携带访问控制参数（如防盗链签名）。",
+          "example": "123",
           "member": "string",
           "name": "SourceMedia",
           "required": true,
@@ -27474,6 +27489,7 @@
         {
           "default": "",
           "document": "视频片段取自素材文件的起始时间，单位为秒。默认为0。",
+          "example": "1",
           "member": "float",
           "name": "SourceMediaStartTime",
           "required": false,
@@ -27483,6 +27499,7 @@
         {
           "default": "",
           "document": "视频片段时长，单位为秒。默认取视频素材本身长度，表示截取全部素材。如果源文件是图片，Duration需要大于0。",
+          "example": "2",
           "member": "float",
           "name": "Duration",
           "required": false,
@@ -27491,7 +27508,18 @@
         },
         {
           "default": "",
+          "document": "视频片段目标时长，单位为秒。\n<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>\n<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>",
+          "example": "2",
+          "member": "float",
+          "name": "TargetDuration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "视频原点位置，取值有：\n<li>Center：坐标原点为中心位置，如画布中心。</li>\n默认值 ：Center。",
+          "example": "Center",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -27501,6 +27529,7 @@
         {
           "default": "",
           "document": "视频片段原点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布口宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认值：0px。",
+          "example": "10%",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -27510,6 +27539,7 @@
         {
           "default": "",
           "document": "视频片段原点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认值：0px。",
+          "example": "10%",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -27519,6 +27549,7 @@
         {
           "default": "",
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "10%",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -27528,6 +27559,7 @@
         {
           "default": "",
           "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；\n</li><li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "10%",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -27536,18 +27568,20 @@
         },
         {
           "default": "",
-          "document": "对图像进行的操作，如图像旋转等。",
-          "member": "ImageTransform",
-          "name": "ImageOperations",
+          "document": "对音频进行操作，如静音等。",
+          "example": "无",
+          "member": "AudioTransform",
+          "name": "AudioOperations",
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "对音频进行操作，如静音等。",
-          "member": "AudioTransform",
-          "name": "AudioOperations",
+          "document": "对图像进行的操作，如图像旋转等。",
+          "example": "无",
+          "member": "ImageTransform",
+          "name": "ImageOperations",
           "required": false,
           "type": "list",
           "value_allowed_null": false

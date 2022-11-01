@@ -54,6 +54,12 @@
       "name": "删除审计日志文件",
       "output": "DeleteAuditLogFileResponse"
     },
+    "DeleteBackup": {
+      "document": "为集群删除手动备份，无法删除自动备份",
+      "input": "DeleteBackupRequest",
+      "name": "删除手动备份",
+      "output": "DeleteBackupResponse"
+    },
     "DescribeAccountAllGrantPrivileges": {
       "document": "账号所有权限",
       "input": "DescribeAccountAllGrantPrivilegesRequest",
@@ -3662,6 +3668,42 @@
     },
     "DeleteAuditLogFileResponse": {
       "document": "DeleteAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupRequest": {
+      "document": "DeleteBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-45knmnra",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件ID",
+          "example": "[\"4928\\r\\n\"]",
+          "member": "int64",
+          "name": "SnapshotIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupResponse": {
+      "document": "DeleteBackup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

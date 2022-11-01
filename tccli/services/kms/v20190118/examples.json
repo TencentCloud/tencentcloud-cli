@@ -43,8 +43,8 @@
     "CancelKeyDeletion": [
       {
         "document": "取消对CMK的计划删除",
-        "input": "https://kms.tencentcloudapi.com/?Action=CancelKeyDeletion\n&KeyId=\"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelKeyDeletion\n<公共请求参数>\n\n{\n    \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e8f23a7-50b2-4c8e-bd23-0a98cb643f88\",\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
         "title": "取消计划删除接口示例"
       }
     ],
@@ -137,8 +137,8 @@
     "DescribeWhiteBoxKeyDetails": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKeyDetails\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"KeyInfos\": [\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            },\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWhiteBoxKeyDetails\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"KeyInfos\": [\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            },\n            {\n                \"Status\": \"xx\",\n                \"DecryptKey\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": 1,\n                \"ResourceId\": \"xx\",\n                \"OwnerUin\": 1,\n                \"Algorithm\": \"xx\",\n                \"Alias\": \"xx\",\n                \"EncryptKey\": \"xx\",\n                \"CreateTime\": 1,\n                \"DeviceFingerprintBind\": true\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取白盒密钥列表"
       }
     ],
@@ -297,7 +297,7 @@
     "GetServiceStatus": [
       {
         "document": "查询服务状态",
-        "input": "https://kms.tencentcloudapi.com/?Action=GetServiceStatus\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServiceStatus\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"UserLevel\": 0,\n        \"ProResourceId\": \"kms_pro_12345\",\n        \"ProRenewFlag\": 1,\n        \"ProExpireTime\": 1603701385,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"ExclusiveHSMEnabled\": false,\n        \"ExclusiveVSMEnabled\": false\n    }\n}",
         "title": "查询服务状态"
       }
@@ -305,7 +305,7 @@
     "ImportKeyMaterial": [
       {
         "document": "",
-        "input": "https://kms.tencentcloudapi.com/?Action=ImportKeyMaterial\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&EncryptedKeyMaterial=dgqtAzLde+xsR5q3kwOsWu4bst7FaE4sbhhf1OHCMujhjTJTnFGEubKowVFnFC96e2vUvO5fwGvfNcPIDkg6q7iuFviM0BepCmF9Fyk3tluJVRf/Nv8FCccANXmsZDPxtSHdcD00/dQg1i2BIaLMP3/VFBDVEK7AzRhlTkrNiout4pavGSCAF+uBl2Vmnq6fF4DT37B0Q0WQ4NyfUwDCSR0VSF9vwqommhudJUhv4+21xHMgUCdbFvVoOmZP/Md5Sb4rbMbWi5qRpLusi8W3KKTyJ8onp7UC+0qi6DTw4XCq4UPniFNJXIxUOSVXpZHQKFCJXr6/cxNAci8eMTTwfA==\n&ImportToken=Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpxBApJqYG9zc37OM0Z3qT/mvLofzM3hwVJSTzIITcAo6ew3LidOJ3nwNoVNOM2wnrL+g9puwP0GpbbSwTd16X9E\n&ValidTo=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportKeyMaterial\n<公共请求参数>\n\n{\n    \"ValidTo\": \"0\",\n    \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n    \"ImportToken\": \"Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpxBApJqYG9zc37OM0Z3qT/mvLofzM3hwVJSTzIITcAo6ew3LidOJ3nwNoVNOM2wnrL+g9puwP0GpbbSwTd16X9E\",\n    \"EncryptedKeyMaterial\": \"dgqtAzLde+xsR5q3kwOsWu4bst7FaE4sbhhf1OHCMujhjTJTnFGEubKowVFnFC96e2vUvO5fwGvfNcPIDkg6q7iuFviM0BepCmF9Fyk3tluJVRf/Nv8FCccANXmsZDPxtSHdcD00/dQg1i2BIaLMP3/VFBDVEK7AzRhlTkrNiout4pavGSCAF+uBl2Vmnq6fF4DT37B0Q0WQ4NyfUwDCSR0VSF9vwqommhudJUhv4+21xHMgUCdbFvVoOmZP/Md5Sb4rbMbWi5qRpLusi8W3KKTyJ8onp7UC+0qi6DTw4XCq4UPniFNJXIxUOSVXpZHQKFCJXr6/cxNAci8eMTTwfA==\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "导入密钥材料"
       }
@@ -353,8 +353,8 @@
     "ScheduleKeyDeletion": [
       {
         "document": "指定CMK于累计7天后被删除",
-        "input": "https://kms.tencentcloudapi.com/?Action=ScheduleKeyDeletion\n&KeyId=\"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n&PendingWindowInDays=7\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DeletionDate\": 1559318399,\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScheduleKeyDeletion\n<公共请求参数>\n\n{\n    \"PendingWindowInDays\": \"7\",\n    \"KeyId\": \"\\\"23e80852-1e38-11e9-b129-5cb9019b4b01\\\"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e8f23a7-50b2-4c8e-bd23-0a98cb643f88\",\n        \"DeletionDate\": 1559318399,\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
         "title": "计划删除接口请求示例"
       }
     ],

@@ -384,6 +384,18 @@
       "name": "获取生产者信息",
       "output": "DescribePublishersResponse"
     },
+    "DescribeRabbitMQNodeList": {
+      "document": "RabbitMQ专享版查询节点列表",
+      "input": "DescribeRabbitMQNodeListRequest",
+      "name": "RabbitMQ专享版查询节点列表",
+      "output": "DescribeRabbitMQNodeListResponse"
+    },
+    "DescribeRabbitMQVipInstances": {
+      "document": "查询用户已购的RabbitMQ专享实例列表",
+      "input": "DescribeRabbitMQVipInstancesRequest",
+      "name": "查询RabbitMQ专享实例列表",
+      "output": "DescribeRabbitMQVipInstancesResponse"
+    },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",
       "input": "DescribeRocketMQClusterRequest",
@@ -6637,6 +6649,132 @@
       ],
       "type": "object"
     },
+    "DescribeRabbitMQNodeListRequest": {
+      "document": "DescribeRabbitMQNodeList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "不适用，默认参数",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页限制",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQNodeListResponse": {
+      "document": "DescribeRabbitMQNodeList返回参数结构体",
+      "members": [
+        {
+          "document": "集群列表数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RabbitMQPrivateNode",
+          "name": "NodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVipInstancesRequest": {
+      "document": "DescribeRabbitMQVipInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询数目上限，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询起始位置",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQVipInstancesResponse": {
+      "document": "DescribeRabbitMQVipInstances返回参数结构体",
+      "members": [
+        {
+          "document": "未分页的总数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例信息列表",
+          "example": "无",
+          "member": "RabbitMQVipInstance",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQClusterRequest": {
       "document": "DescribeRocketMQCluster请求参数结构体",
       "members": [
@@ -9267,6 +9405,168 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQPrivateNode": {
+      "document": "RabbitMQ节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "node-xx",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQVipInstance": {
+      "document": "RabbitMQ专享实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "amqp-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "abc",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4.9.3",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例配置规格名称",
+          "example": "基础型",
+          "member": "string",
+          "name": "ConfigDisplay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值TPS",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MaxTps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值带宽，Mbps为单位",
+          "example": "1200",
+          "member": "uint64",
+          "name": "MaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储容量，GB为单位",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间，毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0-后付费，1-预付费",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例配置ID",
+          "example": "vip-basic-1",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

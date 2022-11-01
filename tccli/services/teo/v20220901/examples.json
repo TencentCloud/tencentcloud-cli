@@ -8,14 +8,6 @@
         "title": "证书校验"
       }
     ],
-    "CreateAliasDomain": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAliasDomain\n<公共请求参数>\n\n{\n    \"TargetName\": \"aaa.example.com\",\n    \"AliasName\": \"bbb.test.com\",\n    \"CertType\": \"none\",\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AliasId\": \"alias-29j5sz41ib59\",\n        \"RequestId\": \"4dcgtb24-7dc5-46s2-9q3e-95825d53dcs3a\"\n    }\n}",
-        "title": "创建别称域名"
-      }
-    ],
     "CreateApplicationProxy": [
       {
         "document": "",
@@ -232,14 +224,6 @@
         "title": "创建站点"
       }
     ],
-    "DeleteAliasDomain": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAliasDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28569s6od5na\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"eo.example.com\"\n            ],\n            \"Name\": \"alias-name\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28ec90d3-7af9-460c-bb1a-dd9cf4d8c785\"\n    }\n}",
-        "title": "删除别称域名"
-      }
-    ],
     "DeleteApplicationProxy": [
       {
         "document": "",
@@ -310,14 +294,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddableEntityList\n<公共请求参数>\n\n{\n    \"EntityType\": \"domain\",\n    \"ZoneId\": \"zone-28v4ag8bprrm\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EntityList\": [\n            \"sub.example.com\"\n        ],\n        \"RequestId\": \"8fbf8770-6bc2-48e1-a544-bf06eb8481e6\"\n    }\n}",
         "title": "查询剩余可添加的四层代理列表"
-      }
-    ],
-    "DescribeAliasDomains": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAliasDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28569s6od5na\",\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"bbb.test.com\"\n            ],\n            \"Name\": \"alias-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"5ce6ee51-cda5-4e0d-a338-cff57a00bb3a\",\n        \"AliasDomains\": [\n            {\n                \"Status\": \"pending\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"TargetName\": \"aaa.example.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ZoneId\": \"zone-28569s6od5na\",\n                \"AliasName\": \"bbb.test.com\",\n                \"AliasId\": \"alias-29j5sz41ib59\",\n                \"TargetForbid\": false,\n                \"ForbidMode\": 0\n            }\n        ]\n    }\n}",
-        "title": "查询别称域名信息列表"
       }
     ],
     "DescribeApplicationProxies": [
@@ -902,22 +878,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmDefaultThreshold\n<公共请求参数>\n\n{\n    \"Threshold\": 100,\n    \"ServiceType\": \"ddos\",\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"46c32ba8-06d8-447e-a8e2-c39619535723\"\n    }\n}",
         "title": "修改告警服务默认阈值"
-      }
-    ],
-    "ModifyAliasDomain": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAliasDomain\n<公共请求参数>\n\n{\n    \"TargetName\": \"bbb.example.com\",\n    \"AliasId\": \"alias-29j5sz41ib59\",\n    \"CertType\": \"none\",\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d1efe51-b951-498e-9b10-755906835e87\"\n    }\n}",
-        "title": "修改别称域名"
-      }
-    ],
-    "ModifyAliasDomainStatus": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAliasDomainStatus\n<公共请求参数>\n\n{\n    \"Paused\": true,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"eo.example.com\"\n            ],\n            \"Name\": \"alias-name\"\n        }\n    ],\n    \"ZoneId\": \"zone-28569s6od5na\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"114327ee-463c-4ee4-83f6-82e9a44bd81d\"\n    }\n}",
-        "title": "修改别称域名状态"
       }
     ],
     "ModifyApplicationProxy": [

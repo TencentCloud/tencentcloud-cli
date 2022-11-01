@@ -16533,6 +16533,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "未处理恶意外连事件",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandledMaliciousConnectionEventCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未处理k8sApi事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandledK8sApiEventCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -30187,6 +30205,32 @@
       ],
       "usage": "out"
     },
+    "RaspInfo": {
+      "document": "漏洞防御插件 rasp信息",
+      "members": [
+        {
+          "default": "",
+          "document": "rasp名称",
+          "example": "Gadget",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "rasp  描述",
+          "example": "CommonsCollections",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RegionInfo": {
       "document": "地域信息",
       "members": [
@@ -32120,7 +32164,7 @@
         },
         {
           "default": "",
-          "document": "事件类型：\nET_ESCAPE : 容器逃逸\nET_REVERSE_SHELL: 反弹shell\nET_RISK_SYSCALL:高危系统调用\nET_ABNORMAL_PROCESS: 异常进程\nET_ACCESS_CONTROL 文件篡改",
+          "document": "事件类型：\nET_ESCAPE : 容器逃逸\nET_REVERSE_SHELL: 反弹shell\nET_RISK_SYSCALL:高危系统调用\nET_ABNORMAL_PROCESS: 异常进程\nET_ACCESS_CONTROL 文件篡改\nET_VIRUS 木马事件\nET_MALICIOUS_CONNECTION 恶意外连事件",
           "example": "xxx",
           "member": "string",
           "name": "EventType",
@@ -34483,6 +34527,16 @@
           "name": "JNDIUrl",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rasp detail\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RaspInfo",
+          "name": "RaspDetail",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
