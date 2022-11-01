@@ -172,6 +172,14 @@
         "title": "修改证书所属项目"
       }
     ],
+    "ModifyCertificatesExpiringNotificationSwitch": [
+      {
+        "document": "修改是否忽略证书到期通知",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCertificatesExpiringNotificationSwitch\n<公共请求参数>\n\n{\n    \"SwitchStatus\": 1,\n    \"CertificateIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"CertificateIds\": [\n            \"xx\"\n        ]\n    }\n}",
+        "title": "修改是否忽略证书到期通知"
+      }
+    ],
     "ReplaceCertificate": [
       {
         "document": "",

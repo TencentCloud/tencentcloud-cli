@@ -72,6 +72,12 @@
       "name": "安全验证码获取用户注册所有APPId和应用名称",
       "output": "DescribeCaptchaUserAllAppIdResponse"
     },
+    "GetTicketStatistics": {
+      "document": "查询单个验证的统计数据，包括：票据校验量、票据校验通过量、票据校验拦截量。",
+      "input": "GetTicketStatisticsRequest",
+      "name": "查询单个票据校验统计",
+      "output": "GetTicketStatisticsResponse"
+    },
     "GetTotalTicketStatistics": {
       "document": "查询所有验证的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。",
       "input": "GetTotalTicketStatisticsRequest",
@@ -1661,6 +1667,87 @@
           "name": "CaptchaMsg",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTicketStatisticsRequest": {
+      "document": "GetTicketStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码appid",
+          "example": "\"19901111\"",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间字符串",
+          "example": "\"2022-05-14 01:00\"",
+          "member": "string",
+          "name": "StartTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间字符串",
+          "example": "\"2022-06-15 20:00\"",
+          "member": "string",
+          "name": "EndTimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询粒度",
+          "example": "\"3\"",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTicketStatisticsResponse": {
+      "document": "GetTicketStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "查询后数据块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ActionTotal\":155,\"VerifyTotal\":32}",
+          "member": "CaptchaStatisticObj",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "验证码返回码",
+          "example": "11000",
+          "member": "int64",
+          "name": "CaptchaCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证码返回信息",
+          "example": "\"success\"",
+          "member": "string",
+          "name": "CaptchaMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

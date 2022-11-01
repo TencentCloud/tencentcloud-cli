@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tcr DescribeInstanceAllNamespaces --cli-unfold-argument ```
+tccli tcr DescribeInstanceAllNamespaces --cli-unfold-argument  \
+    --Limit 20 \
+    --Offset 0
+```
 
 Output: 
 ```

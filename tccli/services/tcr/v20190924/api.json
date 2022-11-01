@@ -379,7 +379,7 @@
       "output": "DescribeInstanceAllResponse"
     },
     "DescribeInstanceAllNamespaces": {
-      "document": "查询所有有实例命名空间列表",
+      "document": "查询所有实例命名空间列表",
       "input": "DescribeInstanceAllNamespacesRequest",
       "name": "查询所有实例命名空间",
       "output": "DescribeInstanceAllNamespacesResponse"
@@ -3872,7 +3872,26 @@
     },
     "DescribeInstanceAllNamespacesRequest": {
       "document": "DescribeInstanceAllNamespaces请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "每页个数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始偏移位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeInstanceAllNamespacesResponse": {

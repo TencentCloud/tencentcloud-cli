@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cloudhsm InquiryPriceBuyVsm --cli-unfold-argument  \
-    --GoodsNum 1 \
     --PayMode 1 \
-    --TimeSpan 1 \
     --TimeUnit y \
-    --Type CREATE
+    --Type CREATE \
+    --GoodsNum 1 \
+    --TimeSpan 1
 ```
 
 Output: 

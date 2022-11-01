@@ -590,7 +590,7 @@
         },
         {
           "default": "",
-          "document": "资源类型 取值范围doc,docx,html之一",
+          "document": "资源类型 取值范围doc,docx,html,excel之一",
           "example": "无",
           "member": "string",
           "name": "ResourceType",
@@ -905,7 +905,7 @@
         },
         {
           "default": "",
-          "document": "企业内部审核结果\nPASS: 通过\nREJECT: 拒绝",
+          "document": "企业内部审核结果\nPASS: 通过\nREJECT: 拒绝\nSIGN_REJECT:拒签(流程结束)",
           "example": "xxx",
           "member": "string",
           "name": "ReviewType",
@@ -1328,7 +1328,7 @@
       "members": [
         {
           "default": "",
-          "document": "控件编号\n\n注：\n当GenerateMode=3时，通过\"^\"来决定是否使用关键字整词匹配能力。\n例：\n当GenerateMode=3时，如果传入关键字\"^甲方签署^\"，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方进行对应操作。\n如传入的关键字为\"甲方签署\"，则PDF文件中每个出现关键字的位置都会执行相应操作。\n\n创建控件时，此值为空\n查询时返回完整结构",
+          "document": "控件编号\n\nCreateFlowByTemplates发起合同时优先以ComponentId（不为空）填充；否则以ComponentName填充\n\n注：\n当GenerateMode=3时，通过\"^\"来决定是否使用关键字整词匹配能力。\n例：\n当GenerateMode=3时，如果传入关键字\"^甲方签署^\"，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方进行对应操作。\n如传入的关键字为\"甲方签署\"，则PDF文件中每个出现关键字的位置都会执行相应操作。\n\n创建控件时，此值为空\n查询时返回完整结构",
           "example": "ComponentId",
           "member": "string",
           "name": "ComponentId",
@@ -4413,7 +4413,7 @@
         },
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf .doc .docx .html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "document": "文件对应业务类型\n1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

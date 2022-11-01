@@ -299,6 +299,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人个性化能力值",
+          "example": "无",
+          "member": "ApproverOption",
+          "name": "ApproverOption",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -790,7 +800,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源类型 取值范围doc,docx,html之一",
+          "document": "资源类型 取值范围doc,docx,html,excel之一",
           "example": "无",
           "member": "string",
           "name": "ResourceType",
@@ -1141,6 +1151,15 @@
         },
         {
           "default": "",
+          "document": "用户自定义字段，回调的时候会进行透传，长度需要小于20480",
+          "example": "无",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "应用号信息",
           "example": "无",
           "member": "Agent",
@@ -1294,7 +1313,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480",
+          "document": "用户自定义字段，回调的时候会进行透传，长度需要小于20480",
           "example": "无",
           "member": "string",
           "name": "UserData",
@@ -3968,7 +3987,7 @@
       "members": [
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf .doc .docx .html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
+          "document": "文件对应业务类型\n1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

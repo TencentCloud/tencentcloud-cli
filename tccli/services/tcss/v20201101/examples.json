@@ -348,6 +348,14 @@
         "title": "创建刷新任务示例"
       }
     ],
+    "CreateRiskDnsEventExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRiskDnsEventExportJob\n<公共请求参数>\n\n{\n    \"Order\": \"xx\",\n    \"Limit\": 10000,\n    \"By\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"JobId\": \"xx\"\n    }\n}",
+        "title": "创建恶意请求事件导出任务"
+      }
+    ],
     "CreateSearchTemplate": [
       {
         "document": "",

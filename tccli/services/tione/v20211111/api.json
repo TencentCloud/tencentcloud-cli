@@ -12,6 +12,12 @@
       "name": "创建数据集",
       "output": "CreateDatasetResponse"
     },
+    "CreateModelService": {
+      "document": "用于创建、发布一个新的模型服务",
+      "input": "CreateModelServiceRequest",
+      "name": "创建模型服务",
+      "output": "CreateModelServiceResponse"
+    },
     "CreateTrainingModel": {
       "document": "导入模型",
       "input": "CreateTrainingModelRequest",
@@ -36,6 +42,18 @@
       "name": "删除数据集",
       "output": "DeleteDatasetResponse"
     },
+    "DeleteModelService": {
+      "document": "根据服务id删除模型服务",
+      "input": "DeleteModelServiceRequest",
+      "name": "删除模型服务",
+      "output": "DeleteModelServiceResponse"
+    },
+    "DeleteModelServiceGroup": {
+      "document": "根据服务组id删除服务组下所有模型服务",
+      "input": "DeleteModelServiceGroupRequest",
+      "name": "删除模型服务组",
+      "output": "DeleteModelServiceGroupResponse"
+    },
     "DeleteTrainingModel": {
       "document": "删除模型",
       "input": "DeleteTrainingModelRequest",
@@ -53,6 +71,12 @@
       "input": "DeleteTrainingTaskRequest",
       "name": "删除训练任务",
       "output": "DeleteTrainingTaskResponse"
+    },
+    "DescribeAPIConfigs": {
+      "document": "列举API",
+      "input": "DescribeAPIConfigsRequest",
+      "name": "列举API",
+      "output": "DescribeAPIConfigsResponse"
     },
     "DescribeBatchTask": {
       "document": "查询跑批任务",
@@ -126,6 +150,48 @@
       "name": "获取日志",
       "output": "DescribeLogsResponse"
     },
+    "DescribeModelService": {
+      "document": "查询单个服务",
+      "input": "DescribeModelServiceRequest",
+      "name": "查询单个服务",
+      "output": "DescribeModelServiceResponse"
+    },
+    "DescribeModelServiceCallInfo": {
+      "document": "展示服务的调用信息",
+      "input": "DescribeModelServiceCallInfoRequest",
+      "name": "展示服务的调用信息",
+      "output": "DescribeModelServiceCallInfoResponse"
+    },
+    "DescribeModelServiceGroup": {
+      "document": "查询单个服务组",
+      "input": "DescribeModelServiceGroupRequest",
+      "name": "查询单个服务组",
+      "output": "DescribeModelServiceGroupResponse"
+    },
+    "DescribeModelServiceGroups": {
+      "document": "列举在线推理服务组",
+      "input": "DescribeModelServiceGroupsRequest",
+      "name": "列举在线推理服务组",
+      "output": "DescribeModelServiceGroupsResponse"
+    },
+    "DescribeModelServiceHistory": {
+      "document": "展示服务的历史版本",
+      "input": "DescribeModelServiceHistoryRequest",
+      "name": "展示服务的历史版本",
+      "output": "DescribeModelServiceHistoryResponse"
+    },
+    "DescribeModelServiceHotUpdated": {
+      "document": "用于查询模型服务能否开启热更新",
+      "input": "DescribeModelServiceHotUpdatedRequest",
+      "name": "查询模型服务能否开启热更新",
+      "output": "DescribeModelServiceHotUpdatedResponse"
+    },
+    "DescribeModelServices": {
+      "document": "查询多个服务",
+      "input": "DescribeModelServicesRequest",
+      "name": "查询多个服务",
+      "output": "DescribeModelServicesResponse"
+    },
     "DescribeTrainingFrameworks": {
       "document": "训练框架列表",
       "input": "DescribeTrainingFrameworksRequest",
@@ -174,6 +240,12 @@
       "name": "模型训练任务列表",
       "output": "DescribeTrainingTasksResponse"
     },
+    "ModifyServiceGroupWeights": {
+      "document": "更新推理服务组流量分配",
+      "input": "ModifyServiceGroupWeightsRequest",
+      "name": "更新推理服务组流量分配",
+      "output": "ModifyServiceGroupWeightsResponse"
+    },
     "PushTrainingMetrics": {
       "document": "上报训练自定义指标",
       "input": "PushTrainingMetricsRequest",
@@ -206,6 +278,132 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "APIConfigDetail": {
+      "document": "接口描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "接口id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接口所属服务组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接口描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个接口",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "相对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
+          "member": "string",
+          "name": "RelativeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务类型 HTTP HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GET POST\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POST",
+          "member": "string",
+          "name": "HttpMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "HttpInputExample",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回包示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "HttpOutputExample",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新成员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "333",
+          "member": "string",
+          "name": "UpdatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-10 8:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "333",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子账号subuin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "333",
+          "member": "string",
+          "name": "SubUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BatchTaskDetail": {
       "document": "跑批任务详情",
       "members": [
@@ -1151,6 +1349,267 @@
       ],
       "type": "object"
     },
+    "CreateModelServiceRequest": {
+      "document": "CreateModelService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "新增版本时需要填写",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "不超过60个字，仅支持英文、数字、下划线\"_\"、短横\"-\"，只能以英文、数字开头",
+          "example": "test-myname",
+          "member": "string",
+          "name": "ServiceGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型服务的描述",
+          "example": "这是一个用于测试的模型服务",
+          "member": "string",
+          "name": "ServiceDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费模式下所属的资源组id，同服务组下唯一",
+          "example": "ins-ttttt",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型信息，需要挂载模型时填写",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境变量，可选参数，用于配置容器中的环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "Resources",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:\nTI.S.MEDIUM.POST\t2C4G\nTI.S.LARGE.POST\t4C8G\nTI.S.2XLARGE16.POST\t8C16G\nTI.S.2XLARGE32.POST\t8C32G\nTI.S.4XLARGE32.POST\t16C32G\nTI.S.4XLARGE64.POST\t16C64G\nTI.S.6XLARGE48.POST\t24C48G\nTI.S.6XLARGE96.POST\t24C96G\nTI.S.8XLARGE64.POST\t32C64G\nTI.S.8XLARGE128.POST 32C128G\nTI.GN7.LARGE20.POST\t4C20G T4*1/4\nTI.GN7.2XLARGE40.POST\t10C40G T4*1/2\nTI.GN7.2XLARGE32.POST\t8C32G T4*1\nTI.GN7.5XLARGE80.POST\t20C80G T4*1\nTI.GN7.8XLARGE128.POST\t32C128G T4*1\nTI.GN7.10XLARGE160.POST\t40C160G T4*2\nTI.GN7.20XLARGE320.POST\t80C320G T4*4",
+          "example": "TI.S.MEDIUM.POS",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩缩容类型 支持：自动 - \"AUTO\", 手动 - \"MANUAL\",默认为MANUAL",
+          "example": "AUTO",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量, 不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动伸缩信息",
+          "example": "无",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启日志投递，开启后需填写配置投递到指定cls",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "日志配置，需要投递服务日志到指定cls时填写",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权",
+          "example": "true",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "腾讯云标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否新增版本",
+          "example": "true",
+          "member": "bool",
+          "name": "NewVersion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "定时任务配置，使用定时策略时填写",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩",
+          "example": "HPA",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "HybridBillingPrepaidReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]",
+          "example": "AUTO_ML",
+          "member": "string",
+          "name": "CreateSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启模型的热更新。默认不开启",
+          "example": "false",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "定时停止配置",
+          "example": "无",
+          "member": "ScheduledAction",
+          "name": "ScheduledAction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "挂载配置，目前只支持CFS",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMount",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "服务限速限流相关配置",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelServiceResponse": {
+      "document": "CreateModelService返回参数结构体",
+      "members": [
+        {
+          "document": "生成的模型服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTrainingModelRequest": {
       "document": "CreateTrainingModel请求参数结构体",
       "members": [
@@ -1426,15 +1885,6 @@
         },
         {
           "default": "",
-          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
-          "example": "PS_WORKER",
-          "member": "string",
-          "name": "TrainingMode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费",
           "example": "PREPAID",
           "member": "string",
@@ -1459,6 +1909,15 @@
           "name": "CodePackagePath",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
+          "example": "PS_WORKER",
+          "member": "string",
+          "name": "TrainingMode",
+          "required": true,
+          "type": "string"
         },
         {
           "default": "",
@@ -1489,10 +1948,19 @@
         },
         {
           "default": "",
-          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
-          "example": "1.12",
+          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9",
+          "example": "1.15",
           "member": "string",
           "name": "FrameworkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
+          "example": "tf1.15-py3.7-cpu",
+          "member": "string",
+          "name": "FrameworkEnvironment",
           "required": false,
           "type": "string"
         },
@@ -1531,15 +1999,6 @@
           "name": "StartCmdInfo",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "数据来源，eg：DATASET、COS、CFS、HDFS",
-          "example": "DATASET",
-          "member": "string",
-          "name": "DataSource",
-          "required": false,
-          "type": "string"
         },
         {
           "default": "",
@@ -1592,6 +2051,15 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据来源，eg：DATASET、COS、CFS、HDFS",
+          "example": "DATASET",
+          "member": "string",
+          "name": "DataSource",
           "required": false,
           "type": "string"
         }
@@ -1650,6 +2118,72 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CronScaleJob": {
+      "document": "定时扩缩任务",
+      "members": [
+        {
+          "default": "",
+          "document": "Cron表达式，标识任务的执行时间，精确到分钟级",
+          "example": "\"0 30 12 * * *\"",
+          "member": "string",
+          "name": "Schedule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定时任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "job-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标min\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标max\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "例外时间，Cron表达式，在对应时间内不执行任务。最多支持3条。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"0 30 12 * * *\"]",
+          "member": "string",
+          "name": "ExcludeDates",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2375,6 +2909,60 @@
       ],
       "type": "object"
     },
+    "DeleteModelServiceGroupRequest": {
+      "document": "DeleteModelServiceGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelServiceGroupResponse": {
+      "document": "DeleteModelServiceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelServiceRequest": {
+      "document": "DeleteModelService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelServiceResponse": {
+      "document": "DeleteModelService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTrainingModelRequest": {
       "document": "DeleteTrainingModel请求参数结构体",
       "members": [
@@ -2474,6 +3062,87 @@
     "DeleteTrainingTaskResponse": {
       "document": "DeleteTrainingTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAPIConfigsRequest": {
+      "document": "DescribeAPIConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，支持的分页过滤Name包括：\n[\"ClusterId\", \"ServiceId\", \"ServiceGroupName\", \"ServiceGroupId\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAPIConfigsResponse": {
+      "document": "DescribeAPIConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "接口数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "接口详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "APIConfigDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3337,6 +4006,393 @@
       ],
       "type": "object"
     },
+    "DescribeModelServiceCallInfoRequest": {
+      "document": "DescribeModelServiceCallInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务组id",
+          "example": "ms-xy123",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceCallInfoResponse": {
+      "document": "DescribeModelServiceCallInfo返回参数结构体",
+      "members": [
+        {
+          "document": "服务调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceCallInfo",
+          "name": "ServiceCallInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "升级网关调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InferGatewayCallInfo",
+          "name": "InferGatewayCallInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceGroupRequest": {
+      "document": "DescribeModelServiceGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "ms-xyz122",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceGroupResponse": {
+      "document": "DescribeModelServiceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "服务组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGroup",
+          "name": "ServiceGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceGroupsRequest": {
+      "document": "DescribeModelServiceGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，支持的分页过滤Name包括：\n[\"ClusterId\", \"ServiceId\", \"ServiceGroupName\", \"ServiceGroupId\",\"Status\",\"CreatedBy\",\"ModelVersionId\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤参数",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceGroupsResponse": {
+      "document": "DescribeModelServiceGroups返回参数结构体",
+      "members": [
+        {
+          "document": "推理服务组数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGroup",
+          "name": "ServiceGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceHistoryRequest": {
+      "document": "DescribeModelServiceHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务Id",
+          "example": "ms-xyz11",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceHistoryResponse": {
+      "document": "DescribeModelServiceHistory返回参数结构体",
+      "members": [
+        {
+          "document": "历史版本总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceHistory",
+          "name": "ServiceHistory",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceHotUpdatedRequest": {
+      "document": "DescribeModelServiceHotUpdated请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模型信息，需要挂载模型时填写",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "挂载信息",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMount",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceHotUpdatedResponse": {
+      "document": "DescribeModelServiceHotUpdated返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceRequest": {
+      "document": "DescribeModelService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-xyz11",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceResponse": {
+      "document": "DescribeModelService返回参数结构体",
+      "members": [
+        {
+          "document": "服务信息",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServicesRequest": {
+      "document": "DescribeModelServices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，支持的分页过滤Name包括：\n[\"ClusterId\", \"ServiceId\", \"ServiceGroupName\", \"ServiceGroupId\",\"Status\",\"CreatedBy\",\"ModelId\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤参数",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServicesResponse": {
+      "document": "DescribeModelServices返回参数结构体",
+      "members": [
+        {
+          "document": "服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Service",
+          "name": "Services",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrainingFrameworksRequest": {
       "document": "DescribeTrainingFrameworks请求参数结构体",
       "members": [],
@@ -3786,6 +4842,32 @@
       ],
       "usage": "out"
     },
+    "EnvVar": {
+      "document": "环境变量",
+      "members": [
+        {
+          "default": "",
+          "document": "环境变量key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEST",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境变量value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEST",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -4040,7 +5122,7 @@
         {
           "default": "",
           "document": "框架版本",
-          "example": "1.15-py3.6-cuda10.0-gpu",
+          "example": "1.15",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -4055,6 +5137,16 @@
           "name": "TrainingModes",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "框架运行环境",
+          "example": "tf2.4-py3.8-cpu",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4158,6 +5250,42 @@
       ],
       "usage": "both"
     },
+    "HorizontalPodAutoscaler": {
+      "document": "hpa的描述",
+      "members": [
+        {
+          "default": "",
+          "document": "最小实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩缩容指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"gpu-util\": {0, 100}",
+          "member": "Option",
+          "name": "HpaMetrics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageInfo": {
       "document": "镜像描述信息",
       "members": [
@@ -4203,6 +5331,62 @@
         }
       ],
       "usage": "both"
+    },
+    "InferGatewayCallInfo": {
+      "document": "服务的调用信息，服务组下唯一",
+      "members": [
+        {
+          "default": "",
+          "document": "内网http调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "VpcHttpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网https调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "VpcHttpsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网grpc调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "VpcGrpcTlsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可访问的vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后端ip对应的子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InferTemplate": {
       "document": "推理镜像详情",
@@ -4616,6 +5800,51 @@
       ],
       "usage": "both"
     },
+    "ModifyServiceGroupWeightsRequest": {
+      "document": "ModifyServiceGroupWeights请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务组id",
+          "example": "ms-xyz123",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权重设置",
+          "example": "无",
+          "member": "WeightEntry",
+          "name": "Weights",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceGroupWeightsResponse": {
+      "document": "ModifyServiceGroupWeights返回参数结构体",
+      "members": [
+        {
+          "document": "更新权重后的服务组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGroup",
+          "name": "ServiceGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OcrLabelInfo": {
       "document": "OCR场景标签列表",
       "members": [
@@ -4691,6 +5920,32 @@
         }
       ],
       "usage": "out"
+    },
+    "Option": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "gpu-util",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值",
+          "example": "{0,100}",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PointInfo": {
       "document": "点信息描述",
@@ -4952,7 +6207,7 @@
         },
         {
           "default": "",
-          "document": "Gpu卡型号 T4或者V100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
           "member": "string",
           "name": "GpuType",
@@ -4968,6 +6223,16 @@
           "name": "RealGpu",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "GpuDetail",
+          "name": "RealGpuDetailSet",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5014,6 +6279,32 @@
         }
       ],
       "usage": "out"
+    },
+    "ScheduledAction": {
+      "document": "定时的事务和行为",
+      "members": [
+        {
+          "default": "",
+          "document": "是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效",
+          "example": "True",
+          "member": "bool",
+          "name": "ScheduleStop",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "要执行定时停止的时间，格式：“2022-01-26 19:46:22”",
+          "example": "2022-01-26 19:46:22",
+          "member": "string",
+          "name": "ScheduleStopTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SchemaInfo": {
       "document": "表格数据集表头信息",
@@ -5086,6 +6377,782 @@
         }
       ],
       "usage": "out"
+    },
+    "Service": {
+      "document": "描述在线服务",
+      "members": [
+        {
+          "default": "",
+          "document": "服务组id",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务组名",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-sssss",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "infer-eeeee",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PRE_PAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rr-sssss",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1541252152",
+          "member": "string",
+          "name": "CreatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1541252152",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1541252152",
+          "member": "string",
+          "name": "SubUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "app_id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1541252152",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组下服务的最高版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LatestVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ServiceInfo",
+          "name": "ServiceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CREATING",
+          "member": "string",
+          "name": "BusinessStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的创建来源 AUTO_ML,DEFAULT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO_ML",
+          "member": "string",
+          "name": "CreateSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模型服务计费中：1.2元/小时",
+          "member": "string",
+          "name": "BillingInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "// CREATING 创建中 \t//CREATE_FAILED 创建失败 \t//NORMAL\t正常运行中 \t//STOPPED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务所在的 ingress 的 name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "my-ingress",
+          "member": "string",
+          "name": "IngressName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ScheduledAction",
+          "name": "ScheduledAction",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceCallInfo": {
+      "document": "服务的调用信息，服务组下唯一",
+      "members": [
+        {
+          "default": "",
+          "document": "服务组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-ttt",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网http调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "InnerHttpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网https调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "InnerHttpsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网http调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "OuterHttpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网https调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "OuterHttpsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "AppKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用secret\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "AppSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceGroup": {
+      "document": "在线服务一个服务组的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务组id",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务组名",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者",
+          "example": "222222",
+          "member": "string",
+          "name": "CreatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-09-02T21:32:06+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-09-02T21:32:06+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号",
+          "example": "555555",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务组下服务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组下在运行的服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunningServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "Service",
+          "name": "Services",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组状态，与服务一致\n CREATING 创建中\n     CREATE_FAILED 创建失败\n     Normal\t正常运行中\n     Stopped  已停止\n     Stopping 停止中\n     Abnormal 异常\n     Pending 启动中\n     Waiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组下最高版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "LatestVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的业务状态\nCREATING 创建中\n     CREATE_FAILED 创建失败\n     ARREARS_STOP 因欠费被强制停止\n     BILLING 计费中\n     WHITELIST_USING 白名单试用中\n     WHITELIST_STOP 白名单额度不足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ARREARS_STOP",
+          "member": "string",
+          "name": "BusinessStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的计费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2 元/小时",
+          "member": "string",
+          "name": "BillingInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的创建来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "CreateSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组的权重更新状态 \nUPDATING 更新中\n     UPDATED 更新成功\n     UPDATE_FAILED 更新失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UPDATING",
+          "member": "string",
+          "name": "WeightUpdateStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceHistory": {
+      "document": "服务历史版本",
+      "members": [
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12",
+          "member": "string",
+          "name": "Revision",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-21",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com/demo/demo:1.0",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image.file",
+          "member": "string",
+          "name": "ModelFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "原始yaml文件",
+          "member": "string",
+          "name": "RawData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceInfo": {
+      "document": "推理服务在集群中的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "期望运行的Pod数量，停止状态是0\n不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{name: \"k\", value: \"v\"}",
+          "member": "EnvVar",
+          "name": "Env",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ResourceInfo",
+          "name": "Resources",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费实例对应的机型规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TI.S.MEDIUM.POS",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "hpa配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "WorkloadStatus",
+          "name": "Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sss",
+          "member": "string",
+          "name": "PodList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ResourceInfo",
+          "name": "ResourceTotal",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "历史实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OldReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HybridBillingPrepaidReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "历史 HYBRID_PAID 时的实例数，用户恢复服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OldHybridBillingPrepaidReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启模型的热更新。默认不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceLimit": {
+      "document": "服务的限流限速等配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效",
+          "example": "True",
+          "member": "bool",
+          "name": "EnableInstanceRpsLimit",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每个服务实例的 request per second 限速, 0 为不限流",
+          "example": "300",
+          "member": "int64",
+          "name": "InstanceRpsLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Spec": {
       "document": "计费项内容",
@@ -5247,6 +7314,62 @@
         }
       ],
       "type": "object"
+    },
+    "StatefulSetCondition": {
+      "document": "实例状况",
+      "members": [
+        {
+          "default": "",
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Status of the condition, one of True, False, Unknown.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Ready",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次更新的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-02T13:32:06Z",
+          "member": "string",
+          "name": "LastTransitionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StopBatchTaskRequest": {
       "document": "StopBatchTask请求参数结构体",
@@ -6048,10 +8171,10 @@
         },
         {
           "default": "",
-          "document": "训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "框架运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tf2.4-py3.8-cpu",
           "member": "string",
-          "name": "TrainingMode",
+          "name": "FrameworkEnvironment",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6098,12 +8221,12 @@
         },
         {
           "default": "",
-          "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "ImageInfo",
-          "name": "ImageInfo",
+          "member": "string",
+          "name": "TrainingMode",
           "required": true,
-          "type": "object",
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -6208,13 +8331,13 @@
         },
         {
           "default": "",
-          "document": "任务状态",
+          "document": "自定义镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "string",
-          "name": "Status",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -6345,6 +8468,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6394,10 +8527,10 @@
         },
         {
           "default": "",
-          "document": "训练模式eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "PS_WORKER",
+          "document": "框架运行环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tf2.4-py3.8-cpu",
           "member": "string",
-          "name": "TrainingMode",
+          "name": "FrameworkEnvironment",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6444,12 +8577,12 @@
         },
         {
           "default": "",
-          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
-          "member": "Tag",
-          "name": "Tags",
+          "document": "训练模式eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PS_WORKER",
+          "member": "string",
+          "name": "TrainingMode",
           "required": true,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -6571,9 +8704,147 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "VolumeMount": {
+      "document": "外部挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cfs的配置信息",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载源类型",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeightEntry": {
+      "document": "服务的权重",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-xy1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量权重值，同 ServiceGroup 下 总和应为 100",
+          "example": "50",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkloadStatus": {
+      "document": "工作负载的状态",
+      "members": [
+        {
+          "default": "",
+          "document": "当前实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新的实例数",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdatedReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "就绪的实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "ReadyReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用的实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "AvailableReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不可用的实例数",
+          "example": "0",
+          "member": "int64",
+          "name": "UnavailableReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Normal\t正常运行中\nAbnormal\t服务异常，例如容器启动失败等\nWaiting\t服务等待中，例如容器下载镜像过程等\nStopped   已停止 \nPending 启动中\nStopping 停止中",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载的状况信息",
+          "example": "{}",
+          "member": "StatefulSetCondition",
+          "name": "StatefulSetCondition",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

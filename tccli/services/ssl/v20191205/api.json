@@ -120,6 +120,12 @@
       "name": "修改证书所属项目",
       "output": "ModifyCertificateProjectResponse"
     },
+    "ModifyCertificatesExpiringNotificationSwitch": {
+      "document": "修改忽略证书到期通知。打开或关闭证书到期通知。",
+      "input": "ModifyCertificatesExpiringNotificationSwitchRequest",
+      "name": "修改是否忽略证书到期通知",
+      "output": "ModifyCertificatesExpiringNotificationSwitchResponse"
+    },
     "ReplaceCertificate": {
       "document": "本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发，并且目前仅支持1次重颁发。",
       "input": "ReplaceCertificateRequest",
@@ -2978,6 +2984,51 @@
           "name": "FailCertificates",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificatesExpiringNotificationSwitchRequest": {
+      "document": "ModifyCertificatesExpiringNotificationSwitch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID列表。最多50个",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0:不忽略通知。1:忽略通知",
+          "example": "0:不忽略通知。1:忽略通知",
+          "member": "uint64",
+          "name": "SwitchStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificatesExpiringNotificationSwitchResponse": {
+      "document": "ModifyCertificatesExpiringNotificationSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "证书ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

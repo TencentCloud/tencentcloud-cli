@@ -85,3 +85,46 @@ Output:
 }
 ```
 
+**Example 2: 样例**
+
+
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --UserData 字符串 \
+    --FlowName 字符串 \
+    --FlowDescription 字符串 \
+    --NeedPreview false \
+    --FlowType 字符串 \
+    --Approvers.0.ApproverMobile 15912345678 \
+    --Approvers.0.SignComponents.0.ComponentWidth 50 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentName 字符串 \
+    --Approvers.0.SignComponents.0.OffsetX 11 \
+    --Approvers.0.SignComponents.0.OffsetY 11 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 50 \
+    --Approvers.0.SignComponents.0.ComponentPosY 50 \
+    --Approvers.0.SignComponents.0.ComponentId 字符串 \
+    --Approvers.0.SignComponents.0.ComponentHeight 50 \
+    --Approvers.0.ApproverName 张三 \
+    --Approvers.0.ApproverType 1 \
+    --Approvers.0.NotifyType NONE \
+    --Operator.UserId yDRtRUUgygqa2mtyUuO4zjEyckqC592v \
+    --FileIds yDRI5UUgygsupv5oUuO4zjEESmE4Ip0s
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDRsDUUgyg1aczxtUuNAW8Cx4WsAiEB5",
+        "PreviewUrl": "",
+        "RequestId": "43b9474a-c909-4d89-aa7b-3632f02fa8a4"
+    }
+}
+```
+

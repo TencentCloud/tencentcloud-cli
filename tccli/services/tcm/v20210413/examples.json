@@ -56,6 +56,14 @@
         "title": "ModifyMesh"
       }
     ],
+    "ModifyTracingConfig": [
+      {
+        "document": "",
+        "input": "https://tcm.tencentcloudapi.com/?Action=ModifyTracingConfig\n&MeshId=\"mesh-xxx\"\n&Enable=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改 Tracing 配置"
+      }
+    ],
     "UnlinkCluster": [
       {
         "document": "",

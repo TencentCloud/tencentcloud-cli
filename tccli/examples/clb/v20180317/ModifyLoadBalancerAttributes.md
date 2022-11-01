@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb ModifyLoadBalancerAttributes --cli-unfold-argument  \
-    --LoadBalancerId lb-6efswuxa \
-    --LoadBalancerName newlbname
+    --LoadBalancerName newlbname \
+    --LoadBalancerId lb-6efswuxa
 ```
 
 Output: 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli clb ModifyLoadBalancerAttributes --cli-unfold-argument  \
-    --LoadBalancerId lb-6efswuxa \
     --TargetRegionInfo.Region ap-shanghai \
-    --TargetRegionInfo.VpcId vpc-abcd1234
+    --TargetRegionInfo.VpcId vpc-abcd1234 \
+    --LoadBalancerId lb-6efswuxa
 ```
 
 Output: 

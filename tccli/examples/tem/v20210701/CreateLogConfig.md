@@ -7,7 +7,6 @@ Input:
 ```
 tccli tem CreateLogConfig --cli-unfold-argument  \
     --TopicId xx \
-    --BeginningRegex xx \
     --Name xx \
     --EnvironmentId xx \
     --LogPath xx \
@@ -15,7 +14,9 @@ tccli tem CreateLogConfig --cli-unfold-argument  \
     --LogType xx \
     --FilePattern xx \
     --ApplicationId xx \
-    --LogsetId xx
+    --LogsetId xx \
+    --ExtractRule.BeginningRegex xxx \
+    --ExtractRule.Keys xxx
 ```
 
 Output: 

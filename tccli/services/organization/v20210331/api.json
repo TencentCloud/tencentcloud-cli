@@ -229,6 +229,15 @@
           "name": "IdentityRoleID",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主体关系ID",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthRelationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

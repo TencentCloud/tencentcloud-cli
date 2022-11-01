@@ -900,7 +900,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "商品的时间大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "TimeSpan",
@@ -909,7 +909,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "商品的时间单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品的时间单位，m表示月，y表示年\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",

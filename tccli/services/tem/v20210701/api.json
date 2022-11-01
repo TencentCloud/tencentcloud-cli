@@ -1171,6 +1171,15 @@
           "name": "FilePattern",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出规则",
+          "example": "{}",
+          "member": "LogConfigExtractRule",
+          "name": "ExtractRule",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4441,7 +4450,7 @@
         },
         {
           "default": "",
-          "document": "日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；",
+          "document": "日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；",
           "example": "xxx",
           "member": "string",
           "name": "LogType",
@@ -4451,7 +4460,7 @@
         },
         {
           "default": "",
-          "document": "首行正则表达式，当LogType=multiline_log 时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首行正则表达式，当 LogType 为多行全文、多行正则时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "BeginningRegex",
@@ -4518,9 +4527,115 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导出规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "LogConfigExtractRule",
+          "name": "ExtractRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "LogConfigExtractRule": {
+      "document": "日志采集的导出规则配置",
+      "members": [
+        {
+          "default": "",
+          "document": "首行正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "BeginningRegex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提取结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1\", \"k2\"]",
+          "member": "string",
+          "name": "Keys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过滤键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k1\"]",
+          "member": "string",
+          "name": "FilterKeys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"v1*\"]",
+          "member": "string",
+          "name": "FilterRegex",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "LogRegex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "time",
+          "member": "string",
+          "name": "TimeKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "%Y-%m-%d %H:%M:%S",
+          "member": "string",
+          "name": "TimeFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否上传解析失败日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "UnMatchUpload",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析失败日志的键名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LogParseFailure",
+          "member": "string",
+          "name": "UnMatchedKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "LogConfigListPage": {
       "document": "LogConfig 列表结果",
