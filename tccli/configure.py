@@ -351,7 +351,7 @@ class ConfigureCommand(BasicConfigure):
 
         config = {
             OptionsDefine.Region: "ap-guangzhou",
-            OptionsDefine.Output: "json",
+            OptionsDefine.Output: "json"
         }
 
         cred = {
