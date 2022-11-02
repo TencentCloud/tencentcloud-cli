@@ -24,7 +24,9 @@ class BasicConfigure(BasicCommand):
     def __init__(self):
         super(BasicConfigure, self).__init__()
         self.config_list = [
-            OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings]
+            OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings,
+            OptionsDefine.Language
+        ]
         self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
                           OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
@@ -101,6 +103,7 @@ class ConfigureListCommand(BasicConfigure):
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
+               "language = zh-CN\n" \
                "cvm.version = 2017-03-12\n" \
                "cvm.endpoint = cvm.tencentcloudapi.com\n" \
                "...\n" \
@@ -146,12 +149,13 @@ class ConfigureListCommand(BasicConfigure):
 
 class ConfigureSetCommand(BasicConfigure):
     NAME = 'set'
-    DESCRIPTION = 'set your profile(eg:secretId, secretKey, region, output).'
+    DESCRIPTION = 'set your profile(eg:secretId, secretKey, region, output, language).'
     USEAGE = 'tccli configure set [CONFIG] [--profile profile-name]'
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
+                      "language: TCCLI output language[zh-CN, en-US]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
                       "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
     EXAMPLES = "$ tccli configure set secretId ******\n" \
@@ -198,6 +202,9 @@ class ConfigureSetCommand(BasicConfigure):
                 if varname == OptionsDefine.Output and value not in ['json', 'text', 'table']:
                     print('Output format must be json, text or table. Set as default: json')
                     config[varname] = 'json'
+                elif varname == OptionsDefine.Language and value not in ['zh-CN', 'en-US']:
+                    print('Language must be zh-CN or en-US. Set as default: zh-CN')
+                    config[varname] = 'zh-CN'
                 else:
                     config[varname] = value
             else:
@@ -217,6 +224,7 @@ class ConfigureGetCommand(BasicConfigure):
                       "secretKey: TencentCloud API SecretKey\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
+                      "language: TCCLI output language[zh-CN, en-US]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
                       "[cvm, cbs ...].endpoint: service [cvm cbs ...] access point domain name"
     EXAMPLES = "$ tccli configure get region\n" \
