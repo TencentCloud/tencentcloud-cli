@@ -21,6 +21,7 @@ CliInputJson = "cli-input-json"
 CliUnfoldArgument = "cli-unfold-argument"
 Waiter = "waiter"
 WaiterInfo = "waiter_info"
+Language = "language"
 
 ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
 ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
@@ -38,7 +39,7 @@ CliVersion = "version"
 Detail = "detail"
 
 
-ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, RoleArn, RoleSessionName, UseCVMRole, Region, Endpoint, Version,
+ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, RoleArn, RoleSessionName, UseCVMRole, Region, Endpoint, Version, Language,
                      Filter, Profile, Timeout, Output, HttpsProxy, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument, Waiter]
 
 

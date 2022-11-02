@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import six
 import copy
 import json
 from tccli.utils import Utils
@@ -53,6 +54,7 @@ HELPER_MAP = {
     "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
                 "`expr` is the inquiry expresion, `to` is the ending status"
                 ".`timeout` and `interval` are optional params.",
+    "--language": "specify an output language, valid choices: [zh-CN, en-US], default value: zh-CN",
 }
 
 class Loader(object):
@@ -158,8 +160,14 @@ class Loader(object):
             },
             'waiter': {
                 'help': HELPER_MAP['--waiter'],
-            }
-
+            },
+            "language": {
+                'help': HELPER_MAP['--language'],
+                "choices": [
+                    "zh-CN",
+                    "en-US"
+                ],
+            },
         }
 
     def _version_transform(self, version):
@@ -178,8 +186,12 @@ class Loader(object):
         if not os.path.exists(apis_path):
             raise Exception("Not find service:%s version:%s model" % (service, version))
 
-        with open(apis_path, 'r') as f:
-            return json.load(f)
+        if six.PY2:
+            with open(apis_path, 'r') as f:
+                return json.load(f)
+        else:
+            with open(apis_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
 
     def get_service_description(self, service, version):
         service_model = self.get_service_model(service, version)
