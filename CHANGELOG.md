@@ -1,3 +1,187 @@
+# Release 3.0.639.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 20 次发布
+
+发布时间：2022-11-03 06:04:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [RunAutomationServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/377/20453#RunAutomationServiceEnabled)
+
+修改数据结构：
+
+* [EnhancedService](http://document.tencentcloudapi.woa.com/document/product/377/20453#EnhancedService)
+
+	* 新增成员：AutomationService
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 4 次发布
+
+发布时间：2022-11-03 06:15:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1492/74773)
+
+	* 新增入参：TagFilters
+
+* [DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1492/74779)
+
+	* 新增入参：TagFilters
+
+
+新增数据结构：
+
+* [TagFilter](http://document.tencentcloudapi.woa.com/document/product/1492/74806#TagFilter)
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 11 次发布
+
+发布时间：2022-11-03 06:20:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyRoomInfo
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 4 次发布
+
+发布时间：2022-11-03 06:22:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudStorage](http://document.tencentcloudapi.woa.com/document/product/1131/75376)
+
+	* 新增入参：PackageQueue
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 11 次发布
+
+发布时间：2022-11-03 06:26:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37608)
+
+	* 新增入参：Format
+
+* [ModifyImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37590)
+
+	* 新增入参：Format
+
+
+新增数据结构：
+
+* [AiRecognitionTaskTransTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextResult)
+* [AiRecognitionTaskTransTextResultInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextResultInput)
+* [AiRecognitionTaskTransTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextResultOutput)
+* [AiRecognitionTaskTransTextSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextSegmentItem)
+* [LiveStreamTransTextRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTransTextRecognitionResult)
+* [SubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleTemplate)
+
+修改数据结构：
+
+* [AiRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionResult)
+
+	* 新增成员：TransTextTask
+
+* [ImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageSpriteTemplate)
+
+	* 新增成员：Format
+
+* [LiveStreamAiRecognitionResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiRecognitionResultItem)
+
+	* 新增成员：TransTextRecognitionResultSet
+
+* [OverrideTranscodeParameter](http://document.tencentcloudapi.woa.com/document/product/862/37615#OverrideTranscodeParameter)
+
+	* 新增成员：SubtitleTemplate
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 16 次发布
+
+发布时间：2022-11-03 06:29:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetEmailTemplate](http://document.tencentcloudapi.woa.com/document/product/1288/51040)
+
+	* 新增出参：TemplateName
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 43 次发布
+
+发布时间：2022-11-03 06:37:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyAddressAttribute](http://document.tencentcloudapi.woa.com/document/product/215/16704)
+
+	* 新增入参：AntiDDoSPackageId
+
+
+
+
 # Release 3.0.638.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

@@ -11,7 +11,7 @@ tccli mps ModifyTranscodeTemplate --cli-unfold-argument  \
     --VideoTemplate.Codec libx264 \
     --VideoTemplate.Bitrate 256 \
     --VideoTemplate.Fps 60 \
-    --AudioTemplate.SampleRate 200 \
+    --AudioTemplate.SampleRate 48000 \
     --AudioTemplate.Codec libfdk_aac \
     --AudioTemplate.Bitrate 200
 ```

@@ -8,11 +8,11 @@ Input:
 tccli mps ModifySampleSnapshotTemplate --cli-unfold-argument  \
     --Definition 10001 \
     --Name 采样截图模板1 \
-    --Width 540 \
-    --Height 960 \
+    --Format jpg \
     --SampleType Percent \
-    --SampleInterval 10 \
-    --Format jpg
+    --Height 960 \
+    --Width 540 \
+    --SampleInterval 10
 ```
 
 Output: 

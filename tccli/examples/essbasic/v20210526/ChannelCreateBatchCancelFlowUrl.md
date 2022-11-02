@@ -10,11 +10,6 @@ tccli essbasic ChannelCreateBatchCancelFlowUrl --cli-unfold-argument  \
     --Agent.ProxyAppId xx \
     --Agent.ProxyOrganizationOpenId xx \
     --Agent.ProxyOperator.OpenId xx \
-    --Agent.ProxyOperator.ClientIp xx \
-    --Agent.ProxyOperator.CustomUserId xx \
-    --Agent.ProxyOperator.ProxyIp xx \
-    --Agent.ProxyOperator.Channel xx \
-    --Agent.ProxyOrganizationId xx \
     --Agent.AppId xx \
     --FlowIds 
 ```
@@ -24,10 +19,7 @@ Output:
 {
     "Response": {
         "BatchCancelFlowUrl": "url",
-        "FailMessages": [
-            "",
-            ""
-        ],
+        "FailMessages": [],
         "UrlExpireOn": "",
         "RequestId": "xx"
     }

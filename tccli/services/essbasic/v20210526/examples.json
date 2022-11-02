@@ -3,15 +3,9 @@
     "ChannelBatchCancelFlows": [
       {
         "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"AppId\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [\n            \"\",\n            \"\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"xxx\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xxx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xxx\"\n        },\n        \"AppId\": \"xxx\",\n        \"ProxyOrganizationOpenId\": \"xxx\"\n    },\n    \"CancelMessage\": \"撤销测试\",\n    \"CancelMessageFormat\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"c5e01d20-xxxxxx09d3d32b00\"\n    }\n}",
         "title": "电子签渠道版-根据签署流程id批量撤销合同"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"xxx\",\n        \"ClientIp\": \"xx\",\n        \"CustomUserId\": \"xx\",\n        \"ProxyIp\": \"xxx\",\n        \"Channel\": \"xxx\"\n    },\n    \"FlowIds\": [\n        \"xxx\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xxx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xxx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xxx\"\n        },\n        \"AppId\": \"xxx\",\n        \"ProxyOrganizationOpenId\": \"xxx\",\n        \"ProxyOrganizationId\": \"xxx\"\n    },\n    \"CancelMessage\": \"撤销测试\",\n    \"CancelMessageFormat\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"c5e01d20-8d10-49f9-9512-d209d3d32b00\"\n    }\n}",
-        "title": "测试"
       }
     ],
     "ChannelCancelFlow": [
@@ -23,8 +17,8 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"字符串\",\n        \"ClientIp\": \"字符串\",\n        \"CustomUserId\": \"字符串\",\n        \"ProxyIp\": \"字符串\",\n        \"Channel\": \"字符串\"\n    },\n    \"FlowId\": \"字符串\",\n    \"Agent\": {\n        \"ProxyAppId\": \"字符串\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"字符串\",\n            \"ClientIp\": \"字符串\",\n            \"CustomUserId\": \"字符串\",\n            \"ProxyIp\": \"字符串\",\n            \"Channel\": \"字符串\"\n        },\n        \"AppId\": \"字符串\",\n        \"ProxyOrganizationOpenId\": \"字符串\",\n        \"ProxyOrganizationId\": \"字符串\"\n    },\n    \"CancelMessage\": \"字符串\",\n    \"CancelMessageFormat\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b39b29f-aca1-419d-9120-cd5b3e308b91\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelFlow\n<公共请求参数>\n\n{\n    \"FlowId\": \"字符串\",\n    \"Agent\": {\n        \"ProxyAppId\": \"字符串\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"字符串\"\n        },\n        \"AppId\": \"字符串\",\n        \"ProxyOrganizationOpenId\": \"字符串\"\n    },\n    \"CancelMessage\": \"字符串\",\n    \"CancelMessageFormat\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b39b29f-xxxxxx308b91\"\n    }\n}",
         "title": "测试"
       }
     ],
@@ -39,8 +33,8 @@
     "ChannelCreateBatchCancelFlowUrl": [
       {
         "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"url\",\n        \"FailMessages\": [\n            \"\",\n            \"\"\n        ],\n        \"UrlExpireOn\": \"\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"AppId\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"url\",\n        \"FailMessages\": [],\n        \"UrlExpireOn\": \"\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "电子签渠道版-根据签署流程id创建批量撤回url"
       }
     ],

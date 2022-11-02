@@ -79,7 +79,7 @@
     "CreateImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateImageSpriteTemplate\n&Name=雪碧图模板1\n&Width=54\n&Height=96\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"96\",\n    \"Width\": \"54\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建雪碧图模板"
       }
@@ -95,7 +95,7 @@
     "CreateSampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateSampleSnapshotTemplate\n&Name=采样截图模板1\n&Width=540\n&Height=960\n&SampleType=Percent\n&SampleInterval=10\n&Format=jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSampleSnapshotTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"采样截图模板1\",\n    \"Format\": \"jpg\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"960\",\n    \"Width\": \"540\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建采样截图模板"
       }
@@ -103,7 +103,7 @@
     "CreateSnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateSnapshotByTimeOffsetTemplate\n&Name=指定时间点截图模板1\n&Width=540\n&Height=960\n&Format=jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshotByTimeOffsetTemplate\n<公共请求参数>\n\n{\n    \"Width\": \"540\",\n    \"Format\": \"jpg\",\n    \"Name\": \"指定时间点截图模板1\",\n    \"Height\": \"960\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定时间点截图模板"
       }
@@ -111,7 +111,7 @@
     "CreateTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscodeTemplate\n<公共请求参数>\n\n{\n    \"RemoveVideo\": \"0\",\n    \"Container\": \"mp4\",\n    \"Name\": \"转码模板1\",\n    \"AudioTemplate\": {\n        \"SampleRate\": \"200\",\n        \"Codec\": \"libfdk_aac\",\n        \"Bitrate\": \"200\"\n    },\n    \"VideoTemplate\": {\n        \"Codec\": \"libx264\",\n        \"Bitrate\": \"256\",\n        \"Fps\": \"45\"\n    },\n    \"RemoveAudio\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscodeTemplate\n<公共请求参数>\n\n{\n    \"RemoveVideo\": 0,\n    \"Container\": \"mp4\",\n    \"Name\": \"test\",\n    \"AudioTemplate\": {\n        \"SampleRate\": 44100,\n        \"Codec\": \"libfdk_aac\",\n        \"Bitrate\": 200\n    },\n    \"VideoTemplate\": {\n        \"Codec\": \"libx264\",\n        \"Bitrate\": 256,\n        \"Fps\": 45\n    },\n    \"RemoveAudio\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转码模板"
       }
@@ -533,7 +533,7 @@
     "ModifyImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\n&Definition=10001\n&Name=雪碧图模板1\n&Width=54\n&Height=96\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Definition\": \"10001\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"96\",\n    \"Width\": \"54\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改雪碧图模板"
       }
@@ -567,7 +567,7 @@
     "ModifySampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\n&Definition=10001\n&Name=采样截图模板1\n&Width=540\n&Height=960\n&SampleType=Percent\n&SampleInterval=10\n&Format=jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySampleSnapshotTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"10001\",\n    \"Name\": \"采样截图模板1\",\n    \"Format\": \"jpg\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"960\",\n    \"Width\": \"540\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改采样截图模板"
       }
@@ -575,7 +575,7 @@
     "ModifySnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\n&Definition=10001\n&Name=指定时间点截图模板1\n&Width=540\n&Height=960\n&Format=jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotByTimeOffsetTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"10001\",\n    \"Format\": \"jpg\",\n    \"Height\": \"960\",\n    \"Name\": \"指定时间点截图模板1\",\n    \"Width\": \"540\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改指定时间点截图模板"
       }
@@ -583,7 +583,7 @@
     "ModifyTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"1008\",\n    \"Container\": \"mp4\",\n    \"VideoTemplate\": {\n        \"Codec\": \"libx264\",\n        \"Bitrate\": \"256\",\n        \"Fps\": \"60\"\n    },\n    \"AudioTemplate\": {\n        \"SampleRate\": \"200\",\n        \"Codec\": \"libfdk_aac\",\n        \"Bitrate\": \"200\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 1008,\n    \"Container\": \"mp4\",\n    \"VideoTemplate\": {\n        \"Codec\": \"libx264\",\n        \"Bitrate\": 256,\n        \"Fps\": 60\n    },\n    \"AudioTemplate\": {\n        \"SampleRate\": 48000,\n        \"Codec\": \"libfdk_aac\",\n        \"Bitrate\": 200\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转码模板"
       }

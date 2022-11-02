@@ -27667,6 +27667,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "高防包ID。创建高防EIP时，会回调该接口关联高防包。",
+          "example": "bgp-000000ys",
+          "member": "string",
+          "name": "AntiDDoSPackageId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"

@@ -7,10 +7,10 @@ Input:
 ```
 tccli mps ModifySnapshotByTimeOffsetTemplate --cli-unfold-argument  \
     --Definition 10001 \
-    --Name 指定时间点截图模板1 \
-    --Width 540 \
+    --Format jpg \
     --Height 960 \
-    --Format jpg
+    --Name 指定时间点截图模板1 \
+    --Width 540
 ```
 
 Output: 
