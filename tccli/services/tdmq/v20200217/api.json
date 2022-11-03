@@ -312,6 +312,12 @@
       "name": "枚举cmq死信队列源队列",
       "output": "DescribeCmqDeadLetterSourceQueuesResponse"
     },
+    "DescribeCmqExclusiveInstances": {
+      "document": "查询专享实例列表",
+      "input": "DescribeCmqExclusiveInstancesRequest",
+      "name": "查询专享实例列表",
+      "output": "DescribeCmqExclusiveInstancesResponse"
+    },
     "DescribeCmqQueueDetail": {
       "document": "查询cmq队列详情",
       "input": "DescribeCmqQueueDetailRequest",
@@ -5779,6 +5785,74 @@
       ],
       "type": "object"
     },
+    "DescribeCmqExclusiveInstancesRequest": {
+      "document": "DescribeCmqExclusiveInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页查询，limit",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "分页查询，offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "专享实例过滤，支持实例id 实例名称",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCmqExclusiveInstancesResponse": {
+      "document": "DescribeCmqExclusiveInstances返回参数结构体",
+      "members": [
+        {
+          "document": "专享实例总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "专享实例列表信息",
+          "example": "无",
+          "member": "InstanceListInfo",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCmqQueueDetailRequest": {
       "document": "DescribeCmqQueueDetail请求参数结构体",
       "members": [
@@ -7877,6 +7951,78 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceListInfo": {
+      "document": "专享实例列表",
+      "members": [
+        {
+          "default": "",
+          "document": "专享实例id",
+          "example": "InstanceId-uansitah",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享实例name",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享实例描述",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享实例规格",
+          "example": "basic",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享实例状态，枚举如下\n\"Creating\"  // 创建中\n\"CreateFailed\" // 创建失败 \n\"Running\" // 运行中\n\"Deleting\" // 销毁中\n\"Deleted\" // 销毁完成\n\"DeletFailed\" // 销毁失败",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享实例创建时间",
+          "example": "\"2018-10-30T04:24:19Z\"",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "InternalTenant": {
       "document": "面向运营端的虚拟集群信息",

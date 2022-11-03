@@ -4061,16 +4061,18 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "标识是fair还是capacity",
+          "document": "取值范围：\n<li>fair:代表公平调度标识</li>\n<li>capacity:代表容量调度标识</li>",
           "example": "fair",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4085,7 +4087,8 @@
           "name": "IsDraft",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "扩展字段，暂时没用\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4094,7 +4097,8 @@
           "name": "ErrorMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

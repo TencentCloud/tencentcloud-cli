@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 智能识别模板 \
     --Comment 模板2 \
     --FaceConfigure.Switch ON \
+    --FaceConfigure.Score 90 \
     --FaceConfigure.FaceLibrary Default \
-    --FaceConfigure.Score 90
+    --Name 智能识别模板
 ```
 
 Output: 
@@ -31,10 +31,10 @@ Input:
 
 ```
 tccli mps CreateAIRecognitionTemplate --cli-unfold-argument  \
-    --Name 智能识别模板 \
     --Comment 模板3 \
     --FaceConfigure.Switch ON \
-    --FaceConfigure.FaceLibrary All
+    --FaceConfigure.FaceLibrary All \
+    --Name 智能识别模板
 ```
 
 Output: 

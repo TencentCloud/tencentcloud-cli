@@ -1,3 +1,170 @@
+# Release 3.0.640.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 13 次发布
+
+发布时间：2022-11-04 06:07:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76503)
+* [DeleteAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76502)
+* [UpdateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76501)
+
+新增数据结构：
+
+* [AccessKeyDetail](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccessKeyDetail)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 37 次发布
+
+发布时间：2022-11-04 06:15:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateScanMalwareSetting](http://document.tencentcloudapi.woa.com/document/product/296/58241)
+
+	* 新增入参：EnableMemShellScan
+
+* [DescribeMalwareRiskWarning](http://document.tencentcloudapi.woa.com/document/product/296/60929)
+
+	* 新增出参：ProcessList
+
+* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
+
+	* 新增出参：EnableMemShellScan
+
+* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
+
+	* 新增入参：EnableMemShellScan
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 23 次发布
+
+发布时间：2022-11-04 06:18:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76504)
+
+修改数据结构：
+
+* [ZonesInfo](http://document.tencentcloudapi.woa.com/document/product/557/16142#ZonesInfo)
+
+	* 新增成员：OnSale
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 21 次发布
+
+发布时间：2022-11-04 06:21:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增入参：ApproverVerifyType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 22 次发布
+
+发布时间：2022-11-04 06:27:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/76505)
+
+修改数据结构：
+
+* [ZonesInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#ZonesInfo)
+
+	* 新增成员：OnSale
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 11 次发布
+
+发布时间：2022-11-04 06:31:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
+
+	* 新增成员：AppId
+
+* [ScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ScriptInfo)
+
+	* 新增成员：FileId
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 23 次发布
+
+发布时间：2022-11-04 06:37:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCmqExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76507)
+
+新增数据结构：
+
+* [InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo)
+
+
+
 # Release 3.0.639.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

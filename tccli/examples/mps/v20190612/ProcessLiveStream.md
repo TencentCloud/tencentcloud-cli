@@ -7,10 +7,10 @@ Input:
 ```
 tccli mps ProcessLiveStream --cli-unfold-argument  \
     --Url http://www.abc.com/abc.m3u8 \
-    --TaskNotifyConfig.CmqModel Queue \
+    --AiRecognitionTask.Definition 10 \
     --TaskNotifyConfig.CmqRegion gz \
-    --TaskNotifyConfig.QueueName queue-125717729292 \
-    --AiRecognitionTask.Definition 10
+    --TaskNotifyConfig.CmqModel Queue \
+    --TaskNotifyConfig.QueueName queue-125717729292
 ```
 
 Output: 
