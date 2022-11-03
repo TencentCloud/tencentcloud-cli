@@ -150,14 +150,6 @@
         "title": "修改自学习模型状态"
       }
     ],
-    "ModifyRoomInfo": [
-      {
-        "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=ModifyRoomInfo\n&SdkAppId=1400000000\n&RoomId=88888\n&OperationType=301\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
-        "title": "修改房间信息"
-      }
-    ],
     "ModifyUserMicStatus": [
       {
         "document": "",

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mps CreateImageSpriteTemplate --cli-unfold-argument  \
+    --ColumnCount 10 \
     --Name 雪碧图模板1 \
-    --Width 54 \
-    --Height 96 \
-    --SampleType Percent \
-    --SampleInterval 10 \
     --RowCount 5 \
-    --ColumnCount 10
+    --SampleType Percent \
+    --Height 96 \
+    --Width 54 \
+    --SampleInterval 10
 ```
 
 Output: 

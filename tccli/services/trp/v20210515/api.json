@@ -12,6 +12,12 @@
       "name": "生成普通码包",
       "output": "CreateCodePackResponse"
     },
+    "CreateCorporationOrder": {
+      "document": "以订单方式新建企业信息/配额信息",
+      "input": "CreateCorporationOrderRequest",
+      "name": "以订单方式新建企业",
+      "output": "CreateCorporationOrderResponse"
+    },
     "CreateCustomPack": {
       "document": "生成自定义码包",
       "input": "CreateCustomPackRequest",
@@ -920,6 +926,114 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorporationOrderRequest": {
+      "document": "CreateCorporationOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业名称",
+          "example": "安心",
+          "member": "string",
+          "name": "CorpName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所有者ID",
+          "example": "1000",
+          "member": "string",
+          "name": "Owner",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "溯源码额度",
+          "example": "100000",
+          "member": "uint64",
+          "name": "CodeQuota",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "额度过期时间",
+          "example": "2021-05-05 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "金额",
+          "example": "10000",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系电话",
+          "example": "13912345678",
+          "member": "string",
+          "name": "ContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "张三创建企业",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCorporationOrderResponse": {
+      "document": "CreateCorporationOrder返回参数结构体",
+      "members": [
+        {
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

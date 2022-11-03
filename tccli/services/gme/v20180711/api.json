@@ -108,12 +108,6 @@
       "name": "修改语音消息转文本自学习模型状态",
       "output": "ModifyCustomizationStateResponse"
     },
-    "ModifyRoomInfo": {
-      "document": "修改房间信息",
-      "input": "ModifyRoomInfoRequest",
-      "name": "修改房间信息",
-      "output": "ModifyRoomInfoResponse"
-    },
     "ModifyUserMicStatus": {
       "document": "修改用户麦克风状态。",
       "input": "ModifyUserMicStatusRequest",
@@ -1838,69 +1832,6 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoomInfoRequest": {
-      "document": "ModifyRoomInfo请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
-          "example": "123456",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "房间id",
-          "example": "8888",
-          "member": "uint64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "301 启动推流\n302 停止推流\n303 重置RTMP连接",
-          "example": "301",
-          "member": "int64",
-          "name": "OperationType",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoomInfoResponse": {
-      "document": "ModifyRoomInfo返回参数结构体",
-      "members": [
-        {
-          "document": "操作结果, 0成功, 非0失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Result",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "err",
-          "member": "string",
-          "name": "ErrMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

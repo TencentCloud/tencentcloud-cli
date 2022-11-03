@@ -1598,6 +1598,7 @@
         {
           "default": "",
           "document": "视频内容审核模板 ID。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -1612,7 +1613,8 @@
       "members": [
         {
           "default": "",
-          "document": "任务的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>",
+          "document": "任务的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>",
+          "example": "FaceRecognition",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1622,6 +1624,7 @@
         {
           "default": "",
           "document": "人脸识别结果，当 Type 为 \n FaceRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskFaceResult",
           "name": "FaceTask",
           "required": true,
@@ -1631,6 +1634,7 @@
         {
           "default": "",
           "document": "语音关键词识别结果，当 Type 为\n AsrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResult",
           "name": "AsrWordsTask",
           "required": true,
@@ -1640,6 +1644,7 @@
         {
           "default": "",
           "document": "语音全文识别结果，当 Type 为\n AsrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResult",
           "name": "AsrFullTextTask",
           "required": true,
@@ -1649,6 +1654,7 @@
         {
           "default": "",
           "document": "文本关键词识别结果，当 Type 为\n OcrWordsRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResult",
           "name": "OcrWordsTask",
           "required": true,
@@ -1658,8 +1664,19 @@
         {
           "default": "",
           "document": "文本全文识别结果，当 Type 为\n OcrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResult",
           "name": "OcrFullTextTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "翻译结果，当 Type 为\n TransTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskTransTextResult",
+          "name": "TransTextTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -2256,6 +2273,7 @@
         {
           "default": "",
           "document": "视频智能识别模板 ID 。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -2584,6 +2602,180 @@
           "name": "AreaCoordSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskTransTextResult": {
+      "document": "翻译结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "NULL",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译任务输入信息。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskTransTextResultInput",
+          "name": "Input",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskTransTextResultOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskTransTextResultInput": {
+      "document": "翻译的输入。",
+      "members": [
+        {
+          "default": "",
+          "document": "翻译模板 ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskTransTextResultOutput": {
+      "document": "翻译结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "翻译片段列表。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskTransTextSegmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕文件地址。",
+          "example": "/xx.webvtt",
+          "member": "string",
+          "name": "SubtitlePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕文件存储位置。",
+          "example": "NULL",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskTransTextSegmentItem": {
+      "document": "翻译片段。",
+      "members": [
+        {
+          "default": "",
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "100",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别片段起始的偏移时间，单位：秒。",
+          "example": "17.45",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别片段终止的偏移时间，单位：秒。",
+          "example": "29.99",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别文本。",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译文本。",
+          "example": "Hello",
+          "member": "string",
+          "name": "Trans",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4338,6 +4530,7 @@
         {
           "default": "",
           "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
+          "example": "libfdk_aac",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -4347,6 +4540,7 @@
         {
           "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "0",
           "member": "uint64",
           "name": "Bitrate",
           "required": true,
@@ -4356,6 +4550,7 @@
         {
           "default": "",
           "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
           "required": true,
@@ -4365,6 +4560,7 @@
         {
           "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
+          "example": "2",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
@@ -4380,6 +4576,7 @@
         {
           "default": "",
           "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
+          "example": "libmp3lame",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -4389,6 +4586,7 @@
         {
           "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "0",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
@@ -4398,6 +4596,7 @@
         {
           "default": "",
           "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
           "required": false,
@@ -4407,6 +4606,7 @@
         {
           "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
+          "example": "2",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
@@ -5255,6 +5455,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片格式，取值为 jpg、png、webp。默认为 jpg。",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5411,7 +5620,7 @@
         },
         {
           "default": "",
-          "document": "图片格式，取值为 jpg 和 png。默认为 jpg。",
+          "document": "图片格式，取值为 jpg、png、webp。默认为 jpg。",
           "example": "jpg",
           "member": "string",
           "name": "Format",
@@ -5501,7 +5710,7 @@
         },
         {
           "default": "",
-          "document": "图片格式，取值可以为 jpg 和 png。默认为 jpg。",
+          "document": "图片格式，取值可以为 jpg、png、webp。默认为 jpg。",
           "example": "jpg",
           "member": "string",
           "name": "Format",
@@ -8217,6 +8426,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "0",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -8226,6 +8436,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8235,6 +8446,7 @@
         {
           "default": "",
           "document": "雪碧图模板名称。",
+          "example": "“”",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8244,6 +8456,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -8253,6 +8466,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -8262,6 +8476,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "“”",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -8271,6 +8486,7 @@
         {
           "default": "",
           "document": "采样类型。",
+          "example": "“”",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -8280,6 +8496,7 @@
         {
           "default": "",
           "document": "采样间隔。",
+          "example": "0",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -8289,6 +8506,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的行数。",
+          "example": "0",
           "member": "uint64",
           "name": "RowCount",
           "required": true,
@@ -8298,6 +8516,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的列数。",
+          "example": "0",
           "member": "uint64",
           "name": "ColumnCount",
           "required": true,
@@ -8307,6 +8526,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8316,6 +8536,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -8325,6 +8546,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
+          "example": "“”",
           "member": "string",
           "name": "FillType",
           "required": true,
@@ -8334,8 +8556,19 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "“”",
           "member": "string",
           "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片格式。",
+          "example": "“”",
+          "member": "string",
+          "name": "Format",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8489,7 +8722,8 @@
       "members": [
         {
           "default": "",
-          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>",
+          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>",
+          "example": "FaceRecognition",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8499,6 +8733,7 @@
         {
           "default": "",
           "document": "人脸识别结果，当 Type 为\nFaceRecognition 时有效。",
+          "example": "NULL",
           "member": "LiveStreamFaceRecognitionResult",
           "name": "FaceRecognitionResultSet",
           "required": true,
@@ -8508,6 +8743,7 @@
         {
           "default": "",
           "document": "语音关键词识别结果，当 Type 为\nAsrWordsRecognition 时有效。",
+          "example": "NULL",
           "member": "LiveStreamAsrWordsRecognitionResult",
           "name": "AsrWordsRecognitionResultSet",
           "required": true,
@@ -8517,6 +8753,7 @@
         {
           "default": "",
           "document": "文本关键词识别结果，当 Type 为\nOcrWordsRecognition 时有效。",
+          "example": "NULL",
           "member": "LiveStreamOcrWordsRecognitionResult",
           "name": "OcrWordsRecognitionResultSet",
           "required": true,
@@ -8526,6 +8763,7 @@
         {
           "default": "",
           "document": "语音全文识别结果，当 Type 为\nAsrFullTextRecognition 时有效。",
+          "example": "NULL",
           "member": "LiveStreamAsrFullTextRecognitionResult",
           "name": "AsrFullTextRecognitionResultSet",
           "required": true,
@@ -8535,8 +8773,19 @@
         {
           "default": "",
           "document": "文本全文识别结果，当 Type 为\nOcrFullTextRecognition 时有效。",
+          "example": "NULL",
           "member": "LiveStreamOcrFullTextRecognitionResult",
           "name": "OcrFullTextRecognitionResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译结果，当Type 为 TransTextRecognition 时有效。",
+          "example": "NULL",
+          "member": "LiveStreamTransTextRecognitionResult",
+          "name": "TransTextRecognitionResultSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9307,6 +9556,62 @@
         }
       ],
       "usage": "both"
+    },
+    "LiveStreamTransTextRecognitionResult": {
+      "document": "直播实时翻译结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别文本。",
+          "example": "Hello",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译片段起始的 PTS 时间，单位：秒。",
+          "example": "0.0",
+          "member": "float",
+          "name": "StartPtsTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译片段终止的 PTS 时间，单位：秒。",
+          "example": "1.0",
+          "member": "float",
+          "name": "EndPtsTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译片段置信度。取值：0~100。",
+          "example": "99",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译文本。",
+          "example": "你好",
+          "member": "string",
+          "name": "Trans",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LowLightEnhanceConfig": {
       "document": "低光照增强配置",
@@ -11590,6 +11895,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片格式，取值可以为 jpg、png、webp。",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11754,7 +12068,7 @@
         },
         {
           "default": "",
-          "document": "图片格式，取值为 jpg 和 png。",
+          "document": "图片格式，取值为 jpg、png、webp。",
           "example": "jpg",
           "member": "string",
           "name": "Format",
@@ -11844,7 +12158,7 @@
         },
         {
           "default": "",
-          "document": "图片格式，取值可以为 jpg 和 png。",
+          "document": "图片格式，取值可以为 jpg、png、webp。",
           "example": "jpg",
           "member": "string",
           "name": "Format",
@@ -12347,6 +12661,7 @@
         {
           "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": false,
@@ -12356,6 +12671,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveVideo",
           "required": false,
@@ -12365,6 +12681,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "RemoveAudio",
           "required": false,
@@ -12374,6 +12691,7 @@
         {
           "default": "",
           "document": "视频流配置参数。",
+          "example": "NULL",
           "member": "VideoTemplateInfoForUpdate",
           "name": "VideoTemplate",
           "required": false,
@@ -12383,6 +12701,7 @@
         {
           "default": "",
           "document": "音频流配置参数。",
+          "example": "NULL",
           "member": "AudioTemplateInfoForUpdate",
           "name": "AudioTemplate",
           "required": false,
@@ -12392,8 +12711,19 @@
         {
           "default": "",
           "document": "极速高清转码参数。",
+          "example": "NULL",
           "member": "TEHDConfigForUpdate",
           "name": "TEHDConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字幕流配置参数。",
+          "example": "NULL",
+          "member": "SubtitleTemplate",
+          "name": "SubtitleTemplate",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -13350,7 +13680,7 @@
         },
         {
           "default": "",
-          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。\n注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
+          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
           "example": "无",
           "member": "int64",
           "name": "ScheduleId",
@@ -14526,6 +14856,11 @@
         }
       ],
       "usage": "out"
+    },
+    "SubtitleTemplate": {
+      "document": "字幕流配置参数。",
+      "members": [],
+      "usage": "in"
     },
     "SuperResolutionConfig": {
       "document": "超分配置",

@@ -18,7 +18,8 @@ Output:
         "TemplateContent": {
             "Html": "PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+",
             "Text": "dGhpcyBpcyBhIGV4YW1wbGU="
-        }
+        },
+        "TemplateName": "模板名称"
     }
 }
 ```

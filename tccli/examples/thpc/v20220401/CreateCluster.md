@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli thpc CreateCluster --cli-unfold-argument  \
+    --ManagerNodeCount 1 \
     --Placement.Zone ap-guangzhou-2 \
     --SchedulerType SLURM \
     --ImageId img-3la7wgnt \
-    --ManagerNode.InstanceType S2.SMALL2 \
-    --ManagerNodeCount 1 \
-    --ComputeNode.InstanceType S2.SMALL2 \
     --ComputeNode.InstanceChargeType SPOTPAID \
-    --ComputeNodeCount 2
+    --ComputeNode.InstanceType S2.SMALL2 \
+    --ComputeNodeCount 2 \
+    --ManagerNode.InstanceType S2.SMALL2
 ```
 
 Output: 

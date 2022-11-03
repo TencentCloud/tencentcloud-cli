@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mps CreateSnapshotByTimeOffsetTemplate --cli-unfold-argument  \
-    --Name 指定时间点截图模板1 \
     --Width 540 \
-    --Height 960 \
-    --Format jpg
+    --Format jpg \
+    --Name 指定时间点截图模板1 \
+    --Height 960
 ```
 
 Output: 

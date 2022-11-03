@@ -1460,6 +1460,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1676,6 +1685,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2889,6 +2907,32 @@
         }
       ],
       "usage": "out"
+    },
+    "TagFilter": {
+      "document": "资产标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "\"业务部门\"",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "[\"研发部\", \"运营部\"]",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "User": {
       "document": "用户信息",

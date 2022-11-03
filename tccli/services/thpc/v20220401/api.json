@@ -653,7 +653,7 @@
         },
         {
           "default": "",
-          "document": "调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。",
+          "document": "调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。",
           "example": "SGE",
           "member": "string",
           "name": "SchedulerType",
@@ -716,7 +716,7 @@
         },
         {
           "default": "",
-          "document": "域名字服务类型。默认值：NIS\n<li>NIS：NIS域名字服务。",
+          "document": "域名字服务类型。默认取值：NIS。\n<li>NIS：NIS域名字服务。",
           "example": "NIS",
           "member": "string",
           "name": "AccountType",

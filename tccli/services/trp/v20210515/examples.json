@@ -16,6 +16,14 @@
         "title": "生成普通码包"
       }
     ],
+    "CreateCorporationOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorporationOrder\n<公共请求参数>\n\n{\n    \"CodeQuota\": 10000,\n    \"CorpId\": 1000,\n    \"Amount\": 10000,\n    \"ContactPerson\": \"张三\",\n    \"ExpireTime\": \"2023-12-31 23:59:59\",\n    \"ContactNumber\": \"13912345678\",\n    \"Owner\": \"1000\",\n    \"CorpName\": \"张三企业\",\n    \"Remark\": \"张三\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CorpId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建企业订单"
+      }
+    ],
     "CreateCustomPack": [
       {
         "document": "",

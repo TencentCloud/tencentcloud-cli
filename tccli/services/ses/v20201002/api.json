@@ -972,11 +972,20 @@
         },
         {
           "document": "模板状态 0-审核通过 1-待审核 2-审核拒绝",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TemplateStatus",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

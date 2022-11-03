@@ -8,8 +8,8 @@ Input:
 tccli mps CreateTranscodeTemplate --cli-unfold-argument  \
     --RemoveVideo 0 \
     --Container mp4 \
-    --Name 转码模板1 \
-    --AudioTemplate.SampleRate 200 \
+    --Name test \
+    --AudioTemplate.SampleRate 44100 \
     --AudioTemplate.Codec libfdk_aac \
     --AudioTemplate.Bitrate 200 \
     --VideoTemplate.Codec libx264 \
