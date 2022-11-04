@@ -785,6 +785,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

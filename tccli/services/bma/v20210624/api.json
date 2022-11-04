@@ -2049,6 +2049,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "导出地址",
+          "example": "1",
+          "member": "string",
+          "name": "ExportURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2109,6 +2118,15 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出地址",
+          "example": "https://test.com",
+          "member": "string",
+          "name": "ExportURL",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2269,6 +2287,15 @@
           "example": "xxx",
           "member": "string",
           "name": "ObtainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取证公证信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "DepositPdfCert",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3141,6 +3168,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作品类型全部展示",
+          "example": "010101",
+          "member": "string",
+          "name": "WorkCategoryAll",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存证状态",
+          "example": "1",
+          "member": "int64",
+          "name": "EvidenceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存证状态说明",
+          "example": "xxx",
+          "member": "string",
+          "name": "EvidenceNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "侵权站点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TortSiteNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3396,6 +3463,16 @@
           "name": "IsOverseas",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip地理位置",
+          "example": "1",
+          "member": "string",
+          "name": "IPLoc",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

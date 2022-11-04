@@ -7,8 +7,7 @@ Input:
 ```
 tccli teo DeleteAliasDomain --cli-unfold-argument  \
     --ZoneId zone-28569s6od5na \
-    --Filters.0.Values eo.example.com \
-    --Filters.0.Name alias-name
+    --AliasNames eo.test.com
 ```
 
 Output: 

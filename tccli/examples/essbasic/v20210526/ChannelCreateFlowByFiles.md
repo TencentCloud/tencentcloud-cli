@@ -53,6 +53,7 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --Components.0.DocumentId xx \
     --Components.0.ComponentHeight 0.0 \
     --CallbackUrl xx \
+    --ApproverVerifyType VerifyCheck \
     --FileIds xx
 ```
 

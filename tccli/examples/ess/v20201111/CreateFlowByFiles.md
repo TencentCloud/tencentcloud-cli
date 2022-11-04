@@ -13,6 +13,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Unordered False \
     --FlowType 劳动合同 \
     --Deadline 1604912664 \
+    --ApproverVerifyType VerifyCheck \
     --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName xxx有限公司 \

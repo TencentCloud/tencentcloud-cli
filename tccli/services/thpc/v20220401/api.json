@@ -767,6 +767,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoScalingType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

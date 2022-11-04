@@ -76,3 +76,32 @@ Output:
 }
 ```
 
+**Example 3: a**
+
+
+
+Input: 
+
+```
+tccli ess DescribeFileUrls --cli-unfold-argument  \
+    --Operator.UserId yDRtRUUgygqa2mtyUuO4zjEyckqC592v \
+    --BusinessType FLOW \
+    --BusinessIds yDR0dUUgygqih0oeUuO4zjEvWe1SbE7r
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FileUrls": [
+            {
+                "Option": "[\"595.00,841.00\",\"-1\"]",
+                "Url": "https://file.test.ess.tencent.cn/file/FLOW/yDR0dUUgygqih0oeUuO4zjEvWe1SbE7r/0/0.PDF?hkey=c80b3f135787e86cbd1841a17211ca7f86c7cf8e40059df26bb6b554ffa8b93d603ac6e1ff343bd1addcf442cc41c5f7a4588fe828bb561819896ab91e04f0780907adeb70e3005cc2e466afd14599c6f04521e619fb6fa0ad002ad82345c777"
+            }
+        ],
+        "RequestId": "1e1da501-8c68-4ce4-a982-5d570ab151c9",
+        "TotalCount": 1
+    }
+}
+```
+

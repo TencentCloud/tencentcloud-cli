@@ -7,7 +7,7 @@ Input:
 ```
 tccli teo ModifyAliasDomain --cli-unfold-argument  \
     --TargetName bbb.example.com \
-    --AliasId alias-29j5sz41ib59 \
+    --AliasName eo.test.com \
     --CertType none \
     --ZoneId zone-28569s6od5na
 ```

@@ -3933,7 +3933,7 @@
         },
         {
           "default": "",
-          "document": "标识是fair还是capacity",
+          "document": "取值范围：\n<li>fair:代表公平调度标识</li>\n<li>capacity:代表容量调度标识</li>",
           "example": "fair",
           "member": "string",
           "name": "Key",

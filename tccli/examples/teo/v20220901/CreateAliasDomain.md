@@ -16,7 +16,6 @@ Output:
 ```
 {
     "Response": {
-        "AliasId": "alias-29j5sz41ib59",
         "RequestId": "4dcgtb24-7dc5-46s2-9q3e-95825d53dcs3a"
     }
 }

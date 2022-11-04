@@ -1270,7 +1270,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1427,7 +1427,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1526,7 +1526,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1634,7 +1634,7 @@
         },
         {
           "default": "",
-          "document": "分页，偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1814,7 +1814,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1895,7 +1895,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1976,7 +1976,7 @@
         },
         {
           "default": "",
-          "document": "分页，偏移位置",
+          "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",

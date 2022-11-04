@@ -246,6 +246,12 @@
       "name": "初始化实例",
       "output": "InitDBInstancesResponse"
     },
+    "IsolateDedicatedDBInstance": {
+      "document": "本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。",
+      "input": "IsolateDedicatedDBInstanceRequest",
+      "name": "隔离独享云数据库实例",
+      "output": "IsolateDedicatedDBInstanceResponse"
+    },
     "IsolateHourDBInstance": {
       "document": "隔离后付费实例",
       "input": "IsolateHourDBInstanceRequest",
@@ -4682,6 +4688,33 @@
       ],
       "usage": "both"
     },
+    "IsolateDedicatedDBInstanceRequest": {
+      "document": "IsolateDedicatedDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id，形如：tdsql-ow728lmc。",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDedicatedDBInstanceResponse": {
+      "document": "IsolateDedicatedDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IsolateHourDBInstanceRequest": {
       "document": "IsolateHourDBInstance请求参数结构体",
       "members": [
@@ -6688,6 +6721,7 @@
         {
           "default": "",
           "document": "可用区英文ID",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6697,6 +6731,7 @@
         {
           "default": "",
           "document": "可用区数字ID",
+          "example": "100001",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -6706,10 +6741,21 @@
         {
           "default": "",
           "document": "可用区中文名",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否在售",
+          "example": "true",
+          "member": "bool",
+          "name": "OnSale",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

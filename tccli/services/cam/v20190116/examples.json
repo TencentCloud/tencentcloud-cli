@@ -48,6 +48,14 @@
         "title": "验证自定义多因子Token"
       }
     ],
+    "CreateAccessKey": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateAccessKey\n&TargetUin=123456\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKey\": {\n            \"AccessKeyId\": \"AKID8GFED7s****QrFXkmb\",\n            \"SecretAccessKey\": \"iDVjy****tNzX\",\n            \"Status\": \"Active\",\n            \"CreateTime\": \"2020-03-03 18:00:26\"\n        },\n        \"RequestId\": \"f8423e9b-a7da-488d-9539-333f1955ca78\"\n    }\n}",
+        "title": "创建访问密钥"
+      }
+    ],
     "CreateGroup": [
       {
         "document": "",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSAMLConfig\n<公共请求参数>\n\n{\n    \"SAMLMetadataDocument\": \"metadataDocumentDemo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建用户SAML配置"
+      }
+    ],
+    "DeleteAccessKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessKey\n<公共请求参数>\n\n{\n    \"TargetUin\": \"123456\",\n    \"AccessKeyId\": \"AKIDtm****lqorp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
+        "title": "删除访问密钥"
       }
     ],
     "DeleteGroup": [
@@ -594,6 +610,14 @@
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UntagRole\n<公共请求参数>\n\n{\n    \"TagKeys\": [\n        \"AKey\"\n    ],\n    \"RoleName\": \"CAM_QCSRole\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
         "title": "角色解绑标签"
+      }
+    ],
+    "UpdateAccessKey": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAccessKey\n&TargetUin=123456\n&AccessKeyId=AKIDtm****lqorp\n&Status=Active\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
+        "title": "更新访问密钥"
       }
     ],
     "UpdateAssumeRolePolicy": [

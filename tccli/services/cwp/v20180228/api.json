@@ -8489,6 +8489,15 @@
           "name": "EngineType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableMemShellScan",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -16111,6 +16120,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "异常进程列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MalwareRisk",
+          "name": "ProcessList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16258,6 +16276,15 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableInspiredEngine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableMemShellScan",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -23368,7 +23395,7 @@
         },
         {
           "default": "",
-          "document": "状态；4-:待处理，5-已信任，6-已隔离，8-文件已删除",
+          "document": "状态；4-:待处理，5-已信任，6-已隔离，8-文件已删除, 14:已处理",
           "example": "xxx",
           "member": "uint64",
           "name": "Status",
@@ -24308,6 +24335,15 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableInspiredEngine",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启恶意进程查杀[0:未开启,1:开启]",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableMemShellScan",
           "required": false,
           "type": "int"
         }

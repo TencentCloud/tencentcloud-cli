@@ -43,7 +43,7 @@
       "output": "DeleteTagResponse"
     },
     "DeleteTags": {
-      "document": "本接口用于删除一对标签键和标签值",
+      "document": "本接口用于批量删除标签键和标签值。",
       "input": "DeleteTagsRequest",
       "name": "批量删除标签",
       "output": "DeleteTagsResponse"

@@ -4057,6 +4057,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户账号的 App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6207,6 +6217,16 @@
           "name": "LoadWeight",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file-xxx",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

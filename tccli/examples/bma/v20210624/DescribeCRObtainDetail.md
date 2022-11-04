@@ -15,6 +15,7 @@ Output:
     "Response": {
         "TortId": 0,
         "ObtainTime": "xx",
+        "DepositPdfCert": "xx",
         "ObtainDuration": "xx",
         "ObtainType": "xx",
         "DepositCert": "xx",

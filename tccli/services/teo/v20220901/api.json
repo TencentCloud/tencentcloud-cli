@@ -6,6 +6,12 @@
       "name": "校验证书",
       "output": "CheckCertificateResponse"
     },
+    "CreateAliasDomain": {
+      "document": "创建别称域名。",
+      "input": "CreateAliasDomainRequest",
+      "name": "创建别称域名",
+      "output": "CreateAliasDomainResponse"
+    },
     "CreateApplicationProxy": {
       "document": "创建应用代理",
       "input": "CreateApplicationProxyRequest",
@@ -114,6 +120,12 @@
       "name": "创建站点",
       "output": "CreateZoneResponse"
     },
+    "DeleteAliasDomain": {
+      "document": "删除别称域名。",
+      "input": "DeleteAliasDomainRequest",
+      "name": "删除别称域名",
+      "output": "DeleteAliasDomainResponse"
+    },
     "DeleteApplicationProxy": {
       "document": "删除应用代理",
       "input": "DeleteApplicationProxyRequest",
@@ -167,6 +179,12 @@
       "input": "DescribeAddableEntityListRequest",
       "name": "查询剩余可添加的日志推送实体列表",
       "output": "DescribeAddableEntityListResponse"
+    },
+    "DescribeAliasDomains": {
+      "document": "查询别称域名信息列表。",
+      "input": "DescribeAliasDomainsRequest",
+      "name": "查询别称域名信息列表",
+      "output": "DescribeAliasDomainsResponse"
     },
     "DescribeApplicationProxies": {
       "document": "查询应用代理列表。",
@@ -569,6 +587,18 @@
       "input": "ModifyAlarmDefaultThresholdRequest",
       "name": "修改告警默认阈值",
       "output": "ModifyAlarmDefaultThresholdResponse"
+    },
+    "ModifyAliasDomain": {
+      "document": "修改别称域名。",
+      "input": "ModifyAliasDomainRequest",
+      "name": "修改别称域名",
+      "output": "ModifyAliasDomainResponse"
+    },
+    "ModifyAliasDomainStatus": {
+      "document": "修改别称域名状态。",
+      "input": "ModifyAliasDomainStatusRequest",
+      "name": "修改别称域名状态",
+      "output": "ModifyAliasDomainStatusResponse"
     },
     "ModifyApplicationProxy": {
       "document": "修改应用代理",
@@ -1075,6 +1105,82 @@
         }
       ],
       "usage": "both"
+    },
+    "AliasDomain": {
+      "document": "别称域名信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "别称域名名称。",
+          "example": "eo.tencent.com",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标域名名称。",
+          "example": "a.example.com",
+          "member": "string",
+          "name": "TargetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别称域名状态，取值有：\n<li> active：已生效； </li>\n<li> pending：部署中；</li>\n<li> conflict：被找回。 </li>\n<li> stop：已停用；</li>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封禁模式，取值有：\n<li> 0：未封禁； </li>\n<li> 11：合规封禁；</li>\n<li> 14：未备案封禁。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ForbidMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别称域名创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别称域名修改时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ApplicationProxy": {
       "document": "应用代理实例",
@@ -2397,6 +2503,69 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateAliasDomainRequest": {
+      "document": "CreateAliasDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别称域名名称。",
+          "example": "eo.tencent.com",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标域名名称。",
+          "example": "a.example.com",
+          "member": "string",
+          "name": "TargetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书配置，取值有：\n<li> none：不配置；</li>\n<li> hosting：SSL托管证书；</li>\n<li> apply：申请免费证书。</li>默认取值为 none。",
+          "example": "none",
+          "member": "string",
+          "name": "CertType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当 CertType 取值为 hosting 时需填入相应证书 ID。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAliasDomainResponse": {
+      "document": "CreateAliasDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateApplicationProxyRequest": {
       "document": "CreateApplicationProxy请求参数结构体",
@@ -4839,6 +5008,42 @@
       ],
       "usage": "both"
     },
+    "DeleteAliasDomainRequest": {
+      "document": "DeleteAliasDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除别称域名名称。如果为空，则不执行删除操作。",
+          "example": "无",
+          "member": "string",
+          "name": "AliasNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAliasDomainResponse": {
+      "document": "DeleteAliasDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteApplicationProxyRequest": {
       "document": "DeleteApplicationProxy请求参数结构体",
       "members": [
@@ -5171,6 +5376,78 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAliasDomainsRequest": {
+      "document": "DescribeAliasDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>target-name<br>   按照【<strong>目标域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li><li>alias-name<br>   按照【<strong>别称域名名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>模糊查询时仅支持过滤字段名为alias-name。",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAliasDomainsResponse": {
+      "document": "DescribeAliasDomains返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的别称域名个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "别称域名详细信息列表。",
+          "example": "无",
+          "member": "AliasDomain",
+          "name": "AliasDomains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12330,6 +12607,114 @@
     },
     "ModifyAlarmDefaultThresholdResponse": {
       "document": "ModifyAlarmDefaultThreshold返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAliasDomainRequest": {
+      "document": "ModifyAliasDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别称域名名称。",
+          "example": "eo.tencent.com",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标域名名称。",
+          "example": "a.example.com",
+          "member": "string",
+          "name": "TargetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书配置，取值有：\n<li> none：不配置；</li>\n<li> hosting：SSL托管证书；</li>\n<li> apply：申请免费证书。</li>不填写保持原有配置。",
+          "example": "none",
+          "member": "string",
+          "name": "CertType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当 CertType 取值为 hosting 时填入相应证书 ID。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAliasDomainResponse": {
+      "document": "ModifyAliasDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAliasDomainStatusRequest": {
+      "document": "ModifyAliasDomainStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "别称域名状态，取值有：\n<li> false：开启别称域名；</li>\n<li> true：关闭别称域名。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "Paused",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "待修改状态的别称域名名称。如果为空，则不执行修改状态操作。",
+          "example": "无",
+          "member": "string",
+          "name": "AliasNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAliasDomainStatusResponse": {
+      "document": "ModifyAliasDomainStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

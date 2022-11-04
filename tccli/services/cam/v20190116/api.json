@@ -36,6 +36,12 @@
       "name": "验证自定义多因子Token",
       "output": "ConsumeCustomMFATokenResponse"
     },
+    "CreateAccessKey": {
+      "document": "为CAM用户创建访问密钥",
+      "input": "CreateAccessKeyRequest",
+      "name": "创建访问密钥",
+      "output": "CreateAccessKeyResponse"
+    },
     "CreateGroup": {
       "document": "创建用户组",
       "input": "CreateGroupRequest",
@@ -89,6 +95,12 @@
       "input": "CreateUserSAMLConfigRequest",
       "name": "创建用户SAML配置",
       "output": "CreateUserSAMLConfigResponse"
+    },
+    "DeleteAccessKey": {
+      "document": "为CAM用户删除访问密钥。\n此接口属于高风险操作，删除密钥后不可恢复，腾讯云将永久拒绝此密钥的所有请求，请谨慎使用。",
+      "input": "DeleteAccessKeyRequest",
+      "name": "删除访问密钥",
+      "output": "DeleteAccessKeyResponse"
     },
     "DeleteGroup": {
       "document": "删除用户组",
@@ -438,6 +450,12 @@
       "name": "角色解绑标签",
       "output": "UntagRoleResponse"
     },
+    "UpdateAccessKey": {
+      "document": "为CAM用户更新访问密钥",
+      "input": "UpdateAccessKeyRequest",
+      "name": "更新访问密钥",
+      "output": "UpdateAccessKeyResponse"
+    },
     "UpdateAssumeRolePolicy": {
       "document": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。",
       "input": "UpdateAssumeRolePolicyRequest",
@@ -533,6 +551,48 @@
           "default": "",
           "document": "创建时间",
           "example": "2021-03-20 00:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessKeyDetail": {
+      "document": "访问密钥",
+      "members": [
+        {
+          "default": "",
+          "document": "访问密钥标识",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问密钥（密钥仅创建时可见，请妥善保存）",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥状态，激活（Active）或未激活（Inactive）",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -1219,6 +1279,42 @@
       ],
       "type": "object"
     },
+    "CreateAccessKeyRequest": {
+      "document": "CreateAccessKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定用户Uin，不填默认为当前用户创建访问密钥",
+          "example": "123456",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessKeyResponse": {
+      "document": "CreateAccessKey返回参数结构体",
+      "members": [
+        {
+          "document": "访问密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessKeyDetail",
+          "name": "AccessKey",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGroupRequest": {
       "document": "CreateGroup请求参数结构体",
       "members": [
@@ -1735,6 +1831,42 @@
     },
     "CreateUserSAMLConfigResponse": {
       "document": "CreateUserSAMLConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessKeyRequest": {
+      "document": "DeleteAccessKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要删除的AccessKeyId",
+          "example": "AKIDtmV4QYS9dx4yhEZllY8VebL2c0Tlqorp",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定用户Uin，不填默认为当前用户删除访问密钥",
+          "example": "123456",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessKeyResponse": {
+      "document": "DeleteAccessKey返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5798,6 +5930,51 @@
     },
     "UntagRoleResponse": {
       "document": "UntagRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAccessKeyRequest": {
+      "document": "UpdateAccessKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定需要更新的AccessKeyId",
+          "example": "AKIDtmV4QYS9dx4yhEZllY8VebL2c0Tlqorp",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密钥状态，激活（Active）或未激活（Inactive）",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定用户Uin，不填默认为当前用户更新访问密钥",
+          "example": "123456",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAccessKeyResponse": {
+      "document": "UpdateAccessKey返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

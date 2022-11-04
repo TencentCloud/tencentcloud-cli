@@ -84,6 +84,30 @@
       "name": "查询历史房间和用户数",
       "output": "DescribeScaleInfoResponse"
     },
+    "DescribeTRTCMarketQualityMetricData": {
+      "document": "查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2、查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
+      "input": "DescribeTRTCMarketQualityMetricDataRequest",
+      "name": "查询TRTC数据大盘质量指标",
+      "output": "DescribeTRTCMarketQualityMetricDataResponse"
+    },
+    "DescribeTRTCMarketScaleMetricData": {
+      "document": "查询TRTC监控仪表盘-数据大盘规模指标（会返回通话人数，通话房间数，峰值同时在线人数，峰值同时在线频道数）\nuserCount：通话人数，\nroomCount：通话房间数，从有用户加入频道到所有用户离开频道计为一个通话频道。\npeakCurrentChannels：峰值同时在线频道数。\npeakCurrentUsers：峰值同时在线人数。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2、查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
+      "input": "DescribeTRTCMarketScaleMetricDataRequest",
+      "name": "查询TRTC数据大盘规模指标",
+      "output": "DescribeTRTCMarketScaleMetricDataResponse"
+    },
+    "DescribeTRTCRealTimeQualityMetricData": {
+      "document": "查询TRTC监控仪表盘-实时监控质量指标（会返回下列指标）\n-视频卡顿率\n-音频卡顿率\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2、查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
+      "input": "DescribeTRTCRealTimeQualityMetricDataRequest",
+      "name": "查询TRTC实时监控质量指标",
+      "output": "DescribeTRTCRealTimeQualityMetricDataResponse"
+    },
+    "DescribeTRTCRealTimeScaleMetricData": {
+      "document": "查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）\n-userCount（在线用户数）\n-roomCount（在线房间数）\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2、查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
+      "input": "DescribeTRTCRealTimeScaleMetricDataRequest",
+      "name": "查询TRTC实时监控规模指标",
+      "output": "DescribeTRTCRealTimeScaleMetricDataResponse"
+    },
     "DescribeTrtcMcuTranscodeTime": {
       "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
@@ -1390,6 +1414,258 @@
           "name": "ScaleList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCMarketQualityMetricDataRequest": {
+      "document": "DescribeTRTCMarketQualityMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "\"1400188366\"",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）",
+          "example": "2022-10-20",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。",
+          "example": "2022-10-21",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据的粒度，支持设为以下值：\nd：按天。此时返回查询时间范围内 UTC 时间为零点的数据。\nh：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。",
+          "example": "\"d\"",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCMarketQualityMetricDataResponse": {
+      "document": "DescribeTRTCMarketQualityMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "TRTC监控数据出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TRTCDataResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCMarketScaleMetricDataRequest": {
+      "document": "DescribeTRTCMarketScaleMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId",
+          "example": "\"1400188366\"",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）",
+          "example": "2022-10-20",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。",
+          "example": "2022-10-21",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数据的粒度，支持设为以下值：\nd：按天。此时返回查询时间范围内 UTC 时间为零点的数据。\nh：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。",
+          "example": "\"d\"",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCMarketScaleMetricDataResponse": {
+      "document": "DescribeTRTCMarketScaleMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "TRTC监控数据出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TRTCDataResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCRealTimeQualityMetricDataRequest": {
+      "document": "DescribeTRTCRealTimeQualityMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "\"1400188366\"",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，unix时间戳，单位：秒（查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时）",
+          "example": "1665747036",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间，unix时间戳，单位：秒",
+          "example": "1665747284",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "example": "23390",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCRealTimeQualityMetricDataResponse": {
+      "document": "DescribeTRTCRealTimeQualityMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "TRTC监控数据出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TRTCDataResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCRealTimeScaleMetricDataRequest": {
+      "document": "DescribeTRTCRealTimeScaleMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户SdkAppId（如：1400xxxxxx）",
+          "example": "\"1400188366\"",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，unix时间戳，单位：秒（查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时）",
+          "example": "1665747036",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间，unix时间戳，单位：秒",
+          "example": "1665747284",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "example": "23390",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTRTCRealTimeScaleMetricDataResponse": {
+      "document": "DescribeTRTCRealTimeScaleMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "TRTC监控数据出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TRTCDataResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -3270,6 +3546,32 @@
       ],
       "usage": "out"
     },
+    "SeriesInfo": {
+      "document": "SeriesInfo类型",
+      "members": [
+        {
+          "default": "",
+          "document": "数据列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"time\",\"count(queryCount)\"]",
+          "member": "string",
+          "name": "Columns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1659927600,399]",
+          "member": "int64",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SmallVideoLayoutParams": {
       "document": "画中画模板中有效，代表小画面的布局参数",
       "members": [
@@ -3659,6 +3961,42 @@
         }
       ],
       "usage": "in"
+    },
+    "TRTCDataResp": {
+      "document": "TRTC数据大盘/实时监控 API接口数据出参",
+      "members": [
+        {
+          "default": "",
+          "document": "StatementID值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StatementID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Series数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "SeriesInfo",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Total值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TencentVod": {
       "document": "腾讯云点播相关参数。",

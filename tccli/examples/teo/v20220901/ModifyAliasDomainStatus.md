@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli teo ModifyAliasDomainStatus --cli-unfold-argument  \
-    --Paused True \
-    --Filters.0.Values eo.example.com \
-    --Filters.0.Name alias-name \
-    --ZoneId zone-28569s6od5na
+    --ZoneId zone-28569s6od5na \
+    --AliasNames eo.test.com \
+    --Paused True
 ```
 
 Output: 

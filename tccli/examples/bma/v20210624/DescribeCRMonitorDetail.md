@@ -16,6 +16,7 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
+        "ExportURL": "xx",
         "MonitorStatus": 0,
         "RequestId": "xx",
         "Torts": [
@@ -39,6 +40,7 @@ Output:
                 "TortURL": "xx",
                 "ICP": "xx",
                 "ObtainStatus": 0,
+                "IPLoc": "xx",
                 "BlockStatus": 0,
                 "IsProducer": 0,
                 "WorkName": "xx",

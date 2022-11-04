@@ -328,6 +328,14 @@
         "title": "批量初始化云数据库实例"
       }
     ],
+    "IsolateDedicatedDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDedicatedDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "IsolateHourDBInstance": [
       {
         "document": "",
