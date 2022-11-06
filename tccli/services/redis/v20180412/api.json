@@ -7855,15 +7855,26 @@
       "usage": "out"
     },
     "ProxyNodes": {
-      "document": "Proxy节点信息",
+      "document": "Proxy节点信息。",
       "members": [
         {
           "default": "",
-          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NodeId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

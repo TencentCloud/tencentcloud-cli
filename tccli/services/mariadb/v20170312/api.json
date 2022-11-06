@@ -246,6 +246,12 @@
       "name": "初始化实例",
       "output": "InitDBInstancesResponse"
     },
+    "IsolateDBInstance": {
+      "document": "本接口(IsolateDBInstance)用于隔离云数据库实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
+      "input": "IsolateDBInstanceRequest",
+      "name": "隔离云数据库实例（包年包月）",
+      "output": "IsolateDBInstanceResponse"
+    },
     "IsolateDedicatedDBInstance": {
       "document": "本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。",
       "input": "IsolateDedicatedDBInstanceRequest",
@@ -4687,6 +4693,51 @@
         }
       ],
       "usage": "both"
+    },
+    "IsolateDBInstanceRequest": {
+      "document": "IsolateDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：tdsql-dasjkhd，与云数据库控制台页面中显示的实例 ID 相同，可使用 查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "tdsql-dasjkhd",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstanceResponse": {
+      "document": "IsolateDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "隔离成功实例ID列表。",
+          "example": "[]",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "隔离失败实例ID列表。",
+          "example": "[]",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IsolateDedicatedDBInstanceRequest": {
       "document": "IsolateDedicatedDBInstance请求参数结构体",

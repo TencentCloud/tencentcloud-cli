@@ -16208,6 +16208,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Bot标签，取值有:\n<li>evil_bot：恶意Bot；</li>\n<li>suspect_bot：疑似Bot；</li>\n<li>good_bot：正常Bot；</li>\n<li>normal：正常请求；</li>\n<li>none：未分类。</li>",
+          "example": "evil_bot",
+          "member": "string",
+          "name": "BotLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16217,7 +16227,7 @@
       "members": [
         {
           "default": "",
-          "document": "规则ID列表（99999为无效id）。",
+          "document": "规则ID。",
           "example": "123131",
           "member": "int64",
           "name": "RuleId",
@@ -16258,7 +16268,7 @@
         {
           "default": "",
           "document": "规则描述。",
-          "example": "”针对出现在GET参数中的命令注入防护规则“",
+          "example": "针对出现在GET参数中的命令注入防护规则",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -16268,12 +16278,22 @@
         {
           "default": "",
           "document": "规则类型名称。",
-          "example": "\"命令/代码注入攻击防护\"",
+          "example": "命令/代码注入攻击防护",
           "member": "string",
           "name": "RuleTypeName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AttackContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

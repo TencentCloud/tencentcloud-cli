@@ -1445,6 +1445,15 @@
           "name": "RegionName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求的地域ID，用于实例复制地域",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1512,6 +1521,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "mynamespace",
           "member": "string",
           "name": "Namespace",
           "required": true,

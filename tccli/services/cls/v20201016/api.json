@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddMachineGroupInfo": {
+      "document": "用于添加机器组信息",
+      "input": "AddMachineGroupInfoRequest",
+      "name": "添加机器组信息",
+      "output": "AddMachineGroupInfoResponse"
+    },
     "ApplyConfigToMachineGroup": {
       "document": "应用采集配置到指定机器组",
       "input": "ApplyConfigToMachineGroupRequest",
@@ -137,6 +143,12 @@
       "input": "DeleteMachineGroupRequest",
       "name": "删除机器组",
       "output": "DeleteMachineGroupResponse"
+    },
+    "DeleteMachineGroupInfo": {
+      "document": "用于删除机器组信息",
+      "input": "DeleteMachineGroupInfoRequest",
+      "name": "删除机器组信息",
+      "output": "DeleteMachineGroupInfoResponse"
     },
     "DeleteShipper": {
       "document": "删除投递规则",
@@ -368,6 +380,42 @@
     "serviceShortName": "cls"
   },
   "objects": {
+    "AddMachineGroupInfoRequest": {
+      "document": "AddMachineGroupInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器组类型\n目前type支持 ip 和 label",
+          "example": "无",
+          "member": "MachineGroupTypeInfo",
+          "name": "MachineGroupType",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddMachineGroupInfoResponse": {
+      "document": "AddMachineGroupInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AlarmAnalysisConfig": {
       "document": "告警多维分析一些配置信息",
       "members": [
@@ -2949,6 +2997,42 @@
     },
     "DeleteLogsetResponse": {
       "document": "DeleteLogset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMachineGroupInfoRequest": {
+      "document": "DeleteMachineGroupInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器组类型\n目前type支持 ip 和 label",
+          "example": "无",
+          "member": "MachineGroupTypeInfo",
+          "name": "MachineGroupType",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMachineGroupInfoResponse": {
+      "document": "DeleteMachineGroupInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

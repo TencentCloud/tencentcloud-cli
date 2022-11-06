@@ -73,7 +73,7 @@
         },
         {
           "default": "",
-          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)",
           "example": "3.5",
           "member": "float",
           "name": "ScoreCoeff",
@@ -82,7 +82,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)",
           "example": "无",
           "member": "string",
           "name": "SoeAppId",
@@ -118,7 +118,7 @@
         },
         {
           "default": "",
-          "document": "评估语言\n0：英文\n1：中文\nServerType不填默认为0",
+          "document": "评估语言\n0：英文（默认）\n1：中文",
           "example": "无",
           "member": "int64",
           "name": "ServerType",
@@ -136,7 +136,7 @@
         },
         {
           "default": "",
-          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本",
           "example": "无",
           "member": "int64",
           "name": "TextMode",
@@ -237,7 +237,7 @@
       "members": [
         {
           "default": "",
-          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
           "example": "1",
           "member": "uint64",
           "name": "SeqId",
@@ -255,7 +255,7 @@
         },
         {
           "default": "",
-          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "document": "语音文件类型\n1: raw/pcm\n2: wav\n3: mp3\n4: speex\n[音频上传格式](https://cloud.tencent.com/document/product/884/56132)",
           "example": "3",
           "member": "uint64",
           "name": "VoiceFileType",
@@ -273,7 +273,7 @@
         },
         {
           "default": "",
-          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "document": "当前语音数据, 编码格式要求为BASE64且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数）。格式要求参考[音频上传格式](https://cloud.tencent.com/document/product/884/56132)\n流式模式下需要将语音数据进行分片处理，参考：[分片大小设置](https://cloud.tencent.com/document/product/884/78985#.E5.88.86.E7.89.87.E5.A4.A7.E5.B0.8F.E8.AE.BE.E7.BD.AE.E4.B8.BA.E5.A4.9A.E5.A4.A7.E6.AF.94.E8.BE.83.E5.90.88.E9.80.82.3F)\n如何进行流式分片参考：[流式评测](https://cloud.tencent.com/document/product/884/78824#.E6.B5.81.E5.BC.8F.E8.AF.84.E6.B5.8B)",
           "example": "SUQzBAAAAAAANFRDT04AAAAHAAADQmx1ZXMAVFNTRQAAAA8AAANMYXZmNTguMjMuMTAyAAAAAAAAAAAAAAD%2F81jAAAAAAAAAAAAASW5mbwAAAA8AAAASAAAITAAiIiIiIi8vLy8vLzw8PDw8SUlJSUlJVlZWVlZjY2NjY2NwcHBwcH19fX19fYqKioqKl5eXl5eXpKSkpKSksbGxsbG%2Bvr6%2Bvr7Ly8vLy9jY2NjY2OXl5eXl8vLy8vLy%2F%2F%2F%2F%2F%2F8AAAAATGF2YzU4LjQxAAAAAAAAAAAAAAAAJAOVAAAAAAAACEyULaIpAAAAAAAAAAAAAAD%2F8zjEABOylnQLRigAETO960QQJ6YQQPAYDTk8mTJ0YQIB9yBwCBwk5CEISd5zvIQjHDgoxzoQihwOEnOdyB8Pnf5CEb%2F%2FJ%2F%2Fkb%2F%2FQnIT%2F%2F%2FU4fOQPh84gcf%2F4fdgZFMFAgSI3tbm442AGGmn%2F8zjEEBkKUvpfi1AAfjskBZcKzUvSVbbkBJDYQQjiAjweEh5oMAAxlFw2k%2Bp54rlpkWD5QfurYURx1YQtGGn7mdM%2FVu3Rmq2QIhX7ZWx7%2F5Eex766IzR8OwyFiH5dn1HFKghCWjAD0l4f9zT%2F8zjEChdqDubXyzgA3lYDYbubfXyPI2D4dmug8D4iJZc9%2BYIwaBEHgPBor9R8YU890ucccaexjHjBqIc6aHHqb%2F%2F%2F%2F%2FsjrS1mImg2cCg1BlukfTFxC7PpC5FCF0fiWcCdCWNpdRAMYCcHqZf%2F8zjECxfpUu7%2BC9JQ7YQQxOR%2FiKEMUe%2F8q1hNE2EaKBQxc4SWEQlDQsCbSBBCTuqSolZZPPt2k1GqT2EbsZFLIkRIWmJpQqDAoCDv%2F%2FXtcHDDGBwHAIXU5FPmGNLVf%2BiOUgqkR5AiDr1Jh7X%2F8zjEChc4tvMWFhJoYfXUNMqB1gdU4pPwIZnrP%2F8mYkJKNHVmM3yXQoSVDEkDMWPMUFXJOsEoLFTr1VAYgA1fSthFzQ28abcksWuOkSyg6C3T2tzJkkKEEk6ov3B9BBMDoBg1EgT8ootC24j%2F8zjEDBb62tI6FgpoO5GE3EBgQmkw%2FnMdCMQQDBEPGNstEOdTnssPdbMz5GHyiIt%2F91KWkPHrVXra7LGO1GOdVOlWHOSHj7%2Fpt3%2F%2FbOrO7pd5%2BQ4xxEh5r%2BoRIDoFhAAZ3YAEH%2F%2FNbiyCRBn%2F8zjEDxWystLcwkSoLYJUnMaxF7LRRVWrMAgQElk6CbkRETWhQsuYrHuoyO9Jiy3naZB9Stfr%2F%2F%2F%2F6p2eh7osy0u5m6Svo1%2F%2F7%2Bj0qavNQdVA7UuiGxAMkt2ZuyUSEUFGaDj8M8WuGo1X4IL%2F8zjEFxMQpupcBowKRR5FI6kt9afbPm38SfPJrAKBHikFpXloKkIsWYM%2FrPf6h7cAAuOGA4tNVeydJCsVHlv%2F%2FedqLkssZVj%2F4yVQtUemsMYhKaZhU2gdEzWb7LfwLDzWJbhnMD46pRpWrnX%2F8zjEKRUKBrh8egSarpKOqT66Fa6S9DbaJ2Qxj%2F%2FZL0VSspQrWVAJ4sLg6Iv7dyyICEv%2F%2BmJBZVUufh4SdxCqFKEJQMJ%2BsEqaXtrbx4WzXlB%2F%2BXX%2FmHNikKupO1hAKmGRGFEaELvR15TSsYz%2F8zjEMxRCimwQeETdreatS1Zyq39ktUtf0cBxymbx%2F%2FO1uX63eKCeBMIFArlLCwIjqBWHSamMJzj5FFxgaNAeKxQqKX0Mn%2F7P2KGxYdzo1IbVIixgYLAyeUaBk5PJUZbson4URTW24h0%2FSgf%2F8zjEQQ%2FoRlwUS8wA%2FglgBwOUTVxujFPq2x72dRxP%2FX0L0t2%2F%2Fb9Le36McQdCK4U7PBlrQGCQ7koxmDjEKZUZWOcimEnIHM7OymihAJljbgm4zUpugWnetpkMhEO7Eb9FucQBM2PECMOt0CX%2F8zjEYBS6PmQVSxAARGA%2BfNEEC0UBchAQ935fc3LjCOC2JEQ0q%2Flw6VyDnDQwFAiEw6iBCb%2F5OGknSuXECJkIToYFAoAN%2FGd%2F5DCIDQIOolycL7idg2UDzwGmEoBFAhEOQELf%2FlMnx3lxjRb%2F8zjEbCb7zowBipAA98NlDbgbiFhIuRcdh9MuE%2BXv%2F%2FoLdO3vcuGZPloyNC8alQvlwumyRS%2F%2F%2F1f%2F%2FzU6B4d3%2B222ku2H%2Fw1qUtolGx5YxBokEwPjG02NhBZBMqZBhqRqmnCqFa1MJiNRAAj%2F8zjELxRwdxL%2FyxACaDh92VacCiWgbq3G71JGf%2BUIpjHUJCJmLNDJNzhAa0tjGk4AhiEN21AFmCjjKLLxjmPBALF5Egr2PkYAFBZqG4%2BCFGqGM9i7X%2F2Xhr%2B2xkcnpdFRR7I0aWhqZ2Q%2FwYD%2F8zjEPBSRwr78AYYwgZQkyJMu7X5XZXcQljwcK%2B%2F%2BSKuABOoCVhWb2EHuNarNrHOLkiSscbiJVXtQ5rEialjXoGiym5fnkCY%2BH5KSOUOr7atkZnV2WhRJGv59X81%2F4bTh%2FxqEFHcWL1qesrb%2F8zjESBXx%2BqpcAYY8VoLRMoNSwUHD%2F6nvVh1QVnUBvHPzELNOiKAIKRYeq%2FKwzFC1rcX%2F%2F%2BzMxQdGx8X8KsNw3xryKmqKyKitNsHQAw61VeVWSRU2v%2BGa59a1FQkHXxEJQaDhENCWR9TxKJb%2F8zjETxdh4nQ0CZCEDR6HKzqwaPYbqeWgrDTaxYeCA4Cwfy3%2FllqGTWX8jVrLZ%2BXZPvyyX%2FlkuZGstQyNQwUMGBhHFRUUFuoka%2F6hf2oHs%2FxYXZLCwr%2F%2BukxBTUUzLjEwMKqqqqqqqqqqqqr%2F8zjEUA8hVcGWCAYAqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqo%3D",
           "member": "string",
           "name": "UserVoiceData",
@@ -300,7 +300,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)",
           "example": "default",
           "member": "string",
           "name": "SoeAppId",
@@ -630,7 +630,7 @@
         },
         {
           "default": "",
-          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "document": "1: raw/pcm\n2: wav\n3: mp3\n4: speex\n[音频上传格式](https://cloud.tencent.com/document/product/884/56132)",
           "example": "1",
           "member": "int64",
           "name": "VoiceFileType",
@@ -648,7 +648,7 @@
         },
         {
           "default": "",
-          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络稳定时，分片大小建议设置0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "document": "当前语音数据, 编码格式要求为BASE64且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数）。格式要求参考[音频上传格式](https://cloud.tencent.com/document/product/884/56132)\n流式模式下需要将语音数据进行分片处理，参考：[分片大小设置](https://cloud.tencent.com/document/product/884/78985#.E5.88.86.E7.89.87.E5.A4.A7.E5.B0.8F.E8.AE.BE.E7.BD.AE.E4.B8.BA.E5.A4.9A.E5.A4.A7.E6.AF.94.E8.BE.83.E5.90.88.E9.80.82.3F)\n如何进行流式分片参考：[流式评测](https://cloud.tencent.com/document/product/884/78824#.E6.B5.81.E5.BC.8F.E8.AF.84.E6.B5.8B)",
           "example": "VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5",
           "member": "string",
           "name": "UserVoiceData",
@@ -666,7 +666,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)",
           "example": "无",
           "member": "string",
           "name": "SoeAppId",
@@ -707,7 +707,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1",
           "example": "0.3",
           "member": "float",
           "name": "PronFluency",
@@ -716,7 +716,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "document": "发音完整度，取值范围[0, 1]，当为词模式或自由说模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1",
           "example": "1",
           "member": "float",
           "name": "PronCompletion",
@@ -743,7 +743,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "保存语音音频文件下载地址",
+          "document": "已废弃，不再保存语音音频文件下载地址",
           "example": "无",
           "member": "string",
           "name": "AudioUrl",
@@ -837,7 +837,7 @@
         },
         {
           "default": "",
-          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "document": "语音文件类型\n1: raw/pcm\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。\n[音频上传格式](https://cloud.tencent.com/document/product/884/56132)",
           "example": "1",
           "member": "int64",
           "name": "VoiceFileType",
@@ -855,7 +855,7 @@
         },
         {
           "default": "",
-          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "document": "当前语音数据, 编码格式要求为BASE64且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数）。格式要求参考[音频上传格式](https://cloud.tencent.com/document/product/884/56132)\n流式模式下需要将语音数据进行分片处理，参考：[分片大小设置](https://cloud.tencent.com/document/product/884/78985#.E5.88.86.E7.89.87.E5.A4.A7.E5.B0.8F.E8.AE.BE.E7.BD.AE.E4.B8.BA.E5.A4.9A.E5.A4.A7.E6.AF.94.E8.BE.83.E5.90.88.E9.80.82.3F)\n如何进行流式分片参考：[流式测试](https://cloud.tencent.com/document/product/884/78824#.E6.B5.81.E5.BC.8F.E8.AF.84.E6.B5.8B)",
           "example": "LyoqKioqKiog5pu05paw5pe26Ze077yaMjAxOeW5tDEx5pyIMTjml6UyMzozMjow",
           "member": "string",
           "name": "UserVoiceData",
@@ -900,7 +900,7 @@
         },
         {
           "default": "",
-          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。\n苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)",
           "example": "1.0",
           "member": "float",
           "name": "ScoreCoeff",
@@ -909,7 +909,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)",
           "example": "无",
           "member": "string",
           "name": "SoeAppId",
@@ -927,7 +927,7 @@
         },
         {
           "default": "",
-          "document": "输出断句中间结果标识\n0：不输出\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "document": "输出断句中间结果标识\n0：不输出（默认）\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcessWithInit请求返回结果 SentenceInfoSet 字段。",
           "example": "无",
           "member": "int64",
           "name": "SentenceInfoEnabled",
@@ -936,7 +936,7 @@
         },
         {
           "default": "",
-          "document": "评估语言\n0：英文\n1：中文\nServerType不填默认为0",
+          "document": "评估语言\n0：英文（默认）\n1：中文",
           "example": "无",
           "member": "int64",
           "name": "ServerType",
@@ -945,7 +945,7 @@
         },
         {
           "default": "",
-          "document": "异步模式标识\n0：同步模式\n1：异步模式（一般情况不建议使用异步模式）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "document": "异步模式标识\n0：同步模式（默认）\n1：异步模式（一般情况不建议使用异步模式，如需使用参考：[异步轮询](https://cloud.tencent.com/document/product/884/78824#.E7.BB.93.E6.9E.9C.E6.9F.A5.E8.AF.A2)）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
           "example": "无",
           "member": "int64",
           "name": "IsAsync",
@@ -963,7 +963,7 @@
         },
         {
           "default": "",
-          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "document": "输入文本模式\n0: 普通文本（默认）\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本",
           "example": "无",
           "member": "int64",
           "name": "TextMode",
@@ -995,7 +995,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1",
           "example": "0.99",
           "member": "float",
           "name": "PronFluency",
@@ -1004,7 +1004,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "document": "发音完整度，取值范围[0, 1]，当为词模式或自由说模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1",
           "example": "1",
           "member": "float",
           "name": "PronCompletion",
@@ -1031,7 +1031,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "保存语音音频文件下载地址",
+          "document": "已废弃，不再保存语音音频文件下载地址",
           "example": "无",
           "member": "string",
           "name": "AudioUrl",

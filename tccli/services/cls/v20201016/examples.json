@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddMachineGroupInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddMachineGroupInfo\n<公共请求参数>\n\n{\n    \"MachineGroupType\": {\n        \"Values\": [\n            \"10.0.60.184\"\n        ],\n        \"Type\": \"ip\"\n    },\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "增量添加机器组ip或者label"
+      }
+    ],
     "ApplyConfigToMachineGroup": [
       {
         "document": "",
@@ -182,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除机器组"
+      }
+    ],
+    "DeleteMachineGroupInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMachineGroupInfo\n<公共请求参数>\n\n{\n    \"MachineGroupType\": {\n        \"Values\": [\n            \"10.0.60.184\"\n        ],\n        \"Type\": \"ip\"\n    },\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "增量添加机器组ip或者label"
       }
     ],
     "DeleteShipper": [

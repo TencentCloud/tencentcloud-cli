@@ -13,7 +13,7 @@
       "output": "ConfigureSyncJobResponse"
     },
     "CreateCheckSyncJob": {
-      "document": "校验同步任务，检查必要参数和周边",
+      "document": "校验同步任务，检查必要参数和周边配置。",
       "input": "CreateCheckSyncJobRequest",
       "name": "校验同步任务",
       "output": "CreateCheckSyncJobResponse"
@@ -67,7 +67,7 @@
       "output": "DescribeCompareTasksResponse"
     },
     "DescribeMigrateDBInstances": {
-      "document": "本接口用于查询支持迁移的是云数据库实例",
+      "document": "本接口用于查询支持迁移的云数据库实例",
       "input": "DescribeMigrateDBInstancesRequest",
       "name": "查询可迁移的实例列表",
       "output": "DescribeMigrateDBInstancesResponse"
@@ -97,7 +97,7 @@
       "output": "DescribeSyncJobsResponse"
     },
     "DestroyMigrateJob": {
-      "document": "下线删除数据迁移任务。计费任务必须先调用隔离(IsolateMigrateJob)接口，且只有是**已隔离**状态下，才能调用此接口销毁任务。对于不计费任务，调用隔离(IsolateMigrateJob)接口删除任务操作。",
+      "document": "下线数据迁移任务。计费任务必须先调用隔离(IsolateMigrateJob)接口，且只有是**已隔离**状态下，才能调用此接口销毁任务。对于不计费任务，调用隔离(IsolateMigrateJob)接口删除任务操作。",
       "input": "DestroyMigrateJobRequest",
       "name": "下线数据迁移任务",
       "output": "DestroyMigrateJobResponse"
@@ -169,7 +169,7 @@
       "output": "ResizeSyncJobResponse"
     },
     "ResumeMigrateJob": {
-      "document": "重试数据迁移任务，针对redis在迁移在失败情况下的重试操作，注意：此操作跳过校验阶段，直接重新发起任务，相当于从StartMigrationJob开始执行。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "重试数据迁移任务，针对异常情况可进行重试，对于redis在失败时也可重试。注意：此操作跳过校验阶段，直接重新发起任务，相当于从StartMigrationJob开始执行。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "ResumeMigrateJobRequest",
       "name": "重试迁移任务",
       "output": "ResumeMigrateJobResponse"

@@ -54,6 +54,18 @@
       "name": "创建指定时间点截图模板",
       "output": "CreateSnapshotByTimeOffsetTemplateResponse"
     },
+    "CreateStreamLinkFlow": {
+      "document": "创建媒体传输的传输流配置。",
+      "input": "CreateStreamLinkFlowRequest",
+      "name": "创建媒体传输流",
+      "output": "CreateStreamLinkFlowResponse"
+    },
+    "CreateStreamLinkOutputInfo": {
+      "document": "创建媒体传输流的输出信息。",
+      "input": "CreateStreamLinkOutputInfoRequest",
+      "name": "创建媒体传输的输出信息",
+      "output": "CreateStreamLinkOutputInfoResponse"
+    },
     "CreateTranscodeTemplate": {
       "document": "创建用户自定义转码模板，数量上限：1000。",
       "input": "CreateTranscodeTemplateRequest",
@@ -131,6 +143,18 @@
       "input": "DeleteSnapshotByTimeOffsetTemplateRequest",
       "name": "删除指定时间点截图模板",
       "output": "DeleteSnapshotByTimeOffsetTemplateResponse"
+    },
+    "DeleteStreamLinkFlow": {
+      "document": "删除媒体传输的传输流配置。",
+      "input": "DeleteStreamLinkFlowRequest",
+      "name": "删除媒体传输流",
+      "output": "DeleteStreamLinkFlowResponse"
+    },
+    "DeleteStreamLinkOutput": {
+      "document": "删除媒体传输流的输出配置。",
+      "input": "DeleteStreamLinkOutputRequest",
+      "name": "删除媒体传输输出",
+      "output": "DeleteStreamLinkOutputResponse"
     },
     "DeleteTranscodeTemplate": {
       "document": "删除用户自定义转码模板。",
@@ -215,6 +239,60 @@
       "input": "DescribeSnapshotByTimeOffsetTemplatesRequest",
       "name": "获取指定时间点截图模板列表",
       "output": "DescribeSnapshotByTimeOffsetTemplatesResponse"
+    },
+    "DescribeStreamLinkActivateState": {
+      "document": "查询媒体传输开通状态。",
+      "input": "DescribeStreamLinkActivateStateRequest",
+      "name": "查询媒体传输开通状态",
+      "output": "DescribeStreamLinkActivateStateResponse"
+    },
+    "DescribeStreamLinkFlow": {
+      "document": "查询媒体输入流的配置信息。",
+      "input": "DescribeStreamLinkFlowRequest",
+      "name": "查询媒体输入流",
+      "output": "DescribeStreamLinkFlowResponse"
+    },
+    "DescribeStreamLinkFlowLogs": {
+      "document": "查询媒体传输流的日志信息。",
+      "input": "DescribeStreamLinkFlowLogsRequest",
+      "name": "查询传输流的日志",
+      "output": "DescribeStreamLinkFlowLogsResponse"
+    },
+    "DescribeStreamLinkFlowMediaStatistics": {
+      "document": "查询媒体传输流的媒体质量数据。\n",
+      "input": "DescribeStreamLinkFlowMediaStatisticsRequest",
+      "name": "查询媒体质量数据",
+      "output": "DescribeStreamLinkFlowMediaStatisticsResponse"
+    },
+    "DescribeStreamLinkFlowRealtimeStatus": {
+      "document": "实时查询流的当前状态",
+      "input": "DescribeStreamLinkFlowRealtimeStatusRequest",
+      "name": "查询流实时状态接口",
+      "output": "DescribeStreamLinkFlowRealtimeStatusResponse"
+    },
+    "DescribeStreamLinkFlowSRTStatistics": {
+      "document": "查询媒体传输流的SRT质量数据。",
+      "input": "DescribeStreamLinkFlowSRTStatisticsRequest",
+      "name": "查询SRT数据信息",
+      "output": "DescribeStreamLinkFlowSRTStatisticsResponse"
+    },
+    "DescribeStreamLinkFlowStatistics": {
+      "document": "查询媒体传输流的媒体质量数据。\n",
+      "input": "DescribeStreamLinkFlowStatisticsRequest",
+      "name": "查询流的媒体质量数据",
+      "output": "DescribeStreamLinkFlowStatisticsResponse"
+    },
+    "DescribeStreamLinkFlows": {
+      "document": "批量查询媒体输入流的配置信息。",
+      "input": "DescribeStreamLinkFlowsRequest",
+      "name": "批量查询媒体输入流",
+      "output": "DescribeStreamLinkFlowsResponse"
+    },
+    "DescribeStreamLinkRegions": {
+      "document": "查询媒体传输所有地区。",
+      "input": "DescribeStreamLinkRegionsRequest",
+      "name": "查询媒体传输地区",
+      "output": "DescribeStreamLinkRegionsResponse"
     },
     "DescribeTaskDetail": {
       "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。",
@@ -336,6 +414,24 @@
       "name": "修改指定时间点截图模板",
       "output": "ModifySnapshotByTimeOffsetTemplateResponse"
     },
+    "ModifyStreamLinkFlow": {
+      "document": "修改媒体传输的传输流配置信息。",
+      "input": "ModifyStreamLinkFlowRequest",
+      "name": "修改媒体传输流",
+      "output": "ModifyStreamLinkFlowResponse"
+    },
+    "ModifyStreamLinkInput": {
+      "document": "修改媒体传输流的输入信息。",
+      "input": "ModifyStreamLinkInputRequest",
+      "name": "修改媒体传输输入",
+      "output": "ModifyStreamLinkInputResponse"
+    },
+    "ModifyStreamLinkOutputInfo": {
+      "document": "修改媒体传输流的输出配置。",
+      "input": "ModifyStreamLinkOutputInfoRequest",
+      "name": "修改媒体传输的输出信息",
+      "output": "ModifyStreamLinkOutputInfoResponse"
+    },
     "ModifyTranscodeTemplate": {
       "document": "修改用户自定义转码模板信息。",
       "input": "ModifyTranscodeTemplateRequest",
@@ -389,6 +485,18 @@
       "input": "ResetWorkflowRequest",
       "name": "重设工作流",
       "output": "ResetWorkflowResponse"
+    },
+    "StartStreamLinkFlow": {
+      "document": "启动媒体传输流。",
+      "input": "StartStreamLinkFlowRequest",
+      "name": "开启媒体传输流",
+      "output": "StartStreamLinkFlowResponse"
+    },
+    "StopStreamLinkFlow": {
+      "document": "停止媒体传输流。",
+      "input": "StopStreamLinkFlowRequest",
+      "name": "停止媒体传输流",
+      "output": "StopStreamLinkFlowResponse"
     }
   },
   "metadata": {
@@ -5489,6 +5597,578 @@
       ],
       "type": "object"
     },
+    "CreateInput": {
+      "document": "创建输入的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入名称，可填大小写、数字和下划线，长度为[1, 32]。",
+          "example": "input",
+          "member": "string",
+          "name": "InputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入描述，长度为[0, 255]。",
+          "example": "input description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的IP白名单，格式为CIDR。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的SRT配置信息。",
+          "example": "0",
+          "member": "CreateInputSRTSettings",
+          "name": "SRTSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的RTP配置信息。",
+          "example": "0",
+          "member": "CreateInputRTPSettings",
+          "name": "RTPSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "FailOver",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的RTMP_PULL配置信息。",
+          "example": "无",
+          "member": "CreateInputRTMPPullSettings",
+          "name": "RTMPPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的RTSP_PULL配置信息。",
+          "example": "无",
+          "member": "CreateInputRTSPPullSettings",
+          "name": "RTSPPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputRTMPPullSettings": {
+      "document": "创建的输入RTMP拉流的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP源站的源站地址，有且只能有一个。",
+          "example": "无",
+          "member": "RTMPPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputRTPSettings": {
+      "document": "创建输入的RTP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "默认为“none”，可选值['none']。",
+          "example": "none",
+          "member": "string",
+          "name": "FEC",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。",
+          "example": "1000",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputRTSPPullSettings": {
+      "document": "创建的输入RTSP拉流的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP源站的源站地址，有且只能有一个。",
+          "example": "无",
+          "member": "RTSPPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputSRTSettings": {
+      "document": "创建的输入SRT的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "SRT模式，可选[LISTENER|CALLER]，默认为LISTENER。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。",
+          "example": "streamId",
+          "member": "string",
+          "name": "StreamId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟，默认0，单位ms，范围为[0, 3000]。",
+          "example": "0",
+          "member": "int64",
+          "name": "Latency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收延迟，默认120，单位ms，范围为[0, 3000]。",
+          "example": "120",
+          "member": "int64",
+          "name": "RecvLatency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端延迟，默认0，单位ms，范围为[0, 3000]。",
+          "example": "0",
+          "member": "int64",
+          "name": "PeerLatency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端超时时间，默认5000，单位ms，范围为[1000, 10000]。",
+          "example": "5000",
+          "member": "int64",
+          "name": "PeerIdleTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。",
+          "example": "无",
+          "member": "string",
+          "name": "Passphrase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥长度，默认为0，可选[0|16|24|32]。",
+          "example": "0",
+          "member": "int64",
+          "name": "PbKeyLen",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SRT对端地址，当Mode为CALLER时必填，且只能填1组。",
+          "example": "无",
+          "member": "SRTSourceAddressReq",
+          "name": "SourceAddresses",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputInfo": {
+      "document": "创建输出的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出的名称。",
+          "example": "OutputName",
+          "member": "string",
+          "name": "OutputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出描述。",
+          "example": "OutputName",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出地区。",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "OutputRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的SRT的配置。",
+          "example": "0",
+          "member": "CreateOutputSRTSettings",
+          "name": "SRTSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的RTMP的配置。",
+          "example": "0",
+          "member": "CreateOutputRTMPSettings",
+          "name": "RTMPSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的RTP的配置。",
+          "example": "0",
+          "member": "CreateOutputInfoRTPSettings",
+          "name": "RTPSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
+          "example": "0",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputInfoRTPSettings": {
+      "document": "创建媒体传输流的输出的RTP配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标地址，可填1~2个。",
+          "example": "0",
+          "member": "CreateOutputRTPSettingsDestinations",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只能填none。",
+          "example": "none",
+          "member": "string",
+          "name": "FEC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空闲超时时间，单位ms。",
+          "example": "1000",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputRTMPSettings": {
+      "document": "创建媒体传输流的输出的RTMP配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标地址，可填1~2个。",
+          "example": "your address",
+          "member": "CreateOutputRtmpSettingsDestinations",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTMP的Chunk大小，范围为[4096, 40960]。",
+          "example": "4096",
+          "member": "int64",
+          "name": "ChunkSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputRTPSettingsDestinations": {
+      "document": "创建媒体传输流的输出的RTP的目标地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标IP。",
+          "example": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推的目标端口。",
+          "example": "port",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputRtmpSettingsDestinations": {
+      "document": "创建媒体传输流的输出的RTMP的目标地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的URL，格式如：rtmp://domain/live。",
+          "example": "your url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推的StreamKey，格式如：stream?key=value。",
+          "example": "test",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputSRTSettings": {
+      "document": "创建媒体传输流的输出的SRT配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标地址，当Mode为CALLER时必填，且只能填1组。",
+          "example": "无",
+          "member": "CreateOutputSRTSettingsDestinations",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。",
+          "example": "StreamId",
+          "member": "string",
+          "name": "StreamId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。",
+          "example": "0",
+          "member": "int64",
+          "name": "Latency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。",
+          "example": "120",
+          "member": "int64",
+          "name": "RecvLatency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。",
+          "example": "0",
+          "member": "int64",
+          "name": "PeerLatency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。",
+          "example": "5000",
+          "member": "int64",
+          "name": "PeerIdleTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。",
+          "example": "无",
+          "member": "string",
+          "name": "Passphrase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的密钥长度，默认为0，可选[0|16|24|32]。",
+          "example": "0",
+          "member": "int64",
+          "name": "PbKeyLen",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SRT模式，可选[LISTENER|CALLER]，默认为CALLER。",
+          "example": "CALLER",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateOutputSRTSettingsDestinations": {
+      "document": "创建媒体传输流的输出SRT的目标地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出的IP。",
+          "example": "test",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的端口。",
+          "example": "test",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreatePersonSampleRequest": {
       "document": "CreatePersonSample请求参数结构体",
       "members": [
@@ -5748,6 +6428,105 @@
           "name": "Definition",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkFlowRequest": {
+      "document": "CreateStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大带宽，单位bps，可选[10000000, 20000000, 50000000]。",
+          "example": "20000000",
+          "member": "int64",
+          "name": "MaxBandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流的输入组。",
+          "example": "无",
+          "member": "CreateInput",
+          "name": "InputGroup",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkFlowResponse": {
+      "document": "CreateStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "创建的Flow信息。",
+          "example": "无",
+          "member": "DescribeFlow",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkOutputInfoRequest": {
+      "document": "CreateStreamLinkOutputInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流Id。",
+          "example": "01746cfeda560956b92d34d30445",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传输流的Output配置。",
+          "example": "无",
+          "member": "CreateOutputInfo",
+          "name": "Output",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkOutputInfoResponse": {
+      "document": "CreateStreamLinkOutputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "创建后的Output信息。",
+          "example": "无",
+          "member": "DescribeOutput",
+          "name": "Info",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -6377,6 +7156,69 @@
       ],
       "type": "object"
     },
+    "DeleteStreamLinkFlowRequest": {
+      "document": "DeleteStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamLinkFlowResponse": {
+      "document": "DeleteStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamLinkOutputRequest": {
+      "document": "DeleteStreamLinkOutput请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输出Id。",
+          "example": "asd21dsa",
+          "member": "string",
+          "name": "OutputId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamLinkOutputResponse": {
+      "document": "DeleteStreamLinkOutput返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTranscodeTemplateRequest": {
       "document": "DeleteTranscodeTemplate请求参数结构体",
       "members": [
@@ -6843,6 +7685,72 @@
       ],
       "type": "object"
     },
+    "DescribeFlow": {
+      "document": "查询Flow的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流状态，目前有IDLE/RUNNING。",
+          "example": "IDLE",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大带宽值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入组。",
+          "example": "无",
+          "member": "DescribeInput",
+          "name": "InputGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutput",
+          "name": "OutputGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeImageSpriteTemplatesRequest": {
       "document": "DescribeImageSpriteTemplates请求参数结构体",
       "members": [
@@ -6915,6 +7823,322 @@
       ],
       "type": "object"
     },
+    "DescribeInput": {
+      "document": "查询输入配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入Id。",
+          "example": "id",
+          "member": "string",
+          "name": "InputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入名称。",
+          "example": "inputName",
+          "member": "string",
+          "name": "InputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入协议。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入地址列表。",
+          "example": "0",
+          "member": "InputAddress",
+          "name": "InputAddressList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入IP白名单列表。",
+          "example": "0",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "DescribeInputSRTSettings",
+          "name": "SRTSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "DescribeInputRTPSettings",
+          "name": "RTPSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入的地区。",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "InputRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的RTMP配置信息。",
+          "example": "0",
+          "member": "DescribeInputRTMPSettings",
+          "name": "RTMPSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的主备开关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "FailOver",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入的RTMP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeInputRTMPPullSettings",
+          "name": "RTMPPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入的RTSP_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeInputRTSPPullSettings",
+          "name": "RTSPPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputRTMPPullSettings": {
+      "document": "查询输入的RTMP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP源站地址信息。",
+          "example": "streamKey",
+          "member": "DescribeRTMPPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputRTMPSettings": {
+      "document": "查询输入的RTMP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP的推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live_appid",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RTMP的推流StreamKey。\nRTMP的推流地址拼接规则为：rtmp://Ip:1935/AppName/StreamKey",
+          "example": "inputid_index",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputRTPSettings": {
+      "document": "查询输入的RTP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "是否FEC。",
+          "example": "FEC",
+          "member": "string",
+          "name": "FEC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空闲超时时间。",
+          "example": "timeout",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputRTSPPullSettings": {
+      "document": "查询输入的RTSP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP源站地址信息。",
+          "example": "无",
+          "member": "DescribeRTSPPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputSRTSettings": {
+      "document": "查询输入的SRT配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "SRT模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LISTENER",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "StreamId",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟。",
+          "example": "0",
+          "member": "int64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收延迟。",
+          "example": "120",
+          "member": "int64",
+          "name": "RecvLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端延迟。",
+          "example": "0",
+          "member": "int64",
+          "name": "PeerLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端空闲超时时间。",
+          "example": "5000",
+          "member": "int64",
+          "name": "PeerIdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解密密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "Passphrase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥长度。",
+          "example": "0",
+          "member": "int64",
+          "name": "PbKeyLen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SRT对端地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SRTSourceAddressResp",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeMediaMetaDataRequest": {
       "document": "DescribeMediaMetaData请求参数结构体",
       "members": [
@@ -6947,6 +8171,394 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeOutput": {
+      "document": "查询输出的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出Id。",
+          "example": "AB342ED131CE",
+          "member": "string",
+          "name": "OutputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出名称。",
+          "example": "OutputName",
+          "member": "string",
+          "name": "OutputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出类型。",
+          "example": "Internet",
+          "member": "string",
+          "name": "OutputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出协议。",
+          "example": "RTMP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的出口地址信息列表。",
+          "example": "无",
+          "member": "OutputAddress",
+          "name": "OutputAddressList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的地区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "OutputRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的SRT配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputSRTSettings",
+          "name": "SRTSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的RTP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTPSettings",
+          "name": "RTPSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的RTMP配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTMPSettings",
+          "name": "RTMPSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的RTMP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTMPPullSettings",
+          "name": "RTMPPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CIDR白名单列表。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的RTSP拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTSPPullSettings",
+          "name": "RTSPPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTMPPullServerUrl": {
+      "document": "查询输出的RTMP拉流URL信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP拉流地址的tcUrl。",
+          "example": "rtmp://1.1.1.1:1/live",
+          "member": "string",
+          "name": "TcUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTMP拉流地址的流key。",
+          "example": "AB342ED131CE",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTMPPullSettings": {
+      "document": "查询输出的RTMP拉流配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "拉流地址列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTMPPullServerUrl",
+          "name": "ServerUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTMPSettings": {
+      "document": "查询输出的RTMP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "空闲超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Chunk大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "ChunkSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转推RTMP的目标地址信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "address",
+          "member": "RTMPAddressDestination",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTPSettings": {
+      "document": "查询输出的RTP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推RTP的目标地址信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RTPAddressDestination",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否FEC。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FEC",
+          "member": "string",
+          "name": "FEC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "空闲超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTSPPullServerUrl": {
+      "document": "查询输出的RTSP拉流URL信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP拉流地址的Url。",
+          "example": "rtsp://ip_or_domain[:rtsp_port]/server_URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputRTSPPullSettings": {
+      "document": "查询输出的RTSP拉流配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP拉流地址列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputRTSPPullServerUrl",
+          "name": "ServerUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputSRTSettings": {
+      "document": "查询输出的SRT配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标的地址信息列表，SRT模式为CALLER时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SRTAddressDestination",
+          "name": "Destinations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "StreamId",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接收延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120",
+          "member": "int64",
+          "name": "RecvLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对端延迟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PeerLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对端空闲超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "PeerIdleTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加密密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Passphrase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加密密钥长度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PbKeyLen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SRT模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CALLER",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器监听地址，SRT模式为LISTENER时使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputSRTSourceAddressResp",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribePersonSamplesRequest": {
       "document": "DescribePersonSamples请求参数结构体",
@@ -7027,6 +8639,48 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeRTMPPullSourceAddress": {
+      "document": "查询输入的RTMP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP源站的TcUrl地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://domain/live",
+          "member": "string",
+          "name": "TcUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RTMP源站的StreamKey。\nRTMP源站地址拼接规则为：$TcUrl/$StreamKey。",
+          "example": "streamKey",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeRTSPPullSourceAddress": {
+      "document": "查询输入的RTSP配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP源站的Url地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtsp://ip_or_domain[:rtsp_port]/server_URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeSampleSnapshotTemplatesRequest": {
       "document": "DescribeSampleSnapshotTemplates请求参数结构体",
@@ -7161,6 +8815,643 @@
           "name": "SnapshotByTimeOffsetTemplateSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkActivateStateRequest": {
+      "document": "DescribeStreamLinkActivateState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStreamLinkActivateStateResponse": {
+      "document": "DescribeStreamLinkActivateState返回参数结构体",
+      "members": [
+        {
+          "document": "用户已激活为0，否则为非0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowLogsRequest": {
+      "document": "DescribeStreamLinkFlowLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流Id。",
+          "example": "0175723949ba0956b92d0bf40cfe",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的开始时间，默认为前一小时，最多支持查询近7天。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T13:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的结束时间，默认为StartTime后一小时，最多支持查询24小时的数据。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T13:27:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出类型，可选[input|output]。",
+          "example": "[\"Input\",\"Output\"]",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主通道或备通道，可选[0|1]。",
+          "example": "[\"0\",\"1\"]",
+          "member": "string",
+          "name": "Pipeline",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认100，范围为[1, 1000]。",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按Timestamp升序或降序排序，默认降序，可选[desc|asc]。",
+          "example": "desc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码，默认1，范围为[1, 1000]。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowLogsResponse": {
+      "document": "DescribeStreamLinkFlowLogs返回参数结构体",
+      "members": [
+        {
+          "document": "日志信息列表。",
+          "example": "无",
+          "member": "FlowLogInfo",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页码。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小。",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowMediaStatisticsRequest": {
+      "document": "DescribeStreamLinkFlowMediaStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流ID。",
+          "example": "0175723949ba0956b92d0bf40cfe",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出类型，可选[input|output]。",
+          "example": "input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出Id。",
+          "example": "0175723949bb0956b92d0bf40cff",
+          "member": "string",
+          "name": "InputOutputId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主通道或备通道，可选[0|1]。",
+          "example": "0",
+          "member": "string",
+          "name": "Pipeline",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询间隔，可选[5s|1min|5min|15min]。",
+          "example": "1min",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的开始时间，默认为前一小时，最多支持查询近7天。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T11:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的结束时间，默认为StartTime后一小时，最多支持查询24小时的数据。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T12:00:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowMediaStatisticsResponse": {
+      "document": "DescribeStreamLinkFlowMediaStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "传输流的媒体数据列表。",
+          "example": "无",
+          "member": "FlowMediaInfo",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowRealtimeStatusRequest": {
+      "document": "DescribeStreamLinkFlowRealtimeStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流ID。",
+          "example": "0176ac7f1af20956b92d2aad1e6d",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入id数组，如果输入输出数组都为空，则代表全量查询。",
+          "example": "[\"0176ac7f1af3\",\"0956b92d2aad1e6e\"]",
+          "member": "string",
+          "name": "InputIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "输出id数组，如果输入输出数组都为空，则代表全量查询。",
+          "example": "[\"0178c3f4bceb09\",\"56b92d149e1b5d\"]",
+          "member": "string",
+          "name": "OutputIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowRealtimeStatusResponse": {
+      "document": "DescribeStreamLinkFlowRealtimeStatus返回参数结构体",
+      "members": [
+        {
+          "document": "查询时间，单位s。",
+          "example": "1618543864",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实时数据信息列表。",
+          "example": "无",
+          "member": "FlowRealtimeStatusItem",
+          "name": "Datas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowRequest": {
+      "document": "DescribeStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowResponse": {
+      "document": "DescribeStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "流的配置信息。",
+          "example": "无",
+          "member": "DescribeFlow",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowSRTStatisticsRequest": {
+      "document": "DescribeStreamLinkFlowSRTStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流ID。",
+          "example": "0175723949ba0956b92d0bf40cfe",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出类型，可选[input|output]。",
+          "example": "input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出Id。",
+          "example": "0175723949bb0956b92d0bf40cff",
+          "member": "string",
+          "name": "InputOutputId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主通道或备通道，可选[0|1]。",
+          "example": "0",
+          "member": "string",
+          "name": "Pipeline",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的开始时间，默认为前一小时，最多支持查询近7天。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T11:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的结束时间，默认为StartTime后一小时，最多支持查询24小时的数据。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-12-10T12:00:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询间隔，可选[5s|1min|5min|15min]。",
+          "example": "1min",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowSRTStatisticsResponse": {
+      "document": "DescribeStreamLinkFlowSRTStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "传输流的SRT质量数据列表。",
+          "example": "无",
+          "member": "FlowSRTInfo",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowStatisticsRequest": {
+      "document": "DescribeStreamLinkFlowStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传输流ID。",
+          "example": "AB342ED131CE",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出类型，可选[input|output]。",
+          "example": "input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入或输出Id。",
+          "example": "CD342ED131CE",
+          "member": "string",
+          "name": "InputOutputId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主通道或备通道，可选[0|1]。",
+          "example": "0",
+          "member": "string",
+          "name": "Pipeline",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询间隔，可选[5s|1min|5min|15min]。",
+          "example": "1min",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的开始时间，默认为前一小时，最多支持查询近7天。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-01-01T12:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计的结束时间，默认为StartTime后一小时，最多支持查询24小时的数据。\nUTC时间，如'2020-01-01T12:00:00Z'。",
+          "example": "2020-01-01T12:00:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowStatisticsResponse": {
+      "document": "DescribeStreamLinkFlowStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "传输流的媒体数据列表。",
+          "example": "无",
+          "member": "FlowStatisticsArray",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowsRequest": {
+      "document": "DescribeStreamLinkFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "当前页数，默认1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认10。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkFlowsResponse": {
+      "document": "DescribeStreamLinkFlows返回参数结构体",
+      "members": [
+        {
+          "document": "流的配置信息列表。",
+          "example": "无",
+          "member": "DescribeFlow",
+          "name": "Infos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamLinkRegionsRequest": {
+      "document": "DescribeStreamLinkRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStreamLinkRegionsResponse": {
+      "document": "DescribeStreamLinkRegions返回参数结构体",
+      "members": [
+        {
+          "document": "媒体传输地区信息。",
+          "example": "无",
+          "member": "StreamLinkRegionInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -8235,6 +10526,800 @@
       ],
       "usage": "both"
     },
+    "FlowAudio": {
+      "document": "流的音频数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "帧率。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率，单位是bps。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频Pid。",
+          "example": "256",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowLogInfo": {
+      "document": "传输流日志信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳，单位为秒。",
+          "example": "12 ",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入输出类型（input/output）。",
+          "example": " input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入或输出Id。",
+          "example": " 12478",
+          "member": "string",
+          "name": "InputOutputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议。",
+          "example": " RTMP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件代码。",
+          "example": " 10224",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件信息。",
+          "example": " test",
+          "member": "string",
+          "name": "EventMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端IP。",
+          "example": " ip",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端端口。",
+          "example": " port",
+          "member": "string",
+          "name": "RemotePort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主备通道，0为主通道，1为备通道。",
+          "example": " 1",
+          "member": "string",
+          "name": "Pipeline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入或输出的名称。",
+          "example": " name",
+          "member": "string",
+          "name": "InputOutputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowMediaAudio": {
+      "document": "传输流媒体的音频数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "帧率。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率，单位是bps。",
+          "example": "1477",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频Pid。",
+          "example": "10227",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标志同一次推流。",
+          "example": "20147",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowMediaInfo": {
+      "document": "传输流的媒体数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳，单位是秒。",
+          "example": "1610954100",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总带宽。",
+          "example": "2824932",
+          "member": "int64",
+          "name": "Network",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传输流的视频数据。",
+          "example": "0",
+          "member": "FlowMediaVideo",
+          "name": "Video",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传输流的音频数据。",
+          "example": "0",
+          "member": "FlowMediaAudio",
+          "name": "Audio",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标志同一次推流。",
+          "example": "412573995",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowMediaVideo": {
+      "document": "传输流媒体的视频数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "帧率。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率，单位是bps。",
+          "example": "1477",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频Pid。",
+          "example": "10251",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标志同一次推流。",
+          "example": "14557",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowRealtimeStatusCommon": {
+      "document": "实时流状态查询的通用状态信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "当前连接状态，Connected|Waiting|Idle。",
+          "example": "Connected",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接模式，Listener|Caller。",
+          "example": "Listener",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已连接时长，单位为ms。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectedTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时码率，单位为bps。",
+          "example": "1",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试次数。",
+          "example": "1",
+          "member": "int64",
+          "name": "Reconnections",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowRealtimeStatusItem": {
+      "document": "流状态实时查询接口的流状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，Input|Output。",
+          "example": "Input",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入Id，如果Type为Input，此字段不为空。",
+          "example": "0176ac7f1af30956b92d2aad1e6e",
+          "member": "string",
+          "name": "InputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出Id，如果Type为Output，此字段不为空。",
+          "example": "2176ac7f1af20956b92d2aad1234",
+          "member": "string",
+          "name": "OutputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "asd5ac7f1af20956b92d2aadq231",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议， SRT | RTMP。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "共同状态信息。",
+          "example": "无",
+          "member": "FlowRealtimeStatusCommon",
+          "name": "CommonStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是SRT协议则有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowRealtimeStatusSRT",
+          "name": "SRTStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果是RTMP协议则有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowRealtimeStatusRTMP",
+          "name": "RTMPStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器IP。",
+          "example": "121.23.56.99",
+          "member": "string",
+          "name": "ConnectServerIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是RTP协议则有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowRealtimeStatusRTP",
+          "name": "RTPStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowRealtimeStatusRTMP": {
+      "document": "流状态实时查询接口的RTMP信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频帧率。",
+          "example": "25",
+          "member": "int64",
+          "name": "VideoFPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频帧率。",
+          "example": "48",
+          "member": "int64",
+          "name": "AudioFPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowRealtimeStatusRTP": {
+      "document": "流状态实时查询接口的RTP流状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "传输的包个数",
+          "example": "30",
+          "member": "int64",
+          "name": "Packets",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowRealtimeStatusSRT": {
+      "document": "流状态实时查询接口的SRT信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "延迟，单位为ms。",
+          "example": "1",
+          "member": "int64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTT，单位为ms。",
+          "example": "1",
+          "member": "int64",
+          "name": "RTT",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时发包数或者收包数。",
+          "example": "1",
+          "member": "int64",
+          "name": "Packets",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "丢包率。",
+          "example": "0.01",
+          "member": "float",
+          "name": "PacketLossRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重传率。",
+          "example": "0.01",
+          "member": "float",
+          "name": "RetransmitRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时丢包数。",
+          "example": "1",
+          "member": "int64",
+          "name": "DroppedPackets",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否加密，On|Off。",
+          "example": "On",
+          "member": "string",
+          "name": "Encryption",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowSRTInfo": {
+      "document": "传输流的SRT质量数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳，单位是秒。",
+          "example": "1611288000",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送丢包率。",
+          "example": "0",
+          "member": "int64",
+          "name": "SendPacketLossRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送重传率。",
+          "example": "0",
+          "member": "int64",
+          "name": "SendRetransmissionRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收丢包率。",
+          "example": "0",
+          "member": "int64",
+          "name": "RecvPacketLossRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收重传率。",
+          "example": "0",
+          "member": "int64",
+          "name": "RecvRetransmissionRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与对端的RTT时延。",
+          "example": "100",
+          "member": "int64",
+          "name": "RTT",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标志同一次推流。",
+          "example": "15346848",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送弃包数。",
+          "example": "0",
+          "member": "int64",
+          "name": "SendPacketDropNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收弃包数。",
+          "example": "0",
+          "member": "int64",
+          "name": "RecvPacketDropNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowStatistics": {
+      "document": "流的统计数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "会话Id。",
+          "example": "1564865",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总带宽。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Network",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频数据。",
+          "example": "0",
+          "member": "FlowVideo",
+          "name": "Video",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频数据。",
+          "example": "0",
+          "member": "FlowAudio",
+          "name": "Audio",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowStatisticsArray": {
+      "document": "流的统计数据列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳。",
+          "example": "1611288000",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每个会话的统计数据。",
+          "example": "0",
+          "member": "FlowStatistics",
+          "name": "FlowStatistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowVideo": {
+      "document": "流的视频数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "帧率。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率，单位是bps。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频Pid。",
+          "example": "257",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FrameRateConfig": {
       "document": "插帧帧率配置",
       "members": [
@@ -8697,6 +11782,32 @@
           "name": "RepeatType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InputAddress": {
+      "document": "输入地址信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入地址的IP。",
+          "example": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入地址的端口。",
+          "example": "port",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -11920,6 +15031,198 @@
       ],
       "type": "object"
     },
+    "ModifyInput": {
+      "document": "修改输入信息的参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入Id。",
+          "example": "InputId",
+          "member": "string",
+          "name": "InputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入名称。",
+          "example": "InputName",
+          "member": "string",
+          "name": "InputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入描述。",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许的推流的IP，CIDR格式。",
+          "example": "[\"0.0.0.0/0\"]",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SRT的配置信息。",
+          "example": "0",
+          "member": "CreateInputSRTSettings",
+          "name": "SRTSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTP的配置信息。",
+          "example": "0",
+          "member": "CreateInputRTPSettings",
+          "name": "RTPSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的协议，可选[SRT|RTP|RTMP]。\n当输出包含RTP时，输入只能是RTP。\n当输出包含RTMP时，输入可以是SRT/RTMP。\n当输出包含SRT时，输入只能是SRT。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的主备开关，可选[OPEN|CLOSE]。",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "FailOver",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTMP_PULL的配置信息。",
+          "example": "0",
+          "member": "CreateInputRTMPPullSettings",
+          "name": "RTMPPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTSP_PULL的配置信息。",
+          "example": "无",
+          "member": "CreateInputRTSPPullSettings",
+          "name": "RTSPPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyOutputInfo": {
+      "document": "修改Output配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改的Output的Id。",
+          "example": "AB342ED131CE",
+          "member": "string",
+          "name": "OutputId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的名称。",
+          "example": "OutputName",
+          "member": "string",
+          "name": "OutputName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的描述。",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的转推协议，支持SRT|RTP|RTMP。",
+          "example": "SRT",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推SRT的配置。",
+          "example": "无",
+          "member": "CreateOutputSRTSettings",
+          "name": "SRTSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推RTP的配置。",
+          "example": "无",
+          "member": "CreateOutputInfoRTPSettings",
+          "name": "RTPSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推RTMP的配置。",
+          "example": "无",
+          "member": "CreateOutputRTMPSettings",
+          "name": "RTMPSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
+          "example": "无",
+          "member": "string",
+          "name": "AllowIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyPersonSampleRequest": {
       "document": "ModifyPersonSample请求参数结构体",
       "members": [
@@ -12189,6 +15492,132 @@
     "ModifySnapshotByTimeOffsetTemplateResponse": {
       "document": "ModifySnapshotByTimeOffsetTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkFlowRequest": {
+      "document": "ModifyStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的流名称。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkFlowResponse": {
+      "document": "ModifyStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkInputRequest": {
+      "document": "ModifyStreamLinkInput请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "01746cfeda560956b92d34d30445",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的Input信息。",
+          "example": "无",
+          "member": "ModifyInput",
+          "name": "Input",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkInputResponse": {
+      "document": "ModifyStreamLinkInput返回参数结构体",
+      "members": [
+        {
+          "document": "修改后的Input信息。",
+          "example": "无",
+          "member": "DescribeInput",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkOutputInfoRequest": {
+      "document": "ModifyStreamLinkOutputInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的Output配置。",
+          "example": "无",
+          "member": "ModifyOutputInfo",
+          "name": "Output",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkOutputInfoResponse": {
+      "document": "ModifyStreamLinkOutputInfo返回参数结构体",
+      "members": [
+        {
+          "document": "修改后的Output配置。",
+          "example": "无",
+          "member": "DescribeOutput",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12650,6 +16079,48 @@
           "name": "LabelSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OutputAddress": {
+      "document": "输出的出口的地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "出口IP。",
+          "example": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputSRTSourceAddressResp": {
+      "document": "SRT输出的监听地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "监听IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听端口。",
+          "example": "65535",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13891,6 +17362,100 @@
       ],
       "usage": "in"
     },
+    "RTMPAddressDestination": {
+      "document": "RTMP转推的目标地址信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推RTMP的目标Url，格式如'rtmp://domain/live'。",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推RTMP的目标StreamKey，格式如'steamid?key=value'。",
+          "example": "streamkey",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RTMPPullSourceAddress": {
+      "document": "创建的输入RTMP拉流源站配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTMP源站的TcUrl地址。",
+          "example": "rtmp://domain/live",
+          "member": "string",
+          "name": "TcUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTMP源站的StreamKey信息。",
+          "example": "streamKey",
+          "member": "string",
+          "name": "StreamKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RTPAddressDestination": {
+      "document": "转推的RTP目标地址信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推的目标地址的IP。",
+          "example": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推的目标地址的端口。",
+          "example": "port",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RTSPPullSourceAddress": {
+      "document": "创建的输入RTSP拉流源站配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "RTSP源站的Url地址。",
+          "example": "rtsp://9.223.70.41:8806/live/streamname",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "RawImageWatermarkInput": {
       "document": "图片水印模板输入参数",
       "members": [
@@ -14097,6 +17662,22 @@
       ],
       "type": "object"
     },
+    "RegionInfo": {
+      "document": "地区信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "地区名称。",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResetWorkflowRequest": {
       "document": "ResetWorkflow请求参数结构体",
       "members": [
@@ -14202,6 +17783,84 @@
         }
       ],
       "type": "object"
+    },
+    "SRTAddressDestination": {
+      "document": "转推的目标地址信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "目标地址的IP。",
+          "example": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标地址的端口。",
+          "example": "port",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SRTSourceAddressReq": {
+      "document": "SRT输入源地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "对端IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端端口。",
+          "example": "65535",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SRTSourceAddressResp": {
+      "document": "SRT输入源地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "对端IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对端端口。",
+          "example": "65535",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型。",
@@ -14852,6 +18511,76 @@
           "name": "FillType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StartStreamLinkFlowRequest": {
+      "document": "StartStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartStreamLinkFlowResponse": {
+      "document": "StartStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopStreamLinkFlowRequest": {
+      "document": "StopStreamLinkFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流Id。",
+          "example": "aaa",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopStreamLinkFlowResponse": {
+      "document": "StopStreamLinkFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StreamLinkRegionInfo": {
+      "document": "媒体传输的地区信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体直传输的地区信息列表。",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

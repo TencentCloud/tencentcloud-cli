@@ -16983,6 +16983,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -16992,6 +16993,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17001,6 +17003,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17010,6 +17013,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17018,7 +17022,18 @@
         },
         {
           "default": "",
+          "document": "转自适应码流任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "对视频转自适应码流任务的输入。",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "Input",
           "required": true,
@@ -17028,6 +17043,7 @@
         {
           "default": "",
           "document": "对视频转自适应码流任务的输出。",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingInfoItem",
           "name": "Output",
           "required": true,

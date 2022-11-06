@@ -1,7 +1,7 @@
 {
   "actions": {
     "AssessQuality": {
-      "document": "评估输入图片在视觉上的质量，从多个方面评估，并同时给出综合的、客观的清晰度评分，和主观的美观度评分。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "评估输入图片在视觉上的质量，从多个方面评估，并同时给出综合的、客观的清晰度评分，和主观的美观度评分。\n\n>   \n- 可前往 [图像处理](https://cloud.tencent.com/document/product/1590) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "AssessQualityRequest",
       "name": "图像质量评估",
       "output": "AssessQualityResponse"
@@ -19,7 +19,7 @@
       "output": "CreateImageResponse"
     },
     "CropImage": {
-      "document": "根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响。\n\n可以自动裁剪图片，适应不同平台、设备的展示要求，避免简单拉伸带来的变形。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响，以适应不同平台、设备的展示要求，避免简单拉伸带来的变形。\n\n>   \n- 可前往 [图像处理](https://cloud.tencent.com/document/product/1590) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "CropImageRequest",
       "name": "图片智能裁剪",
       "output": "CropImageResponse"
@@ -55,7 +55,7 @@
       "output": "DetectEnvelopeResponse"
     },
     "DetectLabel": {
-      "document": ">!\n- **图像标签已升级服务，建议前往使用新版接口[通用图像标签](https://cloud.tencent.com/document/product/865/75196)。**\n- **与本接口相比，[通用图像标签](https://cloud.tencent.com/document/product/865/75196)新版接口提供更高精度的图像标签识别服务，覆盖更广泛的物体与场景类型，效果和通用性更优。**\n\n图像标签利用深度学习技术，可以对图片进行智能分类、物体识别等。\n\n目前支持8个大类、六十多个子类、数千个标签。涵盖各种日常场景、动植物、物品、美食、卡证等。具体分类请见[图像分析常见问题功能与限制相关](https://cloud.tencent.com/document/product/865/39164)。\n\n图像标签提供四个版本供选择：\n\n• 摄像头版：针对搜索、手机摄像头照片进行优化，涵盖大量卡证、日常物品、二维码条形码。\n\n• 相册版：针对手机相册、网盘进行优化，去除相册和网盘中不常见的标签，针对相册常见图片类型（人像、日常活动、日常物品等）识别效果更好。\n\n• 网络版：针对网络图片进行优化，涵盖标签更多，满足长尾识别需求。\n\n• 新闻版：针对新闻、资讯、广电等行业进行优化，增加定制识别，支持万级图像标签。\n\n每个产品的图像类型都有独特性，建议在接入初期，对四个版本进行对比评估后选择合适的版本使用。\n\n为了方便使用、减少图片传输次数，图像标签包装成多合一接口，实际上是多个服务。\n\n图像标签按照服务的实际使用数量进行收费。例如一张图片同时调用相册版、摄像头版两个服务，那么此次调用按照两次计费。\n\n>?\n- 图像标签摄像头版、相册版、网络版、新闻版分别按照各自的使用次数进行收费，例如一张图片同时使用相册版、摄像头版，则按照两次调用计费。建议测试对比后从中选择一个最合适的版本使用即可。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "图像标签利用深度学习技术，可以对图片进行智能分类、物体识别等。\n\n目前支持八个大类、六十多个子类、数千个标签，涵盖各种日常场景、动植物、物品、美食等。\n\n图像标签提供四个版本供选择：\n\n• 摄像头版：针对搜索、手机摄像头照片进行优化，涵盖大量卡证、日常物品、二维码条形码。\n\n• 相册版：针对手机相册、网盘进行优化，去除相册和网盘中不常见的标签，针对相册常见图片类型（人像、日常活动、日常物品等）识别效果更好。\n\n• 网络版：针对网络图片进行优化，涵盖标签更多，满足长尾识别需求。\n\n• 新闻版：针对新闻、资讯、广电等行业进行优化，增加定制识别，支持万级图像标签。\n\n为了方便使用、减少图片传输次数，图像标签将不同版本包装成多合一接口，实际上是多个服务，分别计费。建议在接入初期，对四个版本进行对比评估后选择合适的版本使用。\n\n>?\n- 图像标签已升级服务，建议使用新版接口[通用图像标签](https://cloud.tencent.com/document/product/865/75196)。\n- 图像标签摄像头版、相册版、网络版、新闻版分别按照各自的实际使用次数进行收费，例如一张图片同时使用相册版、摄像头版，则按照两次调用计费。建议测试对比后从中选择一个最合适的版本使用即可。\n\n>   \n- 可前往 [图像标签](https://cloud.tencent.com/document/product/1588) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n",
       "input": "DetectLabelRequest",
       "name": "图像标签",
       "output": "DetectLabelResponse"
@@ -67,7 +67,7 @@
       "output": "DetectLabelBetaResponse"
     },
     "DetectLabelPro": {
-      "document": "通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等，广泛应用于拍照识物、场景分析、内容推荐与审核、智能相册分类等场景。\n\n>?    \n- **通用图像标签**接口在原图像标签接口（旧版接口）的基础上进行了升级，识别精度和场景通用性更优，推荐使用。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等。\n\n>   \n- 可前往 [图像标签](https://cloud.tencent.com/document/product/1588) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectLabelProRequest",
       "name": "通用图像标签",
       "output": "DetectLabelProResponse"
@@ -91,7 +91,7 @@
       "output": "DetectProductBetaResponse"
     },
     "EnhanceImage": {
-      "document": ">!\n- 图像清晰度增强接口将于2022年8月31日结束免费公测，2022年9月1日起正式转入计费。若您不需要使用本服务，请及时停止使用。价格详情在[计费概述](https://cloud.tencent.com/document/product/865/17627)中提前公示，请您参阅。\n\n传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n\n>   \n- 可前往 [图像处理](https://cloud.tencent.com/document/product/1590) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "EnhanceImageRequest",
       "name": "图像清晰度增强",
       "output": "EnhanceImageResponse"
@@ -127,7 +127,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果。 \n• 长宽比：长边：短边<5。\n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -136,7 +136,7 @@
         },
         {
           "default": "",
-          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "document": "图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要Base64编码，并且要去掉编码头部。**",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -749,7 +749,7 @@
       "members": [
         {
           "default": "",
-          "document": "需要裁剪区域的宽度，与Height共同组成所需裁剪的图片宽高比例；\n输入数字请大于0、小于图片宽度的像素值；",
+          "document": "需要裁剪区域的宽度，与Height共同组成所需裁剪的图片宽高比例。\n输入数字请大于0、小于图片宽度的像素值。",
           "example": "1100",
           "member": "int64",
           "name": "Width",
@@ -758,7 +758,7 @@
         },
         {
           "default": "",
-          "document": "需要裁剪区域的高度，与Width共同组成所需裁剪的图片宽高比例；\n输入数字请请大于0、小于图片高度的像素值；\n宽高比例（Width : Height）会简化为最简分数，即如果Width输入10、Height输入20，会简化为1：2。\nWidth : Height建议取值在[1, 2.5]之间，超过这个范围可能会影响效果；",
+          "document": "需要裁剪区域的高度，与Width共同组成所需裁剪的图片宽高比例。\n输入数字请请大于0、小于图片高度的像素值。\n宽高比例（Width : Height）会简化为最简分数，即如果Width输入10、Height输入20，会简化为1：2。\nWidth : Height建议取值在[1, 2.5]之间，超过这个范围可能会影响效果。",
           "example": "880",
           "member": "int64",
           "name": "Height",
@@ -767,7 +767,7 @@
         },
         {
           "default": "",
-          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果。\n• 长宽比：长边：短边<5。 \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -776,7 +776,7 @@
         },
         {
           "default": "",
-          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "document": "图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要Base64编码，并且要去掉编码头部。",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
@@ -1587,7 +1587,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，最大不超过250万像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，最大不超过250万像素，否则影响识别效果。 \n• 长宽比：长边：短边<5。 \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -1596,7 +1596,7 @@
         },
         {
           "default": "",
-          "document": "支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "document": "支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要Base64编码，并且要去掉编码头部。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",

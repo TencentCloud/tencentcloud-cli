@@ -75,7 +75,7 @@
     "CreateCmqQueue": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqQueue\n&QueueName=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqQueue\n<公共请求参数>\n\n{\n    \"QueueName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建队列"
       },
@@ -97,7 +97,7 @@
     "CreateCmqTopic": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqTopic\n&TopicName=ConnTopic\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqTopic\n<公共请求参数>\n\n{\n    \"TopicName\": \"ConnTopic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建主题"
       },
@@ -439,7 +439,7 @@
     "DescribeCmqQueues": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqQueues\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCmqQueues\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2005,\n        \"QueueList\": [\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-6zs45b15\",\n                \"QueueName\": \"QTA-5cd25c1e-5c7c-11ea-b510-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 10000000,\n                \"PollingWaitSeconds\": 0,\n                \"MsgRetentionSeconds\": 345600,\n                \"VisibilityTimeout\": 30,\n                \"MaxMsgSize\": 65536,\n                \"RewindSeconds\": 43200,\n                \"CreateTime\": 1583149980,\n                \"LastModifyTime\": 1583149980,\n                \"Transaction\": false,\n                \"DeadLetterSource\": [],\n                \"DeadLetterPolicy\": [],\n                \"TransactionPolicy\": [],\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 0\n            }\n        ],\n        \"RequestId\": \"6bab9048-bc14-4142-80c6-3ec119729bed\"\n    }\n}",
         "title": "枚举队列（不区分用户）"
       }
@@ -463,7 +463,7 @@
     "DescribeCmqTopics": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqTopics\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCmqTopics\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 360,\n        \"TopicList\": [\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-catv1v6h\",\n                \"TopicName\": \"QTA-6d1dfa44-5c70-11ea-8575-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"MsgRetentionSeconds\": 86400,\n                \"MaxMsgSize\": 65536,\n                \"Qps\": 5000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1583144853,\n                \"LastModifyTime\": 1583144874,\n                \"MsgCount\": 0\n            },\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-caysfz7j\",\n                \"TopicName\": \"QTA-8f9162e2-5c6f-11ea-8dea-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"MsgRetentionSeconds\": 86400,\n                \"MaxMsgSize\": 1025,\n                \"Qps\": 5000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1583144481,\n                \"LastModifyTime\": 1583144484,\n                \"MsgCount\": 0\n            }\n        ],\n        \"RequestId\": \"104f0831-f81a-4d65-81e4-ff0c6217ae23\"\n    }\n}",
         "title": "枚举主题（不区分用户）"
       }
