@@ -1420,7 +1420,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1429,7 +1430,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1438,7 +1440,8 @@
           "member": "string",
           "name": "EniLBIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1447,7 +1450,8 @@
           "member": "bool",
           "name": "UsePublicDomain",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1456,7 +1460,18 @@
           "member": "string",
           "name": "RegionName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "请求的地域ID，用于实例复制地域",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1527,10 +1542,12 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "mynamespace",
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2643,7 +2660,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2652,7 +2670,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2661,7 +2680,8 @@
           "member": "string",
           "name": "EniLBIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2670,7 +2690,8 @@
           "member": "bool",
           "name": "UsePublicDomain",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2679,7 +2700,8 @@
           "member": "string",
           "name": "RegionName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

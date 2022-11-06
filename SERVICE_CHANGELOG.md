@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
+## 日志服务(cls) 版本：2020-10-16
 
-### 第 13 次发布
+### 第 25 次发布
 
-发布时间：2022-11-04 06:07:58
+发布时间：2022-11-07 06:10:56
 
 本次发布包含了以下内容：
 
@@ -12,21 +12,128 @@
 
 新增接口：
 
-* [CreateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76503)
-* [DeleteAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76502)
-* [UpdateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76501)
+* [AddMachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/76509)
+* [DeleteMachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/76508)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 12 次发布
+
+发布时间：2022-11-07 06:24:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76528)
+* [CreateStreamLinkOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/76527)
+* [DeleteStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76526)
+* [DeleteStreamLinkOutput](http://document.tencentcloudapi.woa.com/document/product/862/76525)
+* [DescribeStreamLinkActivateState](http://document.tencentcloudapi.woa.com/document/product/862/76524)
+* [DescribeStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76523)
+* [DescribeStreamLinkFlowLogs](http://document.tencentcloudapi.woa.com/document/product/862/76522)
+* [DescribeStreamLinkFlowMediaStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76521)
+* [DescribeStreamLinkFlowRealtimeStatus](http://document.tencentcloudapi.woa.com/document/product/862/76520)
+* [DescribeStreamLinkFlowSRTStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76519)
+* [DescribeStreamLinkFlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76518)
+* [DescribeStreamLinkFlows](http://document.tencentcloudapi.woa.com/document/product/862/76517)
+* [DescribeStreamLinkRegions](http://document.tencentcloudapi.woa.com/document/product/862/76516)
+* [ModifyStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76515)
+* [ModifyStreamLinkInput](http://document.tencentcloudapi.woa.com/document/product/862/76514)
+* [ModifyStreamLinkOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/76513)
+* [StartStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76512)
+* [StopStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76511)
 
 新增数据结构：
 
-* [AccessKeyDetail](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccessKeyDetail)
+* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+* [CreateInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTMPPullSettings)
+* [CreateInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTPSettings)
+* [CreateInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTSPPullSettings)
+* [CreateInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputSRTSettings)
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+* [CreateOutputInfoRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfoRTPSettings)
+* [CreateOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTMPSettings)
+* [CreateOutputRTPSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTPSettingsDestinations)
+* [CreateOutputRtmpSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRtmpSettingsDestinations)
+* [CreateOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettings)
+* [CreateOutputSRTSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettingsDestinations)
+* [DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow)
+* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
+* [DescribeInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPPullSettings)
+* [DescribeInputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPSettings)
+* [DescribeInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTPSettings)
+* [DescribeInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTSPPullSettings)
+* [DescribeInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputSRTSettings)
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+* [DescribeOutputRTMPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullServerUrl)
+* [DescribeOutputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullSettings)
+* [DescribeOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPSettings)
+* [DescribeOutputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTPSettings)
+* [DescribeOutputRTSPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullServerUrl)
+* [DescribeOutputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullSettings)
+* [DescribeOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputSRTSettings)
+* [DescribeRTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTMPPullSourceAddress)
+* [DescribeRTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTSPPullSourceAddress)
+* [FlowAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowAudio)
+* [FlowLogInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowLogInfo)
+* [FlowMediaAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaAudio)
+* [FlowMediaInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaInfo)
+* [FlowMediaVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaVideo)
+* [FlowRealtimeStatusCommon](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusCommon)
+* [FlowRealtimeStatusItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusItem)
+* [FlowRealtimeStatusRTMP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTMP)
+* [FlowRealtimeStatusRTP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTP)
+* [FlowRealtimeStatusSRT](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusSRT)
+* [FlowSRTInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowSRTInfo)
+* [FlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatistics)
+* [FlowStatisticsArray](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatisticsArray)
+* [FlowVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowVideo)
+* [InputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#InputAddress)
+* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
+* [ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)
+* [OutputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputAddress)
+* [OutputSRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputSRTSourceAddressResp)
+* [RTMPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPAddressDestination)
+* [RTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPPullSourceAddress)
+* [RTPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTPAddressDestination)
+* [RTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTSPPullSourceAddress)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#RegionInfo)
+* [SRTAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTAddressDestination)
+* [SRTSourceAddressReq](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressReq)
+* [SRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressResp)
+* [StreamLinkRegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#StreamLinkRegionInfo)
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
+## 云数据库Redis(redis) 版本：2018-04-12
 
-### 第 37 次发布
+### 第 24 次发布
 
-发布时间：2022-11-04 06:15:19
+发布时间：2022-11-07 06:27:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProxyNodes](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProxyNodes)
+
+	* 新增成员：ZoneId
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 10 次发布
+
+发布时间：2022-11-07 06:31:10
 
 本次发布包含了以下内容：
 
@@ -34,122 +141,60 @@
 
 修改接口：
 
-* [CreateScanMalwareSetting](http://document.tencentcloudapi.woa.com/document/product/296/58241)
+* [CreateInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/53131)
 
-	* 新增入参：EnableMemShellScan
-
-* [DescribeMalwareRiskWarning](http://document.tencentcloudapi.woa.com/document/product/296/60929)
-
-	* 新增出参：ProcessList
-
-* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
-
-	* 新增出参：EnableMemShellScan
-
-* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
-
-	* 新增入参：EnableMemShellScan
-
-
-
-
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
-
-### 第 23 次发布
-
-发布时间：2022-11-04 06:18:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76504)
-
-修改数据结构：
-
-* [ZonesInfo](http://document.tencentcloudapi.woa.com/document/product/557/16142#ZonesInfo)
-
-	* 新增成员：OnSale
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 21 次发布
-
-发布时间：2022-11-04 06:21:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
-
-	* 新增入参：ApproverVerifyType
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 22 次发布
-
-发布时间：2022-11-04 06:27:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/76505)
-
-修改数据结构：
-
-* [ZonesInfo](http://document.tencentcloudapi.woa.com/document/product/237/16191#ZonesInfo)
-
-	* 新增成员：OnSale
-
-
-
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 11 次发布
-
-发布时间：2022-11-04 06:31:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [File](http://document.tencentcloudapi.woa.com/document/product/1597/75228#File)
-
-	* 新增成员：AppId
-
-* [ScriptInfo](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ScriptInfo)
-
-	* 新增成员：FileId
+	* 新增入参：RegionId
 
 
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 23 次发布
+### 第 24 次发布
 
-发布时间：2022-11-04 06:37:19
+发布时间：2022-11-07 06:31:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCmqQueue](http://document.tencentcloudapi.woa.com/document/product/1179/55917)
+
+	* 新增入参：InstanceId
+
+* [CreateCmqTopic](http://document.tencentcloudapi.woa.com/document/product/1179/55915)
+
+	* 新增入参：InstanceId
+
+* [DescribeCmqQueues](http://document.tencentcloudapi.woa.com/document/product/1179/55909)
+
+	* 新增入参：SetType, InstanceId
+
+* [DescribeCmqTopics](http://document.tencentcloudapi.woa.com/document/product/1179/55906)
+
+	* 新增入参：SetType, InstanceId
+
+
+修改数据结构：
+
+* [CmqQueue](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqQueue)
+
+	* 新增成员：BrokerType, SetType, InstanceId
+
+* [CmqTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqTopic)
+
+	* 新增成员：BrokerType, SetType, InstanceId
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 17 次发布
+
+发布时间：2022-11-07 06:33:27
 
 本次发布包含了以下内容：
 
@@ -157,11 +202,34 @@
 
 新增接口：
 
-* [DescribeCmqExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76507)
+* [DescribeTRTCMarketQualityMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76533)
+* [DescribeTRTCMarketScaleMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76532)
+* [DescribeTRTCRealTimeQualityMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76531)
+* [DescribeTRTCRealTimeScaleMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76530)
 
 新增数据结构：
 
-* [InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo)
+* [SeriesInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#SeriesInfo)
+* [TRTCDataResp](http://document.tencentcloudapi.woa.com/document/product/647/44055#TRTCDataResp)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 32 次发布
+
+发布时间：2022-11-07 06:35:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：Progress
+
 
 
 
@@ -4049,13 +4117,13 @@
 
 新增接口：
 
-* [[CreateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76503)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76502)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76501)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76503)
+* [DeleteAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76502)
+* [UpdateAccessKey](http://document.tencentcloudapi.woa.com/document/product/598/76501)
 
 新增数据结构：
 
-* [[AccessKeyDetail](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccessKeyDetail)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[AccessKeyDetail](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccessKeyDetail))
+* [AccessKeyDetail](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccessKeyDetail)
 
 ### 第 12 次发布
 
@@ -10070,6 +10138,19 @@
 
 ## 日志服务(cls) 版本：2020-10-16
 
+### 第 25 次发布
+
+发布时间：2022-11-07 06:10:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddMachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/76509)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteMachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/76508)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 24 次发布
 
 发布时间：2022-11-01 21:02:00
@@ -15530,7 +15611,7 @@
 
 新增接口：
 
-* [[IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76504)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/76504)
 
 修改数据结构：
 
@@ -24912,7 +24993,7 @@
 
 新增接口：
 
-* [[IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/76505)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [IsolateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/76505)
 
 修改数据结构：
 
@@ -26761,6 +26842,95 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 12 次发布
+
+发布时间：2022-11-07 06:24:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76528)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateStreamLinkOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/76527)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76526)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteStreamLinkOutput](http://document.tencentcloudapi.woa.com/document/product/862/76525)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkActivateState](http://document.tencentcloudapi.woa.com/document/product/862/76524)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76523)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlowLogs](http://document.tencentcloudapi.woa.com/document/product/862/76522)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlowMediaStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76521)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlowRealtimeStatus](http://document.tencentcloudapi.woa.com/document/product/862/76520)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlowSRTStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76519)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76518)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkFlows](http://document.tencentcloudapi.woa.com/document/product/862/76517)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStreamLinkRegions](http://document.tencentcloudapi.woa.com/document/product/862/76516)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76515)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyStreamLinkInput](http://document.tencentcloudapi.woa.com/document/product/862/76514)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyStreamLinkOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/76513)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76512)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76511)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput))
+* [[CreateInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTMPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTMPPullSettings))
+* [[CreateInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTPSettings))
+* [[CreateInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTSPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputRTSPPullSettings))
+* [[CreateInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputSRTSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputSRTSettings))
+* [[CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo))
+* [[CreateOutputInfoRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfoRTPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputInfoRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfoRTPSettings))
+* [[CreateOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTMPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTMPSettings))
+* [[CreateOutputRTPSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTPSettingsDestinations)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputRTPSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRTPSettingsDestinations))
+* [[CreateOutputRtmpSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRtmpSettingsDestinations)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputRtmpSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputRtmpSettingsDestinations))
+* [[CreateOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettings))
+* [[CreateOutputSRTSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettingsDestinations)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[CreateOutputSRTSettingsDestinations](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputSRTSettingsDestinations))
+* [[DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow))
+* [[DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput))
+* [[DescribeInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPPullSettings))
+* [[DescribeInputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTMPSettings))
+* [[DescribeInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTPSettings))
+* [[DescribeInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTSPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputRTSPPullSettings))
+* [[DescribeInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputSRTSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeInputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputSRTSettings))
+* [[DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput))
+* [[DescribeOutputRTMPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullServerUrl)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTMPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullServerUrl))
+* [[DescribeOutputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTMPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPPullSettings))
+* [[DescribeOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTMPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTMPSettings))
+* [[DescribeOutputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTPSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTPSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTPSettings))
+* [[DescribeOutputRTSPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullServerUrl)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTSPPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullServerUrl))
+* [[DescribeOutputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputRTSPPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputRTSPPullSettings))
+* [[DescribeOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputSRTSettings)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeOutputSRTSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputSRTSettings))
+* [[DescribeRTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTMPPullSourceAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeRTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTMPPullSourceAddress))
+* [[DescribeRTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTSPPullSourceAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[DescribeRTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeRTSPPullSourceAddress))
+* [[FlowAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowAudio)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowAudio))
+* [[FlowLogInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowLogInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowLogInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowLogInfo))
+* [[FlowMediaAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaAudio)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowMediaAudio](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaAudio))
+* [[FlowMediaInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowMediaInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaInfo))
+* [[FlowMediaVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaVideo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowMediaVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowMediaVideo))
+* [[FlowRealtimeStatusCommon](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusCommon)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowRealtimeStatusCommon](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusCommon))
+* [[FlowRealtimeStatusItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusItem)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowRealtimeStatusItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusItem))
+* [[FlowRealtimeStatusRTMP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTMP)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowRealtimeStatusRTMP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTMP))
+* [[FlowRealtimeStatusRTP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTP)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowRealtimeStatusRTP](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusRTP))
+* [[FlowRealtimeStatusSRT](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusSRT)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowRealtimeStatusSRT](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowRealtimeStatusSRT))
+* [[FlowSRTInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowSRTInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowSRTInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowSRTInfo))
+* [[FlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatistics)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatistics))
+* [[FlowStatisticsArray](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatisticsArray)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowStatisticsArray](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowStatisticsArray))
+* [[FlowVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowVideo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[FlowVideo](http://document.tencentcloudapi.woa.com/document/product/862/37615#FlowVideo))
+* [[InputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#InputAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[InputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#InputAddress))
+* [[ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput))
+* [[ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo))
+* [[OutputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[OutputAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputAddress))
+* [[OutputSRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputSRTSourceAddressResp)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[OutputSRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#OutputSRTSourceAddressResp))
+* [[RTMPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPAddressDestination)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[RTMPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPAddressDestination))
+* [[RTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPPullSourceAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[RTMPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTMPPullSourceAddress))
+* [[RTPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTPAddressDestination)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[RTPAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTPAddressDestination))
+* [[RTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTSPPullSourceAddress)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[RTSPPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#RTSPPullSourceAddress))
+* [[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#RegionInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#RegionInfo))
+* [[SRTAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTAddressDestination)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[SRTAddressDestination](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTAddressDestination))
+* [[SRTSourceAddressReq](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressReq)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[SRTSourceAddressReq](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressReq))
+* [[SRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressResp)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[SRTSourceAddressResp](http://document.tencentcloudapi.woa.com/document/product/862/37615#SRTSourceAddressResp))
+* [[StreamLinkRegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#StreamLinkRegionInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[StreamLinkRegionInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#StreamLinkRegionInfo))
 
 ### 第 11 次发布
 
@@ -30368,6 +30538,21 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 24 次发布
+
+发布时间：2022-11-07 06:27:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProxyNodes](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProxyNodes)
+
+	* 新增成员：ZoneId
+
 
 ### 第 23 次发布
 
@@ -35001,6 +35186,21 @@
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
 
+### 第 10 次发布
+
+发布时间：2022-11-07 06:31:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/53131)
+
+	* 新增入参：RegionId
+
+
 ### 第 9 次发布
 
 发布时间：2022-09-26 06:44:39
@@ -35427,6 +35627,44 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 24 次发布
+
+发布时间：2022-11-07 06:31:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCmqQueue](http://document.tencentcloudapi.woa.com/document/product/1179/55917)
+
+	* 新增入参：InstanceId
+
+* [CreateCmqTopic](http://document.tencentcloudapi.woa.com/document/product/1179/55915)
+
+	* 新增入参：InstanceId
+
+* [DescribeCmqQueues](http://document.tencentcloudapi.woa.com/document/product/1179/55909)
+
+	* 新增入参：SetType, InstanceId
+
+* [DescribeCmqTopics](http://document.tencentcloudapi.woa.com/document/product/1179/55906)
+
+	* 新增入参：SetType, InstanceId
+
+
+修改数据结构：
+
+* [CmqQueue](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqQueue)
+
+	* 新增成员：BrokerType, SetType, InstanceId
+
+* [CmqTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqTopic)
+
+	* 新增成员：BrokerType, SetType, InstanceId
+
+
 ### 第 23 次发布
 
 发布时间：2022-11-04 06:37:19
@@ -35437,11 +35675,11 @@
 
 新增接口：
 
-* [[DescribeCmqExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76507)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCmqExclusiveInstances](http://document.tencentcloudapi.woa.com/document/product/1179/76507)
 
 新增数据结构：
 
-* [[InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo))
+* [InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo)
 
 ### 第 22 次发布
 
@@ -38839,6 +39077,26 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 17 次发布
+
+发布时间：2022-11-07 06:33:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTRTCMarketQualityMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76533)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTRTCMarketScaleMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76532)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTRTCRealTimeQualityMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76531)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTRTCRealTimeScaleMetricData](http://document.tencentcloudapi.woa.com/document/product/647/76530)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SeriesInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#SeriesInfo)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[SeriesInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#SeriesInfo))
+* [[TRTCDataResp](http://document.tencentcloudapi.woa.com/document/product/647/44055#TRTCDataResp)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[TRTCDataResp](http://document.tencentcloudapi.woa.com/document/product/647/44055#TRTCDataResp))
+
 ### 第 16 次发布
 
 发布时间：2022-10-18 06:43:38
@@ -40967,6 +41225,21 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 32 次发布
+
+发布时间：2022-11-07 06:35:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaProcessTaskAdaptiveDynamicStreamingResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAdaptiveDynamicStreamingResult)
+
+	* 新增成员：Progress
+
 
 ### 第 31 次发布
 

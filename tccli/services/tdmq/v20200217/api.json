@@ -1804,7 +1804,8 @@
           "name": "QueueId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1814,7 +1815,8 @@
           "name": "QueueName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1824,7 +1826,8 @@
           "name": "Qps",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1834,7 +1837,8 @@
           "name": "Bps",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1844,7 +1848,8 @@
           "name": "MaxDelaySeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1854,7 +1859,8 @@
           "name": "MaxMsgHeapNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1864,7 +1870,8 @@
           "name": "PollingWaitSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1874,7 +1881,8 @@
           "name": "MsgRetentionSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1884,7 +1892,8 @@
           "name": "VisibilityTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1894,7 +1903,8 @@
           "name": "MaxMsgSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1904,7 +1914,8 @@
           "name": "RewindSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1914,7 +1925,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1924,7 +1936,8 @@
           "name": "LastModifyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1934,7 +1947,8 @@
           "name": "ActiveMsgNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1944,7 +1958,8 @@
           "name": "InactiveMsgNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1954,7 +1969,8 @@
           "name": "DelayMsgNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1964,7 +1980,8 @@
           "name": "RewindMsgNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1974,7 +1991,8 @@
           "name": "MinMsgTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1984,7 +2002,8 @@
           "name": "Transaction",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1994,7 +2013,8 @@
           "name": "DeadLetterSource",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2004,7 +2024,8 @@
           "name": "DeadLetterPolicy",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2014,7 +2035,8 @@
           "name": "TransactionPolicy",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2024,7 +2046,8 @@
           "name": "CreateUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2034,7 +2057,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2044,7 +2068,8 @@
           "name": "Trace",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2054,7 +2079,8 @@
           "name": "TenantId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2064,7 +2090,8 @@
           "name": "NamespaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2074,7 +2101,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2084,7 +2112,8 @@
           "name": "MaxUnackedMsgNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2094,7 +2123,8 @@
           "name": "MaxMsgBacklogSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2104,7 +2134,41 @@
           "name": "RetentionSizeInMB",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0表示pulsar，1表示rocketmq\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BrokerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "当前服务所在集群类型 EXCLUSIVE_INSTANCE\nSHARED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHARED",
+          "member": "string",
+          "name": "SetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "专享实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instance-adsnadsn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -2246,7 +2310,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2256,7 +2321,8 @@
           "name": "TopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2266,7 +2332,8 @@
           "name": "MsgRetentionSeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2276,7 +2343,8 @@
           "name": "MaxMsgSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2286,7 +2354,8 @@
           "name": "Qps",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2296,7 +2365,8 @@
           "name": "FilterType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2306,7 +2376,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2316,7 +2387,8 @@
           "name": "LastModifyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2326,7 +2398,8 @@
           "name": "MsgCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2336,7 +2409,8 @@
           "name": "CreateUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2346,7 +2420,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2356,7 +2431,8 @@
           "name": "Trace",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2366,7 +2442,8 @@
           "name": "TenantId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2376,7 +2453,8 @@
           "name": "NamespaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2386,7 +2464,41 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0表示pulsar，1表示rocketmq\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BrokerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前服务所在集群类型 EXCLUSIVE_INSTANCE\nSHARED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHARED",
+          "member": "string",
+          "name": "SetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "专享实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instance-asnadsnads",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -3119,6 +3231,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定专享实例创建",
+          "example": "instance-auashas",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -3254,7 +3376,8 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3263,7 +3386,8 @@
           "member": "uint64",
           "name": "MaxMsgSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3272,7 +3396,8 @@
           "member": "uint64",
           "name": "FilterType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3281,7 +3406,8 @@
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3290,7 +3416,8 @@
           "member": "bool",
           "name": "Trace",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3299,7 +3426,18 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定专享实例创建主题",
+          "example": "instance-ausansa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -3314,7 +3452,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5951,6 +6090,26 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定所在集群类型查询",
+          "example": "SHARED",
+          "member": "string",
+          "name": "SetType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "指定专享实例查询",
+          "example": "instance-asdjasdn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -6157,6 +6316,26 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前服务所在集群类型 EXCLUSIVE_INSTANCE\nSHARED",
+          "example": "SHARED",
+          "member": "string",
+          "name": "SetType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "专享实例id",
+          "example": "instance-sajadns",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"

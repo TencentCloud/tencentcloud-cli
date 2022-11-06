@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeCmqTopics --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 1
+    --Limit 1 \
+    --Offset 0
 ```
 
 Output: 
