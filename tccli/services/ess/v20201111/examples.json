@@ -188,6 +188,14 @@
         "title": "查询员工信息"
       }
     ],
+    "DescribeOrganizationSeals": [
+      {
+        "document": "查询企业印章的列表，需要操作者具有查询印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationSeals\n<公共请求参数>\n\n{\n    \"InfoType\": \"1\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\",\n    \"Operator\": {\n        \"ClientIp\": \"8.8.8.8\",\n        \"UserId\": \"yDRt***gygqb1n5zUuO4zjEwzVL5XuTW\",\n        \"Channel\": \"YU**\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901***5e-7113-4f50-a472-11eb9fe61d9a\",\n        \"Seals\": [\n            {\n                \"AuthorizedUsers\": [\n                    {\n                        \"UserId\": \"yDR1fUUgygj9ic***uO4zjEvDps0boOj\"\n                    },\n                    {\n                        \"UserId\": \"yDxojUUgydjfd2x8UuO4zjEEwSQl****\"\n                    }\n                ],\n                \"CreateOn\": 1628061951,\n                \"Creator\": \"yDRtSUUgygqb1n5zUuO4zjEwzVL5****\",\n                \"FailReason\": \"\",\n                \"IsAllTime\": true,\n                \"SealId\": \"yDxMjUyKQDN7EkUuO4zjEBpGXvHE****\",\n                \"SealName\": \"深圳市腾讯计算机系统有限公司企业公章企业公章\",\n                \"SealPolicyId\": \"\",\n                \"SealStatus\": \"SUCCESS\",\n                \"SealType\": \"\",\n                \"Url\": \"https://*********80\"\n            }\n        ],\n        \"TotalCount\": 40\n    }\n}",
+        "title": "请求详细印章列表信息"
+      }
+    ],
     "DescribeThirdPartyAuthCode": [
       {
         "document": "通过AuthCode查询用户是否实名，AuthCode 查询后作废，只能查询一次",

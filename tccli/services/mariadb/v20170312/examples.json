@@ -512,6 +512,14 @@
         "title": "无"
       }
     ],
+    "TerminateDedicatedDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDedicatedDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"5d6581df-7914-46e5-9693-0663617c756e\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "UpgradeDBInstance": [
       {
         "document": "",

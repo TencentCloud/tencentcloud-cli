@@ -16305,7 +16305,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频处理任务信息，仅当 EventType 为 WorkflowTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTask",
           "name": "WorkflowTaskEvent",
@@ -16314,7 +16314,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频编辑任务信息，仅当 EventType 为 EditMediaTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTaskEvent",
@@ -16341,7 +16341,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编排任务信息，仅当 EventType 为 ScheduleTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleTask",
           "name": "ScheduleTaskEvent",

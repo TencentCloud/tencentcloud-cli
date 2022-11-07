@@ -60,6 +60,12 @@
       "name": "查询企业员工",
       "output": "ChannelDescribeEmployeesResponse"
     },
+    "ChannelDescribeOrganizationSeals": {
+      "document": "查询渠道子客企业电子印章，需要操作者具有管理印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数。",
+      "input": "ChannelDescribeOrganizationSealsRequest",
+      "name": "查询渠道子客企业电子印章",
+      "output": "ChannelDescribeOrganizationSealsResponse"
+    },
     "ChannelGetTaskResultApi": {
       "document": "渠道版查询转换任务状态",
       "input": "ChannelGetTaskResultApiRequest",
@@ -301,6 +307,22 @@
           "example": "无",
           "member": "string",
           "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizedUser": {
+      "document": "授权用户",
+      "members": [
+        {
+          "default": "",
+          "document": "用户openid",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1159,6 +1181,87 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeOrganizationSealsRequest": {
+      "document": "ChannelDescribeOrganizationSeals请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "返回最大数量，最大为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0，最大为20000",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询信息类型，为0时不返回授权用户，为1时返回",
+          "example": "1",
+          "member": "int64",
+          "name": "InfoType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "印章id（没有输入返回所有）",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeOrganizationSealsResponse": {
+      "document": "ChannelDescribeOrganizationSeals返回参数结构体",
+      "members": [
+        {
+          "document": "在设置了SealId时返回0或1，没有设置时返回公司的总印章数量，可能比返回的印章数组数量多",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的印章结果数组",
+          "example": "无",
+          "member": "OccupiedSeal",
+          "name": "Seals",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3171,6 +3274,122 @@
         }
       ],
       "type": "object"
+    },
+    "OccupiedSeal": {
+      "document": "持有的电子印章信息",
+      "members": [
+        {
+          "default": "",
+          "document": "电子印章编号",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "无",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章授权时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章授权人",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章策略Id",
+          "example": "无",
+          "member": "string",
+          "name": "SealPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）",
+          "example": "无",
+          "member": "string",
+          "name": "SealStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "印章图片url，5分钟内有效",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章类型",
+          "example": "无",
+          "member": "string",
+          "name": "SealType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用印申请是否为永久授权",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAllTime",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权人列表",
+          "example": "无",
+          "member": "AuthorizedUser",
+          "name": "AuthorizedUsers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OperateChannelTemplateRequest": {
       "document": "OperateChannelTemplate请求参数结构体",

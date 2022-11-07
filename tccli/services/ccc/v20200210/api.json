@@ -2699,6 +2699,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "满意度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Id\":1,\"Label\":\"满意\"}",
+          "member": "IMSatisfaction",
+          "name": "Satisfaction",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IMSatisfaction": {
+      "document": "IM满意度",
+      "members": [
+        {
+          "default": "",
+          "document": "满意度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "满意度标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "非常满意",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

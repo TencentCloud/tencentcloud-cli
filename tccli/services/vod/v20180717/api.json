@@ -25518,7 +25518,8 @@
       "members": [
         {
           "default": "",
-          "document": "存储地域",
+          "document": "存储地域。",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -25527,7 +25528,8 @@
         },
         {
           "default": "",
-          "document": "存储地域描述信息",
+          "document": "存储地域描述信息。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -25537,6 +25539,7 @@
         {
           "default": "",
           "document": "状态，是否开通，取值有：\n<li>opened：已经开通。</li>\n<li>unopened：未开通。</li>",
+          "example": "opened",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -25545,11 +25548,22 @@
         },
         {
           "default": "",
-          "document": "是否默认的存储地域，true：是；false：否",
+          "document": "是否默认的存储地域，true：是；false：否。",
+          "example": "true",
           "member": "bool",
           "name": "IsDefault",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储区域，取值有：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>Outside Chinese Mainland：中国境外。</li>",
+          "example": "Chinese Mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

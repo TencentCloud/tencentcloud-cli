@@ -11050,7 +11050,7 @@
         },
         {
           "default": "",
-          "document": "拉流源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。",
+          "document": "拉流源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播，\nPullPicPushLive -图片。",
           "example": "PullLivePushLive",
           "member": "string",
           "name": "SourceType",
@@ -11296,6 +11296,16 @@
           "name": "WatermarkList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "点播源是否启用本地推流模式，默认0，不启用。\n0 - 不启用。\n1 - 启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "VodLocalMode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11750,6 +11760,16 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流服务端 IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.1.1.1",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11760,6 +11780,7 @@
         {
           "default": "",
           "document": "当前正在拉的文件地址。",
+          "example": "http://youfile.domain.com/vod/file.mp4",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -11769,6 +11790,7 @@
         {
           "default": "",
           "document": "当前正在拉的文件偏移，单位：秒。",
+          "example": "2300",
           "member": "uint64",
           "name": "OffsetTime",
           "required": true,
@@ -11778,6 +11800,7 @@
         {
           "default": "",
           "document": "最新上报偏移信息时间。UTC格式。\n如：2020-07-23T03:20:39Z。\n注意：与北京时间相差八小时。",
+          "example": "2022-10-20T03:35:11Z",
           "member": "string",
           "name": "ReportTime",
           "required": true,
@@ -11787,6 +11810,7 @@
         {
           "default": "",
           "document": "已经轮播的次数。",
+          "example": "2",
           "member": "int64",
           "name": "LoopedTimes",
           "required": true,
@@ -12677,6 +12701,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -12686,6 +12711,7 @@
         {
           "default": "",
           "document": "应用名称。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -12695,6 +12721,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -12704,6 +12731,7 @@
         {
           "default": "",
           "document": "推流开始时间。\nUTC格式时间，例如：2019-01-07T12:00:00Z。",
+          "example": "2022-11-04T08:42:06Z",
           "member": "string",
           "name": "StreamStartTime",
           "required": true,
@@ -12713,6 +12741,7 @@
         {
           "default": "",
           "document": "推流结束时间。\nUTC格式时间，例如：2019-01-07T15:00:00Z。",
+          "example": "2022-11-04T09:10:58Z",
           "member": "string",
           "name": "StreamEndTime",
           "required": true,
@@ -12722,6 +12751,7 @@
         {
           "default": "",
           "document": "停止原因。",
+          "example": "推流客户端主动断流",
           "member": "string",
           "name": "StopReason",
           "required": true,
@@ -12731,6 +12761,7 @@
         {
           "default": "",
           "document": "推流持续时长，单位：秒。",
+          "example": "1732",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -12740,6 +12771,7 @@
         {
           "default": "",
           "document": "主播 IP。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ClientIp",
           "required": true,
@@ -12749,6 +12781,7 @@
         {
           "default": "",
           "document": "分辨率。",
+          "example": "640*360",
           "member": "string",
           "name": "Resolution",
           "required": true,
@@ -12764,6 +12797,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -12773,6 +12807,7 @@
         {
           "default": "",
           "document": "推流时间列表",
+          "example": "[{\"PublishTime\":\"2022-07-11T08:56:36Z\"}]",
           "member": "PublishTime",
           "name": "PublishTimeList",
           "required": true,
@@ -12782,6 +12817,7 @@
         {
           "default": "",
           "document": "应用名称。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -12791,6 +12827,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,

@@ -73,7 +73,7 @@
       "output": "DeleteMountTargetResponse"
     },
     "DescribeAutoSnapshotPolicies": {
-      "document": "查询文件系统快照d定期策略列表信息",
+      "document": "查询文件系统快照定期策略列表信息",
       "input": "DescribeAutoSnapshotPoliciesRequest",
       "name": "查询文件系统快照策略列表信息",
       "output": "DescribeAutoSnapshotPoliciesResponse"

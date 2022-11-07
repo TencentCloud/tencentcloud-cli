@@ -384,6 +384,12 @@
       "name": "实例主备切换",
       "output": "SwitchDBInstanceHAResponse"
     },
+    "TerminateDedicatedDBInstance": {
+      "document": "本接口（IsolateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。",
+      "input": "TerminateDedicatedDBInstanceRequest",
+      "name": "销毁独享云数据库实例",
+      "output": "TerminateDedicatedDBInstanceResponse"
+    },
     "UpgradeDBInstance": {
       "document": "本接口(UpgradeDBInstance)用于扩容云数据库实例。本接口完成下单和支付两个动作，如果发生支付失败的错误，调用用户账户相关接口中的支付订单接口（PayDeals）重新支付即可。",
       "input": "UpgradeDBInstanceRequest",
@@ -6624,6 +6630,42 @@
         }
       ],
       "usage": "in"
+    },
+    "TerminateDedicatedDBInstanceRequest": {
+      "document": "TerminateDedicatedDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 Id，形如：tdsql-ow728lmc。",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateDedicatedDBInstanceResponse": {
+      "document": "TerminateDedicatedDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程Id",
+          "example": "11",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpgradeDBInstanceRequest": {
       "document": "UpgradeDBInstance请求参数结构体",

@@ -1,11 +1,51 @@
 {
   "actions": {
+    "BatchCreateIntegrationTaskAlarms": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateIntegrationTaskAlarms\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskAlarmInfo\": {\n        \"AlarmRecipientName\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"EstimatedTime\": 1,\n        \"ProjectId\": \"xx\",\n        \"TaskType\": 1,\n        \"AlarmIndicator\": 1,\n        \"Id\": \"xx\",\n        \"Creater\": \"xx\",\n        \"RegularId\": \"xx\",\n        \"RegularName\": \"xx\",\n        \"TriggerType\": 1,\n        \"AlarmRecipientId\": \"xx\",\n        \"AlarmWay\": \"xx\",\n        \"AlarmLevel\": 1,\n        \"RegularStatus\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchCreateIntegrationTaskAlarms"
+      }
+    ],
+    "BatchDeleteIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchDeleteIntegrationTasks"
+      }
+    ],
     "BatchDeleteTasksNew": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTasksNew\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"1111\",\n        \"22222\"\n    ],\n    \"EnableNotify\": true,\n    \"DeleteMode\": true,\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量删除任务"
+      }
+    ],
+    "BatchForceSuccessIntegrationTaskInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchForceSuccessIntegrationTaskInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Instances\": [\n        {\n            \"TaskId\": \"123\",\n            \"CurRunDate\": \"2022-04-12 17:00:15\"\n        },\n        {\n            \"TaskId\": \"1234\",\n            \"CurRunDate\": \"2022-04-12 18:00:15\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchForceSuccessIntegrationTaskInstances"
+      }
+    ],
+    "BatchKillIntegrationTaskInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchKillIntegrationTaskInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Instances\": [\n        {\n            \"TaskId\": \"123\",\n            \"CurRunDate\": \"2022-04-12 17:00:15\"\n        },\n        {\n            \"TaskId\": \"1234\",\n            \"CurRunDate\": \"2022-04-12 18:00:15\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchKillIntegrationTaskInstances"
+      }
+    ],
+    "BatchMakeUpIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchMakeUpIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"StartTime\": \"2022-04-18 12:00:00\",\n    \"EndTime\": \"2022-04-18 13:00:00\",\n    \"TaskType\": 202\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchMakeUpIntegrationTasks"
       }
     ],
     "BatchModifyOwnersNew": [
@@ -16,12 +56,100 @@
         "title": "批量修改任务责任人"
       }
     ],
+    "BatchRerunIntegrationTaskInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchRerunIntegrationTaskInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Instances\": [\n        {\n            \"TaskId\": \"123\",\n            \"CurRunDate\": \"2022-04-12 17:00:15\"\n        },\n        {\n            \"TaskId\": \"1234\",\n            \"CurRunDate\": \"2022-04-12 18:00:15\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchRerunIntegrationTaskInstances"
+      }
+    ],
+    "BatchResumeIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchResumeIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchResumeIntegrationTasks"
+      }
+    ],
+    "BatchStartIntegrationTasks": [
+      {
+        "document": "批量运行任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStartIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchStartIntegrationTasks"
+      }
+    ],
+    "BatchStopIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchStopIntegrationTasks"
+      }
+    ],
     "BatchStopTasksNew": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopTasksNew\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"1111\",\n        \"22222\"\n    ],\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量停止任务"
+      }
+    ],
+    "BatchSuspendIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSuspendIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchSuspendIntegrationTasks"
+      }
+    ],
+    "BatchUpdateIntegrationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchUpdateIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"Incharge\": \"352;345\",\n    \"TaskType\": 202\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "BatchUpdateIntegrationTasks"
+      }
+    ],
+    "CheckAlarmRegularNameExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAlarmRegularNameExist\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"AlarmRegularName\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "判断告警规则重名"
+      }
+    ],
+    "CheckIntegrationNodeNameExists": [
+      {
+        "document": "判断集成节点名称是否存在",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIntegrationNodeNameExists\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Id\": 0,\n    \"TaskId\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CheckIntegrationNodeNameExists"
+      }
+    ],
+    "CheckIntegrationTaskNameExists": [
+      {
+        "document": "判断集成任务名称是否存在",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIntegrationTaskNameExists\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskName\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"ExistsType\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CheckIntegrationTaskNameExists"
+      }
+    ],
+    "CheckTaskNameExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckTaskNameExist\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskName\": \"xx\",\n    \"TypeId\": 27\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "离线任务重名校验"
+      }
+    ],
+    "CommitIntegrationTask": [
+      {
+        "document": "提交集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"CommitType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "提交集成任务"
       }
     ],
     "CreateCustomFunction": [
@@ -48,6 +176,54 @@
         "title": "范例"
       }
     ],
+    "CreateHiveTable": [
+      {
+        "document": "建hive表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTable\n<公共请求参数>\n\n{\n    \"Database\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"Incharge\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"Privilege\": 0,\n    \"DDLSql\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateHiveTable"
+      }
+    ],
+    "CreateHiveTableByDDL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTableByDDL\n<公共请求参数>\n\n{\n    \"Database\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"Incharge\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"Privilege\": 0,\n    \"Type\": \"xx\",\n    \"DDLSql\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateHiveTableByDDL"
+      }
+    ],
+    "CreateInLongAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInLongAgent\n<公共请求参数>\n\n{\n    \"ExecutorGroupId\": \"xx\",\n    \"AgentType\": 1,\n    \"ClusterId\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"AgentName\": \"xx\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "注册采集器"
+      }
+    ],
+    "CreateIntegrationNode": [
+      {
+        "document": "创建集成节点",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationNode\n<公共请求参数>\n\n{\n    \"NodeInfo\": {\n        \"NodeType\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreatorUin\": \"xx\",\n        \"DataSourceType\": \"xx\",\n        \"ProjectId\": \"xx\",\n        \"OwnerUin\": \"xx\",\n        \"ExtConfig\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"DatasourceId\": \"xx\",\n        \"NodeMapping\": {\n            \"SourceId\": \"xx\",\n            \"SchemaMappings\": [\n                {\n                    \"SinkSchemaId\": \"xx\",\n                    \"SourceSchemaId\": \"xx\"\n                }\n            ],\n            \"SinkId\": \"xx\",\n            \"SourceSchema\": [\n                {\n                    \"Type\": \"xx\",\n                    \"Id\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ]\n        },\n        \"TaskId\": \"xx\",\n        \"AppId\": \"xx\",\n        \"Schema\": [\n            {\n                \"Type\": \"xx\",\n                \"Id\": \"xx\",\n                \"Value\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"Config\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Id\": \"xx\",\n        \"OperatorUin\": \"xx\",\n        \"Name\": \"xx\"\n    },\n    \"ProjectId\": \"xx\",\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateIntegrationNode"
+      }
+    ],
+    "CreateIntegrationTask": [
+      {
+        "document": "创建集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskInfo\": {\n        \"TaskGroupId\": \"xx\",\n        \"Status\": 0,\n        \"WorkflowId\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreatorUin\": \"xx\",\n        \"SyncType\": 0,\n        \"ProjectId\": \"xx\",\n        \"OwnerUin\": \"xx\",\n        \"ExecuteContext\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ScheduleTaskId\": \"xx\",\n        \"TaskType\": 0,\n        \"AppId\": \"xx\",\n        \"ExecutorId\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"OperatorUin\": \"xx\",\n        \"Nodes\": [\n            {\n                \"NodeType\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DataSourceType\": \"xx\",\n                \"ProjectId\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ExtConfig\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DatasourceId\": \"xx\",\n                \"NodeMapping\": {\n                    \"SourceId\": \"xx\",\n                    \"SchemaMappings\": [\n                        {\n                            \"SinkSchemaId\": \"xx\",\n                            \"SourceSchemaId\": \"xx\"\n                        }\n                    ],\n                    \"SinkId\": \"xx\",\n                    \"SourceSchema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ]\n                },\n                \"TaskId\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Schema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Config\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Id\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"ExtConfig\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Config\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"TaskName\": \"xx\",\n        \"Mappings\": [\n            {\n                \"SourceId\": \"xx\",\n                \"SchemaMappings\": [\n                    {\n                        \"SinkSchemaId\": \"xx\",\n                        \"SourceSchemaId\": \"xx\"\n                    }\n                ],\n                \"SinkId\": \"xx\",\n                \"SourceSchema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "创建集成任务"
+      }
+    ],
+    "CreateOfflineTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOfflineTask\n<公共请求参数>\n\n{\n    \"TypeId\": 0,\n    \"ProjectId\": \"xx\",\n    \"Notes\": \"xx\",\n    \"TaskAction\": \"xx\",\n    \"DelayTime\": 0,\n    \"StartTime\": \"xx\",\n    \"TaskName\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"CycleStep\": 0,\n    \"TaskMode\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建离线任务"
+      }
+    ],
     "CreateOrUpdateResource": [
       {
         "document": "",
@@ -62,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"TaskExt\": [\n        {\n            \"Key\": \"aa\",\n            \"Value\": \"vv\"\n        }\n    ],\n    \"TaskName\": \"aaab\",\n    \"TaskType\": \"35\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eeae735-b9c1-4c99-a4dd-54f3e8da674f\",\n        \"Data\": {\n            \"Id\": \"20220801203612642\"\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "CreateTaskAlarmRegular": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskAlarmInfo\": {\n        \"AlarmRecipientName\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"EstimatedTime\": 1,\n        \"ProjectId\": \"xx\",\n        \"TaskType\": 1,\n        \"AlarmIndicator\": 1,\n        \"Id\": \"xx\",\n        \"Creater\": \"xx\",\n        \"RegularId\": \"xx\",\n        \"RegularName\": \"xx\",\n        \"TriggerType\": 1,\n        \"AlarmRecipientId\": \"xx\",\n        \"AlarmWay\": \"xx\",\n        \"AlarmLevel\": 1,\n        \"RegularStatus\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AlarmId\": 0\n    }\n}",
+        "title": "创建集成任务告警规则"
       }
     ],
     "CreateWorkflow": [
@@ -96,6 +280,38 @@
         "title": "范例"
       }
     ],
+    "DeleteInLongAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInLongAgent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除采集器"
+      }
+    ],
+    "DeleteIntegrationNode": [
+      {
+        "document": "删除集成节点",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationNode\n<公共请求参数>\n\n{\n    \"Id\": \"xx\",\n    \"ProjectId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DeleteIntegrationNode"
+      }
+    ],
+    "DeleteIntegrationTask": [
+      {
+        "document": "删除集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "删除集成任务"
+      }
+    ],
+    "DeleteOfflineTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOfflineTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"VirtualFlag\": true,\n    \"OperatorName\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除任务"
+      }
+    ],
     "DeleteResource": [
       {
         "document": "",
@@ -104,12 +320,52 @@
         "title": "示例1"
       }
     ],
+    "DeleteTaskAlarmRegular": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Id\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"TaskType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除任务告警规则"
+      }
+    ],
     "DeleteWorkflowNew": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkflowNew\n<公共请求参数>\n\n{\n    \"WorkFlowId\": \"xx\",\n    \"EnableNotify\": true,\n    \"DeleteMode\": true,\n    \"ProjectId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true,\n            \"ErrorId\": \"1111\",\n            \"ErrorDesc\": \"xxxx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除工作流"
+      }
+    ],
+    "DescribeAlarmEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmEvents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"xx\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"StartTime\": \"xx\",\n    \"TaskType\": 1,\n    \"EndTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AlarmEventInfoList\": [\n            {\n                \"TaskId\": \"xx\",\n                \"EstimatedTime\": 1,\n                \"ProjectId\": \"xx\",\n                \"AlarmIndicator\": 1,\n                \"AlarmTime\": \"xx\",\n                \"AlarmId\": 1,\n                \"RegularName\": \"xx\",\n                \"TriggerType\": 1,\n                \"AlarmRecipientId\": \"xx\",\n                \"AlarmWay\": 1,\n                \"AlarmLevel\": 1,\n                \"AlarmIndicatorDesc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "告警事件列表"
+      }
+    ],
+    "DescribeAlarmReceiver": [
+      {
+        "document": "告警接收人详情",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmReceiver\n<公共请求参数>\n\n{\n    \"AlarmRecipientName\": \"xx\",\n    \"PageSize\": 1,\n    \"ProjectId\": \"xx\",\n    \"MessageId\": \"xx\",\n    \"AlarmTime\": \"xx\",\n    \"AlarmId\": \"xx\",\n    \"PageNumber\": 1,\n    \"TaskType\": 1,\n    \"AlarmRecipient\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmReceiverInfoList\": [\n            {\n                \"Http\": 1,\n                \"Sms\": 1,\n                \"AlarmId\": 1,\n                \"Wechat\": 1,\n                \"AlarmReceiver\": \"xx\",\n                \"Wecom\": 1,\n                \"Voice\": 1,\n                \"Email\": 1\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "告警接收人详情"
+      }
+    ],
+    "DescribeClusterNamespaceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNamespaceList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatedAt\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取集群命名空间列表"
+      }
+    ],
+    "DescribeDataSourceInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceInfoList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DatasourceSet\": [\n            {\n                \"Name\": \"xx\",\n                \"Region\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"DatabaseNames\": [\n                    \"xx\"\n                ],\n                \"Instance\": \"xx\",\n                \"Type\": \"xx\",\n                \"ID\": 1,\n                \"Description\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取数据源信息"
       }
     ],
     "DescribeDataSourceList": [
@@ -126,6 +382,22 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceWithoutInfo\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": {}\n    }\n}",
         "title": "样例"
+      }
+    ],
+    "DescribeDataTypes": [
+      {
+        "document": "获取字段类型列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTypes\n<公共请求参数>\n\n{\n    \"DatasourceType\": \"xx\",\n    \"ProjectId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"TypeInfoSet\": [\n            {\n                \"Value\": \"FUNCTION\",\n                \"Text\": \"函数\"\n            },\n            {\n                \"Value\": \"CONSTANT\",\n                \"Text\": \"常量\"\n            },\n            {\n                \"Value\": \"boolean\",\n                \"Text\": \"boolean\"\n            },\n            {\n                \"Value\": \"date\",\n                \"Text\": \"date\"\n            },\n            {\n                \"Value\": \"double\",\n                \"Text\": \"double\"\n            },\n            {\n                \"Value\": \"float\",\n                \"Text\": \"float\"\n            },\n            {\n                \"Value\": \"tinyint\",\n                \"Text\": \"tinyint\"\n            },\n            {\n                \"Value\": \"smallint\",\n                \"Text\": \"smallint\"\n            },\n            {\n                \"Value\": \"tinyint unsigned\",\n                \"Text\": \"tinyint unsigned\"\n            },\n            {\n                \"Value\": \"int\",\n                \"Text\": \"int\"\n            },\n            {\n                \"Value\": \"mediumint\",\n                \"Text\": \"mediumint\"\n            },\n            {\n                \"Value\": \"smallint unsigned\",\n                \"Text\": \"smallint unsigned\"\n            },\n            {\n                \"Value\": \"Bigint\",\n                \"Text\": \"Bigint\"\n            },\n            {\n                \"Value\": \"int unsigned\",\n                \"Text\": \"int unsigned\"\n            },\n            {\n                \"Value\": \"bigint unsigned\",\n                \"Text\": \"bigint unsigned\"\n            },\n            {\n                \"Value\": \"double precision\",\n                \"Text\": \"double precision\"\n            },\n            {\n                \"Value\": \"tinyint(1)\",\n                \"Text\": \"tinyint(1)\"\n            },\n            {\n                \"Value\": \"char\",\n                \"Text\": \"char\"\n            },\n            {\n                \"Value\": \"varchar\",\n                \"Text\": \"varchar\"\n            },\n            {\n                \"Value\": \"text\",\n                \"Text\": \"text\"\n            },\n            {\n                \"Value\": \"varbinary\",\n                \"Text\": \"varbinary\"\n            },\n            {\n                \"Value\": \"blob\",\n                \"Text\": \"blob\"\n            }\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeDatabaseInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseInfoList\n<公共请求参数>\n\n{\n    \"ConnectionType\": \"rpc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取数据库信息"
       }
     ],
     "DescribeDatasource": [
@@ -176,12 +448,172 @@
         "title": "查询函数类型"
       }
     ],
+    "DescribeInLongAgentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentList\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"PageIndex\": 1,\n    \"VpcId\": \"xx\",\n    \"PageSize\": 1,\n    \"ProjectId\": \"xx\",\n    \"AgentType\": 1,\n    \"AgentName\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"AgentType\": 1,\n                \"StatusDesc\": \"xx\",\n                \"Source\": \"xx\",\n                \"ExecutorGroupName\": \"xx\",\n                \"TaskCount\": 1,\n                \"AgentName\": \"xx\",\n                \"AgentId\": \"xx\",\n                \"ExecutorGroupId\": \"xx\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取采集器列表"
+      }
+    ],
+    "DescribeInLongAgentTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentTaskList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskName\": \"xx\",\n                \"TaskId\": \"xx\",\n                \"TaskStatus\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeInLongAgentTaskList"
+      }
+    ],
+    "DescribeInLongAgentVpcList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentVpcList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcList\": [\n            \"xxx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeInLongAgentVpcList"
+      }
+    ],
+    "DescribeInLongTkeClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongTkeClusterList\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"PageIndex\": 1,\n    \"PageSize\": 1,\n    \"ClusterName\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"HasAgent\": true,\n    \"ClusterType\": \"xx\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"TkeRegion\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"HasAgent\": true,\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\",\n                \"AgentId\": \"xx\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取TKE集群列表"
+      }
+    ],
+    "DescribeInstanceLastLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLastLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"CurRunDate\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"XX\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "日志获取详情页面"
+      }
+    ],
+    "DescribeInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceList\n<公共请求参数>\n\n{\n    \"Sort\": \"xx\",\n    \"PageIndex\": 0,\n    \"PageSize\": 0,\n    \"CycleList\": [\n        \"xx\"\n    ],\n    \"ProjectId\": \"xx\",\n    \"OwnerList\": [\n        \"xx\"\n    ],\n    \"SortCol\": \"xx\",\n    \"TaskTypeList\": [\n        0\n    ],\n    \"StateList\": [\n        0\n    ],\n    \"InstanceType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"XX\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
+    "DescribeInstanceLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLog\n<公共请求参数>\n\n{\n    \"BrokerIp\": \"xx\",\n    \"OriginFileName\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"CurRunDate\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"XX\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例运行日志"
+      }
+    ],
+    "DescribeInstanceLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLogList\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"CurRunDate\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"XX\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取离线任务实例运行日志列表"
+      }
+    ],
     "DescribeInstanceLogs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\",\n    \"CurRunDate\": \"2022-07-29 13:40:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dad51553-30cd-49a0-8e34-0574b6d8bd06\",\n        \"Data\": []\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DescribeIntegrationNode": [
+      {
+        "document": "查询集成节点",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationNode\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Id\": \"xx\",\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeInfo\": {\n            \"NodeType\": \"xx\",\n            \"Description\": \"xx\",\n            \"CreatorUin\": \"xx\",\n            \"DataSourceType\": \"xx\",\n            \"ProjectId\": \"xx\",\n            \"OwnerUin\": \"xx\",\n            \"ExtConfig\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"DatasourceId\": \"xx\",\n            \"NodeMapping\": {\n                \"SourceId\": \"xx\",\n                \"SchemaMappings\": [\n                    {\n                        \"SinkSchemaId\": \"xx\",\n                        \"SourceSchemaId\": \"xx\"\n                    }\n                ],\n                \"SinkId\": \"xx\",\n                \"SourceSchema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            },\n            \"TaskId\": \"xx\",\n            \"AppId\": \"xx\",\n            \"Schema\": [\n                {\n                    \"Type\": \"xx\",\n                    \"Id\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Config\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Id\": \"xx\",\n            \"OperatorUin\": \"xx\",\n            \"Name\": \"xx\"\n        },\n        \"SourceCheckFlag\": false,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationNode"
+      }
+    ],
+    "DescribeIntegrationStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatistics\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalTask\": 1,\n        \"ProdTask\": 1,\n        \"DevTask\": 2,\n        \"TotalReadRecords\": 1,\n        \"TotalWriteRecords\": 1,\n        \"TotalErrorRecords\": 1,\n        \"TotalAlarmEvent\": 1,\n        \"IncreaseReadRecords\": 1,\n        \"IncreaseWriteRecords\": 1,\n        \"IncreaseErrorRecords\": 1,\n        \"IncreaseAlarmEvent\": 1,\n        \"AlarmEvent\": \"{\\\"important\\\":1,\\\"ordinary\\\":0,\\\"urgent\\\":0}\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatistics"
+      }
+    ],
+    "DescribeIntegrationStatisticsAgentStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsAgentStatus\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\",\n    \"ExecutorGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusData\": \"{\\\"running\\\":0}\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatisticsAgentStatus"
+      }
+    ],
+    "DescribeIntegrationStatisticsInstanceTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsInstanceTrend\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\",\n    \"ExecutorGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TrendsData\": [\n            {\n                \"StatisticName\": [\n                    \"a\",\n                    \"b\"\n                ],\n                \"StatisticValue\": [\n                    2,\n                    3\n                ],\n                \"StatisticType\": \"typeA\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatisticsInstanceTrend"
+      }
+    ],
+    "DescribeIntegrationStatisticsRecordsTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsRecordsTrend\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TrendsData\": [\n            {\n                \"StatisticName\": [\n                    \"a\",\n                    \"b\"\n                ],\n                \"StatisticValue\": [\n                    2,\n                    3\n                ],\n                \"StatisticType\": \"typeA\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatisticsRecordsTrend"
+      }
+    ],
+    "DescribeIntegrationStatisticsTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsTaskStatus\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\",\n    \"ExecutorGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusData\": \"{\\\"running\\\":0}\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatisticsTaskStatus"
+      }
+    ],
+    "DescribeIntegrationStatisticsTaskStatusTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsTaskStatusTrend\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\",\n    \"ExecutorGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TrendsData\": [\n            {\n                \"StatisticName\": [\n                    \"a\",\n                    \"b\"\n                ],\n                \"StatisticValue\": [\n                    2,\n                    3\n                ],\n                \"StatisticType\": \"typeA\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeIntegrationStatisticsTaskStatusTrend"
+      }
+    ],
+    "DescribeIntegrationTask": [
+      {
+        "document": "查询集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskInfo\": {\n            \"TaskGroupId\": \"xx\",\n            \"Status\": 0,\n            \"WorkflowId\": \"xx\",\n            \"Description\": \"xx\",\n            \"CreatorUin\": \"xx\",\n            \"SyncType\": 0,\n            \"ProjectId\": \"xx\",\n            \"OwnerUin\": \"xx\",\n            \"ExecuteContext\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"ScheduleTaskId\": \"xx\",\n            \"TaskType\": 0,\n            \"AppId\": \"xx\",\n            \"ExecutorId\": \"xx\",\n            \"TaskId\": \"xx\",\n            \"OperatorUin\": \"xx\",\n            \"Nodes\": [\n                {\n                    \"NodeType\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"CreatorUin\": \"xx\",\n                    \"DataSourceType\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"OwnerUin\": \"xx\",\n                    \"ExtConfig\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"DatasourceId\": \"xx\",\n                    \"NodeMapping\": {\n                        \"SourceId\": \"xx\",\n                        \"SchemaMappings\": [\n                            {\n                                \"SinkSchemaId\": \"xx\",\n                                \"SourceSchemaId\": \"xx\"\n                            }\n                        ],\n                        \"SinkId\": \"xx\",\n                        \"SourceSchema\": [\n                            {\n                                \"Type\": \"xx\",\n                                \"Id\": \"xx\",\n                                \"Value\": \"xx\",\n                                \"Name\": \"xx\"\n                            }\n                        ]\n                    },\n                    \"TaskId\": \"xx\",\n                    \"AppId\": \"xx\",\n                    \"Schema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ],\n                    \"Config\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"Id\": \"xx\",\n                    \"OperatorUin\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"ExtConfig\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Config\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"TaskName\": \"xx\",\n            \"Mappings\": [\n                {\n                    \"SourceId\": \"xx\",\n                    \"SchemaMappings\": [\n                        {\n                            \"SinkSchemaId\": \"xx\",\n                            \"SourceSchemaId\": \"xx\"\n                        }\n                    ],\n                    \"SinkId\": \"xx\",\n                    \"SourceSchema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询集成任务"
+      }
+    ],
+    "DescribeIntegrationTasks": [
+      {
+        "document": "查询集成任务列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 0,\n    \"ProjectId\": \"xx\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 0,\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInfoSet\": [\n            {\n                \"TaskGroupId\": \"xx\",\n                \"Status\": 0,\n                \"WorkflowId\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"SyncType\": 0,\n                \"ProjectId\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ExecuteContext\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"ScheduleTaskId\": \"xx\",\n                \"TaskType\": 0,\n                \"AppId\": \"xx\",\n                \"ExecutorId\": \"xx\",\n                \"TaskId\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"Nodes\": [\n                    {\n                        \"NodeType\": \"xx\",\n                        \"Description\": \"xx\",\n                        \"CreatorUin\": \"xx\",\n                        \"DataSourceType\": \"xx\",\n                        \"ProjectId\": \"xx\",\n                        \"OwnerUin\": \"xx\",\n                        \"ExtConfig\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"DatasourceId\": \"xx\",\n                        \"NodeMapping\": {\n                            \"SourceId\": \"xx\",\n                            \"SchemaMappings\": [\n                                {\n                                    \"SinkSchemaId\": \"xx\",\n                                    \"SourceSchemaId\": \"xx\"\n                                }\n                            ],\n                            \"SinkId\": \"xx\",\n                            \"SourceSchema\": [\n                                {\n                                    \"Type\": \"xx\",\n                                    \"Id\": \"xx\",\n                                    \"Value\": \"xx\",\n                                    \"Name\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"TaskId\": \"xx\",\n                        \"AppId\": \"xx\",\n                        \"Schema\": [\n                            {\n                                \"Type\": \"xx\",\n                                \"Id\": \"xx\",\n                                \"Value\": \"xx\",\n                                \"Name\": \"xx\"\n                            }\n                        ],\n                        \"Config\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"Id\": \"xx\",\n                        \"OperatorUin\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"ExtConfig\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Config\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"TaskName\": \"xx\",\n                \"Mappings\": [\n                    {\n                        \"SourceId\": \"xx\",\n                        \"SchemaMappings\": [\n                            {\n                                \"SinkSchemaId\": \"xx\",\n                                \"SourceSchemaId\": \"xx\"\n                            }\n                        ],\n                        \"SinkId\": \"xx\",\n                        \"SourceSchema\": [\n                            {\n                                \"Type\": \"xx\",\n                                \"Id\": \"xx\",\n                                \"Value\": \"xx\",\n                                \"Name\": \"xx\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询集成任务列表"
+      }
+    ],
+    "DescribeIntegrationVersionNodesInfo": [
+      {
+        "document": "查询集成任务版本节点信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationVersionNodesInfo\n<公共请求参数>\n\n{\n    \"TaskId\": \"cos-|ap-|file.dg\",\n    \"ProjectId\": \"22yy\",\n    \"TaskVersionPath\": \"cos-|ap-|file_xxy.dg\",\n    \"TaskVersion\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"cos-|ap-|file.dg\",\n        \"RequestId\": \"xx\",\n        \"Nodes\": [\n            {\n                \"NodeType\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DataSourceType\": \"xx\",\n                \"ProjectId\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ExtConfig\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DatasourceId\": \"xx\",\n                \"NodeMapping\": {\n                    \"SourceId\": \"xx\",\n                    \"SchemaMappings\": [\n                        {\n                            \"SinkSchemaId\": \"xx\",\n                            \"SourceSchemaId\": \"xx\"\n                        }\n                    ],\n                    \"SinkId\": \"xx\",\n                    \"SourceSchema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ]\n                },\n                \"TaskId\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Schema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Config\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Id\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"Mappings\": [\n            {\n                \"SourceId\": \"xx\",\n                \"SchemaMappings\": [\n                    {\n                        \"SinkSchemaId\": \"xx\",\n                        \"SourceSchemaId\": \"xx\"\n                    }\n                ],\n                \"SinkId\": \"xx\",\n                \"SourceSchema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询集成任务版本节点信息"
+      }
+    ],
+    "DescribeKafkaTopicInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaTopicInfo\n<公共请求参数>\n\n{\n    \"DatasourceId\": \"12\",\n    \"Type\": \"12\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取kafka的topic信息"
+      }
+    ],
+    "DescribeOfflineTaskToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfflineTaskToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取离线任务长连接Token"
       }
     ],
     "DescribeOrganizationalFunctions": [
@@ -212,6 +644,30 @@
         "title": "projectName transfer"
       }
     ],
+    "DescribeRealTimeTaskInstanceNodeInfo": [
+      {
+        "document": "查询实时任务实例节点信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskInstanceNodeInfo\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RealTimeTaskInstanceNodeInfo\": {\n            \"InstanceNodeInfoList\": [\n                {\n                    \"NodeType\": \"SOURCE\",\n                    \"NodeId\": \"xx\",\n                    \"NodeName\": \"xx\"\n                }\n            ],\n            \"TaskName\": \"xx\",\n            \"TaskId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询实时任务实例节点信息"
+      }
+    ],
+    "DescribeRealTimeTaskMetricOverview": [
+      {
+        "document": "实时任务运行指标概览",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskMetricOverview\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalRecordNumOfWrite\": 1,\n        \"TotalDirtyRecordByte\": 1,\n        \"TotalDirtyRecordNum\": 1,\n        \"EndRunTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TotalRecordNumOfRead\": 1,\n        \"TotalRecordByteNumOfRead\": 1,\n        \"BeginRunTime\": \"xx\",\n        \"TotalRecordByteNumOfWrite\": 1,\n        \"TotalDuration\": 1\n    }\n}",
+        "title": "实时任务运行指标概览"
+      }
+    ],
+    "DescribeRealTimeTaskSpeed": [
+      {
+        "document": "实时任务同步速度趋势",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealTimeTaskSpeed\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"EndTime\": 1,\n    \"StartTime\": 1,\n    \"TaskId\": \"xx\",\n    \"Granularity\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BytesSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RecordsSpeedList\": [\n            {\n                \"Values\": [\n                    {\n                        \"Speed\": 0.0,\n                        \"Time\": 1\n                    }\n                ],\n                \"NodeType\": \"xx\",\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "实时任务同步速度趋势"
+      }
+    ],
     "DescribeRelatedInstances": [
       {
         "document": "",
@@ -234,12 +690,68 @@
         "title": "示例1"
       }
     ],
+    "DescribeStandardRuleDetailInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandardRuleDetailInfoList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"StandardRuleDetailList\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取数据标准规则详情"
+      }
+    ],
+    "DescribeStreamTaskLogList": [
+      {
+        "document": "查询实时任务日志列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamTaskLogList\n<公共请求参数>\n\n{\n    \"RunningOrderId\": 1,\n    \"Container\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"JobId\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": 1,\n    \"OrderType\": \"xx\",\n    \"EndTime\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ListOver\": true,\n        \"LogContentList\": [\n            {\n                \"PkgId\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"Time\": 1,\n                \"Log\": \"xx\",\n                \"PkgLogId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询实时任务日志列表"
+      }
+    ],
+    "DescribeTableInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableInfoList\n<公共请求参数>\n\n{\n    \"Catalog\": \"HIVE\",\n    \"ConnectionType\": \"rpc\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"7\"\n            ],\n            \"Name\": \"datasourceId\"\n        },\n        {\n            \"Values\": [\n                \"hive\"\n            ],\n            \"Name\": \"type\"\n        },\n        {\n            \"Values\": [\n                \"rost_test_hive384\"\n            ],\n            \"Name\": \"databaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TableInfo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取数据表信息"
+      }
+    ],
+    "DescribeTableSchemaInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableSchemaInfo\n<公共请求参数>\n\n{\n    \"MsType\": \"HIVE\",\n    \"Name\": \"字符串\",\n    \"DatabaseName\": \"字符串\",\n    \"DatasourceId\": \"23432\",\n    \"ConnectionType\": \"rpc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SchemaInfoList\": [\n            {\n                \"ColumnKey\": \"xx\",\n                \"Type\": \"xx\",\n                \"Description\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取表schema信息"
+      }
+    ],
+    "DescribeTaskAlarmRegulations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskAlarmRegulations\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 0,\n    \"ProjectId\": 0,\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 0,\n    \"TaskId\": 1,\n    \"TaskType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"TaskAlarmInfos\": [\n            {\n                \"TaskId\": \"xx\",\n                \"EstimatedTime\": 1,\n                \"ProjectId\": \"xx\",\n                \"TaskType\": 1,\n                \"AlarmIndicator\": 1,\n                \"Id\": \"xx\",\n                \"Creater\": \"xx\",\n                \"RegularId\": \"xx\",\n                \"RegularName\": \"xx\",\n                \"TriggerType\": 1,\n                \"AlarmWay\": 1,\n                \"AlarmLevel\": 1,\n                \"RegularStatus\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询任务告警规则列表"
+      }
+    ],
     "DescribeTaskDetail": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskDetail\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b3a6016-96d1-4832-8376-afb191a21a6a\",\n        \"Data\": {\n            \"TaskId\": \"20220727140613327\",\n            \"VirtualTaskId\": null,\n            \"VirtualFlag\": false,\n            \"TaskName\": \"task2\",\n            \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n            \"RealWorkflowId\": null,\n            \"WorkflowName\": \"work1\",\n            \"FolderId\": null,\n            \"FolderName\": null,\n            \"CreateTime\": \"2022-07-27 14:06:13\",\n            \"LastUpdate\": \"2022-07-27 17:40:31\",\n            \"Status\": \"NS\",\n            \"InCharge\": \"TBDS\",\n            \"StartTime\": \"2022-09-03 11:00:00\",\n            \"EndTime\": \"2099-12-31 23:59:59\",\n            \"ExecutionStartTime\": null,\n            \"ExecutionEndTime\": null,\n            \"ProjectId\": \"1\",\n            \"ProjectIdent\": \"test_dev_all\",\n            \"ProjectName\": \"test_dev_all\",\n            \"CycleType\": 1,\n            \"CycleStep\": 10,\n            \"CrontabExpression\": null,\n            \"DelayTime\": 10,\n            \"StartupTime\": 0,\n            \"RetryWait\": 1,\n            \"Retriable\": 1,\n            \"TaskAction\": \"\",\n            \"TryLimit\": 3,\n            \"RunPriority\": 4,\n            \"TaskType\": 35,\n            \"BrokerIp\": \"any\",\n            \"ClusterId\": null,\n            \"MinDateTime\": null,\n            \"MaxDateTime\": null,\n            \"SelfDepend\": 1,\n            \"Notes\": \"\",\n            \"YarnQueue\": null,\n            \"Submit\": false,\n            \"LastSchedulerCommitTime\": null,\n            \"NormalizedJobStartTime\": null,\n            \"SourceServer\": null,\n            \"TargetServer\": \"11\",\n            \"Creater\": \"TBDS\",\n            \"DependencyRel\": \"and\",\n            \"DependencyWorkflow\": \"yes\",\n            \"DependencyConfigs\": null,\n            \"VirtualTaskStatus\": null,\n            \"Params\": null,\n            \"TaskExt\": [\n                {\n                    \"Key\": \"aa\",\n                    \"Value\": \"bb\"\n                },\n                {\n                    \"Key\": \"bucket\",\n                    \"Value\": \"wedata-fusion-dev-1257305158\"\n                },\n                {\n                    \"Key\": \"python_type\",\n                    \"Value\": \"python2\"\n                },\n                {\n                    \"Key\": \"ftp.file.name\",\n                    \"Value\": \"https://wedata-fusion-dev-1257305158.cos.ap-nanjing.myqcloud.com/datastudio/project/1/wb555/work1/task2.sh\"\n                },\n                {\n                    \"Key\": \"region\",\n                    \"Value\": \"ap-nanjing\"\n                },\n                {\n                    \"Key\": \"extraInfo\",\n                    \"Value\": \"{}\"\n                }\n            ],\n            \"UpdateUser\": \"fe\",\n            \"UpdateTime\": \"2022-07-27 17:40:31\",\n            \"UpdateUserId\": \"100022256608\",\n            \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n            \"ResourceGroup\": \"20220420160541973718\",\n            \"VersionDesc\": null\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DescribeTaskInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInstance\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"202205058668886\",\n    \"CurRunDate\": \"2020-05-05 12:00:00\",\n    \"IssueDate\": \"2020-05-05 12:04:18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskInstanceDetail\": {\n            \"BrokerIp\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"OwnerUin\": 1,\n            \"TaskRunId\": \"xx\",\n            \"TaskRunType\": 1,\n            \"CurRunDate\": \"xx\",\n            \"CreateUin\": 1,\n            \"ProjectId\": \"xx\",\n            \"InlongTaskId\": \"xx\",\n            \"State\": 1,\n            \"PodName\": \"xx\",\n            \"OperatorUin\": 1,\n            \"StartTime\": \"xx\",\n            \"AppId\": 1,\n            \"TaskId\": \"xx\",\n            \"TaskName\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"IssueDate\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"ExecutorGroupId\": \"xx\",\n            \"NextRunDate\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "离线任务实例详情"
+      }
+    ],
+    "DescribeTaskInstanceReportDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInstanceReportDetail\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"202205058668886\",\n    \"CurRunDate\": \"2020-05-05 12:00:00\",\n    \"IssueDate\": \"2020-05-05 12:04:18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": {\n            \"TotalReadRecords\": 2000000,\n            \"TotalReadBytes\": 89898292,\n            \"TotalWriteRecords\": 2000000,\n            \"TotalWriteBytes\": 89898292,\n            \"RecordSpeed\": 8000,\n            \"ByteSpeed\": 3.5,\n            \"TotalErrorRecords\": 0,\n            \"TotalErrorBytes\": 0,\n            \"TotalRunDuration\": 308,\n            \"BeginRunTime\": \"2020-05-05 12:00:00\",\n            \"EndRunTime\": \"2020-05-05 12:05:08\"\n        },\n        \"ReadNode\": {\n            \"NodeName\": \"mysql_input_node\",\n            \"DataSource\": \"datasource.table\",\n            \"TotalReadRecords\": 2000000,\n            \"TotalReadBytes\": 89898292,\n            \"RecordSpeed\": 8000,\n            \"ByteSpeed\": 3.5,\n            \"TotalErrorRecords\": 0\n        },\n        \"WriteNode\": {\n            \"NodeName\": \"mysql_input_node\",\n            \"DataSource\": \"datasource.table\",\n            \"TotalWriteRecords\": 2000000,\n            \"TotalWriteBytes\": 89898292,\n            \"RecordSpeed\": 8000,\n            \"ByteSpeed\": 3.5,\n            \"TotalErrorRecords\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "离线任务实例统计明细"
       }
     ],
     "DescribeTaskInstances": [
@@ -256,6 +768,30 @@
         "title": "真实案例"
       }
     ],
+    "DescribeTaskLockStatus": [
+      {
+        "document": "查看任务锁状态信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskLockStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskLockStatus\": {\n            \"IsRob\": 1,\n            \"Locker\": \"xx\",\n            \"IsLocker\": 1,\n            \"TaskId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看任务锁状态信息"
+      }
+    ],
+    "DescribeTaskReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskReport\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"202205058668886\",\n    \"BeginDate\": \"2022-05-01\",\n    \"EndDate\": \"2022-05-05\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalReadRecords\": 2000000,\n        \"TotalReadBytes\": 89898292,\n        \"TotalWriteRecords\": 2000000,\n        \"TotalWriteBytes\": 89898292,\n        \"TotalErrorRecords\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeTaskReport"
+      }
+    ],
+    "DescribeTaskReportDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskReportDetailList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"202205058668886\",\n    \"BeginDate\": \"2022-05-01\",\n    \"EndDate\": \"2022-05-05\",\n    \"StateList\": \"1,2\",\n    \"SortItem\": \"startDate\",\n    \"SortType\": \"DESC\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskId\": \"202205058668000\",\n                \"InstanceId\": \"202205058668000\",\n                \"CurRunDate\": \"2020-05-05 12:00:00\",\n                \"IssueDate\": \"2020-05-05 12:01:00\",\n                \"TaskState\": \"2\",\n                \"TotalReadRecords\": 2000000,\n                \"TotalReadBytes\": 89898292,\n                \"TotalWriteRecords\": 2000000,\n                \"TotalWriteBytes\": 89898292,\n                \"RecordSpeed\": 8000,\n                \"ByteSpeed\": 3.5,\n                \"TotalErrorRecords\": 0\n            }\n        ],\n        \"PageIndex\": 1,\n        \"PageSize\": 10,\n        \"TotalCount\": 29,\n        \"TotalPage\": 3,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "离线任务周期统计明细"
+      }
+    ],
     "DescribeTaskScript": [
       {
         "document": "",
@@ -270,6 +806,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"75164e96-e1aa-45b3-be14-aac909d67b11\",\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"Items\": [\n                {\n                    \"TaskId\": \"20220727140613327\",\n                    \"VirtualTaskId\": null,\n                    \"VirtualFlag\": false,\n                    \"TaskName\": \"task2\",\n                    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n                    \"RealWorkflowId\": null,\n                    \"WorkflowName\": \"work1\",\n                    \"FolderId\": null,\n                    \"FolderName\": null,\n                    \"CreateTime\": \"2022-07-27 14:06:13\",\n                    \"LastUpdate\": \"2022-07-27 17:40:31\",\n                    \"Status\": \"NS\",\n                    \"InCharge\": \"TBDS\",\n                    \"StartTime\": \"2022-09-03 11:00:00\",\n                    \"EndTime\": \"2099-12-31 23:59:59\",\n                    \"ExecutionStartTime\": null,\n                    \"ExecutionEndTime\": null,\n                    \"ProjectId\": \"1\",\n                    \"ProjectIdent\": null,\n                    \"ProjectName\": null,\n                    \"CycleType\": 1,\n                    \"CycleStep\": 10,\n                    \"CrontabExpression\": null,\n                    \"DelayTime\": 10,\n                    \"StartupTime\": 0,\n                    \"RetryWait\": 1,\n                    \"Retriable\": 1,\n                    \"TaskAction\": \"\",\n                    \"TryLimit\": 3,\n                    \"RunPriority\": 4,\n                    \"TaskType\": 35,\n                    \"BrokerIp\": \"any\",\n                    \"ClusterId\": null,\n                    \"MinDateTime\": null,\n                    \"MaxDateTime\": null,\n                    \"SelfDepend\": 1,\n                    \"Notes\": \"\",\n                    \"YarnQueue\": null,\n                    \"Submit\": false,\n                    \"LastSchedulerCommitTime\": null,\n                    \"NormalizedJobStartTime\": null,\n                    \"SourceServer\": null,\n                    \"TargetServer\": \"11\",\n                    \"Creater\": \"TBDS\",\n                    \"DependencyRel\": \"and\",\n                    \"DependencyWorkflow\": \"yes\",\n                    \"DependencyConfigs\": null,\n                    \"VirtualTaskStatus\": null,\n                    \"Params\": null,\n                    \"TaskExt\": null,\n                    \"UpdateUser\": \"fe\",\n                    \"UpdateTime\": \"2022-07-27 17:40:31\",\n                    \"UpdateUserId\": \"100022256608\",\n                    \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n                    \"ResourceGroup\": \"20220420160541973718\",\n                    \"VersionDesc\": null\n                }\n            ]\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DryRunDIOfflineTask": [
+      {
+        "document": "调试运行集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DryRunDIOfflineTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"ResourceGroup\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"CurrentRunDate\": \"xx\",\n        \"ProjectId\": \"xx\",\n        \"Status\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"TaskInstanceKey\": \"xx\"\n    }\n}",
+        "title": "调试运行集成任务"
       }
     ],
     "ForceSucInstances": [
@@ -296,12 +840,52 @@
         "title": "范例"
       }
     ],
+    "GenHiveTableDDLSql": [
+      {
+        "document": "生成建hive表的sql",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenHiveTableDDLSql\n<公共请求参数>\n\n{\n    \"SourceDatabase\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"TableName\": \"xx\",\n    \"SinkDatabase\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"MsType\": \"xx\",\n    \"Id\": \"xx\",\n    \"SinkType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DDLSql\": \"xx\"\n    }\n}",
+        "title": "GenHiveTableDDLSql"
+      }
+    ],
+    "GetIntegrationNodeColumnSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIntegrationNodeColumnSchema\n<公共请求参数>\n\n{\n    \"ColumnContent\": \"{\\\"a\\\":1,\\\"b\\\":\\\"0\\\",\\\"c\\\":0}\",\n    \"DatasourceType\": \"KAFKA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Schemas\": [\n            {\n                \"Name\": \"a\",\n                \"Value\": \"int\"\n            },\n            {\n                \"Name\": \"b\",\n                \"Value\": \"string\"\n            },\n            {\n                \"Name\": \"c\",\n                \"Value\": \"int\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "GetIntegrationNodeColumnSchema"
+      }
+    ],
+    "GetOfflineDIInstanceList": [
+      {
+        "document": "调试运行集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOfflineDIInstanceList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"PageIndex\": 1,\n    \"SearchCondition\": {\n        \"Sort\": \"xx\",\n        \"Instance\": {\n            \"ResourceGroup\": 1,\n            \"ExecutionSpace\": 1,\n            \"ProductName\": 1\n        },\n        \"SortCol\": \"xx\",\n        \"Keyword\": \"xx\"\n    },\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"IssueId\": \"xx\",\n                \"CurRunDate\": \"xx\",\n                \"CreateUin\": \"xx\",\n                \"InlongTaskId\": \"xx\",\n                \"InstanceKey\": \"xx\",\n                \"ResourceGroup\": \"xx\",\n                \"State\": \"xx\",\n                \"WorkspaceId\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"AppId\": \"xx\",\n                \"TaskId\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"TaskRunType\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "调试运行集成任务"
+      }
+    ],
+    "GetOfflineInstanceList": [
+      {
+        "document": "调试运行集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOfflineInstanceList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"PageIndex\": \"xx\",\n    \"SearchCondition\": {\n        \"Sort\": \"xx\",\n        \"Instance\": {\n            \"ResourceGroup\": 1,\n            \"ExecutionSpace\": 1,\n            \"ProductName\": 1\n        },\n        \"SortCol\": \"xx\",\n        \"Keyword\": \"xx\"\n    },\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"IssueId\": \"xx\",\n                \"CurRunDate\": \"xx\",\n                \"CreateUin\": \"xx\",\n                \"InlongTaskId\": \"xx\",\n                \"InstanceKey\": \"xx\",\n                \"ResourceGroup\": \"xx\",\n                \"State\": \"xx\",\n                \"WorkspaceId\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"AppId\": \"xx\",\n                \"TaskId\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"TaskRunType\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "调试运行集成任务"
+      }
+    ],
     "KillInstances": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"Instances\": [\n        {\n            \"TaskId\": \"20220711143109589\",\n            \"CurRunDate\": \"2022-07-22 00:00:00\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c3bc2b3-ba5e-4bd9-9a74-88a84c996eba\",\n        \"Data\": {\n            \"Result\": true,\n            \"ErrorId\": null,\n            \"ErrorDesc\": null\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "LockIntegrationTask": [
+      {
+        "document": "锁定集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "锁定集成任务"
       }
     ],
     "MakeUpTasksNew": [
@@ -336,6 +920,30 @@
         "title": "范例"
       }
     ],
+    "ModifyIntegrationNode": [
+      {
+        "document": "更新数据集成节点",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationNode\n<公共请求参数>\n\n{\n    \"NodeInfo\": {\n        \"UpdateTime\": \"xx\",\n        \"NodeType\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreatorUin\": \"xx\",\n        \"DataSourceType\": \"xx\",\n        \"ProjectId\": \"xx\",\n        \"OwnerUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"ExtConfig\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"DatasourceId\": \"xx\",\n        \"NodeMapping\": {\n            \"SourceId\": \"xx\",\n            \"SchemaMappings\": [\n                {\n                    \"SinkSchemaId\": \"xx\",\n                    \"SourceSchemaId\": \"xx\"\n                }\n            ],\n            \"SinkId\": \"xx\",\n            \"ExtConfig\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"SourceSchema\": [\n                {\n                    \"Id\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Properties\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"TaskId\": \"xx\",\n        \"AppId\": \"xx\",\n        \"Schema\": [\n            {\n                \"Id\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\",\n                \"Value\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Config\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Id\": \"xx\",\n        \"OperatorUin\": \"xx\",\n        \"Name\": \"xx\"\n    },\n    \"ProjectId\": \"xx\",\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新数据集成节点"
+      }
+    ],
+    "ModifyIntegrationTask": [
+      {
+        "document": "更新集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskInfo\": {\n        \"TaskGroupId\": \"xx\",\n        \"Status\": 0,\n        \"WorkflowId\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreatorUin\": \"xx\",\n        \"SyncType\": 0,\n        \"ProjectId\": \"xx\",\n        \"OwnerUin\": \"xx\",\n        \"ExecuteContext\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ScheduleTaskId\": \"xx\",\n        \"TaskType\": 0,\n        \"AppId\": \"xx\",\n        \"ExecutorId\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"OperatorUin\": \"xx\",\n        \"Nodes\": [\n            {\n                \"NodeType\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DataSourceType\": \"xx\",\n                \"ProjectId\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ExtConfig\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DatasourceId\": \"xx\",\n                \"NodeMapping\": {\n                    \"SourceId\": \"xx\",\n                    \"SchemaMappings\": [\n                        {\n                            \"SinkSchemaId\": \"xx\",\n                            \"SourceSchemaId\": \"xx\"\n                        }\n                    ],\n                    \"SinkId\": \"xx\",\n                    \"SourceSchema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ]\n                },\n                \"TaskId\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Schema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Config\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Id\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"ExtConfig\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Config\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"TaskName\": \"xx\",\n        \"Mappings\": [\n            {\n                \"SourceId\": \"xx\",\n                \"SchemaMappings\": [\n                    {\n                        \"SinkSchemaId\": \"xx\",\n                        \"SourceSchemaId\": \"xx\"\n                    }\n                ],\n                \"SinkId\": \"xx\",\n                \"SourceSchema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "更新集成任务"
+      }
+    ],
+    "ModifyTaskAlarmRegular": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskAlarmInfo\": {\n        \"AlarmRecipientName\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"EstimatedTime\": 1,\n        \"ProjectId\": \"xx\",\n        \"TaskType\": 1,\n        \"AlarmIndicator\": 1,\n        \"Id\": \"xx\",\n        \"Creater\": \"xx\",\n        \"RegularId\": \"xx\",\n        \"RegularName\": \"xx\",\n        \"TriggerType\": 1,\n        \"AlarmRecipientId\": \"xx\",\n        \"AlarmWay\": \"xx\",\n        \"AlarmLevel\": 1,\n        \"RegularStatus\": 1\n    },\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改任务告警规则"
+      }
+    ],
     "ModifyTaskInfo": [
       {
         "document": "",
@@ -350,6 +958,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskLinks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"9e993c1d-0cd9-11ed-8909-bc97e105ba60\",\n    \"TaskTo\": \"20220729142629819\",\n    \"RealFromWorkflowId\": \"9e993c1d-0cd9-11ed-8909-bc97e105ba60\",\n    \"TaskFrom\": \"20220729130936366\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"afa1f6bf-7a86-410c-a214-006726d11957\",\n        \"Data\": true\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "ModifyTaskName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskName\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskName\": \"xx\",\n    \"Notes\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重命名任务（任务编辑）"
       }
     ],
     "ModifyTaskScript": [
@@ -412,6 +1028,30 @@
         "title": "范例"
       }
     ],
+    "RestartInLongAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartInLongAgent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重启采集器"
+      }
+    ],
+    "ResumeIntegrationTask": [
+      {
+        "document": "继续集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "继续集成任务"
+      }
+    ],
+    "RobAndLockIntegrationTask": [
+      {
+        "document": "抢占锁定集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RobAndLockIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RobLockState\": {\n            \"Locker\": \"xx\",\n            \"IsRob\": true\n        }\n    }\n}",
+        "title": "抢占锁定集成任务"
+      }
+    ],
     "RunTask": [
       {
         "document": "",
@@ -434,6 +1074,22 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetTaskAlarmNew\n<公共请求参数>\n\n{\n    \"AlarmInfoList\": [\n        {\n            \"AlarmId\": \"yyyy\",\n            \"TaskIds\": \"xxx,12323\",\n            \"Status\": 1,\n            \"AlarmType\": \"overtime\",\n            \"AlarmWay\": \"SMS,Email\",\n            \"AlarmRecipient\": \"wang;ming\",\n            \"AlarmRecipientId\": \"1;2\",\n            \"Hours\": 0,\n            \"Minutes\": 59,\n            \"TriggerType\": \"1\"\n        }\n    ],\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "设置任务告警"
+      }
+    ],
+    "StartIntegrationTask": [
+      {
+        "document": "启动集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "启动集成任务"
+      }
+    ],
+    "StopIntegrationTask": [
+      {
+        "document": "停止集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "停止集成任务"
       }
     ],
     "SubmitCustomFunction": [
@@ -460,12 +1116,44 @@
         "title": "范例"
       }
     ],
+    "SuspendIntegrationTask": [
+      {
+        "document": "暂停集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "暂停集成任务"
+      }
+    ],
+    "TaskLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TaskLog\n<公共请求参数>\n\n{\n    \"ProjectId\": \"**\",\n    \"StartTime\": 1659258887409,\n    \"EndTime\": 1659345287409,\n    \"Limit\": 100,\n    \"OrderType\": \"desc\",\n    \"TaskId\": \"**\",\n    \"TaskType\": 201\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LogContentList\": [\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            },\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            },\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询管控日志"
+      }
+    ],
     "TriggerEvent": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"Description\": \"手动触发\",\n    \"Name\": \"mytest\",\n    \"Dimension\": \" 20220729\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a339e515-9f6c-46b1-a43a-587f1c39067c\",\n        \"Data\": {\n            \"Result\": true,\n            \"ErrorId\": null,\n            \"ErrorDesc\": null\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "UnlockIntegrationTask": [
+      {
+        "document": "锁定集成任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "title": "锁定集成任务"
+      }
+    ],
+    "UpdateInLongAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInLongAgent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"ExecutorGroupId\": \"xx\",\n    \"AgentName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新采集器"
       }
     ]
   },
