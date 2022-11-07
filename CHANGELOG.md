@@ -1,3 +1,176 @@
+# Release 3.0.642.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 19 次发布
+
+发布时间：2022-11-08 06:08:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [IMSatisfaction](http://document.tencentcloudapi.woa.com/document/product/679/47715#IMSatisfaction)
+
+修改数据结构：
+
+* [IMCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#IMCdrInfo)
+
+	* 新增成员：Satisfaction
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 22 次发布
+
+发布时间：2022-11-08 06:19:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelDescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1595/76535)
+
+新增数据结构：
+
+* [AuthorizedUser](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AuthorizedUser)
+* [OccupiedSeal](http://document.tencentcloudapi.woa.com/document/product/1595/75258#OccupiedSeal)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 22 次发布
+
+发布时间：2022-11-08 06:23:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PullStreamTaskInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#PullStreamTaskInfo)
+
+	* 新增成员：VodLocalMode
+
+* [PushQualityData](http://document.tencentcloudapi.woa.com/document/product/267/20474#PushQualityData)
+
+	* 新增成员：ServerIp
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 23 次发布
+
+发布时间：2022-11-08 06:24:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [TerminateDedicatedDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/76536)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 25 次发布
+
+发布时间：2022-11-08 06:28:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RenewInstance](http://document.tencentcloudapi.woa.com/document/product/239/20015)
+
+	* 新增入参：ModifyPayMode
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 11 次发布
+
+发布时间：2022-11-08 06:32:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImages](http://document.tencentcloudapi.woa.com/document/product/1141/42723)
+
+	* 新增入参：ExactMatch
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 25 次发布
+
+发布时间：2022-11-08 06:33:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
+
+	* 新增成员：HasAuthority
+
+* [TemService](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemService)
+
+	* 新增成员：HasAuthority
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 33 次发布
+
+发布时间：2022-11-08 06:36:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StorageRegionInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#StorageRegionInfo)
+
+	* 新增成员：Area
+
+
+
+
 # Release 3.0.641.1
 
 ## 日志服务(cls) 版本：2020-10-16

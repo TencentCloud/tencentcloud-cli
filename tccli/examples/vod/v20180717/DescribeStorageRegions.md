@@ -17,7 +17,8 @@ Output:
                 "Region": "ap-chongqing",
                 "Description": "重庆",
                 "Status": "opened",
-                "IsDefault": true
+                "IsDefault": true,
+                "Area": "Chinese Mainland"
             }
         ]
     }

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli redis RenewInstance --cli-unfold-argument  \
-    --Period 12 \
-    --InstanceId crs-5a4py64p
+    --InstanceId crs-5a4py64p \
+    --Period 12
 ```
 
 Output: 

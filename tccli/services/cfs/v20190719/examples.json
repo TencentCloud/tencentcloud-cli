@@ -99,7 +99,7 @@
     "DescribeAutoSnapshotPolicies": [
       {
         "document": "",
-        "input": "https://cfs.tencentcloudapi.com/?Action=DescribeAutoSnapshotPolicies\n&AutoSnapshotPolicyId=asp-12345\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoSnapshotPolicies\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"TotalCount\": 1,\n        \"AutoSnapshotPolicies\": [\n            {\n                \"AutoSnapshotPolicyId\": \"asp-12345\",\n                \"PolicyName\": \"未命名\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-08-26 15:19:46\",\n                \"AliveDays\": 1,\n                \"DayOfWeek\": \"1\",\n                \"Hour\": \"1\",\n                \"IsActivated\": 0,\n                \"AppId\": 1255558577,\n                \"FileSystemNums\": 0,\n                \"Status\": \"available\",\n                \"NextActiveTime\": \"2021-11-22 01:00:00\",\n                \"FileSystems\": []\n            }\n        ]\n    }\n}",
         "title": "查询快照策略"
       }

@@ -23,7 +23,13 @@ Output:
             "ConsoleLogin": 0,
             "RoleType": "system",
             "SessionDuration": 43200,
-            "DeletionTaskId": "114"
+            "DeletionTaskId": "114",
+            "Tags": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ]
         },
         "RequestId": "87fb9770-0fca-4c5a-b985-1c36b05a95cb"
     }
@@ -55,7 +61,13 @@ Output:
             "ConsoleLogin": 0,
             "RoleType": "service_linked",
             "SessionDuration": 43200,
-            "DeletionTaskId": "114"
+            "DeletionTaskId": "114",
+            "Tags": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ]
         },
         "RequestId": "1fb826eb-6d21-42f3-8f6e-9f51360f585d"
     }

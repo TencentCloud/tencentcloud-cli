@@ -451,7 +451,7 @@
       "output": "ReleaseWanAddressResponse"
     },
     "RenewInstance": {
-      "document": "续费实例",
+      "document": "本接口（RenewInstance）可用于为实例续费。",
       "input": "RenewInstanceRequest",
       "name": "续费实例",
       "output": "RenewInstanceResponse"
@@ -8562,21 +8562,33 @@
       "members": [
         {
           "default": "",
-          "document": "购买时长，单位：月",
+          "document": "购买时长，单位：月。",
           "example": "12",
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ModifyPayMode",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8585,13 +8597,14 @@
       "document": "RenewInstance返回参数结构体",
       "members": [
         {
-          "document": "交易ID",
+          "document": "交易ID。",
           "example": "6954225",
           "member": "string",
           "name": "DealId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

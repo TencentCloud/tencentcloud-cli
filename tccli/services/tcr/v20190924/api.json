@@ -3875,6 +3875,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "指定是否为精准匹配，true为精准匹配，不填为模糊匹配",
+          "example": "false",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

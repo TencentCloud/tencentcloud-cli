@@ -769,8 +769,8 @@
     "DescribeStorageRegions": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageRegions\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"StorageRegionInfos\": [\n            {\n                \"Region\": \"ap-chongqing\",\n                \"Description\": \"重庆\",\n                \"Status\": \"opened\",\n                \"IsDefault\": true\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"StorageRegionInfos\": [\n            {\n                \"Region\": \"ap-chongqing\",\n                \"Description\": \"重庆\",\n                \"Status\": \"opened\",\n                \"IsDefault\": true,\n                \"Area\": \"Chinese Mainland\"\n            }\n        ]\n    }\n}",
         "title": "查询存储桶地域列表"
       }
     ],

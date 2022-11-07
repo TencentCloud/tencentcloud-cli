@@ -7672,6 +7672,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源是否有权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "HasAuthority",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7863,6 +7874,17 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否有资源权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "HasAuthority",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }

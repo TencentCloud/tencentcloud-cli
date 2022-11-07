@@ -1319,6 +1319,58 @@ def doCheckBankCard3EVerification(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeUsers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EssbasicClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUsersRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeUsers(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeSeals(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2203,7 +2255,7 @@ def doGetDownloadFlowUrl(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSyncProxyOrganizationOperators(args, parsed_globals):
+def doChannelDescribeOrganizationSeals(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2232,11 +2284,11 @@ def doSyncProxyOrganizationOperators(args, parsed_globals):
     client = mod.EssbasicClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SyncProxyOrganizationOperatorsRequest()
+    model = models.ChannelDescribeOrganizationSealsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.SyncProxyOrganizationOperators(model)
+        rsp = client.ChannelDescribeOrganizationSeals(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3347,7 +3399,7 @@ def doCheckBankCardVerification(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUsers(args, parsed_globals):
+def doSyncProxyOrganizationOperators(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3376,11 +3428,11 @@ def doDescribeUsers(args, parsed_globals):
     client = mod.EssbasicClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUsersRequest()
+    model = models.SyncProxyOrganizationOperatorsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeUsers(model)
+        rsp = client.SyncProxyOrganizationOperators(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4113,6 +4165,7 @@ ACTION_MAP = {
     "CreateFlowsByTemplates": doCreateFlowsByTemplates,
     "CreateUser": doCreateUser,
     "CheckBankCard3EVerification": doCheckBankCard3EVerification,
+    "DescribeUsers": doDescribeUsers,
     "DescribeSeals": doDescribeSeals,
     "CheckFaceIdentify": doCheckFaceIdentify,
     "CreateSignUrls": doCreateSignUrls,
@@ -4130,7 +4183,7 @@ ACTION_MAP = {
     "GenerateOrganizationSeal": doGenerateOrganizationSeal,
     "ChannelVerifyPdf": doChannelVerifyPdf,
     "GetDownloadFlowUrl": doGetDownloadFlowUrl,
-    "SyncProxyOrganizationOperators": doSyncProxyOrganizationOperators,
+    "ChannelDescribeOrganizationSeals": doChannelDescribeOrganizationSeals,
     "ChannelDescribeEmployees": doChannelDescribeEmployees,
     "CheckMobileAndName": doCheckMobileAndName,
     "ChannelBatchCancelFlows": doChannelBatchCancelFlows,
@@ -4152,7 +4205,7 @@ ACTION_MAP = {
     "DescribeCustomFlowIdsByFlowId": doDescribeCustomFlowIdsByFlowId,
     "DescribeFaceIdResults": doDescribeFaceIdResults,
     "CheckBankCardVerification": doCheckBankCardVerification,
-    "DescribeUsers": doDescribeUsers,
+    "SyncProxyOrganizationOperators": doSyncProxyOrganizationOperators,
     "CreateFaceIdSign": doCreateFaceIdSign,
     "DescribeFlowApprovers": doDescribeFlowApprovers,
     "CreateFlowByFiles": doCreateFlowByFiles,

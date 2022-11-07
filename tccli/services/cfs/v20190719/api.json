@@ -73,7 +73,7 @@
       "output": "DeleteMountTargetResponse"
     },
     "DescribeAutoSnapshotPolicies": {
-      "document": "查询文件系统快照d定期策略列表信息",
+      "document": "查询文件系统快照定期策略列表信息",
       "input": "DescribeAutoSnapshotPoliciesRequest",
       "name": "查询文件系统快照策略列表信息",
       "output": "DescribeAutoSnapshotPoliciesResponse"
@@ -1381,7 +1381,8 @@
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1390,7 +1391,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1399,7 +1401,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1408,7 +1411,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1417,7 +1421,8 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1426,7 +1431,8 @@
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1441,7 +1447,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "快照策略信息",
@@ -1450,7 +1457,8 @@
           "name": "AutoSnapshotPolicies",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
