@@ -5242,7 +5242,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5251,7 +5252,8 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5260,7 +5262,8 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5269,7 +5272,8 @@
           "member": "bool",
           "name": "ModifyPortableDataDisk",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5284,7 +5288,8 @@
           "name": "Price",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5804,7 +5809,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5819,7 +5825,8 @@
           "name": "InstanceRefundsSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

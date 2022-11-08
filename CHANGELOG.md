@@ -1,3 +1,161 @@
+# Release 3.0.644.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 33 次发布
+
+发布时间：2022-11-09 06:05:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDDoSThreshold](http://document.tencentcloudapi.woa.com/document/product/1021/69190)
+
+	* 新增入参：OtherThresholdFlag, SynFloodThreshold, SynFloodPktThreshold, UdpFloodThreshold, UdpFloodPktThreshold
+
+
+修改数据结构：
+
+* [PacketFilterConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#PacketFilterConfig)
+
+	* 新增成员：PktLenGT
+
+* [ProtectThresholdRelation](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtectThresholdRelation)
+
+	* 新增成员：SynFloodThreshold, SynFloodPktThreshold, UdpFloodThreshold, UdpFloodPktThreshold
+
+* [ProtocolBlockConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtocolBlockConfig)
+
+	* 新增成员：PingOfDeath, TearDrop
+
+
+
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 15 次发布
+
+发布时间：2022-11-09 06:06:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePluginsByApi](http://document.tencentcloudapi.woa.com/document/product/628/76543)
+
+新增数据结构：
+
+* [AttachedPluginInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginInfo)
+* [AttachedPluginSummary](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginSummary)
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 14 次发布
+
+发布时间：2022-11-09 06:11:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateProbeTaskAttributes](http://document.tencentcloudapi.woa.com/document/product/280/76544)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 38 次发布
+
+发布时间：2022-11-09 06:20:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Machine](http://document.tencentcloudapi.woa.com/document/product/296/19867#Machine)
+
+	* 新增成员：IpList
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 23 次发布
+
+发布时间：2022-11-09 06:35:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56245)
+
+	* 新增入参：VodLocalMode
+
+* [ModifyLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56242)
+
+	* 新增入参：VodLocalMode
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 13 次发布
+
+发布时间：2022-11-09 06:38:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTemplateInfoForUpdate)
+
+	* 新增成员：StreamSelects
+
+* [SubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleTemplate)
+
+	* 新增成员：Path, StreamIndex, FontType, FontSize, FontColor, FontAlpha
+
+
+
+
+## 图像分析(tiia) 版本：2019-05-29
+
+### 第 15 次发布
+
+发布时间：2022-11-09 06:50:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DetectPet](http://document.tencentcloudapi.woa.com/document/product/865/76545)
+
+新增数据结构：
+
+* [Pet](http://document.tencentcloudapi.woa.com/document/product/865/35474#Pet)
+
+
+
 # Release 3.0.643.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

@@ -420,6 +420,14 @@
         "title": "DescribePlugins"
       }
     ],
+    "DescribePluginsByApi": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribePluginsByApi\n&ApiId=api-fa23vfd\n&EnvironmentName=release\n&ServiceId=service-o5as3moe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"PluginSummary\": [\n                {\n                    \"PluginId\": \"plugin-9l0d4sdf\",\n                    \"PluginName\": \"onlyname\",\n                    \"PluginType\": \"IPControl\",\n                    \"Description\": \"modifyDesc\",\n                    \"PluginData\": \"{\\\"blocks\\\":\\\"1.1.1.1\\\",\\\"type\\\":\\\"black_list\\\"}\",\n                    \"Environment\": \"release\",\n                    \"AttachedTime\": \"2021-01-25T06:56:58Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"4effd8e7-abd0-4f95-a881-301d68d9985e\"\n    }\n}",
+        "title": "DescribeAvailablePluginApis"
+      }
+    ],
     "DescribeService": [
       {
         "document": "",

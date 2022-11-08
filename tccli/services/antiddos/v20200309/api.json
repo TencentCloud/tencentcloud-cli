@@ -9571,6 +9571,56 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "配置其他阈值标志位，1表示配置其他阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "OtherThresholdFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYN FLOOD流量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYN FLOOD包量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodPktThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "UDP FLOOD流量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "UDP FLOOD包量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodPktThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10220,7 +10270,8 @@
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10230,7 +10281,8 @@
           "name": "SportStart",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10240,7 +10292,8 @@
           "name": "SportEnd",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10250,7 +10303,8 @@
           "name": "DportStart",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10260,7 +10314,8 @@
           "name": "DportEnd",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10270,7 +10325,8 @@
           "name": "PktlenMin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10280,7 +10336,8 @@
           "name": "PktlenMax",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10290,7 +10347,8 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10300,7 +10358,8 @@
           "name": "MatchBegin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10310,7 +10369,8 @@
           "name": "MatchType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10320,7 +10380,8 @@
           "name": "Str",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10330,7 +10391,8 @@
           "name": "Depth",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10340,7 +10402,8 @@
           "name": "Offset",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10350,7 +10413,8 @@
           "name": "IsNot",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10360,7 +10424,8 @@
           "name": "MatchLogic",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10370,7 +10435,8 @@
           "name": "MatchBegin2",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10380,7 +10446,8 @@
           "name": "MatchType2",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10390,7 +10457,8 @@
           "name": "Str2",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10400,7 +10468,8 @@
           "name": "Depth2",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10410,7 +10479,8 @@
           "name": "Offset2",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10420,7 +10490,8 @@
           "name": "IsNot2",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -10430,7 +10501,19 @@
           "name": "Id",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "大于报文长度，取值1+",
+          "example": "50",
+          "member": "int64",
+          "name": "PktLenGT",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -10501,65 +10584,123 @@
         {
           "default": "",
           "document": "DDoS防护等级，取值[\nlow(宽松)\nmiddle(适中)\nhigh(严格)\n]",
+          "example": "无",
           "member": "string",
           "name": "DDoSLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "DDoS清洗阈值，单位Mbps",
+          "example": "无",
           "member": "uint64",
           "name": "DDoSThreshold",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "DDoS的AI防护开关，取值[\non(开启)\noff(关闭)\n]",
+          "example": "无",
           "member": "string",
           "name": "DDoSAI",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "CC清洗开关，取值[\n0(关闭)\n1(开启)\n]",
+          "example": "无",
           "member": "uint64",
           "name": "CCEnable",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "CC清洗阈值，单位QPS",
+          "example": "无",
           "member": "uint64",
           "name": "CCThreshold",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "所属的资源实例",
+          "example": "无",
           "member": "InstanceRelation",
           "name": "InstanceDetailList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "域名与协议纬度的防护阈值",
+          "example": "无",
           "member": "ListenerCcThreholdConfig",
           "name": "ListenerCcThresholdList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYN FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYN FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "UDP FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "UDP FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -10570,47 +10711,79 @@
         {
           "default": "",
           "document": "TCP封禁，取值[0(封禁关)，1(封禁开)]",
+          "example": "1",
           "member": "int64",
           "name": "DropTcp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "UDP封禁，取值[0(封禁关)，1(封禁开)]",
+          "example": "1",
           "member": "int64",
           "name": "DropUdp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "ICMP封禁，取值[0(封禁关)，1(封禁开)]",
+          "example": "1",
           "member": "int64",
           "name": "DropIcmp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "其他协议封禁，取值[0(封禁关)，1(封禁开)]",
+          "example": "1",
           "member": "int64",
           "name": "DropOther",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "异常空连接防护，取值[0(防护关)，1(防护开)]",
+          "example": "1",
           "member": "int64",
           "name": "CheckExceptNullConnect",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ping of death防护，取值[0(防护关)，1(防护开)]",
+          "example": "1",
+          "member": "int64",
+          "name": "PingOfDeath",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "tear drop防护，取值[0(防护关)，1(防护开)]",
+          "example": "1",
+          "member": "int64",
+          "name": "TearDrop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli antiddos ModifyDDoSThreshold --cli-unfold-argument  \
-    --Business bgpip \
+    --Threshold 1000 \
     --Id bgpip-000000xe \
-    --Threshold 1000
+    --Business bgpip
 ```
 
 Output: 
