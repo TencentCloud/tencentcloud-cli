@@ -73,7 +73,7 @@
     "CreateClusterEndpoint": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpoint\n&ClusterId=cls-xxxxxxxx\n&SubnetId=subnet-xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterEndpoint\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建集群访问端口"
       }
@@ -143,7 +143,7 @@
     "CreateEKSCluster": [
       {
         "document": "创建托管集群",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateEKSCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEKSCluster\n<公共请求参数>\n\n{\n    \"ServiceSubnetId\": \"subnet-xxxx\",\n    \"VpcId\": \"vpc-xxx\",\n    \"K8SVersion\": \"1.12.4\",\n    \"ClusterName\": \"for_test\",\n    \"SubnetIds\": [\n        \"subnet-xxxx\"\n    ],\n    \"DnsServers\": [\n        {\n            \"Domain\": \"exam.com\",\n            \"DnsServers\": [\n                \"10.2.2.88:53\"\n            ]\n        }\n    ],\n    \"ClusterDesc\": \"my_test_cluster\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建弹性集群示例"
       }
@@ -178,6 +178,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageCache\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-508ctkfb\",\n    \"SubnetId\": \"subnet-8ah75lo8\",\n    \"Images\": [\n        \"nginx:latest\"\n    ],\n    \"ImageCacheSize\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"232323-5ed9-4cb7-9194-a95e2cd626e5\",\n        \"ImageCacheId\": \"imc-xxx\"\n    }\n}",
         "title": "创建镜像缓存"
+      }
+    ],
+    "CreateInstantInspectJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstantInspectJob\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"JobName\": \"job-test\"\n    }\n}",
+        "title": "调用api创建TKE集群巡检任务"
       }
     ],
     "CreatePrometheusAlertPolicy": [
@@ -291,7 +299,7 @@
     "DeleteClusterEndpoint": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterEndpoint\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterEndpoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除集群访问端口"
       }
@@ -475,8 +483,8 @@
     "DescribeAvailableTKEEdgeVersion": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableTKEEdgeVersion\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            \"1.14.1\",\n            \"1.16.1\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableTKEEdgeVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            \"1.14.1\",\n            \"1.16.1\"\n        ],\n        \"EdgeVersionLatest\": \"1.0.1\",\n        \"EdgeVersionCurrent\": \"1.0.1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "检查当前支持的k8s版本"
       }
     ],
@@ -500,7 +508,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\"\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\"\n        },\n        \"OIDCConfig\": {\n            \"AutoCreateOIDCConfig\": true,\n            \"AutoInstallPodIdentityWebhookAddon\": true,\n            \"AutoCreateClientId\": [\n                \"xx\"\n            ]\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
         "title": "查看集群认证配置"
       }
     ],
@@ -712,6 +720,14 @@
         "title": "查询边缘计算集群的节点信息"
       }
     ],
+    "DescribeEdgeClusterUpgradeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeClusterUpgradeInfo\n<公共请求参数>\n\n{\n    \"EdgeVersion\": \"1.0.2\",\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67a0dd10-ef28-49a1-8834-7a5fa7a9bac0\",\n        \"EdgeVersionCurrent\": \"1.1.0\",\n        \"ComponentVersion\": \"{\\\"hyperkube\\\":{},\\\"kube-proxy\\\":{},\\\"coredns\\\":{\\\"InitImageName\\\":\\\"\\\",\\\"InitImageVersion\\\":\\\"\\\",\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.6.7\\\"},\\\"flannel\\\":{\\\"InitImageName\\\":\\\"\\\",\\\"InitImageVersion\\\":\\\"\\\",\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.12.0-edge-2.0\\\"},\\\"gpu-plugin\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.9.0\\\"},\\\"site-manager\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.6.0\\\"},\\\"application-grid-controller\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.21.1\\\"},\\\"application-grid-wrapper\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"1.20.3\\\"},\\\"tunnel\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"v0.8.0\\\"},\\\"edge-health\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"edge-health-admission\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"event\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"griddaemon\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"metric-server\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"standalone-metrics\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"hpa-metrics-server\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"\\\"},\\\"tke-monitor-agent\\\":{\\\"ImageName\\\":\\\"\\\",\\\"ImageVersion\\\":\\\"20220714-3b31e8d2\\\"}}\",\n        \"RegistryPrefix\": \"\",\n        \"ClusterUpgradeStatus\": \"updating\",\n        \"ClusterUpgradeStatusReason\": \"component application-grid-controller:Back-off pulling image \\\"ccr.ccs.tencentyun.com/tkeedge/application-grid-controller:1.21.1-x\\\"\"\n    }\n}",
+        "title": "查询边缘集群升级信息"
+      }
+    ],
     "DescribeEdgeLogSwitches": [
       {
         "document": "",
@@ -766,6 +782,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeImages\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageInstanceSet\": [\n            {\n                \"Alias\": \"xx\",\n                \"OsCustomizeType\": \"xx\",\n                \"OsName\": \"xx\",\n                \"ImageId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
         "title": "获取镜像信息"
+      }
+    ],
+    "DescribeInstantInspectTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstantInspectTask\n<公共请求参数>\n\n{\n    \"JobName\": \"job-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": \"waiting\",\n        \"Data\": []\n    }\n}",
+        "title": "获得集群巡检结果"
       }
     ],
     "DescribePrometheusAgentInstances": [
@@ -851,14 +875,14 @@
     "DescribePrometheusInstanceInitStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EksClusterId\": \"xx\",\n        \"Steps\": [\n            {\n                \"StartAt\": \"xx\",\n                \"Step\": \"xx\",\n                \"LifeState\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取初始化任务状态"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bfa1653-e199-4c46-ba0b-2a6b89203a3f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71ppt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EksClusterId\": \"xx\",\n        \"Steps\": [\n            {\n                \"StartAt\": \"xx\",\n                \"Step\": \"xx\",\n                \"LifeState\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            },\n            {\n                \"LifeState\": \"xx\",\n                \"Step\": \"xx\",\n                \"StartAt\": \"xx\",\n                \"EndAt\": \"xx\",\n                \"FailedMsg\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取2.0实例初始化任务状态"
       }
     ],
@@ -1281,7 +1305,7 @@
     "RunPrometheusInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunPrometheusInstance\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "初始化实例"
       }
@@ -1364,6 +1388,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEKSContainerInstance\n<公共请求参数>\n\n{\n    \"Name\": \"helloworld\",\n    \"RestartPolicy\": \"Always\",\n    \"EksCiId\": \"eksci-123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e133246\",\n        \"EksCiId\": \"eksci-rkkrzy4o\"\n    }\n}",
         "title": "更新容器实例"
+      }
+    ],
+    "UpdateEdgeClusterVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEdgeClusterVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"EdgeVersion\": \"1.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "title": "升级边缘集群"
       }
     ],
     "UpdateImageCache": [

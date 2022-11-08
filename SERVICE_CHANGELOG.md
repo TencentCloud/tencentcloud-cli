@@ -152,6 +152,77 @@
 
 
 
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 44 次发布
+
+发布时间：2022-11-08 15:17:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInstantInspectJob](http://document.tencentcloudapi.woa.com/document/product/457/76538)
+* [DescribeEdgeClusterUpgradeInfo](http://document.tencentcloudapi.woa.com/document/product/457/76540)
+* [DescribeInstantInspectTask](http://document.tencentcloudapi.woa.com/document/product/457/76537)
+* [UpdateEdgeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/457/76539)
+
+修改接口：
+
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76169)
+
+	* 新增入参：EdgeVersion, RegistryPrefix
+
+* [DescribeAvailableTKEEdgeVersion](http://document.tencentcloudapi.woa.com/document/product/457/76164)
+
+	* 新增入参：ClusterId
+
+	* 新增出参：EdgeVersionLatest, EdgeVersionCurrent
+
+* [DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76141)
+
+	* 新增出参：OIDCConfig
+
+* [DescribePrometheusInstanceInitStatus](http://document.tencentcloudapi.woa.com/document/product/457/76269)
+
+	* 新增入参：InstanceId
+
+	* 新增出参：Status, Steps, EksClusterId
+
+* [ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76118)
+
+	* 新增入参：OIDCConfig
+
+* [RunPrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/457/76541)
+
+	* 新增入参：InstanceId, SubnetId
+
+
+新增数据结构：
+
+* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask)
+* [ClusterInspectionTaskOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskOverview)
+* [OIDCConfigAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76293#OIDCConfigAuthenticationOptions)
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeCluster)
+
+	* 新增成员：Level
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAgentOverview)
+
+	* 新增成员：Region, VpcId, FailedReason
+
+
+
+
 ## 云点播(vod) 版本：2018-07-17
 
 ### 第 33 次发布
@@ -37873,6 +37944,69 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 44 次发布
+
+发布时间：2022-11-08 15:17:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateInstantInspectJob](http://document.tencentcloudapi.woa.com/document/product/457/76538)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeEdgeClusterUpgradeInfo](http://document.tencentcloudapi.woa.com/document/product/457/76540)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstantInspectTask](http://document.tencentcloudapi.woa.com/document/product/457/76537)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateEdgeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/457/76539)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76169)
+
+	* 新增入参：EdgeVersion, RegistryPrefix
+
+* [DescribeAvailableTKEEdgeVersion](http://document.tencentcloudapi.woa.com/document/product/457/76164)
+
+	* 新增入参：ClusterId
+
+	* 新增出参：EdgeVersionLatest, EdgeVersionCurrent
+
+* [DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76141)
+
+	* 新增出参：OIDCConfig
+
+* [DescribePrometheusInstanceInitStatus](http://document.tencentcloudapi.woa.com/document/product/457/76269)
+
+	* 新增入参：InstanceId
+
+	* 新增出参：Status, Steps, EksClusterId
+
+* [ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76118)
+
+	* 新增入参：OIDCConfig
+
+* [RunPrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/457/76541)
+
+	* 新增入参：InstanceId, SubnetId
+
+
+新增数据结构：
+
+* [[ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask))
+* [[ClusterInspectionTaskOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskOverview)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTaskOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskOverview))
+* [[OIDCConfigAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76293#OIDCConfigAuthenticationOptions)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[OIDCConfigAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76293#OIDCConfigAuthenticationOptions))
+
+修改数据结构：
+
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeCluster)
+
+	* 新增成员：Level
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAgentOverview)
+
+	* 新增成员：Region, VpcId, FailedReason
+
+
 ### 第 43 次发布
 
 发布时间：2022-09-15 06:29:03
@@ -37883,7 +38017,7 @@
 
 修改接口：
 
-* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76151)
 
 	* 新增入参：ClusterLevel
 
@@ -37898,14 +38032,14 @@
 
 修改接口：
 
-* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76151)
 
 	* 新增入参：AutoUpgradeClusterLevel
 
 
 修改数据结构：
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/#/##Cluster)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#Cluster)
 
 	* 新增成员：RuntimeVersion
 
@@ -37920,25 +38054,25 @@
 
 修改接口：
 
-* [DescribeClusterEndpoints](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterEndpoints](http://document.tencentcloudapi.woa.com/document/product/457/76136)
 
 	* 新增出参：ClusterExternalDomain, ClusterIntranetDomain, SecurityGroup
 
-* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/457/76117)
 
 	* 新增入参：SecurityGroup
 
 
 新增数据结构：
 
-* [CUDNN](http://document.tencentcloudapi.woa.com/document/product/#/##CUDNN)
-* [CustomDriver](http://document.tencentcloudapi.woa.com/document/product/#/##CustomDriver)
-* [DriverVersion](http://document.tencentcloudapi.woa.com/document/product/#/##DriverVersion)
-* [GPUArgs](http://document.tencentcloudapi.woa.com/document/product/#/##GPUArgs)
+* [CUDNN](http://document.tencentcloudapi.woa.com/document/product/457/76293#CUDNN)
+* [CustomDriver](http://document.tencentcloudapi.woa.com/document/product/457/76293#CustomDriver)
+* [DriverVersion](http://document.tencentcloudapi.woa.com/document/product/457/76293#DriverVersion)
+* [GPUArgs](http://document.tencentcloudapi.woa.com/document/product/457/76293#GPUArgs)
 
 修改数据结构：
 
-* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceAdvancedSettings)
+* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceAdvancedSettings)
 
 	* 新增成员：GPUArgs
 
@@ -37953,30 +38087,30 @@
 
 新增接口：
 
-* [CreateEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76171)
 
 修改接口：
 
-* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76169)
 
 	* 新增入参：ClusterLevel, AutoUpgradeClusterLevel, ChargeType
 
-* [DeletePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeletePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/457/76283)
 
 	* 新增入参：Agents, InstanceId
 
 
 新增数据结构：
 
-* [PrometheusAgentInfo](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAgentInfo)
+* [PrometheusAgentInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAgentInfo)
 
 修改数据结构：
 
-* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeCluster)
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeCluster)
 
 	* 新增成员：ClusterAdvancedSettings
 
-* [SubnetInfos](http://document.tencentcloudapi.woa.com/document/product/#/##SubnetInfos)
+* [SubnetInfos](http://document.tencentcloudapi.woa.com/document/product/457/76293#SubnetInfos)
 
 	* 新增成员：SecurityGroups
 
@@ -37991,7 +38125,7 @@
 
 修改接口：
 
-* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/457/76155)
 
 	* 新增入参：ScriptVersion
 
@@ -38000,7 +38134,7 @@
 
 修改数据结构：
 
-* [EdgeClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeClusterAdvancedSettings)
+* [EdgeClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeClusterAdvancedSettings)
 
 	* 新增成员：Runtime, ProxyMode
 
@@ -38015,7 +38149,7 @@
 
 新增接口：
 
-* [DescribeEdgeLogSwitches](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEdgeLogSwitches](http://document.tencentcloudapi.woa.com/document/product/457/76160)
 
 ### 第 37 次发布
 
@@ -38027,10 +38161,10 @@
 
 新增接口：
 
-* [CreateEdgeLogConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterEndpoints](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [InstallEdgeLogAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UninstallEdgeLogAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEdgeLogConfig](http://document.tencentcloudapi.woa.com/document/product/457/76170)
+* [DescribeClusterEndpoints](http://document.tencentcloudapi.woa.com/document/product/457/76136)
+* [InstallEdgeLogAgent](http://document.tencentcloudapi.woa.com/document/product/457/76153)
+* [UninstallEdgeLogAgent](http://document.tencentcloudapi.woa.com/document/product/457/76152)
 
 ### 第 36 次发布
 
@@ -38042,7 +38176,7 @@
 
 修改数据结构：
 
-* [ExistedInstance](http://document.tencentcloudapi.woa.com/document/product/#/##ExistedInstance)
+* [ExistedInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#ExistedInstance)
 
 	* 新增成员：IPv6Addresses
 
@@ -38057,36 +38191,36 @@
 
 修改接口：
 
-* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76193)
 
 	* 新增入参：DeletionProtection
 
-* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76119)
 
 	* 新增入参：QGPUShareEnable
 
 	* 新增出参：QGPUShareEnable
 
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76186)
 
 	* 新增入参：DeletionProtection
 
 
 修改数据结构：
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/#/##Cluster)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#Cluster)
 
 	* 新增成员：QGPUShareEnable
 
-* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAdvancedSettings)
+* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAdvancedSettings)
 
 	* 新增成员：QGPUShareEnable
 
-* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterNetworkSettings)
+* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterNetworkSettings)
 
 	* 新增成员：IsDualStack, Ipv6ServiceCIDR
 
-* [NodePool](http://document.tencentcloudapi.woa.com/document/product/#/##NodePool)
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/76293#NodePool)
 
 	* 新增成员：DeletionProtection
 
@@ -38101,7 +38235,7 @@
 
 修改接口：
 
-* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/457/76155)
 
 	* 新增出参：Link, Token, Command
 
@@ -38116,16 +38250,16 @@
 
 修改接口：
 
-* [CreatePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreatePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/457/76290)
 
 	* 新增入参：InstanceId, Agents
 
 
 新增数据结构：
 
-* [PrometheusClusterAgentBasic](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusClusterAgentBasic)
-* [PrometheusClusterAgentPodConfig](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusClusterAgentPodConfig)
-* [Toleration](http://document.tencentcloudapi.woa.com/document/product/#/##Toleration)
+* [PrometheusClusterAgentBasic](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusClusterAgentBasic)
+* [PrometheusClusterAgentPodConfig](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusClusterAgentPodConfig)
+* [Toleration](http://document.tencentcloudapi.woa.com/document/product/457/76293#Toleration)
 
 ### 第 32 次发布
 
@@ -38137,7 +38271,7 @@
 
 修改数据结构：
 
-* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAdvancedSettings)
+* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAdvancedSettings)
 
 	* 新增成员：IsDualStack
 
@@ -38152,19 +38286,19 @@
 
 新增接口：
 
-* [CreatePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusGlobalConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusInstanceInitStatus](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusAgentExternalLabels](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [RunPrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreatePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/457/76290)
+* [CreatePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/457/76216)
+* [CreatePrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/457/76215)
+* [DeletePrometheusClusterAgent](http://document.tencentcloudapi.woa.com/document/product/457/76283)
+* [DeletePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/457/76214)
+* [DeletePrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/457/76213)
+* [DescribePrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/457/76212)
+* [DescribePrometheusGlobalConfig](http://document.tencentcloudapi.woa.com/document/product/457/76272)
+* [DescribePrometheusInstanceInitStatus](http://document.tencentcloudapi.woa.com/document/product/457/76269)
+* [ModifyPrometheusAgentExternalLabels](http://document.tencentcloudapi.woa.com/document/product/457/76260)
+* [ModifyPrometheusConfig](http://document.tencentcloudapi.woa.com/document/product/457/76211)
+* [ModifyPrometheusRecordRuleYaml](http://document.tencentcloudapi.woa.com/document/product/457/76210)
+* [RunPrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/457/76541)
 
 ### 第 30 次发布
 
@@ -38176,7 +38310,7 @@
 
 新增接口：
 
-* [ForwardTKEEdgeApplicationRequestV3](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ForwardTKEEdgeApplicationRequestV3](http://document.tencentcloudapi.woa.com/document/product/457/76154)
 
 ### 第 29 次发布
 
@@ -38188,101 +38322,101 @@
 
 新增接口：
 
-* [CheckEdgeClusterCIDR](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateECMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteECMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteEdgeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusTempSync](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeAvailableTKEEdgeVersion](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeECMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEdgeAvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEdgeClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEdgeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusRecordRules](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusTempSync](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeTKEEdgeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeTKEEdgeClusters](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeTKEEdgeExternalKubeconfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DisableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [EnableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [EnableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [InstallLogAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [SyncPrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UninstallLogAgent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckEdgeClusterCIDR](http://document.tencentcloudapi.woa.com/document/product/457/76173)
+* [CreateECMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76172)
+* [CreatePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/457/76292)
+* [CreatePrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/457/76288)
+* [CreatePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76287)
+* [CreateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76169)
+* [DeleteECMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76168)
+* [DeleteEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76167)
+* [DeleteEdgeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76166)
+* [DeletePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/457/76285)
+* [DeletePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76282)
+* [DeletePrometheusTempSync](http://document.tencentcloudapi.woa.com/document/product/457/76281)
+* [DeleteTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76165)
+* [DescribeAvailableTKEEdgeVersion](http://document.tencentcloudapi.woa.com/document/product/457/76164)
+* [DescribeECMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76163)
+* [DescribeEdgeAvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76129)
+* [DescribeEdgeCVMInstances](http://document.tencentcloudapi.woa.com/document/product/457/76162)
+* [DescribeEdgeClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76128)
+* [DescribeEdgeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76161)
+* [DescribePrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/457/76275)
+* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/457/76542)
+* [DescribePrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/457/76271)
+* [DescribePrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/457/76268)
+* [DescribePrometheusRecordRules](http://document.tencentcloudapi.woa.com/document/product/457/76266)
+* [DescribePrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76264)
+* [DescribePrometheusTempSync](http://document.tencentcloudapi.woa.com/document/product/457/76263)
+* [DescribeTKEEdgeClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76159)
+* [DescribeTKEEdgeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/457/76158)
+* [DescribeTKEEdgeClusters](http://document.tencentcloudapi.woa.com/document/product/457/76157)
+* [DescribeTKEEdgeExternalKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/76156)
+* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/76125)
+* [DisableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/76243)
+* [EnableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/76123)
+* [EnableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/76242)
+* [InstallLogAgent](http://document.tencentcloudapi.woa.com/document/product/457/76239)
+* [ModifyPrometheusAlertPolicy](http://document.tencentcloudapi.woa.com/document/product/457/76259)
+* [ModifyPrometheusGlobalNotification](http://document.tencentcloudapi.woa.com/document/product/457/76257)
+* [ModifyPrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76256)
+* [SyncPrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76253)
+* [UninstallLogAgent](http://document.tencentcloudapi.woa.com/document/product/457/76238)
+* [UpdateTKEEdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76151)
 
 修改接口：
 
-* [AddExistedInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddExistedInstances](http://document.tencentcloudapi.woa.com/document/product/457/76180)
 
 	* 新增入参：ImageId
 
-* [CreateClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/457/76147)
 
 	* 新增入参：Domain, SecurityGroup, ExtensiveParameters
 
-* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76193)
 
 	* 新增入参：ContainerRuntime, RuntimeVersion
 
-* [CreateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76222)
 
 	* 新增入参：SubnetInfos
 
 
 新增数据结构：
 
-* [ClusterCondition](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterCondition)
-* [ECMEnhancedService](http://document.tencentcloudapi.woa.com/document/product/#/##ECMEnhancedService)
-* [ECMRunMonitorServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/#/##ECMRunMonitorServiceEnabled)
-* [ECMRunSecurityServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/#/##ECMRunSecurityServiceEnabled)
-* [ECMZoneInstanceCountISP](http://document.tencentcloudapi.woa.com/document/product/#/##ECMZoneInstanceCountISP)
-* [EdgeArgsFlag](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeArgsFlag)
-* [EdgeAvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeAvailableExtraArgs)
-* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeCluster)
-* [EdgeClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeClusterAdvancedSettings)
-* [EdgeClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeClusterExtraArgs)
-* [EdgeClusterInternalLB](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeClusterInternalLB)
-* [EdgeClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/#/##EdgeClusterPublicLB)
-* [PrometheusAlertManagerConfig](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertManagerConfig)
-* [PrometheusAlertPolicyItem](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertPolicyItem)
-* [PrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusInstancesOverview)
-* [PrometheusNotificationItem](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusNotificationItem)
-* [PrometheusRecordRuleYamlItem](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusRecordRuleYamlItem)
-* [PrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTemp)
-* [PrometheusTempModify](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTempModify)
-* [SubnetInfos](http://document.tencentcloudapi.woa.com/document/product/#/##SubnetInfos)
+* [ClusterCondition](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterCondition)
+* [ECMEnhancedService](http://document.tencentcloudapi.woa.com/document/product/457/76293#ECMEnhancedService)
+* [ECMRunMonitorServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/457/76293#ECMRunMonitorServiceEnabled)
+* [ECMRunSecurityServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/457/76293#ECMRunSecurityServiceEnabled)
+* [ECMZoneInstanceCountISP](http://document.tencentcloudapi.woa.com/document/product/457/76293#ECMZoneInstanceCountISP)
+* [EdgeArgsFlag](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeArgsFlag)
+* [EdgeAvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeAvailableExtraArgs)
+* [EdgeCluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeCluster)
+* [EdgeClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeClusterAdvancedSettings)
+* [EdgeClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeClusterExtraArgs)
+* [EdgeClusterInternalLB](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeClusterInternalLB)
+* [EdgeClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/457/76293#EdgeClusterPublicLB)
+* [PrometheusAlertManagerConfig](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertManagerConfig)
+* [PrometheusAlertPolicyItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertPolicyItem)
+* [PrometheusInstancesOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusInstancesOverview)
+* [PrometheusNotificationItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusNotificationItem)
+* [PrometheusRecordRuleYamlItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusRecordRuleYamlItem)
+* [PrometheusTemp](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTemp)
+* [PrometheusTempModify](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTempModify)
+* [SubnetInfos](http://document.tencentcloudapi.woa.com/document/product/457/76293#SubnetInfos)
 
 修改数据结构：
 
-* [ClusterCIDRSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterCIDRSettings)
+* [ClusterCIDRSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterCIDRSettings)
 
 	* 新增成员：IgnoreServiceCIDRConflict
 
-* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterNetworkSettings)
+* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterNetworkSettings)
 
 	* 新增成员：IgnoreServiceCIDRConflict
 
-* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceAdvancedSettings)
+* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceAdvancedSettings)
 
 	* 新增成员：Taints
 
@@ -38309,7 +38443,7 @@
 
 修改数据结构：
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/#/##Cluster)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#Cluster)
 
 	* 新增成员：ClusterLevel, AutoUpgradeClusterLevel
 
@@ -38324,17 +38458,17 @@
 
 新增接口：
 
-* [DescribeClusterLevelAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterLevelChangeRecords](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeResourceUsage](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [GetClusterLevelPrice](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterLevelAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76134)
+* [DescribeClusterLevelChangeRecords](http://document.tencentcloudapi.woa.com/document/product/457/76133)
+* [DescribeResourceUsage](http://document.tencentcloudapi.woa.com/document/product/457/76126)
+* [GetClusterLevelPrice](http://document.tencentcloudapi.woa.com/document/product/457/76121)
 
 新增数据结构：
 
-* [ClusterLevelAttribute](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterLevelAttribute)
-* [ClusterLevelChangeRecord](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterLevelChangeRecord)
-* [ResourceUsage](http://document.tencentcloudapi.woa.com/document/product/#/##ResourceUsage)
-* [ResourceUsageDetail](http://document.tencentcloudapi.woa.com/document/product/#/##ResourceUsageDetail)
+* [ClusterLevelAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterLevelAttribute)
+* [ClusterLevelChangeRecord](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterLevelChangeRecord)
+* [ResourceUsage](http://document.tencentcloudapi.woa.com/document/product/457/76293#ResourceUsage)
+* [ResourceUsageDetail](http://document.tencentcloudapi.woa.com/document/product/457/76293#ResourceUsageDetail)
 
 ### 第 25 次发布
 
@@ -38346,7 +38480,7 @@
 
 修改接口：
 
-* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76220)
 
 	* 新增出参：Kubeconfig
 
@@ -38361,7 +38495,7 @@
 
 修改接口：
 
-* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76119)
 
 	* 新增入参：ClusterLevel, AutoUpgradeClusterLevel
 
@@ -38370,11 +38504,11 @@
 
 新增数据结构：
 
-* [AutoUpgradeClusterLevel](http://document.tencentcloudapi.woa.com/document/product/#/##AutoUpgradeClusterLevel)
+* [AutoUpgradeClusterLevel](http://document.tencentcloudapi.woa.com/document/product/457/76293#AutoUpgradeClusterLevel)
 
 修改数据结构：
 
-* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterBasicSettings)
+* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterBasicSettings)
 
 	* 新增成员：ClusterLevel, AutoUpgradeClusterLevel
 
@@ -38389,7 +38523,7 @@
 
 修改数据结构：
 
-* [Container](http://document.tencentcloudapi.woa.com/document/product/#/##Container)
+* [Container](http://document.tencentcloudapi.woa.com/document/product/457/76293#Container)
 
 	* 新增成员：SecurityContext
 
@@ -38404,16 +38538,16 @@
 
 新增接口：
 
-* [CreateImageCache](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteImageCaches](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeImageCaches](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [GetMostSuitableImageCache](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpdateImageCache](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateImageCache](http://document.tencentcloudapi.woa.com/document/product/457/76235)
+* [DeleteImageCaches](http://document.tencentcloudapi.woa.com/document/product/457/76233)
+* [DescribeImageCaches](http://document.tencentcloudapi.woa.com/document/product/457/76228)
+* [GetMostSuitableImageCache](http://document.tencentcloudapi.woa.com/document/product/457/76227)
+* [UpdateImageCache](http://document.tencentcloudapi.woa.com/document/product/457/76224)
 
 新增数据结构：
 
-* [ImageCache](http://document.tencentcloudapi.woa.com/document/product/#/##ImageCache)
-* [ImageCacheEvent](http://document.tencentcloudapi.woa.com/document/product/#/##ImageCacheEvent)
+* [ImageCache](http://document.tencentcloudapi.woa.com/document/product/457/76293#ImageCache)
+* [ImageCacheEvent](http://document.tencentcloudapi.woa.com/document/product/457/76293#ImageCacheEvent)
 
 ### 第 21 次发布
 
@@ -38425,7 +38559,7 @@
 
 新增接口：
 
-* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTKEEdgeScript](http://document.tencentcloudapi.woa.com/document/product/457/76155)
 
 ### 第 20 次发布
 
@@ -38437,7 +38571,7 @@
 
 修改接口：
 
-* [DescribeClusterNodePools](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76188)
 
 	* 新增入参：Filters
 
@@ -38452,11 +38586,11 @@
 
 新增接口：
 
-* [DescribeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/457/76131)
 
 新增数据结构：
 
-* [ClusterStatus](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterStatus)
+* [ClusterStatus](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterStatus)
 
 ### 第 18 次发布
 
@@ -38468,7 +38602,7 @@
 
 修改接口：
 
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76186)
 
 	* 新增入参：Unschedulable
 
@@ -38483,7 +38617,7 @@
 
 修改接口：
 
-* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76218)
 
 	* 新增入参：ExtraParam
 
@@ -38498,11 +38632,11 @@
 
 修改数据结构：
 
-* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAgentOverview)
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAgentOverview)
 
 	* 新增成员：ExternalLabels
 
-* [PrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertRule)
+* [PrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertRule)
 
 	* 新增成员：RuleState
 
@@ -38517,18 +38651,18 @@
 
 修改接口：
 
-* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76193)
 
 	* 新增入参：Tags
 
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76186)
 
 	* 新增入参：Tags
 
 
 修改数据结构：
 
-* [NodePool](http://document.tencentcloudapi.woa.com/document/product/#/##NodePool)
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/76293#NodePool)
 
 	* 新增成员：Tags
 
@@ -38543,18 +38677,18 @@
 
 修改接口：
 
-* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76220)
 
 	* 新增出参：ProxyLB
 
-* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76218)
 
 	* 新增入参：ProxyLB
 
 
 修改数据结构：
 
-* [ClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterPublicLB)
+* [ClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterPublicLB)
 
 	* 新增成员：SecurityGroup
 
@@ -38569,7 +38703,7 @@
 
 修改数据结构：
 
-* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterBasicSettings)
+* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterBasicSettings)
 
 	* 新增成员：SubnetId
 
@@ -38584,7 +38718,7 @@
 
 修改数据结构：
 
-* [EksCi](http://document.tencentcloudapi.woa.com/document/product/#/##EksCi)
+* [EksCi](http://document.tencentcloudapi.woa.com/document/product/457/76293#EksCi)
 
 	* 新增成员：PersistStatus
 
@@ -38599,12 +38733,12 @@
 
 新增接口：
 
-* [ForwardApplicationRequestV3](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [GetTkeAppChartList](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ForwardApplicationRequestV3](http://document.tencentcloudapi.woa.com/document/product/457/76241)
+* [GetTkeAppChartList](http://document.tencentcloudapi.woa.com/document/product/457/76240)
 
 新增数据结构：
 
-* [AppChart](http://document.tencentcloudapi.woa.com/document/product/#/##AppChart)
+* [AppChart](http://document.tencentcloudapi.woa.com/document/product/457/76293#AppChart)
 
 ### 第 10 次发布
 
@@ -38616,8 +38750,8 @@
 
 新增接口：
 
-* [DisableClusterDeletionProtection](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [EnableClusterDeletionProtection](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DisableClusterDeletionProtection](http://document.tencentcloudapi.woa.com/document/product/457/76124)
+* [EnableClusterDeletionProtection](http://document.tencentcloudapi.woa.com/document/product/457/76122)
 
 ### 第 9 次发布
 
@@ -38629,12 +38763,12 @@
 
 新增接口：
 
-* [ScaleInClusterMaster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ScaleOutClusterMaster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ScaleInClusterMaster](http://document.tencentcloudapi.woa.com/document/product/457/76116)
+* [ScaleOutClusterMaster](http://document.tencentcloudapi.woa.com/document/product/457/76115)
 
 新增数据结构：
 
-* [ScaleInMaster](http://document.tencentcloudapi.woa.com/document/product/#/##ScaleInMaster)
+* [ScaleInMaster](http://document.tencentcloudapi.woa.com/document/product/457/76293#ScaleInMaster)
 
 ### 第 8 次发布
 
@@ -38646,7 +38780,7 @@
 
 修改接口：
 
-* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/457/76117)
 
 	* <font color="#dd0000">**修改入参**：</font>SecurityPolicies
 
@@ -38661,12 +38795,12 @@
 
 新增接口：
 
-* [DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76141)
+* [ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76118)
 
 新增数据结构：
 
-* [ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/#/##ServiceAccountAuthenticationOptions)
+* [ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/76293#ServiceAccountAuthenticationOptions)
 
 ### 第 6 次发布
 
@@ -38678,7 +38812,7 @@
 
 修改接口：
 
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76186)
 
 	* 新增入参：ExtraArgs
 
@@ -38693,7 +38827,7 @@
 
 修改接口：
 
-* [DescribeClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/76135)
 
 	* 新增入参：IsExtranet
 
@@ -38708,11 +38842,11 @@
 
 新增接口：
 
-* [DescribeExternalClusterSpec](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeExternalClusterSpec](http://document.tencentcloudapi.woa.com/document/product/457/76127)
 
 修改接口：
 
-* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/457/76130)
 
 	* 新增入参：ClusterType
 
@@ -38727,36 +38861,36 @@
 
 新增接口：
 
-* [CreateEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEKSContainerInstanceEvent](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEksContainerInstanceLog](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [RestartEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpdateEKSContainerInstance](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/457/76236)
+* [DeleteEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/457/76234)
+* [DescribeEKSContainerInstanceEvent](http://document.tencentcloudapi.woa.com/document/product/457/76232)
+* [DescribeEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/457/76230)
+* [DescribeEksContainerInstanceLog](http://document.tencentcloudapi.woa.com/document/product/457/76229)
+* [RestartEKSContainerInstances](http://document.tencentcloudapi.woa.com/document/product/457/76226)
+* [UpdateEKSContainerInstance](http://document.tencentcloudapi.woa.com/document/product/457/76225)
 
 新增数据结构：
 
-* [Capabilities](http://document.tencentcloudapi.woa.com/document/product/#/##Capabilities)
-* [CbsVolume](http://document.tencentcloudapi.woa.com/document/product/#/##CbsVolume)
-* [Container](http://document.tencentcloudapi.woa.com/document/product/#/##Container)
-* [ContainerState](http://document.tencentcloudapi.woa.com/document/product/#/##ContainerState)
-* [DNSConfig](http://document.tencentcloudapi.woa.com/document/product/#/##DNSConfig)
-* [DNSConfigOption](http://document.tencentcloudapi.woa.com/document/product/#/##DNSConfigOption)
-* [EipAttribute](http://document.tencentcloudapi.woa.com/document/product/#/##EipAttribute)
-* [EksCi](http://document.tencentcloudapi.woa.com/document/product/#/##EksCi)
-* [EksCiVolume](http://document.tencentcloudapi.woa.com/document/product/#/##EksCiVolume)
-* [EnvironmentVariable](http://document.tencentcloudapi.woa.com/document/product/#/##EnvironmentVariable)
-* [Event](http://document.tencentcloudapi.woa.com/document/product/#/##Event)
-* [Exec](http://document.tencentcloudapi.woa.com/document/product/#/##Exec)
-* [HttpGet](http://document.tencentcloudapi.woa.com/document/product/#/##HttpGet)
-* [ImageRegistryCredential](http://document.tencentcloudapi.woa.com/document/product/#/##ImageRegistryCredential)
-* [LivenessOrReadinessProbe](http://document.tencentcloudapi.woa.com/document/product/#/##LivenessOrReadinessProbe)
-* [NfsVolume](http://document.tencentcloudapi.woa.com/document/product/#/##NfsVolume)
-* [Probe](http://document.tencentcloudapi.woa.com/document/product/#/##Probe)
-* [SecurityContext](http://document.tencentcloudapi.woa.com/document/product/#/##SecurityContext)
-* [TcpSocket](http://document.tencentcloudapi.woa.com/document/product/#/##TcpSocket)
-* [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/#/##VolumeMount)
+* [Capabilities](http://document.tencentcloudapi.woa.com/document/product/457/76293#Capabilities)
+* [CbsVolume](http://document.tencentcloudapi.woa.com/document/product/457/76293#CbsVolume)
+* [Container](http://document.tencentcloudapi.woa.com/document/product/457/76293#Container)
+* [ContainerState](http://document.tencentcloudapi.woa.com/document/product/457/76293#ContainerState)
+* [DNSConfig](http://document.tencentcloudapi.woa.com/document/product/457/76293#DNSConfig)
+* [DNSConfigOption](http://document.tencentcloudapi.woa.com/document/product/457/76293#DNSConfigOption)
+* [EipAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76293#EipAttribute)
+* [EksCi](http://document.tencentcloudapi.woa.com/document/product/457/76293#EksCi)
+* [EksCiVolume](http://document.tencentcloudapi.woa.com/document/product/457/76293#EksCiVolume)
+* [EnvironmentVariable](http://document.tencentcloudapi.woa.com/document/product/457/76293#EnvironmentVariable)
+* [Event](http://document.tencentcloudapi.woa.com/document/product/457/76293#Event)
+* [Exec](http://document.tencentcloudapi.woa.com/document/product/457/76293#Exec)
+* [HttpGet](http://document.tencentcloudapi.woa.com/document/product/457/76293#HttpGet)
+* [ImageRegistryCredential](http://document.tencentcloudapi.woa.com/document/product/457/76293#ImageRegistryCredential)
+* [LivenessOrReadinessProbe](http://document.tencentcloudapi.woa.com/document/product/457/76293#LivenessOrReadinessProbe)
+* [NfsVolume](http://document.tencentcloudapi.woa.com/document/product/457/76293#NfsVolume)
+* [Probe](http://document.tencentcloudapi.woa.com/document/product/457/76293#Probe)
+* [SecurityContext](http://document.tencentcloudapi.woa.com/document/product/457/76293#SecurityContext)
+* [TcpSocket](http://document.tencentcloudapi.woa.com/document/product/457/76293#TcpSocket)
+* [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/457/76293#VolumeMount)
 
 ### 第 2 次发布
 
@@ -38768,11 +38902,11 @@
 
 新增接口：
 
-* [DescribeEKSContainerInstanceRegions](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEKSContainerInstanceRegions](http://document.tencentcloudapi.woa.com/document/product/457/76231)
 
 新增数据结构：
 
-* [EksCiRegionInfo](http://document.tencentcloudapi.woa.com/document/product/#/##EksCiRegionInfo)
+* [EksCiRegionInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#EksCiRegionInfo)
 
 ### 第 1 次发布
 
@@ -38784,164 +38918,164 @@
 
 新增接口：
 
-* [AcquireClusterAdminRole](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [AddClusterCIDR](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [AddExistedInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [AddNodeToNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [AddVpcCniSubnets](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CheckInstancesUpgradeAble](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AcquireClusterAdminRole](http://document.tencentcloudapi.woa.com/document/product/457/76149)
+* [AddClusterCIDR](http://document.tencentcloudapi.woa.com/document/product/457/76208)
+* [AddExistedInstances](http://document.tencentcloudapi.woa.com/document/product/457/76180)
+* [AddNodeToNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76194)
+* [AddVpcCniSubnets](http://document.tencentcloudapi.woa.com/document/product/457/76207)
+* [CheckInstancesUpgradeAble](http://document.tencentcloudapi.woa.com/document/product/457/76179)
+* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/457/76148)
 * [CreateClusterAsGroup](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterEndpointVip](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterNodePoolFromExistingAsg](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterRoute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateClusterRouteTable](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusDashboard](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [CreatePrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterAsGroups](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterEndpointVip](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterRoute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteClusterRouteTable](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeleteEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DeletePrometheusTemplateSync](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeAvailableClusterVersion](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterAsGroupOption](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterAsGroups](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterCommonNames](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterControllers](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterEndpointStatus](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterEndpointVipStatus](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterNodePoolDetail](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterNodePools](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterRouteTables](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterRoutes](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusterSecurity](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEKSClusters](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeEnableVpcCniProgress](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeExistedInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeImages](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusAgentInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusAgents](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusAlertHistory](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusOverviews](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusTargets](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusTemplateSync](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribePrometheusTemplates](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeRouteTableConflicts](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeVersions](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DescribeVpcCniPodLimits](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [DisableVpcCniNetworkType](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [EnableVpcCniNetworkType](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [GetUpgradeInstanceProgress](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterAsGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterAsGroupOptionAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyNodePoolDesiredCapacityAboutAsg](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyNodePoolInstanceTypes](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [ModifyPrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [RemoveNodeFromNodePool](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [SetNodePoolNodeProtection](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [SyncPrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpdateClusterVersion](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [UpgradeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/457/76147)
+* [CreateClusterEndpointVip](http://document.tencentcloudapi.woa.com/document/product/457/76146)
+* [CreateClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76178)
+* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76193)
+* [CreateClusterNodePoolFromExistingAsg](http://document.tencentcloudapi.woa.com/document/product/457/76192)
+* [CreateClusterRoute](http://document.tencentcloudapi.woa.com/document/product/457/76206)
+* [CreateClusterRouteTable](http://document.tencentcloudapi.woa.com/document/product/457/76205)
+* [CreateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76222)
+* [CreatePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76291)
+* [CreatePrometheusDashboard](http://document.tencentcloudapi.woa.com/document/product/457/76289)
+* [CreatePrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/457/76286)
+* [DeleteCluster](http://document.tencentcloudapi.woa.com/document/product/457/76145)
+* [DeleteClusterAsGroups](http://document.tencentcloudapi.woa.com/document/product/457/76250)
+* [DeleteClusterEndpoint](http://document.tencentcloudapi.woa.com/document/product/457/76144)
+* [DeleteClusterEndpointVip](http://document.tencentcloudapi.woa.com/document/product/457/76143)
+* [DeleteClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76177)
+* [DeleteClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76191)
+* [DeleteClusterRoute](http://document.tencentcloudapi.woa.com/document/product/457/76204)
+* [DeleteClusterRouteTable](http://document.tencentcloudapi.woa.com/document/product/457/76203)
+* [DeleteEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76221)
+* [DeletePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76284)
+* [DeletePrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/457/76280)
+* [DeletePrometheusTemplateSync](http://document.tencentcloudapi.woa.com/document/product/457/76279)
+* [DescribeAvailableClusterVersion](http://document.tencentcloudapi.woa.com/document/product/457/76142)
+* [DescribeClusterAsGroupOption](http://document.tencentcloudapi.woa.com/document/product/457/76190)
+* [DescribeClusterAsGroups](http://document.tencentcloudapi.woa.com/document/product/457/76249)
+* [DescribeClusterCommonNames](http://document.tencentcloudapi.woa.com/document/product/457/76140)
+* [DescribeClusterControllers](http://document.tencentcloudapi.woa.com/document/product/457/76139)
+* [DescribeClusterEndpointStatus](http://document.tencentcloudapi.woa.com/document/product/457/76138)
+* [DescribeClusterEndpointVipStatus](http://document.tencentcloudapi.woa.com/document/product/457/76137)
+* [DescribeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76176)
+* [DescribeClusterKubeconfig](http://document.tencentcloudapi.woa.com/document/product/457/76135)
+* [DescribeClusterNodePoolDetail](http://document.tencentcloudapi.woa.com/document/product/457/76189)
+* [DescribeClusterNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76188)
+* [DescribeClusterRouteTables](http://document.tencentcloudapi.woa.com/document/product/457/76202)
+* [DescribeClusterRoutes](http://document.tencentcloudapi.woa.com/document/product/457/76201)
+* [DescribeClusterSecurity](http://document.tencentcloudapi.woa.com/document/product/457/76132)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/457/76130)
+* [DescribeEKSClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76220)
+* [DescribeEKSClusters](http://document.tencentcloudapi.woa.com/document/product/457/76219)
+* [DescribeEnableVpcCniProgress](http://document.tencentcloudapi.woa.com/document/product/457/76200)
+* [DescribeExistedInstances](http://document.tencentcloudapi.woa.com/document/product/457/76175)
+* [DescribeImages](http://document.tencentcloudapi.woa.com/document/product/457/76246)
+* [DescribePrometheusAgentInstances](http://document.tencentcloudapi.woa.com/document/product/457/76278)
+* [DescribePrometheusAgents](http://document.tencentcloudapi.woa.com/document/product/457/76277)
+* [DescribePrometheusAlertHistory](http://document.tencentcloudapi.woa.com/document/product/457/76276)
+* [DescribePrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76274)
+* [DescribePrometheusInstance](http://document.tencentcloudapi.woa.com/document/product/457/76270)
+* [DescribePrometheusOverviews](http://document.tencentcloudapi.woa.com/document/product/457/76267)
+* [DescribePrometheusTargets](http://document.tencentcloudapi.woa.com/document/product/457/76265)
+* [DescribePrometheusTemplateSync](http://document.tencentcloudapi.woa.com/document/product/457/76262)
+* [DescribePrometheusTemplates](http://document.tencentcloudapi.woa.com/document/product/457/76261)
+* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/457/76245)
+* [DescribeRouteTableConflicts](http://document.tencentcloudapi.woa.com/document/product/457/76199)
+* [DescribeVersions](http://document.tencentcloudapi.woa.com/document/product/457/76244)
+* [DescribeVpcCniPodLimits](http://document.tencentcloudapi.woa.com/document/product/457/76198)
+* [DisableVpcCniNetworkType](http://document.tencentcloudapi.woa.com/document/product/457/76197)
+* [EnableVpcCniNetworkType](http://document.tencentcloudapi.woa.com/document/product/457/76196)
+* [GetUpgradeInstanceProgress](http://document.tencentcloudapi.woa.com/document/product/457/76120)
+* [ModifyClusterAsGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76248)
+* [ModifyClusterAsGroupOptionAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76187)
+* [ModifyClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76119)
+* [ModifyClusterEndpointSP](http://document.tencentcloudapi.woa.com/document/product/457/76117)
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76186)
+* [ModifyNodePoolDesiredCapacityAboutAsg](http://document.tencentcloudapi.woa.com/document/product/457/76185)
+* [ModifyNodePoolInstanceTypes](http://document.tencentcloudapi.woa.com/document/product/457/76184)
+* [ModifyPrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76258)
+* [ModifyPrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/457/76255)
+* [RemoveNodeFromNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76183)
+* [SetNodePoolNodeProtection](http://document.tencentcloudapi.woa.com/document/product/457/76182)
+* [SyncPrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/457/76252)
+* [UpdateClusterVersion](http://document.tencentcloudapi.woa.com/document/product/457/76114)
+* [UpdateEKSCluster](http://document.tencentcloudapi.woa.com/document/product/457/76218)
+* [UpgradeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/76113)
 
 新增数据结构：
 
-* [AutoScalingGroupRange](http://document.tencentcloudapi.woa.com/document/product/#/##AutoScalingGroupRange)
-* [AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/#/##AutoscalingAdded)
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/#/##Cluster)
-* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAdvancedSettings)
-* [ClusterAsGroup](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAsGroup)
-* [ClusterAsGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAsGroupAttribute)
-* [ClusterAsGroupOption](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterAsGroupOption)
-* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterBasicSettings)
-* [ClusterCIDRSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterCIDRSettings)
-* [ClusterCredential](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterCredential)
-* [ClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterExtraArgs)
-* [ClusterInternalLB](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterInternalLB)
-* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterNetworkSettings)
-* [ClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterPublicLB)
-* [ClusterVersion](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterVersion)
-* [CommonName](http://document.tencentcloudapi.woa.com/document/product/#/##CommonName)
-* [ControllerStatus](http://document.tencentcloudapi.woa.com/document/product/#/##ControllerStatus)
-* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/#/##DataDisk)
-* [DnsServerConf](http://document.tencentcloudapi.woa.com/document/product/#/##DnsServerConf)
-* [EksCluster](http://document.tencentcloudapi.woa.com/document/product/#/##EksCluster)
-* [EnhancedService](http://document.tencentcloudapi.woa.com/document/product/#/##EnhancedService)
-* [ExistedInstance](http://document.tencentcloudapi.woa.com/document/product/#/##ExistedInstance)
-* [ExistedInstancesForNode](http://document.tencentcloudapi.woa.com/document/product/#/##ExistedInstancesForNode)
-* [ExistedInstancesPara](http://document.tencentcloudapi.woa.com/document/product/#/##ExistedInstancesPara)
-* [ExtensionAddon](http://document.tencentcloudapi.woa.com/document/product/#/##ExtensionAddon)
-* [Filter](http://document.tencentcloudapi.woa.com/document/product/#/##Filter)
-* [IPAddress](http://document.tencentcloudapi.woa.com/document/product/#/##IPAddress)
-* [ImageInstance](http://document.tencentcloudapi.woa.com/document/product/#/##ImageInstance)
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/#/##Instance)
-* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceAdvancedSettings)
-* [InstanceDataDiskMountSetting](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceDataDiskMountSetting)
-* [InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceExtraArgs)
-* [InstanceUpgradeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceUpgradeClusterStatus)
-* [InstanceUpgradePreCheckResult](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceUpgradePreCheckResult)
-* [InstanceUpgradePreCheckResultItem](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceUpgradePreCheckResultItem)
-* [InstanceUpgradeProgressItem](http://document.tencentcloudapi.woa.com/document/product/#/##InstanceUpgradeProgressItem)
-* [Label](http://document.tencentcloudapi.woa.com/document/product/#/##Label)
-* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/#/##LoginSettings)
-* [ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/#/##ManuallyAdded)
-* [NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/#/##NodeCountSummary)
-* [NodePool](http://document.tencentcloudapi.woa.com/document/product/#/##NodePool)
-* [NodePoolOption](http://document.tencentcloudapi.woa.com/document/product/#/##NodePoolOption)
-* [PodLimitsByType](http://document.tencentcloudapi.woa.com/document/product/#/##PodLimitsByType)
-* [PodLimitsInstance](http://document.tencentcloudapi.woa.com/document/product/#/##PodLimitsInstance)
-* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAgentOverview)
-* [PrometheusAlertHistoryItem](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertHistoryItem)
-* [PrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertRule)
-* [PrometheusAlertRuleDetail](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusAlertRuleDetail)
-* [PrometheusConfigItem](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusConfigItem)
-* [PrometheusGrafanaInfo](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusGrafanaInfo)
-* [PrometheusInstanceOverview](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusInstanceOverview)
-* [PrometheusJobTargets](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusJobTargets)
-* [PrometheusNotification](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusNotification)
-* [PrometheusTarget](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTarget)
-* [PrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTemplate)
-* [PrometheusTemplateModify](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTemplateModify)
-* [PrometheusTemplateSyncTarget](http://document.tencentcloudapi.woa.com/document/product/#/##PrometheusTemplateSyncTarget)
-* [RegionInstance](http://document.tencentcloudapi.woa.com/document/product/#/##RegionInstance)
-* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/#/##ResourceDeleteOption)
-* [RouteInfo](http://document.tencentcloudapi.woa.com/document/product/#/##RouteInfo)
-* [RouteTableConflict](http://document.tencentcloudapi.woa.com/document/product/#/##RouteTableConflict)
-* [RouteTableInfo](http://document.tencentcloudapi.woa.com/document/product/#/##RouteTableInfo)
-* [RunAutomationServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/#/##RunAutomationServiceEnabled)
-* [RunInstancesForNode](http://document.tencentcloudapi.woa.com/document/product/#/##RunInstancesForNode)
-* [RunMonitorServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/#/##RunMonitorServiceEnabled)
-* [RunSecurityServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/#/##RunSecurityServiceEnabled)
-* [Tag](http://document.tencentcloudapi.woa.com/document/product/#/##Tag)
-* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/#/##TagSpecification)
-* [Taint](http://document.tencentcloudapi.woa.com/document/product/#/##Taint)
-* [TaskStepInfo](http://document.tencentcloudapi.woa.com/document/product/#/##TaskStepInfo)
-* [UpgradeAbleInstancesItem](http://document.tencentcloudapi.woa.com/document/product/#/##UpgradeAbleInstancesItem)
-* [UpgradeNodeResetParam](http://document.tencentcloudapi.woa.com/document/product/#/##UpgradeNodeResetParam)
-* [VersionInstance](http://document.tencentcloudapi.woa.com/document/product/#/##VersionInstance)
+* [AutoScalingGroupRange](http://document.tencentcloudapi.woa.com/document/product/457/76293#AutoScalingGroupRange)
+* [AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/457/76293#AutoscalingAdded)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#Cluster)
+* [ClusterAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAdvancedSettings)
+* [ClusterAsGroup](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAsGroup)
+* [ClusterAsGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAsGroupAttribute)
+* [ClusterAsGroupOption](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterAsGroupOption)
+* [ClusterBasicSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterBasicSettings)
+* [ClusterCIDRSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterCIDRSettings)
+* [ClusterCredential](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterCredential)
+* [ClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterExtraArgs)
+* [ClusterInternalLB](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInternalLB)
+* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterNetworkSettings)
+* [ClusterPublicLB](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterPublicLB)
+* [ClusterVersion](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterVersion)
+* [CommonName](http://document.tencentcloudapi.woa.com/document/product/457/76293#CommonName)
+* [ControllerStatus](http://document.tencentcloudapi.woa.com/document/product/457/76293#ControllerStatus)
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/457/76293#DataDisk)
+* [DnsServerConf](http://document.tencentcloudapi.woa.com/document/product/457/76293#DnsServerConf)
+* [EksCluster](http://document.tencentcloudapi.woa.com/document/product/457/76293#EksCluster)
+* [EnhancedService](http://document.tencentcloudapi.woa.com/document/product/457/76293#EnhancedService)
+* [ExistedInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#ExistedInstance)
+* [ExistedInstancesForNode](http://document.tencentcloudapi.woa.com/document/product/457/76293#ExistedInstancesForNode)
+* [ExistedInstancesPara](http://document.tencentcloudapi.woa.com/document/product/457/76293#ExistedInstancesPara)
+* [ExtensionAddon](http://document.tencentcloudapi.woa.com/document/product/457/76293#ExtensionAddon)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/457/76293#Filter)
+* [IPAddress](http://document.tencentcloudapi.woa.com/document/product/457/76293#IPAddress)
+* [ImageInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#ImageInstance)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/457/76293#Instance)
+* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceAdvancedSettings)
+* [InstanceDataDiskMountSetting](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceDataDiskMountSetting)
+* [InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceExtraArgs)
+* [InstanceUpgradeClusterStatus](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceUpgradeClusterStatus)
+* [InstanceUpgradePreCheckResult](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceUpgradePreCheckResult)
+* [InstanceUpgradePreCheckResultItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceUpgradePreCheckResultItem)
+* [InstanceUpgradeProgressItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#InstanceUpgradeProgressItem)
+* [Label](http://document.tencentcloudapi.woa.com/document/product/457/76293#Label)
+* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/457/76293#LoginSettings)
+* [ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/457/76293#ManuallyAdded)
+* [NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/457/76293#NodeCountSummary)
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/76293#NodePool)
+* [NodePoolOption](http://document.tencentcloudapi.woa.com/document/product/457/76293#NodePoolOption)
+* [PodLimitsByType](http://document.tencentcloudapi.woa.com/document/product/457/76293#PodLimitsByType)
+* [PodLimitsInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#PodLimitsInstance)
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAgentOverview)
+* [PrometheusAlertHistoryItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertHistoryItem)
+* [PrometheusAlertRule](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertRule)
+* [PrometheusAlertRuleDetail](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusAlertRuleDetail)
+* [PrometheusConfigItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusConfigItem)
+* [PrometheusGrafanaInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusGrafanaInfo)
+* [PrometheusInstanceOverview](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusInstanceOverview)
+* [PrometheusJobTargets](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusJobTargets)
+* [PrometheusNotification](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusNotification)
+* [PrometheusTarget](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTarget)
+* [PrometheusTemplate](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTemplate)
+* [PrometheusTemplateModify](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTemplateModify)
+* [PrometheusTemplateSyncTarget](http://document.tencentcloudapi.woa.com/document/product/457/76293#PrometheusTemplateSyncTarget)
+* [RegionInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#RegionInstance)
+* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/457/76293#ResourceDeleteOption)
+* [RouteInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#RouteInfo)
+* [RouteTableConflict](http://document.tencentcloudapi.woa.com/document/product/457/76293#RouteTableConflict)
+* [RouteTableInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#RouteTableInfo)
+* [RunAutomationServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/457/76293#RunAutomationServiceEnabled)
+* [RunInstancesForNode](http://document.tencentcloudapi.woa.com/document/product/457/76293#RunInstancesForNode)
+* [RunMonitorServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/457/76293#RunMonitorServiceEnabled)
+* [RunSecurityServiceEnabled](http://document.tencentcloudapi.woa.com/document/product/457/76293#RunSecurityServiceEnabled)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/457/76293#Tag)
+* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/457/76293#TagSpecification)
+* [Taint](http://document.tencentcloudapi.woa.com/document/product/457/76293#Taint)
+* [TaskStepInfo](http://document.tencentcloudapi.woa.com/document/product/457/76293#TaskStepInfo)
+* [UpgradeAbleInstancesItem](http://document.tencentcloudapi.woa.com/document/product/457/76293#UpgradeAbleInstancesItem)
+* [UpgradeNodeResetParam](http://document.tencentcloudapi.woa.com/document/product/457/76293#UpgradeNodeResetParam)
+* [VersionInstance](http://document.tencentcloudapi.woa.com/document/product/457/76293#VersionInstance)
 
 
 

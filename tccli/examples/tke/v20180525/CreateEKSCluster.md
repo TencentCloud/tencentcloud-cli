@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tke CreateEKSCluster --cli-unfold-argument  \
-    --K8SVersion 1.12.4 \
+    --ServiceSubnetId subnet-xxxx \
     --VpcId vpc-xxx \
+    --K8SVersion 1.12.4 \
     --ClusterName for_test \
     --SubnetIds subnet-xxxx \
-    --ClusterDesc my_test_cluster \
-    --ServiceSubnetId subnet-xxxx \
     --DnsServers.0.Domain exam.com \
-    --DnsServers.0.DnsServers 10.2.2.88:53
+    --DnsServers.0.DnsServers 10.2.2.88:53 \
+    --ClusterDesc my_test_cluster
 ```
 
 Output: 

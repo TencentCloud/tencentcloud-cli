@@ -49,7 +49,7 @@
       "output": "CreateClusterResponse"
     },
     "CreateClusterEndpoint": {
-      "document": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "document": "创建集群访问端口",
       "input": "CreateClusterEndpointRequest",
       "name": "创建集群访问端口",
       "output": "CreateClusterEndpointResponse"
@@ -126,6 +126,12 @@
       "name": "创建镜像缓存",
       "output": "CreateImageCacheResponse"
     },
+    "CreateInstantInspectJob": {
+      "document": "创建TKE集群巡检任务",
+      "input": "CreateInstantInspectJobRequest",
+      "name": "创建TKE集群巡检任务",
+      "output": "CreateInstantInspectJobResponse"
+    },
     "CreatePrometheusAlertPolicy": {
       "document": "创建告警策略",
       "input": "CreatePrometheusAlertPolicyRequest",
@@ -199,7 +205,7 @@
       "output": "DeleteClusterAsGroupsResponse"
     },
     "DeleteClusterEndpoint": {
-      "document": "删除集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
+      "document": "删除集群访问端口",
       "input": "DeleteClusterEndpointRequest",
       "name": "删除集群访问端口",
       "output": "DeleteClusterEndpointResponse"
@@ -337,7 +343,7 @@
       "output": "DescribeAvailableClusterVersionResponse"
     },
     "DescribeAvailableTKEEdgeVersion": {
-      "document": "边缘计算支持的k8s版本",
+      "document": "边缘计算支持版本和k8s版本",
       "input": "DescribeAvailableTKEEdgeVersionRequest",
       "name": "边缘计算支持的k8s版本",
       "output": "DescribeAvailableTKEEdgeVersionResponse"
@@ -516,6 +522,12 @@
       "name": "查询边缘计算集群的节点信息",
       "output": "DescribeEdgeClusterInstancesResponse"
     },
+    "DescribeEdgeClusterUpgradeInfo": {
+      "document": "可以查询边缘集群升级信息，包含可以升级的组件，当前升级状态和升级错误信息",
+      "input": "DescribeEdgeClusterUpgradeInfoRequest",
+      "name": "查询边缘集群升级信息",
+      "output": "DescribeEdgeClusterUpgradeInfoResponse"
+    },
     "DescribeEdgeLogSwitches": {
       "document": "获取事件、审计和日志的状态接口",
       "input": "DescribeEdgeLogSwitchesRequest",
@@ -558,6 +570,12 @@
       "name": "获取镜像信息",
       "output": "DescribeImagesResponse"
     },
+    "DescribeInstantInspectTask": {
+      "document": "查询TKE集群巡检任务结果",
+      "input": "DescribeInstantInspectTaskRequest",
+      "name": "查询TKE集群巡检任务结果",
+      "output": "DescribeInstantInspectTaskResponse"
+    },
     "DescribePrometheusAgentInstances": {
       "document": "获取关联目标集群的实例列表",
       "input": "DescribePrometheusAgentInstancesRequest",
@@ -589,9 +607,9 @@
       "output": "DescribePrometheusAlertRuleResponse"
     },
     "DescribePrometheusClusterAgents": {
-      "document": "获取2.0实例关联集群列表",
+      "document": "获取TMP实例关联集群列表",
       "input": "DescribePrometheusClusterAgentsRequest",
-      "name": "获取2.0实例关联集群列表",
+      "name": "获取TMP实例关联集群列表",
       "output": "DescribePrometheusClusterAgentsResponse"
     },
     "DescribePrometheusConfig": {
@@ -937,9 +955,9 @@
       "output": "RestartEKSContainerInstancesResponse"
     },
     "RunPrometheusInstance": {
-      "document": "初始化与云监控融合的2.0版本实例，开启集成中心时调用",
+      "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
-      "name": "初始化2.0实例",
+      "name": "初始化TMP实例",
       "output": "RunPrometheusInstanceResponse"
     },
     "ScaleInClusterMaster": {
@@ -1001,6 +1019,12 @@
       "input": "UpdateEKSContainerInstanceRequest",
       "name": "更新容器实例",
       "output": "UpdateEKSContainerInstanceResponse"
+    },
+    "UpdateEdgeClusterVersion": {
+      "document": "升级边缘集群组件到指定版本，此版本为TKEEdge专用版本。",
+      "input": "UpdateEdgeClusterVersionRequest",
+      "name": "升级边缘集群",
+      "output": "UpdateEdgeClusterVersionResponse"
     },
     "UpdateImageCache": {
       "document": "更新镜像缓存接口",
@@ -2778,6 +2802,194 @@
       ],
       "usage": "both"
     },
+    "ClusterInspectionTask": {
+      "document": "单集群巡检任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "example": "job-xxx",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检编排",
+          "example": "basic",
+          "member": "string",
+          "name": "Orchestration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "waiting, executing, finished",
+          "example": "巡检状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "ExecuteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "集群概览",
+          "example": "无",
+          "member": "ClusterInspectionTaskOverview",
+          "name": "Cluster",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Suggest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInspectionTaskOverview": {
+      "document": "巡检集群概况",
+      "members": [
+        {
+          "default": "",
+          "document": "节点数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Nodes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "Pod数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Pods",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "CPU核数",
+          "example": "0",
+          "member": "uint64",
+          "name": "CPUCores",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "内存GB数",
+          "example": "0",
+          "member": "uint64",
+          "name": "MemoryGB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "Workload数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Workloads",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "命名空间数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Namespaces",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterInternalLB": {
       "document": "弹性容器集群内网访问LB信息",
       "members": [
@@ -3621,7 +3833,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3630,7 +3843,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3639,7 +3853,8 @@
           "member": "bool",
           "name": "IsExtranet",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3648,16 +3863,18 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "使用的安全组，只有外网访问需要传递",
+          "document": "使用的安全组，只有外网访问需要传递（开启外网访问时必传）",
           "example": "sg-xxx",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3666,7 +3883,8 @@
           "member": "string",
           "name": "ExtensiveParameters",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4335,7 +4553,7 @@
       "members": [
         {
           "default": "",
-          "document": "k8s版本号。可为1.14.4, 1.12.8。",
+          "document": "k8s版本号。可为1.18.4 1.20.6。",
           "example": "1.12.8",
           "member": "string",
           "name": "K8SVersion",
@@ -4385,8 +4603,8 @@
         },
         {
           "default": "",
-          "document": "Serivce 所在子网Id",
-          "example": "subnet-i9sqn2mq",
+          "document": "Service CIDR 或 Serivce 所在子网Id",
+          "example": "192.168.0.0/20 或者 subnet-i9sqn2mq",
           "member": "string",
           "name": "ServiceSubnetId",
           "required": false,
@@ -4945,6 +5163,44 @@
       ],
       "type": "object"
     },
+    "CreateInstantInspectJobRequest": {
+      "document": "CreateInstantInspectJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id, 根据集群id初始化任务，如果不为空，则忽略下面的MatchLables字段",
+          "example": "cls-ad3321dd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstantInspectJobResponse": {
+      "document": "CreateInstantInspectJob返回参数结构体",
+      "members": [
+        {
+          "document": "巡检任务名称",
+          "example": "job-02h9u3",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertPolicyRequest": {
       "document": "CreatePrometheusAlertPolicy请求参数结构体",
       "members": [
@@ -5459,6 +5715,26 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "边缘组件镜像仓库前缀",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5681,18 +5957,22 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "example": "false",
           "member": "bool",
           "name": "IsExtranet",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6585,7 +6865,18 @@
     },
     "DescribeAvailableTKEEdgeVersionRequest": {
       "document": "DescribeAvailableTKEEdgeVersion请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "填写ClusterId获取当前集群各个组件版本和最新版本",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeAvailableTKEEdgeVersionResponse": {
@@ -6593,10 +6884,33 @@
       "members": [
         {
           "document": "版本列表",
+          "example": "[\"1.14.1\",\"1.16.1\"]",
           "member": "string",
           "name": "Versions",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "边缘集群最新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionLatest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "边缘集群当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionCurrent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6722,7 +7036,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6737,7 +7052,8 @@
           "name": "ServiceAccounts",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6746,7 +7062,18 @@
           "name": "LatestOperationState",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "OIDC认证配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OIDCConfigAuthenticationOptions",
+          "name": "OIDCConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8280,6 +8607,94 @@
       ],
       "type": "object"
     },
+    "DescribeEdgeClusterUpgradeInfoRequest": {
+      "document": "DescribeEdgeClusterUpgradeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "要升级到的TKEEdge版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterUpgradeInfoResponse": {
+      "document": "DescribeEdgeClusterUpgradeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "可升级的集群组件和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"x\":{\"ImageName\":\"x\",\"ImageVersion\":\"v1\"}}",
+          "member": "string",
+          "name": "ComponentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "边缘集群当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "EdgeVersionCurrent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "边缘组件镜像仓库地址前缀，包含域名和命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群升级状态，可能值：running、updating、failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "ClusterUpgradeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "集群升级中状态或者失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tunnel: image pulling",
+          "member": "string",
+          "name": "ClusterUpgradeStatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEdgeLogSwitchesRequest": {
       "document": "DescribeEdgeLogSwitches请求参数结构体",
       "members": [
@@ -8742,6 +9157,54 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstantInspectTaskRequest": {
+      "document": "DescribeInstantInspectTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群巡检任务名称，在调用CreateInstantInspectJob接口后获得",
+          "example": "job-test123",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstantInspectTaskResponse": {
+      "document": "DescribeInstantInspectTask返回参数结构体",
+      "members": [
+        {
+          "document": "巡检任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "巡检任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInspectionTask",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9340,12 +9803,53 @@
     },
     "DescribePrometheusInstanceInitStatusRequest": {
       "document": "DescribePrometheusInstanceInitStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribePrometheusInstanceInitStatusResponse": {
       "document": "DescribePrometheusInstanceInitStatus返回参数结构体",
       "members": [
+        {
+          "document": "实例初始化状态，取值：\nuninitialized 未初始化 \ninitializing 初始化中\nrunning 初始化完成，运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "初始化任务步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskStepInfo",
+          "name": "Steps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "实例eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EksClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10990,6 +11494,17 @@
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "边缘容器集群级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L5",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -11785,7 +12300,8 @@
           "name": "SecurityService",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11795,17 +12311,19 @@
           "name": "MonitorService",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。",
+          "document": "开启云自动化助手服务（TencentCloud Automation Tools，TAT）。若不指定该参数，则公共镜像默认开启云自动化助手服务，其他镜像默认不开启云自动化助手服务。",
           "example": "TRUE",
           "member": "RunAutomationServiceEnabled",
           "name": "AutomationService",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -13653,29 +14171,35 @@
         {
           "default": "",
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
           "member": "string",
           "name": "Password",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。当前仅支持购买的时候指定一个密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取，密钥与密码不能同时指定，同时Windows操作系统不支持指定密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['abc']",
           "member": "string",
           "name": "KeyIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：<br><li>TRUE：表示保持镜像的登录设置<br><li>FALSE：表示不保持镜像的登录设置<br><br>默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
           "member": "string",
           "name": "KeepImageLogin",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -13952,7 +14476,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13961,7 +14486,18 @@
           "member": "ServiceAccountAuthenticationOptions",
           "name": "ServiceAccounts",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "OIDC认证配置",
+          "example": "无",
+          "member": "OIDCConfigAuthenticationOptions",
+          "name": "OIDCConfig",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14937,6 +15473,45 @@
       ],
       "usage": "in"
     },
+    "OIDCConfigAuthenticationOptions": {
+      "document": "OIDC认证相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "创建身份提供商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateOIDCConfig",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建身份提供商的ClientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxxx\",\"yyyy\"]",
+          "member": "string",
+          "name": "AutoCreateClientId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建PodIdentityWebhook组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoInstallPodIdentityWebhookAddon",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "PodLimitsByType": {
       "document": "某机型可支持的最大 VPC-CNI 模式的 Pod 数量",
       "members": [
@@ -15107,7 +15682,8 @@
           "name": "ClusterType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15117,7 +15693,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15127,7 +15704,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15137,7 +15715,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15147,7 +15726,41 @@
           "name": "ExternalLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群所在VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "记录关联等操作的失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -17291,7 +17904,28 @@
     },
     "RunPrometheusInstanceRequest": {
       "document": "RunPrometheusInstance请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化",
+          "example": "xx-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "RunPrometheusInstanceResponse": {
@@ -17483,7 +18117,8 @@
           "name": "Issuer",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -17493,7 +18128,8 @@
           "name": "JWKSURI",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -17503,7 +18139,8 @@
           "name": "AutoCreateDiscoveryAnonymousAuth",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -17778,6 +18415,7 @@
         {
           "default": "",
           "document": "步骤名称",
+          "example": "preCheck",
           "member": "string",
           "name": "Step",
           "required": true,
@@ -17787,6 +18425,7 @@
         {
           "default": "",
           "document": "生命周期\npending : 步骤未开始\nrunning: 步骤执行中\nsuccess: 步骤成功完成\nfailed: 步骤失败",
+          "example": "success",
           "member": "string",
           "name": "LifeState",
           "required": true,
@@ -17796,6 +18435,7 @@
         {
           "default": "",
           "document": "步骤开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-19T07:29:46Z",
           "member": "string",
           "name": "StartAt",
           "required": true,
@@ -17805,6 +18445,7 @@
         {
           "default": "",
           "document": "步骤结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-19T07:29:46Z",
           "member": "string",
           "name": "EndAt",
           "required": true,
@@ -17814,6 +18455,7 @@
         {
           "default": "",
           "document": "若步骤生命周期为failed,则此字段显示错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "显示错误信息",
           "member": "string",
           "name": "FailedMsg",
           "required": true,
@@ -18202,6 +18844,64 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEdgeClusterVersionRequest": {
+      "document": "UpdateEdgeClusterVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要升级到的版本",
+          "example": "1.0.2",
+          "member": "string",
+          "name": "EdgeVersion",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自定义边缘组件镜像仓库前缀",
+          "example": "reg.test.com/myedge",
+          "member": "string",
+          "name": "RegistryPrefix",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否跳过预检查阶段",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipPreCheck",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEdgeClusterVersionResponse": {
+      "document": "UpdateEdgeClusterVersion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
