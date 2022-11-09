@@ -739,7 +739,8 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -749,7 +750,8 @@
           "name": "PostTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -759,7 +761,8 @@
           "name": "AssociateAccount",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -769,7 +772,8 @@
           "name": "UserIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -779,7 +783,8 @@
           "name": "RiskLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -789,7 +794,8 @@
           "name": "RiskType",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -799,7 +805,19 @@
           "name": "ConstId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "返回动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"block\"]",
+          "member": "string",
+          "name": "Actions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

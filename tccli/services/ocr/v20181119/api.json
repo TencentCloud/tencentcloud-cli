@@ -12217,7 +12217,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12226,7 +12227,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12235,7 +12237,8 @@
           "member": "string",
           "name": "ImageConfig",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12244,7 +12247,8 @@
           "member": "string",
           "name": "RegNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12253,7 +12257,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12262,7 +12267,8 @@
           "member": "string",
           "name": "Address",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12271,7 +12277,8 @@
           "member": "int64",
           "name": "RegCapital",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12280,7 +12287,8 @@
           "member": "bool",
           "name": "EstablishTime",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12295,7 +12303,8 @@
           "name": "ErrorCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "统一社会信用代码",
@@ -12304,7 +12313,8 @@
           "name": "CreditCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营期限自（YYYY-MM-DD）",
@@ -12313,7 +12323,8 @@
           "name": "Opfrom",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营期限至（YYYY-MM-DD）",
@@ -12322,7 +12333,8 @@
           "name": "Opto",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "法人姓名",
@@ -12331,7 +12343,8 @@
           "name": "Frname",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营状态，包括：成立、筹建、存续、在营、开业、在册、正常经营、开业登记中、登记成立、撤销、撤销登记、非正常户、告解、个体暂时吊销、个体转企业、吊销（未注销）、拟注销、已注销、（待）迁入、（待）迁出、停业、歇业、清算等。",
@@ -12340,7 +12353,8 @@
           "name": "Entstatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营业务范围",
@@ -12349,7 +12363,8 @@
           "name": "Zsopscope",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查询的状态信息",
@@ -12358,7 +12373,8 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "原注册号",
@@ -12367,7 +12383,8 @@
           "name": "Oriregno",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的工商注册号",
@@ -12376,7 +12393,8 @@
           "name": "VerifyRegno",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "工商注册号",
@@ -12385,7 +12403,8 @@
           "name": "Regno",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的企业名称",
@@ -12394,7 +12413,8 @@
           "name": "VerifyEntname",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "企业名称",
@@ -12403,7 +12423,8 @@
           "name": "Entname",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的住址",
@@ -12412,7 +12433,8 @@
           "name": "VerifyDom",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "住址",
@@ -12421,7 +12443,8 @@
           "name": "Dom",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "验证结果",
@@ -12430,7 +12453,8 @@
           "name": "RegNumResult",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注册资本（单位：万元）,只有输入参数regCapital为1的时候才输出",
@@ -12439,7 +12463,8 @@
           "name": "RegCapital",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "成立/注册日期，只有输入参数EstablishTime为true时展示，默认为空",
@@ -12448,7 +12473,8 @@
           "name": "EstablishTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12469,7 +12495,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12478,7 +12505,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12487,7 +12515,8 @@
           "member": "string",
           "name": "ImageConfig",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12496,7 +12525,8 @@
           "member": "string",
           "name": "RegNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12505,7 +12535,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12514,7 +12545,8 @@
           "member": "string",
           "name": "Address",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12529,7 +12561,8 @@
           "name": "ErrorCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "统一社会信用代码",
@@ -12538,7 +12571,8 @@
           "name": "CreditCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "组织机构代码",
@@ -12547,7 +12581,8 @@
           "name": "OrgCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营期限自（YYYY-MM-DD）",
@@ -12556,7 +12591,8 @@
           "name": "OpenFrom",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营期限至（YYYY-MM-DD）",
@@ -12565,7 +12601,8 @@
           "name": "OpenTo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "法人姓名",
@@ -12574,7 +12611,8 @@
           "name": "FrName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营状态，包括：成立、筹建、存续、在营、开业、在册、正常经营、开业登记中、登记成立、撤销、撤销登记、非正常户、告解、个体暂时吊销、个体转企业、吊销（未注销）、拟注销、已注销、（待）迁入、（待）迁出、停业、歇业、清算等。",
@@ -12583,7 +12621,8 @@
           "name": "EnterpriseStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营（业务）范围及方式",
@@ -12592,7 +12631,8 @@
           "name": "OperateScopeAndForm",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注册资金（单位:万元）",
@@ -12601,7 +12641,8 @@
           "name": "RegCap",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注册币种",
@@ -12610,7 +12651,8 @@
           "name": "RegCapCur",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "登记机关",
@@ -12619,7 +12661,8 @@
           "name": "RegOrg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开业日期（YYYY-MM-DD）",
@@ -12628,7 +12671,8 @@
           "name": "EsDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "企业（机构）类型",
@@ -12637,7 +12681,8 @@
           "name": "EnterpriseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注销日期",
@@ -12646,7 +12691,8 @@
           "name": "CancelDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "吊销日期",
@@ -12655,7 +12701,8 @@
           "name": "RevokeDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "许可经营项目",
@@ -12664,7 +12711,8 @@
           "name": "AbuItem",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "一般经营项目",
@@ -12673,7 +12721,8 @@
           "name": "CbuItem",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "核准时间",
@@ -12682,7 +12731,8 @@
           "name": "ApprDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "省（返回空值）",
@@ -12691,7 +12741,8 @@
           "name": "Province",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "地级市（返回空值）",
@@ -12700,7 +12751,8 @@
           "name": "City",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "区\\县（返回空值）",
@@ -12709,7 +12761,8 @@
           "name": "County",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "住所所在行政区划代码（返回空值）",
@@ -12718,7 +12771,8 @@
           "name": "AreaCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "行业门类代码（返回空值）",
@@ -12727,7 +12781,8 @@
           "name": "IndustryPhyCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "行业门类名称（返回空值）",
@@ -12736,7 +12791,8 @@
           "name": "IndustryPhyName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "国民经济行业代码（返回空值）",
@@ -12745,7 +12801,8 @@
           "name": "IndustryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "国民经济行业名称（返回空值）",
@@ -12754,7 +12811,8 @@
           "name": "IndustryName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营（业务）范围",
@@ -12763,7 +12821,8 @@
           "name": "OperateScope",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的工商注册号",
@@ -12772,7 +12831,8 @@
           "name": "VerifyRegNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "工商注册号",
@@ -12781,7 +12841,8 @@
           "name": "RegNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的企业名称",
@@ -12790,7 +12851,8 @@
           "name": "VerifyEnterpriseName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "企业名称",
@@ -12799,7 +12861,8 @@
           "name": "EnterpriseName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "要核验的注册地址",
@@ -12808,7 +12871,8 @@
           "name": "VerifyAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注册地址",
@@ -12817,7 +12881,8 @@
           "name": "Address",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "验证结果",
@@ -12826,7 +12891,8 @@
           "name": "RegNumResult",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1,44 +1,29 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+## 全栈式风控引擎(rce) 版本：2020-11-03
 
-### 第 33 次发布
+### 第 8 次发布
 
-发布时间：2022-11-09 06:05:32
+发布时间：2022-11-10 06:42:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
-
-* [ModifyDDoSThreshold](http://document.tencentcloudapi.woa.com/document/product/1021/69190)
-
-	* 新增入参：OtherThresholdFlag, SynFloodThreshold, SynFloodPktThreshold, UdpFloodThreshold, UdpFloodPktThreshold
-
-
 修改数据结构：
 
-* [PacketFilterConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#PacketFilterConfig)
+* [OutputManageMarketingRiskValue](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputManageMarketingRiskValue)
 
-	* 新增成员：PktLenGT
-
-* [ProtectThresholdRelation](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtectThresholdRelation)
-
-	* 新增成员：SynFloodThreshold, SynFloodPktThreshold, UdpFloodThreshold, UdpFloodPktThreshold
-
-* [ProtocolBlockConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtocolBlockConfig)
-
-	* 新增成员：PingOfDeath, TearDrop
+	* 新增成员：Actions
 
 
 
 
-## API 网关(apigateway) 版本：2018-08-08
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
-### 第 15 次发布
+### 第 7 次发布
 
-发布时间：2022-11-09 06:06:51
+发布时间：2022-11-10 06:51:11
 
 本次发布包含了以下内容：
 
@@ -46,113 +31,27 @@
 
 新增接口：
 
-* [DescribePluginsByApi](http://document.tencentcloudapi.woa.com/document/product/628/76543)
+* [CreateBatchModelAccTasks](http://document.tencentcloudapi.woa.com/document/product/851/76553)
+* [CreateOptimizedModel](http://document.tencentcloudapi.woa.com/document/product/851/76552)
+* [DeleteModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76551)
+* [DescribeModelAccEngineVersions](http://document.tencentcloudapi.woa.com/document/product/851/76550)
+* [DescribeModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76549)
+* [DescribeModelAccelerateTasks](http://document.tencentcloudapi.woa.com/document/product/851/76548)
+* [RestartModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76547)
+* [StopModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76546)
 
 新增数据结构：
 
-* [AttachedPluginInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginInfo)
-* [AttachedPluginSummary](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginSummary)
+* [BatchModelAccTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchModelAccTask)
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
+* [ModelAccEngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccEngineVersion)
+* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
+* [ModelInputInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInputInfo)
 
 
 
-## 云拨测(cat) 版本：2018-04-09
-
-### 第 14 次发布
-
-发布时间：2022-11-09 06:11:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [UpdateProbeTaskAttributes](http://document.tencentcloudapi.woa.com/document/product/280/76544)
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 38 次发布
-
-发布时间：2022-11-09 06:20:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Machine](http://document.tencentcloudapi.woa.com/document/product/296/19867#Machine)
-
-	* 新增成员：IpList
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 23 次发布
-
-发布时间：2022-11-09 06:35:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56245)
-
-	* 新增入参：VodLocalMode
-
-* [ModifyLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56242)
-
-	* 新增入参：VodLocalMode
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 13 次发布
-
-发布时间：2022-11-09 06:38:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [AudioTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTemplateInfoForUpdate)
-
-	* 新增成员：StreamSelects
-
-* [SubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleTemplate)
-
-	* 新增成员：Path, StreamIndex, FontType, FontSize, FontColor, FontAlpha
-
-
-
-
-## 图像分析(tiia) 版本：2019-05-29
-
-### 第 15 次发布
-
-发布时间：2022-11-09 06:50:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DetectPet](http://document.tencentcloudapi.woa.com/document/product/865/76545)
-
-新增数据结构：
-
-* [Pet](http://document.tencentcloudapi.woa.com/document/product/865/35474#Pet)
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
 
 
 
@@ -1867,12 +1766,12 @@
 
 新增接口：
 
-* [[DescribePluginsByApi](http://document.tencentcloudapi.woa.com/document/product/628/76543)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePluginsByApi](http://document.tencentcloudapi.woa.com/document/product/628/76543)
 
 新增数据结构：
 
-* [[AttachedPluginInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginInfo)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[AttachedPluginInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginInfo))
-* [[AttachedPluginSummary](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginSummary)](http://document.tencentcloudapi.woa.com/document/product/628/45244#[AttachedPluginSummary](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginSummary))
+* [AttachedPluginInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginInfo)
+* [AttachedPluginSummary](http://document.tencentcloudapi.woa.com/document/product/628/45244#AttachedPluginSummary)
 
 ### 第 14 次发布
 
@@ -4524,7 +4423,7 @@
 
 新增接口：
 
-* [[UpdateProbeTaskAttributes](http://document.tencentcloudapi.woa.com/document/product/280/76544)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateProbeTaskAttributes](http://document.tencentcloudapi.woa.com/document/product/280/76544)
 
 ### 第 13 次发布
 
@@ -30500,6 +30399,21 @@
 
 ## 全栈式风控引擎(rce) 版本：2020-11-03
 
+### 第 8 次发布
+
+发布时间：2022-11-10 06:42:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OutputManageMarketingRiskValue](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputManageMarketingRiskValue)
+
+	* 新增成员：Actions
+
+
 ### 第 7 次发布
 
 发布时间：2022-08-05 06:17:13
@@ -37210,11 +37124,11 @@
 
 新增接口：
 
-* [[DetectPet](http://document.tencentcloudapi.woa.com/document/product/865/76545)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DetectPet](http://document.tencentcloudapi.woa.com/document/product/865/76545)
 
 新增数据结构：
 
-* [[Pet](http://document.tencentcloudapi.woa.com/document/product/865/35474#Pet)](http://document.tencentcloudapi.woa.com/document/product/865/35474#[Pet](http://document.tencentcloudapi.woa.com/document/product/865/35474#Pet))
+* [Pet](http://document.tencentcloudapi.woa.com/document/product/865/35474#Pet)
 
 ### 第 14 次发布
 
@@ -37556,6 +37470,34 @@
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 7 次发布
+
+发布时间：2022-11-10 06:51:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateBatchModelAccTasks](http://document.tencentcloudapi.woa.com/document/product/851/76553)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateOptimizedModel](http://document.tencentcloudapi.woa.com/document/product/851/76552)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76551)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeModelAccEngineVersions](http://document.tencentcloudapi.woa.com/document/product/851/76550)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76549)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeModelAccelerateTasks](http://document.tencentcloudapi.woa.com/document/product/851/76548)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RestartModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76547)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76546)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BatchModelAccTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchModelAccTask)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[BatchModelAccTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchModelAccTask))
+* [[EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion))
+* [[HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter))
+* [[ModelAccEngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccEngineVersion)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[ModelAccEngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccEngineVersion))
+* [[ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask))
+* [[ModelInputInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInputInfo)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[ModelInputInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInputInfo))
 
 ### 第 6 次发布
 

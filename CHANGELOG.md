@@ -1,3 +1,60 @@
+# Release 3.0.645.1
+
+## 全栈式风控引擎(rce) 版本：2020-11-03
+
+### 第 8 次发布
+
+发布时间：2022-11-10 06:42:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OutputManageMarketingRiskValue](http://document.tencentcloudapi.woa.com/document/product/1343/52566#OutputManageMarketingRiskValue)
+
+	* 新增成员：Actions
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 7 次发布
+
+发布时间：2022-11-10 06:51:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchModelAccTasks](http://document.tencentcloudapi.woa.com/document/product/851/76553)
+* [CreateOptimizedModel](http://document.tencentcloudapi.woa.com/document/product/851/76552)
+* [DeleteModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76551)
+* [DescribeModelAccEngineVersions](http://document.tencentcloudapi.woa.com/document/product/851/76550)
+* [DescribeModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76549)
+* [DescribeModelAccelerateTasks](http://document.tencentcloudapi.woa.com/document/product/851/76548)
+* [RestartModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76547)
+* [StopModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/76546)
+
+新增数据结构：
+
+* [BatchModelAccTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#BatchModelAccTask)
+* [EngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#EngineVersion)
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
+* [ModelAccEngineVersion](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccEngineVersion)
+* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
+* [ModelInputInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInputInfo)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.644.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

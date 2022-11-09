@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateBatchModelAccTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchModelAccTasks\n<公共请求参数>\n\n{\n    \"BatchModelAccTasks\": [\n        {\n            \"ModelName\": \"xx\",\n            \"ModelFormat\": \"xx\",\n            \"ModelVersion\": \"xx\",\n            \"ModelSource\": \"xx\",\n            \"ModelInputPath\": {\n                \"Paths\": [\n                    \"xx\"\n                ],\n                \"Region\": \"xx\",\n                \"Bucket\": \"xx\"\n            },\n            \"AccEngineVersion\": \"xx\",\n            \"TensorInfos\": [\n                \"xx\"\n            ],\n            \"ModelId\": \"xx\"\n        }\n    ],\n    \"ModelAccTaskName\": \"xx\",\n    \"ModelOutputPath\": {\n        \"Paths\": [\n            \"xx\"\n        ],\n        \"Region\": \"xx\",\n        \"Bucket\": \"xx\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"HyperParameter\": {\n        \"EnableDistributed\": \"xx\",\n        \"CpuCachePercentage\": \"xx\",\n        \"SlotNum\": \"xx\",\n        \"GpuCachePercentage\": \"xx\",\n        \"MaxNNZ\": \"xx\"\n    },\n    \"OptimizationLevel\": \"xx\",\n    \"GPUType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ModelAccTaskIds\": [\n            \"xx\"\n        ]\n    }\n}",
+        "title": "批量创建模型加速任务"
+      }
+    ],
     "CreateBatchTask": [
       {
         "document": "",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"\",\n    \"ServiceGroupName\": \"demo\",\n    \"ServiceDescription\": \"\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"InstanceType\": \"TI.S.MEDIUM.POST\",\n    \"ImageInfo\": {\n        \"ImageType\": \"CCR\",\n        \"ImageUrl\": \"ccr.ccs.tencentyun.com/tiemsdev/hellotest:latest\",\n        \"RegistryRegion\": \"\",\n        \"RegistryId\": \"\"\n    },\n    \"ScaleMode\": \"MANUAL\",\n    \"Replicas\": 1,\n    \"AuthorizationEnable\": false,\n    \"Tags\": [],\n    \"LogEnable\": false,\n    \"Env\": []\n}",
         "output": "{\n    \"Response\": {\n        \"Service\": {\n            \"ServiceGroupId\": \"ms-gqlzzr2f\",\n            \"ServiceId\": \"ms-gqlzzr2f-1\",\n            \"ServiceGroupName\": \"demo\",\n            \"ServiceDescription\": \"\",\n            \"ServiceInfo\": {\n                \"Replicas\": 1,\n                \"ImageInfo\": {\n                    \"ImageType\": \"CCR\",\n                    \"ImageUrl\": \"ccr.ccs.tencentyun.com/tiemsdev/hellotest:latest\",\n                    \"RegistryRegion\": \"\",\n                    \"RegistryId\": \"\"\n                },\n                \"Env\": [],\n                \"Resources\": {\n                    \"Cpu\": 2000,\n                    \"Memory\": 4096,\n                    \"Gpu\": 0,\n                    \"GpuType\": \"none\"\n                },\n                \"InstanceType\": \"TI.S.MEDIUM.POST\",\n                \"ModelInfo\": null,\n                \"LogEnable\": false,\n                \"LogConfig\": null,\n                \"AuthorizationEnable\": false,\n                \"HorizontalPodAutoscaler\": null,\n                \"Status\": null,\n                \"Weight\": 100,\n                \"PodList\": [],\n                \"ResourceTotal\": null,\n                \"OldReplicas\": 0\n            },\n            \"ClusterId\": \"\",\n            \"Region\": \"ap-beijing\",\n            \"Namespace\": \"\",\n            \"ChargeType\": \"POSTPAID_BY_HOUR\",\n            \"ResourceGroupId\": \"\",\n            \"CreatedBy\": \"243224118\",\n            \"CreateTime\": \"\",\n            \"UpdateTime\": \"\",\n            \"Uin\": \"100005348929\",\n            \"SubUin\": \"243224118\",\n            \"AppId\": 1256580188,\n            \"BusinessStatus\": \"CREATING\",\n            \"Weight\": 0,\n            \"Version\": \"\",\n            \"LatestVersion\": \"\"\n        },\n        \"RequestId\": \"5d067ec5-def2-44f9-bed2-9b1f75b7067d\"\n    }\n}",
         "title": "创建一个自定义镜像的后付费服务"
+      }
+    ],
+    "CreateOptimizedModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOptimizedModel\n<公共请求参数>\n\n{\n    \"ModelAccTaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelVersionId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
+        "title": "保存优化模型"
       }
     ],
     "CreateTrainingModel": [
@@ -54,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataset\n<公共请求参数>\n\n{\n    \"DatasetId\": \"ds-m95jmpb5\",\n    \"DeleteLabelEnable\": true\n}",
         "output": "{\n    \"Response\": {\n        \"DatasetId\": \"ds-m95jmpb5\",\n        \"RequestId\": \"22225ac6-aadc-4732-be03-0583f26caa3a\"\n    }\n}",
         "title": "删除数据集"
+      }
+    ],
+    "DeleteModelAccelerateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelAccelerateTask\n<公共请求参数>\n\n{\n    \"ModelAccTaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除模型加速任务"
       }
     ],
     "DeleteModelService": [
@@ -200,6 +224,30 @@
         "title": "获取日志"
       }
     ],
+    "DescribeModelAccEngineVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAccEngineVersions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ModelAccEngineVersions\": [\n            {\n                \"EngineVersions\": [\n                    {\n                        \"Image\": \"xx\",\n                        \"Version\": \"xx\"\n                    }\n                ],\n                \"ModelFormat\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询模型加速引擎版本列表"
+      }
+    ],
+    "DescribeModelAccelerateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAccelerateTask\n<公共请求参数>\n\n{\n    \"ModelAccTaskId\": \"acc-783jj121\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAccRuntimeInSecond\": 1,\n        \"ModelAccStartTime\": \"xx\",\n        \"ModelAccelerateTask\": {\n            \"ModelName\": \"xx\",\n            \"ModelAccTaskName\": \"xx\",\n            \"ModelInputNum\": 1,\n            \"ModelAccTaskId\": \"xx\",\n            \"ModelVersion\": \"xx\",\n            \"ModelSource\": \"xx\",\n            \"Speedup\": \"xx\",\n            \"TaskStatus\": \"xx\",\n            \"ModelInputPath\": {\n                \"Paths\": [\n                    \"xx\"\n                ],\n                \"Region\": \"xx\",\n                \"Bucket\": \"xx\"\n            },\n            \"ChargeType\": \"xx\",\n            \"OptimizationLevel\": \"xx\",\n            \"ModelInputInfos\": [\n                {\n                    \"ModelInputDimension\": [\n                        \"xx\"\n                    ],\n                    \"ModelInputType\": \"xx\"\n                }\n            ],\n            \"GPUType\": \"xx\",\n            \"ModelOutputPath\": {\n                \"Paths\": [\n                    \"xx\"\n                ],\n                \"Region\": \"xx\",\n                \"Bucket\": \"xx\"\n            },\n            \"ModelId\": \"xx\"\n        },\n        \"ModelAccEndTime\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询模型优化任务详情"
+      }
+    ],
+    "DescribeModelAccelerateTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAccelerateTasks\n<公共请求参数>\n\n{\n    \"OrderField\": \"xx\",\n    \"Limit\": 1,\n    \"Order\": \"xx\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ModelAccelerateTasks\": [\n            {\n                \"ModelName\": \"xx\",\n                \"ModelAccTaskName\": \"xx\",\n                \"ModelInputNum\": 1,\n                \"ModelAccTaskId\": \"xx\",\n                \"ModelVersion\": \"xx\",\n                \"ModelSource\": \"xx\",\n                \"Speedup\": \"xx\",\n                \"TaskStatus\": \"xx\",\n                \"ModelInputPath\": {\n                    \"Paths\": [\n                        \"xx\"\n                    ],\n                    \"Region\": \"xx\",\n                    \"Bucket\": \"xx\"\n                },\n                \"ChargeType\": \"xx\",\n                \"OptimizationLevel\": \"xx\",\n                \"ModelInputInfos\": [\n                    {\n                        \"ModelInputDimension\": [\n                            \"xx\"\n                        ],\n                        \"ModelInputType\": \"xx\"\n                    }\n                ],\n                \"GPUType\": \"xx\",\n                \"ModelOutputPath\": {\n                    \"Paths\": [\n                        \"xx\"\n                    ],\n                    \"Region\": \"xx\",\n                    \"Bucket\": \"xx\"\n                },\n                \"ModelId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询模型加速任务列表"
+      }
+    ],
     "DescribeModelService": [
       {
         "document": "",
@@ -336,6 +384,14 @@
         "title": "上报训练自定义指标"
       }
     ],
+    "RestartModelAccelerateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartModelAccelerateTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"xx\",\n    \"ModelAccTaskName\": \"xx\",\n    \"ModelAccTaskId\": \"xx\",\n    \"ModelVersion\": \"xx\",\n    \"ModelSource\": \"xx\",\n    \"ModelInputPath\": {\n        \"Paths\": [\n            \"xx\"\n        ],\n        \"Region\": \"xx\",\n        \"Bucket\": \"xx\"\n    },\n    \"ModelOutputPath\": {\n        \"Paths\": [\n            \"xx\"\n        ],\n        \"Region\": \"xx\",\n        \"Bucket\": \"xx\"\n    },\n    \"ModelFormat\": \"xx\",\n    \"TensorInfos\": [\n        \"xx\"\n    ],\n    \"OptimizationLevel\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重启模型加速任务"
+      }
+    ],
     "StartTrainingTask": [
       {
         "document": "",
@@ -350,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopBatchTask\n<公共请求参数>\n\n{\n    \"BatchTaskId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d033484-30f4-42e7-837e-825f33fdd23b\"\n    }\n}",
         "title": "停止跑批任务"
+      }
+    ],
+    "StopModelAccelerateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopModelAccelerateTask\n<公共请求参数>\n\n{\n    \"ModelAccTaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelAccTaskId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"AsyncTaskId\": \"xx\"\n    }\n}",
+        "title": "停止模型加速任务"
       }
     ],
     "StopTrainingTask": [
