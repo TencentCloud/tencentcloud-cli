@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ms CreateShieldInstance --cli-unfold-argument  \
-    --AppInfo.AppUrl http://example.com/1.apk \
     --AppInfo.AppMd5 dd5b29a800246d7089febf228286d901 \
+    --AppInfo.AppUrl http://example.com/1.apk \
     --AppInfo.AppSize 1024 \
-    --ServiceInfo.ServiceEdition basic \
     --ServiceInfo.CallbackUrl http://example.com/cb \
-    --ServiceInfo.SubmitSource MC
+    --ServiceInfo.SubmitSource MC \
+    --ServiceInfo.ServiceEdition basic
 ```
 
 Output: 

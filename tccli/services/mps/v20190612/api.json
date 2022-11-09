@@ -4720,6 +4720,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定输出要保留的音频轨道。默认是全部保留源的。",
+          "example": "NULL",
+          "member": "int64",
+          "name": "StreamSelects",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -18588,7 +18598,68 @@
     },
     "SubtitleTemplate": {
       "document": "字幕流配置参数。",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "要压制到视频中的字幕文件地址。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。",
+          "example": "3",
+          "member": "int64",
+          "name": "StreamIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体类型，\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>simkai.ttf：楷体</li>\n<li>arial.ttf：仅支持英文</li>\n默认hei.ttf",
+          "example": "simhei.ttf",
+          "member": "string",
+          "name": "FontType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。",
+          "example": "5px",
+          "member": "string",
+          "name": "FontSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）",
+          "example": "0xRRGGBB",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>\n默认值：1。",
+          "example": "1",
+          "member": "float",
+          "name": "FontAlpha",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "SuperResolutionConfig": {

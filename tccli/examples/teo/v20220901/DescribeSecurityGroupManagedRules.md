@@ -16,14 +16,38 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4b8c24c5-3576-40e0-82f9-60628c9c2d47",
         "Count": 1,
         "Total": 570,
+        "RequestId": "xx",
         "WafGroupInfo": {
-            "Switch": "on",
-            "Act": "",
-            "Mode": "block",
-            "Level": "strict"
+            "Switch": "xx",
+            "Act": "xx",
+            "WafGroupDetails": [
+                {
+                    "Level": "xx",
+                    "RuleTypeId": 0,
+                    "RuleTypeName": "xx",
+                    "WafGroupRules": [
+                        {
+                            "Status": "xx",
+                            "UpdateTime": "xx",
+                            "Description": "xx",
+                            "RuleId": 0,
+                            "RuleTypeId": 0,
+                            "RuleLevelDesc": "xx",
+                            "RuleTypeName": "xx",
+                            "RuleTags": [
+                                "xx"
+                            ],
+                            "RuleTypeDesc": "xx"
+                        }
+                    ],
+                    "Action": "xx",
+                    "RuleTypeDesc": "xx"
+                }
+            ],
+            "Mode": "xx",
+            "Level": "xx"
         }
     }
 }

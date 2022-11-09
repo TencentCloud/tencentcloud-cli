@@ -691,7 +691,7 @@
     "ModifyDDoSThreshold": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyDDoSThreshold\n&Business=bgpip\n&Id=bgpip-000000xe\n&Threshold=1000\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSThreshold\n<公共请求参数>\n\n{\n    \"Threshold\": \"1000\",\n    \"Id\": \"bgpip-000000xe\",\n    \"Business\": \"bgpip\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "修改DDoS清洗阈值"
       }

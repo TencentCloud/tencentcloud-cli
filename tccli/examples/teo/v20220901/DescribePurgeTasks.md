@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli teo DescribePurgeTasks --cli-unfold-argument  \
-    --ZoneId zone-sae1abc \
     --StartTime 2022-02-09T00:00:00+08:00 \
     --EndTime 2022-02-09T23:59:00+08:00 \
     --Limit 1 \

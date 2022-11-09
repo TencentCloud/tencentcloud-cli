@@ -306,6 +306,12 @@
       "name": "查询插件列表和详情",
       "output": "DescribePluginsResponse"
     },
+    "DescribePluginsByApi": {
+      "document": "展示API上已绑定的插件列表。",
+      "input": "DescribePluginsByApiRequest",
+      "name": "API上已绑定的插件",
+      "output": "DescribePluginsByApiResponse"
+    },
     "DescribeService": {
       "document": "本接口（DescribeService）用于查询一个服务的详细信息、包括服务的描述、域名、协议、创建时间、发布情况等信息。",
       "input": "DescribeServiceRequest",
@@ -2251,6 +2257,108 @@
           "document": "插件绑定的API信息。",
           "member": "AttachedApiInfo",
           "name": "AttachedApis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachedPluginInfo": {
+      "document": "已绑定的插件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "插件ID。",
+          "example": "plugin-9l0d4sdf",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境信息。",
+          "example": "release",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定时间。",
+          "example": "2021-01-25T06:56:58Z",
+          "member": "string",
+          "name": "AttachedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件名称。",
+          "example": "myplugin",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件类型。",
+          "example": "IPControl",
+          "member": "string",
+          "name": "PluginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件描述。",
+          "example": "IPControl",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件定义语句。",
+          "example": "{\\\"blocks\\\":\\\"1.1.1.1\\\",\\\"type\\\":\\\"black_list\\\"}",
+          "member": "string",
+          "name": "PluginData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachedPluginSummary": {
+      "document": "已绑定的插件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "已绑定的插件总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已绑定的插件信息。",
+          "example": "无",
+          "member": "AttachedPluginInfo",
+          "name": "PluginSummary",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6170,6 +6278,78 @@
           "document": "插件详情。",
           "example": "无",
           "member": "Plugin",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginsByApiRequest": {
+      "document": "DescribePluginsByApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的API ID。",
+          "example": "api-fa23vfd",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的服务ID。",
+          "example": "service-o5as3moe",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境信息。",
+          "example": "test",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginsByApiResponse": {
+      "document": "DescribePluginsByApi返回参数结构体",
+      "members": [
+        {
+          "document": "插件可绑定的API列表信息。",
+          "example": "无",
+          "member": "AttachedPluginSummary",
           "name": "Result",
           "required": true,
           "type": "object",

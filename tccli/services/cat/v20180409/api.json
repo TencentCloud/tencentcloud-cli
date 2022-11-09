@@ -54,6 +54,12 @@
       "name": "暂停拨测任务",
       "output": "SuspendProbeTaskResponse"
     },
+    "UpdateProbeTaskAttributes": {
+      "document": "更新探测任务属性",
+      "input": "UpdateProbeTaskAttributesRequest",
+      "name": "更新探测任务属性",
+      "output": "UpdateProbeTaskAttributesResponse"
+    },
     "UpdateProbeTaskConfigurationList": {
       "document": "批量更新拨测任务配置",
       "input": "UpdateProbeTaskConfigurationListRequest",
@@ -1485,6 +1491,42 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateProbeTaskAttributesRequest": {
+      "document": "UpdateProbeTaskAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProbeTaskAttributesResponse": {
+      "document": "UpdateProbeTaskAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateProbeTaskConfigurationListRequest": {
       "document": "UpdateProbeTaskConfigurationList请求参数结构体",

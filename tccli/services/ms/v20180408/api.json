@@ -1,7 +1,7 @@
 {
   "actions": {
     "CreateBindInstance": {
-      "document": "将应用和资源进行绑定",
+      "document": "将应用和资源进行绑定。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateBindInstanceRequest",
       "name": "将应用绑定到资源",
       "output": "CreateBindInstanceResponse"
@@ -25,13 +25,13 @@
       "output": "CreateScanInstancesResponse"
     },
     "CreateShieldInstance": {
-      "document": "用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果",
+      "document": "用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateShieldInstanceRequest",
       "name": "提交加固基础数据",
       "output": "CreateShieldInstanceResponse"
     },
     "CreateShieldPlanInstance": {
-      "document": "对资源进行策略新增",
+      "document": "对资源进行策略新增。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "CreateShieldPlanInstanceRequest",
       "name": "新增加固策略",
       "output": "CreateShieldPlanInstanceResponse"
@@ -43,7 +43,7 @@
       "output": "DeleteScanInstancesResponse"
     },
     "DeleteShieldInstances": {
-      "document": "删除一个或者多个app加固信息",
+      "document": "删除一个或者多个app加固信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DeleteShieldInstancesRequest",
       "name": "批量删除提交过的app信息",
       "output": "DeleteShieldInstancesResponse"
@@ -55,7 +55,7 @@
       "output": "DescribeApkDetectionResultResponse"
     },
     "DescribeResourceInstances": {
-      "document": "获取某个用户的所有资源信息",
+      "document": "获取某个用户的所有资源信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeResourceInstancesRequest",
       "name": "获取用户的所有资源信息",
       "output": "DescribeResourceInstancesResponse"
@@ -73,19 +73,19 @@
       "output": "DescribeScanResultsResponse"
     },
     "DescribeShieldInstances": {
-      "document": "本接口用于查看app列表。\n可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。\n",
+      "document": "本接口用于查看app列表。\n可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）\n",
       "input": "DescribeShieldInstancesRequest",
       "name": "用户查询提交过的app列表",
       "output": "DescribeShieldInstancesResponse"
     },
     "DescribeShieldPlanInstance": {
-      "document": "查询加固策略",
+      "document": "查询加固策略。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeShieldPlanInstanceRequest",
       "name": "查询加固策略",
       "output": "DescribeShieldPlanInstanceResponse"
     },
     "DescribeShieldResult": {
-      "document": "通过唯一标识获取加固的结果",
+      "document": "通过唯一标识获取加固的结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
       "input": "DescribeShieldResultRequest",
       "name": "查询加固结果",
       "output": "DescribeShieldResultResponse"
@@ -620,6 +620,7 @@
         {
           "default": "",
           "document": "资源id，全局唯一",
+          "example": "hsihi12923-ioio",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -628,6 +629,7 @@
         {
           "default": "",
           "document": "app的icon的url",
+          "example": "http://q.com/1.png",
           "member": "string",
           "name": "AppIconUrl",
           "required": true,
@@ -636,6 +638,7 @@
         {
           "default": "",
           "document": "app的名称",
+          "example": "微信",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -644,6 +647,7 @@
         {
           "default": "",
           "document": "app的包名",
+          "example": "com.tencent.mm",
           "member": "string",
           "name": "AppPkgName",
           "required": true,
@@ -657,9 +661,12 @@
       "members": [
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "1",
           "member": "uint64",
           "name": "Progress",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

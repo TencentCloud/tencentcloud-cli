@@ -3759,7 +3759,7 @@
         },
         {
           "default": "",
-          "document": "AutoScalingGroupPara AS组参数",
+          "document": "AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440",
           "example": "{\\\"AutoScalingGroupName\\\":\\\"\\\",\\\"MaxSize\\\":1,\\\"MinSize\\\":0,\\\"Des",
           "member": "string",
           "name": "AutoScalingGroupPara",
@@ -3768,7 +3768,7 @@
         },
         {
           "default": "",
-          "document": "LaunchConfigurePara 运行参数",
+          "document": "LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447",
           "example": "{\\\"LaunchConfigurationName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"S3.SMALL1\\\"",
           "member": "string",
           "name": "LaunchConfigurePara",

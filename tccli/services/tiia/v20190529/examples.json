@@ -140,6 +140,26 @@
         "title": "不良行为识别调用成功"
       }
     ],
+    "DetectPet": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\",\n        \"Pets\": [\n            {\n                \"Score\": 99,\n                \"Name\": \"cat\",\n                \"Location\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            }\n        ]\n    }\n}",
+        "title": "识别成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "title": "图片中未识别出宠物"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "识别失败"
+      }
+    ],
     "DetectProduct": [
       {
         "document": "",

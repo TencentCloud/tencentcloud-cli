@@ -7,9 +7,9 @@ Input:
 ```
 tccli ms CreateBindInstance --cli-unfold-argument  \
     --ResourceId hsihi12923-ioio \
+    --AppPkgName com.tencent.mm \
     --AppIconUrl http://q.com/1.png \
-    --AppName 微信 \
-    --AppPkgName com.tencent.mm
+    --AppName 微信
 ```
 
 Output: 
