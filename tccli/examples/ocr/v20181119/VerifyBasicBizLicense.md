@@ -7,9 +7,9 @@ Input:
 ```
 tccli ocr VerifyBasicBizLicense --cli-unfold-argument  \
     --RegNum xxxxx \
+    --EstablishTime true \
     --Name xxxxx \
-    --Address xxxxx \
-    --EstablishTime true
+    --Address xxxxx
 ```
 
 Output: 

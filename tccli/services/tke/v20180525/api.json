@@ -2368,7 +2368,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289",
+          "document": "集群操作系统，支持设置公共镜像(字段传相应镜像Name)和自定义镜像(字段传相应镜像ID)，详情参考：https://cloud.tencent.com/document/product/457/68289",
           "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "ClusterOs",

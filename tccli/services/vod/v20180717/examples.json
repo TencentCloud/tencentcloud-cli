@@ -1331,19 +1331,19 @@
     "PullUpload": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=PullUpload\n&MediaUrl=http://www.abc.com/abc.mp4\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频。"
       },
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=PullUpload\n&MediaUrl=http://www.abc.com/abc.mp4\n&StorageRegion=ap-chongqing\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-chongqing\",\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-793dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个国内 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至重庆园区。"
       },
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=PullUpload\n&MediaUrl=http://www.abc.com/abc.mp4\n&StorageRegion=ap-singapore\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullUpload\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-singapore\",\n    \"MediaUrl\": \"http://www.abc.com/abc.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-pull-693dc41e6fdc22dcf24aa6e9c61cp94\"\n    }\n}",
         "title": "拉取上传一个海外 URL 为 ```http://www.abc.com/abc.mp4``` 的 MP4 视频至新加坡园区。"
       }

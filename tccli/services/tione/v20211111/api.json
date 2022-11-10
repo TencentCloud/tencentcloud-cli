@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateBatchModelAccTasks": {
+      "document": "批量创建模型加速任务",
+      "input": "CreateBatchModelAccTasksRequest",
+      "name": "批量创建模型加速任务",
+      "output": "CreateBatchModelAccTasksResponse"
+    },
     "CreateBatchTask": {
       "document": "创建跑批任务",
       "input": "CreateBatchTaskRequest",
@@ -17,6 +23,12 @@
       "input": "CreateModelServiceRequest",
       "name": "创建模型服务",
       "output": "CreateModelServiceResponse"
+    },
+    "CreateOptimizedModel": {
+      "document": "保存优化模型",
+      "input": "CreateOptimizedModelRequest",
+      "name": "保存优化模型",
+      "output": "CreateOptimizedModelResponse"
     },
     "CreateTrainingModel": {
       "document": "导入模型",
@@ -41,6 +53,12 @@
       "input": "DeleteDatasetRequest",
       "name": "删除数据集",
       "output": "DeleteDatasetResponse"
+    },
+    "DeleteModelAccelerateTask": {
+      "document": "删除模型加速任务",
+      "input": "DeleteModelAccelerateTaskRequest",
+      "name": "删除模型加速任务",
+      "output": "DeleteModelAccelerateTaskResponse"
     },
     "DeleteModelService": {
       "document": "根据服务id删除模型服务",
@@ -150,6 +168,24 @@
       "name": "获取日志",
       "output": "DescribeLogsResponse"
     },
+    "DescribeModelAccEngineVersions": {
+      "document": "查询模型加速引擎版本列表",
+      "input": "DescribeModelAccEngineVersionsRequest",
+      "name": "查询模型加速引擎版本列表",
+      "output": "DescribeModelAccEngineVersionsResponse"
+    },
+    "DescribeModelAccelerateTask": {
+      "document": "查询模型优化任务详情",
+      "input": "DescribeModelAccelerateTaskRequest",
+      "name": "查询模型优化任务详情",
+      "output": "DescribeModelAccelerateTaskResponse"
+    },
+    "DescribeModelAccelerateTasks": {
+      "document": "查询模型加速任务列表",
+      "input": "DescribeModelAccelerateTasksRequest",
+      "name": "查询模型加速任务列表",
+      "output": "DescribeModelAccelerateTasksResponse"
+    },
     "DescribeModelService": {
       "document": "查询单个服务",
       "input": "DescribeModelServiceRequest",
@@ -252,6 +288,12 @@
       "name": "上报训练自定义指标",
       "output": "PushTrainingMetricsResponse"
     },
+    "RestartModelAccelerateTask": {
+      "document": "重启模型加速任务",
+      "input": "RestartModelAccelerateTaskRequest",
+      "name": "重启模型加速任务",
+      "output": "RestartModelAccelerateTaskResponse"
+    },
     "StartTrainingTask": {
       "document": "启动模型训练任务",
       "input": "StartTrainingTaskRequest",
@@ -263,6 +305,12 @@
       "input": "StopBatchTaskRequest",
       "name": "停止跑批任务",
       "output": "StopBatchTaskResponse"
+    },
+    "StopModelAccelerateTask": {
+      "document": "停止模型加速任务",
+      "input": "StopModelAccelerateTaskRequest",
+      "name": "停止模型加速任务",
+      "output": "StopModelAccelerateTaskResponse"
     },
     "StopTrainingTask": {
       "document": "停止模型训练任务",
@@ -403,6 +451,102 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchModelAccTask": {
+      "document": "批量模型加速任务",
+      "members": [
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "m-123",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型版本",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型来源(JOB/COS)",
+          "example": "COS",
+          "member": "string",
+          "name": "ModelSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型格式(TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/MMDETECTION/ONNX/HUGGING_FACE)",
+          "example": "TORCH_SCRIPT",
+          "member": "string",
+          "name": "ModelFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型Tensor信息",
+          "example": "无",
+          "member": "string",
+          "name": "TensorInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加速引擎版本",
+          "example": "v2.0",
+          "member": "string",
+          "name": "AccEngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型输入cos路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelInputPath",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模型名称",
+          "example": "test",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SavedModel保存时配置的签名",
+          "example": "test",
+          "member": "string",
+          "name": "ModelSignature",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "BatchTaskDetail": {
       "document": "跑批任务详情",
@@ -1034,6 +1178,96 @@
       ],
       "usage": "both"
     },
+    "CreateBatchModelAccTasksRequest": {
+      "document": "CreateBatchModelAccTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务名称",
+          "example": "test",
+          "member": "string",
+          "name": "ModelAccTaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量模型加速任务",
+          "example": "无",
+          "member": "BatchModelAccTask",
+          "name": "BatchModelAccTasks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模型加速保存路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelOutputPath",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "优化级别(NO_LOSS/FP16)，默认FP16",
+          "example": "FP16",
+          "member": "string",
+          "name": "OptimizationLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "GPU卡类型(T4/V100)，默认T4",
+          "example": "T4",
+          "member": "string",
+          "name": "GPUType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专业参数设置",
+          "example": "无",
+          "member": "HyperParameter",
+          "name": "HyperParameter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchModelAccTasksResponse": {
+      "document": "CreateBatchModelAccTasks返回参数结构体",
+      "members": [
+        {
+          "document": "模型优化任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"acc-9123dfcd\"]",
+          "member": "string",
+          "name": "ModelAccTaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateBatchTaskRequest": {
       "document": "CreateBatchTask请求参数结构体",
       "members": [
@@ -1599,6 +1833,60 @@
           "name": "Service",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOptimizedModelRequest": {
+      "document": "CreateOptimizedModel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOptimizedModelResponse": {
+      "document": "CreateOptimizedModel返回参数结构体",
+      "members": [
+        {
+          "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m-123",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mv-234",
+          "member": "string",
+          "name": "ModelVersionId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -2909,6 +3197,33 @@
       ],
       "type": "object"
     },
+    "DeleteModelAccelerateTaskRequest": {
+      "document": "DeleteModelAccelerateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID",
+          "example": "acc-3v3yf470zrpc",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelAccelerateTaskResponse": {
+      "document": "DeleteModelAccelerateTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteModelServiceGroupRequest": {
       "document": "DeleteModelServiceGroup请求参数结构体",
       "members": [
@@ -4006,6 +4321,185 @@
       ],
       "type": "object"
     },
+    "DescribeModelAccEngineVersionsRequest": {
+      "document": "DescribeModelAccEngineVersions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModelAccEngineVersionsResponse": {
+      "document": "DescribeModelAccEngineVersions返回参数结构体",
+      "members": [
+        {
+          "document": "模型加速版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelAccEngineVersion",
+          "name": "ModelAccEngineVersions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelAccelerateTaskRequest": {
+      "document": "DescribeModelAccelerateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID",
+          "example": "acc-783jj121",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelAccelerateTaskResponse": {
+      "document": "DescribeModelAccelerateTask返回参数结构体",
+      "members": [
+        {
+          "document": "模型加速任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelAccelerateTask",
+          "name": "ModelAccelerateTask",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型加速时长，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ModelAccRuntimeInSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型加速任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAccStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模型加速任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAccEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelAccelerateTasksRequest": {
+      "document": "DescribeModelAccelerateTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤器\nModelAccTaskName 任务名称",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，默认CreateTime",
+          "example": "无",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：ASC/DESC，默认DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签过滤",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelAccelerateTasksResponse": {
+      "document": "DescribeModelAccelerateTasks返回参数结构体",
+      "members": [
+        {
+          "document": "模型加速任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelAccelerateTask",
+          "name": "ModelAccelerateTasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeModelServiceCallInfoRequest": {
       "document": "DescribeModelServiceCallInfo请求参数结构体",
       "members": [
@@ -4842,6 +5336,32 @@
       ],
       "usage": "out"
     },
+    "EngineVersion": {
+      "document": "引擎版本",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EnvVar": {
       "document": "环境变量",
       "members": [
@@ -5286,6 +5806,82 @@
       ],
       "usage": "both"
     },
+    "HyperParameter": {
+      "document": "模型专业参数",
+      "members": [
+        {
+          "default": "",
+          "document": "最大nnz数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "MaxNNZ",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "slot数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SlotNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "gpu cache 使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.2",
+          "member": "string",
+          "name": "CpuCachePercentage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cpu cache 使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.2",
+          "member": "string",
+          "name": "GpuCachePercentage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启分布式模式(true/false)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "EnableDistributed",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TORCH_SCRIPT、MMDETECTION、DETECTRON2、HUGGINGFACE格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "MinBlockSizePt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "FROZEN_GRAPH、SAVED_MODEL格式在进行优化时切分子图的最小算子数目，一般无需进行改动，默认为10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "MinBlockSizeTf",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageInfo": {
       "document": "镜像描述信息",
       "members": [
@@ -5714,6 +6310,308 @@
       ],
       "usage": "both"
     },
+    "ModelAccEngineVersion": {
+      "document": "模型加速引擎版本",
+      "members": [
+        {
+          "default": "",
+          "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TORCH_SCRIPT",
+          "member": "string",
+          "name": "ModelFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EngineVersion",
+          "name": "EngineVersions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelAccelerateTask": {
+      "document": "模型加速任务",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "acc-3v3yf470zrpc",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型加速任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-task",
+          "member": "string",
+          "name": "ModelAccTaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JOB",
+          "member": "string",
+          "name": "ModelSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优化级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FP16",
+          "member": "string",
+          "name": "OptimizationLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STATUS_SUCCESS",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "input节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModelInputNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "input节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelInputInfo",
+          "name": "ModelInputInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T4",
+          "member": "string",
+          "name": "GPUType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FREE",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加速比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.86x",
+          "member": "string",
+          "name": "Speedup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型输入cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelInputPath",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型输出cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelOutputPath",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "算法框架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTORCH",
+          "member": "string",
+          "name": "AlgorithmFramework",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "排队个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WaitNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-10 22:10:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TaskProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SAVED_MODEL",
+          "member": "string",
+          "name": "ModelFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型Tensor信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TensorInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模型专业参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HyperParameter",
+          "name": "HyperParameter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加速引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccEngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优化模型是否已保存到模型仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSaved",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SAVED_MODEL保存时配置的签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ModelSignature",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModelInfo": {
       "document": "模型描述信息",
       "members": [
@@ -5795,6 +6693,32 @@
           "name": "ModelType",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelInputInfo": {
+      "document": "模型输入信息",
+      "members": [
+        {
+          "default": "",
+          "document": "input数据类型\nFIXED：固定\nRANGE：浮动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RANGE",
+          "member": "string",
+          "name": "ModelInputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "input数据尺寸\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"n*c*h*w\"]",
+          "member": "string",
+          "name": "ModelInputDimension",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6237,6 +7161,195 @@
         }
       ],
       "usage": "both"
+    },
+    "RestartModelAccelerateTaskRequest": {
+      "document": "RestartModelAccelerateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID",
+          "example": "acc-3v3yf470zrpc",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型加速任务名称",
+          "example": "test",
+          "member": "string",
+          "name": "ModelAccTaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型来源（JOB/COS）",
+          "example": "JOB",
+          "member": "string",
+          "name": "ModelSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "算法框架（废弃）",
+          "example": "Pytorch",
+          "member": "string",
+          "name": "AlgorithmFramework",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "m-123",
+          "member": "string",
+          "name": "ModelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型名称",
+          "example": "test",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型版本",
+          "example": "v1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型输入cos路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelInputPath",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "优化级别（NO_LOSS/FP16），默认FP16",
+          "example": "FP16",
+          "member": "string",
+          "name": "OptimizationLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "input节点个数（废弃）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModelInputNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "input节点信息（废弃）",
+          "example": "无",
+          "member": "ModelInputInfo",
+          "name": "ModelInputInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模型输出cos路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "ModelOutputPath",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模型格式（TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/MMDETECTION/ONNX/HUGGING_FACE）",
+          "example": "SAVED_MODEL",
+          "member": "string",
+          "name": "ModelFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型Tensor信息",
+          "example": "无",
+          "member": "string",
+          "name": "TensorInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "GPU类型（T4/V100），默认T4",
+          "example": "无",
+          "member": "string",
+          "name": "GPUType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型专业参数",
+          "example": "无",
+          "member": "HyperParameter",
+          "name": "HyperParameter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "加速引擎版本",
+          "example": "无",
+          "member": "string",
+          "name": "AccEngineVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "SavedModel保存时配置的签名",
+          "example": "test",
+          "member": "string",
+          "name": "ModelSignature",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartModelAccelerateTaskResponse": {
+      "document": "RestartModelAccelerateTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RowItem": {
       "document": "文本行信息",
@@ -7389,6 +8502,51 @@
     "StopBatchTaskResponse": {
       "document": "StopBatchTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopModelAccelerateTaskRequest": {
+      "document": "StopModelAccelerateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模型加速任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopModelAccelerateTaskResponse": {
+      "document": "StopModelAccelerateTask返回参数结构体",
+      "members": [
+        {
+          "document": "模型加速任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAccTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "异步任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsyncTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
