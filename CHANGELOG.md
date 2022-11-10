@@ -1,3 +1,27 @@
+# Release 3.0.646.1
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 4 次发布
+
+发布时间：2022-11-11 06:15:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76556)
+* [DescribeUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76555)
+* [SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)
+
+新增数据结构：
+
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+
+
+
 # Release 3.0.645.1
 
 ## 全栈式风控引擎(rce) 版本：2020-11-03

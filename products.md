@@ -34,7 +34,7 @@
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2022-10-31 06:13:56 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | 2022-10-31 06:14:34 |
 | cetcd | [云原生 ETCD](http://document.tencentcloudapi.woa.com/document/product/) | 2022-08-30 11:15:23 |
-| cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | 2022-11-08 06:09:53 |
+| cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | 2022-11-11 06:15:38 |
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2022-10-25 06:14:15 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2022-07-04 06:06:47 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2022-06-27 06:17:15 |
@@ -140,7 +140,7 @@
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | 2022-11-01 21:27:09 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2022-11-08 06:32:24 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2022-03-08 08:00:15 |
-| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-11-07 06:31:48 |
+| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-11-11 06:53:44 |
 | tem | [弹性微服务 TEM](http://document.tencentcloudapi.woa.com/document/product/1371) | 2022-11-08 06:33:39 |
 | tic | [资源编排 TIC](http://document.tencentcloudapi.woa.com/document/product/1213) | 2022-10-31 06:45:28 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2022-03-08 08:12:22 |
