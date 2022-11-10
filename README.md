@@ -26,6 +26,26 @@ complete -C 'tccli_completer' tccli
 ```
 可以将命令``complete -C 'tccli_completer' tccli``加入环境变量(/etc/profile)中，使自动补全功能一直有效。
 
+## 在 Docker 上使用
+
+```shell
+docker run --rm -it tencentcom/tencentcloud-cli --version
+docker run --rm -it tencentcom/tencentcloud-cli help
+```
+
+## 在 Coding-CI 上使用
+
+```yaml
+master:
+  push:
+  - stages:
+    - name: run with tencentcloud-cli
+      image: tencentcom/tencentcloud-cli
+      commands: |
+        tccli --version
+        tccli help
+```        
+
 # 配置TCCLI
 要使用腾讯云命令行工具，您还需要进行一些初始化配置，使其完成使用 云 API的必要前提条件。
 1. 交互模式，您可以通过tccli configure命令进入交互模式快速配置。
