@@ -72,6 +72,12 @@
       "name": "删除挂载点",
       "output": "DeleteMountTargetResponse"
     },
+    "DeleteUserQuota": {
+      "document": "指定条件删除文件系统配额",
+      "input": "DeleteUserQuotaRequest",
+      "name": "删除文件系统配额",
+      "output": "DeleteUserQuotaResponse"
+    },
     "DescribeAutoSnapshotPolicies": {
       "document": "查询文件系统快照定期策略列表信息",
       "input": "DescribeAutoSnapshotPoliciesRequest",
@@ -137,6 +143,18 @@
       "input": "DescribeSnapshotOperationLogsRequest",
       "name": "查询快照操作日志",
       "output": "DescribeSnapshotOperationLogsResponse"
+    },
+    "DescribeUserQuota": {
+      "document": "查询文件系统配额",
+      "input": "DescribeUserQuotaRequest",
+      "name": "查询文件系统配额",
+      "output": "DescribeUserQuotaResponse"
+    },
+    "SetUserQuota": {
+      "document": "设置文件系统配额，提供UID/GID的配额设置的接口",
+      "input": "SetUserQuotaRequest",
+      "name": "设置文件系统配额",
+      "output": "SetUserQuotaResponse"
     },
     "SignUpCfsService": {
       "document": "本接口（SignUpCfsService）用于开通CFS服务。",
@@ -1305,6 +1323,51 @@
       ],
       "type": "object"
     },
+    "DeleteUserQuotaRequest": {
+      "document": "DeleteUserQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "example": "cfs-12345",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定配额类型，包括Uid、Gid",
+          "example": "Uid",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UID/GID信息",
+          "example": "1000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserQuotaResponse": {
+      "document": "DeleteUserQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAutoSnapshotPoliciesRequest": {
       "document": "DescribeAutoSnapshotPolicies请求参数结构体",
       "members": [
@@ -1837,6 +1900,78 @@
           "example": "无",
           "member": "SnapshotOperateLog",
           "name": "SnapshotOperates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserQuotaRequest": {
+      "document": "DescribeUserQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "example": "cfs-12345",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )\n<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Offset 分页码",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Limit 页面大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserQuotaResponse": {
+      "document": "DescribeUserQuota返回参数结构体",
+      "members": [
+        {
+          "document": "UserQuota条目总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "UserQuota条目",
+          "example": "无",
+          "member": "UserQuota",
+          "name": "UserQuotaInfo",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2469,6 +2604,69 @@
         }
       ],
       "usage": "out"
+    },
+    "SetUserQuotaRequest": {
+      "document": "SetUserQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "example": "cfs-12345",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定配额类型，包括Uid、Gid",
+          "example": "Uid",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UID/GID信息",
+          "example": "1000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容量硬限制，单位GiB",
+          "example": "10",
+          "member": "uint64",
+          "name": "CapacityHardLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件硬限制，单位个",
+          "example": "10000",
+          "member": "uint64",
+          "name": "FileHardLimit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetUserQuotaResponse": {
+      "document": "SetUserQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SignUpCfsServiceRequest": {
       "document": "SignUpCfsService请求参数结构体",
@@ -3280,6 +3478,62 @@
         }
       ],
       "type": "object"
+    },
+    "UserQuota": {
+      "document": "文件系统配额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "指定配额类型，包括Uid、Gid",
+          "example": "Uid",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UID/GID信息",
+          "example": "1000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容量硬限制，单位GiB",
+          "example": "10",
+          "member": "uint64",
+          "name": "CapacityHardLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件硬限制，单位个",
+          "example": "10000",
+          "member": "uint64",
+          "name": "FileHardLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统ID",
+          "example": "cfs-1245",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
