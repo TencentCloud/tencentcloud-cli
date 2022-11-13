@@ -3,7 +3,7 @@
 | aa | [活动防刷](http://document.tencentcloudapi.woa.com/document/product/1189) | 2022-08-05 06:03:18 |
 | account | [账号中心](http://document.tencentcloudapi.woa.com/document/product/378) | 2022-08-03 10:27:29 |
 | af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | 2022-05-23 08:03:11 |
-| afc | [定制建模](http://document.tencentcloudapi.woa.com/document/product/1029) | 2022-05-23 08:03:10 |
+| afc | [定制建模](http://document.tencentcloudapi.woa.com/document/product/1029) | 2022-11-14 06:10:34 |
 | ame | [正版曲库直通车](http://document.tencentcloudapi.woa.com/document/product/1155) | 2022-04-15 08:13:58 |
 | ams | [音频内容安全](http://document.tencentcloudapi.woa.com/document/product/1219) | 2022-10-31 06:07:17 |
 | antiddos | [T-Sec-DDoS防护(Anti-DDoS)](http://document.tencentcloudapi.woa.com/document/product/1021) | 2022-11-09 06:05:32 |

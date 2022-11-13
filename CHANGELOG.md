@@ -1,3 +1,26 @@
+# Release 3.0.647.1
+
+## 定制建模(afc) 版本：2020-02-26
+
+### 第 3 次发布
+
+发布时间：2022-11-14 06:10:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)
+
+新增数据结构：
+
+* [TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)
+* [TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)
+
+
+
 # Release 3.0.646.1
 
 ## 文件存储(cfs) 版本：2019-07-19

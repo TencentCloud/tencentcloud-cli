@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 文件存储(cfs) 版本：2019-07-19
+## 定制建模(afc) 版本：2020-02-26
 
-### 第 4 次发布
+### 第 3 次发布
 
-发布时间：2022-11-11 06:15:38
+发布时间：2022-11-14 06:10:34
 
 本次发布包含了以下内容：
 
@@ -12,13 +12,12 @@
 
 新增接口：
 
-* [DeleteUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76556)
-* [DescribeUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76555)
-* [SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)
+* [TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)
 
 新增数据结构：
 
-* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+* [TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)
+* [TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)
 
 
 
@@ -245,6 +244,23 @@
 
 
 ## 定制建模(afc) 版本：2020-02-26
+
+### 第 3 次发布
+
+发布时间：2022-11-14 06:10:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)](http://document.tencentcloudapi.woa.com/document/product/1029/44018#[TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput))
+* [[TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)](http://document.tencentcloudapi.woa.com/document/product/1029/44018#[TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput))
 
 ### 第 2 次发布
 
@@ -7494,13 +7510,13 @@
 
 新增接口：
 
-* [[DeleteUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76556)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76555)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76556)
+* [DescribeUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76555)
+* [SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)
 
 新增数据结构：
 
-* [[UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)](http://document.tencentcloudapi.woa.com/document/product/582/38175#[UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota))
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
 
 ### 第 3 次发布
 
