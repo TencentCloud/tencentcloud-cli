@@ -4851,12 +4851,13 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "服务组ID",
           "example": "ms-xyz122",
           "member": "string",
           "name": "ServiceGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4871,7 +4872,8 @@
           "name": "ServiceGroup",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

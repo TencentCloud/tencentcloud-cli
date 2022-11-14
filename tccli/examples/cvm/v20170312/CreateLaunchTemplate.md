@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm CreateLaunchTemplate --cli-unfold-argument  \
+    --LaunchTemplateName test \
     --Placement.Zone ap-guangzhou-2 \
-    --ImageId img-pmqg1cw7 \
-    --LaunchTemplateName test
+    --ImageId img-pmqg1cw7
 ```
 
 Output: 

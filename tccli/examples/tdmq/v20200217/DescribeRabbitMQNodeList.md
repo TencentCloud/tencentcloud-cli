@@ -1,4 +1,4 @@
-**Example 1: 获取虚拟机列表**
+**Example 1: RabbitMQ专享版查询节点列表**
 
 
 

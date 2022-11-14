@@ -409,7 +409,7 @@
       "output": "SwitchDBInstanceHAResponse"
     },
     "TerminateDedicatedDBInstance": {
-      "document": "本接口（IsolateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。",
+      "document": "本接口（TerminateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。",
       "input": "TerminateDedicatedDBInstanceRequest",
       "name": "销毁独享云数据库实例",
       "output": "TerminateDedicatedDBInstanceResponse"
@@ -7080,7 +7080,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7095,7 +7096,8 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

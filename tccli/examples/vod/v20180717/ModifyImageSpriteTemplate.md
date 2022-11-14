@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vod ModifyImageSpriteTemplate --cli-unfold-argument  \
+    --ColumnCount 10 \
     --Definition 10001 \
     --Name 雪碧图模板1 \
-    --Width 128 \
-    --Height 128 \
-    --SampleType Percent \
-    --SampleInterval 10 \
     --RowCount 5 \
-    --ColumnCount 10
+    --SampleType Percent \
+    --Height 128 \
+    --Width 128 \
+    --SampleInterval 10
 ```
 
 Output: 

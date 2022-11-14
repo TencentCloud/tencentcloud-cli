@@ -493,9 +493,9 @@
       "output": "DisassociateSecurityGroupsResponse"
     },
     "InitDBInstances": {
-      "document": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等",
+      "document": "本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。",
       "input": "InitDBInstancesRequest",
-      "name": "初始化新实例",
+      "name": "初始化新实例（该接口已经不再维护，不建议使用）",
       "output": "InitDBInstancesResponse"
     },
     "InquiryPriceUpgradeInstances": {
@@ -10039,7 +10039,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10048,7 +10049,8 @@
           "member": "string",
           "name": "NewPassword",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10057,7 +10059,8 @@
           "member": "ParamInfo",
           "name": "Parameters",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10066,7 +10069,8 @@
           "member": "int64",
           "name": "Vport",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10081,7 +10085,8 @@
           "name": "AsyncRequestIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

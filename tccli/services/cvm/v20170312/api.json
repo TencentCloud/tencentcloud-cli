@@ -623,23 +623,14 @@
       "members": [
         {
           "default": "",
-          "document": "扩展数据",
-          "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
-          "member": "Externals",
-          "name": "Externals",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "定时器名称，目前仅支持销毁一个值：TerminateInstances。",
           "example": "\"xx\"",
           "member": "string",
           "name": "TimerAction",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -649,7 +640,19 @@
           "name": "ActionTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "扩展数据",
+          "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
+          "member": "Externals",
+          "name": "Externals",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -1532,7 +1535,8 @@
           "member": "string",
           "name": "LaunchTemplateName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1541,7 +1545,8 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1550,7 +1555,8 @@
           "member": "string",
           "name": "ImageId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1559,7 +1565,8 @@
           "member": "string",
           "name": "LaunchTemplateVersionDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1568,7 +1575,8 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1577,7 +1585,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1586,7 +1595,8 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1595,7 +1605,8 @@
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1604,7 +1615,8 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1613,7 +1625,8 @@
           "member": "int64",
           "name": "InstanceCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1622,7 +1635,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1631,7 +1645,8 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1640,7 +1655,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1649,7 +1665,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1658,7 +1675,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1667,7 +1685,8 @@
           "member": "string",
           "name": "HostName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1676,7 +1695,8 @@
           "member": "ActionTimer",
           "name": "ActionTimer",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1685,7 +1705,8 @@
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1694,7 +1715,8 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1703,7 +1725,8 @@
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1712,7 +1735,8 @@
           "member": "string",
           "name": "UserData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1721,7 +1745,8 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1730,7 +1755,8 @@
           "member": "string",
           "name": "CamRoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1739,7 +1765,8 @@
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1748,7 +1775,8 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1757,7 +1785,8 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1766,7 +1795,8 @@
           "member": "bool",
           "name": "DisableApiTermination",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1781,7 +1811,8 @@
           "name": "LaunchTemplateId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10635,6 +10666,17 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可用区类型。\n<li>availability-zone: 中心可用区</li>\n<li>edge-zone: 边缘可用区</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "availability-zone",
+          "member": "string",
+          "name": "ZoneType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

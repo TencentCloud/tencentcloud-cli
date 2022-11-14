@@ -1,23 +1,187 @@
 # 本版本更新包含以下内容：
 
-## 定制建模(afc) 版本：2020-02-26
+## 云服务器(cvm) 版本：2017-03-12
 
-### 第 3 次发布
+### 第 36 次发布
 
-发布时间：2022-11-14 06:10:34
+发布时间：2022-11-15 06:17:18
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)
+* [ActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/15753#ActionTimer)
+
+	* <font color="#dd0000">**修改成员**：</font>Externals
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#ZoneInfo)
+
+	* 新增成员：ZoneType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 23 次发布
+
+发布时间：2022-11-15 06:23:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：Endpoint, AutoJumpBackEvent
+
+	* 新增出参：ProxyOperatorIsVerified
+
+* [CreateFlowsByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75250)
+
+	* 新增入参：PreviewType
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：WithPreviewUrl
+
+* [SyncProxyOrganization](http://document.tencentcloudapi.woa.com/document/product/1595/75241)
+
+	* 新增入参：ProxyLegalName
+
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：PreviewUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 32 次发布
+
+发布时间：2022-11-15 06:31:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StructuralItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#StructuralItem)
+
+	* 新增成员：Row
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 25 次发布
+
+发布时间：2022-11-15 06:38:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 新增数据结构：
 
-* [TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)
-* [TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)
+* [VpcConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VpcConfig)
+
+修改数据结构：
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：Vpcs, IsVip
+
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 3 次发布
+
+发布时间：2022-11-15 06:40:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1124/51861#Tag)
+
+修改数据结构：
+
+* [DetailResults](http://document.tencentcloudapi.woa.com/document/product/1124/51861#DetailResults)
+
+	* 新增成员：Tags
+
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 34 次发布
+
+发布时间：2022-11-15 06:42:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/37788)
+
+	* 新增入参：Format
+
+* [ModifyImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/37776)
+
+	* 新增入参：Format
+
+
+修改数据结构：
+
+* [ImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#ImageSpriteTemplate)
+
+	* 新增成员：Format
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2022-11-15 06:43:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：QosLevel
+
 
 
 
@@ -255,12 +419,12 @@
 
 新增接口：
 
-* [[TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [TransportGeneralInterface](http://document.tencentcloudapi.woa.com/document/product/1029/76557)
 
 新增数据结构：
 
-* [[TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)](http://document.tencentcloudapi.woa.com/document/product/1029/44018#[TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput))
-* [[TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)](http://document.tencentcloudapi.woa.com/document/product/1029/44018#[TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput))
+* [TransportGeneralInterfaceInput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceInput)
+* [TransportGeneralInterfaceOutput](http://document.tencentcloudapi.woa.com/document/product/1029/44018#TransportGeneralInterfaceOutput)
 
 ### 第 2 次发布
 
@@ -12456,6 +12620,25 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 36 次发布
+
+发布时间：2022-11-15 06:17:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/15753#ActionTimer)
+
+	* <font color="#dd0000">**修改成员**：</font>Externals
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#ZoneInfo)
+
+	* 新增成员：ZoneType
+
+
 ### 第 35 次发布
 
 发布时间：2022-11-01 21:04:22
@@ -19343,6 +19526,42 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 23 次发布
+
+发布时间：2022-11-15 06:23:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：Endpoint, AutoJumpBackEvent
+
+	* 新增出参：ProxyOperatorIsVerified
+
+* [CreateFlowsByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75250)
+
+	* 新增入参：PreviewType
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：WithPreviewUrl
+
+* [SyncProxyOrganization](http://document.tencentcloudapi.woa.com/document/product/1595/75241)
+
+	* 新增入参：ProxyLegalName
+
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：PreviewUrl
+
 
 ### 第 22 次发布
 
@@ -28288,6 +28507,21 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 32 次发布
+
+发布时间：2022-11-15 06:31:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StructuralItem](http://document.tencentcloudapi.woa.com/document/product/866/33527#StructuralItem)
+
+	* 新增成员：Row
+
+
 ### 第 31 次发布
 
 发布时间：2022-11-01 21:20:59
@@ -35674,6 +35908,25 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 25 次发布
+
+发布时间：2022-11-15 06:38:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[VpcConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VpcConfig)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[VpcConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#VpcConfig))
+
+修改数据结构：
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：Vpcs, IsVip
+
+
 ### 第 24 次发布
 
 发布时间：2022-11-07 06:31:48
@@ -39145,6 +39398,25 @@
 
 ## 文本内容安全(tms) 版本：2020-12-29
 
+### 第 3 次发布
+
+发布时间：2022-11-15 06:40:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[Tag](http://document.tencentcloudapi.woa.com/document/product/1124/51861#Tag)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[Tag](http://document.tencentcloudapi.woa.com/document/product/1124/51861#Tag))
+
+修改数据结构：
+
+* [DetailResults](http://document.tencentcloudapi.woa.com/document/product/1124/51861#DetailResults)
+
+	* 新增成员：Tags
+
+
 ### 第 2 次发布
 
 发布时间：2021-12-20 08:02:27
@@ -41399,6 +41671,32 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 34 次发布
+
+发布时间：2022-11-15 06:42:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/37788)
+
+	* 新增入参：Format
+
+* [ModifyImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/37776)
+
+	* 新增入参：Format
+
+
+修改数据结构：
+
+* [ImageSpriteTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#ImageSpriteTemplate)
+
+	* 新增成员：Format
+
+
 ### 第 33 次发布
 
 发布时间：2022-11-08 06:36:20
@@ -42627,6 +42925,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2022-11-15 06:43:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：QosLevel
+
 
 ### 第 43 次发布
 

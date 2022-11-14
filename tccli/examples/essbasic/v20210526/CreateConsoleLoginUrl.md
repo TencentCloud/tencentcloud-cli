@@ -18,6 +18,7 @@ Output:
     "Response": {
         "ConsoleUrl": "https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE",
         "IsActivated": false,
+        "ProxyOperatorIsVerified": false,
         "RequestId": "s16221xxx14775648"
     }
 }
@@ -46,6 +47,7 @@ Output:
     "Response": {
         "ConsoleUrl": "https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE",
         "IsActivated": false,
+        "ProxyOperatorIsVerified": false,
         "RequestId": "s16221xxx14775648"
     }
 }
