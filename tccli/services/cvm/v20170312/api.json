@@ -617,16 +617,6 @@
       "members": [
         {
           "default": "",
-          "document": "扩展数据",
-          "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
-          "member": "Externals",
-          "name": "Externals",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "定时器名称，目前仅支持销毁一个值：TerminateInstances。",
           "example": "\"xx\"",
           "member": "string",
@@ -643,6 +633,16 @@
           "name": "ActionTime",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展数据",
+          "example": "{\"StorageBlockAttr\":{\"MinSize\":0,\"MaxSize\":0,\"Type\":\"xx\"}}",
+          "member": "Externals",
+          "name": "Externals",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

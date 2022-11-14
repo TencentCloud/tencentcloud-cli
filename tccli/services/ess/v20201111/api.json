@@ -957,12 +957,12 @@
         },
         {
           "default": "",
-          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
+          "document": "预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,",
           "example": "无",
-          "member": "string",
-          "name": "ClientToken",
+          "member": "int64",
+          "name": "PreviewType",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
@@ -972,6 +972,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "客户端Token，保持接口幂等性,最大长度64个字符",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1128,12 +1137,12 @@
         },
         {
           "default": "",
-          "document": "签署流程描述,最大长度1000个字符",
-          "example": "无",
-          "member": "string",
-          "name": "FlowDescription",
+          "document": "预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,",
+          "example": "0",
+          "member": "int64",
+          "name": "PreviewType",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
@@ -1195,6 +1204,15 @@
           "example": "无",
           "member": "string",
           "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署流程描述,最大长度1000个字符",
+          "example": "无",
+          "member": "string",
+          "name": "FlowDescription",
           "required": false,
           "type": "string"
         }

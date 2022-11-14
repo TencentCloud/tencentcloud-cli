@@ -96,6 +96,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Keyword\":\"约炮\",\"Score\":100,\"SubLabel\":\"Sexy\"}",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -198,6 +208,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "该字段用于返回审核结果明细字段的标签及分数",
+      "members": [
+        {
+          "default": "",
+          "document": "该字段用于返回命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "习近平",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回子标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ChinesePresident",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回子标签对应的分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

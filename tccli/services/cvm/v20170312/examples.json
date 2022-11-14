@@ -67,7 +67,7 @@
     "CreateLaunchTemplate": [
       {
         "document": "只传必传的Zone和镜像ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州二区，镜像ID为：img-pmqg1cw7，实例启动模板名称：test",
-        "input": "https://cvm.tencentcloudapi.com/?Action=CreateLaunchTemplate\n&Placement.Zone=ap-guangzhou-2\n&ImageId=img-pmqg1cw7\n&LaunchTemplateName=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchTemplate\n<公共请求参数>\n\n{\n    \"LaunchTemplateName\": \"test\",\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\"\n    },\n    \"ImageId\": \"img-pmqg1cw7\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchTemplateId\": \"lt-lobxe2yo\",\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec309\"\n    }\n}",
         "title": "使用最简单参数创建实例启动模板"
       }

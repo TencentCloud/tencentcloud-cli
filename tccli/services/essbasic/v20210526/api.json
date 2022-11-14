@@ -7,7 +7,7 @@
       "output": "ChannelBatchCancelFlowsResponse"
     },
     "ChannelCancelFlow": {
-      "document": "渠道版撤销签署流程接口\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人\n",
+      "document": "渠道版撤销签署流程接口\n仅支持未签署完成的合同\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人\n",
       "input": "ChannelCancelFlowRequest",
       "name": "渠道版撤销签署流程",
       "output": "ChannelCancelFlowResponse"
@@ -79,13 +79,13 @@
       "output": "ChannelVerifyPdfResponse"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建渠道子客企业控制台Web端登录链接。Web端登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程,首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。\n返回的Url仅支持PC端操作。",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建渠道子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
       "input": "CreateConsoleLoginUrlRequest",
-      "name": "生成控制台链接",
+      "name": "生成控制台、移动端链接",
       "output": "CreateConsoleLoginUrlResponse"
     },
     "CreateFlowsByTemplates": {
-      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建签署流程。当前可批量发起合同（签署流程）数量最大为20个。\n合同发起人必须在电子签已经进行实名。",
+      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建签署流程。当前可批量发起合同（签署流程）数量最大为20个。\n如若在模板中配置了动态表格, 上传的附件必须为A4大小\n合同发起人必须在电子签已经进行实名。",
       "input": "CreateFlowsByTemplatesRequest",
       "name": "使用多个模板批量创建签署流程",
       "output": "CreateFlowsByTemplatesResponse"
@@ -1116,7 +1116,7 @@
         },
         {
           "default": "",
-          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
+          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]\n查询离职员工时，Key为Status，Values为[\"QuiteJob\"]",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1699,6 +1699,24 @@
         },
         {
           "default": "",
+          "document": "链接跳转类型：\"PC\"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台",
+          "example": "无",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发自动跳转事件，仅对App类型有效，\"VERIFIED\":企业认证完成/员工认证完成后跳回原App/小程序",
+          "example": "无",
+          "member": "string",
+          "name": "AutoJumpBackEvent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -1713,7 +1731,7 @@
       "document": "CreateConsoleLoginUrl返回参数结构体",
       "members": [
         {
-          "document": "子客Web控制台url，此链接5分钟内有效，且只能访问一次。同时需要注意：\n1. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）；\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
+          "document": "子客Web控制台url注意事项：\n1. 所有类型的链接在企业未认证/员工未认证完成时，只要在有效期内（一年）都可以访问\n2. 若企业认证完成且员工认证完成后，重新获取pc端的链接5分钟之内有效，且只能访问一次\n3. 若企业认证完成且员工认证完成后，重新获取H5/APP的链接只要在有效期内（一年）都可以访问\n4. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）\n5. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -1726,6 +1744,15 @@
           "example": "无",
           "member": "bool",
           "name": "IsActivated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前经办人是否已认证（false:未认证 true:已认证）",
+          "example": "无",
+          "member": "bool",
+          "name": "ProxyOperatorIsVerified",
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1762,12 +1789,21 @@
         },
         {
           "default": "",
-          "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，不会发起合同，会返回PreviewUrls（此Url返回的是PDF文件流 ）；\n预览链接有效期300秒；\n同时，如果预览的文件中指定了动态表格控件，需要进行异步合成；此时此接口返回的是合成前的文档预览链接，而合成完成后的文档预览链接会通过：回调通知的方式、或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询；",
+          "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，不会发起合同，会返回PreviewUrls；\n预览链接有效期300秒；\n同时，如果预览的文件中指定了动态表格控件，需要进行异步合成；此时此接口返回的是合成前的文档预览链接，而合成完成后的文档预览链接会通过：回调通知的方式、或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询；",
           "example": "false",
           "member": "bool",
           "name": "NeedPreview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,",
+          "example": "0",
+          "member": "int64",
+          "name": "PreviewType",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -2316,6 +2352,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否获取模板预览链接",
+          "example": "无",
+          "member": "bool",
+          "name": "WithPreviewUrl",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2650,7 +2695,7 @@
         },
         {
           "default": "",
-          "document": "经办人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
+          "document": "签署人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -2660,7 +2705,7 @@
         },
         {
           "default": "",
-          "document": "经办人证件号",
+          "document": "签署人证件号",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -4449,6 +4494,15 @@
         },
         {
           "default": "",
+          "document": "渠道侧合作企业法人/负责人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyLegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -4599,6 +4653,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板的预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

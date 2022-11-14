@@ -7779,6 +7779,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段所在行号，下标从0开始，非行字段或未能识别行号的该值返回-1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Row",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -20162,6 +20162,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务质量级别：\n<li>`DEFAULT`：默认</li>\n<li>`PT`：云金</li>\n<li>`AU`：云银</li>\n<li>`AG`：云铜</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AG",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

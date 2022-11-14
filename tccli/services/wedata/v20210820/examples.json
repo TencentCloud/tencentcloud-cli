@@ -120,6 +120,22 @@
         "title": "判断告警规则重名"
       }
     ],
+    "CheckDuplicateRuleName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDuplicateRuleName\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"RuleId\": 1,\n    \"Name\": \"xx\",\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "检查规则名称是否重复"
+      }
+    ],
+    "CheckDuplicateTemplateName": [
+      {
+        "document": "检查规则名称是否重复",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDuplicateTemplateName\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Name\": \"xx\",\n    \"TemplateId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "检查规则名称是否重复"
+      }
+    ],
     "CheckIntegrationNodeNameExists": [
       {
         "document": "判断集成节点名称是否存在",
@@ -144,12 +160,36 @@
         "title": "离线任务重名校验"
       }
     ],
+    "CommitExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitExportTask\n<公共请求参数>\n\n{\n    \"RuleExecId\": 1,\n    \"ProjectId\": 1,\n    \"ExportType\": 1,\n    \"QueueName\": \"xx\",\n    \"ExecutorGroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "提交数据导出任务"
+      }
+    ],
     "CommitIntegrationTask": [
       {
         "document": "提交集成任务",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"CommitType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
         "title": "提交集成任务"
+      }
+    ],
+    "CommitRuleGroupExecResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitRuleGroupExecResult\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11\",\n    \"RuleGroupExecId\": 15,\n    \"RuleGroupState\": \"COMPLETED\",\n    \"RuleExecResults\": [\n        {\n            \"RuleId\": 2,\n            \"RuleExecId\": 9,\n            \"State\": \"COMPLETED\",\n            \"Data\": [\n                100\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "runner 结果上报"
+      }
+    ],
+    "CommitRuleGroupTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitRuleGroupTask\n<公共请求参数>\n\n{\n    \"ExecRuleConfig\": [\n        {\n            \"ConditionType\": 1,\n            \"Condition\": \"xx\",\n            \"RuleId\": 1\n        }\n    ],\n    \"ExecConfig\": {\n        \"ExecutorGroupId\": \"1\",\n        \"QueueName\": \"xx\"\n    },\n    \"TriggerType\": 1,\n    \"RuleGroupId\": 1,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 1,\n            \"AlarmRuleCount\": 1,\n            \"DatabaseId\": \"xx\",\n            \"RuleGroupId\": 1,\n            \"RuleGroupExecId\": 1,\n            \"TableName\": \"xx\",\n            \"ExecTime\": \"xx\",\n            \"TableId\": \"xx\",\n            \"TableOwnerName\": \"xx\",\n            \"TriggerType\": 1,\n            \"DatasourceId\": \"xx\",\n            \"TotalRuleCount\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "提交规则组运行任务接口"
       }
     ],
     "CreateCustomFunction": [
@@ -230,6 +270,22 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrUpdateResource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1171938931991703552\",\n    \"Files\": [\n        \"wedata-udf-1.0_v1.jar\"\n    ],\n    \"FilePath\": \"/datastudio/resource\",\n    \"CosBucketName\": \"hannahtest-1257305158\",\n    \"CosRegion\": \"ap-guangzhou\",\n    \"NewFile\": true,\n    \"FilesSize\": [\n        \"3167\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ResourceId\": \"75431931-7d27-4034-b3de-3dc3348a220e\",\n                \"FileName\": \"wedata-spark-1.0-SNAPSHOT.jar\",\n                \"FileExtensionType\": \"jar\",\n                \"Md5Value\": null,\n                \"CreateTime\": 1665648126363,\n                \"UpdateTime\": 1665648126363,\n                \"Size\": 8148,\n                \"LocalPath\": \"/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"RemotePath\": \"/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"OwnerName\": \"fe\",\n                \"Owner\": \"100022256608\",\n                \"PathDepth\": 5,\n                \"ProjectId\": \"1171938931991703552\",\n                \"ExtraInfo\": null,\n                \"LocalTmpPath\": \"/tmp//datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar\",\n                \"ZipPath\": null,\n                \"Bucket\": \"agent-test-1257305158\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "CreateRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRule\n<公共请求参数>\n\n{\n    \"FieldConfig\": {\n        \"WhereConfig\": [\n            {\n                \"FieldKey\": \"xx\",\n                \"FieldValue\": \"xx\"\n            }\n        ],\n        \"TableConfig\": [\n            {\n                \"DatabaseId\": \"xx\",\n                \"FieldConfig\": [\n                    {\n                        \"FieldKey\": \"xx\",\n                        \"FieldValue\": \"xx\"\n                    }\n                ],\n                \"TableName\": \"xx\",\n                \"TableId\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"TableKey\": \"xx\"\n            }\n        ]\n    },\n    \"ConditionExpression\": \"xx\",\n    \"DatabaseId\": \"xx\",\n    \"QualityDim\": 1,\n    \"TableId\": \"xx\",\n    \"TargetTableId\": \"xx\",\n    \"Type\": 1,\n    \"CustomSql\": \"xx\",\n    \"Name\": \"xx\",\n    \"Description\": \"xx\",\n    \"TargetDatabaseId\": \"xx\",\n    \"TargetObjectValue\": \"xx\",\n    \"ConditionType\": 1,\n    \"RelConditionExpr\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"TargetConditionExpr\": \"xx\",\n    \"CompareRule\": {\n        \"Items\": [\n            {\n                \"Operator\": \"xx\",\n                \"ValueComputeType\": 1,\n                \"ValueList\": [\n                    {\n                        \"ValueType\": 1,\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"CompareType\": 1\n            }\n        ]\n    },\n    \"RuleTemplateId\": 1,\n    \"DatasourceId\": \"xx\",\n    \"SourceObjectDataTypeName\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"SourceObjectValue\": \"xx\",\n    \"AlarmLevel\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CompareRule\": {\n                \"Items\": [\n                    {\n                        \"Operator\": \"xx\",\n                        \"ValueComputeType\": 1,\n                        \"ValueList\": [\n                            {\n                                \"ValueType\": 1,\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"CompareType\": 1\n                    }\n                ]\n            },\n            \"ConditionType\": 1,\n            \"RuleTemplateContent\": \"xx\",\n            \"Name\": \"xx\",\n            \"RuleGroupId\": 1,\n            \"SourceObjectDataType\": 1,\n            \"RuleId\": 1,\n            \"AlarmLevel\": 1,\n            \"SourceObjectValue\": \"xx\",\n            \"RuleTemplateId\": 1,\n            \"SourceObjectDataTypeName\": \"xx\",\n            \"TableId\": \"xx\",\n            \"CustomSql\": \"xx\",\n            \"Operator\": \"xx\",\n            \"Description\": \"xx\",\n            \"Type\": 1,\n            \"ConditionExpression\": \"xx\",\n            \"SourceObjectType\": 1,\n            \"QualityDim\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建质量规则接口"
+      }
+    ],
+    "CreateRuleTemplate": [
+      {
+        "document": "创建规则模版",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"ProjectId\": 1,\n    \"MultiSourceFlag\": true,\n    \"SqlExpression\": \"xx\",\n    \"Description\": \"xx\",\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"QualityDim\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建规则模版"
       }
     ],
     "CreateTask": [
@@ -320,6 +376,22 @@
         "title": "示例1"
       }
     ],
+    "DeleteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRule\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除质量规则接口"
+      }
+    ],
+    "DeleteRuleTemplate": [
+      {
+        "document": "删除规则模版",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRuleTemplate\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Ids\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除规则模版"
+      }
+    ],
     "DeleteTaskAlarmRegular": [
       {
         "document": "",
@@ -358,6 +430,30 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNamespaceList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"ProjectId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatedAt\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "获取集群命名空间列表"
+      }
+    ],
+    "DescribeDataBases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataBases\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"DatasourceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"xx\",\n                \"DatasourceId\": \"xx\",\n                \"DatabaseId\": \"xx\",\n                \"DatasourceName\": \"xx\",\n                \"DatabaseName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询数据来源列表"
+      }
+    ],
+    "DescribeDataCheckStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataCheckStat\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"BeginDate\": \"1645155262\",\n    \"EndDate\": \"1645155262\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ColumnConfig\": 1,\n            \"TableExec\": 1,\n            \"ColumnExec\": 1,\n            \"ColumnTotal\": 1,\n            \"TableConfig\": 1,\n            \"TableTotal\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "数据检测情况"
+      }
+    ],
+    "DescribeDataObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataObjects\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TableId\": \"1\",\n    \"DatasourceId\": \"1\",\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"SourceObjectValue\": \"xx\",\n                \"SourceObjectDataTypeName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则组数据对象列表"
       }
     ],
     "DescribeDataSourceInfoList": [
@@ -414,6 +510,22 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDependTasksNew\n<公共请求参数>\n\n{\n    \"Deep\": 1,\n    \"TaskId\": \"123123\",\n    \"Up\": 2,\n    \"ProjectId\": 1,\n    \"WorkflowId\": \"338a6229-72d6-11ec-854b-525400f55a20\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TasksList\": [\n                {\n                    \"TaskId\": \"20220107114644842\",\n                    \"TaskName\": \"hive_sql\",\n                    \"WorkflowId\": \"be741023-6d44-11ec-a07d-525400f55a20\",\n                    \"WorkflowName\": \"mywf1\",\n                    \"ProjectName\": \"zch\",\n                    \"ProjectIdent\": \"zch\",\n                    \"Status\": \"F\",\n                    \"TaskTypeId\": 34,\n                    \"TaskTypeDesc\": \"Hive SQL\",\n                    \"ProjectId\": \"8\",\n                    \"FolderName\": \"mytest\",\n                    \"FolderId\": \"b9f64ab3-6d44-11ec-a07d-525400f55a20\",\n                    \"FirstSubmitTime\": \"2022-02-19 19:33:07\",\n                    \"FirstRunTime\": null,\n                    \"ScheduleDesc\": null,\n                    \"CycleUnit\": \"D\",\n                    \"InCharge\": \";wangling;xue;\",\n                    \"TaskAction\": \"\",\n                    \"DelayTime\": 0,\n                    \"LeftCoordinate\": 755.17,\n                    \"TopCoordinate\": 459.5,\n                    \"VirtualFlag\": true\n                },\n                {\n                    \"TaskId\": \"20220107142238149\",\n                    \"TaskName\": \"asdfasfaasdf\",\n                    \"WorkflowId\": \"be741023-6d44-11ec-a07d-525400f55a20\",\n                    \"WorkflowName\": \"mywf1\",\n                    \"ProjectName\": \"zch\",\n                    \"ProjectIdent\": \"zch\",\n                    \"Status\": \"Y\",\n                    \"TaskTypeId\": 30,\n                    \"TaskTypeDesc\": \"Python\",\n                    \"ProjectId\": \"8\",\n                    \"FolderName\": \"mytest\",\n                    \"FolderId\": \"b9f64ab3-6d44-11ec-a07d-525400f55a20\",\n                    \"FirstSubmitTime\": \"2022-01-12 21:32:47\",\n                    \"FirstRunTime\": null,\n                    \"ScheduleDesc\": null,\n                    \"CycleUnit\": \"D\",\n                    \"InCharge\": \";admin;\",\n                    \"TaskAction\": \"\",\n                    \"DelayTime\": 0,\n                    \"LeftCoordinate\": 206.0,\n                    \"TopCoordinate\": 254.0,\n                    \"VirtualFlag\": false\n                },\n                {\n                    \"TaskId\": \"20220111200138961\",\n                    \"TaskName\": \"shell_01\",\n                    \"WorkflowId\": \"338a6229-72d6-11ec-854b-525400f55a20\",\n                    \"WorkflowName\": \"ceshi\",\n                    \"ProjectName\": \"zch\",\n                    \"ProjectIdent\": \"zch\",\n                    \"Status\": \"Y\",\n                    \"TaskTypeId\": 38,\n                    \"TaskTypeDesc\": \"SHELL\",\n                    \"ProjectId\": \"8\",\n                    \"FolderName\": \"hhhuilli\",\n                    \"FolderId\": \"a7704640-72c0-11ec-854b-525400f55a20\",\n                    \"FirstSubmitTime\": \"2022-01-18 17:30:45\",\n                    \"FirstRunTime\": \"2022-01-12 00:00:00\",\n                    \"ScheduleDesc\": \"从2022-01-12 00:00:00开始，每间隔1天执行一次\",\n                    \"CycleUnit\": \"D\",\n                    \"InCharge\": \";hui;\",\n                    \"TaskAction\": \"\",\n                    \"DelayTime\": 0,\n                    \"LeftCoordinate\": 1691.0,\n                    \"TopCoordinate\": 234.0,\n                    \"VirtualFlag\": false\n                }\n            ],\n            \"LinksList\": [\n                {\n                    \"TaskTo\": \"20220111200138961\",\n                    \"TaskFrom\": \"20220107114644842\",\n                    \"LinkType\": \"virtual_real\",\n                    \"LinkId\": \"c89d3dd2-ad84-11ec-9431-e997374ddc6b\"\n                },\n                {\n                    \"TaskTo\": \"20220107142238149\",\n                    \"TaskFrom\": \"20220111200138961\",\n                    \"LinkType\": \"virtual_real\",\n                    \"LinkId\": \"b8504d7e-ad85-11ec-9431-e997374ddc6b\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "根据层级查找上-下游任务节点"
+      }
+    ],
+    "DescribeDimensionScore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDimensionScore\n<公共请求参数>\n\n{\n    \"StatisticsDate\": 1647878400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"qwe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a131b8-0de7-4cb8-a354-9bbfc5d3a028\",\n        \"Data\": {}\n    }\n}",
+        "title": "查询维度评分"
+      }
+    ],
+    "DescribeExecStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExecStrategy\n<公共请求参数>\n\n{\n    \"RuleGroupId\": 1,\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6347c5c-10bd-4c70-b066-bc62ccbff7be\",\n        \"Data\": {\n            \"RuleGroupId\": null,\n            \"MonitorType\": 2,\n            \"ExecQueue\": \"root.default\",\n            \"ExecutorGroupId\": \"1\",\n            \"ExecutorGroupName\": \"worker\",\n            \"Tasks\": [\n                {\n                    \"TaskId\": \"1\",\n                    \"TaskName\": \"task_1\",\n                    \"WorkflowId\": \"1\"\n                }\n            ],\n            \"StartTime\": null,\n            \"EndTime\": null,\n            \"CycleType\": \"H\",\n            \"CycleStep\": 1,\n            \"TaskAction\": \"1\",\n            \"DelayTime\": 1\n        }\n    }\n}",
+        "title": "例子"
       }
     ],
     "DescribeFolderList": [
@@ -520,6 +632,14 @@
         "title": "范例"
       }
     ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "请求实例列表"
+      }
+    ],
     "DescribeIntegrationNode": [
       {
         "document": "查询集成节点",
@@ -608,6 +728,14 @@
         "title": "获取kafka的topic信息"
       }
     ],
+    "DescribeMonitorsByPage": [
+      {
+        "document": "分页查询质量监控组",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorsByPage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"DatabaseId\": \"xx\",\n                    \"MonitorStatus\": 1,\n                    \"RuleGroupId\": 1,\n                    \"CreateUserId\": 1,\n                    \"CreateUserName\": \"xx\",\n                    \"DatasourceId\": 1,\n                    \"TableId\": \"xx\",\n                    \"MonitorType\": 1,\n                    \"CreateTime\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分页查询质量监控组"
+      }
+    ],
     "DescribeOfflineTaskToken": [
       {
         "document": "",
@@ -622,6 +750,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationalFunctions\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"Type\": \"xx\",\n    \"Name\": \"xx\",\n    \"DisplayName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Category\": \"xx\",\n                \"Status\": \"xx\",\n                \"Kind\": \"xx\",\n                \"DisplayName\": \"xx\",\n                \"Name\": \"xx\",\n                \"OwnerUserIds\": [\n                    0\n                ],\n                \"ReturnDesc\": \"xx\",\n                \"FuncId\": \"xx\",\n                \"ParamDesc\": \"xx\",\n                \"Example\": \"xx\",\n                \"ClassName\": \"xx\",\n                \"ResourceList\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"UserName\": \"xx\",\n                        \"Timestamp\": \"xx\",\n                        \"UserId\": \"xx\",\n                        \"Content\": \"xx\",\n                        \"Tag\": \"xx\",\n                        \"Type\": \"xx\"\n                    }\n                ],\n                \"OperatorUserIds\": [\n                    0\n                ],\n                \"Usage\": \"xx\",\n                \"ClusterIdentifier\": \"xx\",\n                \"LayerPath\": \"xx\",\n                \"Type\": \"xx\",\n                \"ParentLayerPath\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"ErrorMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询全量函数（层级化）接口"
+      }
+    ],
+    "DescribeProdTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProdTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"Keyword\"\n        }\n    ],\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TaskName\": \"xx\",\n                \"TaskId\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取生产调度任务列表"
       }
     ],
     "DescribeProject": [
@@ -642,6 +778,22 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProject\n<公共请求参数>\n\n{\n    \"ProjectName\": \"unique_2rij3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"949cd55d-e683-4698-a1cd-c142cf7b1e75\"\n    }\n}",
         "title": "projectName transfer"
+      }
+    ],
+    "DescribeQualityScore": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityScore\n<公共请求参数>\n\n{\n    \"StatisticsDate\": 1647878400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cb20a58-a110-48ed-b539-0807e9af05d6\",\n        \"Data\": {\n            \"CompositeScore\": 17.76,\n            \"TotalTableNumber\": 1,\n            \"ScoringDistribution\": [\n                {\n                    \"Level\": 1,\n                    \"TableNumber\": 1,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 2,\n                    \"TableNumber\": 1,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 3,\n                    \"TableNumber\": 0,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 4,\n                    \"TableNumber\": 0,\n                    \"Scale\": 0\n                },\n                {\n                    \"Level\": 5,\n                    \"TableNumber\": 1,\n                    \"Scale\": 100\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询质量评分"
+      }
+    ],
+    "DescribeQualityScoreTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityScoreTrend\n<公共请求参数>\n\n{\n    \"StatisticsStartDate\": 1679414400,\n    \"StatisticsEndDate\": 1679414400,\n    \"ProjectId\": \"1\",\n    \"DatasourceId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {}\n    }\n}",
+        "title": "质量评分趋势"
       }
     ],
     "DescribeRealTimeTaskInstanceNodeInfo": [
@@ -690,6 +842,190 @@
         "title": "示例1"
       }
     ],
+    "DescribeRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRule\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CompareRule\": {\n                \"Items\": [\n                    {\n                        \"Operator\": \"xx\",\n                        \"ValueComputeType\": 1,\n                        \"ValueList\": [\n                            {\n                                \"ValueType\": 1,\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"CompareType\": 1\n                    }\n                ]\n            },\n            \"ConditionType\": 1,\n            \"RuleTemplateContent\": \"xx\",\n            \"Name\": \"xx\",\n            \"RuleGroupId\": 1,\n            \"SourceObjectDataType\": 1,\n            \"RuleId\": 1,\n            \"AlarmLevel\": 1,\n            \"SourceObjectValue\": \"xx\",\n            \"RuleTemplateId\": 1,\n            \"SourceObjectDataTypeName\": \"xx\",\n            \"TableId\": 1,\n            \"CustomSql\": \"xx\",\n            \"Operator\": \"xx\",\n            \"Description\": \"xx\",\n            \"Type\": 1,\n            \"ConditionExpression\": \"xx\",\n            \"SourceObjectType\": 1,\n            \"QualityDim\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则详情"
+      }
+    ],
+    "DescribeRuleDataSources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleDataSources\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"DatasourceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DatabaseId\": \"xx\",\n                \"DatasourceName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"DatasourceType\": 1,\n                \"DatasourceId\": \"xx\",\n                \"DatabaseName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询质量规则数据源"
+      }
+    ],
+    "DescribeRuleDimStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleDimStat\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"BeginDate\": \"1645155262\",\n    \"EndDate\": \"1645155262\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DimCntList\": [\n                {\n                    \"Dim\": 1,\n                    \"Cnt\": 1\n                }\n            ],\n            \"TotalCnt\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则触发维度情况"
+      }
+    ],
+    "DescribeRuleExecDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecDetail\n<公共请求参数>\n\n{\n    \"RuleExecId\": 1,\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DatabaseId\": \"xx\",\n            \"DatasourceName\": \"xx\",\n            \"InstanceId\": \"xx\",\n            \"TableName\": \"xx\",\n            \"DatasourceId\": 1,\n            \"DatabaseName\": \"xx\",\n            \"RuleExecResult\": {\n                \"RuleType\": 1,\n                \"QualityDim\": 1,\n                \"RelConditionExpr\": \"xx\",\n                \"RuleGroupId\": 1,\n                \"RuleExecId\": 1,\n                \"ConditionExpression\": \"xx\",\n                \"RuleId\": 1,\n                \"ExecResultStatus\": 1,\n                \"TargetDBTableName\": \"xx\",\n                \"SourceObjectValue\": \"xx\",\n                \"RuleGroupExecId\": 1,\n                \"SourceObjectDataTypeName\": \"xx\",\n                \"TargetObjectDataType\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"TriggerResult\": \"xx\",\n                \"CompareResult\": {\n                    \"Items\": [\n                        {\n                            \"ResultValue\": \"xx\",\n                            \"FixResult\": 1,\n                            \"ValueComputeType\": 1,\n                            \"Values\": [\n                                {\n                                    \"ValueType\": 1,\n                                    \"Value\": \"xx\"\n                                }\n                            ],\n                            \"CompareType\": 1,\n                            \"Operator\": \"xx\"\n                        }\n                    ]\n                },\n                \"TargetObjectValue\": \"xx\",\n                \"TemplateName\": \"xx\",\n                \"FieldConfig\": {\n                    \"WhereConfig\": [\n                        {\n                            \"FieldKey\": \"xx\",\n                            \"FieldValue\": \"xx\",\n                            \"FieldDataType\": \"xx\"\n                        }\n                    ],\n                    \"TableConfig\": [\n                        {\n                            \"DatabaseId\": \"xx\",\n                            \"FieldConfig\": [\n                                {\n                                    \"FieldKey\": \"xx\",\n                                    \"FieldValue\": \"xx\",\n                                    \"FieldDataType\": \"xx\"\n                                }\n                            ],\n                            \"TableName\": \"xx\",\n                            \"TableId\": \"xx\",\n                            \"DatabaseName\": \"xx\",\n                            \"TableKey\": \"xx\"\n                        }\n                    ]\n                }\n            },\n            \"TableId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则执行结果详情"
+      }
+    ],
+    "DescribeRuleExecExportResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecExportResult\n<公共请求参数>\n\n{\n    \"RuleExecId\": 1,\n    \"ProjectId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RuleExecId\": 1,\n            \"ExportTasks\": [\n                {\n                    \"Status\": 1,\n                    \"SchedulerCurRunDate\": \"xx\",\n                    \"OperatorId\": 1,\n                    \"FilePath\": \"xx\",\n                    \"ExportTaskId\": 1,\n                    \"CreateTime\": \"xx\",\n                    \"TaskType\": 1,\n                    \"SchedulerTaskId\": \"xx\",\n                    \"OperatorName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则执行导出结果"
+      }
+    ],
+    "DescribeRuleExecHistory": [
+      {
+        "document": "查询规则执行历史， 最近30条",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecHistory\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RuleType\": 1,\n                \"QualityDim\": 1,\n                \"RuleId\": 1,\n                \"RuleExecId\": 1,\n                \"ConditionExpression\": \"xx\",\n                \"RuleGroupId\": 1,\n                \"ExecResultStatus\": 1,\n                \"SourceObjectValue\": \"xx\",\n                \"RuleGroupExecId\": 1,\n                \"SourceObjectDataTypeName\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"TriggerResult\": \"xx\",\n                \"TemplateName\": \"xx\",\n                \"CompareResult\": {\n                    \"Items\": [\n                        {\n                            \"ResultValue\": \"xx\",\n                            \"FixResult\": 1,\n                            \"ValueComputeType\": 1,\n                            \"Values\": [\n                                {\n                                    \"ValueType\": 1,\n                                    \"Value\": \"xx\"\n                                }\n                            ],\n                            \"CompareType\": 1,\n                            \"Operator\": \"xx\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则执行历史， 最近30条"
+      }
+    ],
+    "DescribeRuleExecLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecLog\n<公共请求参数>\n\n{\n    \"RuleGroupExecId\": 1,\n    \"RuleExecId\": 1,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Finished\": true,\n            \"Log\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeRuleExecResults"
+      }
+    ],
+    "DescribeRuleExecResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecResults\n<公共请求参数>\n\n{\n    \"RuleGroupExecId\": 1,\n    \"ProjectId\": \"123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {}\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则执行结果列表查询"
+      }
+    ],
+    "DescribeRuleExecResultsByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecResultsByPage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"RuleType\": 1,\n                    \"QualityDim\": 1,\n                    \"RelConditionExpr\": \"xx\",\n                    \"RuleGroupId\": 1,\n                    \"RuleExecId\": 1,\n                    \"ConditionExpression\": \"xx\",\n                    \"RuleId\": 1,\n                    \"ExecResultStatus\": 1,\n                    \"TargetDBTableName\": \"xx\",\n                    \"SourceObjectValue\": \"xx\",\n                    \"RuleGroupExecId\": 1,\n                    \"SourceObjectDataTypeName\": \"xx\",\n                    \"TargetObjectDataType\": \"xx\",\n                    \"RuleName\": \"xx\",\n                    \"TriggerResult\": \"xx\",\n                    \"CompareResult\": {\n                        \"Items\": [\n                            {\n                                \"ResultValue\": \"xx\",\n                                \"FixResult\": 1,\n                                \"ValueComputeType\": 1,\n                                \"Values\": [\n                                    {\n                                        \"ValueType\": 1,\n                                        \"Value\": \"xx\"\n                                    }\n                                ],\n                                \"CompareType\": 1,\n                                \"Operator\": \"xx\"\n                            }\n                        ]\n                    },\n                    \"TargetObjectValue\": \"xx\",\n                    \"TemplateName\": \"xx\",\n                    \"FieldConfig\": {\n                        \"WhereConfig\": [\n                            {\n                                \"FieldKey\": \"xx\",\n                                \"FieldValue\": \"xx\",\n                                \"FieldDataType\": \"xx\"\n                            }\n                        ],\n                        \"TableConfig\": [\n                            {\n                                \"DatabaseId\": \"xx\",\n                                \"FieldConfig\": [\n                                    {\n                                        \"FieldKey\": \"xx\",\n                                        \"FieldValue\": \"xx\",\n                                        \"FieldDataType\": \"xx\"\n                                    }\n                                ],\n                                \"TableName\": \"xx\",\n                                \"TableId\": \"xx\",\n                                \"DatabaseName\": \"xx\",\n                                \"TableKey\": \"xx\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeRuleExecStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleExecStat\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"BeginDate\": \"1645155262\",\n    \"EndDate\": \"1645155262\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AlarmCnt\": 1,\n            \"LastTotalCntRatio\": 0.0,\n            \"LastTriggerCnt\": 1,\n            \"AlarmCntRatio\": 0.0,\n            \"TotalCntRatio\": 0.0,\n            \"TriggerCnt\": 1,\n            \"TriggerCntRatio\": 0.0,\n            \"LastPipelineCntRatio\": 0.0,\n            \"PipelineCntRatio\": 0.0,\n            \"TotalCnt\": 1,\n            \"PipelineCnt\": 1,\n            \"LastTriggerCntRatio\": 0.0,\n            \"LastTotalCnt\": 1,\n            \"LastAlarmCntRatio\": 0.0,\n            \"LastAlarmCnt\": 1,\n            \"LastPipelineCnt\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则运行情况"
+      }
+    ],
+    "DescribeRuleGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroup\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"DatabaseId\": \"xx\",\n    \"TableId\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UpdateTime\": \"xx\",\n            \"DatasourceName\": \"xx\",\n            \"TableOwnerName\": \"xx\",\n            \"RuleGroupId\": 1,\n            \"DatasourceType\": 1,\n            \"TableName\": \"xx\",\n            \"DatabaseId\": \"xx\",\n            \"TableId\": \"xx\",\n            \"DatabaseName\": \"xx\",\n            \"MonitorType\": 1,\n            \"ExecStrategy\": {\n                \"Tasks\": [\n                    {\n                        \"TaskName\": \"xx\",\n                        \"TaskId\": 1\n                    }\n                ],\n                \"ExecQueue\": \"xx\",\n                \"RuleGroupId\": 1,\n                \"ExecutorGroupName\": \"xx\",\n                \"MonitorType\": 1,\n                \"ExecutorGroupId\": 1\n            },\n            \"DatasourceId\": \"xx\",\n            \"Subscription\": {\n                \"Receivers\": [\n                    {\n                        \"ReceiverUserId\": 1,\n                        \"ReceiverName\": \"xx\"\n                    }\n                ],\n                \"SubscribeType\": [\n                    1\n                ],\n                \"RuleGroupId\": 1\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则组详情接口"
+      }
+    ],
+    "DescribeRuleGroupExecResultsByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupExecResultsByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"Status\": 1,\n                    \"AlarmRuleCount\": 1,\n                    \"RuleGroupId\": 1,\n                    \"RuleGroupExecId\": 1,\n                    \"TableName\": \"xx\",\n                    \"ExecTime\": \"xx\",\n                    \"TableId\": 1,\n                    \"TableOwnerName\": \"xx\",\n                    \"TriggerType\": 1,\n                    \"TotalRuleCount\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则组执行结果分页查询接口"
+      }
+    ],
+    "DescribeRuleGroupExecResultsByPageWithoutAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupExecResultsByPageWithoutAuth\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"Status\": 1,\n                    \"AlarmRuleCount\": 1,\n                    \"DatabaseId\": \"xx\",\n                    \"RuleGroupId\": 1,\n                    \"RuleGroupExecId\": 1,\n                    \"Permission\": true,\n                    \"TableName\": \"xx\",\n                    \"ExecDetail\": \"xx\",\n                    \"ExecTime\": \"xx\",\n                    \"TableId\": \"xx\",\n                    \"TableOwnerName\": \"xx\",\n                    \"TriggerType\": 1,\n                    \"DatasourceId\": \"xx\",\n                    \"TotalRuleCount\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeRuleGroupSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupSubscription\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Receivers\": [\n                {\n                    \"ReceiverName\": \"xx\"\n                }\n            ],\n            \"SubscribeType\": [\n                1\n            ],\n            \"RuleGroupId\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则组订阅信息"
+      }
+    ],
+    "DescribeRuleGroupTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupTable\n<公共请求参数>\n\n{\n    \"TableId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RuleGroups\": [\n                {\n                    \"CycleTaskId\": \"xx\",\n                    \"EndTime\": \"xx\",\n                    \"AssociateTaskIds\": [\n                        \"xx\"\n                    ],\n                    \"CycleDesc\": \"xx\",\n                    \"CycleType\": \"xx\",\n                    \"DelayTime\": 0,\n                    \"StartTime\": \"xx\",\n                    \"Id\": 0,\n                    \"MonitorType\": 0,\n                    \"TaskAction\": \"xx\",\n                    \"CycleStep\": 0\n                }\n            ],\n            \"TableInfo\": {\n                \"DatabaseId\": \"xx\",\n                \"DatasourceName\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"TableName\": \"xx\",\n                \"UserId\": 0,\n                \"TableId\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"ProjectId\": 0,\n                \"DatasourceType\": 0,\n                \"DatasourceId\": \"xx\"\n            },\n            \"Subscriptions\": [\n                {\n                    \"Receivers\": [\n                        {\n                            \"ReceiverUserId\": 1,\n                            \"ReceiverName\": \"xx\"\n                        }\n                    ],\n                    \"SubscribeType\": [\n                        1\n                    ],\n                    \"RuleGroupId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询表绑定执行规则组信息"
+      }
+    ],
+    "DescribeRuleGroupsByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupsByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UpdateTime\": \"xx\",\n                    \"DatasourceName\": \"xx\",\n                    \"RuleGroupId\": 1,\n                    \"DatasourceType\": 1,\n                    \"TableName\": \"xx\",\n                    \"TableId\": 1,\n                    \"TableOwnerName\": \"xx\",\n                    \"MonitorType\": 1,\n                    \"ExecStrategy\": {\n                        \"Tasks\": [\n                            {\n                                \"TaskName\": \"xx\",\n                                \"TaskId\": 1\n                            }\n                        ],\n                        \"ExecQueue\": \"xx\",\n                        \"RuleGroupId\": 1,\n                        \"ExecutorGroupName\": \"xx\",\n                        \"MonitorType\": 1,\n                        \"ExecutorGroupId\": 1\n                    },\n                    \"DatasourceId\": 1,\n                    \"Subscription\": {\n                        \"Receivers\": [\n                            {\n                                \"ReceiverName\": \"xx\"\n                            }\n                        ],\n                        \"SubscribeType\": [\n                            1\n                        ],\n                        \"RuleGroupId\": 1\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分页查询规则组接口"
+      }
+    ],
+    "DescribeRuleHistoryByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleHistoryByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"AlterTime\": \"xx\",\n                    \"AlterContent\": \"xx\",\n                    \"OperatorUserId\": 1,\n                    \"OperatorName\": \"xx\",\n                    \"RuleId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分页查询规则操作记录接口"
+      }
+    ],
+    "DescribeRuleTablesByPage": [
+      {
+        "document": "获取表列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTablesByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UpdateTime\": \"xx\",\n                    \"DatasourceName\": \"xx\",\n                    \"TableOwnerName\": \"xx\",\n                    \"Permission\": true,\n                    \"DatasourceType\": 1,\n                    \"RuleGroupId\": 1,\n                    \"TableName\": \"xx\",\n                    \"DatabaseId\": \"xx\",\n                    \"TableId\": \"xx\",\n                    \"DatabaseName\": \"xx\",\n                    \"MonitorType\": 1,\n                    \"RuleCount\": 1,\n                    \"ExecStrategy\": {\n                        \"Tasks\": [\n                            {\n                                \"TaskName\": \"xx\",\n                                \"WorkflowId\": \"xx\",\n                                \"TaskId\": \"xx\"\n                            }\n                        ],\n                        \"DelayTime\": 1,\n                        \"ExecQueue\": \"xx\",\n                        \"RuleGroupId\": 1,\n                        \"TaskAction\": \"xx\",\n                        \"CycleType\": \"xx\",\n                        \"ExecutorGroupName\": \"xx\",\n                        \"StartTime\": \"xx\",\n                        \"MonitorType\": 1,\n                        \"EndTime\": \"xx\",\n                        \"ExecutorGroupId\": \"xx\",\n                        \"CycleStep\": 1\n                    },\n                    \"MonitorStatus\": true,\n                    \"DatasourceId\": \"xx\",\n                    \"Subscription\": {\n                        \"Receivers\": [\n                            {\n                                \"ReceiverUserId\": 1,\n                                \"ReceiverName\": \"xx\"\n                            }\n                        ],\n                        \"SubscribeType\": [\n                            1\n                        ],\n                        \"RuleGroupId\": 1\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取表列表"
+      }
+    ],
+    "DescribeRuleTemplate": [
+      {
+        "document": "查询模板详情",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplate\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"TemplateId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UserName\": \"xx\",\n            \"SourceEngineTypes\": [\n                1\n            ],\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"MultiSourceFlag\": true,\n            \"SourceObjectDataType\": 1,\n            \"SourceContent\": \"xx\",\n            \"UserId\": 1,\n            \"CitationCount\": 1,\n            \"WhereFlag\": true,\n            \"QualityDim\": 1,\n            \"RuleTemplateId\": 1,\n            \"CompareType\": 1,\n            \"SqlExpression\": \"xx\",\n            \"Type\": 1,\n            \"SourceObjectType\": 1,\n            \"Description\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询模板详情"
+      }
+    ],
+    "DescribeRuleTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplates\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"SourceObjectType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"SourceEngineTypes\": [\n                    1\n                ],\n                \"QualityDim\": 1,\n                \"SourceObjectDataType\": 1,\n                \"SourceContent\": \"xx\",\n                \"CitationCount\": 1,\n                \"RuleTemplateId\": 1,\n                \"CompareType\": 1,\n                \"Name\": \"xx\",\n                \"Type\": 1,\n                \"SourceObjectType\": 1,\n                \"Description\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则模版列表"
+      }
+    ],
+    "DescribeRuleTemplatesByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplatesByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Name\": \"xxx\",\n            \"Direction\": \"xxxx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"SourceEngineTypes\": [\n                        1\n                    ],\n                    \"QualityDim\": 1,\n                    \"SourceObjectDataType\": 1,\n                    \"SourceContent\": \"xx\",\n                    \"CitationCount\": 1,\n                    \"RuleTemplateId\": 1,\n                    \"CompareType\": 1,\n                    \"Name\": \"xx\",\n                    \"Type\": 1,\n                    \"SourceObjectType\": 1,\n                    \"Description\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则模版列表"
+      }
+    ],
+    "DescribeRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRules\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CompareRule\": {\n                    \"Items\": [\n                        {\n                            \"Operator\": \"xx\",\n                            \"ValueComputeType\": 1,\n                            \"ValueList\": [\n                                {\n                                    \"ValueType\": 1,\n                                    \"Value\": \"xx\"\n                                }\n                            ],\n                            \"CompareType\": 1\n                        }\n                    ]\n                },\n                \"ConditionType\": 1,\n                \"RuleTemplateContent\": \"xx\",\n                \"Name\": \"xx\",\n                \"RuleGroupId\": 1,\n                \"SourceObjectDataType\": 1,\n                \"RuleId\": 1,\n                \"AlarmLevel\": 1,\n                \"SourceObjectValue\": \"xx\",\n                \"RuleTemplateId\": 1,\n                \"SourceObjectDataTypeName\": \"xx\",\n                \"TableId\": \"xx\",\n                \"CustomSql\": \"xx\",\n                \"Operator\": \"xx\",\n                \"Description\": \"xx\",\n                \"Type\": 1,\n                \"ConditionExpression\": \"xx\",\n                \"SourceObjectType\": 1,\n                \"QualityDim\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询质量规则列表"
+      }
+    ],
+    "DescribeRulesByPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRulesByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"CompareRule\": {\n                        \"Items\": [\n                            {\n                                \"Operator\": \"xx\",\n                                \"ValueComputeType\": 1,\n                                \"ValueList\": [\n                                    {\n                                        \"ValueType\": 1,\n                                        \"Value\": \"xx\"\n                                    }\n                                ],\n                                \"CompareType\": 1\n                            }\n                        ]\n                    },\n                    \"ConditionType\": 1,\n                    \"RuleTemplateContent\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"RuleGroupId\": 1,\n                    \"SourceObjectDataType\": 1,\n                    \"RuleId\": 1,\n                    \"AlarmLevel\": 1,\n                    \"SourceObjectValue\": \"xx\",\n                    \"RuleTemplateId\": 1,\n                    \"SourceObjectDataTypeName\": \"xx\",\n                    \"TableId\": 1,\n                    \"CustomSql\": \"xx\",\n                    \"Operator\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"Type\": 1,\n                    \"ConditionExpression\": \"xx\",\n                    \"SourceObjectType\": 1,\n                    \"QualityDim\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分页查询质量规则"
+      }
+    ],
     "DescribeStandardRuleDetailInfoList": [
       {
         "document": "",
@@ -714,12 +1050,28 @@
         "title": "获取数据表信息"
       }
     ],
+    "DescribeTableQualityDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableQualityDetails\n<公共请求参数>\n\n{\n    \"PageSize\": 0,\n    \"ProjectId\": \"0\",\n    \"StatisticsDate\": 0,\n    \"DatasourceId\": \"\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"DESC\",\n            \"Name\": \"TableScore\"\n        }\n    ],\n    \"PageNumber\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"TableName\"\n            ],\n            \"Name\": \"test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a131b8-0de7-4cb8-a354-9bbfc5d3a028\",\n        \"Data\": {\n            \"TotalCount\": 4,\n            \"Items\": [\n                {\n                    \"DatabaseId\": \"\",\n                    \"DatabaseName\": \"\",\n                    \"TableId\": \"\",\n                    \"TableName\": \"\",\n                    \"OwnerUserId\": 1234,\n                    \"OwnerUserName\": \"\",\n                    \"DatabaseScore\": 0.0,\n                    \"TableScore\": 0.0,\n                    \"LastPeriodRatio\": 0.0\n                }\n            ]\n        }\n    }\n}",
+        "title": "分页查询表数据质量详情"
+      }
+    ],
     "DescribeTableSchemaInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableSchemaInfo\n<公共请求参数>\n\n{\n    \"MsType\": \"HIVE\",\n    \"Name\": \"字符串\",\n    \"DatabaseName\": \"字符串\",\n    \"DatasourceId\": \"23432\",\n    \"ConnectionType\": \"rpc\"\n}",
         "output": "{\n    \"Response\": {\n        \"SchemaInfoList\": [\n            {\n                \"ColumnKey\": \"xx\",\n                \"Type\": \"xx\",\n                \"Description\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取表schema信息"
+      }
+    ],
+    "DescribeTableScoreTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableScoreTrend\n<公共请求参数>\n\n{\n    \"StatisticsStartDate\": 1679414400,\n    \"StatisticsEndDate\": 1679414400,\n    \"ProjectId\": \"1\",\n    \"TableId\": \"23f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f440fef-24c6-4f5c-a58e-7e0aa7aa19d7\",\n        \"Data\": {}\n    }\n}",
+        "title": "查询表得分趋势"
       }
     ],
     "DescribeTaskAlarmRegulations": [
@@ -806,6 +1158,38 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"75164e96-e1aa-45b3-be14-aac909d67b11\",\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"Items\": [\n                {\n                    \"TaskId\": \"20220727140613327\",\n                    \"VirtualTaskId\": null,\n                    \"VirtualFlag\": false,\n                    \"TaskName\": \"task2\",\n                    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n                    \"RealWorkflowId\": null,\n                    \"WorkflowName\": \"work1\",\n                    \"FolderId\": null,\n                    \"FolderName\": null,\n                    \"CreateTime\": \"2022-07-27 14:06:13\",\n                    \"LastUpdate\": \"2022-07-27 17:40:31\",\n                    \"Status\": \"NS\",\n                    \"InCharge\": \"TBDS\",\n                    \"StartTime\": \"2022-09-03 11:00:00\",\n                    \"EndTime\": \"2099-12-31 23:59:59\",\n                    \"ExecutionStartTime\": null,\n                    \"ExecutionEndTime\": null,\n                    \"ProjectId\": \"1\",\n                    \"ProjectIdent\": null,\n                    \"ProjectName\": null,\n                    \"CycleType\": 1,\n                    \"CycleStep\": 10,\n                    \"CrontabExpression\": null,\n                    \"DelayTime\": 10,\n                    \"StartupTime\": 0,\n                    \"RetryWait\": 1,\n                    \"Retriable\": 1,\n                    \"TaskAction\": \"\",\n                    \"TryLimit\": 3,\n                    \"RunPriority\": 4,\n                    \"TaskType\": 35,\n                    \"BrokerIp\": \"any\",\n                    \"ClusterId\": null,\n                    \"MinDateTime\": null,\n                    \"MaxDateTime\": null,\n                    \"SelfDepend\": 1,\n                    \"Notes\": \"\",\n                    \"YarnQueue\": null,\n                    \"Submit\": false,\n                    \"LastSchedulerCommitTime\": null,\n                    \"NormalizedJobStartTime\": null,\n                    \"SourceServer\": null,\n                    \"TargetServer\": \"11\",\n                    \"Creater\": \"TBDS\",\n                    \"DependencyRel\": \"and\",\n                    \"DependencyWorkflow\": \"yes\",\n                    \"DependencyConfigs\": null,\n                    \"VirtualTaskStatus\": null,\n                    \"Params\": null,\n                    \"TaskExt\": null,\n                    \"UpdateUser\": \"fe\",\n                    \"UpdateTime\": \"2022-07-27 17:40:31\",\n                    \"UpdateUserId\": \"100022256608\",\n                    \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n                    \"ResourceGroup\": \"20220420160541973718\",\n                    \"VersionDesc\": null\n                }\n            ]\n        }\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "DescribeTemplateDimCount": [
+      {
+        "document": "查询规则模版维度分布情况",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateDimCount\n<公共请求参数>\n\n{\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"DimType\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则模版维度分布情况"
+      }
+    ],
+    "DescribeTemplateHistory": [
+      {
+        "document": "查询规则模版操作记录",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateHistory\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UserName\": \"xx\",\n                    \"AlterContent\": \"xx\",\n                    \"AlterType\": 1,\n                    \"UserId\": 1,\n                    \"Version\": 1,\n                    \"TemplateId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询规则模版操作记录"
+      }
+    ],
+    "DescribeTopTableStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopTableStat\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"BeginDate\": \"1645155262\",\n    \"EndDate\": \"1645155262\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PipelineTables\": [\n                {\n                    \"TableName\": \"xx\",\n                    \"Cnt\": 1,\n                    \"TableId\": \"xx\"\n                }\n            ],\n            \"AlarmTables\": [\n                {\n                    \"TableName\": \"xx\",\n                    \"Cnt\": 1,\n                    \"TableId\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "数据表排行"
+      }
+    ],
+    "DescribeTrendStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrendStat\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"BeginDate\": \"1645155262\",\n    \"EndDate\": \"1645155262\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AlarmCnt\": 1,\n                \"StatDate\": \"2022-01-01\",\n                \"PipelineCnt\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则触发趋势情况"
       }
     ],
     "DryRunDIOfflineTask": [
@@ -912,6 +1296,22 @@
         "title": "样例"
       }
     ],
+    "ModifyDimensionWeight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDimensionWeight\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WeightInfoList\": [\n        {\n            \"QualityDim\": 1,\n            \"Weight\": 0\n        }\n    ],\n    \"Refresh\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a131b8-0de7-4cb8-a354-9bbfc5d3a028\",\n        \"Data\": true\n    }\n}",
+        "title": "修改权重信息"
+      }
+    ],
+    "ModifyExecStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExecStrategy\n<公共请求参数>\n\n{\n    \"DatabaseId\": \"xx\",\n    \"Tasks\": [\n        {\n            \"TaskName\": \"xx\",\n            \"WorkflowId\": \"xx\",\n            \"TaskId\": \"xx\"\n        }\n    ],\n    \"DelayTime\": 1,\n    \"ExecQueue\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"ProjectId\": \"xx\",\n    \"ExecutorGroupName\": \"xx\",\n    \"TaskAction\": \"xx\",\n    \"CycleType\": \"xx\",\n    \"TableId\": \"xx\",\n    \"StartTime\": \"xx\",\n    \"MonitorType\": 1,\n    \"EndTime\": \"xx\",\n    \"ExecutorGroupId\": \"xx\",\n    \"CycleStep\": 1,\n    \"DatasourceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 123456,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新规则组执行策略"
+      }
+    ],
     "ModifyFolder": [
       {
         "document": "",
@@ -934,6 +1334,38 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskInfo\": {\n        \"TaskGroupId\": \"xx\",\n        \"Status\": 0,\n        \"WorkflowId\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreatorUin\": \"xx\",\n        \"SyncType\": 0,\n        \"ProjectId\": \"xx\",\n        \"OwnerUin\": \"xx\",\n        \"ExecuteContext\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ScheduleTaskId\": \"xx\",\n        \"TaskType\": 0,\n        \"AppId\": \"xx\",\n        \"ExecutorId\": \"xx\",\n        \"TaskId\": \"xx\",\n        \"OperatorUin\": \"xx\",\n        \"Nodes\": [\n            {\n                \"NodeType\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DataSourceType\": \"xx\",\n                \"ProjectId\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ExtConfig\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DatasourceId\": \"xx\",\n                \"NodeMapping\": {\n                    \"SourceId\": \"xx\",\n                    \"SchemaMappings\": [\n                        {\n                            \"SinkSchemaId\": \"xx\",\n                            \"SourceSchemaId\": \"xx\"\n                        }\n                    ],\n                    \"SinkId\": \"xx\",\n                    \"SourceSchema\": [\n                        {\n                            \"Type\": \"xx\",\n                            \"Id\": \"xx\",\n                            \"Value\": \"xx\",\n                            \"Name\": \"xx\"\n                        }\n                    ]\n                },\n                \"TaskId\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Schema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Config\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Id\": \"xx\",\n                \"OperatorUin\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"ExtConfig\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Config\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"TaskName\": \"xx\",\n        \"Mappings\": [\n            {\n                \"SourceId\": \"xx\",\n                \"SchemaMappings\": [\n                    {\n                        \"SinkSchemaId\": \"xx\",\n                        \"SourceSchemaId\": \"xx\"\n                    }\n                ],\n                \"SinkId\": \"xx\",\n                \"SourceSchema\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Id\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
         "title": "更新集成任务"
+      }
+    ],
+    "ModifyMonitorStatus": [
+      {
+        "document": "更新监控状态",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitorStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"MonitorStatus\": true,\n    \"RuleGroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新监控状态"
+      }
+    ],
+    "ModifyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRule\n<公共请求参数>\n\n{\n    \"FieldConfig\": {\n        \"TableConfig\": \"xx\"\n    },\n    \"ConditionExpression\": \"xx\",\n    \"QualityDim\": 1,\n    \"TableId\": \"xx\",\n    \"TargetTableId\": \"xx\",\n    \"Type\": 1,\n    \"CustomSql\": \"xx\",\n    \"Name\": \"xx\",\n    \"Description\": \"xx\",\n    \"TargetDatabaseId\": \"xx\",\n    \"TargetObjectValue\": \"xx\",\n    \"ConditionType\": 1,\n    \"RelConditionExpr\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"TargetConditionExpr\": \"xx\",\n    \"CompareRule\": {\n        \"Items\": [\n            {\n                \"Operator\": \"xx\",\n                \"ValueComputeType\": 1,\n                \"ValueList\": [\n                    {\n                        \"ValueType\": 1,\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"CompareType\": 1\n            }\n        ]\n    },\n    \"RuleTemplateId\": 1,\n    \"SourceObjectDataTypeName\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"RuleId\": 1,\n    \"SourceObjectValue\": \"xx\",\n    \"AlarmLevel\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新质量规则接口"
+      }
+    ],
+    "ModifyRuleGroupSubscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleGroupSubscription\n<公共请求参数>\n\n{\n    \"DatabaseId\": \"xx\",\n    \"Receivers\": [\n        {\n            \"ReceiverUserId\": 1,\n            \"ReceiverName\": \"xx\"\n        }\n    ],\n    \"ProjectId\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"SubscribeType\": [\n        1\n    ],\n    \"DatasourceId\": \"xx\",\n    \"TableId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 123456,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新规则组订阅信息"
+      }
+    ],
+    "ModifyRuleTemplate": [
+      {
+        "document": "编辑规则模版",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"SqlExpression\": \"xx\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑规则模版"
       }
     ],
     "ModifyTaskAlarmRegular": [

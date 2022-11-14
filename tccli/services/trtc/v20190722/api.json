@@ -3967,7 +3967,7 @@
       "members": [
         {
           "default": "",
-          "document": "StatementID值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "StatementID值，监控仪表盘下固定为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "StatementID",
@@ -3977,7 +3977,7 @@
         },
         {
           "default": "",
-          "document": "Series数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询结果数据，以Columns-Values形式返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "SeriesInfo",
           "name": "Series",
@@ -3987,7 +3987,7 @@
         },
         {
           "default": "",
-          "document": "Total值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Total值，监控仪表盘功能下固定为1。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Total",

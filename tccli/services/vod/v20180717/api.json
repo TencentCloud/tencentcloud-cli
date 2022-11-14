@@ -8068,6 +8068,15 @@
           "name": "ResolutionAdaptive",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片格式，取值：\n<li> jpg：jpg 格式；</li>\n<li> png：png 格式；</li>\n<li> webp：webp 格式。</li>\n默认值：jpg。",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14859,6 +14868,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "10000",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -14868,6 +14878,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -14877,6 +14888,7 @@
         {
           "default": "",
           "document": "雪碧图模板名称。",
+          "example": "截图",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -14886,6 +14898,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -14895,6 +14908,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -14904,6 +14918,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "Open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -14913,6 +14928,7 @@
         {
           "default": "",
           "document": "采样类型。",
+          "example": "Time",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -14922,6 +14938,7 @@
         {
           "default": "",
           "document": "采样间隔。",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -14931,6 +14948,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的行数。",
+          "example": "1",
           "member": "uint64",
           "name": "RowCount",
           "required": true,
@@ -14940,6 +14958,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的列数。",
+          "example": "1",
           "member": "uint64",
           "name": "ColumnCount",
           "required": true,
@@ -14949,6 +14968,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -14958,6 +14978,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -14967,6 +14988,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
+          "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": true,
@@ -14976,8 +14998,19 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "desc",
           "member": "string",
           "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片格式。",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19107,6 +19140,15 @@
           "example": "123",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片格式，取值：\n<li> jpg：jpg 格式；</li>\n<li> png：png 格式；</li>\n<li> webp：webp 格式。</li>",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
           "required": false,
           "type": "string"
         }

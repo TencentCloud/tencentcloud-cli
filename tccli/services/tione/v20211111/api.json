@@ -4550,7 +4550,7 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "服务组ID",
           "example": "ms-xyz122",
           "member": "string",
           "name": "ServiceGroupId",

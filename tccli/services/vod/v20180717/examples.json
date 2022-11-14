@@ -167,7 +167,7 @@
     "CreateImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateImageSpriteTemplate\n&Name=雪碧图模板1\n&Width=128\n&Height=128\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"128\",\n    \"Width\": \"128\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建雪碧图模板"
       }
@@ -1081,7 +1081,7 @@
     "ModifyImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\n&Definition=10001\n&Name=雪碧图模板1\n&Width=128\n&Height=128\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Definition\": \"10001\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"128\",\n    \"Width\": \"128\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改雪碧图模板"
       }

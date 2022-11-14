@@ -4335,11 +4335,11 @@
       "usage": "out"
     },
     "TraceItem": {
-      "document": "溯源数据",
+      "document": "溯源数据项\nType的枚举值\ntext:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n具体组合如下\nType: \"text\" 文本类型, 对应值 Value: \"文本字符串\"\nType: \"longtext\" 长文本类型, 对应值 Value: \"长文本字符串, 支持换行\\n\"\nType: \"banner\" 单图片类型, 对应图片地址 Value: \"https://sample.cdn.com/xxx.jpg\"\nType: \"image\" 多图片类型, 对应图片地址 Values: [\"https://sample.cdn.com/1.jpg\", \"https://sample.cdn.com/2.jpg\"]\nType: \"video\" 视频类型, 对应视频地址 Value: \"https://sample.cdn.com/xxx.mp4\"\nType: \"mp\" 小程序类型, 对应配置 Values: [\"WXAPPID\", \"WXAPP_PATH\", \"跳转说明\"]",
       "members": [
         {
           "default": "",
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "商品名称2",
           "member": "string",
           "name": "Name",
@@ -4349,7 +4349,7 @@
         },
         {
           "default": "",
-          "document": "单个值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "Value",
@@ -4359,7 +4359,7 @@
         },
         {
           "default": "",
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "text",
           "member": "string",
           "name": "Type",

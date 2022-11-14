@@ -120,13 +120,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xxx\",\n        \"AppId\": \"xx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成默认的控制台链接"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"xx\",\n    \"MenuStatus\": \"ENABLE\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "生成到模板详情的控制台链接"
       }
     ],
@@ -237,7 +237,7 @@
     "SyncProxyOrganization": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"proxy-operator-openid\"\n        },\n        \"ProxyOrganizationOpenId\": \"proxy-organization-openid\",\n        \"AppId\": \"test-appid\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncProxyOrganization\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"渠道子客企业名称\",\n    \"UniformSocialCreditCode\": \"xxxxxxxxxxxxxxxxxxxx\",\n    \"BusinessLicense\": \"xxxxxxxxxxxxx\",\n    \"ProxyLegalName\": \"王x\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"proxy-operator-openid\"\n        },\n        \"ProxyOrganizationOpenId\": \"proxy-organization-openid\",\n        \"AppId\": \"test-appid\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
         "title": "同步企业信息"
       }
