@@ -11,6 +11,12 @@
       "input": "QueryAntiFraudVipRequest",
       "name": "定制建模",
       "output": "QueryAntiFraudVipResponse"
+    },
+    "TransportGeneralInterface": {
+      "document": "天御信鸽取数平台接口",
+      "input": "TransportGeneralInterfaceRequest",
+      "name": "信鸽取数平台接口",
+      "output": "TransportGeneralInterfaceResponse"
     }
   },
   "metadata": {
@@ -778,6 +784,114 @@
         }
       ],
       "usage": "out"
+    },
+    "TransportGeneralInterfaceInput": {
+      "document": "天御信鸽取数平台接口入参",
+      "members": [
+        {
+          "default": "",
+          "document": "公证处请求接口名",
+          "example": "StartApp",
+          "member": "string",
+          "name": "InterfaceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公证处业务详情二层入参",
+          "example": "UpdateAesKey",
+          "member": "string",
+          "name": "NotarizationInput",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务二层详情入参的哈希签名",
+          "example": "de1y1kdr1526451889661677568",
+          "member": "string",
+          "name": "NotarizationSign",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TransportGeneralInterfaceOutput": {
+      "document": "天御信鸽取数平台接口出参",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公证处业务回包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "de1y1kdr1526451889661677568",
+          "member": "string",
+          "name": "NotarizationData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TransportGeneralInterfaceRequest": {
+      "document": "TransportGeneralInterface请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务入参",
+          "example": "无",
+          "member": "TransportGeneralInterfaceInput",
+          "name": "BusinessSecurityData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "TransportGeneralInterfaceResponse": {
+      "document": "TransportGeneralInterface返回参数结构体",
+      "members": [
+        {
+          "document": "业务出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TransportGeneralInterfaceOutput",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

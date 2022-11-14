@@ -15,6 +15,50 @@
         "output": "{\n    \"Response\": {\n        \"CodeDesc\": \"Success\",\n        \"Found\": 1,\n        \"IdFound\": -1,\n        \"RequestId\": \"23297af7-a805-4d9d-a9cb-825de5f8ed8c\",\n        \"RiskInfo\": [],\n        \"RiskScore\": 800\n    }\n}",
         "title": "定制接模接口示例"
       }
+    ],
+    "TransportGeneralInterface": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"InterfaceName\": \"auth\",\n        \"NotarizationInput\": \"input\",\n        \"NotarizationSign\": \"de1y1kdr1526451889661677568\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":\\\"success\\\",\\\"data\\\":{\\\"daId\\\":\\\"de1y1kdr1526451889661677568\\\",\\\"redirectUrl\\\":\\\"https://testing-vdi.zdgzc.com/vdi/vdi.html?accessWay=app&appId=de1y1kdr&bizScenario=general&daId=de1y1kdr1526451889661677568&fullUrl=true&site=tax&title=%E4%B8%AD%E5%A4%A7%E5%85%AC%E8%AF%81%E5%A4%84&vcode=nCgMqEaCmQlWV2Am5oRA0CJnNGJmX2oN9g9yk_PWdXc=\\\"}}\"\n        },\n        \"RequestId\": \"aa5ef093-1c43-4b15-b6ef-f6c8d6eedc27\"\n    }\n}",
+        "title": "TransportGeneralInterface"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"GetCertResult\",\n        \"NotarizationInput\":\"{\"arg\":{\"daId\":\"DF11660547274162774\",\"ext\":{}},\"v\":\"1.1.0\",\"auth\":{\"appId\":\"123\",\"nonce\":\"123\"}}\"\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2e6e160-6708-4f9a-a2c8-652cdaf995e8\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":\\\"成功\\\",\\\"data\\\":{\\\"daId\\\":\\\"DF11660547274162774\\\",\\\"bizNo\\\":\\\"c1040fad-92d4-4cf2-b2eb-73471877874c\\\",\\\"certResult\\\":\\\"10\\\",\\\"certFileUrl\\\":[\\\"Z1RDeXFnV292Qk9uU3FRcWFjS1RFcno4OXlObk9jQVgvQWJreVdWMHJTUWlvays1U0cwbTZ2Q1Y2bWd3QXltUVBUT0JGZW40ZTZPbwppSTF2ejlEdGtzUVRFdENzMXd0RUVRK20rdXdFV0hkQkVFQjJjb09HcGN0dUxSQkhISjVneG1tMTdQdVpwVDlSNXdzTldGdm9HWHNFCk9lTkVoV2tINXVUanR5ZUxJUGZSZjBZQ3FIaXF3ZVFmeThWaDhIR0xkUDVlODRLN2NsODVnM2RpVTdiU3AxV205ZDM2S2NlT21SVTYKR0VWdHRORXN1KzBIUkVXRUxXZ1NiWmd4NVVvazdrZFg0SW55T0l1b2dyM0pwOVdJcm1ubGRPYUNZS1BQUzdkV3NGTHB1ajArNnNxSgpYU3NJNk5EYVlvRENRdjVGOXFjZjJ6dU13VTV0Z2FYeWw0VmZ2VGxuMS9NVmoxU21oemsramh1aUltM0hKS1Blc1J6Z0dUdVJkczZ4ClhNTmNETHpWb2UrZklvOEgxMlhjT21PUFVZaklJbCthUkhEOW5TWmZMWnpKTnh0NW9NTkp4MWhpNDB3SjRaQkhwWm5GTjJTajdlSW4Kb0d5T0VyQTVrMTFEY2V5UlZjR0dpcTV0Z1p0dXdGSk9na3kxNUNLcldhcDNLc3k2a1VpVng0cmRQRHJMamoxM1NJMzRUSXpIdHhUegpWZz09\\\"],\\\"ext\\\":null}}\\\"\"\n        }\n    }\n}",
+        "title": "接入方拉取“存管证书”接口(InterfaceName: GetCertResult)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"UploadUserProtocol\",\n        \"NotarizationInput\":\"{\"v\": \"1.0.0\",\"auth\": {\"appId\": \"123\",\"nonce\": \"123\"},\"arg\": {\"idNo\": \"210281199509094215\",\"site\": \"tax\",\"files\": [{\"name\": \"userProtocol.pdf\",\"content\": \"MTIzNDU2Nzg5\"}]}}\"\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbc3f7ea-04bc-4215-8e71-2e25e9a3ee70\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":\\\"success\\\",\\\"data\\\":{\\\"result\\\":true}}\\\"\"\n        }\n    }\n}",
+        "title": "用户协议签署接口(InterfaceName: UploadUserProtocol)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"GetSitesState\",\n        \"NotarizationInput\":\"{\"v\":\"1.0.0\",\"auth\":{\"appId\": \"123\",\"nonce\": \"123\"},\"arg\":{\"sites\":[\"tax\", \"chsi\"]}}\"\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b9f7645-4aee-4863-a2cd-aff60c3c84cc\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":\\\"成功\\\",\\\"data\\\":[{\\\"status\\\":\\\"0\\\",\\\"site\\\":\\\"tax\\\",\\\"description\\\":\\\"个税\\\"},{\\\"status\\\":\\\"0\\\",\\\"site\\\":\\\"chsi\\\",\\\"description\\\":\\\"学信网\\\"}]}\\\"\"\n        }\n    }\n}",
+        "title": "拉取当前数据类型状态的接口(InterfaceName: GetSitesState)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"GetParseResult\",\n        \"NotarizationInput\":\"{\"v\":\"1.0.0\",\"auth\":{\"appId\": \"123\",\"nonce\": \"123\"},\"arg\":{\"daId\": \"DF11660547274162774\",\"ext\":{}}}\"\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70f1102f-63da-4bb7-af4b-30d6ba571d31\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":\\\"\\\",\\\"data\\\":{\\\"daId\\\":\\\"DF11660547274162774\\\",\\\"bizNo\\\":\\\"c1040fad-92d4-4cf2-b2eb-73471877874c\\\",\\\"jsonFileUrl\\\":[\\\"ZEpENUV2Y1M1VzB5RjRwWWJYczJuUT09\\\"],\\\"jsonResult\\\":\\\"100\\\",\\\"site\\\":\\\"qqmail-wechatpay\\\",\\\"ext\\\":{\\\"companyId\\\":null,\\\"companyName\\\":null,\\\"fileKey\\\":null,\\\"dl\\\":[{\\\"fileName\\\":null,\\\"dlResult\\\":null,\\\"type\\\":null}]}}}\\\"\"\n        }\n    }\n}",
+        "title": "接入方拉取“取证解析文件”的接口（InterfaceName: GetParseResult）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"GetOriginalFiles\",\n        \"NotarizationInput\":\"{\"v\":\"1.0.0\",\"auth\":{\"appId\": \"123\",\"nonce\": \"123\"},\"arg\":{\"daId\": \"DF11660547274162774\",\"ext\":{}}}\"\"}}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bf05c4c-ff8d-4f9b-ac86-2264f6fce956\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":null,\\\"data\\\":{\\\"daId\\\":\\\"DF11660547274162774\\\",\\\"bizNo\\\":\\\"c1040fad-92d4-4cf2-b2eb-73471877874c\\\",\\\"site\\\":\\\"qqmail-wechatpay\\\",\\\"fileUrl\\\":[\\\"[B@179b9025\\\"],\\\"ext\\\":{\\\"fileKey\\\":\\\"[B@f7f80f0\\\"}}}\\\"\"\n        }\n    }\n}",
+        "title": "接入方拉取取证文件接口(InterfaceName: GetOriginalFiles)"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransportGeneralInterface\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\":{\n        \"NotarizationSign\":\"123\",\n        \"InterfaceName\":\"UpdateAesKey\",\n        \"NotarizationInput\":\"{\"v\": \"1.0.0\",\"auth\": {\"appId\": \"123\",\"nonce\": \"123\"},\"arg\": {}}“\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6b36bc2-8608-4a05-8fa0-83559aabc1bb\",\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"NotarizationData\": \"{\\\"errorCode\\\":0,\\\"errorMessage\\\":null,\\\"data\\\":{\\\"aesKey\\\":\\\"GyQ/dCdy+/XH/jwMW8wAkOl9Bs2QM9Yhq5HF72eTZdkqDxAs17omK9ac/kAE4el2AIqNphpKypOyVMnbEttxiZxP8QF04UHJB9qaTS24BYYqA8yhKKYBoNRCNkXpk3h2kTo133rMln+9kPJ4R5hLEGpd1cWfUkycFt/cyX6QoiBQ6vbk0T5WPgPWwxkLA5U/KbS9BJq9aFlFD7d1RbykMlz9jAk4iu9EVzp94L6KXIkMuF8SRDQiO6bf/gqQHlBIxbZjDsQBVdgyVTtwzQUQvEKxIbKDnMrYBwgsa2/NBx+3B6IVslv+KsWcZnNgwY3+4KcLXx6OuMi20Pvps3TK4g==\\\"}}\\\"\"\n        }\n    }\n}",
+        "title": "更新 AES 加密密钥接口 (InterfaceName:UpdateAesKey)"
+      }
     ]
   },
   "version": "1.0"
