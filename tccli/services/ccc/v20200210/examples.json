@@ -51,7 +51,7 @@
     "CreateStaff": [
       {
         "document": "",
-        "input": "https://ccc.tencentcloudapi.com/?Action=CreateStaff\n&SdkAppId=1400000000\n&Staffs.0.Phone=联系电话\n&Staffs.0.Mail=联系人邮箱\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStaff\n<公共请求参数>\n\n{\n    \"Staffs\": [\n        {\n            \"Phone\": \"联系电话\",\n            \"Mail\": \"联系人邮箱\"\n        }\n    ],\n    \"SdkAppId\": \"1400000000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ErrorStaffList\": null\n    }\n}",
         "title": "创建客服示例"
       }

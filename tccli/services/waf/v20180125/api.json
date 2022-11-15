@@ -84,6 +84,12 @@
       "name": "描述WAF自动封禁IP详情",
       "output": "DescribeAutoDenyIPResponse"
     },
+    "DescribeDomainDetailsSaas": {
+      "document": "查询单个saas域名详情",
+      "input": "DescribeDomainDetailsSaasRequest",
+      "name": "查询单个saas域名详情",
+      "output": "DescribeDomainDetailsSaasResponse"
+    },
     "DescribeDomainWhiteRules": {
       "document": "获取域名的规则白名单\n\n",
       "input": "DescribeDomainWhiteRulesRequest",
@@ -1923,6 +1929,60 @@
       ],
       "type": "object"
     },
+    "DescribeDomainDetailsSaasRequest": {
+      "document": "DescribeDomainDetailsSaas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDetailsSaasResponse": {
+      "document": "DescribeDomainDetailsSaas返回参数结构体",
+      "members": [
+        {
+          "document": "域名详情",
+          "example": "无",
+          "member": "DomainsPartInfo",
+          "name": "DomainsPartInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainWhiteRulesRequest": {
       "document": "DescribeDomainWhiteRules请求参数结构体",
       "members": [
@@ -2018,7 +2078,7 @@
       "members": [
         {
           "default": "",
-          "document": "偏移",
+          "document": "数据偏移量，从1开始。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -2027,7 +2087,7 @@
         },
         {
           "default": "",
-          "document": "容量",
+          "document": "返回域名的数量",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -2600,7 +2660,248 @@
     },
     "DomainInfo": {
       "document": "域名的详细信息",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "qcloud",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名ID",
+          "example": "123",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cname地址",
+          "example": "213",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型",
+          "example": "\"sparta_waf\"",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "213",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "213",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志包",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClsStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "clb模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlowMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "waf开关",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防御模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AI防御模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "Engine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC列表",
+          "example": "[\"1\",\"2\"]",
+          "member": "string",
+          "name": "CCList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源ip",
+          "example": "[\"1\",\"2\"]",
+          "member": "string",
+          "name": "RsList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端口配置",
+          "example": "11",
+          "member": "PortInfo",
+          "name": "Ports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡器",
+          "example": "11",
+          "member": "LoadBalancerPackageNew",
+          "name": "LoadBalancerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户id",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "clb状态",
+          "example": "-2",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "13",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0关闭 1开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Ipv6Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0关闭 1开启",
+          "example": "1",
+          "member": "int64",
+          "name": "BotStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本信息",
+          "example": "1",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启投递CLS功能",
+          "example": "1",
+          "member": "int64",
+          "name": "PostCLSStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启投递CKafka功能",
+          "example": "1",
+          "member": "int64",
+          "name": "PostCKafkaStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "DomainPackageNew": {
@@ -2658,6 +2959,242 @@
         }
       ],
       "usage": "in"
+    },
+    "DomainsPartInfo": {
+      "document": "saas域名详情",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启httpRewrite",
+          "example": "1",
+          "member": "uint64",
+          "name": "HttpsRewrite",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "https回源端口",
+          "example": "1",
+          "member": "string",
+          "name": "HttpsUpstreamPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是cdn",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCdn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启gray",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGray",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是http2",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsHttp2",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启websocket",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsWebsocket",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡",
+          "example": "1",
+          "member": "uint64",
+          "name": "LoadBalance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防御模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私钥",
+          "example": "1",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ssl id",
+          "example": "1",
+          "member": "string",
+          "name": "SSLId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源域名",
+          "example": "1",
+          "member": "string",
+          "name": "UpstreamDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源ip",
+          "example": "[\"0\",\"1\"]",
+          "member": "string",
+          "name": "SrcList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务端口配置",
+          "example": "11",
+          "member": "PortInfo",
+          "name": "Ports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "CertType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源方式",
+          "example": "1",
+          "member": "string",
+          "name": "UpstreamScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志包",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cls",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级cname",
+          "example": "1",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否长连接",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsKeepAlive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启主动健康检测，1表示开启，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActiveCheck",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TLS版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TLSVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加密套件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Ciphers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CipherTemplate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DownloadAttackRecordInfo": {
       "document": "下载攻击日志记录数据项",
@@ -3432,6 +3969,11 @@
       ],
       "usage": "out"
     },
+    "LoadBalancerPackageNew": {
+      "document": "负载均衡算法",
+      "members": [],
+      "usage": "out"
+    },
     "ModifyAccessPeriodRequest": {
       "document": "ModifyAccessPeriod请求参数结构体",
       "members": [
@@ -3734,6 +4276,11 @@
         }
       ],
       "type": "object"
+    },
+    "PortInfo": {
+      "document": "防护域名端口配置信息",
+      "members": [],
+      "usage": "out"
     },
     "PortItem": {
       "document": "防护域名端口配置信息",

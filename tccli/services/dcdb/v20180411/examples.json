@@ -155,7 +155,7 @@
     "DescribeDCDBPrice": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBPrice\n&ShardMemory=2\n&ShardStorage=10\n&ShardNodeCount=3\n&ShardCount=2\n&Zone=ap-guangzhou-2\n&Count=1\n&Period=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDCDBPrice\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"ShardNodeCount\": \"3\",\n    \"Period\": \"1\",\n    \"ShardMemory\": \"2\",\n    \"ShardCount\": \"2\",\n    \"ShardStorage\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e1000c2-190a-d0df-ff75-59fbdf5ff381\",\n        \"OriginalPrice\": 42240,\n        \"Price\": 42240\n    }\n}",
         "title": "查询新购分布式数据库实例的价格（示例中返回价格仅供参考）"
       }
@@ -163,7 +163,7 @@
     "DescribeDCDBRenewalPrice": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBRenewalPrice\n&InstanceId=dcdvt-fdpjf5zh\n&Period=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDCDBRenewalPrice\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdvt-fdpjf5zh\",\n    \"Period\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b637383-8059-b0f8-3dcd-59fbdff262b6\",\n        \"OriginalPrice\": 42240,\n        \"Price\": 42240\n    }\n}",
         "title": "查询分布式数据库实例续费的价格"
       }
@@ -187,7 +187,7 @@
     "DescribeDCDBUpgradePrice": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBUpgradePrice\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDCDBUpgradePrice\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-fdpjf5zh\",\n    \"AddShardConfig\": {\n        \"ShardMemory\": \"2\",\n        \"ShardStorage\": \"10\",\n        \"ShardCount\": \"2\"\n    },\n    \"UpgradeType\": \"ADD\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"OriginalPrice\": 7020,\n        \"Price\": 7020,\n        \"Formula\": \"变配订单金额：退款3.45 元[1、退费3.45 元=变配差价3.45 元*现金比例100 %，>代金券不可退；2、变配差价3.45 = 资源清退金额258.42 元(订单号20210425458003134632561：部件dcdb:现金支付267.32元-原价393.12*使用时间3.33%*折扣:68=剩余258.42元;)- 新配置费用254.97 元(月单价380.16*天数30/(365/12)*折扣68%) 3、现金比例=清退现金总和/清退原价总和=258.42 /258.42\"\n    }\n}",
         "title": "查询升级分布式数据库实例的价格"
       }

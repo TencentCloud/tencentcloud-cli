@@ -2042,6 +2042,15 @@
           "name": "IsSM",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选证书是否即将过期，传1是筛选，0不筛选",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterExpiring",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

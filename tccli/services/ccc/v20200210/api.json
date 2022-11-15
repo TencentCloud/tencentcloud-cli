@@ -944,6 +944,15 @@
           "name": "Staffs",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否发送密码邮件，默认true",
+          "example": "false",
+          "member": "bool",
+          "name": "SendPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

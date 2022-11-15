@@ -7,8 +7,8 @@ Input:
 ```
 tccli mariadb DescribeUpgradePrice --cli-unfold-argument  \
     --InstanceId tdsql-fdpjf5zh \
-    --Memory 2000 \
-    --Storage 20000
+    --Storage 20000 \
+    --Memory 2000
 ```
 
 Output: 

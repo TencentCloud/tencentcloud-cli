@@ -1706,6 +1706,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "运营商",
+          "member": "string",
+          "name": "ISP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2432,7 +2441,7 @@
         },
         {
           "default": "",
-          "document": "CompareLib为商业库库时必传。",
+          "document": "CompareLib为商业库时必传。",
           "example": "xxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Name",
@@ -2474,6 +2483,15 @@
           "name": "UseCos",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

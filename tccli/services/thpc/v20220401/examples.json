@@ -40,6 +40,14 @@
         "title": "删除节点"
       }
     ],
+    "DescribeClusterActivities": [
+      {
+        "document": "根据集群ID查询集群活动历史记录。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterActivities\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-0yd8fqsc\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ClusterId\": \"hpc-myd8fgsc\",\n                \"ActivityId\": \"cha-gvzj0zbd\",\n                \"ActivityType\": \"TerminateNodes\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ResultDetail\": \"Activity success.\",\n                \"Cause\": \"DeleteCluster\",\n                \"Description\": \"删除指定集群，销毁实例，销毁所有节点。\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeInstanceId\": \"ins-1zll2of0\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    },\n                    {\n                        \"NodeInstanceId\": \"ins-ig2bew40\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    }\n                ],\n                \"StartTime\": \"2021-11-01T02:17:20Z\",\n                \"EndTime\": \"2021-11-01T02:17:38Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7fa864e6-cf1a-4962-8aa9-f68abfa31a00\"\n    }\n}",
+        "title": "查询集群活动历史记录"
+      }
+    ],
     "DescribeClusters": [
       {
         "document": "",

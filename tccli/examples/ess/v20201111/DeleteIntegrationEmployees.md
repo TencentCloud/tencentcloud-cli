@@ -6,11 +6,7 @@ Input:
 
 ```
 tccli ess DeleteIntegrationEmployees --cli-unfold-argument  \
-    --Operator.ProxyIp  \
-    --Operator.ClientIp 0.0.0.1 \
     --Operator.UserId y**********************************N \
-    --Operator.Channel  \
-    --Operator.OpenId  \
     --Employees.0.OpenId open123
 ```
 

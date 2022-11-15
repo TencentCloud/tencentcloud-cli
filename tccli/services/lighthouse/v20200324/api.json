@@ -1457,6 +1457,16 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据盘挂载的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lhins-abcdef",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4311,7 +4321,7 @@
       "members": [
         {
           "default": "",
-          "document": "待续费的实例。",
+          "document": "待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。",
           "example": "[\"lhins-11110001\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4329,7 +4339,7 @@
         },
         {
           "default": "",
-          "document": "是否续费数据盘",
+          "document": "是否续费数据盘。默认值: false, 即不续费。",
           "example": "false",
           "member": "bool",
           "name": "RenewDataDisk",
@@ -4338,7 +4348,7 @@
         },
         {
           "default": "",
-          "document": "数据盘是否对齐实例到期时间",
+          "document": "数据盘是否对齐实例到期时间。默认值: false, 即不对齐。",
           "example": "false",
           "member": "bool",
           "name": "AlignInstanceExpiredTime",
@@ -4352,7 +4362,7 @@
       "document": "InquirePriceRenewInstances返回参数结构体",
       "members": [
         {
-          "document": "询价信息。",
+          "document": "询价信息。默认为列表中第一个实例的价格信息。",
           "example": "无",
           "member": "Price",
           "name": "Price",
@@ -4365,6 +4375,15 @@
           "example": "无",
           "member": "DataDiskPrice",
           "name": "DataDiskPriceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "待续费实例价格列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstancePriceDetail",
+          "name": "InstancePriceDetailSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -4740,6 +4759,32 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstancePriceDetail": {
+      "document": "实例价格详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lhins-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "询价信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstancePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

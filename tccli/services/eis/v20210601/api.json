@@ -43,7 +43,7 @@
       "members": [
         {
           "default": "",
-          "document": "运行时id",
+          "document": "环境id",
           "example": "12",
           "member": "int64",
           "name": "RuntimeId",
@@ -53,7 +53,7 @@
         },
         {
           "default": "",
-          "document": "运行时名称，用户输入，同一uin内唯一",
+          "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-2",
           "member": "string",
           "name": "DisplayName",
@@ -63,7 +63,7 @@
         },
         {
           "default": "",
-          "document": "运行时类型：0: sandbox, 1:shared, 2:private",
+          "document": "环境类型：0: sandbox, 1:shared, 2:private",
           "example": "2",
           "member": "int64",
           "name": "Type",
@@ -73,7 +73,7 @@
         },
         {
           "default": "",
-          "document": "运行时所在地域，tianjin，beijiing，guangzhou等",
+          "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
           "member": "string",
           "name": "Zone",
@@ -83,7 +83,7 @@
         },
         {
           "default": "",
-          "document": "运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）",
+          "document": "环境所在地域，tianjin，beijiing，guangzhou等（同Zone）",
           "example": "tianjin",
           "member": "string",
           "name": "Area",
@@ -93,7 +93,7 @@
         },
         {
           "default": "",
-          "document": "运行时应用listener地址后缀",
+          "document": "环境应用listener地址后缀",
           "example": "ipaas.tianjin.com",
           "member": "string",
           "name": "Addr",
@@ -103,7 +103,7 @@
         },
         {
           "default": "",
-          "document": "运行时状态",
+          "document": "环境状态",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -113,13 +113,33 @@
         },
         {
           "default": "",
-          "document": "运行时过期时间",
+          "document": "环境过期时间",
           "example": "1624354153",
           "member": "int64",
           "name": "ExpiredAt",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境运行类型：0:运行时类型、1:api类型",
+          "example": "1",
+          "member": "int64",
+          "name": "RuntimeClass",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已在当前环境发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Deployed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -129,7 +149,7 @@
       "members": [
         {
           "default": "",
-          "document": "运行时id",
+          "document": "环境id",
           "example": "12",
           "member": "int64",
           "name": "RuntimeId",
@@ -138,12 +158,21 @@
         },
         {
           "default": "",
-          "document": "运行时地域",
+          "document": "环境地域",
           "example": "tinajin",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境运行类型：0:运行时类型、1:api类型",
+          "example": "1",
+          "member": "int64",
+          "name": "RuntimeClass",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -223,6 +252,15 @@
           "example": "300",
           "member": "int64",
           "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境运行类型：0:运行时类型、1:api类型",
+          "example": "1",
+          "member": "int64",
+          "name": "RuntimeClass",
           "required": false,
           "type": "int"
         }
@@ -404,7 +442,17 @@
     },
     "ListRuntimesMCRequest": {
       "document": "ListRuntimesMC请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "环境运行类型：0:运行时类型、1:api类型",
+          "example": "1",
+          "member": "int64",
+          "name": "RuntimeClass",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListRuntimesMCResponse": {
@@ -566,16 +614,102 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用版本：0:旧版 1:3.0新控制台",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "RuntimeExtensionMC": {
+      "document": "运行环境扩展组件",
+      "members": [
+        {
+          "default": "",
+          "document": "扩展组件类型：0:cdc",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署规格vcore数",
+          "example": "1",
+          "member": "float",
+          "name": "Size",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本数",
+          "example": "2",
+          "member": "int64",
+          "name": "Replica",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展组件名称",
+          "example": "cdc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态 1:未启用 2:已启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RuntimeMC": {
       "document": "运行时详细信息",
       "members": [
         {
           "default": "",
-          "document": "运行时id",
+          "document": "环境id",
           "example": "123",
           "member": "int64",
           "name": "RuntimeId",
@@ -595,7 +729,7 @@
         },
         {
           "default": "",
-          "document": "运行时名称，用户输入，同一uin内唯一",
+          "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-测试1",
           "member": "string",
           "name": "DisplayName",
@@ -605,7 +739,7 @@
         },
         {
           "default": "",
-          "document": "运行时所在地域，tianjin，beijiing，guangzhou等",
+          "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
           "member": "string",
           "name": "Zone",
@@ -615,7 +749,7 @@
         },
         {
           "default": "",
-          "document": "运行时类型：0: sandbox, 1:shared, 2:private",
+          "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial",
           "example": "2",
           "member": "int64",
           "name": "Type",
@@ -635,7 +769,7 @@
         },
         {
           "default": "",
-          "document": "运行时创建时间",
+          "document": "环境创建时间",
           "example": "1624354153",
           "member": "int64",
           "name": "CreatedAt",
@@ -645,7 +779,7 @@
         },
         {
           "default": "",
-          "document": "运行时更新时间",
+          "document": "环境更新时间",
           "example": "1624354153",
           "member": "int64",
           "name": "UpdatedAt",
@@ -655,7 +789,7 @@
         },
         {
           "default": "",
-          "document": "运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited",
+          "document": "环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited",
           "example": "2",
           "member": "int64",
           "name": "WorkerSize",
@@ -665,7 +799,7 @@
         },
         {
           "default": "",
-          "document": "运行时资源配置，worker副本数",
+          "document": "环境资源配置，worker副本数",
           "example": "3",
           "member": "int64",
           "name": "WorkerReplica",
@@ -725,7 +859,7 @@
         },
         {
           "default": "",
-          "document": "运行时过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624354153",
           "member": "int64",
           "name": "ExpiredAt",
@@ -735,7 +869,7 @@
         },
         {
           "default": "",
-          "document": "收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChargeType",
@@ -761,6 +895,56 @@
           "name": "AutoRenewal",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩展组件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuntimeExtensionMC",
+          "name": "WorkerExtensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "RuntimeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境运行类型：0:运行时类型、1:api类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuntimeClass",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已使用出带宽 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "BandwidthOutUsed",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出带宽上限 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "BandwidthOutLimit",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

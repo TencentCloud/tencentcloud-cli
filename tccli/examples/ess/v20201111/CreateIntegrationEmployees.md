@@ -6,11 +6,7 @@ Input:
 
 ```
 tccli ess CreateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.ProxyIp  \
-    --Operator.ClientIp 0.0.0.1 \
     --Operator.UserId y**********************************N \
-    --Operator.Channel  \
-    --Operator.OpenId  \
     --Employees.0.DisplayName 张三 \
     --Employees.0.Mobile 12345678901 \
     --Employees.0.OpenId open123
@@ -30,7 +26,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "s1663585682405723073"
+        "RequestId": "s166*************073"
     }
 }
 ```

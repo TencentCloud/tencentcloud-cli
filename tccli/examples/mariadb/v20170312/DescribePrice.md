@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli mariadb DescribePrice --cli-unfold-argument  \
-    --NodeCount 2 \
-    --Memory 2000 \
-    --Storage 10000 \
-    --Zone ap-guangzhou-2 \
     --Count 1 \
-    --Period 1
+    --Zone ap-guangzhou-2 \
+    --Storage 10000 \
+    --Period 1 \
+    --Memory 2000 \
+    --NodeCount 2
 ```
 
 Output: 

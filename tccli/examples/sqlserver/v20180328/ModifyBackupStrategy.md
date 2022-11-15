@@ -6,11 +6,16 @@ Input:
 
 ```
 tccli sqlserver ModifyBackupStrategy --cli-unfold-argument  \
-    --InstanceId mssql-j8kv137v \
-    --BackupType daily \
     --BackupTime 14 \
+    --InstanceId mssql-j8kv137v \
+    --RegularBackupCounts 1 \
+    --BackupSaveDays 7 \
     --BackupDay 1 \
-    --BackupSaveDays 7
+    --RegularBackupSaveDays 365 \
+    --BackupType daily \
+    --RegularBackupEnable enable \
+    --RegularBackupStrategy month \
+    --RegularBackupStartTime 2022-10-10
 ```
 
 Output: 

@@ -4087,6 +4087,15 @@
           "name": "Paymode",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4095,7 +4104,7 @@
       "document": "DescribePrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "21120",
           "member": "int64",
           "name": "OriginalPrice",
@@ -4104,7 +4113,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "21120",
           "member": "int64",
           "name": "Price",
@@ -4195,6 +4204,15 @@
           "name": "Period",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4203,7 +4221,7 @@
       "document": "DescribeRenewalPrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "21120",
           "member": "int64",
           "name": "OriginalPrice",
@@ -4212,7 +4230,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "21120",
           "member": "int64",
           "name": "Price",
@@ -4293,6 +4311,15 @@
           "name": "NodeCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4301,7 +4328,7 @@
       "document": "DescribeUpgradePrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "720",
           "member": "int64",
           "name": "OriginalPrice",
@@ -4310,7 +4337,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "720",
           "member": "int64",
           "name": "Price",

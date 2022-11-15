@@ -30,6 +30,12 @@
       "name": "删除节点",
       "output": "DeleteNodesResponse"
     },
+    "DescribeClusterActivities": {
+      "document": "本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。",
+      "input": "DescribeClusterActivitiesRequest",
+      "name": "查询集群活动历史记录",
+      "output": "DescribeClusterActivitiesResponse"
+    },
     "DescribeClusters": {
       "document": "本接口（DescribeClusters）用于查询集群列表。",
       "input": "DescribeClustersRequest",
@@ -374,6 +380,122 @@
         }
       ],
       "usage": "in"
+    },
+    "ClusterActivity": {
+      "document": "符合条件的集群活动信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动类型。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityStatusCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群活动结果详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群活动起因。",
+          "example": "无",
+          "member": "string",
+          "name": "Cause",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动相关节点活动集合。",
+          "example": "无",
+          "member": "NodeActivity",
+          "name": "RelatedNodeActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClusterOverview": {
       "document": "集群概览信息。",
@@ -890,6 +1012,69 @@
       ],
       "type": "object"
     },
+    "DescribeClusterActivitiesRequest": {
+      "document": "DescribeClusterActivities请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID。通过该参数指定需要查询活动历史记录的集群。",
+          "example": "hpc-myd8fgsc",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterActivitiesResponse": {
+      "document": "DescribeClusterActivities返回参数结构体",
+      "members": [
+        {
+          "document": "集群活动历史记录列表。",
+          "example": "无",
+          "member": "ClusterActivity",
+          "name": "ClusterActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群活动历史记录数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClustersRequest": {
       "document": "DescribeClusters请求参数结构体",
       "members": [
@@ -1290,6 +1475,52 @@
           "example": "ins-jfhc307q",
           "member": "string",
           "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeActivity": {
+      "document": "节点活动信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "节点活动所在的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatusCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点活动状态原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeActivityStatusReason",
           "required": true,
           "type": "string",
           "value_allowed_null": true

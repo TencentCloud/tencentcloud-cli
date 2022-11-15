@@ -914,20 +914,22 @@
       "members": [
         {
           "default": "",
-          "document": "过滤参数的名字",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "数值",
+          "example": "[\"test_queue\", \"queue_sync_test\"]",
           "member": "string",
           "name": "Values",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤参数的名字",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

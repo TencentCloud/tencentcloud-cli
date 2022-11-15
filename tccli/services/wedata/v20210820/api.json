@@ -5438,6 +5438,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库原始名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OriginDatabaseName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OriginSchemaName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6468,6 +6488,15 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类型",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "DsTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9797,6 +9826,15 @@
           "name": "DatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源类型",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "DsTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10913,6 +10951,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源端对应的引擎类型",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "SourceEngineTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

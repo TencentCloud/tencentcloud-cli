@@ -73,15 +73,15 @@
       "output": "DescribeCaptchaUserAllAppIdResponse"
     },
     "GetTicketStatistics": {
-      "document": "查询单个验证的统计数据，包括：票据校验量、票据校验通过量、票据校验拦截量。",
+      "document": "查询单个CaptchaAppID票据校验数据，包括：票据校验量、票据校验通过量、票据校验拦截量。",
       "input": "GetTicketStatisticsRequest",
-      "name": "查询单个票据校验统计",
+      "name": "查询单个CaptchaAppID票据校验数据",
       "output": "GetTicketStatisticsResponse"
     },
     "GetTotalTicketStatistics": {
-      "document": "查询所有验证的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。",
+      "document": "查询全部票据校验的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。",
       "input": "GetTotalTicketStatisticsRequest",
-      "name": "查询整体票据校验统计（控制台2.0-当前版本）",
+      "name": "查询全部票据校验统计数据",
       "output": "GetTotalTicketStatisticsResponse"
     },
     "UpdateCaptchaAppIdInfo": {

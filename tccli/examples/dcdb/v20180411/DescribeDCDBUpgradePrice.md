@@ -7,10 +7,10 @@ Input:
 ```
 tccli dcdb DescribeDCDBUpgradePrice --cli-unfold-argument  \
     --InstanceId dcdbt-fdpjf5zh \
-    --UpgradeType ADD \
-    --AddShardConfig.ShardCount 2 \
     --AddShardConfig.ShardMemory 2 \
-    --AddShardConfig.ShardStorage 10
+    --AddShardConfig.ShardStorage 10 \
+    --AddShardConfig.ShardCount 2 \
+    --UpgradeType ADD
 ```
 
 Output: 

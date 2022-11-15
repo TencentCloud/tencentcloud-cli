@@ -1,9 +1,15 @@
 {
   "actions": {
+    "AddOrganizationNode": {
+      "document": "添加企业组织节点",
+      "input": "AddOrganizationNodeRequest",
+      "name": "添加企业组织节点",
+      "output": "AddOrganizationNodeResponse"
+    },
     "BindOrganizationMemberAuthAccount": {
-      "document": "绑定组织成员和子账号的授权关系",
+      "document": "绑定组织成员和组织管理员子账号的授权关系",
       "input": "BindOrganizationMemberAuthAccountRequest",
-      "name": "绑定组织成员和子账号的授权关系",
+      "name": "绑定组织成员和组织管理员子账号的授权关系",
       "output": "BindOrganizationMemberAuthAccountResponse"
     },
     "CreateOrganizationMember": {
@@ -13,10 +19,22 @@
       "output": "CreateOrganizationMemberResponse"
     },
     "CreateOrganizationMemberPolicy": {
-      "document": "创建组织成员的授权策略",
+      "document": "创建组织成员访问授权策略",
       "input": "CreateOrganizationMemberPolicyRequest",
-      "name": "创建组织成员的授权策略",
+      "name": "创建组织成员访问授权策略",
       "output": "CreateOrganizationMemberPolicyResponse"
+    },
+    "DeleteOrganizationMembers": {
+      "document": "批量删除企业组织成员",
+      "input": "DeleteOrganizationMembersRequest",
+      "name": "批量删除企业组织成员",
+      "output": "DeleteOrganizationMembersResponse"
+    },
+    "DeleteOrganizationNodes": {
+      "document": "批量删除企业组织节点",
+      "input": "DeleteOrganizationNodesRequest",
+      "name": "批量删除企业组织节点",
+      "output": "DeleteOrganizationNodesResponse"
     },
     "DescribeOrganization": {
       "document": "获取企业组织信息",
@@ -24,11 +42,53 @@
       "name": "获取企业组织信息",
       "output": "DescribeOrganizationResponse"
     },
+    "DescribeOrganizationAuthNode": {
+      "document": "获取可创建组织成员的认证主体关系列表",
+      "input": "DescribeOrganizationAuthNodeRequest",
+      "name": "获取可创建组织成员的认证主体关系列表",
+      "output": "DescribeOrganizationAuthNodeResponse"
+    },
+    "DescribeOrganizationMemberAuthIdentities": {
+      "document": "获取组织成员可被管理的身份列表",
+      "input": "DescribeOrganizationMemberAuthIdentitiesRequest",
+      "name": "获取组织成员可被管理的身份列表",
+      "output": "DescribeOrganizationMemberAuthIdentitiesResponse"
+    },
+    "DescribeOrganizationMemberPolicies": {
+      "document": "获取组织成员的授权策略列表",
+      "input": "DescribeOrganizationMemberPoliciesRequest",
+      "name": "获取组织成员的授权策略列表",
+      "output": "DescribeOrganizationMemberPoliciesResponse"
+    },
     "DescribeOrganizationMembers": {
       "document": "获取企业组织成员列表",
       "input": "DescribeOrganizationMembersRequest",
       "name": "获取企业组织成员列表",
       "output": "DescribeOrganizationMembersResponse"
+    },
+    "DescribeOrganizationNodes": {
+      "document": "获取组织节点列表",
+      "input": "DescribeOrganizationNodesRequest",
+      "name": "获取组织节点列表",
+      "output": "DescribeOrganizationNodesResponse"
+    },
+    "ListOrganizationIdentity": {
+      "document": "获取组织成员访问身份列表",
+      "input": "ListOrganizationIdentityRequest",
+      "name": "获取组织成员访问身份列表",
+      "output": "ListOrganizationIdentityResponse"
+    },
+    "MoveOrganizationNodeMembers": {
+      "document": "移动成员到指定企业组织节点",
+      "input": "MoveOrganizationNodeMembersRequest",
+      "name": "移动成员到指定企业组织节点",
+      "output": "MoveOrganizationNodeMembersResponse"
+    },
+    "UpdateOrganizationNode": {
+      "document": "更新企业组织节点",
+      "input": "UpdateOrganizationNodeRequest",
+      "name": "更新企业组织节点",
+      "output": "UpdateOrganizationNodeResponse"
     }
   },
   "metadata": {
@@ -38,6 +98,86 @@
     "serviceShortName": "organization"
   },
   "objects": {
+    "AddOrganizationNodeRequest": {
+      "document": "AddOrganizationNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "父节点ID。可以调用DescribeOrganizationNodes获取",
+          "example": "1234",
+          "member": "uint64",
+          "name": "ParentNodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrganizationNodeResponse": {
+      "document": "AddOrganizationNode返回参数结构体",
+      "members": [
+        {
+          "document": "节点ID。",
+          "example": "1001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthNode": {
+      "document": "认证主体主要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主体关系ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RelationId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "AuthName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BindOrganizationMemberAuthAccountRequest": {
       "document": "BindOrganizationMemberAuthAccount请求参数结构体",
       "members": [
@@ -52,7 +192,7 @@
         },
         {
           "default": "",
-          "document": "策略ID。",
+          "document": "策略ID。可以调用DescribeOrganizationMemberPolicies获取",
           "example": "10",
           "member": "int64",
           "name": "PolicyId",
@@ -61,7 +201,7 @@
         },
         {
           "default": "",
-          "document": "组织子账号Uin。",
+          "document": "组织管理员子账号Uin列表。最大5个",
           "example": "无",
           "member": "int64",
           "name": "OrgSubAccountUins",
@@ -97,7 +237,7 @@
         },
         {
           "default": "",
-          "document": "策略名。",
+          "document": "策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-",
           "example": "test",
           "member": "string",
           "name": "PolicyName",
@@ -106,7 +246,7 @@
         },
         {
           "default": "",
-          "document": "身份ID。",
+          "document": "成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取",
           "example": "11",
           "member": "int64",
           "name": "IdentityId",
@@ -151,7 +291,7 @@
       "members": [
         {
           "default": "",
-          "document": "名称",
+          "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
           "example": "testAccount",
           "member": "string",
           "name": "Name",
@@ -160,7 +300,7 @@
         },
         {
           "default": "",
-          "document": "关系策略  取值：Financial",
+          "document": "关系策略。取值：Financial",
           "example": "Finical",
           "member": "string",
           "name": "PolicyType",
@@ -169,7 +309,7 @@
         },
         {
           "default": "",
-          "document": "关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须",
+          "document": "成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票、6-优惠继承、7-代付费，1、2 默认必须",
           "example": "无",
           "member": "uint64",
           "name": "PermissionIds",
@@ -178,7 +318,7 @@
         },
         {
           "default": "",
-          "document": "成员所属部门的节点ID",
+          "document": "成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取",
           "example": "1001",
           "member": "int64",
           "name": "NodeId",
@@ -187,7 +327,7 @@
         },
         {
           "default": "",
-          "document": "账号名",
+          "document": "账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
           "example": "test",
           "member": "string",
           "name": "AccountName",
@@ -196,7 +336,7 @@
         },
         {
           "default": "",
-          "document": "备注",
+          "document": "备注。",
           "example": "test",
           "member": "string",
           "name": "Remark",
@@ -205,7 +345,7 @@
         },
         {
           "default": "",
-          "document": "重试创建传记录ID",
+          "document": "成员创建记录ID。创建异常重试时需要",
           "example": "12344",
           "member": "int64",
           "name": "RecordId",
@@ -214,7 +354,7 @@
         },
         {
           "default": "",
-          "document": "代付者Uin",
+          "document": "代付者Uin。成员代付费时需要",
           "example": "\"\"",
           "member": "string",
           "name": "PayUin",
@@ -223,7 +363,7 @@
         },
         {
           "default": "",
-          "document": "管理身份",
+          "document": "成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持",
           "example": "[1]",
           "member": "uint64",
           "name": "IdentityRoleID",
@@ -232,7 +372,7 @@
         },
         {
           "default": "",
-          "document": "主体关系ID",
+          "document": "认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取",
           "example": "0",
           "member": "int64",
           "name": "AuthRelationId",
@@ -246,10 +386,253 @@
       "document": "CreateOrganizationMember返回参数结构体",
       "members": [
         {
-          "document": "成员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100019119",
           "member": "int64",
           "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersRequest": {
+      "document": "DeleteOrganizationMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "被删除成员的UIN列表。",
+          "example": "无",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersResponse": {
+      "document": "DeleteOrganizationMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationNodesRequest": {
+      "document": "DeleteOrganizationNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID列表。",
+          "example": "无",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationNodesResponse": {
+      "document": "DeleteOrganizationNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationAuthNodeRequest": {
+      "document": "DescribeOrganizationAuthNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目。最大50",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationAuthNodeResponse": {
+      "document": "DescribeOrganizationAuthNode返回参数结构体",
+      "members": [
+        {
+          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "条目详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthNode",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberAuthIdentitiesRequest": {
+      "document": "DescribeOrganizationMemberAuthIdentities请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目。最大50",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "组织成员Uin。",
+          "example": "1000001",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberAuthIdentitiesResponse": {
+      "document": "DescribeOrganizationMemberAuthIdentities返回参数结构体",
+      "members": [
+        {
+          "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgMemberAuthIdentity",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberPoliciesRequest": {
+      "document": "DescribeOrganizationMemberPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目。最大50",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "成员Uin。",
+          "example": "1000001",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字。可用于策略名或描述搜索",
+          "example": "test",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationMemberPoliciesResponse": {
+      "document": "DescribeOrganizationMemberPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgMemberPolicy",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -268,7 +651,7 @@
       "members": [
         {
           "default": "",
-          "document": "偏移量",
+          "document": "偏移量。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -277,7 +660,7 @@
         },
         {
           "default": "",
-          "document": "限制数目",
+          "document": "限制数目。最大50",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -295,7 +678,7 @@
         },
         {
           "default": "",
-          "document": "成员名或者成员ID搜索",
+          "document": "成员名称或者成员ID搜索。",
           "example": "test",
           "member": "string",
           "name": "SearchKey",
@@ -304,7 +687,7 @@
         },
         {
           "default": "",
-          "document": "主体名称",
+          "document": "主体名称搜索。",
           "example": "\"\"",
           "member": "string",
           "name": "AuthName",
@@ -313,7 +696,7 @@
         },
         {
           "default": "",
-          "document": "集团服务（服务管理员查询时，必须指定）",
+          "document": "可信服务产品简称。可信服务管理员查询时必须指定",
           "example": "\"\"",
           "member": "string",
           "name": "Product",
@@ -327,7 +710,7 @@
       "document": "DescribeOrganizationMembers返回参数结构体",
       "members": [
         {
-          "document": "成员列表",
+          "document": "成员列表。",
           "example": "无",
           "member": "OrgMember",
           "name": "Items",
@@ -336,13 +719,67 @@
           "value_allowed_null": false
         },
         {
-          "document": "总数目",
+          "document": "总数目。",
           "example": "1",
           "member": "uint64",
           "name": "Total",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationNodesRequest": {
+      "document": "DescribeOrganizationNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "限制数目。最大50",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationNodesResponse": {
+      "document": "DescribeOrganizationNodes返回参数结构体",
+      "members": [
+        {
+          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "列表详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgNode",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -367,7 +804,7 @@
         },
         {
           "default": "",
-          "document": "产品简称（查询是否集团服务委派管理员必填）",
+          "document": "可信服务产品简称。查询是否该可信服务管理员时必须指定",
           "example": "test",
           "member": "string",
           "name": "Product",
@@ -381,7 +818,7 @@
       "document": "DescribeOrganization返回参数结构体",
       "members": [
         {
-          "document": "企业组织ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业组织ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
           "member": "int64",
           "name": "OrgId",
@@ -390,7 +827,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10001",
           "member": "int64",
           "name": "HostUin",
@@ -399,7 +836,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "NickName",
@@ -408,7 +845,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "企业组织类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业组织类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OrgType",
@@ -417,7 +854,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "组织管理员：true，组织成员：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否组织管理员。是：true ，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsManager",
@@ -426,7 +863,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型。财务管理：Financial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Finical",
           "member": "string",
           "name": "OrgPolicyType",
@@ -435,7 +872,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "财务策略",
           "member": "string",
           "name": "OrgPolicyName",
@@ -444,7 +881,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "策略权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员财务权限列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OrgPermission",
           "name": "OrgPermission",
@@ -453,7 +890,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "根节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织根节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "RootNodeId",
@@ -462,7 +899,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -471,7 +908,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "成员加入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员加入时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "JoinTime",
@@ -480,7 +917,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否允许退出。允许：Allow，不允许：Denied。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员是否允许退出。允许：Allow，不允许：Denied\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Allow",
           "member": "string",
           "name": "IsAllowQuit",
@@ -489,7 +926,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "代付者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代付者Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "PayUin",
@@ -498,7 +935,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "代付者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代付者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "PayName",
@@ -507,7 +944,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否集团服务委派管理员 true-是、false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可信服务管理员。是：true，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsAssignManager",
@@ -516,12 +953,110 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否主体管理员 true-是、false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否实名主体管理员。是：true，否：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsAuthManager",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdentityPolicy": {
+      "document": "组织身份策略",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "AdministratorAccess",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListOrganizationIdentityRequest": {
+      "document": "ListOrganizationIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目。最大50",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "名称搜索关键字。",
+          "example": "test",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份ID搜索。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationIdentityResponse": {
+      "document": "ListOrganizationIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "条目详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrgIdentity",
+          "name": "Items",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -552,6 +1087,108 @@
           "example": "test",
           "member": "string",
           "name": "IdentityAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MoveOrganizationNodeMembersRequest": {
+      "document": "MoveOrganizationNodeMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组织节点ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "成员UIN列表。",
+          "example": "无",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveOrganizationNodeMembersResponse": {
+      "document": "MoveOrganizationNodeMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrgIdentity": {
+      "document": "组织身份",
+      "members": [
+        {
+          "default": "",
+          "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IdentityPolicy",
+          "name": "IdentityPolicy",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份类型。 1-预设、 2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -735,6 +1372,224 @@
       ],
       "usage": "out"
     },
+    "OrgMemberAuthIdentity": {
+      "document": "组织成员可授权的身份",
+      "members": [
+        {
+          "default": "",
+          "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgMemberPolicy": {
+      "document": "组织成员被授权的策略",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份角色别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityRoleAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-02-12 12:12:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgNode": {
+      "document": "企业组织单元",
+      "members": [
+        {
+          "default": "",
+          "document": "组织节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ParentNodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-12 12:12:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-12 12:12:11",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OrgPermission": {
       "document": "关系策略权限",
       "members": [
@@ -760,6 +1615,51 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateOrganizationNodeRequest": {
+      "document": "UpdateOrganizationNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID。",
+          "example": "1001",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationNodeResponse": {
+      "document": "UpdateOrganizationNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

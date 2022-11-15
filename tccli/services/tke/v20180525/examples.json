@@ -1017,7 +1017,7 @@
     "DisableClusterAudit": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterAudit\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClusterAudit\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "关闭集群审计"
       }
@@ -1033,7 +1033,7 @@
     "DisableEventPersistence": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DisableEventPersistence\n&ClusterId=xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableEventPersistence\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "关闭事件持久化功能示例"
       }

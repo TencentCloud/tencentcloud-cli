@@ -1,11 +1,19 @@
 {
   "actions": {
+    "AddOrganizationNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganizationNode\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"ParentNodeId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeId\": 1123,\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "添加企业组织节点"
+      }
+    ],
     "BindOrganizationMemberAuthAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOrganizationMemberAuthAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"PolicyId\": \"98081\",\n    \"OrgSubAccountUins\": [\n        \"100000546921\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOrganizationMemberAuthAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": 100000546922,\n    \"PolicyId\": 98081,\n    \"OrgSubAccountUins\": [\n        100000546921\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c2f4b68-01b2-4841-a927-6ca8fe40649b\"\n    }\n}",
-        "title": "绑定成员和子账号的授权关系"
+        "title": "绑定组织成员和组织管理员子账号的授权关系"
       }
     ],
     "CreateOrganizationMember": [
@@ -13,7 +21,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test\",\n    \"NodeId\": \"27\",\n    \"AccountName\": \"test\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Finical\",\n    \"PayUin\": \"\",\n    \"IdentityRoleID\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": 100001919,\n        \"RequestId\": \"1a556fac-cd38-4732-86ef-6283d6abddd7\"\n    }\n}",
-        "title": "创建成员"
+        "title": "创建组织成员"
       }
     ],
     "CreateOrganizationMemberPolicy": [
@@ -21,7 +29,23 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMemberPolicy\n<公共请求参数>\n\n{\n    \"PolicyName\": \"test\",\n    \"MemberUin\": \"100000546922\",\n    \"Description\": \"test\",\n    \"IdentityId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"PolicyId\": 98081,\n        \"RequestId\": \"a1a10c6e-6723-408a-858b-2cb84e92776c\"\n    }\n}",
-        "title": "创建组织成员授权策略"
+        "title": "创建组织成员访问授权策略"
+      }
+    ],
+    "DeleteOrganizationMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationMembers\n<公共请求参数>\n\n{\n    \"MemberUin\": [\n        10000023635\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "批量删除企业组织成员"
+      }
+    ],
+    "DeleteOrganizationNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationNodes\n<公共请求参数>\n\n{\n    \"NodeId\": [\n        123\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "批量删除企业组织节点"
       }
     ],
     "DescribeOrganization": [
@@ -32,12 +56,68 @@
         "title": "获取组织详情"
       }
     ],
+    "DescribeOrganizationAuthNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationAuthNode\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"RelationId\": 1,\n                \"AuthName\": \"腾讯云\"\n            }\n        ],\n        \"RequestId\": \"1d744bef-fa56-40e9-8e3b-5a88b122ad5e\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取可创建组织成员的认证主体关系列表"
+      }
+    ],
+    "DescribeOrganizationMemberAuthIdentities": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMemberAuthIdentities\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-07-14 20:17:34\",\n                \"Description\": \"AdministratorAccess\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"登录访问\",\n                \"IdentityRoleName\": \"OrganizationAccessControlRole\",\n                \"UpdateTime\": \"2021-07-14 20:17:34\"\n            }\n        ],\n        \"RequestId\": \"55fa3e27-1166-45e1-bdac-6198c3c38534\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取组织成员可被管理的身份列表"
+      }
+    ],
+    "DescribeOrganizationMemberPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMemberPolicies\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-07-14 20:22:30\",\n                \"Description\": \"test\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"登录访问\",\n                \"IdentityRoleName\": \"OrganizationAccessControlRole\",\n                \"PolicyId\": 27887,\n                \"PolicyName\": \"test3\",\n                \"UpdateTime\": \"2021-07-14 20:22:30\"\n            },\n            {\n                \"CreateTime\": \"2021-07-14 20:21:21\",\n                \"Description\": \"test\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"登录访问\",\n                \"IdentityRoleName\": \"OrganizationAccessControlRole\",\n                \"PolicyId\": 98081,\n                \"PolicyName\": \"test\",\n                \"UpdateTime\": \"2021-07-14 20:21:21\"\n            }\n        ],\n        \"RequestId\": \"a1525f09-8a00-4b76-9db5-d47aea591dff\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取组织成员的授权策略列表"
+      }
+    ],
     "DescribeOrganizationMembers": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMembers\n<公共请求参数>\n\n{\n    \"Lang\": \"zh\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-04-17 12:19:07\",\n                \"MemberType\": \"Invite\",\n                \"MemberUin\": 100000558815,\n                \"Name\": \"test2\",\n                \"NodeId\": 27,\n                \"NodeName\": \"\",\n                \"IsAllowQuit\": \"Denied\",\n                \"OrgPermission\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"允许主账号查看子账号的消费信息\"\n                    },\n                    {\n                        \"Id\": 2,\n                        \"Name\": \"允许主账号查看子账号的财务信息\"\n                    }\n                ],\n                \"OrgPolicyName\": \"财务管理\",\n                \"OrgPolicyType\": \"Financial\",\n                \"Remark\": \"123\",\n                \"PayUin\": \"\",\n                \"PayName\": \"\",\n                \"OrgIdentity\": [],\n                \"BindStatus\": \"Unbound\",\n                \"PermissionStatus\": \"Confirmed\",\n                \"UpdateTime\": \"2021-04-17 12:19:07\"\n            },\n            {\n                \"CreateTime\": \"2021-04-16 11:49:39\",\n                \"MemberType\": \"Create\",\n                \"MemberUin\": 100000546922,\n                \"Name\": \"\",\n                \"NodeId\": 26,\n                \"NodeName\": \"\",\n                \"IsAllowQuit\": \"Denied\",\n                \"OrgPermission\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"允许主账号查看子账号的消费信息\"\n                    },\n                    {\n                        \"Id\": 2,\n                        \"Name\": \"允许主账号查看子账号的财务信息\"\n                    },\n                    {\n                        \"Id\": 3,\n                        \"Name\": \"允许主账号划拨资金给子账号\"\n                    },\n                    {\n                        \"Id\": 4,\n                        \"Name\": \"允许主账号对子账号的账单合并出账\"\n                    },\n                    {\n                        \"Id\": 5,\n                        \"Name\": \"允许主账号代子账号开票\"\n                    }\n                ],\n                \"OrgPolicyName\": \"财务管理\",\n                \"OrgPolicyType\": \"Financial\",\n                \"Remark\": \"\",\n                \"PayUin\": \"\",\n                \"PayName\": \"\",\n                \"OrgIdentity\": [],\n                \"BindStatus\": \"Unbound\",\n                \"PermissionStatus\": \"Confirmed\",\n                \"UpdateTime\": \"2021-04-16 11:49:39\"\n            }\n        ],\n        \"RequestId\": \"a0fe0702-5757-4aa4-8872-74b70a4c1b7a\",\n        \"Total\": 2\n    }\n}",
         "title": "获取成员列表"
+      }
+    ],
+    "DescribeOrganizationNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationNodes\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-04-16 11:49:39\",\n                \"Name\": \"Root\",\n                \"NodeId\": 26,\n                \"ParentNodeId\": 0,\n                \"Remark\": \"\",\n                \"UpdateTime\": \"2021-04-16 11:49:39\"\n            },\n            {\n                \"CreateTime\": \"2021-04-16 14:59:57\",\n                \"Name\": \"test\",\n                \"NodeId\": 27,\n                \"ParentNodeId\": 26,\n                \"Remark\": \"test\",\n                \"UpdateTime\": \"2021-04-16 14:59:57\"\n            },\n            {\n                \"CreateTime\": \"2021-04-16 15:55:53\",\n                \"Name\": \"test1\",\n                \"NodeId\": 29,\n                \"ParentNodeId\": 27,\n                \"Remark\": \"1\",\n                \"UpdateTime\": \"2021-04-16 15:55:53\"\n            }\n        ],\n        \"RequestId\": \"becff4cb-fe62-4288-ac6c-4fba115b94b3\",\n        \"Total\": 3\n    }\n}",
+        "title": "获取节点列表"
+      }
+    ],
+    "ListOrganizationIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOrganizationIdentity\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"IdentityId\": \"2021-07-15 21:08:38\",\n                \"IdentityAliasName\": \"test\",\n                \"Description\": \"\",\n                \"IdentityPolicy\": [\n                    {\n                        \"PolicyId\": 1,\n                        \"PolicyName\": \"AdministratorAccess\"\n                    }\n                ],\n                \"IdentityType\": 1,\n                \"UpdateTime\": \"2021-07-15 21:08:38\"\n            }\n        ],\n        \"RequestId\": \"1d744bef-fa56-40e9-8e3b-5a88b122ad5e\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取组织成员访问身份列表"
+      }
+    ],
+    "MoveOrganizationNodeMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MoveOrganizationNodeMembers\n<公共请求参数>\n\n{\n    \"MemberUin\": [\n        100000023837\n    ],\n    \"NodeId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "移动成员到指定企业组织节点"
+      }
+    ],
+    "UpdateOrganizationNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationNode\n<公共请求参数>\n\n{\n    \"NodeId\": 123,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "更新企业组织节点"
       }
     ]
   },

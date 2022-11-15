@@ -10,9 +10,7 @@ tccli ess DescribeOrganizationSeals --cli-unfold-argument  \
     --InfoType 1 \
     --Limit 1 \
     --Offset 0 \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDRt***gygqb1n5zUuO4zjEwzVL5XuTW \
-    --Operator.Channel YU**
+    --Operator.UserId yDRt***gygqb1n5zUuO4zjEwzVL5XuTW
 ```
 
 Output: 

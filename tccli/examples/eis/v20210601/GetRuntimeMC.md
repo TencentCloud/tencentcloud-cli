@@ -15,25 +15,27 @@ Output:
 {
     "Response": {
         "Runtime": {
-            "Status": 1,
-            "AutoRenewal": true,
-            "CpuLimit": 0.0,
             "DisplayName": "xx",
-            "RunningInstanceCount": 3,
             "Zone": "xx",
-            "Type": 2,
-            "ExpiredAt": 0,
-            "WorkerReplica": 0,
-            "MemoryLimit": 0.0,
-            "CpuUsed": 0.055,
-            "ChargeType": 0,
-            "UpdatedAt": 1624354153,
-            "ResourceLimitType": 0,
-            "RuntimeId": 123,
-            "Uin": "xx",
             "MemoryUsed": 703.605,
+            "Status": 1,
+            "ResourceLimitType": 0,
+            "Type": 2,
+            "UpdatedAt": 1624354153,
+            "RuntimeId": 123,
+            "CpuLimit": 0.0,
             "CreatedAt": 1624354153,
-            "WorkerSize": 2
+            "WorkerSize": 2,
+            "RuntimeClass": 0,
+            "WorkerReplica": 0,
+            "CpuUsed": 0.055,
+            "RunningInstanceCount": 3,
+            "ExpiredAt": 0,
+            "Uin": "xx",
+            "MemoryLimit": 0.0,
+            "ChargeType": 0,
+            "AutoRenewal": true,
+            "RuntimeType": 0
         },
         "RequestId": "xx"
     }

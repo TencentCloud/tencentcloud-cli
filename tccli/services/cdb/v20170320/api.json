@@ -2777,7 +2777,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -13267,6 +13267,15 @@
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理组地址ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyAddressId",
+          "required": false,
           "type": "string"
         }
       ],
