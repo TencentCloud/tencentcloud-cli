@@ -336,6 +336,12 @@
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse"
     },
+    "ModifyInstancesBundle": {
+      "document": "本接口(ModifyInstancesBundle)用于变更一个或多个轻量应用服务器实例套餐。\n* 只有状态为 RUNNING，STOPPED的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 30。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "ModifyInstancesBundleRequest",
+      "name": "变更实例套餐",
+      "output": "ModifyInstancesBundleResponse"
+    },
     "ModifyInstancesLoginKeyPairAttribute": {
       "document": "本接口用于设置实例默认登录密钥对属性。\n\n",
       "input": "ModifyInstancesLoginKeyPairAttributeRequest",
@@ -1439,7 +1445,8 @@
           "name": "DiskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1449,7 +1456,8 @@
           "name": "OriginalDiskPrice",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1459,7 +1467,8 @@
           "name": "OriginalPrice",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1469,7 +1478,8 @@
           "name": "Discount",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1479,7 +1489,19 @@
           "name": "DiscountPrice",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据盘挂载的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lhins-abcdef",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4398,12 +4420,13 @@
       "members": [
         {
           "default": "",
-          "document": "待续费的实例。",
+          "document": "待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。",
           "example": "[\"lhins-11110001\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4412,25 +4435,28 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "是否续费数据盘",
+          "document": "是否续费数据盘。默认值: false, 即不续费。",
           "example": "false",
           "member": "bool",
           "name": "RenewDataDisk",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "数据盘是否对齐实例到期时间",
+          "document": "数据盘是否对齐实例到期时间。默认值: false, 即不对齐。",
           "example": "false",
           "member": "bool",
           "name": "AlignInstanceExpiredTime",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4439,13 +4465,14 @@
       "document": "InquirePriceRenewInstances返回参数结构体",
       "members": [
         {
-          "document": "询价信息。",
+          "document": "询价信息。默认为列表中第一个实例的价格信息。",
           "example": "无",
           "member": "Price",
           "name": "Price",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "数据盘价格信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4454,7 +4481,18 @@
           "name": "DataDiskPriceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "待续费实例价格列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstancePriceDetail",
+          "name": "InstancePriceDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4854,6 +4892,34 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstancePriceDetail": {
+      "document": "实例价格详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lhins-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "询价信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstancePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5376,6 +5442,54 @@
     },
     "ModifyInstancesAttributeResponse": {
       "document": "ModifyInstancesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesBundleRequest": {
+      "document": "ModifyInstancesBundle请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为30。",
+          "example": "[“lhins-123456”]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
+          "example": "“bundle_ent_01”",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否自动抵扣代金券。取值范围：\ntrue：表示自动抵扣代金券\nfalse：表示不自动抵扣代金券\n默认取值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesBundleResponse": {
+      "document": "ModifyInstancesBundle返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

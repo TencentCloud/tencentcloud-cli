@@ -971,7 +971,8 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -980,7 +981,18 @@
           "member": "SeatUserInfo",
           "name": "Staffs",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否发送密码邮件，默认true",
+          "example": "false",
+          "member": "bool",
+          "name": "SendPassword",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -995,7 +1007,8 @@
           "name": "ErrorStaffList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -256,6 +256,14 @@
         "title": "传入场景only_hw"
       }
     ],
+    "GetTaskState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskState\nVersion:2018-11-19\nRegion:ap-beijing\n<公共请求参数>\n\n{\n    \"TaskId\": \"209fef6e-117c-11ed-9368-525400e51a47\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskState\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询智慧表单任务状态"
+      }
+    ],
     "HKIDCardOCR": [
       {
         "document": "",

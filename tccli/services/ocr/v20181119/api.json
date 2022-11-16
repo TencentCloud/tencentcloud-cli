@@ -156,6 +156,12 @@
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse"
     },
+    "GetTaskState": {
+      "document": "查询智慧表单任务状态",
+      "input": "GetTaskStateRequest",
+      "name": "查询智慧表单任务状态",
+      "output": "GetTaskStateResponse"
+    },
     "HKIDCardOCR": {
       "document": "本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备防伪识别、人像照片裁剪等扩展功能。\n\n默认接口请求频率限制：5次/秒。",
       "input": "HKIDCardOCRRequest",
@@ -1157,7 +1163,7 @@
           "visibility": 1
         },
         {
-          "document": "告警码说明：\nOCR_WARNING_TPYE_NOT_MATCH 非营业执照\nWARN_COPY_CARD 黑白复印件告警\n注：告警信息可以同时存在多个",
+          "document": "告警码说明：\nOCR_WARNING_TYPE_NOT_MATCH 非营业执照\nWARN_COPY_CARD 黑白复印件告警\n注：告警信息可以同时存在多个",
           "example": "无",
           "member": "string",
           "name": "RecognizeWarnMsg",
@@ -3565,6 +3571,44 @@
           "name": "Angel",
           "required": true,
           "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStateRequest": {
+      "document": "GetTaskState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "智慧表单任务唯一身份ID",
+          "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskStateResponse": {
+      "document": "GetTaskState返回参数结构体",
+      "members": [
+        {
+          "document": "1:任务识别完成，还未提交\n2:任务已手动关闭\n3:任务已提交\n4:任务识别中\n5:超时：任务超过了可操作的24H时限\n6:任务识别失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskState",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },

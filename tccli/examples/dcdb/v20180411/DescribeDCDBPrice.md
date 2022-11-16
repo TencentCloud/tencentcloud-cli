@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dcdb DescribeDCDBPrice --cli-unfold-argument  \
-    --ShardMemory 2 \
-    --ShardStorage 10 \
-    --ShardNodeCount 3 \
-    --ShardCount 2 \
-    --Zone ap-guangzhou-2 \
     --Count 1 \
-    --Period 1
+    --Zone ap-guangzhou-2 \
+    --ShardNodeCount 3 \
+    --Period 1 \
+    --ShardMemory 2 \
+    --ShardCount 2 \
+    --ShardStorage 10
 ```
 
 Output: 

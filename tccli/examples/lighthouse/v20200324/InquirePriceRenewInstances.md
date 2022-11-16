@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli lighthouse InquirePriceRenewInstances --cli-unfold-argument  \
-    --InstanceIds lhins-11110001 \
     --InstanceChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
-    --InstanceChargePrepaid.Period 1
+    --InstanceChargePrepaid.Period 1 \
+    --InstanceIds lhins-atqh8y7p
 ```
 
 Output: 
@@ -17,22 +17,34 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalBundlePrice": 60.0,
-                "OriginalPrice": 1440.0,
+                "OriginalBundlePrice": 40.0,
+                "OriginalPrice": 40.0,
                 "Discount": 100,
-                "DiscountPrice": 1440.0
+                "DiscountPrice": 40.0
             }
         },
-        "RequestId": "96d188f2-caf0-4d63-ba6f-474d22a8b344",
         "DataDiskPriceSet": [
             {
-                "Discount": 0.0,
-                "OriginalDiskPrice": 0.0,
-                "OriginalPrice": 0.0,
-                "DiskId": "xx",
-                "DiscountPrice": 0.0
+                "DiskId": "lhdisk-ffyrsb6q",
+                "InstanceId": "lhins-atqh8y7p",
+                "OriginalDiskPrice": 7.0,
+                "OriginalPrice": 7.0,
+                "Discount": 100,
+                "DiscountPrice": 7.0
             }
-        ]
+        ],
+        "InstancePriceDetailSet": [
+            {
+                "InstanceId": "lhins-atqh8y7p",
+                "InstancePrice": {
+                    "OriginalBundlePrice": 40.0,
+                    "OriginalPrice": 40.0,
+                    "Discount": 100,
+                    "DiscountPrice": 40.0
+                }
+            }
+        ],
+        "RequestId": "0151123a-c99c-4eda-b267-2d9800b977dc"
     }
 }
 ```

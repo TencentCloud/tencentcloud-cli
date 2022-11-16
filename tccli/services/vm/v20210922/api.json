@@ -7,7 +7,7 @@
       "output": "CancelTaskResponse"
     },
     "CreateVideoModerationTask": {
-      "document": "通过URL或存储桶创建审核任务",
+      "document": "通过URL或存储桶创建审核任务。\n\n### 直播断流处理说明：\n- 请确认已对接[取消任务](https://cloud.tencent.com/document/product/1265/80018)。\n- 如果直播任务取消/结束，则终止直播拉流并退出审核。\n- 如果直播任务没有取消/结束，直播视频推流因故中断，产品将在将在10分钟内持续拉流重试。如果10分钟检测到图片截帧/音频切片数据，则恢复正常审核，反之，则终止拉流并退出审核。在拉流终止后，用户如有审核需求，需重新送审。\n\n默认接口请求频率限制：20次/秒。",
       "input": "CreateVideoModerationTaskRequest",
       "name": "创建视频审核任务",
       "output": "CreateVideoModerationTaskResponse"
@@ -513,7 +513,8 @@
           "member": "string",
           "name": "BizType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -522,7 +523,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -531,7 +533,8 @@
           "member": "TaskInput",
           "name": "Tasks",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -540,7 +543,8 @@
           "member": "string",
           "name": "Seed",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -549,7 +553,8 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -558,7 +563,8 @@
           "member": "int64",
           "name": "Priority",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -573,7 +579,8 @@
           "name": "Results",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

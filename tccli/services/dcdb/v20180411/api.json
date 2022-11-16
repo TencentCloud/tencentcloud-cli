@@ -3812,7 +3812,8 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3821,7 +3822,8 @@
           "member": "int64",
           "name": "Count",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3830,7 +3832,8 @@
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3839,7 +3842,8 @@
           "member": "int64",
           "name": "ShardNodeCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3848,7 +3852,8 @@
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3857,7 +3862,8 @@
           "member": "int64",
           "name": "ShardStorage",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3866,7 +3872,8 @@
           "member": "int64",
           "name": "ShardCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3875,7 +3882,18 @@
           "member": "string",
           "name": "Paymode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3884,22 +3902,24 @@
       "document": "DescribeDCDBPrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "42240",
           "member": "int64",
           "name": "OriginalPrice",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "42240",
           "member": "int64",
           "name": "Price",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3920,7 +3940,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3929,7 +3950,18 @@
           "member": "int64",
           "name": "Period",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3938,22 +3970,24 @@
       "document": "DescribeDCDBRenewalPrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "42240",
           "member": "int64",
           "name": "OriginalPrice",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "42240",
           "member": "int64",
           "name": "Price",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4099,7 +4133,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4108,7 +4143,8 @@
           "member": "string",
           "name": "UpgradeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4117,7 +4153,8 @@
           "member": "AddShardConfig",
           "name": "AddShardConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4126,7 +4163,8 @@
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4135,7 +4173,18 @@
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "价格金额单位，不传默认单位为分，取值：  \n* pent：分\n* microPent：微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4144,22 +4193,24 @@
       "document": "DescribeDCDBUpgradePrice返回参数结构体",
       "members": [
         {
-          "document": "原价，单位：分",
+          "document": "原价  \n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站为人民币，国际站为美元",
           "example": "7020",
           "member": "int64",
           "name": "OriginalPrice",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "document": "实际价格，受折扣等影响，可能和原价不同\n* 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述\n* 币种：国内站人民币，国际站美元",
           "example": "7020",
           "member": "int64",
           "name": "Price",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "变配明细计算公式",
@@ -4168,7 +4219,8 @@
           "name": "Formula",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5097,7 +5149,8 @@
           "name": "ShardInstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5107,7 +5160,8 @@
           "name": "ShardMemory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -5117,7 +5171,19 @@
           "name": "ShardStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分片节点数",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardNodeCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

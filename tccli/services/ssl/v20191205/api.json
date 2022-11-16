@@ -2142,6 +2142,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "筛选证书是否即将过期，传1是筛选，0不筛选",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterExpiring",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

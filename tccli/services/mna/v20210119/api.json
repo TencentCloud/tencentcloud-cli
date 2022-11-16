@@ -100,6 +100,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否设置预置密钥",
+          "example": "true",
+          "member": "bool",
+          "name": "Encrypted",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -108,7 +118,7 @@
       "document": "AddDevice返回参数结构体",
       "members": [
         {
-          "document": "后台生成的base64字符串密钥",
+          "document": "经过加密算法加密后的base64格式密钥",
           "example": "dasdfrfwer32e4r",
           "member": "string",
           "name": "DataKey",
@@ -125,6 +135,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "签名字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxxxx\"",
+          "member": "string",
+          "name": "Signature",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {

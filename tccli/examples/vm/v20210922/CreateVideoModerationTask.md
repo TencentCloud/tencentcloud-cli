@@ -7,10 +7,10 @@ Input:
 ```
 tccli vm CreateVideoModerationTask --cli-unfold-argument  \
     --BizType 1001 \
-    --Type VIDEO \
     --Tasks.0.DataId test_data_1 \
+    --Tasks.0.Input.Url https://v.com/test.mp4 \
     --Tasks.0.Input.Type URL \
-    --Tasks.0.Input.Url https://v.com/test.mp4
+    --Type VIDEO
 ```
 
 Output: 

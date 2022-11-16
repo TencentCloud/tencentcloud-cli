@@ -93,8 +93,8 @@
     "EncryptedPhoneVerification": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=EncryptedPhoneVerification\n&IdCard=21b2ad431ee1f6d32c3f54c23c684751\n&Name=615db57aa314529aaa0fbe95b3e95bd3\n&Phone=18c6f9a0ca21c6bc9c58675adfc4196e\n&EncryptionMode=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EncryptedPhoneVerification\n<公共请求参数>\n\n{\n    \"Phone\": \"18c6f9a0ca21c6bc9c58675adfc4196e\",\n    \"IdCard\": \"21b2ad431ee1f6d32c3f54c23c684751\",\n    \"EncryptionMode\": \"1\",\n    \"Name\": \"615db57aa314529aaa0fbe95b3e95bd3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"ISP\": \"联通\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
         "title": "认证通过示例"
       }
     ],
@@ -155,7 +155,7 @@
     "GetFaceIdToken": [
       {
         "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdToken\n&IdCard=xxxxxxxxxxxxxxxxx\n&Name=xxxxxxxxxxxxxxxxx\n&CompareLib=BUSINESS\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"xxxxxxxxxxxxxxxxx\",\n    \"Name\": \"xxxxxxxxxxxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "获取token成功"
       }

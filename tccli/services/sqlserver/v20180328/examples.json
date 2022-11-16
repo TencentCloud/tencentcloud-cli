@@ -579,7 +579,7 @@
     "ModifyBackupStrategy": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyBackupStrategy\n&InstanceId=mssql-j8kv137v\n&BackupType=daily\n&BackupTime=14\n&BackupDay=1\n&BackupSaveDays=7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupStrategy\n<公共请求参数>\n\n{\n    \"BackupTime\": \"14\",\n    \"InstanceId\": \"mssql-j8kv137v\",\n    \"RegularBackupCounts\": \"1\",\n    \"BackupSaveDays\": \"7\",\n    \"BackupDay\": \"1\",\n    \"RegularBackupSaveDays\": \"365\",\n    \"BackupType\": \"daily\",\n    \"RegularBackupEnable\": \"enable\",\n    \"RegularBackupStrategy\": \"month\",\n    \"RegularBackupStartTime\": \"2022-10-10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"780339f6-30d7-419a-a30c-c2dc0933af1c\",\n        \"Errno\": 0,\n        \"Msg\": \"\"\n    }\n}",
         "title": "修改实例mssql-j8kv137v的备份策略"
       }

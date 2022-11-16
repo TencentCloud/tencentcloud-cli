@@ -3,8 +3,8 @@
     "AddDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx\",\n    \"Remark\": \"xxx\",\n    \"DataKey\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"DeviceId\": \"xx\",\n        \"DataKey\": \"xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx\",\n    \"Remark\": \"xxx\",\n    \"DataKey\": \"xxx\",\n    \"Encrypted\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"DeviceId\": \"xx\",\n        \"DataKey\": \"xxx\",\n        \"Signature\": \"xxxx\"\n    }\n}",
         "title": "新建设备"
       }
     ],

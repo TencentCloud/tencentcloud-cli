@@ -1090,7 +1090,7 @@
         },
         {
           "default": "",
-          "document": "备份方式，0-定时备份；1-手动临时备份",
+          "document": "备份方式，0-定时备份；1-手动临时备份；2-定期备份",
           "example": "0",
           "member": "int64",
           "name": "BackupWay",
@@ -5135,7 +5135,7 @@
         },
         {
           "default": "",
-          "document": "按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项",
+          "document": "按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项",
           "example": "0",
           "member": "int64",
           "name": "BackupWay",
@@ -8808,7 +8808,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8817,7 +8818,8 @@
           "member": "string",
           "name": "BackupType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8826,7 +8828,8 @@
           "member": "uint64",
           "name": "BackupTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8835,7 +8838,8 @@
           "member": "uint64",
           "name": "BackupDay",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8844,7 +8848,8 @@
           "member": "string",
           "name": "BackupModel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8853,7 +8858,8 @@
           "member": "uint64",
           "name": "BackupCycle",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8862,7 +8868,58 @@
           "member": "uint64",
           "name": "BackupSaveDays",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定期备份状态 enable-开启，disable-关闭，默认关闭",
+          "example": "disable",
+          "member": "string",
+          "name": "RegularBackupEnable",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定期备份保留天数 [90 - 3650]天，默认365天",
+          "example": "90",
+          "member": "uint64",
+          "name": "RegularBackupSaveDays",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定期备份策略 years-每年，quarters-每季度，months-每月，默认months",
+          "example": "months",
+          "member": "string",
+          "name": "RegularBackupStrategy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定期备份保留个数，默认1个",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegularBackupCounts",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定期备份开始日期，格式-YYYY-MM-DD 默认当前日期",
+          "example": "2022-10-10",
+          "member": "string",
+          "name": "RegularBackupStartTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8877,7 +8934,8 @@
           "name": "Errno",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回错误信息",
@@ -8886,7 +8944,8 @@
           "name": "Msg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

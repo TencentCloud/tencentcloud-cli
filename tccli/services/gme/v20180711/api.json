@@ -707,6 +707,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模型名称，名称长度不超过36，默认为BizId。",
+          "example": "ModelName",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -805,11 +815,44 @@
         },
         {
           "default": "",
-          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2训练失败",
+          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2训练失败, 3上线中, 4下线中",
           "example": "1",
           "member": "int64",
           "name": "ModelState",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "模型名称",
+          "example": "ModelName",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
+          "example": "https://file.myqcloud.com/keywords_template.txt",
+          "member": "string",
+          "name": "TextUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "更新时间，11位时间戳",
+          "example": "1667465928843",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1768,7 +1811,7 @@
         },
         {
           "default": "",
-          "document": "文本文件",
+          "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
           "example": "abc",
           "member": "string",
           "name": "TextUrl",
