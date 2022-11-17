@@ -1138,6 +1138,15 @@
           "name": "ProtocolParams",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "单实例多并发配置。只支持Web函数。",
+          "example": "无",
+          "member": "InstanceConcurrencyConfig",
+          "name": "InstanceConcurrencyConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3312,6 +3321,42 @@
           "name": "Args",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "False",
+          "member": "bool",
+          "name": "ContainerImageAccelerate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceConcurrencyConfig": {
+      "document": "多并发执行配置描述",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "'FALSE'",
+          "member": "string",
+          "name": "DynamicEnabled",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单实例并发数最大值。取值范围 [1,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6144,6 +6189,15 @@
           "example": "无",
           "member": "ProtocolParams",
           "name": "ProtocolParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "单实例多并发配置。只支持Web函数。",
+          "example": "无",
+          "member": "InstanceConcurrencyConfig",
+          "name": "InstanceConcurrencyConfig",
           "required": false,
           "type": "object"
         }

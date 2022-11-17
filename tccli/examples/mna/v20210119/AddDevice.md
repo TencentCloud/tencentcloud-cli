@@ -8,7 +8,8 @@ Input:
 tccli mna AddDevice --cli-unfold-argument  \
     --DeviceName xxx \
     --Remark xxx \
-    --DataKey xxx
+    --DataKey xxx \
+    --Encrypted false
 ```
 
 Output: 
@@ -17,7 +18,8 @@ Output:
     "Response": {
         "RequestId": "xxx",
         "DeviceId": "xx",
-        "DataKey": "xxx"
+        "DataKey": "xxx",
+        "Signature": "xxxx"
     }
 }
 ```

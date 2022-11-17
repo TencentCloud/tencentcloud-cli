@@ -169,7 +169,7 @@
         },
         {
           "default": "",
-          "document": "【已废弃】只在TrylockWorker时生效",
+          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "【必选】用户IP，用于就近调度，不填将严重影响用户体验",
+          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",

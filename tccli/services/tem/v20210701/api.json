@@ -4108,7 +4108,7 @@
         },
         {
           "default": "",
-          "document": "指标度量（CPU or MEMORY）",
+          "document": "指标度量\nCPU（CPU使用率，%）\nMEMORY（内存使用率，%）\nCPU_CORE_USED（CPU使用量，core）\nMEMORY_SIZE_USED(内存使用量，MiB)\nNETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)\nNETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)\nNETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)\nNETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)\nNETWORK_PACKETS_RECEIVE(网络入包量，Count/s)\nNETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)\nFS_IOPS_WRITE(磁盘写次数，Count/s)\nFS_IOPS_READ(磁盘读次数，Count/s)\nFS_SIZE_WRITE(磁盘写大小，MiB/s)\nFS_SIZE_READ(磁盘读大小，MiB/s)",
           "example": "1",
           "member": "string",
           "name": "Metrics",
@@ -4118,7 +4118,7 @@
         },
         {
           "default": "",
-          "document": "阈值（百分比）",
+          "document": "阈值（整数）",
           "example": "1",
           "member": "int64",
           "name": "Threshold",
@@ -4135,6 +4135,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "阈值（小数，优先使用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "DoubleThreshold",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -1512,7 +1512,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
@@ -1522,7 +1522,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
@@ -2312,7 +2312,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Id，若为跨账号资源此项必填",
+          "document": "临时密钥Id，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
@@ -2321,7 +2321,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Key，若为跨账号资源此项必填",
+          "document": "临时密钥Key，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
@@ -2330,7 +2330,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Token，若为跨账号资源此项必填",
+          "document": "临时密钥Token，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpToken",
@@ -3422,7 +3422,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Id，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Id，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
@@ -3432,7 +3432,7 @@
         },
         {
           "default": "",
-          "document": "临时秘钥Key，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Key，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",

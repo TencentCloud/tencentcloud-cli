@@ -9,7 +9,8 @@ tccli teo ModifyZone --cli-unfold-argument  \
     --VanityNameServers.Switch on \
     --VanityNameServers.Servers ns1.example.com ns2.example.com \
     --Type full \
-    --ZoneId zone-27q0p0bali16
+    --ZoneId zone-27q0p0bali16 \
+    --AliasZoneName zone-example
 ```
 
 Output: 

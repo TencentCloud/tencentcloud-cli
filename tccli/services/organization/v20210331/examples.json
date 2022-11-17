@@ -16,6 +16,14 @@
         "title": "绑定组织成员和组织管理员子账号的授权关系"
       }
     ],
+    "CancelOrganizationMemberAuthAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOrganizationMemberAuthAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"PolicyId\": \"98081\",\n    \"OrgSubAccountUin\": \"100000546921\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"caecf1a4-72b7-48d6-8f5f-90d1c428d3f3\"\n    }\n}",
+        "title": "取消成员和子账号的授权关系"
+      }
+    ],
     "CreateOrganizationMember": [
       {
         "document": "",
@@ -62,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationAuthNode\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"RelationId\": 1,\n                \"AuthName\": \"腾讯云\"\n            }\n        ],\n        \"RequestId\": \"1d744bef-fa56-40e9-8e3b-5a88b122ad5e\",\n        \"Total\": 1\n    }\n}",
         "title": "获取可创建组织成员的认证主体关系列表"
+      }
+    ],
+    "DescribeOrganizationMemberAuthAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMemberAuthAccounts\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"Limit\": \"10\",\n    \"PolicyId\": \"98081\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-07-14 21:00:59\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"登录访问\",\n                \"IdentityRoleName\": \"OrganizationAccessControlRole\",\n                \"OrgSubAccountUin\": 100000546921,\n                \"PolicyId\": 98081,\n                \"PolicyName\": \"test\",\n                \"UpdateTime\": \"2021-07-14 21:00:59\",\n                \"OrgSubAccountName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"cf182a6b-8caa-4df9-b1d0-09ad41e8c434\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取组织成员被绑定的子账号列表"
       }
     ],
     "DescribeOrganizationMemberAuthIdentities": [

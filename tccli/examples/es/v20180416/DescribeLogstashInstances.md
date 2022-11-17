@@ -67,6 +67,22 @@ Output:
                         "Size": 1
                     }
                 ],
+                "CpuNum": 1,
+                "MemSize": 1,
+                "OperationDuration": {
+                    "TimeStart": "xx",
+                    "TimeZone": "xx",
+                    "Periods": [
+                        1
+                    ],
+                    "TimeEnd": "xx"
+                },
+                "TagList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
                 "CreateTime": "2020-09-25 16:02:43",
                 "UpdateTime": "2020-09-27 16:10:17",
                 "Deadline": "2017-12-04 00:00:00"
@@ -123,6 +139,22 @@ Output:
                     {
                         "Name": "xx",
                         "Size": 1
+                    }
+                ],
+                "CpuNum": 1,
+                "MemSize": 1,
+                "OperationDuration": {
+                    "TimeStart": "xx",
+                    "TimeZone": "xx",
+                    "Periods": [
+                        1
+                    ],
+                    "TimeEnd": "xx"
+                },
+                "TagList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
                     }
                 ],
                 "CreateTime": "2020-09-15 14:29:06",

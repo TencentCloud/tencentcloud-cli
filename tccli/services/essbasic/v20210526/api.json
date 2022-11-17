@@ -951,6 +951,15 @@
           "name": "ReviewMessage",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署节点审核时需要指定",
+          "example": "32984r94w8f",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1450,7 +1459,7 @@
         },
         {
           "default": "",
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日；\nDISTRICT - 省市区行政区划控件；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\n\n表单域的控件不能作为印章和签名控件",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -1560,7 +1569,7 @@
         },
         {
           "default": "",
-          "document": "参数控件样式，json格式表述\n不同类型的控件会有部分非通用参数\nTEXT/MULTI_LINE_TEXT控件可以指定\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n例如：{\"FontSize\":12}",
+          "document": "参数控件样式，json格式表述\n\n不同类型的控件会有部分非通用参数\n\nTEXT/MULTI_LINE_TEXT控件可以指定\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n例如：{\"FontSize\":12}\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
           "example": "ComponentExtra",
           "member": "string",
           "name": "ComponentExtra",
@@ -1626,6 +1635,36 @@
           "name": "OffsetY",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字页码",
+          "example": "无",
+          "member": "int64",
+          "name": "KeywordPage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键字位置模式",
+          "example": "无",
+          "member": "string",
+          "name": "RelativeLocation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键字索引",
+          "example": "无",
+          "member": "int64",
+          "name": "KeywordIndexes",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

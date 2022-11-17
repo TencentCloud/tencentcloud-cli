@@ -9,7 +9,7 @@ tccli car ApplyConcurrent --cli-unfold-argument  \
     --UserIp 125.127.178.228 \
     --ProjectId cap-abcdefgh \
     --UserId cg_user \
-    --ApplicationVersionId v1
+    --ApplicationVersionId ver-1a2b3c4d
 ```
 
 Output: 

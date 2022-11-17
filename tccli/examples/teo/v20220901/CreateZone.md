@@ -9,7 +9,8 @@ tccli teo CreateZone --cli-unfold-argument  \
     --JumpStart False \
     --Type full \
     --ZoneName example.com \
-    --AllowDuplicates False
+    --AllowDuplicates False \
+    --AliasZoneName zone-example
 ```
 
 Output: 

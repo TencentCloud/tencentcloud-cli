@@ -84,9 +84,9 @@
     ],
     "CreateFlowEvidenceReport": [
       {
-        "document": "获取全部签署完成得合同得出征报告，返回报告 URL",
+        "document": "获取全部签署完成得合同得出证报告，返回报告 Id",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowEvidenceReport\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDR0PUUhw8ahh****KyK18G1h3FK5ccC\",\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"113.***.**.65\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\",\n        \"UserId\": \"de71c67592974c****20572d44ec0b6d\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"https://file.ess.tencent.cn/bresource/****\",\n        \"RequestId\": \"s166141****028448367\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"\",\n        \"ReportId\": \"yDRspUUgyg17sqr1Uur7PA0xEQpJXh2b\",\n        \"RequestId\": \"s1667977123504693616\",\n        \"Status\": \"EvidenceStatusSuccess\"\n    }\n}",
         "title": "创建并返回出证报告"
       }
     ],

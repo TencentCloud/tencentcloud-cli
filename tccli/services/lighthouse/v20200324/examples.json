@@ -454,6 +454,14 @@
         "title": "修改实例名称"
       }
     ],
+    "ModifyInstancesBundle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesBundle\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1a2b3c\"\n    ],\n    \"BundleId\": \"bundle_gen_lin_01\",\n    \"AutoVoucher\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3964a892-5399-4eb7-a35b-8bddfe683ab4\"\n    }\n}",
+        "title": "变更实例套餐"
+      }
+    ],
     "ModifyInstancesLoginKeyPairAttribute": [
       {
         "document": "",

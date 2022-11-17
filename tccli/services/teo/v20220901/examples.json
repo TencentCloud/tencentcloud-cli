@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindZoneToPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindZoneToPlan\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxyyyzzz\",\n    \"PlanId\": \"edgeone-qqqwwweee\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd9d86df-b7e8-4469-b928-18cb7fd145641\"\n    }\n}",
+        "title": "将未绑定套餐的站点绑定到目标套餐"
+      }
+    ],
     "CheckCertificate": [
       {
         "document": "",
@@ -227,7 +235,7 @@
     "CreateZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"JumpStart\": false,\n    \"Type\": \"full\",\n    \"ZoneName\": \"example.com\",\n    \"AllowDuplicates\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"JumpStart\": false,\n    \"Type\": \"full\",\n    \"ZoneName\": \"example.com\",\n    \"AllowDuplicates\": false,\n    \"AliasZoneName\": \"zone-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"RequestId\": \"2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
         "title": "创建站点"
       }
@@ -860,7 +868,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Fuzzy\": false,\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"ZoneId\": \"zone-27q0p0bali16\",\n                \"ZoneName\": \"example.com\",\n                \"OriginalNameServers\": [\n                    \"ns1.example.com.\",\n                    \"ns2.example.com.\"\n                ],\n                \"NameServers\": [\n                    \"ns1.teodns.com.\",\n                    \"ns2.teodns.com.\"\n                ],\n                \"VanityNameServers\": {\n                    \"Switch\": \"on\",\n                    \"Servers\": [\n                        \"ns1.example.com\",\n                        \"ns2.example.com\"\n                    ]\n                },\n                \"VanityNameServersIps\": [\n                    {\n                        \"Name\": \"ns1.example.com\",\n                        \"IPv4\": \"1.1.1.1\"\n                    }\n                ],\n                \"Status\": \"active\",\n                \"Type\": \"full\",\n                \"Paused\": false,\n                \"CnameSpeedUp\": \"enabled\",\n                \"CnameStatus\": \"finished\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"example\"\n                    }\n                ],\n                \"Resources\": [],\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Area\": \"mainland\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fd9d86df-b7e8-4469-b928-18cb7fd1d341\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"ZoneId\": \"zone-27q0p0bali16\",\n                \"ZoneName\": \"example.com\",\n                \"OriginalNameServers\": [\n                    \"ns1.example.com.\",\n                    \"ns2.example.com.\"\n                ],\n                \"NameServers\": [\n                    \"ns1.teodns.com.\",\n                    \"ns2.teodns.com.\"\n                ],\n                \"VanityNameServers\": {\n                    \"Switch\": \"on\",\n                    \"Servers\": [\n                        \"ns1.example.com\",\n                        \"ns2.example.com\"\n                    ]\n                },\n                \"VanityNameServersIps\": [\n                    {\n                        \"Name\": \"ns1.example.com\",\n                        \"IPv4\": \"1.1.1.1\"\n                    }\n                ],\n                \"Status\": \"active\",\n                \"Type\": \"full\",\n                \"Paused\": false,\n                \"CnameSpeedUp\": \"enabled\",\n                \"CnameStatus\": \"finished\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"example\"\n                    }\n                ],\n                \"Resources\": [],\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Area\": \"mainland\",\n                \"ActiveStatus\": \"active\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fd9d86df-b7e8-4469-b928-18cb7fd1d341\"\n    }\n}",
         "title": "查询用户站点信息列表"
       }
     ],
@@ -1091,7 +1099,7 @@
     "ModifyZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZone\n<公共请求参数>\n\n{\n    \"VanityNameServers\": {\n        \"Switch\": \"on\",\n        \"Servers\": [\n            \"ns1.example.com\",\n            \"ns2.example.com\"\n        ]\n    },\n    \"Type\": \"full\",\n    \"ZoneId\": \"zone-27q0p0bali16\"\n}",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZone\n<公共请求参数>\n\n{\n    \"VanityNameServers\": {\n        \"Switch\": \"on\",\n        \"Servers\": [\n            \"ns1.example.com\",\n            \"ns2.example.com\"\n        ]\n    },\n    \"Type\": \"full\",\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"AliasZoneName\": \"zone-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ac50b24-7dc2-47f4-92ce-9fd25d53gt2f\"\n    }\n}",
         "title": "修改站点"
       }

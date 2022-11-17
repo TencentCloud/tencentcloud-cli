@@ -1,11 +1,59 @@
 {
   "actions": {
+    "AddLabel": [
+      {
+        "document": "DID添加标签",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLabel\n<公共请求参数>\n\n{\n    \"LabelId\": 75,\n    \"Did\": \"did:tdid:1:0x0c7eab87d4854c91cfdf0e96fddcc836dea723ee\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "AddLabel"
+      }
+    ],
+    "CancelAuthorityIssuer": [
+      {
+        "document": "撤消权威机构认证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAuthorityIssuer\n<公共请求参数>\n\n{\n    \"Did\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "RecognizeAuthorityIssuer"
+      }
+    ],
+    "CheckChain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckChain\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"GroupId\": 1,\n    \"AgencyName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleType\": 1,\n        \"ChainId\": \"bcos-fmtkyt8xne\",\n        \"AppName\": \"tesaba4\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "检查区块链信息"
+      }
+    ],
+    "CheckDidDeploy": [
+      {
+        "document": "检查部署情况",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDidDeploy\n<公共请求参数>\n\n{\n    \"TaskId\": 37\n}",
+        "output": "{\n    \"Response\": {\n        \"Task\": {\n            \"Id\": 37,\n            \"AppId\": 251005746,\n            \"ClusterId\": \"bcos-fmtkyt8xne\",\n            \"GroupId\": 6,\n            \"ServiceId\": 0,\n            \"Status\": 0,\n            \"ErrorCode\": \"\",\n            \"ErrorMsg\": \"\",\n            \"CreateTime\": \"2021-07-23 13:52:50\",\n            \"UpdateTime\": \"2021-07-23 13:52:50\"\n        },\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "CheckDidDeploy"
+      }
+    ],
     "CreateCredential": [
       {
         "document": "创建凭证",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCredential\n<公共请求参数>\n\n{\n    \"TransactionArg\": {\n        \"InvokerTDid\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\"\n    },\n    \"VersionCredential\": \"1.0.0\",\n    \"FunctionArg\": {\n        \"ClaimJson\": \"{\\\"name\\\": \\\"zhang san\\\", \\\"id\\\": \\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\", \\\"age\\\": 18}\",\n        \"ExpirationDate\": \"2029-04-18T21:12:33Z\",\n        \"CptId\": 2000000,\n        \"Issuer\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"CredentialData\": \"{\\\"claim\\\":{\\\"age\\\":18,\\\"id\\\":\\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\",\\\"name\\\":\\\"zhang san\\\"},\\\"context\\\":\\\"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\\\",\\\"cptId\\\":2000000,\\\"expirationDate\\\":1871212353,\\\"id\\\":\\\"0a581276-35e8-4835-ae5d-66705c76335d\\\",\\\"issuanceDate\\\":1628136106,\\\"issuer\\\":\\\"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\\\",\\\"proof\\\":{\\\"created\\\":1628136106,\\\"creator\\\":\\\"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484#keys-0\\\",\\\"salt\\\":{\\\"age\\\":\\\"APoZk\\\",\\\"id\\\":\\\"LxxnG\\\",\\\"name\\\":\\\"9upnW\\\"},\\\"signatureValue\\\":\\\"3qFEuH8Oa7oVWEBSRHSG/iHYVqmTFtnQH+bES3UQTuYYw9m82hP87cDf4s2P5C+h5/I7UqsEJzXz1KRBklrhpAA=\\\",\\\"type\\\":\\\"Secp256k1\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\"]}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
         "title": "CreateCredential"
+      }
+    ],
+    "CreateDidService": [
+      {
+        "document": "创建Did服务",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDidService\n<公共请求参数>\n\n{\n    \"AgencyName\": \"xx\",\n    \"AppName\": \"xx\",\n    \"ConsortiumName\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"GroupName\": \"xx\",\n    \"ConsortiumId\": 617,\n    \"GroupId\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"Task\": {\n            \"Id\": 37,\n            \"AppId\": 251005746,\n            \"ClusterId\": \"bcos-fmtkyt8xne\",\n            \"GroupId\": 6,\n            \"ServiceId\": 0,\n            \"Status\": 0,\n            \"ErrorCode\": \"\",\n            \"ErrorMsg\": \"\",\n            \"CreateTime\": \"2021-07-23 13:52:50\",\n            \"UpdateTime\": \"2021-07-23 13:52:50\"\n        },\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateDidService"
+      }
+    ],
+    "CreateLabel": [
+      {
+        "document": "新建标签",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"LabelName\": \"test1a152\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateLabel"
       }
     ],
     "CreateSelectiveCredential": [
@@ -24,12 +72,60 @@
         "title": "创建DID"
       }
     ],
+    "CreateTDidByPrivateKey": [
+      {
+        "document": "新建DID",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDidByPrivateKey\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1,\n    \"PrivateKey\": \"29331392255431342347427142407956379150860712035024674919338433021732260496669\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"did:tdid:1:0x6dcc17846844ff22046a3cc5ae51941defe0d02c\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateTDidByPrivateKey"
+      }
+    ],
     "CreateTDidByPublicKey": [
       {
         "document": "根据公私钥生成Tdid",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDidByPublicKey\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1,\n    \"PublicKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\",\n    \"EncryptPubKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\"\n}",
         "output": "{\n    \"Response\": {\n        \"Did\": \"did:tdid:1:0x4b5edc27dd8a20ebaae6d427f3142b24fbf687ff\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
         "title": "CreateTDidByPublicKey"
+      }
+    ],
+    "DeployByName": [
+      {
+        "document": "通过Name部署TDID合约",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployByName\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"测试应用11\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Hash\": \"0x1c0eb253d21cbe557573e6deba44a07acedfc16176f72c9a9c3f016e517c6e4b\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "DeployByName"
+      }
+    ],
+    "DownCpt": [
+      {
+        "document": "凭证模版下载",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownCpt\n<公共请求参数>\n\n{\n    \"CptIndex\": 32\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "DownCpt"
+      }
+    ],
+    "EnableHash": [
+      {
+        "document": "启用合约",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableHash\n<公共请求参数>\n\n{\n    \"Hash\": \"0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ffd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "EnableHash"
+      }
+    ],
+    "GetAgencyTDid": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAgencyTDid\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Prefix\": \"did:tdid:\",\n        \"Identity\": [\n            {\n                \"AccountIdentifier\": \"0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"ChainID\": \"15\",\n                \"Did\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "本机构DID详情"
+      }
+    ],
+    "GetAuthoritiesList": [
+      {
+        "document": "权威机构列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAuthoritiesList\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:15:0xf1cefdd7991234c7a52d69225012ba0eaef7025d\",\n    \"Status\": 1,\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": 39,\n                \"DidId\": 5721,\n                \"Did\": \"did:tdid:15:0xf1cefdd7991234c7a52d69225012ba0eaef7025d\",\n                \"Name\": \"tencent\",\n                \"Status\": 1,\n                \"DidServiceId\": 25,\n                \"ContractAppId\": 45,\n                \"Remark\": \"tx\",\n                \"RegisterTime\": \"2021-08-03 09:58:54\",\n                \"RecognizeTime\": \"2021-08-03 15:36:06\",\n                \"CreateTime\": \"2021-08-03 09:58:54\",\n                \"UpdateTime\": \"2021-08-03 09:58:54\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"AppName\": \"xxxxx\",\n                \"LabelName\": \"\"\n            }\n        ],\n        \"AllCount\": 1,\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetAuthoritiesList"
       }
     ],
     "GetAuthorityIssuer": [
@@ -40,12 +136,236 @@
         "title": "GetAuthorityIssuer"
       }
     ],
+    "GetConsortiumClusterList": [
+      {
+        "document": "获取联盟列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConsortiumClusterList\n<公共请求参数>\n\n{\n    \"ConsortiumId\": 661\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterList\": [\n            {\n                \"ChainId\": 591,\n                \"ChainName\": \"asdfafffffffffffffffffffffff\",\n                \"AgencyCount\": 2,\n                \"ConsortiumId\": 661,\n                \"CreateTime\": \"2021-08-07 15:40:46\",\n                \"ExpireTime\": \"2021-09-07 15:53:55\",\n                \"ChainStatus\": 1,\n                \"ResourceId\": \"tbaas-6s0ih1k0rg\",\n                \"ClusterId\": \"bcos-03z30qbg1c\",\n                \"ConsortiumName\": \"TDID测试\",\n                \"AgencyId\": 303,\n                \"AutoRenewFlag\": 1,\n                \"TotalNetworkNode\": 5,\n                \"TotalCreateNode\": 5,\n                \"TotalGroups\": 28\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetConsortiumList"
+      }
+    ],
+    "GetConsortiumList": [
+      {
+        "document": "获取联盟列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConsortiumList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ConsortiumList\": [\n            {\n                \"Id\": 661,\n                \"Name\": \"TDID测试\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetConsortiumList"
+      }
+    ],
+    "GetCptInfo": [
+      {
+        "document": "凭证模版详情",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCptInfo\n<公共请求参数>\n\n{\n    \"CptIndex\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"CptJsonData\": \"{\\n  \\\"cptType\\\" : \\\"original\\\",\\n  \\\"$schema\\\" : \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\" : \\\"rtehreher\\\",\\n  \\\"title\\\" : \\\"fwwfwfw\\\",\\n  \\\"type\\\" : \\\"object\\\",\\n  \\\"properties\\\" : {\\n    \\\"age\\\" : {\\n      \\\"description\\\" : \\\"the age of certificate owner\\\",\\n      \\\"type\\\" : \\\"number\\\"\\n    },\\n    \\\"rtrey\\\" : {\\n      \\\"description\\\" : \\\"wrwetwe\\\",\\n      \\\"type\\\" : \\\"string\\\"\\n    }\\n  },\\n  \\\"required\\\" : [ \\\"rtrey\\\", \\\"age\\\" ]\\n}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetCptInfo"
+      }
+    ],
+    "GetCptList": [
+      {
+        "document": "凭证模版列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCptList\n<公共请求参数>\n\n{\n    \"DisplayStart\": 0,\n    \"DisplayLength\": 10,\n    \"CptType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"CptDataList\": [\n            {\n                \"Id\": 2,\n                \"Name\": \"\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 1,\n                \"ServiceId\": 1,\n                \"ContractAppId\": 5,\n                \"CptId\": 3000009,\n                \"CptType\": 3,\n                \"Description\": \"\",\n                \"CptJson\": \"{\\n  \\\"cptType\\\": \\\"original\\\",\\n  \\\"$schema\\\": \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\": \\\"rtehreher\\\",\\n  \\\"title\\\": \\\"fwwfwfw\\\",\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"rtrey\\\": {\\n      \\\"description\\\": \\\"wrwetwe\\\",\\n      \\\"type\\\": \\\"string\\\"\\n    },\\n\\\"age\\\": {\\n      \\\"description\\\": \\\"the age of certificate owner\\\",\\n      \\\"type\\\": \\\"number\\\"\\n    }\\n  },\\n  \\\"required\\\": [\\n    \\\"rtrey\\\",\\\"age\\\"\\n  ]\\n}\",\n                \"CreateTime\": \"2021-07-14 22:21:39\",\n                \"UpdateTime\": \"2021-07-14 22:21:39\",\n                \"CreatorDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"AppName\": \"tesaba4\"\n            },\n            {\n                \"Id\": 3,\n                \"Name\": \"test\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 1,\n                \"ServiceId\": 1,\n                \"ContractAppId\": 5,\n                \"CptId\": 3000010,\n                \"CptType\": 3,\n                \"Description\": \"aaaaa\",\n                \"CptJson\": \"{\\n  \\\"cptType\\\": \\\"original\\\",\\n  \\\"$schema\\\": \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\": \\\"rtehreher\\\",\\n  \\\"title\\\": \\\"fwwfwfw\\\",\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"rtrey\\\": {\\n      \\\"description\\\": \\\"wrwetwe\\\",\\n      \\\"type\\\": \\\"string\\\"\\n    },\\n\\\"age\\\": {\\n      \\\"description\\\": \\\"the age of certificate owner\\\",\\n      \\\"type\\\": \\\"number\\\"\\n    }\\n  },\\n  \\\"required\\\": [\\n    \\\"rtrey\\\",\\\"age\\\"\\n  ]\\n}\",\n                \"CreateTime\": \"2021-07-14 22:22:33\",\n                \"UpdateTime\": \"2021-07-14 22:22:33\",\n                \"CreatorDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"AppName\": \"tesaba4\"\n            },\n            {\n                \"Id\": 4,\n                \"Name\": \"test\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 1,\n                \"ServiceId\": 1,\n                \"ContractAppId\": 5,\n                \"CptId\": 3000011,\n                \"CptType\": 3,\n                \"Description\": \"aaaaa\",\n                \"CptJson\": \"{\\n  \\\"cptType\\\": \\\"original\\\",\\n  \\\"$schema\\\": \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\": \\\"rtehreher\\\",\\n  \\\"title\\\": \\\"fwwfwfw\\\",\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"rtrey\\\": {\\n      \\\"description\\\": \\\"wrwetwe\\\",\\n      \\\"type\\\": \\\"string\\\"\\n    },\\n\\\"age\\\": {\\n      \\\"description\\\": \\\"the age of certificate owner\\\",\\n      \\\"type\\\": \\\"number\\\"\\n    }\\n  },\\n  \\\"required\\\": [\\n    \\\"rtrey\\\",\\\"age\\\"\\n  ]\\n}\",\n                \"CreateTime\": \"2021-07-15 00:14:47\",\n                \"UpdateTime\": \"2021-07-15 00:14:47\",\n                \"CreatorDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"AppName\": \"tesaba4\"\n            }\n        ],\n        \"AllCount\": 4,\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "GetCptList"
+      }
+    ],
+    "GetCredentialCptRank": [
+      {
+        "document": "凭证颁发排行",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialCptRank\n<公共请求参数>\n\n{\n    \"StartTime\": \"2021-06-28\",\n    \"EndTime\": \"2021-07-28\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RankIssueResult\": [\n            {\n                \"Count\": 1,\n                \"ApplyId\": 1,\n                \"ApplyName\": \"xx\",\n                \"CptName\": \"xx\",\n                \"Rank\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CredentialIssueRank"
+      }
+    ],
+    "GetCredentialIssueRank": [
+      {
+        "document": "凭证颁发排行",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialIssueRank\n<公共请求参数>\n\n{\n    \"StartTime\": \"2021-06-28\",\n    \"EndTime\": \"2021-07-28\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RankIssueResult\": [\n            {\n                \"Count\": 1,\n                \"ApplyId\": 1,\n                \"ApplyName\": \"xx\",\n                \"CptName\": \"xx\",\n                \"Rank\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CredentialIssueRank"
+      }
+    ],
+    "GetCredentialIssueTrend": [
+      {
+        "document": "凭证颁发趋势",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialIssueTrend\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"StartTime\": \"2021-07-15\",\n    \"EndTime\": \"2021-07-28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Trend\": [\n            {\n                \"Time\": \"2021-07-15\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-16\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-17\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-18\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-19\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-20\",\n                \"Count\": 1\n            },\n            {\n                \"Time\": \"2021-07-21\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-22\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-23\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-24\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-25\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-26\",\n                \"Count\": 0\n            },\n            {\n                \"Time\": \"2021-07-27\",\n                \"Count\": 0\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CredentialIssueTrend"
+      }
+    ],
+    "GetCredentialStatus": [
+      {
+        "document": "新建标签",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialStatus\n<公共请求参数>\n\n{\n    \"CredentialId\": \"0a581276-35e8-4835-ae5d-66705c76335d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialStatus\": {\n            \"CredentialId\": \"0a581276-35e8-4835-ae5d-66705c76335d\",\n            \"Status\": 1,\n            \"Issuer\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\",\n            \"Digest\": \"XXXXXXXXXXXXXXXXXX\",\n            \"Signature\": \"XXXXXXXXXXXXXXXXXX\",\n            \"TimeStamp\": 1645670370\n        },\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateLabel"
+      }
+    ],
+    "GetDataPanel": [
+      {
+        "document": "概览",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDataPanel\n<公共请求参数>\n\n{\n    \"ClusterId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockNetworkCount\": 1,\n        \"BlockNetworkName\": \"name\",\n        \"BlockHeight\": 1,\n        \"BlockNetworkType\": 1,\n        \"DidCount\": 15,\n        \"CptCount\": 10,\n        \"CertificatedAuthCount\": 1,\n        \"IssueCptCount\": 1,\n        \"NewDidCount\": 15,\n        \"BcosCount\": 10,\n        \"FabricCount\": 1,\n        \"ChainMakerCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "GetDataPanel"
+      }
+    ],
+    "GetDeployInfo": [
+      {
+        "document": "合约部署详情",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDeployInfo\n<公共请求参数>\n\n{\n    \"Hash\": \"0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ffd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SdkVersion\": \"xx\",\n        \"CptAddress\": \"xx\",\n        \"Hash\": \"xx\",\n        \"BlockVersion\": \"xx\",\n        \"ContractVersion\": \"xx\",\n        \"EvidenceAddress\": \"xx\",\n        \"AuthorityAddress\": \"xx\",\n        \"ChainId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SpecificAddress\": \"xx\",\n        \"DeployDid\": \"xx\",\n        \"DidAddress\": \"xx\",\n        \"GroupId\": \"xx\",\n        \"BlockIp\": \"xx\"\n    }\n}",
+        "title": "GetDeployInfo"
+      }
+    ],
+    "GetDeployList": [
+      {
+        "document": "合约部署列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDeployList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1,\n    \"DisplayStart\": 0,\n    \"DisplayLength\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"AllCount\": 3,\n        \"Result\": [\n            {\n                \"ApplyName\": \"学历证书\",\n                \"Enable\": false,\n                \"Hash\": \"0x3aa0ef15707202a4e26120297972127487cc59f45f9bc63213e092c5c9051372\",\n                \"HashShow\": \"0x3aa0...051372\",\n                \"WeId\": \"0x47088e867502ddcd735d7ec96230c2c2c2d7e95f\",\n                \"DeployName\": \"\",\n                \"GroupId\": \"group-1\",\n                \"CreateTime\": \"2021-07-14 20:32:09\"\n            },\n            {\n                \"ApplyName\": \"tesaba4\",\n                \"Enable\": false,\n                \"Hash\": \"0x7a9044fcbc36eb7a7237347157aef06c732099bad603c46c06225a5a99806cb5\",\n                \"HashShow\": \"0x7a90...806cb5\",\n                \"WeId\": \"0x47088e867502ddcd735d7ec96230c2c2c2d7e95f\",\n                \"DeployName\": \"\",\n                \"GroupId\": \"group-1\",\n                \"CreateTime\": \"2021-07-06 20:01:46\"\n            }\n        ],\n        \"RequestId\": \"b5f50310-3c85-4c48-967b-e1b1043c420a\"\n    }\n}",
+        "title": "GetDeployList"
+      }
+    ],
+    "GetDidClusterDetail": [
+      {
+        "document": "网络基本信息",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsortiumName\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ChainAgency\": \"xx\"\n    }\n}",
+        "title": "ClusterName"
+      }
+    ],
+    "GetDidClusterList": [
+      {
+        "document": "网络基本信息",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidClusterList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DidClusterList\": [\n            {\n                \"ChainId\": 590,\n                \"ChainName\": \"DCDC\",\n                \"AgencyCount\": 2,\n                \"ConsortiumId\": 661,\n                \"CreateTime\": \"2021-08-06 20:43:05\",\n                \"ExpireTime\": \"2021-09-06 20:57:20\",\n                \"ChainStatus\": 1,\n                \"ResourceId\": \"tbaas-ijfnnzqhg6\",\n                \"ClusterId\": \"bcos-8o0v0fpj12\",\n                \"ConsortiumName\": \"\",\n                \"AgencyId\": 301,\n                \"AutoRenewFlag\": 1,\n                \"TotalNetworkNode\": 5,\n                \"TotalCreateNode\": 4,\n                \"TotalGroups\": 1,\n                \"DidCount\": 5\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "ClusterName"
+      }
+    ],
+    "GetDidDetail": [
+      {
+        "document": "DID详情",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidDetail\n<公共请求参数>\n\n{\n    \"Did\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"did:weid:1:0xc89a0423e25bea56c9f3c33098a41b100795946b\",\n        \"Remark\": \"\",\n        \"PublicKey\": \"6584791555786563316509885238222269581668944990935472251441138953175584477704980511086954755594925031757290408838181535373243875909851103030607080357950575\",\n        \"AuthorityState\": 0,\n        \"ConsortiumId\": 617,\n        \"ConsortiumName\": \"bigbang\",\n        \"GroupId\": 1,\n        \"ClusterId\": \"bcos-fmtkyt8xne\",\n        \"ResChainId\": \"1tbaas-k0j8i7lqc4\",\n        \"CreateTime\": \"2021-06-29 16:27:26\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetDidInfo"
+      }
+    ],
     "GetDidDocument": [
       {
         "document": "查看DID文档",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidDocument\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"test\",\n        \"Document\": \"aaa\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "GetDidDocument"
+      }
+    ],
+    "GetDidList": [
+      {
+        "document": "DID列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidList\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:bcos558:0x046553b6d60dde4255e406117c57c031878337bb\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 13,\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            {\n                \"ServiceId\": 51,\n                \"GroupId\": 13,\n                \"AppName\": \"测试\",\n                \"Did\": \"did:tdid:bcos558:0x046553b6d60dde4255e406117c57c031878337bb\",\n                \"Remark\": \"\",\n                \"AuthorityState\": 0,\n                \"LabelName\": \"\",\n                \"CreatedAt\": \"2021-07-24 09:04:05\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"AllianceName\": \"bigbang\",\n                \"LabelId\": 0\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\",\n        \"AllCount\": 1\n    }\n}",
+        "title": "GetDidList"
+      }
+    ],
+    "GetDidRegisterTrend": [
+      {
+        "document": "DID注册量趋势接口",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidRegisterTrend\n<公共请求参数>\n\n{\n    \"EndTime\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"StartTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Trend\": [\n            {\n                \"Time\": \"2021-04-23\",\n                \"Count\": 50\n            },\n            {\n                \"Time\": \"2021-04-24\",\n                \"Count\": 20\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "DidCreateTrend"
+      }
+    ],
+    "GetDidServiceDetail": [
+      {
+        "document": "网络基本信息",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidServiceDetail\n<公共请求参数>\n\n{\n    \"ServiceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DidService\": {\n            \"Id\": 1,\n            \"Appid\": 251005745,\n            \"Uin\": \"1298334110\",\n            \"ConsortiumId\": 617,\n            \"ConsortiumName\": \"bigbang\",\n            \"ClusterId\": \"bcos-fmtkyt8xne\",\n            \"GroupId\": 1,\n            \"ChainId\": \"\",\n            \"RoleType\": 0,\n            \"AgencyDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n            \"CreateOrg\": \"test\",\n            \"Endpoint\": \"http://127.0.0.1:6001\",\n            \"CreateTime\": \"2021-07-12T21:27:23+08:00\",\n            \"UpdateTime\": \"2021-07-12T21:27:23+08:00\"\n        },\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "ClusterName"
+      }
+    ],
+    "GetDidServiceList": [
+      {
+        "document": "网络基本信息",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidServiceList\n<公共请求参数>\n\n{\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DidServiceList\": [\n            {\n                \"Id\": 1,\n                \"Appid\": 251005745,\n                \"Uin\": \"1298334110\",\n                \"ConsortiumId\": 617,\n                \"ConsortiumName\": \"bigbang\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 1,\n                \"ChainId\": \"\",\n                \"RoleType\": 0,\n                \"AgencyDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"CreateOrg\": \"test\",\n                \"Endpoint\": \"http://127.0.0.1:6001\",\n                \"CreateTime\": \"2021-07-12T21:27:23+08:00\",\n                \"UpdateTime\": \"2021-07-12T21:27:23+08:00\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "ClusterName"
+      }
+    ],
+    "GetGroupList": [
+      {
+        "document": "配置主群组",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"GroupId\": 2,\n                \"NodeCount\": 4,\n                \"NodeCountOfAgency\": 4,\n                \"Description\": \"qtadescriptionjkbdcqzgwohei\"\n            },\n            {\n                \"GroupId\": 3,\n                \"NodeCount\": 4,\n                \"NodeCountOfAgency\": 4,\n                \"Description\": \"qtadescriptionzmphidguskafr\"\n            },\n            {\n                \"GroupId\": 4,\n                \"NodeCount\": 4,\n                \"NodeCountOfAgency\": 4,\n                \"Description\": \"qtadescriptiononjygtkmhlcqp\"\n            },\n            {\n                \"GroupId\": 5,\n                \"NodeCount\": 4,\n                \"NodeCountOfAgency\": 4,\n                \"Description\": \"qtadescriptionxhprqfmuvtyod\"\n            },\n            {\n                \"GroupId\": 6,\n                \"NodeCount\": 6,\n                \"NodeCountOfAgency\": 5,\n                \"Description\": \"qtaaas\"\n            },\n            {\n                \"GroupId\": 7,\n                \"NodeCount\": 5,\n                \"NodeCountOfAgency\": 5,\n                \"Description\": \"1111\"\n            },\n            {\n                \"GroupId\": 8,\n                \"NodeCount\": 5,\n                \"NodeCountOfAgency\": 5,\n                \"Description\": \"测试\"\n            },\n            {\n                \"GroupId\": 9,\n                \"NodeCount\": 5,\n                \"NodeCountOfAgency\": 5,\n                \"Description\": \"test\"\n            },\n            {\n                \"GroupId\": 10,\n                \"NodeCount\": 5,\n                \"NodeCountOfAgency\": 4,\n                \"Description\": \"xxxx\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "SetGroupId"
+      }
+    ],
+    "GetLabelList": [
+      {
+        "document": "获取标签列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLabelList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 15,\n    \"PageSize\": 5,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"LabelId\": \"122\",\n                \"LabelName\": \"laker\",\n                \"DidCount\": 0,\n                \"Did\": \"did:tdid:15:0x2edb0bd3182de505bdc757b0a597a0759b6580ce\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"CreateTime\": \"2021-08-03 11:26:12\"\n            },\n            {\n                \"LabelId\": \"122\",\n                \"LabelName\": \"laker\",\n                \"DidCount\": 0,\n                \"Did\": \"did:tdid:15:0x2edb0bd3182de505bdc757b0a597a0759b6580ce\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"CreateTime\": \"2021-08-03 11:26:12\"\n            },\n            {\n                \"LabelId\": \"116\",\n                \"LabelName\": \"xxx\",\n                \"DidCount\": 3,\n                \"Did\": \"did:tdid:15:0x2edb0bd3182de505bdc757b0a597a0759b6580ce\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"CreateTime\": \"2021-07-28 15:47:22\"\n            },\n            {\n                \"LabelId\": \"116\",\n                \"LabelName\": \"xxx\",\n                \"DidCount\": 3,\n                \"Did\": \"did:tdid:15:0x2edb0bd3182de505bdc757b0a597a0759b6580ce\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"CreateTime\": \"2021-07-28 15:47:22\"\n            },\n            {\n                \"LabelId\": \"88\",\n                \"LabelName\": \"aaa\",\n                \"DidCount\": 1,\n                \"Did\": \"did:tdid:15:0x2edb0bd3182de505bdc757b0a597a0759b6580ce\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 15,\n                \"CreateTime\": \"2021-07-26 10:19:19\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\",\n        \"TotalCount\": 20\n    }\n}",
+        "title": "GetLabelList"
+      }
+    ],
+    "GetPolicyList": [
+      {
+        "document": "披露策略Policy管理列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPolicyList\n<公共请求参数>\n\n{\n    \"DisplayStart\": 0,\n    \"DisplayLength\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyDataList\": [\n            {\n                \"Id\": 39,\n                \"Name\": \"\",\n                \"ClusterId\": \"bcos-fmtkyt8xne\",\n                \"GroupId\": 1,\n                \"ServiceId\": 0,\n                \"ContractAppId\": 5,\n                \"PolicyId\": 2000047,\n                \"CptId\": 3000007,\n                \"PolicyJson\": \"{\\\"cptType\\\": \\\"original\\\",\\\"$schema\\\": \\\"http://json-schema.org/draft-04/schema#\\\",\\\"description\\\": \\\"rtehreher\\\",\\\"title\\\": \\\"fwwfwfw\\\",\\\"type\\\": \\\"object\\\",\\\"properties\\\": {\\\"rtrey\\\": {      \\\"description\\\": \\\"wrwetwe\\\",\\\"type\\\": \\\"string\\\"    },\\\"age\\\": {      \\\"description\\\": \\\"the age of certificate owner\\\",      \\\"type\\\": \\\"number\\\"    }  }, \\\"required\\\": [    \\\"rtrey\\\",\\\"age\\\"  ]}\",\n                \"CreateTime\": \"2021-07-19 10:24:19\",\n                \"UpdateTime\": \"2021-07-19 10:24:19\",\n                \"CreatorDid\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"AppName\": \"tesaba4\"\n            }\n        ],\n        \"AllCount\": 39,\n        \"RequestId\": \"b447f3a7-8c7c-4550-bbd8-ba47a7255768\"\n    }\n}",
+        "title": "GetPolicyList"
+      }
+    ],
+    "GetPublicKey": [
+      {
+        "document": "查看公钥",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPublicKey\n<公共请求参数>\n\n{\n    \"Did\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"xx\",\n        \"PublicKey\": \"xx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "GetPublicKey"
+      }
+    ],
+    "QueryPolicy": [
+      {
+        "document": "披露策略Policy查看",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryPolicy\n<公共请求参数>\n\n{\n    \"PolicyIndex\": 37\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\",\n        \"Id\": 37,\n        \"PolicyId\": 2000045,\n        \"CptId\": 21414450,\n        \"PolicyData\": \"{\\n  \\\"cptId\\\": 1,\\n  \\\"gender\\\": 0,\\n  \\\"tags\\\": 0,\\n  \\\"userId\\\": 0,\\n  \\\"userName\\\": 0\\n}\"\n    }\n}",
+        "title": "QueryPolicy"
+      }
+    ],
+    "RecognizeAuthorityIssuer": [
+      {
+        "document": "认证权威机构",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeAuthorityIssuer\n<公共请求参数>\n\n{\n    \"Did\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "RecognizeAuthorityIssuer"
+      }
+    ],
+    "RegisterClaimPolicy": [
+      {
+        "document": "披露策略Policy注册",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterClaimPolicy\n<公共请求参数>\n\n{\n    \"CptIndex\": 48,\n    \"Policy\": \"{\\n  \\\"cptId\\\": 1,\\n  \\\"gender\\\": 0,\\n  \\\"age\\\": 1,\\n  \\\"userId\\\": 0,\\n  \\\"userName\\\": 0\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 39,\n        \"PolicyId\": 2000047,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "RegisterClaimPolicy"
+      }
+    ],
+    "RegisterCpt": [
+      {
+        "document": "凭证模版新建",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterCpt\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"GroupId\": 1,\n    \"CptJson\": \"xx\",\n    \"CptId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 42,\n        \"CptId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "RegisterCpt"
+      }
+    ],
+    "RegisterIssuer": [
+      {
+        "document": "注册为权威机构",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterIssuer\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d\",\n    \"Name\": \"aaa\",\n    \"Description\": \"mark一下\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "RegisterIssuer"
+      }
+    ],
+    "RemoveHash": [
+      {
+        "document": "删除合约",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveHash\n<公共请求参数>\n\n{\n    \"Hash\": \"0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ffd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "RemoveHash"
       }
     ],
     "SetCredentialStatus": [
@@ -61,6 +381,14 @@
         "document": "验证凭证",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyCredential\n<公共请求参数>\n\n{\n    \"FunctionArg\": {\n        \"ClaimJson\": \"{\\\"name\\\": \\\"zhang san\\\", \\\"id\\\": \\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\", \\\"age\\\": 18}\",\n        \"CptId\": 2000000,\n        \"ExpirationDate\": 1871212353,\n        \"Context\": \"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\",\n        \"Proof\": {\n            \"SignatureValue\": \"IL/CtZKrg+g395nYZbXT/Uzk1N3/NG/tgjbjeMf03shcGl7jSRXgVk3zz+x5zp11OBApb43By6VjWdPUJJLJMQA=\",\n            \"Created\": 1627803566,\n            \"Type\": \"Secp256k1\",\n            \"SaltJson\": \"{\\\"age\\\":\\\"o58g1\\\",\\\"id\\\":\\\"X5efp\\\",\\\"name\\\":\\\"pu2UZ\\\"}\",\n            \"Creator\": 1627803566\n        },\n        \"Id\": \"9bff9f22-2794-4d1e-b598-894163392cd9\",\n        \"Type\": [\n            \"VerifiableCredential\",\n            \"original\"\n        ],\n        \"IssuanceDate\": 1627803566,\n        \"Issuer\": \"did:tdid:15:0x4c59267a10ed54857842674d0c76ab708c6275f5\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"VerifyCode\": 0,\n        \"VerifyMessage\": \"success\",\n        \"RequestId\": \"72a6643f-7123-4288-9584-8dd4db7e8373\"\n    }\n}",
+        "title": "VerifyCredential"
+      }
+    ],
+    "VerifyPurchase": [
+      {
+        "document": "验证凭证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPurchase\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "VerifyCredential"
       }
     ]

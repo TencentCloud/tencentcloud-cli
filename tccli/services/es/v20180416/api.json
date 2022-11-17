@@ -2065,6 +2065,15 @@
           "name": "VpcIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签信息列表",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4141,6 +4150,36 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5115,6 +5154,7 @@
         {
           "default": "",
           "document": "集群实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5123,6 +5163,7 @@
         {
           "default": "",
           "document": "节点名称列表",
+          "example": "[\"159229897700074xxxx\\r\\n\"]",
           "member": "string",
           "name": "NodeNames",
           "required": true,
@@ -5131,8 +5172,27 @@
         {
           "default": "",
           "document": "是否强制重启",
+          "example": "true",
           "member": "bool",
           "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "可选重启模式\"in-place\",\"blue-green\"，分别表示重启，蓝绿重启；默认值为\"in-place\"",
+          "example": "\"in-place\"",
+          "member": "string",
+          "name": "RestartMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点状态，在蓝绿模式中使用；离线节点蓝绿有风险",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOffline",
           "required": false,
           "type": "bool"
         }

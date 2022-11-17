@@ -3,7 +3,7 @@
     "ApplyConcurrent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyConcurrent\n<公共请求参数>\n\n{\n    \"UserIp\": \"125.127.178.228\",\n    \"ProjectId\": \"cap-abcdefgh\",\n    \"UserId\": \"cg_user\",\n    \"ApplicationVersionId\": \"v1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyConcurrent\n<公共请求参数>\n\n{\n    \"UserIp\": \"125.127.178.228\",\n    \"ProjectId\": \"cap-abcdefgh\",\n    \"UserId\": \"cg_user\",\n    \"ApplicationVersionId\": \"ver-1a2b3c4d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
         "title": "ApplyConcurrent示例"
       }

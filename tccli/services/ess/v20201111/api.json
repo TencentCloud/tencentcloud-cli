@@ -49,7 +49,7 @@
       "output": "CreateFlowByFilesResponse"
     },
     "CreateFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 URL。此接口暂未开放，有问题请联系运营人员。",
+      "document": "创建出证报告，返回报告 ID。",
       "input": "CreateFlowEvidenceReportRequest",
       "name": "创建并返回出证报告",
       "output": "CreateFlowEvidenceReportResponse"
@@ -573,7 +573,7 @@
       "members": [
         {
           "default": "",
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nDATE， 日期控件，默认是格式化为xxxx年xx月xx日\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日；\nDISTRICT - 省市区行政区划控件；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nDATE， 日期控件，默认是格式化为xxxx年xx月xx日\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -673,7 +673,7 @@
         },
         {
           "default": "",
-          "document": "扩展参数：\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
+          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -749,6 +749,46 @@
           "name": "OffsetY",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字排序规则",
+          "example": "Positive\\Reverse",
+          "member": "string",
+          "name": "KeywordOrder",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字页码",
+          "example": "无",
+          "member": "int64",
+          "name": "KeywordPage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键字位置模式",
+          "example": "无",
+          "member": "string",
+          "name": "RelativeLocation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键字索引",
+          "example": "无",
+          "member": "int64",
+          "name": "KeywordIndexes",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1277,10 +1317,28 @@
       "document": "CreateFlowEvidenceReport返回参数结构体",
       "members": [
         {
-          "document": "出证报告 URL（有效期5分钟）",
+          "document": "出证报告 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "废除，字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://file.xxx",
           "member": "string",
           "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行中：EvidenceStatusExecuting\n成功：EvidenceStatusSuccess\n失败：EvidenceStatusFailed",
+          "example": "EvidenceStatusExecuting",
+          "member": "string",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false

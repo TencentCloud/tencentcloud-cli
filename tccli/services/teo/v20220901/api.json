@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindZoneToPlan": {
+      "document": "将未绑定套餐的站点绑定到已有套餐",
+      "input": "BindZoneToPlanRequest",
+      "name": "为站点绑定套餐",
+      "output": "BindZoneToPlanResponse"
+    },
     "CheckCertificate": {
       "document": "校验证书",
       "input": "CheckCertificateRequest",
@@ -1515,6 +1521,42 @@
         }
       ],
       "usage": "in"
+    },
+    "BindZoneToPlanRequest": {
+      "document": "BindZoneToPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "未绑定套餐的站点ID。",
+          "example": "zone-xxxyyyzzz",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的目标套餐ID。",
+          "example": "edgeone-qqqwwweee",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindZoneToPlanResponse": {
+      "document": "BindZoneToPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BotConfig": {
       "document": "安全Bot配置",
@@ -3819,6 +3861,15 @@
           "name": "AllowDuplicates",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "站点别名。数字、英文、-和_组合，限制20个字符。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10435,6 +10486,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值有：\n<li> type：接入类型；</li>\n<li> area：加速区域；</li>\n<li> create-time：创建时间；</li>\n<li> zone-name：站点名称；</li>\n<li> use-time：最近使用时间；</li>\n<li> active-status：生效状态。</li>不填写使用默认值create-time。",
+          "example": "\"status\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向，取值有：\n<li> asc：从小到大排序；</li>\n<li> desc：从大到小排序。</li>不填写使用默认值desc。",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14051,6 +14120,15 @@
           "name": "VanityNameServers",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "站点别名。数字、英文、-和_组合，限制20个字符。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18431,6 +18509,26 @@
           "name": "VanityNameServersIps",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "展示状态，取值有：\n<li> active：已启用；</li>\n<li> inactive：未生效；</li>\n<li> paused：已停用。</li>",
+          "example": "active",
+          "member": "string",
+          "name": "ActiveStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点别名。数字、英文、-和_组合，限制20个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

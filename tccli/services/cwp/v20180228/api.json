@@ -534,6 +534,12 @@
       "name": "获取爆破破解规则",
       "output": "DescribeBruteAttackRulesResponse"
     },
+    "DescribeClientException": {
+      "document": "获取客户端异常事件",
+      "input": "DescribeClientExceptionRequest",
+      "name": "获取客户端异常事件",
+      "output": "DescribeClientExceptionResponse"
+    },
     "DescribeComponentStatistics": {
       "document": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。",
       "input": "DescribeComponentStatisticsRequest",
@@ -13633,6 +13639,87 @@
       ],
       "type": "object"
     },
+    "DescribeClientExceptionRequest": {
+      "document": "DescribeClientException请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端异常类型 1:客户端离线，2:客户端卸载",
+          "example": "1",
+          "member": "int64",
+          "name": "ExceptionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，不为0，最大值100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始时间 `2006-01-02 15:04:05` 格式",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间 `2006-01-02 15:04:05` 格式",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientExceptionResponse": {
+      "document": "DescribeClientException返回参数结构体",
+      "members": [
+        {
+          "document": "事件总数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详情",
+          "example": "无",
+          "member": "RecordInfo",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeComponentStatisticsRequest": {
       "document": "DescribeComponentStatistics请求参数结构体",
       "members": [
@@ -25525,6 +25612,72 @@
           "name": "Num",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordInfo": {
+      "document": "客户端异常信息结构",
+      "members": [
+        {
+          "default": "",
+          "document": "主机ip",
+          "example": "10.10.10.10",
+          "member": "string",
+          "name": "HostIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机实例id",
+          "example": "ins-abc",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端离线时间",
+          "example": "2022-11-14 00:00:00",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端卸载时间",
+          "example": "2022-11-14 00:00:00",
+          "member": "string",
+          "name": "UninstallTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端卸载调用链",
+          "example": "-",
+          "member": "string",
+          "name": "UninstallCmd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端uuid",
+          "example": "c6bf7a9e-95cf-4048-a6cc-97e85d02e6ee",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

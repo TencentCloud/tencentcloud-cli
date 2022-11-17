@@ -4012,7 +4012,7 @@
         },
         {
           "default": "",
-          "document": "过期时间",
+          "document": "过期时间 秒级unix时间戳",
           "example": "124177555",
           "member": "int64",
           "name": "ExpireTime",

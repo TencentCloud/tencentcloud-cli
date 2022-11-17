@@ -40,7 +40,7 @@
         },
         {
           "default": "",
-          "document": "用户IP",
+          "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
@@ -59,7 +59,7 @@
         {
           "default": "",
           "document": "应用版本ID",
-          "example": "v1",
+          "example": "ver-1a2b3c4d",
           "member": "string",
           "name": "ApplicationVersionId",
           "required": false,
@@ -94,7 +94,7 @@
         },
         {
           "default": "",
-          "document": "用户IP",
+          "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",

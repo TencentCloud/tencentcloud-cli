@@ -1,10 +1,46 @@
 {
   "actions": {
+    "AddLabel": {
+      "document": "DID添加标签\n",
+      "input": "AddLabelRequest",
+      "name": "DID添加标签",
+      "output": "AddLabelResponse"
+    },
+    "CancelAuthorityIssuer": {
+      "document": "撤消权威机构认证",
+      "input": "CancelAuthorityIssuerRequest",
+      "name": "撤消权威机构认证",
+      "output": "CancelAuthorityIssuerResponse"
+    },
+    "CheckChain": {
+      "document": "检查区块链信息",
+      "input": "CheckChainRequest",
+      "name": "检查区块链信息",
+      "output": "CheckChainResponse"
+    },
+    "CheckDidDeploy": {
+      "document": "检查部署情况",
+      "input": "CheckDidDeployRequest",
+      "name": "检查部署情况",
+      "output": "CheckDidDeployResponse"
+    },
     "CreateCredential": {
       "document": "创建凭证",
       "input": "CreateCredentialRequest",
       "name": "创建凭证",
       "output": "CreateCredentialResponse"
+    },
+    "CreateDidService": {
+      "document": "创建DID服务",
+      "input": "CreateDidServiceRequest",
+      "name": "创建DID服务",
+      "output": "CreateDidServiceResponse"
+    },
+    "CreateLabel": {
+      "document": "新建标签",
+      "input": "CreateLabelRequest",
+      "name": "新建标签",
+      "output": "CreateLabelResponse"
     },
     "CreateSelectiveCredential": {
       "document": "创建选择性批露凭证",
@@ -18,11 +54,47 @@
       "name": "创建机构DID",
       "output": "CreateTDidResponse"
     },
+    "CreateTDidByPrivateKey": {
+      "document": "新建DID根据私钥生成Tdid",
+      "input": "CreateTDidByPrivateKeyRequest",
+      "name": "新建DID根据私钥生成Tdid",
+      "output": "CreateTDidByPrivateKeyResponse"
+    },
     "CreateTDidByPublicKey": {
       "document": " 新建DID根据公钥生成Tdid",
       "input": "CreateTDidByPublicKeyRequest",
       "name": "新建DID根据公钥生成Tdid",
       "output": "CreateTDidByPublicKeyResponse"
+    },
+    "DeployByName": {
+      "document": "通过Name部署TDID合约",
+      "input": "DeployByNameRequest",
+      "name": "通过Name部署TDID合约",
+      "output": "DeployByNameResponse"
+    },
+    "DownCpt": {
+      "document": "凭证模版下载",
+      "input": "DownCptRequest",
+      "name": "凭证模版下载",
+      "output": "DownCptResponse"
+    },
+    "EnableHash": {
+      "document": "启用合约",
+      "input": "EnableHashRequest",
+      "name": "启用合约",
+      "output": "EnableHashResponse"
+    },
+    "GetAgencyTDid": {
+      "document": "本机构DID详情",
+      "input": "GetAgencyTDidRequest",
+      "name": "本机构DID详情",
+      "output": "GetAgencyTDidResponse"
+    },
+    "GetAuthoritiesList": {
+      "document": "权威机构列表",
+      "input": "GetAuthoritiesListRequest",
+      "name": "权威机构列表",
+      "output": "GetAuthoritiesListResponse"
     },
     "GetAuthorityIssuer": {
       "document": "获取权威机构信息",
@@ -30,11 +102,179 @@
       "name": "获取权威机构信息",
       "output": "GetAuthorityIssuerResponse"
     },
+    "GetConsortiumClusterList": {
+      "document": "获取联盟bcos网络列表",
+      "input": "GetConsortiumClusterListRequest",
+      "name": "获取联盟bcos网络列表",
+      "output": "GetConsortiumClusterListResponse"
+    },
+    "GetConsortiumList": {
+      "document": "获取联盟列表",
+      "input": "GetConsortiumListRequest",
+      "name": "获取联盟列表",
+      "output": "GetConsortiumListResponse"
+    },
+    "GetCptInfo": {
+      "document": "凭证模版详情",
+      "input": "GetCptInfoRequest",
+      "name": "凭证模版详情",
+      "output": "GetCptInfoResponse"
+    },
+    "GetCptList": {
+      "document": "凭证模版列表",
+      "input": "GetCptListRequest",
+      "name": "凭证模版列表",
+      "output": "GetCptListResponse"
+    },
+    "GetCredentialCptRank": {
+      "document": "凭证颁发按机构排行",
+      "input": "GetCredentialCptRankRequest",
+      "name": "凭证颁发模板排行",
+      "output": "GetCredentialCptRankResponse"
+    },
+    "GetCredentialIssueRank": {
+      "document": "凭证颁发按机构排行",
+      "input": "GetCredentialIssueRankRequest",
+      "name": "凭证颁发机构排行",
+      "output": "GetCredentialIssueRankResponse"
+    },
+    "GetCredentialIssueTrend": {
+      "document": "凭证颁发趋势",
+      "input": "GetCredentialIssueTrendRequest",
+      "name": "凭证颁发趋势",
+      "output": "GetCredentialIssueTrendResponse"
+    },
+    "GetCredentialStatus": {
+      "document": "获取凭证链上状态信息",
+      "input": "GetCredentialStatusRequest",
+      "name": "获取凭证链上状态",
+      "output": "GetCredentialStatusResponse"
+    },
+    "GetDataPanel": {
+      "document": "概览\n",
+      "input": "GetDataPanelRequest",
+      "name": "概览",
+      "output": "GetDataPanelResponse"
+    },
+    "GetDeployInfo": {
+      "document": "合约部署详情\n",
+      "input": "GetDeployInfoRequest",
+      "name": "合约部署详情",
+      "output": "GetDeployInfoResponse"
+    },
+    "GetDeployList": {
+      "document": "合约部署列表",
+      "input": "GetDeployListRequest",
+      "name": "合约部署列表",
+      "output": "GetDeployListResponse"
+    },
+    "GetDidClusterDetail": {
+      "document": "获取DID区块链网络详情",
+      "input": "GetDidClusterDetailRequest",
+      "name": "获取DID网络详情",
+      "output": "GetDidClusterDetailResponse"
+    },
+    "GetDidClusterList": {
+      "document": "获取用户的DID网络列表",
+      "input": "GetDidClusterListRequest",
+      "name": "获取DID网络列表",
+      "output": "GetDidClusterListResponse"
+    },
+    "GetDidDetail": {
+      "document": "DID详情",
+      "input": "GetDidDetailRequest",
+      "name": "DID详情",
+      "output": "GetDidDetailResponse"
+    },
     "GetDidDocument": {
       "document": "查看DID文档\n",
       "input": "GetDidDocumentRequest",
       "name": "查看DID文档",
       "output": "GetDidDocumentResponse"
+    },
+    "GetDidList": {
+      "document": "DID列表",
+      "input": "GetDidListRequest",
+      "name": "DID列表",
+      "output": "GetDidListResponse"
+    },
+    "GetDidRegisterTrend": {
+      "document": "DID注册趋势",
+      "input": "GetDidRegisterTrendRequest",
+      "name": "DID注册趋势",
+      "output": "GetDidRegisterTrendResponse"
+    },
+    "GetDidServiceDetail": {
+      "document": "获取DID服务详情",
+      "input": "GetDidServiceDetailRequest",
+      "name": "获取DID服务详情",
+      "output": "GetDidServiceDetailResponse"
+    },
+    "GetDidServiceList": {
+      "document": "获取DID服务列表",
+      "input": "GetDidServiceListRequest",
+      "name": "获取DID服务列表",
+      "output": "GetDidServiceListResponse"
+    },
+    "GetGroupList": {
+      "document": "主群组配置列表",
+      "input": "GetGroupListRequest",
+      "name": "主群组配置列表",
+      "output": "GetGroupListResponse"
+    },
+    "GetLabelList": {
+      "document": "标签列表",
+      "input": "GetLabelListRequest",
+      "name": "标签列表",
+      "output": "GetLabelListResponse"
+    },
+    "GetPolicyList": {
+      "document": "披露策略Policy管理列表",
+      "input": "GetPolicyListRequest",
+      "name": "披露策略Policy管理列表",
+      "output": "GetPolicyListResponse"
+    },
+    "GetPublicKey": {
+      "document": "查看公钥",
+      "input": "GetPublicKeyRequest",
+      "name": "查看公钥",
+      "output": "GetPublicKeyResponse"
+    },
+    "QueryPolicy": {
+      "document": "披露策略Policy查看",
+      "input": "QueryPolicyRequest",
+      "name": "披露策略Policy查看",
+      "output": "QueryPolicyResponse"
+    },
+    "RecognizeAuthorityIssuer": {
+      "document": "认证权威机构",
+      "input": "RecognizeAuthorityIssuerRequest",
+      "name": "认证权威机构",
+      "output": "RecognizeAuthorityIssuerResponse"
+    },
+    "RegisterClaimPolicy": {
+      "document": "披露策略Policy注册",
+      "input": "RegisterClaimPolicyRequest",
+      "name": "披露策略Policy注册",
+      "output": "RegisterClaimPolicyResponse"
+    },
+    "RegisterCpt": {
+      "document": "凭证模版新建",
+      "input": "RegisterCptRequest",
+      "name": "凭证模版新建",
+      "output": "RegisterCptResponse"
+    },
+    "RegisterIssuer": {
+      "document": "注册为权威机构",
+      "input": "RegisterIssuerRequest",
+      "name": "注册为权威机构",
+      "output": "RegisterIssuerResponse"
+    },
+    "RemoveHash": {
+      "document": "删除合约",
+      "input": "RemoveHashRequest",
+      "name": "删除合约",
+      "output": "RemoveHashResponse"
     },
     "SetCredentialStatus": {
       "document": "设置凭证链上状态",
@@ -47,6 +287,12 @@
       "input": "VerifyCredentialRequest",
       "name": "验证凭证",
       "output": "VerifyCredentialResponse"
+    },
+    "VerifyPurchase": {
+      "document": "验证购买",
+      "input": "VerifyPurchaseRequest",
+      "name": "验证购买",
+      "output": "VerifyPurchaseResponse"
     }
   },
   "metadata": {
@@ -56,6 +302,813 @@
     "serviceShortName": "tdid"
   },
   "objects": {
+    "AddLabelRequest": {
+      "document": "AddLabel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "LabelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "tdid",
+          "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddLabelResponse": {
+      "document": "AddLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Authority": {
+      "document": "权威机构",
+      "members": [
+        {
+          "default": "",
+          "document": "权威机构ID",
+          "example": "11",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Did的ID",
+          "example": "5587",
+          "member": "uint64",
+          "name": "DidId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID具体信息",
+          "example": "did:tdid:1:0x27f6403f908c7fa81006eaf71b4ae4be97c69c3d",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权威认证 1:已认证，2:未认证",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "DidServiceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "5",
+          "member": "uint64",
+          "name": "ContractAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-13 17:02:33",
+          "member": "string",
+          "name": "RegisterTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "认证时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RecognizeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-13T17:02:33+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-13T17:02:33+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约名称",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链上标签",
+          "example": "test",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BcosClusterItem": {
+      "document": "bcos网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网络索引id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络名称",
+          "example": "test",
+          "member": "string",
+          "name": "ChainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "AgencyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-08-07 15:40:46",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "2021-09-07 15:53:55",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源 id",
+          "example": "tbaas-6s0ih1k0rg",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "bcos-03z30qbg1c",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织名称",
+          "example": "test",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构id",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgencyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNetworkNode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建节点数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCreateNode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总群组数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalGroups",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CancelAuthorityIssuerRequest": {
+      "document": "CancelAuthorityIssuer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "did具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAuthorityIssuerResponse": {
+      "document": "CancelAuthorityIssuer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckChainRequest": {
+      "document": "CheckChain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "did服务机构名称",
+          "example": "test",
+          "member": "string",
+          "name": "AgencyName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckChainResponse": {
+      "document": "CheckChain返回参数结构体",
+      "members": [
+        {
+          "document": "1为盟主，0为非盟主",
+          "example": "1",
+          "member": "int64",
+          "name": "RoleType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "链ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ChainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDidDeployRequest": {
+      "document": "CheckDidDeploy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDidDeployResponse": {
+      "document": "CheckDidDeploy返回参数结构体",
+      "members": [
+        {
+          "document": "服务信息",
+          "example": "无",
+          "member": "Task",
+          "name": "Task",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConsortiumItem": {
+      "document": "联盟信息",
+      "members": [
+        {
+          "default": "",
+          "document": "联盟id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Contract": {
+      "document": "部署合约",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名",
+          "example": "22",
+          "member": "string",
+          "name": "ApplyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约状态 true:已启用 false:未启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约CNS地址",
+          "example": "0x0dd4aef95b3801c6b7bb1cee8c214a99b2aaf31896998f614032fb5ef750df",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约CNS地址脱敏",
+          "example": "0x0dd4...50dfe1",
+          "member": "string",
+          "name": "HashShow",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署机构DID",
+          "example": "0x79cd098cab63e0503f9ed87dd869cd970e88cb02",
+          "member": "string",
+          "name": "WeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署机构名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeployName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署群组",
+          "example": "group-1",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署时间",
+          "example": "2021-04-12 16:46:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CptIssueRank": {
+      "document": "模板颁发量排名",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称",
+          "example": "test",
+          "member": "string",
+          "name": "CptName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名次",
+          "example": "10",
+          "member": "int64",
+          "name": "Rank",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "颁发量",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "ApplyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CptListData": {
+      "document": "cpt集合数据",
+      "members": [
+        {
+          "default": "",
+          "document": "ID信息",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模版名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContractAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证模板ID",
+          "example": "3000009",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，1: 系统模板，2: 用户模板，3:普通模板",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证模版描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证模板Json",
+          "example": "test",
+          "member": "string",
+          "name": "CptJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "test",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "test",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者DID",
+          "example": "test",
+          "member": "string",
+          "name": "CreatorDid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateCredentialRequest": {
       "document": "CreateCredential请求参数结构体",
       "members": [
@@ -119,6 +1172,141 @@
       ],
       "type": "object"
     },
+    "CreateDidServiceRequest": {
+      "document": "CreateDidService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "联盟名称",
+          "example": "bigbang",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联盟ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "机构名称",
+          "example": "盟主",
+          "member": "string",
+          "name": "AgencyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "测试应用",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDidServiceResponse": {
+      "document": "CreateDidService返回参数结构体",
+      "members": [
+        {
+          "document": "服务信息",
+          "example": "无",
+          "member": "Task",
+          "name": "Task",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLabelRequest": {
+      "document": "CreateLabel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "test1a152",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络Id",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLabelResponse": {
+      "document": "CreateLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSelectiveCredentialRequest": {
       "document": "CreateSelectiveCredential请求参数结构体",
       "members": [
@@ -151,6 +1339,60 @@
           "example": "{}",
           "member": "string",
           "name": "CredentialData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTDidByPrivateKeyRequest": {
+      "document": "CreateTDidByPrivateKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私钥",
+          "example": "test",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTDidByPrivateKeyResponse": {
+      "document": "CreateTDidByPrivateKey返回参数结构体",
+      "members": [
+        {
+          "document": "did的具体信息",
+          "example": "did:tdid:1:0x6dcc17846844ff22046a3cc5ae51941defe0d02c",
+          "member": "string",
+          "name": "Did",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -347,6 +1589,552 @@
       ],
       "usage": "both"
     },
+    "DeployByNameRequest": {
+      "document": "DeployByName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployByNameResponse": {
+      "document": "DeployByName返回参数结构体",
+      "members": [
+        {
+          "document": "哈希值",
+          "example": "0xf9738549a9be10bf5fa15c9d32d113ba6b64f1f97c6dc8c962b07b84a08af1",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DidCluster": {
+      "document": "did区块链网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "链ID",
+          "example": "590",
+          "member": "uint64",
+          "name": "ChainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链名称",
+          "example": "DCDC",
+          "member": "string",
+          "name": "ChainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "AgencyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟ID",
+          "example": "661",
+          "member": "uint64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-08-06 20:43:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "2021-09-06 20:57:20",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "tbaas-ijfnnzqhg6",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-8o0v0fpj12",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟名称",
+          "example": "test",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织ID",
+          "example": "301",
+          "member": "uint64",
+          "name": "AgencyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络节点总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalNetworkNode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本机构节点数",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCreateNode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总群组数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalGroups",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "DidCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DidData": {
+      "document": "DID列表",
+      "members": [
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "a",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "did号码",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权威机构认证状态 1未注册 2 未认证 3 已认证",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthorityState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID标签名称",
+          "example": "test",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID创建时间",
+          "example": "1622620908",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟名称",
+          "example": "test",
+          "member": "string",
+          "name": "AllianceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DID标签id",
+          "example": "1",
+          "member": "uint64",
+          "name": "LabelId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DidServiceInfo": {
+      "document": "DID服务基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DID服务索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "251005745",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号唯一标识",
+          "example": "1298334110",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟id",
+          "example": "1",
+          "member": "int64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联盟名称",
+          "example": "test",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链ID",
+          "example": "test",
+          "member": "string",
+          "name": "ChainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1为盟主，0为非盟主",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoleType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构DID",
+          "example": "test",
+          "member": "string",
+          "name": "AgencyDid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构名称",
+          "example": "test",
+          "member": "string",
+          "name": "CreateOrg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端点",
+          "example": "\"http://127.0.0.1:6001\"",
+          "member": "string",
+          "name": "Endpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成时间",
+          "example": "test",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "test",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DownCptRequest": {
+      "document": "DownCpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Cpt索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DownCptResponse": {
+      "document": "DownCpt返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableHashRequest": {
+      "document": "EnableHash请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "合约CNS地址",
+          "example": "0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ff",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableHashResponse": {
+      "document": "EnableHash返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FunctionArg": {
       "document": "创建凭证入参的FunctionArg",
       "members": [
@@ -392,6 +2180,123 @@
         }
       ],
       "usage": "in"
+    },
+    "GetAgencyTDidRequest": {
+      "document": "GetAgencyTDid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAgencyTDidResponse": {
+      "document": "GetAgencyTDid返回参数结构体",
+      "members": [
+        {
+          "document": "固定前缀",
+          "example": "did:tdid",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "did详情",
+          "example": "无",
+          "member": "Identity",
+          "name": "Identity",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthoritiesListRequest": {
+      "document": "GetAuthoritiesList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Did信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权威认证 1:已认证，2:未认证",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthoritiesListResponse": {
+      "document": "GetAuthoritiesList返回参数结构体",
+      "members": [
+        {
+          "document": "数据集合",
+          "example": "无",
+          "member": "Authority",
+          "name": "ResultList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "3",
+          "member": "int64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetAuthorityIssuerRequest": {
       "document": "GetAuthorityIssuer请求参数结构体",
@@ -483,6 +2388,913 @@
       ],
       "type": "object"
     },
+    "GetConsortiumClusterListRequest": {
+      "document": "GetConsortiumClusterList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "联盟id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetConsortiumClusterListResponse": {
+      "document": "GetConsortiumClusterList返回参数结构体",
+      "members": [
+        {
+          "document": "网络列表",
+          "example": "无",
+          "member": "BcosClusterItem",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetConsortiumListRequest": {
+      "document": "GetConsortiumList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetConsortiumListResponse": {
+      "document": "GetConsortiumList返回参数结构体",
+      "members": [
+        {
+          "document": "联盟列表",
+          "example": "无",
+          "member": "ConsortiumItem",
+          "name": "ConsortiumList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCptInfoRequest": {
+      "document": "GetCptInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Cpt索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCptInfoResponse": {
+      "document": "GetCptInfo返回参数结构体",
+      "members": [
+        {
+          "document": "CptJsonData的具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "CptJsonData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCptListRequest": {
+      "document": "GetCptList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisplayStart",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "DisplayLength",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板类型，0: 所有模板，1: 系统模板，2: 用户模板，3:普通模板",
+          "example": "3",
+          "member": "uint64",
+          "name": "CptType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCptListResponse": {
+      "document": "GetCptList返回参数结构体",
+      "members": [
+        {
+          "document": "cpt数据集合",
+          "example": "无",
+          "member": "CptListData",
+          "name": "CptDataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭证模板总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialCptRankRequest": {
+      "document": "GetCredentialCptRank请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialCptRankResponse": {
+      "document": "GetCredentialCptRank返回参数结构体",
+      "members": [
+        {
+          "document": "Rank集合",
+          "example": "无",
+          "member": "CptIssueRank",
+          "name": "RankIssueResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialIssueRankRequest": {
+      "document": "GetCredentialIssueRank请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialIssueRankResponse": {
+      "document": "GetCredentialIssueRank返回参数结构体",
+      "members": [
+        {
+          "document": "Rank集合",
+          "example": "无",
+          "member": "CptIssueRank",
+          "name": "RankIssueResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialIssueTrendRequest": {
+      "document": "GetCredentialIssueTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialIssueTrendResponse": {
+      "document": "GetCredentialIssueTrend返回参数结构体",
+      "members": [
+        {
+          "document": "Trend集合",
+          "example": "无",
+          "member": "Trend",
+          "name": "Trend",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialStatusRequest": {
+      "document": "GetCredentialStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭证id",
+          "example": "a",
+          "member": "string",
+          "name": "CredentialId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCredentialStatusResponse": {
+      "document": "GetCredentialStatus返回参数结构体",
+      "members": [
+        {
+          "document": "凭证状态信息",
+          "example": "无",
+          "member": "CredentialStatus",
+          "name": "CredentialStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataPanelRequest": {
+      "document": "GetDataPanel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataPanelResponse": {
+      "document": "GetDataPanel返回参数结构体",
+      "members": [
+        {
+          "document": "区块链网络数量",
+          "example": "1",
+          "member": "int64",
+          "name": "BlockNetworkCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链网络名称",
+          "example": "test",
+          "member": "string",
+          "name": "BlockNetworkName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前区块高度",
+          "example": "1",
+          "member": "int64",
+          "name": "BlockHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链网络类型",
+          "example": "1",
+          "member": "int64",
+          "name": "BlockNetworkType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "did数量",
+          "example": "2",
+          "member": "int64",
+          "name": "DidCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭证模版数量",
+          "example": "4",
+          "member": "int64",
+          "name": "CptCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已认证权威机构数量",
+          "example": "5",
+          "member": "int64",
+          "name": "CertificatedAuthCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "颁发凭证数量",
+          "example": "1",
+          "member": "int64",
+          "name": "IssueCptCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本周新增DID数量",
+          "example": "4",
+          "member": "int64",
+          "name": "NewDidCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "BCOS网络类型数量",
+          "example": "5",
+          "member": "int64",
+          "name": "BcosCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Fabric网络类型数量",
+          "example": "4",
+          "member": "int64",
+          "name": "FabricCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "长安链网络类型数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ChainMakerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeployInfoRequest": {
+      "document": "GetDeployInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "合约CNS地址",
+          "example": "test",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeployInfoResponse": {
+      "document": "GetDeployInfo返回参数结构体",
+      "members": [
+        {
+          "document": "合约CNS地址",
+          "example": "test",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合约主群组ID",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "部署机构DID",
+          "example": "test",
+          "member": "string",
+          "name": "DeployDid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TDID SDK版本",
+          "example": "test",
+          "member": "string",
+          "name": "SdkVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TDID 合约版本",
+          "example": "test",
+          "member": "string",
+          "name": "ContractVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链节点版本",
+          "example": "test",
+          "member": "string",
+          "name": "BlockVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链节点IP",
+          "example": "test",
+          "member": "string",
+          "name": "BlockIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DID合约地址",
+          "example": "test",
+          "member": "string",
+          "name": "DidAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CPT合约地址",
+          "example": "test",
+          "member": "string",
+          "name": "CptAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Authority Issuer地址",
+          "example": "test",
+          "member": "string",
+          "name": "AuthorityAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Evidence合约地址",
+          "example": "test",
+          "member": "string",
+          "name": "EvidenceAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Specific Issuer合约地址",
+          "example": "test",
+          "member": "string",
+          "name": "SpecificAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "链ID",
+          "example": "test",
+          "member": "string",
+          "name": "ChainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeployListRequest": {
+      "document": "GetDeployList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisplayStart",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "DisplayLength",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeployListResponse": {
+      "document": "GetDeployList返回参数结构体",
+      "members": [
+        {
+          "document": "合约总数",
+          "example": "3",
+          "member": "uint64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合约部署列表",
+          "example": "无",
+          "member": "Contract",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidClusterDetailRequest": {
+      "document": "GetDidClusterDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DID网络ID",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidClusterDetailResponse": {
+      "document": "GetDidClusterDetail返回参数结构体",
+      "members": [
+        {
+          "document": "网络ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组织名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链组织名称",
+          "example": "无",
+          "member": "string",
+          "name": "ChainAgency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidClusterListRequest": {
+      "document": "GetDidClusterList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetDidClusterListResponse": {
+      "document": "GetDidClusterList返回参数结构体",
+      "members": [
+        {
+          "document": "DID网络列表",
+          "example": "aaa",
+          "member": "DidCluster",
+          "name": "DidClusterList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidDetailRequest": {
+      "document": "GetDidDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DID号码的具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidDetailResponse": {
+      "document": "GetDidDetail返回参数结构体",
+      "members": [
+        {
+          "document": "DID名称",
+          "example": "did:weid:1:0xc89a0423e25bea56c9f3c33098a41b100795946b",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公钥",
+          "example": "6584791555786563316509885238222269581668944990935472251441138953",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权威认证",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthorityState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联盟ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ConsortiumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联盟名称",
+          "example": "test",
+          "member": "string",
+          "name": "ConsortiumName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "bcos资源ID",
+          "example": "1tbaas-k0j8i7lqc4",
+          "member": "string",
+          "name": "ResChainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "2021-06-29 16:27:26",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetDidDocumentRequest": {
       "document": "GetDidDocument请求参数结构体",
       "members": [
@@ -527,6 +3339,773 @@
         }
       ],
       "type": "object"
+    },
+    "GetDidListRequest": {
+      "document": "GetDidList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Did信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidListResponse": {
+      "document": "GetDidList返回参数结构体",
+      "members": [
+        {
+          "document": "数据列表",
+          "example": "无",
+          "member": "DidData",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidRegisterTrendRequest": {
+      "document": "GetDidRegisterTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（支持到天 2021-4-23）",
+          "example": "test",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidRegisterTrendResponse": {
+      "document": "GetDidRegisterTrend返回参数结构体",
+      "members": [
+        {
+          "document": "Trend集合",
+          "example": "无",
+          "member": "Trend",
+          "name": "Trend",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidServiceDetailRequest": {
+      "document": "GetDidServiceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DID服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidServiceDetailResponse": {
+      "document": "GetDidServiceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "did服务信息",
+          "example": "无",
+          "member": "DidServiceInfo",
+          "name": "DidService",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidServiceListRequest": {
+      "document": "GetDidServiceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "1: 以网络维度输出, 0: 以服务维度输出",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidServiceListResponse": {
+      "document": "GetDidServiceList返回参数结构体",
+      "members": [
+        {
+          "document": "DID服务列表",
+          "example": "aaa",
+          "member": "DidServiceInfo",
+          "name": "DidServiceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupListRequest": {
+      "document": "GetGroupList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0为未部署DID服务的群组，1为已部署DID服务的群组",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupListResponse": {
+      "document": "GetGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "群组数据集合",
+          "example": "无",
+          "member": "Group",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLabelListRequest": {
+      "document": "GetLabelList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLabelListResponse": {
+      "document": "GetLabelList返回参数结构体",
+      "members": [
+        {
+          "document": "数据集合",
+          "example": "无",
+          "member": "Label",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyListRequest": {
+      "document": "GetPolicyList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "DisplayStart",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "长度",
+          "example": "10",
+          "member": "int64",
+          "name": "DisplayLength",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPolicyListResponse": {
+      "document": "GetPolicyList返回参数结构体",
+      "members": [
+        {
+          "document": "策略Policy管理列表",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicyDataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "3",
+          "member": "int64",
+          "name": "AllCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPublicKeyRequest": {
+      "document": "GetPublicKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "did的具体号码",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPublicKeyResponse": {
+      "document": "GetPublicKey返回参数结构体",
+      "members": [
+        {
+          "document": "DID的具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公钥",
+          "example": "test",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Group": {
+      "document": "群组",
+      "members": [
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "2",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点数量",
+          "example": "4",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属机构节点数量",
+          "example": "4",
+          "member": "uint64",
+          "name": "NodeCountOfAgency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组描述",
+          "example": "qtadescriptionjkbdcqzgwohei",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与角色，盟主或非盟主",
+          "example": "1为盟主，0为非盟主",
+          "member": "uint64",
+          "name": "RoleType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链id",
+          "example": "bc104-1",
+          "member": "string",
+          "name": "ChainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Identity": {
+      "document": "did详情",
+      "members": [
+        {
+          "default": "",
+          "document": "账户标识符",
+          "example": "test",
+          "member": "string",
+          "name": "AccountIdentifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链ID",
+          "example": "1",
+          "member": "string",
+          "name": "ChainID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完整tdid",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组名称",
+          "example": "1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Label": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签ID",
+          "example": "78",
+          "member": "uint64",
+          "name": "LabelId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "test",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "did数量",
+          "example": "10",
+          "member": "int64",
+          "name": "DidCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者did",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-07-20 18:35:56",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Policy": {
+      "document": "策略管理",
+      "members": [
+        {
+          "default": "",
+          "document": "披露策略索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "披露策略名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合约应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContractAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "披露策略ID",
+          "example": "100000",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证模板ID",
+          "example": "3000005",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略Json",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成时间",
+          "example": "test",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "test",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者DID",
+          "example": "test",
+          "member": "string",
+          "name": "CreatorDid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Proof": {
       "document": "验证凭证签名",
@@ -584,6 +4163,294 @@
       ],
       "usage": "in"
     },
+    "QueryPolicyRequest": {
+      "document": "QueryPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "policy索引",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyIndex",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryPolicyResponse": {
+      "document": "QueryPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "披露策略索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "披露策略ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭证模板ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "披露策略的具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAuthorityIssuerRequest": {
+      "document": "RecognizeAuthorityIssuer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "did具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAuthorityIssuerResponse": {
+      "document": "RecognizeAuthorityIssuer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterClaimPolicyRequest": {
+      "document": "RegisterClaimPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Cpt索引",
+          "example": "11",
+          "member": "uint64",
+          "name": "CptIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "披露策略",
+          "example": "test",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterClaimPolicyResponse": {
+      "document": "RegisterClaimPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "披露策略索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "披露策略ID",
+          "example": "300000",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterCptRequest": {
+      "document": "RegisterCpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CptJson的具体信息",
+          "example": "test",
+          "member": "string",
+          "name": "CptJson",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cptId 不填默认自增",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterCptResponse": {
+      "document": "RegisterCpt返回参数结构体",
+      "members": [
+        {
+          "document": "凭证模板索引",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "凭证模板id",
+          "example": "11",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterIssuerRequest": {
+      "document": "RegisterIssuer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tdid",
+          "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权威机构名称",
+          "example": "aaa",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "mark 一下",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterIssuerResponse": {
+      "document": "RegisterIssuer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveHashRequest": {
+      "document": "RemoveHash请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "合约CNS地址",
+          "example": "0x51c01ded73e0e319ae283d587a52af312e63892cd8cfaf645b7d8cf8a2b5ff",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveHashResponse": {
+      "document": "RemoveHash返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SetCredentialStatusRequest": {
       "document": "SetCredentialStatus请求参数结构体",
       "members": [
@@ -611,6 +4478,112 @@
       ],
       "type": "object"
     },
+    "Task": {
+      "document": "CreateDidService、CheckDidDeploy出参",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0: 部署中，1:部署成功，其他失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码",
+          "example": "200",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误提示",
+          "example": "test",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成时间",
+          "example": "test",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "test",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TransactionArg": {
       "document": "创建凭证第二个",
       "members": [
@@ -626,6 +4599,32 @@
         }
       ],
       "usage": "in"
+    },
+    "Trend": {
+      "document": "趋势",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点",
+          "example": "test",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "example": "test",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VerifyCredentialRequest": {
       "document": "VerifyCredential请求参数结构体",
@@ -776,6 +4775,23 @@
         }
       ],
       "usage": "in"
+    },
+    "VerifyPurchaseRequest": {
+      "document": "VerifyPurchase请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "VerifyPurchaseResponse": {
+      "document": "VerifyPurchase返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

@@ -336,6 +336,12 @@
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse"
     },
+    "ModifyInstancesBundle": {
+      "document": "本接口(ModifyInstancesBundle)用于变更一个或多个轻量应用服务器实例套餐。\n* 只有状态为 RUNNING，STOPPED的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 30。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "ModifyInstancesBundleRequest",
+      "name": "变更实例套餐",
+      "output": "ModifyInstancesBundleResponse"
+    },
     "ModifyInstancesLoginKeyPairAttribute": {
       "document": "本接口用于设置实例默认登录密钥对属性。\n\n",
       "input": "ModifyInstancesLoginKeyPairAttributeRequest",
@@ -5307,6 +5313,51 @@
     },
     "ModifyInstancesAttributeResponse": {
       "document": "ModifyInstancesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesBundleRequest": {
+      "document": "ModifyInstancesBundle请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为30。",
+          "example": "[“lhins-123456”]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
+          "example": "“bundle_ent_01”",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动抵扣代金券。取值范围：\ntrue：表示自动抵扣代金券\nfalse：表示不自动抵扣代金券\n默认取值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesBundleResponse": {
+      "document": "ModifyInstancesBundle返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

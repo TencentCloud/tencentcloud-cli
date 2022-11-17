@@ -1,6 +1,6 @@
 **Example 1: 创建并返回出证报告**
 
-获取全部签署完成得合同得出征报告，返回报告 URL
+获取全部签署完成得合同得出证报告，返回报告 Id
 
 Input: 
 
@@ -18,8 +18,10 @@ Output:
 ```
 {
     "Response": {
-        "ReportUrl": "https://file.ess.tencent.cn/bresource/****",
-        "RequestId": "s166141****028448367"
+        "ReportUrl": "",
+        "ReportId": "yDRspUUgyg17sqr1Uur7PA0xEQpJXh2b",
+        "RequestId": "s1667977123504693616",
+        "Status": "EvidenceStatusSuccess"
     }
 }
 ```
