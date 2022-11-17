@@ -13,9 +13,9 @@
       "output": "BindOrganizationMemberAuthAccountResponse"
     },
     "CancelOrganizationMemberAuthAccount": {
-      "document": "取消组织成员和子账号的授权绑定关系",
+      "document": "取消组织成员和组织管理员子账号的授权关系\n",
       "input": "CancelOrganizationMemberAuthAccountRequest",
-      "name": "取消组织成员和子账号的授权绑定关系",
+      "name": "取消组织成员和组织管理员子账号的授权关系",
       "output": "CancelOrganizationMemberAuthAccountResponse"
     },
     "CreateOrganizationMember": {
@@ -55,9 +55,9 @@
       "output": "DescribeOrganizationAuthNodeResponse"
     },
     "DescribeOrganizationMemberAuthAccounts": {
-      "document": "获取组织成员被绑定的子账号列表",
+      "document": "获取组织成员被绑定授权关系的子账号列表",
       "input": "DescribeOrganizationMemberAuthAccountsRequest",
-      "name": "获取组织成员被绑定的子账号列表",
+      "name": "获取组织成员被绑定授权关系的子账号列表",
       "output": "DescribeOrganizationMemberAuthAccountsResponse"
     },
     "DescribeOrganizationMemberAuthIdentities": {
@@ -612,7 +612,8 @@
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -621,7 +622,8 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -630,7 +632,8 @@
           "member": "int64",
           "name": "MemberUin",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -639,7 +642,8 @@
           "member": "int64",
           "name": "PolicyId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -654,7 +658,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "总数目\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -663,7 +668,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

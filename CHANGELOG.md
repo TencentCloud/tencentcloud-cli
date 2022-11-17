@@ -1,3 +1,202 @@
+# Release 3.0.651.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 22 次发布
+
+发布时间：2022-11-18 06:04:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
+
+	* 新增入参：IPv6InternetAccessible
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
+
+	* 新增入参：IPv6InternetAccessible
+
+* [UpgradeLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/35199)
+
+	* 新增入参：IPv6InternetAccessible
+
+
+新增数据结构：
+
+* [IPv6InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/377/20453#IPv6InternetAccessible)
+
+修改数据结构：
+
+* [LaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20453#LaunchConfiguration)
+
+	* 新增成员：IPv6InternetAccessible
+
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 35 次发布
+
+发布时间：2022-11-18 06:22:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateExporterIntegration](http://document.tencentcloudapi.woa.com/document/product/248/75015)
+
+	* <font color="#dd0000">**修改入参**：</font>KubeType, ClusterId
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 14 次发布
+
+发布时间：2022-11-18 06:23:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CreateInputHLSPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInputHLSPullSettings)
+* [DescribeHLSPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeHLSPullSourceAddress)
+* [DescribeInputHLSPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInputHLSPullSettings)
+* [DescribeOutputHLSPullServerUrl](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputHLSPullServerUrl)
+* [DescribeOutputHLSPullSettings](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutputHLSPullSettings)
+* [HLSPullSourceAddress](http://document.tencentcloudapi.woa.com/document/product/862/37615#HLSPullSourceAddress)
+
+修改数据结构：
+
+* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+
+	* 新增成员：HLSPullSettings
+
+* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
+
+	* 新增成员：HLSPullSettings
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：HLSPullSettings
+
+* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
+
+	* 新增成员：HLSPullSettings
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 12 次发布
+
+发布时间：2022-11-18 06:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：NetworkReceiveRate, NetworkSendRate
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 26 次发布
+
+发布时间：2022-11-18 06:29:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceListInfo)
+
+	* 新增成员：VpcConfig
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 8 次发布
+
+发布时间：2022-11-18 06:30:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyModelServicePartialConfig](http://document.tencentcloudapi.woa.com/document/product/851/76667)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 5 次发布
+
+发布时间：2022-11-18 06:32:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1124/51861#User)
+
+	* 新增成员：RoomId, ReceiverId, SendTime
+
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
+## 语音合成(tts) 版本：2019-08-23
+
+### 第 4 次发布
+
+发布时间：2022-11-18 06:33:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextToVoice](http://document.tencentcloudapi.woa.com/document/product/1073/37995)
+
+	* 新增入参：SegmentRate
+
+
+
+
 # Release 3.0.650.1
 
 ## 主机安全(cwp) 版本：2018-02-28

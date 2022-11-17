@@ -8,7 +8,7 @@ Input:
 tccli monitor UpdateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --KubeType 3 \
-    --ClusterId cls-xx \
+    --ClusterId  \
     --Kind blackbox-exporter \
     --Content {"name":"test","kind":"blackbox-exporter","spec":{"instanceSpec":{"module":"http_get","urls":["xx"]}}}
 ```

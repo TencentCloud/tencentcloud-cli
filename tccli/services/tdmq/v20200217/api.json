@@ -8199,6 +8199,17 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "专享集群vpc属性",
+          "example": "[{\"VpcId\":\"vpc-12345\",\"SubnetId\":\"subnet-12345\"}]",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

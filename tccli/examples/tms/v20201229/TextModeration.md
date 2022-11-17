@@ -70,6 +70,8 @@ Input:
 tccli tms TextModeration --cli-unfold-argument  \
     --Content 5LusCg \
     --BizType bigotest \
+    --User.RoomId 字符串 \
+    --User.ReceiverId 123 \
     --User.UserId user1
 ```
 
