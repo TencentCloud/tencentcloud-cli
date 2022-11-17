@@ -1,3 +1,345 @@
+# Release 3.0.650.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 39 次发布
+
+发布时间：2022-11-17 06:13:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClientException](http://document.tencentcloudapi.woa.com/document/product/296/76576)
+
+新增数据结构：
+
+* [RecordInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#RecordInfo)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 23 次发布
+
+发布时间：2022-11-17 06:17:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLogstashInstances](http://document.tencentcloudapi.woa.com/document/product/845/75147)
+
+	* 新增入参：TagList
+
+* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/845/48473)
+
+	* 新增入参：RestartMode, IsOffline
+
+
+修改数据结构：
+
+* [LogstashInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#LogstashInstanceInfo)
+
+	* 新增成员：CpuNum, TagList, MemSize
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 25 次发布
+
+发布时间：2022-11-17 06:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignReview](http://document.tencentcloudapi.woa.com/document/product/1595/75657)
+
+	* 新增入参：RecipientId
+
+
+修改数据结构：
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+
+	* 新增成员：KeywordPage, RelativeLocation, KeywordIndexes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 12 次发布
+
+发布时间：2022-11-17 06:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomization](http://document.tencentcloudapi.woa.com/document/product/607/75632)
+
+	* 新增入参：ModelName
+
+
+修改数据结构：
+
+* [CustomizationConfigs](http://document.tencentcloudapi.woa.com/document/product/607/35375#CustomizationConfigs)
+
+	* 新增成员：ModelName, TextUrl, UpdateTime
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 17 次发布
+
+发布时间：2022-11-17 06:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyInstancesBundle](http://document.tencentcloudapi.woa.com/document/product/1207/76577)
+
+
+
+## 移动网络加速(mna) 版本：2021-01-19
+
+### 第 6 次发布
+
+发布时间：2022-11-17 06:23:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76363)
+
+	* 新增入参：Encrypted
+
+	* 新增出参：Signature
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 14 次发布
+
+发布时间：2022-11-17 06:25:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelOrganizationMemberAuthAccount](http://document.tencentcloudapi.woa.com/document/product/850/76580)
+* [DescribeOrganizationMemberAuthAccounts](http://document.tencentcloudapi.woa.com/document/product/850/76579)
+
+新增数据结构：
+
+* [OrgMemberAuthAccount](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMemberAuthAccount)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 16 次发布
+
+发布时间：2022-11-17 06:27:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：InstanceConcurrencyConfig
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：InstanceConcurrencyConfig
+
+
+新增数据结构：
+
+* [InstanceConcurrencyConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#InstanceConcurrencyConfig)
+
+修改数据结构：
+
+* [ImageConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#ImageConfig)
+
+	* 新增成员：ContainerImageAccelerate
+
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 3 次发布
+
+发布时间：2022-11-17 06:30:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddLabel](http://document.tencentcloudapi.woa.com/document/product/1439/76621)
+* [CancelAuthorityIssuer](http://document.tencentcloudapi.woa.com/document/product/1439/76620)
+* [CheckChain](http://document.tencentcloudapi.woa.com/document/product/1439/76619)
+* [CheckDidDeploy](http://document.tencentcloudapi.woa.com/document/product/1439/76618)
+* [CreateDidService](http://document.tencentcloudapi.woa.com/document/product/1439/76617)
+* [CreateLabel](http://document.tencentcloudapi.woa.com/document/product/1439/76616)
+* [CreateTDidByPrivateKey](http://document.tencentcloudapi.woa.com/document/product/1439/76615)
+* [DeployByName](http://document.tencentcloudapi.woa.com/document/product/1439/76614)
+* [DownCpt](http://document.tencentcloudapi.woa.com/document/product/1439/76613)
+* [EnableHash](http://document.tencentcloudapi.woa.com/document/product/1439/76612)
+* [GetAgencyTDid](http://document.tencentcloudapi.woa.com/document/product/1439/76611)
+* [GetAuthoritiesList](http://document.tencentcloudapi.woa.com/document/product/1439/76610)
+* [GetConsortiumClusterList](http://document.tencentcloudapi.woa.com/document/product/1439/76609)
+* [GetConsortiumList](http://document.tencentcloudapi.woa.com/document/product/1439/76608)
+* [GetCptInfo](http://document.tencentcloudapi.woa.com/document/product/1439/76607)
+* [GetCptList](http://document.tencentcloudapi.woa.com/document/product/1439/76606)
+* [GetCredentialCptRank](http://document.tencentcloudapi.woa.com/document/product/1439/76605)
+* [GetCredentialIssueRank](http://document.tencentcloudapi.woa.com/document/product/1439/76604)
+* [GetCredentialIssueTrend](http://document.tencentcloudapi.woa.com/document/product/1439/76603)
+* [GetCredentialStatus](http://document.tencentcloudapi.woa.com/document/product/1439/76602)
+* [GetDataPanel](http://document.tencentcloudapi.woa.com/document/product/1439/76601)
+* [GetDeployInfo](http://document.tencentcloudapi.woa.com/document/product/1439/76600)
+* [GetDeployList](http://document.tencentcloudapi.woa.com/document/product/1439/76599)
+* [GetDidClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1439/76598)
+* [GetDidClusterList](http://document.tencentcloudapi.woa.com/document/product/1439/76597)
+* [GetDidDetail](http://document.tencentcloudapi.woa.com/document/product/1439/76596)
+* [GetDidList](http://document.tencentcloudapi.woa.com/document/product/1439/76595)
+* [GetDidRegisterTrend](http://document.tencentcloudapi.woa.com/document/product/1439/76594)
+* [GetDidServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1439/76593)
+* [GetDidServiceList](http://document.tencentcloudapi.woa.com/document/product/1439/76592)
+* [GetGroupList](http://document.tencentcloudapi.woa.com/document/product/1439/76591)
+* [GetLabelList](http://document.tencentcloudapi.woa.com/document/product/1439/76590)
+* [GetPolicyList](http://document.tencentcloudapi.woa.com/document/product/1439/76589)
+* [GetPublicKey](http://document.tencentcloudapi.woa.com/document/product/1439/76588)
+* [QueryPolicy](http://document.tencentcloudapi.woa.com/document/product/1439/76587)
+* [RecognizeAuthorityIssuer](http://document.tencentcloudapi.woa.com/document/product/1439/76586)
+* [RegisterClaimPolicy](http://document.tencentcloudapi.woa.com/document/product/1439/76585)
+* [RegisterCpt](http://document.tencentcloudapi.woa.com/document/product/1439/76584)
+* [RegisterIssuer](http://document.tencentcloudapi.woa.com/document/product/1439/76583)
+* [RemoveHash](http://document.tencentcloudapi.woa.com/document/product/1439/76582)
+* [VerifyPurchase](http://document.tencentcloudapi.woa.com/document/product/1439/76581)
+
+新增数据结构：
+
+* [Authority](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Authority)
+* [BcosClusterItem](http://document.tencentcloudapi.woa.com/document/product/1439/60283#BcosClusterItem)
+* [ConsortiumItem](http://document.tencentcloudapi.woa.com/document/product/1439/60283#ConsortiumItem)
+* [Contract](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Contract)
+* [CptIssueRank](http://document.tencentcloudapi.woa.com/document/product/1439/60283#CptIssueRank)
+* [CptListData](http://document.tencentcloudapi.woa.com/document/product/1439/60283#CptListData)
+* [DidCluster](http://document.tencentcloudapi.woa.com/document/product/1439/60283#DidCluster)
+* [DidData](http://document.tencentcloudapi.woa.com/document/product/1439/60283#DidData)
+* [DidServiceInfo](http://document.tencentcloudapi.woa.com/document/product/1439/60283#DidServiceInfo)
+* [Group](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Group)
+* [Identity](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Identity)
+* [Label](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Label)
+* [Policy](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Policy)
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Task)
+* [Trend](http://document.tencentcloudapi.woa.com/document/product/1439/60283#Trend)
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 26 次发布
+
+发布时间：2022-11-17 06:31:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HorizontalAutoscaler](http://document.tencentcloudapi.woa.com/document/product/1371/60171#HorizontalAutoscaler)
+
+	* 新增成员：DoubleThreshold
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 45 次发布
+
+发布时间：2022-11-17 14:51:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/76125)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+* [DisableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/76243)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+
+新增数据结构：
+
+* [ClusterInspectionTaskGroup](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskGroup)
+* [ClusterInspectionTaskObjectCounter](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskObjectCounter)
+* [ClusterInspectionTaskSubResult](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskSubResult)
+* [ClusterInspectionTaskTip](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskTip)
+
+修改数据结构：
+
+* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask)
+
+	* 新增成员：Groups
+
+
+
+
 # Release 3.0.649.1
 
 ## 主机安全(cwp) 版本：2018-02-28

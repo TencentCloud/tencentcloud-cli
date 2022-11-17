@@ -2445,7 +2445,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289",
+          "document": "集群操作系统，支持设置公共镜像(字段传相应镜像Name)和自定义镜像(字段传相应镜像ID)，详情参考：https://cloud.tencent.com/document/product/457/68289",
           "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "ClusterOs",
@@ -2914,6 +2914,117 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检子项结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInspectionTaskGroup",
+          "name": "Groups",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInspectionTaskGroup": {
+      "document": "巡检子项分组",
+      "members": [
+        {
+          "default": "",
+          "document": "分组名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "分组类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "分组执行策略",
+          "example": "无",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检子项结果",
+          "example": "无",
+          "member": "ClusterInspectionTaskSubResult",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInspectionTaskObjectCounter": {
+      "document": "集群巡检任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "异常级别资源数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Error",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "告警级别资源数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Warning",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "普通级别资源数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Normal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "提示级别资源数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Tip",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -2985,6 +3096,172 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInspectionTaskSubResult": {
+      "document": "巡检子项结果",
+      "members": [
+        {
+          "default": "",
+          "document": "巡检子项名称",
+          "example": "PodHostNetwork",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "83",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检结果告警级别",
+          "example": "warning",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检子项失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检结果子项提示详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInspectionTaskTip",
+          "name": "Tips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检结果异常资源计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInspectionTaskObjectCounter",
+          "name": "Counter",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检子项状态, waiting, executing, finished",
+          "example": "waiting",
+          "member": "string",
+          "name": "Phase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子项开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "StartAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子项结束执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "EndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInspectionTaskTip": {
+      "document": "巡检结果提示",
+      "members": [
+        {
+          "default": "",
+          "document": "提示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "提示类型, link, text\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "提示分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "提示内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 2
         }
       ],
@@ -4064,7 +4341,7 @@
         },
         {
           "default": "",
-          "document": "AutoScalingGroupPara AS组参数",
+          "document": "AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440",
           "example": "{\\\"AutoScalingGroupName\\\":\\\"\\\",\\\"MaxSize\\\":1,\\\"MinSize\\\":0,\\\"Des",
           "member": "string",
           "name": "AutoScalingGroupPara",
@@ -4074,7 +4351,7 @@
         },
         {
           "default": "",
-          "document": "LaunchConfigurePara 运行参数",
+          "document": "LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447",
           "example": "{\\\"LaunchConfigurationName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"S3.SMALL1\\\"",
           "member": "string",
           "name": "LaunchConfigurePara",
@@ -11023,6 +11300,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteLogSetAndTopic",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11076,6 +11363,16 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteLogSetAndTopic",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],

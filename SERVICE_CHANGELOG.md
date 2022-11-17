@@ -299,6 +299,47 @@
 
 
 
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 45 次发布
+
+发布时间：2022-11-17 14:51:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/76125)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+* [DisableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/76243)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+
+新增数据结构：
+
+* [ClusterInspectionTaskGroup](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskGroup)
+* [ClusterInspectionTaskObjectCounter](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskObjectCounter)
+* [ClusterInspectionTaskSubResult](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskSubResult)
+* [ClusterInspectionTaskTip](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskTip)
+
+修改数据结构：
+
+* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask)
+
+	* 新增成员：Groups
+
+
+
+
 # 历次版本更新如下：
 
 ## 活动防刷(aa) 版本：2020-02-24
@@ -22227,7 +22268,7 @@
 
 
 
-## 图片瘦身(ic) 版本：2019-03-07
+## 物联网卡(ic) 版本：2019-03-07
 
 ### 第 3 次发布
 
@@ -38818,6 +38859,39 @@
 
 
 ## 容器服务(tke) 版本：2018-05-25
+
+### 第 45 次发布
+
+发布时间：2022-11-17 14:51:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/76125)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+* [DisableEventPersistence](http://document.tencentcloudapi.woa.com/document/product/457/76243)
+
+	* 新增入参：DeleteLogSetAndTopic
+
+
+新增数据结构：
+
+* [[ClusterInspectionTaskGroup](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskGroup)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTaskGroup](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskGroup))
+* [[ClusterInspectionTaskObjectCounter](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskObjectCounter)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTaskObjectCounter](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskObjectCounter))
+* [[ClusterInspectionTaskSubResult](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskSubResult)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTaskSubResult](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskSubResult))
+* [[ClusterInspectionTaskTip](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskTip)](http://document.tencentcloudapi.woa.com/document/product/457/76293#[ClusterInspectionTaskTip](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTaskTip))
+
+修改数据结构：
+
+* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/76293#ClusterInspectionTask)
+
+	* 新增成员：Groups
+
 
 ### 第 44 次发布
 
