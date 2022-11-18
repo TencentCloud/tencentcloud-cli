@@ -299,7 +299,7 @@
     "DeleteRecordTask": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteRecordTask\r\n&TaskId=UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -963,7 +963,7 @@
     "StopRecordTask": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=StopRecordTask\n&TaskId=UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRecordTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

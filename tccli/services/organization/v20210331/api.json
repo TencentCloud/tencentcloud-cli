@@ -13,9 +13,9 @@
       "output": "BindOrganizationMemberAuthAccountResponse"
     },
     "CancelOrganizationMemberAuthAccount": {
-      "document": "取消组织成员和子账号的授权绑定关系",
+      "document": "取消组织成员和组织管理员子账号的授权关系\n",
       "input": "CancelOrganizationMemberAuthAccountRequest",
-      "name": "取消组织成员和子账号的授权绑定关系",
+      "name": "取消组织成员和组织管理员子账号的授权关系",
       "output": "CancelOrganizationMemberAuthAccountResponse"
     },
     "CreateOrganizationMember": {
@@ -55,9 +55,9 @@
       "output": "DescribeOrganizationAuthNodeResponse"
     },
     "DescribeOrganizationMemberAuthAccounts": {
-      "document": "获取组织成员被绑定的子账号列表",
+      "document": "获取组织成员被绑定授权关系的子账号列表",
       "input": "DescribeOrganizationMemberAuthAccountsRequest",
-      "name": "获取组织成员被绑定的子账号列表",
+      "name": "获取组织成员被绑定授权关系的子账号列表",
       "output": "DescribeOrganizationMemberAuthAccountsResponse"
     },
     "DescribeOrganizationMemberAuthIdentities": {

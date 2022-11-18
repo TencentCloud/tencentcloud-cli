@@ -4726,6 +4726,26 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每秒接收字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.456",
+          "member": "float",
+          "name": "NetworkReceiveRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每秒发送字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.456",
+          "member": "float",
+          "name": "NetworkSendRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -6,6 +6,12 @@
       "name": "新建设备",
       "output": "AddDeviceResponse"
     },
+    "CreateEncryptedKey": {
+      "document": "通过此接口设置和更新预置密钥",
+      "input": "CreateEncryptedKeyRequest",
+      "name": "设置或更新密钥",
+      "output": "CreateEncryptedKeyResponse"
+    },
     "CreateQos": {
       "document": "移动网络发起Qos加速过程",
       "input": "CreateQosRequest",
@@ -47,6 +53,12 @@
       "input": "GetFlowStatisticRequest",
       "name": "获取数据流量统计数据",
       "output": "GetFlowStatisticResponse"
+    },
+    "GetPublicKey": {
+      "document": "获取公钥用于验签",
+      "input": "GetPublicKeyRequest",
+      "name": "获取公钥",
+      "output": "GetPublicKeyResponse"
     },
     "GetStatisticData": {
       "document": "在用量统计页面下载流量数据",
@@ -210,6 +222,32 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateEncryptedKeyRequest": {
+      "document": "CreateEncryptedKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateEncryptedKeyResponse": {
+      "document": "CreateEncryptedKey返回参数结构体",
+      "members": [
+        {
+          "document": "预置密钥",
+          "example": "\"xxxxx\"",
+          "member": "string",
+          "name": "EncryptedKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateQosRequest": {
       "document": "CreateQos请求参数结构体",
@@ -993,6 +1031,32 @@
           "name": "TotalValue",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPublicKeyRequest": {
+      "document": "GetPublicKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetPublicKeyResponse": {
+      "document": "GetPublicKey返回参数结构体",
+      "members": [
+        {
+          "document": "非对称公钥",
+          "example": "\"xxxxx\"",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -4174,6 +4174,7 @@
         {
           "default": "",
           "document": "人物 ID。",
+          "example": "9527",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -4183,6 +4184,7 @@
         {
           "default": "",
           "document": "人物名称。",
+          "example": "Default",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4192,6 +4194,7 @@
         {
           "default": "",
           "document": "人物描述。",
+          "example": "张三",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -4201,6 +4204,7 @@
         {
           "default": "",
           "document": "人脸信息。",
+          "example": "NULL",
           "member": "AiSampleFaceInfo",
           "name": "FaceInfoSet",
           "required": true,
@@ -4210,6 +4214,7 @@
         {
           "default": "",
           "document": "人物标签。",
+          "example": "NULL",
           "member": "string",
           "name": "TagSet",
           "required": true,
@@ -4219,6 +4224,7 @@
         {
           "default": "",
           "document": "应用场景。",
+          "example": "NULL",
           "member": "string",
           "name": "UsageSet",
           "required": true,
@@ -4228,6 +4234,7 @@
         {
           "default": "",
           "document": "创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -4237,6 +4244,7 @@
         {
           "default": "",
           "document": "最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -5698,6 +5706,32 @@
           "name": "RTSPPullSettings",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的HLS_PULL配置信息。",
+          "example": "无",
+          "member": "CreateInputHLSPullSettings",
+          "name": "HLSPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInputHLSPullSettings": {
+      "document": "创建的输入HLS拉流的配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS源站的源站地址，有且只能有一个。",
+          "example": "无",
+          "member": "HLSPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -7761,6 +7795,22 @@
       ],
       "usage": "out"
     },
+    "DescribeHLSPullSourceAddress": {
+      "document": "查询输入的HLS配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS源站的Url地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://domain[:port]/server_URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeImageSpriteTemplatesRequest": {
       "document": "DescribeImageSpriteTemplates请求参数结构体",
       "members": [
@@ -7965,6 +8015,32 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输入的HLS_PULL配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeInputHLSPullSettings",
+          "name": "HLSPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInputHLSPullSettings": {
+      "document": "查询输入的HLS配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS源站地址信息。",
+          "example": "无",
+          "member": "DescribeHLSPullSourceAddress",
+          "name": "SourceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8313,6 +8389,48 @@
           "name": "RTSPPullSettings",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出的HLS拉流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputHLSPullSettings",
+          "name": "HLSPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputHLSPullServerUrl": {
+      "document": "查询输出的HLS拉流URL信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS拉流地址的Url。",
+          "example": "http://domain[port]/server_URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeOutputHLSPullSettings": {
+      "document": "查询输出的HLS拉流配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS拉流地址列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeOutputHLSPullServerUrl",
+          "name": "ServerUrls",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -11380,6 +11498,22 @@
           "member": "string",
           "name": "Switch",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "HLSPullSourceAddress": {
+      "document": "创建的输入HLS拉流源站配置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "HLS源站的Url地址。",
+          "example": "http://testdomain.com:8806/live/streamname",
+          "member": "string",
+          "name": "Url",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15140,6 +15274,16 @@
           "example": "无",
           "member": "CreateInputRTSPPullSettings",
           "name": "RTSPPullSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HLS_PULL的配置信息。",
+          "example": "无",
+          "member": "CreateInputHLSPullSettings",
+          "name": "HLSPullSettings",
           "required": false,
           "type": "object",
           "value_allowed_null": false

@@ -4028,6 +4028,7 @@
         {
           "default": "",
           "document": "任务ID，CreateRecordTask返回。删除TaskId指定的录制任务。",
+          "example": "UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -11148,7 +11149,7 @@
         },
         {
           "default": "",
-          "document": "拉流源所在地域（请就近选取）：\nap-beijing - 华北地区(北京)，\nap-shanghai -华东地区(上海)，\nap-guangzhou -华南地区(广州)，\nap-mumbai - 印度。",
+          "document": "任务创建所在地域：\nap-beijing - 华北地区(北京)，\nap-shanghai -华东地区(上海)，\nap-guangzhou -华南地区(广州)，\nap-mumbai - 印度，\nap-hongkong - 香港，\neu-frankfurt - 德国，\nap-seoul - 韩国，\nap-bangkok - 泰国，\nap-singapore - 新加坡，\nna-siliconvalley - 美西，\nna-ashburn - 美东，\nap-tokyo - 日本。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",

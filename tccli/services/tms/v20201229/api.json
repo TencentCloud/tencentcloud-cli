@@ -502,6 +502,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段表示业务群聊场景时的房间ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段表示消息接受者ID",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息生成时间，精确到毫秒",
+          "example": "无",
+          "member": "int64",
+          "name": "SendTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

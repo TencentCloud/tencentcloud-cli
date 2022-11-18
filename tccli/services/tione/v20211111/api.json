@@ -276,6 +276,12 @@
       "name": "模型训练任务列表",
       "output": "DescribeTrainingTasksResponse"
     },
+    "ModifyModelServicePartialConfig": {
+      "document": "增量更新在线推理服务的部分配置，不更新的配置项不需要传入",
+      "input": "ModifyModelServicePartialConfigRequest",
+      "name": "增量修改模型服务",
+      "output": "ModifyModelServicePartialConfigResponse"
+    },
     "ModifyServiceGroupWeights": {
       "document": "更新推理服务组流量分配",
       "input": "ModifyServiceGroupWeightsRequest",
@@ -6723,6 +6729,60 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyModelServicePartialConfigRequest": {
+      "document": "ModifyModelServicePartialConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "在线推理服务Id，需已存在",
+          "example": "ms-gwc8j2d5-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后服务不重启，定时停止的配置",
+          "example": "无",
+          "member": "ScheduledAction",
+          "name": "ScheduledAction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更新后服务不重启，服务对应限流限频配置",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServicePartialConfigResponse": {
+      "document": "ModifyModelServicePartialConfig返回参数结构体",
+      "members": [
+        {
+          "document": "被修改后的服务配置",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyServiceGroupWeightsRequest": {
       "document": "ModifyServiceGroupWeights请求参数结构体",
