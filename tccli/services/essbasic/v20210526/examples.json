@@ -38,6 +38,14 @@
         "title": "电子签渠道版-根据签署流程id创建批量撤回url"
       }
     ],
+    "ChannelCreateBoundFlows": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBoundFlows\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"CustomUserId\": \"xx\",\n        \"ProxyIp\": \"xx\",\n        \"Channel\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"xx\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16221xxxx12775546\"\n    }\n}",
+        "title": "领取合同"
+      }
+    ],
     "ChannelCreateConvertTaskApi": [
       {
         "document": "",

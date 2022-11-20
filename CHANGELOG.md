@@ -1,3 +1,149 @@
+# Release 3.0.652.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 21 次发布
+
+发布时间：2022-11-21 06:07:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCarrierPrivilegeNumberApplicant](http://document.tencentcloudapi.woa.com/document/product/679/76670)
+* [DescribeActiveCarrierPrivilegeNumber](http://document.tencentcloudapi.woa.com/document/product/679/76669)
+* [DescribeCarrierPrivilegeNumberApplicants](http://document.tencentcloudapi.woa.com/document/product/679/76668)
+
+新增数据结构：
+
+* [ActiveCarrierPrivilegeNumber](http://document.tencentcloudapi.woa.com/document/product/679/47715#ActiveCarrierPrivilegeNumber)
+* [CarrierPrivilegeNumberApplicant](http://document.tencentcloudapi.woa.com/document/product/679/47715#CarrierPrivilegeNumberApplicant)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/679/47715#Filter)
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 5 次发布
+
+发布时间：2022-11-21 06:08:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteCfsSnapshot](http://document.tencentcloudapi.woa.com/document/product/582/75932)
+
+	* 新增入参：SnapshotIds
+
+	* <font color="#dd0000">**修改入参**：</font>SnapshotId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 26 次发布
+
+发布时间：2022-11-21 06:17:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateBoundFlows](http://document.tencentcloudapi.woa.com/document/product/1595/76671)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 18 次发布
+
+发布时间：2022-11-21 06:19:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDeviceLocationSolve](http://document.tencentcloudapi.woa.com/document/product/1081/76674)
+
+新增数据结构：
+
+* [WifiInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#WifiInfo)
+
+
+
+## 移动网络加速(mna) 版本：2021-01-19
+
+### 第 7 次发布
+
+发布时间：2022-11-21 06:23:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEncryptedKey](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetPublicKey](http://document.tencentcloudapi.woa.com/document/product/1385/76675)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 16 次发布
+
+发布时间：2022-11-21 06:28:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/41679#DeployedResources)
+
+	* 新增成员：Resources
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 46 次发布
+
+发布时间：2022-11-21 06:32:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/49431)
+
+	* 新增入参：GPUArgs, UserScript, IgnoreExistedNode, DockerGraphPath
+
+
+
+
 # Release 3.0.651.1
 
 ## 弹性伸缩(as) 版本：2018-04-19
