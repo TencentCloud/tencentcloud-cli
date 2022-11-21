@@ -1148,10 +1148,20 @@
         },
         {
           "default": "",
-          "document": "关联资源ID或关联域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不建议使用。字段返回和Resources相同。本字段后续只返回null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResourceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联资源ID或关联域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Resources",
           "required": true,
           "type": "list",
           "value_allowed_null": true

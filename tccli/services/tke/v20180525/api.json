@@ -13990,6 +13990,33 @@
         },
         {
           "default": "",
+          "document": "GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性",
+          "example": "无",
+          "member": "GPUArgs",
+          "name": "GPUArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "base64编码后的自定义脚本",
+          "example": "dG91Y2ggL3RtcC9oZWxsbwo=",
+          "member": "string",
+          "name": "UserScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新label和taint时忽略存量节点",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreExistedNode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
           "document": "节点自定义参数",
           "example": "无",
           "member": "InstanceExtraArgs",
@@ -14023,6 +14050,15 @@
           "name": "DeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "DockerGraphPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

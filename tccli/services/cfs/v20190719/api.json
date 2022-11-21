@@ -1260,8 +1260,17 @@
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项",
+          "example": "[\"snapcfs-xx\",\"snapcfs-xx1\"]",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

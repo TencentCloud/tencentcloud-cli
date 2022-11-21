@@ -32,6 +32,14 @@
         "title": "外呼接口调用示例"
       }
     ],
+    "CreateCarrierPrivilegeNumberApplicant": [
+      {
+        "document": "审批完成后，号码A呼叫号码B不会被运营商限制频率",
+        "input": "{\n    \"SdkAppId\": 14000000,\n    \"Callers\": [\"008601012345678\"],\n    \"Callees\":[\"008618612345678\"]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"ApplicantId\": 1\n    }\n}",
+        "title": "申请白名单号码"
+      }
+    ],
     "CreateExtension": [
       {
         "document": "",
@@ -80,6 +88,14 @@
         "title": "删除坐席信息示例"
       }
     ],
+    "DescribeActiveCarrierPrivilegeNumber": [
+      {
+        "document": "查询生效的白名单规则",
+        "input": "{\n    \"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActiveCarrierPrivilegeNumbers\": [\n            {\n                \"SdkAppId\": 140000000,\n                \"Caller\": \"00860101234\",\n                \"Callee\": \"008618612341234\"\n            }\n        ],\n        \"PendingApplicantIds\": [\n            1,\n            2\n        ],\n        \"RequestId\": \"xxxxX\"\n    }\n}",
+        "title": "查询生效的白名单规则"
+      }
+    ],
     "DescribeAutoCalloutTask": [
       {
         "document": "",
@@ -110,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallInMetrics\n<公共请求参数>\n\n{\n    \"EnabledNumber\": true,\n    \"EnabledSkillGroup\": true,\n    \"SdkAppId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Timestamp\": 0,\n        \"SkillGroupMetrics\": [\n            {\n                \"Metrics\": {\n                    \"AvgQueueDuration\": 5,\n                    \"AvgAcceptDuration\": 0,\n                    \"MaxRingDuration\": 4,\n                    \"RingCount\": 1,\n                    \"MaxQueueDuration\": 5,\n                    \"TransferOuterCount\": 0,\n                    \"AcceptCount\": 0,\n                    \"MaxAcceptDuration\": 0,\n                    \"QueueCount\": 1,\n                    \"IvrCount\": 0,\n                    \"AvgRingDuration\": 4\n                },\n                \"Name\": \"xx\",\n                \"SkillGroupId\": 1070\n            }\n        ],\n        \"NumberMetrics\": [\n            {\n                \"Metrics\": {\n                    \"AvgQueueDuration\": 5,\n                    \"AvgAcceptDuration\": 0,\n                    \"MaxRingDuration\": 4,\n                    \"RingCount\": 1,\n                    \"MaxQueueDuration\": 5,\n                    \"TransferOuterCount\": 0,\n                    \"AcceptCount\": 0,\n                    \"MaxAcceptDuration\": 0,\n                    \"QueueCount\": 1,\n                    \"IvrCount\": 0,\n                    \"AvgRingDuration\": 4\n                },\n                \"SkillGroupMetrics\": [\n                    {\n                        \"Metrics\": {\n                            \"AvgQueueDuration\": 5,\n                            \"AvgAcceptDuration\": 0,\n                            \"MaxRingDuration\": 4,\n                            \"RingCount\": 1,\n                            \"MaxQueueDuration\": 5,\n                            \"TransferOuterCount\": 0,\n                            \"AcceptCount\": 0,\n                            \"MaxAcceptDuration\": 0,\n                            \"QueueCount\": 1,\n                            \"IvrCount\": 0,\n                            \"AvgRingDuration\": 4\n                        },\n                        \"Name\": \"xx\",\n                        \"SkillGroupId\": 1070\n                    }\n                ],\n                \"Number\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalMetrics\": {\n            \"AvgQueueDuration\": 5,\n            \"AvgAcceptDuration\": 0,\n            \"MaxRingDuration\": 4,\n            \"RingCount\": 1,\n            \"MaxQueueDuration\": 5,\n            \"TransferOuterCount\": 0,\n            \"AcceptCount\": 0,\n            \"MaxAcceptDuration\": 0,\n            \"QueueCount\": 1,\n            \"IvrCount\": 0,\n            \"AvgRingDuration\": 4\n        }\n    }\n}",
         "title": "获取呼入实时数据统计指标实例"
+      }
+    ],
+    "DescribeCarrierPrivilegeNumberApplicants": [
+      {
+        "document": "查询申请单",
+        "input": "{\n    \"SdkAppId\": 14000000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xnasdlgfas\",\n        \"TotalCount\": 1,\n        \"Applicants\": [\n            {\n                \"SdkAppId\": 1400000000,\n                \"ApplicantId\": 3,\n                \"Callers\": [\n                    \"008601012345678\"\n                ],\n                \"Callees\": [\n                    \"008618612345678\"\n                ],\n                \"State\": 1,\n                \"CreateTime\": 1623145120,\n                \"UpdateTime\": 1623145120\n            }\n        ]\n    }\n}",
+        "title": "查询申请单"
       }
     ],
     "DescribeChatMessages": [

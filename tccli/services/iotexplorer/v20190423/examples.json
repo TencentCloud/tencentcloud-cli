@@ -306,6 +306,14 @@
         "title": "获取设备历史数据"
       }
     ],
+    "DescribeDeviceLocationSolve": [
+      {
+        "document": "获取实时位置解析",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceLocationSolve\n<公共请求参数>\n\n{\n    \"LocationType\": \"GNSSNavigation\",\n    \"DeviceName\": \"\",\n    \"ProductId\": \"\",\n    \"GNSSNavigation\": \"{\\\"captures\\\":[{\\\"payload\\\":\\\"82d3ef004114d419ecf7ef4ed40bbf4ab588f1a419b56a275264a6b8cd01\\\"},{\\\"payload\\\":\\\"82d3ef004114331ad480d459ab49d4787e67fdd2760bdb65e70c\\\"}]}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Longitude\": 113.93931,\n        \"Latitude\": 22.54099,\n        \"LocationType\": \"GNSSNavigation\",\n        \"Accuracy\": 54.5,\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "获取实时位置解析"
+      }
+    ],
     "DescribeDevicePositionList": [
       {
         "document": "",

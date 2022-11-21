@@ -198,6 +198,12 @@
       "name": "获取设备历史数据",
       "output": "DescribeDeviceDataHistoryResponse"
     },
+    "DescribeDeviceLocationSolve": {
+      "document": "获取实时位置解析",
+      "input": "DescribeDeviceLocationSolveRequest",
+      "name": "获取实时位置解析",
+      "output": "DescribeDeviceLocationSolveResponse"
+    },
     "DescribeDevicePositionList": {
       "document": "获取设备位置列表",
       "input": "DescribeDevicePositionListRequest",
@@ -2739,6 +2745,105 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceLocationSolveRequest": {
+      "document": "DescribeDeviceLocationSolve请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ZUBPP0Y2G9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "D1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定位解析类型，wifi或GNSSNavigation",
+          "example": "wifi",
+          "member": "string",
+          "name": "LocationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "LoRaEdge卫星导航电文",
+          "example": "1",
+          "member": "string",
+          "name": "GNSSNavigation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "wifi信息",
+          "example": "无",
+          "member": "WifiInfo",
+          "name": "WiFiInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceLocationSolveResponse": {
+      "document": "DescribeDeviceLocationSolve返回参数结构体",
+      "members": [
+        {
+          "document": "经度",
+          "example": "22.54",
+          "member": "float",
+          "name": "Longitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "维度",
+          "example": "22.54",
+          "member": "float",
+          "name": "Latitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "类型",
+          "example": "wifi",
+          "member": "string",
+          "name": "LocationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "误差精度预估，单位为米\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22.54",
+          "member": "float",
+          "name": "Accuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8223,6 +8328,32 @@
         }
       ],
       "type": "object"
+    },
+    "WifiInfo": {
+      "document": "wifi定位信息",
+      "members": [
+        {
+          "default": "",
+          "document": "mac地址",
+          "example": "78a106a5b166",
+          "member": "string",
+          "name": "MAC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "信号强度",
+          "example": "-1",
+          "member": "int64",
+          "name": "RSSI",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

@@ -24,6 +24,12 @@
       "name": "创建外呼会话（当前仅支持双呼）",
       "output": "CreateCallOutSessionResponse"
     },
+    "CreateCarrierPrivilegeNumberApplicant": {
+      "document": "用于无限频率地呼叫坐席手机",
+      "input": "CreateCarrierPrivilegeNumberApplicantRequest",
+      "name": "申请运营商白名单号码",
+      "output": "CreateCarrierPrivilegeNumberApplicantResponse"
+    },
     "CreateExtension": {
       "document": "创建话机账号",
       "input": "CreateExtensionRequest",
@@ -60,6 +66,12 @@
       "name": "删除坐席信息",
       "output": "DeleteStaffResponse"
     },
+    "DescribeActiveCarrierPrivilegeNumber": {
+      "document": "查询生效运营商白名单规则",
+      "input": "DescribeActiveCarrierPrivilegeNumberRequest",
+      "name": "查询生效运营商白名单规则",
+      "output": "DescribeActiveCarrierPrivilegeNumberResponse"
+    },
     "DescribeAutoCalloutTask": {
       "document": "查询自动外呼任务详情",
       "input": "DescribeAutoCalloutTaskRequest",
@@ -83,6 +95,12 @@
       "input": "DescribeCallInMetricsRequest",
       "name": "获取呼入实时数据统计指标",
       "output": "DescribeCallInMetricsResponse"
+    },
+    "DescribeCarrierPrivilegeNumberApplicants": {
+      "document": "查询单状态",
+      "input": "DescribeCarrierPrivilegeNumberApplicantsRequest",
+      "name": "查询运营商白名单号码申请",
+      "output": "DescribeCarrierPrivilegeNumberApplicantsResponse"
     },
     "DescribeChatMessages": {
       "document": "包括具体聊天内容",
@@ -200,6 +218,48 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "ActiveCarrierPrivilegeNumber": {
+      "document": "生效运营商白名单号码",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主叫号码",
+          "example": "008601012345678",
+          "member": "string",
+          "name": "Caller",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被叫号码",
+          "example": "008601012345678",
+          "member": "string",
+          "name": "Callee",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生效unix时间戳(秒)",
+          "example": "1668590448",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AutoCalloutTaskCalleeInfo": {
       "document": "外呼任务被叫信息",
       "members": [
@@ -555,6 +615,84 @@
       ],
       "usage": "out"
     },
+    "CarrierPrivilegeNumberApplicant": {
+      "document": "运营商白名单号码申请单",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "申请单Id",
+          "example": "123",
+          "member": "uint64",
+          "name": "ApplicantId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主叫号码列表",
+          "example": "[\"008601012345678\"]",
+          "member": "string",
+          "name": "Callers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被叫号码列表",
+          "example": "[\"008601012345678\"]",
+          "member": "string",
+          "name": "Callees",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "审批状态:1 待审核、2 通过、3 拒绝",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间，unix时间戳(秒)",
+          "example": "1668573686",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间，unix时间戳(秒)",
+          "example": "1668573686",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAutoCalloutTaskRequest": {
       "document": "CreateAutoCalloutTask请求参数结构体",
       "members": [
@@ -805,6 +943,64 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCarrierPrivilegeNumberApplicantRequest": {
+      "document": "CreateCarrierPrivilegeNumberApplicant请求参数结构体",
+      "members": [
+        {
+          "document": "SdkAppId",
+          "example": "140000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）",
+          "example": "[\"008601012345678\"]",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）",
+          "example": "[\"008618612345678\"]",
+          "member": "string",
+          "name": "Callees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCarrierPrivilegeNumberApplicantResponse": {
+      "document": "CreateCarrierPrivilegeNumberApplicant返回参数结构体",
+      "members": [
+        {
+          "document": "申请单Id",
+          "example": "1543",
+          "member": "uint64",
+          "name": "ApplicantId",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1122,6 +1318,80 @@
       ],
       "type": "object"
     },
+    "DescribeActiveCarrierPrivilegeNumberRequest": {
+      "document": "DescribeActiveCarrierPrivilegeNumber请求参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "默认10，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "筛选条件 Name支持PhoneNumber(按号码模糊查找)",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActiveCarrierPrivilegeNumberResponse": {
+      "document": "DescribeActiveCarrierPrivilegeNumber返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生效列表",
+          "example": "[]",
+          "member": "ActiveCarrierPrivilegeNumber",
+          "name": "ActiveCarrierPrivilegeNumbers",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "待审核单号",
+          "example": "[]",
+          "member": "uint64",
+          "name": "PendingApplicantIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAutoCalloutTaskRequest": {
       "document": "DescribeAutoCalloutTask请求参数结构体",
       "members": [
@@ -1418,6 +1688,72 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCarrierPrivilegeNumberApplicantsRequest": {
+      "document": "DescribeCarrierPrivilegeNumberApplicants请求参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "默认0，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "默认10，最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)",
+          "example": "[{\"Name\":\"ApplicantId\", \"Values\":\"1\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCarrierPrivilegeNumberApplicantsResponse": {
+      "document": "DescribeCarrierPrivilegeNumberApplicants返回参数结构体",
+      "members": [
+        {
+          "document": "筛选出的总申请单数量",
+          "example": "13",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "申请单列表",
+          "example": "无",
+          "member": "CarrierPrivilegeNumberApplicant",
+          "name": "Applicants",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2605,6 +2941,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "筛选条件",
+      "members": [
+        {
+          "document": "筛选字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "筛选条件值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Value1\",\"Value2\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "IMCdrInfo": {
       "document": "文本会话服务记录信息",
