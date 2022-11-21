@@ -494,6 +494,14 @@
         "title": "列出用户关联的用户组"
       }
     ],
+    "ListMaskedSubAccounts": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListMaskedSubAccounts\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 12062472,\n                \"Uin\": 100023162094,\n                \"Name\": \"test_seven\",\n                \"Remark\": \"\",\n                \"CanLogin\": 1,\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2022-01-03 10:38:26\",\n                \"IsReceiverOwner\": 0,\n                \"SystemType\": \"SubAccount\",\n                \"NeedResetPassword\": 1,\n                \"ConsoleLogin\": 0,\n                \"WxzsStatus\": 0,\n                \"PermType\": [],\n                \"IsDeleted\": 0,\n                \"IsSelected\": null,\n                \"HasAPIKey\": null,\n                \"BindWework\": null\n            }\n        ],\n        \"OwnerInfo\": [\n            {\n                \"Uin\": 100011742865,\n                \"UserName\": \"YB\",\n                \"CheckStatus\": 0\n            }\n        ],\n        \"GroupInfo\": [],\n        \"RequestId\": \"50a36793-83c2-44b5-961f-2946bca09c69\"\n    }\n}",
+        "title": "获取子账户列表"
+      }
+    ],
     "ListPolicies": [
       {
         "document": "",

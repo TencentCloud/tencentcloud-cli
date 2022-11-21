@@ -273,7 +273,7 @@
     "DescribeKeyPairs": [
       {
         "document": "",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeKeyPairs\n&KeyIds.0=lhkp-omd12oc1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeyPairs\n<公共请求参数>\n\n{\n    \"KeyIds\": [\n        \"lhkp-omd12oc1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"lhkp-omd12oc1\",\n                \"KeyName\": \"test\",\n                \"PublicKey\": \"\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2020-04-28T23:01:47Z\",\n                \"PrivateKey\": \"null\"\n            }\n        ],\n        \"RequestId\": \"9abb999a-53d6-4534-9b49-00e53b5c0fea\"\n    }\n}",
         "title": "查询用户密钥对列表"
       }

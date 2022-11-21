@@ -1718,7 +1718,7 @@
       "members": [
         {
           "default": "",
-          "document": "验证码appid",
+          "document": "验证码AppId",
           "example": "\"19901111\"",
           "member": "string",
           "name": "CaptchaAppId",

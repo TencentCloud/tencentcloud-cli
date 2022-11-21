@@ -2925,6 +2925,17 @@
           "type": "object",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "巡检子项结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInspectionTaskGroup",
+          "name": "TaskGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -18587,6 +18598,28 @@
           "name": "SecurityGroups",
           "required": false,
           "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "系统",
+          "example": "linux",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "硬件架构",
+          "example": "amd64",
+          "member": "string",
+          "name": "Arch",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }

@@ -68,6 +68,20 @@
         "title": "调用成功示例"
       }
     ],
+    "DetectChefDress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别(酒店版)\"\n                    },\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无厨师帽\",\n                        \"Name\": \"厨师帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.99437755,\n                        \"Label\": \"赤膊\",\n                        \"Name\": \"赤膊识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"a9050291-41a7-48ca-bd94-7a2a25d1d466\"\n    }\n}",
+        "title": "厨师穿戴识别请求成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "厨师穿戴识别请求失败"
+      }
+    ],
     "DetectDisgust": [
       {
         "document": "",
@@ -174,6 +188,20 @@
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectProductBeta\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RegionDetected\": [\n            {\n                \"Category\": \"家电数码\",\n                \"CategoryScore\": 0.894864857197,\n                \"Location\": {\n                    \"XMin\": 175,\n                    \"YMin\": 12,\n                    \"XMax\": 401,\n                    \"YMax\": 376\n                }\n            }\n        ],\n        \"ProductInfo\": {\n            \"FindSKU\": 1,\n            \"Location\": {\n                \"XMin\": 175,\n                \"YMin\": 12,\n                \"XMax\": 401,\n                \"YMax\": 376\n            },\n            \"Name\": \"手机\",\n            \"Brand\": \"iphone\",\n            \"Price\": \"￥7299\",\n            \"ProductCategory\": \"家电数码\",\n            \"Score\": 0.544267654419,\n            \"Image\": \"https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74\",\n            \"LemmaInfoList\": []\n        },\n        \"ProductInfoList\": [\n            {\n                \"FindSKU\": 1,\n                \"Location\": {\n                    \"XMin\": 175,\n                    \"YMin\": 12,\n                    \"XMax\": 401,\n                    \"YMax\": 376\n                },\n                \"Name\": \"手机\",\n                \"Brand\": \"iphone\",\n                \"Price\": \"￥7299\",\n                \"ProductCategory\": \"家电数码\",\n                \"Score\": 0.544267654419,\n                \"Image\": \"https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74\",\n                \"LemmaInfoList\": []\n            }\n        ],\n        \"RequestId\": \"2054720d-0c93-4028-9843-8fb9114ce2e2\"\n    }\n}",
         "title": "商品识别-微信识物版接口调用成功"
+      }
+    ],
+    "DetectSecurity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无安全帽\",\n                        \"Name\": \"安全帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9768763,\n                        \"Label\": \"没有电话\",\n                        \"Name\": \"玩手机识别\"\n                    },\n                    {\n                        \"Confidence\": 0.8206851,\n                        \"Label\": \"没有抽烟\",\n                        \"Name\": \"抽烟识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9113377,\n                        \"Label\": \"无工地安全带\",\n                        \"Name\": \"工地安全带识别\"\n                    },\n                    {\n                        \"Confidence\": 0.7201198,\n                        \"Label\": \"无手套\",\n                        \"Name\": \"手套识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无工服\",\n                        \"Name\": \"工服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.611658,\n                        \"Label\": \"无护目镜\",\n                        \"Name\": \"护目镜识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9828068,\n                        \"Label\": \"无反光衣\",\n                        \"Name\": \"反光衣识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"8a3f48ea-f995-4ad2-9ff5-7f8faf8bdbaf\"\n    }\n}",
+        "title": "安全属性识别请求成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e516\"\n    }\n}",
+        "title": "安全属性识别请求失败"
       }
     ],
     "EnhanceImage": [

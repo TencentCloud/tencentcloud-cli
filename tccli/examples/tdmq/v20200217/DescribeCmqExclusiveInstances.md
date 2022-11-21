@@ -23,7 +23,13 @@ Output:
                 "InstanceDescription": "cmq",
                 "InstanceState": "Creating",
                 "InstanceType": "basic",
-                "CreatedTime": "0001-01-01T00:00:00Z"
+                "CreatedTime": "0001-01-01T00:00:00Z",
+                "VpcConfig": [
+                    {
+                        "SubnetId": "vpc-cxxx",
+                        "VpcId": "subnet-xasas"
+                    }
+                ]
             },
             {
                 "InstanceId": "instance-b8787f12",
@@ -31,7 +37,13 @@ Output:
                 "InstanceDescription": "asdsasadsa",
                 "InstanceState": "Creating",
                 "InstanceType": "basic",
-                "CreatedTime": "0001-01-01T00:00:00Z"
+                "CreatedTime": "0001-01-01T00:00:00Z",
+                "VpcConfig": [
+                    {
+                        "SubnetId": "vpc-cxxx",
+                        "VpcId": "subnet-xasas"
+                    }
+                ]
             }
         ]
     }

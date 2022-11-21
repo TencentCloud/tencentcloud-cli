@@ -2593,7 +2593,8 @@
           "member": "string",
           "name": "FunctionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2602,7 +2603,8 @@
           "member": "string",
           "name": "Qualifier",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2611,7 +2613,8 @@
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2620,7 +2623,8 @@
           "member": "string",
           "name": "ShowCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2635,7 +2639,8 @@
           "name": "ModTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的代码",
@@ -2644,7 +2649,8 @@
           "name": "CodeInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的描述信息",
@@ -2653,7 +2659,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的触发器列表",
@@ -2662,7 +2669,8 @@
           "name": "Triggers",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的入口",
@@ -2671,7 +2679,8 @@
           "name": "Handler",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数代码大小",
@@ -2680,7 +2689,8 @@
           "name": "CodeSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的超时时间",
@@ -2689,7 +2699,8 @@
           "name": "Timeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的版本",
@@ -2698,7 +2709,8 @@
           "name": "FunctionVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的最大可用内存",
@@ -2707,7 +2719,8 @@
           "name": "MemorySize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的运行环境",
@@ -2716,7 +2729,8 @@
           "name": "Runtime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的名称",
@@ -2725,7 +2739,8 @@
           "name": "FunctionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的私有网络",
@@ -2734,7 +2749,8 @@
           "name": "VpcConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否使用GPU",
@@ -2743,7 +2759,8 @@
           "name": "UseGpu",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的环境变量",
@@ -2752,7 +2769,8 @@
           "name": "Environment",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "代码是否正确",
@@ -2761,7 +2779,8 @@
           "name": "CodeResult",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "代码错误信息",
@@ -2770,7 +2789,8 @@
           "name": "CodeError",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "代码错误码",
@@ -2779,7 +2799,8 @@
           "name": "ErrNo",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的命名空间",
@@ -2788,7 +2809,8 @@
           "name": "Namespace",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数绑定的角色",
@@ -2797,7 +2819,8 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否自动安装依赖",
@@ -2806,7 +2829,8 @@
           "name": "InstallDependency",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)",
@@ -2815,7 +2839,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "状态描述",
@@ -2824,7 +2849,8 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志投递到的Cls日志集",
@@ -2833,7 +2859,8 @@
           "name": "ClsLogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志投递到的Cls Topic",
@@ -2842,7 +2869,8 @@
           "name": "ClsTopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数ID",
@@ -2851,7 +2879,8 @@
           "name": "FunctionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的标签列表",
@@ -2860,7 +2889,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "EipConfig配置",
@@ -2869,7 +2899,8 @@
           "name": "EipConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "域名信息",
@@ -2878,7 +2909,8 @@
           "name": "AccessInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数类型，取值为HTTP或者Event",
@@ -2887,7 +2919,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否启用L5",
@@ -2896,7 +2929,8 @@
           "name": "L5Enable",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数关联的Layer版本信息",
@@ -2905,7 +2939,8 @@
           "name": "Layers",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数关联的死信队列信息",
@@ -2914,7 +2949,8 @@
           "name": "DeadLetterConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数创建回见",
@@ -2923,7 +2959,8 @@
           "name": "AddTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "公网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2932,7 +2969,8 @@
           "name": "PublicNetConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否启用Ons\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2941,7 +2979,8 @@
           "name": "OnsEnable",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "文件系统配置参数，用于云函数挂载文件系统\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2950,7 +2989,8 @@
           "name": "CfsConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2959,7 +2999,8 @@
           "name": "AvailableStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "函数版本\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2968,7 +3009,8 @@
           "name": "Qualifier",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "函数初始化超时时间",
@@ -2977,7 +3019,8 @@
           "name": "InitTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数状态失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2986,7 +3029,8 @@
           "name": "StatusReasons",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否开启异步属性\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2995,7 +3039,8 @@
           "name": "AsyncRunEnable",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否开启事件追踪\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3004,7 +3049,8 @@
           "name": "TraceEnable",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "HTTP函数支持的访问协议。当前支持WebSockets协议。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3013,7 +3059,8 @@
           "name": "ProtocolType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "HTTP函数配置ProtocolType访问协议，当前协议配置的参数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3022,7 +3069,8 @@
           "name": "ProtocolParams",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
