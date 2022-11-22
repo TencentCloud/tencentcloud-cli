@@ -753,7 +753,7 @@
         "document": "对 URL 为 http://www.abc.com/abc.m3u8 的直播流发起内容识别任务。",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessLiveStream\n<公共请求参数>\n\n{\n    \"Url\": \"http://www.abc.com/abc.m3u8\",\n    \"AiRecognitionTask\": {\n        \"Definition\": \"10\"\n    },\n    \"TaskNotifyConfig\": {\n        \"CmqRegion\": \"gz\",\n        \"CmqModel\": \"Queue\",\n        \"QueueName\": \"queue-125717729292\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92\"\n    }\n}",
-        "title": "发起直播流审核任务"
+        "title": "发起直播流识别任务"
       }
     ],
     "ProcessMedia": [

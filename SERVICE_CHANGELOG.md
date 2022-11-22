@@ -1,10 +1,36 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
 
-### 第 14 次发布
+### 第 34 次发布
 
-发布时间：2022-11-22 06:09:55
+发布时间：2022-11-23 06:04:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDDoSThreshold](http://document.tencentcloudapi.woa.com/document/product/1021/69190)
+
+	* 新增入参：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
+
+修改数据结构：
+
+* [ProtectThresholdRelation](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtectThresholdRelation)
+
+	* 新增成员：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 37 次发布
+
+发布时间：2022-11-23 06:18:25
 
 本次发布包含了以下内容：
 
@@ -12,22 +38,71 @@
 
 新增接口：
 
-* [ListMaskedSubAccounts](http://document.tencentcloudapi.woa.com/document/product/598/76677)
+* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
+* [DeleteHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76695)
+* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
+* [ModifyHpcClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/213/76693)
 
 新增数据结构：
 
-* [AccountTag](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccountTag)
-* [FilteredSubAccount](http://document.tencentcloudapi.woa.com/document/product/598/33167#FilteredSubAccount)
-* [OwnerInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#OwnerInfo)
-* [SimpleGroupInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SimpleGroupInfo)
+* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 19 次发布
+
+发布时间：2022-11-23 06:21:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeParamTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/75540)
+
+	* 新增入参：EngineVersions, TemplateNames, TemplateIds, DbModes, Offset, Limit, Products, TemplateTypes, EngineTypes, OrderBy, OrderDirection
+
+
+新增数据结构：
+
+* [TemplateParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TemplateParamInfo)
+
+修改数据结构：
+
+* [ParamTemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamTemplateListInfo)
+
+	* 新增成员：DbMode, ParamInfoSet
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 25 次发布
+
+发布时间：2022-11-23 06:23:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#DcnDetailItem)
+
+	* 新增成员：EncryptStatus
+
 
 
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 13 次发布
+### 第 14 次发布
 
-发布时间：2022-11-22 06:19:20
+发布时间：2022-11-23 06:24:24
 
 本次发布包含了以下内容：
 
@@ -35,118 +110,85 @@
 
 新增接口：
 
-* [CheckRecordSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76690)
-* [CheckSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76689)
-* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76688)
-* [DeleteSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76687)
-* [DescribeRecordSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76686)
-* [DescribeSnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76685)
-* [DescribeSnapshotList](http://document.tencentcloudapi.woa.com/document/product/1427/76684)
-* [DescribeSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76683)
-* [DescribeSnapshotRollbackTask](http://document.tencentcloudapi.woa.com/document/product/1427/76682)
-* [DownloadSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76681)
-* [ModifySnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76680)
-* [RollbackRecordSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76679)
-* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
+* [CreateRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76701)
+* [DeleteRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76700)
+* [DescribeRecordGroupList](http://document.tencentcloudapi.woa.com/document/product/1427/76699)
+* [ModifyRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76698)
+* [ModifyRecordToGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76697)
 
 新增数据结构：
 
-* [SnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotConfig)
-* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotInfo)
-* [SnapshotPageInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotPageInfo)
-* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
+* [RecordGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordGroupInfo)
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
-### 第 27 次发布
+### 第 25 次发布
 
-发布时间：2022-11-22 06:21:37
+发布时间：2022-11-23 06:35:55
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增数据结构：
 
-* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
-
-	* 新增入参：SignBeanTag
-
+* [DCNReplicaConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaConfig)
+* [DCNReplicaStatus](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaStatus)
 
 修改数据结构：
 
-* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#DcnDetailItem)
 
-	* 新增成员：ChannelComponentId
+	* 新增成员：ReplicaConfig, ReplicaStatus, EncryptStatus
 
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
-
-	* 新增成员：ChannelTemplateId
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 媒体处理(mps) 版本：2019-06-12
 
-### 第 15 次发布
+### 第 16 次发布
 
-发布时间：2022-11-22 06:27:44
+发布时间：2022-11-23 06:38:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增数据结构：
-
-* [ResilientStreamConf](http://document.tencentcloudapi.woa.com/document/product/862/37615#ResilientStreamConf)
 
 修改数据结构：
 
-* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTaskNotifyConfig)
 
-	* 新增成员：ResilientStream
-
-* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
-
-	* 新增成员：ResilientStream
-
-* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
-
-	* 新增成员：ResilientStream
+	* <font color="#dd0000">**修改成员**：</font>CmqModel, CmqRegion
 
 
 
 
-## 前端性能监控(rum) 版本：2021-06-22
+## 文字识别(ocr) 版本：2018-11-19
 
-### 第 14 次发布
+### 第 34 次发布
 
-发布时间：2022-11-22 06:30:43
+发布时间：2022-11-23 06:39:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateWhitelist](http://document.tencentcloudapi.woa.com/document/product/1464/69243)
+* [OnlineTaxiItineraryInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#OnlineTaxiItineraryInfo)
 
-	* 新增出参：ID
-
-
+	* 新增成员：Row
 
 
-## 图像分析(tiia) 版本：2019-05-29
 
-### 第 16 次发布
 
-发布时间：2022-11-22 06:35:50
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 9 次发布
+
+发布时间：2022-11-23 06:51:49
 
 本次发布包含了以下内容：
 
@@ -154,59 +196,11 @@
 
 新增接口：
 
-* [DetectChefDress](http://document.tencentcloudapi.woa.com/document/product/865/76692)
-* [DetectSecurity](http://document.tencentcloudapi.woa.com/document/product/865/76691)
-
-新增数据结构：
-
-* [AttributesForBody](http://document.tencentcloudapi.woa.com/document/product/865/35474#AttributesForBody)
-* [BodyAttributes](http://document.tencentcloudapi.woa.com/document/product/865/35474#BodyAttributes)
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
 
 
 
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 47 次发布
-
-发布时间：2022-11-22 06:36:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterInspectionTask)
-
-	* 新增成员：TaskGroups
-
-* [SubnetInfos](http://document.tencentcloudapi.woa.com/document/product/457/31866#SubnetInfos)
-
-	* 新增成员：Os, Arch
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 45 次发布
-
-发布时间：2022-11-22 06:40:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyNetworkInterfaceQos](http://document.tencentcloudapi.woa.com/document/product/215/55136)
-
-	* 新增入参：EnableDirectSend, DirectSendMinPort, DirectSendMaxPort
-
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
 
 
 
@@ -1080,6 +1074,28 @@
 
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 34 次发布
+
+发布时间：2022-11-23 06:04:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDDoSThreshold](http://document.tencentcloudapi.woa.com/document/product/1021/69190)
+
+	* 新增入参：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
+
+修改数据结构：
+
+* [ProtectThresholdRelation](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtectThresholdRelation)
+
+	* 新增成员：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
 
 ### 第 33 次发布
 
@@ -4207,14 +4223,14 @@
 
 新增接口：
 
-* [[ListMaskedSubAccounts](http://document.tencentcloudapi.woa.com/document/product/598/76677)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ListMaskedSubAccounts](http://document.tencentcloudapi.woa.com/document/product/598/76677)
 
 新增数据结构：
 
-* [[AccountTag](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccountTag)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[AccountTag](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccountTag))
-* [[FilteredSubAccount](http://document.tencentcloudapi.woa.com/document/product/598/33167#FilteredSubAccount)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[FilteredSubAccount](http://document.tencentcloudapi.woa.com/document/product/598/33167#FilteredSubAccount))
-* [[OwnerInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#OwnerInfo)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[OwnerInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#OwnerInfo))
-* [[SimpleGroupInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SimpleGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[SimpleGroupInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SimpleGroupInfo))
+* [AccountTag](http://document.tencentcloudapi.woa.com/document/product/598/33167#AccountTag)
+* [FilteredSubAccount](http://document.tencentcloudapi.woa.com/document/product/598/33167#FilteredSubAccount)
+* [OwnerInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#OwnerInfo)
+* [SimpleGroupInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SimpleGroupInfo)
 
 ### 第 13 次发布
 
@@ -12784,6 +12800,25 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 37 次发布
+
+发布时间：2022-11-23 06:18:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76695)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyHpcClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/213/76693)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)](http://document.tencentcloudapi.woa.com/document/product/213/15753#[HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo))
+
 ### 第 36 次发布
 
 发布时间：2022-11-15 06:17:18
@@ -14782,6 +14817,32 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 19 次发布
+
+发布时间：2022-11-23 06:21:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeParamTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/75540)
+
+	* 新增入参：EngineVersions, TemplateNames, TemplateIds, DbModes, Offset, Limit, Products, TemplateTypes, EngineTypes, OrderBy, OrderDirection
+
+
+新增数据结构：
+
+* [[TemplateParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TemplateParamInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[TemplateParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TemplateParamInfo))
+
+修改数据结构：
+
+* [ParamTemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamTemplateListInfo)
+
+	* 新增成员：DbMode, ParamInfoSet
+
+
 ### 第 18 次发布
 
 发布时间：2022-11-01 21:06:30
@@ -15879,6 +15940,21 @@
 
 
 ## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 25 次发布
+
+发布时间：2022-11-23 06:23:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#DcnDetailItem)
+
+	* 新增成员：EncryptStatus
+
 
 ### 第 24 次发布
 
@@ -17150,6 +17226,26 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 14 次发布
+
+发布时间：2022-11-23 06:24:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76701)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76700)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRecordGroupList](http://document.tencentcloudapi.woa.com/document/product/1427/76699)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76698)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRecordToGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76697)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RecordGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[RecordGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordGroupInfo))
+
 ### 第 13 次发布
 
 发布时间：2022-11-22 06:19:20
@@ -17160,26 +17256,26 @@
 
 新增接口：
 
-* [[CheckRecordSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76690)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CheckSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76689)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76688)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76687)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRecordSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76686)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76685)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotList](http://document.tencentcloudapi.woa.com/document/product/1427/76684)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76683)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotRollbackTask](http://document.tencentcloudapi.woa.com/document/product/1427/76682)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DownloadSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76681)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifySnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76680)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RollbackRecordSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76679)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckRecordSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76690)
+* [CheckSnapshotRollback](http://document.tencentcloudapi.woa.com/document/product/1427/76689)
+* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76688)
+* [DeleteSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76687)
+* [DescribeRecordSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76686)
+* [DescribeSnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76685)
+* [DescribeSnapshotList](http://document.tencentcloudapi.woa.com/document/product/1427/76684)
+* [DescribeSnapshotRollbackResult](http://document.tencentcloudapi.woa.com/document/product/1427/76683)
+* [DescribeSnapshotRollbackTask](http://document.tencentcloudapi.woa.com/document/product/1427/76682)
+* [DownloadSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76681)
+* [ModifySnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/76680)
+* [RollbackRecordSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76679)
+* [RollbackSnapshot](http://document.tencentcloudapi.woa.com/document/product/1427/76678)
 
 新增数据结构：
 
-* [[SnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotConfig)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[SnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotConfig))
-* [[SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotInfo)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotInfo))
-* [[SnapshotPageInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotPageInfo)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[SnapshotPageInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotPageInfo))
-* [[SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord))
+* [SnapshotConfig](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotConfig)
+* [SnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotInfo)
+* [SnapshotPageInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotPageInfo)
+* [SnapshotRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56185#SnapshotRecord)
 
 ### 第 12 次发布
 
@@ -25652,6 +25748,26 @@
 
 ## 云数据库 MariaDB(mariadb) 版本：2017-03-12
 
+### 第 25 次发布
+
+发布时间：2022-11-23 06:35:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[DCNReplicaConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaConfig)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[DCNReplicaConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaConfig))
+* [[DCNReplicaStatus](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaStatus)](http://document.tencentcloudapi.woa.com/document/product/237/16191#[DCNReplicaStatus](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaStatus))
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#DcnDetailItem)
+
+	* 新增成员：ReplicaConfig, ReplicaStatus, EncryptStatus
+
+
 ### 第 24 次发布
 
 发布时间：2022-11-16 07:22:51
@@ -26257,7 +26373,7 @@
 
 * [AddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76363)
 * [DeleteDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76362)
-* [GetDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76361)
+* [GetDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76676)
 * [GetDevices](http://document.tencentcloudapi.woa.com/document/product/1385/76578)
 * [GetFlowStatistic](http://document.tencentcloudapi.woa.com/document/product/1385/76368)
 * [GetStatisticData](http://document.tencentcloudapi.woa.com/document/product/1385/76558)
@@ -27592,6 +27708,21 @@
 
 ## 媒体处理(mps) 版本：2019-06-12
 
+### 第 16 次发布
+
+发布时间：2022-11-23 06:38:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTaskNotifyConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>CmqModel, CmqRegion
+
+
 ### 第 15 次发布
 
 发布时间：2022-11-22 06:27:44
@@ -27602,7 +27733,7 @@
 
 新增数据结构：
 
-* [[ResilientStreamConf](http://document.tencentcloudapi.woa.com/document/product/862/37615#ResilientStreamConf)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ResilientStreamConf](http://document.tencentcloudapi.woa.com/document/product/862/37615#ResilientStreamConf))
+* [ResilientStreamConf](http://document.tencentcloudapi.woa.com/document/product/862/37615#ResilientStreamConf)
 
 修改数据结构：
 
@@ -29116,6 +29247,21 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 34 次发布
+
+发布时间：2022-11-23 06:39:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OnlineTaxiItineraryInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#OnlineTaxiItineraryInfo)
+
+	* 新增成员：Row
+
 
 ### 第 33 次发布
 
@@ -38252,13 +38398,13 @@
 
 新增接口：
 
-* [[DetectChefDress](http://document.tencentcloudapi.woa.com/document/product/865/76692)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DetectSecurity](http://document.tencentcloudapi.woa.com/document/product/865/76691)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DetectChefDress](http://document.tencentcloudapi.woa.com/document/product/865/76692)
+* [DetectSecurity](http://document.tencentcloudapi.woa.com/document/product/865/76691)
 
 新增数据结构：
 
-* [[AttributesForBody](http://document.tencentcloudapi.woa.com/document/product/865/35474#AttributesForBody)](http://document.tencentcloudapi.woa.com/document/product/865/35474#[AttributesForBody](http://document.tencentcloudapi.woa.com/document/product/865/35474#AttributesForBody))
-* [[BodyAttributes](http://document.tencentcloudapi.woa.com/document/product/865/35474#BodyAttributes)](http://document.tencentcloudapi.woa.com/document/product/865/35474#[BodyAttributes](http://document.tencentcloudapi.woa.com/document/product/865/35474#BodyAttributes))
+* [AttributesForBody](http://document.tencentcloudapi.woa.com/document/product/865/35474#AttributesForBody)
+* [BodyAttributes](http://document.tencentcloudapi.woa.com/document/product/865/35474#BodyAttributes)
 
 ### 第 15 次发布
 
@@ -38616,6 +38762,18 @@
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 9 次发布
+
+发布时间：2022-11-23 06:51:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 8 次发布
 

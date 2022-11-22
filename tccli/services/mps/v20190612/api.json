@@ -13446,9 +13446,10 @@
           "example": "Queue",
           "member": "string",
           "name": "CmqModel",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13456,9 +13457,10 @@
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13468,7 +13470,8 @@
           "name": "QueueName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13478,7 +13481,8 @@
           "name": "TopicName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13488,7 +13492,8 @@
           "name": "NotifyType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13498,7 +13503,8 @@
           "name": "NotifyUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -9621,6 +9621,66 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ACK FLOOD流量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ACK FLOOD包量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodPktThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYNACK FLOOD流量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYNACK FLOOD包量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodPktThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "RST FLOOD流量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "RST FLOOD包量阈值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodPktThreshold",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10697,6 +10757,72 @@
           "example": "1000",
           "member": "uint64",
           "name": "UdpFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ACK FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ACK FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYNACK FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SYNACK FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "RST FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "RST FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodPktThreshold",
           "required": true,
           "type": "int",
           "value_allowed_null": true,

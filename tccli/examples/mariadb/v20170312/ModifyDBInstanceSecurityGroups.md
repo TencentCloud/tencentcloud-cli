@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --Product mariadb \
     --InstanceId tdsql-eb2w7dto \
+    --Product mariadb \
     --SecurityGroupIds sg-ajr1jzgj
 ```
 

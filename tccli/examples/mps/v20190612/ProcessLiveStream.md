@@ -1,4 +1,4 @@
-**Example 1: 发起直播流审核任务**
+**Example 1: 发起直播流识别任务**
 
 对 URL 为 http://www.abc.com/abc.m3u8 的直播流发起内容识别任务。
 

@@ -1,3 +1,209 @@
+# Release 3.0.654.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 34 次发布
+
+发布时间：2022-11-23 06:04:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDDoSThreshold](http://document.tencentcloudapi.woa.com/document/product/1021/69190)
+
+	* 新增入参：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
+
+修改数据结构：
+
+* [ProtectThresholdRelation](http://document.tencentcloudapi.woa.com/document/product/1021/57582#ProtectThresholdRelation)
+
+	* 新增成员：AckFloodThreshold, AckFloodPktThreshold, SynAckFloodThreshold, SynAckFloodPktThreshold, RstFloodThreshold, RstFloodPktThreshold
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 37 次发布
+
+发布时间：2022-11-23 06:18:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
+* [DeleteHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76695)
+* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
+* [ModifyHpcClusterAttribute](http://document.tencentcloudapi.woa.com/document/product/213/76693)
+
+新增数据结构：
+
+* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 19 次发布
+
+发布时间：2022-11-23 06:21:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeParamTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/75540)
+
+	* 新增入参：EngineVersions, TemplateNames, TemplateIds, DbModes, Offset, Limit, Products, TemplateTypes, EngineTypes, OrderBy, OrderDirection
+
+
+新增数据结构：
+
+* [TemplateParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TemplateParamInfo)
+
+修改数据结构：
+
+* [ParamTemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamTemplateListInfo)
+
+	* 新增成员：DbMode, ParamInfoSet
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 25 次发布
+
+发布时间：2022-11-23 06:23:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#DcnDetailItem)
+
+	* 新增成员：EncryptStatus
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 14 次发布
+
+发布时间：2022-11-23 06:24:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76701)
+* [DeleteRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76700)
+* [DescribeRecordGroupList](http://document.tencentcloudapi.woa.com/document/product/1427/76699)
+* [ModifyRecordGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76698)
+* [ModifyRecordToGroup](http://document.tencentcloudapi.woa.com/document/product/1427/76697)
+
+新增数据结构：
+
+* [RecordGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordGroupInfo)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 25 次发布
+
+发布时间：2022-11-23 06:35:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DCNReplicaConfig](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaConfig)
+* [DCNReplicaStatus](http://document.tencentcloudapi.woa.com/document/product/237/16191#DCNReplicaStatus)
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#DcnDetailItem)
+
+	* 新增成员：ReplicaConfig, ReplicaStatus, EncryptStatus
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 16 次发布
+
+发布时间：2022-11-23 06:38:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTaskNotifyConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>CmqModel, CmqRegion
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 34 次发布
+
+发布时间：2022-11-23 06:39:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OnlineTaxiItineraryInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#OnlineTaxiItineraryInfo)
+
+	* 新增成员：Row
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 9 次发布
+
+发布时间：2022-11-23 06:51:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.653.1
 
 ## 访问管理(cam) 版本：2019-01-16

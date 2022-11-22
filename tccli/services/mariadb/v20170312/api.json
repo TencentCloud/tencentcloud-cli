@@ -509,7 +509,8 @@
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -518,7 +519,8 @@
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -527,7 +529,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2507,6 +2510,84 @@
       ],
       "usage": "in"
     },
+    "DCNReplicaConfig": {
+      "document": "dcn 配置情况",
+      "members": [
+        {
+          "default": "",
+          "document": "DCN 运行状态，START为正常运行，STOP为暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "START",
+          "member": "string",
+          "name": "RoReplicationMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "DelayReplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "延迟复制的指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "DueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "延迟复制时的延迟秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicationDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "DCNReplicaStatus": {
+      "document": "DCN的状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DCN 的运行状态，START为正常运行，STOP为暂停，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "START",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前延迟情况，取备实例的 master 节点的 delay 值",
+          "example": "1",
+          "member": "int64",
+          "name": "Delay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "Database": {
       "document": "数据库信息",
       "members": [
@@ -2619,7 +2700,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2629,7 +2711,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2639,7 +2722,8 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2649,7 +2733,8 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2659,7 +2744,8 @@
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2669,7 +2755,8 @@
           "name": "Vipv6",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2679,7 +2766,8 @@
           "name": "Vport",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2689,7 +2777,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2699,7 +2788,8 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2709,7 +2799,8 @@
           "name": "DcnFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2719,7 +2810,8 @@
           "name": "DcnStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2729,7 +2821,8 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2739,7 +2832,8 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2749,7 +2843,8 @@
           "name": "Storage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2759,7 +2854,8 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2769,7 +2865,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2779,7 +2876,8 @@
           "name": "PeriodEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2789,7 +2887,41 @@
           "name": "InstanceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "DCN复制的配置信息；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "DCNReplicaConfig",
+          "name": "ReplicaConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "DCN复制的状态；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "DCNReplicaStatus",
+          "name": "ReplicaStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启了 kms",
+          "example": "暂无",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2800,56 +2932,68 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "20221108006001219594201",
           "member": "string",
           "name": "DealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "所属账号",
+          "example": "3078115006",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "商品数量",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "关联的流程 Id，可用于查询流程执行状态",
+          "example": "68000002",
           "member": "int64",
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tdsql-61vf76u9\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "付费模式，0后付费/1预付费",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4520,7 +4664,8 @@
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4529,7 +4674,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4544,7 +4690,8 @@
           "name": "Groups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "安全组总数。",
@@ -4553,7 +4700,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5182,7 +5330,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5602,7 +5751,8 @@
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5611,7 +5761,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5620,7 +5771,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6103,7 +6255,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6112,7 +6265,8 @@
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6127,7 +6281,8 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli mariadb InitDBInstances --cli-unfold-argument  \
-    --InstanceIds tdsql-fdpjf5zh tdsql-avw0207d \
-    --Params.0.Param lower_case_table_names \
-    --Params.0.Value 1 \
-    --Params.1.Param innodb_page_size \
-    --Params.1.Value 16384 \
+    --Params.0.Value 16384 \
+    --Params.0.Param innodb_page_size \
+    --Params.1.Value 1 \
+    --Params.1.Param lower_case_table_names \
+    --Params.2.Value utf8 \
     --Params.2.Param character_set_server \
-    --Params.2.Value utf8
+    --InstanceIds tdsql-avw0207d tdsql-fdpjf5zh
 ```
 
 Output: 
