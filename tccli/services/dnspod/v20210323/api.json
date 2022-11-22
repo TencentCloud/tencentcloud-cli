@@ -1,5 +1,17 @@
 {
   "actions": {
+    "CheckRecordSnapshotRollback": {
+      "document": "回滚前检查单条记录",
+      "input": "CheckRecordSnapshotRollbackRequest",
+      "name": "回滚前检查单条记录",
+      "output": "CheckRecordSnapshotRollbackResponse"
+    },
+    "CheckSnapshotRollback": {
+      "document": "快照回滚前检查",
+      "input": "CheckSnapshotRollbackRequest",
+      "name": "快照回滚前检查",
+      "output": "CheckSnapshotRollbackResponse"
+    },
     "CreateDeal": {
       "document": "DNSPod商品下单",
       "input": "CreateDealRequest",
@@ -42,6 +54,12 @@
       "name": "批量添加记录",
       "output": "CreateRecordBatchResponse"
     },
+    "CreateSnapshot": {
+      "document": "创建快照",
+      "input": "CreateSnapshotRequest",
+      "name": "创建快照",
+      "output": "CreateSnapshotResponse"
+    },
     "DeleteDomain": {
       "document": "删除域名\n",
       "input": "DeleteDomainRequest",
@@ -65,6 +83,12 @@
       "input": "DeleteShareDomainRequest",
       "name": "删除域名共享",
       "output": "DeleteShareDomainResponse"
+    },
+    "DeleteSnapshot": {
+      "document": "删除快照",
+      "input": "DeleteSnapshotRequest",
+      "name": "删除快照",
+      "output": "DeleteSnapshotResponse"
     },
     "DescribeBatchTask": {
       "document": "获取任务详情",
@@ -138,11 +162,41 @@
       "name": "获取域名的解析记录",
       "output": "DescribeRecordListResponse"
     },
+    "DescribeRecordSnapshotRollbackResult": {
+      "document": "查询解析记录重新回滚的结果",
+      "input": "DescribeRecordSnapshotRollbackResultRequest",
+      "name": "查询解析记录重新回滚的结果",
+      "output": "DescribeRecordSnapshotRollbackResultResponse"
+    },
     "DescribeRecordType": {
       "document": "获取等级允许的记录类型",
       "input": "DescribeRecordTypeRequest",
       "name": "获取等级允许的记录类型",
       "output": "DescribeRecordTypeResponse"
+    },
+    "DescribeSnapshotConfig": {
+      "document": "查询解析快照配置",
+      "input": "DescribeSnapshotConfigRequest",
+      "name": "查询解析快照配置",
+      "output": "DescribeSnapshotConfigResponse"
+    },
+    "DescribeSnapshotList": {
+      "document": "查询快照列表",
+      "input": "DescribeSnapshotListRequest",
+      "name": "查询快照列表",
+      "output": "DescribeSnapshotListResponse"
+    },
+    "DescribeSnapshotRollbackResult": {
+      "document": "查询快照回滚结果",
+      "input": "DescribeSnapshotRollbackResultRequest",
+      "name": "查询快照回滚结果",
+      "output": "DescribeSnapshotRollbackResultResponse"
+    },
+    "DescribeSnapshotRollbackTask": {
+      "document": "查询最近一次回滚",
+      "input": "DescribeSnapshotRollbackTaskRequest",
+      "name": "查询最近一次回滚",
+      "output": "DescribeSnapshotRollbackTaskResponse"
     },
     "DescribeSubdomainAnalytics": {
       "document": "统计子域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况。仅付费套餐域名可用。",
@@ -155,6 +209,12 @@
       "input": "DescribeUserDetailRequest",
       "name": "获取帐户信息",
       "output": "DescribeUserDetailResponse"
+    },
+    "DownloadSnapshot": {
+      "document": "下载快照",
+      "input": "DownloadSnapshotRequest",
+      "name": "下载快照",
+      "output": "DownloadSnapshotResponse"
     },
     "ModifyDomainLock": {
       "document": "锁定域名",
@@ -222,6 +282,12 @@
       "name": "设置记录状态",
       "output": "ModifyRecordStatusResponse"
     },
+    "ModifySnapshotConfig": {
+      "document": "修改快照配置",
+      "input": "ModifySnapshotConfigRequest",
+      "name": "修改快照配置",
+      "output": "ModifySnapshotConfigResponse"
+    },
     "ModifySubdomainStatus": {
       "document": "暂停子域名的解析记录",
       "input": "ModifySubdomainStatusRequest",
@@ -239,6 +305,18 @@
       "input": "PayOrderWithBalanceRequest",
       "name": "DNSPod商品余额支付",
       "output": "PayOrderWithBalanceResponse"
+    },
+    "RollbackRecordSnapshot": {
+      "document": "重新回滚指定解析记录快照",
+      "input": "RollbackRecordSnapshotRequest",
+      "name": "重新回滚指定解析记录快照",
+      "output": "RollbackRecordSnapshotResponse"
+    },
+    "RollbackSnapshot": {
+      "document": "回滚快照",
+      "input": "RollbackSnapshotRequest",
+      "name": "回滚快照",
+      "output": "RollbackSnapshotResponse"
     }
   },
   "metadata": {
@@ -479,6 +557,177 @@
         }
       ],
       "usage": "out"
+    },
+    "CheckRecordSnapshotRollbackRequest": {
+      "document": "CheckRecordSnapshotRollback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照 ID",
+          "example": "BCED853D",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解析记录信息",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "Record",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckRecordSnapshotRollbackResponse": {
+      "document": "CheckRecordSnapshotRollback返回参数结构体",
+      "members": [
+        {
+          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "记录线路不正确",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckSnapshotRollbackRequest": {
+      "document": "CheckSnapshotRollback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照记录 ID",
+          "example": "EG34GE",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckSnapshotRollbackResponse": {
+      "document": "CheckSnapshotRollback返回参数结构体",
+      "members": [
+        {
+          "document": "快照记录 ID",
+          "example": "EG34GE",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚时长（分钟）",
+          "example": "321",
+          "member": "uint64",
+          "name": "CostMinutes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照所属域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析记录总数",
+          "example": "234",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值为 1，表示超时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检查失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "uint64",
+          "name": "Failed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败记录信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "FailedRecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDealRequest": {
       "document": "CreateDeal请求参数结构体",
@@ -1330,6 +1579,42 @@
       ],
       "type": "object"
     },
+    "CreateSnapshotRequest": {
+      "document": "CreateSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotResponse": {
+      "document": "CreateSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Deals": {
       "document": "子订单号列表",
       "members": [
@@ -1517,6 +1802,51 @@
     },
     "DeleteShareDomainResponse": {
       "document": "DeleteShareDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotRequest": {
+      "document": "DeleteSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照记录 ID",
+          "example": "EG34GE",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotResponse": {
+      "document": "DeleteSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2422,6 +2752,141 @@
       ],
       "type": "object"
     },
+    "DescribeRecordSnapshotRollbackResultRequest": {
+      "document": "DescribeRecordSnapshotRollbackResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回滚任务 ID",
+          "example": "1234131",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordSnapshotRollbackResultResponse": {
+      "document": "DescribeRecordSnapshotRollbackResult返回参数结构体",
+      "members": [
+        {
+          "document": "回滚任务 ID",
+          "example": "121212",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚状态",
+          "example": "ok",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败的记录信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "FailedRecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "所属域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "回滚进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "95",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "回滚剩余时间（单位：分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LeftMinutes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Failed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "成功记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Success",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "快照下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cos.xx.com/yyy.csv",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordTypeRequest": {
       "document": "DescribeRecordType请求参数结构体",
       "members": [
@@ -2447,6 +2912,339 @@
           "name": "TypeList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotConfigRequest": {
+      "document": "DescribeSnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "121313",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotConfigResponse": {
+      "document": "DescribeSnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "document": "解析快照配置",
+          "example": "无",
+          "member": "SnapshotConfig",
+          "name": "SnapshotConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotListRequest": {
+      "document": "DescribeSnapshotList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotListResponse": {
+      "document": "DescribeSnapshotList返回参数结构体",
+      "members": [
+        {
+          "document": "分页信息",
+          "example": "无",
+          "member": "SnapshotPageInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照列表",
+          "example": "无",
+          "member": "SnapshotInfo",
+          "name": "SnapshotList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotRollbackResultRequest": {
+      "document": "DescribeSnapshotRollbackResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照回滚任务 ID",
+          "example": "124",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotRollbackResultResponse": {
+      "document": "DescribeSnapshotRollbackResult返回参数结构体",
+      "members": [
+        {
+          "document": "快照所属域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚剩余时间（分钟）",
+          "example": "341",
+          "member": "uint64",
+          "name": "LeftMinutes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚进度百分比",
+          "example": "11",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照 ID",
+          "example": "DFG335E",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚状态",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照回滚任务 ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成功数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Success",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Failed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "失败详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "FailedRecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "快照的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://cos.xx.com/xxx.csv",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotRollbackTaskRequest": {
+      "document": "DescribeSnapshotRollbackTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotRollbackTaskResponse": {
+      "document": "DescribeSnapshotRollbackTask返回参数结构体",
+      "members": [
+        {
+          "document": "快照所属域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照 ID",
+          "example": "DFG335E",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回滚状态",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照回滚任务 ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "RecordCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始回滚时间",
+          "example": "2022-09-21 14:37:32",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3397,6 +4195,60 @@
       ],
       "usage": "out"
     },
+    "DownloadSnapshotRequest": {
+      "document": "DownloadSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照记录 ID",
+          "example": "EG34GE",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadSnapshotResponse": {
+      "document": "DownloadSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "快照下载链接",
+          "example": "https://xx.cos.yy.com/zzz.csv",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GroupInfo": {
       "document": "域名分组列表",
       "members": [
@@ -4339,6 +5191,51 @@
       ],
       "type": "object"
     },
+    "ModifySnapshotConfigRequest": {
+      "document": "ModifySnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备件间隔：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月",
+          "example": "daily",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotConfigResponse": {
+      "document": "ModifySnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySubdomainStatusRequest": {
       "document": "ModifySubdomainStatus请求参数结构体",
       "members": [
@@ -4844,6 +5741,366 @@
         }
       ],
       "usage": "out"
+    },
+    "RollbackRecordSnapshotRequest": {
+      "document": "RollbackRecordSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照 ID",
+          "example": "BCED853D",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "解析记录信息",
+          "example": "无",
+          "member": "SnapshotRecord",
+          "name": "RecordList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "之前的快照回滚任务 ID",
+          "example": "45",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackRecordSnapshotResponse": {
+      "document": "RollbackRecordSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "回滚任务 ID",
+          "example": "23113",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackSnapshotRequest": {
+      "document": "RollbackSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照记录 ID",
+          "example": "EG34GE",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "3123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackSnapshotResponse": {
+      "document": "RollbackSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "回滚任务 ID，用来查询回滚状态",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SnapshotConfig": {
+      "document": "域名解析快照配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月",
+          "example": "half_hour",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加时间",
+          "example": "2022-09-19 15:01:35",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属域名 ID",
+          "example": "13452",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置 ID",
+          "example": "21",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "SnapshotCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态：enable-启用，disable-禁用",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2022-09-19 15:01:35",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotInfo": {
+      "document": "快照信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照的对象存储地址",
+          "example": "https://xx.cos.xx.com/xx.csv",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加时间",
+          "example": "2022-09-20 14:03:13",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属域名",
+          "example": "xxyy.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照记录 ID",
+          "example": "957A1A5B",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名解析记录数",
+          "example": "2",
+          "member": "string",
+          "name": "RecordCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态：normal-正常，create-备份中",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotPageInfo": {
+      "document": "快照列表分页信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotRecord": {
+      "document": "快照解析记录",
+      "members": [
+        {
+          "default": "",
+          "document": "子域名",
+          "example": "test",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析线路",
+          "example": "默认",
+          "member": "string",
+          "name": "RecordLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析值",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TTL(秒)",
+          "example": "600",
+          "member": "string",
+          "name": "TTL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析记录 ID",
+          "example": "15689601",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MX优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "MX",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SubdomainAliasAnalyticsItem": {
       "document": "子域名别名解析量统计信息",

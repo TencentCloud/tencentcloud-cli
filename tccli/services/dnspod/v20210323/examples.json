@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CheckRecordSnapshotRollback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRecordSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EEXXXX\",\n    \"Record\": {\n        \"RecordId\": \"1111111\",\n        \"SubDomain\": \"no_line\",\n        \"RecordType\": \"A\",\n        \"RecordLine\": \"测试啊\",\n        \"Value\": \"0.0.0.1\",\n        \"TTL\": \"600\",\n        \"MX\": \"0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1664058d-f8b0-4b4b-9127-cc6d6b36f2b7\",\n        \"Reason\": \"记录线路不正确\"\n    }\n}",
+        "title": "回滚前检查单条记录"
+      }
+    ],
+    "CheckSnapshotRollback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45A0XXX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8a0fd97-4a54-40ce-a7a9-a97523eaaf2e\",\n        \"Domain\": \"domain.com\",\n        \"SnapshotId\": \"A45A0XXX\",\n        \"Total\": 63,\n        \"Failed\": 0,\n        \"CostMinutes\": 1,\n        \"FailedRecordList\": [],\n        \"Timeout\": null\n    }\n}",
+        "title": "快照回滚前检查"
+      }
+    ],
     "CreateDeal": [
       {
         "document": "",
@@ -68,6 +84,14 @@
         "title": "批量添加记录"
       }
     ],
+    "CreateSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"289e4d98-4907-4aa1-84bc-75f79926e724\"\n    }\n}",
+        "title": "创建快照"
+      }
+    ],
     "DeleteDomain": [
       {
         "document": "",
@@ -104,6 +128,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShareDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Account\": \"qcloud_uin_100000014226@qcloud.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除域名共享"
+      }
+    ],
+    "DeleteSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"B102XXXA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3c8c279-ccfb-4630-810c-36bc11e21ff9\"\n    }\n}",
+        "title": "删除快照"
       }
     ],
     "DescribeBatchTask": [
@@ -202,12 +234,58 @@
         "title": "查询域名的解析记录"
       }
     ],
+    "DescribeRecordSnapshotRollbackResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"JobId\": 1111\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8a5c989-0d6d-4335-928c-266fe831adc8\",\n        \"FailedRecordList\": [\n            {\n                \"RecordId\": \"0\",\n                \"SubDomain\": \"no_line\",\n                \"RecordType\": \"A\",\n                \"RecordLine\": \"测试啊\",\n                \"Value\": \"0.0.0.1\",\n                \"TTL\": \"600\",\n                \"MX\": null\n            }\n        ],\n        \"JobId\": 1111,\n        \"Status\": \"ok\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 1,\n        \"Failed\": 1,\n        \"Success\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xx.csv\"\n    }\n}",
+        "title": "查询解析记录重新回滚的结果"
+      }
+    ],
     "DescribeRecordType": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordType\n<公共请求参数>\n\n{\n    \"DomainGrade\": \"DP_Expert\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"TypeList\": [\n            \"A\",\n            \"CNAME\",\n            \"MX\",\n            \"TXT\",\n            \"NS\",\n            \"AAAA\",\n            \"SPF\",\n            \"SRV\",\n            \"CAA\",\n            \"显性URL\",\n            \"隐性URL\"\n        ]\n    }\n}",
         "title": "获取等级允许的记录类型"
+      }
+    ],
+    "DescribeSnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"xx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"567ca259-aff2-449b-a3af-c8cf7ee32f91\",\n        \"SnapshotConfig\": {\n            \"Id\": \"1111\",\n            \"DomainId\": \"121212\",\n            \"Status\": \"enable\",\n            \"Config\": \"monthly\",\n            \"CreatedOn\": \"2022-08-16 11:33:56\",\n            \"UpdatedOn\": \"2022-10-16 11:34:21\",\n            \"SnapshotCount\": 3\n        }\n    }\n}",
+        "title": "查询解析快照配置"
+      }
+    ],
+    "DescribeSnapshotList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotList\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86690c76-ee04-4501-807a-821350c915db\",\n        \"SnapshotList\": [\n            {\n                \"Id\": \"BXXBCBE1\",\n                \"RecordCount\": \"57\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx1.csv\",\n                \"CreatedOn\": \"2022-10-16 11:34:20\",\n                \"Domain\": \"domain.com\"\n            },\n            {\n                \"Id\": \"3EEXXF2D\",\n                \"RecordCount\": \"49\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx2.csv\",\n                \"CreatedOn\": \"2022-09-16 11:34:09\",\n                \"Domain\": \"domain.com\"\n            },\n            {\n                \"Id\": \"B1XXXX8A\",\n                \"RecordCount\": \"43\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx3.csv\",\n                \"CreatedOn\": \"2022-08-16 11:34:03\",\n                \"Domain\": \"domain.com\"\n            }\n        ],\n        \"Info\": {\n            \"Total\": 3\n        }\n    }\n}",
+        "title": "查询快照列表"
+      }
+    ],
+    "DescribeSnapshotRollbackResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7723f78-ff6f-43bc-89ee-bc225376276b\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Status\": \"waiting\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 0,\n        \"LeftMinutes\": 1,\n        \"Success\": null,\n        \"Failed\": null,\n        \"Total\": null,\n        \"CosUrl\": null,\n        \"FailedRecordList\": null\n    }\n}",
+        "title": "查询快照回滚结果，进行中"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4c4c0e9-ca5a-44a2-9d51-b0c64656b8bb\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Success\": 63,\n        \"Failed\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xxx.csv\",\n        \"Status\": \"ok\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 63,\n        \"Domain\": \"domain.com\",\n        \"FailedRecordList\": []\n    }\n}",
+        "title": "查询快照回滚结果，已完成"
+      }
+    ],
+    "DescribeSnapshotRollbackTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackTask\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa4e8fe3-0a47-41e8-80d2-6833a1186286\",\n        \"TaskId\": 179,\n        \"SnapshotId\": \"A4EEXXXX\",\n        \"CreatedOn\": \"2022-10-27 17:34:16\",\n        \"Status\": \"ok\",\n        \"Domain\": \"domain.com\",\n        \"RecordCount\": 65\n    }\n}",
+        "title": "查询最近一次回滚"
       }
     ],
     "DescribeSubdomainAnalytics": [
@@ -224,6 +302,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDetail\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"UserInfo\": {\n            \"Nick\": \"jionly\",\n            \"Id\": 5299600,\n            \"Email\": \"qcloud_uin_100000000328@qcloud.com\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"187****3214\",\n            \"EmailVerified\": \"yes\",\n            \"TelephoneVerified\": \"yes\",\n            \"UserGrade\": \"DP_Free\",\n            \"RealName\": \"王小云\",\n            \"WechatBinded\": \"no\",\n            \"Uin\": 100000000328\n        }\n    }\n}",
         "title": "获取帐户信息"
+      }
+    ],
+    "DownloadSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45AXXX3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9ac63bb-c1c2-465e-b662-4696ce2ccb5b\",\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_91724229_xxx.csv\"\n    }\n}",
+        "title": "下载快照"
       }
     ],
     "ModifyDomainLock": [
@@ -320,6 +406,14 @@
         "title": "设置记录状态"
       }
     ],
+    "ModifySnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"xx.com\",\n    \"Period\": \"hourly\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d319d9d-fa62-4ddb-915a-2f874faeb8d5\"\n    }\n}",
+        "title": "修改快照配置"
+      }
+    ],
     "ModifySubdomainStatus": [
       {
         "document": "",
@@ -354,6 +448,22 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PayOrderWithBalance\n<公共请求参数>\n\n{\n    \"BigDealIdList\": [\n        \"20220614328001008099351\"\n    ],\n    \"VoucherIdList\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"96065f69-df89-42e7-8023-c65f87588c64\",\n        \"DealIdList\": [\n            \"223853617\"\n        ],\n        \"BigDealIdList\": [\n            \"20220614328001008099351\"\n        ],\n        \"DealNameList\": [\n            \"20220614328001008099361\"\n        ]\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "RollbackRecordSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRecordSnapshot\n<公共请求参数>\n\n{\n    \"TaskId\": 179,\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EE5XXX\",\n    \"RecordList\": [\n        {\n            \"RecordId\": \"1111\",\n            \"SubDomain\": \"no_line\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"测试啊\",\n            \"Value\": \"0.0.0.1\",\n            \"TTL\": \"600\",\n            \"MX\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"265628c4-a5ed-4a84-9c8b-719582e6c43b\",\n        \"JobId\": 5657107\n    }\n}",
+        "title": "重新回滚指定解析记录快照"
+      }
+    ],
+    "RollbackSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45XXX33\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42aabd52-d05b-45f0-95a0-dcefdc87c7b8\",\n        \"TaskId\": 177\n    }\n}",
+        "title": "回滚快照"
       }
     ]
   },

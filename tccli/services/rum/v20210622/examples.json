@@ -51,9 +51,15 @@
     "CreateWhitelist": [
       {
         "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=CreateWhitelist\n&WhitelistUin=1123\n&Aid=222\n&Remark=备注\n&InstanceID=taw-123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"222\",\n    \"Remark\": \"备注\",\n    \"WhitelistUin\": \"1123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"ID\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建白名单"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"333\",\n    \"Remark\": \"222\",\n    \"WhitelistUin\": \"22323\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": 77,\n        \"Msg\": \"success\",\n        \"RequestId\": \"fcaec326-8c68-4302-8624-c5b08b9f1893\"\n    }\n}",
+        "title": "12"
       }
     ],
     "DeleteInstance": [

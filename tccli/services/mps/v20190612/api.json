@@ -5717,6 +5717,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延播平滑吐流配置信息。",
+          "example": "无",
+          "member": "ResilientStreamConf",
+          "name": "ResilientStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -8022,6 +8032,16 @@
           "example": "无",
           "member": "DescribeInputHLSPullSettings",
           "name": "HLSPullSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延播平滑吐流配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResilientStreamConf",
+          "name": "ResilientStream",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -15287,6 +15307,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延播平滑吐流配置信息。",
+          "example": "无",
+          "member": "ResilientStreamConf",
+          "name": "ResilientStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -17937,6 +17967,32 @@
         }
       ],
       "type": "object"
+    },
+    "ResilientStreamConf": {
+      "document": "延播平滑吐流配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启延播平滑吐流，true开启，false不开启，默认不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延播时间，单位秒，目前支持的范围为10~300秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "133",
+          "member": "uint64",
+          "name": "BufferTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SRTAddressDestination": {
       "document": "转推的目标地址信息。",

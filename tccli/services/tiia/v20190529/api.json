@@ -42,6 +42,12 @@
       "name": "查询图片信息",
       "output": "DescribeImagesResponse"
     },
+    "DetectChefDress": {
+      "document": "可对图片中厨师穿戴进行识别，支持厨师服识别，厨师帽识别，赤膊识别和口罩识别,可应用于明厨亮灶场景。\n\"被优选过滤\"标签值在人体优选开关开启时才会返回。\n厨师服：厨师服定义为白色上衣\n厨师服识别(酒店版)：厨师服定义为红色，白色，黑色上衣\n\n|序号 | 标签名称 | 标签值 |\n| :-----|  :----------   |:-----------------  |\n| 1 | 厨师服识别<div style=\"width: 70pt\"> |无厨师服、有厨师服、被优选过滤|\n| 2 | 厨师服识别（酒店版）<div style=\"width: 70pt\"> |无厨师服、有厨师服、被优选过滤|\n| 3 | 厨师帽识别<div style=\"width: 70pt\"> |无厨师帽、有厨师帽、被优选过滤\t|\n| 4 | 赤膊识别<div style=\"width: 70pt\"> |非赤膊、赤膊、被优选过滤|\n| 5 | 口罩识别<div style=\"width: 70pt\"> |无口罩、有口罩、口罩不确定、被优选过滤\t|",
+      "input": "DetectChefDressRequest",
+      "name": "厨师穿戴识别接口",
+      "output": "DetectChefDressResponse"
+    },
     "DetectDisgust": {
       "document": "输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。\n\n通过恶心图片识别, 可以判断一张图片是否令人恶心, 同时给出它属于的潜在类别, 让您能够过滤掉使人不愉快的图片。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectDisgustRequest",
@@ -95,6 +101,12 @@
       "input": "DetectProductBetaRequest",
       "name": "商品识别-微信识物版",
       "output": "DetectProductBetaResponse"
+    },
+    "DetectSecurity": {
+      "document": "识别常安全属性识别可对图片中人体安全防护属性进行识别，支持识别安全帽，反光衣，护目镜，工服，手套，工地安全带，口罩，抽烟，玩手机等多种属性。\n\"被优选过滤\"标签值在人体优选开关开启时才会返回。\n\n|序号 | 标签名称 | 标签值 |\n| :-----|  :----------   |:-----------------  |\n| 1 | 安全帽识别<div style=\"width: 70pt\"> |无安全帽、有安全帽、被优选过滤|\n| 2 | 玩手机识别<div style=\"width: 70pt\"> |没有电话、打电话、玩手机、被优选过滤|\n| 3 | 抽烟识别<div style=\"width: 70pt\"> |没有抽烟、抽烟、被优选过滤\t|\n| 4 | 口罩识别<div style=\"width: 70pt\"> |无口罩、有口罩、口罩不确定、被优选过滤|\n| 5 | 工地安全带识别<div style=\"width: 70pt\"> |无工地安全带、工地安全带、被优选过滤\t|\n| 6 | 手套识别<div style=\"width: 70pt\"> |无手套、有手套、手套不确定、被优选过滤\t|\n| 7 | 工服识别<div style=\"width: 70pt\"> |无工服、有工服、被优选过滤|\n| 8 | 护目镜识别<div style=\"width: 70pt\"> |无护目镜、有护目镜、被优选过滤|\n| 9 | 反光衣识别<div style=\"width: 70pt\"> |无反光衣、有反光衣、被优选过滤|",
+      "input": "DetectSecurityRequest",
+      "name": "安全属性识别",
+      "output": "DetectSecurityResponse"
     },
     "EnhanceImage": {
       "document": "传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n\n>   \n- 可前往 [图像处理](https://cloud.tencent.com/document/product/1590) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
@@ -249,6 +261,78 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttributesForBody": {
+      "document": "属性检测到的人体",
+      "members": [
+        {
+          "default": "",
+          "document": "人体框。当不开启人体检测时，内部参数默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageRect",
+          "name": "Rect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "DetectConfidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BodyAttributes",
+          "name": "Attributes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BodyAttributes": {
+      "document": "属性列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "属性值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "置信度，取值0-1之间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "属性名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1038,6 +1122,69 @@
       ],
       "type": "object"
     },
+    "DetectChefDressRequest": {
+      "document": "DetectChefDress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Url 。\nImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过 3840 x 2160pixel。\n建议：\n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要base64编码，并且要去掉编码头部。\n支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。\n支持的图片大小：所下载图片经Base64编码后不超过5M。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人体检测模型开关，“true”为开启，“false”为关闭\n默认为开启，开启后可先对图片中的人体进行检测之后再进行属性识别",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDetect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "人体优选开关，“true”为开启，“false”为关闭\n开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。\n默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭\n人体优选开启时，检测到的人体分辨率不超过1920*1080 pixel",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePreferred",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectChefDressResponse": {
+      "document": "DetectChefDress返回参数结构体",
+      "members": [
+        {
+          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttributesForBody",
+          "name": "Bodies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetectDisgustRequest": {
       "document": "DetectDisgust请求参数结构体",
       "members": [
@@ -1623,6 +1770,69 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectSecurityRequest": {
+      "document": "DetectSecurity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Url 。\nImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过3840 x 2160 pixel。\n建议：\n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "“”",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。\n最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要base64编码，并且要去掉编码头部。\n支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。\n支持的图片大小：所下载图片经Base64编码后不超过5M。",
+          "example": "“”",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人体检测模型开关，“true”为开启，“false”为关闭\n开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDetect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "人体优选开关，“true”为开启，“false”为关闭\n开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。\n默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭\n如开启人体优选，检测到的人体分辨率需不大于1920*1080 pixel",
+          "example": "ture",
+          "member": "bool",
+          "name": "EnablePreferred",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectSecurityResponse": {
+      "document": "DetectSecurity返回参数结构体",
+      "members": [
+        {
+          "document": "识别到的人体属性信息。单个人体属性信息包括人体检测置信度，属性信息，人体检测框。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttributesForBody",
+          "name": "Bodies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

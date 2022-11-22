@@ -7746,7 +7746,7 @@
         },
         {
           "default": "",
-          "document": "服务的创建来源 AUTO_ML,DEFAULT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务的创建来源\nAUTO_ML: 来自自动学习的一键发布\nDEFAULT: 其他来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO_ML",
           "member": "string",
           "name": "CreateSource",
@@ -7766,8 +7766,8 @@
         },
         {
           "default": "",
-          "document": "服务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "// CREATING 创建中 \t//CREATE_FAILED 创建失败 \t//NORMAL\t正常运行中 \t//STOPPED",
+          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nNormal\t正常运行中\nStopped  已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
           "member": "string",
           "name": "Status",
           "required": true,

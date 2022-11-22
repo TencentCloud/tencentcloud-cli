@@ -911,6 +911,15 @@
           "name": "PackSpec",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
+          "example": "id",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1118,6 +1127,15 @@
           "name": "CodeParts",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "批次ID，如果传了生码后会同时绑定批次，并激活码",
+          "example": "id",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3329,6 +3347,15 @@
           "member": "int64",
           "name": "Status",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
           "type": "int"
         }
       ],

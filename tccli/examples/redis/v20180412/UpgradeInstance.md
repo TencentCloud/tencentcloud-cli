@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli redis UpgradeInstance --cli-unfold-argument  \
-    --InstanceId crs-5qlrlhux \
-    --MemSize 4096
+    --InstanceId crs-5qlr**** \
+    --MemSize 4096 \
+    --RedisShardNum 5 \
+    --RedisReplicasNum 3
 ```
 
 Output: 

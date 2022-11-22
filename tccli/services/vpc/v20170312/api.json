@@ -18223,6 +18223,15 @@
           "name": "QosLevel",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DirectSend端口范围最大值。",
+          "example": "8090",
+          "member": "uint64",
+          "name": "DirectSendMaxPort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

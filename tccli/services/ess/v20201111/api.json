@@ -1255,6 +1255,15 @@
           "name": "FlowDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件",
+          "example": "0",
+          "member": "int64",
+          "name": "SignBeanTag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

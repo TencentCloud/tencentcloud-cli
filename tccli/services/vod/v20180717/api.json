@@ -21966,6 +21966,7 @@
         {
           "default": "",
           "document": "API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。",
+          "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "required": false,
@@ -21974,6 +21975,7 @@
         {
           "default": "",
           "document": "输出文件 COS 路径信息。",
+          "example": "无",
           "member": "MediaOutputInfo",
           "name": "OutputInfo",
           "required": false,
@@ -21982,6 +21984,7 @@
         {
           "default": "",
           "document": "视频内容审核类型任务参数。",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
@@ -21990,6 +21993,7 @@
         {
           "default": "",
           "document": "视频内容分析类型任务参数。",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
@@ -21998,6 +22002,7 @@
         {
           "default": "",
           "document": "视频内容识别类型任务参数。",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
@@ -22006,6 +22011,7 @@
         {
           "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -22014,6 +22020,7 @@
         {
           "default": "",
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
+          "example": "无",
           "member": "string",
           "name": "TasksNotifyMode",
           "required": false,
@@ -22022,6 +22029,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -22030,6 +22038,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -22038,6 +22047,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -22051,8 +22061,10 @@
       "members": [
         {
           "document": "任务 ID",
+          "example": "125xxxxxx07-procedurev2-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

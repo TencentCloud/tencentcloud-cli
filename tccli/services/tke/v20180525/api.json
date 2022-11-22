@@ -17551,6 +17551,26 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统",
+          "example": "linux",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬件架构",
+          "example": "amd64",
+          "member": "string",
+          "name": "Arch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
