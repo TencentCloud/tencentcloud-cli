@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tione DeleteModelAccelerateTask --cli-unfold-argument  \
-    --ModelAccTaskId xx
+    --ModelAccTaskId acc-50rjzj2xtest
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

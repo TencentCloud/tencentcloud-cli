@@ -6,53 +6,71 @@ Input:
 
 ```
 tccli tione DescribeModelAccelerateTask --cli-unfold-argument  \
-    --ModelAccTaskId acc-783jj121
+    --ModelAccTaskId acc-50rjzj2xtest
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ModelAccRuntimeInSecond": 1,
-        "ModelAccStartTime": "xx",
+        "ModelAccRuntimeInSecond": 322,
+        "ModelAccStartTime": "2022-11-08 21:52:31",
+        "ModelAccEndTime": "2022-11-08 21:57:53",
         "ModelAccelerateTask": {
-            "ModelName": "xx",
-            "ModelAccTaskName": "xx",
-            "ModelInputNum": 1,
-            "ModelAccTaskId": "xx",
-            "ModelVersion": "xx",
-            "ModelSource": "xx",
-            "Speedup": "xx",
-            "TaskStatus": "xx",
-            "ModelInputPath": {
-                "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
-            },
-            "ChargeType": "xx",
-            "OptimizationLevel": "xx",
-            "ModelInputInfos": [
+            "ModelFormat": "TORCH_SCRIPT",
+            "ModelSource": "COS",
+            "WaitNumber": 0,
+            "AccEngineVersion": "v2.0",
+            "IsSaved": true,
+            "Tags": [
                 {
-                    "ModelInputDimension": [
-                        "xx"
-                    ],
-                    "ModelInputType": "xx"
+                    "TagKey": "test-key",
+                    "TagValue": "test-value"
                 }
             ],
-            "GPUType": "xx",
+            "HyperParameter": {
+                "EnableDistributed": "",
+                "MaxNNZ": "1",
+                "GpuCachePercentage": "0.2",
+                "CpuCachePercentage": "0.2",
+                "MinBlockSizeTf": "10",
+                "SlotNum": "1",
+                "MinBlockSizePt": "3"
+            },
+            "ModelAccTaskId": "acc-50rjzj2xtest",
+            "AlgorithmFramework": "PYTORCH",
+            "ModelName": "test-model",
+            "ModelAccTaskName": "test-acc-task",
             "ModelOutputPath": {
                 "Paths": [
-                    "xx"
+                    "test/output/"
                 ],
-                "Region": "xx",
-                "Bucket": "xx"
+                "Region": "ap-guangzhou",
+                "Bucket": "test-bucket"
             },
-            "ModelId": "xx"
+            "OptimizationLevel": "FP16",
+            "ModelVersion": "v1",
+            "TaskProgress": 100,
+            "TaskStatus": "STATUS_SUCCESS",
+            "ModelInputPath": {
+                "Paths": [
+                    "test/input/inception.pt"
+                ],
+                "Region": "ap-guangzhou",
+                "Bucket": "test-bucket"
+            },
+            "GPUType": "T4",
+            "ModelId": "m-608587242317024640",
+            "ErrorMsg": "",
+            "Speedup": "4.66x",
+            "ChargeType": "FREE",
+            "ModelSignature": "",
+            "TensorInfos": [
+                "input_0:float(1*3*640*640)"
+            ],
+            "CreateTime": "2022-11-08 21:52:31"
         },
-        "ModelAccEndTime": "xx",
-        "RequestId": "xx"
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

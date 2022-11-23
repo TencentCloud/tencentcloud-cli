@@ -1,3 +1,255 @@
+# Release 3.0.655.1
+
+## 云审计(cloudaudit) 版本：2019-03-19
+
+### 第 5 次发布
+
+发布时间：2022-11-24 06:15:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAuditTrack](http://document.tencentcloudapi.woa.com/document/product/629/76704)
+
+修改接口：
+
+* [CreateAuditTrack](http://document.tencentcloudapi.woa.com/document/product/629/70383)
+
+	* 新增入参：Name, ActionType, ResourceType, Status, EventNames, Storage, TrackForAllMembers
+
+	* 新增出参：TrackId
+
+* [DeleteAuditTrack](http://document.tencentcloudapi.woa.com/document/product/629/70382)
+
+	* 新增入参：TrackId
+
+* [DescribeAuditTracks](http://document.tencentcloudapi.woa.com/document/product/629/69204)
+
+	* 新增入参：PageNumber, PageSize
+
+	* 新增出参：Tracks, TotalCount
+
+* [ModifyAuditTrack](http://document.tencentcloudapi.woa.com/document/product/629/70381)
+
+	* 新增入参：TrackId, Name, ActionType, ResourceType, Status, EventNames, Storage, TrackForAllMembers
+
+
+新增数据结构：
+
+* [Storage](http://document.tencentcloudapi.woa.com/document/product/629/35353#Storage)
+* [Tracks](http://document.tencentcloudapi.woa.com/document/product/629/35353#Tracks)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 32 次发布
+
+发布时间：2022-11-24 06:23:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DataGovernPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataGovernPolicy)
+* [ExpiredSnapshotsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ExpiredSnapshotsInfo)
+* [MergeManifestsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#MergeManifestsInfo)
+* [RemoveOrphanFilesInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#RemoveOrphanFilesInfo)
+* [RewriteDataInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#RewriteDataInfo)
+
+修改数据结构：
+
+* [DatabaseResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatabaseResponseInfo)
+
+	* 新增成员：GovernPolicy, DatabaseId
+
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
+
+	* 新增成员：GovernPolicy
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 16 次发布
+
+发布时间：2022-11-24 06:27:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceUpdateInstance](http://document.tencentcloudapi.woa.com/document/product/589/38063)
+
+	* 新增入参：ResourceIdList
+
+	* 新增出参：PriceDetail
+
+* [ModifyResourceScheduleConfig](http://document.tencentcloudapi.woa.com/document/product/589/73096)
+
+	* 新增出参：Data
+
+
+新增数据结构：
+
+* [PriceDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#PriceDetail)
+
+修改数据结构：
+
+* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+
+	* 新增成员：DisableApiTermination, TradeVersion
+
+* [Placement](http://document.tencentcloudapi.woa.com/document/product/589/33981#Placement)
+
+	* <font color="#dd0000">**修改成员**：</font>ProjectId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 28 次发布
+
+发布时间：2022-11-24 06:28:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：AuthorizationTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 13 次发布
+
+发布时间：2022-11-24 06:30:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeApplicationList](http://document.tencentcloudapi.woa.com/document/product/607/76709)
+
+新增数据结构：
+
+* [ApplicationList](http://document.tencentcloudapi.woa.com/document/product/607/35375#ApplicationList)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/607/35375#Filter)
+* [ServiceStatus](http://document.tencentcloudapi.woa.com/document/product/607/35375#ServiceStatus)
+* [StatusInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#StatusInfo)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 35 次发布
+
+发布时间：2022-11-24 06:39:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizePrintDocumentOCR](http://document.tencentcloudapi.woa.com/document/product/866/76710)
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 16 次发布
+
+发布时间：2022-11-24 06:41:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBInstanceNetInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstanceNetInfo)
+
+	* 新增成员：ProtocolType
+
+
+
+
+## 腾讯云区块链服务平台 TBaaS(tbaas) 版本：2018-04-16
+
+### 第 4 次发布
+
+发布时间：2022-11-24 06:47:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyChainMakerBatchUserCert](http://document.tencentcloudapi.woa.com/document/product/663/76711)
+
+新增数据结构：
+
+* [SignCertCsr](http://document.tencentcloudapi.woa.com/document/product/663/19466#SignCertCsr)
+
+
+
+## 服务网格(tcm) 版本：2021-04-13
+
+### 第 14 次发布
+
+发布时间：2022-11-24 06:49:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAccessLogConfig](http://document.tencentcloudapi.woa.com/document/product/1593/76713)
+* [ModifyAccessLogConfig](http://document.tencentcloudapi.woa.com/document/product/1593/76712)
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 19 次发布
+
+发布时间：2022-11-24 06:55:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCredential](http://document.tencentcloudapi.woa.com/document/product/1364/76715)
+* [DescribeEngineClbAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/76714)
+
+
+
 # Release 3.0.654.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

@@ -13,9 +13,9 @@
       "output": "CreateInstanceResponse"
     },
     "DescribeClusterNodes": {
-      "document": "查询硬件节点信息",
+      "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
-      "name": "查询硬件节点信息",
+      "name": "查询集群节点信息",
       "output": "DescribeClusterNodesResponse"
     },
     "DescribeCvmQuota": {
@@ -103,9 +103,9 @@
       "output": "ModifyResourcePoolsResponse"
     },
     "ModifyResourceScheduleConfig": {
-      "document": "修改yarn资源调度的资源配置",
+      "document": "修改YARN资源调度的资源配置",
       "input": "ModifyResourceScheduleConfigRequest",
-      "name": "修改yarn资源调度的资源配置",
+      "name": "修改YARN资源调度的资源配置",
       "output": "ModifyResourceScheduleConfigResponse"
     },
     "ModifyResourceScheduler": {
@@ -121,7 +121,7 @@
       "output": "RunJobFlowResponse"
     },
     "ScaleOutInstance": {
-      "document": "实例扩容",
+      "document": "扩容节点",
       "input": "ScaleOutInstanceRequest",
       "name": "实例扩容",
       "output": "ScaleOutInstanceResponse"
@@ -3702,7 +3702,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3711,7 +3712,8 @@
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3720,7 +3722,8 @@
           "member": "UpdateInstanceSettings",
           "name": "UpdateSpec",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3729,7 +3732,8 @@
           "member": "uint64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3738,7 +3742,8 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3747,7 +3752,18 @@
           "member": "string",
           "name": "Currency",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "批量变配资源ID列表",
+          "example": "[\"emr-vm-xxx\"]",
+          "member": "string",
+          "name": "ResourceIdList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3762,7 +3778,8 @@
           "name": "OriginalCost",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3771,7 +3788,8 @@
           "name": "DiscountCost",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "变配的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3780,7 +3798,8 @@
           "name": "TimeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "变配的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3789,7 +3808,18 @@
           "name": "TimeSpan",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "PriceDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4119,7 +4149,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4128,7 +4159,8 @@
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4137,7 +4169,8 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4152,7 +4185,8 @@
           "name": "IsDraft",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "校验错误信息，如果不为空，则说明校验失败，配置没有成功\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4161,7 +4195,18 @@
           "name": "ErrorMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json串",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4948,6 +4993,28 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "该实例是否开启实例保护，true为开启 false为关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableApiTermination",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "0表示老计费，1表示新计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TradeVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5077,23 +5144,25 @@
       "members": [
         {
           "default": "",
-          "document": "实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。填0为默认项目。",
-          "example": "0",
-          "member": "int64",
-          "name": "ProjectId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。",
+          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -5536,6 +5605,56 @@
         }
       ],
       "usage": "in"
+    },
+    "PriceDetail": {
+      "document": "价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID",
+          "example": "emr-vm-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "价格计算公式",
+          "example": "无",
+          "member": "string",
+          "name": "Formula",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "原价",
+          "example": "4.3",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "折扣价",
+          "example": "3.2",
+          "member": "float",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "PriceResource": {
       "document": "询价资源",

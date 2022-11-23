@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cloudaudit DeleteAuditTrack --cli-unfold-argument ```
+tccli cloudaudit DeleteAuditTrack --cli-unfold-argument  \
+    --TrackId 1
+```
 
 Output: 
 ```

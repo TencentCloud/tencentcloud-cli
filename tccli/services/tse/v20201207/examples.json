@@ -24,6 +24,22 @@
         "title": "测试获取云原生API网关节点列表"
       }
     ],
+    "DescribeCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCredential\n<公共请求参数>\n\n{\n    \"TenancyKey\": \"100000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"xx\",\n        \"Token\": \"xx\",\n        \"SecretID\": \"xx\",\n        \"ExpiredTime\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看临时凭证"
+      }
+    ],
+    "DescribeEngineClbAccessAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineClbAccessAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"sre-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportIntranetAddress\": \"xx\",\n        \"EnvAddressInfos\": [\n            {\n                \"EnableConfigInternet\": true,\n                \"EnvName\": \"xx\",\n                \"ConfigIntranetAddress\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\"\n            }\n        ],\n        \"LimiterAddressInfos\": [\n            {\n                \"IntranetAddress\": \"xx\"\n            }\n        ],\n        \"ConsoleIntranetAddress\": \"xx\",\n        \"ClientIntranetAddress\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询引擎实例访问地址"
+      }
+    ],
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",

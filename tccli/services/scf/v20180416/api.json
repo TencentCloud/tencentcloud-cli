@@ -1617,7 +1617,8 @@
           "member": "string",
           "name": "FunctionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1626,7 +1627,8 @@
           "member": "string",
           "name": "TriggerName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1635,7 +1637,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1644,7 +1647,8 @@
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1653,16 +1657,18 @@
           "member": "string",
           "name": "TriggerDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "函数的版本信息",
+          "document": "函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。",
           "example": "$DEFAULT",
           "member": "string",
           "name": "Qualifier",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

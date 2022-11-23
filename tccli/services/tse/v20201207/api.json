@@ -18,6 +18,18 @@
       "name": "获取云原生网关节点列表",
       "output": "DescribeCloudNativeAPIGatewayNodesResponse"
     },
+    "DescribeCredential": {
+      "document": "查看临时凭证",
+      "input": "DescribeCredentialRequest",
+      "name": "查看临时凭证",
+      "output": "DescribeCredentialResponse"
+    },
+    "DescribeEngineClbAccessAddress": {
+      "document": "查询引擎实例的CLB访问地址",
+      "input": "DescribeEngineClbAccessAddressRequest",
+      "name": "查询引擎实例的CLB访问地址",
+      "output": "DescribeEngineClbAccessAddressResponse"
+    },
     "DescribeNacosReplicas": {
       "document": "查询Nacos类型引擎实例副本信息",
       "input": "DescribeNacosReplicasRequest",
@@ -525,6 +537,162 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeCredentialRequest": {
+      "document": "DescribeCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户凭证",
+          "example": "10000",
+          "member": "string",
+          "name": "TenancyKey",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCredentialResponse": {
+      "document": "DescribeCredential返回参数结构体",
+      "members": [
+        {
+          "document": "凭证key",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "凭证ID",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "SecretID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "临时token",
+          "example": "xxxx-xxxx-xxxxx",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "失效时间，单位秒",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineClbAccessAddressRequest": {
+      "document": "DescribeEngineClbAccessAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎实例Id",
+          "example": "sre-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "部署地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineClbAccessAddressResponse": {
+      "document": "DescribeEngineClbAccessAddress返回参数结构体",
+      "members": [
+        {
+          "document": "客户端内网CLB访问地址",
+          "example": "10.1.8.15:8080",
+          "member": "string",
+          "name": "ClientIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "控制台内网CLB访问地址",
+          "example": "10.0.0.1:8080",
+          "member": "string",
+          "name": "ConsoleIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "apollo多环境公网ip",
+          "example": "无",
+          "member": "EnvAddressInfo",
+          "name": "EnvAddressInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "监控数据上报内网CLB地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ReportIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "北极星限流服务实例CLB地址",
+          "example": "无",
+          "member": "PolarisLimiterAddress",
+          "name": "LimiterAddressInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeInstanceRegionInfo": {
       "document": "实例地域信息描述",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeTrainingModelVersion --cli-unfold-argument  \
-    --TrainingModelVersionId xx
+    --TrainingModelVersionId mv-v1-634036602245424384
 ```
 
 Output: 
@@ -14,39 +14,51 @@ Output:
 {
     "Response": {
         "TrainingModelVersion": {
-            "TrainingModelCreateTime": "xx",
-            "TrainingModelFormat": "xx",
-            "TrainingJobId": "xx",
-            "TrainingModelVersionId": "xx",
-            "TrainingJobName": "xx",
-            "TrainingModelIndex": "xx",
-            "CreateTime": "xx",
-            "ReasoningEnvironment": "xx",
-            "TrainingModelStatus": "xx",
-            "AlgorithmFramework": "xx",
-            "TrainingModelName": "xx",
-            "TrainingModelErrorMsg": "xx",
-            "TrainingModelVersion": "xx",
-            "TrainingModelProgress": 1,
-            "TrainingModelSource": "xx",
-            "ReasoningImageInfo": {
-                "ImageUrl": "xx",
-                "RegistryRegion": "xx",
-                "RegistryId": "xx",
-                "ImageType": "xx"
-            },
-            "ReasoningEnvironmentSource": "xx",
+            "ReasoningEnvironment": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch1.9.0-cu111-tiacc2.5.0-2.0.2",
             "TrainingModelCosPath": {
                 "Paths": [
-                    "xx"
+                    "test/model/"
                 ],
-                "Region": "xx",
-                "Bucket": "xx"
+                "Region": "ap-guangzhou",
+                "Bucket": "test-bucket"
             },
-            "TrainingModelId": "xx",
-            "TrainingModelCreator": "xx"
+            "TrainingJobId": "",
+            "TrainingModelProgress": 100,
+            "TrainingModelStatus": "STATUS_SUCCESS",
+            "AutoClean": "false",
+            "MaxReservedModels": 0,
+            "TrainingModelName": "test-model",
+            "AlgorithmFramework": "PYTORCH",
+            "ModelCleanPeriod": 0,
+            "ModelHotUpdatePath": {
+                "Paths": [
+                    "test/model/"
+                ],
+                "Region": "ap-guangzhou",
+                "Bucket": "test-bucket"
+            },
+            "TrainingModelErrorMsg": "",
+            "TrainingModelCreator": "102311000",
+            "TrainingModelCreateTime": "2022-09-29T03:17:24Z",
+            "TrainingModelVersion": "v1",
+            "TrainingModelSource": "COS",
+            "ReasoningEnvironmentSource": "SYSTEM",
+            "GPUType": "",
+            "TrainingModelFormat": "TORCH_SCRIPT",
+            "TrainingJobName": "",
+            "TrainingModelVersionId": "mv-v1-634036602245424384",
+            "TrainingModelIndex": "",
+            "TrainingModelId": "m-608587242317024640",
+            "VersionType": "NORMAL",
+            "ReasoningImageInfo": {
+                "ImageUrl": "",
+                "RegistryRegion": "",
+                "RegistryId": "",
+                "ImageType": ""
+            },
+            "CreateTime": "2022-09-29T03:17:24Z"
         },
-        "RequestId": "xx"
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

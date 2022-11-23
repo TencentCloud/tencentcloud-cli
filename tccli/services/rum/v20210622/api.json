@@ -680,7 +680,7 @@
         },
         {
           "default": "",
-          "document": "计费类型, (1=后付费，2=预付费)",
+          "document": "计费类型, (1=后付费)",
           "example": "1",
           "member": "int64",
           "name": "ChargeType",
@@ -5747,7 +5747,8 @@
           "member": "int64",
           "name": "ChargeStatuses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5756,7 +5757,8 @@
           "member": "int64",
           "name": "ChargeTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5765,7 +5767,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5774,7 +5777,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5783,25 +5787,28 @@
           "member": "int64",
           "name": "AreaIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)",
+          "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明",
           "example": "无",
           "member": "int64",
           "name": "InstanceStatuses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例Id",
+          "document": "实例Id, 该参数已废弃，请在Filters内注明",
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5810,7 +5817,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5819,7 +5827,8 @@
           "member": "int64",
           "name": "IsDemo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5834,7 +5843,8 @@
           "name": "InstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例总数",
@@ -5843,7 +5853,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

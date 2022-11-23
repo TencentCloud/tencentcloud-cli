@@ -348,6 +348,12 @@
       "name": "菲律宾VoteID识别",
       "output": "RecognizePhilippinesVoteIDOCRResponse"
     },
+    "RecognizePrintDocumentOCR": {
+      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于文字较多、整页A4打印文本图片。\n\n产品优势：与通用印刷体识别相比，在打印文档图片场景下的识别准确率更高。\n\n默认接口请求频率限制：10次/秒。",
+      "input": "RecognizePrintDocumentOCRRequest",
+      "name": "打印文档图片识别",
+      "output": "RecognizePrintDocumentOCRResponse"
+    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
       "input": "RecognizeTableOCRRequest",
@@ -6241,29 +6247,35 @@
         {
           "default": "",
           "document": "类型（二维码、条形码）",
+          "example": "无",
           "member": "string",
           "name": "TypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "二维码/条形码包含的地址",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）",
+          "document": "二维码/条形码坐标",
+          "example": "无",
           "member": "QrcodePositionObj",
           "name": "Position",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7819,6 +7831,104 @@
           "name": "PrecinctNo",
           "required": true,
           "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePrintDocumentOCRRequest": {
+      "document": "RecognizePrintDocumentOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否返回单字信息，默认关",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWords",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启原图切图检测功能，开启后可提升“整图面积大，但单字符占比面积小”（例如：试卷）场景下的识别效果，默认关",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDetectSplit",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePrintDocumentOCRResponse": {
+      "document": "RecognizePrintDocumentOCR返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
+          "example": "无",
+          "member": "TextDetection",
+          "name": "TextDetections",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false,
           "visibility": 1
         },
