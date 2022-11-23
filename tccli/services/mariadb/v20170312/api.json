@@ -2362,6 +2362,78 @@
       ],
       "usage": "in"
     },
+    "DCNReplicaConfig": {
+      "document": "dcn 配置情况",
+      "members": [
+        {
+          "default": "",
+          "document": "DCN 运行状态，START为正常运行，STOP为暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "START",
+          "member": "string",
+          "name": "RoReplicationMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "DelayReplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟复制的指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "DueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟复制时的延迟秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicationDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DCNReplicaStatus": {
+      "document": "DCN的状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DCN 的运行状态，START为正常运行，STOP为暂停，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "START",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前延迟情况，取备实例的 master 节点的 delay 值",
+          "example": "1",
+          "member": "int64",
+          "name": "Delay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Database": {
       "document": "数据库信息",
       "members": [
@@ -2645,6 +2717,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DCN复制的配置信息；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "DCNReplicaConfig",
+          "name": "ReplicaConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DCN复制的状态；对于主实例，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "DCNReplicaStatus",
+          "name": "ReplicaStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启了 kms",
+          "example": "暂无",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2655,6 +2757,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "20221108006001219594201",
           "member": "string",
           "name": "DealName",
           "required": true,
@@ -2664,6 +2767,7 @@
         {
           "default": "",
           "document": "所属账号",
+          "example": "3078115006",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -2673,6 +2777,7 @@
         {
           "default": "",
           "document": "商品数量",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -2682,6 +2787,7 @@
         {
           "default": "",
           "document": "关联的流程 Id，可用于查询流程执行状态",
+          "example": "68000002",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -2690,7 +2796,8 @@
         },
         {
           "default": "",
-          "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tdsql-61vf76u9\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2700,6 +2807,7 @@
         {
           "default": "",
           "document": "付费模式，0后付费/1预付费",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,

@@ -204,12 +204,6 @@
       "name": "查询当前账户可购买套餐信息列表",
       "output": "DescribeAvailablePlansResponse"
     },
-    "DescribeBillingData": {
-      "document": "获取计费数据。",
-      "input": "DescribeBillingDataRequest",
-      "name": "获取计费数据",
-      "output": "DescribeBillingDataResponse"
-    },
     "DescribeBotClientIpList": {
       "document": "本接口（DescribeBotClientIpList）用于查询Bot攻击客户端Ip信息列表。",
       "input": "DescribeBotClientIpListRequest",
@@ -1495,32 +1489,6 @@
         }
       ],
       "usage": "out"
-    },
-    "BillingDataFilter": {
-      "document": "Dns数据曲线过滤参数",
-      "members": [
-        {
-          "default": "",
-          "document": "参数名称，取值范围：\nzone：站点名\nhost：域名\nproxy: 四层实例\nplan: 套餐",
-          "example": "zone",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "参数值",
-          "example": "1.com",
-          "member": "string",
-          "name": "Value",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "BindZoneToPlanRequest": {
       "document": "BindZoneToPlan请求参数结构体",
@@ -5587,87 +5555,6 @@
           "name": "PlanInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBillingDataRequest": {
-      "document": "DescribeBillingData请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "起始时间。",
-          "example": "2014-08-03T12:00:00+08:00",
-          "member": "datetime_iso",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "结束时间。",
-          "example": "2014-08-03T12:00:00+08:00",
-          "member": "datetime_iso",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "时间粒度, 支持指定以下几种粒度：\n<ul>\n<li>min：1分钟粒度；</li>\n<li>5min：5分钟粒度；</li>\n<li>hour：1小时粒度；</li>\n<li>day：天粒度；</li>\n</ul>",
-          "example": "hour",
-          "member": "string",
-          "name": "Interval",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "指标名,支持:\n<ul>\n<li>acc_flux: 内容加速流量用量；</li>\n<li>quic_request: QUIC 请求数用量；</li>\n<li>sec_flux: 安全流量用量；</li>\n<li>sec_request_clean: 安全干净流量请求数；</li>\n</ul>",
-          "example": "sec_flux",
-          "member": "string",
-          "name": "MetricName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "筛选条件. 支持:\n<ul>\n<li>zone: 站点级数据；</li>\n<li>plan: 套餐级数据；</li>\n<li>service: l4 / l7分别筛选四七层数据；</li>\n<li>tagKey: 标签Key；</li>\n<li>tagValue: 标签Value。</li>\n</ul>",
-          "example": "无",
-          "member": "BillingDataFilter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBillingDataResponse": {
-      "document": "DescribeBillingData返回参数结构体",
-      "members": [
-        {
-          "document": "统计曲线数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DnsData",
-          "name": "Data",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "时间粒度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "min",
-          "member": "string",
-          "name": "Interval",
-          "required": true,
-          "type": "string",
           "value_allowed_null": true
         },
         {

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --Product dcdb \
     --InstanceId tdsqlshard-eb2w7dto \
+    --Product dcdb \
     --SecurityGroupIds sg-ajr1jzgj
 ```
 

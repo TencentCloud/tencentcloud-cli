@@ -272,6 +272,14 @@
         "title": "示例1"
       }
     ],
+    "CreateResourcePath": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResourcePath\n<公共请求参数>\n\n{\n    \"Name\": \"aaa\",\n    \"FilePath\": \"/datastudio/resource\",\n    \"ProjectId\": \"123412312312\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateRule": [
       {
         "document": "",

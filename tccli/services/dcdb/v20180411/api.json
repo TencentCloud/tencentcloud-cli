@@ -2507,6 +2507,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启了 kms",
+          "example": "暂无",
+          "member": "int64",
+          "name": "EncryptStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2517,6 +2527,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "20221108006001219915661",
           "member": "string",
           "name": "DealName",
           "required": true,
@@ -2526,6 +2537,7 @@
         {
           "default": "",
           "document": "所属账号",
+          "example": "3078115006",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -2535,6 +2547,7 @@
         {
           "default": "",
           "document": "商品数量",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -2544,6 +2557,7 @@
         {
           "default": "",
           "document": "关联的流程 Id，可用于查询流程执行状态",
+          "example": "68000008",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -2552,7 +2566,8 @@
         },
         {
           "default": "",
-          "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只有创建实例且已完成发货的订单会填充该字段，表示该订单创建的实例的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tdsqlshard-c06stiq3\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2562,6 +2577,7 @@
         {
           "default": "",
           "document": "付费模式，0后付费/1预付费",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": true,

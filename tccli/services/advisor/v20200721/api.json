@@ -202,7 +202,7 @@
         },
         {
           "default": "",
-          "document": "限制数量,默认100",
+          "document": "返回数量,默认值为100,最大值为200",
           "example": "10",
           "member": "uint64",
           "name": "Limit",

@@ -11,7 +11,7 @@
     "AssociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&Product=dcdb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"dcdb\",\n    \"SecurityGroupId\": \"sg-xxxxxx\",\n    \"InstanceIds\": [\n        \"tdsql-xxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
         "title": "无"
       }
@@ -115,7 +115,7 @@
     "DescribeDBSecurityGroups": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-eb2w7dto\",\n    \"Product\": \"dcdb\"\n}",
         "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": \"3306\",\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"dcdb\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询实例安全组信息"
       }
@@ -251,7 +251,7 @@
     "DescribeProjectSecurityGroups": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&Product=dcdb\n&ProjectId=11954\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectSecurityGroups\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11954\",\n    \"Product\": \"dcdb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 11988,\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"dcdb\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询项目安全组信息"
       }
@@ -337,7 +337,7 @@
     "InitDCDBInstances": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=InitDCDBInstances\n&InstanceIds.0=dcdbt-fdpjf5zh\n&InstanceIds.1=dcdbt-avw0207d\n&Params.0.Param=lower_case_table_names\n&Params.0.Value=1\n&Params.1.Param=innodb_page_size\n&Params.1.Value=16384\n&Params.2.Param=character_set_server\n&Params.2.Value=utf8\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDCDBInstances\n<公共请求参数>\n\n{\n    \"Params\": [\n        {\n            \"Value\": \"16384\",\n            \"Param\": \"innodb_page_size\"\n        },\n        {\n            \"Value\": \"1\",\n            \"Param\": \"lower_case_table_names\"\n        },\n        {\n            \"Value\": \"utf8\",\n            \"Param\": \"character_set_server\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"dcdbt-avw0207d\",\n        \"dcdbt-fdpjf5zh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d94ef093-ff84-4851-b2e0-a5c5920d618e\",\n        \"InstanceIds\": [\n            \"dcdbt-fdpjf5zh\",\n            \"dcdbt-avw0207d\"\n        ],\n        \"FlowIds\": [\n            3340,\n            3341\n        ]\n    }\n}",
         "title": "批量初始化云数据库实例"
       }
@@ -385,7 +385,7 @@
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-eb2w7dto\",\n    \"Product\": \"dcdb\",\n    \"SecurityGroupIds\": [\n        \"sg-ajr1jzgj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\"\n    }\n}",
         "title": "示例1 修改云数据库安全组"
       }
@@ -449,7 +449,7 @@
     "OpenDBExtranetAccess": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=OpenDBExtranetAccess\n&InstanceId=dcdbt-avw0207d\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBExtranetAccess\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-avw0207d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"FlowId\": 3023\n    }\n}",
         "title": "开通云数据库实例的外网访问"
       }

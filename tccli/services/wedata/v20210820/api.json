@@ -204,6 +204,12 @@
       "name": "资源管理将cos资源绑定到wedata",
       "output": "CreateOrUpdateResourceResponse"
     },
+    "CreateResourcePath": {
+      "document": "文件路径的根目录为 /datastudio/resource，如果要在根目录下创建 aaa 文件夹，FilePath的值应该为 /datastudio/resource，如果根目录下已经创建了 aaa 文件夹，要在 aaa 下创建  bbb 文件夹，FilePath的值应该为 /datastudio/resource/aaa",
+      "input": "CreateResourcePathRequest",
+      "name": "资源管理创建文件路径",
+      "output": "CreateResourcePathResponse"
+    },
     "CreateRule": {
       "document": "创建质量规则接口",
       "input": "CreateRuleRequest",
@@ -4399,6 +4405,60 @@
           "name": "Data",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourcePathRequest": {
+      "document": "CreateResourcePath请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件夹名称，如 aaa",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件夹所属父目录，请注意，根目录为 /datastudio/resource",
+          "example": "1",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourcePathResponse": {
+      "document": "CreateResourcePath返回参数结构体",
+      "members": [
+        {
+          "document": "新建成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         },
         {
@@ -13486,6 +13546,15 @@
           "name": "SchemaName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上游节点的字段信息",
+          "example": "无",
+          "member": "SourceFieldInfo",
+          "name": "SourceFieldInfoList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14779,6 +14848,16 @@
           "name": "Properties",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "schema别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -21748,6 +21827,42 @@
           "member": "string",
           "name": "TaskName",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SourceFieldInfo": {
+      "document": "上游节点字段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "example": "123",
+          "member": "string",
+          "name": "FieldName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段类型",
+          "example": "int",
+          "member": "string",
+          "name": "FieldType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段别名",
+          "example": "123",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb DescribeProjectSecurityGroups --cli-unfold-argument  \
-    --Product dcdb \
-    --ProjectId 11954
+    --ProjectId 11954 \
+    --Product dcdb
 ```
 
 Output: 

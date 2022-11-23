@@ -276,6 +276,12 @@
       "name": "模型训练任务列表",
       "output": "DescribeTrainingTasksResponse"
     },
+    "ModifyModelService": {
+      "document": "用于更新模型服务",
+      "input": "ModifyModelServiceRequest",
+      "name": "更新模型服务",
+      "output": "ModifyModelServiceResponse"
+    },
     "ModifyModelServicePartialConfig": {
       "document": "增量更新在线推理服务的部分配置，不更新的配置项不需要传入",
       "input": "ModifyModelServicePartialConfigRequest",
@@ -2296,7 +2302,7 @@
         },
         {
           "default": "",
-          "document": "数据配置",
+          "document": "数据配置，依赖DataSource字段",
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -6784,6 +6790,213 @@
       ],
       "type": "object"
     },
+    "ModifyModelServiceRequest": {
+      "document": "ModifyModelService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模型信息，需要挂载模型时填写",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "ModelInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "镜像信息，配置服务运行所需的镜像地址等信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境变量，可选参数，用于配置容器中的环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "Resources",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:\nTI.S.MEDIUM.POST\t2C4G\nTI.S.LARGE.POST\t4C8G\nTI.S.2XLARGE16.POST\t8C16G\nTI.S.2XLARGE32.POST\t8C32G\nTI.S.4XLARGE32.POST\t16C32G\nTI.S.4XLARGE64.POST\t16C64G\nTI.S.6XLARGE48.POST\t24C48G\nTI.S.6XLARGE96.POST\t24C96G\nTI.S.8XLARGE64.POST\t32C64G\nTI.S.8XLARGE128.POST 32C128G\nTI.GN7.LARGE20.POST\t4C20G T4*1/4\nTI.GN7.2XLARGE40.POST\t10C40G T4*1/2\nTI.GN7.2XLARGE32.POST\t8C32G T4*1\nTI.GN7.5XLARGE80.POST\t20C80G T4*1\nTI.GN7.8XLARGE128.POST\t32C128G T4*1\nTI.GN7.10XLARGE160.POST\t40C160G T4*2\nTI.GN7.20XLARGE320.POST\t80C320G T4*4",
+          "example": "TI.S.MEDIUM.POS",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩缩容类型 支持：自动 - \"AUTO\", 手动 - \"MANUAL\"",
+          "example": "AUTO",
+          "member": "string",
+          "name": "ScaleMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量, 不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动伸缩信息",
+          "example": "无",
+          "member": "HorizontalPodAutoscaler",
+          "name": "HorizontalPodAutoscaler",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启日志投递，开启后需填写配置投递到指定cls",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "日志配置，需要投递服务日志到指定cls时填写",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "特殊更新行为： \"STOP\": 停止, \"RESUME\": 重启, \"SCALE\": 扩缩容, 存在这些特殊更新行为时，会忽略其他更新字段",
+          "example": "STOP",
+          "member": "string",
+          "name": "ServiceAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务的描述",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动伸缩策略",
+          "example": "HPA",
+          "member": "string",
+          "name": "ScaleStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩",
+          "example": "无",
+          "member": "CronScaleJob",
+          "name": "CronScaleJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "HybridBillingPrepaidReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启模型的热更新。默认不开启",
+          "example": "false",
+          "member": "bool",
+          "name": "ModelHotUpdateEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "定时停止配置",
+          "example": "无",
+          "member": "ScheduledAction",
+          "name": "ScheduledAction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "服务限速限流相关配置",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "挂载配置，目前只支持CFS",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMount",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServiceResponse": {
+      "document": "ModifyModelService返回参数结构体",
+      "members": [
+        {
+          "document": "生成的模型服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyServiceGroupWeightsRequest": {
       "document": "ModifyServiceGroupWeights请求参数结构体",
       "members": [
@@ -9369,7 +9582,7 @@
         },
         {
           "default": "",
-          "document": "训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
@@ -9689,7 +9902,7 @@
         },
         {
           "default": "",
-          "document": "任务状态",
+          "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -9805,7 +10018,7 @@
         },
         {
           "default": "",
-          "document": "任务状态",
+          "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
           "example": "无",
           "member": "string",
           "name": "Status",

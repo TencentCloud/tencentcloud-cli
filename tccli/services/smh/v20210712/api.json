@@ -993,19 +993,10 @@
       "members": [
         {
           "default": "",
-          "document": "验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。",
+          "document": "验证码目的，当前支持换绑超级管理员账号， BindSuperAdmin；体验版企业升级，ChannelUpdateVerify等",
           "example": "BindSuperAdmin",
           "member": "string",
           "name": "Purpose",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "官方云盘实例 ID",
-          "example": "tyc9msci",
-          "member": "string",
-          "name": "InstanceId",
           "required": true,
           "type": "string"
         },
@@ -1016,6 +1007,15 @@
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "官方云盘实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
           "type": "string"
         },
         {
@@ -1153,19 +1153,10 @@
       "members": [
         {
           "default": "",
-          "document": "验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。",
+          "document": "验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等",
           "example": "BindSuperAdmin",
           "member": "string",
           "name": "Purpose",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "官方云盘实例 ID",
-          "example": "tyc9msci",
-          "member": "string",
-          "name": "InstanceId",
           "required": true,
           "type": "string"
         },
@@ -1185,6 +1176,15 @@
           "member": "string",
           "name": "Code",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "官方云盘实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
           "type": "string"
         },
         {

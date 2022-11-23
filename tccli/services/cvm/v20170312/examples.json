@@ -48,6 +48,14 @@
         "title": "创建分散置放群组"
       }
     ],
+    "CreateHpcCluster": [
+      {
+        "document": "创建高性能计算集群。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=CreateHpcCluster\r\n&Name=test_cluster\r\n&Remark=my cluster\r\n&Zone=ap-guangzhou-3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HpcClusterSet\": [\n            {\n                \"HpcClusterId\": \"hpc-0eixl8xv\",\n                \"Name\": \"test_cluster\",\n                \"Remark\": \"my cluster\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceIds\": [],\n                \"CvmQuotaTotal\": 50,\n                \"CurrentNum\": 0,\n                \"CreateTime\": \"2020-06-02T07:36:04Z\"\n            }\n        ],\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
+        "title": "创建高性能计算集群"
+      }
+    ],
     "CreateImage": [
       {
         "document": "使用实例ins-6pb6lrmy 创建一个镜像。当实例处于运行中时，执行软关机，软关机失败后，结束任务(默认语义)。",
@@ -86,6 +94,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DeleteDisasterRecoverGroups\n&DisasterRecoverGroupIds.0=ps-58l1hu01\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "删除分散置放群组"
+      }
+    ],
+    "DeleteHpcClusters": [
+      {
+        "document": "删除高性能计算集群",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteHpcClusters\r\n&HpcClusterIds.0=hpc-p64fdfa9\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
+        "title": "删除高性能计算集群"
       }
     ],
     "DeleteImages": [
@@ -172,6 +188,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHosts\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-2\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HostSet\": [\n            {\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"ProjectId\": 0\n                },\n                \"HostId\": \"host-ey16rkyg\",\n                \"HostType\": \"HS1\",\n                \"HostName\": \"bibibibib-111\",\n                \"CageId\": \"\",\n                \"HostChargeType\": \"PREPAID\",\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"CreatedTime\": \"2018-01-04T09:45:39Z\",\n                \"ExpiredTime\": \"2025-05-04T09:45:42Z\",\n                \"InstanceIds\": [],\n                \"HostState\": \"RUNNING\",\n                \"HostResource\": {\n                    \"CpuTotal\": 24,\n                    \"CpuAvailable\": 24,\n                    \"MemTotal\": 56.0,\n                    \"MemAvailable\": 56.0,\n                    \"DiskTotal\": 1200,\n                    \"DiskAvailable\": 1200,\n                    \"DiskType\": \"LOCAL_BASIC\"\n                }\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询CDH实例列表"
+      }
+    ],
+    "DescribeHpcClusters": [
+      {
+        "document": "查询高性能集群信息",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHpcClusters\r\n&Zone=ap-guangzhou-3\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HpcClusterSet\": [\n            {\n                \"HpcClusterId\": \"hpc-dc4gcarp\",\n                \"Name\": \"test_33311\",\n                \"Remark\": \"remark 1\",\n                \"CvmQuotaTotal\": 50,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"CreateTime\": \"2020-06-02T07:55:05Z\"\n            },\n            {\n                \"HpcClusterId\": \"hpc-p64fdfa9\",\n                \"Name\": \"test_333333\",\n                \"Remark\": \"remark 2\",\n                \"CvmQuotaTotal\": 50,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"CreateTime\": \"2020-06-02T07:51:58Z\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
+        "title": "查询高性能集群信息"
       }
     ],
     "DescribeImageQuota": [
@@ -520,6 +544,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=ModifyHostsAttribute\n&HostIds.0=host-ey16rkyg\n&HostName=webserver\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改CDH实例的属性"
+      }
+    ],
+    "ModifyHpcClusterAttribute": [
+      {
+        "document": "修改高性能计算集群名称",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyHpcClusterAttribute\r\n&HpcClusterId=hpc-gzahhoy5\r\n&Name=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
+        "title": "修改高性能计算集群名称"
       }
     ],
     "ModifyImageAttribute": [

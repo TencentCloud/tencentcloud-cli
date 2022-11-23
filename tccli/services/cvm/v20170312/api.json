@@ -36,6 +36,12 @@
       "name": "创建分散置放群组",
       "output": "CreateDisasterRecoverGroupResponse"
     },
+    "CreateHpcCluster": {
+      "document": "创建高性能计算集群",
+      "input": "CreateHpcClusterRequest",
+      "name": "创建高性能计算集群",
+      "output": "CreateHpcClusterResponse"
+    },
     "CreateImage": {
       "document": "本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。",
       "input": "CreateImageRequest",
@@ -65,6 +71,12 @@
       "input": "DeleteDisasterRecoverGroupsRequest",
       "name": "删除分散置放群组",
       "output": "DeleteDisasterRecoverGroupsResponse"
+    },
+    "DeleteHpcClusters": {
+      "document": "当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除改集群。",
+      "input": "DeleteHpcClustersRequest",
+      "name": "删除高性能计算集群",
+      "output": "DeleteHpcClustersResponse"
     },
     "DeleteImages": {
       "document": "本接口（DeleteImages）用于删除一个或多个镜像。\n\n* 当[镜像状态](https://cloud.tencent.com/document/product/213/15753#Image)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。\n* 每个地域最多只支持创建10个自定义镜像，删除镜像可以释放账户的配额。\n* 当镜像正在被其它账户分享时，不允许删除。",
@@ -125,6 +137,12 @@
       "input": "DescribeHostsRequest",
       "name": "查看CDH实例列表",
       "output": "DescribeHostsResponse"
+    },
+    "DescribeHpcClusters": {
+      "document": "查询高性能集群信息",
+      "input": "DescribeHpcClustersRequest",
+      "name": "查询高性能集群信息",
+      "output": "DescribeHpcClustersResponse"
     },
     "DescribeImageQuota": {
       "document": "本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。",
@@ -359,6 +377,12 @@
       "input": "ModifyHostsAttributeRequest",
       "name": "修改CDH实例的属性",
       "output": "ModifyHostsAttributeResponse"
+    },
+    "ModifyHpcClusterAttribute": {
+      "document": "修改高性能计算集群属性。",
+      "input": "ModifyHpcClusterAttributeRequest",
+      "name": "修改高性能计算集群属性",
+      "output": "ModifyHpcClusterAttributeResponse"
     },
     "ModifyImageAttribute": {
       "document": "本接口（ModifyImageAttribute）用于修改镜像属性。\n\n* 已分享的镜像无法修改属性。",
@@ -1315,6 +1339,55 @@
       ],
       "type": "object"
     },
+    "CreateHpcClusterRequest": {
+      "document": "CreateHpcCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群备注。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHpcClusterResponse": {
+      "document": "CreateHpcCluster返回参数结构体",
+      "members": [
+        {
+          "document": "高性能计算集群信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HpcClusterInfo",
+          "name": "HpcClusterSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageRequest": {
       "document": "CreateImage请求参数结构体",
       "members": [
@@ -2149,6 +2222,32 @@
       ],
       "type": "object"
     },
+    "DeleteHpcClustersRequest": {
+      "document": "DeleteHpcClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "高性能计算集群ID列表。",
+          "member": "string",
+          "name": "HpcClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHpcClustersResponse": {
+      "document": "DeleteHpcClusters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteImagesRequest": {
       "document": "DeleteImages请求参数结构体",
       "members": [
@@ -2623,6 +2722,78 @@
           "name": "HostSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHpcClustersRequest": {
+      "document": "DescribeHpcClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "高性能计算集群ID数组。",
+          "member": "string",
+          "name": "HpcClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区。",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量, 默认值0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本次请求量, 默认值20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHpcClustersResponse": {
+      "document": "DescribeHpcClusters返回参数结构体",
+      "members": [
+        {
+          "document": "高性能计算集群信息。",
+          "member": "HpcClusterInfo",
+          "name": "HpcClusterSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高性能计算集群总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4384,6 +4555,84 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HpcClusterInfo": {
+      "document": "高性能计算集群",
+      "members": [
+        {
+          "default": "",
+          "document": "高性能计算集群ID",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群下设备容量",
+          "member": "uint64",
+          "name": "CvmQuotaTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群所在可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群当前已有设备量",
+          "member": "uint64",
+          "name": "CurrentNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群内实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7286,6 +7535,48 @@
     },
     "ModifyHostsAttributeResponse": {
       "document": "ModifyHostsAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHpcClusterAttributeRequest": {
+      "document": "ModifyHpcClusterAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "高性能计算集群ID。",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群新名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群新备注。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHpcClusterAttributeResponse": {
+      "document": "ModifyHpcClusterAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

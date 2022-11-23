@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mariadb DescribeProjectSecurityGroups --cli-unfold-argument  \
-    --Product mariadb \
-    --ProjectId 11988
+    --ProjectId 11988 \
+    --Product mariadb
 ```
 
 Output: 

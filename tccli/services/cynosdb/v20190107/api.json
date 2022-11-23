@@ -5129,7 +5129,107 @@
     },
     "DescribeParamTemplatesRequest": {
       "document": "DescribeParamTemplates请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎版本号",
+          "example": "无",
+          "member": "string",
+          "name": "EngineVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版名称",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据库类型，可选值：NORMAL，SERVERLESS",
+          "example": "无",
+          "member": "string",
+          "name": "DbModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询限制条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的模板对应的产品类型",
+          "example": "无",
+          "member": "string",
+          "name": "Products",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模版类型",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "版本类型",
+          "example": "无",
+          "member": "string",
+          "name": "EngineTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回结果的排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式（asc、desc）",
+          "example": "无",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeParamTemplatesResponse": {
@@ -6992,6 +7092,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库类型，可选值：NORMAL，SERVERLESS",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DbMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"\"}]",
+          "member": "TemplateParamInfo",
+          "name": "ParamInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7351,7 +7471,7 @@
         },
         {
           "default": "",
-          "document": "期望阈值",
+          "document": "期望阈值（已废弃）",
           "example": "1",
           "member": "uint64",
           "name": "ExpectTimeThresh",
@@ -7369,7 +7489,7 @@
         },
         {
           "default": "",
-          "document": "回档数据库表",
+          "document": "回档数据库表列表",
           "example": "无",
           "member": "RollbackTable",
           "name": "RollbackTables",
@@ -7855,6 +7975,102 @@
         }
       ],
       "usage": "both"
+    },
+    "TemplateParamInfo": {
+      "document": "参数模板详情",
+      "members": [
+        {
+          "default": "",
+          "document": "当前值",
+          "example": "1024",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "2048",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型为enum时可选的值类型集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[12,23,45]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数类型为float/integer时的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数类型为float/integer时的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "binlog_back",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数描述",
+          "example": "this is set bin log size",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型，integer/float/string/enum",
+          "example": "float",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TradePrice": {
       "document": "计费询价结果",

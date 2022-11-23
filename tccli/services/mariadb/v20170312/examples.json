@@ -11,7 +11,7 @@
     "AssociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&Product=mariadb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"mariadb\",\n    \"SecurityGroupId\": \"sg-xxxxxx\",\n    \"InstanceIds\": [\n        \"tdsql-xxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
         "title": "无"
       }
@@ -251,7 +251,7 @@
     "DescribeProjectSecurityGroups": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&Product=mariadb\n&ProjectId=11988\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectSecurityGroups\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11988\",\n    \"Product\": \"mariadb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 11988,\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"mariadb\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询项目安全组信息"
       }
@@ -323,7 +323,7 @@
     "InitDBInstances": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=InitDBInstances\n&InstanceIds.0=tdsql-fdpjf5zh\n&InstanceIds.1=tdsql-avw0207d\n&Params.0.Param=lower_case_table_names\n&Params.0.Value=1\n&Params.1.Param=innodb_page_size\n&Params.1.Value=16384\n&Params.2.Param=character_set_server\n&Params.2.Value=utf8\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDBInstances\n<公共请求参数>\n\n{\n    \"Params\": [\n        {\n            \"Value\": \"16384\",\n            \"Param\": \"innodb_page_size\"\n        },\n        {\n            \"Value\": \"1\",\n            \"Param\": \"lower_case_table_names\"\n        },\n        {\n            \"Value\": \"utf8\",\n            \"Param\": \"character_set_server\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"tdsql-avw0207d\",\n        \"tdsql-fdpjf5zh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d94ef093-ff84-4851-b2e0-a5c5920d618e\",\n        \"InstanceIds\": [\n            \"tdsql-fdpjf5zh\",\n            \"tdsql-avw0207d\"\n        ],\n        \"FlowId\": 3340\n    }\n}",
         "title": "批量初始化云数据库实例"
       }
@@ -395,7 +395,7 @@
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Product=mariadb\n&InstanceId=tdsql-eb2w7dto\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-eb2w7dto\",\n    \"Product\": \"mariadb\",\n    \"SecurityGroupIds\": [\n        \"sg-ajr1jzgj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\"\n    }\n}",
         "title": "示例1 修改云数据库安全组"
       }
@@ -475,7 +475,7 @@
     "OpenDBExtranetAccess": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=OpenDBExtranetAccess\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBExtranetAccess\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-avw0207d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"FlowId\": 3323\n    }\n}",
         "title": "开通云数据库实例的外网访问"
       }

@@ -84,6 +84,14 @@
         "title": "批量添加记录"
       }
     ],
+    "CreateRecordGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupName\": \"分组2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\",\n        \"GroupId\": 146\n    }\n}",
+        "title": "添加记录分组"
+      }
+    ],
     "CreateSnapshot": [
       {
         "document": "",
@@ -120,6 +128,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除解析记录"
+      }
+    ],
+    "DeleteRecordGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupId\": 156\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\"\n    }\n}",
+        "title": "删除记录分组"
       }
     ],
     "DeleteShareDomain": [
@@ -216,6 +232,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordInfo\": {\n            \"Id\": 158,\n            \"SubDomain\": \"wwww\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"百度\",\n            \"RecordLineId\": \"90=0\",\n            \"Value\": \"129.23.32.32\",\n            \"Weight\": null,\n            \"MX\": 0,\n            \"TTL\": 10,\n            \"Enabled\": 1,\n            \"MonitorStatus\": \"Ok\",\n            \"Remark\": \"以下参数列表仅列出了此接口响应代码，除此接口请求响应代码外\",\n            \"UpdatedOn\": \"2021-03-31 11:38:02\",\n            \"DomainId\": 62\n        }\n    }\n}",
         "title": "获取记录信息"
+      }
+    ],
+    "DescribeRecordGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordGroupList\n<公共请求参数>\n\n{\n    \"Domain\": \"recordgroup.com\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0076ce66-aff3-4d2b-bd6e-92bf053ae150\",\n        \"GroupList\": [\n            {\n                \"GroupId\": 0,\n                \"GroupName\": \"默认分组\",\n                \"GroupType\": \"system\"\n            },\n            {\n                \"GroupId\": 144,\n                \"GroupName\": \"分组啊\",\n                \"GroupType\": \"user\"\n            }\n        ]\n    }\n}",
+        "title": "查询解析记录分组列表"
       }
     ],
     "DescribeRecordLineList": [
@@ -390,6 +414,14 @@
         "title": "批量修改记录"
       }
     ],
+    "ModifyRecordGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupName\": \"分组2\",\n    \"GroupId\": 145\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\",\n        \"GroupId\": 145\n    }\n}",
+        "title": "修改记录分组"
+      }
+    ],
     "ModifyRecordRemark": [
       {
         "document": "",
@@ -404,6 +436,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 161,\n    \"Status\": \"ENABLE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 161\n    }\n}",
         "title": "设置记录状态"
+      }
+    ],
+    "ModifyRecordToGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordToGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupId\": 156,\n    \"RecordId\": \"123232|2343232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\"\n    }\n}",
+        "title": "将记录添加到分组"
       }
     ],
     "ModifySnapshotConfig": [
