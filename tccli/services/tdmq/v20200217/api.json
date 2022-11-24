@@ -7120,7 +7120,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7135,7 +7136,8 @@
           "name": "ClusterInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群配置",
@@ -7144,7 +7146,8 @@
           "name": "ClusterConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群最近使用量\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -7153,7 +7156,8 @@
           "name": "ClusterStats",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7174,7 +7178,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7183,7 +7188,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7192,7 +7198,8 @@
           "member": "string",
           "name": "IdKeyword",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7201,7 +7208,8 @@
           "member": "string",
           "name": "NameKeyword",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7210,7 +7218,8 @@
           "member": "string",
           "name": "ClusterIdList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7219,7 +7228,8 @@
           "member": "bool",
           "name": "IsTagFilter",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7228,7 +7238,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7243,7 +7254,8 @@
           "name": "ClusterList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "总条数",
@@ -7252,7 +7264,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10648,6 +10661,17 @@
           "example": "false",
           "member": "bool",
           "name": "IsVip",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Rocketmq集群标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RocketMQFlag",
           "required": true,
           "type": "bool",
           "value_allowed_null": true,

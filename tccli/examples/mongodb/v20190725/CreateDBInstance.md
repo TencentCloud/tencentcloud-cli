@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli mongodb CreateDBInstance --cli-unfold-argument  \
-    --Memory 4 \
-    --Volume 250 \
+    --VpcId vpc-0akbol5v \
     --GoodsNum 1 \
     --Zone ap-guangzhou-2 \
-    --VpcId vpc-0akbol5v \
-    --SubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
-    --MongoVersion MONGO_40_WT \
     --MachineCode HIO10G \
-    --NodeNum 3 \
     --Period 1 \
-    --Password pwd123456 \
     --ClusterType REPLSET \
-    --ReplicateSetNum 1
+    --Volume 250 \
+    --MongoVersion MONGO_40_WT \
+    --NodeNum 3 \
+    --ReplicateSetNum 1 \
+    --Memory 4 \
+    --SubnetId subnet-fyrtjbqw \
+    --Password pwd123456
 ```
 
 Output: 

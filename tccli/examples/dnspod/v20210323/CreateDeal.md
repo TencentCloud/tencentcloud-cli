@@ -1,38 +1,4 @@
-**Example 1: DNSPod商品下单**
-
-
-
-Input: 
-
-```
-tccli dnspod CreateDeal --cli-unfold-argument  \
-    --Domain xx \
-    --NewPackageType xx \
-    --GoodsNum 1 \
-    --TimeSpan 1 \
-    --AutoRenew 1 \
-    --DealType 1 \
-    --GoodsChildType xx \
-    --GoodsType 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "BigDealId": "xx",
-        "RequestId": "xx",
-        "DealList": [
-            {
-                "DealName": "xx",
-                "DealId": "xx"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 成功示例**
+**Example 1: DNSPod商品下单示例**
 
 
 

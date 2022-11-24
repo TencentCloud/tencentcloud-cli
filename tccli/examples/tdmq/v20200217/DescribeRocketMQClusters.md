@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQClusters --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -25,7 +25,16 @@ Output:
                     "CreateTime": 1620321019000,
                     "Remark": "字符串",
                     "PublicEndPoint": "pulsar://rocketmq-xxxx1.xxxx.com:5678",
-                    "VpcEndPoint": "pulsar://rocketmq-xxxx1.xxxx.com:5678"
+                    "VpcEndPoint": "pulsar://rocketmq-xxxx1.xxxx.com:5678",
+                    "Vpcs": [
+                        {
+                            "SubnetId": "xx",
+                            "VpcId": "xx"
+                        }
+                    ],
+                    "SupportNamespaceEndpoint": true,
+                    "RocketMQFlag": true,
+                    "IsVip": true
                 },
                 "Config": {
                     "MaxTpsPerNamespace": 8000,

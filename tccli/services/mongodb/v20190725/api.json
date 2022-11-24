@@ -901,7 +901,8 @@
           "member": "uint64",
           "name": "NodeNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -910,7 +911,8 @@
           "member": "uint64",
           "name": "Memory",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -919,7 +921,8 @@
           "member": "uint64",
           "name": "Volume",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -928,7 +931,8 @@
           "member": "string",
           "name": "MongoVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -937,7 +941,8 @@
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -946,7 +951,8 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -955,7 +961,8 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -964,7 +971,8 @@
           "member": "string",
           "name": "MachineCode",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -973,7 +981,8 @@
           "member": "string",
           "name": "ClusterType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -982,7 +991,8 @@
           "member": "uint64",
           "name": "ReplicateSetNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -991,7 +1001,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1000,7 +1011,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1009,16 +1021,18 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例密码，不设置该参数则默认密码规则为 实例ID+\"@\"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为\"cmgo-higv73ed@100000001\"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种",
+          "document": "实例密码，不设置该参数则默认密码规则为 实例ID+\"@\"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为\"cmgo-higv73ed@100000001\"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种",
           "example": "pwd123456",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1027,7 +1041,8 @@
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1036,7 +1051,8 @@
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1045,7 +1061,8 @@
           "member": "uint64",
           "name": "AutoVoucher",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1054,7 +1071,8 @@
           "member": "int64",
           "name": "Clone",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1063,7 +1081,8 @@
           "member": "string",
           "name": "Father",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1072,7 +1091,8 @@
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1081,7 +1101,8 @@
           "member": "string",
           "name": "RestoreTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1090,7 +1111,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1099,7 +1121,8 @@
           "member": "string",
           "name": "AvailabilityZoneList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1108,7 +1131,8 @@
           "member": "uint64",
           "name": "MongosCpu",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1117,7 +1141,8 @@
           "member": "uint64",
           "name": "MongosMemory",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1126,7 +1151,38 @@
           "member": "uint64",
           "name": "MongosNodeNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "只读节点数量，最大不超过7个",
+          "example": "无",
+          "member": "uint64",
+          "name": "ReadonlyNodeNum",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "只读节点部署可用区",
+          "example": "无",
+          "member": "string",
+          "name": "ReadonlyNodeAvailabilityZoneList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Hidden节点所在的可用区，跨可用区实例必传",
+          "example": "无",
+          "member": "string",
+          "name": "HiddenZone",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1141,7 +1197,8 @@
           "name": "DealId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "创建的实例ID列表",
@@ -1150,7 +1207,8 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2404,6 +2462,7 @@
         {
           "default": "",
           "document": "待查询可用区",
+          "example": "1",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -2417,8 +2476,10 @@
       "members": [
         {
           "document": "实例售卖规格信息列表",
+          "example": "无",
           "member": "SpecificationInfo",
           "name": "SpecInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

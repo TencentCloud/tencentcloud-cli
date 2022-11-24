@@ -1197,6 +1197,26 @@
           "required": false,
           "type": "int",
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "内部组件专用字段。是否执行空转检查",
+          "example": "True",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "是否将快照创建在云盘的专有集群中。",
+          "example": "True",
+          "member": "bool",
+          "name": "CreateInCluster",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"
