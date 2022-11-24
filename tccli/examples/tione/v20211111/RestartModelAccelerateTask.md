@@ -6,27 +6,27 @@ Input:
 
 ```
 tccli tione RestartModelAccelerateTask --cli-unfold-argument  \
-    --ModelName xx \
-    --ModelAccTaskName xx \
-    --ModelAccTaskId xx \
-    --ModelVersion xx \
-    --ModelSource xx \
-    --ModelInputPath.Paths xx \
-    --ModelInputPath.Region xx \
-    --ModelInputPath.Bucket xx \
-    --ModelOutputPath.Paths xx \
-    --ModelOutputPath.Region xx \
-    --ModelOutputPath.Bucket xx \
-    --ModelFormat xx \
-    --TensorInfos xx \
-    --OptimizationLevel xx
+    --ModelName test-model \
+    --ModelAccTaskName test-acc-task \
+    --ModelAccTaskId acc-3wj738qaxy80 \
+    --ModelVersion v1 \
+    --ModelSource COS \
+    --ModelInputPath.Paths test/input/inception.pt \
+    --ModelInputPath.Region ap-guangzhou \
+    --ModelInputPath.Bucket test-bucket \
+    --ModelOutputPath.Paths test/output/ \
+    --ModelOutputPath.Region ap-guangzhou \
+    --ModelOutputPath.Bucket test-bucket \
+    --ModelFormat TORCH_SCRIPT \
+    --TensorInfos input_0:float(1*3*640*640) \
+    --OptimizationLevel FP16
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

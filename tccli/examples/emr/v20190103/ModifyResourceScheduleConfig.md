@@ -15,9 +15,10 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": null,
-        "IsDraft": true,
-        "RequestId": "cb6e29be-d9d5-4694-8ff5-19bf8bbd412f"
+        "ErrorMsg": "xx",
+        "Data": "xx",
+        "RequestId": "xx",
+        "IsDraft": true
     }
 }
 ```

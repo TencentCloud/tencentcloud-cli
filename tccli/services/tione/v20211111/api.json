@@ -2095,7 +2095,7 @@
         },
         {
           "default": "",
-          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML）",
+          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE）",
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
@@ -4427,7 +4427,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤器\nModelAccTaskName 任务名称",
+          "document": "过滤器\nModelAccTaskName 任务名称\nModelSource 模型来源",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4463,7 +4463,7 @@
         },
         {
           "default": "",
-          "document": "返回记录条数，默认20",
+          "document": "返回记录条数，默认10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -5056,7 +5056,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤器\nFilter.Name: 枚举值:\n    keyword (模型名称)\n    TrainingModelId (模型ID)\n    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)\n    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS/AUTO_ML\n    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2\n    ModelFormat（模型格式）其值Filter.Values支持：\nTORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML\nFilter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100\nFilter.Fuzzy取值：true/false，是否支持模糊匹配",
+          "document": "过滤器\nFilter.Name: 枚举值:\n    keyword (模型名称)\n    TrainingModelId (模型ID)\n    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)\n    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS\n    ModelFormat（模型格式）其值Filter.Values支持：\nPYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE\nFilter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100\nFilter.Fuzzy取值：true/false，是否支持模糊匹配",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9426,7 +9426,7 @@
         },
         {
           "default": "",
-          "document": "模型处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型处理状态\nSTATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "TrainingModelStatus",

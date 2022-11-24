@@ -2689,6 +2689,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

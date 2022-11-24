@@ -37,7 +37,17 @@ Output:
         "K8sVersion": "xx",
         "K8sMasterIP": "xx",
         "ImageCnt": 1,
-        "ContainerCnt": 1
+        "ContainerCnt": 1,
+        "Project": {
+            "ProjectName": "xx",
+            "ProjectID": 0
+        },
+        "Tags": [
+            {
+                "TagKey": "xx",
+                "TagValue": "xx"
+            }
+        ]
     }
 }
 ```

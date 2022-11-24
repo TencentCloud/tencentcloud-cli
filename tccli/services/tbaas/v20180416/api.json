@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ApplyChainMakerBatchUserCert": {
+      "document": "批量申请长安链用户签名证书",
+      "input": "ApplyChainMakerBatchUserCertRequest",
+      "name": "批量申请长安链用户签名证书",
+      "output": "ApplyChainMakerBatchUserCertResponse"
+    },
     "ApplyUserCert": {
       "document": "申请用户证书",
       "input": "ApplyUserCertRequest",
@@ -206,6 +212,51 @@
     "serviceShortName": "tbaas"
   },
   "objects": {
+    "ApplyChainMakerBatchUserCertRequest": {
+      "document": "ApplyChainMakerBatchUserCert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID，可在区块链网络详情或列表中获取",
+          "example": "chainmaker-xxxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书标识和证书请求文件，可参考TBaaS证书生成相关文档生成证书请求文件",
+          "example": "无",
+          "member": "SignCertCsr",
+          "name": "SignUserCsrList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyChainMakerBatchUserCertResponse": {
+      "document": "ApplyChainMakerBatchUserCert返回参数结构体",
+      "members": [
+        {
+          "document": "成功生成的用户证书的base64编码字符串列表，与SignUserCsrList一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请求的唯一",
+          "member": "string",
+          "name": "SignUserCrtList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplyUserCertRequest": {
       "document": "ApplyUserCert请求参数结构体",
       "members": [
@@ -3695,6 +3746,32 @@
         }
       ],
       "type": "object"
+    },
+    "SignCertCsr": {
+      "document": "用于申请用户签名证书的结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户签名证书的标识，会存在于用户申请的证书中",
+          "example": "alice",
+          "member": "string",
+          "name": "CertMark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户申请签名证书所需要的证书请求文件的base64编码",
+          "example": "test",
+          "member": "string",
+          "name": "SignCsrContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SrvInvokeRequest": {
       "document": "SrvInvoke请求参数结构体",

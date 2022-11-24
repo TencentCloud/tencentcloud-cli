@@ -28,7 +28,17 @@ Output:
                 "RegionID": 0,
                 "MachineType": "xx",
                 "ContainerCnt": 1,
-                "Uuid": "xx"
+                "Uuid": "xx",
+                "Tags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "Project": {
+                    "ProjectName": "xx",
+                    "ProjectID": 0
+                }
             },
             {
                 "Status": "xx",
@@ -45,7 +55,17 @@ Output:
                 "RegionID": 0,
                 "MachineType": "xx",
                 "ContainerCnt": 1,
-                "Uuid": "xx"
+                "Uuid": "xx",
+                "Tags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "Project": {
+                    "ProjectName": "xx",
+                    "ProjectID": 0
+                }
             }
         ],
         "RequestId": "xx"

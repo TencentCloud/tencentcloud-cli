@@ -31,9 +31,9 @@
       "output": "CreateMigrateCheckJobResponse"
     },
     "CreateMigrationService": {
-      "document": "购买迁移服务。购买成功后会返回随机生成的迁移服务id列表，也可以通过查询迁移服务任务列表接口`DescribeMigrationJobs`看到购买成功的实例Id。注意，一旦购买成功后源及目标数据库类型，源及目标实例地域不可修改。",
+      "document": "购买迁移任务。购买成功后会返回随机生成的迁移任务id列表，也可以通过查询迁移任务任务列表接口`DescribeMigrationJobs`看到购买成功的实例Id。注意，一旦购买成功后源及目标数据库类型，源及目标实例地域不可修改。",
       "input": "CreateMigrationServiceRequest",
-      "name": "购买迁移服务",
+      "name": "购买迁移任务",
       "output": "CreateMigrationServiceResponse"
     },
     "CreateSyncJob": {
@@ -49,9 +49,9 @@
       "output": "DeleteCompareTaskResponse"
     },
     "DescribeCheckSyncJobResult": {
-      "document": "查询校验同步任务结果",
+      "document": "查询同步校验任务结果",
       "input": "DescribeCheckSyncJobResultRequest",
-      "name": "查询校验同步任务结果",
+      "name": "查询同步校验任务结果",
       "output": "DescribeCheckSyncJobResultResponse"
     },
     "DescribeCompareReport": {
@@ -79,9 +79,9 @@
       "output": "DescribeMigrationCheckJobResponse"
     },
     "DescribeMigrationDetail": {
-      "document": "查询某个数据迁移任务详情",
+      "document": "查询某个迁移任务详情",
       "input": "DescribeMigrationDetailRequest",
-      "name": "查询某个数据迁移任务详情",
+      "name": "查询某个迁移任务详情",
       "output": "DescribeMigrationDetailResponse"
     },
     "DescribeMigrationJobs": {
@@ -109,7 +109,7 @@
       "output": "DestroySyncJobResponse"
     },
     "IsolateMigrateJob": {
-      "document": " 隔离退还数据迁移服务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。对于计费任务，在任务隔离后可进行解除隔离(RecoverMigrationJob)操作或直接进行下线销毁(DestroyMigrateJob)操作。对于不计费任务，调用此接口会直接删除任务，无法进行恢复操作。",
+      "document": " 隔离退还数据迁移服务。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。对于计费任务，在任务隔离后可进行解除隔离(RecoverMigrationJob)操作或直接进行下线销毁(DestroyMigrateJob)操作。对于不计费任务，调用此接口会直接销毁任务，无法进行恢复操作。",
       "input": "IsolateMigrateJobRequest",
       "name": "隔离数据迁移任务",
       "output": "IsolateMigrateJobResponse"
@@ -205,9 +205,9 @@
       "output": "StopCompareResponse"
     },
     "StopMigrateJob": {
-      "document": "本接口（StopMigrateJob）用于停止数据迁移任务。\n调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
+      "document": "本接口（StopMigrateJob）用于终止数据迁移任务。\n调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "StopMigrateJobRequest",
-      "name": "停止数据迁移任务",
+      "name": "终止数据迁移任务",
       "output": "StopMigrateJobResponse"
     },
     "StopSyncJob": {
@@ -1109,7 +1109,7 @@
       "document": "CreateMigrationService返回参数结构体",
       "members": [
         {
-          "document": "下单成功随机生成的迁移服务id列表，形如：dts-c1f6rs21\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"dts-amm1jw5q\"]",
           "member": "string",
           "name": "JobIds",
@@ -5491,7 +5491,7 @@
       "usage": "both"
     },
     "TableItem": {
-      "document": "表图对象集合，当 TableMode 为 partial 时，此项需要填写",
+      "document": "表对象集合，当 TableMode 为 partial 时，此项需要填写",
       "members": [
         {
           "default": "",

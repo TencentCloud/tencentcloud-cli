@@ -233,7 +233,7 @@
     "StartWhiteboardPush": [
       {
         "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=StartWhiteboardPush\n&SdkAppId=1400000001\n&RoomId=1203\n&PushUserId=tic_push_user_1203_141551\n&PushUserSig=usersig_of_<tic_push_user_1203_141551>\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": \"1203\",\n    \"SdkAppId\": \"1400000001\"\n}",
         "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
         "title": "开始白板推流"
       }

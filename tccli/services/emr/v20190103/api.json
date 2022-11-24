@@ -13,9 +13,9 @@
       "output": "CreateInstanceResponse"
     },
     "DescribeClusterNodes": {
-      "document": "查询硬件节点信息",
+      "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
-      "name": "查询硬件节点信息",
+      "name": "查询集群节点信息",
       "output": "DescribeClusterNodesResponse"
     },
     "DescribeCvmQuota": {
@@ -103,9 +103,9 @@
       "output": "ModifyResourcePoolsResponse"
     },
     "ModifyResourceScheduleConfig": {
-      "document": "修改yarn资源调度的资源配置",
+      "document": "修改YARN资源调度的资源配置",
       "input": "ModifyResourceScheduleConfigRequest",
-      "name": "修改yarn资源调度的资源配置",
+      "name": "修改YARN资源调度的资源配置",
       "output": "ModifyResourceScheduleConfigResponse"
     },
     "ModifyResourceScheduler": {
@@ -121,7 +121,7 @@
       "output": "RunJobFlowResponse"
     },
     "ScaleOutInstance": {
-      "document": "实例扩容",
+      "document": "扩容节点",
       "input": "ScaleOutInstanceRequest",
       "name": "实例扩容",
       "output": "ScaleOutInstanceResponse"
@@ -3620,6 +3620,15 @@
           "name": "Currency",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量变配资源ID列表",
+          "example": "[\"emr-vm-xxx\"]",
+          "member": "string",
+          "name": "ResourceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3661,6 +3670,15 @@
           "name": "TimeSpan",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "PriceDetail",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4023,6 +4041,15 @@
           "example": "null",
           "member": "string",
           "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json串",
+          "member": "string",
+          "name": "Data",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4764,6 +4791,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该实例是否开启实例保护，true为开启 false为关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableApiTermination",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0表示老计费，1表示新计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TradeVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4893,22 +4940,22 @@
       "members": [
         {
           "default": "",
-          "document": "实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。填0为默认项目。",
-          "example": "0",
-          "member": "int64",
-          "name": "ProjectId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。",
+          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5352,6 +5399,52 @@
         }
       ],
       "usage": "in"
+    },
+    "PriceDetail": {
+      "document": "价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID",
+          "example": "emr-vm-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "价格计算公式",
+          "example": "无",
+          "member": "string",
+          "name": "Formula",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价",
+          "example": "4.3",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣价",
+          "example": "3.2",
+          "member": "float",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PriceResource": {
       "document": "询价资源",

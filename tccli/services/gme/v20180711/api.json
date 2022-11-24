@@ -60,6 +60,12 @@
       "name": "获取数据详情",
       "output": "DescribeApplicationDataResponse"
     },
+    "DescribeApplicationList": {
+      "document": "本接口(DescribeApplicationList)用于查询自己账号下的应用列表",
+      "input": "DescribeApplicationListRequest",
+      "name": "查询某账号下的应用列表",
+      "output": "DescribeApplicationListResponse"
+    },
     "DescribeRealtimeScanConfig": {
       "document": "获取用户自定义送检信息",
       "input": "DescribeRealtimeScanConfigRequest",
@@ -416,6 +422,82 @@
           "name": "PcuDataSum",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationList": {
+      "document": "获取应用列表返回",
+      "members": [
+        {
+          "default": "",
+          "document": "服务开关状态",
+          "example": "[]",
+          "member": "ServiceStatus",
+          "name": "ServiceConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID(AppID)",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID，默认为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用状态，返回0表示正常，1表示关闭，2表示欠费停服，3表示欠费回收",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，Unix时间戳格式",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用类型，无需关注此数值",
+          "example": "1",
+          "member": "uint64",
+          "name": "AppType",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1205,6 +1287,96 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationListRequest": {
+      "document": "DescribeApplicationList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID，0表示默认项目，-1表示所有项目，如果需要查找具体项目下的应用列表，请填入具体项目ID，项目ID在项目管理中查看 https://console.cloud.tencent.com/project",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码ID，0表示第一页，以此后推。默认填0",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页展示应用数量。默认填200",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用",
+          "example": "测试",
+          "member": "string",
+          "name": "SearchText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查找过滤关键字列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListResponse": {
+      "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "document": "获取应用列表返回",
+          "example": "无",
+          "member": "ApplicationList",
+          "name": "ApplicationList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用总数",
+          "example": "9",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRealtimeScanConfigRequest": {
       "document": "DescribeRealtimeScanConfig请求参数结构体",
       "members": [
@@ -1623,6 +1795,30 @@
         }
       ],
       "type": "object"
+    },
+    "Filter": {
+      "document": "查找过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "要过滤的字段名, 比如\"AppName\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "多个关键字",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "GetCustomizationListRequest": {
       "document": "GetCustomizationList请求参数结构体",
@@ -2350,6 +2546,62 @@
       ],
       "usage": "out"
     },
+    "ServiceStatus": {
+      "document": "服务开关状态",
+      "members": [
+        {
+          "default": "",
+          "document": "实时语音服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "RealTimeSpeech",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音消息服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "VoiceMessage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音内容安全服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "Porn",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音录制服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "Live",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音转文本服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "StatusInfo",
+          "name": "RealTimeAsr",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StatisticsItem": {
       "document": "用量数据单元",
       "members": [
@@ -2367,6 +2619,21 @@
           "document": "统计值",
           "member": "uint64",
           "name": "Data",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StatusInfo": {
+      "document": "服务开关状态",
+      "members": [
+        {
+          "default": "",
+          "document": "服务开关状态， 0-正常，1-关闭",
+          "member": "uint64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": false

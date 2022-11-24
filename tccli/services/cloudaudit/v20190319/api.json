@@ -30,6 +30,12 @@
       "name": "查询跟踪集详情",
       "output": "DescribeAuditResponse"
     },
+    "DescribeAuditTrack": {
+      "document": "查询云审计跟踪集详情",
+      "input": "DescribeAuditTrackRequest",
+      "name": "查询云审计跟踪集详情",
+      "output": "DescribeAuditTrackResponse"
+    },
     "DescribeAuditTracks": {
       "document": "查询云审计跟踪集列表",
       "input": "DescribeAuditTracksRequest",
@@ -416,12 +422,85 @@
     },
     "CreateAuditTrackRequest": {
       "document": "CreateAuditTrack请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "example": "云审计",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "example": "Read",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
+          "example": "*",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
+          "example": "[*]",
+          "member": "string",
+          "name": "EventNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "CreateAuditTrackResponse": {
       "document": "CreateAuditTrack返回参数结构体",
       "members": [
+        {
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -469,7 +548,17 @@
     },
     "DeleteAuditTrackRequest": {
       "document": "DeleteAuditTrack请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DeleteAuditTrackResponse": {
@@ -628,14 +717,150 @@
       ],
       "type": "object"
     },
+    "DescribeAuditTrackRequest": {
+      "document": "DescribeAuditTrack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTrackResponse": {
+      "document": "DescribeAuditTrack返回参数结构体",
+      "members": [
+        {
+          "document": "跟踪集名称",
+          "example": "云审计",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "example": "Read",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪事件所属产品（如：cos，全部：*）",
+          "example": "*",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪事件接口名列表（全部：[*]）",
+          "example": "1",
+          "member": "string",
+          "name": "EventNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪集创建时间",
+          "example": "2021-02-01 18:03",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAuditTracksRequest": {
       "document": "DescribeAuditTracks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeAuditTracksResponse": {
       "document": "DescribeAuditTracks返回参数结构体",
       "members": [
+        {
+          "document": "跟踪集列表",
+          "example": "*",
+          "member": "Tracks",
+          "name": "Tracks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1305,7 +1530,80 @@
     },
     "ModifyAuditTrackRequest": {
       "document": "ModifyAuditTrack请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
+          "example": "云审计",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "example": "Read",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）",
+          "example": "*",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"*\"]；指定ResourceType时，支持全部接口：[\"*\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
+          "example": "1",
+          "member": "string",
+          "name": "EventNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackForAllMembers",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ModifyAuditTrackResponse": {
@@ -1417,6 +1715,138 @@
         }
       ],
       "type": "object"
+    },
+    "Storage": {
+      "document": "跟踪集存储信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储类型（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储所在地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储名称(cos：存储名称为用户自定义的存储桶名称，不包含\"-APPID\"，仅支持小写字母、数字以及中划线\"-\"的组合，不能超过50字符，且不支持中划线\"-\"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)",
+          "example": "audit",
+          "member": "string",
+          "name": "StorageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符",
+          "example": "audit",
+          "member": "string",
+          "name": "StoragePrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tracks": {
+      "document": "跟踪集列表",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "cloudaudit",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
+          "example": "Read",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪事件所属产品（如：cos，全部：*）",
+          "example": "cloudaudit",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪集状态（未开启：0；开启：1）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪事件接口名列表（全部：[*]）",
+          "example": "[*]",
+          "member": "string",
+          "name": "EventNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据投递存储（目前支持 cos、cls）",
+          "example": "cos",
+          "member": "Storage",
+          "name": "Storage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪集创建时间",
+          "example": "2021-01-20 11:06:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪集 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrackId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpdateAuditRequest": {
       "document": "UpdateAudit请求参数结构体",

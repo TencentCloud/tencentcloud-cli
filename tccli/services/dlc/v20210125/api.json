@@ -3094,6 +3094,11 @@
       ],
       "usage": "out"
     },
+    "DataGovernPolicy": {
+      "document": "数据治理规则",
+      "members": [],
+      "usage": "both"
+    },
     "DatabaseInfo": {
       "document": "数据库对象",
       "members": [
@@ -3219,6 +3224,26 @@
           "example": "100019878767",
           "member": "string",
           "name": "UserSubUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataGovernPolicy",
+          "name": "GovernPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -7078,6 +7103,16 @@
           "name": "UserSubUin",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataGovernPolicy",
+          "name": "GovernPolicy",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

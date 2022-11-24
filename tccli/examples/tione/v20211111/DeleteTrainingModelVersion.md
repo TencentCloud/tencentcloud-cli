@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tione DeleteTrainingModelVersion --cli-unfold-argument  \
-    --TrainingModelVersionId xx
+    --TrainingModelVersionId mv-v2-662319300915299328
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

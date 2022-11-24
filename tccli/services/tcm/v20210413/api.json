@@ -12,6 +12,12 @@
       "name": "删除网格",
       "output": "DeleteMeshResponse"
     },
+    "DescribeAccessLogConfig": {
+      "document": "获取AccessLog配置",
+      "input": "DescribeAccessLogConfigRequest",
+      "name": "获取AccessLog配置",
+      "output": "DescribeAccessLogConfigResponse"
+    },
     "DescribeMesh": {
       "document": "查询网格详情",
       "input": "DescribeMeshRequest",
@@ -35,6 +41,12 @@
       "input": "LinkPrometheusRequest",
       "name": "关联Prometheus",
       "output": "LinkPrometheusResponse"
+    },
+    "ModifyAccessLogConfig": {
+      "document": "修改访问日志配置",
+      "input": "ModifyAccessLogConfigRequest",
+      "name": "修改访问日志配置",
+      "output": "ModifyAccessLogConfigResponse"
     },
     "ModifyMesh": {
       "document": "修改网格",
@@ -756,6 +768,78 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeAccessLogConfigRequest": {
+      "document": "DescribeAccessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "mesh名字",
+          "example": "无",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessLogConfigResponse": {
+      "document": "DescribeAccessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "访问日志输出路径。默认 /dev/stdout",
+          "example": "xxx",
+          "member": "string",
+          "name": "File",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问日志的格式。",
+          "example": "%REQ(Method)",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问日志输出编码。默认 “TEXT”。除此之外还有“JSON”",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Encoding",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "选中的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SelectedRange",
+          "name": "SelectedRange",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "采用的模板，可取值为\"istio, trace，默认为istio\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "istio",
+          "member": "string",
+          "name": "Template",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeMeshListRequest": {
       "document": "DescribeMeshList请求参数结构体",
@@ -1875,6 +1959,114 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAccessLogConfigRequest": {
+      "document": "ModifyAccessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "mesh ID",
+          "example": "mesh-xxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选中的范围",
+          "example": "无",
+          "member": "SelectedRange",
+          "name": "SelectedRange",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "采用的模板，可选值：istio（默认）、trace、custom",
+          "example": "istio",
+          "member": "string",
+          "name": "Template",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "腾讯云日志服务相关参数",
+          "example": "无",
+          "member": "CLS",
+          "name": "CLS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编码格式，可选值：TEXT、JSON",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志格式",
+          "example": "[%START_TIME%]",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用标准输出",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableStdout",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否启动GRPC第三方服务器",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableServer",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "GRPC第三方服务器地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessLogConfigResponse": {
+      "document": "ModifyAccessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyMeshRequest": {
       "document": "ModifyMesh请求参数结构体",

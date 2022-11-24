@@ -16,6 +16,14 @@
         "title": "DeleteMesh"
       }
     ],
+    "DescribeAccessLogConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessLogConfig\n<公共请求参数>\n\n{\n    \"MeshId\": \"\\\"mesh-test\\\"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"File\": \"xxx\",\n        \"Format\": \"%REQ(Method)\",\n        \"Encoding\": \"TEXT\",\n        \"SelectedRange\": {\n            \"All\": true\n        },\n        \"Template\": \"xx\"\n    }\n}",
+        "title": "获取Mesh访问日志配置"
+      }
+    ],
     "DescribeMesh": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "https://tcm.tencentcloudapi.com/?Action=LinkPrometheus\n&MeshID=\"mesh-test\"\n&Prometheus.VpcId=test-vpcid\n&Prometheus.SubnetId=test-subnetid\n&Prometheus.Region=sh\n&Prometheus.InstanceId=\"\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "LinkPrometheus"
+      }
+    ],
+    "ModifyAccessLogConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessLogConfig\n<公共请求参数>\n\n{\n    \"EnableStdout\": \"true\",\n    \"Template\": \"\\\"istio\\\"\",\n    \"MeshId\": \"\\\"mesh-xxx\\\"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
+        "title": "修改AccessLog配置"
       }
     ],
     "ModifyMesh": [

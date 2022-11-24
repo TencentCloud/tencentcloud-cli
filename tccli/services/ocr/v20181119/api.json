@@ -5511,6 +5511,7 @@
         {
           "default": "",
           "document": "类型（二维码、条形码）",
+          "example": "无",
           "member": "string",
           "name": "TypeName",
           "required": true,
@@ -5520,6 +5521,7 @@
         {
           "default": "",
           "document": "二维码/条形码包含的地址",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -5528,7 +5530,8 @@
         },
         {
           "default": "",
-          "document": "二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）",
+          "document": "二维码/条形码坐标",
+          "example": "无",
           "member": "QrcodePositionObj",
           "name": "Position",
           "required": true,

@@ -8097,16 +8097,7 @@
       "members": [
         {
           "default": "",
-          "document": "导出字段",
-          "example": "无",
-          "member": "string",
-          "name": "ExportField",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "需要返回的数量，默认为10，最大值为10000",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>\n<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>\n<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -8124,7 +8115,7 @@
         },
         {
           "default": "",
-          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
+          "document": "需要返回的数量，默认为10，最大值为10000",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -8148,6 +8139,15 @@
           "name": "Order",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "无",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12130,6 +12130,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "所属项目",
+          "example": "无",
+          "member": "ProjectInfo",
+          "name": "Project",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12161,7 +12179,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>\n<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>\n<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -25765,6 +25783,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectInfo",
+          "name": "Project",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -30237,6 +30275,32 @@
       ],
       "usage": "out"
     },
+    "ProjectInfo": {
+      "document": "主机所属项目",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PromotionActivityContent": {
       "document": "促销活动内容",
       "members": [
@@ -32767,6 +32831,32 @@
         }
       ],
       "type": "object"
+    },
+    "TagInfo": {
+      "document": "主机标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UnauthorizedCoresTendency": {
       "document": "未授权核数趋势",

@@ -6,10 +6,8 @@ Input:
 
 ```
 tccli tione DescribeModelAccelerateTasks --cli-unfold-argument  \
-    --OrderField xx \
-    --Limit 1 \
-    --Order xx \
-    --Offset 1
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -19,40 +17,31 @@ Output:
         "TotalCount": 1,
         "ModelAccelerateTasks": [
             {
-                "ModelName": "xx",
-                "ModelAccTaskName": "xx",
-                "ModelInputNum": 1,
-                "ModelAccTaskId": "xx",
-                "ModelVersion": "xx",
-                "ModelSource": "xx",
-                "Speedup": "xx",
-                "TaskStatus": "xx",
+                "ModelName": "test-model",
+                "ModelAccTaskName": "test-acc-task",
+                "ModelAccTaskId": "acc-3wj738qaxy80",
+                "ModelVersion": "v1",
+                "ModelSource": "COS",
+                "Speedup": "2.1x",
+                "TaskStatus": "STATUS_SUCCESS",
                 "ModelInputPath": {
                     "Paths": [
-                        "xx"
+                        "test/input/inception.pt"
                     ],
-                    "Region": "xx",
-                    "Bucket": "xx"
+                    "Region": "ap-guangzhou",
+                    "Bucket": "test-bucket"
                 },
-                "ChargeType": "xx",
-                "OptimizationLevel": "xx",
-                "ModelInputInfos": [
-                    {
-                        "ModelInputDimension": [
-                            "xx"
-                        ],
-                        "ModelInputType": "xx"
-                    }
-                ],
-                "GPUType": "xx",
+                "ChargeType": "FREE",
+                "OptimizationLevel": "FP16",
+                "GPUType": "T4",
                 "ModelOutputPath": {
                     "Paths": [
-                        "xx"
+                        "test/output/"
                     ],
-                    "Region": "xx",
-                    "Bucket": "xx"
+                    "Region": "ap-guangzhou",
+                    "Bucket": "test-bucket"
                 },
-                "ModelId": "xx"
+                "ModelId": "m-23014259659902976"
             }
         ],
         "RequestId": "xx"

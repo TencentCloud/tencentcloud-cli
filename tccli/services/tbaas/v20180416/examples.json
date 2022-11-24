@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyChainMakerBatchUserCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyChainMakerBatchUserCert\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SignUserCsrList\": [\n        {\n            \"CertMark\": \"xx\",\n            \"SignCsrContent\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SignUserCrtList\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量申请长安链用户签名证书"
+      }
+    ],
     "ApplyUserCert": [
       {
         "document": "",

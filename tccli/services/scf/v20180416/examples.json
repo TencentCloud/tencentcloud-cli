@@ -91,7 +91,7 @@
     "DeleteTrigger": [
       {
         "document": "用户使用该函数删除触发器。",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteTrigger\n&FunctionName=ledDummyAPITest\n&TriggerName=test3\n&Type=timer\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrigger\n<公共请求参数>\n\n{\n    \"Type\": \"timer\",\n    \"FunctionName\": \"ledDummyAPITest\",\n    \"TriggerName\": \"test3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除触发器"
       }
