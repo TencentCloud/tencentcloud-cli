@@ -555,7 +555,7 @@
     "DescribeClusterKubeconfig": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterKubeconfig\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterKubeconfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
         "output": "{\n    \"Response\": {\n        \"Kubeconfig\": \"xxx\",\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "获取集群kubeconfig文件"
       }

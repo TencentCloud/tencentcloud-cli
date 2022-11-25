@@ -10165,6 +10165,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Rocketmq集群标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RocketMQFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -210,6 +210,24 @@
       "name": "创建镜像导出任务",
       "output": "CreateImageExportJobResponse"
     },
+    "CreateK8sApiAbnormalEventExportJob": {
+      "document": "创建k8s api异常事件导出任务",
+      "input": "CreateK8sApiAbnormalEventExportJobRequest",
+      "name": "创建k8s api异常事件导出任务",
+      "output": "CreateK8sApiAbnormalEventExportJobResponse"
+    },
+    "CreateK8sApiAbnormalRuleExportJob": {
+      "document": "创建k8sApi异常规则导出任务",
+      "input": "CreateK8sApiAbnormalRuleExportJobRequest",
+      "name": "创建k8sApi异常规则导出任务",
+      "output": "CreateK8sApiAbnormalRuleExportJobResponse"
+    },
+    "CreateK8sApiAbnormalRuleInfo": {
+      "document": "创建k8sapi异常事件规则",
+      "input": "CreateK8sApiAbnormalRuleInfoRequest",
+      "name": "创建k8sapi异常事件规则",
+      "output": "CreateK8sApiAbnormalRuleInfoResponse"
+    },
     "CreateNetworkFirewallClusterRefresh": {
       "document": "容器网络集群下发刷新任务",
       "input": "CreateNetworkFirewallClusterRefreshRequest",
@@ -365,6 +383,12 @@
       "input": "DeleteIgnoreVulRequest",
       "name": "取消漏洞扫描忽略漏洞",
       "output": "DeleteIgnoreVulResponse"
+    },
+    "DeleteK8sApiAbnormalRule": {
+      "document": "删除k8sapi异常事件规则",
+      "input": "DeleteK8sApiAbnormalRuleRequest",
+      "name": "删除k8sapi异常事件规则",
+      "output": "DeleteK8sApiAbnormalRuleResponse"
     },
     "DeleteMachine": {
       "document": "卸载Agent客户端",
@@ -533,6 +557,12 @@
       "input": "DescribeAssetAppServiceListRequest",
       "name": "查询app服务列表",
       "output": "DescribeAssetAppServiceListResponse"
+    },
+    "DescribeAssetClusterList": {
+      "document": "查询集群列表",
+      "input": "DescribeAssetClusterListRequest",
+      "name": "查询集群列表",
+      "output": "DescribeAssetClusterListResponse"
     },
     "DescribeAssetComponentList": {
       "document": "容器安全搜索查询容器组件列表",
@@ -1025,6 +1055,48 @@
       "input": "DescribeInspectionReportRequest",
       "name": "查询检查报告",
       "output": "DescribeInspectionReportResponse"
+    },
+    "DescribeK8sApiAbnormalEventInfo": {
+      "document": "查询k8s api 异常事件详情",
+      "input": "DescribeK8sApiAbnormalEventInfoRequest",
+      "name": "查询k8s api 异常事件详情",
+      "output": "DescribeK8sApiAbnormalEventInfoResponse"
+    },
+    "DescribeK8sApiAbnormalEventList": {
+      "document": "查询k8s api异常事件列表",
+      "input": "DescribeK8sApiAbnormalEventListRequest",
+      "name": "查询k8s api异常事件列表",
+      "output": "DescribeK8sApiAbnormalEventListResponse"
+    },
+    "DescribeK8sApiAbnormalRuleInfo": {
+      "document": "查询k8sapi异常请求规则详情",
+      "input": "DescribeK8sApiAbnormalRuleInfoRequest",
+      "name": "查询k8sapi异常请求规则详情",
+      "output": "DescribeK8sApiAbnormalRuleInfoResponse"
+    },
+    "DescribeK8sApiAbnormalRuleList": {
+      "document": "查询k8sapi异常请求规则列表",
+      "input": "DescribeK8sApiAbnormalRuleListRequest",
+      "name": "查询k8sapi异常请求规则列表",
+      "output": "DescribeK8sApiAbnormalRuleListResponse"
+    },
+    "DescribeK8sApiAbnormalRuleScopeList": {
+      "document": "查询k8s api 异常规则中范围列表",
+      "input": "DescribeK8sApiAbnormalRuleScopeListRequest",
+      "name": "查询k8s api 异常规则中范围列表",
+      "output": "DescribeK8sApiAbnormalRuleScopeListResponse"
+    },
+    "DescribeK8sApiAbnormalSummary": {
+      "document": "查询k8sapi异常事件统计",
+      "input": "DescribeK8sApiAbnormalSummaryRequest",
+      "name": "查询k8sapi异常事件统计",
+      "output": "DescribeK8sApiAbnormalSummaryResponse"
+    },
+    "DescribeK8sApiAbnormalTendency": {
+      "document": "查询k8sapi异常事件趋势",
+      "input": "DescribeK8sApiAbnormalTendencyRequest",
+      "name": "查询k8sapi异常事件趋势",
+      "output": "DescribeK8sApiAbnormalTendencyResponse"
     },
     "DescribeLogStorageStatistic": {
       "document": "获取日志检索容量使用统计",
@@ -1667,6 +1739,24 @@
       "input": "ModifyImageAuthorizedRequest",
       "name": "批量授权镜像扫描V2.0",
       "output": "ModifyImageAuthorizedResponse"
+    },
+    "ModifyK8sApiAbnormalEventStatus": {
+      "document": "修改k8sapi异常事件状态",
+      "input": "ModifyK8sApiAbnormalEventStatusRequest",
+      "name": "修改k8sapi异常事件状态",
+      "output": "ModifyK8sApiAbnormalEventStatusResponse"
+    },
+    "ModifyK8sApiAbnormalRuleInfo": {
+      "document": "修改k8sapi异常规则信息",
+      "input": "ModifyK8sApiAbnormalRuleInfoRequest",
+      "name": "修改k8sapi异常规则信息",
+      "output": "ModifyK8sApiAbnormalRuleInfoResponse"
+    },
+    "ModifyK8sApiAbnormalRuleStatus": {
+      "document": "修改k8sapi异常事件规则状态",
+      "input": "ModifyK8sApiAbnormalRuleStatusRequest",
+      "name": "修改k8sapi异常事件规则状态",
+      "output": "ModifyK8sApiAbnormalRuleStatusResponse"
     },
     "ModifyReverseShellStatus": {
       "document": "修改反弹shell事件的状态信息",
@@ -4113,6 +4203,62 @@
           "example": "无",
           "member": "string",
           "name": "VerifyInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetClusterListItem": {
+      "document": "集群列表Item",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态\nCSR_RUNNING: 运行中\nCSR_EXCEPTION:异常\nCSR_DEL:已经删除",
+          "example": "xx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定规则名称",
+          "example": "[]",
+          "member": "string",
+          "name": "BindRuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型:\nCT_TKE: TKE集群\nCT_USER_CREATE: 用户自建集群",
+          "example": "xx",
+          "member": "string",
+          "name": "ClusterType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8263,6 +8409,186 @@
       ],
       "type": "object"
     },
+    "CreateK8sApiAbnormalEventExportJobRequest": {
+      "document": "CreateK8sApiAbnormalEventExportJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>\n<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>\n<li>Status - string  - 是否必填: 否 -事件状态筛选</li>\n<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>\n<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>\n<li>ClusterName - string  - 是否必填: 否 -集群名称</li>\n<li>ClusterID - string  - 是否必填: 否 -集群ID</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "[]",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateK8sApiAbnormalEventExportJobResponse": {
+      "document": "CreateK8sApiAbnormalEventExportJob返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务ID，前端拿着任务ID查询任务进度",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateK8sApiAbnormalRuleExportJobRequest": {
+      "document": "CreateK8sApiAbnormalRuleExportJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "无",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateK8sApiAbnormalRuleExportJobResponse": {
+      "document": "CreateK8sApiAbnormalRuleExportJob返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务ID，前端拿着任务ID查询任务进度",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateK8sApiAbnormalRuleInfoRequest": {
+      "document": "CreateK8sApiAbnormalRuleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则详情",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleInfo",
+          "name": "RuleInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "拷贝规则ID(适用于复制规则场景)",
+          "example": "xxx",
+          "member": "string",
+          "name": "CopySrcRuleID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件ID(适用于事件加白场景)",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateK8sApiAbnormalRuleInfoResponse": {
+      "document": "CreateK8sApiAbnormalRuleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "规则ID",
+          "example": "10",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNetworkFirewallClusterRefreshRequest": {
       "document": "CreateNetworkFirewallClusterRefresh请求参数结构体",
       "members": [],
@@ -9637,6 +9963,33 @@
     },
     "DeleteIgnoreVulResponse": {
       "document": "DeleteIgnoreVul返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteK8sApiAbnormalRuleRequest": {
+      "document": "DeleteK8sApiAbnormalRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID集合",
+          "example": "无",
+          "member": "string",
+          "name": "RuleIDSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteK8sApiAbnormalRuleResponse": {
+      "document": "DeleteK8sApiAbnormalRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11394,6 +11747,87 @@
         {
           "document": "总数量",
           "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetClusterListRequest": {
+      "document": "DescribeAssetClusterList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>ClusterID - string  - 是否必填: 否 -集群ID</li>\n<li>ClusterName - string  - 是否必填: 否 -集群名称</li>\n<li>Status - string  - 是否必填: 否 -集群状态</li>",
+          "example": "[]",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段。",
+          "example": "xx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetClusterListResponse": {
+      "document": "DescribeAssetClusterList返回参数结构体",
+      "members": [
+        {
+          "document": "集群列表",
+          "example": "[]",
+          "member": "AssetClusterListItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -18219,6 +18653,410 @@
           "name": "ReportUrl",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalEventInfoRequest": {
+      "document": "DescribeK8sApiAbnormalEventInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalEventInfoResponse": {
+      "document": "DescribeK8sApiAbnormalEventInfo返回参数结构体",
+      "members": [
+        {
+          "document": "事件详情",
+          "example": "无",
+          "member": "K8sApiAbnormalEventInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalEventListRequest": {
+      "document": "DescribeK8sApiAbnormalEventList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>\n<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>\n<li>Status - string  - 是否必填: 否 -事件状态筛选</li>\n<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>\n<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>\n<li>ClusterName - string  - 是否必填: 否 -集群名称</li>\n<li>ClusterID - string  - 是否必填: 否 -集群ID</li>",
+          "example": "[]",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段\nLatestFoundTime: 最近生成时间\nAlarmCount: 告警数量",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalEventListResponse": {
+      "document": "DescribeK8sApiAbnormalEventList返回参数结构体",
+      "members": [
+        {
+          "document": "事件列表",
+          "example": "无",
+          "member": "K8sApiAbnormalEventListItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleInfoRequest": {
+      "document": "DescribeK8sApiAbnormalRuleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "10",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleInfoResponse": {
+      "document": "DescribeK8sApiAbnormalRuleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "规则详情",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleListRequest": {
+      "document": "DescribeK8sApiAbnormalRuleList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>",
+          "example": "[]",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段。\n<li>UpdateTime - string  - 是否必填: 否 -最后更新时间</li>\n<li>EffectClusterCount - string  - 是否必填: 否 -影响集群数</li>",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleListResponse": {
+      "document": "DescribeK8sApiAbnormalRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "规则列表",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleListItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleScopeListRequest": {
+      "document": "DescribeK8sApiAbnormalRuleScopeList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "xx",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Action - string -是否必填: 否 - 执行动作</li>\n<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>",
+          "example": "[]",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalRuleScopeListResponse": {
+      "document": "DescribeK8sApiAbnormalRuleScopeList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表",
+          "example": "[]",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalSummaryRequest": {
+      "document": "DescribeK8sApiAbnormalSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalSummaryResponse": {
+      "document": "DescribeK8sApiAbnormalSummary返回参数结构体",
+      "members": [
+        {
+          "document": "待处理事件个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "UnhandleEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "待处理高危事件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandleHighLevelEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "待处理中危事件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandleMediumLevelEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "待处理低危事件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandleLowLevelEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "待处理提示级别事件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandleNoticeLevelEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalTendencyRequest": {
+      "document": "DescribeK8sApiAbnormalTendency请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "趋势周期(默认为7天)",
+          "example": "7",
+          "member": "uint64",
+          "name": "TendencyPeriod",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeK8sApiAbnormalTendencyResponse": {
+      "document": "DescribeK8sApiAbnormalTendency返回参数结构体",
+      "members": [
+        {
+          "document": "趋势列表",
+          "example": "[\"xxx\"]",
+          "member": "K8sApiAbnormalTendencyItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -27667,6 +28505,692 @@
       ],
       "type": "object"
     },
+    "K8sApiAbnormalEventInfo": {
+      "document": "k8sApi异常事件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "命中规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "MatchRuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "MatchRuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警等级",
+          "example": "xxx",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群运行状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterRunningStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初次生成时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "FirstCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次生成时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态\n\"EVENT_UNDEAL\":未处理\n\"EVENT_DEALED\": 已处理\n\"EVENT_IGNORE\": 忽略\n\"EVENT_DEL\": 删除\n\"EVENT_ADD_WHITE\": 加白",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群masterIP",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterMasterIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s版本",
+          "example": "xxx",
+          "member": "string",
+          "name": "K8sVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时组件",
+          "example": "xxx",
+          "member": "string",
+          "name": "RunningComponent",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议",
+          "example": "xxx",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "Info",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "MatchRuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高亮字段数组",
+          "example": "[]",
+          "member": "string",
+          "name": "HighLightFields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "MatchRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "K8sApiAbnormalEventListItem": {
+      "document": "k8sapi异常事件列表Item",
+      "members": [
+        {
+          "default": "",
+          "document": "事件ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "MatchRuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "威胁等级",
+          "example": "xxx",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群运行状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterRunningStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初次生成时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "FirstCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次生成时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警数量",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "AlarmCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解决方案",
+          "example": "xxx",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "MatchRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "K8sApiAbnormalRuleInfo": {
+      "document": "k8a api 异常请求规则详情",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则信息列表",
+          "example": "[]",
+          "member": "K8sApiAbnormalRuleScopeInfo",
+          "name": "RuleInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效集群IDSet",
+          "example": "[]",
+          "member": "string",
+          "name": "EffectClusterIDSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型\nRT_SYSTEM 系统规则\nRT_USER 用户自定义",
+          "example": "xx",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否所有集群生效",
+          "example": "false",
+          "member": "bool",
+          "name": "EffectAllCluster",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "K8sApiAbnormalRuleListItem": {
+      "document": "k8s api 异常请求规则列表Item",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "1",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型\nRT_SYSTEM 系统规则\nRT_USER 用户自定义",
+          "example": "xxx",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "受影响集群总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "EffectClusterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑账号",
+          "example": "xxx",
+          "member": "string",
+          "name": "OprUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "K8sApiAbnormalRuleScopeInfo": {
+      "document": "k8s api 异常事件规则配置范围 ",
+      "members": [
+        {
+          "default": "",
+          "document": "范围\n系统事件:\nANONYMOUS_ACCESS: 匿名访问\nABNORMAL_UA_REQ: 异常UA请求\nANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动\nGET_CREDENTIALS: 凭据信息获取\nMOUNT_SENSITIVE_PATH: 敏感路径挂载\nCOMMAND_RUN: 命令执行\nPRIVILEGE_CONTAINER: 特权容器\nEXCEPTION_CRONTAB_TASK: 异常定时任务\nSTATICS_POD: 静态pod创建\nABNORMAL_CREATE_POD: 异常pod创建\nUSER_DEFINED: 用户自定义",
+          "example": "xx",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)",
+          "example": "xx",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开关状态(true:开 false:关) 适用于系统规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否被删除 适用于自定义规则入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDelete",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "K8sApiAbnormalTendencyItem": {
+      "document": "k8sapi异常请求趋势Item",
+      "members": [
+        {
+          "default": "",
+          "document": "日期",
+          "example": "1",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常UA请求事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExceptionUARequestCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匿名用户权限事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AnonymousUserRightCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭据信息获取事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CredentialInformationObtainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感数据挂载事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "SensitiveDataMountCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CmdExecCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常定时任务事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AbnormalScheduledTaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "静态Pod创建数",
+          "example": "1",
+          "member": "uint64",
+          "name": "StaticsPodCreateCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可疑容器创建数",
+          "example": "1",
+          "member": "uint64",
+          "name": "DoubtfulContainerCreateCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义规则事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserDefinedRuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匿名访问事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AnonymousAccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特权容器事件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PrivilegeContainerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAbnormalProcessRuleStatusRequest": {
       "document": "ModifyAbnormalProcessRuleStatus请求参数结构体",
       "members": [
@@ -28413,6 +29937,114 @@
     },
     "ModifyImageAuthorizedResponse": {
       "document": "ModifyImageAuthorized返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalEventStatusRequest": {
+      "document": "ModifyK8sApiAbnormalEventStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件ID集合",
+          "example": "[]",
+          "member": "uint64",
+          "name": "EventIDSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalEventStatusResponse": {
+      "document": "ModifyK8sApiAbnormalEventStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalRuleInfoRequest": {
+      "document": "ModifyK8sApiAbnormalRuleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则详情",
+          "example": "无",
+          "member": "K8sApiAbnormalRuleInfo",
+          "name": "RuleInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalRuleInfoResponse": {
+      "document": "ModifyK8sApiAbnormalRuleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalRuleStatusRequest": {
+      "document": "ModifyK8sApiAbnormalRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "1",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态(ture:开 false:关)",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyK8sApiAbnormalRuleStatusResponse": {
+      "document": "ModifyK8sApiAbnormalRuleStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

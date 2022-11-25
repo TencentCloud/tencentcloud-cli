@@ -21,7 +21,16 @@ Output:
             "CreateTime": 1620321019000,
             "Remark": "modified",
             "PublicEndPoint": "pulsar://xxxxx.com:6650",
-            "VpcEndPoint": "pulsar://xxxxx.com:6650"
+            "VpcEndPoint": "pulsar://xxxxx.com:6650",
+            "Vpcs": [
+                {
+                    "SubnetId": "xx",
+                    "VpcId": "xx"
+                }
+            ],
+            "SupportNamespaceEndpoint": true,
+            "RocketMQFlag": true,
+            "IsVip": true
         },
         "ClusterConfig": {
             "MaxTpsPerNamespace": 8000,

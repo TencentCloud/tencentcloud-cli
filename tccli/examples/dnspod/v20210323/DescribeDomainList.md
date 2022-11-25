@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dnspod DescribeDomainList --cli-unfold-argument  \
-    --Type xx \
-    --Keyword xx \
+    --Type ALL \
+    --Keyword abc \
     --Limit 2 \
     --Offset 0 \
     --GroupId 1

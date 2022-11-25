@@ -292,6 +292,30 @@
         "title": "创建镜像导出任务"
       }
     ],
+    "CreateK8sApiAbnormalEventExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateK8sApiAbnormalEventExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"JobId\": \"\"\n    }\n}",
+        "title": "创建k8s api异常事件导出任务"
+      }
+    ],
+    "CreateK8sApiAbnormalRuleExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateK8sApiAbnormalRuleExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"JobId\": \"\"\n    }\n}",
+        "title": "创建k8sApi异常规则导出任务"
+      }
+    ],
+    "CreateK8sApiAbnormalRuleInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateK8sApiAbnormalRuleInfo\n<公共请求参数>\n\n{\n    \"RuleInfo\": {\n        \"Status\": true,\n        \"RuleInfoList\": [\n            {\n                \"Action\": \"xx\",\n                \"Scope\": \"xx\",\n                \"RiskLevel\": \"xx\",\n                \"IsDelete\": true,\n                \"Status\": true\n            }\n        ],\n        \"EffectClusterIDSet\": [\n            \"xx\"\n        ],\n        \"RuleID\": \"xx\",\n        \"RuleType\": \"xx\",\n        \"EffectAllCluster\": true,\n        \"RuleName\": \"xx\"\n    },\n    \"CopySrcRuleID\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleID\": \"xxx\",\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "创建k8sapi异常事件规则"
+      }
+    ],
     "CreateNetworkFirewallClusterRefresh": [
       {
         "document": "",
@@ -498,6 +522,14 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=DeleteIgnoreVul\n&List.0.PocID=\"xx\"\n&List.0.ImageIDs.0=\"xx\"\n&List.0.ImageType=\"xx\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "取消漏洞扫描忽略漏洞"
+      }
+    ],
+    "DeleteK8sApiAbnormalRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteK8sApiAbnormalRule\n<公共请求参数>\n\n{\n    \"RuleIDSet\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "删除k8sapi异常事件规则"
       }
     ],
     "DeleteMachine": [
@@ -758,6 +790,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetAppServiceList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"ContainerName\": \"xx\",\n                \"Parameter\": \"xx\",\n                \"HostID\": \"xx\",\n                \"Version\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"AccessLog\": \"xx\",\n                \"Config\": \"xx\",\n                \"RunAs\": \"xx\",\n                \"HostName\": \"xx\",\n                \"ErrorLog\": \"xx\",\n                \"DataPath\": \"xx\",\n                \"MainType\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"WebRoot\": \"xx\",\n                \"ProcessCnt\": 1,\n                \"Exe\": \"xx\",\n                \"ServiceID\": \"xx\",\n                \"HostIP\": \"xx\",\n                \"Pids\": [\n                    1\n                ],\n                \"Type\": \"xx\",\n                \"Listen\": [\n                    \"tcp://:::10054\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询app服务列表"
+      }
+    ],
+    "DescribeAssetClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetClusterList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询集群列表"
       }
     ],
     "DescribeAssetComponentList": [
@@ -1420,6 +1460,62 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInspectionReport\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ReportName\": \"xxx\",\n        \"ReportUrl\": \"xxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询检查报告"
+      }
+    ],
+    "DescribeK8sApiAbnormalEventInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalEventInfo\n<公共请求参数>\n\n{\n    \"ID\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Status\": \"xx\",\n            \"MatchRuleName\": \"xx\",\n            \"ClusterMasterIP\": \"xx\",\n            \"MatchRule\": {\n                \"Action\": \"xx\",\n                \"Scope\": \"xx\",\n                \"RiskLevel\": \"xx\",\n                \"IsDelete\": true,\n                \"Status\": true\n            },\n            \"ClusterRunningStatus\": \"xx\",\n            \"K8sVersion\": \"xx\",\n            \"RiskLevel\": \"xx\",\n            \"ClusterID\": \"xx\",\n            \"Suggestion\": \"xx\",\n            \"HighLightFields\": [\n                \"xx\"\n            ],\n            \"ClusterName\": \"xx\",\n            \"MatchRuleID\": \"xx\",\n            \"Info\": \"xx\",\n            \"RunningComponent\": [\n                \"xx\"\n            ],\n            \"FirstCreateTime\": \"xx\",\n            \"MatchRuleType\": \"xx\",\n            \"LastCreateTime\": \"xx\",\n            \"AlarmCount\": 1,\n            \"Desc\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询k8s api 异常事件详情"
+      }
+    ],
+    "DescribeK8sApiAbnormalEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalEventList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询k8s api异常事件列表"
+      }
+    ],
+    "DescribeK8sApiAbnormalRuleInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalRuleInfo\n<公共请求参数>\n\n{\n    \"RuleID\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Status\": true,\n            \"RuleInfoList\": [\n                {\n                    \"Action\": \"xx\",\n                    \"Scope\": \"xx\",\n                    \"RiskLevel\": \"xx\",\n                    \"IsDelete\": true,\n                    \"Status\": true\n                }\n            ],\n            \"EffectClusterIDSet\": [\n                \"xx\"\n            ],\n            \"RuleID\": \"xx\",\n            \"EffectAllCluster\": true,\n            \"RuleName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询k8sapi异常请求规则详情"
+      }
+    ],
+    "DescribeK8sApiAbnormalRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询k8sapi异常请求规则列表"
+      }
+    ],
+    "DescribeK8sApiAbnormalRuleScopeList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalRuleScopeList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"RuleID\": \"xxx\",\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Action\": \"xx\",\n                \"Scope\": \"xx\",\n                \"RiskLevel\": \"xx\",\n                \"IsDelete\": true,\n                \"Status\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询k8s api 异常规则中范围列表"
+      }
+    ],
+    "DescribeK8sApiAbnormalSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UnhandleEventCount\": 1,\n        \"UnhandleHighLevelEventCount\": 1,\n        \"UnhandleNoticeLevelEventCount\": 1,\n        \"UnhandleLowLevelEventCount\": 1,\n        \"RequestId\": \"xx\",\n        \"UnhandleMediumLevelEventCount\": 1\n    }\n}",
+        "title": "查询k8sapi异常事件统计"
+      }
+    ],
+    "DescribeK8sApiAbnormalTendency": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalTendency\n<公共请求参数>\n\n{\n    \"TendencyPeriod\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "查询k8sapi异常请求趋势列表"
       }
     ],
     "DescribeLogStorageStatistic": [
@@ -2288,6 +2384,30 @@
         "input": "https://tcss.tencentcloudapi.com/?Action=ModifyImageAuthorized\n&AllLocalImages=false\n&UpdatedLocalImageCnt=1\n&LocalImageIds.0=xx\n&AllRegistryImages=false\n&UpdatedRegistryImageCnt=1\n&RegistryImageIds.0=xx\n&ImageSourceType=ASSETIMAGE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量授权镜像扫描V2.0"
+      }
+    ],
+    "ModifyK8sApiAbnormalEventStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyK8sApiAbnormalEventStatus\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"Remark\": \"xx\",\n    \"EventIDSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "修改k8sapi异常事件状态"
+      }
+    ],
+    "ModifyK8sApiAbnormalRuleInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyK8sApiAbnormalRuleInfo\n<公共请求参数>\n\n{\n    \"RuleInfo\": {\n        \"Status\": true,\n        \"RuleInfoList\": [\n            {\n                \"Action\": \"xx\",\n                \"Scope\": \"xx\",\n                \"RiskLevel\": \"xx\",\n                \"IsDelete\": true,\n                \"Status\": true\n            }\n        ],\n        \"EffectClusterIDSet\": [\n            \"xx\"\n        ],\n        \"RuleID\": \"xx\",\n        \"RuleType\": \"xx\",\n        \"EffectAllCluster\": true,\n        \"RuleName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "修改k8sapi异常规则信息"
+      }
+    ],
+    "ModifyK8sApiAbnormalRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyK8sApiAbnormalRuleStatus\n<公共请求参数>\n\n{\n    \"RuleID\": \"xxx\",\n    \"Status\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
+        "title": "修改k8sapi异常事件规则状态"
       }
     ],
     "ModifyReverseShellStatus": [

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeSpecInfo --cli-unfold-argument  \
-    --Region ap-guangzhou
+    --Zone xx
 ```
 
 Output: 

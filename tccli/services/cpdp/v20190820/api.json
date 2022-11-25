@@ -7490,6 +7490,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台应收金额\n单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalPlatformIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户应收金额\n单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalMchIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

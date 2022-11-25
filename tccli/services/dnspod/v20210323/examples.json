@@ -19,15 +19,9 @@
     "CreateDeal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeal\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"NewPackageType\": \"xx\",\n    \"GoodsNum\": 1,\n    \"TimeSpan\": 1,\n    \"AutoRenew\": 1,\n    \"DealType\": 1,\n    \"GoodsChildType\": \"xx\",\n    \"GoodsType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DealList\": [\n            {\n                \"DealName\": \"xx\",\n                \"DealId\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "DNSPod商品下单"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeal\n<公共请求参数>\n\n{\n    \"Domain\": \"8988.ltd\",\n    \"NewPackageType\": \"\",\n    \"GoodsNum\": \"1\",\n    \"TimeSpan\": \"12\",\n    \"AutoRenew\": \"1\",\n    \"DealType\": \"1\",\n    \"GoodsChildType\": \"DP_PLUS\",\n    \"GoodsType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\",\n        \"DealList\": [\n            {\n                \"DealName\": \"20220519328000975112751\",\n                \"DealId\": \"223011900\"\n            }\n        ],\n        \"BigDealId\": \"20220519328000975112741\"\n    }\n}",
-        "title": "成功示例"
+        "title": "DNSPod商品下单示例"
       }
     ],
     "CreateDomain": [
@@ -197,7 +191,7 @@
     "DescribeDomainList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainList\n<公共请求参数>\n\n{\n    \"Type\": \"xx\",\n    \"Keyword\": \"xx\",\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"GroupId\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainList\n<公共请求参数>\n\n{\n    \"Type\": \"ALL\",\n    \"Keyword\": \"abc\",\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"GroupId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\",\n        \"DomainCountInfo\": {\n            \"DomainTotal\": 4,\n            \"AllTotal\": 4,\n            \"MineTotal\": 4,\n            \"ShareTotal\": 0,\n            \"VipTotal\": 1,\n            \"PauseTotal\": 0,\n            \"ErrorTotal\": 4,\n            \"LockTotal\": 0,\n            \"SpamTotal\": 0,\n            \"VipExpire\": 0,\n            \"ShareOutTotal\": 0,\n            \"GroupTotal\": 3\n        },\n        \"DomainList\": [\n            {\n                \"TTL\": 600,\n                \"CNAMESpeedup\": \"DISABLE\",\n                \"DNSStatus\": \"DNSERROR\",\n                \"DomainId\": 12609493,\n                \"Status\": \"ENABLE\",\n                \"Grade\": \"DP_ULTRA\",\n                \"GroupId\": \"1\",\n                \"Remark\": \"\",\n                \"CreatedOn\": \"2020-05-21 16:08:29\",\n                \"UpdatedOn\": \"2021-04-01 18:09:58\",\n                \"Punycode\": \"shenhailong.club\",\n                \"Name\": \"shenhailong.club\",\n                \"GradeLevel\": 10,\n                \"GradeTitle\": \"企业旗舰版\",\n                \"IsVip\": \"YES\",\n                \"Owner\": \"qcloud_uin_100000012799@qcloud.com\",\n                \"VipStartAt\": \"0000-00-00 00:00:00\",\n                \"VipEndAt\": \"0000-00-00 00:00:00\",\n                \"VipAutoRenew\": \"NO\",\n                \"SearchEnginePush\": \"NO\",\n                \"RecordCount\": 6,\n                \"EffectiveDNS\": [\n                    \"ns3.dnsv5.com\",\n                    \"ns4.dnsv5.com\"\n                ]\n            },\n            {\n                \"TTL\": 600,\n                \"CNAMESpeedup\": \"DISABLE\",\n                \"DNSStatus\": \"DNSERROR\",\n                \"DomainId\": 12610063,\n                \"Status\": \"ENABLE\",\n                \"Grade\": \"DP_FREE\",\n                \"GroupId\": \"1\",\n                \"Remark\": \"\",\n                \"CreatedOn\": \"2020-08-18 17:52:30\",\n                \"UpdatedOn\": \"2020-08-18 17:52:30\",\n                \"Punycode\": \"shenhailong.xn--fiqs8s\",\n                \"Name\": \"shenhailong.中国\",\n                \"GradeLevel\": 2,\n                \"GradeTitle\": \"免费版\",\n                \"IsVip\": \"NO\",\n                \"Owner\": \"qcloud_uin_100000012799@qcloud.com\",\n                \"VipStartAt\": \"0000-00-00 00:00:00\",\n                \"VipEndAt\": \"0000-00-00 00:00:00\",\n                \"VipAutoRenew\": \"NO\",\n                \"SearchEnginePush\": \"NO\",\n                \"RecordCount\": 2,\n                \"EffectiveDNS\": [\n                    \"f1g1ns1.dnspod.net\",\n                    \"f1g1ns2.dnspod.net\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取域名列表"
       }
@@ -412,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordBatch\n<公共请求参数>\n\n{\n    \"RecordIdList\": [\n        101,\n        102\n    ],\n    \"Change\": \"record_type\",\n    \"ChangeTo\": \"MX\",\n    \"Value\": \"test.aaaaaaa.com\",\n    \"MX\": 23\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DetailList\": [\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"MX\": \"21\",\n                        \"RecordId\": \"178\",\n                        \"SubDomain\": \"test\",\n                        \"RecordType\": \"MX\",\n                        \"Value\": \"test.aaaaaaa.com.\",\n                        \"Enabled\": 1,\n                        \"Status\": \"waiting\",\n                        \"ErrMsg\": null,\n                        \"Id\": 0,\n                        \"Operation\": \"edit\"\n                    }\n                ],\n                \"DomainId\": 49,\n                \"Domain\": \"dnsapi1.cn\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": null,\n                \"DomainGrade\": \"DP_FREE\",\n                \"Id\": 0\n            }\n        ],\n        \"JobId\": 67\n    }\n}",
         "title": "批量修改记录"
+      }
+    ],
+    "ModifyRecordFields": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordFields\n<公共请求参数>\n\n{\n    \"Domain\": \"modify1.com\",\n    \"RecordId\": 15690732,\n    \"FieldList\": [\n        {\n            \"Key\": \"weight\",\n            \"Value\": \"20\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3e412d3-0eeb-4b05-815c-86763b9d72aa\",\n        \"RecordId\": 15690732\n    }\n}",
+        "title": "修改记录可选字段"
       }
     ],
     "ModifyRecordGroup": [
