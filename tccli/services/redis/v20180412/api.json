@@ -109,7 +109,7 @@
       "output": "DescribeAutoBackupConfigResponse"
     },
     "DescribeBackupUrl": {
-      "document": "查询备份Rdb下载地址",
+      "document": "本接口（DescribeBackupUrl）用于查询备份 Rdb 文件的下载地址。",
       "input": "DescribeBackupUrlRequest",
       "name": "查询备份Rdb下载地址",
       "output": "DescribeBackupUrlResponse"

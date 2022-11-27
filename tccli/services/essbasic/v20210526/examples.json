@@ -124,6 +124,14 @@
         "title": "示例-验证通过"
       }
     ],
+    "CreateChannelFlowEvidenceReport": [
+      {
+        "document": "获取全部签署完成得合同得出出证报告，返回报告 ID",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelFlowEvidenceReport\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDR0PUUhw8ahh****KyK18G1h3FK5ccC\",\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f349*********984a9657b0ec\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"channel-super-*****-openId0001\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"\",\n        \"Status\": \"EvidenceStatusSuccess\",\n        \"ReportId\": \"yDRspUUgyg17sqr1Uur7PA0xEQpJXh2b\",\n        \"RequestId\": \"s166141****028448367\"\n    }\n}",
+        "title": "创建并返回出证报告"
+      }
+    ],
     "CreateConsoleLoginUrl": [
       {
         "document": "",
@@ -166,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrls\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"test-flow-id\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\"\n        },\n        \"AppId\": \"xx\"\n    },\n    \"Endpoint\": \"CHANNEL\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"xx\"\n        ],\n        \"SignUrlInfos\": [\n            {\n                \"SignUrl\": \"xx\",\n                \"OrganizationName\": \"xx\",\n                \"Name\": \"xx\",\n                \"ApproverType\": \"xx\",\n                \"Mobile\": \"xx\",\n                \"CustomUserId\": \"xx\",\n                \"Deadline\": 0,\n                \"SignOrder\": 0,\n                \"SignId\": \"xx\",\n                \"IdCardNumber\": \"xxxxxxx\",\n                \"OpenId\": \"xx\",\n                \"FlowId\": \"test-flow-id\",\n                \"FlowGroupId\": \"\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量创建签署参与者签署H5链接"
+      }
+    ],
+    "DescribeChannelFlowEvidenceReport": [
+      {
+        "document": "获取全部签署完成得合同得出证报告，返回报告 URL",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelFlowEvidenceReport\n<公共请求参数>\n\n{\n    \"ReportId\": \"yDR0PUUhw8ahh****KyK18G1h3FK5ccC\",\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test1_clara_open_organization1\",\n        \"AppId\": \"7f349*********984a9657b0ec\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"channel-super-*****-openId0001\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"\",\n        \"Status\": \"EvidenceStatusSuccess\",\n        \"RequestId\": \"s166141****028448367\"\n    }\n}",
+        "title": "创建并返回出证报告"
       }
     ],
     "DescribeFlowDetailInfo": [

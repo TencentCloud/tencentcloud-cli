@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 语音识别(asr) 版本：2019-06-14
 
-### 第 18 次发布
+### 第 7 次发布
 
-发布时间：2022-11-25 06:10:04
+发布时间：2022-11-28 06:08:56
 
 本次发布包含了以下内容：
 
@@ -12,37 +12,29 @@
 
 修改接口：
 
-* [CreateSnapshot](http://document.tencentcloudapi.woa.com/document/product/362/15648)
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
 
-	* 新增入参：DryRun, CreateInCluster
+	* 新增入参：EmotionalEnergy, ReinforceHotword
 
+* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
 
+	* 新增入参：ReinforceHotword
 
-
-## 企业收付平台(cpdp) 版本：2019-08-20
-
-### 第 46 次发布
-
-发布时间：2022-11-25 06:17:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
 
 修改数据结构：
 
-* [CloudOrderReturn](http://document.tencentcloudapi.woa.com/document/product/1122/40683#CloudOrderReturn)
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
 
-	* 新增成员：TotalPlatformIncome, TotalMchIncome
-
-
+	* 新增成员：EmotionalEnergy, SilenceTime
 
 
-## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 15 次发布
 
-发布时间：2022-11-25 06:25:15
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 29 次发布
+
+发布时间：2022-11-28 06:39:05
 
 本次发布包含了以下内容：
 
@@ -50,42 +42,20 @@
 
 新增接口：
 
-* [ModifyRecordFields](http://document.tencentcloudapi.woa.com/document/product/1427/76716)
-
-新增数据结构：
-
-* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/1427/56185#KeyValue)
+* [CreateChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/75739)
+* [DescribeChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/76717)
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 14 次发布
-
-发布时间：2022-11-25 06:38:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/38571)
-
-	* 新增入参：ReadonlyNodeNum, ReadonlyNodeAvailabilityZoneList, HiddenZone
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
+## 云点播(vod) 版本：2018-07-17
 
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+### 第 35 次发布
 
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 27 次发布
-
-发布时间：2022-11-25 06:53:39
+发布时间：2022-11-28 07:16:45
 
 本次发布包含了以下内容：
 
@@ -93,9 +63,121 @@
 
 修改数据结构：
 
-* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+* [AiAnalysisTaskClassificationResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskClassificationResult)
 
-	* 新增成员：RocketMQFlag
+	* 新增成员：Progress
+
+* [AiAnalysisTaskCoverResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskCoverResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskFrameTagResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskFrameTagResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskHighlightResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskHighlightResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskTagResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskTagResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskAsrWordsResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskAsrWordsResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskFaceResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskFaceResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskHeadTailResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskHeadTailResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskObjectResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskObjectResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskOcrFullTextResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskOcrFullTextResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskOcrWordsResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskOcrWordsResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskSegmentResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskSegmentResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPoliticalAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPoliticalAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPoliticalResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPoliticalResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskProhibitedAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskProhibitedAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskProhibitedOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskProhibitedOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskTerrorismOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskTerrorismOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskTerrorismResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskTerrorismResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskCoverBySnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskCoverBySnapshotResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：Progress
+
+* [ProcedureTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureTask)
+
+	* 新增成员：Operator, OperationType
+
+* [PullUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#PullUploadTask)
+
+	* 新增成员：Progress
+
+* [SplitMediaTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#SplitMediaTask)
+
+	* 新增成员：Progress
 
 
 
@@ -2843,6 +2925,32 @@
 
 
 ## 语音识别(asr) 版本：2019-06-14
+
+### 第 7 次发布
+
+发布时间：2022-11-28 06:08:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：EmotionalEnergy, ReinforceHotword
+
+* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
+
+	* 新增入参：ReinforceHotword
+
+
+修改数据结构：
+
+* [SentenceDetail](http://document.tencentcloudapi.woa.com/document/product/1093/37824#SentenceDetail)
+
+	* 新增成员：EmotionalEnergy, SilenceTime
+
 
 ### 第 6 次发布
 
@@ -17229,11 +17337,11 @@
 
 新增接口：
 
-* [[ModifyRecordFields](http://document.tencentcloudapi.woa.com/document/product/1427/76716)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyRecordFields](http://document.tencentcloudapi.woa.com/document/product/1427/76716)
 
 新增数据结构：
 
-* [[KeyValue](http://document.tencentcloudapi.woa.com/document/product/1427/56185#KeyValue)](http://document.tencentcloudapi.woa.com/document/product/1427/56185#[KeyValue](http://document.tencentcloudapi.woa.com/document/product/1427/56185#KeyValue))
+* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/1427/56185#KeyValue)
 
 ### 第 14 次发布
 
@@ -19976,6 +20084,19 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 29 次发布
+
+发布时间：2022-11-28 06:39:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/75739)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/76717)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 28 次发布
 
@@ -43022,6 +43143,133 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 35 次发布
+
+发布时间：2022-11-28 07:16:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiAnalysisTaskClassificationResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskClassificationResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskCoverResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskCoverResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskFrameTagResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskFrameTagResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskHighlightResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskHighlightResult)
+
+	* 新增成员：Progress
+
+* [AiAnalysisTaskTagResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiAnalysisTaskTagResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskAsrWordsResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskAsrWordsResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskFaceResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskFaceResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskHeadTailResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskHeadTailResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskObjectResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskObjectResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskOcrFullTextResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskOcrFullTextResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskOcrWordsResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskOcrWordsResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskSegmentResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiRecognitionTaskSegmentResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPoliticalAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPoliticalAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPoliticalResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPoliticalResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskPornResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskPornResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskProhibitedAsrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskProhibitedAsrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskProhibitedOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskProhibitedOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskTerrorismOcrResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskTerrorismOcrResult)
+
+	* 新增成员：Progress
+
+* [AiReviewTaskTerrorismResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#AiReviewTaskTerrorismResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskAnimatedGraphicResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskCoverBySnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskCoverBySnapshotResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskImageSpriteResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSampleSnapshotResult)
+
+	* 新增成员：Progress
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* 新增成员：Progress
+
+* [ProcedureTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureTask)
+
+	* 新增成员：Operator, OperationType
+
+* [PullUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#PullUploadTask)
+
+	* 新增成员：Progress
+
+* [SplitMediaTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#SplitMediaTask)
+
+	* 新增成员：Progress
+
 
 ### 第 34 次发布
 

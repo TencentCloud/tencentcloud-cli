@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli gme DescribeRoomInfo --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
     --RoomIds 88888 \
-    --StrRoomIds aaaaa
+    --StrRoomIds aaaaa \
+    --SdkAppId 1400000000
 ```
 
 Output: 

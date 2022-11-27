@@ -1843,7 +1843,8 @@
           "member": "string",
           "name": "BundleIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1852,7 +1853,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1861,16 +1863,18 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。",
+          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BundleIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1879,7 +1883,8 @@
           "member": "string",
           "name": "Zones",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1894,7 +1899,8 @@
           "name": "BundleSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合要求的套餐总数，用于分页展示。",
@@ -1903,7 +1909,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2825,16 +2832,18 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2843,7 +2852,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2852,7 +2862,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2867,7 +2878,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "变更套餐详细信息。",
@@ -2876,7 +2888,8 @@
           "name": "ModifyBundleSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
