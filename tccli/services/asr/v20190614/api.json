@@ -439,7 +439,7 @@
       "members": [
         {
           "default": "",
-          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；",
+          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；\n• 16k_zh-PY 中英粤;\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -587,6 +587,24 @@
           "example": "0",
           "member": "int64",
           "name": "FilterModal",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启",
+          "example": "0",
+          "member": "int64",
+          "name": "EmotionalEnergy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReinforceHotword",
           "required": false,
           "type": "int"
         }
@@ -1287,6 +1305,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "EmotionalEnergy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本句与上一句之间的静音时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SilenceTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1314,7 +1352,7 @@
         },
         {
           "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_medical：16k 医疗；",
+          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_medical：16k 医疗；\n• 16k_zh-PY 中英粤;\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_en",
           "member": "string",
           "name": "EngSerViceType",
@@ -1437,6 +1475,15 @@
           "name": "CustomizationId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”、“蜜汁”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReinforceHotword",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

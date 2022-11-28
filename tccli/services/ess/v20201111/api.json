@@ -72,6 +72,12 @@
       "name": "创建一码多扫流程签署二维码",
       "output": "CreateMultiFlowSignQRCodeResponse"
     },
+    "CreatePrepareFlow": {
+      "document": "创建快速发起流程\n适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n注：该接口文件的resourceId 是通过上传文件之后获取的。",
+      "input": "CreatePrepareFlowRequest",
+      "name": "创建快速发起流程",
+      "output": "CreatePrepareFlowResponse"
+    },
     "CreateSchemeUrl": {
       "document": "获取小程序跳转链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n注：如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署。\n\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://cloud.tencent.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
       "input": "CreateSchemeUrlRequest",
@@ -95,6 +101,12 @@
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse"
+    },
+    "DescribeFlowEvidenceReport": {
+      "document": "查询出证报告，返回报告 URL。",
+      "input": "DescribeFlowEvidenceReportRequest",
+      "name": "查询出证报告",
+      "output": "DescribeFlowEvidenceReportResponse"
     },
     "DescribeFlowInfo": {
       "document": "查询合同详情\n适用场景：可用于主动查询某个合同详情信息。",
@@ -862,7 +874,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源类型 取值范围doc,docx,html,excel之一",
+          "document": "资源类型 取值范围doc,docx,html,xls,xlsx之一",
           "example": "无",
           "member": "string",
           "name": "ResourceType",
@@ -1748,6 +1760,105 @@
       ],
       "type": "object"
     },
+    "CreatePrepareFlowRequest": {
+      "document": "CreatePrepareFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源Id,通过上传uploadfile接口获得",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同名称",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否顺序签署(true:无序签,false:顺序签)",
+          "example": "true",
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
+          "example": "无",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户自定义合同类型",
+          "example": "无",
+          "member": "string",
+          "name": "UserFlowTypeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署流程参与者信息，最大限制50方",
+          "example": "无",
+          "member": "FlowCreateApprover",
+          "name": "Approvers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
+          "example": "OPEN",
+          "member": "string",
+          "name": "IntelligentStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrepareFlowResponse": {
+      "document": "CreatePrepareFlow返回参数结构体",
+      "members": [
+        {
+          "document": "快速发起预览链接",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSchemeUrlRequest": {
       "document": "CreateSchemeUrl请求参数结构体",
       "members": [
@@ -2157,6 +2268,60 @@
           "name": "FlowBriefs",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowEvidenceReportRequest": {
+      "document": "DescribeFlowEvidenceReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方用户信息，userId 必填",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "出证报告编号",
+          "example": "无",
+          "member": "string",
+          "name": "ReportId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowEvidenceReportResponse": {
+      "document": "DescribeFlowEvidenceReport返回参数结构体",
+      "members": [
+        {
+          "document": "报告 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://file.xxx",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行中：EvidenceStatusExecuting\n成功：EvidenceStatusSuccess\n失败：EvidenceStatusFailed",
+          "example": "EvidenceStatusExecuting",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

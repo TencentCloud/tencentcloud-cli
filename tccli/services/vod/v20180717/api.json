@@ -703,7 +703,7 @@
       "output": "ProcessImageResponse"
     },
     "ProcessMedia": {
-      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 内容审核（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。\n\n使用溯源水印存在以下限制条件：\n<li> 溯源水印仅支持图片水印； </li>\n<li> 溯源水印仅支持水印重复类型为水印循环播放； </li>\n<li> 溯源水印仅支持输出文件封装格式为 HLS； </li>\n<li> 溯源水印的位置仅支持位于视频的上半部分。 </li>",
+      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 内容审核（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
       "input": "ProcessMediaRequest",
       "name": "视频处理",
       "output": "ProcessMediaResponse"
@@ -1497,6 +1497,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1506,6 +1507,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1515,6 +1517,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1524,6 +1527,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1533,6 +1537,7 @@
         {
           "default": "",
           "document": "智能分类任务输入。",
+          "example": "无",
           "member": "AiAnalysisTaskClassificationInput",
           "name": "Input",
           "required": true,
@@ -1542,11 +1547,22 @@
         {
           "default": "",
           "document": "智能分类任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskClassificationOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能分类任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1608,6 +1624,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1617,6 +1634,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1626,6 +1644,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1635,6 +1654,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1644,6 +1664,7 @@
         {
           "default": "",
           "document": "智能封面任务输入。",
+          "example": "无",
           "member": "AiAnalysisTaskCoverInput",
           "name": "Input",
           "required": true,
@@ -1653,11 +1674,22 @@
         {
           "default": "",
           "document": "智能封面任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskCoverOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能封面任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1719,6 +1751,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1728,6 +1761,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1737,6 +1771,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1746,6 +1781,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1755,6 +1791,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务输入。",
+          "example": "无",
           "member": "AiAnalysisTaskFrameTagInput",
           "name": "Input",
           "required": true,
@@ -1764,11 +1801,22 @@
         {
           "default": "",
           "document": "智能按帧标签任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskFrameTagOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能按帧标签任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1830,6 +1878,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1839,6 +1888,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1848,6 +1898,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1857,6 +1908,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1866,6 +1918,7 @@
         {
           "default": "",
           "document": "智能精彩片段任务输入。",
+          "example": "无",
           "member": "AiAnalysisTaskHighlightInput",
           "name": "Input",
           "required": true,
@@ -1875,11 +1928,22 @@
         {
           "default": "",
           "document": "智能精彩片段任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskHighlightOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能精彩片段任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1956,6 +2020,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1965,6 +2030,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1974,6 +2040,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1983,6 +2050,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1992,6 +2060,7 @@
         {
           "default": "",
           "document": "智能标签任务输入。",
+          "example": "无",
           "member": "AiAnalysisTaskTagInput",
           "name": "Input",
           "required": true,
@@ -2001,11 +2070,22 @@
         {
           "default": "",
           "document": "智能标签任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskTagOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能标签任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2450,6 +2530,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2459,6 +2540,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2468,6 +2550,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2477,6 +2560,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2486,6 +2570,7 @@
         {
           "default": "",
           "document": "语音关键词识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskAsrWordsResultInput",
           "name": "Input",
           "required": true,
@@ -2495,11 +2580,22 @@
         {
           "default": "",
           "document": "语音关键词识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskAsrWordsResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音关键词识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2618,6 +2714,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2627,6 +2724,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2636,6 +2734,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2645,6 +2744,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2654,6 +2754,7 @@
         {
           "default": "",
           "document": "人脸识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskFaceResultInput",
           "name": "Input",
           "required": true,
@@ -2663,11 +2764,22 @@
         {
           "default": "",
           "document": "人脸识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskFaceResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人脸识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2813,6 +2925,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2822,6 +2935,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2831,6 +2945,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2840,6 +2955,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2849,6 +2965,7 @@
         {
           "default": "",
           "document": "视频片头片尾识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskHeadTailResultInput",
           "name": "Input",
           "required": true,
@@ -2858,11 +2975,22 @@
         {
           "default": "",
           "document": "视频片头片尾识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskHeadTailResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频片头片尾识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2945,6 +3073,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2954,6 +3083,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2963,6 +3093,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2972,6 +3103,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2981,6 +3113,7 @@
         {
           "default": "",
           "document": "物体识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskObjectResultInput",
           "name": "Input",
           "required": true,
@@ -2990,11 +3123,22 @@
         {
           "default": "",
           "document": "物体识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskObjectResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物体识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3122,6 +3266,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3131,6 +3276,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3140,6 +3286,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3149,6 +3296,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3158,6 +3306,7 @@
         {
           "default": "",
           "document": "文本全文识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskOcrFullTextResultInput",
           "name": "Input",
           "required": true,
@@ -3167,11 +3316,22 @@
         {
           "default": "",
           "document": "文本全文识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskOcrFullTextResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本全文识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3299,6 +3459,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3308,6 +3469,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3317,6 +3479,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3326,6 +3489,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3335,6 +3499,7 @@
         {
           "default": "",
           "document": "文本关键词识别任务输入信息。",
+          "example": "无",
           "member": "AiRecognitionTaskOcrWordsResultInput",
           "name": "Input",
           "required": true,
@@ -3344,11 +3509,22 @@
         {
           "default": "",
           "document": "文本关键词识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskOcrWordsResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本关键词识别任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3476,6 +3652,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3485,6 +3662,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3494,6 +3672,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3503,6 +3682,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3512,6 +3692,7 @@
         {
           "default": "",
           "document": "视频拆条任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskSegmentResultInput",
           "name": "Input",
           "required": true,
@@ -3521,11 +3702,22 @@
         {
           "default": "",
           "document": "视频拆条任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskSegmentResultOutput",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频拆条任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4308,6 +4500,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音视频审核 Asr 文字涉及令人不适宜信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4440,6 +4642,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核涉及令人不适宜信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4506,6 +4718,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核 Asr 文字涉及令人反感的信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4572,6 +4794,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4638,6 +4870,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4704,6 +4946,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核 Asr 文字鉴违禁任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4770,6 +5022,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核 Ocr 文字鉴违禁任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4836,6 +5098,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核 Ocr 文字涉及令人不安全的信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4902,6 +5174,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音视频审核涉及令人不安全的信息的任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12259,7 +12541,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li> ReviewAudioVideo：音视频审核任务。</li>\n<li> ReduceMediaBitrate：降码率任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li> ReviewAudioVideo：音视频审核任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -12439,7 +12721,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "降码率任务信息，仅当 TaskType 为 ReduceMediaBitrate，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段已无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateTask",
@@ -13635,7 +13917,7 @@
         },
         {
           "default": "",
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成；</li>\n<li>ReviewAudioVideoComplete：音视频审核完成。</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>WechatPublishComplete：微信发布完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>FastClipMediaComplete：快速剪辑完成；</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -13825,7 +14107,7 @@
         },
         {
           "default": "",
-          "document": "降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段已无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateCompleteEvent",
@@ -16770,6 +17052,7 @@
         {
           "default": "",
           "document": "上传的媒体文件大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。",
+          "example": "1",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -16779,6 +17062,7 @@
         {
           "default": "",
           "document": "容器类型，例如 m4a，mp4 等。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": true,
@@ -16788,6 +17072,7 @@
         {
           "default": "",
           "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
+          "example": "123",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -16797,6 +17082,7 @@
         {
           "default": "",
           "document": "视频流高度的最大值，单位：px。",
+          "example": "1080",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -16806,6 +17092,7 @@
         {
           "default": "",
           "document": "视频流宽度的最大值，单位：px。",
+          "example": "1080",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -16815,6 +17102,7 @@
         {
           "default": "",
           "document": "视频时长，单位：秒。",
+          "example": "30",
           "member": "float",
           "name": "Duration",
           "required": true,
@@ -16824,6 +17112,7 @@
         {
           "default": "",
           "document": "视频拍摄时的选择角度，单位：度。",
+          "example": "90",
           "member": "int64",
           "name": "Rotate",
           "required": true,
@@ -16833,6 +17122,7 @@
         {
           "default": "",
           "document": "视频流信息。",
+          "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
           "required": true,
@@ -16842,6 +17132,7 @@
         {
           "default": "",
           "document": "音频流信息。",
+          "example": "无",
           "member": "MediaAudioStreamItem",
           "name": "AudioStreamSet",
           "required": true,
@@ -16851,6 +17142,7 @@
         {
           "default": "",
           "document": "视频时长，单位：秒。",
+          "example": "30.1",
           "member": "float",
           "name": "VideoDuration",
           "required": true,
@@ -16860,6 +17152,7 @@
         {
           "default": "",
           "document": "音频时长，单位：秒。",
+          "example": "30.1",
           "member": "float",
           "name": "AudioDuration",
           "required": true,
@@ -17092,6 +17385,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17101,6 +17395,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17110,6 +17405,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17119,6 +17415,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17128,6 +17425,7 @@
         {
           "default": "",
           "document": "转动图任务的输入。",
+          "example": "无",
           "member": "AnimatedGraphicTaskInput",
           "name": "Input",
           "required": true,
@@ -17137,11 +17435,22 @@
         {
           "default": "",
           "document": "转动图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaAnimatedGraphicsItem",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转动图任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17152,6 +17461,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17161,6 +17471,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17170,6 +17481,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17179,6 +17491,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17188,6 +17501,7 @@
         {
           "default": "",
           "document": "对视频截图做封面任务的输入。",
+          "example": "无",
           "member": "CoverBySnapshotTaskInput",
           "name": "Input",
           "required": true,
@@ -17197,10 +17511,21 @@
         {
           "default": "",
           "document": "对视频截图做封面任务的输出。",
+          "example": "无",
           "member": "CoverBySnapshotTaskOutput",
           "name": "Output",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对视频截图做封面任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17212,6 +17537,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17221,6 +17547,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17230,6 +17557,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17239,6 +17567,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17248,6 +17577,7 @@
         {
           "default": "",
           "document": "对视频截雪碧图任务的输入。",
+          "example": "无",
           "member": "ImageSpriteTaskInput",
           "name": "Input",
           "required": true,
@@ -17257,11 +17587,22 @@
         {
           "default": "",
           "document": "对视频截雪碧图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaImageSpriteItem",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对视频截雪碧图任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17419,6 +17760,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17428,6 +17770,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17437,6 +17780,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17446,6 +17790,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17455,6 +17800,7 @@
         {
           "default": "",
           "document": "对视频做采样截图任务输入。",
+          "example": "无",
           "member": "SampleSnapshotTaskInput",
           "name": "Input",
           "required": true,
@@ -17464,11 +17810,22 @@
         {
           "default": "",
           "document": "对视频做采样截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaSampleSnapshotItem",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对视频做采样截图任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17479,6 +17836,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -17488,6 +17846,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -17497,6 +17856,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -17506,6 +17866,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -17515,6 +17876,7 @@
         {
           "default": "",
           "document": "对视频按指定时间点截图任务输入。",
+          "example": "无",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "Input",
           "required": true,
@@ -17524,11 +17886,22 @@
         {
           "default": "",
           "document": "对视频按指定时间点截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaSnapshotByTimeOffsetItem",
           "name": "Output",
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对视频按指定时间点截图任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21688,6 +22061,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者。取值范围：\n<li>System: 表示系统触发。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型。取值范围：\n<li>TSC: 表示使用极速高清进行智能降码。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22828,6 +23221,16 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转拉任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -25256,6 +25659,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "12xx-SplitMedia-xx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -25265,6 +25669,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -25274,6 +25679,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -25283,6 +25689,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -25292,6 +25699,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "\"\"",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -25301,6 +25709,7 @@
         {
           "default": "",
           "document": "视频拆条任务详细信息列表。",
+          "example": "无",
           "member": "SplitMediaTaskSegmentInfo",
           "name": "FileInfoSet",
           "required": true,
@@ -25310,6 +25719,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "sessioncontext",
           "member": "string",
           "name": "SessionContext",
           "required": true,
@@ -25319,10 +25729,21 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "sessionid",
           "member": "string",
           "name": "SessionId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拆条任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

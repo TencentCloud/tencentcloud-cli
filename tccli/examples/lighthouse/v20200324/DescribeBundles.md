@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse DescribeBundles --cli-unfold-argument  \
-    --BundleIds bundle_bw_small1_1 bundle_ntp_small1_500
+    --BundleIds bundle_ntp_small1_500 bundle_bw_small1_1
 ```
 
 Output: 

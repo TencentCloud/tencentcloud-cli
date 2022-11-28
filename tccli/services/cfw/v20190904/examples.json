@@ -369,7 +369,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockIgnoreList\n<公共请求参数>\n\n{\n    \"IOC\": [\n        {\n            \"IP\": \"192.168.1.1\",\n            \"Direction\": 1,\n            \"Domain\": \"\"\n        }\n    ],\n    \"RuleType\": 1,\n    \"IocAction\": \"add\",\n    \"StartTime\": \"2021-04-16 18:01:09\",\n    \"EndTime\": \"3000-01-01 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
-        "title": "入侵防御-拦截列表/忽略列表-增删改接口"
+        "title": "入侵防御-封禁列表/放通列表-增删改接口"
       }
     ],
     "ModifyBlockTop": [

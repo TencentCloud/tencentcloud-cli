@@ -1,0 +1,526 @@
+{
+  "actions": {
+    "ActionAlterCkUser": {
+      "document": "新增和修改用户接口",
+      "input": "ActionAlterCkUserRequest",
+      "name": "新增、修改ck用户接口",
+      "output": "ActionAlterCkUserResponse"
+    },
+    "CreateBackUpSchedule": {
+      "document": "创建或者修改备份策略",
+      "input": "CreateBackUpScheduleRequest",
+      "name": "创建或者修改备份策略",
+      "output": "CreateBackUpScheduleResponse"
+    },
+    "DescribeCkSqlApis": {
+      "document": "针对驱动sql命令查询ck集群接口",
+      "input": "DescribeCkSqlApisRequest",
+      "name": "通过sql查询ck集群信息",
+      "output": "DescribeCkSqlApisResponse"
+    },
+    "DescribeInstanceShards": {
+      "document": "获取实例shard信息列表",
+      "input": "DescribeInstanceShardsRequest",
+      "name": "获取实例shard信息列表",
+      "output": "DescribeInstanceShardsResponse"
+    },
+    "ModifyClusterConfigs": {
+      "document": "在集群配置页面修改集群配置文件接口，xml模式",
+      "input": "ModifyClusterConfigsRequest",
+      "name": "修改集群配置文件接口",
+      "output": "ModifyClusterConfigsResponse"
+    },
+    "ModifyUserNewPrivilege": {
+      "document": "针对ck账号的权限做管控（新版）",
+      "input": "ModifyUserNewPrivilegeRequest",
+      "name": "新增、修改ck账号cluster权限（新版）",
+      "output": "ModifyUserNewPrivilegeResponse"
+    },
+    "OpenBackUp": {
+      "document": "开启或者关闭策略",
+      "input": "OpenBackUpRequest",
+      "name": "开启或者关闭策略",
+      "output": "OpenBackUpResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-09-15",
+    "api_brief": "云数据仓库 ClickHouse（CDWCH）是腾讯云提供的云上 ClickHouse 托管服务，为用户提供便捷的 ClickHouse 集群部署、软件安装、配置修改、监控告警、弹性伸缩等功能，为企业及用户提供安全稳定的大数据处理解决方案。",
+    "serviceNameCN": "云数据仓库 ClickHouse",
+    "serviceShortName": "cdwch"
+  },
+  "objects": {
+    "ActionAlterCkUserRequest": {
+      "document": "ActionAlterCkUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "cdwch-xxxx",
+          "member": "CkUserAlterInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "api接口类型",
+          "example": "AddSystemUser",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActionAlterCkUserResponse": {
+      "document": "ActionAlterCkUser返回参数结构体",
+      "members": [
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BackupTableContent": {
+      "document": "备份表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表总字节数",
+          "example": "1234",
+          "member": "int64",
+          "name": "TotalBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟cluster",
+          "example": "\"cluster-XXX\"",
+          "member": "string",
+          "name": "VCluster",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表ip",
+          "example": "\"10.0.0.10\"",
+          "member": "string",
+          "name": "Ips",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CkUserAlterInfo": {
+      "document": "新增或是修改ck用户",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例id",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "password",
+          "member": "string",
+          "name": "PassWord",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ConfigSubmitContext": {
+      "document": "配置文件修改信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置文件名称",
+          "example": "config.xml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件旧内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "OldConfValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件新内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "NewConfValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保存配置文件的路径",
+          "example": "/etc/clickhouse-server",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateBackUpScheduleRequest": {
+      "document": "CreateBackUpSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑时需要传",
+          "example": "12345",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "选择的星期 逗号分隔",
+          "example": "\"1,2\"",
+          "member": "string",
+          "name": "WeekDays",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行小时",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecuteHour",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备份表列表",
+          "example": "[\"123\"]",
+          "member": "BackupTableContent",
+          "name": "BackUpTables",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackUpScheduleResponse": {
+      "document": "CreateBackUpSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCkSqlApisRequest": {
+      "document": "DescribeCkSqlApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "api接口名称",
+          "example": "GetClusters",
+          "member": "string",
+          "name": "ApiType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "Cluster",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCkSqlApisResponse": {
+      "document": "DescribeCkSqlApis返回参数结构体",
+      "members": [
+        {
+          "document": "返回的查询数据，大部分情况是list，也可能是bool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ReturnData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceShardsRequest": {
+      "document": "DescribeInstanceShards请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceShardsResponse": {
+      "document": "DescribeInstanceShards返回参数结构体",
+      "members": [
+        {
+          "document": "实例shard信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceShardsList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterConfigsRequest": {
+      "document": "ModifyClusterConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID，例如cdwch-xxxx",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置文件修改信息",
+          "example": "无",
+          "member": "ConfigSubmitContext",
+          "name": "ModifyConfContext",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "修改原因",
+          "example": "为了性能提升",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterConfigsResponse": {
+      "document": "ModifyClusterConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "流程相关信息",
+          "example": "-",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserNewPrivilegeRequest": {
+      "document": "ModifyUserNewPrivilege请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyUserNewPrivilegeResponse": {
+      "document": "ModifyUserNewPrivilege返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenBackUpRequest": {
+      "document": "OpenBackUp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "\"cdwch-XXX\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "OPEN 或者CLOSE",
+          "example": "OPEN",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "桶名字",
+          "example": "\"cos-XXX\"",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenBackUpResponse": {
+      "document": "OpenBackUp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

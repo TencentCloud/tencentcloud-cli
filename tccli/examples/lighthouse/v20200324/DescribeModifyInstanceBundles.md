@@ -39,6 +39,7 @@ Output:
                     "SystemDiskType": "CLOUD_SSD"
                 },
                 "ModifyBundleState": "UNAVAILABLE",
+                "NotSupportModifyMessage": "",
                 "ModifyPrice": {
                     "InstancePrice": {
                         "Discount": 100,
@@ -73,6 +74,7 @@ Output:
                     "SystemDiskType": "CLOUD_SSD"
                 },
                 "ModifyBundleState": "UNAVAILABLE",
+                "NotSupportModifyMessage": "",
                 "ModifyPrice": {
                     "InstancePrice": {
                         "Discount": 100,
@@ -107,6 +109,7 @@ Output:
                     "SystemDiskType": "CLOUD_SSD"
                 },
                 "ModifyBundleState": "UNAVAILABLE",
+                "NotSupportModifyMessage": "",
                 "ModifyPrice": {
                     "InstancePrice": {
                         "Discount": 100,

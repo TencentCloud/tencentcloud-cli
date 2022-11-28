@@ -265,9 +265,9 @@
       "output": "ModifyAssetScanResponse"
     },
     "ModifyBlockIgnoreList": {
-      "document": "支持对拦截列表、忽略列表如下操作：\n批量增加拦截IP、忽略IP/域名\n批量删除拦截IP、忽略IP/域名\n批量修改拦截IP、忽略IP/域名生效事件",
+      "document": "支持对封禁列表、放通列表如下操作：\n批量增加封禁IP、放通IP/域名\n批量删除封禁IP、放通IP/域名\n批量修改封禁IP、放通IP/域名生效事件",
       "input": "ModifyBlockIgnoreListRequest",
-      "name": "拦截列表和忽略列表批量操作接口",
+      "name": "封禁列表和放通列表批量操作接口",
       "output": "ModifyBlockIgnoreListResponse"
     },
     "ModifyBlockTop": {
@@ -4228,7 +4228,7 @@
       "members": [
         {
           "default": "",
-          "document": "1拦截列表 2 忽略列表",
+          "document": "1封禁列表 2 放通列表",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
@@ -4264,7 +4264,7 @@
         },
         {
           "default": "",
-          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填",
+          "document": "时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime",
           "example": "2020-04-30 18:56:16",
           "member": "string",
           "name": "EndTime",
