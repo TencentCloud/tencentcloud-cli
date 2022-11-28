@@ -27,7 +27,7 @@
     "CreateCustomization": [
       {
         "document": "",
-        "input": "https://asr.tencentcloudapi.com/?Action=CreateCustomization\n&ModelName=自学习模型\n&TextUrl=http://www.download.com/test.txt\n&ModelType=16k\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"ModelName\": \"自学习模型\",\n    \"ModelType\": \"16k\",\n    \"TextUrl\": \"http://www.download.com/test.txt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a23740a1-4bb5-4154-9f1f-ea36b1bfe2ea\",\n        \"ModelId\": \"413c479df72d11eaacd3c81fbecfd0bd\"\n    }\n}",
         "title": "创建自学习模型"
       }

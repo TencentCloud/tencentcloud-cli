@@ -518,6 +518,10 @@ tccli/services/ocr/__init__.py
 tccli/services/ocr/ocr_client.py
 tccli/services/ocr/v20181119/api.json
 tccli/services/ocr/v20181119/examples.json
+tccli/services/opc/__init__.py
+tccli/services/opc/opc_client.py
+tccli/services/opc/v20180719/api.json
+tccli/services/opc/v20180719/examples.json
 tccli/services/organization/__init__.py
 tccli/services/organization/organization_client.py
 tccli/services/organization/v20181225/api.json

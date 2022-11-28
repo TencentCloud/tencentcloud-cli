@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli emr InquiryPriceScaleOutInstance --cli-unfold-argument  \
-    --TimeUnit s \
     --TimeSpan 3600 \
-    --ZoneId 100003 \
-    --PayMode 0 \
     --InstanceId emr-3ida6zmi \
     --CoreCount 1 \
-    --TaskCount 0 \
+    --ZoneId 100003 \
+    --PayMode 0 \
     --Currency CNY \
+    --TaskCount 0 \
+    --TimeUnit s \
     --RouterCount 0
 ```
 

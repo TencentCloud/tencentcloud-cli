@@ -2130,7 +2130,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2139,7 +2140,8 @@
           "member": "string",
           "name": "Output",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2148,7 +2150,8 @@
           "member": "string",
           "name": "Path",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2157,7 +2160,8 @@
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2166,7 +2170,8 @@
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2175,7 +2180,8 @@
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2184,7 +2190,8 @@
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2199,7 +2206,8 @@
           "name": "ConfigId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6376,7 +6384,8 @@
           "member": "string",
           "name": "ConfigId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6385,7 +6394,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6394,7 +6404,8 @@
           "member": "string",
           "name": "Path",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6403,7 +6414,8 @@
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6412,7 +6424,8 @@
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6421,7 +6434,8 @@
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6430,7 +6444,8 @@
           "member": "string",
           "name": "Output",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6439,7 +6454,8 @@
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
