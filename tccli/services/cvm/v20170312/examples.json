@@ -796,6 +796,12 @@
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-o3ycss2p\"\n    ],\n    \"DestinationRegions\": [\n        \"ap-guangzhou\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "同步镜像"
+      },
+      {
+        "document": "同步镜像img-o3ycss2p到广州",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-o3ycss2p\"\n    ],\n    \"DestinationRegions\": [\n        \"ap-guangzhou\"\n    ],\n    \"ImageSetRequired\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"ImageId\": \"img-evhmf3fy\"\n            }\n        ],\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
+        "title": "同步镜像，同时需要返回目的地域的镜像ID"
       }
     ],
     "TerminateInstances": [

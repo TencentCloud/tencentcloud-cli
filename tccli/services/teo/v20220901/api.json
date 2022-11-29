@@ -3670,7 +3670,7 @@
       "members": [
         {
           "default": "",
-          "document": "站点Id。",
+          "document": "站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。",
           "example": "zone-xxxxx",
           "member": "string",
           "name": "ZoneId",
@@ -3679,7 +3679,7 @@
         },
         {
           "default": "",
-          "document": "站点子域名。",
+          "document": "子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。",
           "example": "www.example.com",
           "member": "string",
           "name": "Entity",
@@ -3720,6 +3720,15 @@
           "member": "string",
           "name": "Module",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。",
+          "example": "temp-j39jf04f41",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
           "type": "string"
         }
       ],

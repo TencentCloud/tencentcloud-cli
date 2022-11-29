@@ -374,6 +374,14 @@
         "title": "修改云数据库账号备注"
       }
     ],
+    "ModifyAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&InstanceId=tdsqlshard-f35wr6wj\n&Accounts.0.User=ajnnw\n&GlobalPrivileges.0=SELECT\n&Accounts.0.Host=127.0.0.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
     "ModifyDBInstanceName": [
       {
         "document": "",

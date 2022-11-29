@@ -7,8 +7,8 @@ Input:
 ```
 tccli asr CreateCustomization --cli-unfold-argument  \
     --ModelName 自学习模型 \
-    --TextUrl http://www.download.com/test.txt \
-    --ModelType 16k
+    --ModelType 16k \
+    --TextUrl http://www.download.com/test.txt
 ```
 
 Output: 

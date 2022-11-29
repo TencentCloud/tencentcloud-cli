@@ -157,7 +157,7 @@
       "output": "DescribeImageConfigResponse"
     },
     "DescribeIpStatus": {
-      "document": "DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细。注意事项：暂不支持查询边缘节点信息。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41954\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
+      "document": "DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细。注意事项：暂不支持查询边缘节点信息并且数据会存在一定延迟。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41954\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribeIpStatusRequest",
       "name": "查询域名节点状态",
       "output": "DescribeIpStatusResponse"
@@ -5741,6 +5741,15 @@
           "example": "true/false",
           "member": "bool",
           "name": "ShowIpv6",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否对IPV6进行缩写。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "AbbreviationIpv6",
           "required": false,
           "type": "bool"
         }
@@ -11610,11 +11619,12 @@
       "usage": "out"
     },
     "OriginPullOptimization": {
-      "document": "跨国回源优化配置，默认为关闭状态（功能灰度中，尚未全量）",
+      "document": "跨国回源优化配置，默认为关闭状态 (已下线)",
       "members": [
         {
           "default": "",
           "document": "跨国回源优化配置开关\non：开启\noff：关闭",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -11624,6 +11634,7 @@
         {
           "default": "",
           "document": "跨国类型\nOVToCN：境外回源境内\nCNToOV：境内回源境外\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OVToCN",
           "member": "string",
           "name": "OptimizationType",
           "required": false,
@@ -11639,6 +11650,7 @@
         {
           "default": "",
           "document": "回源建连超时时间，单位为秒，要求5~60之间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "uint64",
           "name": "ConnectTimeout",
           "required": true,
@@ -11647,7 +11659,8 @@
         },
         {
           "default": "",
-          "document": "回源接收超时时间，单位为秒，要求10 ~ 60之间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源接收超时时间，单位为秒，要求10 ~ 300之间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
           "member": "uint64",
           "name": "ReceiveTimeout",
           "required": true,
@@ -15640,7 +15653,7 @@
         },
         {
           "default": "",
-          "document": "跨国链路优化配置",
+          "document": "跨国链路优化配置（已下线）",
           "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",

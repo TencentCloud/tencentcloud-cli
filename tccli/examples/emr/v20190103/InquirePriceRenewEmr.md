@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli emr InquirePriceRenewEmr --cli-unfold-argument  \
-    --TimeUnit m \
-    --TimeSpan 1 \
-    --Currency CNY \
-    --PayMode 1 \
-    --InstanceId emr-vm-jv1s4zas \
     --Placement.ProjectId 0 \
-    --Placement.Zone ap-guangzhou-4
+    --Placement.Zone ap-guangzhou-4 \
+    --TimeSpan 1 \
+    --InstanceId emr-vm-jv1s4zas \
+    --PayMode 1 \
+    --Currency CNY \
+    --TimeUnit m
 ```
 
 Output: 

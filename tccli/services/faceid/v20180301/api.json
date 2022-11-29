@@ -1063,6 +1063,15 @@
           "name": "IntentionQuestions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "RuleId相关配置",
+          "example": "无",
+          "member": "RuleIdConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4251,6 +4260,22 @@
         }
       ],
       "type": "object"
+    },
+    "RuleIdConfig": {
+      "document": "RuleId相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "意愿核身过程中识别用户的回答意图，开启后除了IntentionQuestions的Answers列表中的标准回答会通过，近似意图的回答也会通过，默认不开启。",
+          "example": "true",
+          "member": "bool",
+          "name": "IntentionRecognition",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "WeChatBillDetail": {
       "document": "账单详情",

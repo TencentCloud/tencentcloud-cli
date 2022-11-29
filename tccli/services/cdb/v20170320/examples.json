@@ -784,14 +784,6 @@
         "title": "修改备份下载来源限制"
       }
     ],
-    "ModifyCDBProxy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxy\n<公共请求参数>\n\n{\n    \"RoWeightValues\": {},\n    \"MaxDelay\": 1,\n    \"AutoAddRo\": true,\n    \"ProxyGroupId\": \"proxy-test\",\n    \"IsKickout\": true,\n    \"FailOver\": true,\n    \"MinCount\": 1,\n    \"WeightMode\": \"system\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"122198-2222-1223-2222-c3a1733\"\n    }\n}",
-        "title": "配置数据库读写分离"
-      }
-    ],
     "ModifyCDBProxyConnectionPool": [
       {
         "document": "",

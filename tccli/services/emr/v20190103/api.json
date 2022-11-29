@@ -3,7 +3,7 @@
     "AddUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
-      "name": "用户管理-新增用户列表",
+      "name": "新增用户列表",
       "output": "AddUsersForUserManagerResponse"
     },
     "CreateInstance": {
@@ -21,49 +21,49 @@
     "DescribeCvmQuota": {
       "document": "获取账户的CVM配额",
       "input": "DescribeCvmQuotaRequest",
-      "name": "获取账户的CVM配额",
+      "name": "查询账户的CVM配额",
       "output": "DescribeCvmQuotaResponse"
     },
     "DescribeEmrApplicationStatics": {
       "document": " yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
-      "name": "【监控】查询Application统计信息",
+      "name": "查询YARN的任务统计信息",
       "output": "DescribeEmrApplicationStaticsResponse"
     },
     "DescribeInstanceRenewNodes": {
-      "document": "预付费集群隔离后续费资源查询",
+      "document": "查询待续费节点信息",
       "input": "DescribeInstanceRenewNodesRequest",
-      "name": "预付费集群隔离后续费资源查询",
+      "name": "查询待续费节点信息",
       "output": "DescribeInstanceRenewNodesResponse"
     },
     "DescribeInstances": {
-      "document": "查询EMR实例",
+      "document": "查询集群实例信息",
       "input": "DescribeInstancesRequest",
-      "name": "查询EMR实例",
+      "name": "查询集群实例信息",
       "output": "DescribeInstancesResponse"
     },
     "DescribeInstancesList": {
-      "document": "EMR集群实例列表查询",
+      "document": "查询集群列表",
       "input": "DescribeInstancesListRequest",
-      "name": "EMR集群实例列表查询",
+      "name": "查询集群列表",
       "output": "DescribeInstancesListResponse"
     },
     "DescribeJobFlow": {
       "document": "查询流程任务",
       "input": "DescribeJobFlowRequest",
-      "name": "查询流程任务",
+      "name": "查询流程作业状态",
       "output": "DescribeJobFlowResponse"
     },
     "DescribeResourceSchedule": {
-      "document": "获取yarn资源调度页面的数据",
+      "document": "查询YARN资源调度数据信息",
       "input": "DescribeResourceScheduleRequest",
-      "name": "获取yarn资源调度页面的数据",
+      "name": "查询YARN资源调度数据信息",
       "output": "DescribeResourceScheduleResponse"
     },
     "DescribeUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。",
       "input": "DescribeUsersForUserManagerRequest",
-      "name": "用户管理-查询用户列表",
+      "name": "查询用户列表",
       "output": "DescribeUsersForUserManagerResponse"
     },
     "InquirePriceRenewEmr": {
@@ -97,9 +97,9 @@
       "output": "InquiryPriceUpdateInstanceResponse"
     },
     "ModifyResourcePools": {
-      "document": "刷新动态资源池",
+      "document": "刷新YARN的动态资源池",
       "input": "ModifyResourcePoolsRequest",
-      "name": "刷新动态资源池",
+      "name": "刷新YARN的动态资源池",
       "output": "ModifyResourcePoolsResponse"
     },
     "ModifyResourceScheduleConfig": {
@@ -111,7 +111,7 @@
     "ModifyResourceScheduler": {
       "document": "修改了yarn的资源调度器，点击部署生效",
       "input": "ModifyResourceSchedulerRequest",
-      "name": "部署生效yarn的资源调度器",
+      "name": "修改YARN的资源调度器",
       "output": "ModifyResourceSchedulerResponse"
     },
     "RunJobFlow": {
@@ -1139,7 +1139,7 @@
       "members": [
         {
           "default": "",
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>\n<li>9：表示EMR-V2.2.0。</li>\n<li>11：表示CLICKHOUSE-V1.0.0。</li>\n<li>13：表示DRUID-V1.0.0。</li>\n<li>15：表示EMR-V2.2.1。</li>\n<li>16：表示EMR-V2.3.0。</li>\n<li>17：表示CLICKHOUSE-V1.1.0。</li>\n<li>19：表示EMR-V2.4.0。</li>\n<li>20：表示EMR-V2.5.0。</li>\n<li>22：表示CLICKHOUSE-V1.2.0。</li>\n<li>24：表示EMR-TianQiong-V1.0.0。</li>\n<li>25：表示EMR-V3.1.0。</li>\n<li>26：表示DORIS-V1.0.0。</li>\n<li>27：表示KAFKA-V1.0.0。</li>\n<li>28：表示EMR-V3.2.0。</li>\n<li>29：表示EMR-V2.5.1。</li>\n<li>30：表示EMR-V2.6.0。</li>",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>16：表示EMR-V2.3.0。</li>\n<li>20：表示EMR-V2.5.0。</li>\n<li>25：表示EMR-V3.1.0。</li>\n<li>27：表示KAFKA-V1.0.0。</li>\n<li>30：表示EMR-V2.6.0。</li>\n<li>33 :   表示EMR-V3.2.1。</li>\n<li>34 :   表示EMR-V3.3.0。</li>\n<li>36 :   表示STARROCKS-V1.0.0。</li>\n<li>37 :   表示EMR-V3.4.0。</li>\n<li>38 :   表示EMR-V2.7.0。</li>\n<li>39 :   表示STARROCKS-V1.1.0。</li>\n<li>41 :   表示DRUID-V1.1.0。</li>",
           "example": "4",
           "member": "uint64",
           "name": "ProductId",
@@ -3696,6 +3696,7 @@
         {
           "default": "",
           "document": "包年包月时间，默认为1，单位：月。\n取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。",
+          "example": "无",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -3704,7 +3705,8 @@
         },
         {
           "default": "",
-          "document": "是否自动续费，默认为否。",
+          "document": "是否自动续费，默认为否。\n<li>true：是</li>\n<li>false：否</li>",
+          "example": "无",
           "member": "bool",
           "name": "RenewFlag",
           "required": true,
@@ -3885,7 +3887,8 @@
       "members": [
         {
           "default": "",
-          "document": "Password",
+          "document": "实例登录密码，8-16个字符，包含大写字母、小写字母、数字和特殊字符四种，特殊符号仅支持!@%^*，密码第一位不能为特殊字符",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -3894,7 +3897,8 @@
         },
         {
           "default": "",
-          "document": "Public Key",
+          "document": "密钥ID。关联密钥后，就可以通过对应的私钥来访问实例；PublicKeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取",
+          "example": "无",
           "member": "string",
           "name": "PublicKeyId",
           "required": false,
@@ -5452,6 +5456,7 @@
         {
           "default": "",
           "document": "需要的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -5461,6 +5466,7 @@
         {
           "default": "",
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "StorageType",
           "required": true,
@@ -5470,6 +5476,7 @@
         {
           "default": "",
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -5479,6 +5486,7 @@
         {
           "default": "",
           "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "RootSize",
           "required": true,
@@ -5488,6 +5496,7 @@
         {
           "default": "",
           "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MemSize",
           "required": true,
@@ -5497,6 +5506,7 @@
         {
           "default": "",
           "document": "核心数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Cpu",
           "required": true,
@@ -5506,6 +5516,7 @@
         {
           "default": "",
           "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -5515,6 +5526,7 @@
         {
           "default": "",
           "document": "云盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MultiDisk",
           "name": "MultiDisks",
           "required": true,
@@ -5524,6 +5536,7 @@
         {
           "default": "",
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "DiskCnt",
           "required": true,
@@ -5533,6 +5546,7 @@
         {
           "default": "",
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -5542,6 +5556,7 @@
         {
           "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -5551,6 +5566,7 @@
         {
           "default": "",
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "DiskNum",
           "required": true,
@@ -5560,6 +5576,7 @@
         {
           "default": "",
           "document": "本地盘的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "LocalDiskNum",
           "required": true,

@@ -4968,7 +4968,7 @@
       "document": "InquiryPriceRenewDBInstance返回参数结构体",
       "members": [
         {
-          "document": "总费用，打折前的。比如24650表示246.5元",
+          "document": "刊例价，单位为分。如24650表示246.5元",
           "example": "253440",
           "member": "int64",
           "name": "OriginalPrice",
@@ -4977,7 +4977,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实际需要付款金额。比如24650表示246.5元",
+          "document": "折后实际付款金额，单位为分。如24650表示246.5元",
           "example": "210355",
           "member": "int64",
           "name": "Price",
@@ -6065,7 +6065,7 @@
         },
         {
           "default": "",
-          "document": "参数值 单位。参数没有单位是，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值 单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ms",
           "member": "string",
           "name": "Unit",
@@ -6095,22 +6095,22 @@
         },
         {
           "default": "",
-          "document": "枚举类型参数，取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[replica,logical]",
-          "member": "string",
-          "name": "EnumValue",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "float",
           "name": "Max",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "枚举类型参数，取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[replica,logical]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -6201,6 +6201,188 @@
           "name": "LastModifyTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StandbyRelated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数版本关联信息，存储具体内核版本下的具体参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamVersionRelation",
+          "name": "VersionRelationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数规格关联信息，存储具体规格下具体的参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamSpecRelation",
+          "name": "SpecRelationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamSpecRelation": {
+      "document": "描述各规格下的参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wal_level",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数信息所属规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2G",
+          "member": "string",
+          "name": "Memory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数在该规格下的默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数值单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000",
+          "member": "float",
+          "name": "Max",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Min",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "枚举类型参数，取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[on;off]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamVersionRelation": {
+      "document": "描述各版本下的参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wal_level",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数信息所属内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v14.1_r1.2",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数在该版本该规格下的默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数值单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000",
+          "member": "float",
+          "name": "Max",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Min",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "枚举类型参数，取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[on;off]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

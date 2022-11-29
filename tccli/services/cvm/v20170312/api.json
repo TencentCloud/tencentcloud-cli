@@ -10065,6 +10065,32 @@
       ],
       "usage": "out"
     },
+    "SyncImage": {
+      "document": "同步镜像信息",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像ID",
+          "example": "img-xxxxxxxx",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SyncImagesRequest": {
       "document": "SyncImages请求参数结构体",
       "members": [
@@ -10103,6 +10129,15 @@
           "name": "ImageName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回目的地域的镜像ID。",
+          "example": "false",
+          "member": "bool",
+          "name": "ImageSetRequired",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10110,6 +10145,15 @@
     "SyncImagesResponse": {
       "document": "SyncImages返回参数结构体",
       "members": [
+        {
+          "document": "目的地域的镜像ID信息。",
+          "example": "无",
+          "member": "SyncImage",
+          "name": "ImageSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

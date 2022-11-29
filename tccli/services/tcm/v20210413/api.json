@@ -824,12 +824,57 @@
           "value_allowed_null": true
         },
         {
-          "document": "采用的模板，可取值为\"istio, trace，默认为istio\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采用的模板，可取值为\"istio, trace，默认为istio",
           "example": "istio",
           "member": "string",
           "name": "Template",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "腾讯云日志服务相关参数",
+          "example": "无",
+          "member": "CLS",
+          "name": "CLS",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "GRPC第三方服务器地址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否启用GRPC第三方服务器",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableServer",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否启用标准输出",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStdout",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否启用访问日志采集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         },
         {

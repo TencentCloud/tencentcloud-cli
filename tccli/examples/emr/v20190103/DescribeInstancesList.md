@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli emr DescribeInstancesList --cli-unfold-argument  \
-    --Offset 0 \
+    --Asc 0 \
+    --DisplayStrategy clusterList \
     --Limit 10 \
     --OrderField clusterid \
-    --Asc 0 \
-    --DisplayStrategy clusterList
+    --Offset 0
 ```
 
 Output: 
@@ -21,6 +21,7 @@ Output:
         "InstancesList": [
             {
                 "Zone": "xx",
+                "IsMultiZoneCluster": true,
                 "SubnetName": "xx",
                 "Status": 1,
                 "VpcId": 1,
@@ -41,6 +42,7 @@ Output:
                 ],
                 "RegionId": 1,
                 "ClusterId": "xx",
+                "IsHandsCluster": true,
                 "VpcName": "xx",
                 "AddTime": "xx",
                 "SubnetId": 1,
@@ -56,6 +58,7 @@ Output:
                 "UniqSubnetId": "xx",
                 "ChargeType": 1,
                 "AppId": 1,
+                "ClusterClass": "xx",
                 "RunTime": "xx",
                 "Id": 1
             }

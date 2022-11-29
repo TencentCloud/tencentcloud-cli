@@ -55,7 +55,23 @@ Output:
                             "ReadyReplicas": 0,
                             "AvailableReplicas": 0,
                             "UnavailableReplicas": 0,
-                            "Status": "Stopped"
+                            "Status": "Stopped",
+                            "Conditions": [
+                                {
+                                    "Message": "Deployment has minimum availability.",
+                                    "Reason": "MinimumReplicasAvailable",
+                                    "Status": "True",
+                                    "Type": "Available",
+                                    "LastTransitionTime": "2022-01-15T17:32:52+08:00"
+                                },
+                                {
+                                    "Message": "ReplicaSet \"ms-nx4m7zjh-1-8bd6f8459\" has successfully progressed.",
+                                    "Reason": "NewReplicaSetAvailable",
+                                    "Status": "True",
+                                    "Type": "Progressing",
+                                    "LastTransitionTime": "2022-01-15T17:32:00+08:00"
+                                }
+                            ]
                         },
                         "Weight": 0,
                         "PodList": [],
