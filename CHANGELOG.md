@@ -1,3 +1,57 @@
+# Release 3.0.659.1
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 31 次发布
+
+发布时间：2022-11-30 06:27:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：WithPdfUrl
+
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：PdfUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 18 次发布
+
+发布时间：2022-11-30 06:33:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)
+
+新增数据结构：
+
+* [Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)
+
+
+
 # Release 3.0.658.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

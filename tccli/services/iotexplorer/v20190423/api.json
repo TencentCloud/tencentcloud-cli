@@ -2857,7 +2857,7 @@
           "visibility": 1
         },
         {
-          "document": "维度",
+          "document": "纬度",
           "example": "22.54",
           "member": "float",
           "name": "Latitude",

@@ -1,111 +1,28 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 35 次发布
-
-发布时间：2022-11-29 06:16:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ModifyCDBProxy
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* RoWeight
-
-
-
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
-
-### 第 37 次发布
-
-发布时间：2022-11-29 06:17:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeIpStatus](http://document.tencentcloudapi.woa.com/document/product/228/41954)
-
-	* 新增入参：AbbreviationIpv6
-
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 38 次发布
-
-发布时间：2022-11-29 06:25:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [SyncImages](http://document.tencentcloudapi.woa.com/document/product/213/15711)
-
-	* 新增入参：ImageSetRequired
-
-	* 新增出参：ImageSet
-
-
-新增数据结构：
-
-* [SyncImage](http://document.tencentcloudapi.woa.com/document/product/213/15753#SyncImage)
-
-
-
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
-
-### 第 26 次发布
-
-发布时间：2022-11-29 06:31:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/76739)
-
-新增数据结构：
-
-* [Account](http://document.tencentcloudapi.woa.com/document/product/557/16142#Account)
-* [ColumnPrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#ColumnPrivilege)
-* [DatabasePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#DatabasePrivilege)
-* [TablePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#TablePrivilege)
-* [ViewPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/16142#ViewPrivileges)
-
-
-
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 30 次发布
+### 第 31 次发布
 
-发布时间：2022-11-29 06:39:42
+发布时间：2022-11-30 06:27:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
 
-新增数据结构：
+	* 新增入参：WithPdfUrl
 
-* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
-* [RelieveInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RelieveInfo)
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：PdfUrl
+
 
 
 
@@ -113,111 +30,25 @@
 
 
 
-## 人脸核身(faceid) 版本：2018-03-01
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 22 次发布
+### 第 18 次发布
 
-发布时间：2022-11-29 06:40:14
+发布时间：2022-11-30 06:33:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DetectAuth](http://document.tencentcloudapi.woa.com/document/product/1007/31816)
-
-	* 新增入参：Config
-
+* [DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)
 
 新增数据结构：
 
-* [RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RuleIdConfig)
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 19 次发布
-
-发布时间：2022-11-29 06:44:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DeviceInfo)
-
-	* 新增成员：IsLora, ConnIP, ConnCityCode
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 17 次发布
-
-发布时间：2022-11-29 06:57:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ParamSpecRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamSpecRelation)
-* [ParamVersionRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamVersionRelation)
-
-修改数据结构：
-
-* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamInfo)
-
-	* 新增成员：StandbyRelated, VersionRelationSet, SpecRelationSet
-
-
-
-
-## 服务网格(tcm) 版本：2021-04-13
-
-### 第 15 次发布
-
-发布时间：2022-11-29 07:07:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeAccessLogConfig](http://document.tencentcloudapi.woa.com/document/product/1593/76713)
-
-	* 新增出参：CLS, Address, EnableServer, EnableStdout, Enable
-
-
-
-
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
-
-### 第 10 次发布
-
-发布时间：2022-11-29 07:11:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [WorkloadStatus](http://document.tencentcloudapi.woa.com/document/product/851/74915#WorkloadStatus)
-
-	* 新增成员：Conditions
-
-
-
-
-## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+* [Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)
 
 
 
@@ -12963,7 +12794,7 @@
 
 新增数据结构：
 
-* [[SyncImage](http://document.tencentcloudapi.woa.com/document/product/213/15753#SyncImage)](http://document.tencentcloudapi.woa.com/document/product/213/15753#[SyncImage](http://document.tencentcloudapi.woa.com/document/product/213/15753#SyncImage))
+* [SyncImage](http://document.tencentcloudapi.woa.com/document/product/213/15753#SyncImage)
 
 ### 第 37 次发布
 
@@ -16116,15 +15947,15 @@
 
 新增接口：
 
-* [[ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/76739)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyAccountPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/76739)
 
 新增数据结构：
 
-* [[Account](http://document.tencentcloudapi.woa.com/document/product/557/16142#Account)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[Account](http://document.tencentcloudapi.woa.com/document/product/557/16142#Account))
-* [[ColumnPrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#ColumnPrivilege)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[ColumnPrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#ColumnPrivilege))
-* [[DatabasePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#DatabasePrivilege)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[DatabasePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#DatabasePrivilege))
-* [[TablePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#TablePrivilege)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[TablePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#TablePrivilege))
-* [[ViewPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/16142#ViewPrivileges)](http://document.tencentcloudapi.woa.com/document/product/557/16142#[ViewPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/16142#ViewPrivileges))
+* [Account](http://document.tencentcloudapi.woa.com/document/product/557/16142#Account)
+* [ColumnPrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#ColumnPrivilege)
+* [DatabasePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#DatabasePrivilege)
+* [TablePrivilege](http://document.tencentcloudapi.woa.com/document/product/557/16142#TablePrivilege)
+* [ViewPrivileges](http://document.tencentcloudapi.woa.com/document/product/557/16142#ViewPrivileges)
 
 ### 第 25 次发布
 
@@ -20196,6 +20027,28 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 31 次发布
+
+发布时间：2022-11-30 06:27:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：WithPdfUrl
+
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：PdfUrl
+
+
 ### 第 30 次发布
 
 发布时间：2022-11-29 06:39:42
@@ -20206,12 +20059,12 @@
 
 新增接口：
 
-* [[ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
 
 新增数据结构：
 
-* [[ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover))
-* [[RelieveInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RelieveInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[RelieveInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RelieveInfo))
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
+* [RelieveInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RelieveInfo)
 
 ### 第 29 次发布
 
@@ -20892,7 +20745,7 @@
 
 新增数据结构：
 
-* [[RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RuleIdConfig)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RuleIdConfig))
+* [RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RuleIdConfig)
 
 ### 第 21 次发布
 
@@ -24962,6 +24815,24 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 18 次发布
+
+发布时间：2022-11-30 06:33:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene))
+* [[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo))
 
 ### 第 17 次发布
 
@@ -30832,8 +30703,8 @@
 
 新增数据结构：
 
-* [[ParamSpecRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamSpecRelation)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[ParamSpecRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamSpecRelation))
-* [[ParamVersionRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamVersionRelation)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[ParamVersionRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamVersionRelation))
+* [ParamSpecRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamSpecRelation)
+* [ParamVersionRelation](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParamVersionRelation)
 
 修改数据结构：
 
