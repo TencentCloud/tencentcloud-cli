@@ -1,3 +1,31 @@
+# Release 3.0.660.1
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 36 次发布
+
+发布时间：2022-12-01 06:57:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReviewAudioVideo](http://document.tencentcloudapi.woa.com/document/product/266/75956)
+
+	* 新增入参：Definition
+
+
+修改数据结构：
+
+* [ReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoTaskInput)
+
+	* 新增成员：Definition
+
+
+
+
 # Release 3.0.659.1
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26

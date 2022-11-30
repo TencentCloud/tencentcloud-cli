@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 云点播(vod) 版本：2018-07-17
 
-### 第 31 次发布
+### 第 36 次发布
 
-发布时间：2022-11-30 06:27:10
+发布时间：2022-12-01 06:57:28
 
 本次发布包含了以下内容：
 
@@ -12,43 +12,17 @@
 
 修改接口：
 
-* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+* [ReviewAudioVideo](http://document.tencentcloudapi.woa.com/document/product/266/75956)
 
-	* 新增入参：WithPdfUrl
+	* 新增入参：Definition
 
 
 修改数据结构：
 
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+* [ReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoTaskInput)
 
-	* 新增成员：PdfUrl
+	* 新增成员：Definition
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 18 次发布
-
-发布时间：2022-11-30 06:33:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)
-* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)
-
-新增数据结构：
-
-* [Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)
-* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)
 
 
 
@@ -24826,13 +24800,13 @@
 
 新增接口：
 
-* [[DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAllScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76745)
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1207/76744)
 
 新增数据结构：
 
-* [[Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene))
-* [[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo))
+* [Scene](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Scene)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SceneInfo)
 
 ### 第 17 次发布
 
@@ -26574,7 +26548,7 @@
 
 新增接口：
 
-* [CreateEncryptedKey](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEncryptedKey](http://document.tencentcloudapi.woa.com/document/product/1385/76747)
 * [GetPublicKey](http://document.tencentcloudapi.woa.com/document/product/1385/76675)
 
 ### 第 6 次发布
@@ -26605,7 +26579,7 @@
 新增接口：
 
 * [AddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76363)
-* [DeleteDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76362)
+* [DeleteDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76702)
 * [GetDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76676)
 * [GetDevices](http://document.tencentcloudapi.woa.com/document/product/1385/76578)
 * [GetFlowStatistic](http://document.tencentcloudapi.woa.com/document/product/1385/76368)
@@ -43256,6 +43230,28 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 36 次发布
+
+发布时间：2022-12-01 06:57:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReviewAudioVideo](http://document.tencentcloudapi.woa.com/document/product/266/75956)
+
+	* 新增入参：Definition
+
+
+修改数据结构：
+
+* [ReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoTaskInput)
+
+	* 新增成员：Definition
+
 
 ### 第 35 次发布
 
