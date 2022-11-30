@@ -32,6 +32,14 @@
         "title": "获取实例节点信息列表"
       }
     ],
+    "DescribeSpec": [
+      {
+        "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
+        "input": "https://cdwch.tencentcloudapi.com/?Action=DescribeSpec\n&Zone=ap-guangzhou-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataSpec\": [\n            {\n                \"Available\": true,\n                \"InstanceQuota\": 1000,\n                \"SystemDisk\": {\n                    \"DiskDesc\": \"xx\",\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskCount\": 1,\n                    \"DiskType\": \"xx\"\n                },\n                \"DisplayName\": \"xx\",\n                \"Name\": \"xx\",\n                \"ComputeSpecDesc\": \"xx\",\n                \"Mem\": 16,\n                \"MaxNodeSize\": 50,\n                \"Type\": \"xx\",\n                \"Cpu\": 4,\n                \"DataDisk\": {\n                    \"DiskDesc\": \"xx\",\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskCount\": 1,\n                    \"DiskType\": \"xx\"\n                }\n            }\n        ],\n        \"AttachCBSSpec\": [\n            {\n                \"DiskDesc\": \"xx\",\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 100,\n                \"DiskCount\": 1,\n                \"DiskType\": \"xx\"\n            }\n        ],\n        \"CommonSpec\": [\n            {\n                \"Available\": true,\n                \"InstanceQuota\": 1000,\n                \"SystemDisk\": {\n                    \"DiskDesc\": \"xx\",\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskCount\": 1,\n                    \"DiskType\": \"xx\"\n                },\n                \"DisplayName\": \"xx\",\n                \"Name\": \"xx\",\n                \"ComputeSpecDesc\": \"xx\",\n                \"Mem\": 4,\n                \"MaxNodeSize\": 50,\n                \"Type\": \"xx\",\n                \"Cpu\": 2,\n                \"DataDisk\": {\n                    \"DiskDesc\": \"xx\",\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskCount\": 1,\n                    \"DiskType\": \"xx\"\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取集群规格"
+      }
+    ],
     "ModifyClusterConfigs": [
       {
         "document": "在集群配置页面修改集群配置文件接口，xml模式",

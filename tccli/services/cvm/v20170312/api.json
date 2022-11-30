@@ -427,7 +427,7 @@
       "output": "ModifyInstancesRenewFlagResponse"
     },
     "ModifyInstancesVpcAttribute": {
-      "document": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络ip。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络IP。\n* 此操作默认会关闭实例，完成后再启动。\n* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesVpcAttributeRequest",
       "name": "修改实例vpc属性",
       "output": "ModifyInstancesVpcAttributeResponse"
@@ -1438,7 +1438,7 @@
         },
         {
           "default": "",
-          "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘Id",
+          "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘ID",
           "example": "['disk-6gabakqz']",
           "member": "string",
           "name": "DataDiskIds",
@@ -4342,7 +4342,7 @@
         },
         {
           "default": "",
-          "document": "专用宿主机实例id",
+          "document": "专用宿主机实例ID",
           "example": "无",
           "member": "string",
           "name": "HostId",
@@ -4432,7 +4432,7 @@
         },
         {
           "default": "",
-          "document": "专用宿主机实例ip",
+          "document": "专用宿主机实例IP",
           "example": "无",
           "member": "string",
           "name": "HostIp",
@@ -4468,7 +4468,7 @@
       "members": [
         {
           "default": "",
-          "document": "专用宿主机实例总cpu核数",
+          "document": "专用宿主机实例总CPU核数",
           "example": "32",
           "member": "uint64",
           "name": "CpuTotal",
@@ -4478,7 +4478,7 @@
         },
         {
           "default": "",
-          "document": "专用宿主机实例可用cpu核数",
+          "document": "专用宿主机实例可用CPU核数",
           "example": "32",
           "member": "uint64",
           "name": "CpuAvailable",
@@ -4814,11 +4814,12 @@
       "usage": "out"
     },
     "ImageOsList": {
-      "document": "支持的操作系统类型，根据windows和Linux分类。",
+      "document": "支持的操作系统类型，根据Windows和Linux分类。",
       "members": [
         {
           "default": "",
-          "document": "支持的windows操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的Windows操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
           "member": "string",
           "name": "Windows",
           "required": true,
@@ -4827,7 +4828,8 @@
         },
         {
           "default": "",
-          "document": "支持的linux操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的Linux操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
           "member": "string",
           "name": "Linux",
           "required": true,
@@ -7149,7 +7151,7 @@
         },
         {
           "default": "",
-          "document": "置放群组id，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置放群组ID，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['ps-3p88qhfo']",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -8140,7 +8142,7 @@
       "usage": "out"
     },
     "Placement": {
-      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机ip等",
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP等",
       "members": [
         {
           "default": "",
@@ -8174,7 +8176,7 @@
         },
         {
           "default": "",
-          "document": "指定母机ip生产子机",
+          "document": "指定母机IP生产子机",
           "example": "无",
           "member": "string",
           "name": "HostIps",
@@ -8775,6 +8777,7 @@
         {
           "default": "",
           "document": "付费类型，如：\"All Upfront\",\"Partial Upfront\",\"No Upfront\"",
+          "example": "All Upfront",
           "member": "string",
           "name": "OfferingType",
           "required": true,
@@ -8784,6 +8787,7 @@
         {
           "default": "",
           "document": "预支合计费用，单位：元。",
+          "example": "100.00",
           "member": "float",
           "name": "FixedPrice",
           "required": true,
@@ -8793,6 +8797,7 @@
         {
           "default": "",
           "document": "后续合计费用，单位：元/小时",
+          "example": "NA",
           "member": "float",
           "name": "UsagePrice",
           "required": true,
@@ -8802,6 +8807,7 @@
         {
           "default": "",
           "document": "预留实例配置ID",
+          "example": "NA",
           "member": "string",
           "name": "ReservedInstancesOfferingId",
           "required": true,
@@ -8811,6 +8817,7 @@
         {
           "default": "",
           "document": "预留实例计费可购买的可用区。",
+          "example": "NA",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -8820,6 +8827,7 @@
         {
           "default": "",
           "document": "预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。\n计量单位：秒",
+          "example": "NA",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -8828,7 +8836,8 @@
         },
         {
           "default": "",
-          "document": "预留实例计费的平台描述（即操作系统）。形如：linux。\n返回项： linux 。",
+          "document": "预留实例计费的平台描述（即操作系统）。形如：Linux。\n返回项： Linux 。",
+          "example": "NA",
           "member": "string",
           "name": "ProductDescription",
           "required": true,

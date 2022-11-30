@@ -59,7 +59,7 @@
     "CreateImage": [
       {
         "document": "使用实例ins-6pb6lrmy 创建一个镜像。当实例处于运行中时，执行软关机，软关机失败后，结束任务(默认语义)。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=CreateImage\n&InstanceId=ins-6pb6lrmy\n&ImageName=\"name\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-6pb6lrmy\",\n    \"ImageName\": \"\\\"name\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"ImageId\": \"img-0yc6rie8\",\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "创建一个镜像"
       }

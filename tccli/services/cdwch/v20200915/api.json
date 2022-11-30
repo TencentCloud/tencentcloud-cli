@@ -24,6 +24,12 @@
       "name": "获取实例shard信息列表",
       "output": "DescribeInstanceShardsResponse"
     },
+    "DescribeSpec": {
+      "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
+      "input": "DescribeSpecRequest",
+      "name": "获取集群规格",
+      "output": "DescribeSpecResponse"
+    },
     "ModifyClusterConfigs": {
       "document": "在集群配置页面修改集群配置文件接口，xml模式",
       "input": "ModifyClusterConfigsRequest",
@@ -396,6 +402,134 @@
       ],
       "type": "object"
     },
+    "DescribeSpecRequest": {
+      "document": "DescribeSpec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "地域信息，例如\"ap-guangzhou-1\"",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否弹性ck",
+          "example": "false",
+          "member": "bool",
+          "name": "IsElastic",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecResponse": {
+      "document": "DescribeSpec返回参数结构体",
+      "members": [
+        {
+          "document": "zookeeper节点规格描述",
+          "example": "-",
+          "member": "ResourceSpec",
+          "name": "CommonSpec",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据节点规格描述",
+          "example": "-",
+          "member": "ResourceSpec",
+          "name": "DataSpec",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "DiskSpec",
+          "name": "AttachCBSSpec",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiskSpec": {
+      "document": "磁盘规格描述",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘类型，例如“CLOUD_SSD\", \"LOCAL_SSD\"等",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘类型说明，例如\"云SSD\", \"本地SSD\"等",
+          "example": "本地SSD",
+          "member": "string",
+          "name": "DiskDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘最小规格大小，单位G",
+          "example": "20",
+          "member": "int64",
+          "name": "MinDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘最大规格大小，单位G",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘数目",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyClusterConfigsRequest": {
       "document": "ModifyClusterConfigs请求参数结构体",
       "members": [
@@ -520,6 +654,122 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceSpec": {
+      "document": "资源规格描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规格名称，例如“SCH1\"",
+          "example": "SCH1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu核数",
+          "example": "4",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存大小，单位G",
+          "example": "16",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘描述信息",
+          "example": "复杂结构",
+          "member": "DiskSpec",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据盘描述信息",
+          "example": "复杂结构",
+          "member": "DiskSpec",
+          "name": "DataDisk",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大节点数目限制",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可用，false代表售罄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2核4G",
+          "member": "string",
+          "name": "ComputeSpecDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "库存数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "InstanceQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

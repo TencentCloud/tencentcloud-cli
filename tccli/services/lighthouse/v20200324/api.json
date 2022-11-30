@@ -78,6 +78,12 @@
       "name": "删除快照",
       "output": "DeleteSnapshotsResponse"
     },
+    "DescribeAllScenes": {
+      "document": "本接口(DescribeAllScenes)用于查询全地域使用场景列表。",
+      "input": "DescribeAllScenesRequest",
+      "name": "查询全地域使用场景列表",
+      "output": "DescribeAllScenesResponse"
+    },
     "DescribeBlueprintInstances": {
       "document": "本接口（DescribeBlueprintInstances）用于查询镜像实例信息。",
       "input": "DescribeBlueprintInstancesRequest",
@@ -221,6 +227,12 @@
       "input": "DescribeResetInstanceBlueprintsRequest",
       "name": "查询重置实例的镜像信息",
       "output": "DescribeResetInstanceBlueprintsResponse"
+    },
+    "DescribeScenes": {
+      "document": "本接口(DescribeScenes)用于查看使用场景列表。",
+      "input": "DescribeScenesRequest",
+      "name": "查看使用场景列表",
+      "output": "DescribeScenesResponse"
     },
     "DescribeSnapshots": {
       "document": "本接口（DescribeSnapshots）用于查询快照的详细信息。",
@@ -1636,6 +1648,69 @@
       ],
       "usage": "out"
     },
+    "DescribeAllScenesRequest": {
+      "document": "DescribeAllScenes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "使用场景ID列表。",
+          "example": "[\"lhsc-123456\"]",
+          "member": "string",
+          "name": "SceneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllScenesResponse": {
+      "document": "DescribeAllScenes返回参数结构体",
+      "members": [
+        {
+          "document": "使用场景详细信息列表。",
+          "example": "无",
+          "member": "SceneInfo",
+          "name": "SceneInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用场景详细信息总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlueprintInstancesRequest": {
       "document": "DescribeBlueprintInstances请求参数结构体",
       "members": [
@@ -2927,6 +3002,69 @@
           "name": "ResetInstanceBlueprintSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesRequest": {
+      "document": "DescribeScenes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "使用场景ID列表。",
+          "example": "[\"lhsc-123456\"]",
+          "member": "string",
+          "name": "SceneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesResponse": {
+      "document": "DescribeScenes返回参数结构体",
+      "members": [
+        {
+          "document": "使用场景列表。",
+          "example": "无",
+          "member": "Scene",
+          "name": "SceneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用场景总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5838,6 +5976,78 @@
         }
       ],
       "type": "object"
+    },
+    "Scene": {
+      "document": "使用场景信息",
+      "members": [
+        {
+          "default": "",
+          "document": "使用场景Id",
+          "example": "\"lhsc-123456\"",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用场景展示名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用场景描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SceneInfo": {
+      "document": "使用场景详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "使用场景Id。",
+          "example": "\"lhsc-123456\"",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用场景展示名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用场景描述信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Snapshot": {
       "document": "描述了快照相关信息。",

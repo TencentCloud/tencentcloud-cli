@@ -484,7 +484,6 @@
       "document": "DescribeRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "房间Id。",
           "example": "301234567",
           "member": "uint64",
@@ -503,7 +502,6 @@
           "example": "房间名称",
           "member": "string",
           "name": "Name",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -512,7 +510,6 @@
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -521,7 +518,6 @@
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -530,7 +526,6 @@
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -539,7 +534,6 @@
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -548,16 +542,14 @@
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)",
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -566,7 +558,6 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoMic",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -575,7 +566,6 @@
           "example": "1",
           "member": "uint64",
           "name": "AudioQuality",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -584,7 +574,6 @@
           "example": "video",
           "member": "string",
           "name": "SubType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -593,7 +582,6 @@
           "example": "1",
           "member": "uint64",
           "name": "DisableRecord",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -602,7 +590,6 @@
           "example": "无",
           "member": "string",
           "name": "Assistants",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -611,7 +598,6 @@
           "example": "abc",
           "member": "string",
           "name": "RecordUrl",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

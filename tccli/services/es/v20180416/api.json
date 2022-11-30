@@ -5832,7 +5832,7 @@
         },
         {
           "default": "",
-          "document": "公网访问状态",
+          "document": "ES集群公网访问状态\nOPEN 开启\nCLOSE 关闭",
           "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
@@ -5850,7 +5850,7 @@
         },
         {
           "default": "",
-          "document": "Kibana公网访问状态",
+          "document": "Kibana公网访问状态\nOPEN 开启\nCLOSE 关闭",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
@@ -5859,7 +5859,7 @@
         },
         {
           "default": "",
-          "document": "Kibana内网访问状态",
+          "document": "Kibana内网访问状态\nOPEN 开启\nCLOSE 关闭",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
@@ -5949,7 +5949,7 @@
         },
         {
           "default": "",
-          "document": "Cerebro公网访问状态",
+          "document": "Cerebro公网访问状态\nOPEN 开启\nCLOSE 关闭",
           "example": "无",
           "member": "string",
           "name": "CerebroPublicAccess",
@@ -5958,7 +5958,7 @@
         },
         {
           "default": "",
-          "document": "Cerebro内网访问状态",
+          "document": "Cerebro内网访问状态\nOPEN 开启\nCLOSE 关闭",
           "example": "无",
           "member": "string",
           "name": "CerebroPrivateAccess",
@@ -5985,7 +5985,7 @@
         },
         {
           "default": "",
-          "document": "是否开启Altering 外网告警输出",
+          "document": "是否开启Alerting 外网告警输出：\nOPEN 开启\nCLOSE 关闭",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaAlteringPublicAccess",

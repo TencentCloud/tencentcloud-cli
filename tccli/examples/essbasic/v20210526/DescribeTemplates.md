@@ -82,7 +82,10 @@ Output:
                         "ComponentHeight": 12.142
                     }
                 ],
-                "TemplateId": "yDxlTUyK***********8bbdrxhT5th"
+                "PreviewUrl": "https://xxx",
+                "PdfUrl": "https://xxx",
+                "TemplateId": "yDxlTUyK***********8bbdrxhT5th",
+                "ChannelTemplateId": "yDxlTUyK***********8bbdrxhT5th"
             }
         ],
         "RequestId": "s16xxxxx30469887",
