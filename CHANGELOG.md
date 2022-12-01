@@ -1,3 +1,57 @@
+# Release 3.0.661.1
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 42 次发布
+
+发布时间：2022-12-02 06:15:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+* [InquireCkafkaPrice](http://document.tencentcloudapi.woa.com/document/product/597/76749)
+
+新增数据结构：
+
+* [InquireCkafkaPriceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquireCkafkaPriceResp)
+* [InquiryBasePrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryBasePrice)
+* [InquiryDetailPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDetailPrice)
+* [InquiryDiskParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDiskParam)
+* [InquiryPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPrice)
+* [InquiryPublicNetworkParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPublicNetworkParam)
+* [InstanceChargeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceChargeParam)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 48 次发布
+
+发布时间：2022-12-02 06:54:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76751)
+
+新增数据结构：
+
+* [PendingRelease](http://document.tencentcloudapi.woa.com/document/product/457/31866#PendingRelease)
+* [ReleaseValues](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseValues)
+
+
+
 # Release 3.0.660.1
 
 ## 云点播(vod) 版本：2018-07-17

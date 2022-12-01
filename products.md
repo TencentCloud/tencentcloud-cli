@@ -38,7 +38,7 @@
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2022-11-28 06:19:34 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2022-07-04 06:06:47 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2022-06-27 06:17:15 |
-| ckafka | [消息队列 CKafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-11-03 06:10:09 |
+| ckafka | [消息队列 CKafka](http://document.tencentcloudapi.woa.com/document/product/597) | 2022-12-02 06:15:07 |
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2022-11-01 21:01:04 |
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2022-11-24 06:15:46 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2022-11-01 21:01:51 |
