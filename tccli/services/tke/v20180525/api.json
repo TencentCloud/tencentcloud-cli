@@ -78,6 +78,12 @@
       "name": "从伸缩组创建节点池",
       "output": "CreateClusterNodePoolFromExistingAsgResponse"
     },
+    "CreateClusterRelease": {
+      "document": "在应用市场中集群创建应用",
+      "input": "CreateClusterReleaseRequest",
+      "name": "集群安装应用",
+      "output": "CreateClusterReleaseResponse"
+    },
     "CreateClusterRoute": {
       "document": "创建集群路由",
       "input": "CreateClusterRouteRequest",
@@ -3888,6 +3894,132 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterReleaseRequest": {
+      "document": "CreateClusterRelease请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "app-05",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "example": "lwj",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
+          "example": "redis",
+          "member": "string",
+          "name": "Chart",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义参数",
+          "example": "无",
+          "member": "ReleaseValues",
+          "name": "Values",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "制品来源，范围：tke-market/tcr/other",
+          "example": "tke-market",
+          "member": "string",
+          "name": "ChartFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品版本",
+          "example": "10.5.3",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品仓库URL地址",
+          "example": "无",
+          "member": "string",
+          "name": "ChartRepoURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品访问用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品访问密码",
+          "example": "yyy",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品命名空间",
+          "example": "helm-public",
+          "member": "string",
+          "name": "ChartNamespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterReleaseResponse": {
+      "document": "CreateClusterRelease返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14838,6 +14970,75 @@
       ],
       "usage": "both"
     },
+    "PendingRelease": {
+      "document": "应用市场安装的Pending应用",
+      "members": [
+        {
+          "default": "",
+          "document": "应用状态详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PodLimitsByType": {
       "document": "某机型可支持的最大 VPC-CNI 模式的 Pod 数量",
       "members": [
@@ -16879,6 +17080,30 @@
         }
       ],
       "usage": "out"
+    },
+    "ReleaseValues": {
+      "document": "应用市场自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义参数原始值",
+          "member": "string",
+          "name": "RawOriginal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数值类型",
+          "member": "string",
+          "name": "ValuesType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "RemoveNodeFromNodePoolRequest": {
       "document": "RemoveNodeFromNodePool请求参数结构体",
