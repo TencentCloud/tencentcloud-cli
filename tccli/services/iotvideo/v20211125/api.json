@@ -938,7 +938,8 @@
           "member": "string",
           "name": "ProductID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -947,7 +948,8 @@
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -956,7 +958,8 @@
           "member": "string",
           "name": "FirmwareOriVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -965,7 +968,8 @@
           "member": "uint64",
           "name": "UpgradeMethod",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -974,7 +978,8 @@
           "member": "string",
           "name": "FileName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -983,7 +988,8 @@
           "member": "string",
           "name": "FileMd5",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -992,7 +998,8 @@
           "member": "uint64",
           "name": "FileSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1001,7 +1008,18 @@
           "member": "string",
           "name": "DeviceNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "固件升级任务默认超时时间。 最小取值60秒，最大为3600秒",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeoutInterval",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1016,7 +1034,8 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4894,7 +4913,8 @@
           "member": "string",
           "name": "ProductID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4903,7 +4923,8 @@
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4918,7 +4939,8 @@
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "产品ID",
@@ -4927,7 +4949,8 @@
           "name": "ProductId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4936,7 +4959,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4945,7 +4969,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "固件Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4954,7 +4979,8 @@
           "name": "Md5sum",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "固件上传的秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4963,7 +4989,8 @@
           "name": "Createtime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "产品名称",
@@ -4972,7 +4999,18 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6543,7 +6581,8 @@
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6553,7 +6592,8 @@
           "name": "Md5sum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6563,7 +6603,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6573,7 +6614,8 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6583,7 +6625,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6593,7 +6636,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -6603,7 +6647,19 @@
           "name": "ProductId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -8427,7 +8483,8 @@
           "member": "string",
           "name": "ProductID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8436,7 +8493,8 @@
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8445,7 +8503,8 @@
           "member": "string",
           "name": "Md5sum",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8454,7 +8513,8 @@
           "member": "uint64",
           "name": "FileSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8463,7 +8523,8 @@
           "member": "string",
           "name": "FirmwareName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8472,7 +8533,18 @@
           "member": "string",
           "name": "FirmwareDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "固件升级模块；可选值 mcu|moudule",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

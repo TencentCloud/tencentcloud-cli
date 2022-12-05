@@ -604,6 +604,20 @@
         "title": "创建弹性网卡"
       }
     ],
+    "CreateOverseaAccelerator": [
+      {
+        "document": "通过短名开通苹果支付域名的访问加速",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOverseaAccelerator\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-p3noywst\",\n    \"AccelerateDomain\": [\n        {\n            \"DomainShort\": \"APPLEPAY\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ca4797a-168a-43bf-ac4a-0cd8e20e6cdc\"\n    }\n}",
+        "title": "为VPC开通苹果支付加速"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOverseaAccelerator\n<公共请求参数>\n\n{\n    \"AccelerateDomain\": [\n        {\n            \"Domain\": \"buy.itunes.apple.com\"\n        }\n    ],\n    \"VpcId\": \"vpc-40omdvr7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c20a53a-4c85-49f9-9c68-05b52c2823da\"\n    }\n}",
+        "title": "通过完整域名为VPC开通苹果加速"
+      }
+    ],
     "CreateOwnerWhiteServiceInternal": [
       {
         "document": "",
@@ -2016,6 +2030,20 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkInterfaces\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"TEST\"\n            ],\n            \"Name\": \"tag:Version\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkInterfaceSet\": [\n            {\n                \"VpcId\": \"vpc-709l0i0x\",\n                \"SubnetId\": \"subnet-qymfizh2\",\n                \"NetworkInterfaceId\": \"eni-p17uqigx\",\n                \"NetworkInterfaceName\": \"test\",\n                \"NetworkInterfaceDescription\": \"\",\n                \"GroupSet\": [\n                    \"sg-hcd8t9xj\"\n                ],\n                \"Primary\": false,\n                \"MacAddress\": \"20:90:6F:FC:9F:69\",\n                \"State\": \"AVAILABLE\",\n                \"CreatedTime\": \"2018-04-18 21:46:56\",\n                \"PrivateIpAddressSet\": [\n                    {\n                        \"Description\": \"12312\",\n                        \"Primary\": true,\n                        \"PrivateIpAddress\": \"192.168.3.10\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.104\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"13123\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.18\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.223\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.86\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"Attachment\": null,\n                \"Business\": \"cvm\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Ipv6AddressSet\": [\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"Address\": \"2402:4e00:1000:7400:0:9028:a2c9:85b2\",\n                        \"AddressId\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"AttachType\": 1,\n                \"SubNetworkInterfaces\": [],\n                \"EniType\": 1,\n                \"CdcId\": \"\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"Version\",\n                        \"Value\": \"TEST\"\n                    },\n                    {\n                        \"Key\": \"Compony\",\n                        \"Value\": \"Compony-A\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"0c10340b-2551-4414-a8c7-8d90dc24ddd0\"\n    }\n}",
         "title": "查询绑定了标签的网卡列表"
+      }
+    ],
+    "DescribeOverseaAccelerator": [
+      {
+        "document": "查询一个VPC的已加速域名",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverseaAccelerator\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-8enostyw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccelerateDomain\": [\n            {\n                \"Domain\": \"buy.itunes.apple.com\",\n                \"DomainShort\": \"APPLEPAY\"\n            }\n        ],\n        \"RequestId\": \"e4de1feb-adaf-4cfd-ad3c-db9aecfe549d\"\n    }\n}",
+        "title": "查询一个VPC的已加速域名"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverseaAccelerator\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-40omdvr7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccelerateDomain\": [],\n        \"RequestId\": \"c1993729-f26e-4322-8320-462979693961\"\n    }\n}",
+        "title": "查询未开通加速的VPC"
       }
     ],
     "DescribeOverseaAcceleratorDomains": [

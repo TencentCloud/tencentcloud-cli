@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli antiddos DescribeListPacketFilterConfig --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
+    --FilterInstanceId bgpip-0000011x \
     --FilterIp 1.1.1.1 \
-    --FilterInstanceId bgpip-0000011x
+    --Limit 25 \
+    --Offset 0
 ```
 
 Output: 
@@ -21,40 +21,40 @@ Output:
             {
                 "InstanceDetailList": [
                     {
-                        "InstanceId": "xx",
+                        "InstanceId": "bgpip-0000011x",
                         "EipList": [
                             "1.1.1.1"
                         ]
                     }
                 ],
                 "PacketFilterConfig": {
-                    "MatchType2": "xx",
-                    "MatchBegin2": "xx",
-                    "Str2": "xx",
+                    "MatchType2": "sunday",
+                    "MatchBegin2": "begin-l5",
+                    "Str2": "",
                     "SportEnd": 0,
                     "IsNot": 0,
                     "PktlenMax": 1500,
-                    "MatchLogic": "xx",
-                    "MatchBegin": "xx",
+                    "MatchLogic": "none",
+                    "MatchBegin": "begin-l5",
                     "Offset": 0,
                     "SportStart": 0,
                     "DportStart": 0,
                     "PktlenMin": 0,
                     "IsNot2": 0,
                     "Depth": 20,
-                    "Str": "xx",
-                    "Action": "xx",
-                    "Protocol": "xx",
+                    "Str": "",
+                    "Action": "drop",
+                    "Protocol": "tcp",
                     "MatchType": "xx",
                     "DportEnd": 0,
                     "Offset2": 5,
                     "Depth2": 20,
-                    "Id": "xx"
+                    "Id": ""
                 },
-                "ModifyTime": "xx"
+                "ModifyTime": "2022-01-29 17:47:48"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "3eb91f01-96dd-4ad3-9e16-edde46b8cf40"
     }
 }
 ```

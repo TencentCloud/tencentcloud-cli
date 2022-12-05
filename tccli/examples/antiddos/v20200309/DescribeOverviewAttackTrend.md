@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli antiddos DescribeOverviewAttackTrend --cli-unfold-argument  \
+    --EndTime 2020-02-03 18:03:23 \
     --Type ddos \
     --Dimension attackcount \
-    --Period 86400 \
-    --StartTime '2020-02-01 12:04:12' \
-    --EndTime '2020-02-03 18:03:23'
+    --StartTime 2020-02-01 12:04:12 \
+    --Period 86400
 ```
 
 Output: 

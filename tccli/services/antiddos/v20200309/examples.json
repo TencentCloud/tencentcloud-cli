@@ -11,7 +11,7 @@
     "AssociateDDoSEipLoadBalancer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateDDoSEipLoadBalancer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Eip\": \"xx\",\n    \"Vip\": \"xx\",\n    \"LoadBalancerRegion\": \"xx\",\n    \"LoadBalancerID\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateDDoSEipLoadBalancer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-0000011x\",\n    \"Eip\": \"1.1.1.1\",\n    \"Vip\": \"1.1.1.1\",\n    \"LoadBalancerRegion\": \"ap-hongkong\",\n    \"LoadBalancerID\": \"lb-0000002i\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "绑定高防弹性公网IP到负载均衡上"
       }
@@ -43,7 +43,7 @@
     "CreateCCReqLimitPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Domain\": \"xx\",\n    \"Policy\": {\n        \"ExecuteDuration\": 1,\n        \"Uri\": \"xx\",\n        \"Period\": 1,\n        \"Cookie\": \"xx\",\n        \"Mode\": \"xx\",\n        \"Action\": \"xx\",\n        \"UserAgent\": \"xx\",\n        \"RequestNum\": 1\n    },\n    \"Protocol\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"Domain\": \"www.baidu.com\",\n    \"InstanceId\": \"bgpip-000005v7\",\n    \"Ip\": \"1.1.1.1\",\n    \"Policy\": {\n        \"Action\": \"alg\",\n        \"ExecuteDuration\": 120,\n        \"Mode\": \"equal\",\n        \"Period\": 10,\n        \"RequestNum\": 500,\n        \"Uri\": \"/\"\n    },\n    \"Protocol\": \"http\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "新增CC频率限制策略"
       }
@@ -51,7 +51,7 @@
     "CreateCcBlackWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"IpList\": [\n        {\n            \"Ip\": \"xx\",\n            \"Mask\": 1\n        }\n    ],\n    \"Type\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Protocol\": \"http\",\n    \"InstanceId\": \"bgpip-00001001\",\n    \"Ip\": \"1.1.1.1\",\n    \"IpList\": [\n        {\n            \"Ip\": \"1.1.1.0\",\n            \"Mask\": 24\n        }\n    ],\n    \"Type\": \"black\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7739a1e-837d-4248-bf9f-16a9bf77db22\"\n    }\n}",
         "title": "新建CC四层黑白名单"
       }
@@ -59,8 +59,8 @@
     "CreateCcGeoIPBlockConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcGeoIPBlockConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"IP\": \"xx\",\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"CcGeoIPBlockConfig\": {\n        \"Action\": \"xx\",\n        \"Id\": \"xx\",\n        \"RegionType\": \"xx\",\n        \"AreaList\": [\n            0\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcGeoIPBlockConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-0000011x\",\n    \"IP\": \"1.1.1.1\",\n    \"Domain\": \"www.test.com\",\n    \"Protocol\": \"http\",\n    \"CcGeoIPBlockConfig\": {\n        \"Action\": \"drop\",\n        \"Id\": \"0\",\n        \"RegionType\": \"oversea\",\n        \"AreaList\": [\n            100025\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54a41bf4-dca0-438b-a1cd-eb1f99e9a6b3\"\n    }\n}",
         "title": "添加CC防护的区域封禁配置"
       }
     ],
@@ -123,7 +123,7 @@
     "CreateL7RuleCerts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL7RuleCerts\n<公共请求参数>\n\n{\n    \"CertId\": \"xxx\",\n    \"L7Rules\": [\n        {\n            \"InsId\": \"bgpip-000001eo\",\n            \"AppId\": \"251008915\",\n            \"Protocol\": \"https\",\n            \"Domain\": \"www.xxx.com\",\n            \"VirtualPort\": \"443\",\n            \"SSLId\": \"\",\n            \"Status\": 8\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL7RuleCerts\n<公共请求参数>\n\n{\n    \"CertId\": \"cMgC0TpV\",\n    \"L7Rules\": [\n        {\n            \"InsId\": \"bgpip-000001eo\",\n            \"AppId\": \"251008915\",\n            \"Protocol\": \"https\",\n            \"Domain\": \"www.test.com\",\n            \"VirtualPort\": \"443\",\n            \"SSLId\": \"\",\n            \"Status\": 8\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7d078cc-2547-47f8-b1d6-65bc67d28ae7\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "证书绑定域名列表"
       }
@@ -139,7 +139,7 @@
     "CreatePacketFilterConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"PacketFilterConfig\": {\n        \"MatchType2\": \"xx\",\n        \"MatchBegin2\": \"xx\",\n        \"Str2\": \"xx\",\n        \"SportEnd\": 0,\n        \"IsNot\": 0,\n        \"PktlenMax\": 0,\n        \"MatchLogic\": \"xx\",\n        \"MatchBegin\": \"xx\",\n        \"Offset\": 0,\n        \"SportStart\": 0,\n        \"DportStart\": 0,\n        \"PktlenMin\": 0,\n        \"IsNot2\": 0,\n        \"Depth\": 0,\n        \"Str\": \"xx\",\n        \"Action\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"MatchType\": \"xx\",\n        \"DportEnd\": 0,\n        \"Offset2\": 0,\n        \"Depth2\": 0,\n        \"Id\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-000002q2\",\n    \"PacketFilterConfig\": {\n        \"Action\": \"drop_rst\",\n        \"Depth\": 4,\n        \"DportEnd\": 18373,\n        \"DportStart\": 18373,\n        \"IsNot\": 0,\n        \"MatchBegin\": \"begin_l4\",\n        \"MatchType\": \"sunday\",\n        \"Offset\": 14,\n        \"PktlenMax\": 100,\n        \"PktlenMin\": 1,\n        \"Protocol\": \"tcp\",\n        \"SportEnd\": 65535,\n        \"SportStart\": 1,\n        \"Str\": \"\\\\x05ac\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "添加DDoS防护的特征过滤规则"
       }
@@ -179,7 +179,7 @@
     "CreateWaterPrintConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWaterPrintConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"WaterPrintConfig\": {\n        \"Keys\": [\n            {\n                \"KeyVersion\": \"xx\",\n                \"KeyContent\": \"xx\",\n                \"KeyId\": \"xx\",\n                \"KeyOpenStatus\": 0,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"Verify\": \"xx\",\n        \"Listeners\": [\n            {\n                \"ForwardProtocol\": \"xx\",\n                \"FrontendPort\": 0,\n                \"FrontendPortEnd\": 0\n            }\n        ],\n        \"OpenStatus\": 0,\n        \"Offset\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWaterPrintConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgp-111111aj\",\n    \"WaterPrintConfig\": {\n        \"Keys\": [\n            {\n                \"KeyVersion\": \"fbf1\",\n                \"KeyContent\": \"82e352b956e8d512-fbf1-82e352b956e8d512eeb95315d5772e86fac99256\",\n                \"KeyId\": \"000005hj\",\n                \"KeyOpenStatus\": 0,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"Verify\": \"checkall\",\n        \"Listeners\": [\n            {\n                \"ForwardProtocol\": \"TCP\",\n                \"FrontendPort\": 88,\n                \"FrontendPortEnd\": 88\n            }\n        ],\n        \"OpenStatus\": 0,\n        \"Offset\": 5\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"512b8c34-3df9-448a-ae90-c28643d351bf\"\n    }\n}",
         "title": "添加DDoS防护的水印防护配置"
       }
@@ -227,7 +227,7 @@
     "DeleteCcBlackWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"PolicyId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-111111qq\",\n    \"PolicyId\": \"ccBlackWhite-000000s0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "删除CC四层黑白名单"
       }
@@ -235,8 +235,8 @@
     "DeleteCcGeoIPBlockConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcGeoIPBlockConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"CcGeoIPBlockConfig\": {\n        \"Action\": \"xx\",\n        \"Id\": \"xx\",\n        \"RegionType\": \"xx\",\n        \"AreaList\": [\n            0\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcGeoIPBlockConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-000000q0\",\n    \"CcGeoIPBlockConfig\": {\n        \"Action\": \"drop\",\n        \"Id\": \"ccGeoip-000000mm\",\n        \"RegionType\": \"china\",\n        \"AreaList\": [\n            0\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efc47bf5-b16a-410d-a993-0d4584446b6w\"\n    }\n}",
         "title": "删除CC防护的区域封禁配置"
       }
     ],
@@ -267,7 +267,7 @@
     "DeletePacketFilterConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"PacketFilterConfig\": {\n        \"MatchType2\": \"xx\",\n        \"MatchBegin2\": \"xx\",\n        \"Str2\": \"xx\",\n        \"SportEnd\": 0,\n        \"IsNot\": 0,\n        \"PktlenMax\": 0,\n        \"MatchLogic\": \"xx\",\n        \"MatchBegin\": \"xx\",\n        \"Offset\": 0,\n        \"SportStart\": 0,\n        \"DportStart\": 0,\n        \"PktlenMin\": 0,\n        \"IsNot2\": 0,\n        \"Depth\": 0,\n        \"Str\": \"xx\",\n        \"Action\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"MatchType\": \"xx\",\n        \"DportEnd\": 0,\n        \"Offset2\": 0,\n        \"Depth2\": 0,\n        \"Id\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-111111q1\",\n    \"PacketFilterConfig\": {\n        \"MatchType2\": \"\",\n        \"MatchBegin2\": \"no_match\",\n        \"Str2\": \"\",\n        \"SportEnd\": 0,\n        \"IsNot\": 0,\n        \"PktlenMax\": 0,\n        \"MatchLogic\": \"none\",\n        \"MatchBegin\": \"begin_l4\",\n        \"Offset\": 0,\n        \"SportStart\": 0,\n        \"DportStart\": 0,\n        \"PktlenMin\": 0,\n        \"IsNot2\": 0,\n        \"Depth\": 0,\n        \"Str\": \"\\\\x3908\",\n        \"Action\": \"drop\",\n        \"Protocol\": \"all\",\n        \"MatchType\": \"sunday\",\n        \"DportEnd\": 0,\n        \"Offset2\": 0,\n        \"Depth2\": 0,\n        \"Id\": \"01j9d4hi\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "删除DDoS防护的特征过滤规则"
       }
@@ -307,15 +307,15 @@
     "DescribeBgpBizTrend": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpBizTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Flag\": 1,\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            1\n        ],\n        \"Total\": 1,\n        \"MaxData\": 1,\n        \"RequestId\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpBizTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgp-multip\",\n    \"InstanceId\": \"bgp-00000001\",\n    \"Flag\": 1,\n    \"StartTime\": \"2022-11-29 00:00:00\",\n    \"EndTime\": \"2022-11-29 01:00:00\",\n    \"MetricName\": \"intraffic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            1\n        ],\n        \"Total\": 1,\n        \"MaxData\": 1,\n        \"RequestId\": \"f4b3915e-c1bd-4ca4-aaef-e88eaa8aa66e\",\n        \"MetricName\": \"intraffic\"\n    }\n}",
         "title": "获取高防包流量折线图"
       }
     ],
     "DescribeBizTrend": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Statistics\": \"xx\",\n    \"Business\": \"xx\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Statistics\": \"avg\",\n    \"Business\": \"bgpip\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgpip-00000001\",\n    \"MetricName\": \"qps\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"intraffic\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "获取业务流量曲线"
       }
@@ -347,16 +347,16 @@
     "DescribeCCPrecisionPlyList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCPrecisionPlyList\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"PrecisionPolicyList\": [\n            {\n                \"Domain\": \"xx\",\n                \"PolicyAction\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"PolicyList\": [\n                    {\n                        \"ValueOperator\": \"xx\",\n                        \"FieldName\": \"xx\",\n                        \"FieldType\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"PolicyId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Protocol\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCPrecisionPlyList\n<公共请求参数>\n\n{\n    \"Business\": \"bgp-multip\",\n    \"InstanceId\": \"bgp-00000211\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a97c66-22d4-4522-b93b-388aac08777d\",\n        \"Total\": 1,\n        \"PrecisionPolicyList\": [\n            {\n                \"PolicyId\": \"ccPrecs-00000001\",\n                \"InstanceId\": \"bgp-00000211\",\n                \"Ip\": \"1.1.1.1\",\n                \"Protocol\": \"http\",\n                \"Domain\": \"www.test.com\",\n                \"PolicyAction\": \"alg\",\n                \"PolicyList\": [\n                    {\n                        \"FieldType\": \"value\",\n                        \"FieldName\": \"cgi\",\n                        \"Value\": \"test\",\n                        \"ValueOperator\": \"include\"\n                    }\n                ],\n                \"CreateTime\": \"2022-12-01 09:05:36\",\n                \"ModifyTime\": \"2022-12-01 09:05:36\"\n            }\n        ]\n    }\n}",
         "title": "获取CC精准防护列表"
       }
     ],
     "DescribeCCReqLimitPolicyList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCReqLimitPolicyList\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestLimitPolicyList\": [\n            {\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"PolicyId\": \"xx\",\n                \"PolicyRecord\": {\n                    \"ExecuteDuration\": 1,\n                    \"Uri\": \"xx\",\n                    \"Period\": 1,\n                    \"Cookie\": \"xx\",\n                    \"Mode\": \"xx\",\n                    \"Action\": \"xx\",\n                    \"UserAgent\": \"xx\",\n                    \"RequestNum\": 1\n                },\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCReqLimitPolicyList\n<公共请求参数>\n\n{\n    \"Business\": \"bgp-multip\",\n    \"InstanceId\": \"bgp-00000001\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea775a73-7de5-4d36-aca0-29307e7c4f27\",\n        \"Total\": 1,\n        \"RequestLimitPolicyList\": [\n            {\n                \"PolicyId\": \"ccRule-00009xn0\",\n                \"InstanceId\": \"bgp-00000001\",\n                \"Ip\": \"1.1.1.1\",\n                \"Protocol\": \"http\",\n                \"Domain\": \"www.test.com\",\n                \"PolicyRecord\": {\n                    \"Period\": 10,\n                    \"RequestNum\": 500,\n                    \"Action\": \"alg\",\n                    \"ExecuteDuration\": 120,\n                    \"Mode\": \"equal\",\n                    \"Uri\": \"/\",\n                    \"UserAgent\": \"\",\n                    \"Cookie\": \"\"\n                },\n                \"CreateTime\": \"2022-12-02 09:11:48\",\n                \"ModifyTime\": \"2022-12-02 09:11:48\"\n            }\n        ]\n    }\n}",
         "title": "获取CC频率限制策略列表"
       }
     ],
@@ -379,16 +379,16 @@
     "DescribeCcBlackWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"CcBlackWhiteIpList\": [\n            {\n                \"Domain\": \"xx\",\n                \"BlackWhiteIp\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"Mask\": 1,\n                \"PolicyId\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test1.com\",\n    \"Protocol\": \"https\",\n    \"Business\": \"bgpip\",\n    \"InstanceId\": \"bgpip-000000z9\",\n    \"Ip\": \"1.1.1.1\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"CcBlackWhiteIpList\": [\n            {\n                \"Domain\": \"www.test1.com\",\n                \"BlackWhiteIp\": \"2.2.2.2\",\n                \"Protocol\": \"https\",\n                \"InstanceId\": \"bgpip-000004z9\",\n                \"Ip\": \"1.1.1.1\",\n                \"Mask\": 1,\n                \"PolicyId\": \"ccBlackWhite-000002s7\",\n                \"ModifyTime\": \"2022-04-30 08:09:20\",\n                \"Type\": \"white\",\n                \"CreateTime\": \"2022-04-30 07:09:20\"\n            }\n        ],\n        \"RequestId\": \"1be9f39c-7060-11ed-aae2-525400f921f0\"\n    }\n}",
         "title": "获取CC四层黑白名单列表"
       }
     ],
     "DescribeCcGeoIPBlockConfigList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcGeoIPBlockConfigList\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Business\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"CcGeoIpPolicyList\": [\n            {\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"RegionType\": \"xx\",\n                \"PolicyId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Action\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"AreaList\": [\n                    1\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcGeoIPBlockConfigList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.dayu.com\",\n    \"Protocol\": \"http\",\n    \"Business\": \"bgpip\",\n    \"InstanceId\": \"bgpip-111111q1\",\n    \"Ip\": \"1.1.1.1\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CcGeoIpPolicyList\": [\n            {\n                \"Domain\": \"test.dayu.com\",\n                \"Protocol\": \"http\",\n                \"InstanceId\": \"bgpip-111111q1\",\n                \"Ip\": \"1.1.1.1\",\n                \"RegionType\": \"china\",\n                \"PolicyId\": \"rule-0000011x\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Action\": \"1\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"AreaList\": [\n                    1\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"c9520936-381c-4c04-b535-c8f4df1f8059\"\n    }\n}",
         "title": "获取CC防护的区域封禁配置列表"
       }
     ],
@@ -403,8 +403,8 @@
     "DescribeDDoSConnectLimitList": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeDDoSConnectLimitList\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"ConnectLimitConfig\": {\n                    \"SynLimit\": 1,\n                    \"BadConnThreshold\": 1,\n                    \"SdConnLimit\": 1,\n                    \"SdNewLimit\": 1,\n                    \"SynRate\": 1,\n                    \"ConnTimeout\": 1,\n                    \"DstConnLimit\": 1,\n                    \"DstNewLimit\": 1,\n                    \"NullConnEnable\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSConnectLimitList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"bgpip-111111q1\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"ConnectLimitConfig\": {\n                    \"SynLimit\": 1,\n                    \"BadConnThreshold\": 1,\n                    \"SdConnLimit\": 1,\n                    \"SdNewLimit\": 1,\n                    \"SynRate\": 1,\n                    \"ConnTimeout\": 1,\n                    \"DstConnLimit\": 1,\n                    \"DstNewLimit\": 1,\n                    \"NullConnEnable\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"c9520936-381c-4c04-b535-c8f4df1f8059\"\n    }\n}",
         "title": "获取DDoS连接抑制配置列表"
       }
     ],
@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgpip\",\n    \"Ip\": \"1.1.1.1\",\n    \"Period\": 330,\n    \"StartTime\": \"2022-10-10 01:08:00\",\n    \"EndTime\": \"2022-10-10 01:13:00\",\n    \"Id\": \"bgpip-00000xxx\",\n    \"MetricName\": \"pps\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Business\": \"bgpip\",\n        \"Count\": 2,\n        \"Data\": [\n            30,\n            20\n        ],\n        \"EndTime\": \"2022-10-10 01:13:00\",\n        \"Id\": \"bgpip-00000xxx\",\n        \"Ip\": \"1.1.1.1\",\n        \"MetricName\": \"pps\",\n        \"Period\": 300,\n        \"RequestId\": \"xxxxxxx\",\n        \"StartTime\": \"2022-10-10 01:05:00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgpip\",\n        \"Count\": 2,\n        \"Data\": [\n            30,\n            20\n        ],\n        \"EndTime\": \"2022-10-10 01:13:00\",\n        \"Id\": \"bgpip-00000xxx\",\n        \"Ip\": \"1.1.1.1\",\n        \"MetricName\": \"pps\",\n        \"Period\": 300,\n        \"RequestId\": \"2f44a9d8-2b6f-4a9a-b1da-9d05d9e6ad83\",\n        \"StartTime\": \"2022-10-10 01:05:00\"\n    }\n}",
         "title": "获取DDoS攻击指标数据"
       }
     ],
@@ -451,8 +451,8 @@
     "DescribeListBlackWhiteIpList": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListBlackWhiteIpList\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IpList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.2.2.19\"\n                        ]\n                    }\n                ],\n                \"Ip\": \"xx\",\n                \"Type\": \"xx\",\n                \"Mask\": 1,\n                \"ModifyTime\": \"xx\"\n            },\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.2.2.19\"\n                        ]\n                    }\n                ],\n                \"Ip\": \"xx\",\n                \"Type\": \"xx\",\n                \"Mask\": 1,\n                \"ModifyTime\": \"xx\"\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"FilterInstanceId\": \"bgpip-0000011x\",\n    \"FilterIp\": \"1.1.1.1\",\n    \"Limit\": \"25\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IpList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"bgpip-0000011x\",\n                        \"EipList\": [\n                            \"1.2.2.19\"\n                        ]\n                    }\n                ],\n                \"Ip\": \"1.1.4.1\",\n                \"Type\": \"white\",\n                \"Mask\": 1,\n                \"ModifyTime\": \"2022-11-29 18:34:13\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"j5RV4a5576e8cf46f24e3bae026ebb391a\"\n    }\n}",
         "title": "获取DDoS防护的IP黑白名单列表"
       }
     ],
@@ -499,8 +499,8 @@
     "DescribeListPacketFilterConfig": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListPacketFilterConfig\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"PacketFilterConfig\": {\n                    \"MatchType2\": \"xx\",\n                    \"MatchBegin2\": \"xx\",\n                    \"Str2\": \"xx\",\n                    \"SportEnd\": 0,\n                    \"IsNot\": 0,\n                    \"PktlenMax\": 1500,\n                    \"MatchLogic\": \"xx\",\n                    \"MatchBegin\": \"xx\",\n                    \"Offset\": 0,\n                    \"SportStart\": 0,\n                    \"DportStart\": 0,\n                    \"PktlenMin\": 0,\n                    \"IsNot2\": 0,\n                    \"Depth\": 20,\n                    \"Str\": \"xx\",\n                    \"Action\": \"xx\",\n                    \"Protocol\": \"xx\",\n                    \"MatchType\": \"xx\",\n                    \"DportEnd\": 0,\n                    \"Offset2\": 5,\n                    \"Depth2\": 20,\n                    \"Id\": \"xx\"\n                },\n                \"ModifyTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListPacketFilterConfig\n<公共请求参数>\n\n{\n    \"FilterInstanceId\": \"bgpip-0000011x\",\n    \"FilterIp\": \"1.1.1.1\",\n    \"Limit\": \"25\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"bgpip-0000011x\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"PacketFilterConfig\": {\n                    \"MatchType2\": \"sunday\",\n                    \"MatchBegin2\": \"begin-l5\",\n                    \"Str2\": \"\",\n                    \"SportEnd\": 0,\n                    \"IsNot\": 0,\n                    \"PktlenMax\": 1500,\n                    \"MatchLogic\": \"none\",\n                    \"MatchBegin\": \"begin-l5\",\n                    \"Offset\": 0,\n                    \"SportStart\": 0,\n                    \"DportStart\": 0,\n                    \"PktlenMin\": 0,\n                    \"IsNot2\": 0,\n                    \"Depth\": 20,\n                    \"Str\": \"\",\n                    \"Action\": \"drop\",\n                    \"Protocol\": \"tcp\",\n                    \"MatchType\": \"xx\",\n                    \"DportEnd\": 0,\n                    \"Offset2\": 5,\n                    \"Depth2\": 20,\n                    \"Id\": \"\"\n                },\n                \"ModifyTime\": \"2022-01-29 17:47:48\"\n            }\n        ],\n        \"RequestId\": \"3eb91f01-96dd-4ad3-9e16-edde46b8cf40\"\n    }\n}",
         "title": "获取DDoS防护的特征过滤规则列表"
       }
     ],
@@ -515,8 +515,8 @@
     "DescribeListProtectThresholdConfig": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListProtectThresholdConfig\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"DDoSThreshold\": 1,\n                \"DDoSAI\": \"xx\",\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"ListenerCcThresholdList\": [\n                    {\n                        \"CCThreshold\": 0,\n                        \"Domain\": \"xx\",\n                        \"Protocol\": \"xx\",\n                        \"CCEnable\": 0\n                    }\n                ],\n                \"DDoSLevel\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListProtectThresholdConfig\n<公共请求参数>\n\n{\n    \"FilterInstanceId\": \"bgpip-0000011x\",\n    \"FilterIp\": \"1.1.1.1\",\n    \"Limit\": \"25\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"DDoSThreshold\": 1,\n                \"RstFloodPktThreshold\": 1,\n                \"SynAckFloodThreshold\": 1,\n                \"DDoSAI\": \"om\",\n                \"CCEnable\": 1,\n                \"ListenerCcThresholdList\": [\n                    {\n                        \"CCThreshold\": 0,\n                        \"Domain\": \"*.examw.com\",\n                        \"Protocol\": \"http\",\n                        \"CCEnable\": 0\n                    }\n                ],\n                \"AckFloodThreshold\": 1,\n                \"SynFloodThreshold\": 1,\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"bgpip-0000011x\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"CCThreshold\": 1,\n                \"UdpFloodPktThreshold\": 1,\n                \"AckFloodPktThreshold\": 1,\n                \"UdpFloodThreshold\": 1,\n                \"SynAckFloodPktThreshold\": 1,\n                \"RstFloodThreshold\": 1,\n                \"DDoSLevel\": \"middle\",\n                \"SynFloodPktThreshold\": 1\n            }\n        ],\n        \"RequestId\": \"f56cc9dc-29d9-4594-b12d-22239c7bc888\"\n    }\n}",
         "title": "获取防护阈值配置列表"
       }
     ],
@@ -531,16 +531,16 @@
     "DescribeListSchedulingDomain": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListSchedulingDomain\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"FilterDomain\": \"xx\",\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"DomainList\": [\n            {\n                \"Status\": 1,\n                \"Domain\": \"xx\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"TTL\": 1,\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"UsrDomainName\": \"xx\",\n                \"LineIPList\": [\n                    {\n                        \"Eip\": \"xx\",\n                        \"Type\": \"xx\"\n                    }\n                ],\n                \"Method\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListSchedulingDomain\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"FilterDomain\": \"www.test.com\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"vZw1pMcbJjtlMfhSw84j6C0YXJo31i7N\",\n        \"DomainList\": [\n            {\n                \"Status\": 1,\n                \"Domain\": \"www.test.com\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"TTL\": 1,\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"UsrDomainName\": \"www.test.com\",\n                \"LineIPList\": [\n                    {\n                        \"Eip\": \"1.1.1.1\",\n                        \"Type\": \"bgp\"\n                    }\n                ],\n                \"Method\": \"priority\"\n            }\n        ]\n    }\n}",
         "title": "获取智能调度域名列表"
       }
     ],
     "DescribeListWaterPrintConfig": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListWaterPrintConfig\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"WaterPrintConfig\": {\n                    \"Keys\": [\n                        {\n                            \"KeyVersion\": \"xx\",\n                            \"KeyContent\": \"xx\",\n                            \"KeyId\": \"xx\",\n                            \"KeyOpenStatus\": 0,\n                            \"CreateTime\": \"2020-09-22 00:00:00\"\n                        }\n                    ],\n                    \"Verify\": \"xx\",\n                    \"Listeners\": [\n                        {\n                            \"ForwardProtocol\": \"xx\",\n                            \"FrontendPort\": 80,\n                            \"FrontendPortEnd\": 0\n                        }\n                    ],\n                    \"OpenStatus\": 0,\n                    \"Offset\": 30\n                },\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListWaterPrintConfig\n<公共请求参数>\n\n{\n    \"FilterInstanceId\": \"bgpip-0000011x\",\n    \"FilterIp\": \"1.1.1.1\",\n    \"Limit\": \"25\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"WaterPrintConfig\": {\n                    \"Keys\": [\n                        {\n                            \"KeyVersion\": \"fbf1\",\n                            \"KeyContent\": \"82e352b956e8d512-fbf1-82e352b956e8d512eeb95315d5772e86fac99256\",\n                            \"KeyId\": \"000005hj\",\n                            \"KeyOpenStatus\": 0,\n                            \"CreateTime\": \"2020-09-22 00:00:00\"\n                        }\n                    ],\n                    \"Verify\": \"checkall\",\n                    \"Listeners\": [\n                        {\n                            \"ForwardProtocol\": \"TCP\",\n                            \"FrontendPort\": 80,\n                            \"FrontendPortEnd\": 0\n                        }\n                    ],\n                    \"OpenStatus\": 0,\n                    \"Offset\": 30\n                },\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"bgpip-0000011x\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c5ff0d5d-d2bd-4b34-b081-4acd4cf7be1f\"\n    }\n}",
         "title": "获取DDoS防护的水印防护配置列表"
       }
     ],
@@ -563,7 +563,7 @@
     "DescribeOverviewAttackTrend": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeOverviewAttackTrend\n&Type=ddos\n&Dimension=attackcount\n&Period=86400\n&StartTime=2020-02-01 12:04:12\n&EndTime=2020-02-03 18:03:23\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewAttackTrend\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-02-03 18:03:23\",\n    \"Type\": \"ddos\",\n    \"Dimension\": \"attackcount\",\n    \"StartTime\": \"2020-02-01 12:04:12\",\n    \"Period\": \"86400\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Type\": \"ddos\",\n        \"StartTime\": \"2020-02-01 12:04:12\",\n        \"EndTime\": \"2020-02-03 18:03:23\",\n        \"Period\": 86400,\n        \"Data\": [\n            0,\n            0\n        ],\n        \"Count\": 2\n    }\n}",
         "title": "拉取防护概览攻击趋势"
       }
@@ -587,8 +587,8 @@
     "DescribeOverviewDDoSTrend": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgp\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"bgp-00000001\",\n    \"MetricName\": \"bps\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb39db80-b483-4139-a00e-1177ed011579\",\n        \"Count\": 1,\n        \"Data\": [\n            12234\n        ]\n    }\n}",
         "title": "获取防护概览DDoS攻击流量带宽和攻击包速率数据"
       }
     ],
@@ -602,9 +602,9 @@
     ],
     "DescribePendingRiskInfo": [
       {
-        "document": "",
+        "document": "查询账号维度待处理风险信息",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePendingRiskInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredCount\": 144,\n        \"IsPaidUsr\": true,\n        \"AttackingCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Total\": 146,\n        \"BlockingCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredCount\": 144,\n        \"IsPaidUsr\": true,\n        \"AttackingCount\": 0,\n        \"RequestId\": \"vZw1pMcbJjtlMfhSw84j6C0YXJo31i7N\",\n        \"Total\": 146,\n        \"BlockingCount\": 2\n    }\n}",
         "title": "查询账号维度待处理风险信息"
       }
     ],
@@ -635,7 +635,7 @@
     "ModifyCCReqLimitPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Policy\": {\n        \"ExecuteDuration\": 1,\n        \"Uri\": \"xx\",\n        \"Period\": 1,\n        \"Cookie\": \"xx\",\n        \"Mode\": \"xx\",\n        \"Action\": \"xx\",\n        \"UserAgent\": \"xx\",\n        \"RequestNum\": 1\n    },\n    \"PolicyId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00000001\",\n    \"Policy\": {\n        \"Action\": \"alg\",\n        \"ExecuteDuration\": 100,\n        \"Mode\": \"equal\",\n        \"Period\": 10,\n        \"RequestNum\": 600,\n        \"Uri\": \"/\"\n    },\n    \"PolicyId\": \"ccRule-00009001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改CC频率限制策略"
       }
@@ -651,7 +651,7 @@
     "ModifyCcBlackWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"IpList\": [\n        {\n            \"Ip\": \"xx\",\n            \"Mask\": 1\n        }\n    ],\n    \"Type\": \"xx\",\n    \"PolicyId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCcBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-111111q1\",\n    \"IpList\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Mask\": 1\n        }\n    ],\n    \"Type\": \"black\",\n    \"PolicyId\": \"ccBlackWhite-00000312\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改CC四层黑白名单"
       }
@@ -659,8 +659,8 @@
     "ModifyDDoSBlackWhiteIpList": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyDDoSBlackWhiteIpList\n&InstanceId=bgpip-00023423\n&OldIpType=black\n&OldIp.Ip=1.1.1.1\n&OldIp.Mask=0\n&NewIpType=black\n&NewIp.Ip=1.1.1.2\n&NewIp.Mask=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00023423\",\n    \"OldIp\": {\n        \"Ip\": \"1.1.1.1\",\n        \"Mask\": \"0\"\n    },\n    \"NewIp\": {\n        \"Ip\": \"1.1.1.2\",\n        \"Mask\": \"0\"\n    },\n    \"NewIpType\": \"black\",\n    \"OldIpType\": \"black\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63591603-c943-46eb-9b78-c5498072291a\"\n    }\n}",
         "title": "修改DDoS黑白名单列表"
       }
     ],
@@ -675,7 +675,7 @@
     "ModifyDDoSLevel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSLevel\n<公共请求参数>\n\n{\n    \"DDoSLevel\": \"xx\",\n    \"Id\": \"xx\",\n    \"Business\": \"xx\",\n    \"Method\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSLevel\n<公共请求参数>\n\n{\n    \"Id\": \"bgpip-000000xe\",\n    \"Business\": \"bgpip\",\n    \"Method\": \"get\"\n}",
         "output": "{\n    \"Response\": {\n        \"DDoSLevel\": \"middle\",\n        \"Id\": \"bgpip-000000xe\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改DDoS的防护等级"
       }
@@ -715,7 +715,7 @@
     "ModifyPacketFilterConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"PacketFilterConfig\": {\n        \"MatchType2\": \"xx\",\n        \"MatchBegin2\": \"xx\",\n        \"Str2\": \"xx\",\n        \"SportEnd\": 0,\n        \"IsNot\": 0,\n        \"PktlenMax\": 0,\n        \"MatchLogic\": \"xx\",\n        \"MatchBegin\": \"xx\",\n        \"Offset\": 0,\n        \"SportStart\": 0,\n        \"DportStart\": 0,\n        \"PktlenMin\": 0,\n        \"IsNot2\": 0,\n        \"Depth\": 0,\n        \"Str\": \"xx\",\n        \"Action\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"MatchType\": \"xx\",\n        \"DportEnd\": 0,\n        \"Offset2\": 0,\n        \"Depth2\": 0,\n        \"Id\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPacketFilterConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00000001\",\n    \"PacketFilterConfig\": {\n        \"Action\": \"drop_rst\",\n        \"Depth\": 4,\n        \"Depth2\": 4,\n        \"DportEnd\": 8101,\n        \"DportStart\": 8101,\n        \"Id\": \"0176fm61\",\n        \"IsNot\": 0,\n        \"IsNot2\": 0,\n        \"MatchBegin\": \"begin_l4\",\n        \"MatchBegin2\": \"begin_l4\",\n        \"MatchLogic\": \"and\",\n        \"MatchType\": \"sunday\",\n        \"MatchType2\": \"pcre\",\n        \"Offset\": 14,\n        \"Offset2\": 14,\n        \"PktlenMax\": 100,\n        \"PktlenMin\": 1,\n        \"Protocol\": \"tcp\",\n        \"SportEnd\": 65535,\n        \"SportStart\": 1,\n        \"Str\": \"\\\\x3908\",\n        \"Str2\": \"\\\\xfaf0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改DDoS防护的特征过滤规则"
       }

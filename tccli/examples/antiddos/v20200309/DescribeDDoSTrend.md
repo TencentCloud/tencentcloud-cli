@@ -30,7 +30,7 @@ Output:
         "Ip": "1.1.1.1",
         "MetricName": "pps",
         "Period": 300,
-        "RequestId": "xxxxxxx",
+        "RequestId": "2f44a9d8-2b6f-4a9a-b1da-9d05d9e6ad83",
         "StartTime": "2022-10-10 01:05:00"
     }
 }

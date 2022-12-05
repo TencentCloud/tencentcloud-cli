@@ -390,6 +390,12 @@
       "name": "创建弹性网卡",
       "output": "CreateNetworkInterfaceResponse"
     },
+    "CreateOverseaAccelerator": {
+      "document": "为一个VPC开通指定的域名进行访问加速",
+      "input": "CreateOverseaAcceleratorRequest",
+      "name": "开通海外域名加速",
+      "output": "CreateOverseaAcceleratorResponse"
+    },
     "CreateOwnerWhiteServiceInternal": {
       "document": "本接口（AddOwnerWhiteService）用于关联APPID粒度的白名单公共服务。 原始VPC OSS接口: AddOwnerWhiteService",
       "input": "CreateOwnerWhiteServiceInternalRequest",
@@ -1319,6 +1325,12 @@
       "input": "DescribeNetworkInterfacesRequest",
       "name": "查询弹性网卡列表",
       "output": "DescribeNetworkInterfacesResponse"
+    },
+    "DescribeOverseaAccelerator": {
+      "document": "查询VPC已开通的加速域名",
+      "input": "DescribeOverseaAcceleratorRequest",
+      "name": "查询海外加速域名",
+      "output": "DescribeOverseaAcceleratorResponse"
     },
     "DescribeOverseaAcceleratorDomains": {
       "document": "查询可开通的加速域名",
@@ -8145,6 +8157,44 @@
           "value_allowed_null": false,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOverseaAcceleratorRequest": {
+      "document": "CreateOverseaAccelerator请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc实例id，形如vpc-8enostyw。",
+          "example": "vpc-8enostyw",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "支持APPLEPAY(buy.itunes.apple.com)",
+          "example": "无",
+          "member": "AccelerateDomain",
+          "name": "AccelerateDomain",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOverseaAcceleratorResponse": {
+      "document": "CreateOverseaAccelerator返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -17941,6 +17991,44 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorRequest": {
+      "document": "DescribeOverseaAccelerator请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc实例id，形如vpc-8enostyw。",
+          "example": "vpc-8enostyw",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverseaAcceleratorResponse": {
+      "document": "DescribeOverseaAccelerator返回参数结构体",
+      "members": [
+        {
+          "document": "加速域名描述信息列表",
+          "example": "无",
+          "member": "AccelerateDomain",
+          "name": "AccelerateDomain",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },

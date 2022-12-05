@@ -2587,6 +2587,17 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Docker命令运行参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-u root",
+          "member": "string",
+          "name": "DockerRunOption",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

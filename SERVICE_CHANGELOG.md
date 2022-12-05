@@ -1,10 +1,97 @@
 # 本版本更新包含以下内容：
 
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
+## 批量计算(batch) 版本：2017-03-12
 
-### 第 42 次发布
+### 第 6 次发布
 
-发布时间：2022-12-02 06:15:07
+发布时间：2022-12-05 06:16:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Docker](http://document.tencentcloudapi.woa.com/document/product/599/15912#Docker)
+
+	* 新增成员：DockerRunOption
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 36 次发布
+
+发布时间：2022-12-05 06:21:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：EncryptionFlag
+
+
+
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 15 次发布
+
+发布时间：2022-12-05 06:28:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MaterialInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MaterialInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>BasicInfo, VideoMaterial, AudioMaterial, ImageMaterial, LinkMaterial, VideoEditTemplateMaterial, OtherMaterial
+
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 47 次发布
+
+发布时间：2022-12-05 06:29:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryFlexPayeeAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/74952)
+
+	* 新增入参：SnapshotDate
+
+
+修改数据结构：
+
+* [ApplyFlexPaymentResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ApplyFlexPaymentResult)
+
+	* 新增成员：Vat, IndividualIncomeTax, AdditionalTaxSum, AdditionalTaxItem
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：Vat, IndividualIncomeTax, AdditionalTaxSum, AdditionalTaxItem
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 20 次发布
+
+发布时间：2022-12-05 06:35:59
 
 本次发布包含了以下内容：
 
@@ -12,30 +99,83 @@
 
 新增接口：
 
-* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
-* [InquireCkafkaPrice](http://document.tencentcloudapi.woa.com/document/product/597/76749)
+* [ResetAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1003/76752)
+* [SearchClusterDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/76754)
+* [SearchClusterTables](http://document.tencentcloudapi.woa.com/document/product/1003/76753)
+* [SwitchProxyVpc](http://document.tencentcloudapi.woa.com/document/product/1003/76755)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 5 次发布
+
+发布时间：2022-12-05 06:51:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchUpdateFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75352)
+
+	* 新增入参：TimeoutInterval
+
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75348)
+
+	* 新增出参：FwType
+
+* [UploadFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75337)
+
+	* 新增入参：FwType
+
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#FirmwareInfo)
+
+	* 新增成员：FwType
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 19 次发布
+
+发布时间：2022-12-05 06:54:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
+
+	* 新增出参：TotalPrice
+
 
 新增数据结构：
 
-* [InquireCkafkaPriceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquireCkafkaPriceResp)
-* [InquiryBasePrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryBasePrice)
-* [InquiryDetailPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDetailPrice)
-* [InquiryDiskParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDiskParam)
-* [InquiryPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPrice)
-* [InquiryPublicNetworkParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPublicNetworkParam)
-* [InstanceChargeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceChargeParam)
+* [TotalPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#TotalPrice)
 
 
 
-## 容器服务(tke) 版本：2022-05-01
+## 云监控(monitor) 版本：2018-07-24
 
+### 第 36 次发布
 
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 48 次发布
-
-发布时间：2022-12-02 06:54:10
+发布时间：2022-12-05 06:58:39
 
 本次发布包含了以下内容：
 
@@ -43,12 +183,51 @@
 
 新增接口：
 
-* [CreateClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76751)
+* [DescribePrometheusZones](http://document.tencentcloudapi.woa.com/document/product/248/76756)
 
 新增数据结构：
 
-* [PendingRelease](http://document.tencentcloudapi.woa.com/document/product/457/31866#PendingRelease)
-* [ReleaseValues](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseValues)
+* [PrometheusZoneItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusZoneItem)
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 36 次发布
+
+发布时间：2022-12-05 07:02:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizeDocumentOCR](http://document.tencentcloudapi.woa.com/document/product/866/76757)
+
+新增数据结构：
+
+* [ElemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ElemLists)
+* [ItemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ItemLists)
+* [TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)
+* [WordLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#WordLists)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 46 次发布
+
+发布时间：2022-12-05 07:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOverseaAccelerator](http://document.tencentcloudapi.woa.com/document/product/215/76759)
+* [DescribeOverseaAccelerator](http://document.tencentcloudapi.woa.com/document/product/215/76758)
 
 
 
@@ -2995,6 +3174,21 @@
 
 ## 批量计算(batch) 版本：2017-03-12
 
+### 第 6 次发布
+
+发布时间：2022-12-05 06:16:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Docker](http://document.tencentcloudapi.woa.com/document/product/599/15912#Docker)
+
+	* 新增成员：DockerRunOption
+
+
 ### 第 5 次发布
 
 发布时间：2022-08-29 15:56:55
@@ -5675,6 +5869,21 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 36 次发布
+
+发布时间：2022-12-05 06:21:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：EncryptionFlag
+
 
 ### 第 35 次发布
 
@@ -8634,18 +8843,18 @@
 
 新增接口：
 
-* [[CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[InquireCkafkaPrice](http://document.tencentcloudapi.woa.com/document/product/597/76749)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+* [InquireCkafkaPrice](http://document.tencentcloudapi.woa.com/document/product/597/76749)
 
 新增数据结构：
 
-* [[InquireCkafkaPriceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquireCkafkaPriceResp)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquireCkafkaPriceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquireCkafkaPriceResp))
-* [[InquiryBasePrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryBasePrice)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquiryBasePrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryBasePrice))
-* [[InquiryDetailPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDetailPrice)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquiryDetailPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDetailPrice))
-* [[InquiryDiskParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDiskParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquiryDiskParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDiskParam))
-* [[InquiryPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPrice)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquiryPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPrice))
-* [[InquiryPublicNetworkParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPublicNetworkParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InquiryPublicNetworkParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPublicNetworkParam))
-* [[InstanceChargeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceChargeParam)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[InstanceChargeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceChargeParam))
+* [InquireCkafkaPriceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquireCkafkaPriceResp)
+* [InquiryBasePrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryBasePrice)
+* [InquiryDetailPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDetailPrice)
+* [InquiryDiskParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryDiskParam)
+* [InquiryPrice](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPrice)
+* [InquiryPublicNetworkParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InquiryPublicNetworkParam)
+* [InstanceChargeParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceChargeParam)
 
 ### 第 41 次发布
 
@@ -10939,6 +11148,21 @@
 
 ## 多媒体创作引擎(cme) 版本：2019-10-29
 
+### 第 15 次发布
+
+发布时间：2022-12-05 06:28:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MaterialInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MaterialInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>BasicInfo, VideoMaterial, AudioMaterial, ImageMaterial, LinkMaterial, VideoEditTemplateMaterial, OtherMaterial
+
+
 ### 第 14 次发布
 
 发布时间：2022-08-29 15:55:29
@@ -11400,6 +11624,32 @@
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 47 次发布
+
+发布时间：2022-12-05 06:29:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryFlexPayeeAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/74952)
+
+	* 新增入参：SnapshotDate
+
+
+修改数据结构：
+
+* [ApplyFlexPaymentResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ApplyFlexPaymentResult)
+
+	* 新增成员：Vat, IndividualIncomeTax, AdditionalTaxSum, AdditionalTaxItem
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：Vat, IndividualIncomeTax, AdditionalTaxSum, AdditionalTaxItem
+
 
 ### 第 46 次发布
 
@@ -14835,6 +15085,21 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 20 次发布
+
+发布时间：2022-12-05 06:35:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ResetAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1003/76752)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SearchClusterDatabases](http://document.tencentcloudapi.woa.com/document/product/1003/76754)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SearchClusterTables](http://document.tencentcloudapi.woa.com/document/product/1003/76753)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SwitchProxyVpc](http://document.tencentcloudapi.woa.com/document/product/1003/76755)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 19 次发布
 
@@ -24232,6 +24497,36 @@
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
+### 第 5 次发布
+
+发布时间：2022-12-05 06:51:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchUpdateFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75352)
+
+	* 新增入参：TimeoutInterval
+
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75348)
+
+	* 新增出参：FwType
+
+* [UploadFirmware](http://document.tencentcloudapi.woa.com/document/product/1131/75337)
+
+	* 新增入参：FwType
+
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#FirmwareInfo)
+
+	* 新增成员：FwType
+
+
 ### 第 4 次发布
 
 发布时间：2022-11-03 06:22:22
@@ -24838,6 +25133,25 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 19 次发布
+
+发布时间：2022-12-05 06:54:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquirePriceRenewInstances](http://document.tencentcloudapi.woa.com/document/product/1207/55557)
+
+	* 新增出参：TotalPrice
+
+
+新增数据结构：
+
+* [[TotalPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#TotalPrice)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[TotalPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#TotalPrice))
 
 ### 第 18 次发布
 
@@ -27054,6 +27368,22 @@
 
 
 ## 云监控(monitor) 版本：2018-07-24
+
+### 第 36 次发布
+
+发布时间：2022-12-05 06:58:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribePrometheusZones](http://document.tencentcloudapi.woa.com/document/product/248/76756)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[PrometheusZoneItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusZoneItem)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[PrometheusZoneItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusZoneItem))
 
 ### 第 35 次发布
 
@@ -29518,6 +29848,25 @@
 
 
 ## 文字识别(ocr) 版本：2018-11-19
+
+### 第 36 次发布
+
+发布时间：2022-12-05 07:02:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[RecognizeDocumentOCR](http://document.tencentcloudapi.woa.com/document/product/866/76757)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ElemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ElemLists)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[ElemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ElemLists))
+* [[ItemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ItemLists)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[ItemLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#ItemLists))
+* [[TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists))
+* [[WordLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#WordLists)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[WordLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#WordLists))
 
 ### 第 35 次发布
 
@@ -39676,12 +40025,12 @@
 
 新增接口：
 
-* [[CreateClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76751)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76751)
 
 新增数据结构：
 
-* [[PendingRelease](http://document.tencentcloudapi.woa.com/document/product/457/31866#PendingRelease)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[PendingRelease](http://document.tencentcloudapi.woa.com/document/product/457/31866#PendingRelease))
-* [[ReleaseValues](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseValues)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[ReleaseValues](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseValues))
+* [PendingRelease](http://document.tencentcloudapi.woa.com/document/product/457/31866#PendingRelease)
+* [ReleaseValues](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseValues)
 
 ### 第 47 次发布
 
@@ -44700,6 +45049,19 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 46 次发布
+
+发布时间：2022-12-05 07:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateOverseaAccelerator](http://document.tencentcloudapi.woa.com/document/product/215/76759)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeOverseaAccelerator](http://document.tencentcloudapi.woa.com/document/product/215/76758)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 45 次发布
 

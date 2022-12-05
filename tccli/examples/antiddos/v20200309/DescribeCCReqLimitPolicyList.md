@@ -6,42 +6,39 @@ Input:
 
 ```
 tccli antiddos DescribeCCReqLimitPolicyList --cli-unfold-argument  \
-    --Domain xx \
-    --Protocol xx \
-    --Business xx \
-    --InstanceId xx \
-    --Ip xx \
-    --Limit 1 \
-    --Offset 1
+    --Business bgp-multip \
+    --InstanceId bgp-00000001 \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "ea775a73-7de5-4d36-aca0-29307e7c4f27",
         "Total": 1,
         "RequestLimitPolicyList": [
             {
-                "Domain": "xx",
-                "Protocol": "xx",
-                "InstanceId": "xx",
-                "Ip": "xx",
-                "ModifyTime": "2020-09-22 00:00:00",
-                "PolicyId": "xx",
+                "PolicyId": "ccRule-00009xn0",
+                "InstanceId": "bgp-00000001",
+                "Ip": "1.1.1.1",
+                "Protocol": "http",
+                "Domain": "www.test.com",
                 "PolicyRecord": {
-                    "ExecuteDuration": 1,
-                    "Uri": "xx",
-                    "Period": 1,
-                    "Cookie": "xx",
-                    "Mode": "xx",
-                    "Action": "xx",
-                    "UserAgent": "xx",
-                    "RequestNum": 1
+                    "Period": 10,
+                    "RequestNum": 500,
+                    "Action": "alg",
+                    "ExecuteDuration": 120,
+                    "Mode": "equal",
+                    "Uri": "/",
+                    "UserAgent": "",
+                    "Cookie": ""
                 },
-                "CreateTime": "2020-09-22 00:00:00"
+                "CreateTime": "2022-12-02 09:11:48",
+                "ModifyTime": "2022-12-02 09:11:48"
             }
-        ],
-        "RequestId": "xx"
+        ]
     }
 }
 ```

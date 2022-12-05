@@ -7,19 +7,19 @@ Input:
 ```
 tccli antiddos ModifyDDoSBlackWhiteIpList --cli-unfold-argument  \
     --InstanceId bgpip-00023423 \
-    --OldIpType black \
     --OldIp.Ip 1.1.1.1 \
     --OldIp.Mask 0 \
-    --NewIpType black \
     --NewIp.Ip 1.1.1.2 \
-    --NewIp.Mask 0
+    --NewIp.Mask 0 \
+    --NewIpType black \
+    --OldIpType black
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "63591603-c943-46eb-9b78-c5498072291a"
     }
 }
 ```

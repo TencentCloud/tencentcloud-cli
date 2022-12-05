@@ -6,41 +6,38 @@ Input:
 
 ```
 tccli antiddos DescribeCCPrecisionPlyList --cli-unfold-argument  \
-    --Domain xx \
-    --Protocol xx \
-    --Business xx \
-    --InstanceId xx \
-    --Ip xx \
-    --Limit 1 \
-    --Offset 1
+    --Business bgp-multip \
+    --InstanceId bgp-00000211 \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "23a97c66-22d4-4522-b93b-388aac08777d",
         "Total": 1,
         "PrecisionPolicyList": [
             {
-                "Domain": "xx",
-                "PolicyAction": "xx",
-                "InstanceId": "xx",
-                "Ip": "xx",
+                "PolicyId": "ccPrecs-00000001",
+                "InstanceId": "bgp-00000211",
+                "Ip": "1.1.1.1",
+                "Protocol": "http",
+                "Domain": "www.test.com",
+                "PolicyAction": "alg",
                 "PolicyList": [
                     {
-                        "ValueOperator": "xx",
-                        "FieldName": "xx",
-                        "FieldType": "xx",
-                        "Value": "xx"
+                        "FieldType": "value",
+                        "FieldName": "cgi",
+                        "Value": "test",
+                        "ValueOperator": "include"
                     }
                 ],
-                "PolicyId": "xx",
-                "ModifyTime": "2020-09-22 00:00:00",
-                "Protocol": "xx",
-                "CreateTime": "2020-09-22 00:00:00"
+                "CreateTime": "2022-12-01 09:05:36",
+                "ModifyTime": "2022-12-01 09:05:36"
             }
-        ],
-        "RequestId": "xx"
+        ]
     }
 }
 ```

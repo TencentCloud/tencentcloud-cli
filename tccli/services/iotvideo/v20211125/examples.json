@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"7ZISKXPJVU\",\n    \"FirmwareVersion\": \"1.0.3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"desc\",\n        \"Md5sum\": \"md5\",\n        \"Createtime\": 1597047368,\n        \"RequestId\": \"xxxxxxxxxx\",\n        \"Version\": \"1.0.3\",\n        \"ProductId\": \"7ZISKXPJVU\",\n        \"Name\": \"name\",\n        \"ProductName\": \"ABC\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"desc\",\n        \"Md5sum\": \"md5\",\n        \"Createtime\": 1597047368,\n        \"RequestId\": \"xxxxxxxxxx\",\n        \"Version\": \"1.0.3\",\n        \"ProductId\": \"7ZISKXPJVU\",\n        \"Name\": \"name\",\n        \"ProductName\": \"ABC\",\n        \"FwType\": \"mcu\"\n    }\n}",
         "title": "查询固件信息"
       }
     ],
@@ -739,7 +739,7 @@
     "UploadFirmware": [
       {
         "document": "",
-        "input": "https://iotvideo.tencentcloudapi.com/?Action=UploadFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&Md5sum=hfshfspodkoiwuidoiwjcuie\n&FileSize=1024\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFirmware\n<公共请求参数>\n\n{\n    \"Md5sum\": \"hfshfspodkoiwuidoiwjcuie\",\n    \"FileSize\": \"1024\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"ProductID\": \"ABCDE12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "上传固件信息"
       }

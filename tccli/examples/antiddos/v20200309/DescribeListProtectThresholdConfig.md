@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli antiddos DescribeListProtectThresholdConfig --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
+    --FilterInstanceId bgpip-0000011x \
     --FilterIp 1.1.1.1 \
-    --FilterInstanceId bgpip-0000011x
+    --Limit 25 \
+    --Offset 0
 ```
 
 Output: 
@@ -20,29 +20,39 @@ Output:
         "ConfigList": [
             {
                 "DDoSThreshold": 1,
-                "DDoSAI": "xx",
+                "RstFloodPktThreshold": 1,
+                "SynAckFloodThreshold": 1,
+                "DDoSAI": "om",
                 "CCEnable": 1,
-                "CCThreshold": 1,
+                "ListenerCcThresholdList": [
+                    {
+                        "CCThreshold": 0,
+                        "Domain": "*.examw.com",
+                        "Protocol": "http",
+                        "CCEnable": 0
+                    }
+                ],
+                "AckFloodThreshold": 1,
+                "SynFloodThreshold": 1,
                 "InstanceDetailList": [
                     {
-                        "InstanceId": "xx",
+                        "InstanceId": "bgpip-0000011x",
                         "EipList": [
                             "1.1.1.1"
                         ]
                     }
                 ],
-                "ListenerCcThresholdList": [
-                    {
-                        "CCThreshold": 0,
-                        "Domain": "xx",
-                        "Protocol": "xx",
-                        "CCEnable": 0
-                    }
-                ],
-                "DDoSLevel": "xx"
+                "CCThreshold": 1,
+                "UdpFloodPktThreshold": 1,
+                "AckFloodPktThreshold": 1,
+                "UdpFloodThreshold": 1,
+                "SynAckFloodPktThreshold": 1,
+                "RstFloodThreshold": 1,
+                "DDoSLevel": "middle",
+                "SynFloodPktThreshold": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "f56cc9dc-29d9-4594-b12d-22239c7bc888"
     }
 }
 ```

@@ -2818,7 +2818,7 @@
         {
           "default": "",
           "document": "协议",
-          "example": "bgp-multip",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -2885,7 +2885,7 @@
         },
         {
           "default": "",
-          "document": "CC区域封禁配置，填写参数时配置ID请为空",
+          "document": "CC区域封禁配置",
           "example": "无",
           "member": "CcGeoIPBlockConfig",
           "name": "CcGeoIPBlockConfig",
@@ -7015,7 +7015,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7024,7 +7025,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7033,7 +7035,8 @@
           "member": "string",
           "name": "FilterDomain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7048,7 +7051,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "调度域名信息列表",
@@ -7057,7 +7061,8 @@
           "name": "DomainList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7342,7 +7347,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7351,7 +7357,8 @@
           "member": "string",
           "name": "Dimension",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7360,25 +7367,28 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "起始时间",
+          "document": "统计开始时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "统计结束时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7393,25 +7403,28 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "起始时间",
+          "document": "统计起始时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "结束时间",
+          "document": "统计结束时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "周期",
@@ -7420,7 +7433,8 @@
           "name": "Period",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "每个周期点的攻击次数",
@@ -7429,7 +7443,8 @@
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "包含的周期点数",
@@ -7438,7 +7453,8 @@
           "name": "Count",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7881,7 +7897,7 @@
       "document": "DescribePendingRiskInfo返回参数结构体",
       "members": [
         {
-          "document": "是否为付费用户",
+          "document": "是否为付费用户，true：付费用户， false：普通用户",
           "example": "true",
           "member": "bool",
           "name": "IsPaidUsr",
@@ -9332,7 +9348,7 @@
         },
         {
           "default": "",
-          "document": "当前黑名单类型，取值black时黑名单；取值white时白名单",
+          "document": "当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单",
           "example": "black",
           "member": "string",
           "name": "OldIpType",
@@ -11356,7 +11372,8 @@
           "name": "Offset",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11366,7 +11383,8 @@
           "name": "OpenStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11376,7 +11394,8 @@
           "name": "Listeners",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11386,7 +11405,8 @@
           "name": "Keys",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11396,7 +11416,8 @@
           "name": "Verify",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

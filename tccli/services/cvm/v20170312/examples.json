@@ -99,7 +99,7 @@
     "DeleteHpcClusters": [
       {
         "document": "删除高性能计算集群",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteHpcClusters\r\n&HpcClusterIds.0=hpc-p64fdfa9\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHpcClusters\n<公共请求参数>\n\n{\n    \"HpcClusterIds\": [\n        \"hpc-p64fdfa9\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
         "title": "删除高性能计算集群"
       }

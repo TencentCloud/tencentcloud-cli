@@ -270,7 +270,7 @@
     ],
     "DescribeTaskDetail": [
       {
-        "document": "",
+        "document": "获取任务详情。",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeTaskDetail\n&Platform=test\n&TaskId=181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2020-04-28T18:16:58Z\",\n        \"ErrCode\": 0,\n        \"ErrMsg\": \"Success.\",\n        \"Progress\": 100,\n        \"RequestId\": \"85b8cdac-8e18-430a-aeae-08076ac26a11\",\n        \"Status\": \"SUCCESS\",\n        \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\",\n        \"VideoEditProjectOutput\": {\n            \"MaterialId\": \"1111\",\n            \"MetaData\": {\n                \"AudioStreamInfoSet\": [\n                    {\n                        \"Bitrate\": 46552,\n                        \"Codec\": \"aac\",\n                        \"SamplingRate\": 16000\n                    }\n                ],\n                \"Bitrate\": 6917072,\n                \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                \"Duration\": 346.55999755859375,\n                \"Height\": 1080,\n                \"Rotate\": 0,\n                \"Size\": 299688882,\n                \"VideoStreamInfoSet\": [\n                    {\n                        \"Bitrate\": 6870520,\n                        \"Codec\": \"h264\",\n                        \"Fps\": 25,\n                        \"Height\": 1080,\n                        \"Width\": 1920\n                    }\n                ],\n                \"Width\": 1920\n            },\n            \"URL\": \"http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4\",\n            \"VodFileId\": \"5285890802029089\"\n        }\n    }\n}",
         "title": "获取任务详情"

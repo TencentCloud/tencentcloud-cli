@@ -294,6 +294,12 @@
       "name": "集装箱识别",
       "output": "RecognizeContainerOCRResponse"
     },
+    "RecognizeDocumentOCR": {
+      "document": "本接口集高精度中英文识别、智能版面还原、全文排版输出、表格识别等多功能为一体，针对办公场景下常见的各类文档，如论文、合同、书籍、手册、指南、幻灯片等，支持图片、表格、文本、分割线等视觉元素的相关属性输出，对文档信息进行提取。",
+      "input": "RecognizeDocumentOCRRequest",
+      "name": "办公文档还原（免费公测版）",
+      "output": "RecognizeDocumentOCRResponse"
+    },
     "RecognizeFinancialReportOCR": {
       "document": "财报识别。支持识别Type为3种类型的财报\n1 资产负债表，2 利润表，3 现金流量表",
       "input": "RecognizeFinancialReportOCRRequest",
@@ -2309,6 +2315,72 @@
         }
       ],
       "type": "object"
+    },
+    "ElemLists": {
+      "document": "文档还原（高精度版）识别出的元素信息",
+      "members": [
+        {
+          "default": "",
+          "document": "元素四点坐标，以四个顶点坐标表示",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的元素类型：\n1：图片\n2：文本段\n3：表格对象(表格对象内细分：100：有\n线表格、101：无线表格、102：单元格)\n4：分割线",
+          "example": "无",
+          "member": "int64",
+          "name": "ElemType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度 0 ~100",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ElemType 类型为表格时，返回该参数",
+          "example": "无",
+          "member": "TableLists",
+          "name": "TableContent",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元素所属的群组",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应的元素 id 序号列表",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemIDLists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EnglishOCRRequest": {
       "document": "EnglishOCR请求参数结构体",
@@ -4532,6 +4604,82 @@
       ],
       "usage": "out"
     },
+    "ItemLists": {
+      "document": "文档还原（高精度版）识别的文本行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的文本行四点坐标，以四个顶点坐标表示。",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的文本行字符串。",
+          "example": "无",
+          "member": "string",
+          "name": "DetectedText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行字符串置信度，置信度 0 ~100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行类型：“普通文本”、“页眉/页脚”、“题头/题注”、“章节”、“标题”（nt-普通文本、ls-列表、se-章节、da-日期、ti-标题、au-作者、ab-摘要、re-参考文献、ca-题注、fi-图、ta-表、he-页眉、fo-页脚、ot-其他）",
+          "example": "无",
+          "member": "string",
+          "name": "ItemType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行所属的群组。",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemCoord",
+          "name": "ItemPolygon",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本行中的单字信息，是否返回由isWords决定。",
+          "example": "无",
+          "member": "WordLists",
+          "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LicensePlateInfo": {
       "document": "全部车牌信息",
       "members": [
@@ -6650,6 +6798,114 @@
           "member": "string",
           "name": "TareLB",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeDocumentOCRRequest": {
+      "document": "RecognizeDocumentOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片/PDF的 Base64 值。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片/PDF的 Url 地址。\n要求图片/PDF经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否返回预处理后的图像数据(使用 base64 加密后的字符串)，默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "ReturnImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "宽高位置开关，默认值为false，开启可返回位置信息(x、y、width、height)。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableLocation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否返回单字信息，默认值为false。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsWords",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeDocumentOCRResponse": {
+      "document": "RecognizeDocumentOCR返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
+          "example": "无",
+          "member": "ItemLists",
+          "name": "ItemContent",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别出的元素信息，具体内容请点击左侧链接。",
+          "example": "无",
+          "member": "ElemLists",
+          "name": "ElemContent",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否返回由RetImage决定，其中包含image（预处理返回的图片信息）。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageContent",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9381,6 +9637,72 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableLists": {
+      "document": "文档还原（高精度版）识别的表格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "元素四点坐标，以四个顶点坐标表示",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的元素类型：\n102 单元格",
+          "example": "无",
+          "member": "int64",
+          "name": "ElemType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度 0 ~100",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格类型，包括 body、header、footer、context 四种",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分别对应单元格左上角的列索引、左上角的行索引、单元格右下角的列索引、单元格右下角的行索引",
+          "example": "无",
+          "member": "int64",
+          "name": "CellIndex",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应的元素 id 序号列表",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemIDLists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13725,6 +14047,82 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WordLists": {
+      "document": "文档还原（高精度版）识别的单字信息",
+      "members": [
+        {
+          "default": "",
+          "document": "单字在原图中的四点坐标，以四个顶点坐标表示。",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单字置信度，置信度 0 ~100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行中的单个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Character",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体信息，包含：\n__font__: 字体、\n__handwrting__:手写、\n__middleline__:中划线、\n__underline__:下划线",
+          "example": "无",
+          "member": "string",
+          "name": "FontAttribute",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体颜色。",
+          "example": "无",
+          "member": "string",
+          "name": "Color",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体大小（设定：整页为A4纸，长边假设297mm，字号的定义：字的高度单位为pts，每个pts的大小为0.35mm，接口输出单位1/10pts，例子，接口输出：75，对应7.5 pts, 对应物理高度7.5 * 0.35mm）",
+          "example": "无",
+          "member": "int64",
+          "name": "FontSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单字在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemCoord",
+          "name": "WordPolygon",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

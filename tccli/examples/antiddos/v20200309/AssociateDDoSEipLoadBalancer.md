@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli antiddos AssociateDDoSEipLoadBalancer --cli-unfold-argument  \
-    --InstanceId xx \
-    --Eip xx \
-    --Vip xx \
-    --LoadBalancerRegion xx \
-    --LoadBalancerID xx
+    --InstanceId bgpip-0000011x \
+    --Eip 1.1.1.1 \
+    --Vip 1.1.1.1 \
+    --LoadBalancerRegion ap-hongkong \
+    --LoadBalancerID lb-0000002i
 ```
 
 Output: 

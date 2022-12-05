@@ -6,29 +6,29 @@ Input:
 
 ```
 tccli antiddos ModifyPacketFilterConfig --cli-unfold-argument  \
-    --InstanceId xx \
-    --PacketFilterConfig.MatchType2 xx \
-    --PacketFilterConfig.MatchBegin2 xx \
-    --PacketFilterConfig.Str2 xx \
-    --PacketFilterConfig.SportEnd 0 \
+    --InstanceId bgpip-00000001 \
+    --PacketFilterConfig.Action drop_rst \
+    --PacketFilterConfig.Depth 4 \
+    --PacketFilterConfig.Depth2 4 \
+    --PacketFilterConfig.DportEnd 8101 \
+    --PacketFilterConfig.DportStart 8101 \
+    --PacketFilterConfig.Id 0176fm61 \
     --PacketFilterConfig.IsNot 0 \
-    --PacketFilterConfig.PktlenMax 0 \
-    --PacketFilterConfig.MatchLogic xx \
-    --PacketFilterConfig.MatchBegin xx \
-    --PacketFilterConfig.Offset 0 \
-    --PacketFilterConfig.SportStart 0 \
-    --PacketFilterConfig.DportStart 0 \
-    --PacketFilterConfig.PktlenMin 0 \
     --PacketFilterConfig.IsNot2 0 \
-    --PacketFilterConfig.Depth 0 \
-    --PacketFilterConfig.Str xx \
-    --PacketFilterConfig.Action xx \
-    --PacketFilterConfig.Protocol xx \
-    --PacketFilterConfig.MatchType xx \
-    --PacketFilterConfig.DportEnd 0 \
-    --PacketFilterConfig.Offset2 0 \
-    --PacketFilterConfig.Depth2 0 \
-    --PacketFilterConfig.Id xx
+    --PacketFilterConfig.MatchBegin begin_l4 \
+    --PacketFilterConfig.MatchBegin2 begin_l4 \
+    --PacketFilterConfig.MatchLogic and \
+    --PacketFilterConfig.MatchType sunday \
+    --PacketFilterConfig.MatchType2 pcre \
+    --PacketFilterConfig.Offset 14 \
+    --PacketFilterConfig.Offset2 14 \
+    --PacketFilterConfig.PktlenMax 100 \
+    --PacketFilterConfig.PktlenMin 1 \
+    --PacketFilterConfig.Protocol tcp \
+    --PacketFilterConfig.SportEnd 65535 \
+    --PacketFilterConfig.SportStart 1 \
+    --PacketFilterConfig.Str \x3908 \
+    --PacketFilterConfig.Str2 \xfaf0
 ```
 
 Output: 

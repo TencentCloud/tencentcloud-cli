@@ -8,7 +8,7 @@ Input:
 tccli cpdp BindAccount --cli-unfold-argument  \
     --PhoneNum xx \
     --AnchorId xx \
-    --TransferType 0 \
+    --TransferType 1 \
     --AccountNo xx
 ```
 

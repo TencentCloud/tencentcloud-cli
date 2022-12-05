@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli antiddos DescribeCcGeoIPBlockConfigList --cli-unfold-argument  \
-    --Domain xx \
-    --Protocol xx \
-    --Business xx \
-    --InstanceId xx \
-    --Ip xx \
+    --Domain test.dayu.com \
+    --Protocol http \
+    --Business bgpip \
+    --InstanceId bgpip-111111q1 \
+    --Ip 1.1.1.1 \
     --Limit 1 \
     --Offset 1
 ```
@@ -21,14 +21,14 @@ Output:
     "Response": {
         "CcGeoIpPolicyList": [
             {
-                "Domain": "xx",
-                "Protocol": "xx",
-                "InstanceId": "xx",
-                "Ip": "xx",
-                "RegionType": "xx",
-                "PolicyId": "xx",
+                "Domain": "test.dayu.com",
+                "Protocol": "http",
+                "InstanceId": "bgpip-111111q1",
+                "Ip": "1.1.1.1",
+                "RegionType": "china",
+                "PolicyId": "rule-0000011x",
                 "ModifyTime": "2020-09-22 00:00:00",
-                "Action": "xx",
+                "Action": "1",
                 "CreateTime": "2020-09-22 00:00:00",
                 "AreaList": [
                     1
@@ -36,7 +36,7 @@ Output:
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "c9520936-381c-4c04-b535-c8f4df1f8059"
     }
 }
 ```

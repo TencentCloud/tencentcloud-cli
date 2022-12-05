@@ -21,7 +21,8 @@ Output:
         "Version": "1.0.3",
         "ProductId": "7ZISKXPJVU",
         "Name": "name",
-        "ProductName": "ABC"
+        "ProductName": "ABC",
+        "FwType": "mcu"
     }
 }
 ```

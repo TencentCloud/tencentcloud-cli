@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli antiddos DescribeBgpBizTrend --cli-unfold-argument  \
-    --Business xx \
-    --InstanceId xx \
+    --Business bgp-multip \
+    --InstanceId bgp-00000001 \
     --Flag 1 \
-    --StartTime xx \
-    --EndTime xx \
-    --MetricName xx
+    --StartTime 2022-11-29 00:00:00 \
+    --EndTime 2022-11-29 01:00:00 \
+    --MetricName intraffic
 ```
 
 Output: 
@@ -23,8 +23,8 @@ Output:
         ],
         "Total": 1,
         "MaxData": 1,
-        "RequestId": "xx",
-        "MetricName": "xx"
+        "RequestId": "f4b3915e-c1bd-4ca4-aaef-e88eaa8aa66e",
+        "MetricName": "intraffic"
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: 创建实例询价-成功返回**
+**Example 1: 续费实例询价-成功返回**
 
-
+续费实例询价
 
 Input: 
 
@@ -44,6 +44,10 @@ Output:
                 }
             }
         ],
+        "TotalPrice": {
+            "OriginalPrice": 47.0,
+            "DiscountPrice": 47.0
+        },
         "RequestId": "0151123a-c99c-4eda-b267-2d9800b977dc"
     }
 }

@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli antiddos CreateCcGeoIPBlockConfig --cli-unfold-argument  \
-    --InstanceId xx \
-    --IP xx \
-    --Domain xx \
-    --Protocol xx \
-    --CcGeoIPBlockConfig.Action xx \
-    --CcGeoIPBlockConfig.Id xx \
-    --CcGeoIPBlockConfig.RegionType xx \
-    --CcGeoIPBlockConfig.AreaList 0
+    --InstanceId bgpip-0000011x \
+    --IP 1.1.1.1 \
+    --Domain www.test.com \
+    --Protocol http \
+    --CcGeoIPBlockConfig.Action drop \
+    --CcGeoIPBlockConfig.Id 0 \
+    --CcGeoIPBlockConfig.RegionType oversea \
+    --CcGeoIPBlockConfig.AreaList 100025
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "54a41bf4-dca0-438b-a1cd-eb1f99e9a6b3"
     }
 }
 ```
