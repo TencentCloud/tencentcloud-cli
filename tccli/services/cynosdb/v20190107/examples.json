@@ -456,6 +456,14 @@
         "title": "删除从可用区"
       }
     ],
+    "ResetAccountPassword": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ResetAccountPassword\n&ClusterId=cynosdbpg-on5xw0ni\n&AccountName=root\n&AccountPassword=abc@2018\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"148561\"\n    }\n}",
+        "title": "重置数据库账号密码"
+      }
+    ],
     "ResumeServerless": [
       {
         "document": "",
@@ -480,6 +488,22 @@
         "title": "回档集群"
       }
     ],
+    "SearchClusterDatabases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\",\n    \"Database\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Databases\": []\n    }\n}",
+        "title": "搜索集群database列表"
+      }
+    ],
+    "SearchClusterTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\",\n    \"Database\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Tables\": []\n    }\n}",
+        "title": "搜索集群数据表列表"
+      }
+    ],
     "SetRenewFlag": [
       {
         "document": "",
@@ -494,6 +518,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"OldZone\": \"xx\",\n    \"NewZone\": \"xx\",\n    \"IsInMaintainPeriod\": \"yes\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"123\",\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "切换到从可用区"
+      }
+    ],
+    "SwitchProxyVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": \"0\",\n    \"UniqSubnetId\": \"xx\",\n    \"ClusterId\": \"xxx\",\n    \"UniqVpcId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "转换网络"
       }
     ],
     "UpgradeInstance": [

@@ -73,7 +73,7 @@
       "output": "DeleteDisasterRecoverGroupsResponse"
     },
     "DeleteHpcClusters": {
-      "document": "当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除改集群。",
+      "document": "当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除该集群。",
       "input": "DeleteHpcClustersRequest",
       "name": "删除高性能计算集群",
       "output": "DeleteHpcClustersResponse"
@@ -2228,6 +2228,7 @@
         {
           "default": "",
           "document": "高性能计算集群ID列表。",
+          "example": "[\"hpc-p64fdfa9\\r\\n\"]",
           "member": "string",
           "name": "HpcClusterIds",
           "required": true,

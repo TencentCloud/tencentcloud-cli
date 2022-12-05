@@ -1760,7 +1760,6 @@
       "document": "DescribeBlueprints请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "镜像 ID 列表。",
           "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
@@ -1769,7 +1768,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
@@ -1778,7 +1776,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "1",
           "member": "int64",
@@ -1787,8 +1784,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds 和 Filters 。",
           "example": " [         {             \"Name\": \"blueprint-type\",             \"",
           "member": "Filter",
           "name": "Filters",
@@ -1806,7 +1802,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1815,7 +1810,6 @@
           "example": " [             {                 \"BlueprintId\": \"lhbp-5e8807sc\",",
           "member": "Blueprint",
           "name": "BlueprintSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4464,7 +4458,6 @@
       "document": "InquirePriceRenewInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。",
           "example": "[\"lhins-11110001\\r\\n\"]",
           "member": "string",
@@ -4473,7 +4466,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
@@ -4482,7 +4474,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否续费数据盘。默认值: false, 即不续费。",
           "example": "false",
           "member": "bool",
@@ -4491,7 +4482,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "数据盘是否对齐实例到期时间。默认值: false, 即不对齐。",
           "example": "false",
           "member": "bool",
@@ -4510,7 +4500,6 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4519,7 +4508,6 @@
           "example": "无",
           "member": "DataDiskPrice",
           "name": "DataDiskPriceSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4528,9 +4516,16 @@
           "example": "无",
           "member": "InstancePriceDetail",
           "name": "InstancePriceDetailSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "总计价格。",
+          "example": "无",
+          "member": "TotalPrice",
+          "name": "TotalPrice",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6439,6 +6434,30 @@
         }
       ],
       "type": "object"
+    },
+    "TotalPrice": {
+      "document": "总计价格信息",
+      "members": [
+        {
+          "document": "原始总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.0",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TrafficPackage": {
       "document": "流量包详情",

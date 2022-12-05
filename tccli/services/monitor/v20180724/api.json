@@ -390,6 +390,12 @@
       "name": "列出 Prometheus 抓取任务",
       "output": "DescribePrometheusScrapeJobsResponse"
     },
+    "DescribePrometheusZones": {
+      "document": "列出 Prometheus 服务可用区",
+      "input": "DescribePrometheusZonesRequest",
+      "name": "列出 Prometheus 服务可用区",
+      "output": "DescribePrometheusZonesResponse"
+    },
     "DescribeRecordingRules": {
       "document": "根据条件查询 Prometheus 预聚合规则",
       "input": "DescribeRecordingRulesRequest",
@@ -9303,6 +9309,42 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusZonesRequest": {
+      "document": "DescribePrometheusZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "地域 ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusZonesResponse": {
+      "document": "DescribePrometheusZones返回参数结构体",
+      "members": [
+        {
+          "document": "区域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusZoneItem",
+          "name": "ZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordingRulesRequest": {
       "document": "DescribeRecordingRules请求参数结构体",
       "members": [
@@ -13189,6 +13231,57 @@
         }
       ],
       "usage": "both"
+    },
+    "PrometheusZoneItem": {
+      "document": "PrometheusZoneItem 响应结构体内的地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区 ID",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区状态( 0: 不可用；1: 可用)",
+          "member": "int64",
+          "name": "ZoneState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域 ID",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区名（目前为中文）",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PutMonitorDataRequest": {
       "document": "PutMonitorData请求参数结构体",

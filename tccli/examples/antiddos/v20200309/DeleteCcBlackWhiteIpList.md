@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli antiddos DeleteCcBlackWhiteIpList --cli-unfold-argument  \
-    --InstanceId xx \
-    --PolicyId xx
+    --InstanceId bgpip-111111qq \
+    --PolicyId ccBlackWhite-000000s0
 ```
 
 Output: 

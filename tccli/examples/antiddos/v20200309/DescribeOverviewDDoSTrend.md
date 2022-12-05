@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli antiddos DescribeOverviewDDoSTrend --cli-unfold-argument  \
-    --Business xx \
+    --Business bgp \
     --Period 0 \
     --StartTime 2020-09-22 00:00:00 \
     --EndTime 2020-09-22 00:00:00 \
-    --Id xx \
-    --MetricName xx
+    --Id bgp-00000001 \
+    --MetricName bps
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "cb39db80-b483-4139-a00e-1177ed011579",
         "Count": 1,
         "Data": [
-            1234
+            12234
         ]
     }
 }

@@ -1817,6 +1817,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件是否加密， on-加密， off-未加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "EncryptionFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8431,6 +8441,7 @@
         {
           "default": "",
           "document": "只读实例ID，格式如：cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与MasterInstanceId参数不能同时为空。",
+          "example": "cdbro-831kwfnh",
           "member": "string",
           "name": "RoInstanceId",
           "required": false,
@@ -8439,6 +8450,7 @@
         {
           "default": "",
           "document": "主实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，该参数与RoInstanceId参数不能同时为空。注意，当传入参数包含RoInstanceId时，返回值为只读实例升级时的最小规格；当传入参数只包含MasterInstanceId时，返回值为只读实例购买时的最小规格。",
+          "example": "cdb-r66ityd5",
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
@@ -8452,15 +8464,19 @@
       "members": [
         {
           "document": "内存规格大小, 单位为：MB。",
+          "example": "1000",
           "member": "int64",
           "name": "Memory",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "磁盘规格大小, 单位为：GB。",
+          "example": "50",
           "member": "int64",
           "name": "Volume",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

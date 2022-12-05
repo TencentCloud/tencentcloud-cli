@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli antiddos DescribeDDoSConnectLimitList --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
             {
                 "InstanceDetailList": [
                     {
-                        "InstanceId": "xx",
+                        "InstanceId": "bgpip-111111q1",
                         "EipList": [
                             "1.1.1.1"
                         ]
@@ -38,7 +38,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "c9520936-381c-4c04-b535-c8f4df1f8059"
     }
 }
 ```

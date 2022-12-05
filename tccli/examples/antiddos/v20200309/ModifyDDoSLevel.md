@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli antiddos ModifyDDoSLevel --cli-unfold-argument  \
-    --DDoSLevel xx \
-    --Id xx \
-    --Business xx \
-    --Method xx
+    --Id bgpip-000000xe \
+    --Business bgpip \
+    --Method get
 ```
 
 Output: 

@@ -157,7 +157,7 @@
     "BindAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 0,\n    \"AccountNo\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 1,\n    \"AccountNo\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "BindAccount"
       }
@@ -753,7 +753,7 @@
     "ModifyBindedAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBindedAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 0,\n    \"AccountNo\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBindedAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 1,\n    \"AccountNo\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "ModifyBindedAccount"
       }

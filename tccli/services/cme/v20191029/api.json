@@ -2338,7 +2338,6 @@
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
@@ -2347,7 +2346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务 Id。",
           "example": "1400-tfusion-ct0",
           "member": "string",
@@ -2356,7 +2354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意任务信息。如果指定操作者，则操作者需要是任务发起者。",
           "example": "85b8cdac-8e18-430a-aeae-08076ac26a11",
           "member": "string",
@@ -2375,7 +2372,6 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2384,7 +2380,6 @@
           "example": "100",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2393,7 +2388,6 @@
           "example": "0",
           "member": "uint64",
           "name": "ErrCode",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2402,7 +2396,6 @@
           "example": "Success.",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2411,16 +2404,14 @@
           "example": "VIDEO_EDIT_PROJECT_EXPORT",
           "member": "string",
           "name": "TaskType",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "导出项目输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导出项目输出信息。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoEditProjectOutput",
           "name": "VideoEditProjectOutput",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2429,7 +2420,6 @@
           "example": "2020-04-28T18:16:58Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4604,72 +4594,65 @@
       "document": "媒体详情信息",
       "members": [
         {
-          "default": "",
           "document": "媒体基本信息。",
           "example": "无",
           "member": "MaterialBasicInfo",
           "name": "BasicInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoMaterial",
           "name": "VideoMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "音频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioMaterial",
           "name": "AudioMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "图片媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageMaterial",
           "name": "ImageMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "链接媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LinkMaterial",
           "name": "LinkMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "模板媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoEditTemplateMaterial",
           "name": "VideoEditTemplateMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "其他类型媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OtherMaterial",
           "name": "OtherMaterial",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli antiddos DescribeListWaterPrintConfig --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
+    --FilterInstanceId bgpip-0000011x \
     --FilterIp 1.1.1.1 \
-    --FilterInstanceId bgpip-0000011x
+    --Limit 25 \
+    --Offset 0
 ```
 
 Output: 
@@ -22,17 +22,17 @@ Output:
                 "WaterPrintConfig": {
                     "Keys": [
                         {
-                            "KeyVersion": "xx",
-                            "KeyContent": "xx",
-                            "KeyId": "xx",
+                            "KeyVersion": "fbf1",
+                            "KeyContent": "82e352b956e8d512-fbf1-82e352b956e8d512eeb95315d5772e86fac99256",
+                            "KeyId": "000005hj",
                             "KeyOpenStatus": 0,
                             "CreateTime": "2020-09-22 00:00:00"
                         }
                     ],
-                    "Verify": "xx",
+                    "Verify": "checkall",
                     "Listeners": [
                         {
-                            "ForwardProtocol": "xx",
+                            "ForwardProtocol": "TCP",
                             "FrontendPort": 80,
                             "FrontendPortEnd": 0
                         }
@@ -42,7 +42,7 @@ Output:
                 },
                 "InstanceDetailList": [
                     {
-                        "InstanceId": "xx",
+                        "InstanceId": "bgpip-0000011x",
                         "EipList": [
                             "1.1.1.1"
                         ]
@@ -50,7 +50,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "c5ff0d5d-d2bd-4b34-b081-4acd4cf7be1f"
     }
 }
 ```

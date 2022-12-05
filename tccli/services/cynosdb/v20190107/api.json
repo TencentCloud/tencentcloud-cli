@@ -342,6 +342,12 @@
       "name": "删除从可用区",
       "output": "RemoveClusterSlaveZoneResponse"
     },
+    "ResetAccountPassword": {
+      "document": "本接口(ResetAccountPassword)用于重置实例的数据库账号密码。",
+      "input": "ResetAccountPasswordRequest",
+      "name": "重置数据库账号密码",
+      "output": "ResetAccountPasswordResponse"
+    },
     "ResumeServerless": {
       "document": "恢复serverless集群",
       "input": "ResumeServerlessRequest",
@@ -360,6 +366,18 @@
       "name": "回档集群",
       "output": "RollBackClusterResponse"
     },
+    "SearchClusterDatabases": {
+      "document": "本接口(SearchClusterDatabases)搜索集群database列表",
+      "input": "SearchClusterDatabasesRequest",
+      "name": "搜索集群database列表",
+      "output": "SearchClusterDatabasesResponse"
+    },
+    "SearchClusterTables": {
+      "document": "本接口(SearchClusterTables)搜索集群数据表列表",
+      "input": "SearchClusterTablesRequest",
+      "name": "搜索集群数据表列表",
+      "output": "SearchClusterTablesResponse"
+    },
     "SetRenewFlag": {
       "document": "SetRenewFlag设置实例的自动续费功能",
       "input": "SetRenewFlagRequest",
@@ -371,6 +389,12 @@
       "input": "SwitchClusterZoneRequest",
       "name": "切换到从可用区",
       "output": "SwitchClusterZoneResponse"
+    },
+    "SwitchProxyVpc": {
+      "document": "本接口(SwitchProxyVpc)更换数据库代理vpc",
+      "input": "SwitchProxyVpcRequest",
+      "name": "更换数据库代理vpc",
+      "output": "SwitchProxyVpcResponse"
     },
     "UpgradeInstance": {
       "document": "升级实例",
@@ -7340,6 +7364,60 @@
       ],
       "type": "object"
     },
+    "ResetAccountPasswordRequest": {
+      "document": "ResetAccountPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库账号名",
+          "example": "root",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库账号新密码",
+          "example": "abc@2018",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-on5xw0ni",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机，不填默认为\"%\"",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAccountPasswordResponse": {
+      "document": "ResetAccountPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResumeServerlessRequest": {
       "document": "ResumeServerless请求参数结构体",
       "members": [
@@ -7624,6 +7702,123 @@
       ],
       "usage": "out"
     },
+    "SearchClusterDatabasesRequest": {
+      "document": "SearchClusterDatabases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "test",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否精确搜索。\n0: 模糊搜索 1:精确搜索 \n默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "MatchType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchClusterDatabasesResponse": {
+      "document": "SearchClusterDatabases返回参数结构体",
+      "members": [
+        {
+          "document": "数据库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Databases",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchClusterTablesRequest": {
+      "document": "SearchClusterTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "test",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据表名",
+          "example": "1",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据表类型：\nview：只返回 view，\nbase_table： 只返回基本表，\nall：返回 view 和表",
+          "example": "all",
+          "member": "string",
+          "name": "TableType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchClusterTablesResponse": {
+      "document": "SearchClusterTables返回参数结构体",
+      "members": [
+        {
+          "document": "数据表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DatabaseTables",
+          "name": "Tables",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SecurityGroup": {
       "document": "安全组详情",
       "members": [
@@ -7902,6 +8097,78 @@
         {
           "document": "异步FlowId",
           "example": "12345",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchProxyVpcRequest": {
+      "document": "SwitchProxyVpc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字符串vpc id",
+          "example": "xx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字符串子网id",
+          "example": "xx",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "旧地址回收时间",
+          "example": "xx",
+          "member": "int64",
+          "name": "OldIpReserveHours",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库代理组Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchProxyVpcResponse": {
+      "document": "SwitchProxyVpc返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务id。",
+          "example": "123",
           "member": "int64",
           "name": "FlowId",
           "required": true,

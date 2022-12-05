@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli antiddos ModifyCcBlackWhiteIpList --cli-unfold-argument  \
-    --InstanceId xx \
-    --IpList.0.Ip xx \
+    --InstanceId bgpip-111111q1 \
+    --IpList.0.Ip 1.1.1.1 \
     --IpList.0.Mask 1 \
-    --Type xx \
-    --PolicyId xx
+    --Type black \
+    --PolicyId ccBlackWhite-00000312
 ```
 
 Output: 

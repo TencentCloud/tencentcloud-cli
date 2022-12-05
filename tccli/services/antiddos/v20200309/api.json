@@ -2728,7 +2728,7 @@
         {
           "default": "",
           "document": "协议",
-          "example": "bgp-multip",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -2790,7 +2790,7 @@
         },
         {
           "default": "",
-          "document": "CC区域封禁配置，填写参数时配置ID请为空",
+          "document": "CC区域封禁配置",
           "example": "无",
           "member": "CcGeoIPBlockConfig",
           "name": "CcGeoIPBlockConfig",
@@ -6978,7 +6978,7 @@
         },
         {
           "default": "",
-          "document": "起始时间",
+          "document": "统计开始时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "StartTime",
@@ -6987,7 +6987,7 @@
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "统计结束时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "EndTime",
@@ -7010,7 +7010,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "起始时间",
+          "document": "统计起始时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "StartTime",
@@ -7019,7 +7019,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "结束时间",
+          "document": "统计结束时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "EndTime",
@@ -7477,7 +7477,7 @@
       "document": "DescribePendingRiskInfo返回参数结构体",
       "members": [
         {
-          "document": "是否为付费用户",
+          "document": "是否为付费用户，true：付费用户， false：普通用户",
           "example": "true",
           "member": "bool",
           "name": "IsPaidUsr",
@@ -8858,7 +8858,7 @@
         },
         {
           "default": "",
-          "document": "当前黑名单类型，取值black时黑名单；取值white时白名单",
+          "document": "当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单",
           "example": "black",
           "member": "string",
           "name": "OldIpType",

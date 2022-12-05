@@ -122,7 +122,7 @@
     ],
     "DescribeBlueprints": [
       {
-        "document": "",
+        "document": "查询镜像信息",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-5e8807sc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-5e8807sc\",\n                \"DisplayTitle\": \"wordpress\",\n                \"DisplayVersion\": \"5.3.2\",\n                \"Description\": \"个人blog建站\",\n                \"OsName\": \"CentOS-7.6-64bit\",\n                \"Platform\": \"CENTOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"http://www.wordpress.com/image\",\n                \"RequiredSystemDiskSize\": 50,\n                \"BlueprintState\": \"NORMAL\",\n                \"CreatedTime\": \"2020-04-28T03:46:09Z\",\n                \"BlueprintName\": \"Wordpress\",\n                \"SupportAutomationTools\": true,\n                \"RequiredMemorySize\": 1,\n                \"ImageId\": \"\",\n                \"SceneIdSet\": [],\n                \"CommunityUrl\": \"CommunityUrl_test\",\n                \"GuideUrl\": \"GuideUrl_test\"\n            }\n        ],\n        \"RequestId\": \"3df9cd92-cec1-4864-a2a1-358084f41551\"\n    }\n}",
         "title": "查询镜像信息"
@@ -408,10 +408,10 @@
     ],
     "InquirePriceRenewInstances": [
       {
-        "document": "",
+        "document": "续费实例询价",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"lhins-atqh8y7p\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalBundlePrice\": 40.0,\n                \"OriginalPrice\": 40.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 40.0\n            }\n        },\n        \"DataDiskPriceSet\": [\n            {\n                \"DiskId\": \"lhdisk-ffyrsb6q\",\n                \"InstanceId\": \"lhins-atqh8y7p\",\n                \"OriginalDiskPrice\": 7.0,\n                \"OriginalPrice\": 7.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 7.0\n            }\n        ],\n        \"InstancePriceDetailSet\": [\n            {\n                \"InstanceId\": \"lhins-atqh8y7p\",\n                \"InstancePrice\": {\n                    \"OriginalBundlePrice\": 40.0,\n                    \"OriginalPrice\": 40.0,\n                    \"Discount\": 100,\n                    \"DiscountPrice\": 40.0\n                }\n            }\n        ],\n        \"RequestId\": \"0151123a-c99c-4eda-b267-2d9800b977dc\"\n    }\n}",
-        "title": "创建实例询价-成功返回"
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalBundlePrice\": 40.0,\n                \"OriginalPrice\": 40.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 40.0\n            }\n        },\n        \"DataDiskPriceSet\": [\n            {\n                \"DiskId\": \"lhdisk-ffyrsb6q\",\n                \"InstanceId\": \"lhins-atqh8y7p\",\n                \"OriginalDiskPrice\": 7.0,\n                \"OriginalPrice\": 7.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 7.0\n            }\n        ],\n        \"InstancePriceDetailSet\": [\n            {\n                \"InstanceId\": \"lhins-atqh8y7p\",\n                \"InstancePrice\": {\n                    \"OriginalBundlePrice\": 40.0,\n                    \"OriginalPrice\": 40.0,\n                    \"Discount\": 100,\n                    \"DiscountPrice\": 40.0\n                }\n            }\n        ],\n        \"TotalPrice\": {\n            \"OriginalPrice\": 47.0,\n            \"DiscountPrice\": 47.0\n        },\n        \"RequestId\": \"0151123a-c99c-4eda-b267-2d9800b977dc\"\n    }\n}",
+        "title": "续费实例询价-成功返回"
       }
     ],
     "IsolateInstances": [

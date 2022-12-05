@@ -1002,6 +1002,15 @@
           "name": "DeviceNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务默认超时时间。 最小取值60秒，最大为3600秒",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeoutInterval",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4929,6 +4938,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6540,6 +6558,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8392,6 +8420,15 @@
           "example": "testdes",
           "member": "string",
           "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级模块；可选值 mcu|moudule",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": false,
           "type": "string"
         }

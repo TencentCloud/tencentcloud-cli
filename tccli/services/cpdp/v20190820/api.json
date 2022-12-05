@@ -3361,6 +3361,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "增值税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "个人所得税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndividualIncomeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "附加税总税额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalTaxSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "附加税税项。格式为JSON格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalTaxItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14509,7 +14549,7 @@
       "members": [
         {
           "default": "",
-          "document": "转账类型",
+          "document": "转账类型\n1 微信企业付款 \n2 支付宝转账 \n3 平安银企直连代发转账",
           "example": "1",
           "member": "uint64",
           "name": "TransferType",
@@ -22254,6 +22294,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "增值税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "个人所得税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndividualIncomeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "附加税总税额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalTaxSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "附加税税项。格式为JSON格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalTaxItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -26196,6 +26276,15 @@
           "name": "Environment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照日期。格式yyyy-MM-dd",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotDate",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -28595,7 +28684,7 @@
         },
         {
           "default": "",
-          "document": "页码。Index和Count必须大于等于1。",
+          "document": "页码。Index和Count必须大于等于1。Count建议不超过100。",
           "example": "无",
           "member": "Paging",
           "name": "PageNumber",

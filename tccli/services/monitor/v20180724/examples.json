@@ -538,6 +538,14 @@
         "title": "列出 Prometheus 抓取任务"
       }
     ],
+    "DescribePrometheusZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusZones\n<公共请求参数>\n\n{\n    \"RegionId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"ZoneState\": 1,\n                \"ZoneName\": \"xx\",\n                \"RegionId\": 0,\n                \"Zone\": \"xx\",\n                \"ZoneId\": 160001\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Prometheus 服务可用区"
+      }
+    ],
     "DescribeRecordingRules": [
       {
         "document": "",

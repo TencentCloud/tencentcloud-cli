@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli antiddos CreateCcBlackWhiteIpList --cli-unfold-argument  \
-    --Domain xx \
-    --Protocol xx \
-    --InstanceId xx \
-    --Ip xx \
-    --IpList.0.Ip xx \
-    --IpList.0.Mask 1 \
-    --Type xx
+    --Domain www.test.com \
+    --Protocol http \
+    --InstanceId bgpip-00001001 \
+    --Ip 1.1.1.1 \
+    --IpList.0.Ip 1.1.1.0 \
+    --IpList.0.Mask 24 \
+    --Type black
 ```
 
 Output: 
