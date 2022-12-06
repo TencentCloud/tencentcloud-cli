@@ -416,6 +416,7 @@
         {
           "default": "",
           "document": "数据库账号名",
+          "example": "xxx",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -425,6 +426,7 @@
         {
           "default": "",
           "document": "数据库账号描述",
+          "example": "xxx",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -434,6 +436,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "xxx",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -443,6 +446,7 @@
         {
           "default": "",
           "document": "更新时间",
+          "example": "xxx",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -452,10 +456,21 @@
         {
           "default": "",
           "document": "主机",
+          "example": "xxx",
           "member": "string",
           "name": "Host",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户最大连接数",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3133,6 +3148,56 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理区",
+          "example": "无",
+          "member": "string",
+          "name": "PhysicalZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "IsFreeze",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6151,6 +6216,11 @@
       ],
       "type": "object"
     },
+    "ModifiableInfo": {
+      "document": "参数是否可修改的详细信息",
+      "members": [],
+      "usage": "out"
+    },
     "ModifyAccountParamsRequest": {
       "document": "ModifyAccountParams请求参数结构体",
       "members": [
@@ -6939,6 +7009,7 @@
         {
           "default": "",
           "document": "当前值",
+          "example": "无",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
@@ -6948,6 +7019,7 @@
         {
           "default": "",
           "document": "默认值",
+          "example": "无",
           "member": "string",
           "name": "Default",
           "required": true,
@@ -6957,6 +7029,7 @@
         {
           "default": "",
           "document": "参数为enum/string/bool时，可选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "EnumValue",
           "required": true,
@@ -6966,6 +7039,7 @@
         {
           "default": "",
           "document": "参数类型为float/integer时的最大值",
+          "example": "无",
           "member": "string",
           "name": "Max",
           "required": true,
@@ -6975,6 +7049,7 @@
         {
           "default": "",
           "document": "参数类型为float/integer时的最小值",
+          "example": "无",
           "member": "string",
           "name": "Min",
           "required": true,
@@ -6984,6 +7059,7 @@
         {
           "default": "",
           "document": "参数名称",
+          "example": "无",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -6993,6 +7069,7 @@
         {
           "default": "",
           "document": "是否需要重启生效",
+          "example": "无",
           "member": "int64",
           "name": "NeedReboot",
           "required": true,
@@ -7002,6 +7079,7 @@
         {
           "default": "",
           "document": "参数类型：integer/float/string/enum/bool",
+          "example": "无",
           "member": "string",
           "name": "ParamType",
           "required": true,
@@ -7011,6 +7089,7 @@
         {
           "default": "",
           "document": "匹配类型，multiVal, regex在参数类型是string时使用",
+          "example": "无",
           "member": "string",
           "name": "MatchType",
           "required": true,
@@ -7020,6 +7099,7 @@
         {
           "default": "",
           "document": "匹配目标值，当multiVal时，各个key用;分割",
+          "example": "无",
           "member": "string",
           "name": "MatchValue",
           "required": true,
@@ -7029,11 +7109,52 @@
         {
           "default": "",
           "document": "参数描述",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为全局参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数是否可修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifiableInfo",
+          "name": "ModifiableInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFunc",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Func",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8153,7 +8274,7 @@
         },
         {
           "default": "",
-          "document": "数据库代理组Id",
+          "document": "数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）",
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",

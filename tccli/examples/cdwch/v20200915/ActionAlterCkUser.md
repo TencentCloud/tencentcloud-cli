@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli cdwch ActionAlterCkUser --cli-unfold-argument  \
-    --UserInfo.InstanceId xx \
-    --UserInfo.PassWord xx \
-    --UserInfo.Describe xx \
-    --ApiType xx
+    --UserInfo.InstanceId cdwch-1vud9x9x \
+    --UserInfo.UserName admin \
+    --UserInfo.PassWord base54加密 \
+    --UserInfo.Describe 测试用户 \
+    --ApiType AddSystemUser
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "ErrMsg": "xx"
+        "RequestId": "123456",
+        "ErrMsg": ""
     }
 }
 ```

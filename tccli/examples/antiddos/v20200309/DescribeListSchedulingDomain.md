@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Total": 1,
-        "RequestId": "vZw1pMcbJjtlMfhSw84j6C0YXJo31i7N",
+        "RequestId": "0506d138-ef0f-4ff4-83b0-f1d85e740afd",
         "DomainList": [
             {
                 "Status": 1,

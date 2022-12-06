@@ -1,0 +1,841 @@
+{
+  "actions": {
+    "EvaluateUserRisk": {
+      "document": "用户风险质量接口",
+      "input": "EvaluateUserRiskRequest",
+      "name": "用户风险质量接口",
+      "output": "EvaluateUserRiskResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-07-26",
+    "api_brief": "基于设备指纹生成的用户账号，精准防御流量运营风险问题，智能实施用户风险质量判断。从流量采集、判断、筛选、分发各个阶段提供风险决策能力。",
+    "serviceNameCN": "流量风险决策平台",
+    "serviceShortName": "trdp"
+  },
+  "objects": {
+    "AccountInfo": {
+      "document": "账号信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户账号类型：\n1-手机号；\n2-IMEI；\n3-IDFA；\n100-SSID类型",
+          "example": "无",
+          "member": "int64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通用账号信息，当AccountType为1、2、3、100时必填",
+          "example": "无",
+          "member": "UniversalAccountInfo",
+          "name": "UniversalAccount",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeviceDetailInfo": {
+      "document": "设备详情\t",
+      "members": [
+        {
+          "default": "",
+          "document": "mac地址或唯一设备标识",
+          "example": "无",
+          "member": "string",
+          "name": "MacAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机型号",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统(unknown，android，ios，windows)",
+          "example": "无",
+          "member": "string",
+          "name": "OsSystem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统版本",
+          "example": "无",
+          "member": "string",
+          "name": "OsSystemVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "竞价底价",
+          "example": "无",
+          "member": "int64",
+          "name": "BidFloor",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备版本",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备制造商",
+          "example": "无",
+          "member": "string",
+          "name": "Maker",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备类型（PHONE,TABLET）",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商；-1: 获取失败，0: 其他，1: 移动，2: 联通，3: 电信，4: 铁通",
+          "example": "无",
+          "member": "string",
+          "name": "Carrier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入网方式(wifi,5g,4g,3g,2g)",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机芯片信息",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneChipInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU 型号",
+          "example": "无",
+          "member": "string",
+          "name": "CpuModel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU 核数",
+          "example": "无",
+          "member": "string",
+          "name": "CpuCore",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存容量，单位转换为 GB",
+          "example": "无",
+          "member": "string",
+          "name": "Memory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统语言",
+          "example": "无",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机音量",
+          "example": "无",
+          "member": "string",
+          "name": "Volume",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电池电量",
+          "example": "无",
+          "member": "string",
+          "name": "BatteryPower",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分辨率宽，保留整数",
+          "example": "无",
+          "member": "int64",
+          "name": "ResolutionWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分辨率高，保留整数",
+          "example": "无",
+          "member": "int64",
+          "name": "ResolutionHeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "浏览器类型",
+          "example": "无",
+          "member": "string",
+          "name": "Ua",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端应用",
+          "example": "无",
+          "member": "string",
+          "name": "App",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用包名",
+          "example": "无",
+          "member": "string",
+          "name": "AppPackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备序列号\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "SerialNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "netOperator MCC+MNC\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "MobileCountryAndNetworkCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备品牌 “华为”“oppo”“小米”\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "VendorId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安卓API等级\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidApiLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕亮度\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "Brightness",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "蓝牙地址\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "BluetoothAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基带版本\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "BaseBandVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kernel 版本\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "KernelVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储容量，单位转换为 GB\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "Storage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软件包名\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "app 版本号\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "AppVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "app 显示名称\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否 debug；0 为正常模式，1 为 debug 模式；其他值无效\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "IsDebug",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否越狱；0 为正常，1 为越狱；其他值无效\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "IsRoot",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启动代理；0 为未开启，1 为开启；其他值无效\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "IsProxy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否模拟器；0 为未开启，1 为开启；其他值无效\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "IsEmulator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "充电状态；1-不在充电，2-USB充电，3-电源充电\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "ChargeStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型：2G/3G/4G/5G/WiFi/WWAN/other\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WiFi MAC地址\nAndroid设备",
+          "example": "无",
+          "member": "string",
+          "name": "WifiMac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称 \"xxx 的 iPhone\"，\"xxx's IPhone\" 等等\nIOS设备",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开机时间\nIOS设备",
+          "example": "无",
+          "member": "string",
+          "name": "StartupTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所在经度",
+          "example": "无",
+          "member": "string",
+          "name": "Lon",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所在纬度",
+          "example": "无",
+          "member": "string",
+          "name": "Lat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeviceFingerprintInfo": {
+      "document": "设备指纹信息\t",
+      "members": [
+        {
+          "default": "",
+          "document": "设备指纹Token",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备指纹的客户端SDK对应渠道",
+          "example": "无",
+          "member": "string",
+          "name": "SdkChannel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EvaluateUserRiskRequest": {
+      "document": "EvaluateUserRisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号信息",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "User",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模型ID",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备指纹信息",
+          "example": "无",
+          "member": "DeviceFingerprintInfo",
+          "name": "DeviceFingerprint",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "场景Code，不传默认活动防刷；\ne_activity_antirush；活动防刷场景\ne_login_protection；登陆保护场景\ne_register_protection：注册保护场景",
+          "example": "无",
+          "member": "string",
+          "name": "SceneCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备详情",
+          "example": "无",
+          "member": "DeviceDetailInfo",
+          "name": "DeviceDetail",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "营销信息",
+          "example": "无",
+          "member": "MarketingInfo",
+          "name": "Marketing",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluateUserRiskResponse": {
+      "document": "EvaluateUserRisk返回参数结构体",
+      "members": [
+        {
+          "document": "评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EvaluationResult",
+          "name": "EvaluationResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluationResult": {
+      "document": "评估结果\t",
+      "members": [
+        {
+          "default": "",
+          "document": "SSID值",
+          "example": "无",
+          "member": "string",
+          "name": "SSID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险价值分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险标签，请参考官网风险类型\n账号风险\n1 账号信用低,账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n11 疑似 低活跃账号,账号活跃度与正常用户有差异\n2 垃圾账号 疑似批量注册小号，近期存在严重违规或大量举报\n21 疑似小号 账号有疑似线上养号，小号等行为\n22 疑似违规账号 账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n3 无效账号 送检账号参数无法成功解析，请检查微信 openid 是否有误/appid与QQopenid无法关联/微信openid权限是否有开通/手机号是否为中国大陆手机号；\n4 黑名单 该账号在业务侧有过拉黑记录\n5 白名单 业务自行有添加过白名单记录\n行为风险\n101 批量操作 存在 ip/设备/环境等因素的聚集性异常\n1011 疑似 IP 属性聚集，出现 IP 聚集\n1012 疑似 设备属性聚集 出现设备聚集\n102 自动机 疑似自动机批量请求\n103 恶意行为-网赚 疑似网赚\n104 微信登录态无效 检查 WeChatAccessToken 参数，是否已经失效；\n201 环境风险 环境异常 操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n2011 疑似 非常用IP 请求 当前请求 IP 非该账号常用 IP\n2012 疑似 IP 异常 使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 等\n205 非公网有效ip 传进来的 IP 地址为内网 ip 地址或者 ip 保留地址；\n设备风险\n206 设备异常 该设备存在异常的使用行为\n2061 疑似 非常用设备 当前请求的设备非该账号常用设备\n2062 疑似 虚拟设备 请求设备为模拟器、脚本、云设备等虚拟设备\n2063 疑似 群控设备 请求设备为猫池、手机墙等群控设备\n10201 设备处于开发者模式 来源于Android\n10202 设备疑似 Root 来源于Android\n10203 疑似应用被注 来源于Android\n10204 疑似应用被重打包 来源于Android\n10205 疑似使用 hook 技术 来源于Android\n10206 疑似应用被双开 来源于Android\n10207 疑似设备存在风险进程 来源于Android\n10208 疑似伪造地理位置 来源于Android\n10209 疑似使用 VPN 软件 来源于Android\n10210 疑似使用代理软件 来源于Android\n10211 疑似设备处于调试模式 来源于Android\n10212 疑似高危 ROM 来源于Android\n10213 疑似检测到系统劫持 来源于Android\n10003 疑似模拟器 来源于Android\n10301 疑似主流模拟器 来源于Android\n10302 疑似云模拟器 来源于Android\n10303 疑似开发板设备 来源于Android\n10004 疑似群控设备风险 来源于Android\n10401 疑似使用自动化软件 来源于Android\n10402 疑似群控自动化操作 来源于Android\n10501 疑似参数异常-IMEI 来源于Android\n10502 疑似参数异常-FP 来源于Android\n10504 疑似参数异常-IMSI 来源于Android\n10801 疑似存在刷量安装应用的行为 来源于Android\n10901 疑似多账号异常 来源于Android\n11001 疑似设备参数篡改 来源于Android\n11002 疑似存在风险软件 来源于Android\n11003 疑似应用被调试 来源于Android\n11100 疑似云真机 来源于Android\n25001 设备疑似越狱 来源于IOS\n25004 进程疑似有注入文件 来源于IOS\n25005 疑似使用代理软件 来源于IOS\n25006 疑似使用 VPN 软件 来源于IOS\n25007 疑似被 Hook 来源于IOS\n25008 疑似进程被调试 来源于IOS\n25009 疑似多开 来源于IOS\n25010 疑似改机 来源于IOS\n25011 疑似应用二次打包 来源于IOS\n25012 疑似模拟器 来源于IOS\n25013 疑似云真机 来源于IOS\n25014 疑似云模拟器 来源于IOS\n25015 疑似伪造地理位置 来源于IOS\n25016 疑似使用自动化脚本 来源于IOS\n25017 疑似群控自动化操作 来源于IOS\n30001 疑似虚拟浏览器 来源于H5\n30002 疑似安装作弊插件 来源于H5\n30003 疑似浏览器参数遭篡改 来源于H5\n30004 疑似 JS 代码被篡改 来源于H5\n30005 疑似 JS 被调试 来源于H5\n30006 Cookies 被禁用 来源于H5\n40001 疑似伪造地理位置 来源于小程序\n40002 疑似被调试 来源于小程序\n40003 疑似模拟器 来源于小程序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RiskLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MarketingInfo": {
+      "document": "营销信息",
+      "members": [
+        {
+          "default": "",
+          "document": "投放模式（0=PDB，1=PD，2=RTB，10=其他）",
+          "example": "无",
+          "member": "int64",
+          "name": "DeliveryMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告位类型 （0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）",
+          "example": "无",
+          "member": "int64",
+          "name": "AdvertisingType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否全屏插广告（0-否，1-是）",
+          "example": "无",
+          "member": "int64",
+          "name": "FullScreen",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告位宽度",
+          "example": "无",
+          "member": "int64",
+          "name": "AdvertisingSpaceWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告位高度",
+          "example": "无",
+          "member": "int64",
+          "name": "AdvertisingSpaceHeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网址",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UniversalAccountInfo": {
+      "document": "通用账号信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账号值：\n当账户类型为1时，填入手机号，如135****3695；\n当账户类型为2、3或100时，填入对应的值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserInfo": {
+      "document": "用户信息\t",
+      "members": [
+        {
+          "default": "",
+          "document": "用户外网IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源渠道编码",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户登录平台。1：安卓 2：iOS 3：H5 4：小程序",
+          "example": "无",
+          "member": "int64",
+          "name": "Platform",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "年龄",
+          "example": "无",
+          "member": "int64",
+          "name": "Age",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "性别：\nmale（男）\nfemale（女）",
+          "example": "无",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "ResidentIdentityCard",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱地址",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户地址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称",
+          "example": "无",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

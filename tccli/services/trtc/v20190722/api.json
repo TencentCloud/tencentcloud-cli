@@ -186,6 +186,12 @@
       "name": "启动云端混流（字符串房间号）",
       "output": "StartMCUMixTranscodeByStrRoomIdResponse"
     },
+    "StartPublishCdnStream": {
+      "document": "接口说明：启动旁路以及混流转推任务。TRTC 的房间中可能会同时存在多路音视频流，您可以通过此API接口，实现以下几种效果：\n1、支持将单个主播的音视频流发布（也称作“转推”）到直播CDN上，请参考示例2（发起单流音视频旁路转推）和示例3（发起单流纯音频旁路转推）。\n2、支持将同个房间多个主播或者不同房间多个主播的音视频混合成1路后再发布到直播CDN上，您可以通过AudioParams.SubscribeAudioList和VideoParams.LayoutParams调整参与混音的用户列表以及指定各路混流画面的布局位置。请参考示例1（发起混流转推）。\n3、支持预先设置一个房间的混流模板，将该房间中的多个音视频混合成1路发布到直播CDN，腾讯云后台实时监控TRTC房间中的主播变化，自动按照混流模板调整布局。目前已经支持了如下几种混流预设模板：\n     - 悬浮模板：第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面，最多4行，每行4个，小画面悬浮于大画面之上。最多支持1个大画面和15个小画面。\n     - 九宫格模板：所有用户的视频画面大小一致，平分整个屏幕，人数越多，每个画面的尺寸越小，最多支持16个画面。\n     - 屏幕分享模板：适合视频会议和在线教育场景的布局，屏幕分享（或者主讲的摄像头）始终占据屏幕左侧的大画面位置，其他用户依次垂直排列于右侧，最多两列，每列最多8个小画面。最多支持1个大画面和15个小画面。若上行分辨率宽高比与画面输出宽高比不一致时，左侧大画面为了保持内容的完整性采用缩放方式处理，右侧小画面采用裁剪方式处理。\n4、支持同时将音视频流发布到最多10个直播CDN上。您可以通过PublishCdnParams.PublishCdnUrl指定转推CDN的url，如果您想转推到腾讯云CDN，PublishCdnParams.IsTencentCdn填为1。\n5、支持通过配置服务端回调，实时将转推状态以HTTP/HTTPS POST 请求发送给您的服务器，如果您需要接入转推事件回调，请联系腾讯云技术支持。\n6、云API调用支持广州、上海、北京、香港四个地域，如果您想转推海外，请选择香港地域。\n7、国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN的需求，请联系腾讯云技术支持，由后台进行评估。\n注意：\n1、**混流转码为收费功能，调用接口将产生云端混流转码费用，详见[云端混流转推计费说明](https://cloud.tencent.com/document/product/647/49446)。**\n2、**转推非腾讯云CDN将产生云端转推费用，详见[云端混流转推计费说明](https://cloud.tencent.com/document/product/647/82155)。**\n\n其他使用说明如下：\n1、使用混流转推接口时，您需要先调用启动转推任务接口（StartPublishCdnStream），获取启动转推任务响应中的任务ID标识（TaskId）。后续传入任务ID标识（TaskId）来更新转推任务（UpdatePublishCdnStream）和停止转推任务（StopPublishCdnStream）。\n2、为了确保转推链接的稳定，同一个转推任务不支持纯音频、音视频、纯视频之间的切换。\n3、为了确保转推链接的稳定，更新转推任务接口（UpdatePublishCdnStream）不支持时更改视频参数（codec）和音频参数（codec、采样率、码率、声道数），其余参数建议全量带齐。\n4、发起单流旁路任务时，AudioParams和VideoParams都填写表示音视频旁路，如果仅填写AudioParams表示纯音频旁路，任务进行过程中不支持纯音频到音视频的切换。音视频旁路时，VideoParams中的Width、Height、Fps、BitRate、Gop需要按照真实上行参数填写。\n5、更新转推任务（UpdatePublishCdnStream）必须携带SequenceNumber参数，用于防止请求乱序。客户保证对同一个任务更新时的SequenceNumber参数递增：腾讯云返回InternalError错误码时，需重试请求（不换SequenceNumber）；腾讯云返回FailedOperation.OutdateRequest过期错误码时，无需处理即可。\n6、您可以在主播进房前，提前创建转推任务，结束转推任务时需要主动调用停止接口。如果您没有调用停止转推任务接口时，腾讯云后台会按照所有参与混流的用户没有任何数据上行的时间算起，直到超过启动转推任务时设置的超时时间（AgentParams.MaxIdleTime）为止，自动停止混流转推任务。",
+      "input": "StartPublishCdnStreamRequest",
+      "name": "启动转推任务",
+      "output": "StartPublishCdnStreamResponse"
+    },
     "StopMCUMixTranscode": {
       "document": "接口说明：结束云端混流",
       "input": "StopMCUMixTranscodeRequest",
@@ -197,6 +203,18 @@
       "input": "StopMCUMixTranscodeByStrRoomIdRequest",
       "name": "结束云端混流（字符串房间号）",
       "output": "StopMCUMixTranscodeByStrRoomIdResponse"
+    },
+    "StopPublishCdnStream": {
+      "document": "停止转推任务。",
+      "input": "StopPublishCdnStreamRequest",
+      "name": "停止转推任务",
+      "output": "StopPublishCdnStreamResponse"
+    },
+    "UpdatePublishCdnStream": {
+      "document": "更新转推任务。\n注：请参见启动转推任务的接口说明和使用说明。",
+      "input": "UpdatePublishCdnStreamRequest",
+      "name": "更新转推任务",
+      "output": "UpdatePublishCdnStreamResponse"
     }
   },
   "metadata": {
@@ -280,6 +298,88 @@
         }
       ],
       "usage": "out"
+    },
+    "AgentParams": {
+      "document": "转推服务加入TRTC房间的机器人参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推服务在TRTC房间使用的[UserId](https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。",
+          "example": "room_1234_rtmp_1",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转推服务加入TRTC房间的用户签名，当前 UserId 对应的验证签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "UserSig",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所有参与混流转推的主播持续离开TRTC房间超过MaxIdleTime的时长，自动停止转推，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AudioEncode": {
+      "document": "音频编码参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出流音频采样率。取值为[48000, 44100, 32000, 24000, 16000, 8000]，单位是Hz。",
+          "example": "48000",
+          "member": "uint64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Channel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流音频码率。取值范围[8,500]，单位为kbps。",
+          "example": "64",
+          "member": "uint64",
+          "name": "BitRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流音频编码类型，取值范围[0, 1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Codec",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "AudioParams": {
       "document": "录制音频转码参数。",
@@ -2421,6 +2521,580 @@
       ],
       "usage": "in"
     },
+    "MaxVideoUser": {
+      "document": "指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户媒体流参数。",
+          "example": "UserMediaStream",
+          "member": "UserMediaStream",
+          "name": "UserMediaStream",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuAudioParams": {
+      "document": "混流转推的音频相关参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "音频编码参数。",
+          "example": "AudioEncode",
+          "member": "AudioEncode",
+          "name": "AudioEncode",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。\n使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。",
+          "example": "SubscribeAudioList",
+          "member": "McuUserInfoParams",
+          "name": "SubscribeAudioList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。\n使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。",
+          "example": "UnSubscribeAudioList",
+          "member": "McuUserInfoParams",
+          "name": "UnSubscribeAudioList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuCustomCrop": {
+      "document": "混流自定义裁剪参数",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义裁剪起始位置的X偏移，单位为像素值，大于等于0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义裁剪起始位置的Y偏移，单位为像素值，大于等于0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义裁剪画面的宽度，单位为像素值，大于0，且LocationX+Width不超过10000",
+          "example": "168",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义裁剪画面的高度，单位为像素值，大于0，且LocationY+Height不超过10000",
+          "example": "168",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuFeedBackRoomParams": {
+      "document": "回推房间参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "回推房间的RoomId。",
+          "example": "room_1234",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。",
+          "example": "room_1234_push_1",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuLayout": {
+      "document": "混流布局参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户媒体流参数。不填时腾讯云后台按照上行主播的进房顺序自动填充。",
+          "example": "UserMediaStream",
+          "member": "UserMediaStream",
+          "name": "UserMediaStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的宽度，单位为像素值，不填默认为0。",
+          "example": "1280",
+          "member": "uint64",
+          "name": "ImageWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的高度，单位为像素值，不填默认为0。",
+          "example": "720",
+          "member": "uint64",
+          "name": "ImageHeight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationX",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationY",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的层级，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ZOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RenderMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面的背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "example": "0xFFFFFF",
+          "member": "string",
+          "name": "BackGroundColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子画面的背景图url，填写该参数，当用户关闭摄像头或未进入TRTC房间时，会在布局位置填充为指定图片。若指定图片与布局位置尺寸比例不一致，则会对图片进行拉伸处理，优先级高于BackGroundColor。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "BackgroundImageUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户自定义裁剪，针对原始输入流裁剪",
+          "example": "xxx",
+          "member": "McuCustomCrop",
+          "name": "CustomCrop",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuLayoutParams": {
+      "document": "混流布局参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。",
+          "example": "4",
+          "member": "uint64",
+          "name": "MixLayoutMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PureAudioHoldPlaceMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义模板中有效，指定用户视频在混合画面中的位置。",
+          "example": "MixLayoutList",
+          "member": "McuLayout",
+          "name": "MixLayoutList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。",
+          "example": "MaxVideoUser",
+          "member": "MaxVideoUser",
+          "name": "MaxVideoUser",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuLayoutVolume": {
+      "document": "音量布局SEI参数，可以自定义AppData和PayloadType类型。\n该参数内容可以为空，表示携带默认的音量布局SEI。",
+      "members": [
+        {
+          "default": "",
+          "document": "AppData的内容，会被写入自定义SEI中的app_data字段，长度需小于4096。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "AppData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SEI消息的payload_type，默认值100，取值范围100-254（244除外，244为我们内部自定义的时间戳SEI）",
+          "example": "100",
+          "member": "uint64",
+          "name": "PayloadType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuPassThrough": {
+      "document": "自定义透传SEI",
+      "members": [
+        {
+          "default": "",
+          "document": "透传SEI的payload内容。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PayloadContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SEI消息的payload_type，取值范围5、100-254（244除外，244为我们内部自定义的时间戳SEI）。",
+          "example": "101",
+          "member": "uint64",
+          "name": "PayloadType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PayloadType为5，PayloadUuid必须填写。PayloadType不是5时，不需要填写，填写会被后台忽略。该值必须是32长度的十六进制。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PayloadUuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuPublishCdnParam": {
+      "document": "转推参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "CDN转推URL。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PublishCdnUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：为避免误产生转推费用，该参数建议明确填写。转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsTencentCdn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuSeiParams": {
+      "document": "混流SEI参数",
+      "members": [
+        {
+          "default": "",
+          "document": "音量布局SEI",
+          "example": "LayoutVolume",
+          "member": "McuLayoutVolume",
+          "name": "LayoutVolume",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "透传SEI",
+          "example": "PassThrough",
+          "member": "McuPassThrough",
+          "name": "PassThrough",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuUserInfoParams": {
+      "document": "混流用户参数",
+      "members": [
+        {
+          "default": "",
+          "document": "用户参数。",
+          "example": "UserInfo",
+          "member": "MixUserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuVideoParams": {
+      "document": "混流转推的视频相关参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出流视频编码参数。",
+          "example": "VideoEncode",
+          "member": "VideoEncode",
+          "name": "VideoEncode",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流布局参数。",
+          "example": "LayoutParams",
+          "member": "McuLayoutParams",
+          "name": "LayoutParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "整个画布背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "example": "0xFFFFFF",
+          "member": "string",
+          "name": "BackGroundColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "整个画布的背景图url，优先级高于BackGroundColor。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "BackgroundImageUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "混流布局的水印参数。",
+          "example": "WaterMarkList",
+          "member": "McuWaterMarkParams",
+          "name": "WaterMarkList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuWaterMarkImage": {
+      "document": "图片水印参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。",
+          "example": "xxx.png",
+          "member": "string",
+          "name": "WaterMarkUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印在输出时的宽。单位为像素值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "WaterMarkWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印在输出时的高。单位为像素值。",
+          "example": "64",
+          "member": "uint64",
+          "name": "WaterMarkHeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印在输出时的X偏移。单位为像素值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印在输出时的Y偏移。单位为像素值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LocationY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印在输出时的层级，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ZOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "McuWaterMarkParams": {
+      "document": "水印参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印类型，0为图片（默认）。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WaterMarkType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印参数。WaterMarkType为0指定。",
+          "example": "WaterMarkImage",
+          "member": "McuWaterMarkImage",
+          "name": "WaterMarkImage",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MixLayout": {
       "document": "用户自定义混流布局参数列表。",
       "members": [
@@ -2654,6 +3328,42 @@
           "name": "AudioParams",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MixUserInfo": {
+      "document": "TRTC用户参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID。",
+          "example": "owen-test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。",
+          "example": "room_1234",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间号类型，0为整形房间号，1为字符串房间号。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3572,6 +4282,22 @@
       ],
       "usage": "out"
     },
+    "SingleSubscribeParams": {
+      "document": "单流旁路转推的用户上行信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户媒体流参数。",
+          "example": "UserMediaStream",
+          "member": "UserMediaStream",
+          "name": "UserMediaStream",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SmallVideoLayoutParams": {
       "document": "画中画模板中有效，代表小画面的布局参数",
       "members": [
@@ -3776,6 +4502,132 @@
       ],
       "type": "object"
     },
+    "StartPublishCdnStreamRequest": {
+      "document": "StartPublishCdnStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主房间信息RoomId，转推的TRTC房间所对应的RoomId。",
+          "example": "room_1234",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转推服务加入TRTC房间的机器人参数。",
+          "example": "AgentParams",
+          "member": "AgentParams",
+          "name": "AgentParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否转码，0表示无需转码，1表示需要转码。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WithTranscoding",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转推流的音频编码参数。",
+          "example": "AudioParams",
+          "member": "McuAudioParams",
+          "name": "AudioParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "转推流的视频编码参数，不填表示纯音频转推。",
+          "example": "VideoParams",
+          "member": "McuVideoParams",
+          "name": "VideoParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。",
+          "example": "SingleSubscribeParams",
+          "member": "SingleSubscribeParams",
+          "name": "SingleSubscribeParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "转推的CDN参数。",
+          "example": "PublishCdnParams",
+          "member": "McuPublishCdnParam",
+          "name": "PublishCdnParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "混流SEI参数",
+          "example": "SeiParams",
+          "member": "McuSeiParams",
+          "name": "SeiParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回推房间信息",
+          "example": "FeedBackRoomParams",
+          "member": "McuFeedBackRoomParams",
+          "name": "FeedBackRoomParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishCdnStreamResponse": {
+      "document": "StartPublishCdnStream返回参数结构体",
+      "members": [
+        {
+          "document": "用于唯一标识转推任务，由腾讯云服务端生成，后续更新和停止请求都需要携带TaskiD参数。",
+          "example": "5df46eb2-8e4b-490e-9c3c-dbd3b84faefc",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopMCUMixTranscodeByStrRoomIdRequest": {
       "document": "StopMCUMixTranscodeByStrRoomId请求参数结构体",
       "members": [
@@ -3835,6 +4687,51 @@
     "StopMCUMixTranscodeResponse": {
       "document": "StopMCUMixTranscode返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishCdnStreamRequest": {
+      "document": "StopPublishCdnStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "唯一标识转推任务。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishCdnStreamResponse": {
+      "document": "StopPublishCdnStream返回参数结构体",
+      "members": [
+        {
+          "document": "转推任务唯一的String Id",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4240,6 +5137,123 @@
       ],
       "usage": "out"
     },
+    "UpdatePublishCdnStreamRequest": {
+      "document": "UpdatePublishCdnStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "唯一标识转推任务。",
+          "example": "xxxxxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户保证同一个任务，每次更新请求中的SequenceNumber递增，防止请求乱序。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SequenceNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否转码，0表示无需转码，1表示需要转码。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WithTranscoding",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "更新相关参数，只支持更新参与混音的主播列表参数。不填表示不更新此参数。",
+          "example": "AudioParams",
+          "member": "McuAudioParams",
+          "name": "AudioParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更新视频相关参数，转码时支持更新除编码类型之外的编码参数，视频布局参数，背景图片和背景颜色参数，水印参数。不填表示不更新此参数。",
+          "example": "VideoParams",
+          "member": "McuVideoParams",
+          "name": "VideoParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更新单流转推的用户上行参数，仅在非转码时有效。不填表示不更新此参数。",
+          "example": "SingleSubscribeParams",
+          "member": "SingleSubscribeParams",
+          "name": "SingleSubscribeParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更新转推的CDN参数。不填表示不更新此参数。",
+          "example": "PublishCdnParams",
+          "member": "McuPublishCdnParam",
+          "name": "PublishCdnParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "混流SEI参数",
+          "example": "SeiParams",
+          "member": "McuSeiParams",
+          "name": "SeiParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回推房间信息",
+          "example": "FeedBackRoomParams",
+          "member": "McuFeedBackRoomParams",
+          "name": "FeedBackRoomParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePublishCdnStreamResponse": {
+      "document": "UpdatePublishCdnStream返回参数结构体",
+      "members": [
+        {
+          "document": "转推任务唯一的String Id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UserInformation": {
       "document": "用户信息，包括用户进房时间，退房时间等",
       "members": [
@@ -4317,6 +5331,88 @@
         }
       ],
       "usage": "out"
+    },
+    "UserMediaStream": {
+      "document": "用户媒体流参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC用户参数。",
+          "example": "MixUserInfo",
+          "member": "MixUserInfo",
+          "name": "UserInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StreamType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoEncode": {
+      "document": "视频编码参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。",
+          "example": "1280",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。",
+          "example": "720",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。",
+          "example": "15",
+          "member": "uint64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。",
+          "example": "1500",
+          "member": "uint64",
+          "name": "BitRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Gop",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "VideoParams": {
       "document": "录制视频转码参数。",

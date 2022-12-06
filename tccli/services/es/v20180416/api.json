@@ -5751,7 +5751,7 @@
         },
         {
           "default": "",
-          "document": "访问控制列表",
+          "document": "可视化组件（Kibana、Cerebro）的公网访问策略",
           "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",

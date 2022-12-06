@@ -16,6 +16,14 @@
         "title": "查询设备标识"
       }
     ],
+    "DescribeFraudUltimate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFraudUltimate\n<公共请求参数>\n\n{\n    \"DeviceToken\": \"xx\",\n    \"SceneCode\": \"login\",\n    \"UserId\": \"xx\",\n    \"EventTime\": 1666684836384,\n    \"ElapsedTime\": 1,\n    \"WeChatOpenId\": \"xx\",\n    \"PhoneNumber\": \"xx\",\n    \"ClientIP\": \"xx\",\n    \"QQOpenId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Brand\": \"xx\",\n        \"SdkBuildNo\": \"xx\",\n        \"AppVersion\": \"xx\",\n        \"Platform\": \"xx\",\n        \"SystemVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"Model\": \"xx\",\n        \"PackageName\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"RiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"HistRiskInfos\": [\n            {\n                \"Type\": 201,\n                \"Level\": 1\n            }\n        ],\n        \"Openid\": \"xx\",\n        \"SceneRiskInfos\": [\n            {\n                \"Type\": 100101,\n                \"Level\": 1\n            }\n        ],\n        \"SuggestionLevel\": 1\n    }\n}",
+        "title": "查询设备标识"
+      }
+    ],
     "DescribeTrustedID": [
       {
         "document": "",

@@ -4568,6 +4568,7 @@
         {
           "default": "",
           "document": "每页数量，默认值是 20，必须大于 0 且小于或等于 200",
+          "example": "1",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -4576,6 +4577,7 @@
         {
           "default": "",
           "document": "页码，默认值是 1，从 1开始，不能大于 200",
+          "example": "10",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -4584,6 +4586,7 @@
         {
           "default": "",
           "document": "可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'",
+          "example": "All",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -4592,6 +4595,7 @@
         {
           "default": "",
           "document": "按策略名匹配",
+          "example": "name",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -4605,22 +4609,28 @@
       "members": [
         {
           "document": "策略总数",
+          "example": "239",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： \npolicyId：策略 id \npolicyName：策略名\naddTime：策略创建时间\ntype：1 表示自定义策略，2 表示预设策略 \ndescription：策略描述 \ncreateMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略\nAttachments: 关联的用户数\nServiceType: 策略关联的产品\nIsAttached: 当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略",
+          "example": "无",
           "member": "StrategyInfo",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "ServiceTypeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

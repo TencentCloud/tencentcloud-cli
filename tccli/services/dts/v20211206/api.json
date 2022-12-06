@@ -211,9 +211,9 @@
       "output": "StopMigrateJobResponse"
     },
     "StopSyncJob": {
-      "document": "终止同步任务",
+      "document": "结束同步任务，操作后可通过查询同步任务信息接口DescribeSyncJobs，获取操作后的状态。",
       "input": "StopSyncJobRequest",
-      "name": "终止同步任务",
+      "name": "结束同步任务",
       "output": "StopSyncJobResponse"
     }
   },
@@ -1068,7 +1068,7 @@
         },
         {
           "default": "",
-          "document": "实例规格，包括：micro、small、medium、large、xlarge、2xlarge",
+          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge",
           "example": "large",
           "member": "string",
           "name": "InstanceClass",
@@ -5433,20 +5433,20 @@
         },
         {
           "default": "",
-          "document": "结束时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "EndTime",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已停止)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "Status",
+          "name": "EndTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true

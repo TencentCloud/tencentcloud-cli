@@ -585,7 +585,7 @@
       "members": [
         {
           "default": "",
-          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日；\nDISTRICT - 省市区行政区划控件；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nDATE， 日期控件，默认是格式化为xxxx年xx月xx日\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\n\n表单域的控件不能作为印章和签名控件",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nMULTI_LINE_TEXT - 多行文本控件；\nCHECK_BOX - 勾选框控件；\nFILL_IMAGE - 图片控件；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件；\nSELECTOR - 选择器控件；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日；\nDISTRICT - 省市区行政区划控件；\n\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
           "member": "string",
           "name": "ComponentType",
@@ -595,12 +595,12 @@
         },
         {
           "default": "",
-          "document": "参数控件宽度，单位pt",
+          "document": "控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）",
           "example": "无",
-          "member": "float",
-          "name": "ComponentWidth",
+          "member": "int64",
+          "name": "FileIndex",
           "required": true,
-          "type": "float",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -609,6 +609,16 @@
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件宽度，单位pt",
+          "example": "无",
+          "member": "float",
+          "name": "ComponentWidth",
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -645,16 +655,6 @@
         },
         {
           "default": "",
-          "document": "控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）",
-          "example": "无",
-          "member": "int64",
-          "name": "FileIndex",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "GenerateMode==KEYWORD 指定关键字",
           "example": "无",
           "member": "string",
@@ -685,16 +685,6 @@
         },
         {
           "default": "",
-          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
-          "example": "无",
-          "member": "string",
-          "name": "ComponentExtra",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "控件关联的签署人ID",
           "example": "无",
           "member": "string",
@@ -705,10 +695,10 @@
         },
         {
           "default": "",
-          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo\nDATE - 默认是格式化为xxxx年xx月xx日\nSIGN_SEAL - 印章ID，于控制台查询获取\nSIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取",
+          "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
           "example": "无",
           "member": "string",
-          "name": "ComponentValue",
+          "name": "ComponentExtra",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -725,6 +715,16 @@
         },
         {
           "default": "",
+          "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo\nDATE - 默认是格式化为xxxx年xx月xx日\nSIGN_SEAL - 印章ID，于控制台查询获取\nSIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "NORMAL 正常模式，使用坐标制定签署控件位置\nFIELD 表单域，需使用ComponentName指定表单域名称\nKEYWORD 关键字，使用ComponentId指定关键字",
           "example": "无",
           "member": "string",
@@ -735,12 +735,22 @@
         },
         {
           "default": "",
-          "document": "日期控件类型字号",
+          "document": "日期签署控件的字号，默认为 12",
           "example": "无",
           "member": "int64",
           "name": "ComponentDateFontSize",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道版控件 id 标识",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelComponentId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -761,6 +771,16 @@
           "name": "OffsetY",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "//渠道子客控件来源。0-渠道指定；1-用户自定义",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChannelComponentSource",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

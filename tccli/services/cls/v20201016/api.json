@@ -37,7 +37,7 @@
       "output": "CreateConfigResponse"
     },
     "CreateConfigExtra": {
-      "document": "本接口用于创建特殊采集配置任务",
+      "document": "本接口用于创建特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "CreateConfigExtraRequest",
       "name": "创建特殊采集配置任务",
       "output": "CreateConfigExtraResponse"
@@ -103,7 +103,7 @@
       "output": "DeleteConfigResponse"
     },
     "DeleteConfigExtra": {
-      "document": "本接口用于删除特殊采集规则配置",
+      "document": "本接口用于删除特殊采集规则配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DeleteConfigExtraRequest",
       "name": "删除特殊采集规则配置",
       "output": "DeleteConfigExtraResponse"
@@ -175,7 +175,7 @@
       "output": "DescribeAlarmsResponse"
     },
     "DescribeConfigExtras": {
-      "document": "本接口用于获取特殊采集配置",
+      "document": "本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DescribeConfigExtrasRequest",
       "name": "获取特殊采集配置",
       "output": "DescribeConfigExtrasResponse"
@@ -301,7 +301,7 @@
       "output": "ModifyConfigResponse"
     },
     "ModifyConfigExtra": {
-      "document": "本接口用于修改特殊采集配置任务",
+      "document": "本接口用于修改特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "ModifyConfigExtraRequest",
       "name": "修改特殊采集配置任务",
       "output": "ModifyConfigExtraResponse"

@@ -447,6 +447,8 @@ include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
+include tccli/services/trdp/v20220726/api.json
+include tccli/services/trdp/v20220726/examples.json
 include tccli/services/trp/v20210515/api.json
 include tccli/services/trp/v20210515/examples.json
 include tccli/services/trtc/v20190722/api.json

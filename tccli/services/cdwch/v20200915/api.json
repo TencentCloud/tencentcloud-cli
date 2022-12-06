@@ -13,9 +13,9 @@
       "output": "CreateBackUpScheduleResponse"
     },
     "DescribeCkSqlApis": {
-      "document": "针对驱动sql命令查询ck集群接口",
+      "document": "查询集群用户、集群表，数据库等相关信息",
       "input": "DescribeCkSqlApisRequest",
-      "name": "通过sql查询ck集群信息",
+      "name": "查询集群用户相关信息",
       "output": "DescribeCkSqlApisResponse"
     },
     "DescribeInstanceShards": {
@@ -70,7 +70,7 @@
         },
         {
           "default": "",
-          "document": "api接口类型",
+          "document": "api接口类型，\nAddSystemUser新增用户，UpdateSystemUser，修改用户",
           "example": "AddSystemUser",
           "member": "string",
           "name": "ApiType",
@@ -317,7 +317,7 @@
         },
         {
           "default": "",
-          "document": "api接口名称",
+          "document": "api接口名称,GetClusters:获取集群cluster列表\nGetSystemUsers:获取系统用户列表\nCheckNodeCluster: 检查节点是否隶属一个cluster\nGetClusterDatabases: 获取一个cluster下的数据库列表\nGetClusterTables: 获取一个cluster下的数据库表列表\nGetPrivilegeUsers: 获取授权的用户列表\nGET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   \nGetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）\nRevokeClusterUser:解绑cluster用户\nDeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑\nGetUserOptionMessages:获取用户配置备注信息\nGET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY",
           "example": "GetClusters",
           "member": "string",
           "name": "ApiType",
@@ -326,7 +326,7 @@
         },
         {
           "default": "",
-          "document": "集群名称",
+          "document": "集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填",
           "example": "test",
           "member": "string",
           "name": "Cluster",
@@ -335,7 +335,7 @@
         },
         {
           "default": "",
-          "document": "用户名称",
+          "document": "用户名称，api与user相关的必填",
           "example": "user1",
           "member": "string",
           "name": "UserName",

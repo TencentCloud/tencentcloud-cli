@@ -14,7 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "ServiceTypeList": [],
+        "ServiceTypeList": [
+            "xx"
+        ],
         "List": [
             {
                 "PolicyId": 16313162,
@@ -30,7 +32,10 @@ Output:
                 "DeactivedDetail": [
                     "cvm"
                 ],
-                "IsServiceLinkedPolicy": 1
+                "IsServiceLinkedPolicy": 1,
+                "UpdateTime": "2019-04-19 10:55:31",
+                "AttachEntityCount": 0,
+                "AttachEntityBoundaryCount": 0
             }
         ],
         "TotalNum": 239,

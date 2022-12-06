@@ -45,7 +45,7 @@ Output:
                     "Str": "",
                     "Action": "drop",
                     "Protocol": "tcp",
-                    "MatchType": "xx",
+                    "MatchType": "sunday",
                     "DportEnd": 0,
                     "Offset2": 5,
                     "Depth2": 20,
