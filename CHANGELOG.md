@@ -1,3 +1,138 @@
+# Release 3.0.663.1
+
+## 应用性能观测(apm) 版本：2021-06-22
+
+### 第 2 次发布
+
+发布时间：2022-12-06 06:13:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [APMKV](http://document.tencentcloudapi.woa.com/document/product/1463/64927#APMKV)
+
+修改数据结构：
+
+* [ApmField](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmField)
+
+	* 新增成员：LastPeriodValue
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 21 次发布
+
+发布时间：2022-12-06 06:34:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ModifiableInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifiableInfo)
+
+修改数据结构：
+
+* [Account](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Account)
+
+	* 新增成员：MaxUserConnections
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：PhysicalZone, BusinessType, Tasks, IsFreeze, ResourceTags
+
+* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamInfo)
+
+	* 新增成员：IsGlobal, ModifiableInfo, IsFunc, Func
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 18 次发布
+
+发布时间：2022-12-06 07:19:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76420)
+* [StopPublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76419)
+* [UpdatePublishCdnStream](http://document.tencentcloudapi.woa.com/document/product/647/76418)
+
+新增数据结构：
+
+* [AgentParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentParams)
+* [AudioEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncode)
+* [MaxVideoUser](http://document.tencentcloudapi.woa.com/document/product/647/44055#MaxVideoUser)
+* [McuAudioParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuAudioParams)
+* [McuCustomCrop](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuCustomCrop)
+* [McuFeedBackRoomParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuFeedBackRoomParams)
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+* [McuLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutParams)
+* [McuLayoutVolume](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayoutVolume)
+* [McuPassThrough](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPassThrough)
+* [McuPublishCdnParam](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuPublishCdnParam)
+* [McuSeiParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuSeiParams)
+* [McuUserInfoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuUserInfoParams)
+* [McuVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuVideoParams)
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
+* [McuWaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkParams)
+* [MixUserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixUserInfo)
+* [SingleSubscribeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#SingleSubscribeParams)
+* [UserMediaStream](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserMediaStream)
+* [VideoEncode](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncode)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 47 次发布
+
+发布时间：2022-12-06 07:24:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DfwOssAddPolicyToVMRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#DfwOssAddPolicyToVMRequest)
+
+	* <font color="#dd0000">**修改成员**：</font>IsTop
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 20 次发布
+
+发布时间：2022-12-06 07:29:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserSignatureRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#UserSignatureRule)
+
+	* 新增成员：Reason
+
+
+
+
 # Release 3.0.662.1
 
 ## 批量计算(batch) 版本：2017-03-12

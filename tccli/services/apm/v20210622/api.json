@@ -56,6 +56,34 @@
     "serviceShortName": "apm"
   },
   "objects": {
+    "APMKV": {
+      "document": "APM浮点数类型键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "Key值定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Value值定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "APMKVItem": {
       "document": "Apm通用KV结构",
       "members": [
@@ -159,7 +187,8 @@
           "name": "CompareVal",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -169,7 +198,8 @@
           "name": "CompareVals",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -179,7 +209,8 @@
           "name": "Value",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -189,7 +220,8 @@
           "name": "Unit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -199,7 +231,19 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "同环比上周期具体数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "APMKV",
+          "name": "LastPeriodValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

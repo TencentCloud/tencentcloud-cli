@@ -22611,10 +22611,10 @@
           "default": "",
           "document": "原DFW APIv2名称: addPolicyToVM.isTop",
           "example": "True",
-          "member": "int64",
+          "member": "bool",
           "name": "IsTop",
           "required": false,
-          "type": "int",
+          "type": "bool",
           "value_allowed_null": false,
           "visibility": 2
         },

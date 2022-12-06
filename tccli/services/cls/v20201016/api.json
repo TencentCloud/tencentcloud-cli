@@ -37,7 +37,7 @@
       "output": "CreateConfigResponse"
     },
     "CreateConfigExtra": {
-      "document": "本接口用于创建特殊采集配置任务",
+      "document": "本接口用于创建特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "CreateConfigExtraRequest",
       "name": "创建特殊采集配置任务",
       "output": "CreateConfigExtraResponse"
@@ -109,7 +109,7 @@
       "output": "DeleteConfigResponse"
     },
     "DeleteConfigExtra": {
-      "document": "本接口用于删除特殊采集规则配置",
+      "document": "本接口用于删除特殊采集规则配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DeleteConfigExtraRequest",
       "name": "删除特殊采集规则配置",
       "output": "DeleteConfigExtraResponse"
@@ -187,7 +187,7 @@
       "output": "DescribeAlarmsResponse"
     },
     "DescribeConfigExtras": {
-      "document": "本接口用于获取特殊采集配置",
+      "document": "本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DescribeConfigExtrasRequest",
       "name": "获取特殊采集配置",
       "output": "DescribeConfigExtrasResponse"
@@ -319,7 +319,7 @@
       "output": "ModifyConfigResponse"
     },
     "ModifyConfigExtra": {
-      "document": "本接口用于修改特殊采集配置任务",
+      "document": "本接口用于修改特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "ModifyConfigExtraRequest",
       "name": "修改特殊采集配置任务",
       "output": "ModifyConfigExtraResponse"
@@ -1123,7 +1123,8 @@
           "name": "ConfigExtraId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1133,7 +1134,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1143,7 +1145,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1153,7 +1156,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1163,7 +1167,8 @@
           "name": "HostFile",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1173,7 +1178,8 @@
           "name": "ContainerFile",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1183,7 +1189,8 @@
           "name": "ContainerStdout",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1193,7 +1200,8 @@
           "name": "LogFormat",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1203,7 +1211,8 @@
           "name": "LogType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1213,7 +1222,8 @@
           "name": "ExtractRule",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1223,7 +1233,8 @@
           "name": "ExcludePaths",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1233,7 +1244,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1243,7 +1255,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1253,7 +1266,8 @@
           "name": "UserDefineRule",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1263,7 +1277,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1273,7 +1288,8 @@
           "name": "ConfigFlag",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1283,7 +1299,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1293,7 +1310,8 @@
           "name": "LogsetName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1303,7 +1321,8 @@
           "name": "TopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1496,7 +1515,8 @@
           "name": "Namespace",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1506,7 +1526,8 @@
           "name": "Container",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1516,7 +1537,8 @@
           "name": "LogPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1526,7 +1548,8 @@
           "name": "FilePattern",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1536,7 +1559,8 @@
           "name": "IncludeLabels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1546,7 +1570,8 @@
           "name": "WorkLoad",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1556,7 +1581,8 @@
           "name": "ExcludeNamespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1566,7 +1592,8 @@
           "name": "ExcludeLabels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1582,7 +1609,8 @@
           "name": "AllContainers",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1592,7 +1620,8 @@
           "name": "Container",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1602,7 +1631,8 @@
           "name": "Namespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1612,7 +1642,8 @@
           "name": "IncludeLabels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1622,7 +1653,8 @@
           "name": "WorkLoads",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1632,7 +1664,8 @@
           "name": "ExcludeNamespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1642,7 +1675,8 @@
           "name": "ExcludeLabels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1658,7 +1692,8 @@
           "name": "Kind",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1668,7 +1703,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1678,7 +1714,8 @@
           "name": "Container",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1688,7 +1725,8 @@
           "name": "Namespace",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1950,7 +1988,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1959,7 +1998,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1968,7 +2008,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1977,7 +2018,8 @@
           "member": "string",
           "name": "LogType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1986,7 +2028,8 @@
           "member": "string",
           "name": "ConfigFlag",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1995,7 +2038,8 @@
           "member": "string",
           "name": "LogsetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2004,7 +2048,8 @@
           "member": "string",
           "name": "LogsetName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2013,7 +2058,8 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2022,7 +2068,8 @@
           "member": "HostFileInfo",
           "name": "HostFile",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2031,7 +2078,8 @@
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2040,7 +2088,8 @@
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2049,7 +2098,8 @@
           "member": "string",
           "name": "LogFormat",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2058,7 +2108,8 @@
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2067,7 +2118,8 @@
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2076,7 +2128,8 @@
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2085,7 +2138,8 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2094,7 +2148,8 @@
           "member": "string",
           "name": "GroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2109,7 +2164,8 @@
           "name": "ConfigExtraId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3146,7 +3202,8 @@
           "member": "string",
           "name": "ConfigExtraId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3614,7 +3671,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3623,7 +3681,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3632,7 +3691,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3647,7 +3707,8 @@
           "name": "Configs",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "过滤到的总数目",
@@ -3656,7 +3717,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6213,7 +6275,8 @@
           "member": "string",
           "name": "ConfigExtraId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6222,7 +6285,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6231,7 +6295,8 @@
           "member": "string",
           "name": "TopicId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6240,7 +6305,8 @@
           "member": "HostFileInfo",
           "name": "HostFile",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6249,7 +6315,8 @@
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6258,7 +6325,8 @@
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6267,7 +6335,8 @@
           "member": "string",
           "name": "LogType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6276,7 +6345,8 @@
           "member": "string",
           "name": "LogFormat",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6285,7 +6355,8 @@
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6294,7 +6365,8 @@
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6303,7 +6375,8 @@
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6312,7 +6385,8 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6321,7 +6395,8 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6330,7 +6405,8 @@
           "member": "string",
           "name": "ConfigFlag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6339,7 +6415,8 @@
           "member": "string",
           "name": "LogsetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6348,7 +6425,8 @@
           "member": "string",
           "name": "LogsetName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6357,7 +6435,8 @@
           "member": "string",
           "name": "TopicName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

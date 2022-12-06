@@ -8,13 +8,6 @@ Input:
 tccli essbasic DescribeUsage --cli-unfold-argument  \
     --StartDate 2020-07-11 \
     --EndDate 2020-07-12 \
-    --Agent.ProxyAppId  \
-    --Agent.ProxyOperator.OpenId  \
-    --Agent.ProxyOperator.ClientIp  \
-    --Agent.ProxyOperator.CustomUserId  \
-    --Agent.ProxyOperator.ProxyIp  \
-    --Agent.ProxyOperator.Channel  \
-    --Agent.ProxyOrganizationId  \
     --Agent.AppId testappid1 \
     --NeedAggregate False
 ```
@@ -65,13 +58,6 @@ Input:
 tccli essbasic DescribeUsage --cli-unfold-argument  \
     --StartDate 2020-07-11 \
     --EndDate 2020-07-12 \
-    --Agent.ProxyAppId  \
-    --Agent.ProxyOperator.OpenId  \
-    --Agent.ProxyOperator.ClientIp  \
-    --Agent.ProxyOperator.CustomUserId  \
-    --Agent.ProxyOperator.ProxyIp  \
-    --Agent.ProxyOperator.Channel  \
-    --Agent.ProxyOrganizationId  \
     --Agent.AppId testappid1 \
     --NeedAggregate True
 ```

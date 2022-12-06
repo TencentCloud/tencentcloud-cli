@@ -7372,7 +7372,7 @@
         },
         {
           "default": "",
-          "document": "统计开始时间",
+          "document": "防护概览攻击趋势开始时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "StartTime",
@@ -7382,7 +7382,7 @@
         },
         {
           "default": "",
-          "document": "统计结束时间",
+          "document": "防护概览攻击趋势结束时间",
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "EndTime",
@@ -7407,7 +7407,7 @@
           "visibility": 1
         },
         {
-          "document": "统计起始时间",
+          "document": "防护概览攻击趋势起始时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "StartTime",
@@ -7417,7 +7417,7 @@
           "visibility": 1
         },
         {
-          "document": "统计结束时间",
+          "document": "防护概览攻击趋势结束时间",
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "EndTime",
