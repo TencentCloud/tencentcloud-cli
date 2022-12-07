@@ -3562,6 +3562,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否跨AZ",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDrZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "SlaveZones",
+          "name": "SlaveZones",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4309,6 +4329,33 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "test_sa",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "createTime,updateTime,passTime\" note:\"排序字段，默认按照账号创建时间倒序",
+          "example": "createTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5569,6 +5616,24 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11036,6 +11101,32 @@
           "document": "规则限定的方向，OUTPUT-出战规则  INPUT-进站规则",
           "member": "string",
           "name": "Dir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlaveZones": {
+      "document": "备可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "备可用区地域码",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备可用区",
+          "example": "广州一区",
+          "member": "string",
+          "name": "SlaveZoneName",
           "required": true,
           "type": "string",
           "value_allowed_null": false

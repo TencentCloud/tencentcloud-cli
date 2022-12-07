@@ -1891,6 +1891,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间参数key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TSF-NamespaceName",
+          "member": "string",
+          "name": "NamespaceNameKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微服务名参数key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TSF-ServiceName",
+          "member": "string",
+          "name": "ServiceNameKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间参数位置，path，header或query，默认是path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "path",
+          "member": "string",
+          "name": "NamespaceNameKeyPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微服务名参数位置，path，header或query，默认是path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "path",
+          "member": "string",
+          "name": "ServiceNameKeyPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4246,6 +4286,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预热配置设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WarmupSetting",
+          "name": "WarmupSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Envoy网关服务配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayConfig",
+          "name": "GatewayConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4870,6 +4930,42 @@
           "example": "gw-ins-fsdfs000",
           "member": "string",
           "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间参数key值",
+          "example": "TSF-NamespaceName",
+          "member": "string",
+          "name": "NamespaceNameKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务名参数key值",
+          "example": "TSF-ServiceName",
+          "member": "string",
+          "name": "ServiceNameKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间参数位置，path，header或query，默认是path",
+          "example": "path",
+          "member": "string",
+          "name": "NamespaceNameKeyPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务名参数位置，path，header或query，默认是path",
+          "example": "path",
+          "member": "string",
+          "name": "ServiceNameKeyPosition",
           "required": false,
           "type": "string"
         }
@@ -8038,6 +8134,7 @@
         {
           "default": "",
           "document": "API 分组ID",
+          "example": "grp-e42d597",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -8050,11 +8147,13 @@
       "document": "DescribeApiGroup返回参数结构体",
       "members": [
         {
-          "document": "API分组信息",
+          "document": "API分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiGroupInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9207,13 +9306,13 @@
       "document": "DescribeContainerGroupDeployInfo返回参数结构体",
       "members": [
         {
-          "document": "获取部署组",
+          "document": "获取部署组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ContainerGroupDeploy",
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14545,6 +14644,11 @@
         }
       ],
       "usage": "out"
+    },
+    "GatewayConfig": {
+      "document": "TSF Envoy网关服务配置",
+      "members": [],
+      "usage": "both"
     },
     "GatewayDeployGroup": {
       "document": "api分组已绑定的网关部署组",
@@ -23267,6 +23371,7 @@
         {
           "default": "",
           "document": "Api 分组ID",
+          "example": "grp-grp-5yk7oor1",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -23275,6 +23380,7 @@
         {
           "default": "",
           "document": "Api 分组名称",
+          "example": "new-name",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -23283,6 +23389,7 @@
         {
           "default": "",
           "document": "Api 分组描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -23291,6 +23398,7 @@
         {
           "default": "",
           "document": "鉴权类型",
+          "example": "none",
           "member": "string",
           "name": "AuthType",
           "required": false,
@@ -23299,8 +23407,45 @@
         {
           "default": "",
           "document": "分组上下文",
+          "example": "%2Fuser",
           "member": "string",
           "name": "GroupContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间参数key值",
+          "example": "TSF-NamespaceName",
+          "member": "string",
+          "name": "NamespaceNameKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务名参数key值",
+          "example": "TSF-ServiceName",
+          "member": "string",
+          "name": "ServiceNameKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间参数位置，path，header或query，默认是path",
+          "example": "path",
+          "member": "string",
+          "name": "NamespaceNameKeyPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微服务名参数位置，path，header或query，默认是path",
+          "example": "path",
+          "member": "string",
+          "name": "ServiceNameKeyPosition",
           "required": false,
           "type": "string"
         }
@@ -23311,11 +23456,13 @@
       "document": "UpdateApiGroup返回参数结构体",
       "members": [
         {
-          "document": "返回结果，true: 成功, false: 失败",
+          "document": "返回结果，true: 成功, false: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23728,372 +23875,344 @@
       "document": "虚拟机部署组信息",
       "members": [
         {
-          "default": "",
           "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GroupStatus",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "程序包名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "程序包版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageVersion",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "InstanceCount",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组运行中机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "RunInstanceCount",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组启动参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StartupParameters",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组停止机器数目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "OffInstanceCount",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GroupDesc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "MicroserviceType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "GroupResourceType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "UpdatedTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署应用描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DeployDesc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "滚动发布的更新方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "UpdateType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布是否启用beta批次\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "DeployBetaEnable",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "滚动发布的批次比例列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "DeployBatch",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "滚动发布的批次执行方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DeployExeMode",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "滚动发布的每个批次的等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "DeployWaitTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启了健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "程序包类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "启动脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StartScript",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "停止脚本 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StopScript",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署组备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "javaagent信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SERVICE_AGENT/OT_AGENT",
           "member": "AgentProfile",
           "name": "AgentProfileList",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "预热属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
-          "required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Envoy网关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayConfig",
+          "name": "GatewayConfig",
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }

@@ -79,7 +79,7 @@
       "output": "CreateClusterNodePoolFromExistingAsgResponse"
     },
     "CreateClusterRelease": {
-      "document": "在应用市场中集群创建应用",
+      "document": "在应用市场中给集群创建应用",
       "input": "CreateClusterReleaseRequest",
       "name": "集群安装应用",
       "output": "CreateClusterReleaseResponse"
@@ -3954,7 +3954,7 @@
         },
         {
           "default": "",
-          "document": "制品来源，范围：tke-market/tcr/other",
+          "document": "制品来源，范围：tke 应用市场/第三方chart",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",
@@ -4003,6 +4003,15 @@
           "example": "helm-public",
           "member": "string",
           "name": "ChartNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
           "required": false,
           "type": "string"
         }

@@ -263,7 +263,7 @@
         },
         {
           "default": "",
-          "document": "选择的星期 逗号分隔",
+          "document": "选择的星期 逗号分隔，例如 2 代表周二",
           "example": "\"1,2\"",
           "member": "string",
           "name": "WeekDays",
@@ -282,7 +282,7 @@
         {
           "default": "",
           "document": "备份表列表",
-          "example": "[\"123\"]",
+          "example": "[\"1234\"]",
           "member": "BackupTableContent",
           "name": "BackUpTables",
           "required": false,

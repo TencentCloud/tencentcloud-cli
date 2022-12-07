@@ -3,7 +3,7 @@
     "AllocateHosts": [
       {
         "document": "购买付费模式为包年包月的CDH实例，指定位置在广州二区，购买一个月，到期自动续费，实例机型为HS1，购买一台",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AllocateHosts\n&Placement.Zone=ap-guangzhou-2\n&HostChargeType=PREPAID\n&HostChargePrepaid.Period=1\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&HostType=HS1\n&HostCount=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateHosts\n<公共请求参数>\n\n{\n    \"HostChargeType\": \"PREPAID\",\n    \"HostCount\": \"1\",\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\"\n    },\n    \"HostType\": \"HS1\",\n    \"HostChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"HostIdSet\": [\n            \"host-lan4lb2k\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "包年包月CDH实例购买"
       }
@@ -481,8 +481,8 @@
     "InquiryPriceResetInstancesType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.0,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"xx\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            },\n            \"BandwidthPrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.0,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"xx\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            }\n        },\n        \"RequestId\": \"d9f36a23-7bc4-4f02-99c5-00b4a77431df\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-xmf2ac34\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 8753,\n                \"DiscountPrice\": 8753\n            }\n        },\n        \"RequestId\": \"d345aa58-460a-4a13-8382-c6c99d0bc73f\"\n    }\n}",
         "title": "包年包月实例调整配置询价"
       }
     ],

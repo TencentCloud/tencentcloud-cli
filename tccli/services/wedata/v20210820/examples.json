@@ -956,9 +956,9 @@
     ],
     "DescribeRuleGroupSubscription": [
       {
-        "document": "",
+        "document": "查询规则组订阅详情",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroupSubscription\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"RuleGroupId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Receivers\": [\n                {\n                    \"ReceiverName\": \"xx\"\n                }\n            ],\n            \"SubscribeType\": [\n                1\n            ],\n            \"RuleGroupId\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Receivers\": [\n                {\n                    \"ReceiverName\": \"xx\"\n                }\n            ],\n            \"WebHooks\": [\n                {}\n            ],\n            \"SubscribeType\": [\n                1\n            ],\n            \"RuleGroupId\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询规则组订阅信息"
       }
     ],
@@ -1362,8 +1362,8 @@
     ],
     "ModifyRuleGroupSubscription": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleGroupSubscription\n<公共请求参数>\n\n{\n    \"DatabaseId\": \"xx\",\n    \"Receivers\": [\n        {\n            \"ReceiverUserId\": 1,\n            \"ReceiverName\": \"xx\"\n        }\n    ],\n    \"ProjectId\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"SubscribeType\": [\n        1\n    ],\n    \"DatasourceId\": \"xx\",\n    \"TableId\": \"xx\"\n}",
+        "document": "生成/编辑规则组的订阅信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleGroupSubscription\n<公共请求参数>\n\n{\n    \"DatabaseId\": \"xx\",\n    \"Receivers\": [\n        {\n            \"ReceiverUserId\": 1,\n            \"ReceiverName\": \"xx\"\n        }\n    ],\n    \"WebHooks\": [\n        {\n            \"HookType\": \"feishu\",\n            \"HookAddress\": \"http://xxxxxxxxxxxx\"\n        },\n        {\n            \"HookType\": \"feishu\",\n            \"HookAddress\": \"http://xxxxxxxxxxxx\"\n        }\n    ],\n    \"ProjectId\": \"xx\",\n    \"RuleGroupId\": 1,\n    \"SubscribeType\": [\n        1,\n        7\n    ],\n    \"DatasourceId\": \"xx\",\n    \"TableId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": 123456,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新规则组订阅信息"
       }

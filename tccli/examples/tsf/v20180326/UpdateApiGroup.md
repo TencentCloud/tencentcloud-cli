@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tsf UpdateApiGroup --cli-unfold-argument  \
-    --GroupId grp-grp-5yk7oor1 \
-    --GroupName new-name
+    --GroupName new-name \
+    --GroupId grp-grp-5yk7oor1
 ```
 
 Output: 

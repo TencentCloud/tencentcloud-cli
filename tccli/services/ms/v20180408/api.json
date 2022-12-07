@@ -830,6 +830,7 @@
         {
           "default": "",
           "document": "待扫描的app信息列表，一次最多提交20个",
+          "example": "gets",
           "member": "AppInfo",
           "name": "AppInfos",
           "required": true,
@@ -838,6 +839,7 @@
         {
           "default": "",
           "document": "扫描信息",
+          "example": "gade",
           "member": "ScanInfo",
           "name": "ScanInfo",
           "required": true,
@@ -851,33 +853,48 @@
       "members": [
         {
           "document": "任务唯一标识",
+          "example": "bitian",
           "member": "string",
           "name": "ItemId",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "5975134874",
           "member": "uint64",
           "name": "Progress",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "提交成功的app的md5集合",
+          "example": "sgea",
           "member": "string",
           "name": "AppMd5s",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "剩余可用次数",
+          "example": "10",
           "member": "uint64",
           "name": "LimitCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "到期时间",
+          "example": "16546108",
           "member": "uint64",
           "name": "LimitTime",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1011,6 +1028,7 @@
         {
           "default": "",
           "document": "删除一个或多个扫描的app，最大支持20个",
+          "example": "test",
           "member": "string",
           "name": "AppSids",
           "required": true,
@@ -1024,9 +1042,12 @@
       "members": [
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "get",
           "member": "uint64",
           "name": "Progress",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1232,22 +1253,25 @@
         {
           "default": "",
           "document": "支持通过app名称，app包名进行筛选",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "数量限制，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1256,6 +1280,7 @@
         {
           "default": "",
           "document": "可以提供ItemId数组来查询一个或者多个结果。注意不可以同时指定ItemIds和Filters。",
+          "example": "无",
           "member": "string",
           "name": "ItemIds",
           "required": false,
@@ -1264,14 +1289,16 @@
         {
           "default": "",
           "document": "按某个字段排序，目前仅支持TaskTime排序。",
+          "example": "\"TaskTime\"",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "desc",
+          "default": "",
           "document": "升序（asc）还是降序（desc），默认：desc。",
+          "example": "\"desc\"",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1285,15 +1312,21 @@
       "members": [
         {
           "document": "符合要求的app数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "一个关于app详细信息的结构体，主要包括app的基本信息和扫描状态信息。",
+          "example": "无",
           "member": "AppScanSet",
           "name": "ScanSet",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1310,6 +1343,7 @@
         {
           "default": "",
           "document": "任务唯一标识",
+          "example": "1shi2e-2387hjgus",
           "member": "string",
           "name": "ItemId",
           "required": true,
@@ -1318,6 +1352,7 @@
         {
           "default": "",
           "document": "批量查询一个或者多个app的扫描结果，如果不传表示查询该任务下所提交的所有app",
+          "example": "[\"dd5b29a800246d7089febf228286d901\\r\\n\"]",
           "member": "string",
           "name": "AppMd5s",
           "required": false,
@@ -1331,15 +1366,21 @@
       "members": [
         {
           "document": "批量扫描的app结果集",
+          "example": "无",
           "member": "ScanSetInfo",
           "name": "ScanSet",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "批量扫描结果的个数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

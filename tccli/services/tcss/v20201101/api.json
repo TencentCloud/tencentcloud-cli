@@ -114,6 +114,18 @@
       "name": "容器网络创建网络策略确认任务",
       "output": "ConfirmNetworkFirewallPolicyResponse"
     },
+    "CreateAbnormalProcessRulesExportJob": {
+      "document": "创建异常进程规则导出任务",
+      "input": "CreateAbnormalProcessRulesExportJobRequest",
+      "name": "创建异常进程规则导出任务",
+      "output": "CreateAbnormalProcessRulesExportJobResponse"
+    },
+    "CreateAccessControlsRuleExportJob": {
+      "document": "创建文件篡改规则导出任务",
+      "input": "CreateAccessControlsRuleExportJobRequest",
+      "name": "创建文件篡改规则导出任务",
+      "output": "CreateAccessControlsRuleExportJobResponse"
+    },
     "CreateAssetImageRegistryScanTask": {
       "document": "镜像仓库创建镜像扫描任务",
       "input": "CreateAssetImageRegistryScanTaskRequest",
@@ -7247,6 +7259,132 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAbnormalProcessRulesExportJobRequest": {
+      "document": "CreateAbnormalProcessRulesExportJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "无",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAbnormalProcessRulesExportJobResponse": {
+      "document": "CreateAbnormalProcessRulesExportJob返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务ID，前端拿着任务ID查询任务进度",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessControlsRuleExportJobRequest": {
+      "document": "CreateAccessControlsRuleExportJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>RuleType - string  - 是否必填: 否 -规则类型</li>\n<li>Status - string  - 是否必填: 否 -状态</li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "无",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessControlsRuleExportJobResponse": {
+      "document": "CreateAccessControlsRuleExportJob返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务ID，前端拿着任务ID查询任务进度",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAssetImageRegistryScanTaskOneKeyRequest": {
       "document": "CreateAssetImageRegistryScanTaskOneKey请求参数结构体",

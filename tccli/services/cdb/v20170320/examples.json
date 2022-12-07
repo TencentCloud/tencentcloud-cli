@@ -8,14 +8,6 @@
         "title": "添加维护时间窗口"
       }
     ],
-    "ApplyCDBProxy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyCDBProxy\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"SecurityGroup\": [\n        \"xx\"\n    ],\n    \"Mem\": 1,\n    \"UniqSubnetId\": \"xx\",\n    \"Desc\": \"xx\",\n    \"Cpu\": 1,\n    \"ProxyCount\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"dd803e8b-02543d6b-0b6ec9c4-8c1e133c\",\n        \"RequestId\": \"6236a2ad-0557-48c3-b983-247d2870e0a1\"\n    }\n}",
-        "title": "创建数据库代理"
-      }
-    ],
     "AssociateSecurityGroups": [
       {
         "document": "",

@@ -126,6 +126,12 @@
       "name": "查询码包的二维码列表",
       "output": "DescribeCodesByPackResponse"
     },
+    "DescribeCorpQuotas": {
+      "document": "查询渠道商下属企业额度使用情况",
+      "input": "DescribeCorpQuotasRequest",
+      "name": "查询渠道商下属企业额度使用情况",
+      "output": "DescribeCorpQuotasResponse"
+    },
     "DescribeCustomRuleById": {
       "document": "查自定义码规则",
       "input": "DescribeCustomRuleByIdRequest",
@@ -734,6 +740,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CorpQuota": {
+      "document": "渠道商的子企业额度使用情况",
+      "members": [
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业名称",
+          "example": "渠道商企业",
+          "member": "string",
+          "name": "CorpName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额度",
+          "example": "{}",
+          "member": "Quota",
+          "name": "Quota",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额度使用量",
+          "example": "{}",
+          "member": "UsageQuota",
+          "name": "UsageQuota",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2335,6 +2387,78 @@
           "name": "Codes",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpQuotasRequest": {
+      "document": "DescribeCorpQuotas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商ID，不要传",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AgentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索企业ID",
+          "example": "10000",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCorpQuotasResponse": {
+      "document": "DescribeCorpQuotas返回参数结构体",
+      "members": [
+        {
+          "document": "子企业额度使用情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CorpQuota",
+          "name": "CorpQuotas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -4089,6 +4213,142 @@
       ],
       "usage": "out"
     },
+    "Quota": {
+      "document": "企业配额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "021-05-11T16:00:00.000Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "021-05-11T16:00:00.000Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配额ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "QuotaId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开通服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"track\"]",
+          "member": "string",
+          "name": "Services",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工厂配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "FactoryQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ItemQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "溯源码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "TrackQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "销售码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "SaleQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上链配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ChainQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风控配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "RiskQuota",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TrackType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开通版本 basic standard enterprise\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TraceCode": {
       "document": "溯源码",
       "members": [
@@ -4440,6 +4700,92 @@
           "example": "无",
           "member": "string",
           "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageQuota": {
+      "document": "付费信息使用量",
+      "members": [
+        {
+          "default": "",
+          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FactoryCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ItemCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "溯源码量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TrackCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营销码额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SaleCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区块链上链次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ChainCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营销风控次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RiskCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-05-20",
+          "member": "string",
+          "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true

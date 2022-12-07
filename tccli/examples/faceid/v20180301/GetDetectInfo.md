@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli faceid GetDetectInfo --cli-unfold-argument  \
-    --RuleId 0 \
+    --InfoType 0 \
     --BizToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681 \
-    --InfoType 0
+    --RuleId 0
 ```
 
 Output: 
@@ -29,9 +29,9 @@ Input:
 
 ```
 tccli faceid GetDetectInfo --cli-unfold-argument  \
-    --RuleId 0 \
+    --InfoType 12 \
     --BizToken CE661F1A-0F1E-45BD-BE13-34C05CEA7681 \
-    --InfoType 12
+    --RuleId 0
 ```
 
 Output: 

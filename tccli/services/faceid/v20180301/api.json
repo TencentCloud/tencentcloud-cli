@@ -2536,8 +2536,10 @@
       "members": [
         {
           "document": "数字验证码，如：1234",
+          "example": "4392",
           "member": "string",
           "name": "LiveCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

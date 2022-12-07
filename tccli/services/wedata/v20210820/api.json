@@ -10536,7 +10536,6 @@
       "document": "DescribeRuleGroupSubscription请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则组ID",
           "example": "123456",
           "member": "uint64",
@@ -10545,7 +10544,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "123456",
           "member": "string",
@@ -10564,7 +10562,6 @@
           "example": "无",
           "member": "RuleGroupSubscribe",
           "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16214,7 +16211,6 @@
       "document": "ModifyRuleGroupSubscription请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则组ID",
           "example": "123456",
           "member": "uint64",
@@ -16223,7 +16219,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "订阅人信息",
           "example": "无",
           "member": "SubscribeReceiver",
@@ -16232,7 +16227,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "订阅类型",
           "example": "[1,2]",
           "member": "uint64",
@@ -16241,7 +16235,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "123456",
           "member": "string",
@@ -16250,7 +16243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据库Id",
           "example": "123456",
           "member": "string",
@@ -16259,7 +16251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据源Id",
           "example": "123456",
           "member": "string",
@@ -16268,13 +16259,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据表Id",
           "example": "123456",
           "member": "string",
           "name": "TableId",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "群机器人webhook信息",
+          "example": "[{\"HookType\":\"feishu\",\"HookAddress\":\"http://xxxxxxxxxxxx\"}]",
+          "member": "SubscribeWebHook",
+          "name": "WebHooks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16287,7 +16285,6 @@
           "example": "123456",
           "member": "uint64",
           "name": "Data",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20723,7 +20720,6 @@
       "document": "数据质量规则组订阅信息",
       "members": [
         {
-          "default": "",
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
           "member": "uint64",
@@ -20733,7 +20729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "订阅接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubscribeReceiver",
@@ -20743,11 +20738,19 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "订阅方式 1.邮件email  2.短信sms\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2]",
           "member": "uint64",
           "name": "SubscribeType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "群机器人配置的webhook信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"hookType\":\"feishu\",\"hookAddress\":\"http://xxxxxxxx\"}]",
+          "member": "SubscribeWebHook",
+          "name": "WebHooks",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -22274,6 +22277,30 @@
           "example": "park",
           "member": "string",
           "name": "ReceiverName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SubscribeWebHook": {
+      "document": "群机器人订阅配置",
+      "members": [
+        {
+          "document": "群机器人类型，当前支持飞书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "feishu",
+          "member": "string",
+          "name": "HookType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://open.feishu.cn/open-apis/bot/v2/hook/11111111",
+          "member": "string",
+          "name": "HookAddress",
           "required": false,
           "type": "string",
           "value_allowed_null": true

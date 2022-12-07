@@ -168,6 +168,14 @@
         "title": "查询码包的二维码列表"
       }
     ],
+    "DescribeCorpQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCorpQuotas\n<公共请求参数>\n\n{\n    \"Keyword\": \"10000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CorpQuotas\": [\n            {\n                \"CorpId\": 1,\n                \"UsageQuota\": {\n                    \"SaleCnt\": 0,\n                    \"UpdateTime\": \"xx\",\n                    \"CorpId\": 1,\n                    \"ChainCnt\": 0,\n                    \"FactoryCnt\": 0,\n                    \"RiskCnt\": 0,\n                    \"TrackCnt\": 0,\n                    \"ItemCnt\": 0\n                },\n                \"Quota\": {\n                    \"CorpId\": 1,\n                    \"TrackQuota\": 0,\n                    \"FactoryQuota\": 0,\n                    \"QuotaId\": 1,\n                    \"SaleQuota\": 0,\n                    \"Version\": \"xx\",\n                    \"ItemQuota\": 0,\n                    \"StartTime\": \"xx\",\n                    \"Services\": [\n                        \"xx\"\n                    ],\n                    \"RiskQuota\": 0,\n                    \"EndTime\": \"xx\",\n                    \"TrackType\": 0,\n                    \"ChainQuota\": 0\n                },\n                \"CorpName\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询渠道商下属企业额度使用情况"
+      }
+    ],
     "DescribeCustomRuleById": [
       {
         "document": "",

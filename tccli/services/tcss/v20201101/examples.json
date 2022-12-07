@@ -164,6 +164,22 @@
         "title": "容器网络创建网络策略确认任务示例"
       }
     ],
+    "CreateAbnormalProcessRulesExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAbnormalProcessRulesExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"JobId\": \"\"\n    }\n}",
+        "title": "创建异常进程规则导出任务"
+      }
+    ],
+    "CreateAccessControlsRuleExportJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessControlsRuleExportJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"JobId\": \"\"\n    }\n}",
+        "title": "创建k8sApi异常规则导出任务"
+      }
+    ],
     "CreateAssetImageRegistryScanTask": [
       {
         "document": "",

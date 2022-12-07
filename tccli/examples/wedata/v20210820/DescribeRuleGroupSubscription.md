@@ -1,6 +1,6 @@
 **Example 1: 查询规则组订阅信息**
 
-
+查询规则组订阅详情
 
 Input: 
 
@@ -19,6 +19,9 @@ Output:
                 {
                     "ReceiverName": "xx"
                 }
+            ],
+            "WebHooks": [
+                {}
             ],
             "SubscribeType": [
                 1

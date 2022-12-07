@@ -1150,9 +1150,29 @@
         {
           "default": "",
           "document": "SQL 语句。支持传递多个sql语句。",
-          "example": "无",
+          "example": "\"DELETE FROM test\"",
           "member": "string",
           "name": "Sqls",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回行数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SentRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线程ID。",
+          "example": "[\"49354\"]",
+          "member": "string",
+          "name": "ThreadId",
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1515,6 +1535,26 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8600,6 +8640,15 @@
           "name": "DealMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。",
+          "example": "NormalUpgrade",
+          "member": "string",
+          "name": "UpgradeMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

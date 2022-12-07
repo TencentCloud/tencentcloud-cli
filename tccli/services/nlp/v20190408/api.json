@@ -836,7 +836,7 @@
         {
           "default": "",
           "document": "待处理的文本（仅支持UTF-8格式，不超过10000字符）",
-          "example": "无",
+          "example": "印发《关于促...进一步发挥。",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -845,7 +845,7 @@
         {
           "default": "",
           "document": "指定关键词个数上限（默认值为5）",
-          "example": "无",
+          "example": "6",
           "member": "uint64",
           "name": "Num",
           "required": false,

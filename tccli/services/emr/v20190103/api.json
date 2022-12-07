@@ -12,6 +12,12 @@
       "name": "创建EMR实例",
       "output": "CreateInstanceResponse"
     },
+    "DeleteUserManagerUserList": {
+      "document": "删除用户列表（用户管理）\n",
+      "input": "DeleteUserManagerUserListRequest",
+      "name": "删除用户列表（用户管理）",
+      "output": "DeleteUserManagerUserListResponse"
+    },
     "DescribeClusterNodes": {
       "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
@@ -1510,6 +1516,42 @@
         }
       ],
       "usage": "in"
+    },
+    "DeleteUserManagerUserListRequest": {
+      "document": "DeleteUserManagerUserList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群用户名列表",
+          "example": "[\"emr\", \"es\"]",
+          "member": "string",
+          "name": "UserNameList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserManagerUserListResponse": {
+      "document": "DeleteUserManagerUserList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeClusterNodesRequest": {
       "document": "DescribeClusterNodes请求参数结构体",

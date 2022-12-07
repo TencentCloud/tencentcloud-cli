@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli sqlserver DescribeDBInstances --cli-unfold-argument  \
-    --ProjectId 0 \
-    --InstanceIdSet mssql-3l3fgqn7 \
     --Status 2 \
-    --VipSet 172.1.0.12 \
-    --InstanceNameSet 数仓 \
-    --VersionSet 2008R2 \
-    --Zone ap-guangzhou-2 \
-    --TagKeys 测试tag \
-    --Offset 0 \
-    --Limit 3 \
-    --PayMode 1 \
+    --SearchKey 172.17.0.12 \
     --VpcId vpc-mknbt351 \
+    --Zone ap-guangzhou-2 \
+    --VersionSet 2008R2 \
+    --ProjectId 0 \
+    --Offset 0 \
+    --PayMode 1 \
+    --Limit 3 \
+    --InstanceIdSet mssql-3l3fgqn7 \
     --SubnetId subnet-f72hylo6 \
-    --SearchKey 172.17.0.12
+    --TagKeys 测试tag \
+    --VipSet 172.1.0.12 \
+    --InstanceNameSet 数仓
 ```
 
 Output: 
@@ -28,57 +28,63 @@ Output:
     "Response": {
         "DBInstances": [
             {
+                "BackupCycle": [
+                    1
+                ],
+                "BackupCycleType": "daily",
                 "BackupModel": "master_pkg",
-                "BackupTime": "06:15:15",
-                "Cpu": 1,
-                "CreateTime": "2021-05-07 15:26:58",
+                "BackupSaveDays": 7,
+                "BackupTime": "07:03:00",
+                "Collation": "Chinese_PRC_CI_AS",
+                "Cpu": 4,
+                "CreateTime": "2022-11-07 16:21:01",
+                "CrossBackupEnabled": "disable",
+                "CrossBackupSaveDays": 0,
+                "CrossRegions": [],
+                "DnsPodDomain": "",
                 "EndTime": "0000-00-00 00:00:00",
-                "HAFlag": "MIRROR",
-                "InstanceId": "mssql-m0031jhf",
+                "HAFlag": "SINGLE",
+                "InstanceId": "mssql-fz80u7u1",
+                "InstanceNote": "",
+                "InstanceType": "SI",
                 "IsolateOperator": "",
                 "IsolateTime": "0000-00-00 00:00:00",
-                "Memory": 2,
-                "Model": 1,
-                "Name": "2008_1",
+                "Memory": 8,
+                "Model": 2,
+                "Name": "2008-2012-2016",
                 "PayMode": 0,
-                "Pid": 10908,
+                "Pid": 1003456,
                 "ProjectId": 0,
                 "ROFlag": "",
                 "Region": "ap-guangzhou",
                 "RegionId": 1,
                 "RenewFlag": 0,
                 "ResourceTags": null,
-                "StartTime": "2021-05-07 15:26:58",
+                "IsDrZone": false,
+                "SlaveZones": {
+                    "SlaveZone": "",
+                    "SlaveZoneName": ""
+                },
+                "StartTime": "2022-11-07 16:21:01",
                 "Status": 2,
-                "Storage": 10,
+                "Storage": 40,
                 "SubFlag": "",
-                "SubnetId": 29802,
-                "Type": "TS85",
-                "Uid": "gamedb.gz570.cdb.db",
-                "UniqSubnetId": "subnet-57pxp1bq",
-                "UniqVpcId": "vpc-3p65tezp",
-                "UpdateTime": "2021-05-07 16:56:15",
+                "SubnetId": 2118677,
+                "TgwWanVPort": 0,
+                "TimeZone": "China Standard Time",
+                "Type": "CLOUD_PREMIUM",
+                "Uid": "gamedb.gz1208.cdb.db",
+                "UniqSubnetId": "subnet-ieianm0o",
+                "UniqVpcId": "vpc-o739nubl",
+                "UpdateTime": "2022-11-07 20:04:03",
                 "UsedStorage": 0,
-                "Version": "2008R2",
-                "VersionName": "SQL Server 2008 Enterprise",
-                "Vip": "172.16.1.116",
-                "VpcId": 206194,
+                "Version": "2019",
+                "VersionName": "SQL Server 2019 Enterprise",
+                "Vip": "10.24.12.28",
+                "VpcId": 5350471,
                 "Vport": 1433,
-                "Zone": "ap-guangzhou-2",
-                "ZoneId": 100002,
-                "BackupSaveDays": 7,
-                "BackupCycleType": "weekly",
-                "InstanceNote": "test",
-                "InstanceType": "HA",
-                "BackupCycle": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7
-                ]
+                "Zone": "ap-guangzhou-3",
+                "ZoneId": 100003
             }
         ],
         "RequestId": "de641788-0565-4617-a7f4-639de128772b",

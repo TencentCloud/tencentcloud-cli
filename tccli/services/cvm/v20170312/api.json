@@ -355,7 +355,7 @@
       "output": "InquiryPriceRunInstancesResponse"
     },
     "InquiryPriceTerminateInstances": {
-      "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。",
+      "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "InquiryPriceTerminateInstancesRequest",
       "name": "退还实例询价",
       "output": "InquiryPriceTerminateInstancesResponse"
@@ -745,7 +745,7 @@
       "document": "AllocateHosts返回参数结构体",
       "members": [
         {
-          "document": "新创建云子机的实例id列表。",
+          "document": "新创建云子机的实例ID列表。",
           "example": "[\"host-lan4lb2k\"]",
           "member": "string",
           "name": "HostIdSet",
@@ -6489,6 +6489,26 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。",
+          "example": "无",
+          "member": "float",
+          "name": "GpuCount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的CPU主频信息",
+          "example": "无",
+          "member": "string",
+          "name": "Frequency",
           "required": true,
           "type": "string",
           "value_allowed_null": false

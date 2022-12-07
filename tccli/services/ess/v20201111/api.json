@@ -115,7 +115,7 @@
       "output": "DescribeFlowInfoResponse"
     },
     "DescribeFlowTemplates": {
-      "document": "二期接口-查询模板\n适用场景：当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取自己主体下的模板列表，以及每个模板内的控件信息。该接口常用来配合“创建电子文档”接口作为前置的接口使用。",
+      "document": "当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。该接口常用来配合“创建电子文档”接口作为前置的接口使用。",
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板",
       "output": "DescribeFlowTemplatesResponse"
@@ -2412,21 +2412,21 @@
         },
         {
           "default": "",
-          "document": "搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤",
+          "document": "企业组织相关信息",
           "example": "无",
-          "member": "Filter",
-          "name": "Filters",
+          "member": "OrganizationInfo",
+          "name": "Organization",
           "required": false,
-          "type": "list"
+          "type": "object"
         },
         {
           "default": "",
-          "document": "查询个数，默认20，最大200",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
           "required": false,
-          "type": "int"
+          "type": "object"
         },
         {
           "default": "",
@@ -2439,12 +2439,39 @@
         },
         {
           "default": "",
-          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
-          "example": "无",
-          "member": "int64",
-          "name": "ContentType",
+          "document": "查询个数，默认20，最大200",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "这个参数跟下面的IsChannel参数配合使用。\nIsChannel=false时，ApplicationId参数不起任何作用。\nIsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表\nApplicationId为空，查询渠道模板列表",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为false，查询SaaS模板库列表；\n为true，查询渠道模板库管理列表",
+          "example": "无",
+          "member": "bool",
+          "name": "IsChannel",
+          "required": false,
+          "type": "bool"
         },
         {
           "default": "",
@@ -2457,12 +2484,12 @@
         },
         {
           "default": "",
-          "document": "应用相关信息",
+          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
           "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "member": "int64",
+          "name": "ContentType",
           "required": false,
-          "type": "object"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4450,6 +4477,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板创建组织id",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

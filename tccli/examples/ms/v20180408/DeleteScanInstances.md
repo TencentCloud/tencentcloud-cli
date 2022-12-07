@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ms DeleteScanInstances --cli-unfold-argument  \
-    --AppSids hhussxu-hui2677-kk xyuu-csu-ee78236l
+    --AppSids xyuu-csu-ee78236l hhussxu-hui2677-kk
 ```
 
 Output: 

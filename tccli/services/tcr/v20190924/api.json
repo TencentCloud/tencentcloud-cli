@@ -8109,7 +8109,7 @@
         },
         {
           "default": "",
-          "document": "镜像Id",
+          "document": "制品的 ID",
           "member": "string",
           "name": "TagId",
           "required": true,
@@ -8136,7 +8136,7 @@
         },
         {
           "default": "",
-          "document": "镜像的创建时间",
+          "document": "制品的创建时间",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -8145,7 +8145,7 @@
         },
         {
           "default": "",
-          "document": "镜像创建至今时间长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "制品创建至今时间长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DurationDays",
           "required": true,
@@ -8154,7 +8154,7 @@
         },
         {
           "default": "",
-          "document": "镜像的作者",
+          "document": "标注的制品作者",
           "member": "string",
           "name": "Author",
           "required": true,
@@ -8163,7 +8163,7 @@
         },
         {
           "default": "",
-          "document": "次镜像建议运行的系统架构",
+          "document": "标注的制品平台",
           "member": "string",
           "name": "Architecture",
           "required": true,
@@ -8172,7 +8172,7 @@
         },
         {
           "default": "",
-          "document": "创建此镜像的docker版本",
+          "document": "创建制品的 Docker 版本",
           "member": "string",
           "name": "DockerVersion",
           "required": true,
@@ -8181,7 +8181,7 @@
         },
         {
           "default": "",
-          "document": "此镜像建议运行系统",
+          "document": "标注的制品操作系统",
           "member": "string",
           "name": "OS",
           "required": true,
@@ -8190,7 +8190,7 @@
         },
         {
           "default": "",
-          "document": "SizeByte",
+          "document": "制品大小",
           "member": "int64",
           "name": "SizeByte",
           "required": true,
@@ -8199,7 +8199,7 @@
         },
         {
           "default": "",
-          "document": "Id",
+          "document": "序号",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -8217,9 +8217,18 @@
         },
         {
           "default": "",
-          "document": "镜像更新时间",
+          "document": "制品更新时间",
           "member": "string",
           "name": "PushTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "制品类型",
+          "member": "string",
+          "name": "Kind",
           "required": true,
           "type": "string",
           "value_allowed_null": false

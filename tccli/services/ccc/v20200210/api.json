@@ -4125,72 +4125,74 @@
       "document": "技能组信息",
       "members": [
         {
-          "default": "",
           "document": "技能组ID",
           "example": "1400000000",
           "member": "int64",
           "name": "SkillGroupId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "技能组名称",
           "example": "Test",
           "member": "string",
           "name": "SkillGroupName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "类型：IM、TEL、ALL（全媒体）",
+          "document": "（废弃）类型：IM、TEL、ALL（全媒体）",
           "example": "IM",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "会话分配策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fifo",
           "member": "string",
           "name": "RoutePolicy",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "会话分配是否优先上次服务坐席\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "UsingLastSeat",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "单客服最大并发数（电话类型默认1）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "int64",
           "name": "LastModifyTimestamp",
-          "required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "技能组类型0-电话，1-在线，3-音频，4-视频\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SkillGroupType",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }

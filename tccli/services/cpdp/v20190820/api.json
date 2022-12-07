@@ -12273,7 +12273,7 @@
         },
         {
           "default": "",
-          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "document": "渠道名称。\n__TENPAY__: 商企付",
           "example": "TENPAY",
           "member": "string",
           "name": "ChannelName",
@@ -12863,7 +12863,7 @@
         },
         {
           "default": "",
-          "document": "备注信息。",
+          "document": "备注信息。限制200个字符。",
           "example": "备注",
           "member": "string",
           "name": "Remark",

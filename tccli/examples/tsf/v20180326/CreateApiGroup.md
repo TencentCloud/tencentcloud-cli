@@ -9,7 +9,11 @@ tccli tsf CreateApiGroup --cli-unfold-argument  \
     --GroupName zuul_test_group \
     --GroupContext %2Fuser \
     --AuthType none \
-    --Description test
+    --Description test \
+    --NamespaceNameKey TSF-NamespaceName \
+    --ServiceNameKey TSF-ServiceName \
+    --NamespaceNameKeyPosition path \
+    --ServiceNameKeyPosition path
 ```
 
 Output: 

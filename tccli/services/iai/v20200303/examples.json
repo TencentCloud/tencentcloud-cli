@@ -19,7 +19,7 @@
     "CompareFace": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CompareFace\n&UrlA=http://test.image.myqcloud.com/testA.jpg\n&UrlB=http://test.image.myqcloud.com/testB.jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompareFace\n<公共请求参数>\n\n{\n    \"UrlA\": \"http://test.image.myqcloud.com/testA.jpg\",\n    \"UrlB\": \"http://test.image.myqcloud.com/testB.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Score\": 0.999,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"a8eb4545-a154-4f86-9510-57a8be9cae0c\"\n    }\n}",
         "title": "人脸比对接口"
       }
