@@ -8,6 +8,7 @@ Input:
 tccli mrs ImageToObject --cli-unfold-argument  \
     --IsUsedClassify True \
     --Type 0 \
+    --UserType 0 \
     --HandleParam.OcrEngineType 2 \
     --HandleParam.IsScale False \
     --HandleParam.ImageOriginalSize 310006 \

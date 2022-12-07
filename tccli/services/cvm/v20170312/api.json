@@ -361,7 +361,7 @@
       "output": "InquiryPriceRunInstancesResponse"
     },
     "InquiryPriceTerminateInstances": {
-      "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。",
+      "document": "本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。\n\n* 查询退还实例可以返还的费用。\n* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "InquiryPriceTerminateInstancesRequest",
       "name": "退还实例询价",
       "output": "InquiryPriceTerminateInstancesResponse"
@@ -691,7 +691,8 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -700,7 +701,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -709,7 +711,8 @@
           "member": "ChargePrepaid",
           "name": "HostChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -718,7 +721,8 @@
           "member": "string",
           "name": "HostChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -727,7 +731,8 @@
           "member": "string",
           "name": "HostType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -736,7 +741,8 @@
           "member": "uint64",
           "name": "HostCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -745,7 +751,8 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -754,13 +761,14 @@
       "document": "AllocateHosts返回参数结构体",
       "members": [
         {
-          "document": "新创建云子机的实例id列表。",
+          "document": "新创建云子机的实例ID列表。",
           "example": "[\"host-lan4lb2k\"]",
           "member": "string",
           "name": "HostIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2571,7 +2579,8 @@
           "member": "string",
           "name": "ChcIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2580,7 +2589,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2589,7 +2599,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2598,7 +2609,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2613,7 +2625,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回的实例列表",
@@ -2622,7 +2635,8 @@
           "name": "ChcHostSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7001,6 +7015,28 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。",
+          "example": "无",
+          "member": "float",
+          "name": "GpuCount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例的CPU主频信息",
+          "example": "无",
+          "member": "string",
+          "name": "Frequency",
           "required": true,
           "type": "string",
           "value_allowed_null": false,

@@ -1,3 +1,234 @@
+# Release 3.0.664.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 23 次发布
+
+发布时间：2022-12-08 06:17:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：Remark
+
+	* <font color="#dd0000">**修改成员**：</font>Caller, Callee, Time, Direction, Duration, RecordURL, SeatUser, EndStatus, SkillGroup, CallerLocation, IVRDuration, RingTimestamp, AcceptTimestamp, EndedTimestamp, IVRKeyPressed, HungUpSide, ServeParticipants, SkillGroupId, EndStatusString, StartTimestamp, QueuedTimestamp, PostIVRKeyPressed, QueuedSkillGroupId, SessionId, ProtectedCaller, ProtectedCallee, Uui, IVRKeyPressedEx, AsrUrl, CustomRecordURL
+
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 48 次发布
+
+发布时间：2022-12-08 06:25:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PaymentOrderResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderResult)
+
+	* 新增成员：FailReason
+
+* [PaymentOrderStatusResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PaymentOrderStatusResult)
+
+	* 新增成员：FailReason
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 23 次发布
+
+发布时间：2022-12-08 06:30:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterParamLogs](http://document.tencentcloudapi.woa.com/document/product/1003/70118)
+
+	* 新增入参：InstanceIds, OrderBy, OrderByType
+
+
+
+
+## 医疗报告结构化(mrs) 版本：2020-09-10
+
+### 第 10 次发布
+
+发布时间：2022-12-08 06:53:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImageToClass](http://document.tencentcloudapi.woa.com/document/product/1314/56229)
+
+	* 新增入参：UserType
+
+* [ImageToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56228)
+
+	* 新增入参：UserType
+
+* [TextToClass](http://document.tencentcloudapi.woa.com/document/product/1314/56227)
+
+	* 新增入参：UserType
+
+* [TextToObject](http://document.tencentcloudapi.woa.com/document/product/1314/56226)
+
+	* 新增入参：UserType
+
+
+修改数据结构：
+
+* [MedDoc](http://document.tencentcloudapi.woa.com/document/product/1314/56230#MedDoc)
+
+	* <font color="#dd0000">**修改成员**：</font>Advice, Diagnosis, DiseaseMedicalHistory, PersonalMedicalHistory, ObstericalMedicalHistory, FamilyMedicalHistory, MenstrualMedicalHistory, TreatmentRecord
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 13 次发布
+
+发布时间：2022-12-08 06:57:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：Message
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 11 次发布
+
+发布时间：2022-12-08 07:10:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
+
+	* 新增成员：CreateFailedReason, ResourceGroupName, Tags
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 50 次发布
+
+发布时间：2022-12-08 07:12:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76772)
+* [DescribeClusterPendingReleases](http://document.tencentcloudapi.woa.com/document/product/457/76771)
+* [DescribeClusterReleaseDetails](http://document.tencentcloudapi.woa.com/document/product/457/76770)
+* [DescribeClusterReleaseHistory](http://document.tencentcloudapi.woa.com/document/product/457/76769)
+* [DescribeClusterReleases](http://document.tencentcloudapi.woa.com/document/product/457/76768)
+* [RollbackClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76767)
+* [UninstallClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76766)
+* [UpgradeClusterRelease](http://document.tencentcloudapi.woa.com/document/product/457/76765)
+
+修改接口：
+
+* [UpdateImageCache](http://document.tencentcloudapi.woa.com/document/product/457/70857)
+
+	* 新增入参：ImageRegistryCredentials, Images, ImageCacheSize, RetentionDays, SecurityGroupIds
+
+
+新增数据结构：
+
+* [Release](http://document.tencentcloudapi.woa.com/document/product/457/31866#Release)
+* [ReleaseDetails](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseDetails)
+* [ReleaseHistory](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReleaseHistory)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 19 次发布
+
+发布时间：2022-12-08 07:14:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MixLayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#MixLayoutParams)
+
+	* 新增成员：RenderMode, MaxResolutionUserAlign
+
+* [RecordParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecordParams)
+
+	* 新增成员：MaxMediaFileDuration
+
+* [TencentVod](http://document.tencentcloudapi.woa.com/document/product/647/44055#TencentVod)
+
+	* 新增成员：UserDefineRecordId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 48 次发布
+
+发布时间：2022-12-08 07:19:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DfwOssGetUSGCountFromSGRequest](http://document.tencentcloudapi.woa.com/document/product/215/15824#DfwOssGetUSGCountFromSGRequest)
+
+	* 新增成员：Project
+
+
+
+
 # Release 3.0.663.1
 
 ## 应用性能观测(apm) 版本：2021-06-22

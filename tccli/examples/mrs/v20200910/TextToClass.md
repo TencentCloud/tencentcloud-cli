@@ -25,7 +25,8 @@ tccli mrs TextToClass --cli-unfold-argument  \
 1、甲状腺右侧叶低回声结节，TI-RADS-US分类3类
 2、甲状腺左侧叶囊性结节，TI-RADS-US分类2类
 报告时间:2020-07-019;02:37
-本报告仅供临床参考。
+本报告仅供临床参考。 \
+    --UserType 0
 ```
 
 Output: 

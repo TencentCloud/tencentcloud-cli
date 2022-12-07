@@ -76,6 +76,14 @@
         "title": "查询互动白板时长用量"
       }
     ],
+    "DescribeTIWRoomDailyUsage": [
+      {
+        "document": "查询2022-11-24到2022-11-25的互动白板房间计费用量",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTIWRoomDailyUsage\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400000001\",\n    \"SubProduct\": \"sp_tiw_board\",\n    \"Limit\": \"20\",\n    \"StartTime\": \"2022-11-24\",\n    \"Offset\": \"0\",\n    \"EndTime\": \"2022-11-25\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"916f3549-8e91-467c-afcb-b8dacf188e12\",\n        \"Usages\": [\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 432946024,\n                \"Value\": 5\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 523696026,\n                \"Value\": 60\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 1284910005,\n                \"Value\": 4\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "title": "查询房间维度每天计费用量"
+      }
+    ],
     "DescribeTranscode": [
       {
         "document": "查询文档动态转码任务结果",

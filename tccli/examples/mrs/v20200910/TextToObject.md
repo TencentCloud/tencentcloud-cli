@@ -27,6 +27,7 @@ tccli mrs TextToObject --cli-unfold-argument  \
 报告时间:2020-07-019;02:37
 本报告仅供临床参考。 \
     --Type 0 \
+    --UserType 0 \
     --IsUsedClassify True
 ```
 
@@ -1459,6 +1460,8 @@ Output:
             "Electrocardiogram": null,
             "Endoscopy": null,
             "Prescription": null,
+            "OcrResult": "xx",
+            "OcrText": "xx",
             "VaccineCertificate": null
         }
     }

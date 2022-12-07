@@ -1212,9 +1212,31 @@
         {
           "default": "",
           "document": "SQL 语句。支持传递多个sql语句。",
-          "example": "无",
+          "example": "\"DELETE FROM test\"",
           "member": "string",
           "name": "Sqls",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "返回行数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SentRows",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "线程ID。",
+          "example": "[\"49354\"]",
+          "member": "string",
+          "name": "ThreadId",
           "required": false,
           "type": "list",
           "value_allowed_null": false,
@@ -1578,7 +1600,8 @@
           "name": "ParamName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1588,7 +1611,8 @@
           "name": "CurrentValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1598,7 +1622,8 @@
           "name": "UpdateValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1608,7 +1633,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1618,7 +1644,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1628,7 +1655,30 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4985,25 +5035,58 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例ID列表，用来记录具体操作哪些实例",
+          "example": "[123,123]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段，定义在回返结果的基于哪个字段进行排序",
+          "example": "123",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "返回数量，默认为 20，取值范围为(0,100]",
-          "example": "0",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "记录偏移量，默认值为0，取值范围为[0,INF)",
-          "example": "20",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5018,7 +5101,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "参数修改记录\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5027,7 +5111,8 @@
           "name": "ClusterParamLogs",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9284,6 +9369,16 @@
           "name": "DealMode",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。",
+          "example": "NormalUpgrade",
+          "member": "string",
+          "name": "UpgradeMode",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],

@@ -1,15 +1,24 @@
 **Example 1: 同步调用设备行为**
 
-当行为返回成功时，该值是 succ。
+云端调用后，设备端上报`$thing/up/action/TOIDHQ3AOQ/light1`
+```
+{
+	"method": "action_reply",
+	"clientToken": "0fe1260b7a724b67ba873ca7df703e0d",
+	"code": 0,
+	"response": { "brightness": 1, "color": 1, "light_switch": 1 },
+	"status": "succ"
+}
+```
 
 Input: 
 
 ```
 tccli iotexplorer CallDeviceActionSync --cli-unfold-argument  \
-    --ProductId TOIDHQ3AOQ \
     --DeviceName light1 \
+    --InputParams {"vol":3} \
     --ActionId actid \
-    --InputParams {"vol":3}
+    --ProductId TOIDHQ3AOQ
 ```
 
 Output: 
@@ -32,10 +41,10 @@ Input:
 
 ```
 tccli iotexplorer CallDeviceActionSync --cli-unfold-argument  \
-    --ProductId TOIDHQ3AOQ \
     --DeviceName light1 \
+    --InputParams {"brightness":3} \
     --ActionId actid \
-    --InputParams {"brightness":3}
+    --ProductId TOIDHQ3AOQ
 ```
 
 Output: 
@@ -58,10 +67,10 @@ Input:
 
 ```
 tccli iotexplorer CallDeviceActionSync --cli-unfold-argument  \
-    --ProductId TOIDHQ3AOQ \
     --DeviceName light1 \
+    --InputParams {"brightness":3} \
     --ActionId actid \
-    --InputParams {"brightness":3}
+    --ProductId TOIDHQ3AOQ
 ```
 
 Output: 

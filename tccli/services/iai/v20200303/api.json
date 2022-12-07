@@ -509,7 +509,8 @@
           "member": "string",
           "name": "ImageA",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -518,7 +519,8 @@
           "member": "string",
           "name": "ImageB",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -527,7 +529,8 @@
           "member": "string",
           "name": "UrlA",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -536,7 +539,8 @@
           "member": "string",
           "name": "UrlB",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -545,7 +549,8 @@
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -554,7 +559,8 @@
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -563,7 +569,8 @@
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -578,7 +585,8 @@
           "name": "Score",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸识别所用的算法模型版本。",
@@ -587,7 +595,8 @@
           "name": "FaceModelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -608,7 +617,8 @@
           "member": "string",
           "name": "ImageA",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -617,7 +627,8 @@
           "member": "string",
           "name": "ImageB",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -626,7 +637,8 @@
           "member": "string",
           "name": "UrlA",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -635,7 +647,8 @@
           "member": "string",
           "name": "UrlB",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -644,7 +657,8 @@
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -653,7 +667,8 @@
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -668,7 +683,8 @@
           "name": "Score",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸识别所用的算法模型版本。",
@@ -677,7 +693,8 @@
           "name": "FaceModelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1702,7 +1719,8 @@
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1711,7 +1729,8 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1720,7 +1739,8 @@
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1735,7 +1755,8 @@
           "name": "Score",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸识别所用的算法模型版本。",
@@ -1744,7 +1765,8 @@
           "name": "FaceModelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "活体检测是否通过。\n本字段只有FaceModelVersion为3.0时才具备参考意义。",
@@ -1753,7 +1775,8 @@
           "name": "IsLiveness",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

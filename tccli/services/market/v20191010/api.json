@@ -6,6 +6,12 @@
       "name": "计量商品用量提醒",
       "output": "FlowProductRemindResponse"
     },
+    "GetOrderForYUNDING": {
+      "document": "提供云鼎实验室调用",
+      "input": "GetOrderForYUNDINGRequest",
+      "name": "云鼎实验室订单列表",
+      "output": "GetOrderForYUNDINGResponse"
+    },
     "GetUsagePlanUsageAmount": {
       "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
       "input": "GetUsagePlanUsageAmountRequest",
@@ -128,6 +134,74 @@
       ],
       "type": "object"
     },
+    "GetOrderForYUNDINGRequest": {
+      "document": "GetOrderForYUNDING请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户uin",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "GetOrderForYUNDINGResponse": {
+      "document": "GetOrderForYUNDING返回参数结构体",
+      "members": [
+        {
+          "document": "订单列表",
+          "example": "无",
+          "member": "YunDingOrder",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetUsagePlanUsageAmountRequest": {
       "document": "GetUsagePlanUsageAmount请求参数结构体",
       "members": [
@@ -185,6 +259,122 @@
         }
       ],
       "type": "object"
+    },
+    "YunDingOrder": {
+      "document": "云鼎订单信息",
+      "members": [
+        {
+          "document": "订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OrderName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "消费者uin",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "订单创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderCreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "订单完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProductID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "订单实付金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RealTotalCost",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "订单数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CycleNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "订单状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "服务商uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProviderUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "注册号码（qq、微信、手机号、邮箱等）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -558,7 +558,8 @@
           "member": "string",
           "name": "BankCard",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -567,7 +568,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -582,7 +584,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务结果描述",
@@ -591,7 +594,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开户行",
@@ -600,7 +604,8 @@
           "name": "AccountBank",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡",
@@ -609,7 +614,8 @@
           "name": "AccountType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2068,7 +2074,8 @@
           "member": "string",
           "name": "BizToken",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2077,7 +2084,8 @@
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2086,7 +2094,8 @@
           "member": "string",
           "name": "InfoType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2101,7 +2110,8 @@
           "name": "DetectInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2653,10 +2663,13 @@
       "members": [
         {
           "document": "数字验证码，如：1234",
+          "example": "4392",
           "member": "string",
           "name": "LiveCode",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2838,7 +2851,8 @@
           "member": "string",
           "name": "IdCard",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2847,7 +2861,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2856,7 +2871,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2865,7 +2881,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2874,7 +2891,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2889,7 +2907,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务结果描述。",
@@ -2898,7 +2917,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用于验证的姓名",
@@ -2907,7 +2927,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用于验证的身份证号",
@@ -2916,7 +2937,8 @@
           "name": "IdCard",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "OCR得到的性别\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2925,7 +2947,8 @@
           "name": "Sex",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "OCR得到的民族\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2934,7 +2957,8 @@
           "name": "Nation",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "OCR得到的生日\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2943,7 +2967,8 @@
           "name": "Birth",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "OCR得到的地址\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2952,7 +2977,8 @@
           "name": "Address",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2973,7 +2999,8 @@
           "member": "string",
           "name": "IdCard",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2982,7 +3009,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2991,7 +3019,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3006,7 +3035,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务结果描述。",
@@ -3015,7 +3045,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3298,7 +3329,8 @@
           "member": "string",
           "name": "LivenessType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3307,7 +3339,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3316,7 +3349,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3325,7 +3359,8 @@
           "member": "string",
           "name": "ValidateData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3334,7 +3369,8 @@
           "member": "string",
           "name": "Optional",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3343,7 +3379,8 @@
           "member": "string",
           "name": "VideoBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3352,7 +3389,8 @@
           "member": "string",
           "name": "VideoUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3367,7 +3405,8 @@
           "name": "BestFrameBase64",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
@@ -3376,7 +3415,8 @@
           "name": "Sim",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
@@ -3385,7 +3425,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务结果描述。",
@@ -3394,7 +3435,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "最佳截图列表，仅在配置了返回多张最佳截图时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3403,7 +3445,8 @@
           "name": "BestFrameList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3424,7 +3467,8 @@
           "member": "string",
           "name": "IdCard",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3433,7 +3477,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3442,7 +3487,8 @@
           "member": "string",
           "name": "LivenessType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3451,7 +3497,8 @@
           "member": "string",
           "name": "VideoBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3460,7 +3507,8 @@
           "member": "string",
           "name": "VideoUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3469,7 +3517,8 @@
           "member": "string",
           "name": "ValidateData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3478,7 +3527,8 @@
           "member": "string",
           "name": "Optional",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3487,7 +3537,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3502,7 +3553,8 @@
           "name": "BestFrameBase64",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）",
@@ -3511,7 +3563,8 @@
           "name": "Sim",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
@@ -3520,7 +3573,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务结果描述。",
@@ -3529,7 +3583,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "最佳截图列表，仅在配置了返回多张最佳截图时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3538,7 +3593,8 @@
           "name": "BestFrameList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

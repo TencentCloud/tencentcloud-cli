@@ -6,12 +6,6 @@
       "name": "添加维护时间窗口",
       "output": "AddTimeWindowResponse"
     },
-    "ApplyCDBProxy": {
-      "document": "针对主实例申请创建数据库代理。",
-      "input": "ApplyCDBProxyRequest",
-      "name": "申请数据库代理组",
-      "output": "ApplyCDBProxyResponse"
-    },
     "AssociateSecurityGroups": {
       "document": "本接口(AssociateSecurityGroups)用于安全组批量绑定实例。",
       "input": "AssociateSecurityGroupsRequest",
@@ -1064,105 +1058,6 @@
         }
       ],
       "usage": "out"
-    },
-    "ApplyCDBProxyRequest": {
-      "document": "ApplyCDBProxy请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "主实例唯一标识ID",
-          "example": "cdb-sca12da",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "私有网络ID",
-          "example": "vpc-j1sxc77p",
-          "member": "string",
-          "name": "UniqVpcId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "私有网络子网ID",
-          "example": "subnet-7v7ygzem",
-          "member": "string",
-          "name": "UniqSubnetId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "代理组节点个数",
-          "example": "2",
-          "member": "uint64",
-          "name": "ProxyCount",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "cpu核数",
-          "example": "2",
-          "member": "uint64",
-          "name": "Cpu",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "内存",
-          "example": "4000",
-          "member": "uint64",
-          "name": "Mem",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "安全组",
-          "example": "无",
-          "member": "string",
-          "name": "SecurityGroup",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "描述说明，最大支持256位。",
-          "example": "proxy代理",
-          "member": "string",
-          "name": "Desc",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ApplyCDBProxyResponse": {
-      "document": "ApplyCDBProxy返回参数结构体",
-      "members": [
-        {
-          "document": "异步处理ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a92d-77ce-0ee2-17d99f604e64",
-          "member": "string",
-          "name": "AsyncRequestId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",

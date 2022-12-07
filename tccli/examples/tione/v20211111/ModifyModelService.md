@@ -66,6 +66,8 @@ Output:
             "Namespace": "infer-100005348929",
             "ChargeType": "POSTPAID_BY_HOUR",
             "ResourceGroupId": "",
+            "ResourceGroupName": "",
+            "Tags": [],
             "CreatedBy": "243224118",
             "CreateTime": "2022-01-18T11:22:29Z",
             "UpdateTime": "2022-01-18T11:22:51Z",
@@ -73,6 +75,7 @@ Output:
             "SubUin": "",
             "AppId": 0,
             "BusinessStatus": "CREATE_SUCCEED",
+            "CreateFailedReason": "CREATE_SUCCEED",
             "Weight": 100,
             "Version": "1",
             "LatestVersion": ""

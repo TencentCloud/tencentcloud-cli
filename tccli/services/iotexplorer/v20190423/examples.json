@@ -26,20 +26,20 @@
     ],
     "CallDeviceActionSync": [
       {
-        "document": "当行为返回成功时，该值是 succ。",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CallDeviceActionSync\n&ProductId=TOIDHQ3AOQ\n&DeviceName=light1\n&ActionId=actid\n&InputParams={\"vol\":3}\n&<公共请求参数>",
+        "document": "云端调用后，设备端上报`$thing/up/action/TOIDHQ3AOQ/light1`\n```\n{\n\t\"method\": \"action_reply\",\n\t\"clientToken\": \"0fe1260b7a724b67ba873ca7df703e0d\",\n\t\"code\": 0,\n\t\"response\": { \"brightness\": 1, \"color\": 1, \"light_switch\": 1 },\n\t\"status\": \"succ\"\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"vol\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"0fe1260b7a724b67ba873ca7df703e0d\",\n        \"OutputParams\": \"{\\\"brightness\\\":1,\\\"color\\\":1,\\\"light_switch\\\":1}\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9s4bcf\",\n        \"Status\": \"succ\"\n    }\n}",
         "title": "同步调用设备行为"
       },
       {
         "document": "当设备不在线或未订阅相关 topic 时，设备返回情况如样例所示。",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CallDeviceActionSync\n&ProductId=TOIDHQ3AOQ\n&DeviceName=light1\n&ActionId=actid\n&InputParams={\"brightness\":3}\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
         "title": "同步调用设备行为，设备不在线。"
       },
       {
         "document": "当设备响应时间过长时，设备返回情况如样例所示。",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CallDeviceActionSync\n&ProductId=TOIDHQ3AOQ\n&DeviceName=light1\n&ActionId=actid\n&InputParams={\"brightness\":3}\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1de7dcf-5029-4d70-b6b5-d1ad0f785552\"\n    }\n}",
         "title": "同步调用设备行为，设备超时"
       }

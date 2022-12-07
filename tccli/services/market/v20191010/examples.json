@@ -8,6 +8,14 @@
         "title": "计量商品用量提醒"
       }
     ],
+    "GetOrderForYUNDING": [
+      {
+        "document": "提供云鼎-订单查询接口",
+        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOrderForYUNDING\n<公共请求参数>\n\n{\n    \"EndTime\": 1,\n    \"OwnerUin\": \"xx\",\n    \"StartTime\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            {\n                \"OrderName\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"OrderCreateTime\": \"xx\",\n                \"OrderEndTime\": \"xx\",\n                \"ProductID\": 0,\n                \"ProductName\": \"xx\",\n                \"RealTotalCost\": 0,\n                \"CycleNum\": 0,\n                \"OrderState\": \"xx\",\n                \"ProviderUin\": \"xx\",\n                \"Number\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "云鼎-订单查询接口"
+      }
+    ],
     "GetUsagePlanUsageAmount": [
       {
         "document": "",

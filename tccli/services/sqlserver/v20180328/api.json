@@ -3765,6 +3765,28 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否跨AZ",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDrZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "SlaveZones",
+          "name": "SlaveZones",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4495,7 +4517,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4504,7 +4527,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4513,7 +4537,38 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "test_sa",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "createTime,updateTime,passTime\" note:\"排序字段，默认按照账号创建时间倒序",
+          "example": "createTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4528,7 +4583,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "账户信息列表",
@@ -4537,7 +4593,8 @@
           "name": "Accounts",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总数",
@@ -4546,7 +4603,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5535,7 +5593,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5544,7 +5603,8 @@
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5553,7 +5613,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5562,7 +5623,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5571,7 +5633,8 @@
           "member": "string",
           "name": "InstanceIdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5580,7 +5643,8 @@
           "member": "int64",
           "name": "PayMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5589,7 +5653,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5598,7 +5663,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5607,7 +5673,8 @@
           "member": "string",
           "name": "VipSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5616,7 +5683,8 @@
           "member": "string",
           "name": "InstanceNameSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5625,7 +5693,8 @@
           "member": "string",
           "name": "VersionSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5634,7 +5703,8 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5643,7 +5713,8 @@
           "member": "string",
           "name": "TagKeys",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5652,7 +5723,8 @@
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5661,7 +5733,8 @@
           "member": "string",
           "name": "UidSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5670,7 +5743,8 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5685,7 +5759,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例列表",
@@ -5694,7 +5769,8 @@
           "name": "DBInstances",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5796,7 +5872,8 @@
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5805,7 +5882,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5814,7 +5892,28 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5829,7 +5928,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例数据库列表",
@@ -5838,7 +5938,8 @@
           "name": "DBInstances",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11348,6 +11449,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlaveZones": {
+      "document": "备可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "备可用区地域码",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "备可用区",
+          "example": "广州一区",
+          "member": "string",
+          "name": "SlaveZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -12724,7 +12724,7 @@
         },
         {
           "default": "",
-          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "document": "渠道名称。\n__TENPAY__: 商企付",
           "example": "TENPAY",
           "member": "string",
           "name": "ChannelName",
@@ -13371,7 +13371,7 @@
         },
         {
           "default": "",
-          "document": "备注信息。",
+          "document": "备注信息。限制200个字符。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -23296,6 +23296,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "失败原因。当Status为FAILED时，改字段为失败的原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -23311,7 +23322,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23321,7 +23333,19 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "失败原因。当Status为FAILED时，改字段为失败的原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

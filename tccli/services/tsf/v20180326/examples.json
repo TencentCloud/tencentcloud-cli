@@ -75,7 +75,7 @@
     "CreateApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApiGroup\n&GroupName=zuul_test_group\n&GroupContext=%2Fuser\n&AuthType=none\n&Description=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"zuul_test_group\",\n    \"GroupContext\": \"%2Fuser\",\n    \"AuthType\": \"none\",\n    \"Description\": \"test\",\n    \"NamespaceNameKey\": \"TSF-NamespaceName\",\n    \"ServiceNameKey\": \"TSF-ServiceName\",\n    \"NamespaceNameKeyPosition\": \"path\",\n    \"ServiceNameKeyPosition\": \"path\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"grp-12345678\"\n    }\n}",
         "title": "创建API分组"
       }
@@ -395,7 +395,7 @@
     "DescribeApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiGroup\n&GroupId=grp-e42d597\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-e42d597\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"xx\",\n            \"UpdatedTime\": \"xx\",\n            \"AuthType\": \"secret\",\n            \"Description\": \"xx\",\n            \"BindedGatewayDeployGroups\": [\n                {\n                    \"DeployGroupId\": \"grp-fdsfds\",\n                    \"ApplicationName\": \"xx\",\n                    \"GroupStatus\": \"drafted\",\n                    \"ClusterType\": \"xx\",\n                    \"DeployGroupName\": \"xx\",\n                    \"ApplicationType\": \"xx\",\n                    \"ApplicationId\": \"xx\"\n                }\n            ],\n            \"GroupType\": \"ms\",\n            \"AclMode\": \"xx\",\n            \"ApiCount\": 0,\n            \"GroupName\": \"xx\",\n            \"GroupContext\": \"/xx\",\n            \"CreatedTime\": \"xx\",\n            \"GroupId\": \"grp-dasdasdas\"\n        },\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\n    }\n}",
         "title": "查询API分组"
       }
@@ -559,7 +559,7 @@
     "DescribeContainerGroupDeployInfo": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerGroupDeployInfo\n&GroupId=group-gyqpkzda\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContainerGroupDeployInfo\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-gyqpkzda\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"HealthCheckSettings\": {\n                \"ReadinessProbe\": {\n                    \"TimeoutSeconds\": 1,\n                    \"InitialDelaySeconds\": 1,\n                    \"PeriodSeconds\": 1,\n                    \"ActionType\": \"xx\",\n                    \"Path\": \"xx\",\n                    \"Command\": [\n                        \"xx\"\n                    ],\n                    \"SuccessThreshold\": 1,\n                    \"Scheme\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Port\": 1,\n                    \"FailureThreshold\": 1\n                },\n                \"LivenessProbe\": {\n                    \"TimeoutSeconds\": 1,\n                    \"InitialDelaySeconds\": 1,\n                    \"PeriodSeconds\": 1,\n                    \"ActionType\": \"xx\",\n                    \"Path\": \"xx\",\n                    \"Command\": [\n                        \"xx\"\n                    ],\n                    \"SuccessThreshold\": 1,\n                    \"Scheme\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Port\": 1,\n                    \"FailureThreshold\": 1\n                }\n            },\n            \"InstanceNum\": 1,\n            \"AgentMemLimit\": \"xx\",\n            \"HeadlessService\": true,\n            \"CurrentNum\": 0,\n            \"MemRequest\": \"xx\",\n            \"IstioCpuRequest\": \"xx\",\n            \"AccessType\": 2,\n            \"UpdateIvl\": 10,\n            \"JvmOpts\": \"xx\",\n            \"IstioCpuLimit\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"AgentCpuRequest\": \"xx\",\n            \"MemLimit\": \"xx\",\n            \"CpuLimit\": \"xx\",\n            \"Envs\": [\n                {\n                    \"ValueFrom\": {\n                        \"FieldRef\": {\n                            \"FieldPath\": \"xx\"\n                        },\n                        \"ResourceFieldRef\": {\n                            \"Resource\": \"xx\"\n                        }\n                    },\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"ProtocolPorts\": [\n                {\n                    \"TargetPort\": 30032,\n                    \"Protocol\": \"xx\",\n                    \"Port\": 30032,\n                    \"NodePort\": 0\n                }\n            ],\n            \"AgentMemRequest\": \"xx\",\n            \"IstioMemLimit\": \"xx\",\n            \"UpdateType\": 1,\n            \"Server\": \"xx\",\n            \"GroupName\": \"xx\",\n            \"TcrRepoInfo\": {\n                \"RegistryName\": \"xx\",\n                \"Namespace\": \"xx\",\n                \"Region\": \"xx\",\n                \"RegistryId\": \"xx\",\n                \"RepoName\": \"xx\"\n            },\n            \"DisableService\": true,\n            \"IstioMemRequest\": \"xx\",\n            \"Alias\": \"xx\",\n            \"DeployAgent\": true,\n            \"AgentCpuLimit\": \"xx\",\n            \"Reponame\": \"xx\",\n            \"CpuRequest\": \"xx\",\n            \"GroupId\": \"xx\",\n            \"TagName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeContainerGroupDeployInfo"
       }
@@ -1479,7 +1479,7 @@
     "UpdateApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiGroup\n&GroupId=grp-grp-5yk7oor1\n&GroupName=new-name\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"new-name\",\n    \"GroupId\": \"grp-grp-5yk7oor1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
         "title": "更新Api分组"
       }

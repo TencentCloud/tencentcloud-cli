@@ -1032,7 +1032,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1041,7 +1042,8 @@
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1050,7 +1052,8 @@
           "member": "string",
           "name": "PicName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1131,7 +1134,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1140,7 +1144,8 @@
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1149,7 +1154,8 @@
           "member": "string",
           "name": "PicName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1164,7 +1170,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "物品ID。",
@@ -1173,7 +1180,8 @@
           "name": "EntityId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片信息。",
@@ -1182,7 +1190,8 @@
           "name": "ImageInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2837,7 +2846,7 @@
         },
         {
           "default": "",
-          "document": "匹配阈值。\n只有图片相似度分数超过MatchThreshold值的结果才会返回。\n默认值：\n• 相同图像搜索：50。\n• 商品图像搜索：28。\n• 相似图像搜索：56。\n建议：\n可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。",
+          "document": "匹配阈值。\n只有图片相似度分数超过匹配阈值的结果才会返回。\n当MatchThreshold为0（默认值）时，各服务类型将按照以下默认的匹配阈值进行结果过滤：\n• 相同图像搜索：50。\n• 商品图像搜索：28。\n• 相似图像搜索：56。\n建议：\n可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。",
           "example": "1",
           "member": "int64",
           "name": "MatchThreshold",
