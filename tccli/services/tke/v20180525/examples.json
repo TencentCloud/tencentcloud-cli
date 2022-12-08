@@ -40,6 +40,14 @@
         "title": "为VPC-CNI模式集群增加子网"
       }
     ],
+    "CancelClusterRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelClusterRelease\n<公共请求参数>\n\n{\n    \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-04\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"failed\",\n            \"UpdatedTime\": \"2020-04-15T14:44:43Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "取消集群应用"
+      }
+    ],
     "CheckEdgeClusterCIDR": [
       {
         "document": "",
@@ -598,6 +606,38 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePools\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"AutoscalingGroupId\": \"asg-xxxxx\",\n                \"AutoscalingGroupStatus\": \"enabled\",\n                \"ClusterInstanceId\": \"cls-xxxxx\",\n                \"DesiredNodesNum\": 1,\n                \"Labels\": [],\n                \"LaunchConfigurationId\": \"asc-xxxxx\",\n                \"LifeState\": \"normal\",\n                \"MaxNodesNum\": 1,\n                \"MinNodesNum\": 0,\n                \"Name\": \"test2\",\n                \"NodeCountSummary\": {\n                    \"AutoscalingAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 1,\n                        \"Total\": 1\n                    },\n                    \"ManuallyAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 0\n                    }\n                },\n                \"NodePoolId\": \"np-xxxx\",\n                \"Taints\": []\n            }\n        ],\n        \"RequestId\": \"xxxxxx\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询节点池列表"
+      }
+    ],
+    "DescribeClusterPendingReleases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPendingReleases\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Limit\": 1,\n        \"Offset\": 0,\n        \"ReleaseSet\": [\n            {\n                \"Condition\": \"install release error: host must be a URL or a host:port pair: \\\"https://\\\"\",\n                \"CreatedTime\": \"2020-04-15T09:07:22Z\",\n                \"ID\": \"8aa09a63-8b9a-461f-8c5b-bd7872abdc37\",\n                \"Name\": \"app-01\",\n                \"Namespace\": \"lwj\",\n                \"Status\": \"failed\",\n                \"UpdatedTime\": \"2020-04-15T09:07:22Z\"\n            }\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询集群安装中应用列表"
+      }
+    ],
+    "DescribeClusterReleaseDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleaseDetails\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Name\": \"app-name\",\n            \"Namespace\": \"default\",\n            \"Version\": \"1\",\n            \"Status\": \"deployed\",\n            \"Description\": \"Install complete\",\n            \"Notes\": \"xxxxxxxxx\",\n            \"Config\": \"key1=v1,key2=v2\",\n            \"Manifest\": \"xxxxxxxxx\",\n            \"ChartVersion\": \"10.5.3\",\n            \"ChartName\": \"redis\",\n            \"ChartDescription\": \"Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.\",\n            \"AppVersion\": \"5.0.7\",\n            \"FirstDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n            \"LastDeployedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\"\n        },\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "查询集群已安装应用详情"
+      }
+    ],
+    "DescribeClusterReleaseHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleaseHistory\n<公共请求参数>\n\n{\n    \"Namespace\": \"default\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseHistorySet\": [\n            {\n                \"Name\": \"app-name\",\n                \"Namespace\": \"default\",\n                \"Revision\": \"1\",\n                \"Status\": \"deployed\",\n                \"Chart\": \"redis-10.5.3\",\n                \"AppVersion\": \"5.0.7\",\n                \"UpdatedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\",\n                \"Description\": \"\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询集群已安装应用版本历史"
+      }
+    ],
+    "DescribeClusterReleases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReleases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"ReleaseSet\": [\n            {\n                \"Name\": \"app-name\",\n                \"Namespace\": \"default\",\n                \"Revision\": \"1\",\n                \"Status\": \"deployed\",\n                \"ChartName\": \"redis\",\n                \"ChartVersion\": \"10.5.3\",\n                \"AppVersion\": \"5.0.7\",\n                \"UpdatedTime\": \"2020-04-09 15:28:28.707549 +0800 CST\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询集群已安装应用列表"
       }
     ],
     "DescribeClusterRouteTables": [
@@ -1294,6 +1334,14 @@
         "title": "重启容器实例"
       }
     ],
+    "RollbackClusterRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackClusterRelease\n<公共请求参数>\n\n{\n    \"Namespace\": \"lwj\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-05\",\n    \"Revision\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-05\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"pending-rollback\",\n            \"UpdatedTime\": \"2020-04-15T14:44:42Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "回滚集群应用"
+      }
+    ],
     "RunPrometheusInstance": [
       {
         "document": "",
@@ -1340,6 +1388,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "同步模板到实例"
+      }
+    ],
+    "UninstallClusterRelease": [
+      {
+        "document": "在应用市场中集群删除某个已安装应用",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallClusterRelease\n<公共请求参数>\n\n{\n    \"Namespace\": \"lwj\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Name\": \"app-05\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-05\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"pending-uninstall\",\n            \"UpdatedTime\": \"2020-04-15T14:44:42Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "删除集群应用"
       }
     ],
     "UninstallEdgeLogAgent": [
@@ -1412,6 +1468,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=UpgradeClusterInstances\n&ClusterId=cls-xxxxxx\n&UpgradeType=reset\n&Operation=create\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "集群节点升级"
+      }
+    ],
+    "UpgradeClusterRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeClusterRelease\n<公共请求参数>\n\n{\n    \"ChartFrom\": \"tke-market\",\n    \"Name\": \"app-05\",\n    \"ClusterId\": \"cls-65r1c5nu\",\n    \"Namespace\": \"lwj\",\n    \"Chart\": \"redis\",\n    \"ChartVersion\": \"10.5.3\",\n    \"ChartNamespace\": \"helm-public\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Release\": {\n            \"Condition\": \"\",\n            \"CreatedTime\": \"2020-04-15T14:44:42Z\",\n            \"ID\": \"0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb\",\n            \"Name\": \"app-05\",\n            \"Namespace\": \"lwj\",\n            \"Status\": \"pending-upgrade\",\n            \"UpdatedTime\": \"2020-04-15T14:44:42Z\"\n        },\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "title": "集群升级应用"
       }
     ]
   },

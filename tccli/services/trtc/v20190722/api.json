@@ -3286,7 +3286,7 @@
         },
         {
           "default": "",
-          "document": "下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。",
+          "document": "子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。",
           "example": "https://xxxx",
           "member": "string",
           "name": "DefaultSubBackgroundImage",
@@ -3302,6 +3302,26 @@
           "name": "WaterMarkList",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenderMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxResolutionUserAlign",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3869,7 +3889,7 @@
         },
         {
           "default": "",
-          "document": "输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。",
+          "document": "输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。",
           "example": "0",
           "member": "uint64",
           "name": "OutputFormat",
@@ -3883,6 +3903,16 @@
           "example": "0",
           "member": "uint64",
           "name": "AvMerge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】\nHls 格式录制此参数不生效。",
+          "example": "1440",
+          "member": "uint64",
+          "name": "MaxMediaFileDuration",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4976,6 +5006,16 @@
           "name": "MediaType",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅支持API录制上传vod，该参数表示用户可以自定义录制文件名前缀，【限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符】。前缀与自动生成的录制文件名之间用__UserId_u_分开。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserDefineRecordId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

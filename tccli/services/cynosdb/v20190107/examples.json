@@ -179,7 +179,7 @@
     "DescribeClusterParamLogs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterParamLogs\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterParamLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-ins-xxxxxxxx\"\n    ],\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"DESC\",\n    \"Limit\": \"12\",\n    \"Offset\": \"12\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterParamLogs\": {\n            \"Status\": \"success\",\n            \"CurrentValue\": \"1024\",\n            \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdateValue\": \"1025\",\n            \"ParamName\": \"back_log\",\n            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"651fadd0-7daa-11ec-ae84-e3726d36ffa8\"\n    }\n}",
         "title": "查询参数修改日志"
       }

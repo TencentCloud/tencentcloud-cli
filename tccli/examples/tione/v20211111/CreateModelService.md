@@ -62,6 +62,8 @@ Output:
             "Namespace": "",
             "ChargeType": "POSTPAID_BY_HOUR",
             "ResourceGroupId": "",
+            "ResourceGroupName": "",
+            "Tags": [],
             "CreatedBy": "243224118",
             "CreateTime": "",
             "UpdateTime": "",
@@ -69,6 +71,7 @@ Output:
             "SubUin": "243224118",
             "AppId": 1256580188,
             "BusinessStatus": "CREATING",
+            "CreateFailedReason": "",
             "Weight": 0,
             "Version": "",
             "LatestVersion": ""

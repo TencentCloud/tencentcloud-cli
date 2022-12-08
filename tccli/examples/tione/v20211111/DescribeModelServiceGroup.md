@@ -88,6 +88,8 @@ Output:
                     "Namespace": "infer-xxxx",
                     "ChargeType": "POSTPAID_BY_HOUR",
                     "ResourceGroupId": "",
+                    "ResourceGroupName": "",
+                    "Tags": [],
                     "CreatedBy": "700000207674",
                     "CreateTime": "2022-01-15T09:31:49Z",
                     "UpdateTime": "2022-01-15T09:32:51Z",
@@ -95,6 +97,7 @@ Output:
                     "SubUin": "",
                     "AppId": 0,
                     "BusinessStatus": "CREATE_SUCCEED",
+                    "CreateFailedReason": "CREATE_SUCCEED",
                     "Weight": 100,
                     "Version": "1",
                     "LatestVersion": ""

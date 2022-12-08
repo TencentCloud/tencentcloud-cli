@@ -30,6 +30,12 @@
       "name": "增加集群子网",
       "output": "AddVpcCniSubnetsResponse"
     },
+    "CancelClusterRelease": {
+      "document": "在应用市场中取消安装失败的应用",
+      "input": "CancelClusterReleaseRequest",
+      "name": "集群取消安装应用",
+      "output": "CancelClusterReleaseResponse"
+    },
     "CheckEdgeClusterCIDR": {
       "document": "检查边缘计算集群的CIDR是否冲突",
       "input": "CheckEdgeClusterCIDRRequest",
@@ -431,6 +437,30 @@
       "input": "DescribeClusterNodePoolsRequest",
       "name": "查询节点池列表",
       "output": "DescribeClusterNodePoolsResponse"
+    },
+    "DescribeClusterPendingReleases": {
+      "document": "在应用市场中查询正在安装中的应用列表",
+      "input": "DescribeClusterPendingReleasesRequest",
+      "name": "查询集群安装中的应用列表",
+      "output": "DescribeClusterPendingReleasesResponse"
+    },
+    "DescribeClusterReleaseDetails": {
+      "document": "查询通过应用市场安装的某个应用详情",
+      "input": "DescribeClusterReleaseDetailsRequest",
+      "name": "查询集群已安装应用详情",
+      "output": "DescribeClusterReleaseDetailsResponse"
+    },
+    "DescribeClusterReleaseHistory": {
+      "document": "查询集群在应用市场中某个已安装应用的版本历史",
+      "input": "DescribeClusterReleaseHistoryRequest",
+      "name": "查询集群已安装应用版本历史",
+      "output": "DescribeClusterReleaseHistoryResponse"
+    },
+    "DescribeClusterReleases": {
+      "document": "查询集群在应用市场中已安装应用列表",
+      "input": "DescribeClusterReleasesRequest",
+      "name": "查询集群已安装应用列表",
+      "output": "DescribeClusterReleasesResponse"
     },
     "DescribeClusterRouteTables": {
       "document": "查询集群路由表",
@@ -948,6 +978,12 @@
       "name": "重启容器实例",
       "output": "RestartEKSContainerInstancesResponse"
     },
+    "RollbackClusterRelease": {
+      "document": "在应用市场中集群回滚应用至某个历史版本",
+      "input": "RollbackClusterReleaseRequest",
+      "name": "集群回滚应用版本",
+      "output": "RollbackClusterReleaseResponse"
+    },
     "RunPrometheusInstance": {
       "document": "初始化TMP实例，开启集成中心时调用",
       "input": "RunPrometheusInstanceRequest",
@@ -983,6 +1019,12 @@
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
       "output": "SyncPrometheusTemplateResponse"
+    },
+    "UninstallClusterRelease": {
+      "document": "在应用市场中集群删除某个应用",
+      "input": "UninstallClusterReleaseRequest",
+      "name": "集群删除应用",
+      "output": "UninstallClusterReleaseResponse"
     },
     "UninstallEdgeLogAgent": {
       "document": "从tke@edge集群边缘节点上卸载日志采集组件",
@@ -1037,6 +1079,12 @@
       "input": "UpgradeClusterInstancesRequest",
       "name": "集群节点升级",
       "output": "UpgradeClusterInstancesResponse"
+    },
+    "UpgradeClusterRelease": {
+      "document": "升级集群中已安装的应用",
+      "input": "UpgradeClusterReleaseRequest",
+      "name": "集群升级应用",
+      "output": "UpgradeClusterReleaseResponse"
     }
   },
   "metadata": {
@@ -1520,6 +1568,60 @@
         }
       ],
       "usage": "in"
+    },
+    "CancelClusterReleaseRequest": {
+      "document": "CancelClusterRelease请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelClusterReleaseResponse": {
+      "document": "CancelClusterRelease返回参数结构体",
+      "members": [
+        {
+          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Capabilities": {
       "document": "cloudrun安全特性能力",
@@ -7404,6 +7506,339 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterPendingReleasesRequest": {
+      "document": "DescribeClusterPendingReleases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量限制，默认20，最大100",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterPendingReleasesResponse": {
+      "document": "DescribeClusterPendingReleases返回参数结构体",
+      "members": [
+        {
+          "document": "正在安装中应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "ReleaseSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "每页返回数量限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "页偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleaseDetailsRequest": {
+      "document": "DescribeClusterReleaseDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "app-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleaseDetailsResponse": {
+      "document": "DescribeClusterReleaseDetails返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReleaseDetails",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleaseHistoryRequest": {
+      "document": "DescribeClusterReleaseHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "app-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用所在命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleaseHistoryResponse": {
+      "document": "DescribeClusterReleaseHistory返回参数结构体",
+      "members": [
+        {
+          "document": "已安装应用版本历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReleaseHistory",
+          "name": "ReleaseHistorySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleasesRequest": {
+      "document": "DescribeClusterReleases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页数量限制",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页偏移量",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "helm Release 安装的namespace",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "helm Release 的名字",
+          "example": "test-coredns",
+          "member": "string",
+          "name": "ReleaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "helm Chart 的名字",
+          "example": "coredns",
+          "member": "string",
+          "name": "ChartName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterReleasesResponse": {
+      "document": "DescribeClusterReleases返回参数结构体",
+      "members": [
+        {
+          "document": "数量限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已安装应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Release",
+          "name": "ReleaseSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已安装应用总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -17090,6 +17525,327 @@
       ],
       "usage": "out"
     },
+    "Release": {
+      "document": "应用市场部署的应用结构",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Revision",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "制品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChartName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "制品版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "制品应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReleaseDetails": {
+      "document": "应用市场的安装应用详情",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用所在命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deployed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Notes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用资源详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Manifest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ChartName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ChartDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品app版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0.0",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用首次部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FirstDeployedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用最近部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LastDeployedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ComputedValues",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReleaseHistory": {
+      "document": "应用市场中部署的应用版本历史",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Revision",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Chart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用制品版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReleaseValues": {
       "document": "应用市场自定义参数",
       "members": [
@@ -17263,6 +18019,78 @@
     "RestartEKSContainerInstancesResponse": {
       "document": "RestartEKSContainerInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackClusterReleaseRequest": {
+      "document": "RollbackClusterRelease请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "app-05",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "example": "lwj",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回滚版本号",
+          "example": "1",
+          "member": "int64",
+          "name": "Revision",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackClusterReleaseResponse": {
+      "document": "RollbackClusterRelease返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18068,6 +18896,69 @@
       ],
       "usage": "in"
     },
+    "UninstallClusterReleaseRequest": {
+      "document": "UninstallClusterRelease请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "app-05",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "example": "lwj",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallClusterReleaseResponse": {
+      "document": "UninstallClusterRelease返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UninstallEdgeLogAgentRequest": {
       "document": "UninstallEdgeLogAgent请求参数结构体",
       "members": [
@@ -18474,6 +19365,51 @@
           "name": "ImageCacheName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库凭证数组",
+          "example": "无",
+          "member": "ImageRegistryCredential",
+          "name": "ImageRegistryCredentials",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用于制作镜像缓存的容器镜像列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Images",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存的大小。默认为20 GiB。取值范围参考[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)中的高性能云盘类型的大小限制。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "ImageCacheSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18723,6 +19659,141 @@
     "UpgradeClusterInstancesResponse": {
       "document": "UpgradeClusterInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeClusterReleaseRequest": {
+      "document": "UpgradeClusterRelease请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义的应用名称",
+          "example": "app-05",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用命名空间",
+          "example": "lwj",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
+          "example": "redis",
+          "member": "string",
+          "name": "Chart",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义参数，覆盖chart 中values.yaml 中的参数",
+          "example": "无",
+          "member": "ReleaseValues",
+          "name": "Values",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "制品来源，范围：tke-market/tcr/other",
+          "example": "tke-market",
+          "member": "string",
+          "name": "ChartFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品版本( 从第三安装时，不传这个参数）",
+          "example": "10.5.3",
+          "member": "string",
+          "name": "ChartVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品仓库URL地址",
+          "example": "无",
+          "member": "string",
+          "name": "ChartRepoURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品访问用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品访问密码",
+          "example": "yyy",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "制品命名空间",
+          "example": "helm-public",
+          "member": "string",
+          "name": "ChartNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeClusterReleaseResponse": {
+      "document": "UpgradeClusterRelease返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PendingRelease",
+          "name": "Release",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

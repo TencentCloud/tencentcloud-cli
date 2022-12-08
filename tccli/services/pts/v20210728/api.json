@@ -4030,7 +4030,7 @@
         },
         {
           "default": "",
-          "document": "用户账号的 App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",
           "name": "AppID",
@@ -4379,7 +4379,7 @@
         },
         {
           "default": "",
-          "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.prop\", \"b.prop\"]",
           "member": "string",
           "name": "Configs",
@@ -4399,7 +4399,7 @@
         },
         {
           "default": "",
-          "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.jar\", \"b.jar\"]",
           "member": "string",
           "name": "Extensions",
@@ -4479,7 +4479,7 @@
         },
         {
           "default": "",
-          "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LoadSource",
           "name": "LoadSources",
@@ -4569,7 +4569,7 @@
         },
         {
           "default": "",
-          "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"a.js\", \"b.js\"]",
           "member": "string",
           "name": "Scripts",
@@ -4745,6 +4745,16 @@
           "name": "NetworkSendRate",
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "已完成",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

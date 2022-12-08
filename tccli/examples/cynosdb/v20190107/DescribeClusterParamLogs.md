@@ -6,9 +6,12 @@ Input:
 
 ```
 tccli cynosdb DescribeClusterParamLogs --cli-unfold-argument  \
-    --Limit 0 \
     --ClusterId cynosdbmysql-xxxxxxxx \
-    --Offset 0
+    --InstanceIds cynosdbmysql-ins-xxxxxxxx \
+    --OrderBy CreateTime \
+    --OrderByType DESC \
+    --Limit 12 \
+    --Offset 12
 ```
 
 Output: 

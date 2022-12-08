@@ -8026,6 +8026,36 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api网关注册失败",
+          "member": "string",
+          "name": "CreateFailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pregroup",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

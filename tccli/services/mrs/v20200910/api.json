@@ -1393,6 +1393,15 @@
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户类型，新客户传1，老客户可不传",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1456,6 +1465,15 @@
           "name": "IsUsedClassify",
           "required": true,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户类型，新客户传1，老客户可不传",
+          "example": "0",
+          "member": "int64",
+          "name": "UserType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1738,82 +1756,74 @@
       "document": "医学资料",
       "members": [
         {
-          "default": "",
           "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
           "member": "Advice",
           "name": "Advice",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "诊断结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
           "member": "DiagCertItem",
           "name": "Diagnosis",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "疾病史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
           "member": "DiseaseMedicalHistory",
           "name": "DiseaseMedicalHistory",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "个人史",
           "example": "object",
           "member": "PersonalMedicalHistory",
           "name": "PersonalMedicalHistory",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "婚孕史",
           "example": "object",
           "member": "ObstericalMedicalHistory",
           "name": "ObstericalMedicalHistory",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "家族史",
           "example": "object",
           "member": "FamilyMedicalHistory",
           "name": "FamilyMedicalHistory",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "月经史",
           "example": "object",
           "member": "MenstrualMedicalHistory",
           "name": "MenstrualMedicalHistory",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "诊疗记录",
           "example": "object",
           "member": "TreatmentRecord",
           "name": "TreatmentRecord",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -3657,6 +3667,15 @@
           "name": "Text",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户类型，新客户传1，老客户可不传",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3711,6 +3730,15 @@
           "name": "IsUsedClassify",
           "required": true,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户类型，新客户传1，老客户可不传",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

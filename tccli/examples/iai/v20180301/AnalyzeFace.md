@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iai AnalyzeFace --cli-unfold-argument  \
-    --Mode 0 \
-    --Url http://test.image.myqcloud.com/testA.jpg
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --Mode 0
 ```
 
 Output: 

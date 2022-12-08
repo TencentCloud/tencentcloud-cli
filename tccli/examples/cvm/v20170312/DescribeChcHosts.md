@@ -16,7 +16,7 @@ Output:
         "ChcHostSet": [
             {
                 "ChcId": "chc-1a2b3c4d",
-                "InstanceName": "xx",
+                "InstanceName": "托管服务器",
                 "SerialNumber": "sn34asdfabd",
                 "InstanceState": "RUNNING",
                 "DeviceType": "CHC_HS1",
@@ -43,8 +43,8 @@ Output:
                 "CreatedTime": "2020-03-10T02:43:51Z",
                 "HardwareDescription": "50C 128G 12*4T",
                 "Memory": 128,
-                "DeployMAC": "xxxx:xxxx:xxxx:xxxx",
-                "BmcMAC": "xxxx:xxxx:xxxx:xxx",
+                "DeployMAC": "52:54:00:68:CC:00",
+                "BmcMAC": "52:54:00:68:CC:01",
                 "Disk": "12*4T",
                 "CPU": 50
             }

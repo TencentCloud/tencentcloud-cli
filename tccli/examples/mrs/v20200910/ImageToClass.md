@@ -7,6 +7,7 @@ Input:
 ```
 tccli mrs ImageToClass --cli-unfold-argument  \
     --Type 0 \
+    --UserType 0 \
     --HandleParam.OcrEngineType 2 \
     --HandleParam.IsScale False \
     --HandleParam.ImageOriginalSize 310006 \
