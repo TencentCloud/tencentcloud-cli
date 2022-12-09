@@ -4538,18 +4538,32 @@
         {
           "default": "",
           "document": "源端路径",
+          "example": "无",
           "member": "string",
           "name": "SourcePath",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "目的端路径",
+          "example": "无",
           "member": "string",
           "name": "DestinationPath",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出映射选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputMappingOption",
+          "name": "OutputMappingOption",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4583,6 +4597,22 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OutputMappingOption": {
+      "document": "输出映射选项",
+      "members": [
+        {
+          "default": "",
+          "document": "容器场景下,输出选项从实例映射到容器内的实例侧的工作空间。\nBATCH_WORKSPACE: 工作空间为BATCH在实例内定义的工作空间，BATCH侧保证作业之间的隔离。（默认）\nGLOBAL_WORKSPACE: 工作空间为实例操作系统空间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BATCH_WORKSPACE",
+          "member": "string",
+          "name": "Workspace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

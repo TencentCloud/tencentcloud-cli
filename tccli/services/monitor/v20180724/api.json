@@ -2740,7 +2740,7 @@
       "members": [
         {
           "default": "",
-          "document": "Prometheus 实例 ID",
+          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "prom-123131",
           "member": "string",
           "name": "InstanceId",
@@ -2758,7 +2758,7 @@
         },
         {
           "default": "",
-          "document": "规则表达式",
+          "document": "规则表达式，可参考<a href=\"https://cloud.tencent.com/document/product/1416/56008\">告警规则说明</a>",
           "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
           "member": "string",
           "name": "Expr",
@@ -3512,7 +3512,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
           "member": "string",
           "name": "InstanceId",
@@ -3521,7 +3521,7 @@
         },
         {
           "default": "",
-          "document": "Agent ID",
+          "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "xx",
           "member": "string",
           "name": "AgentId",
@@ -3530,7 +3530,7 @@
         },
         {
           "default": "",
-          "document": "任务内容",
+          "document": "抓取任务配置，格式：job_name:xx",
           "example": "job_name:xx",
           "member": "string",
           "name": "Config",
@@ -4208,7 +4208,8 @@
       "members": [
         {
           "default": "",
-          "document": "Prometheus 实例 ID",
+          "document": "Prometheus 实例 ID，例如：prom-sdfk2342a",
+          "example": "prom-sdfk2342a",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4217,6 +4218,7 @@
         {
           "default": "",
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
+          "example": "cls-pwerf3k3",
           "member": "string",
           "name": "KubeClusterId",
           "required": true,
@@ -4225,6 +4227,7 @@
         {
           "default": "",
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
+          "example": "1",
           "member": "int64",
           "name": "KubeType",
           "required": true,
@@ -4233,6 +4236,7 @@
         {
           "default": "",
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = PodMonitor</li>",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -4241,6 +4245,7 @@
         {
           "default": "",
           "document": "服务发现配置信息",
+          "example": "yaml",
           "member": "string",
           "name": "Yaml",
           "required": true,
@@ -6459,7 +6464,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6765,7 +6770,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6801,7 +6806,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-kleu3gt0",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6810,7 +6815,7 @@
         },
         {
           "default": "",
-          "document": "按插件 ID 过滤",
+          "document": "按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID",
           "example": "grafana-piechart",
           "member": "string",
           "name": "PluginId",
@@ -9440,7 +9445,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -9449,7 +9454,7 @@
         },
         {
           "default": "",
-          "document": "按账号 UIN 进行过滤",
+          "document": "填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000",
           "example": "10000",
           "member": "string",
           "name": "UserId",
@@ -9852,7 +9857,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-kleu3gt0",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceID",
@@ -9861,7 +9866,7 @@
         },
         {
           "default": "",
-          "document": "开启或关闭",
+          "document": "开启或关闭公网访问，true为开启，false 为不开启",
           "example": "true",
           "member": "bool",
           "name": "EnableInternet",
@@ -9888,7 +9893,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否开启 SSO",
+          "document": "是否开启 SSO，true为开启，false 为不开启",
           "example": "true",
           "member": "bool",
           "name": "EnableSSO",
@@ -9897,7 +9902,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9924,7 +9929,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -9933,7 +9938,7 @@
         },
         {
           "default": "",
-          "document": "是否开启cam鉴权",
+          "document": "是否开启 cam 鉴权，true为开启，false 为不开启",
           "example": "true",
           "member": "bool",
           "name": "EnableSSOCamCheck",
@@ -14245,7 +14250,7 @@
       "members": [
         {
           "default": "",
-          "document": "插件 ID 数组",
+          "document": "插件 ID 数组，例如\"PluginIds\": [ \"grafana-clock-panel\" ]，可通过 DescribePluginOverviews 获取 PluginId",
           "example": "[\"grafana-clock-panel\"]",
           "member": "string",
           "name": "PluginIds",
@@ -14254,7 +14259,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefg",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -14668,7 +14673,7 @@
       "members": [
         {
           "default": "",
-          "document": "通道 ID",
+          "document": "通道 ID，例如：nchannel-abcd1234",
           "example": "channel-id",
           "member": "string",
           "name": "ChannelId",
@@ -14677,7 +14682,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -14686,7 +14691,7 @@
         },
         {
           "default": "",
-          "document": "渠道名",
+          "document": "告警通道名称，例如：test",
           "example": "channel-name",
           "member": "string",
           "name": "ChannelName",
@@ -14740,7 +14745,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例名",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -14749,7 +14754,7 @@
         },
         {
           "default": "",
-          "document": "白名单数组",
+          "document": "白名单数组，输入公网域名 IP ，例如：127.0.0.1，可通过接口 DescribeGrafanaWhiteList 查看",
           "example": "[\"\"]",
           "member": "string",
           "name": "Whitelist",
@@ -14776,7 +14781,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
           "member": "string",
           "name": "InstanceId",
@@ -14785,7 +14790,7 @@
         },
         {
           "default": "",
-          "document": "Agent ID 列表",
+          "document": "Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "[\"xx\"]",
           "member": "string",
           "name": "AgentIds",
@@ -14821,7 +14826,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
           "member": "string",
           "name": "InstanceId",
@@ -14830,7 +14835,7 @@
         },
         {
           "default": "",
-          "document": "Agent ID",
+          "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "xx",
           "member": "string",
           "name": "AgentId",
@@ -14839,7 +14844,7 @@
         },
         {
           "default": "",
-          "document": "抓取任务 ID",
+          "document": "抓取任务 ID，例如：job-abcd1234，可在控制台 Agent 管理-抓取任务配置中获取",
           "example": "xx",
           "member": "string",
           "name": "JobId",
@@ -14848,7 +14853,7 @@
         },
         {
           "default": "",
-          "document": "抓取任务配置",
+          "document": "抓取任务配置，格式：job_name:xx",
           "example": "job_name:xx",
           "member": "string",
           "name": "Config",
@@ -14947,7 +14952,7 @@
       "members": [
         {
           "default": "",
-          "document": "示例ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -14956,7 +14961,7 @@
         },
         {
           "default": "",
-          "document": "用户账号ID",
+          "document": "用户账号 ID ，例如：10000000",
           "example": "10000000",
           "member": "string",
           "name": "UserId",
@@ -15102,7 +15107,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -15111,7 +15116,7 @@
         },
         {
           "default": "",
-          "document": "版本别名",
+          "document": "版本别名，例如：v7.4.2",
           "example": "my-instance",
           "member": "string",
           "name": "Alias",

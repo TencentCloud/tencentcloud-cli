@@ -1227,6 +1227,7 @@
         {
           "default": "",
           "document": "认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证",
+          "example": "无",
           "member": "string",
           "name": "SSLMode",
           "required": true,
@@ -1235,7 +1236,8 @@
         },
         {
           "default": "",
-          "document": "服务端证书的 ID。",
+          "document": "服务端证书的ID。",
+          "example": "无",
           "member": "string",
           "name": "CertId",
           "required": true,
@@ -1245,10 +1247,21 @@
         {
           "default": "",
           "document": "客户端证书的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CertCaId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多本服务器证书场景扩展的服务器证书ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtCertIds",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5903,6 +5916,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BasicTargetGroupInfo",
+          "name": "TargetGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6955,6 +6978,36 @@
           "name": "Domains",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多可用区负载均衡实例所选备区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SniSwitch",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -8900,6 +8953,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BasicTargetGroupInfo",
+          "name": "TargetGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9722,6 +9785,16 @@
           "example": "false",
           "member": "bool",
           "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区是否是EdgeZone可用区，如：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EdgeZone",
           "required": true,
           "type": "bool",
           "value_allowed_null": true

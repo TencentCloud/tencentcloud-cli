@@ -29,9 +29,13 @@ Output:
             {
                 "Description": "站点监控",
                 "RuleId": 1659,
+                "ZoneId": "zone-2c2jrfftg9mh",
                 "RequestNum": 22,
                 "Action": "monitor",
-                "HitTime": 1659597382
+                "HitTime": 1659597382,
+                "AlarmEnabled": true,
+                "RuleEnabled": true,
+                "RuleDeleted": false
             }
         ]
     }

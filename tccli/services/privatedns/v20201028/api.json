@@ -1812,6 +1812,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "转发规则名",
+          "member": "string",
+          "name": "ForwardRuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DOWN",
+          "member": "string",
+          "name": "ForwardRuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.23.41:53,10.0.23.42:53,",
+          "member": "string",
+          "name": "ForwardAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndPointName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

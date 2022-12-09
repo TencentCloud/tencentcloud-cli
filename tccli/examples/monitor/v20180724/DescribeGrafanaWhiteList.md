@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribeGrafanaWhiteList --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId grafana-abcdefgh
 ```
 
 Output: 

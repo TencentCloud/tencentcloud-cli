@@ -17,6 +17,7 @@ Output:
                 {
                     "ApplicationName": "xx",
                     "EnvironmentId": "xx",
+                    "HasAuthority": true,
                     "ModifyDate": "2020-09-22 00:00:00",
                     "Description": "xx",
                     "Creator": "xx",

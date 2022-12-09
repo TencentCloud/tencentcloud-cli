@@ -153,7 +153,9 @@ Output:
                         "Type": "xx",
                         "PublicUrl": "xx"
                     }
-                ]
+                ],
+                "ProcessPercent": 0.5,
+                "EnableHybridStorage": true
             }
         ],
         "RequestId": "xxxx"

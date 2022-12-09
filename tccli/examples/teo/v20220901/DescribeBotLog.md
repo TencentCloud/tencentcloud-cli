@@ -38,7 +38,11 @@ Output:
                         "Action": "drop",
                         "Description": "营销",
                         "RuleId": 1003,
-                        "RuleTypeName": "uabot"
+                        "RuleTypeName": "uabot",
+                        "AlarmEnabled": false,
+                        "RuleEnabled": false,
+                        "RuleDeleted": false,
+                        "RuleType": "bot"
                     }
                 ],
                 "SipCountryCode": "CN",

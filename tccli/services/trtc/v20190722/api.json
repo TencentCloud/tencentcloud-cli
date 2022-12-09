@@ -5000,7 +5000,7 @@
         },
         {
           "default": "",
-          "document": "上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。",
+          "document": "上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。",
           "example": "1",
           "member": "uint64",
           "name": "MediaType",

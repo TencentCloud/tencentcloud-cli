@@ -1708,7 +1708,7 @@
         },
         {
           "default": "",
-          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序",
+          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序",
           "example": "1",
           "member": "uint64",
           "name": "OrderByKey",
@@ -1753,7 +1753,7 @@
         },
         {
           "default": "",
-          "document": "健康状态筛列表",
+          "document": "健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知",
           "example": "无",
           "member": "int64",
           "name": "HealthStatus",

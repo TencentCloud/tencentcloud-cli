@@ -3,7 +3,7 @@
     "AutoSummarization": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=AutoSummarization\n&Text=\"中新经纬客户端4月4日电 中方于3月31日宣布对美国进口汽车及零部件暂停加征关税3个月，商务部发言人高峰4日在例行记者会上表示，3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限。双方上述决定有助于为中美经贸磋商创造良好的氛围。发布会上，高峰表示，中美两国元首在G20阿根廷峰会期间举行会晤，就经贸问题达成重要共识。作为两国元首共识的一部分，美方对中国输美产品加征关税税率提升至25%的期限从2019年1月1日推迟到3月2日。之后，为推动磋商，中方宣布对原产于美国的汽车及零部件暂停加征关税3个月，截止日期为3月31日。3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限，具体期限另行通知。3月31日，中国国务院关税税则委员会宣布延长对原产于美国的汽车及零部件暂停加征关税措施，截止日期另行通知。高峰指出，双方上述决定无疑有助于为中美经贸磋商创造良好的氛围。\"\n&Length=200\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AutoSummarization\n<公共请求参数>\n\n{\n    \"Text\": \"中新经纬客户端4月4日电 中方于3月31日宣布对美国进口汽车及零部件暂停加征关税3个月，商务部发言人高峰4日在例行记者会上表示，3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限。双方上述决定有助于为中美经贸磋商创造良好的氛围。发布会上，高峰表示，中美两国元首在G20阿根廷峰会期间举行会晤，就经贸问题达成重要共识。作为两国元首共识的一部分，美方对中国输美产品加征关税税率提升至25%的期限从2019年1月1日推迟到3月2日。之后，为推动磋商，中方宣布对原产于美国的汽车及零部件暂停加征关税3个月，截止日期为3月31日。3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限，具体期限另行通知。3月31日，中国国务院关税税则委员会宣布延长对原产于美国的汽车及零部件暂停加征关税措施，截止日期另行通知。高峰指出，双方上述决定无疑有助于为中美经贸磋商创造良好的氛围。\",\n    \"Length\": 200\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"111f52b2-66e5-48f6-8cc8-a307942887d2\",\n        \"Summary\": \"中新经纬客户端4月4日电 中方于3月31日宣布对美国进口汽车及零部件暂停加征关税3个月，商务部发言人高峰4日在例行记者会上表示，双方上述决定有助于为中美经贸磋商创造良好的氛围。中美两国元首在G20阿根廷峰会期间举行会晤，就经贸问题达成重要共识。美方对中国输美产品加征关税税率提升至25%的期限从2019年1月1日推迟到3月2日。为推动磋商，中方宣布对原产于美国的汽车及零部件暂停加征关税3个月。\"\n    }\n}",
         "title": "自动摘要示例"
       }
@@ -11,13 +11,13 @@
     "ChatBot": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=ChatBot\n&Flag=1\n&OpenId=no23391003\n&Query=给我讲个故事可以\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatBot\n<公共请求参数>\n\n{\n    \"OpenId\": \"no23391003\",\n    \"Flag\": 1,\n    \"Query\": \"给我讲个故事可以\"\n}",
         "output": "{\n    \"Response\": {\n        \"Reply\": \"宝贝，最近好多小朋友都在听下面这些故事呢\",\n        \"Confidence\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "儿童闲聊示例"
       },
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=ChatBot\n&Flag=0\n&Query=我要买股票\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatBot\n<公共请求参数>\n\n{\n    \"Query\": \"我要买股票\",\n    \"Flag\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Reply\": \"股市有风险，入市须谨慎\",\n        \"Confidence\": 0.8,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "通用闲聊示例"
       }
@@ -89,7 +89,7 @@
     "KeywordsExtraction": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KeywordsExtraction\n<公共请求参数>\n\n{\n    \"Text\": \"印发《关于促进中小企业健康发展的指导意见》《改革国有资本授权经营体制方案》；启动第四批国企混合所有制改革试点，推进石油天然气电力等重点领域改革；颁布《外商投资法》，着手压减外商投资负面清单；设立科创板及试点注册制……今年以来，我国进一步放宽市场准入，继续削减行政审批和许可事项，使市场机制更加灵活、市场竞争更加公平，市场在资源配置中的决定性作用进一步发挥。\",\n    \"Num\": \"6\"\n}",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KeywordsExtraction\n<公共请求参数>\n\n{\n    \"Text\": \"印发《关于促进中小企业健康发展的指导意见》《改革国有资本授权经营体制方案》；启动第四批国企混合所有制改革试点，推进石油天然气电力等重点领域改革；颁布《外商投资法》，着手压减外商投资负面清单；设立科创板及试点注册制……今年以来，我国进一步放宽市场准入，继续削减行政审批和许可事项，使市场机制更加灵活、市场竞争更加公平，市场在资源配置中的决定性作用进一步发挥。\",\n    \"Num\": 6\n}",
         "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            {\n                \"Score\": 1,\n                \"Word\": \"改革\"\n            },\n            {\n                \"Score\": 0.71901304,\n                \"Word\": \"外商投资\"\n            },\n            {\n                \"Score\": 0.71288997,\n                \"Word\": \"市场竞争\"\n            },\n            {\n                \"Score\": 0.7022306,\n                \"Word\": \"经营\"\n            },\n            {\n                \"Score\": 0.69770753,\n                \"Word\": \"市场机制\"\n            },\n            {\n                \"Score\": 0.6859139,\n                \"Word\": \"事项\"\n            }\n        ],\n        \"RequestId\": \"669b5a3b-f159-42ea-8ac8-13b41557227c\"\n    }\n}",
         "title": "关键词提取示例"
       }
@@ -121,7 +121,7 @@
     "SentimentAnalysis": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=SentimentAnalysis\n&Text=\"今天受了委屈，心情很差。\"\n&Mode=\"3class\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SentimentAnalysis\n<公共请求参数>\n\n{\n    \"Text\": \"今天受了委屈，心情很差。\",\n    \"Mode\": \"3class\"\n}",
         "output": "{\n    \"Response\": {\n        \"Neutral\": 9.115e-05,\n        \"Negative\": 0.99992788,\n        \"RequestId\": \"2d938c8b-d4cf-4b4e-9c1b-b587eb56d602\",\n        \"Positive\": 1.098e-05,\n        \"Sentiment\": \"negative\"\n    }\n}",
         "title": "情感分析示例"
       }
@@ -137,7 +137,7 @@
     "TextClassification": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=TextClassification\n&Text=\"为迎接下周的比赛，今日巴萨队又开始了集训。\"\n&Flag=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextClassification\n<公共请求参数>\n\n{\n    \"Text\": \"\\\"为迎接下周的比赛，今日巴萨队又开始了集训。\\\"\",\n    \"Flag\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"Classes\": [\n            {\n                \"FirstClassName\": \"体育\",\n                \"FirstClassProbability\": 1,\n                \"SecondClassName\": \"西甲\",\n                \"SecondClassProbability\": 1\n            }\n        ]\n    }\n}",
         "title": "文本分类示例"
       }
@@ -145,7 +145,7 @@
     "TextCorrection": [
       {
         "document": "",
-        "input": "https://nlp.tencentcloudapi.com/?Action=TextCorrection\n&Text=\"令天天气很好，我们很早起床，去学小读书。\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextCorrection\n<公共请求参数>\n\n{\n    \"Text\": \"令天天气很好，我们很早起床，去学小读书。\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"CCITokens\": [\n            {\n                \"BeginOffset\": 0,\n                \"Word\": \"令\",\n                \"CorrectWord\": \"今\"\n            },\n            {\n                \"BeginOffset\": 16,\n                \"Word\": \"小\",\n                \"CorrectWord\": \"校\"\n            }\n        ],\n        \"ResultText\": \"今天天气很好，我们很早起床，去学校读书。\"\n    }\n}",
         "title": "文本纠错示例"
       }

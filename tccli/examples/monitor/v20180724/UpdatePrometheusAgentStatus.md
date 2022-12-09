@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor UpdatePrometheusAgentStatus --cli-unfold-argument  \
-    --InstanceId xx \
-    --AgentIds xx \
+    --InstanceId prom-abcd1234 \
+    --AgentIds agent-abcd1234 \
     --Status 1
 ```
 

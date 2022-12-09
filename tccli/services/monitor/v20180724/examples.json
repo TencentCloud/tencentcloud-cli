@@ -51,7 +51,7 @@
     "CreateAlertRule": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=CreateAlertRule\n&InstanceId=my-prom-gg\n&RuleState=2\n&Expr=\"up{service=\\\"rig-prometheus-agent\\\"}>0\"\n&Duration=5m\n&Receivers.0=34224\n&RuleName=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertRule\n<公共请求参数>\n\n{\n    \"Receivers\": [\n        \"34224\"\n    ],\n    \"InstanceId\": \"prom-abcd1234\",\n    \"Expr\": \"\\\"up{service=\\\\\\\"rig-prometheus-agent\\\\\\\"}>0\\\"\",\n    \"Duration\": \"5m\",\n    \"RuleName\": \"test\",\n    \"RuleState\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"hfd437lxxdj3455-qxdb3eyydvw4doxm\",\n        \"RuleId\": \"arule-f2vx2owo\"\n    }\n}",
         "title": "创建报警规则"
       }
@@ -115,7 +115,7 @@
     "CreatePrometheusScrapeJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"Config\": \"job_name:xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name:xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"job-xxfs\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建 Prometheus 抓取任务"
       }
@@ -235,7 +235,7 @@
     "DeleteServiceDiscovery": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=DeleteServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceDiscovery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdfk2342a\",\n    \"Yaml\": \"yaml\",\n    \"Type\": \"1\",\n    \"KubeClusterId\": \"cls-pwerf3k3\",\n    \"KubeType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "删除服务发现"
       }
@@ -405,7 +405,7 @@
     "DescribeGrafanaConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-mf9ji5jy\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"Config\": \"{\\\"server\\\":{\\\"root_url\\\":\\\"http://balababbb\\\"}}\",\n        \"RequestId\": \"zcv6drxckn53gb61anxndsckjdwgfw6j\"\n    }\n}",
         "title": "列出 Grafana 的设置"
       }
@@ -445,7 +445,7 @@
     "DescribeGrafanaWhiteList": [
       {
         "document": "列出 Grafana 白名单",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\",\n        \"WhiteList\": []\n    }\n}",
         "title": "列出 Grafana 白名单"
       }
@@ -865,7 +865,7 @@
     "UpdateGrafanaNotificationChannel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelId\": \"nchannel-abcd1234\",\n    \"ChannelName\": \"test\",\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新 Grafana 告警通道"
       }
@@ -873,7 +873,7 @@
     "UpdateGrafanaWhiteList": [
       {
         "document": "更新 Grafana 白名单",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Whitelist\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaWhiteList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Whitelist\": [\n        \"127.0.0.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "更新 Grafana 白名单"
       }
@@ -881,7 +881,7 @@
     "UpdatePrometheusAgentStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentIds\": [\n        \"xx\"\n    ],\n    \"Status\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentIds\": [\n        \"agent-abcd1234\"\n    ],\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "更新 Prometheus Agent 状态"
       }
@@ -889,7 +889,7 @@
     "UpdatePrometheusScrapeJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"Config\": \"job_name:xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-abcd1234\",\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name:xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "更新 Prometheus 抓取任务"
       }
@@ -929,7 +929,7 @@
     "UpgradeGrafanaInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Alias\": \"v7.4.2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Alias\": \"v7.4.2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "升级 Grafana 实例"
       }

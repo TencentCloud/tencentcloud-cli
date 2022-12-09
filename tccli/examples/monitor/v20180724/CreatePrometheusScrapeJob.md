@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor CreatePrometheusScrapeJob --cli-unfold-argument  \
-    --InstanceId xx \
-    --AgentId xx \
+    --InstanceId prom-abcd1234 \
+    --AgentId agent-abcd1234 \
     --Config job_name:xx
 ```
 

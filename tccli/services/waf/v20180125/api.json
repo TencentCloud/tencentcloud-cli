@@ -984,6 +984,24 @@
           "name": "CipherTemplate",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "300s",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxyReadTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "300s",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxySendTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3192,6 +3210,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "300s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxyReadTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "300s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "ProxySendTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3794,6 +3832,26 @@
           "example": "10000",
           "member": "uint64",
           "name": "ElasticBilling",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击日志投递开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AttackLogPost",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽峰值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "uint64",
+          "name": "MaxBandwidth",
           "required": false,
           "type": "int",
           "value_allowed_null": true

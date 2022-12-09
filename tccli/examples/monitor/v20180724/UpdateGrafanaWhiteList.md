@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor UpdateGrafanaWhiteList --cli-unfold-argument  \
-    --InstanceId xx \
-    --Whitelist xx
+    --InstanceId grafana-abcdefgh \
+    --Whitelist 127.0.0.1
 ```
 
 Output: 

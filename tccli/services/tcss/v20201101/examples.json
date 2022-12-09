@@ -1200,7 +1200,7 @@
     ],
     "DescribeCompliancePeriodTaskList": [
       {
-        "document": "",
+        "document": "基线设置 查询定时任务列表",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompliancePeriodTaskList\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\",\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"PeriodTaskSet\": [\n            {\n                \"PeriodTaskId\": 123,\n                \"AssetType\": \"xxxx\",\n                \"PeriodRule\": {\n                    \"ExecutionTime\": \"xx\",\n                    \"Frequency\": 1\n                },\n                \"LastTriggerTime\": \"YYYY-MM-DD HH:mm:SS\",\n                \"TotalPolicyItemCount\": 123,\n                \"BenchmarkStandardSet\": [\n                    {\n                        \"StandardId\": 12345,\n                        \"Name\": \"CIS Docker\",\n                        \"Description\": \"CIS Docker\",\n                        \"PolicyItemCount\": 123,\n                        \"Enabled\": true\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询定时任务列表"

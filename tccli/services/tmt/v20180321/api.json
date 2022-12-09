@@ -471,6 +471,7 @@
         {
           "default": "",
           "document": "一段完整的语音对应一个SessionUuid",
+          "example": "sid-1516105689129",
           "member": "string",
           "name": "SessionUuid",
           "required": true,
@@ -479,6 +480,7 @@
         {
           "default": "",
           "document": "音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "zh",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -487,6 +489,7 @@
         {
           "default": "",
           "document": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "en",
           "member": "string",
           "name": "Target",
           "required": true,
@@ -495,6 +498,7 @@
         {
           "default": "",
           "document": "pcm : 146   speex : 16779154   mp3 : 83886080",
+          "example": "83886080",
           "member": "int64",
           "name": "AudioFormat",
           "required": true,
@@ -503,6 +507,7 @@
         {
           "default": "",
           "document": "语音分片的序号，从0开始",
+          "example": "0",
           "member": "int64",
           "name": "Seq",
           "required": true,
@@ -511,6 +516,7 @@
         {
           "default": "",
           "document": "是否最后一片语音分片，0-否，1-是",
+          "example": "1",
           "member": "int64",
           "name": "IsEnd",
           "required": true,
@@ -519,6 +525,7 @@
         {
           "default": "",
           "document": "语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。",
+          "example": "%2F%2FtQxAA......OkolgkGSpWK",
           "member": "string",
           "name": "Data",
           "required": true,
@@ -527,6 +534,7 @@
         {
           "default": "",
           "document": "项目ID，可以根据控制台-账号中心-项目管理中的配置填写，如无配置请填写默认项目ID:0",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -535,6 +543,7 @@
         {
           "default": "",
           "document": "识别模式，该参数已废弃",
+          "example": "无",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -543,6 +552,7 @@
         {
           "default": "",
           "document": "该参数已废弃",
+          "example": "0",
           "member": "int64",
           "name": "TransType",
           "required": false,
@@ -556,57 +566,73 @@
       "members": [
         {
           "document": "请求的SessionUuid直接返回",
+          "example": "sid-1516105689129",
           "member": "string",
           "name": "SessionUuid",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "语音识别状态 1-进行中 0-完成",
+          "example": "0",
           "member": "int64",
           "name": "RecognizeStatus",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "识别出的原文",
+          "example": "你好。",
           "member": "string",
           "name": "SourceText",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "翻译出的译文",
+          "example": "Hello.",
           "member": "string",
           "name": "TargetText",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "第几个语音分片",
+          "example": "0",
           "member": "int64",
           "name": "Seq",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "原语言",
+          "example": "zh",
           "member": "string",
           "name": "Source",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "目标语言",
+          "example": "en",
           "member": "string",
           "name": "Target",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "当请求的Mode参数填写bvad是，启动VadSeq。此时Seq会被设置为后台vad（静音检测）后的新序号，而VadSeq代表客户端原始Seq值",
+          "example": "0",
           "member": "int64",
           "name": "VadSeq",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -667,7 +693,7 @@
         },
         {
           "default": "",
-          "document": "待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于2000。",
+          "document": "待翻译的文本列表，批量接口可以以数组方式在一次请求中填写多个待翻译文本。文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度总和需要低于2000字符。",
           "example": "[\"\\u4f60\\u597d\\r\\n\",\"\\u4eca\\u5929\\u5929\\u6c14\\u600e\\u4e48\\u6837\\r\\n\"]",
           "member": "string",
           "name": "SourceTextList",
@@ -721,7 +747,7 @@
       "members": [
         {
           "default": "",
-          "document": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度需要低于2000。",
+          "document": "待翻译的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败，请传入有效文本，html标记等非常规翻译文本可能会翻译失败。单次请求的文本长度需要低于2000字符。",
           "example": "hello",
           "member": "string",
           "name": "SourceText",

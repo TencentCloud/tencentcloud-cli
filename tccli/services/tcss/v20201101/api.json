@@ -16567,7 +16567,6 @@
       "document": "DescribeCompliancePeriodTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "资产的类型，取值为：\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
           "example": "ASSET_CONTAINER",
           "member": "string",
@@ -16576,7 +16575,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -16585,7 +16583,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100。",
           "example": "10",
           "member": "uint64",
@@ -16604,7 +16601,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16613,7 +16609,6 @@
           "example": "无",
           "member": "CompliancePeriodTask",
           "name": "PeriodTaskSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

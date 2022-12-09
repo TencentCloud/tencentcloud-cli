@@ -1,4 +1,4 @@
-**Example 1: 查询WAF攻击命中规则详情**
+**Example 1: 查询Web攻击命中规则详情**
 
 
 
@@ -29,9 +29,14 @@ Output:
             {
                 "Description": "针对出现在GET参数中的命令注入防护规则",
                 "RuleId": 106247153,
+                "ZoneId": "zone-2c2jrfftg9mh",
                 "RequestNum": 10,
                 "Action": "monitor",
-                "HitTime": 1659690912
+                "HitTime": 1659690912,
+                "BotLabel": "none",
+                "AlarmEnabled": true,
+                "RuleEnabled": true,
+                "RuleDeleted": false
             }
         ]
     }

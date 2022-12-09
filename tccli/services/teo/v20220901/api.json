@@ -501,7 +501,7 @@
     "DescribeWebManagedRulesHitRuleDetail": {
       "document": "本接口（DescribeWebManagedRulesHitRuleDetail）用于查询WAF攻击命中规则详情。",
       "input": "DescribeWebManagedRulesHitRuleDetailRequest",
-      "name": "查询WAF攻击命中规则详情",
+      "name": "查询Web攻击命中规则详情",
       "output": "DescribeWebManagedRulesHitRuleDetailResponse"
     },
     "DescribeWebManagedRulesLog": {
@@ -779,7 +779,7 @@
       "members": [
         {
           "default": "",
-          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>sip_proto：网络层协议。</li>",
+          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>app_proto：应用层协议；</li>\n<li>sip_proto：网络层协议。</li>",
           "example": "host",
           "member": "string",
           "name": "MatchFrom",
@@ -1617,16 +1617,6 @@
         },
         {
           "default": "",
-          "document": "攻击类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "AttackType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "请求方法。",
           "example": "\"\"",
           "member": "string",
@@ -1647,13 +1637,33 @@
         },
         {
           "default": "",
-          "document": "攻击等级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。",
           "example": "\"\"",
           "member": "string",
-          "name": "RiskLevel",
+          "name": "SipCountryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "user agent。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Ua",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击事件ID。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
@@ -1667,23 +1677,13 @@
         },
         {
           "default": "",
-          "document": "IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。",
+          "document": "攻击类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
-          "name": "SipCountryCode",
+          "name": "AttackType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "请求（事件）ID。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "EventId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -1707,13 +1707,13 @@
         },
         {
           "default": "",
-          "document": "user agent。",
+          "document": "攻击等级。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
-          "name": "Ua",
+          "name": "RiskLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -1761,6 +1761,16 @@
           "example": "\"\"",
           "member": "string",
           "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志所属的区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -8603,15 +8613,6 @@
       "members": [
         {
           "default": "",
-          "document": "规则Id数组。",
-          "example": "[0,1]",
-          "member": "int64",
-          "name": "RuleIdList",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "规则类型，取值有：\n<li>waf：web托管规则；</li>\n<li>acl：自定义规则；</li>\n<li>rate：速率限制规则；</li>\n<li>bot：Bot基础规则。</li>",
           "example": "waf/acl/cc/bot",
           "member": "string",
@@ -8627,6 +8628,24 @@
           "name": "Entity",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则Id数组。 当为空时查询 子域名或者应用名下所有规则",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "RuleIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子域名数组。",
+          "example": "[\"test1.com\",\"test2.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8635,13 +8654,22 @@
       "document": "DescribeSecurityRuleId返回参数结构体",
       "members": [
         {
-          "document": "规则列表。",
+          "document": "托管规则类型的规则列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WafGroupRule",
           "name": "WafGroupRules",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "document": "自定义规则、速率限制、Bot规则的规则列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityRule",
+          "name": "SecurityRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11968,13 +11996,13 @@
         },
         {
           "default": "",
-          "document": "匹配内容。",
-          "example": "1.1.1.1",
+          "document": "规则的匹配方式，默认为空代表等于。\n取值有：\n<li> is_emty：配置为空；</li>\n<li> not_exists：配置为不存在；</li>\n<li> include：包含；</li>\n<li> not_include：不包含；</li>\n<li> equal：等于；</li>\n<li> not_equal：不等于。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "equal",
           "member": "string",
-          "name": "MatchContent",
-          "required": true,
+          "name": "Operator",
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -12005,6 +12033,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MatchContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15047,6 +15095,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则id，仅出参使用。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16199,6 +16257,16 @@
       "members": [
         {
           "default": "",
+          "document": "站点ID。",
+          "example": "zone-1234",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "规则ID。",
           "example": "12132123",
           "member": "int64",
@@ -16213,16 +16281,6 @@
           "example": "acl",
           "member": "string",
           "name": "RuleTypeName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "执行动作（处置方式），取值有：\n<li>trans ：通过 ；</li>\n<li>alg ：算法挑战 ；</li>\n<li>drop ：丢弃 ；</li>\n<li>ban ：封禁源ip ；</li>\n<li>redirect ：重定向 ；</li>\n<li>page ：返回指定页面 ；</li>\n<li>monitor ：观察 。</li>",
-          "example": "monitor",
-          "member": "string",
-          "name": "Action",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16269,12 +16327,52 @@
         },
         {
           "default": "",
+          "document": "执行动作（处置方式），取值有：\n<li>trans ：通过 ；</li>\n<li>alg ：算法挑战 ；</li>\n<li>drop ：丢弃 ；</li>\n<li>ban ：封禁源ip ；</li>\n<li>redirect ：重定向 ；</li>\n<li>page ：返回指定页面 ；</li>\n<li>monitor ：观察 。</li>",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "Bot标签，取值有:\n<li>evil_bot：恶意Bot；</li>\n<li>suspect_bot：疑似Bot；</li>\n<li>good_bot：正常Bot；</li>\n<li>normal：正常请求；</li>\n<li>none：未分类。</li>",
           "example": "evil_bot",
           "member": "string",
           "name": "BotLabel",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否启用。",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否启用监控告警。",
+          "example": "false",
+          "member": "bool",
+          "name": "AlarmEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否存在，取值有：\n<li>true: 规则不存在；</li>\n<li>false: 规则存在。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleDeleted",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -16352,6 +16450,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型，取值有：\n<li>waf: 托管规则；</li>\n<li>acl：自定义规则；</li>\n<li>rate：速率限制规则；</li>\n<li>bot：bot防护规则。</li>",
+          "example": "bot",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否开启。",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否存在，取值有：\n<li>true: 规则不存在；</li>\n<li>false: 规则存在。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "RuleDeleted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否启用监控告警。",
+          "example": "false",
+          "member": "bool",
+          "name": "AlarmEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16484,6 +16622,102 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityRule": {
+      "document": "托管规则详情",
+      "members": [
+        {
+          "default": "",
+          "document": "规则id。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述。",
+          "example": "-",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型名。",
+          "example": "-",
+          "member": "string",
+          "name": "RuleTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "等级描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "loose",
+          "member": "string",
+          "name": "RuleLevelDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RuleTypeDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则标签。部分类型的规则不存在该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[a,b]",
+          "member": "string",
+          "name": "RuleTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>为空时对应接口Status无意义，例如仅查询规则详情时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子域名/应用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "runtimewu.eosecdev.xyz",
+          "member": "string",
+          "name": "Entity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18221,6 +18455,16 @@
           "example": "GET",
           "member": "string",
           "name": "ReqMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志所属区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
           "required": true,
           "type": "string",
           "value_allowed_null": true

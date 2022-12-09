@@ -7,10 +7,10 @@ Input:
 ```
 tccli monitor DeleteServiceDiscovery --cli-unfold-argument  \
     --InstanceId prom-sdfk2342a \
-    --KubeClusterId cls-pwerf3k3 \
-    --KubeType 1 \
+    --Yaml yaml \
     --Type 1 \
-    --Yaml yaml
+    --KubeClusterId cls-pwerf3k3 \
+    --KubeType 1
 ```
 
 Output: 

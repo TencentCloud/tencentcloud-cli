@@ -30,9 +30,13 @@ Output:
             {
                 "Description": "cooper5_rate",
                 "RuleId": 1234,
+                "ZoneId": "zone-2c2jrfftg9mh",
                 "RequestNum": 10,
                 "Action": "monitor",
-                "HitTime": 1660035802
+                "HitTime": 1660035802,
+                "AlarmEnabled": true,
+                "RuleEnabled": false,
+                "RuleDeleted": false
             }
         ]
     }

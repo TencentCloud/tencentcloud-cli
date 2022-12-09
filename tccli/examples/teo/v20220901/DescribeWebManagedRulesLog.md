@@ -38,7 +38,11 @@ Output:
                         "RiskLevel": "high risk",
                         "RuleTypeName": "命令/代码注入攻击防护",
                         "Action": "monitor",
-                        "RuleLevel": "严格"
+                        "RuleLevel": "严格",
+                        "AlarmEnabled": false,
+                        "RuleEnabled": false,
+                        "RuleDeleted": false,
+                        "RuleType": "waf"
                     }
                 ],
                 "AttackTime": 1660033867

@@ -748,6 +748,24 @@
           "name": "BuyingChannel",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费资源包类型(仅预付费需要)",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourcePackageType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预付费资源包数量(仅预付费需要)",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourcePackageNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -763,6 +781,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "预付费订单 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20211011688006794751081",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

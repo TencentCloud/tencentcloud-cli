@@ -425,7 +425,7 @@
       "document": "ChannelBatchCancelFlows返回参数结构体",
       "members": [
         {
-          "document": "签署流程批量撤销失败原因，错误信息与流程Id一一对应，如果部分流程不可撤销，不会返回错误信息，只会撤销可撤销流程",
+          "document": "签署流程批量撤销失败原因，错误信息与流程Id一一对应，成功为“”,失败则对应失败消息",
           "example": "无",
           "member": "string",
           "name": "FailMessages",
@@ -4844,6 +4844,16 @@
           "example": "无",
           "member": "int64",
           "name": "VerifiedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "员工是否离职：0-未离职，1-离职",
+          "example": "无",
+          "member": "int64",
+          "name": "QuiteJob",
           "required": true,
           "type": "int",
           "value_allowed_null": false
