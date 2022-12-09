@@ -32,7 +32,7 @@ Output:
                 "UnitPriceDiscount": 0.08,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             },
@@ -53,12 +53,12 @@ Output:
                 "UnitPriceDiscount": 0.0,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "xx"
+        "RequestId": "65b9edac-bca6-496b-a404-29f503b32495"
     }
 }
 ```
@@ -113,7 +113,7 @@ Output:
                 "UnitPriceDiscount": 0.0,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             },
@@ -134,12 +134,12 @@ Output:
                 "UnitPriceDiscount": 0.52,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "xx"
+        "RequestId": "65b9edac-bca6-496b-a404-29f503b32495"
     }
 }
 ```
@@ -192,7 +192,7 @@ Output:
                 "UnitPriceDiscount": 3.33,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             },
@@ -218,7 +218,7 @@ Output:
                 "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "xx"
+        "RequestId": "65b9edac-bca6-496b-a404-29f503b32495"
     }
 }
 ```

@@ -19,6 +19,7 @@ Output:
                     "Channel": "xx",
                     "Status": 0,
                     "EnvironmentName": "xx",
+                    "HasAuthority": true,
                     "ModifyDate": "xx",
                     "Description": "xx",
                     "Tags": [
@@ -38,6 +39,7 @@ Output:
                     "Modifier": "xx",
                     "EnvironmentId": "xx",
                     "Creator": "xx",
+                    "EnvType": "xx",
                     "Uin": "xx",
                     "AppId": "xx",
                     "ClusterStatus": "xx",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribeGrafanaConfig --cli-unfold-argument  \
-    --InstanceId grafana-mf9ji5jy
+    --InstanceId grafana-12345678
 ```
 
 Output: 

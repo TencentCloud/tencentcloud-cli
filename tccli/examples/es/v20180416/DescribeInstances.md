@@ -154,7 +154,9 @@ Output:
                         "PublicUrl": "xx"
                     }
                 ],
-                "EnableAdvancedFeature": 0
+                "EnableAdvancedFeature": 0,
+                "ProcessPercent": 0.5,
+                "EnableHybridStorage": true
             }
         ],
         "RequestId": "xxxx"

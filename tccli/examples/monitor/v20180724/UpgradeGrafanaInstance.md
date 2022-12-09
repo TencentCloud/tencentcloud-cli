@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor UpgradeGrafanaInstance --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId grafana-12345678 \
     --Alias v7.4.2
 ```
 

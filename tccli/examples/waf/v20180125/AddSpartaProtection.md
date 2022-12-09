@@ -109,3 +109,45 @@ Output:
 }
 ```
 
+**Example 4: 添加域名-1**
+
+
+
+Input: 
+
+```
+tccli waf AddSpartaProtection --cli-unfold-argument  \
+    --UpstreamScheme http \
+    --IsGray 1 \
+    --Domain lucas0919.qcloudwaf.com \
+    --LoadBalance 1 \
+    --HttpsUpstreamPort 80 \
+    --InstanceID lucas \
+    --UpstreamType 1 \
+    --UpstreamDomain lucas0622.qcloudwaf.com \
+    --IsWebsocket 1 \
+    --IsHttp2 1 \
+    --Edition saas \
+    --CertType 0 \
+    --Weights 1 \
+    --IsKeepAlive 1 \
+    --ActiveCheck 1 \
+    --IsCdn 1 \
+    --TLSVersion 3 \
+    --Ports.0.NginxServerId 0 \
+    --Ports.0.Protocol http \
+    --Ports.0.Port 80 \
+    --Ports.0.UpstreamPort 80 \
+    --Ports.0.UpstreamProtocol http \
+    --HttpsRewrite 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a5e5757a-2b04-4d56-a049-54eb8f053e75"
+    }
+}
+```
+

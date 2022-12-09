@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli nlp ChatBot --cli-unfold-argument  \
-    --Flag 1 \
     --OpenId no23391003 \
+    --Flag 1 \
     --Query 给我讲个故事可以
 ```
 
@@ -30,8 +30,8 @@ Input:
 
 ```
 tccli nlp ChatBot --cli-unfold-argument  \
-    --Flag 0 \
-    --Query 我要买股票
+    --Query 我要买股票 \
+    --Flag 0
 ```
 
 Output: 

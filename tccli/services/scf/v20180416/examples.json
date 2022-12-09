@@ -131,7 +131,7 @@
     "GetFunctionAddress": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionAddress\n&FunctionName=<FunctionName>\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionAddress\n<公共请求参数>\n\n{\n    \"FunctionName\": \"<FunctionName>\"\n}",
         "output": "{\n    \"Response\": {\n        \"Url\": \"http://lambdacode-1253970226.cosgz.myqcloud.com/1253970226/ledDummyAPITest/ledDummyAPITest_LATEST.zip?sign=RwvyBS5VPXz75hYNCJKHrSUHBqBhPTEyNTM5NzAyMjYmaz1BS0lEQ2dPUFdqUTZCQXh2SHR5Y2toV0FCSlZZU0JqNTQ4cE4mZT0wJnQ9MTUyOTg1MTQxNSZyPTY5NzYyMTk3NCZmPS8xMjUzOTcwMjI2L2xlZER1bW15QVBJVGVzdC9sZWREdW1teUFQSVRlc3RfTEFURVNULnppcCZiPWxhbWJkYWNvZGU=\",\n        \"CodeSha256\": \"5077f5203547b225b532434dd6fcf7c9897025d7581a9f3d474a7afee88bc696\",\n        \"RequestId\": \"a90cb10a-7ad4-4270-b92d-ba0319be6dbd\"\n    }\n}",
         "title": "获取函数代码下载地址"
       }
@@ -150,6 +150,22 @@
         "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionLogs\n&FunctionName=<FunctionName>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"MemUsage\": 3174400,\n                \"RetCode\": 1,\n                \"RetMsg\": \"Success\",\n                \"Log\": \"\",\n                \"BillDuration\": 100,\n                \"InvokeFinished\": 1,\n                \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\",\n                \"StartTime\": \"2018-06-11 18:46:45\",\n                \"Duration\": 0.532,\n                \"FunctionName\": \"APITest\",\n                \"Level\": \"\",\n                \"Source\": \"\",\n                \"RetryNum\": 1\n            }\n        ],\n        \"SearchContext\": {\n            \"Offset\": \"\",\n            \"Limit\": 0,\n            \"Keyword\": \"\",\n            \"Type\": \"\"\n        },\n        \"RequestId\": \"e2571ff3-da04-4c53-8438-f58bf057ce4a\"\n    }\n}",
         "title": "获取函数运行日志"
+      }
+    ],
+    "GetFunctionMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionMeta\n<公共请求参数>\n\n{\n    \"VersionID\": \"xx\",\n    \"FunctionID\": \"xx\",\n    \"Qualifier\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取集群元数据"
+      }
+    ],
+    "GetFunctionSquashAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionSquashAddress\n<公共请求参数>\n\n{\n    \"VersionID\": \"xx\",\n    \"FunctionID\": \"xx\",\n    \"Qualifier\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LayerUrl\": \"xx\",\n        \"CodeUrl\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取用于下载可执行文件地址"
       }
     ],
     "GetLayerVersion": [

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tmt TextTranslateBatch --cli-unfold-argument  \
+    --SourceTextList 你好 今天天气怎么样 \
     --Source zh \
     --Target en \
-    --ProjectId 0 \
-    --SourceTextList 你好 今天天气怎么样
+    --ProjectId 0
 ```
 
 Output: 

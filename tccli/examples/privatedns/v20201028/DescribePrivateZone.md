@@ -1,4 +1,4 @@
-**Example 1: 获取私有域**
+**Example 1: 查询私有域详情**
 
 
 
@@ -6,45 +6,38 @@ Input:
 
 ```
 tccli privatedns DescribePrivateZone --cli-unfold-argument  \
-    --ZoneId zone-123456
+    --ZoneId zone-p0152fh2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "520fea07-9c1b-4560-1c8axxxx5275",
+        "RequestId": "4b744f80-5061-4efa-b258-667316615200",
         "PrivateZone": {
-            "ZoneId": "zone-123456",
-            "OwnerUin": 1111111111111111,
-            "Domain": "a.com",
-            "CreatedOn": "2020-05-28 16:28:10",
-            "UpdatedOn": "2020-11-18 00:11:59",
-            "RecordCount": 10,
-            "Remark": "测试域名",
+            "ZoneId": "zone-p01g24h2",
+            "OwnerUin": 100000123998,
+            "Domain": "aarp",
+            "CreatedOn": "2022-02-16 14:54:51",
+            "UpdatedOn": "2022-02-16 20:12:22",
+            "RecordCount": 2,
+            "Remark": "",
             "VpcSet": [
                 {
-                    "UniqVpcId": "vpc-q1111115",
+                    "UniqVpcId": "vpc-39kkc1s7",
                     "Region": "ap-guangzhou"
                 }
             ],
-            "AccountVpcSet": [
-                {
-                    "UniqVpcId": "vpc-q1111115",
-                    "Region": "ap-guangzhou",
-                    "Uin": "123456789"
-                }
-            ],
+            "AccountVpcSet": [],
             "Status": "ENABLED",
             "DnsForwardStatus": "DISABLED",
-            "Tags": [
-                {
-                    "TagKey": "tagKey",
-                    "TagValue": "tagValue"
-                }
-            ],
+            "CnameSpeedupStatus": "DISABLED",
+            "Tags": [],
             "IsCustomTld": false,
-            "CnameSpeedupStatus": "DISABLED"
+            "ForwardRuleName": "",
+            "ForwardRuleType": "",
+            "ForwardAddress": "",
+            "EndPointName": ""
         }
     }
 }

@@ -1,4 +1,4 @@
-**Example 1: 获取私有域列表**
+**Example 1: 查询私有域详情列表**
 
 
 
@@ -6,74 +6,41 @@ Input:
 
 ```
 tccli privatedns DescribePrivateZoneList --cli-unfold-argument  \
-    --Limit 200 \
-    --Offset 0 \
-    --Filters.0.Name ZoneId \
-    --Filters.0.Values zone-xxxx \
-    --Filters.1.Name Domain \
-    --Filters.1.Values a.com \
-    --Filters.2.Name Remark \
-    --Filters.2.Values aaaaaaaa \
-    --Filters.3.Name Vpc \
-    --Filters.3.Values vpc-16bc7l43 \
-    --Filters.4.Name Tag \
-    --Filters.4.Values tak_key:tag_value
+    --Limit 1 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8a4ea9cc-b1df-f8f8-ffe7efbe98f9ff85",
-        "TotalCount": 5,
+        "RequestId": "a92efb27-74e6-462a-9b92-c836468eb111",
+        "TotalCount": 22,
         "PrivateZoneSet": [
             {
-                "ZoneId": "zone-123456",
-                "OwnerUin": 11111111111111,
-                "Domain": "a.com",
-                "CreatedOn": "2020-05-28 16:28:10",
-                "UpdatedOn": "2020-07-16 02:52:29",
-                "RecordCount": 6,
-                "Remark": null,
+                "ZoneId": "zone-e1g2senm",
+                "OwnerUin": 100000123998,
+                "Domain": "b.ac.cn",
+                "CreatedOn": "2022-11-14 16:42:58",
+                "UpdatedOn": "2022-11-14 16:42:59",
+                "RecordCount": 0,
+                "Remark": "tag",
                 "VpcSet": [
                     {
-                        "Region": "xx",
-                        "UniqVpcId": "xx"
+                        "UniqVpcId": "vpc-39kkc543",
+                        "Region": "ap-taipei"
                     }
                 ],
-                "AccountVpcSet": [
-                    {
-                        "UniqVpcId": "vpc-q1111115",
-                        "Region": "ap-guangzhou",
-                        "Uin": "123456789"
-                    }
-                ],
-                "Status": "ENABLED",
-                "DnsForwardStatus": "DISABLED",
-                "Tags": [],
-                "IsCustomTld": false,
-                "CnameSpeedupStatus": "DISABLED"
-            },
-            {
-                "ZoneId": "zone-123456",
-                "OwnerUin": 1111111111111,
-                "Domain": "a.com",
-                "CreatedOn": "2020-07-09 19:15:21",
-                "UpdatedOn": "2020-07-09 19:15:21",
-                "RecordCount": 0,
-                "Remark": null,
-                "VpcSet": [],
                 "AccountVpcSet": [],
                 "Status": "ENABLED",
-                "DnsForwardStatus": "DISABLED",
-                "Tags": [
-                    {
-                        "TagKey": "tagKey",
-                        "TagValue": "tagValue"
-                    }
-                ],
-                "IsCustomTld": true,
-                "CnameSpeedupStatus": "DISABLED"
+                "DnsForwardStatus": "ENABLED",
+                "CnameSpeedupStatus": "ENABLED",
+                "Tags": [],
+                "IsCustomTld": false,
+                "ForwardRuleName": "",
+                "ForwardRuleType": "",
+                "ForwardAddress": "",
+                "EndPointName": ""
             }
         ]
     }

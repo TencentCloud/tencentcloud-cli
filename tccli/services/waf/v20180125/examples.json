@@ -34,6 +34,12 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"UpstreamScheme\": \"http\",\n    \"IsGray\": \"1\",\n    \"Domain\": \"lucas0621.qcloudwaf.com\",\n    \"LoadBalance\": \"1\",\n    \"HttpsUpstreamPort\": \"80\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"1\",\n    \"UpstreamDomain\": \"lucas0622.qcloudwaf.com\",\n    \"IsWebsocket\": \"1\",\n    \"IsHttp2\": \"1\",\n    \"Edition\": \"sass\",\n    \"CertType\": \"0\",\n    \"Weights\": [\n        \"1\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"ActiveCheck\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"1\",\n    \"Anycast\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"HttpsRewrite\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"87c8499e-3748-4bb0-9740-b2683a003975\"\n    }\n}",
         "title": "添加域名"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"UpstreamScheme\": \"http\",\n    \"IsGray\": \"1\",\n    \"Domain\": \"lucas0919.qcloudwaf.com\",\n    \"LoadBalance\": \"1\",\n    \"HttpsUpstreamPort\": \"80\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"1\",\n    \"UpstreamDomain\": \"lucas0622.qcloudwaf.com\",\n    \"IsWebsocket\": \"1\",\n    \"IsHttp2\": \"1\",\n    \"Edition\": \"saas\",\n    \"CertType\": \"0\",\n    \"Weights\": [\n        \"1\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"ActiveCheck\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"HttpsRewrite\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5e5757a-2b04-4d56-a049-54eb8f053e75\"\n    }\n}",
+        "title": "添加域名-1"
       }
     ],
     "CreateAccessExport": [

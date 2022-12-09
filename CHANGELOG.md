@@ -1,3 +1,285 @@
+# Release 3.0.665.1
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 8 次发布
+
+发布时间：2022-12-09 06:07:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [OutputMappingOption](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMappingOption)
+
+修改数据结构：
+
+* [OutputMapping](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMapping)
+
+	* 新增成员：OutputMappingOption
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 23 次发布
+
+发布时间：2022-12-09 06:09:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#CertificateOutput)
+
+	* 新增成员：ExtCertIds
+
+* [Listener](http://document.tencentcloudapi.woa.com/document/product/214/30694#Listener)
+
+	* 新增成员：TargetGroupList
+
+* [LoadBalancerDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerDetail)
+
+	* 新增成员：SlaveZone, Zones, SniSwitch
+
+* [RuleOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleOutput)
+
+	* 新增成员：TargetGroupList
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#ZoneInfo)
+
+	* 新增成员：EdgeZone
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 32 次发布
+
+发布时间：2022-12-09 06:12:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff)
+
+	* 新增成员：QuiteJob
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 37 次发布
+
+发布时间：2022-12-09 06:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SealInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#SealInfo)
+
+	* 新增成员：SealShape
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 12 次发布
+
+发布时间：2022-12-09 06:15:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrivateZone](http://document.tencentcloudapi.woa.com/document/product/1338/55947#PrivateZone)
+
+	* 新增成员：ForwardRuleName, ForwardRuleType, ForwardAddress, EndPointName
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 15 次发布
+
+发布时间：2022-12-09 06:16:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+
+	* 新增入参：ResourcePackageType, ResourcePackageNum
+
+	* 新增出参：DealName
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 17 次发布
+
+发布时间：2022-12-09 06:16:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetFunctionMeta](http://document.tencentcloudapi.woa.com/document/product/583/76774)
+* [GetFunctionSquashAddress](http://document.tencentcloudapi.woa.com/document/product/583/76773)
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 27 次发布
+
+发布时间：2022-12-09 06:17:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60150)
+
+	* 新增入参：EnvType, CreateRegion
+
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1371/75588)
+
+	* 新增入参：SortInfo
+
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1371/60149)
+
+	* 新增入参：SortInfo
+
+* [ModifyEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60148)
+
+	* 新增入参：EnvType
+
+
+新增数据结构：
+
+* [SortType](http://document.tencentcloudapi.woa.com/document/product/1371/60171#SortType)
+
+修改数据结构：
+
+* [NamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespaceInfo)
+
+	* 新增成员：EnvType
+
+* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
+
+	* 新增成员：EnvType, RegionId
+
+
+
+
+## 弹性微服务 TEM(tem) 版本：2020-12-21
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 37 次发布
+
+发布时间：2022-12-09 06:18:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BackUpMediaForXiaoe](http://document.tencentcloudapi.woa.com/document/product/266/76775)
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/266/33431)
+
+	* 新增出参：DescribeFileAttributesTask
+
+
+新增数据结构：
+
+* [DescribeFileAttributesTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTask)
+* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
+
+修改数据结构：
+
+* [EventContent](http://document.tencentcloudapi.woa.com/document/product/266/31773#EventContent)
+
+	* 新增成员：DescribeFileAttributesCompleteEvent
+
+* [MediaMetaData](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaMetaData)
+
+	* 新增成员：Md5
+
+* [ReviewAudioVideoSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoSegmentItem)
+
+	* 新增成员：Url, PicUrlExpireTime
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 21 次发布
+
+发布时间：2022-12-09 06:19:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：ProxyReadTimeout, ProxySendTimeout
+
+
+修改数据结构：
+
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
+
+	* 新增成员：ProxyReadTimeout, ProxySendTimeout
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
+
+	* 新增成员：AttackLogPost, MaxBandwidth
+
+
+
+
 # Release 3.0.664.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

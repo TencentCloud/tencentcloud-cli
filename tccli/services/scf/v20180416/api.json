@@ -114,6 +114,18 @@
       "name": "获取函数运行日志",
       "output": "GetFunctionLogsResponse"
     },
+    "GetFunctionMeta": {
+      "document": "获取函数元数据，内部组件接口，非公开。",
+      "input": "GetFunctionMetaRequest",
+      "name": "获取函数元数据，内部组件接口，非公开",
+      "output": "GetFunctionMetaResponse"
+    },
+    "GetFunctionSquashAddress": {
+      "document": "获取用于下载可执行文件地址",
+      "input": "GetFunctionSquashAddressRequest",
+      "name": "获取用于下载可执行文件地址",
+      "output": "GetFunctionSquashAddressResponse"
+    },
     "GetLayerVersion": {
       "document": "获取层版本详细信息，包括用于下载层中文件的链接。",
       "input": "GetLayerVersionRequest",
@@ -2314,7 +2326,8 @@
           "member": "string",
           "name": "FunctionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2323,7 +2336,8 @@
           "member": "string",
           "name": "Qualifier",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2332,7 +2346,8 @@
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2347,7 +2362,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "函数的SHA256编码",
@@ -2356,7 +2372,8 @@
           "name": "CodeSha256",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2579,6 +2596,64 @@
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionMetaRequest": {
+      "document": "GetFunctionMeta请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "lamID",
+          "example": "lam-xx",
+          "member": "string",
+          "name": "FunctionID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目标Qualifier",
+          "example": "1",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目标VersionID",
+          "example": "2",
+          "member": "string",
+          "name": "VersionID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionMetaResponse": {
+      "document": "GetFunctionMeta返回参数结构体",
+      "members": [
+        {
+          "document": "json数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3077,6 +3152,74 @@
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionSquashAddressRequest": {
+      "document": "GetFunctionSquashAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "lamID",
+          "example": "1",
+          "member": "string",
+          "name": "FunctionID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目标Qualifier",
+          "example": "2",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目标VersionID",
+          "example": "3",
+          "member": "string",
+          "name": "VersionID",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionSquashAddressResponse": {
+      "document": "GetFunctionSquashAddress返回参数结构体",
+      "members": [
+        {
+          "document": "代码.squashfs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CodeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "layers.squashfs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "LayerUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

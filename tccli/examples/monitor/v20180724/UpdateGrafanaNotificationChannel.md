@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor UpdateGrafanaNotificationChannel --cli-unfold-argument  \
-    --InstanceId xx \
-    --ChannelId xx \
-    --ChannelName xx \
+    --InstanceId grafana-12345678 \
+    --ChannelId nchannel-abcd1234 \
+    --ChannelName test \
     --Receivers xx
 ```
 

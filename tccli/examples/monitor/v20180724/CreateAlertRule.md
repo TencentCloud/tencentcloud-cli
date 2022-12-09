@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli monitor CreateAlertRule --cli-unfold-argument  \
-    --InstanceId my-prom-gg \
-    --RuleState 2 \
-    --Expr "up{service \
-    --Duration 5m \
     --Receivers 34224 \
-    --RuleName test
+    --InstanceId prom-abcd1234 \
+    --Expr "up{service=\"rig-prometheus-agent\"}>0" \
+    --Duration 5m \
+    --RuleName test \
+    --RuleState 2
 ```
 
 Output: 

@@ -6,14 +6,16 @@ Input:
 
 ```
 tccli tmt SpeechTranslate --cli-unfold-argument  \
+    --Target en \
+    --Seq 0 \
     --ProjectId 0 \
     --SessionUuid sid-1516105689129 \
     --Source zh \
-    --Target en \
     --AudioFormat 83886080 \
-    --Seq 0 \
-    --IsEnd 1 \
-    --Data 
+    --Data =%2F%2FtQxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+......
+MGCwUAU4UeWgJDOGmC2JgzouqHJQBsZiKUicVTU5UGTZ6mVJYlri5s9geZdCjBnExqtEsaw%2F5rtShQ6UOkolgkGSpWK \
+    --IsEnd 1
 ```
 
 Output: 
@@ -27,7 +29,8 @@ Output:
         "Source": "zh",
         "SourceText": "你好。",
         "Target": "en",
-        "TargetText": "Hello."
+        "TargetText": "Hello.",
+        "VadSeq": 0
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp TextCorrection --cli-unfold-argument  \
-    --Text "令天天气很好，我们很早起床，去学小读书。"
+    --Text 令天天气很好，我们很早起床，去学小读书。
 ```
 
 Output: 

@@ -9112,6 +9112,17 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "印章类型，表示为:\n圆形印章：0\n椭圆形印章：1\n方形印章：2\n菱形印章：3\n三角形印章：4",
+          "example": "0",
+          "member": "string",
+          "name": "SealShape",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

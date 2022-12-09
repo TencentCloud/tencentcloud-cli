@@ -158,18 +158,22 @@
         {
           "default": "",
           "document": "待处理的文本（仅支持UTF-8格式，不超过2000字）",
+          "example": "中新经纬客户端......创造良好的氛围。",
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "指定摘要的长度上限（默认值为200）\n注：为保证摘要的可读性，最终生成的摘要长度会低于指定的长度上限。",
+          "example": "200",
           "member": "uint64",
           "name": "Length",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -179,10 +183,13 @@
       "members": [
         {
           "document": "文本摘要结果",
+          "example": "无",
           "member": "string",
           "name": "Summary",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -232,26 +239,32 @@
         {
           "default": "",
           "document": "用户请求的query",
+          "example": "给我讲个故事可以",
           "member": "string",
           "name": "Query",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "服务的id,  主要用于儿童闲聊接口，比如手Q的openid",
+          "example": "no23391003",
           "member": "string",
           "name": "OpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊",
+          "example": "1",
           "member": "uint64",
           "name": "Flag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -261,17 +274,23 @@
       "members": [
         {
           "document": "闲聊回复",
+          "example": "宝贝，最近好多小朋友都在听下面这些故事呢",
           "member": "string",
           "name": "Reply",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "对于当前输出回复的自信度",
+          "example": "1",
           "member": "float",
           "name": "Confidence",
+          "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1151,26 +1170,32 @@
         {
           "default": "",
           "document": "待分析的文本（仅支持UTF-8格式，不超过200字）",
+          "example": "今天受了委屈，心情很差。",
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "待分析文本所属的类型，仅当输入参数Mode取值为2class时有效（默认取4值）：\n1、商品评论类\n2、社交类\n3、美食酒店类\n4、通用领域类",
+          "example": "4",
           "member": "uint64",
           "name": "Flag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "情感分类模式选项，可取2class或3class（默认值为2class）\n1、2class：返回正负面二分类情感结果\n2、3class：返回正负面及中性三分类情感结果",
+          "example": "3class",
           "member": "string",
           "name": "Mode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1180,31 +1205,43 @@
       "members": [
         {
           "document": "正面情感概率",
+          "example": "0.00001098",
           "member": "float",
           "name": "Positive",
+          "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "中性情感概率，当输入参数Mode取值为3class时有效，否则值为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00009115",
           "member": "float",
           "name": "Neutral",
+          "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "负面情感概率",
+          "example": "0.99992788",
           "member": "float",
           "name": "Negative",
+          "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "情感分类结果：\n1、positive，表示正面情感\n2、negative，表示负面情感\n3、neutral，表示中性、无情感",
+          "example": "negative",
           "member": "string",
           "name": "Sentiment",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1290,7 +1327,8 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1299,7 +1337,8 @@
           "member": "uint64",
           "name": "Flag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1314,7 +1353,8 @@
           "name": "Classes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1379,10 +1419,12 @@
         {
           "default": "",
           "document": "待纠错的文本（仅支持UTF-8格式，不超过2000字符）",
+          "example": "纠错的文本",
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1392,17 +1434,23 @@
       "members": [
         {
           "document": "纠错详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CCIToken",
           "name": "CCITokens",
+          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "纠错后的文本",
+          "example": "今天天气很好，我们很早起床，去学校读书。",
           "member": "string",
           "name": "ResultText",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

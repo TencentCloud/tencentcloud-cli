@@ -19,7 +19,7 @@
     "ImageTranslate": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=ImageTranslate\n&SessionUuid=session-00001\n&Scene=doc\n&Source=zh\n&Target=en\n&ProjectId=0\n&Data=iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\n......\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslate\n<公共请求参数>\n\n{\n    \"Target\": \"en\",\n    \"SessionUuid\": \"session-00001\",\n    \"ProjectId\": 0,\n    \"Scene\": \"doc\",\n    \"Source\": \"zh\",\n    \"Data\": \"iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\\n......\\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\"\n}",
         "output": "{\n    \"Response\": {\n        \"ImageRecord\": {\n            \"Value\": [\n                {\n                    \"H\": 21,\n                    \"SourceText\": \" 我们可以比较容易的将字典(ict)类型转为字符串(string)类型。\",\n                    \"TargetText\": \"We can easily convert the dictionary icttype to the string) type.\",\n                    \"W\": 373,\n                    \"X\": 12,\n                    \"Y\": 53\n                }\n            ]\n        },\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"SessionUuid\": \"session-00001\",\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\"\n    }\n}",
         "title": "API调用"
       }
@@ -35,8 +35,8 @@
     "SpeechTranslate": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=SpeechTranslate\r\n&ProjectId=0\r\n&SessionUuid=sid-1516105689129\r\n&Source=zh\r\n&Target=en\r\n&AudioFormat=83886080\r\n&Seq=0\r\n&IsEnd=1\r\n&Data==%2F%2FtQxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\r\n......\r\nMGCwUAU4UeWgJDOGmC2JgzouqHJQBsZiKUicVTU5UGTZ6mVJYlri5s9geZdCjBnExqtEsaw%2F5rtShQ6UOkolgkGSpWK\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RecognizeStatus\": 0,\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\",\n        \"Seq\": 0,\n        \"SessionUuid\": \"sid-1516105689129\",\n        \"Source\": \"zh\",\n        \"SourceText\": \"你好。\",\n        \"Target\": \"en\",\n        \"TargetText\": \"Hello.\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SpeechTranslate\n<公共请求参数>\n\n{\n    \"Target\": \"en\",\n    \"Seq\": 0,\n    \"ProjectId\": 0,\n    \"SessionUuid\": \"sid-1516105689129\",\n    \"Source\": \"zh\",\n    \"AudioFormat\": 83886080,\n    \"Data\": \"=%2F%2FtQxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\\n......\\nMGCwUAU4UeWgJDOGmC2JgzouqHJQBsZiKUicVTU5UGTZ6mVJYlri5s9geZdCjBnExqtEsaw%2F5rtShQ6UOkolgkGSpWK\",\n    \"IsEnd\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RecognizeStatus\": 0,\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\",\n        \"Seq\": 0,\n        \"SessionUuid\": \"sid-1516105689129\",\n        \"Source\": \"zh\",\n        \"SourceText\": \"你好。\",\n        \"Target\": \"en\",\n        \"TargetText\": \"Hello.\",\n        \"VadSeq\": 0\n    }\n}",
         "title": "API调用"
       }
     ],
@@ -51,7 +51,7 @@
     "TextTranslateBatch": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslateBatch\n&Source=zh\n&Target=en\n&ProjectId=0\n&SourceTextList.0=你好\n&SourceTextList.1=今天天气怎么样\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"SourceTextList\": [\n        \"你好\",\n        \"今天天气怎么样\"\n    ],\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"Hello.\",\n            \"What's the weather like today?\"\n        ]\n    }\n}",
         "title": "批量文本翻译"
       }
