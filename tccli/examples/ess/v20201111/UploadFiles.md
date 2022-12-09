@@ -23,7 +23,7 @@ Output:
             "d54e3cae*******6762b7562"
         ],
         "TotalCount": 1,
-        "RequestId": "4fecde8c3137d320e8a3c8136bdbb7e5"
+        "RequestId": "4fecde8c313xxxa3c8136bdbb7e5"
     }
 }
 ```
@@ -37,7 +37,7 @@ Input:
 ```
 tccli ess UploadFiles --cli-unfold-argument  \
     --FileType 字符串 \
-    --Caller.OperatorId yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk \
+    --Caller.OperatorId yDxMkUyxxxx4zjE8VI2JmKxPkk \
     --FileInfos.0.FileBody 字符串 \
     --FileInfos.0.FileName 字符串 \
     --BusinessType 字符串 \
@@ -51,7 +51,7 @@ Output:
         "FileIds": [
             "testfileid"
         ],
-        "RequestId": "f56f474a-8b7d-4734-af82-a0872d6312bf",
+        "RequestId": "f56f474a-8bxxxxa0872d6312bf",
         "TotalCount": 1
     }
 }

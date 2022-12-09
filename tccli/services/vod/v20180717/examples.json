@@ -626,6 +626,14 @@
         "title": "获取回调事件通知状态成功示例"
       }
     ],
+    "DescribeFileAttributes": [
+      {
+        "document": "对 FileId 为 5285485487985271487 的文件发起获取媒体文件属性任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileAttributes\n<公共请求参数>\n\n{\n    \"FileId\": \"5285485487985271487\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-DescribeFileAttributes-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
+        "title": "发起获取媒体文件属性任务"
+      }
+    ],
     "DescribeHeadTailTemplates": [
       {
         "document": "",

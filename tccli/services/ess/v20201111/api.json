@@ -25,7 +25,7 @@
       "output": "CreateConvertTaskApiResponse"
     },
     "CreateDocument": {
-      "document": "创建签署流程电子文档\n适用场景：见创建签署流程接口。\u000b\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。是“发起流程”接口的前置接口。\n\n【动态表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版或集成版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充动态表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| widthPercent   | Integer | 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35                    |\n| content    | String  | 表头单元格内容，字数不超过100                         |",
+      "document": "创建签署流程电子文档\n适用场景：见创建签署流程接口。\u000b\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。是“发起流程”接口的前置接口。",
       "input": "CreateDocumentRequest",
       "name": "创建电子文档",
       "output": "CreateDocumentResponse"
@@ -151,7 +151,7 @@
       "output": "StartFlowResponse"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）用于文件上传。\n适用场景：用于生成pdf资源编号（FileIds）来配合“用PDF创建流程”接口使用，使用场景可详见“用PDF创建流程”接口说明。\n调用时需要设置Domain 为 file.ess.tencent.cn，设置Version为2020-12-22",
+      "document": "此接口（UploadFiles）用于文件上传。\n适用场景：用于生成pdf资源编号（FileIds）来配合“用PDF创建流程”接口使用，使用场景可详见“用PDF创建流程”接口说明。\n调用时需要设置Domain/接口请求域名为 file.ess.tencent.cn，并设置参数Version/版本号为2020-12-22",
       "input": "UploadFilesRequest",
       "name": "多文件上传",
       "output": "UploadFilesResponse"
@@ -1794,7 +1794,7 @@
         },
         {
           "default": "",
-          "document": "资源Id,通过上传uploadfile接口获得",
+          "document": "资源Id，通过多文件上传（UploadFiles）接口获得",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -3406,7 +3406,7 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时（渠道版或集成版），FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",
       "members": [
         {
           "default": "",
@@ -4551,7 +4551,7 @@
         },
         {
           "default": "",
-          "document": "调用方信息",
+          "document": "调用方信息，其中OperatorId为必填字段，即用户的UserId",
           "example": "Caller",
           "member": "Caller",
           "name": "Caller",
@@ -4569,24 +4569,6 @@
         },
         {
           "default": "",
-          "document": "不再使用，上传文件链接数组，最多支持20个URL",
-          "example": "FileUrls",
-          "member": "string",
-          "name": "FileUrls",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白\ntrue--是，处理置白\nfalse--否，不处理",
-          "example": "true",
-          "member": "bool",
-          "name": "CoverRect",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "default": "",
           "document": "文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。\n如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF",
           "example": "PDF",
           "member": "string",
@@ -4596,12 +4578,30 @@
         },
         {
           "default": "",
+          "document": "此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白\ntrue--是，处理置白\n默认为false--否，不处理",
+          "example": "true",
+          "member": "bool",
+          "name": "CoverRect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
           "document": "用户自定义ID数组，与上传文件一一对应",
           "example": "无",
           "member": "string",
           "name": "CustomIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "不再使用，上传文件链接数组，最多支持20个URL",
+          "example": "FileUrls",
+          "member": "string",
+          "name": "FileUrls",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

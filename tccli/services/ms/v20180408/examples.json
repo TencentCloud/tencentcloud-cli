@@ -130,7 +130,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUrlDetectionResult\n<公共请求参数>\n\n{\n    \"Url\": \"http://17biquge.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2adb7ea-3f73-487a-8ea5-474277c29e3a\",\n        \"ResultCode\": 0,\n        \"RespVer\": 1,\n        \"UrlType\": 2,\n        \"EvilClass\": 8,\n        \"EvilType\": 268,\n        \"Level\": 5,\n        \"UrlTypeDesc\": \"黑\",\n        \"EvilClassDesc\": \"非法内容（根据法律法规不能传播的内容，主要为政治敏感内容，默认内部使用）\",\n        \"EvilTypeDesc\": \"色情网站(网信办)\",\n        \"LevelDesc\": \"整域\",\n        \"DetectTime\": 1644834245,\n        \"Wording\": \"该网站发布了违反国家相关法律规定的内容，已为您拦截。\",\n        \"WordingTitle\": \"该网站可能存在非法内容\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2adb7ea-3f73-487a-8ea5-474277c29e3a\",\n        \"ResultCode\": 0,\n        \"RespVer\": 1,\n        \"UrlType\": 2,\n        \"EvilClass\": 8,\n        \"EvilType\": 0,\n        \"Level\": 0,\n        \"UrlTypeDesc\": \"风险网址\",\n        \"EvilClassDesc\": \"\",\n        \"EvilTypeDesc\": \"\",\n        \"LevelDesc\": \"\",\n        \"DetectTime\": 1644834245,\n        \"Wording\": \"\",\n        \"WordingTitle\": \"\"\n    }\n}",
         "title": "查询网址检测结果服务"
       }
     ],
