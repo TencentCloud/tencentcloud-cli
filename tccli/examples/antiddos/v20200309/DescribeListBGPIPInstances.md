@@ -6,99 +6,63 @@ Input:
 
 ```
 tccli antiddos DescribeListBGPIPInstances --cli-unfold-argument  \
-    --FilterEipType 1 \
-    --FilterRegion ap-guangzhou \
-    --FilterName test \
-    --FilterDamDDoSStatus 0 \
-    --Limit 25 \
-    --FilterEipEipAddressStatus BINDING BIND \
-    --Offset 0 \
-    --FilterInstanceId bgpip-00000001 \
-    --FilterIp 1.1.1.1 \
-    --FilterLine 1
+    --Limit 1 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
+        "RequestId": "0381c271-292d-4e2a-adcc-cd7bcd6977a7",
         "InstanceList": [
             {
-                "Usage": {
-                    "PortRulesUsage": 1,
-                    "DomainRulesUsage": 1,
-                    "Last7DayAttackCount": 1
-                },
-                "ExpiredTime": "2020-09-22 00:00:00",
-                "EipAddressInfo": {
-                    "EipBoundRscIns": "xx",
-                    "EipBoundRscVip": "xx",
-                    "EipBoundRscEni": "xx",
-                    "EipAddressRegion": "xx",
-                    "ModifyTime": "xx"
-                },
-                "TagInfoList": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "CreatedTime": "2020-09-22 00:00:00",
-                "Status": "xx",
-                "StaticPackRelation": {
-                    "ForwardRulesLimit": 1,
-                    "AutoRenewFlag": 1,
-                    "ProtectBandwidth": 1,
-                    "CurDeadline": "xx",
-                    "NormalBandwidth": 1
-                },
-                "EipAddressPackRelation": {
-                    "AutoRenewFlag": 1,
-                    "CurDeadline": "2020-09-22 00:00:00",
-                    "IpCount": 1
+                "InstanceDetail": {
+                    "EipList": [
+                        "2402:4e00:31:804::17"
+                    ],
+                    "InstanceId": "bgpip-00000001"
                 },
                 "SpecificationLimit": {
-                    "ProtectCCQPS": 1,
-                    "NormalBandwidth": 1,
-                    "ElasticBandwidth": 1,
-                    "AutoRenewFlag": 1,
-                    "ProtectBandwidth": 1,
-                    "ForwardRulesLimit": 1,
+                    "ProtectBandwidth": 30000,
+                    "ProtectCCQPS": 40000,
+                    "ElasticBandwidth": 50000,
+                    "NormalBandwidth": 1000,
+                    "ForwardRulesLimit": 60,
+                    "AutoRenewFlag": 0,
                     "Line": 1
                 },
-                "AnycastOutPackRelation": {
-                    "ForwardRulesLimit": 1,
-                    "AutoRenewFlag": 1,
-                    "CurDeadline": "xx",
-                    "NormalBandwidth": 1
+                "Usage": {
+                    "PortRulesUsage": 0,
+                    "DomainRulesUsage": 0,
+                    "Last7DayAttackCount": 0
                 },
-                "Name": "xx",
                 "Region": {
-                    "Region": "xx"
+                    "Region": "ap-shanghai"
                 },
-                "DamDDoSStatus": 1,
-                "EipFlag": 1,
-                "PackInfo": {
-                    "PackId": "xx",
-                    "PackType": "xx"
-                },
-                "EipAddressStatus": "xx",
-                "Domain": "xx",
-                "Tgw": 1,
-                "InstanceDetail": {
-                    "InstanceId": "xx",
-                    "EipList": [
-                        "1.1.1.1"
-                    ]
-                },
+                "PackInfo": null,
+                "StaticPackRelation": null,
+                "EipAddressPackRelation": null,
+                "AnycastOutPackRelation": null,
+                "Tgw": 2,
+                "ZoneId": 0,
+                "Name": "",
                 "V6Flag": 1,
-                "BGPIPChannelFlag": 1,
-                "InstanceVersion": 1,
-                "ZoneId": 1
+                "Domain": "",
+                "Status": "idle",
+                "ExpiredTime": "2023-01-08 21:22:24",
+                "CreatedTime": "2022-12-08 21:22:24",
+                "EipAddressStatus": "",
+                "EipFlag": 0,
+                "EipAddressInfo": null,
+                "ConvoyId": "",
+                "DamDDoSStatus": 0,
+                "BGPIPChannelFlag": 0,
+                "TagInfoList": [],
+                "InstanceVersion": 3
             }
         ],
-        "RequestId": "xx"
+        "Total": 12
     }
 }
 ```

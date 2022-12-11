@@ -141,7 +141,7 @@
   },
   "metadata": {
     "apiVersion": "2018-03-30",
-    "api_brief": "介绍如何使用API对数据传输服务进行操作，包括数据订阅、数据传输服务、灾备同步等。",
+    "api_brief": "介绍如何使用API对数据传输服务进行数据迁移、数据同步、数据订阅操作。",
     "serviceNameCN": "数据传输服务",
     "serviceShortName": "dts"
   },

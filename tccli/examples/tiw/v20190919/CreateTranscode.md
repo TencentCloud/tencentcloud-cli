@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tiw CreateTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001 \
     --Url https://path/to/document.ppt \
-    --ThumbnailResolution 960x540
+    --ThumbnailResolution 960x540 \
+    --SdkAppId 1400000001
 ```
 
 Output: 
@@ -29,9 +29,9 @@ Input:
 
 ```
 tccli tiw CreateTranscode --cli-unfold-argument  \
-    --SdkAppId 1400000001 \
     --Url https://path/to/document.ppt \
-    --IsStaticPPT True
+    --IsStaticPPT True \
+    --SdkAppId 1400000001
 ```
 
 Output: 

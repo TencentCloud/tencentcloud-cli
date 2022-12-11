@@ -2695,7 +2695,8 @@
           "name": "IndexType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2705,7 +2706,8 @@
           "name": "IndexName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2715,7 +2717,8 @@
           "name": "IndexStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2725,7 +2728,8 @@
           "name": "IndexStorage",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2735,7 +2739,8 @@
           "name": "IndexCreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2745,7 +2750,8 @@
           "name": "BackingIndices",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2755,7 +2761,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2765,7 +2772,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2775,7 +2783,8 @@
           "name": "ClusterVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2785,7 +2794,8 @@
           "name": "IndexPolicyField",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2795,7 +2805,8 @@
           "name": "IndexOptionsField",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2805,7 +2816,8 @@
           "name": "IndexSettingsField",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2815,7 +2827,19 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "索引文档数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IndexDocs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

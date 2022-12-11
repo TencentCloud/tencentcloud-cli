@@ -15,7 +15,7 @@
     "DeleteUserManagerUserList": {
       "document": "删除用户列表（用户管理）\n",
       "input": "DeleteUserManagerUserListRequest",
-      "name": "删除用户列表（用户管理）",
+      "name": "删除用户列表",
       "output": "DeleteUserManagerUserListResponse"
     },
     "DescribeClusterNodes": {

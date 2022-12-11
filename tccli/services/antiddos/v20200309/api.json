@@ -1093,6 +1093,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "重保实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConvoyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -5965,7 +5976,7 @@
         },
         {
           "default": "",
-          "document": "获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking",
+          "document": "获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial",
           "example": "attacking",
           "member": "string",
           "name": "FilterStatus",
@@ -6011,6 +6022,16 @@
           "name": "FilterPackType",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "重保护航搜索",
+          "example": "无",
+          "member": "uint64",
+          "name": "FilterConvoy",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],
@@ -6189,6 +6210,26 @@
           "name": "FilterTag",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "试用资源搜索，1: 应急防护资源；2：PLG试用资源",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterTrialFlag",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "重保护航搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterConvoy",
+          "required": false,
+          "type": "int",
           "visibility": 1
         }
       ],

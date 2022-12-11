@@ -1,68 +1,40 @@
 # 本版本更新包含以下内容：
 
-## 批量计算(batch) 版本：2017-03-12
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
 
-### 第 8 次发布
+### 第 35 次发布
 
-发布时间：2022-12-09 06:07:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [OutputMappingOption](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMappingOption)
-
-修改数据结构：
-
-* [OutputMapping](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMapping)
-
-	* 新增成员：OutputMappingOption
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 23 次发布
-
-发布时间：2022-12-09 06:09:15
+发布时间：2022-12-12 06:08:56
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [DescribeListBGPIPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57524)
+
+	* 新增入参：FilterConvoy
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterTrialFlag, FilterConvoy
+
+
 修改数据结构：
 
-* [CertificateOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#CertificateOutput)
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
 
-	* 新增成员：ExtCertIds
-
-* [Listener](http://document.tencentcloudapi.woa.com/document/product/214/30694#Listener)
-
-	* 新增成员：TargetGroupList
-
-* [LoadBalancerDetail](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancerDetail)
-
-	* 新增成员：SlaveZone, Zones, SniSwitch
-
-* [RuleOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleOutput)
-
-	* 新增成员：TargetGroupList
-
-* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#ZoneInfo)
-
-	* 新增成员：EdgeZone
+	* 新增成员：ConvoyId
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 32 次发布
+### 第 24 次发布
 
-发布时间：2022-12-09 06:12:11
+发布时间：2022-12-12 06:32:51
 
 本次发布包含了以下内容：
 
@@ -70,60 +42,18 @@
 
 修改数据结构：
 
-* [Staff](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Staff)
+* [IndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexMetaField)
 
-	* 新增成员：QuiteJob
+	* 新增成员：IndexDocs
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 文字识别(ocr) 版本：2018-11-19
 
-### 第 37 次发布
+### 第 38 次发布
 
-发布时间：2022-12-09 06:15:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SealInfo](http://document.tencentcloudapi.woa.com/document/product/866/33527#SealInfo)
-
-	* 新增成员：SealShape
-
-
-
-
-## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
-
-### 第 12 次发布
-
-发布时间：2022-12-09 06:15:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PrivateZone](http://document.tencentcloudapi.woa.com/document/product/1338/55947#PrivateZone)
-
-	* 新增成员：ForwardRuleName, ForwardRuleType, ForwardAddress, EndPointName
-
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
-### 第 15 次发布
-
-发布时间：2022-12-09 06:16:00
+发布时间：2022-12-12 06:46:14
 
 本次发布包含了以下内容：
 
@@ -131,87 +61,48 @@
 
 修改接口：
 
-* [CreateTawInstance](http://document.tencentcloudapi.woa.com/document/product/1464/69244)
+* [SealOCR](http://document.tencentcloudapi.woa.com/document/product/866/45807)
 
-	* 新增入参：ResourcePackageType, ResourcePackageNum
-
-	* 新增出参：DealName
-
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 17 次发布
-
-发布时间：2022-12-09 06:16:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetFunctionMeta](http://document.tencentcloudapi.woa.com/document/product/583/76774)
-* [GetFunctionSquashAddress](http://document.tencentcloudapi.woa.com/document/product/583/76773)
-
-
-
-## 弹性微服务 TEM(tem) 版本：2021-07-01
-
-### 第 27 次发布
-
-发布时间：2022-12-09 06:17:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60150)
-
-	* 新增入参：EnvType, CreateRegion
-
-* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1371/75588)
-
-	* 新增入参：SortInfo
-
-* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1371/60149)
-
-	* 新增入参：SortInfo
-
-* [ModifyEnvironment](http://document.tencentcloudapi.woa.com/document/product/1371/60148)
-
-	* 新增入参：EnvType
+	* 新增出参：SealShape
 
 
 新增数据结构：
 
-* [SortType](http://document.tencentcloudapi.woa.com/document/product/1371/60171#SortType)
+* [CellLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#CellLists)
 
 修改数据结构：
 
-* [NamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NamespaceInfo)
+* [TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)
 
-	* 新增成员：EnvType
-
-* [TemNamespaceInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemNamespaceInfo)
-
-	* 新增成员：EnvType, RegionId
+	* 新增成员：CellContent
 
 
 
 
-## 弹性微服务 TEM(tem) 版本：2020-12-21
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 8 次发布
+
+发布时间：2022-12-12 06:58:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40060)
+
+	* 新增入参：AutoHandleUnsupportedElement
+
 
 
 
 ## 云点播(vod) 版本：2018-07-17
 
-### 第 37 次发布
+### 第 38 次发布
 
-发布时间：2022-12-09 06:18:35
+发布时间：2022-12-12 07:02:22
 
 本次发布包含了以下内容：
 
@@ -219,63 +110,29 @@
 
 新增接口：
 
-* [BackUpMediaForXiaoe](http://document.tencentcloudapi.woa.com/document/product/266/76775)
-
-修改接口：
-
-* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/266/33431)
-
-	* 新增出参：DescribeFileAttributesTask
-
-
-新增数据结构：
-
-* [DescribeFileAttributesTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTask)
-* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
-
-修改数据结构：
-
-* [EventContent](http://document.tencentcloudapi.woa.com/document/product/266/31773#EventContent)
-
-	* 新增成员：DescribeFileAttributesCompleteEvent
-
-* [MediaMetaData](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaMetaData)
-
-	* 新增成员：Md5
-
-* [ReviewAudioVideoSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoSegmentItem)
-
-	* 新增成员：Url, PicUrlExpireTime
+* [DescribeFileAttributes](http://document.tencentcloudapi.woa.com/document/product/266/76776)
 
 
 
+## 私有网络(vpc) 版本：2017-03-12
 
-## Web 应用防火墙(waf) 版本：2018-01-25
+### 第 49 次发布
 
-### 第 21 次发布
-
-发布时间：2022-12-09 06:19:29
+发布时间：2022-12-12 07:03:45
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)
+
 修改接口：
 
-* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+* [DescribeVpcInner](http://document.tencentcloudapi.woa.com/document/product/215/75541)
 
-	* 新增入参：ProxyReadTimeout, ProxySendTimeout
-
-
-修改数据结构：
-
-* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
-
-	* 新增成员：ProxyReadTimeout, ProxySendTimeout
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
-
-	* 新增成员：AttackLogPost, MaxBandwidth
+	* 新增入参：OwnedFlag
 
 
 
@@ -1150,6 +1007,32 @@
 
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 35 次发布
+
+发布时间：2022-12-12 06:08:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPIPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57524)
+
+	* 新增入参：FilterConvoy
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterTrialFlag, FilterConvoy
+
+
+修改数据结构：
+
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
+
+	* 新增成员：ConvoyId
+
 
 ### 第 34 次发布
 
@@ -3252,7 +3135,7 @@
 
 新增数据结构：
 
-* [[OutputMappingOption](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMappingOption)](http://document.tencentcloudapi.woa.com/document/product/599/15912#[OutputMappingOption](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMappingOption))
+* [OutputMappingOption](http://document.tencentcloudapi.woa.com/document/product/599/15912#OutputMappingOption)
 
 修改数据结构：
 
@@ -19945,6 +19828,21 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 24 次发布
+
+发布时间：2022-12-12 06:32:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexMetaField)
+
+	* 新增成员：IndexDocs
+
+
 ### 第 23 次发布
 
 发布时间：2022-11-17 06:17:50
@@ -30207,6 +30105,32 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 38 次发布
+
+发布时间：2022-12-12 06:46:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SealOCR](http://document.tencentcloudapi.woa.com/document/product/866/45807)
+
+	* 新增出参：SealShape
+
+
+新增数据结构：
+
+* [[CellLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#CellLists)](http://document.tencentcloudapi.woa.com/document/product/866/33527#[CellLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#CellLists))
+
+修改数据结构：
+
+* [TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)
+
+	* 新增成员：CellContent
+
+
 ### 第 37 次发布
 
 发布时间：2022-12-09 06:15:20
@@ -33620,8 +33544,8 @@
 
 新增接口：
 
-* [[GetFunctionMeta](http://document.tencentcloudapi.woa.com/document/product/583/76774)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetFunctionSquashAddress](http://document.tencentcloudapi.woa.com/document/product/583/76773)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetFunctionMeta](http://document.tencentcloudapi.woa.com/document/product/583/76774)
+* [GetFunctionSquashAddress](http://document.tencentcloudapi.woa.com/document/product/583/76773)
 
 ### 第 16 次发布
 
@@ -38907,7 +38831,7 @@
 
 新增数据结构：
 
-* [[SortType](http://document.tencentcloudapi.woa.com/document/product/1371/60171#SortType)](http://document.tencentcloudapi.woa.com/document/product/1371/60171#[SortType](http://document.tencentcloudapi.woa.com/document/product/1371/60171#SortType))
+* [SortType](http://document.tencentcloudapi.woa.com/document/product/1371/60171#SortType)
 
 修改数据结构：
 
@@ -40406,6 +40330,21 @@
 
 
 ## 互动白板(tiw) 版本：2019-09-19
+
+### 第 8 次发布
+
+发布时间：2022-12-12 06:58:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40060)
+
+	* 新增入参：AutoHandleUnsupportedElement
+
 
 ### 第 7 次发布
 
@@ -44344,6 +44283,18 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 38 次发布
+
+发布时间：2022-12-12 07:02:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeFileAttributes](http://document.tencentcloudapi.woa.com/document/product/266/76776)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 37 次发布
 
 发布时间：2022-12-09 06:18:35
@@ -44354,7 +44305,7 @@
 
 新增接口：
 
-* [[BackUpMediaForXiaoe](http://document.tencentcloudapi.woa.com/document/product/266/76775)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BackUpMediaForXiaoe](http://document.tencentcloudapi.woa.com/document/product/266/76775)
 
 修改接口：
 
@@ -44365,8 +44316,8 @@
 
 新增数据结构：
 
-* [[DescribeFileAttributesTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTask)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[DescribeFileAttributesTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTask))
-* [[DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput))
+* [DescribeFileAttributesTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTask)
+* [DescribeFileAttributesTaskOutput](http://document.tencentcloudapi.woa.com/document/product/266/31773#DescribeFileAttributesTaskOutput)
 
 修改数据结构：
 
@@ -45786,6 +45737,25 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 49 次发布
+
+发布时间：2022-12-12 07:03:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeVpcInner](http://document.tencentcloudapi.woa.com/document/product/215/75541)
+
+	* 新增入参：OwnedFlag
+
 
 ### 第 48 次发布
 

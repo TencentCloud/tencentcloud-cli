@@ -27,6 +27,7 @@ Output:
                     "xx"
                 ],
                 "SealBody": "xx",
+                "SealShape": "xx",
                 "Location": {
                     "Y": 0,
                     "X": 0,
@@ -35,6 +36,7 @@ Output:
                 }
             }
         ],
+        "SealShape": "xx",
         "RequestId": "98b75826-8ff4-4633-a9bb-9be12043f3f8"
     }
 }

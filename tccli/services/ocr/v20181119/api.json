@@ -403,7 +403,7 @@
       "output": "RideHailingTransportLicenseOCRResponse"
     },
     "SealOCR": {
-      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。",
+      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SealOCRRequest",
       "name": "印章识别",
       "output": "SealOCRResponse"
@@ -1588,6 +1588,78 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CellLists": {
+      "document": "文档还原（高精度版）识别的表格中单元格的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "元素四点坐标，以四个顶点坐标表示",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "识别出的元素类型：\n102 单元格",
+          "example": "无",
+          "member": "int64",
+          "name": "ElemType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "置信度 0 ~100",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "单元格类型，包括 body、header、footer、context 四种",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分别对应单元格左上角的列索引、左上角的行索引、单元格右下角的列索引、单元格右下角的行索引",
+          "example": "无",
+          "member": "int64",
+          "name": "CellIndex",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "对应的元素 id 序号列表",
+          "example": "无",
+          "member": "int64",
+          "name": "ItemIDLists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -9197,6 +9269,16 @@
           "visibility": 1
         },
         {
+          "document": "印章类型，表示为：\n圆形印章：0\n椭圆形印章：1\n方形印章：2\n菱形印章：3\n三角形印章：4",
+          "example": "xx",
+          "member": "string",
+          "name": "SealShape",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9663,17 +9745,19 @@
           "name": "Polygon",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "识别出的元素类型：\n102 单元格",
+          "document": "识别出的元素类型\n100：有线表格\n101：无线表格",
           "example": "无",
           "member": "int64",
           "name": "ElemType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9683,7 +9767,8 @@
           "name": "Confidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9693,7 +9778,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9703,7 +9789,8 @@
           "name": "CellIndex",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9713,7 +9800,19 @@
           "name": "ItemIDLists",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ElemType 类型为表格时，返回该参数",
+          "example": "无",
+          "member": "CellLists",
+          "name": "CellContent",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

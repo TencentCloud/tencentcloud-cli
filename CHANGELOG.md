@@ -1,3 +1,142 @@
+# Release 3.0.666.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 35 次发布
+
+发布时间：2022-12-12 06:08:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPIPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57524)
+
+	* 新增入参：FilterConvoy
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterTrialFlag, FilterConvoy
+
+
+修改数据结构：
+
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
+
+	* 新增成员：ConvoyId
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 24 次发布
+
+发布时间：2022-12-12 06:32:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexMetaField)
+
+	* 新增成员：IndexDocs
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 38 次发布
+
+发布时间：2022-12-12 06:46:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SealOCR](http://document.tencentcloudapi.woa.com/document/product/866/45807)
+
+	* 新增出参：SealShape
+
+
+新增数据结构：
+
+* [CellLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#CellLists)
+
+修改数据结构：
+
+* [TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)
+
+	* 新增成员：CellContent
+
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 8 次发布
+
+发布时间：2022-12-12 06:58:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40060)
+
+	* 新增入参：AutoHandleUnsupportedElement
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 38 次发布
+
+发布时间：2022-12-12 07:02:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFileAttributes](http://document.tencentcloudapi.woa.com/document/product/266/76776)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 49 次发布
+
+发布时间：2022-12-12 07:03:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)
+
+修改接口：
+
+* [DescribeVpcInner](http://document.tencentcloudapi.woa.com/document/product/215/75541)
+
+	* 新增入参：OwnedFlag
+
+
+
+
 # Release 3.0.665.1
 
 ## 批量计算(batch) 版本：2017-03-12
