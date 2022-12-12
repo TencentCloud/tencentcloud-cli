@@ -97,6 +97,8 @@ include tccli/services/cme/v20191029/api.json
 include tccli/services/cme/v20191029/examples.json
 include tccli/services/cmq/v20190304/api.json
 include tccli/services/cmq/v20190304/examples.json
+include tccli/services/cms/v20190321/api.json
+include tccli/services/cms/v20190321/examples.json
 include tccli/services/cpdp/v20190820/api.json
 include tccli/services/cpdp/v20190820/examples.json
 include tccli/services/cvm/v20170312/api.json

@@ -1,3 +1,226 @@
+# Release 3.0.667.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 35 次发布
+
+发布时间：2022-12-12 06:08:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPIPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57524)
+
+	* 新增入参：FilterConvoy
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterTrialFlag, FilterConvoy
+
+
+修改数据结构：
+
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
+
+	* 新增成员：ConvoyId
+
+
+
+
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 1 次发布
+
+发布时间：2022-12-12 14:46:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActivateService](http://document.tencentcloudapi.woa.com/document/product/1604/76799)
+* [CreateImageLibImage](http://document.tencentcloudapi.woa.com/document/product/1604/76798)
+* [CreateKeywordsLib](http://document.tencentcloudapi.woa.com/document/product/1604/76797)
+* [CreateKeywordsSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76796)
+* [DeleteImageLibImage](http://document.tencentcloudapi.woa.com/document/product/1604/76795)
+* [DeleteKeywordsLib](http://document.tencentcloudapi.woa.com/document/product/1604/76794)
+* [DeleteLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76793)
+* [DescribeGroupTag](http://document.tencentcloudapi.woa.com/document/product/1604/76783)
+* [DescribeImageLibImage](http://document.tencentcloudapi.woa.com/document/product/1604/76792)
+* [DescribeKeywordsLibs](http://document.tencentcloudapi.woa.com/document/product/1604/76791)
+* [DescribeLevelTag](http://document.tencentcloudapi.woa.com/document/product/1604/76790)
+* [DescribeLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76789)
+* [DescribeMediaStat](http://document.tencentcloudapi.woa.com/document/product/1604/76780)
+* [DescribeModerationDetailsPlatform](http://document.tencentcloudapi.woa.com/document/product/1604/76788)
+* [ImageModeration](http://document.tencentcloudapi.woa.com/document/product/1604/76785)
+* [ModifyKeywordsLib](http://document.tencentcloudapi.woa.com/document/product/1604/76787)
+* [TextModeration](http://document.tencentcloudapi.woa.com/document/product/1604/76782)
+
+新增数据结构：
+
+* [BizInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#BizInfo)
+* [CodeDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#CodeDetail)
+* [CodeDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#CodeDetect)
+* [CodePosition](http://document.tencentcloudapi.woa.com/document/product/1604/76800#CodePosition)
+* [Coordinate](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Coordinate)
+* [CustomResult](http://document.tencentcloudapi.woa.com/document/product/1604/76800#CustomResult)
+* [DeleteSampleDetails](http://document.tencentcloudapi.woa.com/document/product/1604/76800#DeleteSampleDetails)
+* [DetailResult](http://document.tencentcloudapi.woa.com/document/product/1604/76800#DetailResult)
+* [Device](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Device)
+* [EvilCount](http://document.tencentcloudapi.woa.com/document/product/1604/76800#EvilCount)
+* [Field](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Field)
+* [Filters](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Filters)
+* [GroupClass](http://document.tencentcloudapi.woa.com/document/product/1604/76800#GroupClass)
+* [GroupType](http://document.tencentcloudapi.woa.com/document/product/1604/76800#GroupType)
+* [ImageData](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageData)
+* [ImageHotDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageHotDetect)
+* [ImageIllegalDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageIllegalDetect)
+* [ImageLibImageCreateStatus](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageCreateStatus)
+* [ImageLibImageDeleteStatus](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageDeleteStatus)
+* [ImageLibImageInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageInfo)
+* [ImageLibImageSample](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageSample)
+* [ImagePolityDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImagePolityDetect)
+* [ImagePornDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImagePornDetect)
+* [ImageTerrorDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageTerrorDetect)
+* [KeywordsLibInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#KeywordsLibInfo)
+* [LabelGroup](http://document.tencentcloudapi.woa.com/document/product/1604/76800#LabelGroup)
+* [LevelTag](http://document.tencentcloudapi.woa.com/document/product/1604/76800#LevelTag)
+* [Logo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Logo)
+* [LogoDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#LogoDetail)
+* [MediaDetailStat](http://document.tencentcloudapi.woa.com/document/product/1604/76800#MediaDetailStat)
+* [MediaLabelStat](http://document.tencentcloudapi.woa.com/document/product/1604/76800#MediaLabelStat)
+* [MediaResultStat](http://document.tencentcloudapi.woa.com/document/product/1604/76800#MediaResultStat)
+* [MediaStatData](http://document.tencentcloudapi.woa.com/document/product/1604/76800#MediaStatData)
+* [OCRDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#OCRDetect)
+* [OCRItem](http://document.tencentcloudapi.woa.com/document/product/1604/76800#OCRItem)
+* [PhoneDetect](http://document.tencentcloudapi.woa.com/document/product/1604/76800#PhoneDetect)
+* [RiskDetails](http://document.tencentcloudapi.woa.com/document/product/1604/76800#RiskDetails)
+* [RrectF](http://document.tencentcloudapi.woa.com/document/product/1604/76800#RrectF)
+* [SceneDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#SceneDetail)
+* [ServiceEntry](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ServiceEntry)
+* [Similar](http://document.tencentcloudapi.woa.com/document/product/1604/76800#Similar)
+* [TextData](http://document.tencentcloudapi.woa.com/document/product/1604/76800#TextData)
+* [TextOutputComm](http://document.tencentcloudapi.woa.com/document/product/1604/76800#TextOutputComm)
+* [TextOutputID](http://document.tencentcloudapi.woa.com/document/product/1604/76800#TextOutputID)
+* [TextOutputRes](http://document.tencentcloudapi.woa.com/document/product/1604/76800#TextOutputRes)
+* [TrendData](http://document.tencentcloudapi.woa.com/document/product/1604/76800#TrendData)
+* [User](http://document.tencentcloudapi.woa.com/document/product/1604/76800#User)
+* [UserKeyword](http://document.tencentcloudapi.woa.com/document/product/1604/76800#UserKeyword)
+* [UserKeywordInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#UserKeywordInfo)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 24 次发布
+
+发布时间：2022-12-12 06:32:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexMetaField)
+
+	* 新增成员：IndexDocs
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 38 次发布
+
+发布时间：2022-12-12 06:46:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SealOCR](http://document.tencentcloudapi.woa.com/document/product/866/45807)
+
+	* 新增出参：SealShape
+
+
+新增数据结构：
+
+* [CellLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#CellLists)
+
+修改数据结构：
+
+* [TableLists](http://document.tencentcloudapi.woa.com/document/product/866/33527#TableLists)
+
+	* 新增成员：CellContent
+
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 8 次发布
+
+发布时间：2022-12-12 06:58:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40060)
+
+	* 新增入参：AutoHandleUnsupportedElement
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 38 次发布
+
+发布时间：2022-12-12 07:02:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFileAttributes](http://document.tencentcloudapi.woa.com/document/product/266/76776)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 49 次发布
+
+发布时间：2022-12-12 07:03:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)
+
+修改接口：
+
+* [DescribeVpcInner](http://document.tencentcloudapi.woa.com/document/product/215/75541)
+
+	* 新增入参：OwnedFlag
+
+
+
+
 # Release 3.0.666.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

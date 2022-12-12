@@ -236,6 +236,8 @@ tccli/services/cmq/v20190304/api.json
 tccli/services/cmq/v20190304/examples.json
 tccli/services/cms/__init__.py
 tccli/services/cms/cms_client.py
+tccli/services/cms/v20190321/api.json
+tccli/services/cms/v20190321/examples.json
 tccli/services/cpdp/__init__.py
 tccli/services/cpdp/cpdp_client.py
 tccli/services/cpdp/v20190820/api.json

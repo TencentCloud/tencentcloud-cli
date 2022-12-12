@@ -1,75 +1,167 @@
 {
   "actions": {
-    "CreateFileSample": [
+    "ActivateService": [
       {
-        "document": "将一张图片新增到样本库中，标注为色情",
-        "input": "https://cms.tencentcloudapi.com/?Action=CreateFileSample\n&EvilType=20002\n&Label=1\n&FileType.0=image\n&Contents.0.FileName=苍老师.jpg\n&Contents.0.FileUrl=http://example.com/q.jpg\n&Contents.0.FileMd5=9cc56fe973ec99c1f03afcc920df3a0b\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 2\n\t}\n}",
-        "title": "新增图片类型样本"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateService\n<公共请求参数>\n\n{\n    \"Status\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"SceneInfos\": [\n            {\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"xx\",\n                        \"Status\": true,\n                        \"StrategyType\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "一键开通服务示例"
       }
     ],
-    "CreateTextSample": [
+    "CreateImageLibImage": [
       {
-        "document": "将“测试”关键词加入自定义词库，并设置该词类型为正常",
-        "input": "https://cms.tencentcloudapi.com/?Action=CreateTextSample\n&Label=2\n&EvilType=100&Contents.0=测试\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 2,\n                \"ErrMsg\":\"3:-1009,4:-1009,\"\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
-        "title": "新增文本样本"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageLibImage\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"LibID\": 0,\n    \"ImageData\": [\n        {\n            \"Content\": \"xx\",\n            \"Url\": \"\",\n            \"Index\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"FileMD5\": \"xx\",\n            \"Label\": \"xx\"\n        }\n    ],\n    \"UserSubUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateResult\": [\n            {\n                \"Url\": \"xx\",\n                \"Status\": 0,\n                \"Index\": \"xx\",\n                \"ImageID\": 0\n            }\n        ],\n        \"Result\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateImageLibImage"
       }
     ],
-    "DeleteFileSample": [
+    "CreateKeywordsLib": [
       {
-        "document": "删除图片样本库",
-        "input": "https://cms.tencentcloudapi.com/?Action=DeleteFileSample\n&Ids.0=QUOdt1dK16\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 1\n\t}\n}",
-        "title": "删除图片样本库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"LibName\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"Describe\": \"xx\",\n    \"Suggestion\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"MatchType\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123123213\",\n        \"ID\": \"1\"\n    }\n}",
+        "title": "创建关键词词库"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"LibName\": \"测试词库2\",\n    \"UserSubUin\": \"123\",\n    \"Describe\": \"测试词库描述\",\n    \"Suggestion\": \"Review\",\n    \"UserUin\": \"123\",\n    \"MatchType\": \"FuzzyMatch\",\n    \"Type\": \"Text\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\",\n        \"RequestId\": \"a479e517-eced-426c-9568-fdd10fdc9e24\"\n    }\n}",
+        "title": "正常创建词库示例"
       }
     ],
-    "DeleteTextSample": [
+    "CreateKeywordsSamples": [
       {
-        "document": "删除文本样本库",
-        "input": "https://cms.tencentcloudapi.com/?Action=DeleteTextSample\nIds.0=QUOdt1dK16\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"Progress\": 1\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
-        "title": "删除文本样本库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateKeywordsSamples\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"UserKeywords\": [\n        {\n            \"Content\": \"xx\",\n            \"Label\": \"xx\"\n        }\n    ],\n    \"LibID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"测试关键字\",\n                \"ID\": \"1234\",\n                \"CreateTime\": \"2020-12-10 13:00:00\",\n                \"Label\": \"Sexy\"\n            }\n        ],\n        \"SampleIDs\": [\n            \"125\"\n        ],\n        \"RequestId\": \"123144214414\"\n    }\n}",
+        "title": "创建关键词"
       }
     ],
-    "DescribeFileSample": [
+    "DeleteImageLibImage": [
       {
-        "document": "查询黑图片样本库前20条内容，并按CreatedAt倒序排序",
-        "input": "https://cms.tencentcloudapi.com/?Action=DescribeFileSample\n&Offset=0\n&Limit=20\n&OrderField=CreatedAt\n&OrderDirection=desc\n&Filters.0.Name=Label\n&Filters.0.Value=1\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"TotalCount\": 10,\n\t\t\"FileSampleSet\": [{\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"FileName\": \"1.png\",\n\t\t\t\"FileType\": \"image\",\n\t\t\t\"FileMd5\": \"\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}, {\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"FileName\": \"2.png\",\n\t\t\t\"FileType\": \"image\",\n\t\t\t\"FileMd5\": \"\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}]\n\t}\n}",
-        "title": "查询图片样本库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageLibImage\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"LibID\": 0,\n    \"ImageIDs\": [\n        \"0\"\n    ],\n    \"UserSubUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteResult\": [\n            {\n                \"ImageName\": \"xx\",\n                \"Label\": \"xx\",\n                \"ErrMsg\": \"xx\",\n                \"ImageID\": 0\n            }\n        ],\n        \"Result\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "图库删除图片"
       }
     ],
-    "DescribeTextSample": [
+    "DeleteKeywordsLib": [
       {
-        "document": "查询白库",
-        "input": "https://cms.tencentcloudapi.com/?Action=DescribeTextSampleInstances\n&Offset=0\n&Limit=20\n&OrderField=CreatedAt\n&OrderDirection=desc\n&Filters.0.Name=Label\n&Filters.0.Value=1\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"c1935701-668a-4e0f-9f25-7e88a5f3f7af\",\n\t\t\"TotalCount\": 10,\n\t\t\"TextSampleSet\": [{\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"Content\": \"太子党\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}, {\n\t\t\t\"Label\": 1,\n\t\t\t\"EvilType\": 20002,\n\t\t\t\"Content\": \"赵家党\",\n\t\t\t\"Code\": 0,\n\t\t\t\"Status\": 1,\n\t\t\t\"CreatedAt\": \"2019-05-28 17:40:01\"\n\t\t}]\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"success\"\n}",
-        "title": "查询文本样本库"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"ID\": \"xx\",\n    \"UserSubUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除词库范例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeywordsLib\n<公共请求参数>\n\n{\n    \"UserUin\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"UserAppID\": \"123\",\n    \"ID\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adddea6d-8abb-45a7-bcfe-8c7f0bb999d8\"\n    }\n}",
+        "title": "删除词库示例"
+      }
+    ],
+    "DeleteLibSamples": [
+      {
+        "document": "删除词库关键词",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibSamples\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"LibID\": \"xx\",\n    \"SampleIDs\": [\n        \"xx\"\n    ],\n    \"UserSubUin\": \"xx\",\n    \"Type\": \"Text\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Details\": [\n            {\n                \"SampleID\": \"1\",\n                \"Content\": \"\",\n                \"Deleted\": false,\n                \"ErrorInfo\": \"NotFound\"\n            },\n            {\n                \"SampleID\": \"2\",\n                \"Content\": \"xixi\",\n                \"Deleted\": true,\n                \"ErrorInfo\": \"\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除关键词接口示例"
+      }
+    ],
+    "DescribeGroupTag": [
+      {
+        "document": "用于策略维护里面的标签组的选择界面显示分类的数据",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupTag\n<公共请求参数>\n\n{\n    \"HideStatus\": true,\n    \"TagType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"GroupClassList\": [\n                    {\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"xx\",\n                                \"GroupMsg\": \"xx\",\n                                \"GroupName\": \"xx\"\n                            }\n                        ],\n                        \"GroupClassName\": \"xx\",\n                        \"GroupClassEname\": \"xx\"\n                    }\n                ],\n                \"TagType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "标签组数据返回试例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupTag\n<公共请求参数>\n\n{\n    \"HideStatus\": \"true\",\n    \"TagType\": \"TagAudio\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"TagType\": \"TagAudio\",\n                \"GroupClassList\": [\n                    {\n                        \"GroupClassEname\": \"Polity\",\n                        \"GroupClassName\": \"政治\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Porn\",\n                        \"GroupClassName\": \"色情\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Moan\",\n                        \"GroupClassName\": \"娇喘\",\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"OVR\",\n                                \"GroupName\": \"低俗语音识别\",\n                                \"GroupMsg\": \"示例：呻吟、娇喘、娇喘等性暗示相关的语音\"\n                            }\n                        ]\n                    },\n                    {\n                        \"GroupClassEname\": \"Terror\",\n                        \"GroupClassName\": \"暴恐\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Illegal\",\n                        \"GroupClassName\": \"违法\",\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"Illegal\",\n                                \"GroupName\": \"违法违规内容\",\n                                \"GroupMsg\": \"\"\n                            }\n                        ]\n                    },\n                    {\n                        \"GroupClassEname\": \"Abuse\",\n                        \"GroupClassName\": \"谩骂\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Ad\",\n                        \"GroupClassName\": \"广告\",\n                        \"LabelGroupList\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0411564c-0101-4bd0-8db8-6c4e4bd59b78\"\n    }\n}",
+        "title": "正常调用"
+      }
+    ],
+    "DescribeImageLibImage": [
+      {
+        "document": "{}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageLibImage\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"Label\": \"x\",\n    \"LibID\": 0,\n    \"PageSize\": 0,\n    \"PageIndex\": 0,\n    \"UserUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Images\": [\n            {\n                \"ModifyUser\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"ImageURL\": \"xx\",\n                \"FileMD5\": \"xx\",\n                \"Label\": \"xx\",\n                \"LibID\": 0,\n                \"ImageID\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询图库的图片"
+      }
+    ],
+    "DescribeKeywordsLibs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeywordsLibs\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\",\n    \"UserUin\": \"123\",\n    \"Type\": \"Text\",\n    \"Filters\": [\n        {\n            \"Name\": \"LibName\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"LibName\": \"xx\",\n                \"Describe\": \"xx\",\n                \"ID\": \"xx\",\n                \"Suggestion\": \"xx\",\n                \"MatchType\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取用户词库列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeywordsLibs\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\",\n    \"UserUin\": \"123\",\n    \"Type\": \"Text\",\n    \"Filters\": [\n        {\n            \"Name\": \"LibName\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"LibName\": \"xx\",\n                \"Describe\": \"xx\",\n                \"ID\": \"xx\",\n                \"Suggestion\": \"xx\",\n                \"MatchType\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询词库示例"
+      }
+    ],
+    "DescribeLevelTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLevelTag\n<公共请求参数>\n\n{\n    \"ParentTag\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LevelTagList\": [\n            {\n                \"Code\": \"xx\",\n                \"Name\": \"xx\",\n                \"Scene\": \"xx\",\n                \"TagType\": \"xx\",\n                \"Priority\": 0,\n                \"Cname\": \"xx\",\n                \"BackGroundColor\": \"xx\",\n                \"FontColor\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分级标签查询和返回"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLevelTag\n<公共请求参数>\n\n{\n    \"ParentTag\": \"\",\n    \"Type\": \"Text\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LevelTagList\": [\n            {\n                \"Code\": \"100\",\n                \"Name\": \"Normal\",\n                \"Cname\": \"正常\",\n                \"Scene\": \"\",\n                \"Priority\": 0,\n                \"FontColor\": \"#008000\",\n                \"BackGroundColor\": \"#008000\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20001\",\n                \"Name\": \"Polity\",\n                \"Cname\": \"政治\",\n                \"Scene\": \"\",\n                \"Priority\": 999,\n                \"FontColor\": \"#000000\",\n                \"BackGroundColor\": \"#E54545\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20105\",\n                \"Name\": \"Ad\",\n                \"Cname\": \"广告\",\n                \"Scene\": \"\",\n                \"Priority\": 750,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#149CFF\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20007\",\n                \"Name\": \"Abuse\",\n                \"Cname\": \"谩骂\",\n                \"Scene\": \"\",\n                \"Priority\": 800,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#9741D9\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20006\",\n                \"Name\": \"Illegal\",\n                \"Cname\": \"违法\",\n                \"Scene\": \"\",\n                \"Priority\": 900,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#4B70F5\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"25001\",\n                \"Name\": \"Spam\",\n                \"Cname\": \"灌水\",\n                \"Scene\": \"\",\n                \"Priority\": 700,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#1FC0CC\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"24001\",\n                \"Name\": \"Terror\",\n                \"Cname\": \"暴恐\",\n                \"Scene\": \"\",\n                \"Priority\": 950,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#FF7200\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20002\",\n                \"Name\": \"Porn\",\n                \"Cname\": \"色情\",\n                \"Scene\": \"\",\n                \"Priority\": 970,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#FFBB00\",\n                \"TagType\": \"Other\"\n            }\n        ],\n        \"RequestId\": \"afb5ce6e-b68b-4da2-be4e-cf783ae4a91e\"\n    }\n}",
+        "title": "获取成功示例"
+      }
+    ],
+    "DescribeLibSamples": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibSamples\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"Content\": \"xx\",\n    \"EvilTypeList\": [\n        0\n    ],\n    \"LibID\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"UserUin\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3000,\n        \"Infos\": [\n            {\n                \"Content\": \"xx\",\n                \"ID\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Label\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取关键词接口"
+      }
+    ],
+    "DescribeMediaStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMediaStat\n<公共请求参数>\n\n{\n    \"UserAppId\": 0,\n    \"BizTypes\": [\n        \"xx\"\n    ],\n    \"UserSubUin\": \"xx\",\n    \"MediaType\": \"xx\",\n    \"StartTime\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"EndTime\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": {\n            \"CreatedCount\": \"19\",\n            \"ErrorCount\": \"0\",\n            \"FinishCount\": \"18\",\n            \"ImageSegCount\": \"167\",\n            \"AudioDuration\": \"1732\",\n            \"AudioSegCount\": \"96\",\n            \"ResultStats\": [\n                {\n                    \"Suggestion\": \"Pass\",\n                    \"Count\": \"7\"\n                },\n                {\n                    \"Suggestion\": \"Review\",\n                    \"Count\": \"0\"\n                },\n                {\n                    \"Suggestion\": \"Block\",\n                    \"Count\": \"11\"\n                }\n            ],\n            \"LabelStats\": [\n                {\n                    \"Label\": \"Custom\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Polity\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"3\",\n                    \"TotalCount\": \"3\"\n                },\n                {\n                    \"Label\": \"Porn\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"2\",\n                    \"TotalCount\": \"2\"\n                },\n                {\n                    \"Label\": \"Moan\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"2\",\n                    \"TotalCount\": \"2\"\n                },\n                {\n                    \"Label\": \"Terror\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"2\",\n                    \"TotalCount\": \"2\"\n                },\n                {\n                    \"Label\": \"Illegal\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Religion\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Sexy\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"2\",\n                    \"TotalCount\": \"2\"\n                },\n                {\n                    \"Label\": \"Abuse\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Ad\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Spam\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Teenager\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Copyright\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                },\n                {\n                    \"Label\": \"Normal\",\n                    \"ReviewCount\": \"0\",\n                    \"BlockCount\": \"0\",\n                    \"TotalCount\": \"0\"\n                }\n            ]\n        },\n        \"Details\": [\n            {\n                \"StatTime\": \"2021-08-03T16:00:00Z\",\n                \"Stats\": {\n                    \"CreatedCount\": \"19\",\n                    \"ErrorCount\": \"0\",\n                    \"FinishCount\": \"18\",\n                    \"ImageSegCount\": \"167\",\n                    \"AudioDuration\": \"1732\",\n                    \"AudioSegCount\": \"96\",\n                    \"ResultStats\": [\n                        {\n                            \"Suggestion\": \"Pass\",\n                            \"Count\": \"7\"\n                        },\n                        {\n                            \"Suggestion\": \"Review\",\n                            \"Count\": \"0\"\n                        },\n                        {\n                            \"Suggestion\": \"Block\",\n                            \"Count\": \"11\"\n                        }\n                    ],\n                    \"LabelStats\": [\n                        {\n                            \"Label\": \"Custom\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Polity\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"3\",\n                            \"TotalCount\": \"3\"\n                        },\n                        {\n                            \"Label\": \"Porn\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"2\",\n                            \"TotalCount\": \"2\"\n                        },\n                        {\n                            \"Label\": \"Moan\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"2\",\n                            \"TotalCount\": \"2\"\n                        },\n                        {\n                            \"Label\": \"Terror\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"2\",\n                            \"TotalCount\": \"2\"\n                        },\n                        {\n                            \"Label\": \"Illegal\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Religion\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Sexy\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"2\",\n                            \"TotalCount\": \"2\"\n                        },\n                        {\n                            \"Label\": \"Abuse\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Ad\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Spam\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Teenager\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        },\n                        {\n                            \"Label\": \"Copyright\",\n                            \"ReviewCount\": \"0\",\n                            \"BlockCount\": \"0\",\n                            \"TotalCount\": \"0\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"c5c0451e-3bd6-4424-819b-5c747d7d0000\"\n    }\n}",
+        "title": "定制化接口音视频统计结果查询示例"
+      }
+    ],
+    "DescribeModerationDetailsPlatform": [
+      {
+        "document": "显示内容安全识别趋势图",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModerationDetailsPlatform\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"EndDate\": \"2020-09-22\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"BeginDate\": \"2020-09-22\",\n    \"CustomUin\": \"xx\",\n    \"CustomSubAccountUin\": \"xx\",\n    \"Limit\": 0,\n    \"OrderField\": \"xx\",\n    \"Offset\": 0,\n    \"CustomAppId\": \"xx\",\n    \"Channel\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90f4d3cc-02be-4875-a708-fbca7865b73e\",\n        \"Results\": {\n            \"TotalCount\": 4,\n            \"Data\": [\n                {\n                    \"Date\": \"20190616\",\n                    \"ServiceType\": \"Image\",\n                    \"Counts\": [\n                        {\n                            \"EvilType\": 100,\n                            \"Count\": 2633,\n                            \"Duration\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Date\": \"20190615\",\n                    \"ServiceType\": \"Image\",\n                    \"Counts\": [\n                        {\n                            \"EvilType\": 20001,\n                            \"Count\": 1,\n                            \"Duration\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Date\": \"20190614\",\n                    \"ServiceType\": \"Audio\",\n                    \"Counts\": [\n                        {\n                            \"EvilType\": 20001,\n                            \"Count\": 4963,\n                            \"Duration\": 2157\n                        },\n                        {\n                            \"EvilType\": 20002,\n                            \"Count\": 7,\n                            \"Duration\": 4\n                        }\n                    ]\n                },\n                {\n                    \"Date\": \"20190614\",\n                    \"ServiceType\": \"Image\",\n                    \"Counts\": [\n                        {\n                            \"EvilType\": 20001,\n                            \"Count\": 4856,\n                            \"Duration\": 0\n                        },\n                        {\n                            \"EvilType\": 20002,\n                            \"Count\": 7,\n                            \"Duration\": 0\n                        },\n                        {\n                            \"EvilType\": 20006,\n                            \"Count\": 4960,\n                            \"Duration\": 0\n                        },\n                        {\n                            \"EvilType\": 20103,\n                            \"Count\": 16,\n                            \"Duration\": 0\n                        },\n                        {\n                            \"EvilType\": 24001,\n                            \"Count\": 4869,\n                            \"Duration\": 0\n                        },\n                        {\n                            \"EvilType\": 100,\n                            \"Count\": 334,\n                            \"Duration\": 0\n                        }\n                    ]\n                }\n            ]\n        }\n    },\n    \"retcode\": 0,\n    \"retmsg\": \"success\"\n}",
+        "title": "获取内容安全识别按天统计结果明细"
       }
     ],
     "ImageModeration": [
       {
         "document": "",
         "input": "https://cms.tencentcloudapi.com/?Action=ImageModeration\n&FileMD5=字符串型\n&FileContent=字符串型\n&FileUrl=https://xxx.jpg\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"BusinessCode\": 0,\n\t\t\"Data\": {\n\t\t\t\"EvilFlag\": 0,\n\t\t\t\"EvilType\": 100,\n\t\t\t\"CodeDetect\": {\n\t\t\t\t\"ModerationCode\": 0,\n\t\t\t\t\"ModerationDetail\": [{\n\t\t\t\t\t\"CodeCharset\": \"UTF-8\",\n\t\t\t\t\t\"CodePosition\": [{\n\t\t\t\t\t\t\"FloatX\": 5.8333335,\n\t\t\t\t\t\t\"FloatY\": 314.16666\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 5.8333335,\n\t\t\t\t\t\t\"FloatY\": 5.8333335\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 314.16666,\n\t\t\t\t\t\t\"FloatY\": 5.8333335\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"FloatX\": 314.16666,\n\t\t\t\t\t\t\"FloatY\": 314.16666\n\t\t\t\t\t}],\n\t\t\t\t\t\"CodeText\": \"http://xxx\",\n\t\t\t\t\t\"CodeType\": 2\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"HotDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"IllegalDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"OCRDetect\": {\n\t\t\t\t\"TextInfo\": \"\"\n\t\t\t},\n\t\t\t\"PolityDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"FaceNames\": [],\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"PolityItems\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"PornDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t},\n\t\t\t\"Similar\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"SeedUrl\": \"\"\n\t\t\t},\n\t\t\t\"TerrorDetect\": {\n\t\t\t\t\"EvilType\": 100,\n\t\t\t\t\"HitFlag\": 0,\n\t\t\t\t\"Keywords\": [],\n\t\t\t\t\"Labels\": [],\n\t\t\t\t\"Score\": 0\n\t\t\t}\n\t\t},\n\t\t\"RequestId\": \"57937de8-84a6-452d-b723-0cb6dad0dd1e\"\n\t},\n\t\"retcode\": 0,\n\t\"retmsg\": \"ok\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BusinessCode\": 0,\n        \"Data\": {\n            \"EvilFlag\": 0,\n            \"EvilType\": 100,\n            \"CodeDetect\": {\n                \"ModerationCode\": 0,\n                \"ModerationDetail\": [\n                    {\n                        \"CodeCharset\": \"UTF-8\",\n                        \"CodePosition\": [\n                            {\n                                \"FloatX\": 5.8333335,\n                                \"FloatY\": 314.16666\n                            },\n                            {\n                                \"FloatX\": 5.8333335,\n                                \"FloatY\": 5.8333335\n                            },\n                            {\n                                \"FloatX\": 314.16666,\n                                \"FloatY\": 5.8333335\n                            },\n                            {\n                                \"FloatX\": 314.16666,\n                                \"FloatY\": 314.16666\n                            }\n                        ],\n                        \"CodeText\": \"http://xxx\",\n                        \"CodeType\": 2\n                    }\n                ]\n            },\n            \"HotDetect\": {\n                \"EvilType\": 100,\n                \"HitFlag\": 0,\n                \"Keywords\": [],\n                \"Labels\": [],\n                \"Score\": 0\n            },\n            \"IllegalDetect\": {\n                \"EvilType\": 100,\n                \"HitFlag\": 0,\n                \"Keywords\": [],\n                \"Labels\": [],\n                \"Score\": 0\n            },\n            \"OCRDetect\": {\n                \"TextInfo\": \"\"\n            },\n            \"PolityDetect\": {\n                \"EvilType\": 100,\n                \"FaceNames\": [],\n                \"HitFlag\": 0,\n                \"Keywords\": [],\n                \"PolityItems\": [],\n                \"Score\": 0\n            },\n            \"PornDetect\": {\n                \"EvilType\": 100,\n                \"HitFlag\": 0,\n                \"Keywords\": [],\n                \"Labels\": [],\n                \"Score\": 0\n            },\n            \"Similar\": {\n                \"EvilType\": 100,\n                \"HitFlag\": 0,\n                \"SeedUrl\": \"\"\n            },\n            \"TerrorDetect\": {\n                \"EvilType\": 100,\n                \"HitFlag\": 0,\n                \"Keywords\": [],\n                \"Labels\": [],\n                \"Score\": 0\n            }\n        },\n        \"RequestId\": \"57937de8-84a6-452d-b723-0cb6dad0dd1e\"\n    },\n    \"retcode\": 0,\n    \"retmsg\": \"ok\"\n}",
         "title": "图片内容检测"
       }
     ],
-    "ManualReview": [
-      {
-        "document": "业务侧将疑似违规的音频、视频、文本、图片等数据，通过此接口提交到腾讯审核平台，由后端专业人工审核团队进行审核校验。",
-        "input": "https://cms.tencentcloudapi.com/?Action=ManualReview\n&ReviewContent.ContentId=\"123456\"\n&ReviewContent.Content=\"文本为Base64，其他类型提交URL\"\n&ReviewContent.ContentType=3\n&ReviewContent.AutoResult=0\n&ReviewContent.AutoDetailCode=20001\n&ReviewContent.BatchId=\"20200419_0001\"\n&ReviewContent.UserInfo=\"{}\"\n&ReviewContent.CreateTime=130000\n&ReviewContent.Priority=2\n&ReviewContent.CallBackInfo=\"\"\n&ReviewContent.Title=\"\"\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"RequestId\": \"153e746d-d323-4042-b8ab-50b56ad54d36\",\n\t\t\"Data\": {\n\t\t\t\"ContentId\": \"123456\",\n\t\t\t\"BatchId\": \"20200419_0001\"\n\t\t}\n\t}\n}",
-        "title": "提交审核任务"
-      }
-    ],
-    "TextModeration": [
+    "ModifyKeywordsLib": [
       {
         "document": "",
-        "input": "https://cms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
-        "output": "{\n\t\"Response\": {\n\t\t\"BusinessCode\": 0,\n\t\t\"Data\": {\n\t\t\t\"EvilType\": 20001,\n\t\t\t\"EvilFlag\": 1,\n\t\t\t\"BizType\": 2,\n\t\t\t\"Score\": 72,\n\t\t\t\"EvilLabel\": \"Polity\",\n\t\t\t\"Suggestion\": \"Review\",\n\t\t\t\"Keywords\": [\"傻子\"],\n\t\t\t\"DetailResult\": [{\n\t\t\t\t\"EvilType\": 20001,\n\t\t\t\t\"KeywordsList\": [\"傻子\"],\n\t\t\t\t\"Prediction\": 72\n\t\t\t}]\n\t\t},\n\t\t\"RequestId\": \"jlUM5m23JWDeAX1tQirYT9cP\"\n\t}, \n\t\"retmsg\": \"success\", \n\t\"retcode\": 0\n}",
-        "title": "文本内容检测"
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"Fields\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"ID\": \"xx\",\n    \"UserSubUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新词库"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKeywordsLib\n<公共请求参数>\n\n{\n    \"UserUin\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"UserAppID\": \"123\",\n    \"ID\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\",\n    \"Fields\": [\n        {\n            \"Name\": \"LibName\",\n            \"Value\": \"修改后的词库名称\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db6efd42-5472-4606-9dc3-3848d8e641bf\"\n    }\n}",
+        "title": "正常修改词库名称"
       }
     ]
   },
