@@ -343,7 +343,7 @@
       "output": "RideHailingTransportLicenseOCRResponse"
     },
     "SealOCR": {
-      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。",
+      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SealOCRRequest",
       "name": "印章识别",
       "output": "SealOCRResponse"
@@ -7518,6 +7518,15 @@
           "name": "SealInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "印章类型，表示为：\n圆形印章：0\n椭圆形印章：1\n方形印章：2\n菱形印章：3\n三角形印章：4",
+          "example": "xx",
+          "member": "string",
+          "name": "SealShape",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

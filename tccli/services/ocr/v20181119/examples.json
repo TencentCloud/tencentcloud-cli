@@ -513,8 +513,8 @@
     "SealOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=SealOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SealBody\": \"上海市宝山区市场监督管理局\",\n        \"Location\": {\n            \"X\": 428,\n            \"Y\": 259,\n            \"Width\": 226,\n            \"Height\": 235\n        },\n        \"OtherTexts\": [],\n        \"SealInfos\": [\n            {\n                \"OtherTexts\": [\n                    \"xx\"\n                ],\n                \"SealBody\": \"xx\",\n                \"Location\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"98b75826-8ff4-4633-a9bb-9be12043f3f8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SealOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SealBody\": \"上海市宝山区市场监督管理局\",\n        \"Location\": {\n            \"X\": 428,\n            \"Y\": 259,\n            \"Width\": 226,\n            \"Height\": 235\n        },\n        \"OtherTexts\": [],\n        \"SealInfos\": [\n            {\n                \"OtherTexts\": [\n                    \"xx\"\n                ],\n                \"SealBody\": \"xx\",\n                \"SealShape\": \"xx\",\n                \"Location\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            }\n        ],\n        \"SealShape\": \"xx\",\n        \"RequestId\": \"98b75826-8ff4-4633-a9bb-9be12043f3f8\"\n    }\n}",
         "title": "印章识别示例代码"
       }
     ],

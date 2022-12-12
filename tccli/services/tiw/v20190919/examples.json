@@ -11,13 +11,13 @@
     "CreateTranscode": [
       {
         "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&ThumbnailResolution=960x540\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": \"1400000001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT动态转码任务"
       },
       {
         "document": "创建PPT静态转码任务",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&IsStaticPPT=True\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": \"True\",\n    \"SdkAppId\": \"1400000001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT静态转码任务"
       }

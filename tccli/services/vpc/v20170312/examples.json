@@ -2574,6 +2574,14 @@
         "title": "调整VPN网关带宽上限"
       }
     ],
+    "ReturnNormalAddresses": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReturnNormalAddresses\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"101.35.139.183\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5957a632-12b2-4051-b103-ecd77145ecbd\"\n    }\n}",
+        "title": "解绑并释放普通公网IP"
+      }
+    ],
     "SetCcnRegionBandwidthLimits": [
       {
         "document": "设置云联网各地域出带宽上限。例如在示例中，设置ap-guangzhou，ap-shanghai地域的出带宽上限分别为1000Mbps，500Mbps。",

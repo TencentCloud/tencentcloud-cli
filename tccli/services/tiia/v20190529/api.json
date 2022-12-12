@@ -7,13 +7,13 @@
       "output": "AssessQualityResponse"
     },
     "CreateGroup": {
-      "document": "本接口用于创建一个空的图片库，图片库主要用于存储在创建图片时提取的图片特征数据，如果图片库已存在则返回错误。不同的图片库类型对应不同的图像搜索服务类型，根据输入参数GroupType区分。\n\n| 服务类型 | GroupType入参 |功能描述 |\n|  :----------  | :----- |:-----------------  |\n| 相同图像搜索<div style=\"width: 70pt\"> | 4 |在自建图片库中搜索相同原图或高相似图，并给出相似度打分，可支持裁剪、翻转、调色、加水印等二次编辑后的图片搜索。适用于图片版权保护、原图查询等场景。|\n| 商品图像搜索<div style=\"width: 70pt\"> | 5 |在自建图库中搜索同款商品，并给出相似度打分。对于服饰类商品可支持识别服饰类别、属性等信息。适用于商品分类、检索、推荐等电商场景。|\n| 相似图像搜索<div style=\"width: 70pt\"> | 6 |在自建图库中搜索相似的图案、logo、纹理等图像元素或主体，并给出相似度打分。|\n",
+      "document": "本接口用于创建一个空的图片库，图片库主要用于存储在创建图片时提取的图片特征数据，如果图片库已存在则返回错误。不同的图片库类型对应不同的图像搜索服务类型，根据输入参数GroupType区分。\n\n<table>\n    <th>服务类型</th><th>GroupType</th><th>功能描述</th>\n    <tr>\n        <td>通用图像搜索</td>\n        <td>4</td>\n        <td>通用图像搜索1.0版。<br>在自建图片库中搜索相同原图或相似图片集，并给出相似度打分，可支持裁剪、翻转、调色、加水印等二次编辑后的图片搜索。适用于图片版权保护、原图查询等场景。</td>\n    </tr>\n    <tr>\n        <td rowspan=\"2\">商品图像搜索</td>\n        <td>7</td><td>商品图像搜索2.0升级版。<br>\n        在自建图库中搜索同款或相似商品，并给出相似度打分。对于服饰类商品可支持识别服饰类别、属性等信息。适用于商品分类、检索、推荐等电商场景。</td>\n    </tr>\n     <tr>\n        <td>5</td>\n        <td>商品图像搜索1.0版。<br>\n        功能和2.0升级版类似。</td>\n    </tr>\n    <tr>\n    <td>图案花纹搜索</td><td>6</td><td>图案花纹搜索1.0版。<br>\n    在自建图库中搜索相似的图案、logo、纹理等图像元素或主体，并给出相似度打分。</td>\n    </tr>\n</table> \n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n\n",
       "input": "CreateGroupRequest",
       "name": "创建图片库",
       "output": "CreateGroupResponse"
     },
     "CreateImage": {
-      "document": "创建图片，并添加对应图片的自定义信息。模型将在创建图片时自动提取图像特征并存储到指定的图片库中。",
+      "document": "创建图片，并添加对应图片的自定义信息。模型将在创建图片时自动提取图像特征并存储到指定的图片库中，每创建一张图片会对应提取和存储一条图片特征数据。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n\n",
       "input": "CreateImageRequest",
       "name": "创建图片",
       "output": "CreateImageResponse"
@@ -25,19 +25,19 @@
       "output": "CropImageResponse"
     },
     "DeleteImages": {
-      "document": "删除图片。",
+      "document": "删除图片。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
       "input": "DeleteImagesRequest",
       "name": "删除图片",
       "output": "DeleteImagesResponse"
     },
     "DescribeGroups": {
-      "document": "查询所有的图库信息。",
+      "document": "查询所有的图库信息。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
       "input": "DescribeGroupsRequest",
       "name": "查询图片库",
       "output": "DescribeGroupsResponse"
     },
     "DescribeImages": {
-      "document": "获取指定图片库中的图片列表。",
+      "document": "获取指定图片库中的图片列表。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
       "input": "DescribeImagesRequest",
       "name": "查询图片信息",
       "output": "DescribeImagesResponse"
@@ -127,7 +127,7 @@
       "output": "RecognizeCarProResponse"
     },
     "SearchImage": {
-      "document": "本接口用于对一张图片，在指定图片库中检索出与之相似的图片列表。",
+      "document": "本接口用于对一张图片，在指定图片库中检索出与之相似的图片列表。\n\n>   \n- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。\n",
       "input": "SearchImageRequest",
       "name": "检索图片",
       "output": "SearchImageResponse"
@@ -668,7 +668,7 @@
         },
         {
           "default": "",
-          "document": "图库可容纳的最大图片数量。",
+          "document": "图库可容纳的最大图片特征数量，一张图片对应一条图片特征数据。\n达到最大容量后无法在图库中继续创建图片，否则将会报错。\nMaxCapacity不支持修改，请合理评估容量上限，按需创建。",
           "example": "123",
           "member": "uint64",
           "name": "MaxCapacity",
@@ -695,7 +695,7 @@
         },
         {
           "default": "",
-          "document": "图库类型，对应不同的图像搜索服务类型，默认为4。1～3为历史版本，不推荐。\n参数取值：\n4：相同图像搜索。\n5：商品图像搜索。\n6：相似图像搜索。",
+          "document": "图库类型，用于决定图像搜索的服务类型和算法版本，默认为4。\nGroupType不支持修改，若不确定适用的服务类型，建议先对不同类型分别小规模测试后再开始正式使用。\n参数取值：\n4：通用图像搜索1.0版。\n7：商品图像搜索2.0升级版。\n5：商品图像搜索1.0版。\n6：图案花纹搜索1.0版。\n1 - 3：通用图像搜索旧版，不推荐使用。",
           "example": "1",
           "member": "uint64",
           "name": "GroupType",
@@ -2662,7 +2662,7 @@
         },
         {
           "default": "",
-          "document": "返回结果的数量，默认值为10，最大值为100。\n按照相似度分数由高到低排序。\n**<font color=#1E90FF>注意：服务类型为相似图像搜索时返回数量限制为1，即返回top1的结果。</font>**",
+          "document": "返回结果的数量，默认值为10，最大值为100。\n按照相似度分数由高到低排序。\n**<font color=#1E90FF>服务类型为图案花纹搜索时Limit = 1，最多只能返回1个结果。</font>**",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -2680,7 +2680,7 @@
         },
         {
           "default": "",
-          "document": "匹配阈值。\n只有图片相似度分数超过匹配阈值的结果才会返回。\n当MatchThreshold为0（默认值）时，各服务类型将按照以下默认的匹配阈值进行结果过滤：\n• 相同图像搜索：50。\n• 商品图像搜索：28。\n• 相似图像搜索：56。\n建议：\n可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。",
+          "document": "匹配阈值。\n只有图片相似度分数超过匹配阈值的结果才会返回。\n当MatchThreshold为0（默认值）时，各服务类型将按照以下默认的匹配阈值进行结果过滤：\n• 通用图像搜索1.0版：50。\n• 商品图像搜索2.0升级版：45。\n• 商品图像搜索1.0版：28。\n• 图案花纹搜索1.0版：56。\n建议：\n可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。",
           "example": "1",
           "member": "int64",
           "name": "MatchThreshold",

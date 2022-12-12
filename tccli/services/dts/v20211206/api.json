@@ -180,6 +180,18 @@
       "name": "重试同步任务",
       "output": "ResumeSyncJobResponse"
     },
+    "SkipCheckItem": {
+      "document": "本接口用于校验检查项不通过后，可进行跳过此校验项操作，后端将不再校验该项。任何校验步骤都是不应该跳过的，通过校验是能正确执行的前置条件。支持跳过的产品及链路的校验项可 [参考文档](https://cloud.tencent.com/document/product/571/61639)。",
+      "input": "SkipCheckItemRequest",
+      "name": "跳过迁移校验检查项",
+      "output": "SkipCheckItemResponse"
+    },
+    "SkipSyncCheckItem": {
+      "document": "本接口用于校验检查项不通过后，可进行跳过此校验项操作，后端将不再校验该项。任何校验步骤都是不应该跳过的，通过校验是能正确执行的前置条件。支持跳过的产品及链路的校验项可 [参考文档](https://cloud.tencent.com/document/product/571/61639)。",
+      "input": "SkipSyncCheckItemRequest",
+      "name": "跳过同步校验检查项",
+      "output": "SkipSyncCheckItemResponse"
+    },
     "StartCompare": {
       "document": "启动一致性校验任务，启动之前需要先通过接口`CreateCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeCompareTasks` 查询一致性校验任务列表来获得启动后的状态",
       "input": "StartCompareRequest",
@@ -219,7 +231,7 @@
   },
   "metadata": {
     "apiVersion": "2021-12-06",
-    "api_brief": "介绍如何使用API对数据传输服务进行操作，包括数据订阅、数据传输服务、灾备同步等。",
+    "api_brief": "介绍如何使用API对数据传输服务进行数据迁移、数据同步、数据订阅操作。",
     "serviceNameCN": "数据传输服务",
     "serviceShortName": "dts"
   },
@@ -4651,6 +4663,78 @@
         }
       ],
       "usage": "both"
+    },
+    "SkipCheckItemRequest": {
+      "document": "SkipCheckItem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要跳过校验项的步骤id，需要通过DescribeMigrationCheckJob接口返回StepInfo[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
+          "example": "[\"OptimizeCheck\"]",
+          "member": "string",
+          "name": "StepIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SkipCheckItemResponse": {
+      "document": "SkipCheckItem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SkipSyncCheckItemRequest": {
+      "document": "SkipSyncCheckItem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id，如：sync-4ddgid2",
+          "example": "sync-4ddgid2",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
+          "example": "[\"OptimizeCheck\"]",
+          "member": "string",
+          "name": "StepIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SkipSyncCheckItemResponse": {
+      "document": "SkipSyncCheckItem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SkippedDetail": {
       "document": "跳过校验的表详情",
