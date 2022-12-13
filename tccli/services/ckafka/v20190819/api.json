@@ -13300,6 +13300,28 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "虚拟IP列表(1对1 broker节点)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "VipEntity",
+          "name": "BrokerVipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "路由创建任务处理状态（0已完成，1处理中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Processing",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"

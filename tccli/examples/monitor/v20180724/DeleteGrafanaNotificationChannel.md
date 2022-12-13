@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DeleteGrafanaNotificationChannel --cli-unfold-argument  \
-    --InstanceId xx \
-    --ChannelIDs xx
+    --InstanceId grafana-abcdefgh \
+    --ChannelIDs nchannel-abcd1234
 ```
 
 Output: 

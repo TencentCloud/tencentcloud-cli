@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor CreateGrafanaIntegration --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId grafana-abcdefgh \
     --Content xx \
-    --Kind xx
+    --Kind tencent-cloud-prometheus
 ```
 
 Output: 

@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "44d5b2d4-092c-4a4a-971e-07d9e536ccc1",
         "Logset": {
             "AppId": 1242424252,
             "Channel": "cdn",

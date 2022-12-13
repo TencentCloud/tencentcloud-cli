@@ -4793,7 +4793,8 @@
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4802,7 +4803,8 @@
           "member": "uint64",
           "name": "Uid",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4811,7 +4813,8 @@
           "member": "int64",
           "name": "IsFilter",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4820,7 +4823,8 @@
           "member": "uint64",
           "name": "FilterGroups",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4829,7 +4833,8 @@
           "member": "uint64",
           "name": "FilterPolicyId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4838,7 +4843,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4847,7 +4853,8 @@
           "member": "string",
           "name": "UserType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4856,7 +4863,8 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4865,7 +4873,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4874,7 +4883,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4883,7 +4893,8 @@
           "member": "uint64",
           "name": "ExcludeUids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4892,7 +4903,8 @@
           "member": "uint64",
           "name": "UserTypeConsole",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4901,7 +4913,8 @@
           "member": "uint64",
           "name": "CanLoginConsole",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4910,7 +4923,8 @@
           "member": "string",
           "name": "Sort",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4919,7 +4933,8 @@
           "member": "uint64",
           "name": "SortType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4928,7 +4943,18 @@
           "member": "AccountTag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "搜索是否忽略大小写，0-不忽略 1-忽略",
+          "example": "0",
+          "member": "uint64",
+          "name": "IgnoreSearchTermCase",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4943,7 +4969,8 @@
           "name": "TotalNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户信息",
@@ -4952,7 +4979,8 @@
           "name": "UserInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主帐号信息",
@@ -4961,7 +4989,8 @@
           "name": "OwnerInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户组信息",
@@ -4970,7 +4999,8 @@
           "name": "GroupInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

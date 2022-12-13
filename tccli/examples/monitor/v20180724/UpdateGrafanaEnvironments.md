@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor UpdateGrafanaEnvironments --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId grafana-12345678 \
     --Envs {}
 ```
 

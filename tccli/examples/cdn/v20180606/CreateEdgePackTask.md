@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdn CreateEdgePackTask --cli-unfold-argument  \
+    --CosBucket ‘edgepack-bucket1’ \
     --BlockID 0 \
-    --CosBucket ‘edgepack-xxxxxxxx’ \
-    --CosUriFrom ‘/apk/xxxx.apk’ \
-    --CosUriTo ‘/out/xxxx.apk’
+    --CosUriTo ‘/out/app_out.apk’ \
+    --CosUriFrom ‘/apk/app.apk’
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        "RequestId": "19d1096d-a4e8-4607-bfca-840a3f515378"
     }
 }
 ```

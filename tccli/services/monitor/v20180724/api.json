@@ -2200,7 +2200,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-grafana",
           "member": "string",
           "name": "InstanceId",
@@ -3164,7 +3164,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -3174,7 +3174,7 @@
         },
         {
           "default": "",
-          "document": "类型",
+          "document": "集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus",
           "example": "grafana",
           "member": "string",
           "name": "Kind",
@@ -3184,7 +3184,7 @@
         },
         {
           "default": "",
-          "document": "配置",
+          "document": "集成配置",
           "example": "[]",
           "member": "string",
           "name": "Content",
@@ -3222,7 +3222,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -3232,7 +3232,7 @@
         },
         {
           "default": "",
-          "document": "渠道名",
+          "document": "告警通道名称，例如：test",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -3823,7 +3823,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -3833,7 +3833,7 @@
         },
         {
           "default": "",
-          "document": "用户账号ID",
+          "document": "用户账号 ID ，例如：10000000",
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
@@ -4196,7 +4196,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -4206,7 +4206,7 @@
         },
         {
           "default": "",
-          "document": "集成 ID",
+          "document": "集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234",
           "example": "my-instance",
           "member": "string",
           "name": "IntegrationId",
@@ -4234,21 +4234,23 @@
       "members": [
         {
           "default": "",
-          "document": "通道 ID 数组",
+          "document": "通道 ID 数组。例如：nchannel-abcd1234",
           "example": "[]",
           "member": "string",
           "name": "ChannelIDs",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例名",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4384,7 +4386,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
           "member": "string",
           "name": "InstanceId",
@@ -4394,7 +4396,7 @@
         },
         {
           "default": "",
-          "document": "用户账号ID",
+          "document": "用户账号 ID ，例如：10000000",
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
@@ -6593,7 +6595,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6709,7 +6711,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6739,7 +6741,7 @@
         },
         {
           "default": "",
-          "document": "渠道名",
+          "document": "告警通道名称，例如：test",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -6749,7 +6751,7 @@
         },
         {
           "default": "",
-          "document": "渠道 ID",
+          "document": "告警通道 ID，例如：nchannel-abcd1234",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIds",
@@ -6759,7 +6761,7 @@
         },
         {
           "default": "",
-          "document": "状态",
+          "document": "告警通道状态",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -6845,7 +6847,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：Grafana 实例 ID，例如：grafana-abcdefghGrafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -6903,7 +6905,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID 数组",
+          "document": "Grafana 实例 ID 数组",
           "example": "[\"instance-id\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -6913,7 +6915,7 @@
         },
         {
           "default": "",
-          "document": "实例名，支持前缀模糊搜索",
+          "document": "Grafana 实例名，支持前缀模糊搜索",
           "example": "instance-id",
           "member": "string",
           "name": "InstanceName",
@@ -7049,7 +7051,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -7079,7 +7081,7 @@
         },
         {
           "default": "",
-          "document": "渠道名",
+          "document": "告警通道名称，例如：test",
           "example": "my-channel",
           "member": "string",
           "name": "ChannelName",
@@ -7089,7 +7091,7 @@
         },
         {
           "default": "",
-          "document": "渠道 ID",
+          "document": "告警通道 ID，例如：nchannel-abcd1234",
           "example": "[\"crule-123\"]",
           "member": "string",
           "name": "ChannelIDs",
@@ -7099,7 +7101,7 @@
         },
         {
           "default": "",
-          "document": "状态",
+          "document": "告警通道状态",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -11295,7 +11297,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -12457,7 +12459,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -12467,7 +12469,7 @@
         },
         {
           "default": "",
-          "document": "实例名称",
+          "document": "Grafana 实例名称，例如：test",
           "example": "my-instance-1",
           "member": "string",
           "name": "InstanceName",
@@ -14343,12 +14345,13 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -15228,7 +15231,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -15372,7 +15375,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -15410,7 +15413,7 @@
       "members": [
         {
           "default": "",
-          "document": "集成 ID",
+          "document": "集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234",
           "example": "my-instance",
           "member": "string",
           "name": "IntegrationId",
@@ -15420,7 +15423,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID",
+          "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
           "member": "string",
           "name": "InstanceId",
@@ -15430,7 +15433,7 @@
         },
         {
           "default": "",
-          "document": "集成类型",
+          "document": "集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus",
           "example": "grafana",
           "member": "string",
           "name": "Kind",

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor CleanGrafanaInstance --cli-unfold-argument  \
-    --InstanceId my-grafana
+    --InstanceId grafana-abcdefgh
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fpllngzieyoh54e1244ols7k2hh3gdny"
+        "RequestId": "xxx"
     }
 }
 ```

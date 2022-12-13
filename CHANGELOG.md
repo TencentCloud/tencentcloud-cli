@@ -1,3 +1,181 @@
+# Release 3.0.668.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 15 次发布
+
+发布时间：2022-12-14 06:13:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListMaskedSubAccounts](http://document.tencentcloudapi.woa.com/document/product/598/76677)
+
+	* 新增入参：IgnoreSearchTermCase
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 24 次发布
+
+发布时间：2022-12-14 06:19:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ResourceAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#ResourceAvailability)
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/214/30694#Cluster)
+
+	* 新增成员：DisasterRecoveryType
+
+* [ClusterResource](http://document.tencentcloudapi.woa.com/document/product/214/30694#ClusterResource)
+
+	* 新增成员：ClustersZone
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/214/30694#Resource)
+
+	* 新增成员：AvailabilitySet
+
+* [ZoneResource](http://document.tencentcloudapi.woa.com/document/product/214/30694#ZoneResource)
+
+	* 新增成员：ZoneResourceType, EdgeZone
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 33 次发布
+
+发布时间：2022-12-14 06:32:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
+
+	* 新增成员：ChannelTemplateName, ChannelAutoSave, TemplateVersion
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 20 次发布
+
+发布时间：2022-12-14 06:39:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstancePrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePrice)
+
+	* 新增成员：Currency
+
+	* <font color="#dd0000">**修改成员**：</font>OriginalBundlePrice, OriginalPrice, Discount, DiscountPrice
+
+* [InstancePriceDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePriceDetail)
+
+	* 新增成员：InstancePriceType, DiscountDetail
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstancePrice
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 24 次发布
+
+发布时间：2022-12-14 06:39:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
+
+	* 新增入参：PushExceptionNotifyUrl
+
+* [ModifyLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32631)
+
+	* 新增入参：PushExceptionNotifyUrl
+
+
+修改数据结构：
+
+* [CallBackTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackTemplateInfo)
+
+	* 新增成员：PushExceptionNotifyUrl
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 52 次发布
+
+发布时间：2022-12-14 06:57:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateImageCache](http://document.tencentcloudapi.woa.com/document/product/457/70861)
+
+	* 新增入参：RegistrySkipVerifyList, RegistryHttpEndPointList, ResolveConfig
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 51 次发布
+
+发布时间：2022-12-14 07:03:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：ServiceType
+
+
+
+
 # Release 3.0.667.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

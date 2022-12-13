@@ -14,27 +14,27 @@ Output:
         "TotalCount": 0,
         "TaskList": [
             {
-                "Status": "xx",
-                "Domain": "xx",
+                "Status": "created",
+                "Domain": "test.com",
                 "StartTime": "2020-09-22 00:00:00",
-                "Area": "xx",
-                "DefenceMode": "xx",
-                "DownloadUrl": "xx",
-                "Mode": "xx",
-                "AttackType": "xx",
-                "TaskID": "xx",
+                "Area": "mainland",
+                "DefenceMode": "observe",
+                "DownloadUrl": "https://downlaod.com",
+                "Mode": "waf",
+                "AttackType": "xss",
+                "TaskID": "taskId",
                 "EndTime": "2020-09-22 00:00:00",
                 "Conditions": [
                     {
-                        "Operator": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Operator": "include",
+                        "Value": "10.0.0.1",
+                        "Key": "ip"
                     }
                 ],
                 "CreateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1abbe623-4b0e-4727-ab51-7624902d47f4"
     }
 }
 ```

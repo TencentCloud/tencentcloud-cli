@@ -3864,7 +3864,8 @@
           "member": "string",
           "name": "CosBucket",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3873,7 +3874,8 @@
           "member": "string",
           "name": "CosUriFrom",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3882,7 +3884,8 @@
           "member": "uint64",
           "name": "BlockID",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3891,7 +3894,8 @@
           "member": "string",
           "name": "CosUriTo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4044,7 +4048,8 @@
           "member": "string",
           "name": "Mode",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4053,7 +4058,8 @@
           "member": "datetime",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4062,7 +4068,8 @@
           "member": "datetime",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4071,7 +4078,8 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4080,7 +4088,8 @@
           "member": "string",
           "name": "AttackType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4089,7 +4098,8 @@
           "member": "string",
           "name": "DefenceMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4098,7 +4108,8 @@
           "member": "string",
           "name": "Ip",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4107,7 +4118,8 @@
           "member": "string",
           "name": "Domains",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4116,7 +4128,8 @@
           "member": "string",
           "name": "AttackTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4125,7 +4138,8 @@
           "member": "ScdnEventLogConditions",
           "name": "Conditions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4134,7 +4148,8 @@
           "member": "string",
           "name": "Source",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4143,7 +4158,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4158,7 +4174,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5064,7 +5081,8 @@
           "member": "string",
           "name": "Ips",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5079,7 +5097,8 @@
           "name": "Ips",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5135,7 +5154,8 @@
           "member": "string",
           "name": "Cert",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5144,7 +5164,8 @@
           "member": "string",
           "name": "CertId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5153,7 +5174,8 @@
           "member": "string",
           "name": "Product",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5168,7 +5190,8 @@
           "name": "Domains",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "已配置证书的CDN域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5177,7 +5200,8 @@
           "name": "CertifiedDomains",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5621,7 +5645,8 @@
           "member": "string",
           "name": "Mode",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5630,7 +5655,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5639,7 +5665,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5648,7 +5675,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5657,7 +5685,8 @@
           "member": "string",
           "name": "ActionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5666,7 +5695,8 @@
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5675,7 +5705,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5684,7 +5715,8 @@
           "member": "string",
           "name": "Source",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5699,7 +5731,8 @@
           "name": "Results",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9849,7 +9882,8 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9864,7 +9898,8 @@
           "name": "Logset",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "上海区域日志主题信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9873,7 +9908,8 @@
           "name": "Topics",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "其他区域日志集信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9882,7 +9918,8 @@
           "name": "ExtraLogset",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9903,7 +9940,8 @@
           "member": "string",
           "name": "LogsetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9912,7 +9950,8 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9921,7 +9960,8 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9936,7 +9976,8 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "渠道",
@@ -9945,7 +9986,8 @@
           "name": "Channel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志集ID",
@@ -9954,7 +9996,8 @@
           "name": "LogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志主题ID",
@@ -9963,7 +10006,8 @@
           "name": "TopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "域名区域配置，其中可能含有已删除的域名，如果要再传回ManageClsTopicDomains接口，需要结合ListCdnDomains接口排除掉已删除的域名",
@@ -9972,16 +10016,18 @@
           "name": "DomainAreaConfigs",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志主题名称",
-          "example": "xx",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志主题最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9990,7 +10036,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10121,7 +10168,8 @@
           "member": "string",
           "name": "Source",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10130,7 +10178,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10145,7 +10194,8 @@
           "name": "TaskList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查询到的下载任务的总数",
@@ -10154,7 +10204,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10256,7 +10307,8 @@
           "member": "int64",
           "name": "TopCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10265,7 +10317,8 @@
           "member": "datetime",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10274,7 +10327,8 @@
           "member": "datetime",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10283,7 +10337,8 @@
           "member": "string",
           "name": "Metric",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10292,7 +10347,8 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10301,7 +10357,8 @@
           "member": "string",
           "name": "Domains",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10316,7 +10373,8 @@
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10562,7 +10620,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10571,7 +10630,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10580,7 +10640,8 @@
           "member": "uint64",
           "name": "TopCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10589,7 +10650,8 @@
           "member": "string",
           "name": "Metric",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10604,7 +10666,8 @@
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空",
@@ -10613,7 +10676,8 @@
           "name": "IPData",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11479,38 +11543,42 @@
         {
           "default": "",
           "document": "执行时间",
-          "example": "xxx",
+          "example": "2020-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "ExecutionTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "执行状态\nsuccess: 成功\nfailed: 失败",
-          "example": "xxx",
+          "example": "success",
           "member": "string",
           "name": "ExecutionStatus",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "任务 ID",
-          "example": "xxx",
+          "example": "taskId",
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "执行状态详情",
-          "example": "xxx",
+          "example": "desc",
           "member": "string",
           "name": "ExecutionStatusDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

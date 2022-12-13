@@ -1454,7 +1454,18 @@
           "member": "string",
           "name": "KeyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。",
+          "example": "365",
+          "member": "uint64",
+          "name": "RotateDays",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

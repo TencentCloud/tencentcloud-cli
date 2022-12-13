@@ -35,8 +35,8 @@
     "CreateEdgePackTask": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=CreateEdgePackTask\n&BlockID=0\n&CosBucket=‘edgepack-xxxxxxxx’\n&CosUriFrom=‘/apk/xxxx.apk’\n&CosUriTo=‘/out/xxxx.apk’\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgePackTask\n<公共请求参数>\n\n{\n    \"CosBucket\": \"‘edgepack-bucket1’\",\n    \"BlockID\": \"0\",\n    \"CosUriTo\": \"‘/out/app_out.apk’\",\n    \"CosUriFrom\": \"‘/apk/app.apk’\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19d1096d-a4e8-4607-bfca-840a3f515378\"\n    }\n}",
         "title": "动态打包任务提交"
       }
     ],
@@ -59,8 +59,8 @@
     "CreateScdnLogTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"AttackType\": \"xx\",\n    \"Ip\": \"xx\",\n    \"AttackTypes\": [\n        \"xx\"\n    ],\n    \"DefenceMode\": \"xx\",\n    \"Mode\": \"xx\",\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Conditions\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"AttackType\": \"xss\",\n    \"Ip\": \"10.0.0.1\",\n    \"AttackTypes\": [\n        \"xss\"\n    ],\n    \"DefenceMode\": \"observe\",\n    \"Mode\": \"waf\",\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"Domains\": [\n        \"test.com\"\n    ],\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Conditions\": [\n        {\n            \"Operator\": \"include\",\n            \"Value\": \"10.0.0.1\",\n            \"Key\": \"ip\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\"\n    }\n}",
         "title": "创建scdn日志事件任务"
       }
     ],
@@ -131,8 +131,8 @@
     "DescribeCdnIp": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCdnIp\n&Ips.0=1.1.1.1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\n        \"Ips\": [\n            {\n                \"City\": \"xx\",\n                \"Ip\": \"1.1.1.1\",\n                \"Platform\": \"no\",\n                \"Location\": \"unknown\",\n                \"Area\": \"unknown\",\n                \"History\": []\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdnIp\n<公共请求参数>\n\n{\n    \"Ips\": [\n        \"1.1.1.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"156bde25-56b5-4dae-9638-b7b08b08e4f6\",\n        \"Ips\": [\n            {\n                \"City\": \"shanghai\",\n                \"Ip\": \"1.1.1.1\",\n                \"Platform\": \"no\",\n                \"Location\": \"unknown\",\n                \"Area\": \"unknown\",\n                \"History\": []\n            }\n        ]\n    }\n}",
         "title": "IP 归属查询"
       }
     ],
@@ -147,8 +147,8 @@
     "DescribeCertDomains": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCertDomains\n&Cert=XXXXX\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx-xxxxx-xxxxx-xxxxx-xxxxx\",\n        \"Domains\": [\n            \"test.tencentyun.com\",\n            \"httpstest.tencentyun.com\"\n        ],\n        \"CertifiedDomains\": [\n            \"httpstest.tencentyun.com\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertDomains\n<公共请求参数>\n\n{\n    \"Cert\": \"\\\\u65e0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\",\n        \"Domains\": [\n            \"test.tencentyun.com\",\n            \"httpstest.tencentyun.com\"\n        ],\n        \"CertifiedDomains\": [\n            \"httpstest.tencentyun.com\"\n        ]\n    }\n}",
         "title": "提取SSL证书中的可配置域名"
       }
     ],
@@ -196,7 +196,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventLogData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:10:00\",\n    \"Domain\": \"www.test.com\",\n    \"Url\": \"/1.jpg\",\n    \"Mode\": \"cc\",\n    \"ActionName\": \"intercept\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Results\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\",\n        \"Results\": []\n    }\n}",
         "title": "DescribeEventLogData 用于查询事件日志统计曲线"
       }
     ],
@@ -411,16 +411,16 @@
     "ListClsLogTopics": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListClsLogTopics\n&Channel=cdn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Logset\": {\n            \"AppId\": 1242424252,\n            \"Channel\": \"cdn\",\n            \"Region\": \"ap-shanghai\",\n            \"LogsetId\": \"44d5b2d4-092c-4a4a-971e-07d9e536ccc3\",\n            \"LogsetName\": \"cdn_logset\",\n            \"IsDefault\": 1,\n            \"LogsetSavePeriod\": 7,\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RegionEn\": \"ap-shanghai\",\n            \"Deleted\": \"no\"\n        },\n        \"Topics\": [\n            {\n                \"TopicId\": \"def811bf-867e-405c-bbc2-2a3aea45be21\",\n                \"TopicName\": \"cdn_topic\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            },\n            {\n                \"TopicId\": \"e0f6809f-026f-4287-b33f-8041a82188cf\",\n                \"TopicName\": \"cdn_topic2\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            },\n            {\n                \"TopicId\": \"fcfb346d-100d-454c-adc6-bdf2a2af0515\",\n                \"TopicName\": \"cdn_topic1\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            }\n        ],\n        \"ExtraLogset\": [\n            {\n                \"Logset\": {\n                    \"AppId\": 1306270566,\n                    \"Channel\": \"cdn\",\n                    \"LogsetId\": \"de5965b4-b371-4a5e-86ad-f2d2f9988a4d\",\n                    \"LogsetName\": \"cloud_cdn_logset_oversea\",\n                    \"IsDefault\": 0,\n                    \"LogsetSavePeriod\": 7,\n                    \"CreateTime\": \"2021-10-20 17:22:21\",\n                    \"Region\": \"ap-singapore\",\n                    \"RegionEn\": \"ap-singapore\",\n                    \"Deleted\": \"no\"\n                },\n                \"Topics\": [\n                    {\n                        \"TopicId\": \"a9619e5a-2387-46bd-83c8-89b133f20f4a\",\n                        \"TopicName\": \"jory-test\",\n                        \"Enabled\": 1,\n                        \"CreateTime\": \"2021-10-27 15:17:10\",\n                        \"Deleted\": \"no\",\n                        \"Channel\": \"cdn\"\n                    },\n                    {\n                        \"TopicId\": \"58474924-8b34-4e26-aa03-b23202007ea6\",\n                        \"TopicName\": \"jory-oversea\",\n                        \"Enabled\": 1,\n                        \"CreateTime\": \"2021-10-26 21:06:24\",\n                        \"Deleted\": \"no\",\n                        \"Channel\": \"cdn\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClsLogTopics\n<公共请求参数>\n\n{\n    \"Channel\": \"cdn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44d5b2d4-092c-4a4a-971e-07d9e536ccc1\",\n        \"Logset\": {\n            \"AppId\": 1242424252,\n            \"Channel\": \"cdn\",\n            \"Region\": \"ap-shanghai\",\n            \"LogsetId\": \"44d5b2d4-092c-4a4a-971e-07d9e536ccc3\",\n            \"LogsetName\": \"cdn_logset\",\n            \"IsDefault\": 1,\n            \"LogsetSavePeriod\": 7,\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RegionEn\": \"ap-shanghai\",\n            \"Deleted\": \"no\"\n        },\n        \"Topics\": [\n            {\n                \"TopicId\": \"def811bf-867e-405c-bbc2-2a3aea45be21\",\n                \"TopicName\": \"cdn_topic\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            },\n            {\n                \"TopicId\": \"e0f6809f-026f-4287-b33f-8041a82188cf\",\n                \"TopicName\": \"cdn_topic2\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            },\n            {\n                \"TopicId\": \"fcfb346d-100d-454c-adc6-bdf2a2af0515\",\n                \"TopicName\": \"cdn_topic1\",\n                \"Enabled\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Deleted\": \"no\"\n            }\n        ],\n        \"ExtraLogset\": [\n            {\n                \"Logset\": {\n                    \"AppId\": 1306270566,\n                    \"Channel\": \"cdn\",\n                    \"LogsetId\": \"de5965b4-b371-4a5e-86ad-f2d2f9988a4d\",\n                    \"LogsetName\": \"cloud_cdn_logset_oversea\",\n                    \"IsDefault\": 0,\n                    \"LogsetSavePeriod\": 7,\n                    \"CreateTime\": \"2021-10-20 17:22:21\",\n                    \"Region\": \"ap-singapore\",\n                    \"RegionEn\": \"ap-singapore\",\n                    \"Deleted\": \"no\"\n                },\n                \"Topics\": [\n                    {\n                        \"TopicId\": \"a9619e5a-2387-46bd-83c8-89b133f20f4a\",\n                        \"TopicName\": \"jory-test\",\n                        \"Enabled\": 1,\n                        \"CreateTime\": \"2021-10-27 15:17:10\",\n                        \"Deleted\": \"no\",\n                        \"Channel\": \"cdn\"\n                    },\n                    {\n                        \"TopicId\": \"58474924-8b34-4e26-aa03-b23202007ea6\",\n                        \"TopicName\": \"jory-oversea\",\n                        \"Enabled\": 1,\n                        \"CreateTime\": \"2021-10-26 21:06:24\",\n                        \"Deleted\": \"no\",\n                        \"Channel\": \"cdn\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "显示日志主题列表"
       }
     ],
     "ListClsTopicDomains": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListClsTopicDomains\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"d2256449-c6ff-421b-93ef-aa3a7dde2de2\",\n        \"UpdateTime\": \"2020-09-22 00:00:00\",\n        \"TopicName\": \"xx\",\n        \"DomainAreaConfigs\": [\n            {\n                \"Domain\": \"a.b.com\",\n                \"Area\": [\n                    \"mainland\"\n                ]\n            }\n        ],\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n        \"AppId\": 12345678901,\n        \"LogsetId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\",\n        \"Channel\": \"cdn\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListClsTopicDomains\n<公共请求参数>\n\n{\n    \"TopicId\": \"d2256449-c6ff-421b-93ef-aa3a7dde2de2\",\n    \"LogsetId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\",\n    \"Channel\": \"cdn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"d2256449-c6ff-421b-93ef-aa3a7dde2de2\",\n        \"UpdateTime\": \"2020-09-22 00:00:00\",\n        \"TopicName\": \"test\",\n        \"DomainAreaConfigs\": [\n            {\n                \"Domain\": \"a.b.com\",\n                \"Area\": [\n                    \"mainland\"\n                ]\n            }\n        ],\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\",\n        \"AppId\": 12345678901,\n        \"LogsetId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\",\n        \"Channel\": \"cdn\"\n    }\n}",
         "title": "获取主题下绑定的域名列表"
       }
     ],
@@ -443,8 +443,8 @@
     "ListScdnLogTasks": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnLogTasks\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": [\n            {\n                \"Status\": \"xx\",\n                \"Domain\": \"xx\",\n                \"StartTime\": \"2020-09-22 00:00:00\",\n                \"Area\": \"xx\",\n                \"DefenceMode\": \"xx\",\n                \"DownloadUrl\": \"xx\",\n                \"Mode\": \"xx\",\n                \"AttackType\": \"xx\",\n                \"TaskID\": \"xx\",\n                \"EndTime\": \"2020-09-22 00:00:00\",\n                \"Conditions\": [\n                    {\n                        \"Operator\": \"xx\",\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListScdnLogTasks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": [\n            {\n                \"Status\": \"created\",\n                \"Domain\": \"test.com\",\n                \"StartTime\": \"2020-09-22 00:00:00\",\n                \"Area\": \"mainland\",\n                \"DefenceMode\": \"observe\",\n                \"DownloadUrl\": \"https://downlaod.com\",\n                \"Mode\": \"waf\",\n                \"AttackType\": \"xss\",\n                \"TaskID\": \"taskId\",\n                \"EndTime\": \"2020-09-22 00:00:00\",\n                \"Conditions\": [\n                    {\n                        \"Operator\": \"include\",\n                        \"Value\": \"10.0.0.1\",\n                        \"Key\": \"ip\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\"\n    }\n}",
         "title": "查询SCDN事件日志下载任务列表"
       }
     ],
@@ -459,8 +459,8 @@
     "ListTopBotData": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopBotData\n&TopCount=10\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Domain\": \"zc-work.qcloudwaf.com\",\n                \"Count\": 1,\n                \"Value\": \"\",\n                \"Isp\": \"xx\",\n                \"Province\": \"\",\n                \"Country\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTopBotData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-04-20 23:59:00\",\n    \"StartTime\": \"2020-04-20 12:00:00\",\n    \"TopCount\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Domain\": \"zc-work.qcloudwaf.com\",\n                \"Count\": 1,\n                \"Value\": \"\",\n                \"Isp\": \"dianxin\",\n                \"Province\": \"\",\n                \"Country\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
         "title": "查询bot的topN域名"
       }
     ],
@@ -483,8 +483,8 @@
     "ListTopDDoSData": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopDDoSData\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Value\": 1,\n                \"AttackType\": \"xx\"\n            }\n        ],\n        \"IPData\": [\n            {\n                \"Province\": \"广东省\",\n                \"Country\": \"中国\",\n                \"Isp\": \"中国电信\",\n                \"AttackCount\": 100,\n                \"AttackIP\": \"10.32.1.3\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTopDDoSData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-22 01:00:00\",\n    \"StartTime\": \"2020-09-22 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Value\": 1,\n                \"AttackType\": \"ddos\"\n            }\n        ],\n        \"IPData\": [\n            {\n                \"Province\": \"广东省\",\n                \"Country\": \"中国\",\n                \"Isp\": \"中国电信\",\n                \"AttackCount\": 100,\n                \"AttackIP\": \"10.32.1.3\"\n            }\n        ]\n    }\n}",
         "title": "获取DDoS攻击Top数据"
       }
     ],
@@ -515,8 +515,8 @@
     "ModifyPurgeFetchTaskStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPurgeFetchTaskStatus\n<公共请求参数>\n\n{\n    \"ExecutionTime\": \"2020-09-22T00:00:00+00:00\",\n    \"ExecutionStatusDesc\": \"xx\",\n    \"Id\": \"xx\",\n    \"ExecutionStatus\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPurgeFetchTaskStatus\n<公共请求参数>\n\n{\n    \"ExecutionTime\": \"2020-09-22T00:00:00+00:00\",\n    \"ExecutionStatusDesc\": \"成功\",\n    \"Id\": \"taskId_1\",\n    \"ExecutionStatus\": \"success\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19d1096d-a4e8-4607-bfca-840a3f515378\"\n    }\n}",
         "title": "修改定时刷新预热任务执行状态"
       }
     ],
@@ -596,7 +596,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"test.tencent.com\",\n    \"TpgAdapter\": {\n        \"Switch\": \"on\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"XXXXXXX\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79a1d2be-11a0-40de-a5dc-1\"\n    }\n}",
         "title": "开启Tpg图片优化"
       }
     ],

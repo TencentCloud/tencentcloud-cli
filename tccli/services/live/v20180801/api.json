@@ -43,7 +43,7 @@
       "output": "CreateLiveCallbackRuleResponse"
     },
     "CreateLiveCallbackTemplate": {
-      "document": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。",
+      "document": "创建回调模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。",
       "input": "CreateLiveCallbackTemplateRequest",
       "name": "创建回调模板",
       "output": "CreateLiveCallbackTemplateResponse"
@@ -1243,7 +1243,8 @@
           "name": "TemplateId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1253,7 +1254,8 @@
           "name": "TemplateName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1263,7 +1265,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1273,7 +1276,8 @@
           "name": "StreamBeginNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1283,7 +1287,8 @@
           "name": "StreamMixNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1293,7 +1298,8 @@
           "name": "StreamEndNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1303,7 +1309,8 @@
           "name": "RecordNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1313,7 +1320,8 @@
           "name": "SnapshotNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1323,7 +1331,8 @@
           "name": "PornCensorshipNotifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1333,7 +1342,19 @@
           "name": "CallbackKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2060,7 +2081,8 @@
           "member": "string",
           "name": "TemplateName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2069,7 +2091,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2078,7 +2101,8 @@
           "member": "string",
           "name": "StreamBeginNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2087,7 +2111,8 @@
           "member": "string",
           "name": "StreamEndNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2096,7 +2121,8 @@
           "member": "string",
           "name": "RecordNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2105,7 +2131,8 @@
           "member": "string",
           "name": "SnapshotNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2114,7 +2141,8 @@
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2123,7 +2151,8 @@
           "member": "string",
           "name": "CallbackKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2132,7 +2161,18 @@
           "member": "string",
           "name": "StreamMixNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2147,7 +2187,8 @@
           "name": "TemplateId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9714,7 +9755,8 @@
           "member": "int64",
           "name": "TemplateId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9723,7 +9765,8 @@
           "member": "string",
           "name": "TemplateName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9732,7 +9775,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9741,7 +9785,8 @@
           "member": "string",
           "name": "StreamBeginNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9750,7 +9795,8 @@
           "member": "string",
           "name": "StreamEndNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9759,7 +9805,8 @@
           "member": "string",
           "name": "RecordNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9768,7 +9815,8 @@
           "member": "string",
           "name": "SnapshotNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9777,7 +9825,8 @@
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9786,7 +9835,18 @@
           "member": "string",
           "name": "CallbackKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

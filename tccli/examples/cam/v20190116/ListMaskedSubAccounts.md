@@ -21,6 +21,12 @@ Output:
                 "CanLogin": 1,
                 "PhoneNum": "",
                 "CountryCode": "86",
+                "Tags": [
+                    {
+                        "Value": "test",
+                        "Key": "test"
+                    }
+                ],
                 "PhoneFlag": 0,
                 "Email": "",
                 "EmailFlag": 0,
