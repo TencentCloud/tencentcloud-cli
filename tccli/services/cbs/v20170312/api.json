@@ -205,7 +205,7 @@
       "output": "ModifyDiskExtraPerformanceResponse"
     },
     "ModifyDisksChargeType": {
-      "document": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n只支持从 POSTPAID_BY_HOUR 计费模式切换为PREPAID计费模式。\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n",
+      "document": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n",
       "input": "ModifyDisksChargeTypeRequest",
       "name": "修改弹性云盘计费模式",
       "output": "ModifyDisksChargeTypeResponse"
@@ -3353,7 +3353,7 @@
         },
         {
           "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
+          "document": "设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
           "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
@@ -3362,7 +3362,7 @@
         },
         {
           "default": "",
-          "document": "后付费模式",
+          "document": "设置为后付费模式",
           "example": "True",
           "member": "bool",
           "name": "DiskChargePostpaid",

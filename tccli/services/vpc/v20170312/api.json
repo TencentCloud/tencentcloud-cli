@@ -15045,6 +15045,7 @@
         {
           "default": "",
           "document": "终端节点服务ID",
+          "example": "无",
           "member": "string",
           "name": "EndPointServiceId",
           "required": true,
@@ -15054,6 +15055,7 @@
         {
           "default": "",
           "document": "VPCID。",
+          "example": "vpc-gjui0b5t",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -15063,6 +15065,7 @@
         {
           "default": "",
           "document": "APPID。",
+          "example": "251007979",
           "member": "string",
           "name": "ServiceOwner",
           "required": true,
@@ -15072,6 +15075,7 @@
         {
           "default": "",
           "document": "终端节点服务名称。",
+          "example": "无",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -15081,6 +15085,7 @@
         {
           "default": "",
           "document": "后端服务的VIP。",
+          "example": "10.1.1.1",
           "member": "string",
           "name": "ServiceVip",
           "required": true,
@@ -15090,6 +15095,7 @@
         {
           "default": "",
           "document": "后端服务的ID，比如lb-xxx。",
+          "example": "lb-xxx",
           "member": "string",
           "name": "ServiceInstanceId",
           "required": true,
@@ -15099,6 +15105,7 @@
         {
           "default": "",
           "document": "是否自动接受。",
+          "example": "True",
           "member": "bool",
           "name": "AutoAcceptFlag",
           "required": true,
@@ -15108,6 +15115,7 @@
         {
           "default": "",
           "document": "关联的终端节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "EndPointCount",
           "required": true,
@@ -15117,6 +15125,7 @@
         {
           "default": "",
           "document": "终端节点对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EndPoint",
           "name": "EndPointSet",
           "required": true,
@@ -15126,8 +15135,19 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载的PAAS服务类型，CLB,CDB,CRS",
+          "example": "CLB,CDB,CRS",
+          "member": "string",
+          "name": "ServiceType",
           "required": true,
           "type": "string",
           "value_allowed_null": false

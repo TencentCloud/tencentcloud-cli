@@ -7,7 +7,7 @@ Input:
 ```
 tccli monitor ModifyGrafanaInstance --cli-unfold-argument  \
     --InstanceId grafana-abcdefgh \
-    --InstanceName 123
+    --InstanceName test
 ```
 
 Output: 

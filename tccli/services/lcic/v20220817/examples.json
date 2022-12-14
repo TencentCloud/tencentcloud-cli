@@ -82,7 +82,7 @@
     ],
     "ModifyApp": [
       {
-        "document": "",
+        "document": "修改应用的相关信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"Callback\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改应用"

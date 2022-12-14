@@ -1,13 +1,13 @@
 **Example 1: 切换云盘的计费模式**
 
-本示例用于切换一个云盘的计费模式（将按量计费云盘转换为包年包月云盘，并购买一个月时长）。
+本示例用于切换一个云盘的计费模式（将包年包月的云盘转换为按量计费模式）。
 
 Input: 
 
 ```
 tccli cbs ModifyDisksChargeType --cli-unfold-argument  \
     --DiskIds disk-jwk0zvrg \
-    --DiskChargePostpaid True
+    --DiskChargePrepaid.Period 1
 ```
 
 Output: 

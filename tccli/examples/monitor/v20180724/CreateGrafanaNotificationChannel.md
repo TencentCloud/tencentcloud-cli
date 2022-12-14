@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor CreateGrafanaNotificationChannel --cli-unfold-argument  \
-    --InstanceId xx \
-    --ChannelName xx \
+    --InstanceId grafana-abcdefgh \
+    --ChannelName test \
     --OrgId 0 \
     --Receivers xx
 ```

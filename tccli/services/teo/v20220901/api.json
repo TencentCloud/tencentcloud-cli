@@ -2556,7 +2556,7 @@
         },
         {
           "default": "",
-          "document": "证书配置，取值有：\n<li> none：不配置；</li>\n<li> hosting：SSL托管证书；</li>\n<li> apply：申请免费证书。</li>默认取值为 none。",
+          "document": "证书配置，取值有：\n<li> none：不配置；</li>\n<li> hosting：SSL托管证书。</li>默认取值为 none。",
           "example": "none",
           "member": "string",
           "name": "CertType",

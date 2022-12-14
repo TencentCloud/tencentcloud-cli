@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb DescribeResources --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
@@ -18,6 +18,7 @@ Output:
         "ZoneResourceSet": [
             {
                 "LocalZone": false,
+                "EdgeZone": false,
                 "SlaveZone": null,
                 "MasterZone": "ap-guangzhou-1",
                 "IPVersion": "IPv4",
@@ -35,7 +36,8 @@ Output:
                             "CMCC"
                         ]
                     }
-                ]
+                ],
+                "ZoneResourceType": "SHARED"
             }
         ],
         "RequestId": "d09b91ba-a81e-4ca3-b423-c64e60127c64"

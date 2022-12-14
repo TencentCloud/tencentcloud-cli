@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli monitor UpdateGrafanaIntegration --cli-unfold-argument  \
-    --IntegrationId xx \
-    --InstanceId xx \
-    --Kind xx \
-    --Content xx
+    --IntegrationId integration-abcd1234 \
+    --InstanceId grafana-12345678 \
+    --Kind tencent-cloud-prometheus \
+    --Content xxx
 ```
 
 Output: 

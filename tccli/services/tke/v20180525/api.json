@@ -78,12 +78,6 @@
       "name": "创建节点池",
       "output": "CreateClusterNodePoolResponse"
     },
-    "CreateClusterNodePoolFromExistingAsg": {
-      "document": "从伸缩组创建节点池",
-      "input": "CreateClusterNodePoolFromExistingAsgRequest",
-      "name": "从伸缩组创建节点池",
-      "output": "CreateClusterNodePoolFromExistingAsgResponse"
-    },
     "CreateClusterRelease": {
       "document": "在应用市场中给集群创建应用",
       "input": "CreateClusterReleaseRequest",
@@ -3812,47 +3806,6 @@
       ],
       "type": "object"
     },
-    "CreateClusterNodePoolFromExistingAsgRequest": {
-      "document": "CreateClusterNodePoolFromExistingAsg请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "集群ID",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "伸缩组ID",
-          "member": "string",
-          "name": "AutoscalingGroupId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateClusterNodePoolFromExistingAsgResponse": {
-      "document": "CreateClusterNodePoolFromExistingAsg返回参数结构体",
-      "members": [
-        {
-          "document": "节点池ID",
-          "member": "string",
-          "name": "NodePoolId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateClusterNodePoolRequest": {
       "document": "CreateClusterNodePool请求参数结构体",
       "members": [
@@ -5028,6 +4981,33 @@
           "name": "RetentionDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定拉取镜像仓库的镜像时不校验证书。如[\"harbor.example.com\"]。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RegistrySkipVerifyList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定拉取镜像仓库的镜像时使用 HTTP 协议。如[\"harbor.example.com\"]。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RegistryHttpEndPointList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：\n\"nameserver 4.4.4.4\\nnameserver 8.8.8.8\"",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResolveConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

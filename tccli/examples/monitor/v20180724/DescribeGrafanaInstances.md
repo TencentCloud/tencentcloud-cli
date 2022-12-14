@@ -11,8 +11,8 @@ tccli monitor DescribeGrafanaInstances --cli-unfold-argument  \
     --TagFilters.0.Key tagKeyTest \
     --TagFilters.0.Value tagValueTest \
     --InstanceStatus 2 \
-    --InstanceName xx \
-    --InstanceIds xx
+    --InstanceName test \
+    --InstanceIds grafana-abcdefgh
 ```
 
 Output: 

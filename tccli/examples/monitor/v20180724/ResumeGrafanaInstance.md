@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor ResumeGrafanaInstance --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId grafana-12345678
 ```
 
 Output: 

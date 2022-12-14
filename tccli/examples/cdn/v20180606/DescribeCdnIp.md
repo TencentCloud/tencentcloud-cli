@@ -16,7 +16,7 @@ Output:
         "RequestId": "156bde25-56b5-4dae-9638-b7b08b08e4f6",
         "Ips": [
             {
-                "City": "xx",
+                "City": "shanghai",
                 "Ip": "1.1.1.1",
                 "Platform": "no",
                 "Location": "unknown",

@@ -2141,7 +2141,6 @@
       "document": "CreateWebhookTrigger请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 Id",
           "example": "tcr-7s2d14fn",
           "member": "string",
@@ -2150,7 +2149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "触发器参数",
           "example": "无",
           "member": "WebhookTrigger",
@@ -2159,7 +2157,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "命名空间",
           "example": "someNs",
           "member": "string",
@@ -2178,7 +2175,6 @@
           "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

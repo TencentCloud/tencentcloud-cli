@@ -973,7 +973,6 @@
       "document": "ModifyApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -982,8 +981,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "回调地址。",
+          "document": "回调地址。端口目前仅支持80、443",
           "example": "abc",
           "member": "string",
           "name": "Callback",

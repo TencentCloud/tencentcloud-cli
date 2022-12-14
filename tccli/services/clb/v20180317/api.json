@@ -2014,6 +2014,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SINGLE-ZONE",
+          "member": "string",
+          "name": "DisasterRecoveryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2112,6 +2122,16 @@
           "name": "Isp",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClustersZone",
+          "name": "ClustersZone",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -8361,6 +8381,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用资源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceAvailability",
+          "name": "AvailabilitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceAvailability": {
+      "document": "资源可用性",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商内具体资源信息，如\"CMCC\", \"CUCC\", \"CTCC\", \"BGP\"。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源可用性，\"Available\"：可用，\"Unavailable\"：不可用",
+          "example": "Available",
+          "member": "string",
+          "name": "Availability",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9861,6 +9917,26 @@
           "example": "false",
           "member": "bool",
           "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。",
+          "example": "\"SHARED\"",
+          "member": "string",
+          "name": "ZoneResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区是否是EdgeZone可用区，如：false",
+          "example": "false",
+          "member": "bool",
+          "name": "EdgeZone",
           "required": true,
           "type": "bool",
           "value_allowed_null": false

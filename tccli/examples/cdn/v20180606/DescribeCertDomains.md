@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cdn DescribeCertDomains --cli-unfold-argument  \
-    --Cert XXXXX
+    --Cert \u65e0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx",
+        "RequestId": "1abbe623-4b0e-4727-ab51-7624902d47f4",
         "Domains": [
             "test.tencentyun.com",
             "httpstest.tencentyun.com"

@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli cdn CreateScdnLogTask --cli-unfold-argument  \
-    --Domain xx \
-    --AttackType xx \
-    --Ip xx \
-    --AttackTypes xx \
-    --DefenceMode xx \
-    --Mode xx \
+    --Domain test.com \
+    --AttackType xss \
+    --Ip 10.0.0.1 \
+    --AttackTypes xss \
+    --DefenceMode observe \
+    --Mode waf \
     --StartTime 2020-09-22 00:00:00 \
-    --Domains xx \
+    --Domains test.com \
     --EndTime 2020-09-22 00:00:00 \
-    --Conditions.0.Operator xx \
-    --Conditions.0.Value xx \
-    --Conditions.0.Key xx
+    --Conditions.0.Operator include \
+    --Conditions.0.Value 10.0.0.1 \
+    --Conditions.0.Key ip
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "Result": "0",
+        "RequestId": "1abbe623-4b0e-4727-ab51-7624902d47f4"
     }
 }
 ```

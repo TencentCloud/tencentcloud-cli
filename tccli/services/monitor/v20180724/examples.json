@@ -27,8 +27,8 @@
     "CleanGrafanaInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"my-grafana\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "强制销毁 Grafana 实例"
       }
     ],
@@ -75,7 +75,7 @@
     "CreateGrafanaIntegration": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Kind\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Content\": \"xx\",\n    \"Kind\": \"tencent-cloud-prometheus\"\n}",
         "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 集成配置"
       }
@@ -83,7 +83,7 @@
     "CreateGrafanaNotificationChannel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelName\": \"xx\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelName\": \"test\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建 Grafana 告警通道"
       }
@@ -187,7 +187,7 @@
     "DeleteGrafanaIntegration": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"IntegrationId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"IntegrationId\": \"integration-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除 Grafana 集成配置"
       }
@@ -195,7 +195,7 @@
     "DeleteGrafanaNotificationChannel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelIDs\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除 Grafana 告警通道"
       }
@@ -381,7 +381,7 @@
     "DescribeDNSConfig": [
       {
         "document": "列出实例的 DNS 配置",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\",\n        \"NameServers\": [\n            \"114.114.114.114\"\n        ]\n    }\n}",
         "title": "列出实例的 DNS 配置"
       }
@@ -397,8 +397,8 @@
     "DescribeGrafanaChannels": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"xx\",\n    \"ChannelIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"xx\",\n                \"OrganizationIds\": [\n                    \"xx\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"test\",\n    \"ChannelIds\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"nchannel-abcd1234\",\n                \"OrganizationIds\": [\n                    \"xx\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"test\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "列出 Grafana 告警通道"
       }
     ],
@@ -413,7 +413,7 @@
     "DescribeGrafanaEnvironments": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Envs\": \"{}\"\n    }\n}",
         "title": "列出 Grafana 环境变量"
       }
@@ -421,7 +421,7 @@
     "DescribeGrafanaInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaInstances\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"TagFilters\": [\n        {\n            \"Key\": \"tagKeyTest\",\n            \"Value\": \"tagValueTest\"\n        }\n    ],\n    \"InstanceStatus\": [\n        2\n    ],\n    \"InstanceName\": \"xx\",\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaInstances\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"TagFilters\": [\n        {\n            \"Key\": \"tagKeyTest\",\n            \"Value\": \"tagValueTest\"\n        }\n    ],\n    \"InstanceStatus\": [\n        2\n    ],\n    \"InstanceName\": \"test\",\n    \"InstanceIds\": [\n        \"grafana-abcdefgh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceStatus\": 0,\n                \"VpcId\": \"xx\",\n                \"RootUrl\": \"xx\",\n                \"Version\": \"xx\",\n                \"Zone\": \"xx\",\n                \"TagSpecification\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"InstanceId\": \"xx\",\n                \"SubnetIds\": [\n                    \"xx\"\n                ],\n                \"RegionId\": 0,\n                \"InstanceChargeType\": 0,\n                \"InternalUrl\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"EnableSSOCamCheck\": true,\n                \"SubnetName\": \"xx\",\n                \"InternetUrl\": \"xx\",\n                \"EnableSSO\": true,\n                \"InstanceName\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreatedAt\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Instances\": [\n            {\n                \"InstanceStatus\": 0,\n                \"VpcId\": \"xx\",\n                \"RootUrl\": \"xx\",\n                \"Version\": \"xx\",\n                \"Zone\": \"xx\",\n                \"TagSpecification\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"InstanceId\": \"xx\",\n                \"SubnetIds\": [\n                    \"xx\"\n                ],\n                \"RegionId\": 0,\n                \"InstanceChargeType\": 0,\n                \"InternalUrl\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"EnableSSOCamCheck\": true,\n                \"SubnetName\": \"xx\",\n                \"InternetUrl\": \"xx\",\n                \"EnableSSO\": true,\n                \"InstanceName\": \"xx\",\n                \"Region\": \"xx\",\n                \"CreatedAt\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "列出 Grafana 服务"
       }
@@ -437,8 +437,8 @@
     "DescribeGrafanaNotificationChannels": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaNotificationChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"xx\",\n    \"ChannelIDs\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ExtraOrgIds\": [\n                    \"xx\"\n                ],\n                \"OrgIds\": \"xx\",\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"xx\",\n                \"OrganizationIds\": \"xx\",\n                \"OrgId\": \"xx\",\n                \"UpdatedAt\": \"2020-09-22\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaNotificationChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"test\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ExtraOrgIds\": [\n                    \"xx\"\n                ],\n                \"OrgIds\": \"xx\",\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"nchannel-abcd1234\",\n                \"OrganizationIds\": \"xx\",\n                \"OrgId\": \"xx\",\n                \"UpdatedAt\": \"2020-09-22\",\n                \"ChannelName\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "列出 Grafana 告警通道"
       }
     ],
@@ -705,7 +705,7 @@
     "ModifyGrafanaInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"InstanceName\": \"123\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"InstanceName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改 Grafana 实例属性"
       }
@@ -737,7 +737,7 @@
     "ResumeGrafanaInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "恢复 Grafana 实例"
       }
@@ -825,7 +825,7 @@
     "UpdateDNSConfig": [
       {
         "document": "更新 Grafana 的 DNS 配置",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"NameServers\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"NameServers\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "更新 Grafana 的 DNS 配置"
       }
@@ -849,7 +849,7 @@
     "UpdateGrafanaEnvironments": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Envs\": \"{}\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Envs\": \"{}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新 Grafana 环境变量"
       }
@@ -857,7 +857,7 @@
     "UpdateGrafanaIntegration": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"IntegrationId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"Content\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"IntegrationId\": \"integration-abcd1234\",\n    \"InstanceId\": \"grafana-12345678\",\n    \"Kind\": \"tencent-cloud-prometheus\",\n    \"Content\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新 Grafana 集成配置"
       }

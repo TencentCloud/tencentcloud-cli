@@ -26,7 +26,9 @@ Output:
         "ProVersionLicenseCnt": 2,
         "ProtectType": "FLAGSHIP_PREPAY",
         "RequestId": "d9a5456b-a2db-4106-bd12-32e2c735435d",
-        "UsedLicenseCnt": 0
+        "UsedLicenseCnt": 0,
+        "AutoRepurchaseSwitch": false,
+        "AutoRepurchaseRenewSwitch": false
     }
 }
 ```

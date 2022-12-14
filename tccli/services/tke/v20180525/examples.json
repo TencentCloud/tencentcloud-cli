@@ -116,14 +116,6 @@
         "title": "创建节点池"
       }
     ],
-    "CreateClusterNodePoolFromExistingAsg": [
-      {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterNodePoolFromExistingAsg\n&ClusterId=cls-xxxxxx\n&AutoscalingGroupId=asg-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-xxxxxxxx\",\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
-        "title": "从伸缩组创建节点池"
-      }
-    ],
     "CreateClusterRelease": [
       {
         "document": "",

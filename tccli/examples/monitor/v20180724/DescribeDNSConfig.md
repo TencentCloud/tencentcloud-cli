@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribeDNSConfig --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId grafana-abcdefgh
 ```
 
 Output: 

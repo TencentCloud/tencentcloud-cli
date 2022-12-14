@@ -8363,12 +8363,21 @@
         },
         {
           "default": "",
-          "document": "自动防护授权配置值, 不空则表示开启",
+          "document": "该字段作废",
           "example": "''",
           "member": "string",
           "name": "AutoProtectOpenConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "变配参数",
+          "example": "{}",
+          "member": "OrderModifyObject",
+          "name": "ModifyConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -15227,6 +15236,24 @@
           "name": "AvailableLHLicenseCnt",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动加购开关, true 开启, false 关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRepurchaseSwitch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动加购订单是否自动续费 ,true 开启, false 关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRepurchaseRenewSwitch",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -24038,6 +24065,24 @@
           "name": "Status",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动加购/扩容授权开关,默认 1, 0关闭, 1开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRepurchaseSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动加购的订单是否自动续费,默认0 ,0关闭, 1开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRepurchaseRenewSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -24743,6 +24788,42 @@
         }
       ],
       "usage": "out"
+    },
+    "OrderModifyObject": {
+      "document": "订单变配参数对象",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "''",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版",
+          "example": "PRO_VERSION",
+          "member": "string",
+          "name": "NewSubProductCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩容/缩容数,变配子产品忽略该参数",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "OsName": {
       "document": "操作系统名称",

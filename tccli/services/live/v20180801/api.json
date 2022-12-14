@@ -43,7 +43,7 @@
       "output": "CreateLiveCallbackRuleResponse"
     },
     "CreateLiveCallbackTemplate": {
-      "document": "创建回调模板，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。",
+      "document": "创建回调模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveCallbackRule](/document/product/267/32638)接口将模板 ID 绑定到域名/路径使用。\n<br>回调协议相关文档：[事件消息通知](/document/product/267/32744)。\n注意：至少填写一个回调 URL。",
       "input": "CreateLiveCallbackTemplateRequest",
       "name": "创建回调模板",
       "output": "CreateLiveCallbackTemplateResponse"
@@ -1315,6 +1315,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2104,6 +2114,15 @@
           "example": "asdsad",
           "member": "string",
           "name": "StreamMixNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
           "required": false,
           "type": "string"
         }
@@ -9498,6 +9517,15 @@
           "example": "adasdas23432423",
           "member": "string",
           "name": "CallbackKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流异常回调 URL。",
+          "example": "http://abc.com/abc",
+          "member": "string",
+          "name": "PushExceptionNotifyUrl",
           "required": false,
           "type": "string"
         }

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DeleteGrafanaIntegration --cli-unfold-argument  \
-    --InstanceId xx \
-    --IntegrationId xx
+    --InstanceId grafana-12345678 \
+    --IntegrationId integration-abcd1234
 ```
 
 Output: 

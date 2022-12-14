@@ -38,7 +38,7 @@ Output:
 
 扩展信息：
 针对ApproverNumber举个例子，
-比如在原流程中共有三个签署人（a, b, c），
+例如在原流程中共有三个签署人（a, b, c），
 那么a是第一位(ApproverNumber=0)，b是第二位(ApproverNumber=1)，c是第三位(ApproverNumber=2)，
 注意这里的顺序不是签署顺序，仅仅是签署人列表中的自然顺序，签署人列表的获取可以参考DescribeFlows接口。
 
