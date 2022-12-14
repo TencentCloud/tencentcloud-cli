@@ -6872,7 +6872,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6887,7 +6888,8 @@
           "name": "Acl",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "Web 攻击防护（WAF）配置",
@@ -6896,7 +6898,8 @@
           "name": "Waf",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CC 防护配置",
@@ -6905,7 +6908,8 @@
           "name": "CC",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "DDOS 防护配置",
@@ -6914,7 +6918,8 @@
           "name": "Ddos",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "BOT 防护配置",
@@ -6923,7 +6928,8 @@
           "name": "Bot",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "当前状态，取值online | offline\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6932,7 +6938,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

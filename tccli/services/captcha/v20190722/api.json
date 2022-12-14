@@ -43,9 +43,9 @@
       "output": "DescribeCaptchaMiniResultResponse"
     },
     "DescribeCaptchaMiniRiskResult": {
-      "document": "核查验证码小程序插件票据接入风控结果(Beta)",
+      "document": "核查验证码小程序插件票据接入风控结果(已停用)",
       "input": "DescribeCaptchaMiniRiskResultRequest",
-      "name": "核查验证码小程序插件票据接入风控结果(Beta)",
+      "name": "核查验证码小程序插件票据接入风控结果(已停用)",
       "output": "DescribeCaptchaMiniRiskResultResponse"
     },
     "DescribeCaptchaOperData": {
@@ -1220,7 +1220,8 @@
           "member": "uint64",
           "name": "CaptchaType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1229,7 +1230,8 @@
           "member": "string",
           "name": "Ticket",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1238,7 +1240,8 @@
           "member": "string",
           "name": "UserIp",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1247,7 +1250,8 @@
           "member": "uint64",
           "name": "CaptchaAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1256,7 +1260,8 @@
           "member": "string",
           "name": "AppSecretKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1265,7 +1270,8 @@
           "member": "uint64",
           "name": "BusinessId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1274,7 +1280,8 @@
           "member": "uint64",
           "name": "SceneId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1283,7 +1290,8 @@
           "member": "string",
           "name": "MacAddress",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1292,7 +1300,8 @@
           "member": "string",
           "name": "Imei",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1301,7 +1310,8 @@
           "member": "int64",
           "name": "SceneCode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1310,7 +1320,8 @@
           "member": "string",
           "name": "WeChatOpenId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1325,7 +1336,8 @@
           "name": "CaptchaCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1334,7 +1346,8 @@
           "name": "CaptchaMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "拦截策略返回信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1343,7 +1356,8 @@
           "name": "ManageMarketingRiskValue",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -634,65 +634,79 @@
         {
           "default": "",
           "document": "告警通知模板名称。",
+          "example": "告警通知模板名称",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "example": "All",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "notice-xxx-xxx-xx-xx",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1787,7 +1801,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1796,7 +1811,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1805,7 +1821,8 @@
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1814,7 +1831,8 @@
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1829,7 +1847,8 @@
           "name": "AlarmNoticeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3148,7 +3167,8 @@
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3175,7 +3195,8 @@
           "member": "string",
           "name": "AlarmId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3608,7 +3629,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3617,7 +3639,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3626,7 +3649,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3641,7 +3665,8 @@
           "name": "Alarms",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合查询条件的告警策略数目。",
@@ -3650,7 +3675,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6074,7 +6100,8 @@
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6083,7 +6110,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6092,7 +6120,8 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6101,7 +6130,8 @@
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6110,7 +6140,8 @@
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

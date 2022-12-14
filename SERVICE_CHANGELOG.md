@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
+## 人体分析(bda) 版本：2020-03-24
 
-### 第 15 次发布
+### 第 4 次发布
 
-发布时间：2022-12-14 06:13:33
+发布时间：2022-12-15 06:10:11
 
 本次发布包含了以下内容：
 
@@ -12,103 +12,38 @@
 
 修改接口：
 
-* [ListMaskedSubAccounts](http://document.tencentcloudapi.woa.com/document/product/598/76677)
+* [SegmentPortraitPic](http://document.tencentcloudapi.woa.com/document/product/1208/42970)
 
-	* 新增入参：IgnoreSearchTermCase
-
-
+	* 新增入参：Scene
 
 
-## 负载均衡(clb) 版本：2018-03-17
 
-### 第 24 次发布
 
-发布时间：2022-12-14 06:19:23
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 49 次发布
+
+发布时间：2022-12-15 06:18:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [QueryFlexPlatformAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76815)
 
 新增数据结构：
 
-* [ResourceAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#ResourceAvailability)
-
-修改数据结构：
-
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/214/30694#Cluster)
-
-	* 新增成员：DisasterRecoveryType
-
-* [ClusterResource](http://document.tencentcloudapi.woa.com/document/product/214/30694#ClusterResource)
-
-	* 新增成员：ClustersZone
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/214/30694#Resource)
-
-	* 新增成员：AvailabilitySet
-
-* [ZoneResource](http://document.tencentcloudapi.woa.com/document/product/214/30694#ZoneResource)
-
-	* 新增成员：ZoneResourceType, EdgeZone
+* [PlatformAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PlatformAccountBalanceResult)
 
 
 
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 33 次发布
-
-发布时间：2022-12-14 06:32:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#TemplateInfo)
-
-	* 新增成员：ChannelTemplateName, ChannelAutoSave, TemplateVersion
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 20 次发布
-
-发布时间：2022-12-14 06:39:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstancePrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePrice)
-
-	* 新增成员：Currency
-
-	* <font color="#dd0000">**修改成员**：</font>OriginalBundlePrice, OriginalPrice, Discount, DiscountPrice
-
-* [InstancePriceDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePriceDetail)
-
-	* 新增成员：InstancePriceType, DiscountDetail
-
-	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstancePrice
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
 ### 第 24 次发布
 
-发布时间：2022-12-14 06:39:48
+发布时间：2022-12-15 06:22:19
 
 本次发布包含了以下内容：
 
@@ -116,33 +51,85 @@
 
 修改接口：
 
-* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
+* [DescribeAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/48075)
 
-	* 新增入参：PushExceptionNotifyUrl
+	* 新增入参：Hosts, Limit, Offset
 
-* [ModifyLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32631)
+	* 新增出参：TotalCount
 
-	* 新增入参：PushExceptionNotifyUrl
+* [DescribeBackupList](http://document.tencentcloudapi.woa.com/document/product/1003/48093)
+
+	* 新增入参：SnapshotIdList
+
+* [DescribeClusterParams](http://document.tencentcloudapi.woa.com/document/product/1003/75707)
+
+	* 新增入参：ParamName
+
+* [DescribeProjectSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1003/48304)
+
+	* 新增入参：Limit, Offset, SearchKey
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId
+
+	* 新增出参：Total
 
 
-修改数据结构：
-
-* [CallBackTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackTemplateInfo)
-
-	* 新增成员：PushExceptionNotifyUrl
 
 
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 15 次发布
+
+发布时间：2022-12-15 06:38:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOrgMemberProductServiceRole](http://document.tencentcloudapi.woa.com/document/product/850/76816)
 
 
-## 容器服务(tke) 版本：2022-05-01
+
+## 集团账号管理(organization) 版本：2018-12-25
 
 
 
-## 容器服务(tke) 版本：2018-05-25
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
-### 第 52 次发布
+### 第 18 次发布
 
-发布时间：2022-12-14 06:57:37
+发布时间：2022-12-15 06:39:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76826)
+* [DeleteParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76825)
+* [DescribeDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76819)
+* [DescribeDefaultParameters](http://document.tencentcloudapi.woa.com/document/product/409/76824)
+* [DescribeParameterTemplateAttributes](http://document.tencentcloudapi.woa.com/document/product/409/76823)
+* [DescribeParameterTemplates](http://document.tencentcloudapi.woa.com/document/product/409/76822)
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76818)
+* [ModifyParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76821)
+
+新增数据结构：
+
+* [ParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParameterTemplate)
+* [PolicyRule](http://document.tencentcloudapi.woa.com/document/product/409/16778#PolicyRule)
+* [SecurityGroup](http://document.tencentcloudapi.woa.com/document/product/409/16778#SecurityGroup)
+
+
+
+## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 28 次发布
+
+发布时间：2022-12-15 06:47:11
 
 本次发布包含了以下内容：
 
@@ -150,29 +137,14 @@
 
 修改接口：
 
-* [CreateImageCache](http://document.tencentcloudapi.woa.com/document/product/457/70861)
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1371/60149)
 
-	* 新增入参：RegistrySkipVerifyList, RegistryHttpEndPointList, ResolveConfig
-
-
+	* 新增入参：EnvironmentId
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 51 次发布
 
-发布时间：2022-12-14 07:03:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
-
-	* 新增成员：ServiceType
-
+## 弹性微服务 TEM(tem) 版本：2020-12-21
 
 
 
@@ -3390,6 +3362,21 @@
 
 
 ## 人体分析(bda) 版本：2020-03-24
+
+### 第 4 次发布
+
+发布时间：2022-12-15 06:10:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SegmentPortraitPic](http://document.tencentcloudapi.woa.com/document/product/1208/42970)
+
+	* 新增入参：Scene
+
 
 ### 第 3 次发布
 
@@ -9982,7 +9969,7 @@
 
 新增数据结构：
 
-* [[ResourceAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#ResourceAvailability)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[ResourceAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#ResourceAvailability))
+* [ResourceAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#ResourceAvailability)
 
 修改数据结构：
 
@@ -11871,6 +11858,22 @@
 
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 49 次发布
+
+发布时间：2022-12-15 06:18:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryFlexPlatformAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76815)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[PlatformAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PlatformAccountBalanceResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[PlatformAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PlatformAccountBalanceResult))
 
 ### 第 48 次发布
 
@@ -15393,6 +15396,39 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 24 次发布
+
+发布时间：2022-12-15 06:22:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccounts](http://document.tencentcloudapi.woa.com/document/product/1003/48075)
+
+	* 新增入参：Hosts, Limit, Offset
+
+	* 新增出参：TotalCount
+
+* [DescribeBackupList](http://document.tencentcloudapi.woa.com/document/product/1003/48093)
+
+	* 新增入参：SnapshotIdList
+
+* [DescribeClusterParams](http://document.tencentcloudapi.woa.com/document/product/1003/75707)
+
+	* 新增入参：ParamName
+
+* [DescribeProjectSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/1003/48304)
+
+	* 新增入参：Limit, Offset, SearchKey
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId
+
+	* 新增出参：Total
+
 
 ### 第 23 次发布
 
@@ -31307,6 +31343,18 @@
 
 ## 集团账号管理(organization) 版本：2021-03-31
 
+### 第 15 次发布
+
+发布时间：2022-12-15 06:38:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateOrgMemberProductServiceRole](http://document.tencentcloudapi.woa.com/document/product/850/76816)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 14 次发布
 
 发布时间：2022-11-17 06:25:29
@@ -31681,6 +31729,31 @@
 
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 18 次发布
+
+发布时间：2022-12-15 06:39:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDefaultParameters](http://document.tencentcloudapi.woa.com/document/product/409/76824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeParameterTemplateAttributes](http://document.tencentcloudapi.woa.com/document/product/409/76823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeParameterTemplates](http://document.tencentcloudapi.woa.com/document/product/409/76822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/409/76818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/76821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParameterTemplate)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[ParameterTemplate](http://document.tencentcloudapi.woa.com/document/product/409/16778#ParameterTemplate))
+* [[PolicyRule](http://document.tencentcloudapi.woa.com/document/product/409/16778#PolicyRule)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[PolicyRule](http://document.tencentcloudapi.woa.com/document/product/409/16778#PolicyRule))
+* [[SecurityGroup](http://document.tencentcloudapi.woa.com/document/product/409/16778#SecurityGroup)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[SecurityGroup](http://document.tencentcloudapi.woa.com/document/product/409/16778#SecurityGroup))
 
 ### 第 17 次发布
 
@@ -39121,6 +39194,21 @@
 
 
 ## 弹性微服务 TEM(tem) 版本：2021-07-01
+
+### 第 28 次发布
+
+发布时间：2022-12-15 06:47:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1371/60149)
+
+	* 新增入参：EnvironmentId
+
 
 ### 第 27 次发布
 

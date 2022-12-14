@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli captcha DescribeCaptchaMiniRiskResult --cli-unfold-argument  \
-    --CaptchaType 9 \
-    --Ticket xxxx \
-    --UserIp 127.0.0.1 \
     --CaptchaAppId 201111111 \
-    --AppSecretKey xxxxxx \
+    --CaptchaType 9 \
+    --WeChatOpenId xxxxxx \
     --SceneCode 1 \
-    --WeChatOpenId xxxxxx
+    --UserIp 127.0.0.1 \
+    --Ticket xxxx \
+    --AppSecretKey xxxxxx
 ```
 
 Output: 

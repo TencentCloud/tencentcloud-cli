@@ -18,6 +18,12 @@
       "name": "取消组织成员和组织管理员子账号的授权关系",
       "output": "CancelOrganizationMemberAuthAccountResponse"
     },
+    "CreateOrgMemberProductServiceRole": {
+      "document": "创建成员产品服务角色",
+      "input": "CreateOrgMemberProductServiceRoleRequest",
+      "name": "创建成员产品服务角色",
+      "output": "CreateOrgMemberProductServiceRoleResponse"
+    },
     "CreateOrganizationMember": {
       "document": "创建组织成员",
       "input": "CreateOrganizationMemberRequest",
@@ -282,6 +288,44 @@
     },
     "CancelOrganizationMemberAuthAccountResponse": {
       "document": "CancelOrganizationMemberAuthAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrgMemberProductServiceRoleRequest": {
+      "document": "CreateOrgMemberProductServiceRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品简称",
+          "example": "cvm",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "成员Uin",
+          "example": "100000006533",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrgMemberProductServiceRoleResponse": {
+      "document": "CreateOrgMemberProductServiceRole返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -24,6 +24,14 @@
         "title": "取消组织成员和组织管理员子账号的授权关系"
       }
     ],
+    "CreateOrgMemberProductServiceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrgMemberProductServiceRole\n<公共请求参数>\n\n{\n    \"Product\": \"cvm\",\n    \"MemberUin\": 1000055811\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "添加集团服务管理成员"
+      }
+    ],
     "CreateOrganizationMember": [
       {
         "document": "",

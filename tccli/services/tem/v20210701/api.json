@@ -3249,6 +3249,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "aa",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

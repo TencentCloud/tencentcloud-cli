@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "Total": 1,
         "Groups": [
             {
                 "CreateTime": "2017-04-13 15:00:06",
