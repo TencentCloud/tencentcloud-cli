@@ -780,6 +780,12 @@
       "name": "灵云V2-查询付款订单状态",
       "output": "QueryFlexPaymentOrderStatusResponse"
     },
+    "QueryFlexPlatformAccountBalance": {
+      "document": "灵云V2-平台账户余额查询",
+      "input": "QueryFlexPlatformAccountBalanceRequest",
+      "name": "灵云V2-平台账户余额查询",
+      "output": "QueryFlexPlatformAccountBalanceResponse"
+    },
     "QueryFlexSettlementOrderList": {
       "document": "灵云V2-查询结算订单列表",
       "input": "QueryFlexSettlementOrderListRequest",
@@ -22410,6 +22416,72 @@
       ],
       "usage": "out"
     },
+    "PlatformAccountBalanceResult": {
+      "document": "平台账户余额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Balance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SystemFreezeBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人工冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ManualFreezeBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可提现余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayableBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提现中余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InPayBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryAcctBindingRequest": {
       "document": "QueryAcctBinding请求参数结构体",
       "members": [
@@ -26730,6 +26802,78 @@
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PaymentOrderStatusResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPlatformAccountBalanceRequest": {
+      "document": "QueryFlexPlatformAccountBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照日期。格式yyyy-MM-dd",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPlatformAccountBalanceResponse": {
+      "document": "QueryFlexPlatformAccountBalance返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PlatformAccountBalanceResult",
           "name": "Result",
           "required": true,
           "type": "object",

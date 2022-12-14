@@ -1100,6 +1100,14 @@
         "title": "结算中心-查询提现单状态"
       }
     ],
+    "QueryFlexPlatformAccountBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPlatformAccountBalance\n<公共请求参数>\n\n{\n    \"IncomeType\": \"OCCASION\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"IncomeType\": null,\n            \"Balance\": \"331300.89\",\n            \"PayableBalance\": \"331.89\",\n            \"InPayBalance\": \"448.00\",\n            \"SystemFreezeBalance\": \"0.00\",\n            \"ManualFreezeBalance\": \"9.00\"\n        },\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "查询账户余额"
+      }
+    ],
     "QueryFlexSettlementOrderList": [
       {
         "document": "",
