@@ -1,3 +1,245 @@
+# Release 3.0.670.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 36 次发布
+
+发布时间：2022-12-16 01:10:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SwitchWaterPrintConfig](http://document.tencentcloudapi.woa.com/document/product/1021/59001)
+
+	* 新增入参：CloudSdkProxy
+
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：Line, ElasticServiceBandwidth
+
+* [WaterPrintConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#WaterPrintConfig)
+
+	* 新增成员：CloudSdkProxy
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 24 次发布
+
+发布时间：2022-12-16 01:15:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [HangUpCall](http://document.tencentcloudapi.woa.com/document/product/679/76827)
+
+
+
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 2 次发布
+
+发布时间：2022-12-16 01:20:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ActivateService](http://document.tencentcloudapi.woa.com/document/product/1604/76799)
+
+	* 新增入参：SDKAppID, UserAppID, UserUin, UserSubUin, SDKAppName, SceneInfos
+
+
+修改数据结构：
+
+* [BizInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#BizInfo)
+
+	* 新增成员：StrategyConfig
+
+* [SceneDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#SceneDetail)
+
+	* 新增成员：SceneID
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 40 次发布
+
+发布时间：2022-12-16 01:22:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：DefaultLoginUser, DefaultLoginPort, LatestOperationErrorMsg
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 17 次发布
+
+发布时间：2022-12-16 01:37:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ProcessMedia](http://document.tencentcloudapi.woa.com/document/product/862/37578)
+
+	* 新增入参：ChannelInfo, TaskType
+
+
+新增数据结构：
+
+* [AwsSQS](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsSQS)
+* [ChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ChannelInfo)
+* [S3OutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3OutputStorage)
+
+修改数据结构：
+
+* [TaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskNotifyConfig)
+
+	* 新增成员：AwsSQS
+
+	* <font color="#dd0000">**修改成员**：</font>CmqModel, CmqRegion
+
+* [TaskOutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskOutputStorage)
+
+	* 新增成员：S3OutputStorage
+
+
+
+
+## 自然语言处理(nlp) 版本：2019-04-08
+
+### 第 5 次发布
+
+发布时间：2022-12-16 01:38:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GenerateCouplet](http://document.tencentcloudapi.woa.com/document/product/271/76830)
+* [GeneratePoetry](http://document.tencentcloudapi.woa.com/document/product/271/76829)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 18 次发布
+
+发布时间：2022-12-16 01:42:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [K8SLabel](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SLabel)
+* [K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration)
+* [NamespaceResourceEnv](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnv)
+* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
+
+修改数据结构：
+
+* [Namespace](http://document.tencentcloudapi.woa.com/document/product/583/17244#Namespace)
+
+	* 新增成员：Status, StatusReason, ResourceEnv
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 17 次发布
+
+发布时间：2022-12-16 01:42:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateEmailSmtpPassWord](http://document.tencentcloudapi.woa.com/document/product/1288/76831)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 12 次发布
+
+发布时间：2022-12-16 01:48:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：CallbackUrl
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 52 次发布
+
+发布时间：2022-12-16 01:53:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：Egress
+
+* [ModifyBandwidthPackageAttribute](http://document.tencentcloudapi.woa.com/document/product/215/19208)
+
+	* 新增入参：OutTraffic
+
+	* <font color="#dd0000">**删除入参**：</font>MigrateOnRefund
+
+
+
+
 # Release 3.0.669.1
 
 ## 人体分析(bda) 版本：2020-03-24

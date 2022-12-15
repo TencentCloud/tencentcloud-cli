@@ -1962,6 +1962,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "回调地址，用于回调创建服务状态信息",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

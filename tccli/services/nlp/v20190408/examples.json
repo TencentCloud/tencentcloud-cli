@@ -86,6 +86,22 @@
         "title": "查询自定义词库的词条接口示例"
       }
     ],
+    "GenerateCouplet": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateCouplet\n<公共请求参数>\n\n{\n    \"Text\": \"小鸡\",\n    \"TargetType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TopScroll\": \"满园春色\",\n        \"Content\": [\n            \"小龙昂首开新局\",\n            \"鸡犬登楼展宏图\"\n        ],\n        \"RandomCause\": \"\",\n        \"RequestId\": \"9a7a1615-3e09-4db2-8032-5c6f497f7e6a\"\n    }\n}",
+        "title": "智能春联调用示例"
+      }
+    ],
+    "GeneratePoetry": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: nlp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GeneratePoetry\n<公共请求参数>\n\n{\n    \"Genre\": \"7\",\n    \"Text\": \"阳光\",\n    \"PoetryType\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Title\": \"阳光\",\n        \"Content\": [\n            \"阳羡溪头万树梅\",\n            \"光风吹梦入城来\",\n            \"天涯不尽山川胜\",\n            \"一片晴霞落酒台\"\n        ],\n        \"RequestId\": \"35fd611d-d4a1-4127-bd16-58ea1fa1a5dc\"\n    }\n}",
+        "title": "智能写诗调用示例"
+      }
+    ],
     "KeywordsExtraction": [
       {
         "document": "",

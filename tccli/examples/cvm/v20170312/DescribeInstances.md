@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
+    --Limit 1 \
+    --Filters.0.Values ap-guangzhou-2 ap-guangzhou-1 \
     --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2 \
-    --Offset 0 \
-    --Limit 1
+    --Offset 0
 ```
 
 Output: 
@@ -18,105 +18,99 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "RenewFlag": "xx",
-                "Uuid": "xx",
-                "InstanceState": "xx",
-                "LatestOperationState": "xx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "Uuid": "e85f1388-0422-410d-8e50-bef540e78c18",
+                "InstanceState": "RUNNING",
+                "LatestOperationState": "SUCCESS",
                 "LoginSettings": {
-                    "Password": "xx",
-                    "KeepImageLogin": "xx",
+                    "Password": "123qwe!@#QWE",
+                    "KeepImageLogin": "False",
                     "KeyIds": [
-                        "xx"
+                        "skey-b4vakk62"
                     ]
                 },
                 "IPv6Addresses": [
-                    "xx"
+                    "2001:0db8:86a3:08d3:1319:8a2e:0370:7344"
                 ],
-                "RestrictState": "xx",
+                "RestrictState": "PROTECTIVELY_ISOLATED",
                 "ExpiredTime": "2020-09-22T00:00:00+00:00",
-                "DisasterRecoverGroupId": "xx",
+                "DisasterRecoverGroupId": "",
                 "Memory": 1,
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "CPU": 1,
-                "RdmaIpAddresses": [
-                    "xx"
-                ],
-                "CamRoleName": "xx",
+                "RdmaIpAddresses": [],
+                "CamRoleName": "",
                 "PublicIpAddresses": [
                     "123.207.11.190"
                 ],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "test",
+                        "Key": "test"
                     }
                 ],
-                "InstanceId": "xx",
-                "ImageId": "xx",
-                "StopChargingMode": "xx",
-                "InstanceChargeType": "xx",
-                "InstanceType": "xx",
+                "InstanceId": "ins-xlsyru2j",
+                "ImageId": "img-8toqc6s3",
+                "StopChargingMode": "NOT_APPLICABLE",
+                "InstanceChargeType": "POSTPAID_BY_HOUR",
+                "InstanceType": "S2.SMALL2",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "CdcId": "xx",
-                    "DiskId": "xx",
-                    "DiskType": "xx"
+                    "CdcId": null,
+                    "DiskId": "disk-czsodtl1",
+                    "DiskType": "CLOUD_SSD"
                 },
                 "Placement": {
-                    "HostId": "xx",
+                    "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
-                    "HostIds": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "HostIps": [
-                        "xx"
-                    ]
+                    "HostIds": [],
+                    "Zone": "ap-guangzhou-1",
+                    "HostIps": []
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64bit",
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "xx",
+                "InstanceName": "test",
                 "DataDisks": [
                     {
                         "DeleteWithInstance": true,
                         "Encrypt": true,
-                        "CdcId": "xx",
-                        "DiskType": "xx",
+                        "CdcId": null,
+                        "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
-                        "KmsKeyId": "xx",
-                        "DiskSize": 0,
-                        "SnapshotId": "xx",
-                        "DiskId": "xx"
+                        "KmsKeyId": null,
+                        "DiskSize": 50,
+                        "SnapshotId": null,
+                        "DiskId": "disk-bzsodtn1"
                     }
                 ],
-                "IsolatedSource": "xx",
+                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
-                    "SubnetId": "xx",
+                    "SubnetId": "subnet-mv4sn55k",
                     "AsVpcGateway": false,
                     "Ipv6AddressCount": 1,
-                    "VpcId": "xx",
+                    "VpcId": "vpc-m0cnatxj",
                     "PrivateIpAddresses": [
-                        "xx"
+                        "172.16.3.59"
                     ]
                 },
-                "LatestOperationRequestId": "xx",
+                "LatestOperationRequestId": "c7de1287-061d-4ace-8caf-6ad8e5a2f29a",
                 "InternetAccessible": {
                     "PublicIpAssigned": true,
-                    "InternetChargeType": "xx",
-                    "BandwidthPackageId": "xx",
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "BandwidthPackageId": null,
                     "InternetMaxBandwidthOut": 1
                 },
-                "HpcClusterId": "xx",
-                "LatestOperation": "xx"
+                "HpcClusterId": "",
+                "LatestOperation": "ResetInstancesType"
             }
         ],
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "d655191e-a39d-43d2-8349-8c3f2bf4b327"
     }
 }
 ```
@@ -129,10 +123,10 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
-    --Filters.0.Name tag:city \
+    --Limit 1 \
     --Filters.0.Values shenzhen \
-    --Offset 0 \
-    --Limit 1
+    --Filters.0.Name tag:city \
+    --Offset 0
 ```
 
 Output: 
@@ -173,7 +167,7 @@ Output:
                     "DiskId": "disk-nucurerk",
                     "DiskType": "CLOUD_PREMIUM"
                 },
-                "IsolatedSource": "xx",
+                "IsolatedSource": "NOTISOLATED",
                 "Placement": {
                     "ProjectId": 1174660,
                     "HostId": null,
@@ -219,10 +213,10 @@ Input:
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
+    --Limit 1 \
+    --Filters.0.Values ap-guangzhou-2 ap-guangzhou-1 \
     --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-1 ap-guangzhou-2 \
-    --Offset 0 \
-    --Limit 1
+    --Offset 0
 ```
 
 Output: 
@@ -231,105 +225,99 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "RenewFlag": "xx",
-                "Uuid": "xx",
-                "InstanceState": "xx",
-                "LatestOperationState": "xx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "Uuid": "e85f1388-0422-410d-8e50-bef540e78c18",
+                "InstanceState": "RUNNING",
+                "LatestOperationState": "OPERATING",
                 "LoginSettings": {
-                    "Password": "xx",
-                    "KeepImageLogin": "xx",
+                    "Password": "123qwe!@#QWE",
+                    "KeepImageLogin": "False",
                     "KeyIds": [
-                        "xx"
+                        "skey-b4vakk62"
                     ]
                 },
                 "IPv6Addresses": [
-                    "xx"
+                    "2001:0db8:86a3:08d3:1319:8a2e:0370:7344"
                 ],
-                "RestrictState": "xx",
+                "RestrictState": "PROTECTIVELY_ISOLATED",
                 "ExpiredTime": "2020-09-22T00:00:00+00:00",
                 "DisasterRecoverGroupId": "xx",
                 "Memory": 1,
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "CPU": 1,
-                "RdmaIpAddresses": [
-                    "xx"
-                ],
-                "CamRoleName": "xx",
+                "RdmaIpAddresses": [],
+                "CamRoleName": "",
                 "PublicIpAddresses": [
                     "123.207.11.190"
                 ],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "test",
+                        "Key": "test"
                     }
                 ],
-                "InstanceId": "xx",
-                "ImageId": "xx",
-                "StopChargingMode": "xx",
-                "InstanceChargeType": "xx",
-                "InstanceType": "xx",
+                "InstanceId": "ins-xlsyru2j",
+                "ImageId": "img-8toqc6s3",
+                "StopChargingMode": "NOT_APPLICABLE",
+                "InstanceChargeType": "POSTPAID_BY_HOUR",
+                "InstanceType": "S2.SMALL2",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "CdcId": "xx",
-                    "DiskId": "xx",
-                    "DiskType": "xx"
+                    "CdcId": null,
+                    "DiskId": "disk-czsodtl1",
+                    "DiskType": "CLOUD_SSD"
                 },
                 "Placement": {
-                    "HostId": "xx",
+                    "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
-                    "HostIds": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "HostIps": [
-                        "xx"
-                    ]
+                    "HostIds": [],
+                    "Zone": "ap-guangzhou-1",
+                    "HostIps": []
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64bit",
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "xx",
+                "InstanceName": "test",
                 "DataDisks": [
                     {
                         "DeleteWithInstance": true,
                         "Encrypt": true,
-                        "CdcId": "xx",
-                        "DiskType": "xx",
+                        "CdcId": null,
+                        "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
-                        "KmsKeyId": "xx",
-                        "DiskSize": 0,
-                        "SnapshotId": "xx",
-                        "DiskId": "xx"
+                        "KmsKeyId": null,
+                        "DiskSize": 50,
+                        "SnapshotId": null,
+                        "DiskId": "disk-bzsodtn1"
                     }
                 ],
-                "IsolatedSource": "xx",
+                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
-                    "SubnetId": "xx",
+                    "SubnetId": "subnet-mv4sn55k",
                     "AsVpcGateway": false,
                     "Ipv6AddressCount": 1,
-                    "VpcId": "xx",
+                    "VpcId": "vpc-m0cnatxj",
                     "PrivateIpAddresses": [
-                        "xx"
+                        "172.16.3.59"
                     ]
                 },
-                "LatestOperationRequestId": "xx",
+                "LatestOperationRequestId": "c7de1287-061d-4ace-8caf-6ad8e5a2f29a",
                 "InternetAccessible": {
                     "PublicIpAssigned": true,
-                    "InternetChargeType": "xx",
-                    "BandwidthPackageId": "xx",
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "BandwidthPackageId": null,
                     "InternetMaxBandwidthOut": 1
                 },
-                "HpcClusterId": "xx",
-                "LatestOperation": "xx"
+                "HpcClusterId": "",
+                "LatestOperation": "StopInstances"
             }
         ],
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "d655191e-a39d-43d2-8349-8c3f2bf4b327"
     }
 }
 ```

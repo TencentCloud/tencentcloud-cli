@@ -2947,13 +2947,13 @@
     "ModifyBandwidthPackageAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyBandwidthPackageAttribute\n&BandwidthPackageId=bwp-e40edw8y\n&BandwidthPackageName=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBandwidthPackageAttribute\n<公共请求参数>\n\n{\n    \"BandwidthPackageName\": \"test\",\n    \"BandwidthPackageId\": \"bwp-e40edw8y\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ece8f4a-c0f5-4b83-8054-a9b808a5c465\"\n    }\n}",
         "title": "修改带宽包名称"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyBandwidthPackageAttribute\n&BandwidthPackageId=bwp-e40edw8y\n&BandwidthPackageName=test\n&ChargeType=TOP5\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBandwidthPackageAttribute\n<公共请求参数>\n\n{\n    \"BandwidthPackageName\": \"test\",\n    \"BandwidthPackageId\": \"bwp-e40edw8y\",\n    \"ChargeType\": \"TOP5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ece8f4a-c0f5-4b83-8054-a9b808a5c465\"\n    }\n}",
         "title": "修改带宽包计费模式"
       }

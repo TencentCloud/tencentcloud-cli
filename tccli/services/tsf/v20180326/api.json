@@ -5247,7 +5247,8 @@
           "member": "string",
           "name": "ClusterName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5256,7 +5257,8 @@
           "member": "string",
           "name": "ClusterType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5265,7 +5267,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5274,7 +5277,8 @@
           "member": "string",
           "name": "ClusterCIDR",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5283,7 +5287,8 @@
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5292,7 +5297,8 @@
           "member": "string",
           "name": "TsfRegionId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5301,7 +5307,8 @@
           "member": "string",
           "name": "TsfZoneId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5310,7 +5317,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5319,7 +5327,8 @@
           "member": "string",
           "name": "ClusterVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5328,7 +5337,8 @@
           "member": "uint64",
           "name": "MaxNodePodNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5337,7 +5347,8 @@
           "member": "uint64",
           "name": "MaxClusterServiceNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5346,7 +5357,8 @@
           "member": "string",
           "name": "ProgramId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5355,7 +5367,8 @@
           "member": "string",
           "name": "KuberneteApiServer",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5364,7 +5377,8 @@
           "member": "string",
           "name": "KuberneteNativeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5373,7 +5387,8 @@
           "member": "string",
           "name": "KuberneteNativeSecret",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5382,7 +5397,8 @@
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5391,13 +5407,14 @@
       "document": "CreateCluster返回参数结构体",
       "members": [
         {
-          "document": "集群ID",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

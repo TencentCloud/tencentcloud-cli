@@ -6,7 +6,12 @@ Input:
 
 ```
 tccli cms ActivateService --cli-unfold-argument  \
-    --Status True
+    --UserAppID xx \
+    --Status True \
+    --SDKAppID xx \
+    --UserSubUin xx \
+    --SDKAppName xx \
+    --UserUin xx
 ```
 
 Output: 
@@ -15,6 +20,7 @@ Output:
     "Response": {
         "SceneInfos": [
             {
+                "SceneID": "xx",
                 "BizInfos": [
                     {
                         "BizType": "xx",

@@ -3,8 +3,8 @@
     "ActivateService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateService\n<公共请求参数>\n\n{\n    \"Status\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"SceneInfos\": [\n            {\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"xx\",\n                        \"Status\": true,\n                        \"StrategyType\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateService\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"Status\": true,\n    \"SDKAppID\": \"xx\",\n    \"UserSubUin\": \"xx\",\n    \"SDKAppName\": \"xx\",\n    \"UserUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SceneInfos\": [\n            {\n                \"SceneID\": \"xx\",\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"xx\",\n                        \"Status\": true,\n                        \"StrategyType\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "一键开通服务示例"
       }
     ],

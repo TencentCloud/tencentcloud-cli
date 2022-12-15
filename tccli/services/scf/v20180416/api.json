@@ -1220,7 +1220,8 @@
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1229,7 +1230,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3796,6 +3798,95 @@
       ],
       "type": "object"
     },
+    "K8SLabel": {
+      "document": "k8s label",
+      "members": [
+        {
+          "default": "",
+          "document": "label的名称",
+          "example": "labelkey",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "label的值",
+          "example": "labelvalue",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "K8SToleration": {
+      "document": "Kubernetes污点容忍，使用时请注意您的Kubernetes版本所支持的字段情况。\n可参考 https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配的污点名",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配方式，默认值为: Equal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Equal",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NoExecute",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配的污点值，当Operator为Equal时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当污点不被容忍时，Pod还能在节点上运行多久\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TolerationSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "LayerVersionInfo": {
       "document": "层版本信息",
       "members": [
@@ -4692,47 +4783,90 @@
         {
           "default": "",
           "document": "命名空间创建时间",
+          "example": "0000-00-00 00:00",
           "member": "datetime",
           "name": "ModTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "命名空间修改时间",
+          "example": "0000-00-00 00:00",
           "member": "datetime",
           "name": "AddTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "命名空间描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "默认default，TCB表示是小程序云开发创建的",
+          "example": "default",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "命名空间状态，可支持以下值\nActive: 正常可用\nCreating: 创建中\nCreateFailed: 创建失败\nDeleting: 删除中\nDeleteFailed: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "当命名空间处于CreateFailed, DeleteFailed等异常状态时候，该字段指示异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "初始化失败",
+          "member": "string",
+          "name": "StatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "当命名空间绑定了特殊资源池，该字段包含资源池配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "NamespaceResourceEnv",
+          "name": "ResourceEnv",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -4842,6 +4976,95 @@
         }
       ],
       "usage": "out"
+    },
+    "NamespaceResourceEnv": {
+      "document": "命名空间资源池配置",
+      "members": [
+        {
+          "default": "",
+          "document": "基于TKE集群的资源池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "NamespaceResourceEnvTKE",
+          "name": "TKE",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "NamespaceResourceEnvTKE": {
+      "document": "基于TKE的资源池选项",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xx",
+          "member": "string",
+          "name": "SubnetID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "kube-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/scf",
+          "member": "string",
+          "name": "DataPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "node选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Key0=a,Value0=x",
+          "member": "K8SLabel",
+          "name": "NodeSelector",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "污点容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Key: \"key1\"   Operator: \"Exists\"",
+          "member": "K8SToleration",
+          "name": "Tolerations",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "NamespaceUsage": {
       "document": "名称空间已使用信息",

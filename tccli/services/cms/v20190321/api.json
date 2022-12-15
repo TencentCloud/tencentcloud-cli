@@ -115,6 +115,56 @@
       "members": [
         {
           "default": "",
+          "document": "一级业务id(应用id)",
+          "example": "12345",
+          "member": "string",
+          "name": "SDKAppID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户appid",
+          "example": "12345",
+          "member": "string",
+          "name": "UserAppID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户uin",
+          "example": "12345",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子账户uin",
+          "example": "12345",
+          "member": "string",
+          "name": "UserSubUin",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "SDKAppName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
           "document": "应用开通状态",
           "example": "true",
           "member": "bool",
@@ -122,6 +172,16 @@
           "required": false,
           "type": "bool",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景策略配置信息",
+          "example": "无",
+          "member": "SceneDetail",
+          "name": "SceneInfos",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -181,6 +241,17 @@
           "name": "Status",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略配置",
+          "example": "{}",
+          "member": "string",
+          "name": "StrategyConfig",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         }
@@ -3315,6 +3386,17 @@
     "SceneDetail": {
       "document": "场景明细",
       "members": [
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SceneID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "default": "",
           "document": "策略信息",
