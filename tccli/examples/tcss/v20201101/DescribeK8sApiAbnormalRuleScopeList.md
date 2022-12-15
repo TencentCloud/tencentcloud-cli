@@ -1,4 +1,4 @@
-**Example 1: 查询k8s api 异常规则中范围列表**
+**Example 1: 查询k8sapi异常规则中范围列表**
 
 
 

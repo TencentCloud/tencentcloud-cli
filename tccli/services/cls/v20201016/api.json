@@ -594,6 +594,7 @@
         {
           "default": "",
           "document": "告警通知模板名称。",
+          "example": "告警通知模板名称",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -603,6 +604,7 @@
         {
           "default": "",
           "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "example": "All",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -612,6 +614,7 @@
         {
           "default": "",
           "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": true,
@@ -621,6 +624,7 @@
         {
           "default": "",
           "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": true,
@@ -630,6 +634,7 @@
         {
           "default": "",
           "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "notice-xxx-xxx-xx-xx",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -639,6 +644,7 @@
         {
           "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -648,6 +654,7 @@
         {
           "default": "",
           "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "UpdateTime",
           "required": true,

@@ -23,6 +23,7 @@ Output:
                         "ZoneName": "广州二区",
                         "IsSaleout": false,
                         "IsDefault": false,
+                        "OldZoneId": 0,
                         "NetWorkType": [
                             "basenet",
                             "vpcnet"

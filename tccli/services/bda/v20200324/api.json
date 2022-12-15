@@ -1744,10 +1744,19 @@
         },
         {
           "default": "",
-          "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。",
+          "document": "返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。",
           "example": "url",
           "member": "string",
           "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "适用场景类型。\n\n取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。\n两种模式选择一种传入，默认为GEN。",
+          "example": "GEN",
+          "member": "string",
+          "name": "Scene",
           "required": false,
           "type": "string"
         }
@@ -1758,7 +1767,7 @@
       "document": "SegmentPortraitPic返回参数结构体",
       "members": [
         {
-          "document": "处理后的图片 base64 数据，透明背景图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理后的图片 base64 数据，透明背景图。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "******",
           "member": "string",
           "name": "ResultImage",
@@ -1767,7 +1776,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "一个通过 Base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。这些浮点数代表原图从左上角开始的每一行的每一个像素点，每一个浮点数的值是原图相应像素点位于人体轮廓内的置信度（0-1）转化的灰度值（0-255）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "******",
           "member": "string",
           "name": "ResultMask",
@@ -1785,7 +1794,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "支持将处理过的图片 base64 数据，透明背景图以URL的形式返回值，URL有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持将处理过的图片 base64 数据，透明背景图以Url的形式返回值，Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "ResultImageUrl",
@@ -1794,7 +1803,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "一个通过 Base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以URL形式的返回值；URL有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一个通过 base64 编码的文件，解码后文件由 Float 型浮点数组成。支持以Url形式的返回值；Url有效期为30分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
           "name": "ResultMaskUrl",

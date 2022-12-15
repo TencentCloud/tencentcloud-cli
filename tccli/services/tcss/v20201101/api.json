@@ -1093,9 +1093,9 @@
       "output": "DescribeK8sApiAbnormalRuleListResponse"
     },
     "DescribeK8sApiAbnormalRuleScopeList": {
-      "document": "查询k8s api 异常规则中范围列表",
+      "document": "查询k8sapi 异常规则中范围列表",
       "input": "DescribeK8sApiAbnormalRuleScopeListRequest",
-      "name": "查询k8s api 异常规则中范围列表",
+      "name": "查询k8sapi 异常规则中范围列表",
       "output": "DescribeK8sApiAbnormalRuleScopeListResponse"
     },
     "DescribeK8sApiAbnormalSummary": {
@@ -30166,7 +30166,7 @@
         },
         {
           "default": "",
-          "document": "状态(ture:开 false:关)",
+          "document": "状态(true:开 false:关)",
           "example": "true",
           "member": "bool",
           "name": "Status",

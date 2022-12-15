@@ -28,6 +28,7 @@ Output:
                             "TagValue": "xx"
                         }
                     ],
+                    "RegionId": "xx",
                     "ClusterId": "xx",
                     "RunInstancesNum": 0,
                     "Vpc": "xx",

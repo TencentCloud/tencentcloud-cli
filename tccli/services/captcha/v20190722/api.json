@@ -43,9 +43,9 @@
       "output": "DescribeCaptchaMiniResultResponse"
     },
     "DescribeCaptchaMiniRiskResult": {
-      "document": "核查验证码小程序插件票据接入风控结果(Beta)",
+      "document": "核查验证码小程序插件票据接入风控结果(已停用)",
       "input": "DescribeCaptchaMiniRiskResultRequest",
-      "name": "核查验证码小程序插件票据接入风控结果(Beta)",
+      "name": "核查验证码小程序插件票据接入风控结果(已停用)",
       "output": "DescribeCaptchaMiniRiskResultResponse"
     },
     "DescribeCaptchaOperData": {

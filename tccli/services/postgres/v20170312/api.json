@@ -42,6 +42,12 @@
       "name": "创建实例(新)",
       "output": "CreateInstancesResponse"
     },
+    "CreateParameterTemplate": {
+      "document": "本接口 (CreateParameterTemplate) 用于创建参数模板。",
+      "input": "CreateParameterTemplateRequest",
+      "name": "创建参数模板",
+      "output": "CreateParameterTemplateResponse"
+    },
     "CreateReadOnlyDBInstance": {
       "document": "本接口(CreateReadOnlyDBInstance)用于创建只读实例",
       "input": "CreateReadOnlyDBInstanceRequest",
@@ -71,6 +77,12 @@
       "input": "DeleteDBInstanceNetworkAccessRequest",
       "name": "删除实例网络",
       "output": "DeleteDBInstanceNetworkAccessResponse"
+    },
+    "DeleteParameterTemplate": {
+      "document": "本接口（DeleteParameterTemplate）主要用于删除某个参数模板。",
+      "input": "DeleteParameterTemplateRequest",
+      "name": "删除参数模板",
+      "output": "DeleteParameterTemplateResponse"
     },
     "DeleteReadOnlyGroup": {
       "document": "本接口(DeleteReadOnlyGroup)用于删除指定的只读组",
@@ -138,6 +150,12 @@
       "name": "获取实例可修改参数列表",
       "output": "DescribeDBInstanceParametersResponse"
     },
+    "DescribeDBInstanceSecurityGroups": {
+      "document": "本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组信息。",
+      "input": "DescribeDBInstanceSecurityGroupsRequest",
+      "name": "查询实例安全组信息",
+      "output": "DescribeDBInstanceSecurityGroupsResponse"
+    },
     "DescribeDBInstances": {
       "document": "本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。",
       "input": "DescribeDBInstancesRequest",
@@ -162,6 +180,12 @@
       "name": "拉取数据库列表",
       "output": "DescribeDatabasesResponse"
     },
+    "DescribeDefaultParameters": {
+      "document": "本接口（DescribeDefaultParameters）主要用于查询某个数据库版本和引擎支持的所有参数。",
+      "input": "DescribeDefaultParametersRequest",
+      "name": "查询默认参数列表",
+      "output": "DescribeDefaultParametersResponse"
+    },
     "DescribeEncryptionKeys": {
       "document": "获取实例的密钥信息列表。",
       "input": "DescribeEncryptionKeysRequest",
@@ -173,6 +197,18 @@
       "input": "DescribeOrdersRequest",
       "name": "获取订单信息",
       "output": "DescribeOrdersResponse"
+    },
+    "DescribeParameterTemplateAttributes": {
+      "document": "本接口（DescribeParameterTemplateAttributes）用于查询某个参数模板的具体内容，包括基本信息和参数信息。",
+      "input": "DescribeParameterTemplateAttributesRequest",
+      "name": "查询参数模板详情",
+      "output": "DescribeParameterTemplateAttributesResponse"
+    },
+    "DescribeParameterTemplates": {
+      "document": "本接口 (DescribeParameterTemplates) 用于查询参数模板列表。",
+      "input": "DescribeParameterTemplatesRequest",
+      "name": "查询参数模板列表",
+      "output": "DescribeParameterTemplatesResponse"
     },
     "DescribeParamsEvent": {
       "document": "获取参数修改事件详情",
@@ -300,6 +336,12 @@
       "name": "修改实例所属的只读组",
       "output": "ModifyDBInstanceReadOnlyGroupResponse"
     },
+    "ModifyDBInstanceSecurityGroups": {
+      "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改实例安全组。",
+      "input": "ModifyDBInstanceSecurityGroupsRequest",
+      "name": "修改实例的安全组",
+      "output": "ModifyDBInstanceSecurityGroupsResponse"
+    },
     "ModifyDBInstanceSpec": {
       "document": "本接口（ModifyDBInstanceSpec）用于调整实例规格，包括内存、磁盘。",
       "input": "ModifyDBInstanceSpecRequest",
@@ -311,6 +353,12 @@
       "input": "ModifyDBInstancesProjectRequest",
       "name": "将实例转至其他项目",
       "output": "ModifyDBInstancesProjectResponse"
+    },
+    "ModifyParameterTemplate": {
+      "document": "本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述，修改，添加和删除参数模板参数。",
+      "input": "ModifyParameterTemplateRequest",
+      "name": "修改参数模板信息",
+      "output": "ModifyParameterTemplateResponse"
     },
     "ModifyReadOnlyGroupConfig": {
       "document": "本接口(ModifyReadOnlyGroupConfig)用于更新只读组配置信息",
@@ -1564,6 +1612,69 @@
       ],
       "type": "object"
     },
+    "CreateParameterTemplateRequest": {
+      "document": "CreateParameterTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@",
+          "example": "test_template",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库大版本号，例如：11，12，13",
+          "example": "13",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库引擎，例如：postgresql，mssql_compatible",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateParameterTemplateResponse": {
+      "document": "CreateParameterTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "参数模板ID，用于唯一确认参数模板",
+          "example": "497857b4-4676-5583-8359-b697fe5968d9",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateReadOnlyDBInstanceRequest": {
       "document": "CreateReadOnlyDBInstance请求参数结构体",
       "members": [
@@ -2792,6 +2903,33 @@
       ],
       "type": "object"
     },
+    "DeleteParameterTemplateRequest": {
+      "document": "DeleteParameterTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID，用于唯一确认待操作的参数模板",
+          "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteParameterTemplateResponse": {
+      "document": "DeleteParameterTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteReadOnlyGroupNetworkAccessRequest": {
       "document": "DeleteReadOnlyGroupNetworkAccess请求参数结构体",
       "members": [
@@ -3431,6 +3569,51 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceSecurityGroupsRequest": {
+      "document": "DescribeDBInstanceSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId",
+          "example": "postgres-apzvwncr",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要查询只读组关联的安全组，只传ReadOnlyGroupId",
+          "example": "pgrogrp-nqwpkjbu",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceSecurityGroupsResponse": {
+      "document": "DescribeDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组信息数组",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "SecurityGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstancesRequest": {
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
@@ -3737,6 +3920,60 @@
       ],
       "type": "object"
     },
+    "DescribeDefaultParametersRequest": {
+      "document": "DescribeDefaultParameters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库版本，大版本号，例如11，12，13",
+          "example": "13",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库引擎，例如：postgresql,mssql_compatible",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultParametersResponse": {
+      "document": "DescribeDefaultParameters返回参数结构体",
+      "members": [
+        {
+          "document": "参数个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "ParamInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEncryptionKeysRequest": {
       "document": "DescribeEncryptionKeys请求参数结构体",
       "members": [
@@ -3805,6 +4042,177 @@
           "example": "无",
           "member": "PgDeal",
           "name": "Deals",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParameterTemplateAttributesRequest": {
+      "document": "DescribeParameterTemplateAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID",
+          "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParameterTemplateAttributesResponse": {
+      "document": "DescribeParameterTemplateAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "参数模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板包含的参数个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板包含的参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "ParamInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板适用的数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板适用的数据库引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "参数模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "use to test",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParameterTemplatesRequest": {
+      "document": "DescribeParameterTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页显示数量，[0，100]，默认 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，枚举值，支持：asc（升序） ，desc（降序）",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParameterTemplatesResponse": {
+      "document": "DescribeParameterTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的参数模板总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板列表",
+          "example": "无",
+          "member": "ParameterTemplate",
+          "name": "ParameterTemplateSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5408,6 +5816,51 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceSecurityGroupsRequest": {
+      "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例或只读组要绑定的安全组列表",
+          "example": "[\"sg-91jbmkp1\"]",
+          "member": "string",
+          "name": "SecurityGroupIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId",
+          "example": "postgres-apzvwncr",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId",
+          "example": "pgrogrp-nqwpkjbu",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupsResponse": {
+      "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSpecRequest": {
       "document": "ModifyDBInstanceSpec请求参数结构体",
       "members": [
@@ -5561,6 +6014,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyParameterTemplateRequest": {
+      "document": "ModifyParameterTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID，用于唯一确认参数模板，不可修改",
+          "example": "497857b4-4676-5583-8359-b697fe5968d9",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称",
+          "example": "test_template",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中",
+          "example": "无",
+          "member": "ParamEntry",
+          "name": "ModifyParamEntrySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中",
+          "example": "[\"wal_level\"]",
+          "member": "string",
+          "name": "DeleteParamSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyParameterTemplateResponse": {
+      "document": "ModifyParameterTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6388,6 +6904,62 @@
       ],
       "usage": "out"
     },
+    "ParameterTemplate": {
+      "document": "参数模板的基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID",
+          "example": "6e89c045-935f-5d5f-8512-08d7f6cf2210",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板名称",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板适用的数据库版本",
+          "example": "13",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板适用的数据库引擎",
+          "example": "postgresql",
+          "member": "string",
+          "name": "DBEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板描述",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PgDeal": {
       "document": "订单详情",
       "members": [
@@ -6443,6 +7015,62 @@
           "name": "DBInstanceIdSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyRule": {
+      "document": "安全组规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略，ACCEPT 或者 DROP",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源或目的 IP 或 IP 段，例如172.16.0.0/12",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "CidrIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "ALL",
+          "member": "string",
+          "name": "PortRange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络协议，支持 UDP、TCP 等",
+          "example": "icmp",
+          "member": "string",
+          "name": "IpProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "放通Ping服务",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6971,6 +7599,82 @@
         }
       ],
       "type": "object"
+    },
+    "SecurityGroup": {
+      "document": "安全组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "项目Id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-10-20 21:38:20",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入站规则",
+          "example": "无",
+          "member": "PolicyRule",
+          "name": "Inbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出站规则",
+          "example": "无",
+          "member": "PolicyRule",
+          "name": "Outbound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组ID",
+          "example": "sg-mpkb1net",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组名称",
+          "example": "securitygroup",
+          "member": "string",
+          "name": "SecurityGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组备注",
+          "example": "安全组",
+          "member": "string",
+          "name": "SecurityGroupDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ServerlessDBAccount": {
       "document": "serverless账号描述",

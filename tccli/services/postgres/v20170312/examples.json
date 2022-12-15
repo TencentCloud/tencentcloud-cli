@@ -68,6 +68,14 @@
         "title": "创建指定内核版本号的PostgreSQL实例"
       }
     ],
+    "CreateParameterTemplate": [
+      {
+        "document": "数据库版本为14，引擎为postgresql，参数模板名称和描述自定义。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"test_template\",\n    \"DBMajorVersion\": \"13\",\n    \"DBEngine\": \"postgresql\",\n    \"TemplateDescription\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\"\n    }\n}",
+        "title": "创建参数模板示例"
+      }
+    ],
     "CreateReadOnlyDBInstance": [
       {
         "document": "",
@@ -106,6 +114,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBInstanceNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"Vip\": \"127.0.01\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
         "title": "删除实例网络"
+      }
+    ],
+    "DeleteParameterTemplate": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除参数模板"
       }
     ],
     "DeleteReadOnlyGroup": [
@@ -202,6 +218,20 @@
         "title": "获取实例参数列表"
       }
     ],
+    "DescribeDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-nqwpkjb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47e3764e-bce4-477a-a293-49ffa1bfb447\",\n        \"SecurityGroupSet\": [\n            {\n                \"CreateTime\": \"2022-08-30 21:36:58\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义222\",\n                \"SecurityGroupId\": \"sg-116auwb1\",\n                \"SecurityGroupName\": \"自定义222-202208302136517989\"\n            },\n            {\n                \"CreateTime\": \"2022-10-20 21:38:20\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmpv6\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"172.16.0.0/12\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"192.168.0.0/16\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义模板\",\n                \"SecurityGroupId\": \"sg-91jbmkp1\",\n                \"SecurityGroupName\": \"自定义模板-20221020213819279\"\n            },\n            {\n                \"CreateTime\": \"2022-08-22 17:34:08\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通入站规则\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22,3389,80,443,20,21\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通入站规则\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"一键放通出站规则\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"拒绝所有\",\n                \"SecurityGroupId\": \"sg-mpkb1net\",\n                \"SecurityGroupName\": \"自定义-2022082217335427078\"\n            }\n        ]\n    }\n}",
+        "title": "查询只读组安全组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-i2q4utnp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"770234c2-8a51-4d06-b3f7-4454664848b1\",\n        \"SecurityGroupSet\": [\n            {\n                \"CreateTime\": \"2022-10-20 21:38:20\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmp\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Ping服务\",\n                        \"IpProtocol\": \"icmpv6\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Linux SSH登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"22\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Windows远程登录\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"3389\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"172.16.0.0/12\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"192.168.0.0/16\",\n                        \"Description\": \"放通内网（云私有网络）\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"80\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"::/0\",\n                        \"Description\": \"放通Web服务端口\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"443\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"0.0.0.0/0\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"CidrIp\": \"\",\n                        \"Description\": \"\",\n                        \"IpProtocol\": \"ALL\",\n                        \"PortRange\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupDescription\": \"自定义模板\",\n                \"SecurityGroupId\": \"sg-91jbmkp1\",\n                \"SecurityGroupName\": \"自定义模板-20221020213819279\"\n            }\n        ]\n    }\n}",
+        "title": "查询实例安全组"
+      }
+    ],
     "DescribeDBInstances": [
       {
         "document": "",
@@ -240,6 +270,14 @@
         "title": "拉取数据库列表"
       }
     ],
+    "DescribeDefaultParameters": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDefaultParameters\n<公共请求参数>\n\n{\n    \"DBMajorVersion\": \"13\",\n    \"DBEngine\": \"postgresql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\",\n        \"ParamInfoSet\": [\n            {\n                \"Advanced\": false,\n                \"ClassificationCN\": \"AUTOVACUUM\",\n                \"ClassificationEN\": \"Autovacuum\",\n                \"CurrentValue\": \"\",\n                \"DefaultValue\": \"-1\",\n                \"EnumValue\": null,\n                \"ID\": 1409,\n                \"LastModifyTime\": \"\",\n                \"Max\": 10000,\n                \"Min\": -1,\n                \"Name\": \"autovacuum_vacuum_cost_limit\",\n                \"NeedReboot\": false,\n                \"ParamDescriptionCH\": \"指定用于AUTOVACUUM操作中的代价限制值。如果指定-1（默认值），则使用vacuum_cost_limit值\",\n                \"ParamDescriptionEN\": \"Vacuum cost amount available before napping, for autovacuum.\",\n                \"ParamValueType\": \"integer\",\n                \"SpecRelated\": false,\n                \"StandbyRelated\": 0,\n                \"Unit\": \"\"\n            },\n            {\n                \"Advanced\": false,\n                \"ClassificationCN\": \"复制\",\n                \"ClassificationEN\": \"Replication\",\n                \"CurrentValue\": \"\",\n                \"DefaultValue\": \"27\",\n                \"EnumValue\": null,\n                \"ID\": 1592,\n                \"LastModifyTime\": \"\",\n                \"Max\": 650,\n                \"Min\": 27,\n                \"Name\": \"max_wal_senders\",\n                \"NeedReboot\": true,\n                \"ParamDescriptionCH\": \"wal发送进程的数量\",\n                \"ParamDescriptionEN\": \"Sets the maximum number of simultaneously running WAL sender processes.\",\n                \"ParamValueType\": \"integer\",\n                \"SpecRelated\": true,\n                \"StandbyRelated\": 1,\n                \"Unit\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询某个参数模板支持添加的所有参数的信息"
+      }
+    ],
     "DescribeEncryptionKeys": [
       {
         "document": "获取实例的密钥信息列表。",
@@ -254,6 +292,22 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrders\n<公共请求参数>\n\n{\n    \"DealNames\": [\n        \"20180615110033\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Deals\": [\n            {\n                \"Count\": 1,\n                \"OwnerUin\": \"909619400\",\n                \"DBInstanceIdSet\": [\n                    \"postgres-2uepfuz1\"\n                ],\n                \"PayMode\": 1,\n                \"FlowId\": 36,\n                \"DealName\": \"20180615110033\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "获取订单信息"
+      }
+    ],
+    "DescribeParameterTemplateAttributes": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParameterTemplateAttributes\n<公共请求参数>\n\n{\n    \"TemplateId\": \"c0456ace-31d1-54b1-a270-befa6bf960a5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DBEngine\": \"postgresql\",\n        \"DBMajorVersion\": \"12\",\n        \"ParamInfoSet\": [\n            {\n                \"Advanced\": false,\n                \"ClassificationCN\": \"WAL\",\n                \"ClassificationEN\": \"Write-Ahead Log\",\n                \"CurrentValue\": \"logical\",\n                \"DefaultValue\": \"replica\",\n                \"EnumValue\": [\n                    \"replica\",\n                    \"logical\"\n                ],\n                \"ID\": 854,\n                \"LastModifyTime\": \"\",\n                \"Max\": 0,\n                \"Min\": 0,\n                \"Name\": \"wal_level\",\n                \"NeedReboot\": true,\n                \"ParamDescriptionCH\": \"此参数决定记录到日志的信息，不允许设置为minimal\",\n                \"ParamDescriptionEN\": \"Set the level of information written to the WAL.\",\n                \"ParamValueType\": \"enum\",\n                \"SpecRelated\": false,\n                \"StandbyRelated\": 0,\n                \"Unit\": \"\"\n            },\n            {\n                \"Advanced\": false,\n                \"ClassificationCN\": \"资源使用\",\n                \"ClassificationEN\": \"Resource Usage\",\n                \"CurrentValue\": \"12\",\n                \"DefaultValue\": \"8\",\n                \"EnumValue\": null,\n                \"ID\": 755,\n                \"LastModifyTime\": \"\",\n                \"Max\": 262143,\n                \"Min\": 0,\n                \"Name\": \"max_worker_processes\",\n                \"NeedReboot\": true,\n                \"ParamDescriptionCH\": \"系统能够支持的后台进程的最大数量\",\n                \"ParamDescriptionEN\": \"Maximum number of concurrent worker processes.\",\n                \"ParamValueType\": \"integer\",\n                \"SpecRelated\": true,\n                \"StandbyRelated\": 1,\n                \"Unit\": \"\"\n            }\n        ],\n        \"RequestId\": \"e4f0f472-8bef-4404-b3fa-57ed6b6378b8\",\n        \"TemplateDescription\": \"test-modify\",\n        \"TemplateId\": \"c0456ace-31d1-54b1-a270-befa6bf960a5\",\n        \"TemplateName\": \"test-modify_1\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询参数模板详情"
+      }
+    ],
+    "DescribeParameterTemplates": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParameterTemplates\n<公共请求参数>\n\n{\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"desc\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"test\"\n            ],\n            \"Name\": \"TemplateName\"\n        }\n    ],\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ParameterTemplateSet\": [\n            {\n                \"DBEngine\": \"postgresql\",\n                \"DBMajorVersion\": \"13\",\n                \"TemplateDescription\": \"test1\",\n                \"TemplateId\": \"674538e8-4a03-5103-896c-9785c960bf02\",\n                \"TemplateName\": \"test1\"\n            },\n            {\n                \"DBEngine\": \"postgresql\",\n                \"DBMajorVersion\": \"13\",\n                \"TemplateDescription\": \"test2\",\n                \"TemplateId\": \"423984bb-97fe-5693-a74f-63cc8dfb6c5d\",\n                \"TemplateName\": \"test2\"\n            }\n        ],\n        \"RequestId\": \"6224e7ed-d7d8-494c-835f-e1612345383f\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询参数模板信息"
       }
     ],
     "DescribeParamsEvent": [
@@ -442,6 +496,20 @@
         "title": "ModifyDBInstanceReadOnlyGroup"
       }
     ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-nqwpkjb\",\n    \"SecurityGroupIdSet\": [\n        \"sg-91jbmkp1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f81495e4-bca8-4946-b5b0-0aedc512413d\"\n    }\n}",
+        "title": "修改只读组安全组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-i2q4utnp\",\n    \"SecurityGroupIdSet\": [\n        \"sg-91jbmkp1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fad142d-9597-408f-84b8-41a27a1486ce\"\n    }\n}",
+        "title": "修改安全组"
+      }
+    ],
     "ModifyDBInstanceSpec": [
       {
         "document": "",
@@ -462,6 +530,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"10467\",\n    \"DBInstanceIdSet\": [\n        \"postgres-6bwgamo3\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "将实例postgres-6bwgamo3转移至项目ID为10467的项目里面去"
+      }
+    ],
+    "ModifyParameterTemplate": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\",\n    \"TemplateName\": \"test_template\",\n    \"TemplateDescription\": \"test\",\n    \"ModifyParamEntrySet\": [\n        {\n            \"Name\": \"max_wal_senders\",\n            \"ExpectedValue\": \"360\"\n        },\n        {\n            \"Name\": \"max_logical_replication_workers\",\n            \"ExpectedValue\": \"360\"\n        }\n    ],\n    \"DeleteParamSet\": [\n        \"wal_level\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
+        "title": "修改参数模板"
       }
     ],
     "ModifyReadOnlyGroupConfig": [

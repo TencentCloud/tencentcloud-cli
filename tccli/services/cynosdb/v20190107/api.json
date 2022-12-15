@@ -177,7 +177,7 @@
     "DescribeInstances": {
       "document": "本接口(DescribeInstances)用于查询实例列表。",
       "input": "DescribeInstancesRequest",
-      "name": "查询实例列表",
+      "name": "查询实例的列表",
       "output": "DescribeInstancesResponse"
     },
     "DescribeMaintainPeriod": {
@@ -2080,7 +2080,7 @@
         },
         {
           "default": "",
-          "document": "参数数组",
+          "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
           "example": "无",
           "member": "ParamItem",
           "name": "ClusterParams",
@@ -3921,7 +3921,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-on5xw0ni",
+          "example": "cynosdbmysql-on5xw0ni",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3938,12 +3938,39 @@
         },
         {
           "default": "",
-          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "document": "数据库类型，取值范围: \n<li> MYSQL </li>\n该参数已废用",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的账户列表",
+          "example": "[0.0.0.0]",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3952,12 +3979,21 @@
       "document": "DescribeAccounts返回参数结构体",
       "members": [
         {
-          "document": "数据库账号列表",
+          "document": "数据库账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Account",
           "name": "AccountSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账号总数量",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4376,6 +4412,15 @@
           "name": "BackupNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "快照备份Id列表",
+          "example": "无",
+          "member": "int64",
+          "name": "SnapshotIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4754,6 +4799,15 @@
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数名字",
+          "example": "binlog",
+          "member": "string",
+          "name": "ParamName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4771,13 +4825,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例参数列表",
+          "document": "实例参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5427,8 +5481,35 @@
           "example": "11954",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制量",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "无",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5443,6 +5524,15 @@
           "name": "Groups",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5518,22 +5608,22 @@
       "document": "DescribeRollbackTimeRange返回参数结构体",
       "members": [
         {
-          "document": "有效回归时间范围开始时间点（已废弃）",
+          "document": "有效回归时间范围开始时间点（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-01-13 02:12:05",
           "member": "string",
           "name": "TimeRangeStart",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "document": "有效回归时间范围结束时间点（已废弃）",
+          "document": "有效回归时间范围结束时间点（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2019-01-20 02:10:12",
           "member": "string",
           "name": "TimeRangeEnd",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "可回档时间范围",

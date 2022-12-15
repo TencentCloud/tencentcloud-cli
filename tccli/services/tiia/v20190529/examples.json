@@ -192,13 +192,13 @@
     ],
     "DetectSecurity": [
       {
-        "document": "",
+        "document": "安全属性识别请求成功",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无安全帽\",\n                        \"Name\": \"安全帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9768763,\n                        \"Label\": \"没有电话\",\n                        \"Name\": \"玩手机识别\"\n                    },\n                    {\n                        \"Confidence\": 0.8206851,\n                        \"Label\": \"没有抽烟\",\n                        \"Name\": \"抽烟识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9113377,\n                        \"Label\": \"无工地安全带\",\n                        \"Name\": \"工地安全带识别\"\n                    },\n                    {\n                        \"Confidence\": 0.7201198,\n                        \"Label\": \"无手套\",\n                        \"Name\": \"手套识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无工服\",\n                        \"Name\": \"工服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.611658,\n                        \"Label\": \"无护目镜\",\n                        \"Name\": \"护目镜识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9828068,\n                        \"Label\": \"无反光衣\",\n                        \"Name\": \"反光衣识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"8a3f48ea-f995-4ad2-9ff5-7f8faf8bdbaf\"\n    }\n}",
         "title": "安全属性识别请求成功"
       },
       {
-        "document": "",
+        "document": "安全属性识别请求失败",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e516\"\n    }\n}",
         "title": "安全属性识别请求失败"

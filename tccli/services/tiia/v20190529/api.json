@@ -103,7 +103,7 @@
       "output": "DetectProductBetaResponse"
     },
     "DetectSecurity": {
-      "document": "识别常安全属性识别可对图片中人体安全防护属性进行识别，支持识别安全帽，反光衣，护目镜，工服，手套，工地安全带，口罩，抽烟，玩手机等多种属性。\n\"被优选过滤\"标签值在人体优选开关开启时才会返回。\n\n|序号 | 标签名称 | 标签值 |\n| :-----|  :----------   |:-----------------  |\n| 1 | 安全帽识别<div style=\"width: 70pt\"> |无安全帽、有安全帽、被优选过滤|\n| 2 | 玩手机识别<div style=\"width: 70pt\"> |没有电话、打电话、玩手机、被优选过滤|\n| 3 | 抽烟识别<div style=\"width: 70pt\"> |没有抽烟、抽烟、被优选过滤\t|\n| 4 | 口罩识别<div style=\"width: 70pt\"> |无口罩、有口罩、口罩不确定、被优选过滤|\n| 5 | 工地安全带识别<div style=\"width: 70pt\"> |无工地安全带、工地安全带、被优选过滤\t|\n| 6 | 手套识别<div style=\"width: 70pt\"> |无手套、有手套、手套不确定、被优选过滤\t|\n| 7 | 工服识别<div style=\"width: 70pt\"> |无工服、有工服、被优选过滤|\n| 8 | 护目镜识别<div style=\"width: 70pt\"> |无护目镜、有护目镜、被优选过滤|\n| 9 | 反光衣识别<div style=\"width: 70pt\"> |无反光衣、有反光衣、被优选过滤|",
+      "document": "安全属性识别可对图片中人体安全防护属性进行识别，支持识别安全帽，反光衣，护目镜，工服，手套，工地安全带，口罩，抽烟，玩手机等多种属性。\n\"被优选过滤\"标签值在人体优选开关开启时才会返回。\n\n|序号 | 标签名称 | 标签值 |\n| :-----|  :----------   |:-----------------  |\n| 1 | 安全帽识别<div style=\"width: 70pt\"> |无安全帽、有安全帽、被优选过滤|\n| 2 | 玩手机识别<div style=\"width: 70pt\"> |没有电话、打电话、玩手机、被优选过滤|\n| 3 | 抽烟识别<div style=\"width: 70pt\"> |没有抽烟、抽烟、被优选过滤\t|\n| 4 | 口罩识别<div style=\"width: 70pt\"> |无口罩、有口罩、口罩不确定、被优选过滤|\n| 5 | 工地安全带识别<div style=\"width: 70pt\"> |无工地安全带、工地安全带、被优选过滤\t|\n| 6 | 手套识别<div style=\"width: 70pt\"> |无手套、有手套、手套不确定、被优选过滤\t|\n| 7 | 工服识别<div style=\"width: 70pt\"> |无工服、有工服、被优选过滤|\n| 8 | 护目镜识别<div style=\"width: 70pt\"> |无护目镜、有护目镜、被优选过滤|\n| 9 | 反光衣识别<div style=\"width: 70pt\"> |无反光衣、有反光衣、被优选过滤|",
       "input": "DetectSecurityRequest",
       "name": "安全属性识别",
       "output": "DetectSecurityResponse"
@@ -1784,7 +1784,6 @@
       "document": "DetectSecurity请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片的 Url 。\nImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过3840 x 2160 pixel。\n建议：\n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "“”",
           "member": "string",
@@ -1793,7 +1792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片经过base64编码的内容。\n最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要base64编码，并且要去掉编码头部。\n支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。\n支持的图片大小：所下载图片经Base64编码后不超过5M。",
           "example": "“”",
           "member": "string",
@@ -1802,7 +1800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "人体检测模型开关，“true”为开启，“false”为关闭\n开启后可先对图片中的人体进行检测之后再进行属性识别，默认为开启",
           "example": "true",
           "member": "bool",
@@ -1811,7 +1808,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "人体优选开关，“true”为开启，“false”为关闭\n开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。\n默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭\n如开启人体优选，检测到的人体分辨率需不大于1920*1080 pixel",
           "example": "ture",
           "member": "bool",
@@ -1830,7 +1826,6 @@
           "example": "无",
           "member": "AttributesForBody",
           "name": "Bodies",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

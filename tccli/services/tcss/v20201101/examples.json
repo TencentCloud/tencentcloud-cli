@@ -1515,7 +1515,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeK8sApiAbnormalRuleScopeList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"RuleID\": \"xxx\",\n    \"Filters\": []\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Action\": \"xx\",\n                \"Scope\": \"xx\",\n                \"RiskLevel\": \"xx\",\n                \"IsDelete\": true,\n                \"Status\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询k8s api 异常规则中范围列表"
+        "title": "查询k8sapi异常规则中范围列表"
       }
     ],
     "DescribeK8sApiAbnormalSummary": [

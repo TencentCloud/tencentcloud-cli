@@ -59,7 +59,7 @@
     "DescribeCaptchaMiniRiskResult": [
       {
         "document": "",
-        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaMiniRiskResult\n&CaptchaType=9\n&Ticket=xxxx\n&UserIp=127.0.0.1\n&CaptchaAppId=201111111\n&AppSecretKey=xxxxxx\n&SceneCode=1\n&WeChatOpenId=xxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaMiniRiskResult\n<公共请求参数>\n\n{\n    \"CaptchaAppId\": \"201111111\",\n    \"CaptchaType\": \"9\",\n    \"WeChatOpenId\": \"xxxxxx\",\n    \"SceneCode\": \"1\",\n    \"UserIp\": \"127.0.0.1\",\n    \"Ticket\": \"xxxx\",\n    \"AppSecretKey\": \"xxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c02af4b4-f858-4fe0-6f88-ebac4b49d13d\",\n        \"CaptchaCode\": 1,\n        \"CaptchaMsg\": \"ticket verification succeeded\",\n        \"ManageMarketingRiskValue\": {\n            \"UserId\": \"xxxxxxxxxxxxxxxxxxxxxxxx\",\n            \"PostTime\": 1606977595,\n            \"AssociateAccount\": \"\",\n            \"UserIp\": \"127.0.0.1\",\n            \"RiskLevel\": \"pass\",\n            \"RiskType\": []\n        }\n    }\n}",
         "title": "请求和返回示例"
       }

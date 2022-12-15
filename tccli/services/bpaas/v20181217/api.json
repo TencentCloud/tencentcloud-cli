@@ -466,7 +466,7 @@
         },
         {
           "default": "",
-          "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "SubStatus",
@@ -562,6 +562,46 @@
           "name": "CallMethod",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CKafka - 接入资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "datahub-y9xxx",
+          "member": "string",
+          "name": "DataHubId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CKafka - 任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TOPIC",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CKafka - 地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CKafkaRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部审批Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.baidu.com/",
+          "member": "string",
+          "name": "ExternalUrl",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
