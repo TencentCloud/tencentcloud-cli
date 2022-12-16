@@ -1576,7 +1576,7 @@
       "document": "DeleteAllAccessControlRule返回参数结构体",
       "members": [
         {
-          "document": "状态值 0: 修改成功, !0: 修改失败",
+          "document": "状态值 0: 修改成功, 非0: 修改失败",
           "example": "0",
           "member": "int64",
           "name": "Status",

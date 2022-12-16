@@ -227,13 +227,13 @@
     "DescribePlatforms": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatforms\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Status\": \"Valid\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba0483c211ea90dc6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
         "title": "获取所有创建的平台列表"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&LicenseIds.0=cmelid_8621ba0483c211ea90dc6c92bf621f6e\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatforms\n<公共请求参数>\n\n{\n    \"LicenseIds\": [\n        \"cmelid_8621ba0483c211ea90dc6c92bf621f6e\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Status\": \"Valid\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba0483c211ea90dc6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
         "title": "指定绑定的 License Id 获取平台列表"
       }

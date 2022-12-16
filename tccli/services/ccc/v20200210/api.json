@@ -180,6 +180,12 @@
       "name": "停用号码",
       "output": "DisableCCCPhoneNumberResponse"
     },
+    "HangUpCall": {
+      "document": "挂断电话",
+      "input": "HangUpCallRequest",
+      "name": "挂断电话",
+      "output": "HangUpCallResponse"
+    },
     "ModifyExtension": {
       "document": "修改话机账号(绑定技能组、绑定坐席账号)",
       "input": "ModifyExtensionRequest",
@@ -2965,6 +2971,42 @@
         }
       ],
       "usage": "in"
+    },
+    "HangUpCallRequest": {
+      "document": "HangUpCall请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TCCC 实例应用 ID",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "会话ID",
+          "example": "1001",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HangUpCallResponse": {
+      "document": "HangUpCall返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IMCdrInfo": {
       "document": "文本会话服务记录信息",

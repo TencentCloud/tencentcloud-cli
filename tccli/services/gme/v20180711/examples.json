@@ -21,7 +21,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"TextUrl\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
-        "title": "创建语音消息转文本自学习模型"
+        "title": "创建语音消息转文本热句模型"
       }
     ],
     "CreateScanUser": [
@@ -37,7 +37,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除自学习模型"
+        "title": "删除热句模型"
       }
     ],
     "DeleteRoomMember": [
@@ -131,7 +131,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomizationList\n<公共请求参数>\n\n{\n    \"BizId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"CustomizationConfigs\": [\n            {\n                \"ModelState\": 0,\n                \"BizId\": 0,\n                \"ModelId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询语音消息转文本自学习模型列表"
+        "title": "查询语音消息转文本热句模型列表"
       }
     ],
     "ModifyAppStatus": [
@@ -147,7 +147,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomization\n<公共请求参数>\n\n{\n    \"TextUrl\": \"xx\",\n    \"BizId\": 1,\n    \"ModelId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
-        "title": "修改自学习模型"
+        "title": "修改热句模型"
       }
     ],
     "ModifyCustomizationState": [
@@ -155,7 +155,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomizationState\n<公共请求参数>\n\n{\n    \"ToState\": 0,\n    \"BizId\": 0,\n    \"ModelId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\",\n        \"ModelId\": \"xx\"\n    }\n}",
-        "title": "修改自学习模型状态"
+        "title": "修改热句模型状态"
       }
     ],
     "ModifyUserMicStatus": [

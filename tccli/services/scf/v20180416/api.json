@@ -4429,6 +4429,7 @@
         {
           "default": "",
           "document": "命名空间创建时间",
+          "example": "0000-00-00 00:00",
           "member": "datetime",
           "name": "ModTime",
           "required": true,
@@ -4438,6 +4439,7 @@
         {
           "default": "",
           "document": "命名空间修改时间",
+          "example": "0000-00-00 00:00",
           "member": "datetime",
           "name": "AddTime",
           "required": true,
@@ -4447,6 +4449,7 @@
         {
           "default": "",
           "document": "命名空间描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -4456,6 +4459,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4465,6 +4469,7 @@
         {
           "default": "",
           "document": "默认default，TCB表示是小程序云开发创建的",
+          "example": "default",
           "member": "string",
           "name": "Type",
           "required": true,

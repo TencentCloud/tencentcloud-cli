@@ -12811,7 +12811,7 @@
         },
         {
           "default": "",
-          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。",
+          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。\n\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
@@ -13612,7 +13612,7 @@
       "members": [
         {
           "default": "",
-          "document": "输入来源对象的类型，支持 COS 和 URL 两种。",
+          "document": "输入来源对象的类型，支持 COS、URL 两种。",
           "example": "NULL",
           "member": "string",
           "name": "Type",
@@ -17341,6 +17341,15 @@
           "name": "ScheduleId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务类型，默认Online\n<li> Online：实时任务</li>\n<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>",
+          "example": "Online",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19033,7 +19042,7 @@
           "example": "Queue ",
           "member": "string",
           "name": "CmqModel",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19043,7 +19052,7 @@
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19079,7 +19088,7 @@
         },
         {
           "default": "",
-          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n目前 默认CMQ。",
+          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",

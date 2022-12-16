@@ -60,6 +60,18 @@
       "name": "查询指定词库的词条信息",
       "output": "DescribeWordItemsResponse"
     },
+    "GenerateCouplet": {
+      "document": "根据用户输入的命题关键词自动生成一副春联，包括上联、下联和横批。（如需开通请联系商务）",
+      "input": "GenerateCoupletRequest",
+      "name": "智能春联",
+      "output": "GenerateCoupletResponse"
+    },
+    "GeneratePoetry": {
+      "document": "根据用户输入的命题关键词自动生成一首七言律诗或五言律诗。（如需开通请联系商务）",
+      "input": "GeneratePoetryRequest",
+      "name": "智能写诗",
+      "output": "GeneratePoetryResponse"
+    },
     "KeywordsExtraction": {
       "document": "基于关键词提取平台，通过对文本内容进行深度分析，提取出文本内容中的关键信息，为用户实现诸如新闻内容关键词自动提取、评论关键词提取等提供基础服务。",
       "input": "KeywordsExtractionRequest",
@@ -816,6 +828,132 @@
         }
       ],
       "usage": "in"
+    },
+    "GenerateCoupletRequest": {
+      "document": "GenerateCouplet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生成对联的关键词。长度需>=2，当长度>2时，自动截取前两个字作为关键字。内容需为常用汉字（不含有数字、英文、韩语、日语、符号等等其他）。",
+          "example": "小鸡",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的文本结果为繁体还是简体。0：简体；1：繁体。默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "TargetType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateCoupletResponse": {
+      "document": "GenerateCouplet返回参数结构体",
+      "members": [
+        {
+          "document": "横批。",
+          "example": "满园春色",
+          "member": "string",
+          "name": "TopScroll",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上联与下联。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当对联随机生成时，展示随机生成原因。",
+          "example": "无",
+          "member": "string",
+          "name": "RandomCause",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GeneratePoetryRequest": {
+      "document": "GeneratePoetry请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生成诗词的关键词。",
+          "example": "阳光",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生成诗词的类型。0：藏头或藏身；1：藏头；2：藏身。默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "PoetryType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "诗的体裁。0：五言律诗或七言律诗；5：五言律诗；7：七言律诗。默认为0。",
+          "example": "7",
+          "member": "int64",
+          "name": "Genre",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GeneratePoetryResponse": {
+      "document": "GeneratePoetry返回参数结构体",
+      "members": [
+        {
+          "document": "诗题，即输入的生成诗词的关键词。",
+          "example": "阳光",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诗的内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Keyword": {
       "document": "关键词提取结果",

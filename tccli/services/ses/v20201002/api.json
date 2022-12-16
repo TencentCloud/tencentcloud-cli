@@ -144,6 +144,12 @@
       "name": "请求验证",
       "output": "UpdateEmailIdentityResponse"
     },
+    "UpdateEmailSmtpPassWord": {
+      "document": "设置邮箱的smtp密码。若要通过smtp发送邮件，必须为邮箱设置smtp密码。初始时，邮箱没有设置smtp密码，不能使用smtp的方式发送邮件。设置smtp密码后，可以修改密码。",
+      "input": "UpdateEmailSmtpPassWordRequest",
+      "name": "设置邮箱的smtp密码",
+      "output": "UpdateEmailSmtpPassWordResponse"
+    },
     "UpdateEmailTemplate": {
       "document": "更新邮件模板，更新后需再次审核",
       "input": "UpdateEmailTemplateRequest",
@@ -2167,6 +2173,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEmailSmtpPassWordRequest": {
+      "document": "UpdateEmailSmtpPassWord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "smtp密码，长度限制64",
+          "example": "123",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发信邮箱,长度限制128",
+          "example": "123@abc.com",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEmailSmtpPassWordResponse": {
+      "document": "UpdateEmailSmtpPassWord返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

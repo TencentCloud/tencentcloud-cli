@@ -1342,6 +1342,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Line",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弹性业务带宽开关",
+          "example": "1",
+          "member": "uint64",
+          "name": "ElasticServiceBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4298,7 +4318,7 @@
         },
         {
           "default": "",
-          "document": "统计周期，可取值300，1800，3600，21600，86400，单位秒",
+          "document": "统计周期，可取值60，300，1800，3600，21600，86400，单位秒",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -10723,6 +10743,15 @@
           "name": "OpenStatus",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudSdkProxy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10843,6 +10872,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudSdkProxy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

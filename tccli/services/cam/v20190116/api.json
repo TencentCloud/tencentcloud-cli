@@ -2130,6 +2130,7 @@
         {
           "default": "",
           "document": "子账号Uin",
+          "example": "1234567",
           "member": "int64",
           "name": "TargetUin",
           "required": true,
@@ -5169,6 +5170,7 @@
         {
           "default": "",
           "document": "子账号Uin",
+          "example": "1234567",
           "member": "int64",
           "name": "TargetUin",
           "required": true,
@@ -5177,6 +5179,7 @@
         {
           "default": "",
           "document": "策略ID",
+          "example": "1234567",
           "member": "int64",
           "name": "PolicyId",
           "required": true,

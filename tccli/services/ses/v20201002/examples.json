@@ -216,6 +216,14 @@
         "title": "请求验证"
       }
     ],
+    "UpdateEmailSmtpPassWord": [
+      {
+        "document": "设置smtp密码：包含新增和修改密码",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEmailSmtpPassWord\n<公共请求参数>\n\n{\n    \"Password\": \"123\",\n    \"EmailAddress\": \"abc@ef.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "设置smtp密码"
+      }
+    ],
     "UpdateEmailTemplate": [
       {
         "document": "",

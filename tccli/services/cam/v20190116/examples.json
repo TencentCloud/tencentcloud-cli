@@ -211,7 +211,7 @@
     "DeleteUserPermissionsBoundary": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUserPermissionsBoundary\r\n&TargetUin=1234567\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserPermissionsBoundary\n<公共请求参数>\n\n{\n    \"TargetUin\": \"1234567\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "删除用户权限边界"
       }
@@ -567,7 +567,7 @@
     "PutUserPermissionsBoundary": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=PutUserPermissionsBoundary\r\n&TargetUin=1234567\r\n&PolicyId=1234567\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutUserPermissionsBoundary\n<公共请求参数>\n\n{\n    \"TargetUin\": \"1234567\",\n    \"PolicyId\": \"1234567\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "设置用户权限边界"
       }
