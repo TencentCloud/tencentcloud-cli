@@ -1,3 +1,131 @@
+# Release 3.0.671.1
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 6 次发布
+
+发布时间：2022-12-19 01:20:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+
+	* 新增成员：CapacityUsed, FileUsed
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 41 次发布
+
+发布时间：2022-12-19 01:26:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExportImages](http://document.tencentcloudapi.woa.com/document/product/213/73474)
+
+	* 新增出参：CosPaths
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 17 次发布
+
+发布时间：2022-12-19 01:54:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PreAuditInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PreAuditInfo)
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：CAEncryptAlgorithms, CAEndTimes, CACommonNames, PreAuditInfo
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 13 次发布
+
+发布时间：2022-12-19 02:00:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
+
+	* 新增入参：CallbackUrl
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* 新增入参：CallbackUrl
+
+
+修改数据结构：
+
+* [TrainingTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskDetail)
+
+	* 新增成员：CallbackUrl
+
+* [TrainingTaskSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskSetItem)
+
+	* 新增成员：CallbackUrl
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 53 次发布
+
+发布时间：2022-12-19 02:06:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTrunkingSubEniInternal](http://document.tencentcloudapi.woa.com/document/product/215/76832)
+
+修改接口：
+
+* [CreateVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54684)
+
+	* 新增入参：BusinessInstancePrefix, BusinessIpType
+
+
+新增数据结构：
+
+* [VpcOssGetTrunkingSubEniResult](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssGetTrunkingSubEniResult)
+
+
+
 # Release 3.0.670.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

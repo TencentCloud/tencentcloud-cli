@@ -7,9 +7,9 @@ Input:
 ```
 tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
+    --Domain www.gdxxb.com \
     --EndDate 2019-01-01 \
-    --ProductCode 10181 \
-    --Domain www.gdxxb.com
+    --ProductCode 10181
 ```
 
 Output: 
@@ -45,9 +45,9 @@ Input:
 ```
 tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
+    --Domain  "" \
     --EndDate 2019-01-01 \
-    --ProductCode 10181 \
-    --Domain ' ""'
+    --ProductCode 10181
 ```
 
 Output: 

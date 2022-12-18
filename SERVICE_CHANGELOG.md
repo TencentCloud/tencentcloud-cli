@@ -1,105 +1,29 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+## 文件存储(cfs) 版本：2019-07-19
 
-### 第 36 次发布
+### 第 6 次发布
 
-发布时间：2022-12-16 01:10:31
+发布时间：2022-12-19 01:20:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [SwitchWaterPrintConfig](http://document.tencentcloudapi.woa.com/document/product/1021/59001)
-
-	* 新增入参：CloudSdkProxy
-
 
 修改数据结构：
 
-* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
 
-	* 新增成员：Line, ElasticServiceBandwidth
-
-* [WaterPrintConfig](http://document.tencentcloudapi.woa.com/document/product/1021/57582#WaterPrintConfig)
-
-	* 新增成员：CloudSdkProxy
-
-
-
-
-## 云呼叫中心(ccc) 版本：2020-02-10
-
-### 第 24 次发布
-
-发布时间：2022-12-16 01:15:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [HangUpCall](http://document.tencentcloudapi.woa.com/document/product/679/76827)
-
-
-
-## 内容安全(cms) 版本：2019-03-21
-
-### 第 2 次发布
-
-发布时间：2022-12-16 01:20:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ActivateService](http://document.tencentcloudapi.woa.com/document/product/1604/76799)
-
-	* 新增入参：SDKAppID, UserAppID, UserUin, UserSubUin, SDKAppName, SceneInfos
-
-
-修改数据结构：
-
-* [BizInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#BizInfo)
-
-	* 新增成员：StrategyConfig
-
-* [SceneDetail](http://document.tencentcloudapi.woa.com/document/product/1604/76800#SceneDetail)
-
-	* 新增成员：SceneID
+	* 新增成员：CapacityUsed, FileUsed
 
 
 
 
 ## 云服务器(cvm) 版本：2017-03-12
 
-### 第 40 次发布
+### 第 41 次发布
 
-发布时间：2022-12-16 01:22:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
-
-	* 新增成员：DefaultLoginUser, DefaultLoginPort, LatestOperationErrorMsg
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 17 次发布
-
-发布时间：2022-12-16 01:37:41
+发布时间：2022-12-19 01:26:34
 
 本次发布包含了以下内容：
 
@@ -107,96 +31,41 @@
 
 修改接口：
 
-* [ProcessMedia](http://document.tencentcloudapi.woa.com/document/product/862/37578)
+* [ExportImages](http://document.tencentcloudapi.woa.com/document/product/213/73474)
 
-	* 新增入参：ChannelInfo, TaskType
-
-
-新增数据结构：
-
-* [AwsSQS](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsSQS)
-* [ChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ChannelInfo)
-* [S3OutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3OutputStorage)
-
-修改数据结构：
-
-* [TaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskNotifyConfig)
-
-	* 新增成员：AwsSQS
-
-	* <font color="#dd0000">**修改成员**：</font>CmqModel, CmqRegion
-
-* [TaskOutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskOutputStorage)
-
-	* 新增成员：S3OutputStorage
+	* 新增出参：CosPaths
 
 
 
 
-## 自然语言处理(nlp) 版本：2019-04-08
-
-### 第 5 次发布
-
-发布时间：2022-12-16 01:38:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GenerateCouplet](http://document.tencentcloudapi.woa.com/document/product/271/76830)
-* [GeneratePoetry](http://document.tencentcloudapi.woa.com/document/product/271/76829)
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 18 次发布
-
-发布时间：2022-12-16 01:42:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [K8SLabel](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SLabel)
-* [K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration)
-* [NamespaceResourceEnv](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnv)
-* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
-
-修改数据结构：
-
-* [Namespace](http://document.tencentcloudapi.woa.com/document/product/583/17244#Namespace)
-
-	* 新增成员：Status, StatusReason, ResourceEnv
-
-
-
-
-## 邮件推送(ses) 版本：2020-10-02
+## SSL 证书(ssl) 版本：2019-12-05
 
 ### 第 17 次发布
 
-发布时间：2022-12-16 01:42:26
+发布时间：2022-12-19 01:54:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+新增数据结构：
 
-* [UpdateEmailSmtpPassWord](http://document.tencentcloudapi.woa.com/document/product/1288/76831)
+* [PreAuditInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PreAuditInfo)
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：CAEncryptAlgorithms, CAEndTimes, CACommonNames, PreAuditInfo
+
 
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
-### 第 12 次发布
+### 第 13 次发布
 
-发布时间：2022-12-16 01:48:37
+发布时间：2022-12-19 02:00:11
 
 本次发布包含了以下内容：
 
@@ -204,9 +73,24 @@
 
 修改接口：
 
-* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
 
 	* 新增入参：CallbackUrl
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* 新增入参：CallbackUrl
+
+
+修改数据结构：
+
+* [TrainingTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskDetail)
+
+	* 新增成员：CallbackUrl
+
+* [TrainingTaskSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskSetItem)
+
+	* 新增成员：CallbackUrl
 
 
 
@@ -217,26 +101,28 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 52 次发布
+### 第 53 次发布
 
-发布时间：2022-12-16 01:53:48
+发布时间：2022-12-19 02:06:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [DescribeTrunkingSubEniInternal](http://document.tencentcloudapi.woa.com/document/product/215/76832)
+
 修改接口：
 
-* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+* [CreateVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54684)
 
-	* 新增入参：Egress
+	* 新增入参：BusinessInstancePrefix, BusinessIpType
 
-* [ModifyBandwidthPackageAttribute](http://document.tencentcloudapi.woa.com/document/product/215/19208)
 
-	* 新增入参：OutTraffic
+新增数据结构：
 
-	* <font color="#dd0000">**删除入参**：</font>MigrateOnRefund
-
+* [VpcOssGetTrunkingSubEniResult](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssGetTrunkingSubEniResult)
 
 
 
@@ -5596,7 +5482,7 @@
 
 新增接口：
 
-* [[HangUpCall](http://document.tencentcloudapi.woa.com/document/product/679/76827)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [HangUpCall](http://document.tencentcloudapi.woa.com/document/product/679/76827)
 
 ### 第 23 次发布
 
@@ -8157,6 +8043,21 @@
 
 
 ## 文件存储(cfs) 版本：2019-07-19
+
+### 第 6 次发布
+
+发布时间：2022-12-19 01:20:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserQuota](http://document.tencentcloudapi.woa.com/document/product/582/38175#UserQuota)
+
+	* 新增成员：CapacityUsed, FileUsed
+
 
 ### 第 5 次发布
 
@@ -13472,6 +13373,21 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 41 次发布
+
+发布时间：2022-12-19 01:26:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExportImages](http://document.tencentcloudapi.woa.com/document/product/213/73474)
+
+	* 新增出参：CosPaths
+
 
 ### 第 40 次发布
 
@@ -29075,9 +28991,9 @@
 
 新增数据结构：
 
-* [[AwsSQS](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsSQS)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[AwsSQS](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsSQS))
-* [[ChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ChannelInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ChannelInfo))
-* [[S3OutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3OutputStorage)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[S3OutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3OutputStorage))
+* [AwsSQS](http://document.tencentcloudapi.woa.com/document/product/862/37615#AwsSQS)
+* [ChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ChannelInfo)
+* [S3OutputStorage](http://document.tencentcloudapi.woa.com/document/product/862/37615#S3OutputStorage)
 
 修改数据结构：
 
@@ -30154,8 +30070,8 @@
 
 新增接口：
 
-* [[GenerateCouplet](http://document.tencentcloudapi.woa.com/document/product/271/76830)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GeneratePoetry](http://document.tencentcloudapi.woa.com/document/product/271/76829)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GenerateCouplet](http://document.tencentcloudapi.woa.com/document/product/271/76830)
+* [GeneratePoetry](http://document.tencentcloudapi.woa.com/document/product/271/76829)
 
 ### 第 4 次发布
 
@@ -34155,10 +34071,10 @@
 
 新增数据结构：
 
-* [[K8SLabel](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SLabel)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[K8SLabel](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SLabel))
-* [[K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration))
-* [[NamespaceResourceEnv](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnv)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[NamespaceResourceEnv](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnv))
-* [[NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)](http://document.tencentcloudapi.woa.com/document/product/583/17244#[NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE))
+* [K8SLabel](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SLabel)
+* [K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration)
+* [NamespaceResourceEnv](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnv)
+* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
 
 修改数据结构：
 
@@ -34567,7 +34483,7 @@
 
 新增接口：
 
-* [[UpdateEmailSmtpPassWord](http://document.tencentcloudapi.woa.com/document/product/1288/76831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateEmailSmtpPassWord](http://document.tencentcloudapi.woa.com/document/product/1288/76831)
 
 ### 第 16 次发布
 
@@ -35835,6 +35751,25 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 17 次发布
+
+发布时间：2022-12-19 01:54:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[PreAuditInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PreAuditInfo)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[PreAuditInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#PreAuditInfo))
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：CAEncryptAlgorithms, CAEndTimes, CACommonNames, PreAuditInfo
+
 
 ### 第 16 次发布
 
@@ -40622,6 +40557,36 @@
 
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 13 次发布
+
+发布时间：2022-12-19 02:00:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
+
+	* 新增入参：CallbackUrl
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* 新增入参：CallbackUrl
+
+
+修改数据结构：
+
+* [TrainingTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskDetail)
+
+	* 新增成员：CallbackUrl
+
+* [TrainingTaskSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskSetItem)
+
+	* 新增成员：CallbackUrl
+
 
 ### 第 12 次发布
 
@@ -46439,6 +46404,29 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 53 次发布
+
+发布时间：2022-12-19 02:06:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTrunkingSubEniInternal](http://document.tencentcloudapi.woa.com/document/product/215/76832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54684)
+
+	* 新增入参：BusinessInstancePrefix, BusinessIpType
+
+
+新增数据结构：
+
+* [[VpcOssGetTrunkingSubEniResult](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssGetTrunkingSubEniResult)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[VpcOssGetTrunkingSubEniResult](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssGetTrunkingSubEniResult))
 
 ### 第 52 次发布
 

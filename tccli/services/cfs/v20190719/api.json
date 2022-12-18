@@ -3714,6 +3714,28 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "容量使用，单位GiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "uint64",
+          "name": "CapacityUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "文件使用个数，单位个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9999",
+          "member": "uint64",
+          "name": "FileUsed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

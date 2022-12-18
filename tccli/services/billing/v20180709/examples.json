@@ -131,13 +131,13 @@
     "DescribeDosageDetailByDate": [
       {
         "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\n&StartDate=2019-01-01\n&EndDate=2019-01-01\n&ProductCode=10181\n&Domain=www.gdxxb.com\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDosageDetailByDate\n<公共请求参数>\n\n{\n    \"StartDate\": \"2019-01-01\",\n    \"Domain\": \"www.gdxxb.com\",\n    \"EndDate\": \"2019-01-01\",\n    \"ProductCode\": \"10181\"\n}",
         "output": "{\n    \"Response\": {\n        \"RetCode\": 0,\n        \"RetMsg\": \"\",\n        \"Unit\": \"bps\",\n        \"DetailSets\": [\n            {\n                \"Domain\": \"ddfs.dfwfn2.cn\",\n                \"InstanceID\": \"ddfs.dfwfn2.cn\",\n                \"DetailPoints\": [\n                    {\n                        \"Time\": \"2019-01-01 00:00:00\",\n                        \"Value\": \"18731317843\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\n    }\n}",
         "title": "互动直播、CDN业务按日期获取用量明细"
       },
       {
         "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\n&StartDate=2019-01-01\n&EndDate=2019-01-01\n&ProductCode=10181\n&Domain= \"\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDosageDetailByDate\n<公共请求参数>\n\n{\n    \"StartDate\": \"2019-01-01\",\n    \"Domain\": \" \\\"\\\"\",\n    \"EndDate\": \"2019-01-01\",\n    \"ProductCode\": \"10181\"\n}",
         "output": "{\n    \"Response\": {\n        \"RetCode\": 0,\n        \"RetMsg\": \"\",\n        \"Unit\": \"GB\",\n        \"DetailSets\": [\n            {\n                \"Domain\": \"\",\n                \"InstanceID\": \"lb-1zvuxyml\",\n                \"DetailPoints\": [\n                    {\n                        \"Time\": \"2019-01-01 00:00:00\",\n                        \"Value\": \"18731317843\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\n    }\n}",
         "title": "CLB、EIP，视频直播业务按日期获取用量明细"
       }

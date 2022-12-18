@@ -1488,6 +1488,12 @@
       "name": "查询共享流量包",
       "output": "DescribeTrafficPackagesResponse"
     },
+    "DescribeTrunkingSubEniInternal": {
+      "document": "用于获取sub eni弹性网卡的信息。 原始VPC OSS接口: GetTrunkingSubEni",
+      "input": "DescribeTrunkingSubEniInternalRequest",
+      "name": "用于获取sub eni弹性网卡的信息",
+      "output": "DescribeTrunkingSubEniInternalResponse"
+    },
     "DescribeUSGCountFromSgInternal": {
       "document": "根据APPID查询安全组数量 原始DFW接口: getUSGCountFromSG",
       "input": "DescribeUSGCountFromSgInternalRequest",
@@ -9226,7 +9232,7 @@
         },
         {
           "default": "",
-          "document": "是否是PassService类型。",
+          "document": "~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~",
           "example": "True",
           "member": "bool",
           "name": "IsPassService",
@@ -9236,12 +9242,32 @@
         },
         {
           "default": "",
-          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB",
+          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。",
           "example": "CLB,CDB,CRS",
           "member": "string",
           "name": "ServiceType",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "业务方资源前缀 ，用于业务资源校验。",
+          "example": "crs，tke2，eks",
+          "member": "string",
+          "name": "BusinessInstancePrefix",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "业务方iptype , 如crs 对应iptype 26，tke2 对应iptype 41 ，eks 对应iptype 54。",
+          "example": "26， 41 ，54",
+          "member": "uint64",
+          "name": "BusinessIpType",
+          "required": false,
+          "type": "int",
           "visibility": 2
         }
       ],
@@ -19840,6 +19866,134 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrunkingSubEniInternalRequest": {
+      "document": "DescribeTrunkingSubEniInternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "123456",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1234",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.uniqEniId",
+          "example": "eni-asds19ow",
+          "member": "string",
+          "name": "UniqueEniId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.eniId",
+          "example": "1",
+          "member": "int64",
+          "name": "EniId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.trunkingEniId",
+          "example": "11",
+          "member": "int64",
+          "name": "TrunkingEniId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.uniqTrunkingEniId",
+          "example": "eni-12aosj2s",
+          "member": "string",
+          "name": "UniqueTrunkingEniId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.uniqueVpcId",
+          "example": "[\"vpc-12112121\"]",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrunkingSubEniInternalResponse": {
+      "document": "DescribeTrunkingSubEniInternal返回参数结构体",
+      "members": [
+        {
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.total",
+          "example": "346",
+          "member": "int64",
+          "name": "Total",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.getTrunkingSubEniResult",
+          "example": "无",
+          "member": "VpcOssGetTrunkingSubEniResult",
+          "name": "GetTrunkingSubEniResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -42814,6 +42968,144 @@
           "example": "subnet-xxxx",
           "member": "string",
           "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssGetTrunkingSubEniResult": {
+      "document": "复杂类型: VpcOssGetTrunkingSubEniResult",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.trunkingEniId",
+          "example": "2818346",
+          "member": "int64",
+          "name": "TrunkingEniId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "81307",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.eniId",
+          "example": "3265282",
+          "member": "int64",
+          "name": "EniId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.uniqEniId",
+          "example": "eni-2j1vj80b",
+          "member": "string",
+          "name": "UniqueEniId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-30x956b1",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.vlanId",
+          "example": "322",
+          "member": "int64",
+          "name": "VlanId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "251195442",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一SubnetId",
+          "example": "subnet-1qecpyza",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.uniqTrunkingEniId",
+          "example": "eni-4mstuutl",
+          "member": "string",
+          "name": "UniqueTrunkingEniId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数subnetId",
+          "example": "1945884",
+          "member": "int64",
+          "name": "SubnetId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.trunkingSubEniId",
+          "example": "7",
+          "member": "int64",
+          "name": "TrunkingSubEniId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetTrunkingSubEni.createTime",
+          "example": "2021-11-30 15:04:22",
+          "member": "string",
+          "name": "CreateTime",
           "required": false,
           "type": "string",
           "value_allowed_null": false,
