@@ -10,7 +10,8 @@ tccli vpc CreateVpcEndPointService --cli-unfold-argument  \
     --EndPointServiceName 测试 \
     --VpcId vpce-h0fk8lfc \
     --IsPassService True \
-    --ServiceInstanceId lb-nswq8wkq
+    --ServiceInstanceId lb-nswq8wkq \
+    --ServiceType CLB
 ```
 
 Output: 

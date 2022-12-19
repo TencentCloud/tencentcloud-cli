@@ -35,7 +35,7 @@
     "CopySnapshotCrossRegions": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=CopySnapshotCrossRegions\n&SnapshotId=snap-ckgjwkqh\n&DestinationRegions.0=ap-beijing\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopySnapshotCrossRegions\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snap-ckgjwkqh\",\n    \"DestinationRegions\": [\n        \"ap-beijing\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SnapshotCopyResultSet\": [\n            {\n                \"SnapshotId\": \"snap-d012rm6t\",\n                \"DestinationRegion\": \"ap-beijing\",\n                \"Code\": \"Success\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"98f0b5f0-7d84-4d11-9819-ee7804e524a4\"\n    }\n}",
         "title": "将快照从广州复制到北京"
       }

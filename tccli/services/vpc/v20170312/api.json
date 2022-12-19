@@ -1657,7 +1657,7 @@
       "output": "ResetVpnGatewayInternetMaxBandwidthResponse"
     },
     "ReturnNormalAddresses": {
-      "document": "本接口（ReturnNormalAddresses）用于解绑并释放普通公网IP。\n为完善公网IP的访问管理功能，此接口于2022年12月15日升级优化鉴权功能，升级后子用户调用此接口需向主账号申请CAM策略授权，否则可能调用失败。您可以提前为子账号配置操作授权，详情见 授权指南(https://cloud.tencent.com/document/product/598/34545)。",
+      "document": "本接口（ReturnNormalAddresses）用于解绑并释放普通公网IP。\n为完善公网IP的访问管理功能，此接口于2022年12月15日升级优化鉴权功能，升级后子用户调用此接口需向主账号申请CAM策略授权，否则可能调用失败。您可以提前为子账号配置操作授权，详情见[授权指南](https://cloud.tencent.com/document/product/598/34545)。",
       "input": "ReturnNormalAddressesRequest",
       "name": "解绑并释放普通公网IP",
       "output": "ReturnNormalAddressesResponse"
@@ -2567,6 +2567,15 @@
           "example": "test",
           "member": "string",
           "name": "AddressName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络出口，默认是：center_egress1",
+          "example": "无",
+          "member": "string",
+          "name": "Egress",
           "required": false,
           "type": "string"
         }
@@ -6594,12 +6603,21 @@
         },
         {
           "default": "",
-          "document": "是否是PassService类型。",
+          "document": "~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~",
           "example": "True",
           "member": "bool",
           "name": "IsPassService",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。",
+          "example": "CLB,CDB,CRS",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17193,21 +17211,12 @@
         },
         {
           "default": "",
-          "document": "带宽包计费模式",
+          "document": "带宽包计费模式，示例 ：\n'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "退款时迁移为后付费带宽包。默认值：否",
-          "example": "True",
-          "member": "bool",
-          "name": "MigrateOnRefund",
-          "required": false,
-          "type": "bool"
         }
       ],
       "type": "object"

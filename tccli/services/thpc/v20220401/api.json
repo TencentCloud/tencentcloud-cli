@@ -340,8 +340,8 @@
       "members": [
         {
           "default": "",
-          "document": "文件系统本地挂载路径",
-          "example": "/data",
+          "document": "文件系统本地挂载路径。",
+          "example": "/data/",
           "member": "string",
           "name": "LocalPath",
           "required": true,
@@ -350,7 +350,7 @@
         },
         {
           "default": "",
-          "document": "文件系统远程挂载ip及路径",
+          "document": "文件系统远程挂载ip及路径。",
           "example": "172.0.0.1:/",
           "member": "string",
           "name": "RemotePath",
@@ -1199,7 +1199,7 @@
       "members": [
         {
           "default": "",
-          "document": "文件系统本地挂载路径",
+          "document": "文件系统本地挂载路径。",
           "example": "/data",
           "member": "string",
           "name": "LocalPath",
@@ -1209,7 +1209,7 @@
         },
         {
           "default": "",
-          "document": "文件系统远程挂载路径",
+          "document": "文件系统远程挂载路径。",
           "example": "/data/goosefs-fuse",
           "member": "string",
           "name": "RemotePath",
@@ -1219,7 +1219,7 @@
         },
         {
           "default": "",
-          "document": "文件系统master的ip和端口",
+          "document": "文件系统master的ip和端口。",
           "example": "无",
           "member": "string",
           "name": "Masters",

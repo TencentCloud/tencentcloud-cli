@@ -60,6 +60,15 @@ Output:
                 "IsIgnore": true,
                 "IsSM": true,
                 "EncryptAlgorithm": "RSA 2048",
+                "CAEncryptAlgorithms": [
+                    "SM2"
+                ],
+                "CAEndTimes": [
+                    "2022-12-11"
+                ],
+                "CACommonNames": [
+                    "aasf"
+                ],
                 "Tags": [
                     {
                         "TagKey": "testtag",
@@ -128,6 +137,15 @@ Output:
                 "IsIgnore": false,
                 "IsSM": true,
                 "EncryptAlgorithm": "ECC 256",
+                "CAEncryptAlgorithms": [
+                    "SM2"
+                ],
+                "CAEndTimes": [
+                    "2022-12-11"
+                ],
+                "CACommonNames": [
+                    "aasf"
+                ],
                 "ProjectInfo": {
                     "ProjectId": "0",
                     "OwnerUin": 0,

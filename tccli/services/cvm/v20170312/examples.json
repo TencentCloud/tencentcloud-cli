@@ -416,9 +416,9 @@
     ],
     "ExportImages": [
       {
-        "document": "",
+        "document": "导出自定义镜像",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-72n9mi0y\"\n    ],\n    \"BucketName\": \"test-bucket-AppId\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7995cb6f-0018-4286-a4d4-b6301b962d9e\",\n        \"TaskId\": 105591590\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7995cb6f-0018-4286-a4d4-b6301b962d9e\",\n        \"TaskId\": 105591590,\n        \"CosPaths\": [\n            \"/img-pq5pau1w_system_snap-fiux4bof.raw\"\n        ]\n    }\n}",
         "title": "导出自定义镜像"
       }
     ],
