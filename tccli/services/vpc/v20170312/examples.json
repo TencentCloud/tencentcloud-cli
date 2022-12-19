@@ -1868,6 +1868,14 @@
         "title": "用于查询IP地址的详情"
       }
     ],
+    "DescribeIpListInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpListInternal\n<公共请求参数>\n\n{\n    \"Ip\": [\n        \"10.4.128.11\"\n    ],\n    \"UniqueVpcId\": \"vpc-7zayowkt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IpSet\": [\n            {\n                \"Subnet\": \"10.4.128.0\",\n                \"VpcId\": 16769060,\n                \"DirtyFlag\": 0,\n                \"IntSubnet\": 168067072,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Ip\": \"10.4.128.11\",\n                \"Mask\": \"255.255.128.0\",\n                \"Gateway\": \"10.4.128.1\",\n                \"Flag\": 1,\n                \"UniqueInstanceId\": \"\",\n                \"IpType\": 2,\n                \"CreateTime\": \"2021-08-27 15:24:27\"\n            }\n        ],\n        \"RequestId\": \"c435f01f-1bf9-4e6c-93eb-aa1c1d61481a\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeIpv6SubnetInternal": [
       {
         "document": "",
@@ -2224,6 +2232,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnetIpNumInternal\n<公共请求参数>\n\n{\n    \"GetSubnetIpNumRequest\": [\n        {\n            \"SubnetId\": \"123123\",\n            \"Owner\": \"123456\",\n            \"UniqueVpcId\": \"vpc-xxxxxxxx\",\n            \"VpcId\": \"12345\",\n            \"UniqueSubnetId\": \"subnet-xxxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SubnetIpNumResult\": [\n            {\n                \"Subnet\": \"10.4.128.0\",\n                \"VpcId\": 16769060,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Min\": 168067072,\n                \"Max\": 168099839,\n                \"SubnetId\": 2018313,\n                \"Mask\": \"255.255.128.0\",\n                \"Used\": 4,\n                \"IntMask\": 17,\n                \"UniqueSubnetId\": \"subnet-oiqmspv4\",\n                \"Owner\": \"251197522\",\n                \"Total\": 32765,\n                \"AvailableNum\": 32761\n            },\n            {\n                \"Subnet\": \"10.1.1.0\",\n                \"VpcId\": 79996,\n                \"UniqueVpcId\": \"vpc-r9u93oo3\",\n                \"Min\": 167837952,\n                \"Max\": 167838207,\n                \"SubnetId\": 1995599,\n                \"Mask\": \"255.255.255.0\",\n                \"Used\": 2,\n                \"IntMask\": 24,\n                \"UniqueSubnetId\": \"subnet-9txzarp8\",\n                \"Owner\": \"251197522\",\n                \"Total\": 253,\n                \"AvailableNum\": 251\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于获取子网内的IP地址使用详情"
+      }
+    ],
+    "DescribeSubnetListInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubnetListInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\",\n    \"UniqueVpcId\": [\n        \"vpc-7zayowkt\"\n    ],\n    \"Limit\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 3,\n        \"SubnetSet\": [\n            {\n                \"DefaultFlag\": 0,\n                \"VpcId\": 16769060,\n                \"CdcFlag\": 0,\n                \"SubnetId\": 2007467,\n                \"UniqueSubnetId\": \"subnet-1ufvulum\",\n                \"Owner\": \"251197522\",\n                \"Subnet\": \"10.0.0.0\",\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Min\": 167772160,\n                \"UniqueCdcId\": \"\",\n                \"ZoneId\": 100001,\n                \"IntMask\": 24,\n                \"DhcpFlag\": 0,\n                \"Type\": 0,\n                \"Max\": 167772415,\n                \"GatewayIp\": \"0.0.0.0\",\n                \"CreateTime\": \"2021-05-10 15:40:12\",\n                \"RemoteVpcSnatFlag\": 0,\n                \"Name\": \"test\",\n                \"BroadcastFlag\": 0,\n                \"Mask\": \"255.255.255.0\",\n                \"SyncAclToTgwFlag\": 0,\n                \"LocalZoneFlag\": 0\n            }\n        ],\n        \"RequestId\": \"3f8bc2b6-3ae1-4265-89ff-038396edc068\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeSubnets": [

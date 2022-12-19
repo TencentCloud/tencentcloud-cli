@@ -349,7 +349,7 @@
       "output": "DescribeDailyPlayStatFileListResponse"
     },
     "DescribeDrmDataKey": {
-      "document": "本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中[DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643)的升级版本。\n如果您是新接入点播加密的用户，不要使用该 API。请参考[视频加密综述](https://cloud.tencent.com/document/product/266/45552)使用。",
+      "document": "本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中 [DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643) 的升级版本。\n\n如果您是新接入点播加密的用户，不要使用该 API，请参考 [视频加密综述](https://cloud.tencent.com/document/product/266/45552) 使用推荐的加密方式。",
       "input": "DescribeDrmDataKeyRequest",
       "name": "获取视频解密密钥",
       "output": "DescribeDrmDataKeyResponse"
@@ -11654,7 +11654,18 @@
           "member": "string",
           "name": "EdkList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11669,7 +11680,8 @@
           "name": "KeyList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

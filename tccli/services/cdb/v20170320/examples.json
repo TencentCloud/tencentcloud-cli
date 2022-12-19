@@ -603,7 +603,7 @@
     "DescribeSlowLogData": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogData\n&InstanceId=cdb-c1nl9rpv\n&StartTime=1585142640\n&EndTime=1585142640\n&UserNames.0=usename0\n&DataBases.0=database0\n&UserHosts.0=userhosts0\n&SortBy=RowsSent\n&OrderBy=DESC\n&Limit=400\n&Offset=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLogData\n<公共请求参数>\n\n{\n    \"OrderBy\": \"DESC\",\n    \"UserNames\": [\n        \"usename0\"\n    ],\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"DataBases\": [\n        \"database0\"\n    ],\n    \"Offset\": \"0\",\n    \"Limit\": \"400\",\n    \"SortBy\": \"RowsSent\",\n    \"StartTime\": \"1585142640\",\n    \"UserHosts\": [\n        \"userhosts0\"\n    ],\n    \"EndTime\": \"1585142640\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Database\": \"1231231\",\n                \"LockTime\": 1,\n                \"Md5\": \"23123123\",\n                \"QueryTime\": 100,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlTemplate\": \"show master status111111\",\n                \"SqlText\": \"update order_logistics set logistics_status = 205 where logistics_id in ( select `logistics_id` from `order_info` where order_no in('15706082880074381752', '15706082880074381751'))\",\n                \"Timestamp\": 1585142640,\n                \"UserHost\": \"localhost\",\n                \"UserName\": \"marchzcma\"\n            }\n        ]\n    }\n}",
         "title": "通过检索条件，查询实例慢日志"
       }

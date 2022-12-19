@@ -605,7 +605,7 @@
     "DescribeDrmDataKey": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeDrmDataKey\n&EdkList.0=CiCdpfV8oMGHlWuACHIGUxJ/mdjZnBWEsovP6k78xvj2qRCO08TAChiaoOvUBCokNTQ3N2MwYWQtMmVlYy00ZmNhLWE5OGQtNmNiNjc5MTVmODdh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDrmDataKey\n<公共请求参数>\n\n{\n    \"EdkList\": [\n        \"CiCdpfV8oMGHlWuACHIGUxJ/mdjZnBWEsovP6k78xvj2qRCO08TAChiaoOvUBCokNTQ3N2MwYWQtMmVlYy00ZmNhLWE5OGQtNmNiNjc5MTVmODdh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"KeyList\": [\n            {\n                \"Edk\": \"CiCdpfV8oMGHlWuACHIGUxJ/mdjZnBWEsovP6k78xvj2qRCO08TAChiaoOvUBCokNTQ3N2MwYWQtMmVlYy00ZmNhLWE5OGQtNmNiNjc5MTVmODdh\",\n                \"Dk\": \"i6zM/pnmIERJE3vAt0UnGg==\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取视频解密密钥"
       }

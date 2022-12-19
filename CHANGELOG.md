@@ -1,3 +1,48 @@
+# Release 3.0.672.1
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 39 次发布
+
+发布时间：2022-12-20 02:00:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDrmDataKey](http://document.tencentcloudapi.woa.com/document/product/266/54177)
+
+	* 新增入参：SubAppId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 54 次发布
+
+发布时间：2022-12-20 02:01:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIpListInternal](http://document.tencentcloudapi.woa.com/document/product/215/76834)
+* [DescribeSubnetListInternal](http://document.tencentcloudapi.woa.com/document/product/215/76833)
+
+修改数据结构：
+
+* [VpcOssSubnetForDescribeSubnetInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssSubnetForDescribeSubnetInternal)
+
+	* 新增成员：SyncAclToTgwFlag
+
+
+
+
 # Release 3.0.671.1
 
 ## 文件存储(cfs) 版本：2019-07-19

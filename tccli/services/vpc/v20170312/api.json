@@ -1230,6 +1230,12 @@
       "name": "用于查询IP地址的详情",
       "output": "DescribeIpInternalResponse"
     },
+    "DescribeIpListInternal": {
+      "document": "用于查询IP地址的详情 原始VPC OSS接口: GetIp",
+      "input": "DescribeIpListInternalRequest",
+      "name": "用于查询IP列表地址的详情",
+      "output": "DescribeIpListInternalResponse"
+    },
     "DescribeIpv6SubnetInternal": {
       "document": "用于查询IPv6子网段 原始VPC OSS接口: GetIPv6Subnet",
       "input": "DescribeIpv6SubnetInternalRequest",
@@ -1457,6 +1463,12 @@
       "input": "DescribeSubnetIpNumInternalRequest",
       "name": "用于获取子网内的IP地址使用详情",
       "output": "DescribeSubnetIpNumInternalResponse"
+    },
+    "DescribeSubnetListInternal": {
+      "document": "用于获取子网信息 原始VPC OSS接口: GetSubnet",
+      "input": "DescribeSubnetListInternalRequest",
+      "name": "用于获取子网列表",
+      "output": "DescribeSubnetListInternalResponse"
     },
     "DescribeSubnets": {
       "document": "本接口（DescribeSubnets）用于查询子网列表。",
@@ -16529,6 +16541,114 @@
       ],
       "type": "object"
     },
+    "DescribeIpListInternalRequest": {
+      "document": "DescribeIpListInternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetIp.ip",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子网地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetIp.ipType",
+          "example": "1",
+          "member": "int64",
+          "name": "IpType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetIp.flag",
+          "example": "0",
+          "member": "int64",
+          "name": "Flag",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetIp.uniqInstanceId",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "UniqueInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetIp.mask",
+          "example": "255.255.128.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpListInternalResponse": {
+      "document": "DescribeIpListInternal返回参数结构体",
+      "members": [
+        {
+          "document": "原VPC OSS APIv2名称: GetIp.ipSet",
+          "example": "无",
+          "member": "VpcOssIp",
+          "name": "IpSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIpv6SubnetInternalRequest": {
       "document": "DescribeIpv6SubnetInternal请求参数结构体",
       "members": [
@@ -19623,6 +19743,124 @@
           "example": "无",
           "member": "VpcOssSubnetIpNumResult",
           "name": "SubnetIpNumResult",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetListInternalRequest": {
+      "document": "DescribeSubnetListInternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "123123",
+          "member": "uint64",
+          "name": "VpcId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数subnetId",
+          "example": "123123",
+          "member": "uint64",
+          "name": "SubnetId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一SubnetId",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "251198225",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetListInternalResponse": {
+      "document": "DescribeSubnetListInternal返回参数结构体",
+      "members": [
+        {
+          "document": "原VPC OSS APIv2名称: GetSubnet.total",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: GetSubnet.subnets",
+          "example": "无",
+          "member": "VpcOssSubnetForDescribeSubnetInternal",
+          "name": "SubnetSet",
           "required": false,
           "type": "list",
           "value_allowed_null": false,
@@ -49268,6 +49506,17 @@
           "example": "0",
           "member": "int64",
           "name": "LocalZoneFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetSubnet.syncAclToTgwFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "SyncAclToTgwFlag",
           "required": false,
           "type": "int",
           "value_allowed_null": false,
