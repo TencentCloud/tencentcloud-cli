@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cam UpdateUser --cli-unfold-argument  \
-    --Name test124 \
     --Remark test \
-    --ConsoleLogin 1 \
-    --Password test123456 \
+    --Name test124 \
+    --CountryCode 86 \
     --NeedResetPassword 0 \
     --PhoneNum 10086 \
-    --CountryCode 86 \
+    --ConsoleLogin 1 \
+    --Password test123456 \
     --Email 123%40qq.com
 ```
 

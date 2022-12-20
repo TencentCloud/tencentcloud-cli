@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam UpdateGroup --cli-unfold-argument  \
-    --GroupId 2020 \
-    --GroupName 2020test
+    --GroupName 2020test \
+    --GroupId 2020
 ```
 
 Output: 
