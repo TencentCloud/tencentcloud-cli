@@ -378,6 +378,12 @@
       "name": "列出 Prometheus CVM Agent",
       "output": "DescribePrometheusAgentsResponse"
     },
+    "DescribePrometheusInstanceUsage": {
+      "document": " 查询Prometheus按量实例用量",
+      "input": "DescribePrometheusInstanceUsageRequest",
+      "name": "查询Prometheus按量实例用量",
+      "output": "DescribePrometheusInstanceUsageResponse"
+    },
     "DescribePrometheusInstances": {
       "document": "本接口 (DescribePrometheusInstances) 用于查询一个或多个实例的详细信息。\n<ul>\n<li>可以根据实例ID、实例名称或者实例状态等信息来查询实例的详细信息</li>\n<li>如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。</li>\n</ul>",
       "input": "DescribePrometheusInstancesRequest",
@@ -9117,6 +9123,60 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusInstanceUsageRequest": {
+      "document": "DescribePrometheusInstanceUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。",
+          "example": "[\"prom-xxxxxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "20210101",
+          "member": "string",
+          "name": "StartCalcDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "20210102",
+          "member": "string",
+          "name": "EndCalcDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstanceUsageResponse": {
+      "document": "DescribePrometheusInstanceUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusInstanceTenantUsage",
+          "name": "UsageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusInstancesRequest": {
       "document": "DescribePrometheusInstances请求参数结构体",
       "members": [
@@ -12723,6 +12783,62 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusInstanceTenantUsage": {
+      "document": "Prometheus用量信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20210101",
+          "member": "string",
+          "name": "CalcDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "float",
+          "name": "Total",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基础指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "float",
+          "name": "Basic",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费指标用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "float",
+          "name": "Fee",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

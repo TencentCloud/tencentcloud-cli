@@ -36,6 +36,10 @@ Output:
         "BackupArchiveDays": 180,
         "EnableBinlogArchive": "on",
         "BinlogArchiveDays": 180,
+        "EnableBackupStandby": "on",
+        "BackupStandbyDays": 30,
+        "EnableBinlogStandby": "on",
+        "BinlogStandbyDays": 30,
         "RequestId": "9d73ec37-89b8-4d36-9f40-123123123"
     }
 }

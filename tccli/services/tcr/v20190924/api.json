@@ -4706,48 +4706,48 @@
       "document": "DescribeRepositories请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例Id",
+          "example": "tcr-12345678",
           "member": "string",
           "name": "RegistryId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定命名空间，不填写默认为查询所有命名空间下镜像仓库",
+          "example": "library",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库",
+          "example": "nginx",
           "member": "string",
           "name": "RepositoryName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "document": "页数，用于分页",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页个数，用于分页",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "document": "基于字段排序，支持的值有-creation_time,-name, -update_time",
+          "example": "-name",
           "member": "string",
           "name": "SortBy",
           "required": false,
@@ -4761,6 +4761,7 @@
       "members": [
         {
           "document": "仓库信息列表",
+          "example": "[       {         \"BriefDescription\": \"\",         \"CreationTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\",         \"Description\": \"\",         \"Name\": \"library/busybox\",         \"Namespace\": \"library\",         \"Public\": false,         \"UpdateTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\"       }     ],",
           "member": "TcrRepositoryInfo",
           "name": "RepositoryList",
           "type": "list",
@@ -4768,6 +4769,7 @@
         },
         {
           "document": "总个数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",

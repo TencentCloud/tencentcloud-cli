@@ -278,7 +278,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"EnableBackupArchive\": \"on\",\n        \"BackupArchiveDays\": 180,\n        \"EnableBinlogArchive\": \"on\",\n        \"BinlogArchiveDays\": 180,\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"EnableBackupArchive\": \"on\",\n        \"BackupArchiveDays\": 180,\n        \"EnableBinlogArchive\": \"on\",\n        \"BinlogArchiveDays\": 180,\n        \"EnableBackupStandby\": \"on\",\n        \"BackupStandbyDays\": 30,\n        \"EnableBinlogStandby\": \"on\",\n        \"BinlogStandbyDays\": 30,\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
         "title": "查询云数据库备份配置信息"
       }
     ],
@@ -302,7 +302,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupCount\": 15,\n        \"BackupVolume\": 90000,\n        \"BillingVolume\": 20000,\n        \"FreeVolume\": 70000,\n        \"RemoteBackupVolume\": 1000,\n        \"BackupArchiveVolume\": 1000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupCount\": 15,\n        \"BackupVolume\": 90000,\n        \"BillingVolume\": 20000,\n        \"FreeVolume\": 70000,\n        \"RemoteBackupVolume\": 1000,\n        \"BackupArchiveVolume\": 1000,\n        \"BackupStandbyVolume\": 1000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份概览"
       }
     ],
@@ -334,7 +334,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BinlogBackupCount\": 15,\n        \"BinlogBackupVolume\": 6000,\n        \"RemoteBinlogCount\": 5,\n        \"RemoteBinlogVolume\": 2000,\n        \"BinlogArchiveCount\": 5,\n        \"BinlogArchiveVolume\": 2000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BinlogBackupCount\": 15,\n        \"BinlogBackupVolume\": 6000,\n        \"RemoteBinlogCount\": 5,\n        \"RemoteBinlogVolume\": 2000,\n        \"BinlogArchiveCount\": 5,\n        \"BinlogArchiveVolume\": 2000,\n        \"BinlogStandbyCount\": 5,\n        \"BinlogStandbyVolume\": 2000,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "DescribeBinlogBackupOverview"
       }
     ],
@@ -460,7 +460,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataBackupOverview\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoBackupCount\": 3,\n        \"AutoBackupVolume\": 3000,\n        \"DataBackupCount\": 5,\n        \"DataBackupVolume\": 5000,\n        \"ManualBackupCount\": 2,\n        \"ManualBackupVolume\": 2000,\n        \"RemoteBackupVolume\": 1000,\n        \"RemoteBackupCount\": 1,\n        \"DataBackupArchiveVolume\": 1000,\n        \"DataBackupArchiveCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoBackupCount\": 3,\n        \"AutoBackupVolume\": 3000,\n        \"DataBackupCount\": 5,\n        \"DataBackupVolume\": 5000,\n        \"ManualBackupCount\": 2,\n        \"ManualBackupVolume\": 2000,\n        \"RemoteBackupVolume\": 1000,\n        \"RemoteBackupCount\": 1,\n        \"DataBackupArchiveVolume\": 1000,\n        \"DataBackupArchiveCount\": 1,\n        \"DataBackupStandbyVolume\": 1000,\n        \"DataBackupStandbyCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "DescribeDataBackupOverview"
       }
     ],
@@ -568,6 +568,14 @@
         "title": "查询数据库代理规格配置"
       }
     ],
+    "DescribeRemoteBackupConfig": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeRemoteBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExpireDays\": 7,\n        \"RemoteBackupSave\": \"on\",\n        \"RemoteBinlogSave\": \"on\",\n        \"RemoteRegion\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\"\n        ],\n        \"RegionList\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\",\n            \"ap-beijing\",\n            \"ap-shanghai\"\n        ],\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "title": "查询云数据库异地备份配置信息"
+      }
+    ],
     "DescribeRoGroups": [
       {
         "document": "",
@@ -603,7 +611,7 @@
     "DescribeSlowLogData": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogData\n&InstanceId=cdb-c1nl9rpv\n&StartTime=1585142640\n&EndTime=1585142640\n&UserNames.0=usename0\n&DataBases.0=database0\n&UserHosts.0=userhosts0\n&SortBy=RowsSent\n&OrderBy=DESC\n&Limit=400\n&Offset=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLogData\n<公共请求参数>\n\n{\n    \"OrderBy\": \"DESC\",\n    \"UserNames\": [\n        \"usename0\"\n    ],\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"DataBases\": [\n        \"database0\"\n    ],\n    \"Offset\": \"0\",\n    \"Limit\": \"400\",\n    \"SortBy\": \"RowsSent\",\n    \"StartTime\": \"1585142640\",\n    \"UserHosts\": [\n        \"userhosts0\"\n    ],\n    \"EndTime\": \"1585142640\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Database\": \"1231231\",\n                \"LockTime\": 1,\n                \"Md5\": \"23123123\",\n                \"QueryTime\": 100,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlTemplate\": \"show master status111111\",\n                \"SqlText\": \"update order_logistics set logistics_status = 205 where logistics_id in ( select `logistics_id` from `order_info` where order_no in('15706082880074381752', '15706082880074381751'))\",\n                \"Timestamp\": 1585142640,\n                \"UserHost\": \"localhost\",\n                \"UserName\": \"marchzcma\"\n            }\n        ]\n    }\n}",
         "title": "通过检索条件，查询实例慢日志"
       }
@@ -878,6 +886,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=ModifyParamTemplate\n&TemplateId=11231\n&ParamList.0.Name=auto_increment_increment\n&ParamList.0.CurrentValue=1\n&ParamList.1.Name=binlog_format\n&ParamList.1.CurrentValue=MIXED\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\"\n    }\n}",
         "title": "修改参数模板"
+      }
+    ],
+    "ModifyRemoteBackupConfig": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRemoteBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&RemoteBackupSave=on\n&RemoteBinlogSave=on\n&RemoteRegion.0=ap-guangzhou\n&ExpireDays=7\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "title": "修改云数据库异地备份配置信息"
       }
     ],
     "ModifyRoGroupInfo": [

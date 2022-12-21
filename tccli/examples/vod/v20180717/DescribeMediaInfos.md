@@ -1,12 +1,12 @@
 **Example 1: 获取媒体详细信息**
 
-
+获取媒体全部信息，不指定 Filters。
 
 Input: 
 
 ```
 tccli vod DescribeMediaInfos --cli-unfold-argument  \
-    --FileIds 5285485487985271487 5285485487985271488
+    --FileIds 5285485487985271488 5285485487985271487
 ```
 
 Output: 
@@ -39,7 +39,7 @@ Output:
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601.0,
+                    "Duration": 3601,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
@@ -70,7 +70,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -97,7 +97,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -120,7 +120,7 @@ Output:
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145.0,
+                            "Duration": 145,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -157,8 +157,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10.0,
-                            "EndTimeOffset": 15.0
+                            "StartTimeOffset": 10,
+                            "EndTimeOffset": 15
                         }
                     ]
                 },
@@ -203,28 +203,102 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0.0,
+                                    "TimeOffset": 0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000.0,
+                                    "TimeOffset": 1000,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
                         }
                     ]
                 },
+                "MiniProgramReviewInfo": {
+                    "MiniProgramReviewList": [
+                        {
+                            "Url": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Definition": 0,
+                            "ReviewResult": "pass",
+                            "ReviewSummary": [
+                                {
+                                    "Confidence": 0,
+                                    "Type": "Porn",
+                                    "Suggestion": "pass"
+                                }
+                            ],
+                            "MetaData": {
+                                "Rotate": 0,
+                                "Container": "m4a",
+                                "AudioDuration": 0,
+                                "VideoStreamSet": [
+                                    {
+                                        "Bitrate": 246000,
+                                        "Height": 480,
+                                        "Width": 640,
+                                        "Codec": "h264",
+                                        "Fps": 222
+                                    }
+                                ],
+                                "Bitrate": 563477,
+                                "Height": 378,
+                                "Width": 672,
+                                "Duration": 3601,
+                                "Size": 10502,
+                                "VideoDuration": 3601,
+                                "AudioStreamSet": [
+                                    {
+                                        "Codec": "aac",
+                                        "SamplingRate": 44100,
+                                        "Bitrate": 35
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "AdaptiveDynamicStreamingInfo": {
+                    "AdaptiveDynamicStreamingSet": [
+                        {
+                            "Definition": 0,
+                            "Package": "HLS",
+                            "DrmType": "xx",
+                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Size": 0
+                        }
+                    ]
+                },
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1.0,
+                            "TimeOffset": 1,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100.0,
+                            "TimeOffset": 100,
                             "Content": "def"
                         }
                     ]
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Id": "subtitleId",
+                            "Name": "English",
+                            "Language": "en-US",
+                            "Format": "vtt",
+                            "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt"
+                        }
+                    ]
+                },
+                "ReviewInfo": {
+                    "MediaReviewInfo": {
+                        "Definition": 10,
+                        "Suggestion": "pass",
+                        "TypeSet": [],
+                        "ReviewTime": "2022-10-08T10:00:00Z"
+                    },
+                    "CoverReviewInfo": null
                 }
             }
         ],
@@ -237,14 +311,14 @@ Output:
 
 **Example 2: 只获取媒体基础信息**
 
-
+只获取媒体基础信息，Filters 指定 basicInfo。
 
 Input: 
 
 ```
 tccli vod DescribeMediaInfos --cli-unfold-argument  \
-    --FileIds 5285485487985271487 5285485487985271488 \
-    --Filters basicInfo
+    --Filters basicInfo \
+    --FileIds 5285485487985271488 5285485487985271487
 ```
 
 Output: 
@@ -280,8 +354,11 @@ Output:
                 "AnimatedGraphicsInfo": null,
                 "SampleSnapshotInfo": null,
                 "ImageSpriteInfo": null,
+                "MiniProgramReviewInfo": null,
+                "SubtitleInfo": null,
                 "SnapshotByTimeOffsetInfo": null,
-                "KeyFrameDescInfo": null
+                "KeyFrameDescInfo": null,
+                "ReviewInfo": null
             }
         ],
         "NotExistFileIdSet": [

@@ -666,12 +666,6 @@
       "name": "修改负载均衡",
       "output": "ModifyLoadBalancingResponse"
     },
-    "ModifyLoadBalancingStatus": {
-      "document": "修改负载均衡状态",
-      "input": "ModifyLoadBalancingStatusRequest",
-      "name": "修改负载均衡状态",
-      "output": "ModifyLoadBalancingStatusResponse"
-    },
     "ModifyLogTopicTask": {
       "document": "本接口（ModifyLogTopicTask）用于修改日志推送任务信息。",
       "input": "ModifyLogTopicTaskRequest",
@@ -13476,51 +13470,6 @@
     },
     "ModifyLoadBalancingResponse": {
       "document": "ModifyLoadBalancing返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoadBalancingStatusRequest": {
-      "document": "ModifyLoadBalancingStatus请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "负载均衡ID。",
-          "example": "lb-97c8396e-cb88-4c9c-98d9-38e86463d12e",
-          "member": "string",
-          "name": "LoadBalancingId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "负载均衡状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用。</li>",
-          "example": "online",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoadBalancingStatusResponse": {
-      "document": "ModifyLoadBalancingStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

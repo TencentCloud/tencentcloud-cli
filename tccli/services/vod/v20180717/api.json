@@ -96,6 +96,12 @@
       "name": "创建任务流模板",
       "output": "CreateProcedureTemplateResponse"
     },
+    "CreateReviewTemplate": {
+      "document": "创建用户自定义审核模板，数量上限：50。",
+      "input": "CreateReviewTemplateRequest",
+      "name": "创建审核模板",
+      "output": "CreateReviewTemplateResponse"
+    },
     "CreateSampleSnapshotTemplate": {
       "document": "创建用户自定义采样截图模板，数量上限：16。",
       "input": "CreateSampleSnapshotTemplateRequest",
@@ -222,6 +228,12 @@
       "name": "删除任务流模板",
       "output": "DeleteProcedureTemplateResponse"
     },
+    "DeleteReviewTemplate": {
+      "document": "删除用户自定义审核模板。",
+      "input": "DeleteReviewTemplateRequest",
+      "name": "删除审核模板",
+      "output": "DeleteReviewTemplateResponse"
+    },
     "DeleteSampleSnapshotTemplate": {
       "document": "删除用户自定义采样截图模板。",
       "input": "DeleteSampleSnapshotTemplateRequest",
@@ -343,7 +355,7 @@
       "output": "DescribeDailyPlayStatFileListResponse"
     },
     "DescribeDrmDataKey": {
-      "document": "本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中[DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643)的升级版本。\n如果您是新接入点播加密的用户，不要使用该 API。请参考[视频加密综述](https://cloud.tencent.com/document/product/266/45552)使用。",
+      "document": "本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中 [DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643) 的升级版本。\n\n如果您是新接入点播加密的用户，不要使用该 API，请参考 [视频加密综述](https://cloud.tencent.com/document/product/266/45552) 使用推荐的加密方式。",
       "input": "DescribeDrmDataKeyRequest",
       "name": "获取视频解密密钥",
       "output": "DescribeDrmDataKeyResponse"
@@ -403,7 +415,7 @@
       "output": "DescribeLicenseUsageDataResponse"
     },
     "DescribeMediaInfos": {
-      "document": "1. 该接口可以获取多个媒体文件的多种信息，包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n2. 可以指定回包只返回部分信息。",
+      "document": "1. 该接口可以获取多个媒体文件的多种信息，包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n    10. 审核信息（reviewInfo）：包括媒体审核及媒体封面审核信息。\n2. 可以指定回包只返回部分信息。",
       "input": "DescribeMediaInfosRequest",
       "name": "获取媒体详细信息",
       "output": "DescribeMediaInfosResponse"
@@ -443,6 +455,12 @@
       "input": "DescribeReviewDetailsRequest",
       "name": "查询内容智能识别详情",
       "output": "DescribeReviewDetailsResponse"
+    },
+    "DescribeReviewTemplates": {
+      "document": "获取审核模板列表",
+      "input": "DescribeReviewTemplatesRequest",
+      "name": "获取审核模板列表",
+      "output": "DescribeReviewTemplatesResponse"
     },
     "DescribeSampleSnapshotTemplates": {
       "document": "查询采样截图模板，支持根据条件，分页查询。",
@@ -635,6 +653,12 @@
       "input": "ModifyPersonSampleRequest",
       "name": "修改素材样本",
       "output": "ModifyPersonSampleResponse"
+    },
+    "ModifyReviewTemplate": {
+      "document": "修改用户自定义审核模板。",
+      "input": "ModifyReviewTemplateRequest",
+      "name": "修改审核模板",
+      "output": "ModifyReviewTemplateResponse"
     },
     "ModifySampleSnapshotTemplate": {
       "document": "修改用户自定义采样截图模板。",
@@ -8561,6 +8585,69 @@
       ],
       "type": "object"
     },
+    "CreateReviewTemplateRequest": {
+      "document": "CreateReviewTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReviewTemplateResponse": {
+      "document": "CreateReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "审核模板唯一标识。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSampleSnapshotTemplateRequest": {
       "document": "CreateSampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -9800,6 +9887,42 @@
       ],
       "type": "object"
     },
+    "DeleteReviewTemplateRequest": {
+      "document": "DeleteReviewTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审核模板唯一标识。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReviewTemplateResponse": {
+      "document": "DeleteReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSampleSnapshotTemplateRequest": {
       "document": "DeleteSampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -11026,6 +11149,15 @@
           "name": "EdkList",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11746,6 +11878,7 @@
         {
           "default": "",
           "document": "媒体文件 ID 列表，N 从 0 开始取值，最大 19。",
+          "example": "[\"5285485487985271487\\n\",\"5285485487985271488\\n\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -11753,19 +11886,21 @@
         },
         {
           "default": "",
-          "document": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>",
-          "member": "string",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>\n<li>subtitleInfo（字幕信息）。</li>\n<li>reviewInfo（审核信息）。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11775,15 +11910,19 @@
       "members": [
         {
           "document": "媒体文件信息列表。",
+          "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "不存在的文件 ID 列表。",
+          "example": "[\"5285485487985271488\"]",
           "member": "string",
           "name": "NotExistFileIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12187,6 +12326,87 @@
           "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReviewTemplatesRequest": {
+      "document": "DescribeReviewTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "审核模版唯一标识过滤条件，数组长度限制：100。",
+          "example": "123",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReviewTemplatesResponse": {
+      "document": "DescribeReviewTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核模板详情列表。",
+          "example": "无",
+          "member": "ReviewTemplate",
+          "name": "ReviewTemplateSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14810,6 +15030,30 @@
       ],
       "usage": "out"
     },
+    "FileReviewInfo": {
+      "document": "文件审核信息。",
+      "members": [
+        {
+          "document": "媒体审核信息\\*。\n\n\\* 只展示通过 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 发起的审核结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewInfo",
+          "name": "MediaReviewInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "媒体封面审核信息\\*。\n\n\\* 只展示通过 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 发起的审核结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewInfo",
+          "name": "CoverReviewInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FileUploadTask": {
       "document": "文件上传任务信息",
       "members": [
@@ -17080,124 +17324,121 @@
       "document": "点播文件信息",
       "members": [
         {
-          "default": "",
           "document": "基础信息。包括视频名称、分类、播放地址、封面图片等。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaBasicInfo",
           "name": "BasicInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "元信息。包括大小、时长、视频流信息、音频流信息等。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaTranscodeInfo",
           "name": "TranscodeInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转动图结果信息。对视频转动图（如 gif）后，动图相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaAnimatedGraphicsInfo",
           "name": "AnimatedGraphicsInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "采样截图信息。对视频采样截图后，相关截图信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSampleSnapshotInfo",
           "name": "SampleSnapshotInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaImageSpriteInfo",
           "name": "ImageSpriteInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSnapshotByTimeOffsetInfo",
           "name": "SnapshotByTimeOffsetInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频打点信息。对视频设置的各个打点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaKeyFrameDescInfo",
           "name": "KeyFrameDescInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "转自适应码流信息。包括规格、加密类型、打包格式等相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaAdaptiveDynamicStreamingInfo",
           "name": "AdaptiveDynamicStreamingInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "小程序审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMiniProgramReviewInfo",
           "name": "MiniProgramReviewInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "字幕信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSubtitleInfo",
           "name": "SubtitleInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "媒体文件唯一标识 ID。",
           "example": "无",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "审核信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileReviewInfo",
+          "name": "ReviewInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20102,6 +20343,69 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReviewTemplateRequest": {
+      "document": "ModifyReviewTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审核模板唯一标识。",
+          "example": "无",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "审核模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审核模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>\n\n注意：不填表示不更新。",
+          "example": "无",
+          "member": "string",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReviewTemplateResponse": {
+      "document": "ModifyReviewTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -24804,6 +25108,124 @@
         }
       ],
       "type": "object"
+    },
+    "ReviewInfo": {
+      "document": "审核信息。",
+      "members": [
+        {
+          "document": "审核模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核的结果建议，取值范围：\n<li>pass：建议通过；</li>\n<li>review：建议复审；</li>\n<li>block：建议封禁。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。\nForm 表示违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>\nLabel 表示违禁的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "TypeSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReviewTemplate": {
+      "document": "审核模版详情",
+      "members": [
+        {
+          "default": "",
+          "document": "审核模版唯一标签。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要返回的违规标签列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SDMCDrmKeyProviderInfo": {
       "document": "华曦达（SDMC）相关的 DRM 密钥提供商信息。",

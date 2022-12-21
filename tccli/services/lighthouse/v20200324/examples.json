@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyDiskBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyDiskBackup\n<公共请求参数>\n\n{\n    \"DiskBackupId\": \"lhbak-ounanbtt\",\n    \"DiskId\": \"lhdisk-qtovvuzq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41c963ec-5e49-4454-8f98-b3f008958eb9\"\n    }\n}",
+        "title": "回滚云硬盘备份点"
+      }
+    ],
     "ApplyInstanceSnapshot": [
       {
         "document": "",
@@ -40,6 +48,14 @@
         "title": "使用实例创建镜像"
       }
     ],
+    "CreateDiskBackup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDiskBackup\n<公共请求参数>\n\n{\n    \"DiskBackupName\": \"disk-backup-01\",\n    \"DiskId\": \"lhdisk-qtovvuzq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskBackupId\": \"lhbak-6068cwhv\",\n        \"RequestId\": \"ef009de9-1bf7-44b3-a30e-adfb328aff8c\"\n    }\n}",
+        "title": "创建云硬盘备份点"
+      }
+    ],
     "CreateFirewallRules": [
       {
         "document": "",
@@ -78,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-1ynlfst1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecad302e-6952-4c06-a64c-2f8f6c526029\"\n    }\n}",
         "title": "删除一个自定义镜像"
+      }
+    ],
+    "DeleteDiskBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDiskBackups\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"lhbak-ounanbtt\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93fc3495-af3d-4912-8bee-4b6e9502d92d\"\n    }\n}",
+        "title": "删除云硬盘备份点"
       }
     ],
     "DeleteFirewallRules": [
@@ -150,6 +174,22 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnAttachedInstances\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CcnAttachedInstanceSet\": [\n            {\n                \"CcnId\": \"ccn-pf78xmcp\",\n                \"CidrBlock\": [\n                    \"10.0.0.0/16\"\n                ],\n                \"State\": \"PENDING\",\n                \"AttachedTime\": \"2021-05-08 17:21:05\",\n                \"Description\": \"Lighthouse attach ccn instance\"\n            }\n        ],\n        \"RequestId\": \"b0f73b4b-bf36-4611-8e3b-e3dfe0353cd6\"\n    }\n}",
         "title": "查询云联网关联的实例信息"
+      }
+    ],
+    "DescribeDiskBackups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskBackups\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"lhbak-nuen5foj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskBackupSet\": [\n            {\n                \"DiskBackupId\": \"lhbak-nuen5foj\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DiskId\": \"lhdisk-nbebddz8\",\n                \"DiskSize\": 200,\n                \"DiskBackupName\": \"lhdisk-nbebddz8-data-disk-062317\",\n                \"DiskBackupState\": \"ROLLBACKING\",\n                \"Percent\": 100,\n                \"LatestOperation\": \"ApplyDiskBackup\",\n                \"LatestOperationState\": \"OPERATING\",\n                \"LatestOperationRequestId\": \"41c963ec-5e49-4454-8f98-b3f008958eb9\",\n                \"CreatedTime\": \"2022-06-23T09:19:05Z\"\n            }\n        ],\n        \"RequestId\": \"67a6539c-c9b3-453d-9ba4-9024e0e05f31\"\n    }\n}",
+        "title": "查看云硬盘备份点列表"
+      }
+    ],
+    "DescribeDiskBackupsDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskBackupsDeniedActions\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"lhbak-nuen5foj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskBackupDeniedActionSet\": [\n            {\n                \"DiskBackupId\": \"lhbak-nuen5foj\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"ApplyDiskBackup\",\n                        \"Code\": \"UnsupportedOperation.InvalidDiskBackupState\",\n                        \"Message\": \"The disk backup `lhbak-nuen5foj` is in `ROLLBACKING` state and does not support this operation.\"\n                    },\n                    {\n                        \"Action\": \"DeleteDiskBackups\",\n                        \"Code\": \"UnsupportedOperation.InvalidDiskBackupState\",\n                        \"Message\": \"The disk backup `lhbak-nuen5foj` is in `ROLLBACKING` state and does not support this operation.\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"64f1ba69-db43-47c6-b1f1-584b172e3f8a\"\n    }\n}",
+        "title": "查看云硬盘备份点操作限制列表"
       }
     ],
     "DescribeDiskConfigs": [
@@ -428,6 +468,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintAttribute\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-1ynlfst1\",\n    \"BlueprintName\": \"new-blueprint\",\n    \"Description\": \"new-blueprint\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896682bb-fb47-4fce-94d9-9a4f2abbfaac\"\n    }\n}",
         "title": "修改镜像的名称与描述"
+      }
+    ],
+    "ModifyDiskBackupsAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskBackupsAttribute\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"lhbak-l1ghx97r\"\n    ],\n    \"DiskBackupName\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91cbdac6-2cd1-4ab9-a884-c8c47a7fa1e3\"\n    }\n}",
+        "title": "修改云硬盘备份点属性"
       }
     ],
     "ModifyDisksAttribute": [

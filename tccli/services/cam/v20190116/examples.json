@@ -3,7 +3,7 @@
     "AddUser": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=AddUser\n&Name=test124\n&Remark=test\n&ConsoleLogin=1\n&UseApi=1\n&Password=test123456\n&NeedResetPassword=0\n&PhoneNum=10086\n&CountryCode=86\n&Email=123%40qq.com\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
       }
@@ -11,7 +11,7 @@
     "AddUserToGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\n&Info.0.Uid=1001408\n&Info.0.GroupId=2020\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserToGroup\n<公共请求参数>\n\n{\n    \"Info\": [\n        {\n            \"Uid\": \"1001408\",\n            \"GroupId\": \"2020\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\n    }\n}",
         "title": "用户加入到用户组"
       }
@@ -59,7 +59,7 @@
     "CreateGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateGroup\r\n&GroupName=test1\r\n&Remark=test2\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"test1\",\n    \"Remark\": \"test2\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"RequestId\": \"f36a5d34-0d51-4b91-b9fc-af5d02571656\"\n    }\n}",
         "title": "创建用户组"
       }
@@ -139,7 +139,7 @@
     "DeleteGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"2020\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "删除用户组"
       }
@@ -203,7 +203,7 @@
     "DeleteUser": [
       {
         "document": "删除子用户",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\n&Name=test124\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"Name\": \"test124\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "删除子用户"
       }
@@ -401,7 +401,7 @@
     "GetUser": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetUser\n&Name=test124\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUser\n<公共请求参数>\n\n{\n    \"Name\": \"test124\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Uid\": 1001774,\n        \"Remark\": \"test\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"123@qq.com\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "查询子用户"
       }
@@ -489,7 +489,7 @@
     "ListGroupsForUser": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListGroupsForUser\r\n&Uid=1001408\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGroupsForUser\n<公共请求参数>\n\n{\n    \"Uid\": \"1001408\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"GroupInfo\": [\n            {\n                \"GroupId\": 2020,\n                \"GroupName\": \"test1\",\n                \"CreateTime\": \"2019-04-03 15:11:34\",\n                \"Remark\": \"test2\"\n            }\n        ],\n        \"RequestId\": \"a614c392-3079-4dab-b819-0ab0563a32f0\"\n    }\n}",
         "title": "列出用户关联的用户组"
       }
@@ -575,7 +575,7 @@
     "RemoveUserFromGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\n&Info.0.Uid=1001408\n&Info.0.GroupId=2020\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveUserFromGroup\n<公共请求参数>\n\n{\n    \"Info\": [\n        {\n            \"Uid\": \"1001408\",\n            \"GroupId\": \"2020\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "从用户组删除用户"
       }
@@ -631,7 +631,7 @@
     "UpdateGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdateGroup\r\n&GroupId=2020\r\n&GroupName=2020test\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"2020test\",\n    \"GroupId\": \"2020\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "更新用户组"
       }
@@ -679,7 +679,7 @@
     "UpdateUser": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdateUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新子用户"
       }

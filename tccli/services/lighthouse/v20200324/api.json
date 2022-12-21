@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ApplyDiskBackup": {
+      "document": "本接口（ApplyDiskBackup）用于回滚指定云硬盘的备份点。\n* 仅支持回滚到原云硬盘。\n* 用于回滚的云硬盘备份点必须处于 NORMAL 状态。\n  云硬盘备份点状态可以通过 DescribeDiskBackups 接口查询。\n* 回滚云硬盘备份点时，云硬盘的状态必须为 UNATTACHED或ATTACHED。\n  云硬盘状态可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口查询。\n* 如果云硬盘处于 ATTACHED状态，相关RUNNING 状态的实例会强制关机，然后回滚云硬盘备份点。\n",
+      "input": "ApplyDiskBackupRequest",
+      "name": "回滚云硬盘备份点",
+      "output": "ApplyDiskBackupResponse"
+    },
     "ApplyInstanceSnapshot": {
       "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
       "input": "ApplyInstanceSnapshotRequest",
@@ -30,6 +36,12 @@
       "name": "创建镜像",
       "output": "CreateBlueprintResponse"
     },
+    "CreateDiskBackup": {
+      "document": "本接口 ( CreateDiskBackup  ) 用于创建指定云硬盘（当前只支持数据盘）的备份点。",
+      "input": "CreateDiskBackupRequest",
+      "name": "创建云硬盘备份点",
+      "output": "CreateDiskBackupResponse"
+    },
     "CreateFirewallRules": {
       "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "CreateFirewallRulesRequest",
@@ -59,6 +71,12 @@
       "input": "DeleteBlueprintsRequest",
       "name": "删除镜像",
       "output": "DeleteBlueprintsResponse"
+    },
+    "DeleteDiskBackups": {
+      "document": "本接口（DeleteDiskBackups）用于删除云硬盘备份点。\n云硬盘备份点必须处于 NORMAL 状态，云硬盘备份点状态可以通过 DescribeDiskBackups接口查询，见输出参数中 DiskBackupState 字段解释。",
+      "input": "DeleteDiskBackupsRequest",
+      "name": "删除云硬盘备份点",
+      "output": "DeleteDiskBackupsResponse"
     },
     "DeleteFirewallRules": {
       "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
@@ -113,6 +131,18 @@
       "input": "DescribeCcnAttachedInstancesRequest",
       "name": "查询云联网关联的实例信息",
       "output": "DescribeCcnAttachedInstancesResponse"
+    },
+    "DescribeDiskBackups": {
+      "document": "本接口（DescribeDiskBackups）用于查询云硬盘备份点的详细信息。",
+      "input": "DescribeDiskBackupsRequest",
+      "name": "查看云硬盘备份点列表",
+      "output": "DescribeDiskBackupsResponse"
+    },
+    "DescribeDiskBackupsDeniedActions": {
+      "document": "本接口（DescribeDiskBackupsDeniedActions）用于查询一个或多个云硬盘备份点的操作限制列表信息。",
+      "input": "DescribeDiskBackupsDeniedActionsRequest",
+      "name": "查看云硬盘备份点操作限制列表",
+      "output": "DescribeDiskBackupsDeniedActionsResponse"
     },
     "DescribeDiskConfigs": {
       "document": "本接口（DescribeDiskConfigs）用于查询云硬盘配置。",
@@ -318,6 +348,12 @@
       "name": "修改镜像属性",
       "output": "ModifyBlueprintAttributeResponse"
     },
+    "ModifyDiskBackupsAttribute": {
+      "document": "本接口 (ModifyDiskBackupsAttribute) 用于修改云硬盘备份点属性。",
+      "input": "ModifyDiskBackupsAttributeRequest",
+      "name": "修改云硬盘备份点属性",
+      "output": "ModifyDiskBackupsAttributeResponse"
+    },
     "ModifyDisksAttribute": {
       "document": "本接口(ModifyDisksAttribute)用于修改云硬盘属性。",
       "input": "ModifyDisksAttributeRequest",
@@ -434,6 +470,42 @@
     "serviceShortName": "lighthouse"
   },
   "objects": {
+    "ApplyDiskBackupRequest": {
+      "document": "ApplyDiskBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID，可通过[DescribeDisks](https://cloud.tencent.com/document/api/1207/66093)接口查询。",
+          "example": "lhdisk-qtovvuzq",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。",
+          "example": "lhbak-ounanbtt ",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyDiskBackupResponse": {
+      "document": "ApplyDiskBackup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplyInstanceSnapshotRequest": {
       "document": "ApplyInstanceSnapshot请求参数结构体",
       "members": [
@@ -1171,6 +1243,51 @@
       ],
       "type": "object"
     },
+    "CreateDiskBackupRequest": {
+      "document": "CreateDiskBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘 ID。当前只支持数据盘创建备份点。",
+          "example": "lhdisk-p1zflrif",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点名称，最大长度90。",
+          "example": "disk-backup-01",
+          "member": "string",
+          "name": "DiskBackupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDiskBackupResponse": {
+      "document": "CreateDiskBackup返回参数结构体",
+      "members": [
+        {
+          "document": "备份点ID。",
+          "example": "lhbak-g7w4rd71",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFirewallRulesRequest": {
       "document": "CreateFirewallRules请求参数结构体",
       "members": [
@@ -1506,6 +1623,33 @@
     },
     "DeleteBlueprintsResponse": {
       "document": "DeleteBlueprints返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDiskBackupsRequest": {
+      "document": "DeleteDiskBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点ID列表，可通过 DescribeDiskBackups接口查询。",
+          "example": "[\"lhbak-ounanbtt\\n\"]",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDiskBackupsResponse": {
+      "document": "DeleteDiskBackups返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1970,6 +2114,114 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsDeniedActionsRequest": {
+      "document": "DescribeDiskBackupsDeniedActions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点 ID 列表, 可通过 DescribeDiskBackups 接口查询。",
+          "example": "[\"lhbak-nuen5foj\\n\"] ",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsDeniedActionsResponse": {
+      "document": "DescribeDiskBackupsDeniedActions返回参数结构体",
+      "members": [
+        {
+          "document": "云硬盘备份点操作限制列表详细信息。",
+          "example": "无",
+          "member": "DiskBackupDeniedActions",
+          "name": "DiskBackupDeniedActionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsRequest": {
+      "document": "DescribeDiskBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。",
+          "example": "[\"lhbak-nuen5foj\"]",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构DiskBackup下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskBackupsResponse": {
+      "document": "DescribeDiskBackups返回参数结构体",
+      "members": [
+        {
+          "document": "云硬盘备份点的数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云硬盘备份点信息列表。",
+          "example": "无",
+          "member": "DiskBackup",
+          "name": "DiskBackupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3650,6 +3902,148 @@
       ],
       "usage": "out"
     },
+    "DiskBackup": {
+      "document": "描述了云硬盘备份点相关信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点ID。",
+          "example": "lhbak-nuen5foj",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此云硬盘备份点的云硬盘类型。取值：<li>DATA_DISK：数据盘</li>",
+          "example": "DATA_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此云硬盘备份点的云硬盘 ID。",
+          "example": "lhdisk-nbebddz8",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此云硬盘备份点的云硬盘大小，单位 GB。",
+          "example": "200",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点名称，用户自定义的云硬盘备份点别名。",
+          "example": "lhdisk-nbebddz8-data-disk-062",
+          "member": "string",
+          "name": "DiskBackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点的状态。取值范围：\n<li>NORMAL：正常。 </li>\n<li>CREATING：创建中。</li>\n<li>ROLLBACKING：回滚中。</li>\n<li>DELETING：删除中。</li>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DiskBackupState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建或回滚云硬盘备份点进度百分比，成功后此字段取值为 100。",
+          "example": "90",
+          "member": "int64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ApplyDiskBackup",
+          "member": "string",
+          "name": "LatestOperation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上一次操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LatestOperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上一次请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskBackupDeniedActions": {
+      "document": "云硬盘备份点操作限制列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点ID。",
+          "example": "DiskBackupId",
+          "member": "string",
+          "name": "DiskBackupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作限制列表。",
+          "example": "无",
+          "member": "DeniedAction",
+          "name": "DeniedActions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DiskChargePrepaid": {
       "document": "云硬盘包年包月相关参数设置",
       "members": [
@@ -5279,6 +5673,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyDiskBackupsAttributeRequest": {
+      "document": "ModifyDiskBackupsAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘备份点ID列表。",
+          "example": "[\"lhbak-l1ghx97r\"]",
+          "member": "string",
+          "name": "DiskBackupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点名称，最大长度90。",
+          "example": "disk-backup-name",
+          "member": "string",
+          "name": "DiskBackupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskBackupsAttributeResponse": {
+      "document": "ModifyDiskBackupsAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyDisksAttributeRequest": {
       "document": "ModifyDisksAttribute请求参数结构体",

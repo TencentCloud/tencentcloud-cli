@@ -824,6 +824,22 @@
       ],
       "type": "object"
     },
+    "BatchAnalyseParam": {
+      "document": "批量解析",
+      "members": [
+        {
+          "default": "",
+          "document": "ONE_BY_ONE单条输出，MERGE合并输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONE_BY_ONE",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BatchContent": {
       "document": "批量发送消息内容",
       "members": [
@@ -3910,6 +3926,16 @@
           "example": "xxx",
           "member": "CtsdbParam",
           "name": "CtsdbParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Scf配置，Type为SCF时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ScfParam",
+          "name": "ScfParam",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7577,6 +7603,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "死信队列",
+          "example": "xxx",
+          "member": "FailureParam",
+          "name": "DropDlq",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -10013,6 +10049,16 @@
           "name": "CompressionType",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MsgMultiple",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12935,6 +12981,62 @@
       ],
       "usage": "out"
     },
+    "ScfParam": {
+      "document": "Scf类型入参",
+      "members": [
+        {
+          "default": "",
+          "document": "SCF云函数函数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SCF云函数命名空间, 默认为default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SCF云函数版本及别名, 默认为$DEFAULT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$DEFAULT",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每批最大发送消息数, 默认为1000",
+          "example": "1000",
+          "member": "int64",
+          "name": "BatchSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SCF调用失败后重试次数, 默认为5",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxRetries",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SecondaryAnalyseParam": {
       "document": "数据处理——二次解析参数",
       "members": [
@@ -13701,6 +13803,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MsgMultiple",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14055,6 +14167,16 @@
           "name": "KeepMetadata",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数组解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "BatchAnalyseParam",
+          "name": "BatchAnalyse",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

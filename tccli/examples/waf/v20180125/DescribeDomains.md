@@ -168,7 +168,17 @@ Output:
                     {}
                 ],
                 "LoadBalancerSet": [
-                    {}
+                    {
+                        "ListenerId": "",
+                        "ListenerName": "",
+                        "LoadBalancerId": "",
+                        "LoadBalancerName": "",
+                        "Protocol": "",
+                        "Region": "",
+                        "Vip": "",
+                        "Vport": 0,
+                        "Zone": ""
+                    }
                 ]
             },
             {
@@ -192,7 +202,17 @@ Output:
                     {}
                 ],
                 "LoadBalancerSet": [
-                    {}
+                    {
+                        "ListenerId": "",
+                        "ListenerName": "",
+                        "LoadBalancerId": "",
+                        "LoadBalancerName": "",
+                        "Protocol": "",
+                        "Region": "",
+                        "Vip": "",
+                        "Vport": 0,
+                        "Zone": ""
+                    }
                 ]
             },
             {
@@ -216,7 +236,17 @@ Output:
                     {}
                 ],
                 "LoadBalancerSet": [
-                    {}
+                    {
+                        "ListenerId": "",
+                        "ListenerName": "",
+                        "LoadBalancerId": "",
+                        "LoadBalancerName": "",
+                        "Protocol": "",
+                        "Region": "",
+                        "Vip": "",
+                        "Vport": 0,
+                        "Zone": ""
+                    }
                 ]
             },
             {
@@ -240,7 +270,17 @@ Output:
                     {}
                 ],
                 "LoadBalancerSet": [
-                    {}
+                    {
+                        "ListenerId": "",
+                        "ListenerName": "",
+                        "LoadBalancerId": "",
+                        "LoadBalancerName": "",
+                        "Protocol": "",
+                        "Region": "",
+                        "Vip": "",
+                        "Vport": 0,
+                        "Zone": ""
+                    }
                 ]
             }
         ]

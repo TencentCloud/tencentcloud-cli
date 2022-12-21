@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cdb DescribeSlowLogData --cli-unfold-argument  \
-    --InstanceId cdb-c1nl9rpv \
-    --StartTime 1585142640 \
-    --EndTime 1585142640 \
-    --UserNames usename0 \
-    --DataBases database0 \
-    --UserHosts userhosts0 \
-    --SortBy RowsSent \
     --OrderBy DESC \
+    --UserNames usename0 \
+    --InstanceId cdb-c1nl9rpv \
+    --DataBases database0 \
+    --Offset 0 \
     --Limit 400 \
-    --Offset 0
+    --SortBy RowsSent \
+    --StartTime 1585142640 \
+    --UserHosts userhosts0 \
+    --EndTime 1585142640
 ```
 
 Output: 

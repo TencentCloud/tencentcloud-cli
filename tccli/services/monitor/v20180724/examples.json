@@ -522,6 +522,14 @@
         "title": "列出 Prometheus Agent"
       }
     ],
+    "DescribePrometheusInstanceUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceUsage\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"prom-xxxxx\"\n    ],\n    \"StartCalcDate\": \"20210101\",\n    \"EndCalcDate\": \"20210101\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageSet\": [\n            {\n                \"InstanceId\": \"prom-xxxxx\",\n                \"CalcDate\": \"20210101\",\n                \"Total\": 1.1,\n                \"Basic\": 1.1,\n                \"Fee\": 1.1\n            }\n        ],\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "查询Prometheus按量实例用量"
+      }
+    ],
     "DescribePrometheusInstances": [
       {
         "document": "",

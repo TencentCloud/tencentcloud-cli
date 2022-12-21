@@ -408,6 +408,12 @@
       "name": "查询代理规格配置",
       "output": "DescribeProxyCustomConfResponse"
     },
+    "DescribeRemoteBackupConfig": {
+      "document": "本接口(DescribeRemoteBackupConfig)用于查询数据库异地备份配置信息。",
+      "input": "DescribeRemoteBackupConfigRequest",
+      "name": "查询云数据库异地备份配置信息",
+      "output": "DescribeRemoteBackupConfigResponse"
+    },
     "DescribeRoGroups": {
       "document": "本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。",
       "input": "DescribeRoGroupsRequest",
@@ -641,6 +647,12 @@
       "input": "ModifyParamTemplateRequest",
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse"
+    },
+    "ModifyRemoteBackupConfig": {
+      "document": "本接口(ModifyRemoteBackupConfig)用于查询数据库异地备份配置信息。",
+      "input": "ModifyRemoteBackupConfigRequest",
+      "name": "修改云数据库异地备份配置信息",
+      "output": "ModifyRemoteBackupConfigResponse"
     },
     "ModifyRoGroupInfo": {
       "document": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重，设置复制延迟时间等。",
@@ -5611,6 +5623,42 @@
           "value_allowed_null": false
         },
         {
+          "document": "是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupStandby",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数",
+          "example": "30",
+          "member": "int64",
+          "name": "BackupStandbyDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBinlogStandby",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数",
+          "example": "30",
+          "member": "int64",
+          "name": "BinlogStandbyDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5821,6 +5869,15 @@
           "example": "1",
           "member": "int64",
           "name": "BackupArchiveVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标准存储备份容量，包含数据备份以及日志备份。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupStandbyVolume",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -6126,6 +6183,24 @@
           "example": "1",
           "member": "int64",
           "name": "BinlogArchiveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标准存储日志备份容量（单位为字节）。",
+          "example": "1",
+          "member": "int64",
+          "name": "BinlogStandbyVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标准存储日志备份个数。",
+          "example": "1",
+          "member": "int64",
+          "name": "BinlogStandbyCount",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7426,6 +7501,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "当前地域标准存储备份总容量。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataBackupStandbyVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前地域标准存储备份总个数。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataBackupStandbyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -8287,6 +8380,78 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteBackupConfigRequest": {
+      "document": "DescribeRemoteBackupConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteBackupConfigResponse": {
+      "document": "DescribeRemoteBackupConfig返回参数结构体",
+      "members": [
+        {
+          "document": "异地备份保留天时间，单位为天",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpireDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异地数据备份开关，off - 关闭异地备份，on-开启异地备份",
+          "example": "on",
+          "member": "string",
+          "name": "RemoteBackupSave",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异地日志备份开关，off - 关闭异地备份，on-开启异地备份，只有在参数RemoteBackupSave为on时，RemoteBinlogSave参数才可设置为on",
+          "example": "on",
+          "member": "string",
+          "name": "RemoteBinlogSave",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户已设置异地备份地域列表",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "RemoteRegion",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户可设置异地备份地域列表",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "RegionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11191,6 +11356,42 @@
           "name": "EnableBinlogArchive",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupStandby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数",
+          "example": "30",
+          "member": "int64",
+          "name": "BackupStandbyDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBinlogStandby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数",
+          "example": "30",
+          "member": "int64",
+          "name": "BinlogStandbyDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11948,6 +12149,69 @@
     },
     "ModifyParamTemplateResponse": {
       "document": "ModifyParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRemoteBackupConfigRequest": {
+      "document": "ModifyRemoteBackupConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异地数据备份开关，off - 关闭异地备份，on-开启异地备份",
+          "example": "on",
+          "member": "string",
+          "name": "RemoteBackupSave",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异地日志备份开关，off - 关闭异地备份，on-开启异地备份，只有在参数RemoteBackupSave为on时，RemoteBinlogSave参数才可设置为on",
+          "example": "on",
+          "member": "string",
+          "name": "RemoteBinlogSave",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户设置异地备份地域列表",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "RemoteRegion",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "异地备份保留天时间，单位为天",
+          "example": "7",
+          "member": "int64",
+          "name": "ExpireDays",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRemoteBackupConfigResponse": {
+      "document": "ModifyRemoteBackupConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
