@@ -1,3 +1,133 @@
+# Release 3.0.674.1
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 34 次发布
+
+发布时间：2022-12-22 01:35:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75963)
+
+	* 新增入参：ApproverVerifyType
+
+
+修改数据结构：
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+
+	* 新增成员：KeywordOrder
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 5 次发布
+
+发布时间：2022-12-22 01:37:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstancesCount](http://document.tencentcloudapi.woa.com/document/product/1162/52717)
+
+	* 新增入参：GameType
+
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 40 次发布
+
+发布时间：2022-12-22 01:48:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecognizeHealthCodeOCR](http://document.tencentcloudapi.woa.com/document/product/866/68580)
+
+	* 新增出参：VaccinationTime
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 16 次发布
+
+发布时间：2022-12-22 01:49:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeOrganizationOverView](http://document.tencentcloudapi.woa.com/document/product/850/76851)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 16 次发布
+
+发布时间：2022-12-22 01:51:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StopProject](http://document.tencentcloudapi.woa.com/document/product/1464/76852)
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 41 次发布
+
+发布时间：2022-12-22 02:05:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReviewImage](http://document.tencentcloudapi.woa.com/document/product/266/73217)
+
+	* 新增出参：MediaReviewResult
+
+
+新增数据结构：
+
+* [ReviewImageResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageResult)
+* [ReviewImageSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageSegmentItem)
+
+
+
 # Release 3.0.673.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

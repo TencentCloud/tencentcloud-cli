@@ -485,6 +485,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "停止实例"
       }
+    ],
+    "StopProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
+        "title": "停止项目"
+      }
     ]
   },
   "version": "1.0"

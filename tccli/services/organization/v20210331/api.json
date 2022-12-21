@@ -90,6 +90,12 @@
       "name": "获取组织节点列表",
       "output": "DescribeOrganizationNodesResponse"
     },
+    "DescribeOrganizationOverView": {
+      "document": "按天获取组织概览信息，包含成员，节点，子账号，角色数信息。",
+      "input": "DescribeOrganizationOverViewRequest",
+      "name": "按天获取组织概览信息",
+      "output": "DescribeOrganizationOverViewResponse"
+    },
     "ListOrganizationIdentity": {
       "document": "获取组织成员访问身份列表",
       "input": "ListOrganizationIdentityRequest",
@@ -1016,6 +1022,69 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationOverViewRequest": {
+      "document": "DescribeOrganizationOverView请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "不传默认获取前一天数据。格式：yyyy-mm-dd，示例：2021-06-10。\n数据按天统计，当天可以获取前一天之前的数据。",
+          "example": "2021-06-09",
+          "member": "string",
+          "name": "Day",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationOverViewResponse": {
+      "document": "DescribeOrganizationOverView返回参数结构体",
+      "members": [
+        {
+          "document": "成员总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MemberNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子账号总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SubAccountNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "RoleNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -12784,40 +12784,44 @@
       "document": "组成CacheKey的一部分",
       "members": [
         {
-          "default": "",
           "document": "on | off CacheKey是否由QueryString组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "是否重新排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Reorder",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Action",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

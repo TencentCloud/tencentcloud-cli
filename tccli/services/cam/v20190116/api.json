@@ -2415,10 +2415,12 @@
         {
           "default": "",
           "document": "子账号",
+          "example": "1234567",
           "member": "uint64",
           "name": "SubUin",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2428,24 +2430,33 @@
       "members": [
         {
           "document": "登录保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "敏感操作保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "异地登录保护设置",
+          "example": "无",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6098,26 +6109,32 @@
         {
           "default": "",
           "document": "设置用户的uin",
+          "example": "1234567",
           "member": "uint64",
           "name": "OpUin",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "登录保护设置",
+          "example": "无",
           "member": "LoginActionMfaFlag",
           "name": "LoginFlag",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "操作保护设置",
+          "example": "无",
           "member": "LoginActionMfaFlag",
           "name": "ActionFlag",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

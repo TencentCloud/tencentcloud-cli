@@ -11,6 +11,7 @@ tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
     --Agent.ProxyOperator.OpenId xx \
     --Agent.AppId xx \
     --FlowGroupName xxx \
+    --ApproverVerifyType VerifyCheck \
     --FlowFileInfos.0.FlowName  \
     --FlowFileInfos.0.FlowApprovers.0.ApproverType xxx \
     --FlowFileInfos.0.FlowApprovers.0.OrganizationName xxx \
