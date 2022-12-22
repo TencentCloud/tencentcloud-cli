@@ -2351,6 +2351,7 @@
         {
           "default": "",
           "document": "子账号",
+          "example": "1234567",
           "member": "uint64",
           "name": "SubUin",
           "required": true,
@@ -2364,22 +2365,28 @@
       "members": [
         {
           "document": "登录保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "敏感操作保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "异地登录保护设置",
+          "example": "无",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5492,6 +5499,7 @@
         {
           "default": "",
           "document": "设置用户的uin",
+          "example": "1234567",
           "member": "uint64",
           "name": "OpUin",
           "required": false,
@@ -5500,6 +5508,7 @@
         {
           "default": "",
           "document": "登录保护设置",
+          "example": "无",
           "member": "LoginActionMfaFlag",
           "name": "LoginFlag",
           "required": false,
@@ -5508,6 +5517,7 @@
         {
           "default": "",
           "document": "操作保护设置",
+          "example": "无",
           "member": "LoginActionMfaFlag",
           "name": "ActionFlag",
           "required": false,

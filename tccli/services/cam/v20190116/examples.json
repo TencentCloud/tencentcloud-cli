@@ -243,7 +243,7 @@
     "DescribeSafeAuthFlagColl": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlagColl\n&SubUin=1234567\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSafeAuthFlagColl\n<公共请求参数>\n\n{\n    \"SubUin\": \"1234567\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
       }
@@ -591,7 +591,7 @@
     "SetMfaFlag": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetMfaFlag\n<公共请求参数>\n\n{\n    \"LoginFlag\": {\n        \"Phone\": 1,\n        \"Stoken\": 1,\n        \"Wechat\": 1\n    },\n    \"OpUin\": 1,\n    \"ActionFlag\": {\n        \"Phone\": 1,\n        \"Stoken\": 1,\n        \"Wechat\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetMfaFlag\n<公共请求参数>\n\n{\n    \"OpUin\": 123,\n    \"LoginFlag\": {\n        \"Wechat\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf75531d-b72d-4dcb-b0ed-d1c029a37f38\"\n    }\n}",
         "title": "设置登录保护校验方式为微信"
       }

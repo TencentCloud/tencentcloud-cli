@@ -1,0 +1,445 @@
+{
+  "actions": {
+    "CheckAppidExist": {
+      "document": "查看appid是否存在",
+      "input": "CheckAppidExistRequest",
+      "name": "查看appid是否存在",
+      "output": "CheckAppidExistResponse"
+    },
+    "QueryResource": {
+      "document": "查询购买资源",
+      "input": "QueryResourceRequest",
+      "name": "查询购买资源",
+      "output": "QueryResourceResponse"
+    },
+    "QueryResourceInfo": {
+      "document": "查询资源信息",
+      "input": "QueryResourceInfoRequest",
+      "name": "查询资源信息",
+      "output": "QueryResourceInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-09-23",
+    "api_brief": "动效素材接口",
+    "serviceNameCN": "动效素材服务",
+    "serviceShortName": "anicloud"
+  },
+  "objects": {
+    "CheckAppidExistRequest": {
+      "document": "CheckAppidExist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务的appid",
+          "example": "xxx",
+          "member": "string",
+          "name": "SDKAppid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "sub product code",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAppidExistResponse": {
+      "document": "CheckAppidExist返回参数结构体",
+      "members": [
+        {
+          "document": "appid是否存在",
+          "example": "True",
+          "member": "bool",
+          "name": "Exist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求是否成功",
+          "example": "False",
+          "member": "bool",
+          "name": "HasError",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出错消息",
+          "example": "“”",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GoodsDetail": {
+      "document": "购买详情",
+      "members": [
+        {
+          "default": "",
+          "document": "按照四层接入的产品需要传入产品标签,例如:p_cvm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "四层定义的子产品标签,例如:sp_cvm_s1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryResourceInfoRequest": {
+      "document": "QueryResourceInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryResourceInfoResponse": {
+      "document": "QueryResourceInfo返回参数结构体",
+      "members": [
+        {
+          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryResourceRequest": {
+      "document": "QueryResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0: sdk 1:material",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页起始页",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryResourceResponse": {
+      "document": "QueryResource返回参数结构体",
+      "members": [
+        {
+          "document": "资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Resource": {
+      "document": "资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源拥有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UIN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云平台应用ID，一般来说与uin存在一一对应的关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源id，会展示到通知内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源隔离时间，未隔离传\"0000-00-00 00:00:00\"，资源由隔离变回正常传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0后付费 1预付费 2预留实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GoodsDetail",
+          "name": "GoodsDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "（仅预付费）资源到期时间，无到期概念传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Region",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "sdk appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "app名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "app的package名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "app的entry\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Entry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0：sdk 1：素材\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "license的秘钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

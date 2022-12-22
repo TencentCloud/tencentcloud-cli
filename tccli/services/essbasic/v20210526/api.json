@@ -951,6 +951,15 @@
         },
         {
           "default": "",
+          "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
@@ -1811,6 +1820,16 @@
           "example": "无",
           "member": "string",
           "name": "ChannelComponentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。\n传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。",
+          "example": "Positive\\Reverse",
+          "member": "string",
+          "name": "KeywordOrder",
           "required": false,
           "type": "string",
           "value_allowed_null": false

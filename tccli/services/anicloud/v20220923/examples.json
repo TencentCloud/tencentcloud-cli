@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CheckAppidExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: anicloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAppidExist\n<公共请求参数>\n\n{\n    \"Type\": \"xx\",\n    \"SDKAppid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"HasError\": true,\n        \"Exist\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询appid是否存在"
+      }
+    ],
+    "QueryResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: anicloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryResource\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"Type\": 0,\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"xx\",\n        \"Resources\": [\n            {\n                \"Status\": 0,\n                \"ExpireTime\": \"xx\",\n                \"RenewFlag\": 0,\n                \"Key\": \"xx\",\n                \"AppName\": \"xx\",\n                \"URL\": \"xx\",\n                \"ResourceId\": \"xx\",\n                \"GoodsDetail\": {\n                    \"ProductCode\": \"xx\",\n                    \"Type\": [\n                        \"xx\"\n                    ],\n                    \"GoodsNum\": 0,\n                    \"SubProductCode\": \"xx\"\n                },\n                \"IsolatedTimestamp\": \"xx\",\n                \"ZoneId\": 0,\n                \"PayMode\": 0,\n                \"Alias\": \"xx\",\n                \"PackageName\": \"xx\",\n                \"Region\": 0,\n                \"SdkAppId\": \"xx\",\n                \"AppId\": 0,\n                \"Entry\": \"xx\",\n                \"UIN\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"InstType\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询资源"
+      }
+    ],
+    "QueryResourceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: anicloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryResourceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Resource\": {\n            \"Status\": 0,\n            \"ExpireTime\": \"xx\",\n            \"RenewFlag\": 0,\n            \"Key\": \"xx\",\n            \"AppName\": \"xx\",\n            \"URL\": \"xx\",\n            \"ResourceId\": \"xx\",\n            \"GoodsDetail\": {\n                \"ProductCode\": \"xx\",\n                \"Type\": [\n                    \"xx\"\n                ],\n                \"GoodsNum\": 0,\n                \"SubProductCode\": \"xx\"\n            },\n            \"IsolatedTimestamp\": \"xx\",\n            \"ZoneId\": 0,\n            \"PayMode\": 0,\n            \"Alias\": \"xx\",\n            \"PackageName\": \"xx\",\n            \"Region\": 0,\n            \"SdkAppId\": \"xx\",\n            \"AppId\": 0,\n            \"Entry\": \"xx\",\n            \"UIN\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"InstType\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资源信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

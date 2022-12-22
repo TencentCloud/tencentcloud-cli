@@ -22,6 +22,7 @@ Output:
         "IDNumber": "xx",
         "Vaccination": "xx",
         "SpotName": "xx",
+        "VaccinationTime": "xx",
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }

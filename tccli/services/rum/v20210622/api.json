@@ -323,6 +323,12 @@
       "input": "StopInstanceRequest",
       "name": "停止实例",
       "output": "StopInstanceResponse"
+    },
+    "StopProject": {
+      "document": "停止项目使用与上报数据",
+      "input": "StopProjectRequest",
+      "name": "停止项目上报",
+      "output": "StopProjectResponse"
     }
   },
   "metadata": {
@@ -6949,6 +6955,33 @@
     },
     "StopInstanceResponse": {
       "document": "StopInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopProjectRequest": {
+      "document": "StopProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopProjectResponse": {
+      "document": "StopProject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

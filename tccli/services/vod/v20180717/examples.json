@@ -1438,9 +1438,9 @@
     ],
     "ReviewImage": [
       {
-        "document": "",
+        "document": "使用模板 ID 10 发起图片审核任务。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReviewImage\n<公共请求参数>\n\n{\n    \"Definition\": \"10\",\n    \"FileId\": \"5285485487985271487\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"MediaReviewResult\": {\n            \"Suggestion\": \"block\",\n            \"Label\": \"Porn\",\n            \"Form\": \"Image\",\n            \"SegmentSet\": [\n                {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"Porn\",\n                    \"SubLabel\": \"SexyBehavior\",\n                    \"Form\": \"Image\",\n                    \"AreaCoordSet\": [],\n                    \"Text\": \"\",\n                    \"KeywordSet\": []\n                }\n            ]\n        },\n        \"ReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"porn\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
         "title": "发起图片审核任务"
       }
     ],

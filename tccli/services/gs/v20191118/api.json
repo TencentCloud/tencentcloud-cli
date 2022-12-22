@@ -267,7 +267,6 @@
       "document": "DescribeInstancesCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏ID",
           "example": "game-abcd1234",
           "member": "string",
@@ -276,7 +275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例分组ID",
           "example": "cgg-1234abcd",
           "member": "string",
@@ -285,11 +283,18 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏区域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "GameRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "游戏类型。\nMOBILE：手游\nPC：默认值，端游",
+          "example": "MOBILE",
+          "member": "string",
+          "name": "GameType",
           "required": false,
           "type": "string"
         }
@@ -304,7 +309,6 @@
           "example": "590",
           "member": "uint64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -313,7 +317,6 @@
           "example": "480",
           "member": "uint64",
           "name": "Running",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
