@@ -1,98 +1,92 @@
 # 本版本更新包含以下内容：
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 34 次发布
-
-发布时间：2022-12-22 01:35:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelCreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75963)
-
-	* 新增入参：ApproverVerifyType
-
-
-修改数据结构：
-
-* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
-
-	* 新增成员：KeywordOrder
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 5 次发布
-
-发布时间：2022-12-22 01:37:51
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeInstancesCount](http://document.tencentcloudapi.woa.com/document/product/1162/52717)
-
-	* 新增入参：GameType
-
-
-
-
-## 文字识别(ocr) 版本：2018-11-19
-
-### 第 40 次发布
-
-发布时间：2022-12-22 01:48:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [RecognizeHealthCodeOCR](http://document.tencentcloudapi.woa.com/document/product/866/68580)
-
-	* 新增出参：VaccinationTime
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
+## 访问管理(cam) 版本：2019-01-16
 
 ### 第 16 次发布
 
-发布时间：2022-12-22 01:49:01
+发布时间：2022-12-23 01:15:51
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeOrganizationOverView](http://document.tencentcloudapi.woa.com/document/product/850/76851)
+* [SecretIdLastUsed](http://document.tencentcloudapi.woa.com/document/product/598/33167#SecretIdLastUsed)
+
+	* 新增成员：LastSecretUsedDate
 
 
 
-## 集团账号管理(organization) 版本：2018-12-25
+
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 3 次发布
+
+发布时间：2022-12-23 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageLibImageDeleteStatus](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageDeleteStatus)
+
+	* 新增成员：Url, Status
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 25 次发布
+
+发布时间：2022-12-23 01:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
+
+	* 新增入参：InstanceInitInfos
+
+
+新增数据结构：
+
+* [InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 22 次发布
+
+发布时间：2022-12-23 01:43:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#PolicyDetail)
+
+	* 新增成员：ActivityDiscount, DiscountType
+
+	* <font color="#dd0000">**修改成员**：</font>UserDiscount, CommonDiscount, FinalDiscount
+
 
 
 
 ## 前端性能监控(rum) 版本：2021-06-22
 
-### 第 16 次发布
+### 第 17 次发布
 
-发布时间：2022-12-22 01:51:43
+发布时间：2022-12-23 01:53:45
 
 本次发布包含了以下内容：
 
@@ -100,15 +94,16 @@
 
 新增接口：
 
-* [StopProject](http://document.tencentcloudapi.woa.com/document/product/1464/76852)
+* [DescribeRumLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76854)
+* [DescribeRumStatsLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76853)
 
 
 
-## 云点播(vod) 版本：2018-07-17
+## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-### 第 41 次发布
+### 第 25 次发布
 
-发布时间：2022-12-22 02:05:21
+发布时间：2022-12-23 01:59:05
 
 本次发布包含了以下内容：
 
@@ -116,15 +111,22 @@
 
 修改接口：
 
-* [ReviewImage](http://document.tencentcloudapi.woa.com/document/product/266/73217)
+* [DescribeCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/49739)
 
-	* 新增出参：MediaReviewResult
+	* 新增出参：TkeClusterInfo, TkeWorkloadType
 
 
 新增数据结构：
 
-* [ReviewImageResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageResult)
-* [ReviewImageSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageSegmentItem)
+* [CloudBaseRunServiceVolumeHostPath](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudBaseRunServiceVolumeHostPath)
+* [TkeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#TkeClusterInfo)
+
+修改数据结构：
+
+* [CloudRunServiceVolume](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudRunServiceVolume)
+
+	* 新增成员：HostPath
+
 
 
 
@@ -4313,6 +4315,21 @@
 
 
 ## 访问管理(cam) 版本：2019-01-16
+
+### 第 16 次发布
+
+发布时间：2022-12-23 01:15:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecretIdLastUsed](http://document.tencentcloudapi.woa.com/document/product/598/33167#SecretIdLastUsed)
+
+	* 新增成员：LastSecretUsedDate
+
 
 ### 第 15 次发布
 
@@ -11895,6 +11912,21 @@
 
 ## 内容安全(cms) 版本：2019-03-21
 
+### 第 3 次发布
+
+发布时间：2022-12-23 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageLibImageDeleteStatus](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageDeleteStatus)
+
+	* 新增成员：Url, Status
+
+
 ### 第 2 次发布
 
 发布时间：2022-12-16 01:20:52
@@ -15573,6 +15605,25 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 25 次发布
+
+发布时间：2022-12-23 01:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
+
+	* 新增入参：InstanceInitInfos
+
+
+新增数据结构：
+
+* [[InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo))
 
 ### 第 24 次发布
 
@@ -25861,6 +25912,23 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 22 次发布
+
+发布时间：2022-12-23 01:43:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#PolicyDetail)
+
+	* 新增成员：ActivityDiscount, DiscountType
+
+	* <font color="#dd0000">**修改成员**：</font>UserDiscount, CommonDiscount, FinalDiscount
+
+
 ### 第 21 次发布
 
 发布时间：2022-12-21 01:42:59
@@ -31683,7 +31751,7 @@
 
 新增接口：
 
-* [[DescribeOrganizationOverView](http://document.tencentcloudapi.woa.com/document/product/850/76851)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeOrganizationOverView](http://document.tencentcloudapi.woa.com/document/product/850/76851)
 
 ### 第 15 次发布
 
@@ -33947,6 +34015,19 @@
 
 ## 前端性能监控(rum) 版本：2021-06-22
 
+### 第 17 次发布
+
+发布时间：2022-12-23 01:53:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRumLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76854)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRumStatsLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76853)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 16 次发布
 
 发布时间：2022-12-22 01:51:43
@@ -33957,7 +34038,7 @@
 
 新增接口：
 
-* [[StopProject](http://document.tencentcloudapi.woa.com/document/product/1464/76852)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [StopProject](http://document.tencentcloudapi.woa.com/document/product/1464/76852)
 
 ### 第 15 次发布
 
@@ -37393,6 +37474,33 @@
 
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 25 次发布
+
+发布时间：2022-12-23 01:59:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/49739)
+
+	* 新增出参：TkeClusterInfo, TkeWorkloadType
+
+
+新增数据结构：
+
+* [[CloudBaseRunServiceVolumeHostPath](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudBaseRunServiceVolumeHostPath)](http://document.tencentcloudapi.woa.com/document/product/876/34822#[CloudBaseRunServiceVolumeHostPath](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudBaseRunServiceVolumeHostPath))
+* [[TkeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#TkeClusterInfo)](http://document.tencentcloudapi.woa.com/document/product/876/34822#[TkeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#TkeClusterInfo))
+
+修改数据结构：
+
+* [CloudRunServiceVolume](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudRunServiceVolume)
+
+	* 新增成员：HostPath
+
 
 ### 第 24 次发布
 
@@ -45202,8 +45310,8 @@
 
 新增数据结构：
 
-* [[ReviewImageResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageResult)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[ReviewImageResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageResult))
-* [[ReviewImageSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageSegmentItem)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[ReviewImageSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageSegmentItem))
+* [ReviewImageResult](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageResult)
+* [ReviewImageSegmentItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewImageSegmentItem)
 
 ### 第 40 次发布
 

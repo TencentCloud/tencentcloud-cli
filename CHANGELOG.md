@@ -1,3 +1,135 @@
+# Release 3.0.675.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 16 次发布
+
+发布时间：2022-12-23 01:15:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecretIdLastUsed](http://document.tencentcloudapi.woa.com/document/product/598/33167#SecretIdLastUsed)
+
+	* 新增成员：LastSecretUsedDate
+
+
+
+
+## 内容安全(cms) 版本：2019-03-21
+
+### 第 3 次发布
+
+发布时间：2022-12-23 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageLibImageDeleteStatus](http://document.tencentcloudapi.woa.com/document/product/1604/76800#ImageLibImageDeleteStatus)
+
+	* 新增成员：Url, Status
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 25 次发布
+
+发布时间：2022-12-23 01:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
+
+	* 新增入参：InstanceInitInfos
+
+
+新增数据结构：
+
+* [InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 22 次发布
+
+发布时间：2022-12-23 01:43:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PolicyDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#PolicyDetail)
+
+	* 新增成员：ActivityDiscount, DiscountType
+
+	* <font color="#dd0000">**修改成员**：</font>UserDiscount, CommonDiscount, FinalDiscount
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 17 次发布
+
+发布时间：2022-12-23 01:53:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRumLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76854)
+* [DescribeRumStatsLogList](http://document.tencentcloudapi.woa.com/document/product/1464/76853)
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 25 次发布
+
+发布时间：2022-12-23 01:59:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/49739)
+
+	* 新增出参：TkeClusterInfo, TkeWorkloadType
+
+
+新增数据结构：
+
+* [CloudBaseRunServiceVolumeHostPath](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudBaseRunServiceVolumeHostPath)
+* [TkeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#TkeClusterInfo)
+
+修改数据结构：
+
+* [CloudRunServiceVolume](http://document.tencentcloudapi.woa.com/document/product/876/34822#CloudRunServiceVolume)
+
+	* 新增成员：HostPath
+
+
+
+
 # Release 3.0.674.1
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26

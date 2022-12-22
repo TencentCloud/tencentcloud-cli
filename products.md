@@ -25,7 +25,7 @@
 | bmvpc | [黑石私有网络](http://document.tencentcloudapi.woa.com/document/product/1024) | 2022-04-15 08:05:29 |
 | bsca | [二进制软件成分分析](http://document.tencentcloudapi.woa.com/document/product/1483) | 2021-11-18 08:00:03 |
 | btoe | [区块链可信取证](http://document.tencentcloudapi.woa.com/document/product/1259) | 2022-03-08 08:01:25 |
-| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2022-12-22 01:16:42 |
+| cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2022-12-23 01:15:51 |
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2022-12-15 06:12:33 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2022-12-12 06:14:56 |
 | cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2022-12-19 01:17:57 |
@@ -45,11 +45,11 @@
 | cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2022-12-16 01:19:56 |
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | 2022-12-16 01:20:22 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2022-11-16 06:32:42 |
-| cms | [内容安全](http://document.tencentcloudapi.woa.com/document/product/669) | 2022-12-16 01:20:52 |
+| cms | [内容安全](http://document.tencentcloudapi.woa.com/document/product/669) | 2022-12-23 01:24:03 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2022-12-15 06:18:38 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2022-12-19 01:26:34 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2022-12-13 10:23:55 |
-| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-12-15 06:22:19 |
+| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2022-12-23 01:28:56 |
 | dasb | [T-Sec-堡垒机（BH）](http://document.tencentcloudapi.woa.com/document/product/1025) | 2022-11-04 06:17:06 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2022-07-29 10:41:16 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2022-09-29 06:21:38 |
@@ -92,7 +92,7 @@
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2022-12-16 01:33:15 |
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2022-11-17 06:21:11 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2022-12-13 10:37:25 |
-| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2022-12-21 01:42:59 |
+| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2022-12-23 01:43:24 |
 | live | [云直播CSS](http://document.tencentcloudapi.woa.com/document/product/267) | 2022-12-15 06:33:54 |
 | lowcode | [云开发低码](http://document.tencentcloudapi.woa.com/document/product/1301) | 2022-10-20 06:24:37 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2022-03-08 08:03:08 |
@@ -119,7 +119,7 @@
 | redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2022-12-15 06:40:25 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2022-03-08 08:16:14 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
-| rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2022-12-22 01:51:43 |
+| rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2022-12-23 01:53:45 |
 | scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2022-12-20 01:48:19 |
 | ses | [邮件推送](http://document.tencentcloudapi.woa.com/document/product/1288) | 2022-12-16 01:42:26 |
 | smpn | [营销号码安全](http://document.tencentcloudapi.woa.com/document/product/1127) | 2022-03-08 08:04:51 |
@@ -137,12 +137,12 @@
 | tbaas | [腾讯云区块链服务平台 TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2022-11-24 06:47:19 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2022-03-08 08:11:56 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2022-08-29 16:51:32 |
-| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2022-12-05 07:13:05 |
+| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2022-12-23 01:59:05 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2022-07-21 06:03:13 |
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | 2022-11-30 06:46:53 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2022-12-21 01:58:27 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2022-11-17 06:30:40 |
-| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-11-25 06:53:39 |
+| tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2022-12-23 02:01:35 |
 | tem | [弹性微服务 TEM](http://document.tencentcloudapi.woa.com/document/product/1371) | 2022-12-15 06:47:11 |
 | tic | [资源编排 TIC](http://document.tencentcloudapi.woa.com/document/product/1213) | 2022-10-31 06:45:28 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2022-03-08 08:12:22 |

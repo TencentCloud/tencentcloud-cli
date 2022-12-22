@@ -2022,13 +2022,13 @@
       "document": "DescribeBundleDiscount请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "套餐 ID。",
           "example": "bundle_bw_small1_1",
           "member": "string",
           "name": "BundleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2041,18 +2041,18 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2333,7 +2333,6 @@
       "document": "DescribeDiskDiscount请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云硬盘类型, 取值: \"CLOUD_PREMIUM\"。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -2343,7 +2342,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "云硬盘大小。",
           "example": "50",
           "member": "int64",
@@ -2353,7 +2351,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
           "example": "1",
           "member": "int64",
@@ -2373,7 +2370,6 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2383,7 +2379,6 @@
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6272,31 +6267,54 @@
       "document": "折扣详情信息。",
       "members": [
         {
-          "default": "",
           "document": "用户折扣。",
+          "example": "无",
           "member": "int64",
           "name": "UserDiscount",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "公共折扣。",
+          "example": "无",
           "member": "int64",
           "name": "CommonDiscount",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "最终折扣。",
+          "example": "无",
           "member": "int64",
           "name": "FinalDiscount",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "活动折扣。取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ActivityDiscount",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "折扣类型。\nuser：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiscountType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -127,7 +127,7 @@
     "CreateRocketMQCluster": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateRocketMQCluster\n&Name=example\n&Remark=remark\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQCluster\n<公共请求参数>\n\n{\n    \"Remark\": \"remark\",\n    \"Name\": \"example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8841a73b-b002-4e92-a76b-123b12cfa9c1\",\n        \"ClusterId\": \"xx\"\n    }\n}",
         "title": "创建集群"
       }
@@ -271,7 +271,7 @@
     "DeleteRocketMQCluster": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteRocketMQCluster\n&ClusterId=rocketmq-xjo5nq977ow2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRocketMQCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-xjo5nq977ow2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d52695d-f4bd-4035-8f31-3c78fa720844\"\n    }\n}",
         "title": "删除集群"
       }
