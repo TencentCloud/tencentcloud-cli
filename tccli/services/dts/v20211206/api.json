@@ -785,30 +785,12 @@
         },
         {
           "default": "",
-          "document": "源端信息",
-          "example": "无",
-          "member": "Endpoint",
-          "name": "SrcInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路",
           "example": "extranet",
           "member": "string",
           "name": "DstAccessType",
           "required": true,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目标端信息",
-          "example": "无",
-          "member": "Endpoint",
-          "name": "DstInfo",
-          "required": true,
-          "type": "object"
         },
         {
           "default": "",
@@ -839,6 +821,15 @@
         },
         {
           "default": "",
+          "document": "枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式",
+          "example": "fullMode",
+          "member": "string",
+          "name": "JobMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "运行模式，取值如：Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)",
           "example": "Immediate",
           "member": "string",
@@ -854,6 +845,33 @@
           "name": "ExpectRunTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源端信息，单节点数据库使用",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "SrcInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目标端信息，单节点数据库使用",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "DstInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自动重试的时间段、可设置5至720分钟、0表示不重试",
+          "example": "5",
+          "member": "int64",
+          "name": "AutoRetryTimeRangeMinutes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1890,6 +1908,46 @@
           "example": "无",
           "member": "string",
           "name": "Procedures",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "partial",
+          "member": "string",
+          "name": "TriggerMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当TriggerMode为partial，指定要迁移的触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Triggers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "partial",
+          "member": "string",
+          "name": "EventMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当EventMode为partial，指定要迁移的事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Events",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3254,6 +3312,16 @@
         },
         {
           "default": "",
+          "document": "tdsql mysql版的节点类型，枚举值为proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "proxy",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mariadb",
           "member": "string",
@@ -3404,16 +3472,6 @@
         },
         {
           "default": "",
-          "document": "资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "other",
-          "member": "string",
-          "name": "AccountMode",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "实例所属账号，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3424,10 +3482,30 @@
         },
         {
           "default": "",
+          "document": "资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "other",
+          "member": "string",
+          "name": "AccountMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "跨账号同步时的角色，只允许[a-zA-Z0-9\\-\\_]+，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts test_role",
           "member": "string",
           "name": "AccountRole",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleExternalId",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3464,10 +3542,10 @@
         },
         {
           "default": "",
-          "document": "外部角色id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UnEncrypted",
           "member": "string",
-          "name": "RoleExternalId",
+          "name": "EncryptConn",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3746,6 +3824,16 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动重试时间段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "AutoRetryTimeRangeMinutes",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4255,6 +4343,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动重试的时间段、可设置5至720分钟、0表示不重试",
+          "example": "5",
+          "member": "int64",
+          "name": "AutoRetryTimeRangeMinutes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4303,9 +4400,24 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OnlineDDL类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OnlineDDL",
+          "name": "OnlineDDL",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "OnlineDDL": {
+      "document": "OnlineDDL类型",
+      "members": [],
+      "usage": "out"
     },
     "Options": {
       "document": "数据同步中的选项",
@@ -5447,7 +5559,7 @@
         },
         {
           "default": "",
-          "document": "源端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端信息，单节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
           "name": "SrcInfo",
@@ -5487,7 +5599,7 @@
         },
         {
           "default": "",
-          "document": "目标端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端信息，单节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
@@ -5593,6 +5705,16 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动重试时间段设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "AutoRetryTimeRangeMinutes",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

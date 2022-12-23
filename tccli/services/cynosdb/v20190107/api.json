@@ -2113,6 +2113,15 @@
           "name": "SlaveZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
+          "example": "无",
+          "member": "InstanceInitInfo",
+          "name": "InstanceInitInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6159,6 +6168,52 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceInitInfo": {
+      "document": "实例初始化配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例cpu",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型 rw/ro",
+          "example": "rw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例个数,范围[1,15]",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",

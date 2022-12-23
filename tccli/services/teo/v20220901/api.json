@@ -11658,6 +11658,22 @@
       ],
       "usage": "out"
     },
+    "Grpc": {
+      "document": "Grpc配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启Grpc配置，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Header": {
       "document": "刷新预热附带的头部信息",
       "members": [
@@ -14210,6 +14226,15 @@
           "example": "无",
           "member": "ClientIpCountry",
           "name": "ClientIpCountry",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Grpc协议支持配置。\n不填写表示保持原有配置。",
+          "example": "无",
+          "member": "Grpc",
+          "name": "Grpc",
           "required": false,
           "type": "object"
         }
@@ -18832,6 +18857,16 @@
           "example": "无",
           "member": "ClientIpCountry",
           "name": "ClientIpCountry",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Grpc协议支持配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Grpc",
+          "name": "Grpc",
           "required": true,
           "type": "object",
           "value_allowed_null": true

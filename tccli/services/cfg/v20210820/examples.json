@@ -3,9 +3,9 @@
     "CreateTaskFromTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFromTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 689,\n    \"TaskConfig\": {\n        \"TaskTitle\": \"测试演练，关联了实例，修改了演练名称和第一个动作组中第一个动作的动作自定义参数\",\n        \"TaskGroupsConfig\": [\n            {\n                \"TaskGroupInstances\": [\n                    \"ins-y5hy9gnh\"\n                ],\n                \"TaskGroupActionsConfig\": [\n                    {\n                        \"TaskGroupActionOrder\": 1,\n                        \"TaskGroupActionCustomConfiguration\": \"{\\\"timeout\\\":200,\\\"percentage\\\":80}\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFromTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 689,\n    \"TaskConfig\": {\n        \"TaskTitle\": \"测试演练，关联了实例，修改了演练名称和第一个动作组中第一个动作的动作自定义参数\",\n        \"TaskGroupsConfig\": [\n            {\n                \"TaskGroupInstances\": [\n                    \"ins-xxxxxxxx\"\n                ],\n                \"TaskGroupActionsConfig\": [\n                    {\n                        \"TaskGroupActionOrder\": 1,\n                        \"TaskGroupActionCustomConfiguration\": \"{\\\"timeout\\\":200,\\\"percentage\\\":80}\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0aee8ac-2ed3-4a7f-a25b-f0d7d228dd30\",\n        \"TaskId\": 50\n    }\n}",
-        "title": "根据经验模版创建演练"
+        "title": "根据经验模板创建演练"
       }
     ],
     "DeleteTask": [

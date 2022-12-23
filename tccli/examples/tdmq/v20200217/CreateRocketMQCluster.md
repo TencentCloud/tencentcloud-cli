@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq CreateRocketMQCluster --cli-unfold-argument  \
-    --Name example \
-    --Remark remark
+    --Remark remark \
+    --Name example
 ```
 
 Output: 

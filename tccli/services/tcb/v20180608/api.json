@@ -1764,6 +1764,11 @@
       ],
       "usage": "out"
     },
+    "CloudBaseRunServiceVolumeHostPath": {
+      "document": "主机路径挂载参数",
+      "members": [],
+      "usage": "in"
+    },
     "CloudBaseRunServiceVolumeMount": {
       "document": "对标 EKS VolumeMount",
       "members": [
@@ -2447,6 +2452,16 @@
           "example": "无",
           "member": "CloudBaseRunEmptyDirVolumeSource",
           "name": "EmptyDir",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机路径挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunServiceVolumeHostPath",
+          "name": "HostPath",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5631,6 +5646,24 @@
           "name": "PolicyDetail",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Tke集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TkeClusterInfo",
+          "name": "TkeClusterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "版本工作负载类型；deployment/deamonset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deployment",
+          "member": "string",
+          "name": "TkeWorkloadType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -10462,6 +10495,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TkeClusterInfo": {
+      "document": "tke集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本内网CLB所在子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxx",
+          "member": "string",
+          "name": "VersionClbSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
