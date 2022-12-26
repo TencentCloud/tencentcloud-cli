@@ -192,6 +192,14 @@
         "title": "查询实例无主键表"
       }
     ],
+    "DescribeProxyProcessStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyProcessStatistics\n<公共请求参数>\n\n{\n    \"InstanceId\": \"redis-test\",\n    \"Product\": \"redis\",\n    \"Limit\": \"20\",\n    \"InstanceProxyId\": \"b237ff3c5f30b0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"099479c0-7b7c-11ed-8d71-fdsafda\",\n        \"ProcessStatistics\": {}\n    }\n}",
+        "title": "获取实时会话统计详情"
+      }
+    ],
     "DescribeProxySessionKillTasks": [
       {
         "document": "",

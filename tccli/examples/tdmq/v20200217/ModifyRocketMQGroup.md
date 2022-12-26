@@ -6,12 +6,13 @@ Input:
 
 ```
 tccli tdmq ModifyRocketMQGroup --cli-unfold-argument  \
-    --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --GroupId group-example \
     --Remark modified \
+    --BroadcastEnable false \
+    --ClusterId rocketmq-2p9vx3ax9jxg \
+    --GroupId group-example \
+    --RetryMaxTimes 16 \
     --ReadEnable true \
-    --BroadcastEnable false
+    --NamespaceId example
 ```
 
 Output: 

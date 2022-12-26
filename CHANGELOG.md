@@ -1,3 +1,71 @@
+# Release 3.0.676.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 8 次发布
+
+发布时间：2022-12-27 01:33:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProxyProcessStatistics](http://document.tencentcloudapi.woa.com/document/product/1130/76855)
+
+新增数据结构：
+
+* [ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 28 次发布
+
+发布时间：2022-12-27 02:01:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/63428)
+
+	* 新增入参：GroupType, RetryMaxTimes
+
+* [DescribeRocketMQGroups](http://document.tencentcloudapi.woa.com/document/product/1179/63420)
+
+	* 新增入参：Types
+
+* [ModifyRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/63416)
+
+	* 新增入参：RetryMaxTimes
+
+
+修改数据结构：
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：Status, IsolateTime, HttpPublicEndpoint, HttpVpcEndpoint
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Region, CreateTime, Remark, PublicEndPoint, VpcEndPoint, SupportNamespaceEndpoint, Vpcs, IsVip, RocketMQFlag
+
+* [RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQGroup)
+
+	* 新增成员：GroupType, RetryMaxTimes
+
+	* <font color="#dd0000">**修改成员**：</font>Name, ConsumerNum, TPS, TotalAccumulative, ConsumptionMode, ReadEnabled, RetryPartitionNum, CreateTime, UpdateTime, ClientProtocol, Remark, ConsumerType, BroadcastEnabled
+
+
+
+
 # Release 3.0.675.1
 
 ## 访问管理(cam) 版本：2019-01-16

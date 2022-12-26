@@ -385,9 +385,9 @@
     "GetSecurityLastUsed": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{\n    \"SecretIdList\": [\n        \"xxxxxxxxx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"xxxxxxxxx\",\n                \"LastUsedDate\": \"2021-03-20\"\n            }\n        ],\n        \"RequestId\": \"15a763ee-c2da-446a-9b21-25632d7cecb5\"\n    }\n}",
-        "title": "获取密钥最近使用情况"
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{\n    \"SecretIdList\": [\n        \" AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp\",\n                \"LastUsedDate\": \"2022-12-19\",\n                \"LastSecretUsedDate\": 1671681023555\n            }\n        ],\n        \"RequestId\": \"b790d4ca-5692-42ae-8a8c-d15c6ed976db\"\n    }\n}",
+        "title": "密钥最后一次访问时间"
       }
     ],
     "GetServiceLinkedRoleDeletionStatus": [

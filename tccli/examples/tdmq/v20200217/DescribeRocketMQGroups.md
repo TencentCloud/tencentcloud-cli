@@ -1,16 +1,11 @@
 **Example 1: 查询订阅组列表**
 
-
+test
 
 Input: 
 
 ```
-tccli tdmq DescribeRocketMQGroups --cli-unfold-argument  \
-    --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId example \
-    --Offset 0 \
-    --Limit 10
-```
+tccli tdmq DescribeRocketMQGroups --cli-unfold-argument ```
 
 Output: 
 ```
@@ -32,7 +27,8 @@ Output:
                 "ClientProtocol": "TCP",
                 "Remark": "modified",
                 "ConsumerType": "",
-                "TPS": 0
+                "TPS": 0,
+                "GroupType": "TCP"
             }
         ]
     }
