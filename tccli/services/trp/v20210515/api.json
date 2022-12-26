@@ -4217,7 +4217,6 @@
       "document": "企业配额信息",
       "members": [
         {
-          "default": "",
           "document": "服务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
@@ -4227,7 +4226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
@@ -4237,7 +4235,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "配额ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -4247,7 +4244,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "uint64",
@@ -4257,7 +4253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "开通服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"track\"]",
           "member": "string",
@@ -4267,8 +4262,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "工厂配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "FactoryQuota",
@@ -4277,8 +4271,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "产品配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "ItemQuota",
@@ -4287,7 +4280,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "溯源码配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
@@ -4297,7 +4289,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "销售码配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4307,7 +4298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "上链配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4317,7 +4307,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "风控配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
@@ -4327,7 +4316,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -4337,8 +4325,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "开通版本 basic standard enterprise\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开通版本 lite:轻量版, basic:基础版, standard:标准版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "basic",
           "member": "string",
           "name": "Version",

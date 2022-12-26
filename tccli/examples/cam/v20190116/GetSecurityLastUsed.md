@@ -1,4 +1,4 @@
-**Example 1: 获取密钥最近使用情况**
+**Example 1: 密钥最后一次访问时间**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam GetSecurityLastUsed --cli-unfold-argument  \
-    --SecretIdList xxxxxxxxx
+    --SecretIdList ' AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp'
 ```
 
 Output: 
@@ -15,11 +15,12 @@ Output:
     "Response": {
         "SecretIdLastUsedRows": [
             {
-                "SecretId": "xxxxxxxxx",
-                "LastUsedDate": "2021-03-20"
+                "SecretId": "AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp",
+                "LastUsedDate": "2022-12-19",
+                "LastSecretUsedDate": 1671681023555
             }
         ],
-        "RequestId": "15a763ee-c2da-446a-9b21-25632d7cecb5"
+        "RequestId": "b790d4ca-5692-42ae-8a8c-d15c6ed976db"
     }
 }
 ```

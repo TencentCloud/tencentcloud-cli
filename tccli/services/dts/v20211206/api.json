@@ -1574,7 +1574,7 @@
       "usage": "both"
     },
     "DBItem": {
-      "document": "迁移对象信息",
+      "document": "迁移对象信息，在配置库表视图等对象信息时大小写敏感",
       "members": [
         {
           "default": "",
@@ -5761,7 +5761,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移的表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移的表名，大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t1",
           "member": "string",
           "name": "TableName",

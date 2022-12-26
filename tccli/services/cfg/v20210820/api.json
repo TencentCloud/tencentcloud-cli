@@ -376,6 +376,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "任务对应的演练报告信息，null表示未导出报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskReportInfo",
+          "name": "ReportInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1672,6 +1681,72 @@
           "example": "%",
           "member": "string",
           "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskReportInfo": {
+      "document": "演练报告状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "0--未开始，1--正在导出，2--导出成功，3--导出失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Stage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "\"2022-12-12 12:12:12\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效期截止时间",
+          "example": "\"2022-12-12 12:12:12\"",
+          "member": "string",
+          "name": "ExpirationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有效",
+          "example": "true",
+          "member": "bool",
+          "name": "Expired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练报告cos文件地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"http://xxxx\"",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "演练报告导出日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Log",
           "required": true,
           "type": "string",
           "value_allowed_null": true
