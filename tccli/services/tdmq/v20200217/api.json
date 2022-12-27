@@ -3565,6 +3565,24 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Group类型（TCP/HTTP）",
+          "example": "TCP",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Group最大重试次数",
+          "example": "16",
+          "member": "uint64",
+          "name": "RetryMaxTimes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6942,7 +6960,6 @@
       "document": "DescribeRocketMQGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
@@ -6951,7 +6968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间",
           "example": "prod",
           "member": "string",
@@ -6960,7 +6976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -6969,7 +6984,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制条数",
           "example": "20",
           "member": "uint64",
@@ -6978,7 +6992,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "主题名称，输入此参数可查询该主题下所有的订阅组",
           "example": "test",
           "member": "string",
@@ -6987,7 +7000,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按消费组名称查询消费组，支持模糊查询",
           "example": "test",
           "member": "string",
@@ -6996,7 +7008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按照指定字段排序，可选值为tps，accumulative",
           "example": "tps",
           "member": "string",
@@ -7005,7 +7016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "按升序或降序排列，可选值为asc，desc",
           "example": "asc",
           "member": "string",
@@ -7014,13 +7024,20 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订阅组名称，指定此参数后将只返回该订阅组信息",
           "example": "test",
           "member": "string",
           "name": "FilterOneGroup",
           "required": false,
           "type": "string"
+        },
+        {
+          "document": "group类型",
+          "example": "[\"TCP\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7033,7 +7050,6 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7042,7 +7058,6 @@
           "example": "无",
           "member": "RocketMQGroup",
           "name": "Groups",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8851,6 +8866,15 @@
           "name": "BroadcastEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "最大重试次数",
+          "example": "16",
+          "member": "uint64",
+          "name": "RetryMaxTimes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10067,113 +10091,138 @@
       "document": "RocketMQ集群基本信息",
       "members": [
         {
-          "default": "",
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群名称",
           "example": "test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域信息",
           "example": "华南地区",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间，毫秒为单位",
           "example": "100000000",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "公网接入地址",
           "example": "xxx",
           "member": "string",
           "name": "PublicEndPoint",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "VPC接入地址",
           "example": "xxxx",
           "member": "string",
           "name": "VpcEndPoint",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否支持命名空间接入点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "SupportNamespaceEndpoint",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcConfig",
           "name": "Vpcs",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否为专享实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsVip",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Rocketmq集群标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "RocketMQFlag",
-          "required": true,
+          "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "计费状态，1表示正常，2表示已停服，3表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "欠费停服时间，毫秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000000",
+          "member": "int64",
+          "name": "IsolateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "HTTP协议公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HttpPublicEndpoint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "HTTP协议VPC接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HttpVpcEndpoint",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10229,134 +10278,139 @@
       "document": "RocketMQ消费组信息",
       "members": [
         {
-          "default": "",
           "document": "消费组名称",
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "在线消费者数量",
           "example": "1",
           "member": "uint64",
           "name": "ConsumerNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "消费TPS",
           "example": "100",
           "member": "uint64",
           "name": "TPS",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总堆积数量",
           "example": "100",
           "member": "int64",
           "name": "TotalAccumulative",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0表示集群消费模式，1表示广播消费模式，-1表示未知",
           "example": "0",
           "member": "int64",
           "name": "ConsumptionMode",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否允许消费",
           "example": "true",
           "member": "bool",
           "name": "ReadEnabled",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "重试队列分区数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "RetryPartitionNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间，以毫秒为单位",
           "example": "10000",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间，以毫秒为单位",
           "example": "修改时间",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户端协议",
           "example": "tcp",
           "member": "string",
           "name": "ClientProtocol",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "消费者类型，枚举值ACTIVELY, PASSIVELY\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACTIVELY",
           "member": "string",
           "name": "ConsumerType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否开启广播消费",
           "example": "false",
           "member": "bool",
           "name": "BroadcastEnabled",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "Group类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "GroupType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "RetryMaxTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

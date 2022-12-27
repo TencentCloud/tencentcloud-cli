@@ -42,23 +42,11 @@
       "name": "创建自定义页",
       "output": "CreateCustomErrorPageResponse"
     },
-    "CreateDnsRecord": {
-      "document": "创建 DNS 记录",
-      "input": "CreateDnsRecordRequest",
-      "name": "创建 DNS 记录",
-      "output": "CreateDnsRecordResponse"
-    },
     "CreateIpTableList": {
       "document": "创建IP黑白名单列表",
       "input": "CreateIpTableListRequest",
       "name": "创建IP黑白名单列表",
       "output": "CreateIpTableListResponse"
-    },
-    "CreateLoadBalancing": {
-      "document": "创建负载均衡",
-      "input": "CreateLoadBalancingRequest",
-      "name": "创建负载均衡",
-      "output": "CreateLoadBalancingResponse"
     },
     "CreateLogSet": {
       "document": "本接口（CreateClsLog）用于创建CLS日志集。",
@@ -143,18 +131,6 @@
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则",
       "output": "DeleteApplicationProxyRuleResponse"
-    },
-    "DeleteDnsRecords": {
-      "document": "批量删除 DNS 记录",
-      "input": "DeleteDnsRecordsRequest",
-      "name": "批量删除 DNS 记录",
-      "output": "DeleteDnsRecordsResponse"
-    },
-    "DeleteLoadBalancing": {
-      "document": "删除负载均衡",
-      "input": "DeleteLoadBalancingRequest",
-      "name": "删除负载均衡",
-      "output": "DeleteLoadBalancingResponse"
     },
     "DeleteLogTopicTask": {
       "document": "本接口（DeleteLogTopicTask）用于删除日志推送任务。",
@@ -318,12 +294,6 @@
       "name": "获取DNS请求数统计曲线",
       "output": "DescribeDnsDataResponse"
     },
-    "DescribeDnsRecords": {
-      "document": "查询 DNS 记录列表，支持搜索、分页、排序、过滤。",
-      "input": "DescribeDnsRecordsRequest",
-      "name": "查询 DNS 记录列表",
-      "output": "DescribeDnsRecordsResponse"
-    },
     "DescribeDnssec": {
       "document": "用于查询 DNSSEC 相关信息",
       "input": "DescribeDnssecRequest",
@@ -341,12 +311,6 @@
       "input": "DescribeIdentificationsRequest",
       "name": "查询站点的验证信息",
       "output": "DescribeIdentificationsResponse"
-    },
-    "DescribeLoadBalancing": {
-      "document": "获取负载均衡列表",
-      "input": "DescribeLoadBalancingRequest",
-      "name": "获取负载均衡列表",
-      "output": "DescribeLoadBalancingResponse"
     },
     "DescribeLogSets": {
       "document": "本接口（DescribeLogSets）用于获取日志集列表。",
@@ -654,12 +618,6 @@
       "name": "修改默认证书状态",
       "output": "ModifyDefaultCertificateResponse"
     },
-    "ModifyDnsRecord": {
-      "document": "修改 DNS 记录",
-      "input": "ModifyDnsRecordRequest",
-      "name": "修改 DNS 记录",
-      "output": "ModifyDnsRecordResponse"
-    },
     "ModifyDnssec": {
       "document": "设置站点DNSSEC状态",
       "input": "ModifyDnssecRequest",
@@ -671,12 +629,6 @@
       "input": "ModifyHostsCertificateRequest",
       "name": "修改域名证书",
       "output": "ModifyHostsCertificateResponse"
-    },
-    "ModifyLoadBalancing": {
-      "document": "修改负载均衡",
-      "input": "ModifyLoadBalancingRequest",
-      "name": "修改负载均衡",
-      "output": "ModifyLoadBalancingResponse"
     },
     "ModifyLogTopicTask": {
       "document": "本接口（ModifyLogTopicTask）用于修改日志推送任务信息。",
@@ -1059,42 +1011,6 @@
         }
       ],
       "usage": "in"
-    },
-    "AdvancedOriginGroup": {
-      "document": "高级回源配置",
-      "members": [
-        {
-          "default": "",
-          "document": "高级回源配置的匹配条件。其中相同的Target只能出现一次。",
-          "example": "无",
-          "member": "OriginGroupCondition",
-          "name": "OriginGroupConditions",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "备用源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "BackupOriginGroupId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "AiRule": {
       "document": "AI规则引擎防护",
@@ -2889,96 +2805,6 @@
       ],
       "type": "object"
     },
-    "CreateDnsRecordRequest": {
-      "document": "CreateDnsRecord请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "DNS记录所属站点ID。",
-          "example": "zone-225qgrnvbi9w",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "DNS记录类型，取值有：\n<li>A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；</li>\n<li>AAAA：将域名指向一个外网 IPv6 地址；</li>\n<li>MX：用于邮箱服务器，相关记录值/优先级参数由邮件注册商提供。存在多条 MX 记录时，优先级越低越优先；</li>\n<li>CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；</li>\n<li>TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；</li>\n<li>NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；</li>\n<li>CAA：指定可为本站点颁发证书的 CA；</li>\n<li>SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理。</li>",
-          "example": "A",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "DNS记录名。",
-          "example": "www.example.com",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "DNS记录内容。",
-          "example": "1.2.3.4",
-          "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS解析；</li>\n<li>proxied：代理加速。</li>",
-          "example": "dns",
-          "member": "string",
-          "name": "Mode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "缓存时间，数值越小，修改记录各地生效时间越快，默认为300，单位：秒。",
-          "example": "300",
-          "member": "int64",
-          "name": "TTL",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "该参数在创建MX记录时生效，值越小优先级越高，用户可指定值范围1~50，不指定默认为0。",
-          "example": "10",
-          "member": "int64",
-          "name": "Priority",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateDnsRecordResponse": {
-      "document": "CreateDnsRecord返回参数结构体",
-      "members": [
-        {
-          "document": "DNS解析记录ID。",
-          "example": "record-225rcy8bw85g",
-          "member": "string",
-          "name": "DnsRecordId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateIpTableListRequest": {
       "document": "CreateIpTableList请求参数结构体",
       "members": [
@@ -3015,105 +2841,6 @@
     "CreateIpTableListResponse": {
       "document": "CreateIpTableList返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLoadBalancingRequest": {
-      "document": "CreateLoadBalancing请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "负载均衡域名。",
-          "example": "test.tencent.com",
-          "member": "string",
-          "name": "Host",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS；</li>\n<li>proxied：开启代理。</li>",
-          "example": "cdn_only",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主源站源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "备用源站源站组ID，当Type=proxied时可以填写，为空表示不使用备用源站。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "BackupOriginGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "当Type=dns_only时，指解析记录在DNS服务器缓存的生存时间。\n取值范围60-86400，单位：秒，不填写使用默认值：600。",
-          "example": "600",
-          "member": "uint64",
-          "name": "TTL",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>为空表示使用主备回源。",
-          "example": "normal",
-          "member": "string",
-          "name": "OriginType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "高级回源配置，当OriginType=advanced时有效。",
-          "example": "无",
-          "member": "AdvancedOriginGroup",
-          "name": "AdvancedOriginGroups",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLoadBalancingResponse": {
-      "document": "CreateLoadBalancing返回参数结构体",
-      "members": [
-        {
-          "document": "负载均衡ID。",
-          "example": "lb-97c8396e-cb88-4c9c-98d9-38e86463d12e",
-          "member": "string",
-          "name": "LoadBalancingId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5159,78 +4886,6 @@
     },
     "DeleteApplicationProxyRuleResponse": {
       "document": "DeleteApplicationProxyRule返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteDnsRecordsRequest": {
-      "document": "DeleteDnsRecords请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "待删除记录所属站点 ID。",
-          "example": "zone-25ryyvog1qih",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "待删除记录 ID。",
-          "example": "record-25ryzh92h8qh",
-          "member": "string",
-          "name": "DnsRecordIds",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteDnsRecordsResponse": {
-      "document": "DeleteDnsRecords返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLoadBalancingRequest": {
-      "document": "DeleteLoadBalancing请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "负载均衡ID。",
-          "example": "lb-97c8396e-cb88-4c9c-98d9-38e86463d12e",
-          "member": "string",
-          "name": "LoadBalancingId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLoadBalancingResponse": {
-      "document": "DeleteLoadBalancing返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7409,105 +7064,6 @@
       ],
       "type": "object"
     },
-    "DescribeDnsRecordsRequest": {
-      "document": "DescribeDnsRecords请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "DNS记录所属站点ID。不填写该参数默认返回所有站点下的记录。",
-          "example": "zone-20hyebgyfsko",
-          "member": "string",
-          "name": "ZoneId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>record-id<br>   按照【<strong>DNS记录id</strong>】进行过滤。DNS记录ID形如：record-1a8df68z。<br>   类型：String<br>   必选：否\n<li>record-name<br>   按照【<strong>DNS记录名称</strong>】进行过滤。<br>   类型：String<br>   必选：否\n<li>record-type<br>   按照【<strong>DNS记录类型</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   A：将域名指向一个外网 IPv4 地址，如 8.8.8.8<br>   AAAA：将域名指向一个外网 IPv6 地址<br>   CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址<br>   TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）<br>   NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录<br>   CAA：指定可为本站点颁发证书的 CA<br>   SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理<br>   MX：指定收件人邮件服务器。\n<li>mode<br>   按照【<strong>代理模式</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   dns_only：仅DNS解析<br>   proxied：代理加速\n<li>ttl<br>   按照【<strong>解析生效时间</strong>】进行过滤。<br>   类型：string<br>   必选：否",
-          "example": "无",
-          "member": "AdvancedFilter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "列表排序方式，取值有：\n<li>asc：升序排列；</li>\n<li>desc：降序排列。</li>默认值为asc。",
-          "example": "asc",
-          "member": "string",
-          "name": "Direction",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "匹配方式，取值有：\n<li>all：返回匹配所有查询条件的记录；</li>\n<li>any：返回匹配任意一个查询条件的记录。</li>默认值为all。",
-          "example": "all",
-          "member": "string",
-          "name": "Match",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "分页查询限制数目，默认值：20，上限：1000。",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "分页查询偏移量，默认为 0。",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "排序依据，取值有：\n<li>content：DNS记录内容；</li>\n<li>created_on：DNS记录创建时间；</li>\n<li>mode：代理模式；</li>\n<li>record-name：DNS记录名称；</li>\n<li>ttl：解析记录生效时间；</li>\n<li>record-type：DNS记录类型。</li>默认根据record-type, recrod-name属性组合排序。",
-          "example": "record-name",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDnsRecordsResponse": {
-      "document": "DescribeDnsRecords返回参数结构体",
-      "members": [
-        {
-          "document": "DNS记录总数。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "DNS 记录列表。",
-          "example": "无",
-          "member": "DnsRecord",
-          "name": "DnsRecords",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeDnssecRequest": {
       "document": "DescribeDnssec请求参数结构体",
       "members": [
@@ -7684,69 +7240,6 @@
           "example": "无",
           "member": "Identification",
           "name": "Identifications",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLoadBalancingRequest": {
-      "document": "DescribeLoadBalancing请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "分页查询偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "分页查询限制数目，默认为10，取值：1-1000。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-1a8df68z<br>   类型：String<br>   必选：否<br>   模糊查询：不支持\n</li><li>load-balancing-id<br>   按照【<strong>负载均衡ID</strong>】进行过滤。负载均衡ID形如：lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8<br>   类型：String<br>   必选：否<br>   模糊查询：不支持\n</li><li>host<br>   按照【<strong>负载均衡host</strong>】进行过滤。host形如：lb.tencent.com<br>   类型：String<br>   必选：否<br>   模糊查询：支持，模糊查询时仅支持一个host</li>",
-          "example": "无",
-          "member": "AdvancedFilter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLoadBalancingResponse": {
-      "document": "DescribeLoadBalancing返回参数结构体",
-      "members": [
-        {
-          "document": "记录总数。",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "负载均衡信息。",
-          "example": "[]",
-          "member": "LoadBalancing",
-          "name": "Data",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10954,162 +10447,6 @@
       ],
       "usage": "out"
     },
-    "DnsRecord": {
-      "document": "DNS 记录",
-      "members": [
-        {
-          "default": "",
-          "document": "记录 ID。",
-          "example": "record-3d5dg39c",
-          "member": "string",
-          "name": "DnsRecordId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "DNS记录类型，取值有：\n<li>A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；</li>\n<li>AAAA：将域名指向一个外网 IPv6 地址；</li>\n<li>MX：用于邮箱服务器，相关记录值/优先级参数由邮件注册商提供。存在多条 MX 记录时，优先级越低越优先；</li>\n<li>CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；</li>\n<li>TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；</li>\n<li>NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；</li>\n<li>CAA：指定可为本站点颁发证书的 CA；</li>\n<li>SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理。</li>",
-          "example": "A",
-          "member": "string",
-          "name": "DnsRecordType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录名称。",
-          "example": "www.example.com",
-          "member": "string",
-          "name": "DnsRecordName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录值。",
-          "example": "110.242.68.66",
-          "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS解析；</li>\n<li>proxied：代理加速。</li>",
-          "example": "dns_only",
-          "member": "string",
-          "name": "Mode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "缓存时间，数值越小，修改记录各地生效时间越快，单位：秒。",
-          "example": "60",
-          "member": "int64",
-          "name": "TTL",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "MX记录优先级，数值越小越优先。",
-          "example": "0",
-          "member": "int64",
-          "name": "Priority",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建时间。",
-          "example": "2020-09-22T00:00:00+00:00",
-          "member": "datetime_iso",
-          "name": "CreatedOn",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "修改时间。",
-          "example": "2020-09-22T00:00:00+00:00",
-          "member": "datetime_iso",
-          "name": "ModifiedOn",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "域名锁定状态。",
-          "example": "false",
-          "member": "bool",
-          "name": "Locked",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "站点 ID。",
-          "example": "zone-20hyebgyfsko",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "站点名称。",
-          "example": "example.com",
-          "member": "string",
-          "name": "ZoneName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录解析状态，取值有：\n<li>active：生效；</li>\n<li>pending：不生效。</li>",
-          "example": "active",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "CNAME 地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
-          "member": "string",
-          "name": "Cname",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "域名服务类型，取值有：\n<li>lb：负载均衡；</li>\n<li>security：安全；</li>\n<li>l4：四层代理。</li>",
-          "example": "lb",
-          "member": "string",
-          "name": "DomainStatus",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "DnssecInfo": {
       "document": "DNSSEC 相关信息",
       "members": [
@@ -12435,132 +11772,6 @@
       ],
       "usage": "out"
     },
-    "LoadBalancing": {
-      "document": "负载均衡信息",
-      "members": [
-        {
-          "default": "",
-          "document": "负载均衡ID。",
-          "example": "lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8",
-          "member": "string",
-          "name": "LoadBalancingId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-20hzkd4rdmy0",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "子域名，填写@表示根域。",
-          "example": "test.tencent.com",
-          "member": "string",
-          "name": "Host",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS；</li>\n<li>proxied：开启代理。</li>",
-          "example": "dns_only",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当Type=dns_only表示DNS记录的缓存时间。",
-          "example": "600",
-          "member": "uint64",
-          "name": "TTL",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "状态，取值有：\n<li>online：部署成功；</li>\n<li>process：部署中。</li>",
-          "example": "online",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "调度域名。",
-          "example": "test.tencent.com.acc.edgeonedy1.com",
-          "member": "string",
-          "name": "Cname",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主源源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "备用源站源站组ID。为空表示不适用备用源站。",
-          "example": "无",
-          "member": "string",
-          "name": "BackupOriginGroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "更新时间。",
-          "example": "2014-08-03T12:00:00+08:00",
-          "member": "datetime_iso",
-          "name": "UpdateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置。</li>",
-          "example": "normal",
-          "member": "string",
-          "name": "OriginType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "高级回源配置，当OriginType=advanced时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AdvancedOriginGroup",
-          "name": "AdvancedOriginGroups",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "LogSetInfo": {
       "document": "日志集基本信息",
       "members": [
@@ -13446,96 +12657,6 @@
       ],
       "type": "object"
     },
-    "ModifyDnsRecordRequest": {
-      "document": "ModifyDnsRecord请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "记录ID。",
-          "example": "record-21q7frcpseaw",
-          "member": "string",
-          "name": "DnsRecordId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-20hyebgyfsko",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "DNS记录类型，取值有：\n<li>A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；</li>\n<li>AAAA：将域名指向一个外网 IPv6 地址；</li>\n<li>MX：用于邮箱服务器，相关记录值/优先级参数由邮件注册商提供。存在多条 MX 记录时，优先级越低越优先；</li>\n<li>CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；</li>\n<li>TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；</li>\n<li>NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；</li>\n<li>CAA：指定可为本站点颁发证书的 CA；</li>\n<li>SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理。</li>不填写保持原有配置。",
-          "example": "A",
-          "member": "string",
-          "name": "DnsRecordType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "记录名称，由主机记录+站点名称组成，不填写保持原有配置。",
-          "example": "a.example.com",
-          "member": "string",
-          "name": "DnsRecordName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "记录内容，不填写保持原有配置。",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Content",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "缓存时间，数值越小，修改记录各地生效时间越快，默认为300，单位：秒，不填写保持原有配置。",
-          "example": "300",
-          "member": "int64",
-          "name": "TTL",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "该参数在修改MX记录时生效，值越小优先级越高，用户可指定值范围为1~50，不指定默认为0，不填写保持原有配置。",
-          "example": "1",
-          "member": "int64",
-          "name": "Priority",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS解析；</li>\n<li>proxied：代理加速。</li>不填写保持原有配置。",
-          "example": "dns_only",
-          "member": "string",
-          "name": "Mode",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyDnsRecordResponse": {
-      "document": "ModifyDnsRecord返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyDnssecRequest": {
       "document": "ModifyDnssec请求参数结构体",
       "members": [
@@ -13616,96 +12737,6 @@
     },
     "ModifyHostsCertificateResponse": {
       "document": "ModifyHostsCertificate返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoadBalancingRequest": {
-      "document": "ModifyLoadBalancing请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "负载均衡ID。",
-          "example": "lb-97c8396e-cb88-4c9c-98d9-38e86463d12e",
-          "member": "string",
-          "name": "LoadBalancingId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "代理模式，取值有：\n<li>dns_only：仅DNS；</li>\n<li>proxied：开启代理。</li>",
-          "example": "dns_only",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主源站源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "备用源站源站组ID，当Type=proxied时可以填写，为空表示不使用备用源站。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "BackupOriginGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "当Type=dns_only时，指解析记录在DNS服务器缓存的生存时间。\n取值范围60-86400，单位：秒，不填写使用默认值：600。",
-          "example": "600",
-          "member": "uint64",
-          "name": "TTL",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "回源类型，取值有：\n<li>normal：主备回源；</li>\n<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。",
-          "example": "normal",
-          "member": "string",
-          "name": "OriginType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "高级回源配置，当OriginType=advanced时有效。\n不填写表示不使用高级回源配置。",
-          "example": "无",
-          "member": "AdvancedOriginGroup",
-          "name": "AdvancedOriginGroups",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoadBalancingResponse": {
-      "document": "ModifyLoadBalancing返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14744,42 +13775,6 @@
         }
       ],
       "usage": "out"
-    },
-    "OriginGroupCondition": {
-      "document": "回源配置的条件参数",
-      "members": [
-        {
-          "default": "",
-          "document": "匹配类型，取值有：\n<li>url：当前站点下匹配URL路径的请求，例如：/example 或 /example/foo.jpg。支持*表示通配符，支持?表示匹配一个字符。\n</li>",
-          "example": "url",
-          "member": "string",
-          "name": "Target",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "运算符，取值有：\n<li>equal：等于。</li>",
-          "example": "equal",
-          "member": "string",
-          "name": "Operator",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "对应匹配类型的取值。",
-          "example": "无",
-          "member": "string",
-          "name": "Values",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "OriginRecord": {
       "document": "源站组记录",

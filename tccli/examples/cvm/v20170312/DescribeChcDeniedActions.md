@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm DescribeChcDeniedActions --cli-unfold-argument  \
-    --ChcIds chc-1a2b3c4d chc-adf34aft
+    --ChcIds chc-adf34aft chc-1a2b3c4d
 ```
 
 Output: 

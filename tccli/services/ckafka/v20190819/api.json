@@ -10737,7 +10737,7 @@
         },
         {
           "default": "",
-          "document": "时间戳",
+          "document": "公网带宽",
           "example": "无",
           "member": "int64",
           "name": "PublicNetwork",

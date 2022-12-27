@@ -9,7 +9,7 @@
   },
   "metadata": {
     "apiVersion": "2020-05-07",
-    "api_brief": null,
+    "api_brief": "",
     "serviceNameCN": "云访问安全代理",
     "serviceShortName": "casb"
   },

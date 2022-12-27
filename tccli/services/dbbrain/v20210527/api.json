@@ -144,6 +144,12 @@
       "name": "查询实例无主键表",
       "output": "DescribeNoPrimaryKeyTablesResponse"
     },
+    "DescribeProxyProcessStatistics": {
+      "document": "获取当前实例会话统计详情信息。【注意】该接口仅限部分环境调用。",
+      "input": "DescribeProxyProcessStatisticsRequest",
+      "name": "获取实时会话统计详情",
+      "output": "DescribeProxyProcessStatisticsResponse"
+    },
     "DescribeProxySessionKillTasks": {
       "document": "用于查询 redis 执行 kill 会话任务后代理节点的执行结果，入参异步任务 ID 从接口 CreateProxySessionKillTask 调用成功后取得。当前 product 只支持：redis。",
       "input": "DescribeProxySessionKillTasksRequest",
@@ -2163,6 +2169,96 @@
           "name": "Timestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxyProcessStatisticsRequest": {
+      "document": "DescribeProxyProcessStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "example": "\"crs-2gtest\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前实例下的 ProxyID。",
+          "example": "\"b237ff3c5f30b0615276f986cc75c045bc\"",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "\"redis\"",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照某字断排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。",
+          "example": "\"AllConn\"",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方向。支持值包括：\"DESC\"，\"ASC\"。",
+          "example": "\"DESC\"",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxyProcessStatisticsResponse": {
+      "document": "DescribeProxyProcessStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "实时会话统计详情。",
+          "example": "无",
+          "member": "ProcessStatistic",
+          "name": "ProcessStatistics",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -4708,6 +4804,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "out"
+    },
+    "ProcessStatistic": {
+      "document": "实时会话统计详情。",
+      "members": [],
       "usage": "out"
     },
     "ProfileInfo": {

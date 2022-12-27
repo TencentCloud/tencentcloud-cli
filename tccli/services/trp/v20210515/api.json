@@ -577,7 +577,7 @@
         },
         {
           "default": "",
-          "document": "码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防伪码长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CodeLength",
@@ -831,7 +831,7 @@
         },
         {
           "default": "",
-          "document": "批次ID，系统自动生成",
+          "document": "批次ID，留空时系统自动生成",
           "example": "批次ID",
           "member": "string",
           "name": "BatchId",
@@ -862,6 +862,15 @@
           "example": "10000",
           "member": "string",
           "name": "CloneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批次编号，业务字段不判断唯一性",
+          "example": "202210",
+          "member": "string",
+          "name": "BatchCode",
           "required": false,
           "type": "string"
         }
@@ -972,6 +981,15 @@
           "name": "BatchId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1188,6 +1206,15 @@
           "name": "BatchId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2319,6 +2346,15 @@
           "name": "CorpId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否有流水码 0:无 1:有",
+          "example": "number",
+          "member": "uint64",
+          "name": "SerialType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3353,6 +3389,15 @@
           "example": "abc",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批次编码，业务字段不判断唯一性",
+          "example": "202210",
+          "member": "string",
+          "name": "BatchCode",
           "required": false,
           "type": "string"
         }

@@ -56,46 +56,12 @@
         "title": "创建自定义页面"
       }
     ],
-    "CreateDnsRecord": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"Priority\": 1,\n    \"Name\": \"www.example.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Content\": \"1.2.3.4\",\n    \"Mode\": \"dns\",\n    \"TTL\": 300,\n    \"Type\": \"A\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"DnsRecordId\": \"record-225rcy8bw85g\"\n    }\n}",
-        "title": "创建 DNS 记录"
-      }
-    ],
     "CreateIpTableList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIpTableList\n<公共请求参数>\n\n{\n    \"IpTableRules\": [\n        {\n            \"Action\": \"drop\",\n            \"MatchFrom\": \"ip\",\n            \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"MatchContent\": \"1.1.1.1\",\n            \"RuleID\": 0\n        }\n    ],\n    \"Entity\": \"a.eotest.com\",\n    \"ZoneId\": \"zone-285thql0vdhi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
         "title": "新建一条拦截名单"
-      }
-    ],
-    "CreateLoadBalancing": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"Host\": \"test.tencent.com\",\n    \"Type\": \"dns_only\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"BackupOriginGroupId\": \"\",\n    \"TTL\": 600,\n    \"OriginType\": \"normal\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\"\n    }\n}",
-        "title": "创建仅DNS模式负载均衡"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"Host\": \"test.tencent.com\",\n    \"Type\": \"proxied\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"BackupOriginGroupId\": \"\",\n    \"OriginType\": \"normal\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\"\n    }\n}",
-        "title": "创建开启代理模式负载均衡"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"Host\": \"test.tencent.com\",\n    \"Type\": \"proxied\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"BackupOriginGroupId\": \"orgin-9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n    \"OriginType\": \"normal\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\"\n    }\n}",
-        "title": "创建使用备用源站的负载均衡"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"Host\": \"test.tencent.com\",\n    \"Type\": \"proxied\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"BackupOriginGroupId\": \"orgin-9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n    \"OriginType\": \"advanced\",\n    \"AdvancedOriginGroups\": [\n        {\n            \"OriginGroupConditions\": [\n                {\n                    \"Target\": \"url\",\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"/image\"\n                    ]\n                }\n            ],\n            \"OriginGroupId\": \"orgin-9cc50b24-7dc5-44f4-96ce-95825d53ff2f\",\n            \"BackupOriginGroupId\": \"\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\"\n    }\n}",
-        "title": "创建使用高级源站配置的负载均衡"
       }
     ],
     "CreateLogSet": [
@@ -262,22 +228,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"RuleId\": \"rule-19389e5a-118b-11ed-9951-525400655ede\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "删除应用代理规则"
-      }
-    ],
-    "DeleteDnsRecords": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDnsRecords\n<公共请求参数>\n\n{\n    \"DnsRecordIds\": [\n        \"record-25ryzh92h8qh\"\n    ],\n    \"ZoneId\": \"zone-25ryyvog1qih\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "批量删除 DNS 记录"
-      }
-    ],
-    "DeleteLoadBalancing": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "删除负载均衡"
       }
     ],
     "DeleteLogTopicTask": [
@@ -532,14 +482,6 @@
         "title": "获取指定站点所有解析A记录的DNS请求数统计曲线"
       }
     ],
-    "DescribeDnsRecords": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRecords\n<公共请求参数>\n\n{\n    \"Direction\": \"desc\",\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"record-3d5dg39c\"\n            ],\n            \"Name\": \"record-id\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"created_on\",\n    \"Match\": \"all\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"DnsRecords\": [\n            {\n                \"Status\": \"active\",\n                \"Priority\": 0,\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"DnsRecordName\": \"test.example.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"Content\": \"110.242.68.66\",\n                \"Cname\": \"test.example.com.cdn.acc.xyz\",\n                \"Mode\": \"dns_only\",\n                \"TTL\": 0,\n                \"Locked\": true,\n                \"DnsRecordType\": \"A\",\n                \"DnsRecordId\": \"record-3d5dg39c\",\n                \"ZoneName\": \"example.com\",\n                \"DomainStatus\": [\n                    \"lb\"\n                ]\n            }\n        ]\n    }\n}",
-        "title": "dns_records"
-      }
-    ],
     "DescribeDnssec": [
       {
         "document": "",
@@ -562,26 +504,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentifications\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Identifications\": [\n            {\n                \"ZoneName\": \"example.com\",\n                \"Status\": \"pending\",\n                \"Ascription\": {\n                    \"Subdomain\": \"edgeonereclaim\",\n                    \"RecordType\": \"TXT\",\n                    \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n                },\n                \"OriginalNameServers\": [\n                    \"ns1.example.com\",\n                    \"ns2.example.com\"\n                ],\n                \"FileAscription\": {\n                    \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\",\n                    \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8gs50b24-7df5-47f4-96ae-95825d53er3c\"\n    }\n}",
         "title": "查询站点的验证状态"
-      }
-    ],
-    "DescribeLoadBalancing": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancing\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"zone-id\",\n            \"Values\": [\n                \"zone-20hzkd4rdmy0\"\n            ],\n            \"Fuzzy\": false\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Host\": \"test.tencent.com\",\n                \"LoadBalancingId\": \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\",\n                \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n                \"BackupOriginGroupId\": \"\",\n                \"TTL\": 600,\n                \"Type\": \"proxied\",\n                \"UpdateTime\": \"2022-02-14T08:48:03Z\",\n                \"ZoneId\": \"zone-20hzkd4rdmy0\",\n                \"Status\": \"online\",\n                \"Cname\": \"test.tencent.com.acc.edgeonedy1.com\",\n                \"OriginType\": \"normal\",\n                \"AdvancedOriginGroups\": []\n            }\n        ]\n    }\n}",
-        "title": "获取指定站点的负载均衡列表"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancing\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"zone-id\",\n            \"Values\": [\n                \"zone-20hzkd4rdmy0\"\n            ],\n            \"Fuzzy\": false\n        },\n        {\n            \"Name\": \"load-balancing-id\",\n            \"Values\": [\n                \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\"\n            ],\n            \"Fuzzy\": false\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Host\": \"test.tencent.com\",\n                \"LoadBalancingId\": \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\",\n                \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n                \"BackupOriginGroupId\": \"\",\n                \"TTL\": 600,\n                \"Type\": \"proxied\",\n                \"UpdateTime\": \"2022-02-14T08:48:03Z\",\n                \"ZoneId\": \"zone-20hzkd4rdmy0\",\n                \"Status\": \"online\",\n                \"Cname\": \"test.tencent.com.acc.edgeonedy1.com\",\n                \"OriginType\": \"normal\",\n                \"AdvancedOriginGroups\": []\n            }\n        ]\n    }\n}",
-        "title": "获取指定ID的负载均衡信息"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancing\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"zone-id\",\n            \"Values\": [\n                \"zone-20hzkd4rdmy0\"\n            ],\n            \"Fuzzy\": false\n        },\n        {\n            \"Name\": \"host\",\n            \"Values\": [\n                \"test\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Host\": \"test.tencent.com\",\n                \"LoadBalancingId\": \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\",\n                \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n                \"BackupOriginGroupId\": \"\",\n                \"TTL\": 600,\n                \"Type\": \"proxied\",\n                \"UpdateTime\": \"2022-02-14T08:48:03Z\",\n                \"ZoneId\": \"zone-20hzkd4rdmy0\",\n                \"Status\": \"online\",\n                \"Cname\": \"test.tencent.com.acc.edgeonedy1.com\",\n                \"OriginType\": \"normal\",\n                \"AdvancedOriginGroups\": []\n            }\n        ]\n    }\n}",
-        "title": "获取指定域名的负载均衡信息（模糊查询）"
       }
     ],
     "DescribeLogSets": [
@@ -1106,14 +1028,6 @@
         "title": "修改默认证书状态"
       }
     ],
-    "ModifyDnsRecord": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecord\n<公共请求参数>\n\n{\n    \"Priority\": 1,\n    \"DnsRecordName\": \"a.example.com\",\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Content\": \"1.1.1.1\",\n    \"Mode\": \"dns_only\",\n    \"TTL\": 600,\n    \"DnsRecordType\": \"A\",\n    \"DnsRecordId\": \"record-21q7frcpseaw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"015c3e96-2bfd-4171-a25a-a8956a2ad6c0\"\n    }\n}",
-        "title": "修改 DNS 记录"
-      }
-    ],
     "ModifyDnssec": [
       {
         "document": "",
@@ -1128,14 +1042,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-asdfasc\",\n    \"Hosts\": [\n        \"xxx.test.com\"\n    ],\n    \"ServerCertInfo\": [\n        {\n            \"CertId\": \"EO-sddafcasf\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "修改域名证书配置"
-      }
-    ],
-    "ModifyLoadBalancing": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"LoadBalancingId\": \"lb-97c8396e-cb88-4c9c-98d9-38e86463d12e\",\n    \"Type\": \"dns_only\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"BackupOriginGroupId\": \"\",\n    \"TTL\": 600\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "修改负载均衡"
       }
     ],
     "ModifyLogTopicTask": [

@@ -988,11 +988,11 @@
       "usage": "out"
     },
     "AddressTemplateSpecification": {
-      "document": "IP地址模版",
+      "document": "IP地址模板",
       "members": [
         {
-          "default": "",
           "document": "IP地址ID，例如：eipm-2uw6ujo6。",
+          "example": "无",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -1000,8 +1000,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IP地址组ID，例如：eipmg-2uw6ujo6。",
+          "example": "无",
           "member": "string",
           "name": "AddressGroupId",
           "required": true,
@@ -12340,11 +12340,11 @@
       "usage": "both"
     },
     "ServiceTemplateSpecification": {
-      "document": "协议端口模版",
+      "document": "协议端口模板",
       "members": [
         {
-          "default": "",
           "document": "协议端口ID，例如：eppm-f5n1f8da。",
+          "example": "无",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -12352,8 +12352,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议端口组ID，例如：eppmg-f5n1f8da。",
+          "example": "无",
           "member": "string",
           "name": "ServiceGroupId",
           "required": true,

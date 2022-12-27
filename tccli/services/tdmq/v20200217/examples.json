@@ -135,7 +135,7 @@
     "CreateRocketMQGroup": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateRocketMQGroup\n&GroupId=group-example\n&Remark=example\n&ReadEnable=true\n&BroadcastEnable=true\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&Namespaces.0=example\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQGroup\n<公共请求参数>\n\n{\n    \"Remark\": \"example\",\n    \"BroadcastEnable\": \"true\",\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RetryMaxTimes\": \"16\",\n    \"Namespaces\": [\n        \"example\"\n    ],\n    \"ReadEnable\": \"true\",\n    \"GroupType\": \"TCP\",\n    \"GroupId\": \"group-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
         "title": "创建订阅组"
       }
@@ -558,9 +558,9 @@
     ],
     "DescribeRocketMQGroups": [
       {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQGroups\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c127300-fcdd-4087-b1d2-fd75a1cefbe4\",\n        \"TotalCount\": 1,\n        \"Groups\": [\n            {\n                \"Name\": \"group-example\",\n                \"ConsumerNum\": 0,\n                \"TotalAccumulative\": 0,\n                \"ConsumptionMode\": -1,\n                \"BroadcastEnabled\": false,\n                \"ReadEnabled\": true,\n                \"RetryPartitionNum\": 0,\n                \"CreateTime\": 1621307489000,\n                \"UpdateTime\": 1621307706000,\n                \"ClientProtocol\": \"TCP\",\n                \"Remark\": \"modified\",\n                \"ConsumerType\": \"\",\n                \"TPS\": 0\n            }\n        ]\n    }\n}",
+        "document": "test",
+        "input": "{\n  \"ClusterId\": \"xx\",\n  \"NamespaceId\": \"xx\",\n  \"Offset\": 1,\n  \"Limit\": 1,\n  \"FilterTopic\": \"xx\",\n  \"FilterGroup\": \"xx\",\n  \"SortedBy\": \"xx\",\n  \"SortOrder\": \"xx\",\n  \"FilterOneGroup\": \"xx\",\n  \"Types\": [\n    \"xx\"\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c127300-fcdd-4087-b1d2-fd75a1cefbe4\",\n        \"TotalCount\": 1,\n        \"Groups\": [\n            {\n                \"Name\": \"group-example\",\n                \"ConsumerNum\": 0,\n                \"TotalAccumulative\": 0,\n                \"ConsumptionMode\": -1,\n                \"BroadcastEnabled\": false,\n                \"ReadEnabled\": true,\n                \"RetryPartitionNum\": 0,\n                \"CreateTime\": 1621307489000,\n                \"UpdateTime\": 1621307706000,\n                \"ClientProtocol\": \"TCP\",\n                \"Remark\": \"modified\",\n                \"ConsumerType\": \"\",\n                \"TPS\": 0,\n                \"GroupType\": \"TCP\"\n            }\n        ]\n    }\n}",
         "title": "查询订阅组列表"
       }
     ],
@@ -703,7 +703,7 @@
     "ModifyRocketMQGroup": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyRocketMQGroup\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&GroupId=group-example\n&Remark=modified\n&ReadEnable=true\n&BroadcastEnable=false\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQGroup\n<公共请求参数>\n\n{\n    \"Remark\": \"modified\",\n    \"BroadcastEnable\": \"false\",\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"GroupId\": \"group-example\",\n    \"RetryMaxTimes\": \"16\",\n    \"ReadEnable\": \"true\",\n    \"NamespaceId\": \"example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f9e837c-aab9-4f93-a373-48e165758529\"\n    }\n}",
         "title": "修改订阅组"
       }
