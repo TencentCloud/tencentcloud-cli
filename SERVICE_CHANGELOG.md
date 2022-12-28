@@ -1,107 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 语音识别(asr) 版本：2019-06-14
+## 音频内容安全(ams) 版本：2020-12-29
 
-### 第 8 次发布
+### 第 7 次发布
 
-发布时间：2022-12-28 01:06:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
-
-	* 新增入参：SentenceMaxLength
-
-
-
-
-## 云硬盘(cbs) 版本：2017-03-12
-
-### 第 19 次发布
-
-发布时间：2022-12-28 01:07:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDiskBackup](http://document.tencentcloudapi.woa.com/document/product/362/76856)
-
-
-
-## 企业收付平台(cpdp) 版本：2019-08-20
-
-### 第 50 次发布
-
-发布时间：2022-12-28 11:00:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76859)
-* [ModifyFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76858)
-* [QueryFlexServiceProviderAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76857)
-
-新增数据结构：
-
-* [PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult)
-* [ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult)
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 42 次发布
-
-发布时间：2022-12-28 01:08:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [InquiryPriceRenewHosts](http://document.tencentcloudapi.woa.com/document/product/213/76860)
-
-新增数据结构：
-
-* [HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo)
-
-
-
-## 云监控(monitor) 版本：2018-07-24
-
-### 第 38 次发布
-
-发布时间：2022-12-28 12:13:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [GrafanaNotificationChannel](http://document.tencentcloudapi.woa.com/document/product/248/30354#GrafanaNotificationChannel)
-
-	* <font color="#dd0000">**修改成员**：</font>UpdatedAt, OrgIds, OrganizationIds
-
-
-
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 14 次发布
-
-发布时间：2022-12-28 12:27:21
+发布时间：2022-12-29 01:04:00
 
 本次发布包含了以下内容：
 
@@ -109,46 +12,98 @@
 
 修改接口：
 
-* [CreateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75220)
+* [CreateAudioModerationSyncTask](http://document.tencentcloudapi.woa.com/document/product/1219/56755)
 
-	* 新增入参：Owner
-
-* [DescribeScenarioWithJobs](http://document.tencentcloudapi.woa.com/document/product/1597/75195)
-
-	* 新增入参：ScenarioType, Owner
-
-* [UpdateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75184)
-
-	* 新增入参：Owner
-
-
-修改数据结构：
-
-* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
-
-	* 新增成员：Owner
-
-	* <font color="#dd0000">**修改成员**：</font>Name, AppId, Uin, SubAccountUin, TestScripts, Protocols, RequestFiles, SLAPolicy, Plugins, DomainNameConfig, NotificationHooks
+	* 新增出参：Duration
 
 
 
 
-## SSL 证书(ssl) 版本：2019-12-05
+## 音频内容安全(ams) 版本：2020-06-08
 
-### 第 19 次发布
 
-发布时间：2022-12-28 12:36:39
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 25 次发布
+
+发布时间：2022-12-29 01:15:46
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [DeregisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76862)
+* [RegisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76861)
+
+新增数据结构：
+
+* [FunctionInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionInfo)
+* [FunctionTarget](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionTarget)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 26 次发布
+
+发布时间：2022-12-29 01:22:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
 修改数据结构：
 
-* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
 
-	* 新增成员：AutoRenewFlag
+	* 新增成员：InstanceRole
 
+* [CynosdbCluster](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbCluster)
+
+	* 新增成员：PhysicalZone, MasterZone, HasSlaveZone, SlaveZones, BusinessType, IsFreeze, OrderSource, Ability
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* 新增成员：LogBin, PitrType, PhysicalZone, StorageId, Storage, MaxStorageSize, MinStorageSize, StoragePayMode, DbMode, StorageLimit, Ability, CynosVersion, BusinessType, HasSlaveZone, IsFreeze, Tasks, MasterZone, SlaveZones, ProxyStatus, IsSkipTrade, IsOpenPasswordComplexity, NetworkStatus
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* 新增成员：WanIP, WanStatus
+
+* [NewAccount](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NewAccount)
+
+	* 新增成员：MaxUserConnections
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 35 次发布
+
+发布时间：2022-12-29 01:29:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：ChannelTemplateId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
@@ -875,6 +830,21 @@
 
 
 ## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 7 次发布
+
+发布时间：2022-12-29 01:04:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAudioModerationSyncTask](http://document.tencentcloudapi.woa.com/document/product/1219/56755)
+
+	* 新增出参：Duration
+
 
 ### 第 6 次发布
 
@@ -5179,7 +5149,7 @@
 
 新增接口：
 
-* [[CreateDiskBackup](http://document.tencentcloudapi.woa.com/document/product/362/76856)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDiskBackup](http://document.tencentcloudapi.woa.com/document/product/362/76856)
 
 ### 第 18 次发布
 
@@ -10146,6 +10116,24 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
+### 第 25 次发布
+
+发布时间：2022-12-29 01:15:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeregisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76862)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RegisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76861)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FunctionInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionInfo)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[FunctionInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionInfo))
+* [[FunctionTarget](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionTarget)](http://document.tencentcloudapi.woa.com/document/product/214/30694#[FunctionTarget](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionTarget))
+
 ### 第 24 次发布
 
 发布时间：2022-12-14 06:19:23
@@ -12097,14 +12085,14 @@
 
 新增接口：
 
-* [[AddFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76859)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76858)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[QueryFlexServiceProviderAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76857)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76859)
+* [ModifyFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76858)
+* [QueryFlexServiceProviderAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76857)
 
 新增数据结构：
 
-* [[PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult))
-* [[ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult))
+* [PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult)
+* [ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult)
 
 ### 第 49 次发布
 
@@ -13574,11 +13562,11 @@
 
 新增接口：
 
-* [[InquiryPriceRenewHosts](http://document.tencentcloudapi.woa.com/document/product/213/76860)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [InquiryPriceRenewHosts](http://document.tencentcloudapi.woa.com/document/product/213/76860)
 
 新增数据结构：
 
-* [[HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo)](http://document.tencentcloudapi.woa.com/document/product/213/15753#[HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo))
+* [HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo)
 
 ### 第 41 次发布
 
@@ -15689,6 +15677,41 @@
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 26 次发布
+
+发布时间：2022-12-29 01:22:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability))
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：InstanceRole
+
+* [CynosdbCluster](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbCluster)
+
+	* 新增成员：PhysicalZone, MasterZone, HasSlaveZone, SlaveZones, BusinessType, IsFreeze, OrderSource, Ability
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* 新增成员：LogBin, PitrType, PhysicalZone, StorageId, Storage, MaxStorageSize, MinStorageSize, StoragePayMode, DbMode, StorageLimit, Ability, CynosVersion, BusinessType, HasSlaveZone, IsFreeze, Tasks, MasterZone, SlaveZones, ProxyStatus, IsSkipTrade, IsOpenPasswordComplexity, NetworkStatus
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* 新增成员：WanIP, WanStatus
+
+* [NewAccount](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NewAccount)
+
+	* 新增成员：MaxUserConnections
+
 
 ### 第 25 次发布
 
@@ -21110,6 +21133,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 35 次发布
+
+发布时间：2022-12-29 01:29:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：ChannelTemplateId
+
 
 ### 第 34 次发布
 

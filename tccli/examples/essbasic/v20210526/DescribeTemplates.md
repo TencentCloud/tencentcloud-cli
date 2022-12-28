@@ -22,76 +22,98 @@ Output:
     "Response": {
         "Templates": [
             {
-                "Description": "测试模板",
+                "ChannelAutoSave": 0,
+                "PdfUrl": "xx",
+                "Description": "xx",
                 "Recipients": [
                     {
-                        "RecipientType": "INDIVIDUAL",
-                        "Description": "签署人信息",
+                        "RecipientType": "xx",
+                        "Description": "xx",
                         "RoutingOrder": 0,
                         "SignType": 0,
-                        "RecipientId": "yDxlTUyK***********LrHa7uB",
-                        "RequireSign": true,
+                        "RecipientId": "xx",
+                        "IsPromoter": true,
                         "RequireValidation": true,
-                        "RoleName": "个人签署方"
+                        "RoleName": "xx",
+                        "RequireSign": true
                     }
                 ],
-                "Creator": "xxx",
+                "TemplateName": "xx",
                 "CreatedOn": 1234567890,
-                "TemplateName": "测试模板",
+                "Creator": "xx",
+                "ChannelTemplateName": "xx",
                 "SignComponents": [
                     {
-                        "ComponentRecipientId": "yDxlTUyK***********Ha7uB",
-                        "ComponentValue": "",
-                        "GenerateMode": "xx",
-                        "ComponentWidth": 1.1,
+                        "ComponentValue": "xx",
                         "FileIndex": 0,
-                        "ComponentName": "文本",
-                        "ComponentDateFontSize": 0,
-                        "ComponentExtra": "",
-                        "ComponentType": "SIGN_SIGNATURE",
-                        "ComponentPage": 1,
-                        "ComponentDescription": "xx",
-                        "ComponentRequired": true,
+                        "OffsetX": 0.0,
+                        "OffsetY": 0.0,
+                        "ComponentType": "xx",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "ComponentId": "componentId_1",
-                        "DocumentId": "",
-                        "ComponentHeight": 12.142
+                        "GenerateMode": "xx",
+                        "KeywordIndexes": [
+                            0
+                        ],
+                        "ComponentDateFontSize": 0,
+                        "RelativeLocation": "xx",
+                        "ComponentHeight": 12.142,
+                        "ComponentDescription": "xx",
+                        "ComponentRequired": true,
+                        "ComponentId": "xx",
+                        "ComponentRecipientId": "xx",
+                        "KeywordPage": 0,
+                        "ComponentWidth": 1.1,
+                        "ComponentName": "xx",
+                        "ChannelComponentId": "xx",
+                        "ComponentExtra": "xx",
+                        "ComponentPage": 1,
+                        "KeywordOrder": "xx",
+                        "DocumentId": "xx"
                     }
                 ],
                 "TemplateType": 0,
                 "IsPromoter": true,
+                "PreviewUrl": "xx",
                 "Components": [
                     {
-                        "ComponentRecipientId": "yDxlTUyK***********jeCFWBefS",
-                        "ComponentValue": "yDxlTUyK***********xe8mbiVR",
-                        "GenerateMode": "",
-                        "ComponentWidth": 1.1,
+                        "ComponentValue": "xx",
                         "FileIndex": 0,
-                        "ComponentName": "盖章",
-                        "ComponentDateFontSize": 0,
-                        "ComponentExtra": "",
-                        "ComponentType": "SIGN_SEAL",
-                        "ComponentPage": 1,
-                        "ComponentDescription": "xx",
-                        "ComponentRequired": true,
+                        "OffsetX": 0.0,
+                        "OffsetY": 0.0,
+                        "ComponentType": "xx",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "ComponentId": "componentId_2",
-                        "DocumentId": "",
-                        "ComponentHeight": 12.142
+                        "GenerateMode": "xx",
+                        "KeywordIndexes": [
+                            0
+                        ],
+                        "ComponentDateFontSize": 0,
+                        "RelativeLocation": "xx",
+                        "ComponentHeight": 12.142,
+                        "ComponentDescription": "xx",
+                        "ComponentRequired": true,
+                        "ComponentId": "xx",
+                        "ComponentRecipientId": "xx",
+                        "KeywordPage": 0,
+                        "ComponentWidth": 1.1,
+                        "ComponentName": "xx",
+                        "ChannelComponentId": "xx",
+                        "ComponentExtra": "xx",
+                        "ComponentPage": 1,
+                        "KeywordOrder": "xx",
+                        "DocumentId": "xx"
                     }
                 ],
-                "PreviewUrl": "https://xxx",
-                "PdfUrl": "https://xxx",
-                "TemplateId": "yDxlTUyK***********8bbdrxhT5th",
-                "ChannelTemplateId": "yDxlTUyK***********8bbdrxhT5th"
+                "TemplateId": "xx",
+                "TemplateVersion": "xx",
+                "ChannelTemplateId": "xx"
             }
         ],
-        "RequestId": "s16xxxxx30469887",
         "TotalCount": 1,
         "Limit": 1,
-        "Offset": 0
+        "RequestId": "xx",
+        "Offset": 1
     }
 }
 ```

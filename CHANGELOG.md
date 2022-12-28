@@ -1,3 +1,112 @@
+# Release 3.0.678.1
+
+## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 7 次发布
+
+发布时间：2022-12-29 01:04:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAudioModerationSyncTask](http://document.tencentcloudapi.woa.com/document/product/1219/56755)
+
+	* 新增出参：Duration
+
+
+
+
+## 音频内容安全(ams) 版本：2020-06-08
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 25 次发布
+
+发布时间：2022-12-29 01:15:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeregisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76862)
+* [RegisterFunctionTargets](http://document.tencentcloudapi.woa.com/document/product/214/76861)
+
+新增数据结构：
+
+* [FunctionInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionInfo)
+* [FunctionTarget](http://document.tencentcloudapi.woa.com/document/product/214/30694#FunctionTarget)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 26 次发布
+
+发布时间：2022-12-29 01:22:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：InstanceRole
+
+* [CynosdbCluster](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbCluster)
+
+	* 新增成员：PhysicalZone, MasterZone, HasSlaveZone, SlaveZones, BusinessType, IsFreeze, OrderSource, Ability
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* 新增成员：LogBin, PitrType, PhysicalZone, StorageId, Storage, MaxStorageSize, MinStorageSize, StoragePayMode, DbMode, StorageLimit, Ability, CynosVersion, BusinessType, HasSlaveZone, IsFreeze, Tasks, MasterZone, SlaveZones, ProxyStatus, IsSkipTrade, IsOpenPasswordComplexity, NetworkStatus
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* 新增成员：WanIP, WanStatus
+
+* [NewAccount](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NewAccount)
+
+	* 新增成员：MaxUserConnections
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 35 次发布
+
+发布时间：2022-12-29 01:29:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75246)
+
+	* 新增入参：ChannelTemplateId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
 # Release 3.0.677.1
 
 ## 语音识别(asr) 版本：2019-06-14

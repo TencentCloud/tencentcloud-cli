@@ -1,6 +1,6 @@
 **Example 1: 删除域名 dnspod.com**
 
-
+ 
 
 Input: 
 
@@ -20,7 +20,7 @@ Output:
 
 **Example 2: 删除域名 iceice.club**
 
-
+ 
 
 Input: 
 

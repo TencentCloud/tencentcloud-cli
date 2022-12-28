@@ -208,6 +208,14 @@
         "title": "删除目标组"
       }
     ],
+    "DeregisterFunctionTargets": [
+      {
+        "document": "将一个云函数从负载均衡的转发规则上解绑。",
+        "input": "https://clb.tencentcloudapi.com/?Action=DeregisterFunctionTargets\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-d1ubsydq\n&LocationId=loc-abcd1234\n&FunctionTargets.0.Weight=66\n&FunctionTargets.0.Function.FunctionNamespace=ns_test\n&FunctionTargets.0.Function.FunctionName=name_test\n&FunctionTargets.0.Function.FunctionQualifier=version_test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
+        "title": "将云函数从转发规则上解绑"
+      }
+    ],
     "DeregisterTargetGroupInstances": [
       {
         "document": "",
@@ -650,6 +658,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetWeight\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-d1ubsydq\n&Targets.0.InstanceId=ins-dm4xtz0i\n&Targets.0.Port=334\n&Weight=8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85c7b3e8-7fd8-4c62-8b3b-7ba52d7a1dca\"\n    }\n}",
         "title": "修改四层监听器上绑定的后端服务的权重"
+      }
+    ],
+    "RegisterFunctionTargets": [
+      {
+        "document": "将一个云函数绑定到负载均衡实例的7层转发规则上。",
+        "input": "https://clb.tencentcloudapi.com/?Action=RegisterFunctionTargets\n&LoadBalancerId=lb-cuxw****\n&ListenerId=lbl-d1ub****\n&LocationId=loc-abcd1234\n&FunctionTargets.0.Weight=66\n&FunctionTargets.0.Function.FunctionNamespace=ns_test\n&FunctionTargets.0.Function.FunctionName=name_test\n&FunctionTargets.0.Function.FunctionQualifier=version_test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
+        "title": "绑定云函数到转发规则上"
       }
     ],
     "RegisterTargetGroupInstances": [

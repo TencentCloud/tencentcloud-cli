@@ -2986,6 +2986,16 @@
           "required": false,
           "type": "bool",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "渠道模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelTemplateId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

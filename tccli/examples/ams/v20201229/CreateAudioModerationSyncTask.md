@@ -40,7 +40,8 @@ Output:
         "MoanResults": [],
         "LanguageResults": [],
         "SpeakerResults": [],
-        "RecognitionResults": []
+        "RecognitionResults": [],
+        "Duration": "15000"
     }
 }
 ```
