@@ -318,6 +318,12 @@
       "name": "修改实例计费模式询价",
       "output": "InquiryPriceModifyInstancesChargeTypeResponse"
     },
+    "InquiryPriceRenewHosts": {
+      "document": "本接口 (InquiryPriceRenewHosts) 用于续费包年包月`CDH`实例询价。\n* 只支持查询包年包月`CDH`实例的续费价格。",
+      "input": "InquiryPriceRenewHostsRequest",
+      "name": "续费CDH实例询价",
+      "output": "InquiryPriceRenewHostsResponse"
+    },
     "InquiryPriceRenewInstances": {
       "document": "本接口 (InquiryPriceRenewInstances) 用于续费包年包月实例询价。\n\n* 只支持查询包年包月实例的续费价格。",
       "input": "InquiryPriceRenewInstancesRequest",
@@ -4464,6 +4470,21 @@
       ],
       "usage": "out"
     },
+    "HostPriceInfo": {
+      "document": "cdh相关价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "描述了cdh实例相关的价格信息",
+          "member": "ItemPrice",
+          "name": "HostPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HostResource": {
       "document": "专用宿主机实例的资源信息",
       "members": [
@@ -5153,6 +5174,56 @@
           "member": "Price",
           "name": "Price",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewHostsRequest": {
+      "document": "InquiryPriceRenewHosts请求参数结构体",
+      "members": [
+        {
+          "document": "一个或多个待操作的`CDH`实例`ID`。可通过[`DescribeHosts`](https://cloud.tencent.com/document/api/213/16474)接口返回值中的`HostId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"host-xxxxxxxx\"]",
+          "member": "string",
+          "name": "HostIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
+          "example": "无",
+          "member": "ChargePrepaid",
+          "name": "HostChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "document": "试运行，测试使用，不执行具体逻辑。取值范围：<br><li>TRUE：跳过执行逻辑<br><li>FALSE：执行逻辑<br><br>默认取值：FALSE。",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewHostsResponse": {
+      "document": "InquiryPriceRenewHosts返回参数结构体",
+      "members": [
+        {
+          "document": "CDH实例续费价格信息",
+          "example": "无",
+          "member": "HostPriceInfo",
+          "name": "Price",
           "type": "object",
           "value_allowed_null": false
         },

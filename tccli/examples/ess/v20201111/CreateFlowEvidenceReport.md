@@ -19,8 +19,8 @@ Output:
 {
     "Response": {
         "ReportUrl": "",
-        "ReportId": "yDRspUUgyg17sqr1Uur7PA0xEQpJXh2b",
-        "RequestId": "s1667977123504693616",
+        "ReportId": "yDRspUUgxxxx7PA0xEQpJXh2b",
+        "RequestId": "s1667xxx04693616",
         "Status": "EvidenceStatusSuccess"
     }
 }

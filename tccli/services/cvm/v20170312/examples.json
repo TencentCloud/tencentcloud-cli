@@ -454,6 +454,14 @@
         "title": "切换实例的计费模式询价"
       }
     ],
+    "InquiryPriceRenewHosts": [
+      {
+        "document": "续费CDH实例询价",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceRenewHosts\r\n&HostChargePrepaid.Period=1\r\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&HostIds.0=host-ey16rkyg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"HostPrice\": {\n                \"OriginalPrice\": 37050.0,\n                \"DiscountPrice\": 37050.0\n            }\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "续费CDH实例询价"
+      }
+    ],
     "InquiryPriceRenewInstances": [
       {
         "document": "",

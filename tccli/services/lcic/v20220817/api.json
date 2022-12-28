@@ -296,7 +296,6 @@
       "document": "CreateRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "房间名称。",
           "example": "房间名称",
           "member": "string",
@@ -305,7 +304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "预定的房间开始时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -314,7 +312,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "预定的房间结束时间，unix时间戳。",
           "example": "1659600138",
           "member": "uint64",
@@ -323,7 +320,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
@@ -332,7 +328,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
@@ -341,8 +336,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "最大连麦人数（不包括老师）。取值范围[0, 17)",
+          "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -350,7 +344,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\ncoteaching 双师",
           "example": "abc",
           "member": "string",
@@ -359,8 +352,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "老师ID。",
+          "document": "老师ID。通过[注册用户]接口获取的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
           "member": "string",
           "name": "TeacherId",
@@ -368,7 +360,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦",
           "example": "1",
           "member": "uint64",
@@ -377,7 +368,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质",
           "example": "1",
           "member": "uint64",
@@ -386,7 +376,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制",
           "example": "1",
           "member": "uint64",
@@ -395,8 +384,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "助教Id列表。",
+          "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
           "example": "无",
           "member": "string",
           "name": "Assistants",
@@ -404,7 +392,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "录制布局。",
           "example": "1",
           "member": "uint64",
@@ -423,7 +410,6 @@
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

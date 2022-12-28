@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "ReportUrl": "",
-        "RequestId": "s1667977123504693616",
+        "RequestId": "s16679771xxxx693616",
         "Status": "EvidenceStatusSuccess"
     }
 }

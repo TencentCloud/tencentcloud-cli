@@ -202,6 +202,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控制台类型，api调用时默认null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionTypeMC",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不同语言的地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "South China",
+          "member": "string",
+          "name": "LocationMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "控制台展示的地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionNameMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RegionIdMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -264,6 +304,66 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "父级可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "父级可用区描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParentZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "zone类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ZoneType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "控制台类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "公有云",
+          "member": "string",
+          "name": "MachineRoomTypeMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "和ZoneId一样，适用于控制台调用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ZoneIdMC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

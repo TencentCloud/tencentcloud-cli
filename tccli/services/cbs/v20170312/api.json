@@ -36,6 +36,12 @@
       "name": "创建定期快照策略",
       "output": "CreateAutoSnapshotPolicyResponse"
     },
+    "CreateDiskBackup": {
+      "document": "为云硬盘创建一个备份点。",
+      "input": "CreateDiskBackupRequest",
+      "name": "创建云硬盘备份点",
+      "output": "CreateDiskBackupResponse"
+    },
     "CreateDisks": {
       "document": "本接口（CreateDisks）用于创建云硬盘。\n\n* 预付费云盘的购买会预先扣除本次云盘购买所需金额，在调用本接口前请确保账户余额充足。\n* 本接口支持传入数据盘快照来创建云盘，实现将快照数据复制到新购云盘上。\n* 本接口为异步接口，当创建请求下发成功后会返回一个新建的云盘ID列表，此时云盘的创建并未立即完成。可以通过调用[DescribeDisks](/document/product/362/16315)接口根据DiskId查询对应云盘，如果能查到云盘，且状态为'UNATTACHED'或'ATTACHED'，则表示创建成功。",
       "input": "CreateDisksRequest",
@@ -891,6 +897,51 @@
           "example": "2018-08-08 16:00:00",
           "member": "string",
           "name": "NextTriggerTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDiskBackupRequest": {
+      "document": "CreateDiskBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要创建备份点的云硬盘名称。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点名称。长度不能超过100个字符。",
+          "example": "未命名",
+          "member": "string",
+          "name": "DiskBackupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDiskBackupResponse": {
+      "document": "CreateDiskBackup返回参数结构体",
+      "members": [
+        {
+          "document": "云硬盘备份点的ID。",
+          "example": "dbp-xxxxxxxx",
+          "member": "string",
+          "name": "DiskBackupId",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -15,6 +15,12 @@ Output:
     "Response": {
         "RequestId": "f5a67ce9-74a4-4825-9e0b-e9c13ef12463",
         "Template": {
+            "Tags": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xxxxx"
+                }
+            ],
             "TemplateId": 509,
             "TemplateTitle": "test",
             "TemplateDescription": "test",

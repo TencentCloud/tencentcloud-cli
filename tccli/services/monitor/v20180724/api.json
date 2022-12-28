@@ -10695,7 +10695,7 @@
           "default": "",
           "document": "更新时间",
           "example": "2021-03-11T16:54:33+08:00",
-          "member": "date",
+          "member": "datetime_iso",
           "name": "UpdatedAt",
           "required": true,
           "type": "string",
@@ -10728,7 +10728,7 @@
           "member": "string",
           "name": "OrgIds",
           "required": true,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -10738,7 +10738,7 @@
           "member": "string",
           "name": "OrganizationIds",
           "required": true,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": true
         }
       ],

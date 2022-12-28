@@ -54,6 +54,9 @@ Output:
                         ]
                     }
                 ],
+                "Tags": [
+                    "tag1"
+                ],
                 "Status": "disable"
             },
             {
@@ -94,6 +97,9 @@ Output:
                             }
                         ]
                     }
+                ],
+                "Tags": [
+                    "tag2"
                 ],
                 "Status": "disable"
             }

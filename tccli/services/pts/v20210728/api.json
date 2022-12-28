@@ -1422,6 +1422,15 @@
           "name": "DomainNameConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "创建人名",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3591,7 +3600,6 @@
       "document": "DescribeScenarioWithJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "example": "1",
           "member": "int64",
@@ -3600,7 +3608,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大为100",
           "example": "10",
           "member": "int64",
@@ -3609,7 +3616,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
           "member": "string",
@@ -3618,7 +3624,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "场景ID数组",
           "example": "[\"scenario-xx\"]",
           "member": "string",
@@ -3627,7 +3632,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "场景名",
           "example": "test",
           "member": "string",
@@ -3636,7 +3640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "场景状态数组",
           "example": "[1,2]",
           "member": "int64",
@@ -3645,7 +3648,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序的列",
           "example": "status",
           "member": "string",
@@ -3654,7 +3656,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否正序",
           "example": "true/false",
           "member": "bool",
@@ -3663,7 +3664,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "job相关参数",
           "example": "无",
           "member": "ScenarioRelatedJobsParams",
@@ -3672,7 +3672,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否需要返回场景的脚本内容",
           "example": "true",
           "member": "bool",
@@ -3681,13 +3680,28 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否需要返回测试数据文件信息",
           "example": "true",
           "member": "bool",
           "name": "IgnoreDataset",
           "required": false,
           "type": "bool"
+        },
+        {
+          "document": "场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter\t",
+          "example": "pts-xx",
+          "member": "string",
+          "name": "ScenarioType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "创建人员",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3700,7 +3714,6 @@
           "example": "无",
           "member": "ScenarioWithJobs",
           "name": "ScenarioWithJobsSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3709,7 +3722,6 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5867,7 +5879,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6007,7 +6019,7 @@
           "example": "123",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6017,7 +6029,7 @@
           "example": "xx",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6027,7 +6039,7 @@
           "example": "xx",
           "member": "string",
           "name": "SubAccountUin",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6037,7 +6049,7 @@
           "example": "无",
           "member": "ScriptInfo",
           "name": "TestScripts",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6047,7 +6059,7 @@
           "example": "无",
           "member": "ProtocolInfo",
           "name": "Protocols",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6057,7 +6069,7 @@
           "example": "无",
           "member": "FileInfo",
           "name": "RequestFiles",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6067,7 +6079,7 @@
           "example": "无",
           "member": "SLAPolicy",
           "name": "SLAPolicy",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6077,7 +6089,7 @@
           "example": "无",
           "member": "FileInfo",
           "name": "Plugins",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6087,7 +6099,7 @@
           "example": "无",
           "member": "DomainNameConfig",
           "name": "DomainNameConfig",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6097,8 +6109,18 @@
           "example": "无",
           "member": "NotificationHook",
           "name": "NotificationHooks",
-          "required": true,
+          "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6821,7 +6843,6 @@
       "document": "UpdateScenario请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "场景ID",
           "example": "scenario-xx",
           "member": "string",
@@ -6830,7 +6851,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "场景名",
           "example": "test",
           "member": "string",
@@ -6839,7 +6859,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "场景描述",
           "example": "this is a test scenario",
           "member": "string",
@@ -6848,7 +6867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "压测引擎类型",
           "example": "k6",
           "member": "string",
@@ -6857,7 +6875,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "施压配置",
           "example": "无",
           "member": "Load",
@@ -6866,7 +6883,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "deprecated",
           "example": "WyJhYmMiLCAiZGVmIl0K",
           "member": "string",
@@ -6875,7 +6891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "deprecated",
           "example": "[\"a.prop\",\"b.prop\"]",
           "member": "string",
@@ -6884,7 +6899,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "测试数据集",
           "example": "无",
           "member": "TestData",
@@ -6893,7 +6907,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "deprecated",
           "example": "[\"a.jar\",\"b.jar\"]",
           "member": "string",
@@ -6902,7 +6915,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "SLA规则ID",
           "example": "sla-xx",
           "member": "string",
@@ -6911,7 +6923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "cron job ID",
           "example": "cron-xx",
           "member": "string",
@@ -6920,7 +6931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "场景状态（注：现已无需传递该参数）",
           "example": "2",
           "member": "int64",
@@ -6929,7 +6939,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "项目ID",
           "example": "project-xx",
           "member": "string",
@@ -6938,7 +6947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "测试脚本路径",
           "example": "无",
           "member": "ScriptInfo",
@@ -6947,7 +6955,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "协议文件路径",
           "example": "无",
           "member": "ProtocolInfo",
@@ -6956,7 +6963,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "请求文件路径",
           "example": "无",
           "member": "FileInfo",
@@ -6965,7 +6971,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "SLA 策略",
           "example": "无",
           "member": "SLAPolicy",
@@ -6974,7 +6979,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "拓展包文件路径",
           "example": "无",
           "member": "FileInfo",
@@ -6983,7 +6987,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "域名解析配置",
           "example": "无",
           "member": "DomainNameConfig",
@@ -6992,13 +6995,20 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "WebHook请求配置",
           "example": "无",
           "member": "Notification",
           "name": "NotificationHooks",
           "required": false,
           "type": "list"
+        },
+        {
+          "document": "创建人名",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

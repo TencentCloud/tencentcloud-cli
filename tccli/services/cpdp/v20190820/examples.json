@@ -8,6 +8,14 @@
         "title": "添加合同接口成功示例"
       }
     ],
+    "AddFlexFundingAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddFlexFundingAccount\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"FundingAccountType\": \"PINGAN_BANK\",\n    \"FundingAccountName\": \"张三\",\n    \"FundingAccountNo\": \"632xxxxxxxx123\",\n    \"BankBranchName\": \"中国平安银行xx支行\",\n    \"PhoneNo\": \"134xxx1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {},\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "绑定收款用户资金账号信息"
+      }
+    ],
     "AddFlexIdInfo": [
       {
         "document": "",
@@ -758,6 +766,14 @@
         "title": "ModifyBindedAccount"
       }
     ],
+    "ModifyFlexFundingAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlexFundingAccount\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"FundingAccountBindSerialNo\": \"1529657731805986816\",\n    \"FundingAccountType\": \"PINGAN_BANK\",\n    \"FundingAccountName\": \"张三\",\n    \"FundingAccountNo\": \"632xxxxxxxx123\",\n    \"BankBranchName\": \"中国平安银行xx支行\",\n    \"PhoneNo\": \"134xxx1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": null,\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "修改收款用户资金账号信息"
+      }
+    ],
     "ModifyFlexPayeeAccountRightStatus": [
       {
         "document": "",
@@ -1106,6 +1122,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPlatformAccountBalance\n<公共请求参数>\n\n{\n    \"IncomeType\": \"OCCASION\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"IncomeType\": null,\n            \"Balance\": \"331300.89\",\n            \"PayableBalance\": \"331.89\",\n            \"InPayBalance\": \"448.00\",\n            \"SystemFreezeBalance\": \"0.00\",\n            \"ManualFreezeBalance\": \"9.00\"\n        },\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
         "title": "查询账户余额"
+      }
+    ],
+    "QueryFlexServiceProviderAccountBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexServiceProviderAccountBalance\n<公共请求参数>\n\n{\n    \"ServiceProviderId\": \"CM61695xxx1840\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"Balance\": \"1.99\"\n        },\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "查询服务商账户余额"
       }
     ],
     "QueryFlexSettlementOrderList": [

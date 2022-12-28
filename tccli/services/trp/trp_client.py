@@ -121,7 +121,7 @@ def doDescribeCustomRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTraceDataRanks(args, parsed_globals):
+def doDescribeTraceCodes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -150,11 +150,11 @@ def doModifyTraceDataRanks(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTraceDataRanksRequest()
+    model = models.DescribeTraceCodesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyTraceDataRanks(model)
+        rsp = client.DescribeTraceCodes(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -173,7 +173,7 @@ def doModifyTraceDataRanks(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCustomRuleById(args, parsed_globals):
+def doModifyProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -202,11 +202,11 @@ def doDescribeCustomRuleById(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCustomRuleByIdRequest()
+    model = models.ModifyProductRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCustomRuleById(model)
+        rsp = client.ModifyProduct(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -329,7 +329,7 @@ def doDescribeCodeBatchById(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTraceCodes(args, parsed_globals):
+def doModifyTraceDataRanks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -358,11 +358,11 @@ def doDescribeTraceCodes(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTraceCodesRequest()
+    model = models.ModifyTraceDataRanksRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeTraceCodes(model)
+        rsp = client.ModifyTraceDataRanks(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -745,7 +745,7 @@ def doModifyTraceData(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyProduct(args, parsed_globals):
+def doDescribeCustomRuleById(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -774,11 +774,11 @@ def doModifyProduct(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyProductRequest()
+    model = models.DescribeCustomRuleByIdRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyProduct(model)
+        rsp = client.DescribeCustomRuleById(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1733,7 +1733,7 @@ def doCreateTraceData(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMerchant(args, parsed_globals):
+def doCreateCodePack(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1762,11 +1762,63 @@ def doCreateMerchant(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMerchantRequest()
+    model = models.CreateCodePackRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateMerchant(model)
+        rsp = client.CreateCodePack(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyTraceCodeUnlink(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTraceCodeUnlinkRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyTraceCodeUnlink(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2045,7 +2097,7 @@ def doDescribeMerchants(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCodePack(args, parsed_globals):
+def doCreateMerchant(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2074,11 +2126,11 @@ def doCreateCodePack(args, parsed_globals):
     client = mod.TrpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCodePackRequest()
+    model = models.CreateMerchantRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCodePack(model)
+        rsp = client.CreateMerchant(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2162,11 +2214,11 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DescribeTraceCodeById": doDescribeTraceCodeById,
     "DescribeCustomRules": doDescribeCustomRules,
-    "ModifyTraceDataRanks": doModifyTraceDataRanks,
-    "DescribeCustomRuleById": doDescribeCustomRuleById,
+    "DescribeTraceCodes": doDescribeTraceCodes,
+    "ModifyProduct": doModifyProduct,
     "CreateTraceCodesAsync": doCreateTraceCodesAsync,
     "DescribeCodeBatchById": doDescribeCodeBatchById,
-    "DescribeTraceCodes": doDescribeTraceCodes,
+    "ModifyTraceDataRanks": doModifyTraceDataRanks,
     "DescribeCodesByPack": doDescribeCodesByPack,
     "DescribeMerchantById": doDescribeMerchantById,
     "CreateProduct": doCreateProduct,
@@ -2174,7 +2226,7 @@ ACTION_MAP = {
     "DescribeCorpQuotas": doDescribeCorpQuotas,
     "ModifyCustomRule": doModifyCustomRule,
     "ModifyTraceData": doModifyTraceData,
-    "ModifyProduct": doModifyProduct,
+    "DescribeCustomRuleById": doDescribeCustomRuleById,
     "ModifyCustomRuleStatus": doModifyCustomRuleStatus,
     "DescribeProductById": doDescribeProductById,
     "DescribeTmpToken": doDescribeTmpToken,
@@ -2193,13 +2245,14 @@ ACTION_MAP = {
     "DescribeCodePackUrl": doDescribeCodePackUrl,
     "DeleteTraceData": doDeleteTraceData,
     "CreateTraceData": doCreateTraceData,
-    "CreateMerchant": doCreateMerchant,
+    "CreateCodePack": doCreateCodePack,
+    "ModifyTraceCodeUnlink": doModifyTraceCodeUnlink,
     "DescribeTraceDataList": doDescribeTraceDataList,
     "ModifyTraceCode": doModifyTraceCode,
     "DescribeCodePacks": doDescribeCodePacks,
     "ModifyCodeBatch": doModifyCodeBatch,
     "DescribeMerchants": doDescribeMerchants,
-    "CreateCodePack": doCreateCodePack,
+    "CreateMerchant": doCreateMerchant,
     "DescribeJobFileUrl": doDescribeJobFileUrl,
 
 }

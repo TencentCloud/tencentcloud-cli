@@ -266,7 +266,7 @@
     ],
     "ModifyCodeBatch": [
       {
-        "document": "",
+        "document": "激活批次",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改批次状态"
@@ -310,6 +310,14 @@
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceCode\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改码包"
+      }
+    ],
+    "ModifyTraceCodeUnlink": [
+      {
+        "document": "解绑溯源码和批次的关系",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceCodeUnlink\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Codes\": [\n        \"https://anxin.m.qq.com/qr/3a9avhhvk4oyqb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"UnlinkCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"CodeCnt\": 1\n    }\n}",
+        "title": "解绑溯源码和批次的关系"
       }
     ],
     "ModifyTraceData": [

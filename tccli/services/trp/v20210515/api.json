@@ -234,6 +234,12 @@
       "name": "修改二维码的状态",
       "output": "ModifyTraceCodeResponse"
     },
+    "ModifyTraceCodeUnlink": {
+      "document": "解绑溯源码和批次的关系，让溯源码重置为未关联的状态，以便关联其他批次\n注意：溯源码必须属于指定的批次才会解绑",
+      "input": "ModifyTraceCodeUnlinkRequest",
+      "name": "解绑溯源码和批次的关系",
+      "output": "ModifyTraceCodeUnlinkResponse"
+    },
     "ModifyTraceData": {
       "document": "修改溯源信息",
       "input": "ModifyTraceDataRequest",
@@ -3330,7 +3336,6 @@
       "document": "ModifyCodeBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "批次ID",
           "example": "abc",
           "member": "string",
@@ -3339,7 +3344,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "企业ID",
           "example": "1",
           "member": "uint64",
@@ -3348,7 +3352,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "状态 0: 未激活 1: 已激活 -1: 已冻结",
           "example": "1",
           "member": "int64",
@@ -3357,8 +3360,7 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "模版ID，或者活动ID",
+          "document": "模板ID，或者活动ID",
           "example": "abc",
           "member": "string",
           "name": "MpTpl",
@@ -3366,7 +3368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "商户ID",
           "example": "1",
           "member": "string",
@@ -3375,7 +3376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "商品ID",
           "example": "1",
           "member": "string",
@@ -3384,7 +3384,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注",
           "example": "abc",
           "member": "string",
@@ -3393,7 +3392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "批次编码，业务字段不判断唯一性",
           "example": "202210",
           "member": "string",
@@ -3412,7 +3410,6 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3758,6 +3755,78 @@
     "ModifyTraceCodeResponse": {
       "document": "ModifyTraceCode返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeUnlinkRequest": {
+      "document": "ModifyTraceCodeUnlink请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批次ID",
+          "example": "aaa",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "溯源码列表",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "Codes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraceCodeUnlinkResponse": {
+      "document": "ModifyTraceCodeUnlink返回参数结构体",
+      "members": [
+        {
+          "document": "成功解绑溯源码的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnlinkCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前批次的码数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "CodeCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批次ID",
+          "example": "xx",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

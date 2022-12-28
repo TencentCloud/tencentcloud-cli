@@ -49,7 +49,7 @@
       "output": "CreateFlowByFilesResponse"
     },
     "CreateFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 ID。",
+      "document": "创建出证报告，返回报告 ID。需要配合出证套餐才能调用。\n出证需要一定时间，建议调用创建出证24小时之后再通过DescribeFlowEvidenceReport进行查询。",
       "input": "CreateFlowEvidenceReportRequest",
       "name": "创建并返回出证报告",
       "output": "CreateFlowEvidenceReportResponse"
@@ -1358,19 +1358,10 @@
       "document": "CreateFlowEvidenceReport返回参数结构体",
       "members": [
         {
-          "document": "出证报告 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ReportId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "废除，字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://file.xxx",
-          "member": "string",
-          "name": "ReportUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1383,6 +1374,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "废除，字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://file.xxx",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

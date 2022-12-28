@@ -18,7 +18,7 @@
     ],
     "CreateRoom": [
       {
-        "document": "",
+        "document": "创建上课房间",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"AutoMic\": 1,\n    \"Name\": \"xx\",\n    \"AudioQuality\": 1,\n    \"MaxMicNumber\": 1,\n    \"SubType\": \"xx\",\n    \"SdkAppId\": 1,\n    \"StartTime\": 1,\n    \"TeacherId\": \"xx\",\n    \"EndTime\": 1,\n    \"Resolution\": 1,\n    \"DisableRecord\": 1,\n    \"Assistants\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RoomId\": 301234567,\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "创建房间"

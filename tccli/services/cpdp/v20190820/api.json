@@ -6,6 +6,12 @@
       "name": "云支付-添加合同接口",
       "output": "AddContractResponse"
     },
+    "AddFlexFundingAccount": {
+      "document": "灵云V2-绑定收款用户资金账号信息",
+      "input": "AddFlexFundingAccountRequest",
+      "name": "灵云V2-绑定收款用户资金账号信息",
+      "output": "AddFlexFundingAccountResponse"
+    },
     "AddFlexIdInfo": {
       "document": "灵云V2-补充证件信息",
       "input": "AddFlexIdInfoRequest",
@@ -528,6 +534,12 @@
       "name": "灵云-重新绑定账号",
       "output": "ModifyBindedAccountResponse"
     },
+    "ModifyFlexFundingAccount": {
+      "document": "灵云V2-修改收款用户资金账号信息",
+      "input": "ModifyFlexFundingAccountRequest",
+      "name": "灵云V2-修改收款用户资金账号信息",
+      "output": "ModifyFlexFundingAccountResponse"
+    },
     "ModifyFlexPayeeAccountRightStatus": {
       "document": "灵云V2-收款用户账户权益状态修改",
       "input": "ModifyFlexPayeeAccountRightStatusRequest",
@@ -785,6 +797,12 @@
       "input": "QueryFlexPlatformAccountBalanceRequest",
       "name": "灵云V2-平台账户余额查询",
       "output": "QueryFlexPlatformAccountBalanceResponse"
+    },
+    "QueryFlexServiceProviderAccountBalance": {
+      "document": "灵云V2-查询服务商账户余额",
+      "input": "QueryFlexServiceProviderAccountBalanceRequest",
+      "name": "灵云V2-查询服务商账户余额",
+      "output": "QueryFlexServiceProviderAccountBalanceResponse"
     },
     "QueryFlexSettlementOrderList": {
       "document": "灵云V2-查询结算订单列表",
@@ -1706,6 +1724,114 @@
         }
       ],
       "usage": "out"
+    },
+    "AddFlexFundingAccountRequest": {
+      "document": "AddFlexFundingAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资金账户类型\nPINGAN_BANK:平安银行",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户姓名",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户号",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户手机号",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开户支行名",
+          "example": "无",
+          "member": "string",
+          "name": "BankBranchName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddFlexFundingAccountResponse": {
+      "document": "AddFlexFundingAccount返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeFundingAccountResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddFlexIdInfoRequest": {
       "document": "AddFlexIdInfo请求参数结构体",
@@ -18753,6 +18879,123 @@
       ],
       "type": "object"
     },
+    "ModifyFlexFundingAccountRequest": {
+      "document": "ModifyFlexFundingAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款用户资金账户ID",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountBindSerialNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资金账户类型\nPINGAN_BANK:平安银行",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户手机号",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户姓名",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款资金账户号",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开户支行名",
+          "example": "无",
+          "member": "string",
+          "name": "BankBranchName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlexFundingAccountResponse": {
+      "document": "ModifyFlexFundingAccount返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyFlexPayeeAccountRightStatusRequest": {
       "document": "ModifyFlexPayeeAccountRightStatus请求参数结构体",
       "members": [
@@ -22006,6 +22249,22 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeFundingAccountResult": {
+      "document": "收款用户资金账户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资金账户ID",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountBindSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -26874,6 +27133,69 @@
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PlatformAccountBalanceResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexServiceProviderAccountBalanceRequest": {
+      "document": "QueryFlexServiceProviderAccountBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务商ID",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceProviderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexServiceProviderAccountBalanceResponse": {
+      "document": "QueryFlexServiceProviderAccountBalance返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceProviderAccountBalanceResult",
           "name": "Result",
           "required": true,
           "type": "object",
@@ -37659,6 +37981,22 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceProviderAccountBalanceResult": {
+      "document": "服务商账户余额返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务商账户余额",
+          "example": "无",
+          "member": "string",
+          "name": "Balance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
