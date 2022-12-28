@@ -1,34 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+## 语音识别(asr) 版本：2019-06-14
 
 ### 第 8 次发布
 
-发布时间：2022-12-27 01:33:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeProxyProcessStatistics](http://document.tencentcloudapi.woa.com/document/product/1130/76855)
-
-新增数据结构：
-
-* [ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 28 次发布
-
-发布时间：2022-12-27 02:01:19
+发布时间：2022-12-28 01:06:43
 
 本次发布包含了以下内容：
 
@@ -36,32 +12,142 @@
 
 修改接口：
 
-* [CreateRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/63428)
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
 
-	* 新增入参：GroupType, RetryMaxTimes
+	* 新增入参：SentenceMaxLength
 
-* [DescribeRocketMQGroups](http://document.tencentcloudapi.woa.com/document/product/1179/63420)
 
-	* 新增入参：Types
 
-* [ModifyRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/63416)
 
-	* 新增入参：RetryMaxTimes
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 19 次发布
+
+发布时间：2022-12-28 01:07:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDiskBackup](http://document.tencentcloudapi.woa.com/document/product/362/76856)
+
+
+
+## 企业收付平台(cpdp) 版本：2019-08-20
+
+### 第 50 次发布
+
+发布时间：2022-12-28 11:00:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76859)
+* [ModifyFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76858)
+* [QueryFlexServiceProviderAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76857)
+
+新增数据结构：
+
+* [PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult)
+* [ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult)
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 42 次发布
+
+发布时间：2022-12-28 01:08:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InquiryPriceRenewHosts](http://document.tencentcloudapi.woa.com/document/product/213/76860)
+
+新增数据结构：
+
+* [HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo)
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 38 次发布
+
+发布时间：2022-12-28 12:13:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GrafanaNotificationChannel](http://document.tencentcloudapi.woa.com/document/product/248/30354#GrafanaNotificationChannel)
+
+	* <font color="#dd0000">**修改成员**：</font>UpdatedAt, OrgIds, OrganizationIds
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 14 次发布
+
+发布时间：2022-12-28 12:27:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75220)
+
+	* 新增入参：Owner
+
+* [DescribeScenarioWithJobs](http://document.tencentcloudapi.woa.com/document/product/1597/75195)
+
+	* 新增入参：ScenarioType, Owner
+
+* [UpdateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75184)
+
+	* 新增入参：Owner
 
 
 修改数据结构：
 
-* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
 
-	* 新增成员：Status, IsolateTime, HttpPublicEndpoint, HttpVpcEndpoint
+	* 新增成员：Owner
 
-	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Region, CreateTime, Remark, PublicEndPoint, VpcEndPoint, SupportNamespaceEndpoint, Vpcs, IsVip, RocketMQFlag
+	* <font color="#dd0000">**修改成员**：</font>Name, AppId, Uin, SubAccountUin, TestScripts, Protocols, RequestFiles, SLAPolicy, Plugins, DomainNameConfig, NotificationHooks
 
-* [RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQGroup)
 
-	* 新增成员：GroupType, RetryMaxTimes
 
-	* <font color="#dd0000">**修改成员**：</font>Name, ConsumerNum, TPS, TotalAccumulative, ConsumptionMode, ReadEnabled, RetryPartitionNum, CreateTime, UpdateTime, ClientProtocol, Remark, ConsumerType, BroadcastEnabled
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 19 次发布
+
+发布时间：2022-12-28 12:36:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：AutoRenewFlag
 
 
 
@@ -2897,6 +2983,21 @@
 
 ## 语音识别(asr) 版本：2019-06-14
 
+### 第 8 次发布
+
+发布时间：2022-12-28 01:06:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：SentenceMaxLength
+
+
 ### 第 7 次发布
 
 发布时间：2022-11-28 06:08:56
@@ -5067,6 +5168,18 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 19 次发布
+
+发布时间：2022-12-28 01:07:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateDiskBackup](http://document.tencentcloudapi.woa.com/document/product/362/76856)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 18 次发布
 
@@ -11974,6 +12087,25 @@
 
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
+### 第 50 次发布
+
+发布时间：2022-12-28 11:00:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76859)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyFlexFundingAccount](http://document.tencentcloudapi.woa.com/document/product/1122/76858)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryFlexServiceProviderAccountBalance](http://document.tencentcloudapi.woa.com/document/product/1122/76857)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[PayeeFundingAccountResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#PayeeFundingAccountResult))
+* [[ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult)](http://document.tencentcloudapi.woa.com/document/product/1122/40683#[ServiceProviderAccountBalanceResult](http://document.tencentcloudapi.woa.com/document/product/1122/40683#ServiceProviderAccountBalanceResult))
+
 ### 第 49 次发布
 
 发布时间：2022-12-15 06:18:38
@@ -13431,6 +13563,22 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 42 次发布
+
+发布时间：2022-12-28 01:08:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[InquiryPriceRenewHosts](http://document.tencentcloudapi.woa.com/document/product/213/76860)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo)](http://document.tencentcloudapi.woa.com/document/product/213/15753#[HostPriceInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostPriceInfo))
 
 ### 第 41 次发布
 
@@ -16550,11 +16698,11 @@
 
 新增接口：
 
-* [[DescribeProxyProcessStatistics](http://document.tencentcloudapi.woa.com/document/product/1130/76855)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeProxyProcessStatistics](http://document.tencentcloudapi.woa.com/document/product/1130/76855)
 
 新增数据结构：
 
-* [[ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic))
+* [ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)
 
 ### 第 7 次发布
 
@@ -28203,6 +28351,21 @@
 
 ## 云监控(monitor) 版本：2018-07-24
 
+### 第 38 次发布
+
+发布时间：2022-12-28 12:13:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GrafanaNotificationChannel](http://document.tencentcloudapi.woa.com/document/product/248/30354#GrafanaNotificationChannel)
+
+	* <font color="#dd0000">**修改成员**：</font>UpdatedAt, OrgIds, OrganizationIds
+
+
 ### 第 37 次发布
 
 发布时间：2022-12-21 01:46:14
@@ -32804,6 +32967,38 @@
 
 ## 云压测(pts) 版本：2021-07-28
 
+### 第 14 次发布
+
+发布时间：2022-12-28 12:27:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75220)
+
+	* 新增入参：Owner
+
+* [DescribeScenarioWithJobs](http://document.tencentcloudapi.woa.com/document/product/1597/75195)
+
+	* 新增入参：ScenarioType, Owner
+
+* [UpdateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75184)
+
+	* 新增入参：Owner
+
+
+修改数据结构：
+
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
+
+	* 新增成员：Owner
+
+	* <font color="#dd0000">**修改成员**：</font>Name, AppId, Uin, SubAccountUin, TestScripts, Protocols, RequestFiles, SLAPolicy, Plugins, DomainNameConfig, NotificationHooks
+
+
 ### 第 13 次发布
 
 发布时间：2022-12-08 06:57:28
@@ -36004,6 +36199,21 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 19 次发布
+
+发布时间：2022-12-28 12:36:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：AutoRenewFlag
+
 
 ### 第 18 次发布
 

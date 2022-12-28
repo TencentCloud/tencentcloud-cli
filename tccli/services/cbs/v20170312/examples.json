@@ -48,6 +48,14 @@
         "title": "创建定期快照策略"
       }
     ],
+    "CreateDiskBackup": [
+      {
+        "document": "为拥有备份点配额的云硬盘手动创建一个云硬盘备份点。",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDiskBackup\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskBackupId\": \"dbp-xxxxxxxx\",\n        \"RequestId\": \"a79a4333-ac8e-426c-8cfe-2923c4010d64\"\n    }\n}",
+        "title": "创建云硬盘备份点"
+      }
+    ],
     "CreateDisks": [
       {
         "document": "新购云盘具体配置如下：云盘所在位置为广州二区，云盘大小50GB，云盘类型为普通云盘，所属项目ID为0，付费模式为预付费，购买时长1个月，通知过期且自动续费。",

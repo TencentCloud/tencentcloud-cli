@@ -770,16 +770,18 @@
           "member": "uint64",
           "name": "International",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。\n<dx-alert infotype=\"notice\" title=\"注意\">默认数组长度最大100</dx-alert>",
+          "document": "模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。\n<dx-alert infotype=\"notice\" title=\"注意\">默认数组长度最大100</dx-alert>",
           "example": "1110",
           "member": "uint64",
           "name": "TemplateIdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -788,7 +790,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -797,7 +800,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -812,7 +816,8 @@
           "name": "DescribeTemplateStatusSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -925,7 +930,8 @@
           "member": "uint64",
           "name": "SignId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -934,7 +940,8 @@
           "member": "string",
           "name": "SignName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -943,7 +950,8 @@
           "member": "uint64",
           "name": "SignType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -952,7 +960,8 @@
           "member": "uint64",
           "name": "DocumentType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -961,7 +970,8 @@
           "member": "uint64",
           "name": "International",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -970,7 +980,8 @@
           "member": "uint64",
           "name": "SignPurpose",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -979,7 +990,8 @@
           "member": "string",
           "name": "ProofImage",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -988,7 +1000,8 @@
           "member": "string",
           "name": "CommissionImage",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -997,7 +1010,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1012,7 +1026,8 @@
           "name": "ModifySignStatus",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
