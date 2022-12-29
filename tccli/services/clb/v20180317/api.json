@@ -120,6 +120,12 @@
       "name": "删除目标组",
       "output": "DeleteTargetGroupsResponse"
     },
+    "DeregisterFunctionTargets": {
+      "document": "DeregisterFunctionTargets 接口用来将一个云函数从负载均衡的转发规则上解绑，对于七层监听器，还需通过 LocationId 或 Domain+Url 指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。\n<br/>限制说明：\n\n- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。\n- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。\n- 传统型负载均衡不支持绑定 SCF。\n- 基础网络类型不支持绑定 SCF。\n- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。\n- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。\n- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。\n- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。",
+      "input": "DeregisterFunctionTargetsRequest",
+      "name": "将云函数从转发规则上解绑",
+      "output": "DeregisterFunctionTargetsResponse"
+    },
     "DeregisterTargetGroupInstances": {
       "document": "从目标组中解绑服务器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DeregisterTargetGroupInstancesRequest",
@@ -407,6 +413,12 @@
       "input": "ModifyTargetWeightRequest",
       "name": "修改监听器绑定的后端机器的转发权重",
       "output": "ModifyTargetWeightResponse"
+    },
+    "RegisterFunctionTargets": {
+      "document": "RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。<br/>\n限制说明：\n- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。\n- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。 \n- 传统型负载均衡不支持绑定 SCF。\n- 基础网络类型不支持绑定 SCF。\n- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。\n- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。\n- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。\n- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。",
+      "input": "RegisterFunctionTargetsRequest",
+      "name": "绑定云函数到转发规则上",
+      "output": "RegisterFunctionTargetsResponse"
     },
     "RegisterTargetGroupInstances": {
       "document": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
@@ -3297,6 +3309,72 @@
       ],
       "type": "object"
     },
+    "DeregisterFunctionTargetsRequest": {
+      "document": "DeregisterFunctionTargets请求参数结构体",
+      "members": [
+        {
+          "document": "负载均衡实例 ID。",
+          "example": "lb-1234abcd",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "负载均衡监听器 ID。",
+          "example": "lis-1234tgbh",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "待解绑的云函数列表。",
+          "example": "无",
+          "member": "FunctionTarget",
+          "name": "FunctionTargets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "document": "目标转发规则的 ID，当将云函数从七层转发规则上解绑时，必须输入此参数或 Domain+Url 参数。",
+          "example": "loc-1234rrrr",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。",
+          "example": "www.123.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。",
+          "example": "/test",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeregisterFunctionTargetsResponse": {
+      "document": "DeregisterFunctionTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeregisterTargetGroupInstancesRequest": {
       "document": "DeregisterTargetGroupInstances请求参数结构体",
       "members": [
@@ -5317,6 +5395,72 @@
         }
       ],
       "usage": "in"
+    },
+    "FunctionInfo": {
+      "document": "SCF云函数（Serverless Cloud Function）相关信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "函数命名空间",
+          "member": "string",
+          "name": "FunctionNamespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数的版本名称或别名",
+          "member": "string",
+          "name": "FunctionQualifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识 FunctionQualifier 参数的类型，可取值： VERSION（版本）、ALIAS（别名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FunctionQualifierType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionTarget": {
+      "document": "SCF云函数（Serverless Cloud Function）作为后端服务",
+      "members": [
+        {
+          "default": "",
+          "document": "云函数相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FunctionInfo",
+          "name": "Function",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权重",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HealthCheck": {
       "document": "健康检查信息。\n注意，自定义探测相关参数 目前只有少量区域灰度支持。",
@@ -8178,6 +8322,23 @@
         }
       ],
       "usage": "out"
+    },
+    "RegisterFunctionTargetsRequest": {
+      "document": "RegisterFunctionTargets请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RegisterFunctionTargetsResponse": {
+      "document": "RegisterFunctionTargets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RegisterTargetGroupInstancesRequest": {
       "document": "RegisterTargetGroupInstances请求参数结构体",

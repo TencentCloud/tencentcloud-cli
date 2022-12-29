@@ -2,7 +2,7 @@
   "actions": {
     "CheckRecordSnapshotRollback": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRecordSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EEXXXX\",\n    \"Record\": {\n        \"RecordId\": \"1111111\",\n        \"SubDomain\": \"no_line\",\n        \"RecordType\": \"A\",\n        \"RecordLine\": \"测试啊\",\n        \"Value\": \"0.0.0.1\",\n        \"TTL\": \"600\",\n        \"MX\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1664058d-f8b0-4b4b-9127-cc6d6b36f2b7\",\n        \"Reason\": \"记录线路不正确\"\n    }\n}",
         "title": "回滚前检查单条记录"
@@ -10,7 +10,7 @@
     ],
     "CheckSnapshotRollback": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSnapshotRollback\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45A0XXX\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8a0fd97-4a54-40ce-a7a9-a97523eaaf2e\",\n        \"Domain\": \"domain.com\",\n        \"SnapshotId\": \"A45A0XXX\",\n        \"Total\": 63,\n        \"Failed\": 0,\n        \"CostMinutes\": 1,\n        \"FailedRecordList\": [],\n        \"Timeout\": null\n    }\n}",
         "title": "快照回滚前检查"
@@ -18,7 +18,7 @@
     ],
     "CreateDeal": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeal\n<公共请求参数>\n\n{\n    \"Domain\": \"8988.ltd\",\n    \"NewPackageType\": \"\",\n    \"GoodsNum\": \"1\",\n    \"TimeSpan\": \"12\",\n    \"AutoRenew\": \"1\",\n    \"DealType\": \"1\",\n    \"GoodsChildType\": \"DP_PLUS\",\n    \"GoodsType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\",\n        \"DealList\": [\n            {\n                \"DealName\": \"20220519328000975112751\",\n                \"DealId\": \"223011900\"\n            }\n        ],\n        \"BigDealId\": \"20220519328000975112741\"\n    }\n}",
         "title": "DNSPod商品下单示例"
@@ -26,13 +26,13 @@
     ],
     "CreateDomain": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"IsMark\": \"no\",\n    \"GroupId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainInfo\": {\n            \"Id\": 62,\n            \"Punycode\": \"dnspod.com\",\n            \"Domain\": \"dnspod.com\",\n            \"GradeNsList\": [\n                \"source.dnspod.net\",\n                \"low.dnspod.net\"\n            ]\n        }\n    }\n}",
         "title": "添加域名"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"iceice.club\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"674a208e-4829-4c2d-a519-a85f2f9bb223\",\n        \"DomainInfo\": {\n            \"GradeNsList\": [\n                \"eunice.dnspod.net\",\n                \"country.dnspod.net\"\n            ],\n            \"Id\": 15,\n            \"Punycode\": \"iceice.club\",\n            \"Domain\": \"iceice.club\"\n        }\n    }\n}",
         "title": "CreateDomain_success"
@@ -40,7 +40,7 @@
     ],
     "CreateDomainAlias": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainAlias\n<公共请求参数>\n\n{\n    \"Domain\": \"myfm.cc\",\n    \"DomainAlias\": \"cc.cc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainAliasId\": 16080\n    }\n}",
         "title": "创建域名别名"
@@ -48,7 +48,7 @@
     ],
     "CreateDomainBatch": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"tencent1.com\",\n        \"tencent2.com\"\n    ],\n    \"RecordValue\": \"11.22.33.44\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DetailList\": [\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": 600,\n                        \"Id\": 0,\n                        \"SubDomain\": \"www\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"11.22.33.45\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": 600,\n                        \"Id\": 1,\n                        \"SubDomain\": \"@\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"11.22.33.45\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    }\n                ],\n                \"Id\": 0,\n                \"Domain\": \"tencent12.com\",\n                \"DomainGrade\": \"DP_FREE\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": \"plus\"\n            },\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": 600,\n                        \"Id\": 0,\n                        \"SubDomain\": \"www\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"11.22.33.45\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": 600,\n                        \"Id\": 1,\n                        \"SubDomain\": \"@\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"11.22.33.45\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    }\n                ],\n                \"Id\": 1,\n                \"Domain\": \"tencent13.com\",\n                \"DomainGrade\": \"DP_FREE\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": \"plus\"\n            }\n        ],\n        \"JobId\": 30\n    }\n}",
         "title": "批量添加域名"
@@ -56,7 +56,7 @@
     ],
     "CreateDomainGroup": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"彩虹项目\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"GroupId\": 1977\n    }\n}",
         "title": "创建域名分组"
@@ -64,7 +64,7 @@
     ],
     "CreateRecord": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"bbbb\",\n    \"RecordType\": \"A\",\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"MX\": 0,\n    \"TTL\": 600,\n    \"Weight\": 10,\n    \"Status\": \"DISABLE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 162\n    }\n}",
         "title": "添加记录"
@@ -72,7 +72,7 @@
     ],
     "CreateRecordBatch": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordBatch\n<公共请求参数>\n\n{\n    \"DomainIdList\": [\n        49,\n        53\n    ],\n    \"RecordList\": [\n        {\n            \"SubDomain\": \"aa,bb\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"默认\",\n            \"Value\": \"11.22.33.44\",\n            \"TTL\": 600\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DetailList\": [\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 0,\n                        \"SubDomain\": \"www\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 1,\n                        \"SubDomain\": \"wap\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 2,\n                        \"SubDomain\": \"bbs\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    }\n                ],\n                \"Id\": 0,\n                \"DomainId\": 48,\n                \"Domain\": \"dnsapi6.cn\",\n                \"DomainGrade\": \"DP_PLUS\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": null\n            },\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 0,\n                        \"SubDomain\": \"www\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 1,\n                        \"SubDomain\": \"wap\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    },\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"Id\": 2,\n                        \"SubDomain\": \"bbs\",\n                        \"RecordType\": \"A\",\n                        \"Value\": \"1.2.3.4\",\n                        \"ErrMsg\": null,\n                        \"Status\": \"waiting\",\n                        \"Operation\": \"plus\"\n                    }\n                ],\n                \"Id\": 1,\n                \"DomainId\": 49,\n                \"Domain\": \"dnsapi1.cn\",\n                \"DomainGrade\": \"DP_FREE\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": null\n            }\n        ],\n        \"JobId\": 34\n    }\n}",
         "title": "批量添加记录"
@@ -80,7 +80,7 @@
     ],
     "CreateRecordGroup": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupName\": \"分组2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\",\n        \"GroupId\": 146\n    }\n}",
         "title": "添加记录分组"
@@ -88,7 +88,7 @@
     ],
     "CreateSnapshot": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"289e4d98-4907-4aa1-84bc-75f79926e724\"\n    }\n}",
         "title": "创建快照"
@@ -96,13 +96,13 @@
     ],
     "DeleteDomain": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除域名 dnspod.com"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"iceice.club\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d459ba8-f335-4508-b6b2-efed8b531c8c\"\n    }\n}",
         "title": "删除域名 iceice.club"
@@ -110,7 +110,7 @@
     ],
     "DeleteDomainAlias": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainAlias\n<公共请求参数>\n\n{\n    \"DomainAliasId\": 121212,\n    \"Domain\": \"myfm.cc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除域名别名"
@@ -118,7 +118,7 @@
     ],
     "DeleteRecord": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除解析记录"
@@ -126,7 +126,7 @@
     ],
     "DeleteRecordGroup": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupId\": 156\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\"\n    }\n}",
         "title": "删除记录分组"
@@ -134,7 +134,7 @@
     ],
     "DeleteShareDomain": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShareDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Account\": \"qcloud_uin_100000014226@qcloud.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "删除域名共享"
@@ -142,7 +142,7 @@
     ],
     "DeleteSnapshot": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"B102XXXA\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3c8c279-ccfb-4630-810c-36bc11e21ff9\"\n    }\n}",
         "title": "删除快照"
@@ -150,7 +150,7 @@
     ],
     "DescribeBatchTask": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchTask\n<公共请求参数>\n\n{\n    \"JobId\": 69\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DetailList\": [\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": 600,\n                        \"MX\": 23,\n                        \"RecordId\": 178,\n                        \"SubDomain\": \"test\",\n                        \"RecordType\": \"MX\",\n                        \"Value\": \"test.aaaaaaa.com.\",\n                        \"Enabled\": 1,\n                        \"Status\": \"ok\",\n                        \"ErrMsg\": null,\n                        \"Id\": 0,\n                        \"Operation\": \"edit\"\n                    }\n                ],\n                \"DomainId\": 49,\n                \"Domain\": \"dnsapi1.cn\",\n                \"ErrMsg\": null,\n                \"Status\": \"ok\",\n                \"Operation\": null,\n                \"DomainGrade\": \"DP_FREE\",\n                \"Id\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"SuccessCount\": 1,\n        \"FailCount\": 0,\n        \"JobType\": \"record_modify\",\n        \"CreatedAt\": \"2021-04-07 15:28:31\"\n    }\n}",
         "title": "获取任务详情"
@@ -158,7 +158,7 @@
     ],
     "DescribeDomain": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainInfo\": {\n            \"DnspodNsList\": [\n                \"source.dnspod.net\",\n                \"low.dnspod.net\"\n            ],\n            \"ActualNsList\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RecordCount\": 2,\n            \"DomainId\": 61,\n            \"DnsStatus\": \"dnserror\",\n            \"IsVip\": \"no\",\n            \"Punycode\": \"tencent8.com\",\n            \"Grade\": \"DP_FREE\",\n            \"GradeLevel\": 2,\n            \"GradeTitle\": \"免费版\",\n            \"Status\": \"enable\",\n            \"GroupId\": 1,\n            \"IsMark\": \"no\",\n            \"Remark\": \"\",\n            \"UserId\": 1,\n            \"CreatedOn\": \"2021-04-06 15:51:45\",\n            \"UpdatedOn\": \"2021-04-06 15:51:45\",\n            \"TTL\": 600,\n            \"Owner\": \"qcloud_uin_100000014226@qcloud.com\",\n            \"CnameSpeedup\": \"disable\",\n            \"Uin\": \"100000014226\",\n            \"OwnerNick\": \"Loccsser\",\n            \"Domain\": \"tencent8.com\"\n        }\n    }\n}",
         "title": "获取域名信息"
@@ -166,7 +166,7 @@
     ],
     "DescribeDomainAliasList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAliasList\n<公共请求参数>\n\n{\n    \"Domain\": \"myfm.cc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainAliasList\": [\n            {\n                \"DomainAlias\": \"cc.cc\",\n                \"Id\": 16063\n            }\n        ]\n    }\n}",
         "title": "获取域名别名列表"
@@ -174,7 +174,7 @@
     ],
     "DescribeDomainAnalytics": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAnalytics\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\",\n    \"StartDate\": \"2022-06-14\",\n    \"EndDate\": \"2022-06-14\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AliasData\": [\n            {\n                \"Data\": [\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 0,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 1,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 2,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 3,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 4,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 5,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 6,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 7,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 8,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 9,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 10,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 11,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 12,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 13,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 14,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 15,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 16,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 17,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 18,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 19,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 20,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 21,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 22,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": 23,\n                        \"Num\": 0\n                    }\n                ],\n                \"Info\": {\n                    \"DnsFormat\": \"HOUR\",\n                    \"DnsTotal\": 0,\n                    \"Domain\": \"example.comalias.com\",\n                    \"EndDate\": \"2022-06-14\",\n                    \"StartDate\": \"2022-06-14\"\n                }\n            }\n        ],\n        \"Data\": [\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 0,\n                \"Num\": 140\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 1,\n                \"Num\": 136\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 2,\n                \"Num\": 134\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 3,\n                \"Num\": 126\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 4,\n                \"Num\": 147\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 5,\n                \"Num\": 125\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 6,\n                \"Num\": 121\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 7,\n                \"Num\": 120\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 8,\n                \"Num\": 133\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 9,\n                \"Num\": 100\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 10,\n                \"Num\": 114\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 11,\n                \"Num\": 139\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 12,\n                \"Num\": 114\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 13,\n                \"Num\": 114\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 14,\n                \"Num\": 141\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 15,\n                \"Num\": 115\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 16,\n                \"Num\": 116\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 17,\n                \"Num\": 103\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 18,\n                \"Num\": 107\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 19,\n                \"Num\": 107\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 20,\n                \"Num\": 106\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 21,\n                \"Num\": 131\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 22,\n                \"Num\": 120\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": 23,\n                \"Num\": 131\n            }\n        ],\n        \"Info\": {\n            \"DnsFormat\": \"HOUR\",\n            \"DnsTotal\": 2940,\n            \"Domain\": \"example.com\",\n            \"EndDate\": \"2022-06-14\",\n            \"StartDate\": \"2022-06-14\"\n        }\n    }\n}",
         "title": "域名解析量统计"
@@ -182,7 +182,7 @@
     ],
     "DescribeDomainGroupList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainGroupList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"GroupList\": [\n            {\n                \"GroupId\": 1,\n                \"GroupName\": \"默认分组\",\n                \"GroupType\": \"system\",\n                \"Size\": 3\n            }\n        ]\n    }\n}",
         "title": "获取域名分组列表"
@@ -190,7 +190,7 @@
     ],
     "DescribeDomainList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainList\n<公共请求参数>\n\n{\n    \"Type\": \"ALL\",\n    \"Keyword\": \"abc\",\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"GroupId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\",\n        \"DomainCountInfo\": {\n            \"DomainTotal\": 4,\n            \"AllTotal\": 4,\n            \"MineTotal\": 4,\n            \"ShareTotal\": 0,\n            \"VipTotal\": 1,\n            \"PauseTotal\": 0,\n            \"ErrorTotal\": 4,\n            \"LockTotal\": 0,\n            \"SpamTotal\": 0,\n            \"VipExpire\": 0,\n            \"ShareOutTotal\": 0,\n            \"GroupTotal\": 3\n        },\n        \"DomainList\": [\n            {\n                \"TTL\": 600,\n                \"CNAMESpeedup\": \"DISABLE\",\n                \"DNSStatus\": \"DNSERROR\",\n                \"DomainId\": 12609493,\n                \"Status\": \"ENABLE\",\n                \"Grade\": \"DP_ULTRA\",\n                \"GroupId\": \"1\",\n                \"Remark\": \"\",\n                \"CreatedOn\": \"2020-05-21 16:08:29\",\n                \"UpdatedOn\": \"2021-04-01 18:09:58\",\n                \"Punycode\": \"shenhailong.club\",\n                \"Name\": \"shenhailong.club\",\n                \"GradeLevel\": 10,\n                \"GradeTitle\": \"企业旗舰版\",\n                \"IsVip\": \"YES\",\n                \"Owner\": \"qcloud_uin_100000012799@qcloud.com\",\n                \"VipStartAt\": \"0000-00-00 00:00:00\",\n                \"VipEndAt\": \"0000-00-00 00:00:00\",\n                \"VipAutoRenew\": \"NO\",\n                \"SearchEnginePush\": \"NO\",\n                \"RecordCount\": 6,\n                \"EffectiveDNS\": [\n                    \"ns3.dnsv5.com\",\n                    \"ns4.dnsv5.com\"\n                ]\n            },\n            {\n                \"TTL\": 600,\n                \"CNAMESpeedup\": \"DISABLE\",\n                \"DNSStatus\": \"DNSERROR\",\n                \"DomainId\": 12610063,\n                \"Status\": \"ENABLE\",\n                \"Grade\": \"DP_FREE\",\n                \"GroupId\": \"1\",\n                \"Remark\": \"\",\n                \"CreatedOn\": \"2020-08-18 17:52:30\",\n                \"UpdatedOn\": \"2020-08-18 17:52:30\",\n                \"Punycode\": \"shenhailong.xn--fiqs8s\",\n                \"Name\": \"shenhailong.中国\",\n                \"GradeLevel\": 2,\n                \"GradeTitle\": \"免费版\",\n                \"IsVip\": \"NO\",\n                \"Owner\": \"qcloud_uin_100000012799@qcloud.com\",\n                \"VipStartAt\": \"0000-00-00 00:00:00\",\n                \"VipEndAt\": \"0000-00-00 00:00:00\",\n                \"VipAutoRenew\": \"NO\",\n                \"SearchEnginePush\": \"NO\",\n                \"RecordCount\": 2,\n                \"EffectiveDNS\": [\n                    \"f1g1ns1.dnspod.net\",\n                    \"f1g1ns2.dnspod.net\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取域名列表"
@@ -198,7 +198,7 @@
     ],
     "DescribeDomainLogList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainLogList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"LogList\": [\n            \"2021-01-18 12:06:11: (111.111.111.111) 添加 A 记录 默认 线路 ftp 值 64.144.7.51\"\n        ],\n        \"PageSize\": 100,\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取域名日志"
@@ -206,7 +206,7 @@
     ],
     "DescribeDomainPurview": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainPurview\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"PurviewList\": [\n            {\n                \"Name\": \"URL转发条数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"NS记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"AAAA记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"SRV记录条数\",\n                \"Value\": \"99999\"\n            },\n            {\n                \"Name\": \"域名别名绑定个数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"域名锁定天数\",\n                \"Value\": \"365\"\n            },\n            {\n                \"Name\": \"域名共享个数\",\n                \"Value\": \"1000\"\n            },\n            {\n                \"Name\": \"子域名级数\",\n                \"Value\": \"12\"\n            },\n            {\n                \"Name\": \"泛解析级数\",\n                \"Value\": \"10\"\n            },\n            {\n                \"Name\": \"负载均衡数量\",\n                \"Value\": \"60\"\n            },\n            {\n                \"Name\": \"记录TTL最低\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Name\": \"混合泛解析支持\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"增强线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分省线路类型\",\n                \"Value\": \"yes\"\n            },\n            {\n                \"Name\": \"分大洲线路类型\",\n                \"Value\": \"yes\"\n            }\n        ]\n    }\n}",
         "title": "获取域名权限"
@@ -214,7 +214,7 @@
     ],
     "DescribeDomainShareInfo": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainShareInfo\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"ShareList\": [\n            {\n                \"ShareTo\": \"qcloud_uin_100000014227@qcloud.com\",\n                \"Mode\": \"r\",\n                \"Status\": \"enabled\"\n            }\n        ],\n        \"Owner\": \"qcloud_uin_100000014226@qcloud.com\"\n    }\n}",
         "title": "获取域名共享信息"
@@ -222,7 +222,7 @@
     ],
     "DescribeRecord": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordInfo\": {\n            \"Id\": 158,\n            \"SubDomain\": \"wwww\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"百度\",\n            \"RecordLineId\": \"90=0\",\n            \"Value\": \"129.23.32.32\",\n            \"Weight\": null,\n            \"MX\": 0,\n            \"TTL\": 10,\n            \"Enabled\": 1,\n            \"MonitorStatus\": \"Ok\",\n            \"Remark\": \"以下参数列表仅列出了此接口响应代码，除此接口请求响应代码外\",\n            \"UpdatedOn\": \"2021-03-31 11:38:02\",\n            \"DomainId\": 62\n        }\n    }\n}",
         "title": "获取记录信息"
@@ -230,7 +230,7 @@
     ],
     "DescribeRecordGroupList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordGroupList\n<公共请求参数>\n\n{\n    \"Domain\": \"recordgroup.com\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0076ce66-aff3-4d2b-bd6e-92bf053ae150\",\n        \"GroupList\": [\n            {\n                \"GroupId\": 0,\n                \"GroupName\": \"默认分组\",\n                \"GroupType\": \"system\"\n            },\n            {\n                \"GroupId\": 144,\n                \"GroupName\": \"分组啊\",\n                \"GroupType\": \"user\"\n            }\n        ]\n    }\n}",
         "title": "查询解析记录分组列表"
@@ -238,7 +238,7 @@
     ],
     "DescribeRecordLineList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordLineList\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"DomainGrade\": \"DP_ULTRA\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"LineGroupList\": [\n            {\n                \"LineId\": \"998=3\",\n                \"Name\": \"分组2\",\n                \"LineList\": [\n                    \"境外\",\n                    \"第3个_line\",\n                    \"第2个_line\"\n                ],\n                \"Type\": \"user\"\n            },\n            {\n                \"Name\": \"东北\",\n                \"LineId\": \"15=1\",\n                \"LineList\": [\n                    \"黑龙江移动\",\n                    \"黑龙江电信\",\n                    \"黑龙江联通\",\n                    \"吉林移动\",\n                    \"吉林电信\",\n                    \"吉林联通\",\n                    \"辽宁移动\",\n                    \"辽宁电信\",\n                    \"辽宁联通\"\n                ],\n                \"Type\": \"system\"\n            },\n            {\n                \"Name\": \"港澳台地区\",\n                \"LineId\": \"15=7\",\n                \"LineList\": [\n                    \"中国香港\",\n                    \"中国澳门\",\n                    \"中国台湾\"\n                ],\n                \"Type\": \"system\"\n            }\n        ],\n        \"LineList\": [\n            {\n                \"Name\": \"默认\",\n                \"LineId\": \"0\"\n            },\n            {\n                \"Name\": \"境外\",\n                \"LineId\": \"3=0\"\n            },\n            {\n                \"Name\": \"境内\",\n                \"LineId\": \"7=0\"\n            },\n            {\n                \"Name\": \"电信\",\n                \"LineId\": \"10=0\"\n            },\n            {\n                \"Name\": \"联通\",\n                \"LineId\": \"10=1\"\n            }\n        ]\n    }\n}",
         "title": "设置记录备注"
@@ -246,7 +246,7 @@
     ],
     "DescribeRecordList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"Domain\": \"shenjianing.com\",\n    \"DomainId\": 123,\n    \"Subdomain\": \"www\",\n    \"Keyword\": \"dnspod\",\n    \"RecordType\": \"NS\",\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"SortField\": \"type\",\n    \"SortType\": \"ASC\",\n    \"GroupId\": 34\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\",\n        \"RecordCountInfo\": {\n            \"SubdomainCount\": 2,\n            \"TotalCount\": 2,\n            \"ListCount\": 2\n        },\n        \"RecordList\": [\n            {\n                \"RecordId\": 556507778,\n                \"Value\": \"f1g1ns1.dnspod.net.\",\n                \"Status\": \"ENABLE\",\n                \"UpdatedOn\": \"2021-03-28 11:27:09\",\n                \"Name\": \"@\",\n                \"Line\": \"默认\",\n                \"LineId\": \"0\",\n                \"Type\": \"NS\",\n                \"Weight\": null,\n                \"MonitorStatus\": \"\",\n                \"Remark\": \"\",\n                \"TTL\": 86400,\n                \"MX\": 0\n            },\n            {\n                \"RecordId\": 556507779,\n                \"Value\": \"f1g1ns2.dnspod.net.\",\n                \"Status\": \"ENABLE\",\n                \"UpdatedOn\": \"2021-03-28 11:27:09\",\n                \"Name\": \"@\",\n                \"Line\": \"默认\",\n                \"LineId\": \"0\",\n                \"Type\": \"NS\",\n                \"Weight\": null,\n                \"MonitorStatus\": \"\",\n                \"Remark\": \"\",\n                \"TTL\": 86400,\n                \"MX\": 0\n            }\n        ]\n    }\n}",
         "title": "查询域名的解析记录"
@@ -254,7 +254,7 @@
     ],
     "DescribeRecordSnapshotRollbackResult": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"JobId\": 1111\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8a5c989-0d6d-4335-928c-266fe831adc8\",\n        \"FailedRecordList\": [\n            {\n                \"RecordId\": \"0\",\n                \"SubDomain\": \"no_line\",\n                \"RecordType\": \"A\",\n                \"RecordLine\": \"测试啊\",\n                \"Value\": \"0.0.0.1\",\n                \"TTL\": \"600\",\n                \"MX\": null\n            }\n        ],\n        \"JobId\": 1111,\n        \"Status\": \"ok\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 1,\n        \"Failed\": 1,\n        \"Success\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xx.csv\"\n    }\n}",
         "title": "查询解析记录重新回滚的结果"
@@ -262,7 +262,7 @@
     ],
     "DescribeRecordType": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordType\n<公共请求参数>\n\n{\n    \"DomainGrade\": \"DP_Expert\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"TypeList\": [\n            \"A\",\n            \"CNAME\",\n            \"MX\",\n            \"TXT\",\n            \"NS\",\n            \"AAAA\",\n            \"SPF\",\n            \"SRV\",\n            \"CAA\",\n            \"显性URL\",\n            \"隐性URL\"\n        ]\n    }\n}",
         "title": "获取等级允许的记录类型"
@@ -270,7 +270,7 @@
     ],
     "DescribeSnapshotConfig": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"xx.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"567ca259-aff2-449b-a3af-c8cf7ee32f91\",\n        \"SnapshotConfig\": {\n            \"Id\": \"1111\",\n            \"DomainId\": \"121212\",\n            \"Status\": \"enable\",\n            \"Config\": \"monthly\",\n            \"CreatedOn\": \"2022-08-16 11:33:56\",\n            \"UpdatedOn\": \"2022-10-16 11:34:21\",\n            \"SnapshotCount\": 3\n        }\n    }\n}",
         "title": "查询解析快照配置"
@@ -278,7 +278,7 @@
     ],
     "DescribeSnapshotList": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotList\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86690c76-ee04-4501-807a-821350c915db\",\n        \"SnapshotList\": [\n            {\n                \"Id\": \"BXXBCBE1\",\n                \"RecordCount\": \"57\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx1.csv\",\n                \"CreatedOn\": \"2022-10-16 11:34:20\",\n                \"Domain\": \"domain.com\"\n            },\n            {\n                \"Id\": \"3EEXXF2D\",\n                \"RecordCount\": \"49\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx2.csv\",\n                \"CreatedOn\": \"2022-09-16 11:34:09\",\n                \"Domain\": \"domain.com\"\n            },\n            {\n                \"Id\": \"B1XXXX8A\",\n                \"RecordCount\": \"43\",\n                \"Status\": \"normal\",\n                \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx3.csv\",\n                \"CreatedOn\": \"2022-08-16 11:34:03\",\n                \"Domain\": \"domain.com\"\n            }\n        ],\n        \"Info\": {\n            \"Total\": 3\n        }\n    }\n}",
         "title": "查询快照列表"
@@ -286,13 +286,13 @@
     ],
     "DescribeSnapshotRollbackResult": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7723f78-ff6f-43bc-89ee-bc225376276b\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Status\": \"waiting\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 0,\n        \"LeftMinutes\": 1,\n        \"Success\": null,\n        \"Failed\": null,\n        \"Total\": null,\n        \"CosUrl\": null,\n        \"FailedRecordList\": null\n    }\n}",
         "title": "查询快照回滚结果，进行中"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4c4c0e9-ca5a-44a2-9d51-b0c64656b8bb\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Success\": 63,\n        \"Failed\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xxx.csv\",\n        \"Status\": \"ok\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 63,\n        \"Domain\": \"domain.com\",\n        \"FailedRecordList\": []\n    }\n}",
         "title": "查询快照回滚结果，已完成"
@@ -300,7 +300,7 @@
     ],
     "DescribeSnapshotRollbackTask": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackTask\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa4e8fe3-0a47-41e8-80d2-6833a1186286\",\n        \"TaskId\": 179,\n        \"SnapshotId\": \"A4EEXXXX\",\n        \"CreatedOn\": \"2022-10-27 17:34:16\",\n        \"Status\": \"ok\",\n        \"Domain\": \"domain.com\",\n        \"RecordCount\": 65\n    }\n}",
         "title": "查询最近一次回滚"
@@ -308,7 +308,7 @@
     ],
     "DescribeSubdomainAnalytics": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubdomainAnalytics\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\",\n    \"StartDate\": \"2022-06-14\",\n    \"EndDate\": \"2022-06-14\",\n    \"Subdomain\": \"www\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AliasData\": [\n            {\n                \"Data\": [\n                    {\n                        \"DateKey\": \"20220608\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220609\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220610\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220611\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220612\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220613\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    },\n                    {\n                        \"DateKey\": \"20220614\",\n                        \"HourKey\": null,\n                        \"Num\": 0\n                    }\n                ],\n                \"Info\": {\n                    \"DnsFormat\": \"DATE\",\n                    \"DnsTotal\": 0,\n                    \"Domain\": \"examplealis.com\",\n                    \"EndDate\": \"2022-06-14\",\n                    \"StartDate\": \"2022-06-08\",\n                    \"Subdomain\": \"www\"\n                }\n            }\n        ],\n        \"Data\": [\n            {\n                \"DateKey\": \"20220608\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220609\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220610\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220611\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220612\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220613\",\n                \"HourKey\": null,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20220614\",\n                \"HourKey\": null,\n                \"Num\": 0\n            }\n        ],\n        \"Info\": {\n            \"DnsFormat\": \"DATE\",\n            \"DnsTotal\": 0,\n            \"Domain\": \"example.com\",\n            \"EndDate\": \"2022-06-14\",\n            \"StartDate\": \"2022-06-08\",\n            \"Subdomain\": \"www\"\n        }\n    }\n}",
         "title": "子域名解析量统计"
@@ -324,7 +324,7 @@
     ],
     "DownloadSnapshot": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45AXXX3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9ac63bb-c1c2-465e-b662-4696ce2ccb5b\",\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_91724229_xxx.csv\"\n    }\n}",
         "title": "下载快照"
@@ -332,7 +332,7 @@
     ],
     "ModifyDomainLock": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainLock\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"LockDays\": 30\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"LockInfo\": {\n            \"DomainId\": 62,\n            \"LockCode\": \"M3xkbnNwb2Quc2l0ZXwxNjE3MzMwODMwfDhlMTkyODZlOGJjMjU4MDBlNjVlZDA1NDFhZjM4NzJm\",\n            \"LockEnd\": \"2021-05-02\"\n        }\n    }\n}",
         "title": "锁定域名"
@@ -340,7 +340,7 @@
     ],
     "ModifyDomainOwner": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwner\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Account\": \"test@gmail.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "域名过户"
@@ -348,7 +348,7 @@
     ],
     "ModifyDomainRemark": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainRemark\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"Remark\": \"这是XXX专用域名\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "设置域名备注"
@@ -356,7 +356,7 @@
     ],
     "ModifyDomainStatus": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "修改域名状态"
@@ -364,7 +364,7 @@
     ],
     "ModifyDomainUnlock": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainUnlock\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"LockCode\": \"M3xkbnNwb2Quc2l0ZXwxNjE3MzMwNjQzfGZhYjA3YTI0ODcwNzIzMmNjNjI5YzZhNzA1ZmMxOGY1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "域名锁定解锁"
@@ -372,7 +372,7 @@
     ],
     "ModifyDynamicDNS": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDynamicDNS\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"bbbb\",\n    \"RecordId\": 162,\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"Ttl\": 600\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 162\n    }\n}",
         "title": "更新动态 DNS 记录"
@@ -380,13 +380,13 @@
     ],
     "ModifyPackageAutoRenew": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
         "title": "解析套餐关闭自动续费"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
         "title": "解析套餐开启自动续费"
@@ -394,7 +394,7 @@
     ],
     "ModifyRecord": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"bbbb\",\n    \"RecordType\": \"A\",\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"MX\": 0,\n    \"TTL\": 600,\n    \"Weight\": 10,\n    \"Status\": \"DISABLE\",\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 162\n    }\n}",
         "title": "添加记录"
@@ -402,7 +402,7 @@
     ],
     "ModifyRecordBatch": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordBatch\n<公共请求参数>\n\n{\n    \"RecordIdList\": [\n        101,\n        102\n    ],\n    \"Change\": \"record_type\",\n    \"ChangeTo\": \"MX\",\n    \"Value\": \"test.aaaaaaa.com\",\n    \"MX\": 23\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DetailList\": [\n            {\n                \"RecordList\": [\n                    {\n                        \"RecordLine\": \"默认\",\n                        \"TTL\": \"600\",\n                        \"MX\": \"21\",\n                        \"RecordId\": \"178\",\n                        \"SubDomain\": \"test\",\n                        \"RecordType\": \"MX\",\n                        \"Value\": \"test.aaaaaaa.com.\",\n                        \"Enabled\": 1,\n                        \"Status\": \"waiting\",\n                        \"ErrMsg\": null,\n                        \"Id\": 0,\n                        \"Operation\": \"edit\"\n                    }\n                ],\n                \"DomainId\": 49,\n                \"Domain\": \"dnsapi1.cn\",\n                \"ErrMsg\": null,\n                \"Status\": \"waiting\",\n                \"Operation\": null,\n                \"DomainGrade\": \"DP_FREE\",\n                \"Id\": 0\n            }\n        ],\n        \"JobId\": 67\n    }\n}",
         "title": "批量修改记录"
@@ -410,7 +410,7 @@
     ],
     "ModifyRecordFields": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordFields\n<公共请求参数>\n\n{\n    \"Domain\": \"modify1.com\",\n    \"RecordId\": 15690732,\n    \"FieldList\": [\n        {\n            \"Key\": \"weight\",\n            \"Value\": \"20\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3e412d3-0eeb-4b05-815c-86763b9d72aa\",\n        \"RecordId\": 15690732\n    }\n}",
         "title": "修改记录可选字段"
@@ -418,7 +418,7 @@
     ],
     "ModifyRecordGroup": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupName\": \"分组2\",\n    \"GroupId\": 145\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\",\n        \"GroupId\": 145\n    }\n}",
         "title": "修改记录分组"
@@ -426,7 +426,7 @@
     ],
     "ModifyRecordRemark": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordRemark\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 162,\n    \"Remark\": \"这是解析记录的备注\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "设置记录备注"
@@ -434,7 +434,7 @@
     ],
     "ModifyRecordStatus": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"RecordId\": 161,\n    \"Status\": \"ENABLE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 161\n    }\n}",
         "title": "设置记录状态"
@@ -442,7 +442,7 @@
     ],
     "ModifyRecordToGroup": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecordToGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"GroupId\": 156,\n    \"RecordId\": \"123232|2343232\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec8949ba-ec3c-446e-b9eb-5aeafa238f0a\"\n    }\n}",
         "title": "将记录添加到分组"
@@ -450,7 +450,7 @@
     ],
     "ModifySnapshotConfig": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshotConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"xx.com\",\n    \"Period\": \"hourly\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d319d9d-fa62-4ddb-915a-2f874faeb8d5\"\n    }\n}",
         "title": "修改快照配置"
@@ -458,13 +458,13 @@
     ],
     "ModifySubdomainStatus": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"RecordType\": \"A,TXT\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "暂停@子域名A和TXT类型的解析记录"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"SubDomain\": \"www\",\n    \"RecordType\": \"A,TXT,CNAME\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "暂停www子域名A/TXT/CNAME类型的解析记录"
@@ -472,13 +472,13 @@
     ],
     "ModifyVasAutoRenewStatus": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVasAutoRenewStatus\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
         "title": "增值服务关闭自动续费"
       },
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVasAutoRenewStatus\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
         "title": "增值服务开启自动续费"
@@ -486,7 +486,7 @@
     ],
     "PayOrderWithBalance": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PayOrderWithBalance\n<公共请求参数>\n\n{\n    \"BigDealIdList\": [\n        \"20220614328001008099351\"\n    ],\n    \"VoucherIdList\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"96065f69-df89-42e7-8023-c65f87588c64\",\n        \"DealIdList\": [\n            \"223853617\"\n        ],\n        \"BigDealIdList\": [\n            \"20220614328001008099351\"\n        ],\n        \"DealNameList\": [\n            \"20220614328001008099361\"\n        ]\n    }\n}",
         "title": "成功"
@@ -494,7 +494,7 @@
     ],
     "RollbackRecordSnapshot": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackRecordSnapshot\n<公共请求参数>\n\n{\n    \"TaskId\": 179,\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A4EE5XXX\",\n    \"RecordList\": [\n        {\n            \"RecordId\": \"1111\",\n            \"SubDomain\": \"no_line\",\n            \"RecordType\": \"A\",\n            \"RecordLine\": \"测试啊\",\n            \"Value\": \"0.0.0.1\",\n            \"TTL\": \"600\",\n            \"MX\": \"0\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"265628c4-a5ed-4a84-9c8b-719582e6c43b\",\n        \"JobId\": 5657107\n    }\n}",
         "title": "重新回滚指定解析记录快照"
@@ -502,7 +502,7 @@
     ],
     "RollbackSnapshot": [
       {
-        "document": "",
+        "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45XXX33\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42aabd52-d05b-45f0-95a0-dcefdc87c7b8\",\n        \"TaskId\": 177\n    }\n}",
         "title": "回滚快照"

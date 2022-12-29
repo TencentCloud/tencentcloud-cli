@@ -2750,6 +2750,15 @@
           "name": "WithPdfUrl",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "渠道模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

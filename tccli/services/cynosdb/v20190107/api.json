@@ -410,6 +410,52 @@
     "serviceShortName": "cynosdb"
   },
   "objects": {
+    "Ability": {
+      "document": "集群支持的功能",
+      "members": [
+        {
+          "default": "",
+          "document": "是否支持从可用区",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportSlaveZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不支持从可用区的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NonsupportSlaveZoneReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持RO实例",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportRo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不支持RO实例的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NonsupportRoReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Account": {
       "document": "数据库账号信息",
       "members": [
@@ -1404,6 +1450,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1413,6 +1460,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -1422,6 +1470,7 @@
         {
           "default": "",
           "document": "引擎类型",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -1431,6 +1480,7 @@
         {
           "default": "",
           "document": "实例状态",
+          "example": "无",
           "member": "string",
           "name": "InstanceStatus",
           "required": true,
@@ -1440,6 +1490,7 @@
         {
           "default": "",
           "document": "实例状态描述",
+          "example": "无",
           "member": "string",
           "name": "InstanceStatusDesc",
           "required": true,
@@ -1449,6 +1500,7 @@
         {
           "default": "",
           "document": "cpu核数",
+          "example": "无",
           "member": "int64",
           "name": "InstanceCpu",
           "required": true,
@@ -1458,6 +1510,7 @@
         {
           "default": "",
           "document": "内存",
+          "example": "无",
           "member": "int64",
           "name": "InstanceMemory",
           "required": true,
@@ -1467,10 +1520,21 @@
         {
           "default": "",
           "document": "硬盘",
+          "example": "无",
           "member": "int64",
           "name": "InstanceStorage",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例角色",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2268,266 +2332,346 @@
         },
         {
           "default": "",
-          "document": "用户uin",
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111111",
           "member": "string",
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "引擎类型",
+          "document": "引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "用户appid",
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111111",
           "member": "int64",
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群状态描述",
+          "document": "集群状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群创建时间",
+          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-05-08 14:29:25",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "付费模式。0-按量计费，1-包年包月",
+          "document": "付费模式。0-按量计费，1-包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "截止时间",
+          "document": "截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-08 14:29:25",
           "member": "string",
           "name": "PeriodEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群读写vip",
+          "document": "集群读写vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群读写vport",
+          "document": "集群读写vport\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "项目id",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "私有网络ID",
+          "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "子网ID",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "cynos内核版本",
+          "document": "cynos内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.0.12",
           "member": "string",
           "name": "CynosVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "存储容量",
+          "document": "存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "StorageLimit",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "续费标志",
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "正在处理的任务",
+          "document": "正在处理的任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ProcessingTask",
           "member": "string",
           "name": "ProcessingTask",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群的任务数组",
+          "document": "集群的任务数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ObjectTask",
           "name": "Tasks",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群绑定的tag数组",
+          "document": "集群绑定的tag数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "Db类型(NORMAL, SERVERLESS)",
+          "document": "Db类型(NORMAL, SERVERLESS)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SERVERLESS",
           "member": "string",
           "name": "DbMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\npause",
+          "document": "当Db类型为SERVERLESS时，serverless集群状态，可选值:\nresume\npause\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resume",
           "member": "string",
           "name": "ServerlessStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群预付费存储值大小",
+          "document": "集群预付费存储值大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "Storage",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群存储为预付费时的存储ID，用于预付费存储变配",
+          "document": "集群存储为预付费时的存储ID，用于预付费存储变配\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "StorageId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群存储付费模式。0-按量计费，1-包年包月",
+          "document": "集群存储付费模式。0-按量计费，1-包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "StoragePayMode",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群计算规格对应的最小存储值",
+          "document": "集群计算规格对应的最小存储值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "MinStorageSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群计算规格对应的最大存储值",
+          "document": "集群计算规格对应的最大存储值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
           "member": "int64",
           "name": "MaxStorageSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "集群网络信息",
+          "document": "集群网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NetAddr",
           "name": "NetAddrs",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PhysicalZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MasterZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HasSlaveZone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsFreeze",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Ability",
+          "name": "Ability",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CynosdbClusterDetail": {
       "document": "集群详情详细信息",
@@ -2771,6 +2915,226 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "binlog开关，可选值：ON, OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFF",
+          "member": "string",
+          "name": "LogBin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pitr类型，可选值：normal, redo_pitr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "PitrType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "PhysicalZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "StorageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储大小，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大存储规格，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxStorageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小存储规格，单位为G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "MinStorageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储付费类型，1为包年包月，0为按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库类型，normal，serverless\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "DbMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储空间上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3000",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群支持的功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Ability",
+          "name": "Ability",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cynos版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.0.21",
+          "member": "string",
+          "name": "CynosVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "HasSlaveZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "IsFreeze",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "MasterZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "从可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Proxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否跳过交易\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "IsSkipTrade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否打开密码复杂度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsOpenPasswordComplexity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp",
+          "member": "string",
+          "name": "NetworkStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7037,16 +7401,37 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WanIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
     "NewAccount": {
-      "document": "\b新创建的账号",
+      "document": "x08新创建的账号",
       "members": [
         {
           "default": "",
-          "document": "账户名",
+          "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16",
+          "example": "0",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -7055,7 +7440,8 @@
         },
         {
           "default": "",
-          "document": "密码",
+          "document": "密码，密码长度范围为8到64个字符",
+          "example": "0",
           "member": "string",
           "name": "AccountPassword",
           "required": true,
@@ -7065,6 +7451,7 @@
         {
           "default": "",
           "document": "主机",
+          "example": "0",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -7074,10 +7461,21 @@
         {
           "default": "",
           "document": "描述",
+          "example": "0",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户最大连接数，不能大于10240",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

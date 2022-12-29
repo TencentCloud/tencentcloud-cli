@@ -1,6 +1,6 @@
 **Example 1: 暂停@子域名A和TXT类型的解析记录**
 
-
+ 
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 暂停www子域名A/TXT/CNAME类型的解析记录**
 
-
+ 
 
 Input: 
 
