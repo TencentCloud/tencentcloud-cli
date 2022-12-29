@@ -6,73 +6,113 @@ Input:
 
 ```
 tccli cynosdb DescribeClusters --cli-unfold-argument  \
+    --DbType MYSQL \
     --Limit 20 \
-    --Offset 0 \
-    --Filters.0.Names InstanceId \
     --Filters.0.Values cynosdbpg-ins-bzkxxrmt \
+    --Filters.0.Names InstanceId \
     --Filters.0.ExactMatch true \
-    --DbType MYSQL
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b81444b5-e558-4246-85be-d037937f93e0",
+        "TotalCount": 597,
         "ClusterSet": [
             {
-                "MaxStorageSize": 30000,
-                "Status": "running",
-                "VpcId": "vpc-mnkc86gd",
-                "UpdateTime": "2021-11-15 21:48:37",
-                "Region": "ap-guangzhou",
-                "AppId": 251007582,
-                "Tasks": [],
+                "ServerlessStatus": "xx",
                 "RenewFlag": 0,
-                "PeriodEndTime": "2021-12-15 21:48:37",
-                "ClusterId": "cynosdbmysql-49sxfmct",
-                "CreateTime": "2021-11-15 21:47:50",
-                "MinStorageSize": 10,
-                "SubnetId": "subnet-kdqq63yu",
-                "ClusterName": "预付费集群",
-                "DbMode": "NORMAL",
-                "StatusDesc": "运行中",
-                "CynosVersion": "2.0.15",
-                "ProcessingTask": "",
-                "DbType": "MYSQL",
-                "ProjectID": 0,
-                "Uin": "100000007539",
-                "ResourceTags": [],
-                "DbVersion": "5.7",
-                "StorageId": "",
-                "StorageLimit": 30000,
-                "NetAddrs": [
+                "Zone": "xx",
+                "InstanceNum": 1,
+                "ClusterId": "xx",
+                "DbVersion": "xx",
+                "Storage": 0,
+                "StorageId": "xx",
+                "ProcessingTask": "xx",
+                "Status": "xx",
+                "PhysicalZone": "xx",
+                "UpdateTime": "xx",
+                "VpcId": "xx",
+                "Ability": [
                     {
-                        "WanDomain": "",
-                        "NetType": "ha",
-                        "Vport": 3306,
-                        "WanPort": 0,
-                        "Vip": "172.16.62.137"
-                    },
-                    {
-                        "WanDomain": "",
-                        "NetType": "ro",
-                        "Vport": 3306,
-                        "WanPort": 0,
-                        "Vip": "172.16.62.176"
+                        "NonsupportSlaveZoneReason": "xx",
+                        "IsSupportSlaveZone": "xx",
+                        "IsSupportRo": "xx",
+                        "NonsupportRoReason": "xx"
                     }
                 ],
-                "ServerlessStatus": "",
-                "Zone": "ap-guangzhou-3",
-                "StoragePayMode": 0,
-                "InstanceNum": 1,
+                "StorageLimit": 30000,
+                "SlaveZones": [
+                    "xx"
+                ],
+                "DbMode": "xx",
+                "SubnetId": "xx",
+                "MinStorageSize": 10,
+                "MaxStorageSize": 30000,
+                "IsFreeze": "xx",
+                "Region": "xx",
+                "MasterZone": "xx",
                 "PayMode": 1,
-                "Storage": 0,
+                "PeriodEndTime": "xx",
+                "ResourceTags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "CynosVersion": "xx",
+                "StatusDesc": "xx",
+                "StoragePayMode": 0,
+                "BusinessType": "xx",
+                "Tasks": [
+                    {
+                        "ObjectType": "xx",
+                        "TaskStatus": "xx",
+                        "ObjectId": "xx",
+                        "TaskId": 0,
+                        "TaskType": "xx"
+                    }
+                ],
+                "HasSlaveZone": "xx",
+                "ClusterName": "xx",
+                "ProjectID": 0,
+                "Uin": "xx",
+                "DbType": "xx",
+                "Vip": "xx",
+                "AppId": 251007582,
+                "OrderSource": "xx",
                 "Vport": 3306,
-                "Vip": "172.16.62.137"
+                "CreateTime": "xx",
+                "NetAddrs": [
+                    {
+                        "WanStatus": "xx",
+                        "Description": "xx",
+                        "UniqVpcId": "xx",
+                        "WanDomain": "xx",
+                        "WanPort": 0,
+                        "Vip": "xx",
+                        "UniqSubnetId": "xx",
+                        "NetType": "xx",
+                        "WanIP": "xx",
+                        "Vport": 3306
+                    },
+                    {
+                        "WanStatus": "xx",
+                        "Description": "xx",
+                        "UniqVpcId": "xx",
+                        "WanDomain": "xx",
+                        "WanPort": 0,
+                        "Vip": "xx",
+                        "UniqSubnetId": "xx",
+                        "NetType": "xx",
+                        "WanIP": "xx",
+                        "Vport": 3306
+                    }
+                ]
             }
         ],
-        "TotalCount": 597
+        "RequestId": "xx"
     }
 }
 ```

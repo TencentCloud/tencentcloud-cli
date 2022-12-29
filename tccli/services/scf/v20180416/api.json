@@ -5062,6 +5062,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "scf组件将占用的节点端口起始号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "38002",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

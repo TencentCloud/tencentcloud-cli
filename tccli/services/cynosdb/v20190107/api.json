@@ -127,7 +127,7 @@
       "output": "DescribeBinlogsResponse"
     },
     "DescribeClusterDetail": {
-      "document": "显示集群详情",
+      "document": "该接口（DescribeClusterDetail）显示集群详情",
       "input": "DescribeClusterDetailRequest",
       "name": "集群详情",
       "output": "DescribeClusterDetailResponse"
@@ -788,6 +788,26 @@
           "name": "DealMode",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "参数模版ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "参数列表，ParamTemplateId 传入时InstanceParams才有效",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "InstanceParams",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -4623,11 +4643,20 @@
         },
         {
           "default": "",
-          "document": "备份文件ID",
+          "document": "备份文件ID，旧版本使用的字段，不推荐使用",
           "example": "[\"4928\\r\\n\"]",
           "member": "int64",
           "name": "SnapshotIdList",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备份文件ID，推荐使用",
+          "example": "[\"1000\\r\\n\"]",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
           "type": "list"
         }
       ],
@@ -5483,7 +5512,18 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否获取更多服务器信息，可选值yes no",
+          "example": "yes",
+          "member": "string",
+          "name": "GetServerInfo",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -5498,7 +5538,8 @@
           "name": "Detail",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5720,7 +5761,8 @@
           "member": "string",
           "name": "DbType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5729,7 +5771,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5738,7 +5781,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5747,7 +5791,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5756,7 +5801,8 @@
           "member": "string",
           "name": "OrderByType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5765,7 +5811,8 @@
           "member": "QueryFilter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5780,7 +5827,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群列表",
@@ -5789,7 +5837,8 @@
           "name": "ClusterSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8061,6 +8110,45 @@
       ],
       "type": "object"
     },
+    "ModifyParamItem": {
+      "document": "修改的实例参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "参数当前值",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "参数旧值（只在出参时有用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OldValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "NetAddr": {
       "document": "网络信息",
       "members": [
@@ -9099,6 +9187,16 @@
           "name": "RollbackTables",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）",
+          "example": "full",
+          "member": "string",
+          "name": "RollbackMode",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],

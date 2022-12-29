@@ -793,7 +793,7 @@
       "output": "RemoveWatermarkResponse"
     },
     "ResetProcedureTemplate": {
-      "document": "重新设置用户自定义任务流模板的内容。  ",
+      "document": "重新设置用户自定义任务流模板的内容。",
       "input": "ResetProcedureTemplateRequest",
       "name": "重设任务流模板",
       "output": "ResetProcedureTemplateResponse"
@@ -8952,7 +8952,6 @@
       "document": "CreateProcedureTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "任务流名字（支持中文，不超过20个字）。",
           "example": "我的一个任务流",
           "member": "string",
@@ -8962,7 +8961,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -8972,7 +8970,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
@@ -8982,7 +8979,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频处理类型任务参数。",
           "example": "无",
           "member": "MediaProcessTaskInput",
@@ -8992,8 +8988,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "AI 内容审核类型任务参数。",
+          "document": "AI 内容审核类型任务参数 \\*。\n<font color=red>\\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> ",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -9002,7 +8997,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AI 内容分析类型任务参数。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
@@ -9012,11 +9006,19 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AI 内容识别类型任务参数。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "音视频审核类型任务参数。",
+          "example": "无",
+          "member": "ProcedureReviewAudioVideoTaskInput",
+          "name": "ReviewAudioVideoTask",
           "required": false,
           "type": "object",
           "visibility": 1
@@ -12909,44 +12911,49 @@
       "document": "DescribeProcedureTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "任务流模板名字过滤条件，数组长度限制：100。",
-          "member": "string",
-          "name": "Names",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "任务流模板类型过滤条件，可选值：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "分页偏移量，默认值：0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回记录条数，默认值：10，最大值：100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "任务流模板名字过滤条件，数组长度限制：100。",
+          "example": "[\"\\u6211\\u7684\\u4efb\\u52a1\\u6d41A\\r\\n\"]",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "document": "任务流模板类型过滤条件，可选值：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "分页偏移量，默认值：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12956,17 +12963,21 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "任务流模板详情列表。",
+          "example": "无",
           "member": "ProcedureTemplate",
           "name": "ProcedureTemplateSet",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23791,6 +23802,32 @@
       ],
       "usage": "in"
     },
+    "ProcedureReviewAudioVideoTaskInput": {
+      "document": "任务流模板音视频审核输入参数类型。",
+      "members": [
+        {
+          "document": "审核模板。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "审核的内容，可选值：\n<li>Media：原始音视频。</li>\n不填或填空数组时，默认为审核 Media。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewContents",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ProcedureTask": {
       "document": "音视频处理任务信息",
       "members": [
@@ -23999,111 +24036,111 @@
       "document": "任务流模板详情",
       "members": [
         {
-          "default": "",
           "document": "任务流名字。",
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "任务流模板类型，取值范围：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "视频处理类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "AI 智能审核类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI 智能审核类型任务参数 \\*。\n<font color=red>\\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AI 智能内容分析类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "AI 内容识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "微信小程序发布任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WechatMiniProgramPublishTaskInput",
           "name": "MiniProgramPublishTask",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
+          "document": "音视频审核类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcedureReviewAudioVideoTaskInput",
+          "name": "ReviewAudioVideoTask",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -25914,60 +25951,76 @@
       "document": "ResetProcedureTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "任务流名字",
+          "example": "我的一个任务流",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "模板描述信息，长度限制：256 个字符。",
-          "member": "string",
-          "name": "Comment",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "视频处理类型任务参数。",
-          "member": "MediaProcessTaskInput",
-          "name": "MediaProcessTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "AI 智能内容审核类型任务参数。",
-          "member": "AiContentReviewTaskInput",
-          "name": "AiContentReviewTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "AI 智能内容分析类型任务参数。",
-          "member": "AiAnalysisTaskInput",
-          "name": "AiAnalysisTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "AI 内容识别类型任务参数。",
-          "member": "AiRecognitionTaskInput",
-          "name": "AiRecognitionTask",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "document": "视频处理类型任务参数。",
+          "example": "无",
+          "member": "MediaProcessTaskInput",
+          "name": "MediaProcessTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "AI 智能内容审核类型任务参数 \\*。\n<font color=red>\\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> ",
+          "example": "无",
+          "member": "AiContentReviewTaskInput",
+          "name": "AiContentReviewTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "AI 智能内容分析类型任务参数。",
+          "example": "无",
+          "member": "AiAnalysisTaskInput",
+          "name": "AiAnalysisTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "AI 内容识别类型任务参数。",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "document": "音视频审核类型任务参数。",
+          "example": "无",
+          "member": "ProcedureReviewAudioVideoTaskInput",
+          "name": "ReviewAudioVideoTask",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

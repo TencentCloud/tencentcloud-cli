@@ -21,6 +21,8 @@ Output:
         "Topics": [
             {
                 "Name": "example-topic",
+                "Type": "Normal",
+                "GroupNum": 0,
                 "Remark": "modified",
                 "PartitionNum": 3,
                 "CreateTime": 1621308465000,

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cynosdb AddInstances --cli-unfold-argument  \
+    --ReadOnlyCount 1 \
     --VpcId vpc-1ptuei0b \
-    --SubnetId subnet-1tmw9t4o \
-    --Cpu 2 \
-    --Memory 4 \
     --ClusterId cynosdbmysql-6gtlgm5l \
-    --ReadOnlyCount 1
+    --Memory 4 \
+    --SubnetId subnet-1tmw9t4o \
+    --Cpu 2
 ```
 
 Output: 

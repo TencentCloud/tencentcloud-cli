@@ -1257,7 +1257,7 @@
     "DescribeTags": [
       {
         "document": "获取所有主机标签",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeTags\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTags\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 2,\n                \"Name\": \"标签名\",\n                \"Count\": 123\n            }\n        ],\n        \"RequestId\": \"b12a5e5a-9393-453f-a4d9-b42de0b2bcec\"\n    }\n}",
         "title": "获取所有主机标签"
       }

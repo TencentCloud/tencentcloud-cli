@@ -1,3 +1,227 @@
+# Release 3.0.679.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 26 次发布
+
+发布时间：2022-12-30 01:14:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyIndex](http://document.tencentcloudapi.woa.com/document/product/614/56442)
+
+	* 新增入参：CoverageField
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 27 次发布
+
+发布时间：2022-12-30 01:19:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/48088)
+
+	* 新增入参：ParamTemplateId, InstanceParams
+
+* [DeleteBackup](http://document.tencentcloudapi.woa.com/document/product/1003/76475)
+
+	* 新增入参：BackupIds
+
+	* <font color="#dd0000">**修改入参**：</font>SnapshotIdList
+
+* [DescribeClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48086)
+
+	* 新增入参：GetServerInfo
+
+* [RollBackCluster](http://document.tencentcloudapi.woa.com/document/product/1003/70115)
+
+	* 新增入参：RollbackMode
+
+
+新增数据结构：
+
+* [ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 25 次发布
+
+发布时间：2022-12-30 01:31:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CallBackRuleInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackRuleInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CreateTime, UpdateTime, TemplateId, DomainName, AppName
+
+* [CertInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CertInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CertId, CertName, Description, CreateTime, HttpsCrt, CertType, CertExpireTime, DomainList
+
+* [DomainCertInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#DomainCertInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CertId, CertName, Description, CreateTime, HttpsCrt, CertType, CertExpireTime, DomainName, Status, CertDomains, CloudCertId
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#DomainInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Type, Status, CreateTime, BCName, TargetDomain, PlayType, IsDelayLive, CurrentCName, RentTag, RentExpireTime, IsMiniProgramLive
+
+* [ForbidStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#ForbidStreamInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>StreamName, CreateTime, ExpireTime, AppName, DomainName
+
+* [LiveDomainCertBindings](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveDomainCertBindings)
+
+	* <font color="#dd0000">**修改成员**：</font>DomainName, CertificateAlias, CertType, Status, CertExpireTime, CertId, CloudCertId, UpdateTime, GrayRatio
+
+* [LivePackageInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LivePackageInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Total, Used, Left, BuyTime, ExpireTime, Type, Status
+
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LogInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>LogName, LogUrl, LogTime, FileSize
+
+* [RuleInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#RuleInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CreateTime, UpdateTime, TemplateId, DomainName, AppName, StreamName
+
+* [WatermarkInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#WatermarkInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>WatermarkId, PictureUrl, XPosition, YPosition, WatermarkName, Status, CreateTime, Width, Height
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 19 次发布
+
+发布时间：2022-12-30 01:39:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
+
+	* 新增成员：Port
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 13 次发布
+
+发布时间：2022-12-30 01:44:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateSecurityPolicies
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 29 次发布
+
+发布时间：2022-12-30 01:45:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQTopic)
+
+	* 新增成员：Type, GroupNum
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 42 次发布
+
+发布时间：2022-12-30 01:50:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/33897)
+
+	* 新增入参：ReviewAudioVideoTask
+
+* [ResetProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/33894)
+
+	* 新增入参：ReviewAudioVideoTask
+
+
+新增数据结构：
+
+* [ProcedureReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureReviewAudioVideoTaskInput)
+
+修改数据结构：
+
+* [ProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureTemplate)
+
+	* 新增成员：ReviewAudioVideoTask
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Type, Comment, MediaProcessTask, AiContentReviewTask, AiAnalysisTask, AiRecognitionTask, MiniProgramPublishTask, CreateTime, UpdateTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 55 次发布
+
+发布时间：2022-12-30 01:52:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：RouteBroadcastPolicyFlag
+
+	* <font color="#dd0000">**修改成员**：</font>CcnId, CcnName, CcnDescription, InstanceCount, CreateTime, State, QosLevel, InstanceChargeType, BandwidthLimitType, TagSet, RoutePriorityFlag, RouteTableCount, RouteTableFlag
+
+
+
+
 # Release 3.0.678.1
 
 ## 音频内容安全(ams) 版本：2020-12-29
