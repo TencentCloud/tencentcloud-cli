@@ -25,15 +25,23 @@ Output:
         "Items": [
             {
                 "Status": "xx",
+                "AgentTotal": 1,
                 "VpcId": "xx",
+                "ExecutorGroupId": "xx",
                 "AgentType": 1,
+                "AgentGroupId": "xx",
                 "StatusDesc": "xx",
                 "Source": "xx",
                 "ExecutorGroupName": "xx",
                 "TaskCount": 1,
                 "AgentName": "xx",
                 "AgentId": "xx",
-                "ExecutorGroupId": "xx"
+                "CvmAgentStatusList": [
+                    {
+                        "Status": "xx",
+                        "Count": 1
+                    }
+                ]
             }
         ],
         "TotalPage": 1,

@@ -10485,7 +10485,6 @@
       "document": "RocketMQ主题信息",
       "members": [
         {
-          "default": "",
           "document": "主题名称",
           "example": "test",
           "member": "string",
@@ -10495,7 +10494,24 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订阅组数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
           "member": "string",
@@ -10505,7 +10521,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "读写分区数",
           "example": "1",
           "member": "uint64",
@@ -10515,7 +10530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间，以毫秒为单位",
           "example": "100000",
           "member": "uint64",
@@ -10525,7 +10539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间，以毫秒为单位",
           "example": "100000",
           "member": "uint64",

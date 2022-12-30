@@ -313,7 +313,7 @@
       "output": "ModifyConsumerResponse"
     },
     "ModifyIndex": {
-      "document": "本接口用于修改索引配置\n",
+      "document": "本接口用于修改索引配置，该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过1，即同一时间同一个日志主题只能有一个正在执行的索引配置修改操作。\n",
       "input": "ModifyIndexRequest",
       "name": "修改索引",
       "output": "ModifyIndexResponse"
@@ -4965,7 +4965,7 @@
       "members": [
         {
           "default": "",
-          "document": "需要配置键值或者元字段索引的字段名称，仅支持字母、数字和_-./@，且不能以_开头\n\n注意：\n1，元字段（tag）的Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀\n2，键值索引（KeyValue）及元字段索引（Tag）中的Key总数不能超过300\n3，Key的层级不能超过10层，例如a.b.c.d.e.f.g.h.j.k\n4，不允许同时包含json父子级字段，例如a及a.b",
+          "document": "需要配置键值或者元字段索引的字段名称，仅支持字母、数字、下划线和-./@，且不能以下划线开头\n\n注意：\n1，元字段（tag）的Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀\n2，键值索引（KeyValue）及元字段索引（Tag）中的Key总数不能超过300\n3，Key的层级不能超过10层，例如a.b.c.d.e.f.g.h.j.k\n4，不允许同时包含json父子级字段，例如a及a.b",
           "example": "无",
           "member": "string",
           "name": "Key",
@@ -6735,11 +6735,11 @@
       "type": "object"
     },
     "RuleInfo": {
-      "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数",
+      "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数\n",
       "members": [
         {
           "default": "",
-          "document": "全文索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全文索引配置, 如果为空时代表未开启全文索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "FullTextInfo",
           "name": "FullText",
@@ -6749,7 +6749,7 @@
         },
         {
           "default": "",
-          "document": "键值索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键值索引配置，如果为空时代表未开启键值索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleKeyValueInfo",
           "name": "KeyValue",
@@ -6759,7 +6759,7 @@
         },
         {
           "default": "",
-          "document": "元字段索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元字段索引配置，如果为空时代表未开启元字段索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleTagInfo",
           "name": "Tag",

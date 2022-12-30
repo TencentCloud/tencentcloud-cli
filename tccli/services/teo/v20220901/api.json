@@ -336,6 +336,12 @@
       "name": "获取源站组列表",
       "output": "DescribeOriginGroupResponse"
     },
+    "DescribeOriginProtection": {
+      "document": "查询源站防护信息",
+      "input": "DescribeOriginProtectionRequest",
+      "name": "查询源站防护信息",
+      "output": "DescribeOriginProtectionResponse"
+    },
     "DescribeOverviewL7Data": {
       "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
       "input": "DescribeOverviewL7DataRequest",
@@ -707,6 +713,12 @@
       "input": "SwitchLogTopicTaskRequest",
       "name": "开启或关闭推送任务",
       "output": "SwitchLogTopicTaskResponse"
+    },
+    "UpdateOriginProtectionIPWhitelist": {
+      "document": "更新源站防护IP白名单",
+      "input": "UpdateOriginProtectionIPWhitelistRequest",
+      "name": "更新源站防护IP白名单",
+      "output": "UpdateOriginProtectionIPWhitelistResponse"
     }
   },
   "metadata": {
@@ -7487,6 +7499,69 @@
       ],
       "type": "object"
     },
+    "DescribeOriginProtectionRequest": {
+      "document": "DescribeOriginProtection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的站点集合，不填默认查询所有站点。",
+          "example": "[\"zone-276zs184g93m\",\"zone-27fil18zp2v1\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>need-update<br>   按照【<strong>站点是否需要更新源站防护IP白名单</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   true：需要更新<br>   false：无需更新<br></li>\n<li>plan-support<br>   按照【<strong>站点套餐是否支持源站防护</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   true：支持<br>   false：不支持<br></li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginProtectionResponse": {
+      "document": "DescribeOriginProtection返回参数结构体",
+      "members": [
+        {
+          "document": "源站防护信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginProtectionInfo",
+          "name": "OriginProtectionInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOverviewL7DataRequest": {
       "document": "DescribeOverviewL7Data请求参数结构体",
       "members": [
@@ -10395,6 +10470,52 @@
       ],
       "usage": "out"
     },
+    "DiffIPWhitelist": {
+      "document": "最新IP白名单列表相比于当前IP白名单列表的区别",
+      "members": [
+        {
+          "default": "",
+          "document": "最新IP白名单列表。",
+          "example": "无",
+          "member": "IPWhitelist",
+          "name": "LatestIPWhitelist",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新IP白名单列表相比于当前IP白名单列表，新增部分。",
+          "example": "无",
+          "member": "IPWhitelist",
+          "name": "AddedIPWhitelist",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新IP白名单列表相比于当前IP白名单列表，删减部分。",
+          "example": "无",
+          "member": "IPWhitelist",
+          "name": "RemovedIPWhitelist",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新IP白名单列表相比于当前IP白名单列表，不变部分。",
+          "example": "无",
+          "member": "IPWhitelist",
+          "name": "NoChangeIPWhitelist",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DistrictStatistics": {
       "document": "拨测分地域统计数据",
       "members": [
@@ -11358,6 +11479,32 @@
         }
       ],
       "usage": "both"
+    },
+    "IPWhitelist": {
+      "document": "源站防护IP白名单",
+      "members": [
+        {
+          "default": "",
+          "document": "IPv4列表。",
+          "example": "[\"11.11.11.0/24\",\"22.22.22.0/24\"]",
+          "member": "string",
+          "name": "IPv4",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IPv6列表。",
+          "example": "[\"2001:980:7002:6::/64\"]",
+          "member": "string",
+          "name": "IPv6",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Identification": {
       "document": "站点验证信息",
@@ -13771,6 +13918,84 @@
           "name": "HostHeader",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginProtectionInfo": {
+      "document": "源站防护信息",
+      "members": [
+        {
+          "document": "站点ID。",
+          "example": "\"zone-xxx\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名列表。",
+          "example": "[\"www.qq.com\",\"aaa.qq.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代理ID列表。",
+          "example": "[\"proxy-xxx\"]",
+          "member": "string",
+          "name": "ProxyIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前版本的IP白名单。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IPWhitelist",
+          "name": "CurrentIPWhitelist",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该站点是否需要更新源站白名单，取值有：\n<li>true ：需要更新IP白名单 ；</li>\n<li>false ：无需更新IP白名单。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedUpdate",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "源站防护状态，取值有：\n<li>online ：源站防护启用中 ；</li>\n<li>offline ：源站防护已停用 ；</li>\n<li>nonactivate ：源站防护未激活，仅在从未使用过源站防护功能的站点调用中返回。</li>",
+          "example": "\"online\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点套餐是否支持源站防护，取值有：\n<li>true ：支持 ；</li>\n<li>false ：不支持。</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "PlanSupport",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最新IP白名单与当前IP白名单的对比。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffIPWhitelist",
+          "name": "DiffIPWhitelist",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -17104,6 +17329,33 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateOriginProtectionIPWhitelistRequest": {
+      "document": "UpdateOriginProtectionIPWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOriginProtectionIPWhitelistResponse": {
+      "document": "UpdateOriginProtectionIPWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpstreamHttp2": {
       "document": "Http2回源配置",

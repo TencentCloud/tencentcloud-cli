@@ -4992,6 +4992,32 @@
       ],
       "type": "object"
     },
+    "CvmAgentStatus": {
+      "document": "采集器状态统计",
+      "members": [
+        {
+          "default": "",
+          "document": "agent状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对应状态的agent总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DailyScoreInfo": {
       "document": "日评分信息",
       "members": [
@@ -7523,7 +7549,7 @@
         },
         {
           "default": "",
-          "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1",
+          "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】",
           "example": "1",
           "member": "uint64",
           "name": "AgentType",
@@ -7574,6 +7600,15 @@
           "name": "Like",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "agent类型【多个用逗号分隔】",
+          "example": "1",
+          "member": "string",
+          "name": "AgentTypes",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13894,6 +13929,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采集器组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdgrsa",
+          "member": "string",
+          "name": "AgentGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "agent状态统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CvmAgentStatus",
+          "name": "CvmAgentStatusList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "agent数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

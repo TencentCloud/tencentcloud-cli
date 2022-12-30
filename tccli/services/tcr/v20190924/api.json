@@ -108,12 +108,6 @@
       "name": "创建个人版镜像仓库",
       "output": "CreateRepositoryPersonalResponse"
     },
-    "CreateSecurityPolicies": {
-      "document": "创建实例公网访问白名单策略",
-      "input": "CreateSecurityPoliciesRequest",
-      "name": "创建实例公网访问白名单策略",
-      "output": "CreateSecurityPoliciesResponse"
-    },
     "CreateSecurityPolicy": {
       "document": "创建实例公网访问白名单策略",
       "input": "CreateSecurityPolicyRequest",
@@ -1755,55 +1749,6 @@
     "CreateRepositoryResponse": {
       "document": "CreateRepository返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateSecurityPoliciesRequest": {
-      "document": "CreateSecurityPolicies请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例Id",
-          "member": "string",
-          "name": "RegistryId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "192.168.0.0/24",
-          "member": "string",
-          "name": "CidrBlock",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "描述",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateSecurityPoliciesResponse": {
-      "document": "CreateSecurityPolicies返回参数结构体",
-      "members": [
-        {
-          "document": "实例Id",
-          "member": "string",
-          "name": "RegistryId",
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -576,7 +576,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQTopics\n&Offset=0\n&Limit=10\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c017c4d1-13cb-4f14-ab89-2c6530892f90\",\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"Name\": \"example-topic\",\n                \"Remark\": \"modified\",\n                \"PartitionNum\": 3,\n                \"CreateTime\": 1621308465000,\n                \"UpdateTime\": 1621308657000\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c017c4d1-13cb-4f14-ab89-2c6530892f90\",\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"Name\": \"example-topic\",\n                \"Type\": \"Normal\",\n                \"GroupNum\": 0,\n                \"Remark\": \"modified\",\n                \"PartitionNum\": 3,\n                \"CreateTime\": 1621308465000,\n                \"UpdateTime\": 1621308657000\n            }\n        ]\n    }\n}",
         "title": "获取主题列表"
       }
     ],

@@ -18,10 +18,35 @@ Output:
             {
                 "Name": "我的任务流A",
                 "Type": "Custom",
+                "Comment": "我的任务流A",
+                "UpdateTime": "2018-10-01T18:00:00",
+                "CreateTime": "2018-10-01T18:00:00",
+                "MediaProcessTask": {
+                    "TranscodeTaskSet": [
+                        {
+                            "Definition": 20,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 30,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 40,
+                            "WatermarkSet": null
+                        }
+                    ],
+                    "AnimatedGraphicTaskSet": null,
+                    "SnapshotByTimeOffsetTaskSet": null,
+                    "SampleSnapshotTaskSet": null,
+                    "ImageSpriteTaskSet": null,
+                    "CoverBySnapshotTaskSet": null
+                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
-                "MiniProgramPublishTask": null
+                "MiniProgramPublishTask": null,
+                "ReviewAudioVideoTask": null
             }
         ],
         "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"
@@ -47,28 +72,98 @@ Output:
             {
                 "Name": "我的任务流A",
                 "Type": "Custom",
+                "Comment": "我的任务流A",
+                "UpdateTime": "2018-10-01T18:00:00",
+                "CreateTime": "2018-10-01T18:00:00",
+                "MediaProcessTask": {
+                    "TranscodeTaskSet": [
+                        {
+                            "Definition": 20,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 30,
+                            "WatermarkSet": null
+                        },
+                        {
+                            "Definition": 40,
+                            "WatermarkSet": null
+                        }
+                    ],
+                    "AnimatedGraphicTaskSet": null,
+                    "SnapshotByTimeOffsetTaskSet": null,
+                    "SampleSnapshotTaskSet": null,
+                    "ImageSpriteTaskSet": null,
+                    "CoverBySnapshotTaskSet": null
+                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
-                "MiniProgramPublishTask": null
+                "MiniProgramPublishTask": null,
+                "ReviewAudioVideoTask": null
             },
             {
                 "Name": "我的任务流B",
                 "Type": "Custom",
+                "Comment": "我的任务流B",
+                "UpdateTime": "2018-10-01T18:00:00",
+                "CreateTime": "2018-10-01T18:00:00",
+                "MediaProcessTask": {
+                    "TranscodeTaskSet": [
+                        {
+                            "Definition": 20,
+                            "WatermarkSet": [
+                                {
+                                    "Definition": 15780,
+                                    "TextContent": null
+                                }
+                            ]
+                        },
+                        {
+                            "Definition": 30,
+                            "WatermarkSet": [
+                                {
+                                    "Definition": 15780,
+                                    "TextContent": null
+                                }
+                            ]
+                        },
+                        {
+                            "Definition": 40,
+                            "WatermarkSet": [
+                                {
+                                    "Definition": 15780,
+                                    "TextContent": null
+                                }
+                            ]
+                        }
+                    ],
+                    "AnimatedGraphicTaskSet": null,
+                    "SnapshotByTimeOffsetTaskSet": null,
+                    "SampleSnapshotTaskSet": null,
+                    "ImageSpriteTaskSet": null,
+                    "CoverBySnapshotTaskSet": null
+                },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
-                "MiniProgramPublishTask": null
+                "MiniProgramPublishTask": null,
+                "ReviewAudioVideoTask": null
             },
             {
                 "Name": "我的任务流C",
                 "Type": "Custom",
+                "Comment": "我的任务流C",
+                "UpdateTime": "2018-10-01T18:00:00",
+                "CreateTime": "2018-10-01T18:00:00",
+                "MediaProcessTask": null,
                 "AiContentReviewTask": {
                     "Definition": 10
                 },
                 "AiAnalysisTask": null,
                 "AiRecognitionTask": null,
-                "MiniProgramPublishTask": null
+                "MiniProgramPublishTask": null,
+                "ReviewAudioVideoTask": null
             }
         ],
         "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3"

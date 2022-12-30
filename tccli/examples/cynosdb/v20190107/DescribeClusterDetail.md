@@ -15,52 +15,90 @@ Output:
     "Response": {
         "Detail": {
             "ServerlessStatus": "xx",
-            "UsedStorage": 129417216,
-            "VpcId": "vpc-1ptuei0b",
-            "SubnetId": "subnet-1tmw9t4o",
-            "Vport": 5432,
-            "ClusterId": "cynosdbpg-962bpoek",
-            "DbType": "POSTGRESQL",
-            "SubnetName": "cynosdb-test",
-            "CreateTime": "xx",
-            "Charset": "UTF8",
-            "Vip": "10.0.1.5",
-            "ResourceTags": [
+            "NetworkStatus": "xx",
+            "Zone": "xx",
+            "StorageLimit": 0,
+            "DbVersion": "xx",
+            "Storage": 0,
+            "StorageId": "xx",
+            "Tasks": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "ObjectType": "xx",
+                    "TaskStatus": "xx",
+                    "ObjectId": "xx",
+                    "TaskId": 0,
+                    "TaskType": "xx"
                 }
             ],
-            "Region": "ap-guangzhou",
-            "Zone": "xx",
-            "ClusterName": "funnyTest",
-            "StatusDesc": "运行中",
-            "DbVersion": "10.0",
-            "PeriodEndTime": "xx",
-            "PayMode": 0,
-            "ProjectID": 0,
-            "Status": "running",
+            "SubnetName": "xx",
+            "ProxyStatus": "xx",
+            "Status": "xx",
+            "PhysicalZone": "xx",
+            "MasterZone": "xx",
+            "VpcId": "xx",
+            "Ability": {
+                "NonsupportSlaveZoneReason": "xx",
+                "IsSupportSlaveZone": "xx",
+                "IsSupportRo": "xx",
+                "NonsupportRoReason": "xx"
+            },
             "RoAddr": [
                 {
                     "IP": "xx",
                     "Port": 0
                 }
             ],
-            "InstanceSet": [
+            "ClusterId": "xx",
+            "SlaveZones": [
+                "xx"
+            ],
+            "VpcName": "xx",
+            "PeriodEndTime": "xx",
+            "MinStorageSize": 0,
+            "MaxStorageSize": 0,
+            "Charset": "xx",
+            "IsFreeze": "xx",
+            "Region": "xx",
+            "IsOpenPasswordComplexity": "xx",
+            "PayMode": 0,
+            "SubnetId": "xx",
+            "ResourceTags": [
                 {
-                    "InstanceStatus": "running",
-                    "InstanceCpu": 2,
-                    "InstanceId": "xx",
-                    "InstanceStatusDesc": "运行中",
-                    "InstanceMemory": 4,
-                    "InstanceStorage": 100,
-                    "InstanceName": "tom-test11111111",
-                    "InstanceType": "POSTGRESQL"
+                    "TagKey": "xx",
+                    "TagValue": "xx"
                 }
             ],
-            "VpcName": "cynosdb"
+            "CynosVersion": "xx",
+            "StatusDesc": "xx",
+            "StoragePayMode": 0,
+            "BusinessType": "xx",
+            "LogBin": "xx",
+            "HasSlaveZone": "xx",
+            "ClusterName": "xx",
+            "UsedStorage": 129417216,
+            "IsSkipTrade": "xx",
+            "CreateTime": "xx",
+            "DbType": "xx",
+            "Vip": "xx",
+            "ProjectID": 0,
+            "InstanceSet": [
+                {
+                    "InstanceStatus": "xx",
+                    "InstanceCpu": 2,
+                    "InstanceId": "xx",
+                    "InstanceRole": "xx",
+                    "InstanceStatusDesc": "xx",
+                    "InstanceMemory": 4,
+                    "InstanceStorage": 100,
+                    "InstanceName": "xx",
+                    "InstanceType": "xx"
+                }
+            ],
+            "Vport": 5432,
+            "DbMode": "xx",
+            "PitrType": "xx"
         },
-        "RequestId": "101880"
+        "RequestId": "xx"
     }
 }
 ```

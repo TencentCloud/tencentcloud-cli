@@ -550,6 +550,14 @@
         "title": "查询指定源站组名称的源站组信息（模糊查询）"
       }
     ],
+    "DescribeOriginProtection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginProtection\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-276zs184g93m\"\n    ],\n    \"Filters\": {\n        \"Values\": [\n            \"true\"\n        ],\n        \"Name\": \"need-update\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"de0a2b4f-df6d-4d2a-ac39-1706cbf8a797\",\n        \"OriginProtectionInfo\": [\n            {\n                \"ZoneId\": \"zone-276zs184g93m\",\n                \"Hosts\": [\n                    \"www.qq.com\"\n                ],\n                \"ProxyIds\": [\n                    \"proxy-19389e5dwwxfs\"\n                ],\n                \"CurrentIPWhitelist\": {\n                    \"IPv4\": [\n                        \"11.11.11.11/24\"\n                    ],\n                    \"IPv6\": [\n                        \"2001:980:7002:6::/64\"\n                    ]\n                },\n                \"NeedUpdate\": true,\n                \"Status\": \"online\",\n                \"PlanSupport\": true,\n                \"DiffIPWhitelist\": {\n                    \"LatestIPWhitelist\": {\n                        \"IPv4\": [\n                            \"11.11.11.11/24\",\n                            \"22.22.22.22/24\"\n                        ],\n                        \"IPv6\": [\n                            \"2001:980:7002:6::/64\"\n                        ]\n                    },\n                    \"AddedIPWhitelist\": {\n                        \"IPv4\": [\n                            \"22.22.22.22/24\"\n                        ],\n                        \"IPv6\": []\n                    },\n                    \"RemovedIPWhitelist\": {\n                        \"IPv4\": [],\n                        \"IPv6\": []\n                    },\n                    \"NoChangeIPWhitelist\": {\n                        \"IPv4\": [\n                            \"11.11.11.11/24\"\n                        ],\n                        \"IPv6\": [\n                            \"2001:980:7002:6::/64\"\n                        ]\n                    }\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询源站防护信息"
+      }
+    ],
     "DescribeOverviewL7Data": [
       {
         "document": "",
@@ -1170,6 +1178,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchLogTopicTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"0a396698-d589-42b6-a6a2-701777\",\n    \"IsOpen\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"db5b7039-165f-4377-850a-ee0a6a4ae089\"\n    }\n}",
         "title": "开启或关闭推送任务"
+      }
+    ],
+    "UpdateOriginProtectionIPWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOriginProtectionIPWhitelist\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af0a2b4f-df6d-4d2a-ac39-1706cbf8a868\"\n    }\n}",
+        "title": "更新源站防护IP白名单"
       }
     ]
   },

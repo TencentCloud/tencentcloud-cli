@@ -17503,7 +17503,7 @@
         },
         {
           "default": "",
-          "document": "过滤参数;\n<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>",
+          "document": "过滤参数;\n<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -18867,7 +18867,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字(机器名称/机器IP </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装 | SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
