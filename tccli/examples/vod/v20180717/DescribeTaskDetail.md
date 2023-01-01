@@ -1,6 +1,6 @@
 **Example 1: 获取任务详情-Procedure**
 
-
+获取任务详情-任务流
 
 Input: 
 
@@ -82,7 +82,7 @@ Output:
 
 **Example 2: 获取任务详情-Transcode**
 
-
+获取任务详情-转码
 
 Input: 
 
@@ -148,7 +148,7 @@ Output:
 
 **Example 3: 获取任务详情-EditMedia**
 
-
+获取任务详情-编辑视频
 
 Input: 
 
@@ -223,7 +223,7 @@ Output:
 
 **Example 4: 获取任务详情-WechatMiniProgramPublish**
 
-
+获取任务详情-微信小程序发布
 
 Input: 
 

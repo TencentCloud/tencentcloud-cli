@@ -1,6 +1,6 @@
 **Example 1: 查询可售卖实例规格信息**
 
-
+该接口（DescribeInstanceSpecs）用于查询可售卖实例规格信息
 
 Input: 
 
@@ -19,10 +19,12 @@ Output:
                 "ZoneStockInfos": [
                     {
                         "HasStock": true,
+                        "StockCount": 0,
                         "Zone": "xx"
                     }
                 ],
                 "MachineType": "xx",
+                "StockCount": 0,
                 "HasStock": true,
                 "Memory": 1,
                 "MinStorageSize": 1,
@@ -35,10 +37,12 @@ Output:
                 "ZoneStockInfos": [
                     {
                         "HasStock": true,
+                        "StockCount": 0,
                         "Zone": "xx"
                     }
                 ],
                 "MachineType": "xx",
+                "StockCount": 0,
                 "HasStock": true,
                 "Memory": 1,
                 "MinStorageSize": 1,

@@ -15,7 +15,8 @@ Output:
 {
     "Response": {
         "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
-        "TaskId": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca"
+        "TaskId": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
+        "ReviewAudioVideoTaskId": ""
     }
 }
 ```

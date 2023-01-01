@@ -1,29 +1,97 @@
 # 本版本更新包含以下内容：
 
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 26 次发布
-
-发布时间：2022-12-30 01:14:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyIndex](http://document.tencentcloudapi.woa.com/document/product/614/56442)
-
-	* 新增入参：CoverageField
-
-
-
-
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 27 次发布
+### 第 28 次发布
 
-发布时间：2022-12-30 01:19:49
+发布时间：2023-01-02 01:19:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76888)
+* [CreateAuditRuleTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/76887)
+* [DeleteAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76886)
+* [DescribeAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76885)
+* [DescribeAuditRuleWithInstanceIds](http://document.tencentcloudapi.woa.com/document/product/1003/76884)
+* [ModifyAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76883)
+* [ModifyAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76882)
+* [OpenAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76881)
+
+新增数据结构：
+
+* [AuditRuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleFilters)
+* [AuditRuleTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleTemplateInfo)
+* [InstanceAuditRule](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAuditRule)
+* [OldAddrInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#OldAddrInfo)
+* [RuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RuleFilters)
+
+修改数据结构：
+
+* [CynosdbInstanceGrp](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceGrp)
+
+	* 新增成员：UniqVpcId, UniqSubnetId, OldAddrInfo, ProcessingTasks, Tasks, NetServiceId
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, ClusterId, CreatedTime, DeletedTime, InstanceGrpId, Status, Type, UpdatedTime, Vip, Vport, WanDomain, WanIP, WanPort, WanStatus, InstanceSet
+
+* [InstanceSpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceSpec)
+
+	* 新增成员：StockCount
+
+* [ZoneStockInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ZoneStockInfo)
+
+	* 新增成员：StockCount
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 3 次发布
+
+发布时间：2023-01-02 01:29:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
+
+	* 新增成员：PublishStatus, UpdateVersion
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 15 次发布
+
+发布时间：2023-01-02 01:30:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/76889)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云监控(monitor) 版本：2018-07-24
+
+### 第 39 次发布
+
+发布时间：2023-01-02 01:31:00
 
 本次发布包含了以下内容：
 
@@ -31,145 +99,76 @@
 
 修改接口：
 
-* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/48088)
+* [BindingPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40421)
 
-	* 新增入参：ParamTemplateId, InstanceParams
+	* 新增入参：EbSubject, EbEventFlag
 
-* [DeleteBackup](http://document.tencentcloudapi.woa.com/document/product/1003/76475)
+* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
 
-	* 新增入参：BackupIds
+	* 新增入参：EbSubject
 
-	* <font color="#dd0000">**修改入参**：</font>SnapshotIdList
+* [DeleteAlarmNotices](http://document.tencentcloudapi.woa.com/document/product/248/51286)
 
-* [DescribeClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48086)
+	* 新增入参：NoticeBindPolicys
 
-	* 新增入参：GetServerInfo
+* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/51277)
 
-* [RollBackCluster](http://document.tencentcloudapi.woa.com/document/product/1003/70115)
+	* 新增入参：PolicyIds
 
-	* 新增入参：RollbackMode
+* [ModifyAlarmPolicyCondition](http://document.tencentcloudapi.woa.com/document/product/248/51276)
+
+	* 新增入参：NoticeIds, Enable, PolicyName, EbSubject
+
+* [UnBindingAllPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40568)
+
+	* 新增入参：EbSubject, EbEventFlag
+
+* [UnBindingPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40567)
+
+	* 新增入参：EbSubject, EbEventFlag
 
 
 新增数据结构：
 
-* [ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem)
+* [NoticeBindPolicys](http://document.tencentcloudapi.woa.com/document/product/248/30354#NoticeBindPolicys)
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
-### 第 25 次发布
+### 第 14 次发布
 
-发布时间：2022-12-30 01:31:59
+发布时间：2023-01-02 01:41:26
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [CreateTrainingModel](http://document.tencentcloudapi.woa.com/document/product/851/74835)
+
+	* 新增入参：IsQAT
+
 
 修改数据结构：
 
-* [CallBackRuleInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackRuleInfo)
+* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
 
-	* <font color="#dd0000">**修改成员**：</font>CreateTime, UpdateTime, TemplateId, DomainName, AppName
-
-* [CertInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CertInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>CertId, CertName, Description, CreateTime, HttpsCrt, CertType, CertExpireTime, DomainList
-
-* [DomainCertInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#DomainCertInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>CertId, CertName, Description, CreateTime, HttpsCrt, CertType, CertExpireTime, DomainName, Status, CertDomains, CloudCertId
-
-* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#DomainInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>Name, Type, Status, CreateTime, BCName, TargetDomain, PlayType, IsDelayLive, CurrentCName, RentTag, RentExpireTime, IsMiniProgramLive
-
-* [ForbidStreamInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#ForbidStreamInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>StreamName, CreateTime, ExpireTime, AppName, DomainName
-
-* [LiveDomainCertBindings](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveDomainCertBindings)
-
-	* <font color="#dd0000">**修改成员**：</font>DomainName, CertificateAlias, CertType, Status, CertExpireTime, CertId, CloudCertId, UpdateTime, GrayRatio
-
-* [LivePackageInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LivePackageInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>Id, Total, Used, Left, BuyTime, ExpireTime, Type, Status
-
-* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LogInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>LogName, LogUrl, LogTime, FileSize
-
-* [RuleInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#RuleInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>CreateTime, UpdateTime, TemplateId, DomainName, AppName, StreamName
-
-* [WatermarkInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#WatermarkInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>WatermarkId, PictureUrl, XPosition, YPosition, WatermarkName, Status, CreateTime, Width, Height
+	* 新增成员：QATModel
 
 
 
 
-## 云函数(scf) 版本：2018-04-16
-
-### 第 19 次发布
-
-发布时间：2022-12-30 01:39:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
-
-	* 新增成员：Port
-
-
-
-
-## 容器镜像服务(tcr) 版本：2019-09-24
-
-### 第 13 次发布
-
-发布时间：2022-12-30 01:44:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CreateSecurityPolicies
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 29 次发布
-
-发布时间：2022-12-30 01:45:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQTopic)
-
-	* 新增成员：Type, GroupNum
-
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
 
 
 
 ## 云点播(vod) 版本：2018-07-17
 
-### 第 42 次发布
+### 第 43 次发布
 
-发布时间：2022-12-30 01:50:45
+发布时间：2023-01-02 01:44:43
 
 本次发布包含了以下内容：
 
@@ -177,47 +176,46 @@
 
 修改接口：
 
-* [CreateProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/33897)
+* [ProcessMediaByProcedure](http://document.tencentcloudapi.woa.com/document/product/266/34782)
 
-	* 新增入参：ReviewAudioVideoTask
+	* 新增出参：ReviewAudioVideoTaskId
 
-* [ResetProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/33894)
-
-	* 新增入参：ReviewAudioVideoTask
-
-
-新增数据结构：
-
-* [ProcedureReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureReviewAudioVideoTaskInput)
 
 修改数据结构：
 
-* [ProcedureTemplate](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureTemplate)
+* [EditMediaTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#EditMediaTask)
 
-	* 新增成员：ReviewAudioVideoTask
+	* 新增成员：ReviewAudioVideoTaskId
 
-	* <font color="#dd0000">**修改成员**：</font>Name, Type, Comment, MediaProcessTask, AiContentReviewTask, AiAnalysisTask, AiRecognitionTask, MiniProgramPublishTask, CreateTime, UpdateTime
+	* <font color="#dd0000">**修改成员**：</font>TaskId, Status, ErrCode, ErrCodeExt, Message, Progress, Input, Output, MetaData, ProcedureTaskId, SessionId, SessionContext
 
+* [FileUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#FileUploadTask)
 
+	* 新增成员：ReviewAudioVideoTaskId
 
+	* <font color="#dd0000">**修改成员**：</font>FileId, MediaBasicInfo, ProcedureTaskId, MetaData
 
-## 私有网络(vpc) 版本：2017-03-12
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
 
-### 第 55 次发布
+	* <font color="#dd0000">**修改成员**：</font>Bitrate, Height, Width, Codec, Fps, CodecTag
 
-发布时间：2022-12-30 01:52:06
+* [PullUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#PullUploadTask)
 
-本次发布包含了以下内容：
+	* 新增成员：ReviewAudioVideoTaskId
 
-改善已有的文档。
+	* <font color="#dd0000">**修改成员**：</font>TaskId, Status, ErrCode, Message, FileId, MediaBasicInfo, MetaData, FileUrl, ProcedureTaskId, SessionContext, SessionId, Progress
 
-修改数据结构：
+* [ReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoTaskInput)
 
-* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+	* 新增成员：ReviewContents
 
-	* 新增成员：RouteBroadcastPolicyFlag
+	* <font color="#dd0000">**修改成员**：</font>FileId, Definition
 
-	* <font color="#dd0000">**修改成员**：</font>CcnId, CcnName, CcnDescription, InstanceCount, CreateTime, State, QosLevel, InstanceChargeType, BandwidthLimitType, TagSet, RoutePriorityFlag, RouteTableCount, RouteTableFlag
+* [SplitMediaTaskSegmentInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SplitMediaTaskSegmentInfo)
+
+	* 新增成员：ReviewAudioVideoTaskId
+
+	* <font color="#dd0000">**修改成员**：</font>Input, Output, ProcedureTaskId
 
 
 
@@ -15808,6 +15806,50 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 28 次发布
+
+发布时间：2023-01-02 01:19:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CloseAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76888)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateAuditRuleTemplate](http://document.tencentcloudapi.woa.com/document/product/1003/76887)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76886)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76885)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAuditRuleWithInstanceIds](http://document.tencentcloudapi.woa.com/document/product/1003/76884)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/1003/76883)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76882)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[OpenAuditService](http://document.tencentcloudapi.woa.com/document/product/1003/76881)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AuditRuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleFilters)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[AuditRuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleFilters))
+* [[AuditRuleTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleTemplateInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[AuditRuleTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditRuleTemplateInfo))
+* [[InstanceAuditRule](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAuditRule)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[InstanceAuditRule](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAuditRule))
+* [[OldAddrInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#OldAddrInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[OldAddrInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#OldAddrInfo))
+* [[RuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RuleFilters)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[RuleFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RuleFilters))
+
+修改数据结构：
+
+* [CynosdbInstanceGrp](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstanceGrp)
+
+	* 新增成员：UniqVpcId, UniqSubnetId, OldAddrInfo, ProcessingTasks, Tasks, NetServiceId
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, ClusterId, CreatedTime, DeletedTime, InstanceGrpId, Status, Type, UpdatedTime, Vip, Vport, WanDomain, WanIP, WanPort, WanStatus, InstanceSet
+
+* [InstanceSpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceSpec)
+
+	* 新增成员：StockCount
+
+* [ZoneStockInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ZoneStockInfo)
+
+	* 新增成员：StockCount
+
+
 ### 第 27 次发布
 
 发布时间：2022-12-30 01:19:49
@@ -15839,7 +15881,7 @@
 
 新增数据结构：
 
-* [[ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem))
+* [ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem)
 
 ### 第 26 次发布
 
@@ -27432,6 +27474,21 @@
 
 ## 云开发低码(lowcode) 版本：2021-01-08
 
+### 第 3 次发布
+
+发布时间：2023-01-02 01:29:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
+
+	* 新增成员：PublishStatus, UpdateVersion
+
+
 ### 第 2 次发布
 
 发布时间：2022-10-20 06:24:37
@@ -28317,6 +28374,18 @@
 
 ## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
+### 第 15 次发布
+
+发布时间：2023-01-02 01:30:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/76889)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 14 次发布
 
 发布时间：2022-11-25 06:38:41
@@ -28602,6 +28671,49 @@
 
 
 ## 云监控(monitor) 版本：2018-07-24
+
+### 第 39 次发布
+
+发布时间：2023-01-02 01:31:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindingPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40421)
+
+	* 新增入参：EbSubject, EbEventFlag
+
+* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
+
+	* 新增入参：EbSubject
+
+* [DeleteAlarmNotices](http://document.tencentcloudapi.woa.com/document/product/248/51286)
+
+	* 新增入参：NoticeBindPolicys
+
+* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/51277)
+
+	* 新增入参：PolicyIds
+
+* [ModifyAlarmPolicyCondition](http://document.tencentcloudapi.woa.com/document/product/248/51276)
+
+	* 新增入参：NoticeIds, Enable, PolicyName, EbSubject
+
+* [UnBindingAllPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40568)
+
+	* 新增入参：EbSubject, EbEventFlag
+
+* [UnBindingPolicyObject](http://document.tencentcloudapi.woa.com/document/product/248/40567)
+
+	* 新增入参：EbSubject, EbEventFlag
+
+
+新增数据结构：
+
+* [[NoticeBindPolicys](http://document.tencentcloudapi.woa.com/document/product/248/30354#NoticeBindPolicys)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[NoticeBindPolicys](http://document.tencentcloudapi.woa.com/document/product/248/30354#NoticeBindPolicys))
 
 ### 第 38 次发布
 
@@ -41395,6 +41507,28 @@
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
+### 第 14 次发布
+
+发布时间：2023-01-02 01:41:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrainingModel](http://document.tencentcloudapi.woa.com/document/product/851/74835)
+
+	* 新增入参：IsQAT
+
+
+修改数据结构：
+
+* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
+
+	* 新增成员：QATModel
+
+
 ### 第 13 次发布
 
 发布时间：2022-12-19 02:00:11
@@ -45787,6 +45921,58 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 43 次发布
+
+发布时间：2023-01-02 01:44:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ProcessMediaByProcedure](http://document.tencentcloudapi.woa.com/document/product/266/34782)
+
+	* 新增出参：ReviewAudioVideoTaskId
+
+
+修改数据结构：
+
+* [EditMediaTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#EditMediaTask)
+
+	* 新增成员：ReviewAudioVideoTaskId
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, Status, ErrCode, ErrCodeExt, Message, Progress, Input, Output, MetaData, ProcedureTaskId, SessionId, SessionContext
+
+* [FileUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#FileUploadTask)
+
+	* 新增成员：ReviewAudioVideoTaskId
+
+	* <font color="#dd0000">**修改成员**：</font>FileId, MediaBasicInfo, ProcedureTaskId, MetaData
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Bitrate, Height, Width, Codec, Fps, CodecTag
+
+* [PullUploadTask](http://document.tencentcloudapi.woa.com/document/product/266/31773#PullUploadTask)
+
+	* 新增成员：ReviewAudioVideoTaskId
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, Status, ErrCode, Message, FileId, MediaBasicInfo, MetaData, FileUrl, ProcedureTaskId, SessionContext, SessionId, Progress
+
+* [ReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ReviewAudioVideoTaskInput)
+
+	* 新增成员：ReviewContents
+
+	* <font color="#dd0000">**修改成员**：</font>FileId, Definition
+
+* [SplitMediaTaskSegmentInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#SplitMediaTaskSegmentInfo)
+
+	* 新增成员：ReviewAudioVideoTaskId
+
+	* <font color="#dd0000">**修改成员**：</font>Input, Output, ProcedureTaskId
+
+
 ### 第 42 次发布
 
 发布时间：2022-12-30 01:50:45
@@ -45808,7 +45994,7 @@
 
 新增数据结构：
 
-* [[ProcedureReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureReviewAudioVideoTaskInput)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[ProcedureReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureReviewAudioVideoTaskInput))
+* [ProcedureReviewAudioVideoTaskInput](http://document.tencentcloudapi.woa.com/document/product/266/31773#ProcedureReviewAudioVideoTaskInput)
 
 修改数据结构：
 

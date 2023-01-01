@@ -1301,7 +1301,7 @@
         },
         {
           "default": "",
-          "document": "优化级别(NO_LOSS/FP16)，默认FP16",
+          "document": "优化级别(NO_LOSS/FP16/INT8)，默认FP16",
           "example": "FP16",
           "member": "string",
           "name": "OptimizationLevel",
@@ -1311,7 +1311,7 @@
         },
         {
           "default": "",
-          "document": "GPU卡类型(T4/V100)，默认T4",
+          "document": "GPU卡类型(T4/V100/A10)，默认T4",
           "example": "T4",
           "member": "string",
           "name": "GPUType",
@@ -2289,6 +2289,16 @@
           "name": "ModelCleanPeriod",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否QAT模型",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQAT",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -7058,6 +7068,17 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否是QAT模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QATModel",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -8006,7 +8027,7 @@
         },
         {
           "default": "",
-          "document": "优化级别（NO_LOSS/FP16），默认FP16",
+          "document": "优化级别（NO_LOSS/FP16/INT8），默认FP16",
           "example": "FP16",
           "member": "string",
           "name": "OptimizationLevel",
@@ -8066,7 +8087,7 @@
         },
         {
           "default": "",
-          "document": "GPU类型（T4/V100），默认T4",
+          "document": "GPU类型（T4/V100/A10），默认T4",
           "example": "无",
           "member": "string",
           "name": "GPUType",
