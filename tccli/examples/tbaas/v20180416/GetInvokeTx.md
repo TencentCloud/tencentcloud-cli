@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tbaas GetInvokeTx --cli-unfold-argument  \
-    --Module transaction \
-    --Operation query_txid \
-    --ClusterId 251005746envnew \
-    --ChannelName ch042103 \
-    --PeerName peer0.neworg02.envnew \
     --PeerGroup NewOrg02 \
+    --ClusterId 251005746envnew \
+    --PeerName peer0.neworg02.envnew \
+    --Module transaction \
     --TxId 280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c \
-    --GroupName NewOrg02
+    --GroupName NewOrg02 \
+    --Operation query_txid \
+    --ChannelName ch042103
 ```
 
 Output: 

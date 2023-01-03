@@ -16,41 +16,41 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
-        "RequestId": "xx",
+        "TotalCount": 1,
+        "RequestId": "65e950b9-78e8-49b1-9200-0e62a1925557",
         "Groups": [
             {
-                "Status": 0,
+                "Status": 37,
                 "Remark": "xx",
                 "InstanceCount": 1,
                 "Instances": [
                     {
-                        "Engine": "xx",
+                        "Engine": "社区版Redis",
                         "Vip6": "xx",
-                        "UpdateTime": "xx",
+                        "UpdateTime": "2022-11-02 15:04:05",
                         "VpcID": 16770550,
-                        "InstanceId": "xx",
+                        "InstanceId": "crs-9c36****",
                         "RedisShardSize": 1024,
                         "RegionId": 1,
                         "RedisShardNum": 1,
                         "Status": 1,
-                        "Vip": "xx",
+                        "Vip": "10.0.4.42",
                         "DiskSize": 0,
-                        "CreateTime": "xx",
+                        "CreateTime": "2022-11-02 15:04:05",
                         "ProductType": 9,
                         "AppId": 0,
-                        "Role": "xx",
+                        "Role": "rw",
                         "VPort": 6379,
                         "ZoneId": 1,
-                        "InstanceName": "xx",
+                        "InstanceName": "crs-test",
                         "RedisReplicasNum": 1,
                         "GrocerySysId": 1000259
                     }
                 ],
                 "RegionId": 1,
-                "GroupName": "xx",
+                "GroupName": "crs-ben-test",
                 "AppId": 0,
-                "GroupId": "xx"
+                "GroupId": "crs-rpl-lkgv****"
             }
         ]
     }

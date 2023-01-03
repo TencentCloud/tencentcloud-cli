@@ -558,6 +558,10 @@ tccli/services/redis/__init__.py
 tccli/services/redis/redis_client.py
 tccli/services/redis/v20180412/api.json
 tccli/services/redis/v20180412/examples.json
+tccli/services/region/__init__.py
+tccli/services/region/region_client.py
+tccli/services/region/v20220627/api.json
+tccli/services/region/v20220627/examples.json
 tccli/services/rkp/__init__.py
 tccli/services/rkp/rkp_client.py
 tccli/services/rkp/v20191209/api.json

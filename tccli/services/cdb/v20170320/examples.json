@@ -891,7 +891,7 @@
     "ModifyRemoteBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRemoteBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&RemoteBackupSave=on\n&RemoteBinlogSave=on\n&RemoteRegion.0=ap-guangzhou\n&ExpireDays=7\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"RemoteBinlogSave\": \"on\",\n    \"ExpireDays\": \"7\",\n    \"RemoteRegion\": [\n        \"ap-guangzhou\"\n    ],\n    \"RemoteBackupSave\": \"on\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
         "title": "修改云数据库异地备份配置信息"
       }

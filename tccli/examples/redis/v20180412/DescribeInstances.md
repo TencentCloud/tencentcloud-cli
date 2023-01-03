@@ -20,10 +20,10 @@ Output:
                 "RedisShardSize": 1024,
                 "RedisShardNum": 3,
                 "MonitorVersion": "xx",
-                "UpgradeProxyVersion": "xx",
+                "UpgradeProxyVersion": "5.6.0",
                 "InstanceTitle": "xx",
                 "ProductType": "xx",
-                "UpgradeRedisVersion": "xx",
+                "UpgradeRedisVersion": "6.2.5",
                 "NoAuth": true,
                 "PriceId": 13380,
                 "Type": 7,
@@ -76,8 +76,8 @@ Output:
                 "SizeUsed": 0.0,
                 "InstanceTags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "tke-clusterId",
+                        "TagValue": "cls-0kl4et00"
                     }
                 ],
                 "ProjectId": 0,
@@ -88,20 +88,20 @@ Output:
                 "PasswordFree": 0,
                 "Appid": 1251006373,
                 "WanIp": "xx",
-                "NetLimit": 0,
-                "InstanceName": "xx",
-                "Createtime": "xx",
-                "ClientLimit": 0,
+                "NetLimit": 480,
+                "InstanceName": "crs-test",
+                "Createtime": "2022-08-02 16:27:17",
+                "ClientLimit": 10000,
                 "PolarisServer": "xx",
-                "CurrentRedisVersion": "xx",
-                "CurrentProxyVersion": "xx",
-                "UniqVpcId": "xx",
+                "CurrentRedisVersion": "5.2.0",
+                "CurrentProxyVersion": "5.6.0",
+                "UniqVpcId": "vpc-fk33jsf4****",
                 "DtsStatus": 0,
                 "ProjectName": "xx",
                 "BillingMode": 1,
                 "RemainBandwidthDuration": "xx",
                 "ReadOnly": 0,
-                "UniqSubnetId": "xx",
+                "UniqSubnetId": "subnet-6qotc71w",
                 "ClientLimitMin": 0,
                 "RedisReplicasNum": 1,
                 "Port": 6379,
@@ -109,7 +109,7 @@ Output:
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "65e950b9-78e8-49b1-9200-0e62a1925559"
     }
 }
 ```
