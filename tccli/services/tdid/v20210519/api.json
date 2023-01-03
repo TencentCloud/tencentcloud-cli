@@ -85,7 +85,7 @@
       "output": "EnableHashResponse"
     },
     "GetAgencyTDid": {
-      "document": "本机构DID详情",
+      "document": "该接口已废弃\n\n本机构DID详情",
       "input": "GetAgencyTDidRequest",
       "name": "本机构DID详情",
       "output": "GetAgencyTDidResponse"
@@ -289,7 +289,7 @@
       "output": "VerifyCredentialResponse"
     },
     "VerifyPurchase": {
-      "document": "验证购买",
+      "document": "该接口已废弃\n\n验证购买",
       "input": "VerifyPurchaseRequest",
       "name": "验证购买",
       "output": "VerifyPurchaseResponse"

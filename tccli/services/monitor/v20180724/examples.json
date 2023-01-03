@@ -11,7 +11,7 @@
     "BindingPolicyObject": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=BindingPolicyObject\n&Module=monitor\n&GroupId=111111\n&Dimensions.0.Dimensions={\"unInstanceId\":\"ins-ot3cq4bi\"}\n&Dimensions.0.EventDimensions={\"uuid\":\"9d51a69e-0e4a-4120-ae58-9c073c851e24\"}\n&Dimensions.0.Region=gz\n&Dimensions.0.RegionId=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindingPolicyObject\n<公共请求参数>\n\n{\n    \"GroupId\": \"111111\",\n    \"Module\": \"monitor\",\n    \"Dimensions\": [\n        {\n            \"EventDimensions\": \"{\\\"uuid\\\":\\\"9d51a69e-0e4a-4120-ae58-9c073c851e24\\\"}\",\n            \"Region\": \"gz\",\n            \"RegionId\": \"1\",\n            \"Dimensions\": \"{\\\"unInstanceId\\\":\\\"ins-ot3cq4bi\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78345016-ff97-4360-839a-82f3d96430e8\"\n    }\n}",
         "title": "绑定策略对象"
       }
@@ -777,7 +777,7 @@
     "UnBindingAllPolicyObject": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingAllPolicyObject\n&Module=monitor\n&GroupId=11111\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnBindingAllPolicyObject\n<公共请求参数>\n\n{\n    \"GroupId\": \"11111\",\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-b4d6-4c2c-90a9-617d80347ab5\"\n    }\n}",
         "title": "删除全部的关联对象"
       }
@@ -785,7 +785,7 @@
     "UnBindingPolicyObject": [
       {
         "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingPolicyObject\n&Module=monitor\n&GroupId=11111\n&UniqueId.0=3dd5113208fd467b2e5d0c1111111111\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnBindingPolicyObject\n<公共请求参数>\n\n{\n    \"UniqueId\": [\n        \"3dd5113208fd467b2e5d0c1111111111\"\n    ],\n    \"GroupId\": \"11111\",\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-1111-1111-1111-11111111111\"\n    }\n}",
         "title": "删除策略的关联对象"
       }

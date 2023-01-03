@@ -18,6 +18,21 @@ Output:
             {
                 "Status": "xx",
                 "UpdatedTime": "2020-09-22 00:00:00",
+                "Tasks": [
+                    {
+                        "ObjectType": "xx",
+                        "TaskStatus": "xx",
+                        "ObjectId": "xx",
+                        "TaskId": 0,
+                        "TaskType": "xx"
+                    }
+                ],
+                "OldAddrInfo": {
+                    "Vip": "xx",
+                    "Vport": 0,
+                    "ReturnTime": "xx"
+                },
+                "UniqVpcId": "xx",
                 "WanDomain": "xx",
                 "InstanceSet": [
                     {
@@ -31,6 +46,7 @@ Output:
                         "Memory": 0,
                         "ProcessingTask": "xx",
                         "Status": "xx",
+                        "PhysicalZone": "xx",
                         "UpdateTime": "2020-09-22 00:00:00",
                         "VpcId": "xx",
                         "MinCpu": 0.0,
@@ -38,6 +54,7 @@ Output:
                         "InstanceId": "xx",
                         "ClusterId": "xx",
                         "NetType": 0,
+                        "IsFreeze": "xx",
                         "SubnetId": "xx",
                         "InstanceType": "xx",
                         "DestroyTime": "xx",
@@ -47,11 +64,27 @@ Output:
                         "Region": "xx",
                         "PayMode": 0,
                         "PeriodEndTime": "2020-09-22 00:00:00",
+                        "ResourceTags": [
+                            {
+                                "TagKey": "xx",
+                                "TagValue": "xx"
+                            }
+                        ],
                         "CynosVersion": "xx",
                         "StatusDesc": "xx",
                         "InstanceName": "xx",
                         "Cpu": 0,
                         "StoragePayMode": 0,
+                        "BusinessType": "xx",
+                        "Tasks": [
+                            {
+                                "ObjectType": "xx",
+                                "TaskStatus": "xx",
+                                "ObjectId": "xx",
+                                "TaskId": 0,
+                                "TaskType": "xx"
+                            }
+                        ],
                         "WanDomain": "xx",
                         "ClusterName": "xx",
                         "InstanceRole": "xx",
@@ -71,14 +104,19 @@ Output:
                 "WanStatus": "xx",
                 "CreatedTime": "2020-09-22 00:00:00",
                 "Vip": "xx",
+                "UniqSubnetId": "xx",
                 "InstanceGrpId": "xx",
                 "AppId": 0,
                 "WanIP": "xx",
                 "Vport": 0,
-                "Type": "xx"
+                "Type": "xx",
+                "NetServiceId": 0,
+                "ProcessingTasks": [
+                    "xx"
+                ]
             }
         ],
-        "RequestId": "ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb"
+        "RequestId": "xx"
     }
 }
 ```

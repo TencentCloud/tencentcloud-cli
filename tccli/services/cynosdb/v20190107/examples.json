@@ -32,6 +32,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "CloseAuditService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6990cckk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "关闭审计"
+      }
+    ],
     "CreateAccounts": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FileName\": \"test.csv\"\n    }\n}",
         "title": "创建审计日志文件"
+      }
+    ],
+    "CreateAuditRuleTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRuleTemplate\n<公共请求参数>\n\n{\n    \"RuleFilters\": [\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"100.122.76.176\",\n                \"10.0.0.9\"\n            ]\n        },\n        {\n            \"Type\": \"user\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"wy\",\n                \"test\"\n            ]\n        },\n        {\n            \"Type\": \"sqlType\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"Update\",\n                \"Delete\"\n            ]\n        }\n    ],\n    \"RuleTemplateName\": \"test\",\n    \"Description\": \"用于测试的规则模版\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleTemplateId\": \"cynosdb-rt-ws23fwu8\",\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "创建审计规则模版"
       }
     ],
     "CreateBackup": [
@@ -70,6 +86,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"FileName\": \"aaa\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "删除审计日志文件"
+      }
+    ],
+    "DeleteAuditRuleTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cynosdb-rt-ws23fwu8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "删除审计规则模版"
       }
     ],
     "DeleteBackup": [
@@ -110,6 +134,22 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"1\",\n        \"Items\": [\n            {\n                \"PolicyName\": \"xx\",\n                \"ExecTime\": 0,\n                \"Timestamp\": \"xx\",\n                \"AffectRows\": 0,\n                \"ThreadId\": 0,\n                \"TableName\": \"xx\",\n                \"ErrCode\": 0,\n                \"Host\": \"xx\",\n                \"SentRows\": 0,\n                \"User\": \"xx\",\n                \"Sql\": \"xx\",\n                \"SqlType\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"DBName\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "创建审计日志文件"
+      }
+    ],
+    "DescribeAuditRuleTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateNames\": [\n        \"template_test\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"2022-12-06 00:54:01\",\n                \"Description\": \"all_template_des\",\n                \"RuleFilters\": [\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"sqlType\",\n                        \"Value\": [\n                            \"ALTER\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"EQS\",\n                        \"Type\": \"host\",\n                        \"Value\": [\n                            \"10.0.0.2\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"NEQ\",\n                        \"Type\": \"user\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"dbName\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    }\n                ],\n                \"RuleTemplateId\": \"cynosdb-art-lcpm4as3\",\n                \"RuleTemplateName\": \"template_test\"\n            }\n        ],\n        \"RequestId\": \"a19ebcfb-8b35-40f4-85ee-383109c9134b\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询审计规则模版信息"
+      }
+    ],
+    "DescribeAuditRuleWithInstanceIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRuleWithInstanceIds\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cynosdbmysql-ins-6990cckk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AuditRule\": true,\n                \"AuditRuleFilters\": [\n                    {\n                        \"RuleFilters\": [\n                            {\n                                \"Compare\": \"INC\",\n                                \"Type\": \"sql\",\n                                \"Value\": [\n                                    \"select\"\n                                ]\n                            },\n                            {\n                                \"Compare\": \"EQS\",\n                                \"Type\": \"dbName\",\n                                \"Value\": [\n                                    \"testdb\"\n                                ]\n                            }\n                        ]\n                    }\n                ],\n                \"InstanceId\": \"cynosdbmysql-ins-6990cckk\"\n            }\n        ],\n        \"RequestId\": \"a94950e4-7929-493d-97a6-4cd59dba466e\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取实例的审计规则"
       }
     ],
     "DescribeBackupConfig": [
@@ -171,8 +211,8 @@
     "DescribeClusterInstanceGrps": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusterInstanceGrps\n&ClusterId=cynosdbmysql-oib3wx0i\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceGrpInfoList\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"WanDomain\": \"xx\",\n                \"InstanceSet\": [\n                    {\n                        \"ServerlessStatus\": \"xx\",\n                        \"WanStatus\": \"xx\",\n                        \"RenewFlag\": 0,\n                        \"Zone\": \"xx\",\n                        \"DbVersion\": \"xx\",\n                        \"Storage\": 0,\n                        \"StorageId\": \"xx\",\n                        \"Memory\": 0,\n                        \"ProcessingTask\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"UpdateTime\": \"2020-09-22 00:00:00\",\n                        \"VpcId\": \"xx\",\n                        \"MinCpu\": 0.0,\n                        \"MaxCpu\": 0.0,\n                        \"InstanceId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"NetType\": 0,\n                        \"SubnetId\": \"xx\",\n                        \"InstanceType\": \"xx\",\n                        \"DestroyTime\": \"xx\",\n                        \"IsolateTime\": \"2020-09-22 00:00:00\",\n                        \"DestroyDeadlineText\": \"xx\",\n                        \"ProjectId\": 0,\n                        \"Region\": \"xx\",\n                        \"PayMode\": 0,\n                        \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n                        \"CynosVersion\": \"xx\",\n                        \"StatusDesc\": \"xx\",\n                        \"InstanceName\": \"xx\",\n                        \"Cpu\": 0,\n                        \"StoragePayMode\": 0,\n                        \"WanDomain\": \"xx\",\n                        \"ClusterName\": \"xx\",\n                        \"InstanceRole\": \"xx\",\n                        \"WanPort\": 0,\n                        \"Uin\": \"xx\",\n                        \"DbType\": \"xx\",\n                        \"Vip\": \"xx\",\n                        \"AppId\": 0,\n                        \"WanIP\": \"xx\",\n                        \"Vport\": 0,\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"WanPort\": 0,\n                \"ClusterId\": \"xx\",\n                \"DeletedTime\": \"2020-09-22 00:00:00\",\n                \"WanStatus\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"Vip\": \"xx\",\n                \"InstanceGrpId\": \"xx\",\n                \"AppId\": 0,\n                \"WanIP\": \"xx\",\n                \"Vport\": 0,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInstanceGrps\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-oib3wx0i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceGrpInfoList\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"Tasks\": [\n                    {\n                        \"ObjectType\": \"xx\",\n                        \"TaskStatus\": \"xx\",\n                        \"ObjectId\": \"xx\",\n                        \"TaskId\": 0,\n                        \"TaskType\": \"xx\"\n                    }\n                ],\n                \"OldAddrInfo\": {\n                    \"Vip\": \"xx\",\n                    \"Vport\": 0,\n                    \"ReturnTime\": \"xx\"\n                },\n                \"UniqVpcId\": \"xx\",\n                \"WanDomain\": \"xx\",\n                \"InstanceSet\": [\n                    {\n                        \"ServerlessStatus\": \"xx\",\n                        \"WanStatus\": \"xx\",\n                        \"RenewFlag\": 0,\n                        \"Zone\": \"xx\",\n                        \"DbVersion\": \"xx\",\n                        \"Storage\": 0,\n                        \"StorageId\": \"xx\",\n                        \"Memory\": 0,\n                        \"ProcessingTask\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"PhysicalZone\": \"xx\",\n                        \"UpdateTime\": \"2020-09-22 00:00:00\",\n                        \"VpcId\": \"xx\",\n                        \"MinCpu\": 0.0,\n                        \"MaxCpu\": 0.0,\n                        \"InstanceId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"NetType\": 0,\n                        \"IsFreeze\": \"xx\",\n                        \"SubnetId\": \"xx\",\n                        \"InstanceType\": \"xx\",\n                        \"DestroyTime\": \"xx\",\n                        \"IsolateTime\": \"2020-09-22 00:00:00\",\n                        \"DestroyDeadlineText\": \"xx\",\n                        \"ProjectId\": 0,\n                        \"Region\": \"xx\",\n                        \"PayMode\": 0,\n                        \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n                        \"ResourceTags\": [\n                            {\n                                \"TagKey\": \"xx\",\n                                \"TagValue\": \"xx\"\n                            }\n                        ],\n                        \"CynosVersion\": \"xx\",\n                        \"StatusDesc\": \"xx\",\n                        \"InstanceName\": \"xx\",\n                        \"Cpu\": 0,\n                        \"StoragePayMode\": 0,\n                        \"BusinessType\": \"xx\",\n                        \"Tasks\": [\n                            {\n                                \"ObjectType\": \"xx\",\n                                \"TaskStatus\": \"xx\",\n                                \"ObjectId\": \"xx\",\n                                \"TaskId\": 0,\n                                \"TaskType\": \"xx\"\n                            }\n                        ],\n                        \"WanDomain\": \"xx\",\n                        \"ClusterName\": \"xx\",\n                        \"InstanceRole\": \"xx\",\n                        \"WanPort\": 0,\n                        \"Uin\": \"xx\",\n                        \"DbType\": \"xx\",\n                        \"Vip\": \"xx\",\n                        \"AppId\": 0,\n                        \"WanIP\": \"xx\",\n                        \"Vport\": 0,\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"WanPort\": 0,\n                \"ClusterId\": \"xx\",\n                \"DeletedTime\": \"2020-09-22 00:00:00\",\n                \"WanStatus\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"Vip\": \"xx\",\n                \"UniqSubnetId\": \"xx\",\n                \"InstanceGrpId\": \"xx\",\n                \"AppId\": 0,\n                \"WanIP\": \"xx\",\n                \"Vport\": 0,\n                \"Type\": \"xx\",\n                \"NetServiceId\": 0,\n                \"ProcessingTasks\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询实例组"
       }
     ],
@@ -226,9 +266,9 @@
     ],
     "DescribeInstanceSpecs": [
       {
-        "document": "",
+        "document": "该接口（DescribeInstanceSpecs）用于查询可售卖实例规格信息",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSpecs\n<公共请求参数>\n\n{\n    \"DbType\": \"MYSQL\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceSpecSet\": [\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            },\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSpecSet\": [\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"StockCount\": 0,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"StockCount\": 0,\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            },\n            {\n                \"MaxStorageSize\": 1,\n                \"ZoneStockInfos\": [\n                    {\n                        \"HasStock\": true,\n                        \"StockCount\": 0,\n                        \"Zone\": \"xx\"\n                    }\n                ],\n                \"MachineType\": \"xx\",\n                \"StockCount\": 0,\n                \"HasStock\": true,\n                \"Memory\": 1,\n                \"MinStorageSize\": 1,\n                \"MaxIoBandWidth\": 0,\n                \"Cpu\": 1,\n                \"MaxIops\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询可售卖实例规格信息"
       }
     ],
@@ -352,6 +392,22 @@
         "title": "修改账号参数"
       }
     ],
+    "ModifyAuditRuleTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cynosdb-rt-ws23fwu8\"\n    ],\n    \"RuleTemplateName\": \"wy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "修改审计规则模版"
+      }
+    ],
+    "ModifyAuditService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6990cckk\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7,\n    \"AuditAll\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "修改审计服务"
+      }
+    ],
     "ModifyBackupConfig": [
       {
         "document": "",
@@ -438,6 +494,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineInstance\n&ClusterId=cynosdbmysql-bzxxrmtq\n&InstanceIdList.0=cynosdbmysql-ins-7upukfpw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "隔离实例"
+      }
+    ],
+    "OpenAuditService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6990cckk\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
+        "title": "开通审计"
       }
     ],
     "PauseServerless": [

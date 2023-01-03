@@ -24,6 +24,12 @@
       "name": "安全组批量绑定云资源",
       "output": "AssociateSecurityGroupsResponse"
     },
+    "CloseAuditService": {
+      "document": "TDSQL-C for MySQL实例关闭审计服务",
+      "input": "CloseAuditServiceRequest",
+      "name": "实例关闭审计服务",
+      "output": "CloseAuditServiceResponse"
+    },
     "CreateAccounts": {
       "document": "创建账号",
       "input": "CreateAccountsRequest",
@@ -35,6 +41,12 @@
       "input": "CreateAuditLogFileRequest",
       "name": "创建审计日志文件",
       "output": "CreateAuditLogFileResponse"
+    },
+    "CreateAuditRuleTemplate": {
+      "document": "创建审计规则模版",
+      "input": "CreateAuditRuleTemplateRequest",
+      "name": "创建审计规则模版",
+      "output": "CreateAuditRuleTemplateResponse"
     },
     "CreateBackup": {
       "document": "为集群创建手动备份",
@@ -53,6 +65,12 @@
       "input": "DeleteAuditLogFileRequest",
       "name": "删除审计日志文件",
       "output": "DeleteAuditLogFileResponse"
+    },
+    "DeleteAuditRuleTemplates": {
+      "document": "删除审计规则模版",
+      "input": "DeleteAuditRuleTemplatesRequest",
+      "name": "删除审计规则模版",
+      "output": "DeleteAuditRuleTemplatesResponse"
     },
     "DeleteBackup": {
       "document": "为集群删除手动备份，无法删除自动备份",
@@ -83,6 +101,18 @@
       "input": "DescribeAuditLogsRequest",
       "name": "查询数据库审计日志",
       "output": "DescribeAuditLogsResponse"
+    },
+    "DescribeAuditRuleTemplates": {
+      "document": "查询审计规则模版信息",
+      "input": "DescribeAuditRuleTemplatesRequest",
+      "name": "查询审计规则模版",
+      "output": "DescribeAuditRuleTemplatesResponse"
+    },
+    "DescribeAuditRuleWithInstanceIds": {
+      "document": "获取实例的审计规则",
+      "input": "DescribeAuditRuleWithInstanceIdsRequest",
+      "name": "获取实例的审计规则",
+      "output": "DescribeAuditRuleWithInstanceIdsResponse"
     },
     "DescribeBackupConfig": {
       "document": "获取指定集群的备份配置信息，包括全量备份时间段，备份文件保留时间",
@@ -127,7 +157,7 @@
       "output": "DescribeClusterDetailResponse"
     },
     "DescribeClusterInstanceGrps": {
-      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组",
+      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。",
       "input": "DescribeClusterInstanceGrpsRequest",
       "name": "查询实例组",
       "output": "DescribeClusterInstanceGrpsResponse"
@@ -264,6 +294,18 @@
       "name": "修改账号参数",
       "output": "ModifyAccountParamsResponse"
     },
+    "ModifyAuditRuleTemplates": {
+      "document": "修改审计规则模版",
+      "input": "ModifyAuditRuleTemplatesRequest",
+      "name": "修改审计规则模版",
+      "output": "ModifyAuditRuleTemplatesResponse"
+    },
+    "ModifyAuditService": {
+      "document": "本接口(ModifyAuditService)用于修改云数据库审计日志保存时长、审计规则等服务配置。",
+      "input": "ModifyAuditServiceRequest",
+      "name": "实例修改审计服务",
+      "output": "ModifyAuditServiceResponse"
+    },
     "ModifyBackupConfig": {
       "document": "修改指定集群的备份配置",
       "input": "ModifyBackupConfigRequest",
@@ -329,6 +371,12 @@
       "input": "OfflineInstanceRequest",
       "name": "下线实例",
       "output": "OfflineInstanceResponse"
+    },
+    "OpenAuditService": {
+      "document": "TDSQL-C for MySQL实例开通审计服务",
+      "input": "OpenAuditServiceRequest",
+      "name": "实例开通审计服务",
+      "output": "OpenAuditServiceResponse"
     },
     "PauseServerless": {
       "document": "暂停serverless集群",
@@ -1244,6 +1292,78 @@
       ],
       "usage": "in"
     },
+    "AuditRuleFilters": {
+      "document": "规则审计的过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "单条审计规则。",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditRuleTemplateInfo": {
+      "document": "审计规则模版的详情",
+      "members": [
+        {
+          "default": "",
+          "document": "规则模版ID。",
+          "example": "cynosdb-art-dnpg9p3r",
+          "member": "string",
+          "name": "RuleTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则模版名称。",
+          "example": "规则模版名称",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则模版的过滤条件",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则模版描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则模版描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则模版创建时间。",
+          "example": "2022-11-15 11:11:11",
+          "member": "string",
+          "name": "CreateAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BackupFileInfo": {
       "document": "备份文件信息",
       "members": [
@@ -1461,6 +1581,33 @@
         }
       ],
       "usage": "out"
+    },
+    "CloseAuditServiceRequest": {
+      "document": "CloseAuditService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cynosdbmysql-ins-6990cckk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceResponse": {
+      "document": "CloseAuditService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ClusterInstanceDetail": {
       "document": "集群实例信息",
@@ -1751,6 +1898,60 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditRuleTemplateRequest": {
+      "document": "CreateAuditRuleTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审计规则。",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则模版名称。",
+          "example": "这是规则模版名称",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则模版描述。",
+          "example": "规则模版自白。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditRuleTemplateResponse": {
+      "document": "CreateAuditRuleTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "生成的规则模版ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynosdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3950,137 +4151,212 @@
       "members": [
         {
           "default": "",
-          "document": "appId",
+          "document": "用户appId",
+          "example": "无",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "集群ID",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "删除时间",
+          "example": "无",
           "member": "datetime",
           "name": "DeletedTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "实例组ID",
+          "example": "无",
           "member": "string",
           "name": "InstanceGrpId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "状态",
+          "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "实例组类型。ha-ha组；ro-只读组",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "更新时间",
+          "example": "无",
           "member": "datetime",
           "name": "UpdatedTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "内网IP",
+          "example": "无",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "内网端口",
+          "example": "无",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "外网域名",
+          "example": "无",
           "member": "string",
           "name": "WanDomain",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "外网ip",
+          "example": "无",
           "member": "string",
           "name": "WanIP",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "外网端口",
+          "example": "无",
           "member": "int64",
           "name": "WanPort",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "外网状态",
+          "example": "无",
           "member": "string",
           "name": "WanStatus",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "实例组包含实例信息",
+          "example": "无",
           "member": "CynosdbInstance",
           "name": "InstanceSet",
-          "required": true,
+          "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "正在回收IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OldAddrInfo",
+          "name": "OldAddrInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "正在进行的任务",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessingTasks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "biz_net_service表id",
+          "example": "无",
+          "member": "int64",
+          "name": "NetServiceId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4188,6 +4464,33 @@
     },
     "DeleteAuditLogFileResponse": {
       "document": "DeleteAuditLogFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditRuleTemplatesRequest": {
+      "document": "DeleteAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审计规则模版ID。",
+          "example": "cynosdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditRuleTemplatesResponse": {
+      "document": "DeleteAuditRuleTemplates返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4571,6 +4874,123 @@
           "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AuditLog",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplatesRequest": {
+      "document": "DescribeAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则模版ID。",
+          "example": "cynosdb-art-nuzwpha1",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则模版名称",
+          "example": "测试template",
+          "member": "string",
+          "name": "RuleTemplateNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "单次请求返回的数量。默认值20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认值为 0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplatesResponse": {
+      "document": "DescribeAuditRuleTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的实例总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则模版详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditRuleTemplateInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleWithInstanceIdsRequest": {
+      "document": "DescribeAuditRuleWithInstanceIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。目前仅支持单个实例的查询。",
+          "example": "[\"cynosdbmysql-ins-6990cckk\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleWithInstanceIdsResponse": {
+      "document": "DescribeAuditRuleWithInstanceIds返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例审计规则信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceAuditRule",
           "name": "Items",
           "required": true,
           "type": "list",
@@ -6560,6 +6980,42 @@
       ],
       "type": "object"
     },
+    "InstanceAuditRule": {
+      "document": "实例的审计规则详情，DescribeAuditRuleWithInstanceIds接口的出参。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cynosdbmysql-ins-6990cckk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是规则审计。true-规则审计，false-全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditRule",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审计规则详情。仅当AuditRule=true时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditRuleFilters",
+          "name": "AuditRuleFilters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceInitInfo": {
       "document": "实例初始化配置信息",
       "members": [
@@ -6697,6 +7153,16 @@
           "name": "ZoneStockInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "库存数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StockCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6859,6 +7325,132 @@
     },
     "ModifyAccountParamsResponse": {
       "document": "ModifyAccountParams返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditRuleTemplatesRequest": {
+      "document": "ModifyAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "审计规则模版ID。",
+          "example": "cynosdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "修改后的审计规则。",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "修改后的规则模版名称。",
+          "example": "新规则模版名称",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改后的规则模版描述。",
+          "example": "新规则模版描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditRuleTemplatesResponse": {
+      "document": "ModifyAuditRuleTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceRequest": {
+      "document": "ModifyAuditService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cynosdbmysql-ins-6990cckk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志保留时长。",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "高频日志保留时长。",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "修改实例审计规则为全审计。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "规则审计。",
+          "example": "无",
+          "member": "AuditRuleFilters",
+          "name": "AuditRuleFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则模版ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceResponse": {
+      "document": "ModifyAuditService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7667,6 +8259,105 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OldAddrInfo": {
+      "document": "数据库地址",
+      "members": [
+        {
+          "default": "",
+          "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "期望执行回收时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OpenAuditServiceRequest": {
+      "document": "OpenAuditService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cynosdbmysql-ins-6990cckk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志保留时长。",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "高频日志保留时长。",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "审计规则。同RuleTemplateIds都不填是全审计。",
+          "example": "无",
+          "member": "AuditRuleFilters",
+          "name": "AuditRuleFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则模版ID。同AuditRuleFilters都不填是全审计。",
+          "example": "[\"cynosdb-art-l1mlbo59\"]",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceResponse": {
+      "document": "OpenAuditService返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8504,6 +9195,42 @@
         }
       ],
       "usage": "out"
+    },
+    "RuleFilters": {
+      "document": "审计规则的规则过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "审计规则过滤条件的参数名称。可选值：host – 客户端 IP；user – 数据库账户；dbName – 数据库名称；sqlType-SQL类型；sql-sql语句。",
+          "example": "sqlType",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计规则过滤条件的匹配类型。可选值：INC – 包含；EXC – 不包含；EQS – 等于；NEQ – 不等于。",
+          "example": "INC",
+          "member": "string",
+          "name": "Compare",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审计规则过滤条件的匹配值。",
+          "example": "UPDATE",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SearchClusterDatabasesRequest": {
       "document": "SearchClusterDatabases请求参数结构体",
@@ -9355,6 +10082,16 @@
           "name": "HasStock",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库存数量",
+          "example": "1",
+          "member": "int64",
+          "name": "StockCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

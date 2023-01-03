@@ -6,6 +6,12 @@
       "name": "指定云数据库实例的所属项目",
       "output": "AssignProjectResponse"
     },
+    "CreateAccountUser": {
+      "document": "创建实例账号。",
+      "input": "CreateAccountUserRequest",
+      "name": "创建账号",
+      "output": "CreateAccountUserResponse"
+    },
     "CreateBackupDBInstance": {
       "document": "备份实例接口",
       "input": "CreateBackupDBInstanceRequest",
@@ -537,6 +543,87 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAccountUserRequest": {
+      "document": "CreateAccountUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新账号名称。其格式要求如下：<ul><li>字符范围[1,32]。</li><li>可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“_”与短划线“-”。</li></ul>",
+          "example": "mong_test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新账号密码。密码复杂度要求如下：<ul><li>字符长度范围[8,32]。</li><li>至少包含字母、数字和特殊字符（叹号“!”、at\"@\"、井号“#”、百分号“%”、插入符“^”、星号“*”、小括号“()”、下划线“_”）中的两种。</li></ul>",
+          "example": "abc123...",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "mongouser 账号对应的密码。mongouser 为系统默认账号，即为创建实例时，设置的密码。",
+          "example": "Abc123...",
+          "member": "string",
+          "name": "MongoUserPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号备注信息。",
+          "example": "测试账号",
+          "member": "string",
+          "name": "UserDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号的读写权限信息。",
+          "example": "无",
+          "member": "Auth",
+          "name": "AuthRole",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountUserResponse": {
+      "document": "CreateAccountUser返回参数结构体",
+      "members": [
+        {
+          "document": "创建任务ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBackupDBInstanceRequest": {
       "document": "CreateBackupDBInstance请求参数结构体",

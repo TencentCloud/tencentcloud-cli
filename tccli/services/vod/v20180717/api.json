@@ -61,7 +61,7 @@
       "output": "CreateClassResponse"
     },
     "CreateContentReviewTemplate": {
-      "document": "创建用户自定义音视频内容审核模板，数量上限：50。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [创建审核模板](https://cloud.tencent.com/document/api/266/84391)。\n创建用户自定义音视频内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
       "name": "创建音视频内容审核模板",
       "output": "CreateContentReviewTemplateResponse"
@@ -97,7 +97,7 @@
       "output": "CreateProcedureTemplateResponse"
     },
     "CreateReviewTemplate": {
-      "document": "创建用户自定义审核模板，数量上限：50。",
+      "document": "创建用户自定义审核模板，数量上限：50。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "CreateReviewTemplateRequest",
       "name": "创建审核模板",
       "output": "CreateReviewTemplateResponse"
@@ -187,7 +187,7 @@
       "output": "DeleteClassResponse"
     },
     "DeleteContentReviewTemplate": {
-      "document": "删除用户自定义音视频内容审核模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [删除审核模板](https://cloud.tencent.com/document/api/266/84390)。\n删除用户自定义音视频内容审核模板。",
       "input": "DeleteContentReviewTemplateRequest",
       "name": "删除音视频内容审核模板",
       "output": "DeleteContentReviewTemplateResponse"
@@ -229,7 +229,7 @@
       "output": "DeleteProcedureTemplateResponse"
     },
     "DeleteReviewTemplate": {
-      "document": "删除用户自定义审核模板。",
+      "document": "删除用户自定义审核模板。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "DeleteReviewTemplateRequest",
       "name": "删除审核模板",
       "output": "DeleteReviewTemplateResponse"
@@ -331,7 +331,7 @@
       "output": "DescribeClientUploadAccelerationUsageDataResponse"
     },
     "DescribeContentReviewTemplates": {
-      "document": "根据音视频内容审核模板唯一标识，获取音视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [获取审核模板列表](https://cloud.tencent.com/document/api/266/84389)。\n根据音视频内容审核模板唯一标识，获取音视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。",
       "input": "DescribeContentReviewTemplatesRequest",
       "name": "获取音视频内容审核模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
@@ -457,7 +457,7 @@
       "output": "DescribeReviewDetailsResponse"
     },
     "DescribeReviewTemplates": {
-      "document": "获取审核模板列表",
+      "document": "获取审核模板列表。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "DescribeReviewTemplatesRequest",
       "name": "获取审核模板列表",
       "output": "DescribeReviewTemplatesResponse"
@@ -607,7 +607,7 @@
       "output": "ModifyClassResponse"
     },
     "ModifyContentReviewTemplate": {
-      "document": "修改用户自定义音视频内容审核模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [修改审核模板](https://cloud.tencent.com/document/api/266/84388)。\n修改用户自定义音视频内容审核模板。",
       "input": "ModifyContentReviewTemplateRequest",
       "name": "修改音视频内容审核模板",
       "output": "ModifyContentReviewTemplateResponse"
@@ -655,7 +655,7 @@
       "output": "ModifyPersonSampleResponse"
     },
     "ModifyReviewTemplate": {
-      "document": "修改用户自定义审核模板。",
+      "document": "修改用户自定义审核模板。\n>模板仅适用于 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 和 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217) 接口。",
       "input": "ModifyReviewTemplateRequest",
       "name": "修改审核模板",
       "output": "ModifyReviewTemplateResponse"
@@ -733,13 +733,13 @@
       "output": "ProcessImageResponse"
     },
     "ProcessMedia": {
-      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 内容审核（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
+      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 内容审核（令人反感的信息、不安全的信息、不适宜的信息），<font color=red>不建议</font> 使用该接口发起，推荐使用 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217)；\n9. 内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
       "input": "ProcessMediaRequest",
       "name": "视频处理",
       "output": "ProcessMediaResponse"
     },
     "ProcessMediaByProcedure": {
-      "document": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
+      "document": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。\n\n如使用事件通知，除音视频审核任务外的事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)；音视频审核任务事件通知的类型为 [音视频审核完成](https://cloud.tencent.com/document/product/266/81258)。",
       "input": "ProcessMediaByProcedureRequest",
       "name": "使用任务流模板进行视频处理",
       "output": "ProcessMediaByProcedureResponse"
@@ -7944,7 +7944,6 @@
       "document": "CreateContentReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "音视频审核结果是否进入音视频审核墙（对识别结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
           "example": "OFF",
           "member": "string",
@@ -7953,7 +7952,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -7962,7 +7960,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内容审核模板名称，长度限制：64 个字符。",
           "example": "内容审核模板",
           "member": "string",
@@ -7971,7 +7968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内容审核模板描述信息，长度限制：256 个字符。",
           "example": "模板1",
           "member": "string",
@@ -7980,7 +7976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "令人反感的信息的控制参数。",
           "example": "无",
           "member": "PornConfigureInfo",
@@ -7989,7 +7984,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "令人不安全的信息的控制参数。",
           "example": "无",
           "member": "TerrorismConfigureInfo",
@@ -7998,7 +7992,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "令人不适宜的控制参数。",
           "example": "无",
           "member": "PoliticalConfigureInfo",
@@ -8007,7 +8000,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>",
           "example": "无",
           "member": "ProhibitedConfigureInfo",
@@ -8016,7 +8008,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "用户自定义内容审核控制参数。",
           "example": "无",
           "member": "UserDefineConfigureInfo",
@@ -8025,7 +8016,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
           "example": "无",
           "member": "float",
@@ -8044,7 +8034,6 @@
           "example": "30",
           "member": "int64",
           "name": "Definition",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8590,7 +8579,6 @@
       "document": "CreateReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>",
           "example": "无",
           "member": "string",
@@ -8599,7 +8587,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "string",
@@ -8608,7 +8595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "审核模板名称，长度限制：64 个字符。",
           "example": "无",
           "member": "string",
@@ -8617,7 +8603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "审核模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
@@ -8636,7 +8621,6 @@
           "example": "无",
           "member": "int64",
           "name": "Definition",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9631,7 +9615,6 @@
       "document": "DeleteContentReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "内容审核模板唯一标识。",
           "example": "30",
           "member": "int64",
@@ -9640,7 +9623,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "123",
           "member": "uint64",
@@ -9892,7 +9874,6 @@
       "document": "DeleteReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "审核模板唯一标识。",
           "example": "无",
           "member": "int64",
@@ -9901,7 +9882,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -10891,7 +10871,6 @@
       "document": "DescribeContentReviewTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -10900,7 +10879,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内容审核模板唯一标识过滤条件，数组长度限制：100。",
           "example": "无",
           "member": "int64",
@@ -10909,7 +10887,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认值：0。",
           "example": "无",
           "member": "uint64",
@@ -10918,7 +10895,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "无",
           "member": "uint64",
@@ -10937,7 +10913,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10946,7 +10921,6 @@
           "example": "无",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12346,7 +12320,6 @@
       "document": "DescribeReviewTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "123",
           "member": "int64",
@@ -12355,7 +12328,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "审核模版唯一标识过滤条件，数组长度限制：100。",
           "example": "123",
           "member": "int64",
@@ -12364,7 +12336,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
           "example": "Custom",
           "member": "string",
@@ -12373,7 +12344,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页偏移量，默认值：0。",
           "example": "1",
           "member": "int64",
@@ -12382,7 +12352,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
           "example": "100",
           "member": "int64",
@@ -12401,7 +12370,6 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12410,7 +12378,6 @@
           "example": "无",
           "member": "ReviewTemplate",
           "name": "ReviewTemplateSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14071,122 +14038,119 @@
       "document": "编辑视频任务信息",
       "members": [
         {
-          "default": "",
           "document": "任务 ID。",
           "example": "12530xxx-procedurev2-xxx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "“”",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "编辑视频任务进度，取值范围 [0-100] 。",
           "example": "0",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频编辑任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EditMediaTaskInput",
           "name": "Input",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频编辑任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EditMediaTaskOutput",
           "name": "Output",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。",
+          "document": "任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。",
           "example": "12530xxx-procedurev2-xxx",
           "member": "string",
           "name": "ProcedureTaskId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewAudioVideoTaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "example",
+          "example": "Example",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "example",
+          "example": "Example",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15061,38 +15025,47 @@
       "document": "文件上传任务信息",
       "members": [
         {
-          "default": "",
           "document": "文件唯一 ID。",
+          "example": "无",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "上传完成后生成的媒体文件基础信息。",
+          "example": "无",
           "member": "MediaBasicInfo",
           "name": "MediaBasicInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "若视频上传时指定了视频处理流程，则该字段为流程任务 ID。",
+          "document": "任务类型为 Procedure 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。",
+          "example": "无",
           "member": "string",
           "name": "ProcedureTaskId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "document": "任务类型为 ReviewAudioVideo 的任务 ID。若视频[上传时指定要执行的任务(procedure)](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E5.8F.91.E8.B5.B7)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewAudioVideoTaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "元信息。包括大小、时长、视频流信息、音频流信息等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -19047,7 +19020,7 @@
           "example": "100",
           "member": "int64",
           "name": "Bitrate",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19057,7 +19030,7 @@
           "example": "1080",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19067,7 +19040,7 @@
           "example": "720",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19077,7 +19050,7 @@
           "example": "h264",
           "member": "string",
           "name": "Codec",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19087,7 +19060,7 @@
           "example": "25",
           "member": "int64",
           "name": "Fps",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19097,7 +19070,7 @@
           "example": "hev1",
           "member": "string",
           "name": "CodecTag",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19594,7 +19567,6 @@
       "document": "ModifyContentReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "内容审核模板唯一标识。",
           "example": "30",
           "member": "int64",
@@ -19603,7 +19575,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -19612,7 +19583,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "内容审核模板名称，长度限制：64 个字符。",
           "example": "无",
           "member": "string",
@@ -19621,7 +19591,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内容审核模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
@@ -19630,7 +19599,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "令人不安全的信息的控制参数。",
           "example": "无",
           "member": "TerrorismConfigureInfoForUpdate",
@@ -19639,7 +19607,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "令人反感的信息的控制参数。",
           "example": "无",
           "member": "PornConfigureInfoForUpdate",
@@ -19648,7 +19615,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "令人不适宜的信息控制参数。",
           "example": "无",
           "member": "PoliticalConfigureInfoForUpdate",
@@ -19657,7 +19623,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>",
           "example": "无",
           "member": "ProhibitedConfigureInfoForUpdate",
@@ -19666,7 +19631,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "用户自定义内容审核控制参数。",
           "example": "无",
           "member": "UserDefineConfigureInfoForUpdate",
@@ -19675,7 +19639,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "截帧间隔，单位为秒，最小值为 0.5 秒。",
           "example": "无",
           "member": "float",
@@ -19684,7 +19647,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "审核结果是否进入审核墙（对审核结果进行人工识别）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
           "example": "无",
           "member": "string",
@@ -20359,7 +20321,6 @@
       "document": "ModifyReviewTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "审核模板唯一标识。",
           "example": "无",
           "member": "int64",
@@ -20368,7 +20329,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -20377,7 +20337,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "审核模板名称，长度限制：64 个字符。",
           "example": "无",
           "member": "string",
@@ -20386,7 +20345,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "审核模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
@@ -20395,7 +20353,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要返回的违规标签列表，可选值为：\n<li>Porn：色情；</li>\n<li>Terror：暴恐；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Illegal：违法；</li>\n<li>Religion：宗教；</li>\n<li>Abuse：谩骂；</li>\n<li>Ad：广告；</li>\n<li>Moan：娇喘。</li>\n\n注意：不填表示不更新。",
           "example": "无",
           "member": "string",
@@ -22826,7 +22783,6 @@
       "document": "ProcessMediaByProcedure请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "媒体文件 ID。",
           "example": "5285485487985271487",
           "member": "string",
@@ -22835,7 +22791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字。",
           "example": "TranscodeAndSnapshot",
           "member": "string",
@@ -22844,7 +22799,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -22853,7 +22807,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。",
           "example": "无",
           "member": "int64",
@@ -22862,7 +22815,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
           "example": "无",
           "member": "string",
@@ -22871,7 +22823,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
           "example": "无",
           "member": "string",
@@ -22880,7 +22831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "无",
           "member": "string",
@@ -22889,7 +22839,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
           "example": "无",
           "member": "string",
@@ -22904,11 +22853,18 @@
       "document": "ProcessMediaByProcedure返回参数结构体",
       "members": [
         {
-          "document": "任务 ID。",
+          "document": "任务类型为 Procedure 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。",
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型为 ReviewAudioVideo 的任务 ID，当入参 ProcedureName 对应的任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewAudioVideoTaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -23042,7 +22998,6 @@
       "document": "ProcessMedia请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
           "example": "5285485487985271487",
           "member": "string",
@@ -23051,7 +23006,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
@@ -23060,7 +23014,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "视频处理类型任务参数。",
           "example": "无",
           "member": "MediaProcessTaskInput",
@@ -23069,8 +23022,7 @@
           "type": "object"
         },
         {
-          "default": "",
-          "document": "音视频内容审核类型任务参数。",
+          "document": "音视频内容审核类型任务参数 \\*。\n<font color=red>\\* 不建议使用</font>，推荐使用 [音视频审核(ReviewAudioVideo)](https://cloud.tencent.com/document/api/266/80283) 或 [图片审核(ReviewImage)](https://cloud.tencent.com/document/api/266/73217)。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -23078,7 +23030,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "音视频内容分析类型任务参数。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
@@ -23087,7 +23038,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "音视频内容识别类型任务参数。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
@@ -23096,7 +23046,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
           "example": "无",
           "member": "int64",
@@ -23105,7 +23054,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
           "example": "无",
           "member": "string",
@@ -23114,7 +23062,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
           "example": "无",
           "member": "string",
@@ -23123,7 +23070,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "无",
           "member": "string",
@@ -23132,7 +23078,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
           "example": "无",
           "member": "string",
@@ -23151,7 +23096,6 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23502,7 +23446,6 @@
       "document": "PullEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "保留字段，特殊用途时使用。",
           "example": "无",
           "member": "string",
@@ -23511,7 +23454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
           "example": "无",
           "member": "uint64",
@@ -23530,7 +23472,6 @@
           "example": "无",
           "member": "EventContent",
           "name": "EventSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23679,125 +23620,122 @@
       "type": "object"
     },
     "PullUploadTask": {
-      "document": "视频转拉任务信息",
+      "document": "拉取上传任务信息",
       "members": [
         {
-          "default": "",
-          "document": "转拉上传任务 ID。",
+          "document": "拉取上传任务 ID。",
           "example": "12530xxx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "错误信息。",
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "转拉上传完成后生成的视频 ID。",
+          "document": "拉取上传完成后生成的视频 ID。",
           "example": "825xxx",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "转拉完成后生成的媒体文件基础信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拉取上传完成后生成的媒体文件基础信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaBasicInfo",
           "name": "MediaBasicInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "转拉上传完成后生成的播放地址。",
+          "document": "拉取上传完成后生成的播放地址。",
           "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xxx.mp4",
           "member": "string",
           "name": "FileUrl",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。",
+          "document": "任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。",
           "example": "12530xxx",
           "member": "string",
           "name": "ProcedureTaskId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewAudioVideoTaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。",
           "example": "abcd",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "abcd",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "转拉任务进度，取值范围 [0-100] 。",
+          "document": "拉取上传进度，取值范围 [0-100] 。",
           "example": "100",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -25001,23 +24939,30 @@
       "document": "音视频审核任务的输入。",
       "members": [
         {
-          "default": "",
           "document": "媒体文件 ID。",
           "example": "无",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "音视频审核模板 ID。",
           "example": "无",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "审核的内容，可选值：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewContents",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -26721,29 +26666,38 @@
       "document": "视频拆条任务信息。",
       "members": [
         {
-          "default": "",
           "document": "视频拆条任务输入信息。",
+          "example": "无",
           "member": "SplitMediaTaskInput",
           "name": "Input",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "视频拆条任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskOutputMediaInfo",
           "name": "Output",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "若发起视频拆条任务时指定了视频处理流程，则该字段为流程任务 ID。",
+          "document": "任务类型为 Procedure 的任务 ID。若发起[视频拆条](https://cloud.tencent.com/document/api/266/51098)任务时，视频拆条任务信息列表指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。",
+          "example": "无",
           "member": "string",
           "name": "ProcedureTaskId",
-          "required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型为 ReviewAudioVideo 的任务 ID。若发起[视频拆条](https://cloud.tencent.com/document/api/266/51098)任务时，视频拆条任务信息列表指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewAudioVideoTaskId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

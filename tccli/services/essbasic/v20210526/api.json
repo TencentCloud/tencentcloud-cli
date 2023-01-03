@@ -3079,7 +3079,7 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：（暂不支持）\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-渠道合作企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
       "members": [
         {
           "default": "",

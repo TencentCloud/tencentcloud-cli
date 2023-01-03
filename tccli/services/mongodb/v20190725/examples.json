@@ -8,6 +8,14 @@
         "title": "指定云数据库实例的所属项目"
       }
     ],
+    "CreateAccountUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccountUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AuthRole\": [\n        {\n            \"Mask\": 0,\n            \"NameSpace\": \"xx\"\n        }\n    ],\n    \"UserDesc\": \"xx\",\n    \"MongoUserPassword\": \"xx\",\n    \"Password\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建mongodb实例账号"
+      }
+    ],
     "CreateBackupDBInstance": [
       {
         "document": "",

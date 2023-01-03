@@ -1941,7 +1941,7 @@
         {
           "default": "",
           "document": "策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数",
-          "example": "0",
+          "example": "111111",
           "member": "int64",
           "name": "GroupId",
           "required": false,
@@ -1973,6 +1973,24 @@
           "name": "Dimensions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否配置了事件告警",
+          "example": "1",
+          "member": "int64",
+          "name": "EbEventFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2707,6 +2725,15 @@
           "name": "MigrateFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3810,6 +3837,15 @@
           "member": "string",
           "name": "NoticeIds",
           "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "通知模版与策略绑定关系",
+          "example": "无",
+          "member": "NoticeBindPolicys",
+          "name": "NoticeBindPolicys",
+          "required": false,
           "type": "list"
         }
       ],
@@ -11543,6 +11579,15 @@
           "name": "CLSNotices",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警通知模板绑定的告警策略ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11633,6 +11678,42 @@
           "name": "LogAlarmReqInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模版id，专供prom使用",
+          "example": "[\"notice-2323\"]",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "启停状态，0=停用，1=启用",
+          "example": "0",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "专供prom策略名称",
+          "example": "\"prom-1234\"",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12234,6 +12315,32 @@
           "name": "Namespace",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "NoticeBindPolicys": {
+      "document": "通知模版与策略绑定关系",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知模板 ID",
+          "example": "notice-xxx",
+          "member": "string",
+          "name": "NoticeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通知模板绑定的告警策略ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -14196,7 +14303,7 @@
         {
           "default": "",
           "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
-          "example": "0",
+          "example": "11111",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -14210,6 +14317,24 @@
           "name": "PolicyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否配置了事件告警",
+          "example": "1",
+          "member": "int64",
+          "name": "EbEventFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -14273,6 +14398,24 @@
           "name": "PolicyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件配置的告警",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "member": "string",
+          "name": "EbSubject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否配置了事件告警",
+          "example": "1",
+          "member": "int64",
+          "name": "EbEventFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
