@@ -7,7 +7,7 @@
       "output": "AssignProjectResponse"
     },
     "CreateAccountUser": {
-      "document": "创建实例账号。",
+      "document": "本接口(CreateAccountUser)用于创建mongodb实例账号。",
       "input": "CreateAccountUserRequest",
       "name": "创建账号",
       "output": "CreateAccountUserResponse"
@@ -37,7 +37,7 @@
       "output": "CreateDBInstanceHourResponse"
     },
     "DescribeAccountUsers": {
-      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号列表。",
+      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号。",
       "input": "DescribeAccountUsersRequest",
       "name": "全部账号列表",
       "output": "DescribeAccountUsersResponse"
@@ -199,7 +199,7 @@
       "output": "ResetDBInstancePasswordResponse"
     },
     "SetAccountUserPrivilege": {
-      "document": "账户权限设置。",
+      "document": "本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。",
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
       "output": "SetAccountUserPrivilegeResponse"
@@ -4485,30 +4485,33 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "cmgo-kbcfl64r",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "账号名称",
+          "document": "账号名称。",
           "example": "bob",
           "member": "string",
           "name": "UserName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "权限信息",
+          "document": "权限信息。",
           "example": "11",
           "member": "Auth",
           "name": "AuthRole",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4523,7 +4526,8 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

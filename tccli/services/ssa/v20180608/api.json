@@ -6,6 +6,12 @@
       "name": "资产安全页资产详情",
       "output": "DescribeAssetDetailResponse"
     },
+    "DescribeAssetDetailList": {
+      "document": "资产条件查询",
+      "input": "DescribeAssetDetailListRequest",
+      "name": "获取资产列表",
+      "output": "DescribeAssetDetailListResponse"
+    },
     "DescribeAssetList": {
       "document": "资产安全资产列表",
       "input": "DescribeAssetListRequest",
@@ -2604,6 +2610,96 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAssetDetailListRequest": {
+      "document": "DescribeAssetDetailList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag",
+          "example": "无",
+          "member": "AssetQueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序条件，可支持的排序字段：\nAssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime",
+          "example": "无",
+          "member": "QuerySort",
+          "name": "Sorter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "风险标签",
+          "example": "无",
+          "member": "string",
+          "name": "RiskTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetDetailListResponse": {
+      "document": "DescribeAssetDetailList返回参数结构体",
+      "members": [
+        {
+          "document": "业务数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAssetDetailRequest": {
       "document": "DescribeAssetDetail请求参数结构体",

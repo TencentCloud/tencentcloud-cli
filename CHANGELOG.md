@@ -1,3 +1,111 @@
+# Release 3.0.682.1
+
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 39 次发布
+
+发布时间：2023-01-05 01:06:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddCdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/41123)
+
+	* 新增入参：HttpsBilling
+
+* [UpdateDomainConfig](http://document.tencentcloudapi.woa.com/document/product/228/41116)
+
+	* 新增入参：HttpsBilling
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 23 次发布
+
+发布时间：2023-01-05 01:19:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GetRealNameAuthToken
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 18 次发布
+
+发布时间：2023-01-05 01:30:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRumGroupLog](http://document.tencentcloudapi.woa.com/document/product/1464/76909)
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 10 次发布
+
+发布时间：2023-01-05 01:31:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAssetDetailList](http://document.tencentcloudapi.woa.com/document/product/664/76910)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 56 次发布
+
+发布时间：2023-01-05 01:40:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AttachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76923)
+* [CreateSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76922)
+* [DeleteSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76921)
+* [DescribeSgSnapshotFileContent](http://document.tencentcloudapi.woa.com/document/product/215/76920)
+* [DescribeSnapshotAttachedInstances](http://document.tencentcloudapi.woa.com/document/product/215/76919)
+* [DescribeSnapshotFiles](http://document.tencentcloudapi.woa.com/document/product/215/76918)
+* [DescribeSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76917)
+* [DetachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76916)
+* [DisableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76915)
+* [EnableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76914)
+* [ModifySnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76913)
+* [ResumeSnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/76912)
+
+新增数据结构：
+
+* [BackupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BackupPolicy)
+* [BatchModifySnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BatchModifySnapshotPolicy)
+* [SnapshotFileInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotFileInfo)
+* [SnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotInstance)
+* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
+
+
+
 # Release 3.0.681.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06

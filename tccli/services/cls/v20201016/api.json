@@ -3449,7 +3449,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3458,7 +3459,8 @@
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"

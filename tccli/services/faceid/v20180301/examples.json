@@ -176,14 +176,6 @@
         "title": "获取微信实名认证结果"
       }
     ],
-    "GetRealNameAuthToken": [
-      {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=GetRealNameAuthToken\n&Name=XXX\n&IDCard=XXX\n&CallbackURL=https://xxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuthToken\": \"4ad3f260-44f8-0000-88ca-5254001a1560\",\n        \"RedirectURL\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=xxx&redirect_uri=xxx&response_type=code&scope=snsapi_base&state=&component_appid=xxx#wechat_redirect\",\n        \"RequestId\": \"97a8fcbf-9998-4e95-ac38-6f1a2308a021\"\n    }\n}",
-        "title": "微信实名认证鉴权"
-      }
-    ],
     "GetWeChatBillDetails": [
       {
         "document": "获取第一页数据时，Cursor值传0。当HasNextPage的值为true时，继续调用接口。",

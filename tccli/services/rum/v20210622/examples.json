@@ -400,6 +400,20 @@
         "title": "获取发布文件列表"
       }
     ],
+    "DescribeRumGroupLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\",\n    \"Page\": \"1\",\n    \"GroupField\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"ID\": \"1\",\n    \"Limit\": \"1\",\n    \"GroupField\": \"\",\n    \"StartTime\": \"1\",\n    \"Query\": \"1\",\n    \"EndTime\": \"1\",\n    \"Page\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "2312"
+      }
+    ],
     "DescribeRumLogList": [
       {
         "document": "",
