@@ -283,7 +283,7 @@
       "output": "DescribeProxySlowLogResponse"
     },
     "DescribeReplicationGroup": {
-      "document": "查询复制组",
+      "document": "本接口（DescribeReplicationGroup）查询复制组。",
       "input": "DescribeReplicationGroupRequest",
       "name": "查询复制组",
       "output": "DescribeReplicationGroupResponse"
@@ -3969,7 +3969,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例列表的大小，参数默认值20",
+          "document": "每页输出实例列表的大小，参数默认值20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -3978,7 +3978,7 @@
         },
         {
           "default": "",
-          "document": "偏移量，取Limit整数倍",
+          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3987,7 +3987,7 @@
         },
         {
           "default": "",
-          "document": "复制组ID",
+          "document": "复制组ID。",
           "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
@@ -3996,7 +3996,7 @@
         },
         {
           "default": "",
-          "document": "实例ID和实例名称，支持模糊查询",
+          "document": "设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "SearchKey",
@@ -4010,7 +4010,7 @@
       "document": "DescribeReplicationGroup返回参数结构体",
       "members": [
         {
-          "document": "复制组数",
+          "document": "复制组数量。",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
@@ -4019,7 +4019,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "复制组信息",
+          "document": "复制组信息。",
           "example": "无",
           "member": "Groups",
           "name": "Groups",
@@ -6798,7 +6798,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -6807,7 +6807,7 @@
         },
         {
           "default": "",
-          "document": "日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。",
+          "document": "设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
@@ -6816,7 +6816,7 @@
         },
         {
           "default": "",
-          "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00",
+          "document": "备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。",
           "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
@@ -6825,7 +6825,7 @@
         },
         {
           "default": "",
-          "document": "自动备份类型： 1 “定时回档”",
+          "document": "自动备份类型： 1 “定时回档”。",
           "example": "1",
           "member": "int64",
           "name": "AutoBackupType",
@@ -6848,7 +6848,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。",
+          "document": "自动备份周期。取值为：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
@@ -6857,7 +6857,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00",
+          "document": "自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。",
           "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
@@ -6866,7 +6866,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "全量备份文件保存天数,单位：天",
+          "document": "全量备份文件保存天数,单位：天。",
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",

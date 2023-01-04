@@ -206,6 +206,14 @@
         "title": "配置迁移服务"
       }
     ],
+    "PauseSyncJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31197c38-7764-49f6-845c-edbc5aa9294e\"\n    }\n}",
+        "title": "暂停一个同步任务"
+      }
+    ],
     "RecoverMigrateJob": [
       {
         "document": "",

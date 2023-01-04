@@ -60,7 +60,13 @@ Output:
                 "AppId": 1,
                 "ClusterClass": "xx",
                 "RunTime": "xx",
-                "Id": 1
+                "Id": 1,
+                "OutSideSoftInfo": [
+                    {
+                        "SoftName": "hdfs-2.8.5",
+                        "Required": true
+                    }
+                ]
             }
         ],
         "RequestId": "xx"

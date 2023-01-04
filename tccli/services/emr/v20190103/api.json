@@ -3144,6 +3144,72 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "体外客户端组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"hdfs-2.8.5\",true]",
+          "member": "SoftDependInfo",
+          "name": "OutSideSoftInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EmrPrice": {
+      "document": "Emr询价描述",
+      "members": [
+        {
+          "default": "",
+          "document": "刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "折扣价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "s",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "询价配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceResource",
+          "name": "PriceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持竞价实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportSpotPaid",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3760,6 +3826,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "价格清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneDetailPriceResult",
+          "name": "PriceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4018,6 +4093,15 @@
           "name": "PriceSpec",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对应入参MultipleResources中多个规格的询价结果，其它出参返回的是第一个规格的询价结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmrPrice",
+          "name": "MultipleEmrPrice",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4778,6 +4862,32 @@
       ],
       "usage": "both"
     },
+    "NodeDetailPriceResult": {
+      "document": "用于创建集群价格清单 节点价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型 master core task common router mysql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "master",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点组成部分价格详情",
+          "example": "无",
+          "member": "PartDetailPriceItem",
+          "name": "PartDetailPrice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NodeHardwareInfo": {
       "document": "节点硬件信息",
       "members": [
@@ -4787,7 +4897,7 @@
           "example": "0",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4797,7 +4907,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "SerialNo",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4807,7 +4917,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "OrderNo",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4817,7 +4927,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "WanIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4827,7 +4937,7 @@
           "example": "0",
           "member": "int64",
           "name": "Flag",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4837,7 +4947,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4847,7 +4957,7 @@
           "example": "0",
           "member": "int64",
           "name": "CpuNum",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4857,7 +4967,7 @@
           "example": "0",
           "member": "int64",
           "name": "MemSize",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4867,7 +4977,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "MemDesc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4877,7 +4987,7 @@
           "example": "0",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4887,7 +4997,7 @@
           "example": "0",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4897,7 +5007,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ApplyTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4907,7 +5017,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "FreeTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4917,7 +5027,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "DiskSize",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4927,7 +5037,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "NameTag",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4937,7 +5047,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Services",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4947,7 +5057,7 @@
           "example": "0",
           "member": "int64",
           "name": "StorageType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4957,7 +5067,7 @@
           "example": "0",
           "member": "int64",
           "name": "RootSize",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4967,7 +5077,7 @@
           "example": "0",
           "member": "int64",
           "name": "ChargeType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4977,7 +5087,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "CdbIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4987,7 +5097,7 @@
           "example": "0",
           "member": "int64",
           "name": "CdbPort",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4997,7 +5107,7 @@
           "example": "0",
           "member": "int64",
           "name": "HwDiskSize",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5007,7 +5117,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "HwDiskSizeDesc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5017,7 +5127,7 @@
           "example": "0",
           "member": "int64",
           "name": "HwMemSize",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5027,7 +5137,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "HwMemSizeDesc",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5037,7 +5147,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5047,7 +5157,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "EmrResourceId",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5057,7 +5167,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsAutoRenew",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5067,7 +5177,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "DeviceClass",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5077,7 +5187,7 @@
           "example": "0",
           "member": "int64",
           "name": "Mutable",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5087,7 +5197,7 @@
           "example": "[]",
           "member": "MultiDiskMC",
           "name": "MCMultiDisk",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5097,7 +5207,7 @@
           "example": "无",
           "member": "CdbInfo",
           "name": "CdbNodeInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5107,7 +5217,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5117,7 +5227,7 @@
           "example": "0",
           "member": "int64",
           "name": "Destroyable",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5127,7 +5237,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5137,7 +5247,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoFlag",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5147,7 +5257,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "HardwareResourceType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5157,7 +5267,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsDynamicSpec",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5167,7 +5277,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "DynamicPodSpec",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5177,7 +5287,7 @@
           "example": "0",
           "member": "int64",
           "name": "SupportModifyPayMode",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5187,7 +5297,7 @@
           "example": "无",
           "member": "int64",
           "name": "RootStorageType",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5197,7 +5307,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5207,7 +5317,7 @@
           "example": "无",
           "member": "SubnetInfo",
           "name": "SubnetInfo",
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5217,7 +5327,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Clients",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5227,7 +5337,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentTime",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5237,7 +5347,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsFederation",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5247,7 +5357,7 @@
           "example": "无",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5257,7 +5367,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceClient",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5267,7 +5377,7 @@
           "example": "true",
           "member": "bool",
           "name": "DisableApiTermination",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5277,7 +5387,7 @@
           "example": "1",
           "member": "int64",
           "name": "TradeVersion",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5422,6 +5532,72 @@
           "name": "InstanceType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PartDetailPriceItem": {
+      "document": "用于创建集群价格清单-节点组成部分价格",
+      "members": [
+        {
+          "default": "",
+          "document": "类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "node",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单价（原价）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单价（折扣价）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RealCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总价（折扣价）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.5",
+          "member": "float",
+          "name": "Policy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7377,6 +7553,32 @@
       ],
       "usage": "both"
     },
+    "SoftDependInfo": {
+      "document": "体外客户端组件依赖信息",
+      "members": [
+        {
+          "default": "",
+          "document": "组件名称",
+          "example": "hdfs-2.8.5",
+          "member": "string",
+          "name": "SoftName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否必选",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Step": {
       "document": "执行步骤",
       "members": [
@@ -7841,6 +8043,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ZoneDetailPriceResult": {
+      "document": "用于创建集群价格清单 不同可用区下价格详情",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不同节点的价格详情",
+          "example": "无",
+          "member": "NodeDetailPriceResult",
+          "name": "NodeDetailPrice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ZoneResourceConfiguration": {
       "document": "可用区配置信息",

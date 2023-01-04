@@ -1126,6 +1126,15 @@
           "name": "CrossAZone",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定防火墙使用网段信息",
+          "example": "无",
+          "member": "FwCidrInfo",
+          "name": "FwCidrInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1243,6 +1252,15 @@
           "name": "Domain",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定防火墙使用网段信息",
+          "example": "无",
+          "member": "FwCidrInfo",
+          "name": "FwCidrInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3665,6 +3683,68 @@
       ],
       "type": "object"
     },
+    "FwCidrInfo": {
+      "document": "防火墙网段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "防火墙使用的网段类型，值VpcSelf/Assis/Custom分别代表自有网段优先/扩展网段优先/自定义",
+          "example": "VpcSelf",
+          "member": "string",
+          "name": "FwCidrType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "为每个vpc指定防火墙的网段",
+          "example": "无",
+          "member": "FwVpcCidr",
+          "name": "FwCidrLst",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "其他防火墙占用网段，一般是防火墙需要独占vpc时指定的网段",
+          "example": "172.10.0.0/24",
+          "member": "string",
+          "name": "ComFwCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FwVpcCidr": {
+      "document": "vpc的防火墙网段",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc的id",
+          "example": "vpc-xxx1",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防火墙网段，最少/24的网段",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "FwCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IPDefendStatus": {
       "document": "ip防护状态",
       "members": [
@@ -4378,6 +4458,15 @@
           "name": "VpcList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定防火墙使用网段信息",
+          "example": "无",
+          "member": "FwCidrInfo",
+          "name": "FwCidrInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

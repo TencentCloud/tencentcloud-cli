@@ -1134,7 +1134,7 @@
         },
         {
           "default": "",
-          "document": "上传证书的公钥，如果没有 CertId，则此项必传。",
+          "document": "上传证书的公钥；如果没有 CertId，则此项必传。",
           "example": " -----BEGIN CERTIFICATE-----",
           "member": "string",
           "name": "CertContent",
@@ -1144,7 +1144,7 @@
         },
         {
           "default": "",
-          "document": "上传服务端证书的私钥，如果没有 CertId，则此项必传。",
+          "document": "上传服务端证书的私钥；如果没有 CertId，则此项必传。",
           "example": "-----BEGIN RSA PRIVATE KEY----- ",
           "member": "string",
           "name": "CertKey",
@@ -2424,6 +2424,24 @@
           "name": "MultiCertInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxConn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监听器最大新增连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxCps",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6090,6 +6108,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器最大连接数，-1表示监听器维度不限速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxConn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器最大新增连接数，-1表示监听器维度不限速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxCps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7705,6 +7743,24 @@
           "name": "MultiCertInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxConn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "example": "-1",
+          "member": "int64",
+          "name": "MaxCps",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

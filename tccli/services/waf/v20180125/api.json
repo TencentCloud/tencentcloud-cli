@@ -2918,6 +2918,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用型负载均衡类型: clb或者apisix，默认clb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"clb\"",
+          "member": "string",
+          "name": "AlbType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

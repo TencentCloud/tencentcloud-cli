@@ -649,7 +649,7 @@
       "output": "ModifyParamTemplateResponse"
     },
     "ModifyRemoteBackupConfig": {
-      "document": "本接口(ModifyRemoteBackupConfig)用于查询数据库异地备份配置信息。",
+      "document": "本接口(ModifyRemoteBackupConfig)用于修改数据库异地备份配置信息。",
       "input": "ModifyRemoteBackupConfigRequest",
       "name": "修改云数据库异地备份配置信息",
       "output": "ModifyRemoteBackupConfigResponse"
@@ -12200,7 +12200,7 @@
         },
         {
           "default": "",
-          "document": "异地备份保留天时间，单位为天",
+          "document": "异地备份保留时间，单位为天",
           "example": "7",
           "member": "int64",
           "name": "ExpireDays",

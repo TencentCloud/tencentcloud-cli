@@ -24656,7 +24656,16 @@
         },
         {
           "default": "",
-          "document": "音视频审核模板 ID，默认值为 10。取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>",
+          "document": "审核的内容，可选值有：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>\n不填或填空数组时，默认为审核 Media。",
+          "example": "无",
+          "member": "string",
+          "name": "ReviewContents",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "审核模板 ID，默认值为 10。取值范围：\n<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>",
           "example": "无",
           "member": "uint64",
           "name": "Definition",
@@ -25030,6 +25039,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封面审核结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReviewImageResult",
+          "name": "CoverReviewResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -25068,7 +25087,7 @@
       "document": "ReviewImage返回参数结构体",
       "members": [
         {
-          "document": "图片审核任务结果。\n<font color=red>注意：该字段已废弃，建议使用 ReviewResult。</font> ",
+          "document": "图片审核任务结果。\n<font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> ",
           "example": "无",
           "member": "ContentReviewResult",
           "name": "ReviewResultSet",

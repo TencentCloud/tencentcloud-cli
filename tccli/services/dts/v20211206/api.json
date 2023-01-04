@@ -150,6 +150,12 @@
       "name": "配置迁移服务",
       "output": "ModifyMigrationJobResponse"
     },
+    "PauseSyncJob": {
+      "document": "暂停处于同步中的数据同步任务。",
+      "input": "PauseSyncJobRequest",
+      "name": "暂停同步任务",
+      "output": "PauseSyncJobResponse"
+    },
     "RecoverMigrateJob": {
       "document": "解除隔离数据迁移任务，用户手动发起隔离后的手动解隔离，只有任务状态为已隔离(手动操作)状态下才能触发此操作。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。",
       "input": "RecoverMigrateJobRequest",
@@ -4494,6 +4500,33 @@
         }
       ],
       "usage": "both"
+    },
+    "PauseSyncJobRequest": {
+      "document": "PauseSyncJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "同步任务id",
+          "example": "sync-xxxxxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseSyncJobResponse": {
+      "document": "PauseSyncJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessProgress": {
       "document": "任务步骤信息",

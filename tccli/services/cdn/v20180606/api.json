@@ -8012,6 +8012,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "https 请求计费开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HttpsBilling",
+          "name": "HttpsBilling",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9339,6 +9349,22 @@
       ],
       "usage": "both"
     },
+    "HttpsBilling": {
+      "document": "支持 https 请求开关，若关闭，下发配置拦截https请求",
+      "members": [
+        {
+          "default": "",
+          "document": "https请求计费开关",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HwPrivateAccess": {
       "document": " 华为云对象存储回源鉴权",
       "members": [
@@ -9476,7 +9502,7 @@
         },
         {
           "default": "",
-          "document": "IP 黑白名单验证失败时返回的 HTTP Code\n合法值: 400~499\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单验证失败时返回的 code（即将下线）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "403",
           "member": "int64",
           "name": "ReturnCode",

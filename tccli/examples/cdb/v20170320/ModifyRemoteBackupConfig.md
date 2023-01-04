@@ -7,10 +7,10 @@ Input:
 ```
 tccli cdb ModifyRemoteBackupConfig --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
-    --RemoteBackupSave on \
     --RemoteBinlogSave on \
+    --ExpireDays 7 \
     --RemoteRegion ap-guangzhou \
-    --ExpireDays 7
+    --RemoteBackupSave on
 ```
 
 Output: 
