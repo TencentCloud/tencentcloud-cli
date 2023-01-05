@@ -162,9 +162,9 @@
     ],
     "DescribeBillingSpecs": [
       {
-        "document": "",
-        "input": "https://tione.tencentcloudapi.com/?Action=DescribeBillingSpecs\n&TaskType=TRAIN\n&ChargeType=PREPAID\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f91ba5c-03bb-4c02-b9cc-d2740821112f\",\n        \"Specs\": [\n            {\n                \"SpecName\": \"TI.GN10.2XLARGE40.POST\",\n                \"SpecAlias\": \"8核40GB V100*1\",\n                \"SpecId\": \"sv_tio_platform_cloud_post_gpu_8c40g_1v100\"\n            }\n        ]\n    }\n}",
+        "document": "查询计费项列表",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingSpecs\n<公共请求参数>\n\n{\n    \"ChargeType\": \"PREPAID\",\n    \"TaskType\": \"TRAIN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f91ba5c-03bb-4c02-b9cc-d2740821112f\",\n        \"Specs\": [\n            {\n                \"SpecName\": \"TI.GN10.2XLARGE40.POST\",\n                \"SpecAlias\": \"8核40GB V100*1\",\n                \"SpecId\": \"sv_tio_platform_cloud_post_gpu_8c40g_1v100\",\n                \"Available\": false,\n                \"AvailableRegion\": [\n                    \"ap-guangzhou\",\n                    \"ap-beijing\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询计费项列表 示例"
       }
     ],

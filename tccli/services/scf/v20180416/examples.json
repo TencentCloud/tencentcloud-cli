@@ -208,6 +208,14 @@
         "title": "运行函数"
       }
     ],
+    "InvokeAsyncEventCallBack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAsyncEventCallBack\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee33a89b-3825-4d2f-bd88-35a8fa27aae1\"\n    }\n}",
+        "title": "异步事件回调接口"
+      }
+    ],
     "InvokeFunction": [
       {
         "document": "",

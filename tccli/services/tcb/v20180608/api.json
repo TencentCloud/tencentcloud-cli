@@ -9850,7 +9850,8 @@
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9859,7 +9860,8 @@
           "member": "string",
           "name": "VersionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9868,7 +9870,8 @@
           "member": "string",
           "name": "UploadType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9877,7 +9880,8 @@
           "member": "string",
           "name": "RepositoryType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9886,7 +9890,8 @@
           "member": "int64",
           "name": "FlowRatio",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9895,7 +9900,8 @@
           "member": "string",
           "name": "DockerfilePath",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9904,7 +9910,8 @@
           "member": "string",
           "name": "BuildDir",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9913,7 +9920,8 @@
           "member": "string",
           "name": "Cpu",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9922,7 +9930,8 @@
           "member": "string",
           "name": "Mem",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9931,7 +9940,8 @@
           "member": "string",
           "name": "MinNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9940,7 +9950,8 @@
           "member": "string",
           "name": "MaxNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9949,7 +9960,8 @@
           "member": "string",
           "name": "PolicyType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9958,7 +9970,8 @@
           "member": "string",
           "name": "PolicyThreshold",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9967,7 +9980,8 @@
           "member": "string",
           "name": "EnvParams",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9976,7 +9990,8 @@
           "member": "int64",
           "name": "ContainerPort",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9985,7 +10000,8 @@
           "member": "string",
           "name": "ServerName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9994,7 +10010,8 @@
           "member": "string",
           "name": "Repository",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10003,7 +10020,8 @@
           "member": "string",
           "name": "Branch",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10012,7 +10030,8 @@
           "member": "string",
           "name": "VersionRemark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10021,7 +10040,8 @@
           "member": "string",
           "name": "PackageName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10030,7 +10050,8 @@
           "member": "string",
           "name": "PackageVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10039,7 +10060,8 @@
           "member": "CloudBaseRunImageInfo",
           "name": "ImageInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10048,7 +10070,8 @@
           "member": "CloudBaseCodeRepoDetail",
           "name": "CodeDetail",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10057,7 +10080,8 @@
           "member": "bool",
           "name": "IsRebuild",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10066,7 +10090,8 @@
           "member": "int64",
           "name": "InitialDelaySeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10075,7 +10100,8 @@
           "member": "CloudBaseRunVolumeMount",
           "name": "MountVolumeInfo",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10084,7 +10110,8 @@
           "member": "bool",
           "name": "Rollback",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10093,7 +10120,8 @@
           "member": "string",
           "name": "SnapshotName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10102,7 +10130,8 @@
           "member": "string",
           "name": "CustomLogs",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10111,7 +10140,8 @@
           "member": "bool",
           "name": "EnableUnion",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10120,7 +10150,8 @@
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10129,7 +10160,8 @@
           "member": "string",
           "name": "ServerPath",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10138,7 +10170,8 @@
           "member": "bool",
           "name": "IsUpdateCls",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10147,7 +10180,8 @@
           "member": "HpaPolicy",
           "name": "PolicyDetail",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10162,7 +10196,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "滚动更新的VersionName\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10171,7 +10206,8 @@
           "name": "VersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10180,7 +10216,8 @@
           "name": "RunId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

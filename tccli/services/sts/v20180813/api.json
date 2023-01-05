@@ -284,7 +284,8 @@
           "member": "string",
           "name": "ProviderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -293,7 +294,8 @@
           "member": "string",
           "name": "WebIdentityToken",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -302,7 +304,8 @@
           "member": "string",
           "name": "RoleArn",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -311,7 +314,8 @@
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -320,7 +324,8 @@
           "member": "int64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -329,31 +334,34 @@
       "document": "AssumeRoleWithWebIdentity返回参数结构体",
       "members": [
         {
-          "document": "临时秘钥过期时间(时间戳)",
+          "document": "临时密钥过期时间(时间戳)",
           "example": "123456789",
           "member": "uint64",
           "name": "ExpiredTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "临时秘钥过期时间",
+          "document": "临时密钥过期时间",
           "example": "2010-12-10",
           "member": "string",
           "name": "Expiration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "临时秘钥",
+          "document": "临时密钥",
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

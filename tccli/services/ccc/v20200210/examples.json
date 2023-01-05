@@ -138,8 +138,8 @@
     ],
     "DescribeChatMessages": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"CdrId\": \"xx\",\n    \"InstanceId\": 0\n}",
+        "document": "获取指定服务记录的文本消息记录。",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400000000\",\n    \"SessionId\": \"d6253538-7c28-477b-998a-919059801899\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"TotalCount\": 0,\n        \"Messages\": []\n    }\n}",
         "title": "查询聊天记录示例"
       }
@@ -162,9 +162,9 @@
     ],
     "DescribeIMCdrs": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIMCdrs\n<公共请求参数>\n\n{\n    \"InstanceId\": 11,\n    \"StartTimestamp\": 1603877878,\n    \"EndTimestamp\": 1603877879\n}",
-        "output": "{\n    \"Response\": {\n        \"IMCdrs\": [\n            {\n                \"Type\": 2,\n                \"Timestamp\": 1632814604,\n                \"SkillGroupName\": \"bar\",\n                \"EndStatus\": 1,\n                \"SessionId\": \"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\n                \"StaffId\": \"foo@tencent.com\",\n                \"Duration\": 100,\n                \"Nickname\": \"foo\",\n                \"Id\": \"12933\",\n                \"SkillGroupId\": \"1001\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"66fa1d7a-4194-4f2a-73dc-d7c293411890\"\n    }\n}",
+        "document": "获取包括全媒体和文本会话两种类型的服务记录。",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIMCdrs\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StartTimestamp\": 1603877878,\n    \"EndTimestamp\": 1603877879\n}",
+        "output": "{\n    \"Response\": {\n        \"IMCdrs\": [\n            {\n                \"Id\": \"12933\",\n                \"Duration\": 100,\n                \"EndStatus\": 1,\n                \"Nickname\": \"bar\",\n                \"Type\": 2,\n                \"StaffId\": \"foo@tencent.com\",\n                \"Timestamp\": 1632814604,\n                \"SessionId\": \"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\n                \"SkillGroupId\": \"1001\",\n                \"SkillGroupName\": \"bar\",\n                \"Satisfaction\": {\n                    \"Id\": 1,\n                    \"Label\": \"满意\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"66fa1d7a-4194-4f2a-73dc-d7c293411890\"\n    }\n}",
         "title": "查询在线客服记录示例"
       }
     ],

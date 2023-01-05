@@ -103,7 +103,7 @@
       "output": "DescribeCarrierPrivilegeNumberApplicantsResponse"
     },
     "DescribeChatMessages": {
-      "document": "包括具体聊天内容",
+      "document": "获取指定服务记录文本聊天内容，需要先使用查询在线客服记录（DescribeIMCdrs） API 获取服务记录 SessionId。\n\n文本聊天记录只保存了 1 年内的，1 年之前会自动清理。",
       "input": "DescribeChatMessagesRequest",
       "name": "查询服务的聊天记录",
       "output": "DescribeChatMessagesResponse"
@@ -121,7 +121,7 @@
       "output": "DescribeExtensionsResponse"
     },
     "DescribeIMCdrs": {
-      "document": "包括全媒体和文本两种类型",
+      "document": "获取包括全媒体和文本会话两种类型的服务记录。",
       "input": "DescribeIMCdrsRequest",
       "name": "查询在线客服记录",
       "output": "DescribeIMCdrsResponse"
@@ -1856,7 +1856,6 @@
       "document": "DescribeChatMessages请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID（废弃）",
           "example": "0",
           "member": "int64",
@@ -1866,7 +1865,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
@@ -1876,8 +1874,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "服务记录ID",
+          "document": "服务记录ID（废弃）",
           "example": "13503",
           "member": "string",
           "name": "CdrId",
@@ -1886,8 +1883,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回记录条数 最大为100默认20",
+          "document": "返回记录条数，最大为100 默认20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -1896,8 +1892,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回记录偏移 默认为0",
+          "document": "返回记录偏移，默认为 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1906,7 +1901,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "1为从早到晚，2为从晚到早，默认为2",
           "example": "1",
           "member": "int64",
@@ -1916,8 +1910,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "服务记录SessionID",
+          "document": "服务记录 SessionID（必填）",
           "example": "d6253538-7c28-477b-998a-919059801899",
           "member": "string",
           "name": "SessionId",
@@ -1936,7 +1929,6 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1946,7 +1938,6 @@
           "example": "无",
           "member": "MessageBody",
           "name": "Messages",
-          "required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -2150,67 +2141,67 @@
       "document": "DescribeIMCdrs请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "起始时间",
+          "document": "起始时间（必填），Unix 秒级时间戳",
           "example": "1603877878",
           "member": "int64",
           "name": "StartTimestamp",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "结束时间",
+          "document": "结束时间（必填），Unix 秒级时间戳",
           "example": "1603877879",
           "member": "int64",
           "name": "EndTimestamp",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "实例 ID（废弃）",
           "example": "11",
           "member": "int64",
           "name": "InstanceId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回记录条数 最大为100默认20",
+          "document": "返回记录条数，最大为100默认20",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
-          "document": "返回记录偏移 默认为0",
+          "document": "返回记录偏移，默认为 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "1为全媒体，2为文本客服，不填则查询全部",
           "example": "2",
           "member": "int64",
           "name": "Type",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2223,18 +2214,18 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "服务记录列表",
           "example": "无",
           "member": "IMCdrInfo",
           "name": "IMCdrs",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

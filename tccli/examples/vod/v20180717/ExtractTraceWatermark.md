@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli vod ExtractTraceWatermark --cli-unfold-argument  \
-    --Url http://example.com/path/file.mp4
+    --Url http://example.com/path/file.mp4 \
+    --FileId 123422
 ```
 
 Output: 

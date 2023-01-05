@@ -498,6 +498,12 @@
       "name": "SVC新建规则",
       "output": "CreateSvcToUsgInternalResponse"
     },
+    "CreateTrafficPackages": {
+      "document": "本接口 (CreateTrafficPackages) 用于创建共享流量包。",
+      "input": "CreateTrafficPackagesRequest",
+      "name": "创建共享流量包",
+      "output": "CreateTrafficPackagesResponse"
+    },
     "CreateUSGInternal": {
       "document": "新建USG 原始DFW接口: createUSG",
       "input": "CreateUSGInternalRequest",
@@ -5039,7 +5045,6 @@
       "document": "描述带宽包信息的结构",
       "members": [
         {
-          "default": "",
           "document": "带宽包唯一标识Id",
           "example": "bwp-xxxxxx",
           "member": "string",
@@ -5050,8 +5055,7 @@
           "visibility": 1
         },
         {
-          "default": "",
-          "document": "带宽包类型，包括'BGP','SINGLEISP','ANYCAST'",
+          "document": "带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -5061,7 +5065,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包计费类型，包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
@@ -5072,7 +5075,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包名称",
           "example": "未命名",
           "member": "string",
@@ -5083,7 +5085,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "2021-04-27T09:06:07Z",
           "member": "datetime_iso",
@@ -5094,7 +5095,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包状态，包括'CREATING','CREATED','DELETING','DELETED'",
           "example": "CREATED",
           "member": "string",
@@ -5105,7 +5105,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包资源信息",
           "example": "无",
           "member": "Resource",
@@ -5116,7 +5115,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "带宽包限速大小。单位：Mbps，-1表示不限速。",
           "example": "10",
           "member": "int64",
@@ -5127,7 +5125,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "document": "保底带宽包的保底比例：-1-1000，单位：百分比， -1表示非保底。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
@@ -5138,7 +5135,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "当日设置最大带宽值（用于保底/日结场景）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -5149,7 +5145,6 @@
           "visibility": 2
         },
         {
-          "default": "",
           "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -5169,11 +5164,12 @@
           "default": "",
           "document": "当前计费用量，单位为 Mbps",
           "example": "15",
-          "member": "uint64",
+          "member": "float",
           "name": "BandwidthUsage",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -9187,6 +9183,51 @@
       ],
       "type": "object"
     },
+    "CreateTrafficPackagesRequest": {
+      "document": "CreateTrafficPackages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流量包规格。可选值:\n<li>10: 10GB流量，有效期一个月</li>\n<li>50: 50GB流量，有效期一个月</li>\n<li>512: 512GB流量，有效期一个月</li>\n<li>1024: 1TB流量，有效期一个月</li>\n<li>5120: 5TB流量，有效期一个月</li>\n<li>51200: 50TB流量，有效期一个月</li>\n<li>60: 60GB流量，有效期半年</li>\n<li>300: 300GB流量，有效期半年</li>\n<li>600: 600GB流量，有效期半年</li>\n<li>3072: 3TB流量，有效期半年</li>\n<li>6144: 6TB流量，有效期半年</li>\n<li>30720: 30TB流量，有效期半年</li>\n<li>61440: 60TB流量，有效期半年</li>\n<li>307200: 300TB流量，有效期半年</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TrafficAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流量包数量，可选范围 1~20。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrafficPackageCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrafficPackagesResponse": {
+      "document": "CreateTrafficPackages返回参数结构体",
+      "members": [
+        {
+          "document": "创建的流量包ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TrafficPackageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUSGInternalRequest": {
       "document": "CreateUSGInternal请求参数结构体",
       "members": [
@@ -13168,7 +13209,8 @@
           "member": "string",
           "name": "BandwidthPackageIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13177,25 +13219,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "查询带宽包偏移量",
+          "document": "查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "查询带宽包数量限制",
+          "document": "查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13210,7 +13255,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "描述带宽包详细信息",
@@ -13219,7 +13265,8 @@
           "name": "BandwidthPackageSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -37195,6 +37242,26 @@
     "TransformAddressResponse": {
       "document": "TransformAddress返回参数结构体",
       "members": [
+        {
+          "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "37888307",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "转为弹性公网IP后的唯一ID",
+          "example": "eip-fk2gmm9s",
+          "member": "string",
+          "name": "AddressId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

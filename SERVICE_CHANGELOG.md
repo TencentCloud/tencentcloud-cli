@@ -1,33 +1,53 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
 
-### 第 39 次发布
+### 第 38 次发布
 
-发布时间：2023-01-05 01:06:55
+发布时间：2023-01-06 01:06:01
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [AddCdnDomain](http://document.tencentcloudapi.woa.com/document/product/228/41123)
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
 
-	* 新增入参：HttpsBilling
+	* 新增成员：ElasticBandwidth, EOFlag
 
-* [UpdateDomainConfig](http://document.tencentcloudapi.woa.com/document/product/228/41116)
+* [NewL7RuleEntry](http://document.tencentcloudapi.woa.com/document/product/1021/57582#NewL7RuleEntry)
 
-	* 新增入参：HttpsBilling
+	* 新增成员：Version
 
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 45 次发布
+
+发布时间：2023-01-06 01:12:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopicProduceConnection](http://document.tencentcloudapi.woa.com/document/product/597/76924)
+
+新增数据结构：
+
+* [DescribeConnectInfoResultDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectInfoResultDTO)
 
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 23 次发布
+### 第 24 次发布
 
-发布时间：2023-01-05 01:19:08
+发布时间：2023-01-06 01:22:34
 
 本次发布包含了以下内容：
 
@@ -35,31 +55,15 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* GetRealNameAuthToken
+* GetRealNameAuthResult
 
 
 
-## 前端性能监控(rum) 版本：2021-06-22
+## 云函数(scf) 版本：2018-04-16
 
-### 第 18 次发布
+### 第 20 次发布
 
-发布时间：2023-01-05 01:30:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeRumGroupLog](http://document.tencentcloudapi.woa.com/document/product/1464/76909)
-
-
-
-## 安全运营中心(ssa) 版本：2018-06-08
-
-### 第 10 次发布
-
-发布时间：2023-01-05 01:31:52
+发布时间：2023-01-06 01:32:50
 
 本次发布包含了以下内容：
 
@@ -67,15 +71,76 @@
 
 新增接口：
 
-* [DescribeAssetDetailList](http://document.tencentcloudapi.woa.com/document/product/664/76910)
+* [InvokeAsyncEventCallBack](http://document.tencentcloudapi.woa.com/document/product/583/76925)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 15 次发布
+
+发布时间：2023-01-06 01:38:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+
+	* 新增成员：Available, AvailableRegion
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 20 次发布
+
+发布时间：2023-01-06 01:39:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#LayoutParams)
+
+	* 新增成员：RenderMode
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 45 次发布
+
+发布时间：2023-01-06 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExtractTraceWatermark](http://document.tencentcloudapi.woa.com/document/product/266/76369)
+
+	* 新增入参：FileId
+
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 56 次发布
+### 第 57 次发布
 
-发布时间：2023-01-05 01:40:41
+发布时间：2023-01-06 01:42:23
 
 本次发布包含了以下内容：
 
@@ -83,26 +148,21 @@
 
 新增接口：
 
-* [AttachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76923)
-* [CreateSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76922)
-* [DeleteSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76921)
-* [DescribeSgSnapshotFileContent](http://document.tencentcloudapi.woa.com/document/product/215/76920)
-* [DescribeSnapshotAttachedInstances](http://document.tencentcloudapi.woa.com/document/product/215/76919)
-* [DescribeSnapshotFiles](http://document.tencentcloudapi.woa.com/document/product/215/76918)
-* [DescribeSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76917)
-* [DetachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76916)
-* [DisableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76915)
-* [EnableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76914)
-* [ModifySnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76913)
-* [ResumeSnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/76912)
+* [CreateTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/76926)
 
-新增数据结构：
+修改接口：
 
-* [BackupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BackupPolicy)
-* [BatchModifySnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BatchModifySnapshotPolicy)
-* [SnapshotFileInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotFileInfo)
-* [SnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotInstance)
-* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
+* [TransformAddress](http://document.tencentcloudapi.woa.com/document/product/215/16706)
+
+	* 新增出参：TaskId, AddressId
+
+
+修改数据结构：
+
+* [BandwidthPackageBillBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#BandwidthPackageBillBandwidth)
+
+	* <font color="#dd0000">**修改成员**：</font>BandwidthUsage
+
 
 
 
@@ -991,6 +1051,25 @@
 
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 38 次发布
+
+发布时间：2023-01-06 01:06:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
+
+	* 新增成员：ElasticBandwidth, EOFlag
+
+* [NewL7RuleEntry](http://document.tencentcloudapi.woa.com/document/product/1021/57582#NewL7RuleEntry)
+
+	* 新增成员：Version
+
 
 ### 第 37 次发布
 
@@ -9090,6 +9169,22 @@
 
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 45 次发布
+
+发布时间：2023-01-06 01:12:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTopicProduceConnection](http://document.tencentcloudapi.woa.com/document/product/597/76924)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DescribeConnectInfoResultDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectInfoResultDTO)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[DescribeConnectInfoResultDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectInfoResultDTO))
 
 ### 第 44 次发布
 
@@ -22336,6 +22431,18 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 24 次发布
+
+发布时间：2023-01-06 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GetRealNameAuthResult
+
 ### 第 23 次发布
 
 发布时间：2023-01-05 01:19:08
@@ -34805,7 +34912,7 @@
 
 新增接口：
 
-* [[DescribeRumGroupLog](http://document.tencentcloudapi.woa.com/document/product/1464/76909)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRumGroupLog](http://document.tencentcloudapi.woa.com/document/product/1464/76909)
 
 ### 第 17 次发布
 
@@ -35153,6 +35260,18 @@
 
 
 ## 云函数(scf) 版本：2018-04-16
+
+### 第 20 次发布
+
+发布时间：2023-01-06 01:32:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[InvokeAsyncEventCallBack](http://document.tencentcloudapi.woa.com/document/product/583/76925)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 19 次发布
 
@@ -36661,7 +36780,7 @@
 
 新增接口：
 
-* [[DescribeAssetDetailList](http://document.tencentcloudapi.woa.com/document/product/664/76910)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAssetDetailList](http://document.tencentcloudapi.woa.com/document/product/664/76910)
 
 ### 第 9 次发布
 
@@ -41800,6 +41919,21 @@
 
 ## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
 
+### 第 15 次发布
+
+发布时间：2023-01-06 01:38:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+
+	* 新增成员：Available, AvailableRegion
+
+
 ### 第 14 次发布
 
 发布时间：2023-01-02 01:41:26
@@ -43936,6 +44070,21 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 20 次发布
+
+发布时间：2023-01-06 01:39:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#LayoutParams)
+
+	* 新增成员：RenderMode
+
 
 ### 第 19 次发布
 
@@ -46214,6 +46363,21 @@
 
 ## 云点播(vod) 版本：2018-07-17
 
+### 第 45 次发布
+
+发布时间：2023-01-06 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExtractTraceWatermark](http://document.tencentcloudapi.woa.com/document/product/266/76369)
+
+	* 新增入参：FileId
+
+
 ### 第 44 次发布
 
 发布时间：2023-01-04 01:39:38
@@ -47840,6 +48004,32 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 57 次发布
+
+发布时间：2023-01-06 01:42:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/76926)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [TransformAddress](http://document.tencentcloudapi.woa.com/document/product/215/16706)
+
+	* 新增出参：TaskId, AddressId
+
+
+修改数据结构：
+
+* [BandwidthPackageBillBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#BandwidthPackageBillBandwidth)
+
+	* <font color="#dd0000">**修改成员**：</font>BandwidthUsage
+
+
 ### 第 56 次发布
 
 发布时间：2023-01-05 01:40:41
@@ -47850,26 +48040,26 @@
 
 新增接口：
 
-* [[AttachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76923)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76922)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76921)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSgSnapshotFileContent](http://document.tencentcloudapi.woa.com/document/product/215/76920)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotAttachedInstances](http://document.tencentcloudapi.woa.com/document/product/215/76919)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotFiles](http://document.tencentcloudapi.woa.com/document/product/215/76918)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76917)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DetachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76916)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DisableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76915)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[EnableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76914)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifySnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76913)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ResumeSnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/76912)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AttachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76923)
+* [CreateSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76922)
+* [DeleteSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76921)
+* [DescribeSgSnapshotFileContent](http://document.tencentcloudapi.woa.com/document/product/215/76920)
+* [DescribeSnapshotAttachedInstances](http://document.tencentcloudapi.woa.com/document/product/215/76919)
+* [DescribeSnapshotFiles](http://document.tencentcloudapi.woa.com/document/product/215/76918)
+* [DescribeSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76917)
+* [DetachSnapshotInstances](http://document.tencentcloudapi.woa.com/document/product/215/76916)
+* [DisableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76915)
+* [EnableSnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76914)
+* [ModifySnapshotPolicies](http://document.tencentcloudapi.woa.com/document/product/215/76913)
+* [ResumeSnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/76912)
 
 新增数据结构：
 
-* [[BackupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BackupPolicy)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[BackupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BackupPolicy))
-* [[BatchModifySnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BatchModifySnapshotPolicy)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[BatchModifySnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BatchModifySnapshotPolicy))
-* [[SnapshotFileInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotFileInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[SnapshotFileInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotFileInfo))
-* [[SnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotInstance)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[SnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotInstance))
-* [[SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy))
+* [BackupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BackupPolicy)
+* [BatchModifySnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#BatchModifySnapshotPolicy)
+* [SnapshotFileInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotFileInfo)
+* [SnapshotInstance](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotInstance)
+* [SnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SnapshotPolicy)
 
 ### 第 55 次发布
 

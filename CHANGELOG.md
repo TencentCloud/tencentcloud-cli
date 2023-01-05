@@ -1,3 +1,171 @@
+# Release 3.0.683.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 38 次发布
+
+发布时间：2023-01-06 01:06:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BGPIPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPIPInstance)
+
+	* 新增成员：ElasticBandwidth, EOFlag
+
+* [NewL7RuleEntry](http://document.tencentcloudapi.woa.com/document/product/1021/57582#NewL7RuleEntry)
+
+	* 新增成员：Version
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 45 次发布
+
+发布时间：2023-01-06 01:12:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopicProduceConnection](http://document.tencentcloudapi.woa.com/document/product/597/76924)
+
+新增数据结构：
+
+* [DescribeConnectInfoResultDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectInfoResultDTO)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 24 次发布
+
+发布时间：2023-01-06 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GetRealNameAuthResult
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 20 次发布
+
+发布时间：2023-01-06 01:32:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InvokeAsyncEventCallBack](http://document.tencentcloudapi.woa.com/document/product/583/76925)
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2021-11-11
+
+### 第 15 次发布
+
+发布时间：2023-01-06 01:38:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+
+	* 新增成员：Available, AvailableRegion
+
+
+
+
+## 腾讯云 TI 平台 TI-ONE(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 20 次发布
+
+发布时间：2023-01-06 01:39:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LayoutParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#LayoutParams)
+
+	* 新增成员：RenderMode
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 45 次发布
+
+发布时间：2023-01-06 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExtractTraceWatermark](http://document.tencentcloudapi.woa.com/document/product/266/76369)
+
+	* 新增入参：FileId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 57 次发布
+
+发布时间：2023-01-06 01:42:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/76926)
+
+修改接口：
+
+* [TransformAddress](http://document.tencentcloudapi.woa.com/document/product/215/16706)
+
+	* 新增出参：TaskId, AddressId
+
+
+修改数据结构：
+
+* [BandwidthPackageBillBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/15824#BandwidthPackageBillBandwidth)
+
+	* <font color="#dd0000">**修改成员**：</font>BandwidthUsage
+
+
+
+
 # Release 3.0.682.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06

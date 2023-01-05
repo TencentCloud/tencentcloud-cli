@@ -4033,31 +4033,31 @@
       "document": "DescribeBillingSpecs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "枚举值：TRAIN、NOTEBOOK、INFERENCE",
           "example": "TRAIN",
           "member": "string",
           "name": "TaskType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "付费模式：POSTPAID_BY_HOUR后付费、PREPAID预付费",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源类型：CALC 计算资源、CPU CPU资源、GPU GPU资源、CBS云硬盘",
           "example": "CALC",
           "member": "string",
           "name": "ResourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4070,9 +4070,9 @@
           "example": "无",
           "member": "Spec",
           "name": "Specs",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7788,84 +7788,84 @@
       "document": "资源组",
       "members": [
         {
-          "default": "",
           "document": "资源组id",
           "example": "ersg-9hw7jfk6",
           "member": "string",
           "name": "ResourceGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源组名称",
           "example": "test2",
           "member": "string",
           "name": "ResourceGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "可用节点个数(运行中的节点)",
           "example": "1",
           "member": "uint64",
           "name": "FreeInstance",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "总节点个数(所有节点)",
           "example": "1",
           "member": "uint64",
           "name": "TotalInstance",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资资源组已用的资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
           "name": "UsedResource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "资源组总资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
           "name": "TotalResource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -9174,7 +9174,8 @@
           "name": "SpecId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9184,7 +9185,8 @@
           "name": "SpecName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9194,7 +9196,30 @@
           "name": "SpecAlias",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否售罄",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前资源售罄时，可用的区域有哪些",
+          "example": "[]",
+          "member": "string",
+          "name": "AvailableRegion",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

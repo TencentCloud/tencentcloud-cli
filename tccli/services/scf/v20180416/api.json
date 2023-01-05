@@ -156,6 +156,12 @@
       "name": "运行函数",
       "output": "InvokeResponse"
     },
+    "InvokeAsyncEventCallBack": {
+      "document": "异步事件回调接口",
+      "input": "InvokeAsyncEventCallBackRequest",
+      "name": "异步事件回调接口",
+      "output": "InvokeAsyncEventCallBackResponse"
+    },
     "InvokeFunction": {
       "document": " SCF同步调用函数接口",
       "input": "InvokeFunctionRequest",
@@ -3626,6 +3632,23 @@
         }
       ],
       "usage": "both"
+    },
+    "InvokeAsyncEventCallBackRequest": {
+      "document": "InvokeAsyncEventCallBack请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InvokeAsyncEventCallBackResponse": {
+      "document": "InvokeAsyncEventCallBack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InvokeFunctionRequest": {
       "document": "InvokeFunction请求参数结构体",
