@@ -256,6 +256,9 @@ class Loader(object):
     def get_action_description(self, service, version, action):
         return self.get_actions_info(service, version)[action]['document']
 
+    def get_action_online_status(self, service, version, action):
+        return self.get_actions_info(service, version)[action].get('status', 'online')
+
     def get_action_usage(self, service, action):
         return "tccli %s %s [--param...]" % (service, action)
 
