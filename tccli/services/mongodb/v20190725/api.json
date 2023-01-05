@@ -7,7 +7,7 @@
       "output": "AssignProjectResponse"
     },
     "CreateAccountUser": {
-      "document": "创建实例账号。",
+      "document": "本接口(CreateAccountUser)用于创建mongodb实例账号。",
       "input": "CreateAccountUserRequest",
       "name": "创建账号",
       "output": "CreateAccountUserResponse"
@@ -37,7 +37,7 @@
       "output": "CreateDBInstanceHourResponse"
     },
     "DescribeAccountUsers": {
-      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号列表。",
+      "document": "本接口(DescribeAccountUsers)用于获取当前实例的全部账号。",
       "input": "DescribeAccountUsersRequest",
       "name": "全部账号列表",
       "output": "DescribeAccountUsersResponse"
@@ -199,7 +199,7 @@
       "output": "ResetDBInstancePasswordResponse"
     },
     "SetAccountUserPrivilege": {
-      "document": "账户权限设置。",
+      "document": "本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。",
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
       "output": "SetAccountUserPrivilegeResponse"
@@ -4414,7 +4414,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "cmgo-kbcfl64r",
           "member": "string",
           "name": "InstanceId",
@@ -4423,7 +4423,7 @@
         },
         {
           "default": "",
-          "document": "账号名称",
+          "document": "账号名称。",
           "example": "bob",
           "member": "string",
           "name": "UserName",
@@ -4432,7 +4432,7 @@
         },
         {
           "default": "",
-          "document": "权限信息",
+          "document": "权限信息。",
           "example": "11",
           "member": "Auth",
           "name": "AuthRole",

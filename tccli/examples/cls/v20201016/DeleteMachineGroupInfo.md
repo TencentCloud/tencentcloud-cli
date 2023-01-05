@@ -1,4 +1,4 @@
-**Example 1: 增量添加机器组ip或者label**
+**Example 1: 删除机器组ip或者label**
 
 
 

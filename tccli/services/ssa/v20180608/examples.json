@@ -8,6 +8,14 @@
         "title": "资产安全页资产详情"
       }
     ],
+    "DescribeAssetDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetDetailList\n<公共请求参数>\n\n{\n    \"PageIndex\": 0,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ProjectName\": \"默认项目\",\n                \"Id\": \"ins-07ynpvog\",\n                \"InstanceType\": \"S2.SMALL1\",\n                \"AssetVulNum\": 2,\n                \"Vip\": \"\",\n                \"Port\": [],\n                \"RiskConfig\": [],\n                \"NameSpace\": \"\",\n                \"AssetStatus\": \"RUNNING\",\n                \"GroupName\": \"全量资产\",\n                \"InstanceId\": \"ins-07ynpvog\",\n                \"Status\": 0,\n                \"Region\": \"\",\n                \"LoadBalancerType\": \"\",\n                \"RDPRisk\": \"\",\n                \"SsaAssetDiscoverTime\": \"2020-03-31 21:35:00\",\n                \"InstanceState\": \"RUNNING\",\n                \"PublicIpAddresses\": [\n                    \"150.109.204.129\"\n                ],\n                \"SSHRisk\": \"公网开放SSH\",\n                \"CertType\": \"\",\n                \"Vul\": \"\",\n                \"ProductType\": 0,\n                \"EventRisk\": \"\",\n                \"AssetVpcName\": \"Default-VPC\",\n                \"AssetIpv6\": [],\n                \"AssetCreateTime\": \"\",\n                \"LoadBalancerVips\": [],\n                \"CreationDate\": \"\",\n                \"VpcId\": \"\",\n                \"AssetType\": \"cvm\",\n                \"PrivateIpAddresses\": [\n                    \"10.203.0.6\"\n                ],\n                \"CertEndTime\": \"\",\n                \"Name\": \"测试\",\n                \"Tag\": [],\n                \"DiskSize\": 0,\n                \"AssetUniqid\": \"\",\n                \"DiskType\": \"\",\n                \"AssetSubnetId\": \"subnet-f05xi0dn\",\n                \"Domain\": \"\",\n                \"Uin\": 0,\n                \"AssetSubnetName\": \"Default-Subnet\",\n                \"EngineVersion\": \"\",\n                \"Event\": \"\",\n                \"ClusterType\": 0,\n                \"ValidityPeriod\": \"\"\n            }\n        ],\n        \"Total\": 623,\n        \"RequestId\": \"a60a394d-0993-4ded-b422-c0e019fb13ea\"\n    }\n}",
+        "title": "DescribeAssetDetailList"
+      }
+    ],
     "DescribeAssetList": [
       {
         "document": "",

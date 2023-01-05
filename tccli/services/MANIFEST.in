@@ -219,6 +219,8 @@ include tccli/services/gse/v20191112/api.json
 include tccli/services/gse/v20191112/examples.json
 include tccli/services/habo/v20181203/api.json
 include tccli/services/habo/v20181203/examples.json
+include tccli/services/hasim/v20210716/api.json
+include tccli/services/hasim/v20210716/examples.json
 include tccli/services/hcm/v20181106/api.json
 include tccli/services/hcm/v20181106/examples.json
 include tccli/services/iai/v20200303/api.json

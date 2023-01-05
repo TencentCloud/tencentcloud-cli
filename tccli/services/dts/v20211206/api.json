@@ -12,6 +12,18 @@
       "name": "配置同步任务",
       "output": "ConfigureSyncJobResponse"
     },
+    "ContinueMigrateJob": {
+      "document": "恢复一个暂停中的迁移任务。",
+      "input": "ContinueMigrateJobRequest",
+      "name": "恢复暂停中的迁移任务",
+      "output": "ContinueMigrateJobResponse"
+    },
+    "ContinueSyncJob": {
+      "document": "恢复处于暂停中中的数据同步任务。",
+      "input": "ContinueSyncJobRequest",
+      "name": "恢复被暂停的同步任务",
+      "output": "ContinueSyncJobResponse"
+    },
     "CreateCheckSyncJob": {
       "document": "校验同步任务，检查必要参数和周边配置。",
       "input": "CreateCheckSyncJobRequest",
@@ -149,6 +161,12 @@
       "input": "ModifyMigrationJobRequest",
       "name": "配置迁移服务",
       "output": "ModifyMigrationJobResponse"
+    },
+    "PauseMigrateJob": {
+      "document": "暂停一个迁移任务。",
+      "input": "PauseMigrateJobRequest",
+      "name": "暂停迁移任务",
+      "output": "PauseMigrateJobResponse"
     },
     "PauseSyncJob": {
       "document": "暂停处于同步中的数据同步任务。",
@@ -359,6 +377,26 @@
       "members": [
         {
           "default": "",
+          "document": "校验配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "一致性校验对比对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareObject",
+          "name": "Objects",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "对比结论: same,different\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -419,12 +457,62 @@
         },
         {
           "default": "",
+          "document": "预估表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NearlyTableCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "不一致的数据行数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "DifferentRows",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SrcSampleRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目标库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DstSampleRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishedAt",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -461,7 +549,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象模式 整实例-all,部分对象-partial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
           "member": "string",
           "name": "ObjectMode",
@@ -471,10 +559,20 @@
         },
         {
           "default": "",
-          "document": "迁移对象库表配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CompareObjectItem",
           "name": "ObjectItems",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "account",
+          "member": "string",
+          "name": "AdvancedObjects",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -487,7 +585,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移的库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
           "member": "string",
           "name": "DbName",
@@ -507,7 +605,7 @@
         },
         {
           "default": "",
-          "document": "迁移的 schema\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
@@ -553,6 +651,42 @@
           "name": "Views",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CompareOptions": {
+      "document": "一致性校验选项",
+      "members": [
+        {
+          "default": "",
+          "document": "对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dataCheck",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "抽样比例;范围0,100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "线程数，取值1-5，默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ThreadCount",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -605,7 +739,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
@@ -709,6 +843,36 @@
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "FinishedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dataCheck",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对比配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "一致性校验提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -946,6 +1110,60 @@
       ],
       "usage": "both"
     },
+    "ContinueMigrateJobRequest": {
+      "document": "ContinueMigrateJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据迁移任务ID",
+          "example": "dts-xxxxxxxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContinueMigrateJobResponse": {
+      "document": "ContinueMigrateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContinueSyncJobRequest": {
+      "document": "ContinueSyncJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "同步任务id",
+          "example": "sync-xxxxxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContinueSyncJobResponse": {
+      "document": "ContinueSyncJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCheckSyncJobRequest": {
       "document": "CreateCheckSyncJob请求参数结构体",
       "members": [
@@ -978,7 +1196,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移任务 Id",
+          "document": "任务 Id",
           "example": "dts-p1sposne",
           "member": "string",
           "name": "JobId",
@@ -1009,6 +1227,15 @@
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
           "required": false,
           "type": "object"
         }
@@ -2286,6 +2513,24 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "校验任务 ID",
+          "example": "dts-5ftw8366-compare-n0pee6pc",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "example": "[\"running\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4145,7 +4390,7 @@
       "members": [
         {
           "default": "",
-          "document": "迁移任务 Id",
+          "document": "任务 Id",
           "example": "无",
           "member": "string",
           "name": "JobId",
@@ -4172,7 +4417,7 @@
         },
         {
           "default": "",
-          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， **默认为此项配置**)，custom(自定义模式)",
+          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)、custom(自定义)，注意自定义对比对象必须是迁移对象的子集",
           "example": "无",
           "member": "string",
           "name": "ObjectMode",
@@ -4185,6 +4430,15 @@
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
           "required": false,
           "type": "object"
         }
@@ -4500,6 +4754,33 @@
         }
       ],
       "usage": "both"
+    },
+    "PauseMigrateJobRequest": {
+      "document": "PauseMigrateJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据迁移任务ID",
+          "example": "dts-xxxxxxxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseMigrateJobResponse": {
+      "document": "PauseMigrateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PauseSyncJobRequest": {
       "document": "PauseSyncJob请求参数结构体",

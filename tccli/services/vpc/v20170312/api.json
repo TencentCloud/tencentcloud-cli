@@ -120,6 +120,12 @@
       "name": "弹性网卡绑定云服务器",
       "output": "AttachNetworkInterfaceResponse"
     },
+    "AttachSnapshotInstances": {
+      "document": "本接口（AttachSnapshotInstances）用于快照策略关联实例。",
+      "input": "AttachSnapshotInstancesRequest",
+      "name": "快照策略关联实例",
+      "output": "AttachSnapshotInstancesResponse"
+    },
     "AuditCrossBorderCompliance": {
       "document": "本接口（AuditCrossBorderCompliance）用于服务商操作合规化资质审批。\n* 服务商只能操作提交到本服务商的审批单，后台会校验身份。即只授权给服务商的`APPID` 调用本接口。\n* `APPROVED` 状态的审批单，可以再次操作为 `DENY`；`DENY` 状态的审批单，也可以再次操作为 `APPROVED`。",
       "input": "AuditCrossBorderComplianceRequest",
@@ -329,6 +335,12 @@
       "input": "CreateServiceTemplateGroupRequest",
       "name": "创建协议端口模板集合",
       "output": "CreateServiceTemplateGroupResponse"
+    },
+    "CreateSnapshotPolicies": {
+      "document": "本接口（CreateSnapshotPolicies）用于创建快照策略。",
+      "input": "CreateSnapshotPoliciesRequest",
+      "name": "创建快照策略",
+      "output": "CreateSnapshotPoliciesResponse"
     },
     "CreateSubnet": {
       "document": "本接口(CreateSubnet)用于创建子网。\n* 创建子网前必须创建好 VPC。\n* 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。\n* 您可以创建的最小网段子网掩码为28（有16个IP地址），最大网段子网掩码为16（65,536个IP地址）。\n* 同一个VPC内，多个子网的网段不能重叠。\n* 子网创建后会自动关联到默认路由表。\n* 创建子网同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
@@ -551,6 +563,12 @@
       "input": "DeleteServiceTemplateGroupRequest",
       "name": "删除协议端口模板集合",
       "output": "DeleteServiceTemplateGroupResponse"
+    },
+    "DeleteSnapshotPolicies": {
+      "document": "本接口（DeleteSnapshotPolicies）用于删除快照策略。",
+      "input": "DeleteSnapshotPoliciesRequest",
+      "name": "删除快照策略",
+      "output": "DeleteSnapshotPoliciesResponse"
     },
     "DeleteSubnet": {
       "document": "本接口（DeleteSubnet）用于用于删除子网(Subnet)。\n* 删除子网前，请清理该子网下所有资源，包括云服务器、负载均衡、云数据、noSql、弹性网卡等资源。",
@@ -942,6 +960,30 @@
       "name": "查询协议端口模板",
       "output": "DescribeServiceTemplatesResponse"
     },
+    "DescribeSgSnapshotFileContent": {
+      "document": "本接口（DescribeSgSnapshotFileContent）用于查询安全组快照文件内容。",
+      "input": "DescribeSgSnapshotFileContentRequest",
+      "name": "查询安全组快照文件内容",
+      "output": "DescribeSgSnapshotFileContentResponse"
+    },
+    "DescribeSnapshotAttachedInstances": {
+      "document": "本接口（DescribeSnapshotAttachedInstances）用于查询快照策略关联实例列表。",
+      "input": "DescribeSnapshotAttachedInstancesRequest",
+      "name": "查询快照策略关联实例列表",
+      "output": "DescribeSnapshotAttachedInstancesResponse"
+    },
+    "DescribeSnapshotFiles": {
+      "document": "本接口（DescribeSnapshotFiles）用于查询快照文件。",
+      "input": "DescribeSnapshotFilesRequest",
+      "name": "查询快照文件",
+      "output": "DescribeSnapshotFilesResponse"
+    },
+    "DescribeSnapshotPolicies": {
+      "document": "本接口（DescribeSnapshotPolicies）用于查询快照策略。",
+      "input": "DescribeSnapshotPoliciesRequest",
+      "name": "查询快照策略",
+      "output": "DescribeSnapshotPoliciesResponse"
+    },
     "DescribeSubnets": {
       "document": "本接口（DescribeSubnets）用于查询子网列表。",
       "input": "DescribeSubnetsRequest",
@@ -1086,6 +1128,12 @@
       "name": "弹性网卡解绑云服务器",
       "output": "DetachNetworkInterfaceResponse"
     },
+    "DetachSnapshotInstances": {
+      "document": "本接口（DetachSnapshotInstances）用于快照策略解关联实例。",
+      "input": "DetachSnapshotInstancesRequest",
+      "name": "快照策略解关联实例",
+      "output": "DetachSnapshotInstancesResponse"
+    },
     "DisableCcnRoutes": {
       "document": "本接口（DisableCcnRoutes）用于禁用已经启用的云联网（CCN）路由",
       "input": "DisableCcnRoutesRequest",
@@ -1109,6 +1157,12 @@
       "input": "DisableRoutesRequest",
       "name": "禁用子网路由",
       "output": "DisableRoutesResponse"
+    },
+    "DisableSnapshotPolicies": {
+      "document": "本接口（DisableSnapshotPolicies）用于停用快照策略。",
+      "input": "DisableSnapshotPoliciesRequest",
+      "name": "停用快照策略",
+      "output": "DisableSnapshotPoliciesResponse"
     },
     "DisableVpnGatewaySslClientCert": {
       "document": "禁用SSL-VPN-CLIENT 证书",
@@ -1193,6 +1247,12 @@
       "input": "EnableRoutesRequest",
       "name": "启用子网路由",
       "output": "EnableRoutesResponse"
+    },
+    "EnableSnapshotPolicies": {
+      "document": "本接口（EnableSnapshotPolicies）用于启用快照策略。",
+      "input": "EnableSnapshotPoliciesRequest",
+      "name": "启用快照策略",
+      "output": "EnableSnapshotPoliciesResponse"
     },
     "EnableVpcEndPointConnect": {
       "document": "是否接受终端节点连接请求。",
@@ -1488,6 +1548,12 @@
       "name": "修改协议端口模板集合",
       "output": "ModifyServiceTemplateGroupAttributeResponse"
     },
+    "ModifySnapshotPolicies": {
+      "document": "本接口（ModifySnapshotPolicies）用于修改快照策略。",
+      "input": "ModifySnapshotPoliciesRequest",
+      "name": "修改快照策略",
+      "output": "ModifySnapshotPoliciesResponse"
+    },
     "ModifySubnetAttribute": {
       "document": "本接口（ModifySubnetAttribute）用于修改子网属性。",
       "input": "ModifySubnetAttributeRequest",
@@ -1655,6 +1721,12 @@
       "input": "ResetVpnGatewayInternetMaxBandwidthRequest",
       "name": "调整VPN网关带宽上限",
       "output": "ResetVpnGatewayInternetMaxBandwidthResponse"
+    },
+    "ResumeSnapshotInstance": {
+      "document": "本接口（ResumeSnapshotInstance）用于根据备份内容恢复安全组策略。",
+      "input": "ResumeSnapshotInstanceRequest",
+      "name": "恢复安全组策略",
+      "output": "ResumeSnapshotInstanceResponse"
     },
     "ReturnNormalAddresses": {
       "document": "本接口（ReturnNormalAddresses）用于解绑并释放普通公网IP。\n为完善公网IP的访问管理功能，此接口于2022年12月15日升级优化鉴权功能，升级后子用户调用此接口需向主账号申请CAM策略授权，否则可能调用失败。您可以提前为子账号配置操作授权，详情见[授权指南](https://cloud.tencent.com/document/product/598/34545)。",
@@ -3330,6 +3402,42 @@
       ],
       "type": "object"
     },
+    "AttachSnapshotInstancesRequest": {
+      "document": "AttachSnapshotInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关联实例信息。",
+          "example": "无",
+          "member": "SnapshotInstance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachSnapshotInstancesResponse": {
+      "document": "AttachSnapshotInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuditCrossBorderComplianceRequest": {
       "document": "AuditCrossBorderCompliance请求参数结构体",
       "members": [
@@ -3374,6 +3482,32 @@
         }
       ],
       "type": "object"
+    },
+    "BackupPolicy": {
+      "document": "时间备份策略详情",
+      "members": [
+        {
+          "default": "",
+          "document": "备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。",
+          "example": "monday",
+          "member": "string",
+          "name": "BackupDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份时间点，格式：HH:mm:ss。",
+          "example": "3:00",
+          "member": "string",
+          "name": "BackupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BandwidthPackage": {
       "document": "描述带宽包信息的结构",
@@ -3476,6 +3610,52 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchModifySnapshotPolicy": {
+      "document": "批量修改快照策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略名称。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotPolicyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份策略。",
+          "example": "无",
+          "member": "BackupPolicy",
+          "name": "BackupPolicies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照保留时间，支持1～365天。",
+          "example": "12",
+          "member": "uint64",
+          "name": "KeepTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CCN": {
       "document": "云联网（CCN）对象",
@@ -6333,6 +6513,42 @@
       ],
       "type": "object"
     },
+    "CreateSnapshotPoliciesRequest": {
+      "document": "CreateSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略详情。",
+          "example": "无",
+          "member": "SnapshotPolicy",
+          "name": "SnapshotPolicies",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotPoliciesResponse": {
+      "document": "CreateSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略。",
+          "example": "无",
+          "member": "SnapshotPolicy",
+          "name": "SnapshotPolicies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSubnetRequest": {
       "document": "CreateSubnet请求参数结构体",
       "members": [
@@ -8560,6 +8776,33 @@
     },
     "DeleteServiceTemplateResponse": {
       "document": "DeleteServiceTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotPoliciesRequest": {
+      "document": "DeleteSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "-",
+          "member": "string",
+          "name": "SnapshotPolicyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotPoliciesResponse": {
+      "document": "DeleteSnapshotPolicies返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12373,6 +12616,348 @@
       ],
       "type": "object"
     },
+    "DescribeSgSnapshotFileContentRequest": {
+      "document": "DescribeSgSnapshotFileContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照文件Id。",
+          "example": "ssfile-emtabuwu2z",
+          "member": "string",
+          "name": "SnapshotFileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组Id。",
+          "example": "sg-ntrgm89v",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSgSnapshotFileContentResponse": {
+      "document": "DescribeSgSnapshotFileContent返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id，即安全组Id。",
+          "example": "sg-ntrgm89v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照策略Id。",
+          "example": "sspolicy-aart89ip",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照文件Id。",
+          "example": "ssfile-emtabuwu2z",
+          "member": "string",
+          "name": "SnapshotFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备份时间。",
+          "example": "2021-08-20 10:30:00",
+          "member": "string",
+          "name": "BackupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作者。",
+          "example": "100000072292",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原始数据。",
+          "example": "无",
+          "member": "SecurityGroupPolicy",
+          "name": "OriginalData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备份数据。",
+          "example": "无",
+          "member": "SecurityGroupPolicy",
+          "name": "BackupData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotAttachedInstancesRequest": {
+      "document": "DescribeSnapshotAttachedInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n支持的过滤条件如下：\n<li>instance-id：实例ID。</li>\n<li>instance-region：实例所在地域。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大为200。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotAttachedInstancesResponse": {
+      "document": "DescribeSnapshotAttachedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "SnapshotInstance",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的对象数。",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotFilesRequest": {
+      "document": "DescribeSnapshotFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务类型，目前支持安全组：securitygroup。",
+          "example": "securitygroup",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例Id。",
+          "example": "sg-12314a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始日期，格式%Y-%m-%d %H:%M:%S。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，格式%Y-%m-%d %H:%M:%S。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大为200。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotFilesResponse": {
+      "document": "DescribeSnapshotFiles返回参数结构体",
+      "members": [
+        {
+          "document": "快照文件集合。",
+          "example": "无",
+          "member": "SnapshotFileInfo",
+          "name": "SnapshotFileSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的对象数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotPoliciesRequest": {
+      "document": "DescribeSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "-",
+          "member": "string",
+          "name": "SnapshotPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，参数不支持同时指定SnapshotPolicyIds和Filters。\n<li>snapshot-policy-id - String -（过滤条件）快照策略ID。</li>\n<li>snapshot-policy-name - String -（过滤条件）快照策略名称。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大为200。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotPoliciesResponse": {
+      "document": "DescribeSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "快照策略。",
+          "example": "无",
+          "member": "SnapshotPolicy",
+          "name": "SnapshotPolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的对象数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubnetsRequest": {
       "document": "DescribeSubnets请求参数结构体",
       "members": [
@@ -13738,6 +14323,42 @@
       ],
       "type": "object"
     },
+    "DetachSnapshotInstancesRequest": {
+      "document": "DetachSnapshotInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例信息。",
+          "example": "无",
+          "member": "SnapshotInstance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachSnapshotInstancesResponse": {
+      "document": "DetachSnapshotInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DhcpIp": {
       "document": "描述 DhcpIp 信息",
       "members": [
@@ -14267,6 +14888,33 @@
     },
     "DisableRoutesResponse": {
       "document": "DisableRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableSnapshotPoliciesRequest": {
+      "document": "DisableSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "-",
+          "member": "string",
+          "name": "SnapshotPolicyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableSnapshotPoliciesResponse": {
+      "document": "DisableSnapshotPolicies返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14826,6 +15474,33 @@
     },
     "EnableRoutesResponse": {
       "document": "EnableRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSnapshotPoliciesRequest": {
+      "document": "EnableSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "-",
+          "member": "string",
+          "name": "SnapshotPolicyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableSnapshotPoliciesResponse": {
+      "document": "EnableSnapshotPolicies返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18530,6 +19205,33 @@
       ],
       "type": "object"
     },
+    "ModifySnapshotPoliciesRequest": {
+      "document": "ModifySnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略修改信息。",
+          "example": "无",
+          "member": "BatchModifySnapshotPolicy",
+          "name": "SnapshotPoliciesInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotPoliciesResponse": {
+      "document": "ModifySnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySubnetAttributeRequest": {
       "document": "ModifySubnetAttribute请求参数结构体",
       "members": [
@@ -21634,12 +22336,57 @@
       ],
       "usage": "out"
     },
+    "ResumeSnapshotInstanceRequest": {
+      "document": "ResumeSnapshotInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照文件Id。",
+          "example": "ssfile-emtabuwu2z",
+          "member": "string",
+          "name": "SnapshotFileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例Id。",
+          "example": "sg-ntrgm89v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeSnapshotInstanceResponse": {
+      "document": "ResumeSnapshotInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReturnNormalAddressesRequest": {
       "document": "ReturnNormalAddresses请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "1",
+          "document": "EIP 的 IP 地址,示例：101.35.139.183",
           "example": "[\"101.35.139.183\"]",
           "member": "string",
           "name": "AddressIps",
@@ -22569,6 +23316,224 @@
         }
       ],
       "type": "object"
+    },
+    "SnapshotFileInfo": {
+      "document": "快照文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例Id。",
+          "example": "sg-qwmk1q",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照文件Id。",
+          "example": "ssfile-rnhdyl67",
+          "member": "string",
+          "name": "SnapshotFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份时间。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "BackupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者Uin。",
+          "example": "123445567",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotInstance": {
+      "document": "快照策略关联实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id。",
+          "example": "sg-123zsda",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型，目前支持安全组：securitygroup。",
+          "example": "securitygroup",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "example": "名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SnapshotPolicy": {
+      "document": "快照策略",
+      "members": [
+        {
+          "default": "",
+          "document": "快照策略名称。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotPolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份策略类型，operate-操作备份，time-定时备份。",
+          "example": "time",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留时间，支持1～365天。",
+          "example": "12",
+          "member": "uint64",
+          "name": "KeepTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否创建新的cos桶，默认为False。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "CreateNewCos",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cos桶所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos桶。",
+          "example": "test-123123123",
+          "member": "string",
+          "name": "CosBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照策略Id。",
+          "example": "sspolicy-hx8an9sr",
+          "member": "string",
+          "name": "SnapshotPolicyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间备份策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupPolicy",
+          "name": "BackupPolicies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "启用状态，True-启用，False-停用，默认为True。",
+          "example": "True",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SourceIpTranslationNatRule": {
       "document": "NAT的SNAT规则",

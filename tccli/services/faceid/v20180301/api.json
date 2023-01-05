@@ -114,12 +114,6 @@
       "name": "获取微信实名认证结果",
       "output": "GetRealNameAuthResultResponse"
     },
-    "GetRealNameAuthToken": {
-      "document": "该接口仅限微信公众号中使用，传入姓名和身份证号获取回调URL，在微信公众号中打开验证姓名和身份证号与微信实名的信息是否一致。\n",
-      "input": "GetRealNameAuthTokenRequest",
-      "name": "微信实名认证授权",
-      "output": "GetRealNameAuthTokenResponse"
-    },
     "GetWeChatBillDetails": {
       "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
       "input": "GetWeChatBillDetailsRequest",
@@ -2573,62 +2567,6 @@
           "document": "认证结果码，收费情况如下：\n\n收费码：\n0:  姓名和身份证号一致\n-1: 姓名和身份证号不一致\n-2: 姓名和微信实名姓名不一致\n\n不收费码：\n-3: 微信号未实名",
           "member": "string",
           "name": "ResultType",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetRealNameAuthTokenRequest": {
-      "document": "GetRealNameAuthToken请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "姓名",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "身份证号",
-          "member": "string",
-          "name": "IDCard",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "回调地址。实名认证完成后，将会重定向到这个地址通知认证发起方。仅支持http或https协议。",
-          "member": "string",
-          "name": "CallbackURL",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetRealNameAuthTokenResponse": {
-      "document": "GetRealNameAuthToken返回参数结构体",
-      "members": [
-        {
-          "document": "查询实名认证结果的唯一凭证",
-          "member": "string",
-          "name": "AuthToken",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "实名认证授权地址，认证发起方需要重定向到这个地址获取认证用户的授权，仅能在微信环境下打开。",
-          "member": "string",
-          "name": "RedirectURL",
           "type": "string",
           "value_allowed_null": false
         },

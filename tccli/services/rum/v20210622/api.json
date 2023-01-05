@@ -264,6 +264,12 @@
       "name": "获取项目对应sourcemap文件列表",
       "output": "DescribeReleaseFilesResponse"
     },
+    "DescribeRumGroupLog": {
+      "document": "获取项目下的日志聚合信息",
+      "input": "DescribeRumGroupLogRequest",
+      "name": "获取Rum日志聚合信息",
+      "output": "DescribeRumGroupLogResponse"
+    },
     "DescribeRumLogList": {
       "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
       "input": "DescribeRumLogListRequest",
@@ -5478,6 +5484,105 @@
           "name": "Files",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRumGroupLogRequest": {
+      "document": "DescribeRumGroupLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "排序方式  desc  asc（必填）",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderBy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间（必填）",
+          "example": "1665993060000",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数，第几页",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "example": "id:100",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间（必填）",
+          "example": "1665996660000",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID（必填）",
+          "example": "100",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "聚合字段",
+          "example": "date",
+          "member": "string",
+          "name": "GroupField",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRumGroupLogResponse": {
+      "document": "DescribeRumGroupLog返回参数结构体",
+      "members": [
+        {
+          "document": "返回字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

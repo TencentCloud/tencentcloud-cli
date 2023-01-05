@@ -57,6 +57,7 @@ Output:
                 "CreatedAt": "2022-07-11 17:21:02",
                 "FinishedAt": "2022-07-11 17:24:54",
                 "JobId": "dts-amm1jw5q",
+                "Message": "done",
                 "StartedAt": "2022-07-11 17:24:09",
                 "Status": "success",
                 "TaskName": "defaultCmpTask"

@@ -202,6 +202,14 @@
         "title": "弹性网卡绑定云服务器"
       }
     ],
+    "AttachSnapshotInstances": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AttachSnapshotInstances\n&SnapshotPolicyId=sspolicy-g6jwvm35\n&Instances.0.InstanceId=sg-e18r37v3\n&Instances.0.InstanceType=securitygroup\n&Instances.0.InstanceRegion=ap-shanghai\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "快照策略关联实例"
+      }
+    ],
     "AuditCrossBorderCompliance": [
       {
         "document": "",
@@ -530,6 +538,14 @@
         "title": "创建协议端口模板集合"
       }
     ],
+    "CreateSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshotPolicies\n<公共请求参数>\n\n{\n    \"SnapshotPolicies\": [\n        {\n            \"KeepTime\": \"180\",\n            \"CosRegion\": \"ap-guangzhou\",\n            \"CosBucket\": \"test-12345678\",\n            \"CreateNewCos\": \"true\",\n            \"SnapshotPolicyName\": \"test_name\",\n            \"BackupType\": \"operate\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SnapshotPolicies\": [\n            {\n                \"SnapshotPolicyId\": \"sspolicy-n08du1g3\",\n                \"SnapshotPolicyName\": \"test_name\",\n                \"KeepTime\": 180,\n                \"CosRegion\": \"ap-guangzhou\",\n                \"CosBucket\": \"test-12345678\",\n                \"Enable\": true,\n                \"BackupType\": \"operate\",\n                \"CreateNewCos\": true\n            }\n        ],\n        \"RequestId\": \"fdba6828-e317-4bd8-940f-6e12b09ecf1b\"\n    }\n}",
+        "title": "创建快照策略"
+      }
+    ],
     "CreateSubnet": [
       {
         "document": "",
@@ -842,6 +858,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteServiceTemplateGroup\r\n&Version=2017-03-12\r\n&ServiceTemplateGroupId=ppmg-ei8hfd9a\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "删除协议端口模板集合"
+      }
+    ],
+    "DeleteSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteSnapshotPolicies\n&SnapshotPolicyIds.0=sspolicy-0mrp8xzp\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdba6828-e317-4bd8-940f-6e12b09ecf1b\"\n    }\n}",
+        "title": "删除快照策略"
       }
     ],
     "DeleteSubnet": [
@@ -1508,6 +1532,38 @@
         "title": "查看协议端口模板"
       }
     ],
+    "DescribeSgSnapshotFileContent": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSgSnapshotFileContent\n&SnapshotPolicyId=sspolicy-ebjofe71\n&SnapshotFileId=ssfile-017gepjxpr\n&SecurityGroupId=sg-ntrgm89v\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"sg-ntrgm89v\",\n        \"SnapshotPolicyId\": \"sspolicy-ebjofe71\",\n        \"SnapshotFileId\": \"ssfile-017gepjxpr\",\n        \"BackupTime\": \"2021-10-25 15:00:10\",\n        \"Operator\": \"100000072292\",\n        \"OriginalData\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"icmp\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-02 11:24:13\",\n                \"Action\": \"DROP\",\n                \"PolicyDescription\": \"放通Ping服务\"\n            },\n            {\n                \"PolicyIndex\": 1,\n                \"Protocol\": \"icmpv6\",\n                \"Port\": \"ALL\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Ping服务\"\n            },\n            {\n                \"PolicyIndex\": 2,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"22\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Linux SSH登录\"\n            },\n            {\n                \"PolicyIndex\": 3,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"22\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Linux SSH登录\"\n            },\n            {\n                \"PolicyIndex\": 4,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"3389\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Windows远程登录\"\n            },\n            {\n                \"PolicyIndex\": 5,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"3389\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Windows远程登录\"\n            },\n            {\n                \"PolicyIndex\": 6,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"10.0.0.0/8\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 7,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"172.16.0.0/12\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 8,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"192.168.0.0/16\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\"\n            },\n            {\n                \"PolicyIndex\": 1,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\"\n            }\n        ],\n        \"BackupData\": [\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"icmp\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-02 11:24:13\",\n                \"Action\": \"DROP\",\n                \"PolicyDescription\": \"放通Ping服务\"\n            },\n            {\n                \"PolicyIndex\": 1,\n                \"Protocol\": \"icmpv6\",\n                \"Port\": \"ALL\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Ping服务\"\n            },\n            {\n                \"PolicyIndex\": 2,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"22\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Linux SSH登录\"\n            },\n            {\n                \"PolicyIndex\": 3,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"22\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Linux SSH登录\"\n            },\n            {\n                \"PolicyIndex\": 4,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"3389\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Windows远程登录\"\n            },\n            {\n                \"PolicyIndex\": 5,\n                \"Protocol\": \"tcp\",\n                \"Port\": \"3389\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通Windows远程登录\"\n            },\n            {\n                \"PolicyIndex\": 6,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"10.0.0.0/8\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 7,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"172.16.0.0/12\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 8,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"192.168.0.0/16\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\",\n                \"PolicyDescription\": \"放通内网（云私有网络）\"\n            },\n            {\n                \"PolicyIndex\": 0,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\"\n            },\n            {\n                \"PolicyIndex\": 1,\n                \"Protocol\": \"ALL\",\n                \"Port\": \"ALL\",\n                \"Ipv6CidrBlock\": \"::/0\",\n                \"ModifyTime\": \"2021-09-01 19:16:12\",\n                \"Action\": \"ACCEPT\"\n            }\n        ],\n        \"RequestId\": \"6886c65f-f9bb-4547-93ee-71f781b0e014\"\n    }\n}",
+        "title": "查询安全组快照文件内容"
+      }
+    ],
+    "DescribeSnapshotAttachedInstances": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSnapshotAttachedInstances\n&SnapshotPolicyId=sspolicy-g6jwvm35\n&Offset=0\n&Limit=2\n&Filters.0.Name=uniqInstanceId\n&Filters.0.Values.0=sg-ntrgm89v\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"sg-ntrgm89v\",\n                \"InstanceRegion\": \"ap-shanghai\",\n                \"InstanceType\": \"securitygroup\",\n                \"SnapshotPolicyId\": \"sspolicy-g6jwvm35\",\n                \"InstanceName\": \"test11111\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2099cfcf-fe15-4825-93a1-642c9ad2630f\"\n    }\n}",
+        "title": "查询快照策略关联实例列表"
+      }
+    ],
+    "DescribeSnapshotFiles": [
+      {
+        "document": "查询当前实例的快照数据。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSnapshotFiles\n&BusinessType=securitygroup\n&InstanceId=sg-e18r37v3\n&StartDate=2021-10-10 00:00:00\n&EndDate=2021-10-30 19:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SnapshotFileSet\": [\n            {\n                \"InstanceId\": \"sg-ntrgm89v\",\n                \"SnapshotPolicyId\": \"sspolicy-ebjofe71\",\n                \"SnapshotFileId\": \"ssfile-017gepjxpr\",\n                \"BackupTime\": \"2021-10-25 15:00:10\",\n                \"Operator\": \"100000072292\"\n            },\n            {\n                \"InstanceId\": \"sg-ntrgm89v\",\n                \"SnapshotPolicyId\": \"sspolicy-ebjofe71\",\n                \"SnapshotFileId\": \"ssfile-ibvthz32h3\",\n                \"BackupTime\": \"2021-10-25 00:00:10\",\n                \"Operator\": \"100000072292\"\n            },\n            {\n                \"InstanceId\": \"sg-ntrgm89v\",\n                \"SnapshotPolicyId\": \"sspolicy-ebjofe71\",\n                \"SnapshotFileId\": \"ssfile-bu7rtl9145\",\n                \"BackupTime\": \"2021-10-20 12:01:02\",\n                \"Operator\": \"100000072292\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"a54419ea-8f2d-4d38-a69a-2315d413626f\"\n    }\n}",
+        "title": "查询快照"
+      }
+    ],
+    "DescribeSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSnapshotPolicies\n&Offset=0\n&Limit=2\n&Filters.0.Name=snapshot-policy-id\n&Filters.0.Values.0=sspolicy-g6jwvm35\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SnapshotPolicySet\": [\n            {\n                \"SnapshotPolicyId\": \"sspolicy-g6jwvm35\",\n                \"SnapshotPolicyName\": \"test2\",\n                \"KeepTime\": 180,\n                \"CosRegion\": \"ap-guangzhou\",\n                \"CosBucket\": \"test1-251197522\",\n                \"CreateTime\": \"2021-10-08 16:09:46\",\n                \"Enable\": true,\n                \"BackupType\": \"operate\",\n                \"CreateNewCos\": false\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "查询快照策略"
+      }
+    ],
     "DescribeSubnets": [
       {
         "document": "",
@@ -1736,6 +1792,14 @@
         "title": "弹性网卡解绑云服务器"
       }
     ],
+    "DetachSnapshotInstances": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DetachSnapshotInstances\n&SnapshotPolicyId=sspolicy-g6jwvm35\n&Instances.0.InstanceId=sg-e18r37v3\n&Instances.0.InstanceType=securitygroup\n&Instances.0.InstanceRegion=ap-shanghai\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "快照策略解关联实例"
+      }
+    ],
     "DisableCcnRoutes": [
       {
         "document": "",
@@ -1772,6 +1836,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DisableRoutes\n&RouteTableId=rtb-12345678\n&RouteItemIds.0=rti-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "根据唯一ID禁用子网路由"
+      }
+    ],
+    "DisableSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableSnapshotPolicies\n&SnapshotPolicyIds.0=sspolicy-g6jwvm35\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "停用快照策略"
       }
     ],
     "DisableVpnGatewaySslClientCert": [
@@ -1890,6 +1962,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=EnableRoutes\n&RouteTableId=rtb-12345678\n&RouteItemIds.0=rti-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "按照唯一ID启用子网路由"
+      }
+    ],
+    "EnableSnapshotPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableSnapshotPolicies\n&SnapshotPolicyIds.0=sspolicy-g6jwvm35\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "启用快照策略"
       }
     ],
     "EnableVpcEndPointConnect": [
@@ -2320,6 +2400,14 @@
         "title": "修改协议端口模板集合"
       }
     ],
+    "ModifySnapshotPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySnapshotPolicies\n&SnapshotPoliciesInfo.0.SnapshotPolicyId=sspolicy-aart89ip\n&SnapshotPoliciesInfo.0.SnapshotPolicyName=new_name\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdba6828-e317-4bd8-940f-6e12b09ecf1b\"\n    }\n}",
+        "title": "修改快照策略"
+      }
+    ],
     "ModifySubnetAttribute": [
       {
         "document": "",
@@ -2572,6 +2660,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ResetVpnGatewayInternetMaxBandwidth\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InternetMaxBandwidthOut=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "调整VPN网关带宽上限"
+      }
+    ],
+    "ResumeSnapshotInstance": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResumeSnapshotInstance\n&SnapshotPolicyId=sspolicy-aart89ip\n&SnapshotFileId=ssfile-emtabuwu2z\n&InstanceId=sg-ntrgm89v\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "恢复快照实例"
       }
     ],
     "ReturnNormalAddresses": [

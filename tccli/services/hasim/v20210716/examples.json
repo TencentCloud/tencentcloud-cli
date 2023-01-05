@@ -1,0 +1,187 @@
+{
+  "actions": {
+    "CreateRule": [
+      {
+        "document": "创建自动化告警规则",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRule\n<公共请求参数>\n\n{\n    \"Name\": \"demo\",\n    \"Type\": 101,\n    \"IsActive\": true,\n    \"Notice\": \"1\",\n    \"Email\": \"xxx@xx.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建自动化告警规则"
+      }
+    ],
+    "CreateTactic": [
+      {
+        "document": "创建云兔切换策略",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTactic\n<公共请求参数>\n\n{\n    \"Name\": \"测试策略\",\n    \"IsAuto\": 0,\n    \"PingInterval\": 36000,\n    \"IsWeak\": 1,\n    \"WeakThreshold\": -10,\n    \"IsDelay\": 1,\n    \"DelayThreshold\": 50,\n    \"IsFake\": 1,\n    \"FakeIP\": \"www.baidu.com\",\n    \"FakeInterval\": 60,\n    \"IsNet\": 1,\n    \"Network\": 3,\n    \"IsPriorityTele\": 1,\n    \"PriorityTele\": 1,\n    \"IsBottomTele\": 1,\n    \"BottomTele\": 1,\n    \"IsMove\": 1,\n    \"IsBestSignal\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\"\n    }\n}",
+        "title": "创建云兔切换策略"
+      }
+    ],
+    "CreateTag": [
+      {
+        "document": "创建标签",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTag\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建标签"
+      }
+    ],
+    "DeleteRule": [
+      {
+        "document": "删除自动化规则",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRule\n<公共请求参数>\n\n{\n    \"RuleID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除自动化规则"
+      }
+    ],
+    "DeleteTactic": [
+      {
+        "document": "删除策略",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTactic\n<公共请求参数>\n\n{\n    \"TacticID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除策略"
+      }
+    ],
+    "DeleteTag": [
+      {
+        "document": "删除标签",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTag\n<公共请求参数>\n\n{\n    \"TagID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除标签"
+      }
+    ],
+    "DescribeLink": [
+      {
+        "document": "查询云兔连接详细信息",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLink\n<公共请求参数>\n\n{\n    \"LinkID\": \"1000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsActiveLog\": false,\n            \"TacticStatus\": 0,\n            \"Status\": 0,\n            \"ActiveTime\": \"xx\",\n            \"Tags\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"UpdatedAt\": \"xx\",\n                    \"ID\": 10002,\n                    \"CreatedAt\": \"xx\"\n                }\n            ],\n            \"DataUse\": 0,\n            \"SmsUse\": 0,\n            \"Report\": {\n                \"UploadTime\": \"xx\",\n                \"DevModel\": \"xx\",\n                \"Log\": 0,\n                \"Ping\": 36000,\n                \"Delay\": 800,\n                \"DevType\": \"xx\",\n                \"Version\": \"xx\",\n                \"Tele\": 1,\n                \"Tid\": 100001,\n                \"Status\": 0,\n                \"Lac\": \"xx\",\n                \"Lat\": \"xx\",\n                \"Rss\": 0,\n                \"Imei\": \"xx\",\n                \"Cell\": \"xx\",\n                \"MonthFirstTime\": \"xx\",\n                \"Iccid\": \"xx\",\n                \"Lng\": \"xx\"\n            },\n            \"CardID\": \"xx\",\n            \"TeleOperator\": 0,\n            \"Cards\": [\n                {\n                    \"AccountTime\": \"xx\",\n                    \"ActiveTime\": \"xx\",\n                    \"Msisdn\": \"xx\",\n                    \"LinkID\": 0,\n                    \"TeleOperator\": 2,\n                    \"ICCID\": \"xx\",\n                    \"IMSI\": \"xx\"\n                }\n            ],\n            \"TacticExpireTime\": \"xx\",\n            \"ID\": 39000000015,\n            \"TacticID\": 0,\n            \"ExpireTime\": \"xx\",\n            \"AudioUse\": 0,\n            \"LinkedState\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询云兔连接详细信息"
+      }
+    ],
+    "DescribeLinks": [
+      {
+        "document": "查询云兔连接列表",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLinks\n<公共请求参数>\n\n{\n    \"LinkID\": 1000101,\n    \"ICCID\": \"8279***72\",\n    \"IMEI\": \"874****123\",\n    \"Status\": 1,\n    \"TeleOperator\": 1,\n    \"TagID\": 100101,\n    \"TacticID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\",\n        \"Data\": {\n            \"Total\": 1,\n            \"List\": [\n                {\n                    \"ID\": 397294615,\n                    \"Status\": 0,\n                    \"ActiveTime\": \"0001-01-01T00:00:00Z\",\n                    \"ExpireTime\": \"0001-01-01T00:00:00Z\",\n                    \"DataUse\": 0,\n                    \"AudioUse\": 0,\n                    \"SmsUse\": 0,\n                    \"LinkedState\": 1,\n                    \"TacticID\": 0,\n                    \"TacticStatus\": 0,\n                    \"TacticExpireTime\": \"0001-01-01T00:00:00Z\",\n                    \"IsActiveLog\": false,\n                    \"TeleOperator\": 0,\n                    \"Report\": {\n                        \"Imei\": \"89860919730018794506\",\n                        \"Lng\": \"\",\n                        \"Lat\": \"37.29\",\n                        \"Lac\": \"749069031\",\n                        \"Cell\": \"1031\",\n                        \"Iccid\": \"89860919730018751670\",\n                        \"Rss\": -10,\n                        \"Tele\": 1,\n                        \"Tid\": 100001,\n                        \"Ping\": 36000,\n                        \"Delay\": 800,\n                        \"Log\": 0,\n                        \"DevType\": \"TestDevice\",\n                        \"DevModel\": \"TD-10037\",\n                        \"Version\": \"v1.0.1\",\n                        \"UploadTime\": \"2021-07-16T11:19:26+08:00\",\n                        \"Status\": 0,\n                        \"MonthFirstTime\": \"2021-07-16T11:19:26+08:00\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询云兔连接列表"
+      }
+    ],
+    "DescribeOrders": [
+      {
+        "document": "查询订单列表",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrders\n<公共请求参数>\n\n{\n    \"DealName\": \"xx\",\n    \"AuditStatus\": 0,\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 0,\n            \"List\": [\n                {\n                    \"BigDealId\": \"20220624194001025501251\",\n                    \"DealName\": \"20220624194001025501261\",\n                    \"CreatedAt\": \"2022-06-24T17:49:12+08:00\",\n                    \"Uin\": \"xxx\",\n                    \"IndustryCode\": \"工业产品-家居\",\n                    \"Address\": \"**********\",\n                    \"Contact\": \"*******\",\n                    \"Msisdn\": \"**********\",\n                    \"Specification\": \"5*6贴片两网（多芯片版）\",\n                    \"Comment\": \"物联网中心\",\n                    \"AuditStatus\": \"待审核\",\n                    \"FlowStatus\": \"\",\n                    \"Remark\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"82b1fc3d-9881-423e-bdf8-d6061f36ec42\"\n    }\n}",
+        "title": "查询订单列表"
+      }
+    ],
+    "DescribeRule": [
+      {
+        "document": "查询自动化规则",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRule\n<公共请求参数>\n\n{\n    \"RuleID\": 10010\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Distance\": 0,\n            \"Notice\": 0,\n            \"DataThreshold\": 0,\n            \"Name\": \"xx\",\n            \"District\": 0,\n            \"SignalStrength\": 0,\n            \"Url\": \"xx\",\n            \"LostDay\": 0,\n            \"IsActive\": true,\n            \"SalePlan\": \"xx\",\n            \"Email\": \"xx\",\n            \"UpdatedAt\": \"xx\",\n            \"TagIDs\": [\n                0\n            ],\n            \"DeletedAt\": \"xx\",\n            \"Type\": 0,\n            \"ID\": 0,\n            \"CreatedAt\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询自动化规则"
+      }
+    ],
+    "DescribeRules": [
+      {
+        "document": "查询自动化规则",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRules\n<公共请求参数>\n\n{\n    \"RuleID\": 10010\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 0,\n            \"List\": [\n                {\n                    \"Distance\": 0,\n                    \"Notice\": 0,\n                    \"Email\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"District\": 0,\n                    \"SignalStrength\": 0,\n                    \"Url\": \"xx\",\n                    \"DataThreshold\": 0,\n                    \"IsActive\": true,\n                    \"UpdatedAt\": \"xx\",\n                    \"DeletedAt\": \"xx\",\n                    \"Type\": 0,\n                    \"ID\": 0,\n                    \"CreatedAt\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询自动化规则"
+      }
+    ],
+    "DescribeTactic": [
+      {
+        "document": "查询云兔切换策略信息",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTactic\n<公共请求参数>\n\n{\n    \"TacticID\": 10010\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\",\n        \"Data\": {\n            \"ID\": 10002,\n            \"CreatedAt\": \"2021-07-19T16:06:54+08:00\",\n            \"IsAuto\": 0,\n            \"PingInterval\": 36000,\n            \"IsWeak\": 1,\n            \"WeakThreshold\": -10,\n            \"IsDelay\": 1,\n            \"DelayThreshold\": 50,\n            \"IsFake\": 1,\n            \"FakeIP\": \"www.baidu.com\",\n            \"FakeInterval\": 60,\n            \"IsNet\": 1,\n            \"Network\": 3,\n            \"IsPriorityTele\": 1,\n            \"PriorityTele\": 1,\n            \"IsBottomTele\": 1,\n            \"BottomTele\": 1,\n            \"IsBestSignal\": 1,\n            \"IsMove\": 1,\n            \"Name\": \"测试策略\"\n        }\n    }\n}",
+        "title": "查询云兔切换策略信息"
+      }
+    ],
+    "DescribeTactics": [
+      {
+        "document": "查询云兔切换策略列表",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTactics\n<公共请求参数>\n\n{\n    \"TacticID\": 0,\n    \"Name\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\",\n        \"Data\": {\n            \"Total\": 1,\n            \"List\": [\n                {\n                    \"ID\": 10002,\n                    \"CreatedAt\": \"2021-07-19T16:06:54+08:00\",\n                    \"IsAuto\": 0,\n                    \"PingInterval\": 36000,\n                    \"IsWeak\": 1,\n                    \"WeakThreshold\": -10,\n                    \"IsDelay\": 1,\n                    \"DelayThreshold\": 50,\n                    \"IsFake\": 1,\n                    \"FakeIP\": \"www.baidu.com\",\n                    \"FakeInterval\": 60,\n                    \"IsNet\": 1,\n                    \"Network\": 3,\n                    \"IsPriorityTele\": 1,\n                    \"PriorityTele\": 1,\n                    \"IsBottomTele\": 1,\n                    \"BottomTele\": 1,\n                    \"IsBestSignal\": 1,\n                    \"IsMove\": 1,\n                    \"Name\": \"测试策略\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询云兔切换策略列表"
+      }
+    ],
+    "DescribeTags": [
+      {
+        "document": "查询标签列表",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTags\n<公共请求参数>\n\n{\n    \"Name\": \"demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 0,\n            \"List\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"UpdatedAt\": \"xx\",\n                    \"ID\": 0,\n                    \"CreatedAt\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询标签列表"
+      }
+    ],
+    "ModifyLinkAdvancedLog": [
+      {
+        "document": "编辑云兔策略",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLinkAdvancedLog\n<公共请求参数>\n\n{\n    \"LinkID\": 101001,\n    \"IsAdLog\": 10101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑云兔策略"
+      }
+    ],
+    "ModifyLinkTactic": [
+      {
+        "document": "编辑云兔策略",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLinkTactic\n<公共请求参数>\n\n{\n    \"LinkID\": 101001,\n    \"TacticID\": 10101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑云兔策略"
+      }
+    ],
+    "ModifyLinkTele": [
+      {
+        "document": "修改云兔运营商",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLinkTele\n<公共请求参数>\n\n{\n    \"LinkID\": 1001,\n    \"TeleOperator\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\"\n    }\n}",
+        "title": "修改云兔运营商"
+      }
+    ],
+    "ModifyRule": [
+      {
+        "document": "编辑自动化规则",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRule\n<公共请求参数>\n\n{\n    \"Name\": \"demo\",\n    \"Type\": 101,\n    \"IsActive\": true,\n    \"Notice\": \"1\",\n    \"Email\": \"xxx@xx.com\",\n    \"RuleID\": 10010\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑自动化规则"
+      }
+    ],
+    "ModifyRuleStatus": [
+      {
+        "document": "编辑自动化规则状态",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleStatus\n<公共请求参数>\n\n{\n    \"RuleID\": 10001,\n    \"IsActive\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑自动化规则状态"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleStatus\n<公共请求参数>\n\n{\n    \"IsActive\": \"true\",\n    \"RuleID\": \"10027\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0aabacc0-ca02-487d-a795-9376739257fd\"\n    }\n}",
+        "title": "modifystatus"
+      }
+    ],
+    "ModifyTactic": [
+      {
+        "document": "创建云兔切换策略",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTactic\n<公共请求参数>\n\n{\n    \"Name\": \"测试策略\",\n    \"IsAuto\": 0,\n    \"PingInterval\": 36000,\n    \"IsWeak\": 1,\n    \"WeakThreshold\": -10,\n    \"IsDelay\": 1,\n    \"DelayThreshold\": 50,\n    \"IsFake\": 1,\n    \"FakeIP\": \"www.baidu.com\",\n    \"FakeInterval\": 60,\n    \"IsNet\": 1,\n    \"Network\": 3,\n    \"IsPriorityTele\": 1,\n    \"PriorityTele\": 1,\n    \"IsBottomTele\": 1,\n    \"BottomTele\": 1,\n    \"IsMove\": 1,\n    \"IsBestSignal\": 1,\n    \"TacticID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678901\"\n    }\n}",
+        "title": "创建云兔切换策略"
+      }
+    ],
+    "ModifyTag": [
+      {
+        "document": "编辑标签",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTag\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"TagID\": 100101\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑标签"
+      }
+    ],
+    "RenewLinkInfo": [
+      {
+        "document": "刷新云兔连接信息同步",
+        "input": "POST / HTTP/1.1\nHost: hasim.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewLinkInfo\n<公共请求参数>\n\n{\n    \"LinkID\": 101001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "刷新云兔连接信息同步"
+      }
+    ]
+  },
+  "version": "1.0"
+}

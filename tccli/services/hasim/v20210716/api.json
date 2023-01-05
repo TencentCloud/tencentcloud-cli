@@ -1,0 +1,2996 @@
+{
+  "actions": {
+    "CreateRule": {
+      "document": "创建自动化规则",
+      "input": "CreateRuleRequest",
+      "name": "创建自动化规则",
+      "output": "CreateRuleResponse"
+    },
+    "CreateTactic": {
+      "document": "创建云兔切换策略",
+      "input": "CreateTacticRequest",
+      "name": "创建云兔切换策略",
+      "output": "CreateTacticResponse"
+    },
+    "CreateTag": {
+      "document": "创建标签",
+      "input": "CreateTagRequest",
+      "name": "创建标签",
+      "output": "CreateTagResponse"
+    },
+    "DeleteRule": {
+      "document": "删除自动化规则",
+      "input": "DeleteRuleRequest",
+      "name": "删除自动化规则",
+      "output": "DeleteRuleResponse"
+    },
+    "DeleteTactic": {
+      "document": "删除策略",
+      "input": "DeleteTacticRequest",
+      "name": "删除策略",
+      "output": "DeleteTacticResponse"
+    },
+    "DeleteTag": {
+      "document": "删除标签",
+      "input": "DeleteTagRequest",
+      "name": "删除标签",
+      "output": "DeleteTagResponse"
+    },
+    "DescribeLink": {
+      "document": "查询云兔连接详细信息",
+      "input": "DescribeLinkRequest",
+      "name": "查询云兔连接详细信息",
+      "output": "DescribeLinkResponse"
+    },
+    "DescribeLinks": {
+      "document": "查询云兔连接列表",
+      "input": "DescribeLinksRequest",
+      "name": "查询云兔连接列表",
+      "output": "DescribeLinksResponse"
+    },
+    "DescribeOrders": {
+      "document": "查询订单列表",
+      "input": "DescribeOrdersRequest",
+      "name": "查询订单列表",
+      "output": "DescribeOrdersResponse"
+    },
+    "DescribeRule": {
+      "document": "查询自动化规则",
+      "input": "DescribeRuleRequest",
+      "name": "查询自动化规则",
+      "output": "DescribeRuleResponse"
+    },
+    "DescribeRules": {
+      "document": "查询自动化规则列表",
+      "input": "DescribeRulesRequest",
+      "name": "查询自动化规则列表",
+      "output": "DescribeRulesResponse"
+    },
+    "DescribeTactic": {
+      "document": "查询云兔切换策略信息",
+      "input": "DescribeTacticRequest",
+      "name": "查询云兔切换策略信息",
+      "output": "DescribeTacticResponse"
+    },
+    "DescribeTactics": {
+      "document": "查询云兔切换策略列表",
+      "input": "DescribeTacticsRequest",
+      "name": "查询云兔切换策略列表",
+      "output": "DescribeTacticsResponse"
+    },
+    "DescribeTags": {
+      "document": "查询标签列表",
+      "input": "DescribeTagsRequest",
+      "name": "查询标签列表",
+      "output": "DescribeTagsResponse"
+    },
+    "ModifyLinkAdvancedLog": {
+      "document": "编辑云兔高级日志状态",
+      "input": "ModifyLinkAdvancedLogRequest",
+      "name": "编辑云兔高级日志状态",
+      "output": "ModifyLinkAdvancedLogResponse"
+    },
+    "ModifyLinkTactic": {
+      "document": "编辑云兔策略",
+      "input": "ModifyLinkTacticRequest",
+      "name": "编辑云兔策略",
+      "output": "ModifyLinkTacticResponse"
+    },
+    "ModifyLinkTele": {
+      "document": "修改云兔运营商",
+      "input": "ModifyLinkTeleRequest",
+      "name": "修改云兔运营商",
+      "output": "ModifyLinkTeleResponse"
+    },
+    "ModifyRule": {
+      "document": "编辑自动化规则",
+      "input": "ModifyRuleRequest",
+      "name": "编辑自动化规则",
+      "output": "ModifyRuleResponse"
+    },
+    "ModifyRuleStatus": {
+      "document": "编辑自动化规则状态",
+      "input": "ModifyRuleStatusRequest",
+      "name": "编辑自动化规则状态",
+      "output": "ModifyRuleStatusResponse"
+    },
+    "ModifyTactic": {
+      "document": "修改云兔切换策略",
+      "input": "ModifyTacticRequest",
+      "name": "修改策略",
+      "output": "ModifyTacticResponse"
+    },
+    "ModifyTag": {
+      "document": "编辑标签",
+      "input": "ModifyTagRequest",
+      "name": "编辑标签",
+      "output": "ModifyTagResponse"
+    },
+    "RenewLinkInfo": {
+      "document": "刷新云兔连接信息同步",
+      "input": "RenewLinkInfoRequest",
+      "name": "刷新云兔连接信息同步",
+      "output": "RenewLinkInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-07-16",
+    "api_brief": "高可用物联网卡（腾讯云兔）API文档将介绍如何使用高可用物联网卡API，包括卡片管理、策略管理、规则管理等，方便对高可用物联网卡进行管理操作。",
+    "serviceNameCN": "高可用物联网卡",
+    "serviceShortName": "hasim"
+  },
+  "objects": {
+    "CreateRuleRequest": {
+      "document": "CreateRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自动化规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则类型：用量类(101 当月|102有效期内)、位置类(201行政区|202移动距离)、网络质量类(301网络盲点)",
+          "example": "101",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否激活",
+          "example": "true",
+          "member": "bool",
+          "name": "IsActive",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "触发动作：1 邮件 2 API请求 3 微信 4 停卡 5 地图标识为盲点",
+          "example": "1",
+          "member": "int64",
+          "name": "Notice",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推送的API地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用量阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "DataThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区",
+          "example": "1",
+          "member": "int64",
+          "name": "District",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "心跳移动距离阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "Distance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "信号强度阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "SignalStrength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "盲点时间阈值，天",
+          "example": "1",
+          "member": "int64",
+          "name": "LostDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签ID集合",
+          "example": "1",
+          "member": "int64",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资费计划",
+          "example": "1",
+          "member": "string",
+          "name": "SalePlan",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleResponse": {
+      "document": "CreateRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTacticRequest": {
+      "document": "CreateTactic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动执行",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuto",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "心跳上报间隔(s)",
+          "example": "3600",
+          "member": "int64",
+          "name": "PingInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启弱信号检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsWeak",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "弱信号阈值（-dbm）",
+          "example": "-10",
+          "member": "int64",
+          "name": "WeakThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启时延切换",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络时延阈值（ms）",
+          "example": "50",
+          "member": "int64",
+          "name": "DelayThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启假信号检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "假信号检测IP字符串，用逗号分隔",
+          "example": "www.baidu.com,144.144.144.144",
+          "member": "string",
+          "name": "FakeIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "假信号检测间隔（s）",
+          "example": "60",
+          "member": "int64",
+          "name": "FakeInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启网络制式检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNet",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络回落制式 1 2G、 2 3G 、 3 2/3G",
+          "example": "3",
+          "member": "int64",
+          "name": "Network",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启移动检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsMove",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启最优先运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPriorityTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "PriorityTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启最不优先运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBottomTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最不优先运营商 1 移动、 2 联通、 3 电信",
+          "example": "1",
+          "member": "int64",
+          "name": "BottomTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最优先信号选取策略",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBestSignal",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTacticResponse": {
+      "document": "CreateTactic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagRequest": {
+      "document": "CreateTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagResponse": {
+      "document": "CreateTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleRequest": {
+      "document": "DeleteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自动化规则ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "RuleID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleResponse": {
+      "document": "DeleteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTacticRequest": {
+      "document": "DeleteTactic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTacticResponse": {
+      "document": "DeleteTactic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagRequest": {
+      "document": "DeleteTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TagID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagResponse": {
+      "document": "DeleteTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinkRequest": {
+      "document": "DescribeLink请求参数结构体",
+      "members": [
+        {
+          "document": "云兔卡ID",
+          "example": "1000001",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "具体的账号",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinkResponse": {
+      "document": "DescribeLink返回参数结构体",
+      "members": [
+        {
+          "document": "云兔连接详细信息",
+          "example": "无",
+          "member": "LinkDetailInfo",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinksRequest": {
+      "document": "DescribeLinks请求参数结构体",
+      "members": [
+        {
+          "document": "云兔卡ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "LinkID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "运营商ICCID",
+          "example": "84792**736",
+          "member": "string",
+          "name": "ICCID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "设备码",
+          "example": "****",
+          "member": "string",
+          "name": "IMEI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "卡片状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "运营商 1移动 2联通 3电信",
+          "example": "1",
+          "member": "uint64",
+          "name": "TeleOperator",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "标签ID",
+          "example": "100101",
+          "member": "uint64",
+          "name": "TagID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "策略ID",
+          "example": "100101",
+          "member": "uint64",
+          "name": "TacticID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "设备在线状态 0 未激活 1 在线 2 离线",
+          "example": "0",
+          "member": "int64",
+          "name": "LinkedState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "标签ID 集合",
+          "example": "无",
+          "member": "int64",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinksResponse": {
+      "document": "DescribeLinks返回参数结构体",
+      "members": [
+        {
+          "document": "云兔连接响应信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkInfos",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersRequest": {
+      "document": "DescribeOrders请求参数结构体",
+      "members": [
+        {
+          "document": "子订单ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "审批状态 0全部 1通过 2驳回 3待审核",
+          "example": "xxxxx",
+          "member": "int64",
+          "name": "AuditStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "翻页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "翻页偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "开始时间,例如2022-06-30 00:00:00",
+          "example": "2022-06-30 00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "结束时间,例如2022-06-30 00:00:00",
+          "example": "2022-06-30 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersResponse": {
+      "document": "DescribeOrders返回参数结构体",
+      "members": [
+        {
+          "document": "订单列表",
+          "example": "  无",
+          "member": "Orders",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleRequest": {
+      "document": "DescribeRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自动化规则ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "RuleID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleResponse": {
+      "document": "DescribeRule返回参数结构体",
+      "members": [
+        {
+          "document": "策略信息",
+          "example": "无",
+          "member": "RuleDetail",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRulesRequest": {
+      "document": "DescribeRules请求参数结构体",
+      "members": [
+        {
+          "document": "自动化规则ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "自动化规则ID",
+          "example": "[10101]",
+          "member": "int64",
+          "name": "RuleIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "document": "名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "document": "类型",
+          "example": "101",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "是否激活",
+          "example": "1",
+          "member": "int64",
+          "name": "IsActive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "翻页大小",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "document": "翻页偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRulesResponse": {
+      "document": "DescribeRules返回参数结构体",
+      "members": [
+        {
+          "document": "自动化规则列表集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleInfos",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTacticRequest": {
+      "document": "DescribeTactic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTacticResponse": {
+      "document": "DescribeTactic返回参数结构体",
+      "members": [
+        {
+          "document": "策略信息",
+          "example": "无",
+          "member": "Tactic",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTacticsRequest": {
+      "document": "DescribeTactics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTacticsResponse": {
+      "document": "DescribeTactics返回参数结构体",
+      "members": [
+        {
+          "document": "策略集合信息",
+          "example": "无",
+          "member": "TacticInfos",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsRequest": {
+      "document": "DescribeTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsResponse": {
+      "document": "DescribeTags返回参数结构体",
+      "members": [
+        {
+          "document": "列表",
+          "example": "无",
+          "member": "TagInfos",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceReport": {
+      "document": "设备上报信息",
+      "members": [
+        {
+          "document": "移动设备ID",
+          "example": "8679******451",
+          "member": "string",
+          "name": "Imei",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "经度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "108.79345",
+          "member": "string",
+          "name": "Lng",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "37.2561",
+          "member": "string",
+          "name": "Lat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运营商基站ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "784***27",
+          "member": "string",
+          "name": "Lac",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "小区CellID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3691",
+          "member": "string",
+          "name": "Cell",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前上报运营商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8761***742",
+          "member": "string",
+          "name": "Iccid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "信号强度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-10",
+          "member": "int64",
+          "name": "Rss",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运营商: 1 移动 2 联通 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Tele",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前设备策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000101",
+          "member": "int64",
+          "name": "Tid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "心跳间隔,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "360000",
+          "member": "int64",
+          "name": "Ping",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网络延迟,单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Delay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高级日志启停状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Log",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "H26",
+          "member": "string",
+          "name": "DevType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3115",
+          "member": "string",
+          "name": "DevModel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.0.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备刷新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:41+08:00",
+          "member": "string",
+          "name": "UploadTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网络环境: 0 正常 1 弱网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "每月第一次上报心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:41+08:00",
+          "member": "string",
+          "name": "MonthFirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LinkDetailInfo": {
+      "document": "云兔连接详细信息",
+      "members": [
+        {
+          "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "ActiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "DataUse",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AudioUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SmsUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LinkedState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TacticStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "TacticExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsActiveLog",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TeleOperator",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceReport",
+          "name": "Report",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运营商ICCID信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TeleOperatorCard",
+          "name": "Cards",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云兔实际卡片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111111",
+          "member": "string",
+          "name": "CardID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LinkInfo": {
+      "document": "云兔连接基本信息",
+      "members": [
+        {
+          "document": "云兔连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "卡片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "ActiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "DataUse",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "语音用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AudioUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "短信用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SmsUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "在线状态 0 未激活 1 在线 2 离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LinkedState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预期策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略下发状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TacticStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略下发成功过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "TacticExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高级日志预期状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsActiveLog",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "运营商 1移动 2联通 3电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TeleOperator",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备最新上报信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceReport",
+          "name": "Report",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LinkInfos": {
+      "document": "云兔连接信息集合",
+      "members": [
+        {
+          "document": "总量",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云兔连接列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyLinkAdvancedLogRequest": {
+      "document": "ModifyLinkAdvancedLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云兔ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否激活高级日志 0 关闭 1激活",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAdLog",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLinkAdvancedLogResponse": {
+      "document": "ModifyLinkAdvancedLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLinkTacticRequest": {
+      "document": "ModifyLinkTactic请求参数结构体",
+      "members": [
+        {
+          "document": "云兔ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLinkTacticResponse": {
+      "document": "ModifyLinkTactic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLinkTeleRequest": {
+      "document": "ModifyLinkTele请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云兔ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "运营商 1 移动 2 联通 3 电信",
+          "example": "1",
+          "member": "int64",
+          "name": "TeleOperator",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLinkTeleResponse": {
+      "document": "ModifyLinkTele返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleRequest": {
+      "document": "ModifyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自动化规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则类型：用量类(101 当月|102有效期内)、位置类(201行政区|202移动距离)、网络质量类(301网络盲点)",
+          "example": "101",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否激活",
+          "example": "true",
+          "member": "bool",
+          "name": "IsActive",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "触发动作：1 邮件 2 API请求 3 微信 4 停卡 5 地图标识为盲点",
+          "example": "1",
+          "member": "int64",
+          "name": "Notice",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动化规则ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "RuleID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推送的API地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用量阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "DataThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区",
+          "example": "1",
+          "member": "int64",
+          "name": "District",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "心跳移动距离阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "Distance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "信号强度阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "SignalStrength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签ID集合",
+          "example": "1",
+          "member": "int64",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资费计划",
+          "example": "xxx",
+          "member": "string",
+          "name": "SalePlan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "具体的账号",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleResponse": {
+      "document": "ModifyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleStatusRequest": {
+      "document": "ModifyRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自动化规则ID",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "RuleID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否激活",
+          "example": "xxx",
+          "member": "bool",
+          "name": "IsActive",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleStatusResponse": {
+      "document": "ModifyRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTacticRequest": {
+      "document": "ModifyTactic请求参数结构体",
+      "members": [
+        {
+          "document": "策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "document": "是否自动执行",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuto",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "心跳上报间隔(s)",
+          "example": "3600",
+          "member": "int64",
+          "name": "PingInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启弱信号检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsWeak",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "弱信号阈值（-dbm）",
+          "example": "-10",
+          "member": "int64",
+          "name": "WeakThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启时延切换",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "网络时延阈值（ms）",
+          "example": "50",
+          "member": "int64",
+          "name": "DelayThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启假信号检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "假信号检测间隔（s）",
+          "example": "60",
+          "member": "int64",
+          "name": "FakeInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启网络制式检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNet",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "网络回落制式 1 2G、 2 3G 、 3 2/3G",
+          "example": "3",
+          "member": "int64",
+          "name": "Network",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启移动检测",
+          "example": "1",
+          "member": "int64",
+          "name": "IsMove",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TacticID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启最优先运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPriorityTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "PriorityTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否开启最不优先运营商",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBottomTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "最不优先运营商 1 移动、 2 联通、 3 电信",
+          "example": "1",
+          "member": "int64",
+          "name": "BottomTele",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "是否最优先信号选取策略",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBestSignal",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "document": "假信号检测IP字符串，用逗号分隔",
+          "example": "www.baidu.com,144.144.144.144",
+          "member": "string",
+          "name": "FakeIP",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTacticResponse": {
+      "document": "ModifyTactic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagRequest": {
+      "document": "ModifyTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "TagID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagResponse": {
+      "document": "ModifyTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderInfo": {
+      "document": "订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单账户",
+          "example": "1111111",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "BuyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "行业代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "IndustryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Contact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Msisdn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "卡片规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户订单备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审批状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "AuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发货状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "FlowStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审批备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退费订单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RefundBigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Orders": {
+      "document": "订单列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrderInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewLinkInfoRequest": {
+      "document": "RenewLinkInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云兔ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "具体的账号",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UinAccount",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewLinkInfoResponse": {
+      "document": "RenewLinkInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Rule": {
+      "document": "自动化规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "DeletedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsActive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Notice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "DataThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "District",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Distance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-10",
+          "member": "int64",
+          "name": "SignalStrength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LostDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TagIDs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的资费计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SalePlan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleDetail": {
+      "document": "自动化规则详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "xxx",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "DeletedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsActive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发动作：1 邮件 2 API请求 5 停卡 6 地图标识为盲点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Notice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回调API地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用量类：用量阈值,单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "DataThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "行政区类型：1. 省份 2. 城市 3. 区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "District",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "移动距离阈值，单位KM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Distance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "信号强度阈值(-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-10",
+          "member": "int64",
+          "name": "SignalStrength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "盲点阈值天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LostDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签ID集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[10001]",
+          "member": "int64",
+          "name": "TagIDs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SalePlan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleInfos": {
+      "document": "自动化规则集合",
+      "members": [
+        {
+          "default": "",
+          "document": "总量",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rule",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tactic": {
+      "document": "策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "10010***10",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动执行策略",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAuto",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备上报信息间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "PingInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启弱信号检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsWeak",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "弱信号阈值（-dbm）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-10",
+          "member": "int64",
+          "name": "WeakThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "忘了时延切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时延阈值（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "DelayThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启假信号检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFake",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "假信号检测IP字符串，用逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "FakeIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "假信号检测间隔（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FakeInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启网络制式检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsNet",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络回落制式 1: 2G、 2: 3G 、 3: 2/3G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Network",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启移动检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsMove",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启最优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPriorityTele",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PriorityTele",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启最不优先运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBottomTele",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最不优先运营商 1 移动、 2 联通、 3 电信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BottomTele",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启最优先信号选取策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBestSignal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TacticInfos": {
+      "document": "策略信息集合",
+      "members": [
+        {
+          "default": "",
+          "document": "总量",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tactic",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "云兔标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "tag1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签ID",
+          "example": "10002",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:47:59+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:48:02+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfos": {
+      "document": "标签列表集合",
+      "members": [
+        {
+          "default": "",
+          "document": "总量",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TeleOperatorCard": {
+      "document": "运营商卡片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "开户时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "AccountTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-09T15:44:44+08:00",
+          "member": "string",
+          "name": "ActiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运营商ICCID",
+          "example": "898************672",
+          "member": "string",
+          "name": "ICCID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云兔卡ID",
+          "example": "12345678901",
+          "member": "int64",
+          "name": "LinkID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180*********9431",
+          "member": "string",
+          "name": "Msisdn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "移动用户识别码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "871**************012",
+          "member": "string",
+          "name": "IMSI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运营商: 1 移动 2 联通 3 电信",
+          "example": "3",
+          "member": "int64",
+          "name": "TeleOperator",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

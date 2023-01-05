@@ -949,6 +949,15 @@
           "name": "QnPrivateAccess",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "HTTPS服务",
+          "example": "无",
+          "member": "HttpsBilling",
+          "name": "HttpsBilling",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8015,7 +8024,7 @@
         },
         {
           "default": "",
-          "document": "https 请求计费开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HTTPS服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "HttpsBilling",
           "name": "HttpsBilling",
@@ -9354,7 +9363,7 @@
       "members": [
         {
           "default": "",
-          "document": "https请求计费开关",
+          "document": "HTTPS服务",
           "example": "on/off",
           "member": "string",
           "name": "Switch",
@@ -15935,6 +15944,15 @@
           "example": "无",
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "HTTPS服务",
+          "example": "无",
+          "member": "HttpsBilling",
+          "name": "HttpsBilling",
           "required": false,
           "type": "object"
         }
