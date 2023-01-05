@@ -218,6 +218,7 @@ class Loader(object):
             actions_info[action] = {}
             actions_info[action]["name"] = service_model["actions"][action]["name"]
             actions_info[action]["document"] = service_model["actions"][action]["document"]
+            actions_info[action]["status"] = service_model["actions"][action]["status"]
         return actions_info
 
     def get_service_all_version_actions(self, service):

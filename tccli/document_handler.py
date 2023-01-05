@@ -140,12 +140,6 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def description(self):
         self.doc.style.h2('Description')
         description = self._cli_data.get_action_description(self._service, self._version, self._action)
-        online_status = self._cli_data.get_action_online_status(self._service, self._version, self._action)
-        if online_status == "deprecated":
-            deprecated_desc = description.split("\n\n")[0]
-            import warnings
-            warnings.filterwarnings("default")
-            warnings.warn("This action is deprecated, detail: %s" % deprecated_desc, DeprecationWarning)
         self.doc.doc_title_indent("%s-%s-%s\n" % (self._service, self._version, self._action))
         self.doc.doc_description_indent(description)
 

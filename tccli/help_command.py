@@ -72,6 +72,13 @@ class ActionHelpCommand(BaseHelpCommand):
         self._version = version
         self._action_name = action_name
         super(ActionHelpCommand, self).__init__()
+        description = self._cli_data.get_action_description(self._service_name, self._version, self._action_name)
+        online_status = self._cli_data.get_action_online_status(self._service_name, self._version, self._action_name)
+        if online_status == "deprecated":
+            deprecated_desc = description.split("\n\n")[0]
+            import warnings
+            warnings.filterwarnings("default")
+            warnings.warn("This action is deprecated, detail: %s" % deprecated_desc, DeprecationWarning)
 
     def _get_service_version(self, parsed_globals):
         self._service_version(self._service_name, parsed_globals)
