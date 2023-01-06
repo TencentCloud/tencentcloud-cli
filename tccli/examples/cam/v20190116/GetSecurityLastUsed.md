@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cam GetSecurityLastUsed --cli-unfold-argument  \
-    --SecretIdList ' AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp'
+    --SecretIdList ***
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "SecretIdLastUsedRows": [
             {
-                "SecretId": "AKID3zjFYeZGjxylS0MXUDiy1pPo15yqjXGp",
+                "SecretId": "***",
                 "LastUsedDate": "2022-12-19",
                 "LastSecretUsedDate": 1671681023555
             }

@@ -1,6 +1,6 @@
-**Example 1: 获取实时会话统计详情**
+**Example 1: 获取单个proxy实时会话统计详情**
 
-
+获取单个proxy的实时会话统计详情
 
 Input: 
 

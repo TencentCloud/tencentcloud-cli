@@ -306,6 +306,12 @@
       "name": "获取主题列表详情",
       "output": "DescribeTopicDetailResponse"
     },
+    "DescribeTopicProduceConnection": {
+      "document": "查询topic 生产端连接信息",
+      "input": "DescribeTopicProduceConnectionRequest",
+      "name": "查询topic生产端连接信息",
+      "output": "DescribeTopicProduceConnectionResponse"
+    },
     "DescribeTopicSubscribeGroup": {
       "document": "查询订阅某主题消息分组信息",
       "input": "DescribeTopicSubscribeGroupRequest",
@@ -4824,6 +4830,42 @@
       ],
       "type": "object"
     },
+    "DescribeConnectInfoResultDTO": {
+      "document": "topic链接信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "IpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连结时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUnSupportVersion",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeConnectResource": {
       "document": "查询连接源具体数据的返参",
       "members": [
@@ -6420,6 +6462,51 @@
           "name": "Result",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicProduceConnectionRequest": {
+      "document": "DescribeTopicProduceConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic名称",
+          "example": "topic-xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicProduceConnectionResponse": {
+      "document": "DescribeTopicProduceConnection返回参数结构体",
+      "members": [
+        {
+          "document": "链接信息返回结果集",
+          "example": "无",
+          "member": "DescribeConnectInfoResultDTO",
+          "name": "Result",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

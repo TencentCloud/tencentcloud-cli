@@ -24,7 +24,7 @@
     ],
     "ContinueMigrateJob": [
       {
-        "document": "",
+        "document": "任务处于暂停中时、可通过该接口继续任务",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ContinueMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bab78b9b-ce8a-4645-bfb2-5b03397d6ea0\"\n    }\n}",
         "title": "恢复暂停中的迁移任务"

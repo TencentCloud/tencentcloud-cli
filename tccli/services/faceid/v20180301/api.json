@@ -108,12 +108,6 @@
       "name": "获取数字验证码",
       "output": "GetLiveCodeResponse"
     },
-    "GetRealNameAuthResult": {
-      "document": "获取微信实名认证结果",
-      "input": "GetRealNameAuthResultRequest",
-      "name": "获取微信实名认证结果",
-      "output": "GetRealNameAuthResultResponse"
-    },
     "GetWeChatBillDetails": {
       "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
       "input": "GetWeChatBillDetailsRequest",
@@ -2534,39 +2528,6 @@
           "member": "string",
           "name": "LiveCode",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetRealNameAuthResultRequest": {
-      "document": "GetRealNameAuthResult请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实名认证凭证",
-          "member": "string",
-          "name": "AuthToken",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetRealNameAuthResultResponse": {
-      "document": "GetRealNameAuthResult返回参数结构体",
-      "members": [
-        {
-          "document": "认证结果码，收费情况如下：\n\n收费码：\n0:  姓名和身份证号一致\n-1: 姓名和身份证号不一致\n-2: 姓名和微信实名姓名不一致\n\n不收费码：\n-3: 微信号未实名",
-          "member": "string",
-          "name": "ResultType",
           "type": "string",
           "value_allowed_null": false
         },

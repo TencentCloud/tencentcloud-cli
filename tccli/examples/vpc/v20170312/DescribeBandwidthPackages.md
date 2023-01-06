@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc DescribeBandwidthPackages --cli-unfold-argument  \
-    --Filters.0.Name network-type \
-    --Filters.0.Values BGP
+    --Filters.0.Values BGP \
+    --Filters.0.Name network-type
 ```
 
 Output: 

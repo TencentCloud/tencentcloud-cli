@@ -319,7 +319,7 @@
       "document": "AssumeRoleWithWebIdentity返回参数结构体",
       "members": [
         {
-          "document": "临时秘钥过期时间(时间戳)",
+          "document": "临时密钥过期时间(时间戳)",
           "example": "123456789",
           "member": "uint64",
           "name": "ExpiredTime",
@@ -328,7 +328,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "临时秘钥过期时间",
+          "document": "临时密钥过期时间",
           "example": "2010-12-10",
           "member": "string",
           "name": "Expiration",
@@ -337,7 +337,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "临时秘钥",
+          "document": "临时密钥",
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",

@@ -145,9 +145,9 @@
       "output": "DescribeNoPrimaryKeyTablesResponse"
     },
     "DescribeProxyProcessStatistics": {
-      "document": "获取当前实例会话统计详情信息。【注意】该接口仅限部分环境调用。",
+      "document": "获取当前实例下的单个proxy的会话统计详情信息， 返回数据为单个 proxy 的会话统计信息。【注意】该接口仅限部分环境调用。",
       "input": "DescribeProxyProcessStatisticsRequest",
-      "name": "获取实时会话统计详情",
+      "name": "获取单个proxy实时会话统计详情",
       "output": "DescribeProxyProcessStatisticsResponse"
     },
     "DescribeProxySessionKillTasks": {
@@ -2184,7 +2184,6 @@
       "document": "DescribeProxyProcessStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实例 ID 。",
           "example": "\"crs-2gtest\"",
           "member": "string",
@@ -2193,8 +2192,7 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "当前实例下的 ProxyID。",
+          "document": "该实例下需要查询的某一个 ProxyID 。",
           "example": "\"b237ff3c5f30b0615276f986cc75c045bc\"",
           "member": "string",
           "name": "InstanceProxyId",
@@ -2202,7 +2200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量。",
           "example": "100",
           "member": "int64",
@@ -2211,7 +2208,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
           "example": "\"redis\"",
           "member": "string",
@@ -2220,7 +2216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认0。",
           "example": "0",
           "member": "int64",
@@ -2229,7 +2224,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "按照某字断排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。",
           "example": "\"AllConn\"",
           "member": "string",
@@ -2238,7 +2232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方向。支持值包括：\"DESC\"，\"ASC\"。",
           "example": "\"DESC\"",
           "member": "string",
@@ -2257,7 +2250,6 @@
           "example": "无",
           "member": "ProcessStatistic",
           "name": "ProcessStatistics",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

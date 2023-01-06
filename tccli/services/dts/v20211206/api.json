@@ -1114,7 +1114,6 @@
       "document": "ContinueMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据迁移任务ID",
           "example": "dts-xxxxxxxx",
           "member": "string",

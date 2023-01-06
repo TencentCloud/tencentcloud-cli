@@ -168,14 +168,6 @@
         "title": "获取数字验证码"
       }
     ],
-    "GetRealNameAuthResult": [
-      {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=GetRealNameAuthResult\n&AuthToken=XXX\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"714a3f78-3aba-11eb-90a1-5254004cf974\",\n        \"ResultType\": \"0\"\n    }\n}",
-        "title": "获取微信实名认证结果"
-      }
-    ],
     "GetWeChatBillDetails": [
       {
         "document": "获取第一页数据时，Cursor值传0。当HasNextPage的值为true时，继续调用接口。",

@@ -13,7 +13,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
+        "AddressId": "eip-fk2gmm9s",
+        "TaskId": 345732,
+        "RequestId": "070889cb-a42a-40a0-ac50-293ef36e0dfc"
     }
 }
 ```

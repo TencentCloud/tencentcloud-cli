@@ -3788,7 +3788,6 @@
       "document": "DescribeBillingSpecs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "枚举值：TRAIN、NOTEBOOK、INFERENCE",
           "example": "TRAIN",
           "member": "string",
@@ -3797,7 +3796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "付费模式：POSTPAID_BY_HOUR后付费、PREPAID预付费",
           "example": "PREPAID",
           "member": "string",
@@ -3806,7 +3804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源类型：CALC 计算资源、CPU CPU资源、GPU GPU资源、CBS云硬盘",
           "example": "CALC",
           "member": "string",
@@ -3825,7 +3822,6 @@
           "example": "无",
           "member": "Spec",
           "name": "Specs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7305,7 +7301,6 @@
       "document": "资源组",
       "members": [
         {
-          "default": "",
           "document": "资源组id",
           "example": "ersg-9hw7jfk6",
           "member": "string",
@@ -7315,7 +7310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资源组名称",
           "example": "test2",
           "member": "string",
@@ -7325,7 +7319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用节点个数(运行中的节点)",
           "example": "1",
           "member": "uint64",
@@ -7335,7 +7328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总节点个数(所有节点)",
           "example": "1",
           "member": "uint64",
@@ -7345,7 +7337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "资资源组已用的资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
@@ -7355,7 +7346,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源组总资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
@@ -7365,7 +7355,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Instance",
@@ -7375,7 +7364,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -8619,6 +8607,26 @@
           "name": "SpecAlias",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否售罄",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前资源售罄时，可用的区域有哪些",
+          "example": "[]",
+          "member": "string",
+          "name": "AvailableRegion",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
