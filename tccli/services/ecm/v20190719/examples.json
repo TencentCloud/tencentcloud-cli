@@ -134,8 +134,8 @@
     ],
     "CreateLoadBalancer": [
       {
-        "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=CreateLoadBalancer\n&EcmRegion=ap-hangzhou-ecm\n&VpcId=vpc-12345678\n&LoadBalancerType=OPEN\n&LoadBalancerName=testname\n&VipIsp=CUCC\n&InternetAccessible.InternetMaxBandwidthOut=2000\n&<公共请求参数>",
+        "document": "购买负载均衡实例",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"VipIsp\": \"CUCC\",\n    \"VpcId\": \"vpc-12345678\",\n    \"InternetAccessible\": {\n        \"InternetMaxBandwidthOut\": \"2000\"\n    },\n    \"LoadBalancerType\": \"OPEN\",\n    \"LoadBalancerName\": \"testname\",\n    \"EcmRegion\": \"ap-hangzhou-ecm\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-mov2697v\"\n        ],\n        \"RequestId\": \"88487432-ee86-4e5d-861b-774374123f89\"\n    }\n}",
         "title": "购买负载均衡实例"
       }

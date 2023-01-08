@@ -574,7 +574,7 @@
     ],
     "DescribeContainerGroups": [
       {
-        "document": "",
+        "document": "查询容器部署组列表",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerGroups\r\n&ApplicationId=application-xxxxxxx\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a08459-9e0b-4609-841b-0859d6f844e1\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Server\": \"ccr.ccs.tencentyun.com\",\n                    \"CpuLimit\": \"2.00\",\n                    \"GroupId\": \"group-xxxxxxx\",\n                    \"ClusterId\": \"cls-xxxxxxx\",\n                    \"TagName\": \"20190517xxxxxxx\",\n                    \"CpuRequest\": \"\",\n                    \"MemLimit\": \"4096.00\",\n                    \"GroupName\": \"test\",\n                    \"CreateTime\": \"\",\n                    \"NamespaceId\": \"namespace-xxxxxxx\",\n                    \"MemRequest\": \"\",\n                    \"ClusterName\": \"示例\",\n                    \"NamespaceName\": \"test\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询容器部署组列表"

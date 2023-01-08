@@ -1,3 +1,156 @@
+# Release 3.0.684.1
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 25 次发布
+
+发布时间：2023-01-09 01:05:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：QueuedSkillGroupName
+
+
+
+
+## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 4 次发布
+
+发布时间：2023-01-09 01:07:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAccessRules](http://document.tencentcloudapi.woa.com/document/product/1105/52339)
+
+	* 新增出参：AccessRules
+
+* [DescribeFileSystem](http://document.tencentcloudapi.woa.com/document/product/1105/51147)
+
+	* 新增出参：DeepArchiveCapacityUsed, IntelligentCapacityUsed
+
+
+
+
+## 云 HDFS(chdfs) 版本：2019-07-18
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 9 次发布
+
+发布时间：2023-01-09 01:14:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SessionItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SessionItem)
+
+修改数据结构：
+
+* [ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)
+
+	* 新增成员：Items, AllConnSum, ActiveConnSum
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 12 次发布
+
+发布时间：2023-01-09 01:16:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/1108/48465)
+
+	* 新增入参：AddressIPVersion, SubnetId
+
+
+修改数据结构：
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/1108/42574#LoadBalancer)
+
+	* 新增成员：AddressIPv6
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 21 次发布
+
+发布时间：2023-01-09 01:28:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InvokeAsyncEventCallBack](http://document.tencentcloudapi.woa.com/document/product/583/76925)
+
+	* 新增入参：InvokeRequestId, ContainerId, RetCode, RetMsg, ReqStartTimeInMs, ReqEndTimeInMs, CustomFields
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 53 次发布
+
+发布时间：2023-01-09 01:34:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76935)
+* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
+* [DeleteClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76933)
+* [DeleteClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76932)
+* [DescribeClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76931)
+* [DescribeClusterVirtualNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76930)
+* [DrainClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76929)
+* [ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)
+
+新增数据结构：
+
+* [VirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNode)
+* [VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)
+* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
+
+
+
 # Release 3.0.683.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
