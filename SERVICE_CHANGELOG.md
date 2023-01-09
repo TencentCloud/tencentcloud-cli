@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云呼叫中心(ccc) 版本：2020-02-10
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 25 次发布
+### 第 42 次发布
 
-发布时间：2023-01-09 01:05:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
-
-	* 新增成员：QueuedSkillGroupName
-
-
-
-
-## 云 HDFS(chdfs) 版本：2020-11-12
-
-### 第 4 次发布
-
-发布时间：2023-01-09 01:07:52
+发布时间：2023-01-10 01:17:03
 
 本次发布包含了以下内容：
 
@@ -31,102 +12,18 @@
 
 修改接口：
 
-* [CreateAccessRules](http://document.tencentcloudapi.woa.com/document/product/1105/52339)
+* [DescribeVersionStatistics](http://document.tencentcloudapi.woa.com/document/product/296/60922)
 
-	* 新增出参：AccessRules
-
-* [DescribeFileSystem](http://document.tencentcloudapi.woa.com/document/product/1105/51147)
-
-	* 新增出参：DeepArchiveCapacityUsed, IntelligentCapacityUsed
+	* 新增出参：GeneralVersionNum
 
 
 
 
-## 云 HDFS(chdfs) 版本：2019-07-18
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 33 次发布
 
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 9 次发布
-
-发布时间：2023-01-09 01:14:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [SessionItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SessionItem)
-
-修改数据结构：
-
-* [ProcessStatistic](http://document.tencentcloudapi.woa.com/document/product/1130/57812#ProcessStatistic)
-
-	* 新增成员：Items, AllConnSum, ActiveConnSum
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 边缘计算机器(ecm) 版本：2019-07-19
-
-### 第 12 次发布
-
-发布时间：2023-01-09 01:16:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/1108/48465)
-
-	* 新增入参：AddressIPVersion, SubnetId
-
-
-修改数据结构：
-
-* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/1108/42574#LoadBalancer)
-
-	* 新增成员：AddressIPv6
-
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 21 次发布
-
-发布时间：2023-01-09 01:28:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [InvokeAsyncEventCallBack](http://document.tencentcloudapi.woa.com/document/product/583/76925)
-
-	* 新增入参：InvokeRequestId, ContainerId, RetCode, RetMsg, ReqStartTimeInMs, ReqEndTimeInMs, CustomFields
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 53 次发布
-
-发布时间：2023-01-09 01:34:25
+发布时间：2023-01-10 01:20:14
 
 本次发布包含了以下内容：
 
@@ -134,20 +31,57 @@
 
 新增接口：
 
-* [CreateClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76935)
-* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
-* [DeleteClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76933)
-* [DeleteClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76932)
-* [DescribeClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76931)
-* [DescribeClusterVirtualNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76930)
-* [DrainClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76929)
-* [ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)
+* [SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 26 次发布
+
+发布时间：2023-01-10 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 新增数据结构：
 
-* [VirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNode)
-* [VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)
-* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
+* [DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)
+
+修改数据结构：
+
+* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
+
+	* 新增成员：ApiMatchType
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：EnableAuth, Username, Password, KafkaInfos, EnableGlobalLineRule, CustomRule
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 46 次发布
+
+发布时间：2023-01-10 01:42:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* 新增成员：DynamicRangeInfo
+
 
 
 
@@ -14634,6 +14568,21 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 42 次发布
+
+发布时间：2023-01-10 01:17:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVersionStatistics](http://document.tencentcloudapi.woa.com/document/product/296/60922)
+
+	* 新增出参：GeneralVersionNum
+
+
 ### 第 41 次发布
 
 发布时间：2023-01-04 01:12:52
@@ -17231,7 +17180,7 @@
 
 新增数据结构：
 
-* [[SessionItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SessionItem)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[SessionItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SessionItem))
+* [SessionItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#SessionItem)
 
 修改数据结构：
 
@@ -18038,6 +17987,18 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 33 次发布
+
+发布时间：2023-01-10 01:20:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 32 次发布
 
@@ -42628,20 +42589,20 @@
 
 新增接口：
 
-* [[CreateClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76935)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76933)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76932)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76931)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterVirtualNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76930)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DrainClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76929)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76935)
+* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
+* [DeleteClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76933)
+* [DeleteClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76932)
+* [DescribeClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76931)
+* [DescribeClusterVirtualNodePools](http://document.tencentcloudapi.woa.com/document/product/457/76930)
+* [DrainClusterVirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/76929)
+* [ModifyClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76928)
 
 新增数据结构：
 
-* [[VirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNode)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[VirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNode))
-* [[VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool))
-* [[VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec))
+* [VirtualNode](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNode)
+* [VirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodePool)
+* [VirtualNodeSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#VirtualNodeSpec)
 
 ### 第 52 次发布
 
@@ -45067,6 +45028,29 @@
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
+### 第 26 次发布
+
+发布时间：2023-01-10 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo))
+
+修改数据结构：
+
+* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
+
+	* 新增成员：ApiMatchType
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：EnableAuth, Username, Password, KafkaInfos, EnableGlobalLineRule, CustomRule
+
+
 ### 第 25 次发布
 
 发布时间：2022-12-07 07:20:10
@@ -46462,6 +46446,25 @@
 
 
 ## 云点播(vod) 版本：2018-07-17
+
+### 第 46 次发布
+
+发布时间：2023-01-10 01:42:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo))
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* 新增成员：DynamicRangeInfo
+
 
 ### 第 45 次发布
 

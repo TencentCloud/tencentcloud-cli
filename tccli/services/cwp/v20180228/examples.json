@@ -1282,7 +1282,7 @@
       {
         "document": "统计专业版和基础版机器数",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVersionStatistics\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BasicVersionNum\": 1,\n        \"ProVersionNum\": 1,\n        \"RequestId\": \"xx\",\n        \"UltimateVersionNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BasicVersionNum\": 1,\n        \"ProVersionNum\": 1,\n        \"RequestId\": \"xx\",\n        \"UltimateVersionNum\": 1,\n        \"GeneralVersionNum\": 1\n    }\n}",
         "title": "统计专业版和基础版机器数"
       }
     ],

@@ -13922,22 +13922,22 @@
       "document": "VerifyOfdVatInvoiceOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "OFD文件的 Url 地址。",
           "example": "http://test.ofd",
           "member": "string",
           "name": "OfdFileUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "document": "OFD文件的 Base64 值。\nOfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。",
           "example": "base64",
           "member": "string",
           "name": "OfdFileBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13946,12 +13946,13 @@
       "document": "VerifyOfdVatInvoiceOCR返回参数结构体",
       "members": [
         {
-          "document": "发票类型\n026:增值税电子普通发票\n028:增值税电子专用发票",
+          "document": "发票类型\n026:增值税电子普通发票\n028:增值税电子专用发票\n010:电子发票（普通发票）\n020:电子发票（增值税专用发票）",
           "example": "026",
           "member": "string",
           "name": "Type",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票代码",
@@ -13959,7 +13960,8 @@
           "member": "string",
           "name": "InvoiceCode",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票号码",
@@ -13967,7 +13969,8 @@
           "member": "string",
           "name": "InvoiceNumber",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开票日期",
@@ -13975,7 +13978,8 @@
           "member": "string",
           "name": "IssueDate",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "验证码",
@@ -13983,7 +13987,8 @@
           "member": "string",
           "name": "InvoiceCheckCode",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "机器编号",
@@ -13991,7 +13996,8 @@
           "member": "string",
           "name": "MachineNumber",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "密码区",
@@ -13999,7 +14005,8 @@
           "member": "string",
           "name": "TaxControlCode",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "购买方",
@@ -14007,7 +14014,8 @@
           "member": "VatInvoiceUserInfo",
           "name": "Buyer",
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "销售方",
@@ -14015,7 +14023,8 @@
           "member": "VatInvoiceUserInfo",
           "name": "Seller",
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "价税合计",
@@ -14023,7 +14032,8 @@
           "member": "string",
           "name": "TaxInclusiveTotalAmount",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开票人",
@@ -14031,7 +14041,8 @@
           "member": "string",
           "name": "InvoiceClerk",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "收款人",
@@ -14039,7 +14050,8 @@
           "member": "string",
           "name": "Payee",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "复核人",
@@ -14047,7 +14059,8 @@
           "member": "string",
           "name": "Checker",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "税额",
@@ -14055,7 +14068,8 @@
           "member": "string",
           "name": "TaxTotalAmount",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "不含税金额",
@@ -14063,7 +14077,8 @@
           "member": "string",
           "name": "TaxExclusiveTotalAmount",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "备注",
@@ -14071,7 +14086,8 @@
           "member": "string",
           "name": "Note",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "货物或服务清单",
@@ -14079,7 +14095,8 @@
           "member": "VatInvoiceGoodsInfo",
           "name": "GoodsInfos",
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

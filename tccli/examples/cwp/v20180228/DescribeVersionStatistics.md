@@ -14,7 +14,8 @@ Output:
         "BasicVersionNum": 1,
         "ProVersionNum": 1,
         "RequestId": "xx",
-        "UltimateVersionNum": 1
+        "UltimateVersionNum": 1,
+        "GeneralVersionNum": 1
     }
 }
 ```

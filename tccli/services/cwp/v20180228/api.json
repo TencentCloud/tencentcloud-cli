@@ -19681,27 +19681,36 @@
           "example": "1",
           "member": "uint64",
           "name": "BasicVersionNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "专业版数量",
           "example": "1",
           "member": "uint64",
           "name": "ProVersionNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "旗舰版数量",
           "example": "0",
           "member": "uint64",
           "name": "UltimateVersionNum",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "普惠版数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "GeneralVersionNum",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

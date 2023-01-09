@@ -1,3 +1,90 @@
+# Release 3.0.685.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 42 次发布
+
+发布时间：2023-01-10 01:17:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVersionStatistics](http://document.tencentcloudapi.woa.com/document/product/296/60922)
+
+	* 新增出参：GeneralVersionNum
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 33 次发布
+
+发布时间：2023-01-10 01:20:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 26 次发布
+
+发布时间：2023-01-10 01:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)
+
+修改数据结构：
+
+* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
+
+	* 新增成员：ApiMatchType
+
+* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
+
+	* 新增成员：EnableAuth, Username, Password, KafkaInfos, EnableGlobalLineRule, CustomRule
+
+
+
+
+## 云点播(vod) 版本：2018-07-17
+
+### 第 46 次发布
+
+发布时间：2023-01-10 01:42:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)
+
+修改数据结构：
+
+* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
+
+	* 新增成员：DynamicRangeInfo
+
+
+
+
 # Release 3.0.684.1
 
 ## 云呼叫中心(ccc) 版本：2020-02-10

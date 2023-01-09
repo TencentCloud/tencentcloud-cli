@@ -1493,6 +1493,7 @@
         {
           "default": "",
           "document": "API ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -1502,6 +1503,7 @@
         {
           "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -1511,6 +1513,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -1520,6 +1523,7 @@
         {
           "default": "",
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -1529,6 +1533,7 @@
         {
           "default": "",
           "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceName",
           "required": true,
@@ -1538,6 +1543,7 @@
         {
           "default": "",
           "document": "API 请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -1547,6 +1553,7 @@
         {
           "default": "",
           "document": "Api 映射路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PathMapping",
           "required": true,
@@ -1556,6 +1563,7 @@
         {
           "default": "",
           "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -1565,6 +1573,7 @@
         {
           "default": "",
           "document": "所属分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -1574,6 +1583,7 @@
         {
           "default": "",
           "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -1583,6 +1593,7 @@
         {
           "default": "",
           "document": "发布状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReleaseStatus",
           "required": true,
@@ -1592,6 +1603,7 @@
         {
           "default": "",
           "document": "开启限流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RateLimitStatus",
           "required": true,
@@ -1601,6 +1613,7 @@
         {
           "default": "",
           "document": "是否开启mock\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MockStatus",
           "required": true,
@@ -1610,6 +1623,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -1619,6 +1633,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdatedTime",
           "required": true,
@@ -1628,6 +1643,7 @@
         {
           "default": "",
           "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReleasedTime",
           "required": true,
@@ -1637,6 +1653,7 @@
         {
           "default": "",
           "document": "所属分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1646,6 +1663,7 @@
         {
           "default": "",
           "document": "API 超时，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Timeout",
           "required": true,
@@ -1655,6 +1673,7 @@
         {
           "default": "",
           "document": "Api所在服务host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -1664,6 +1683,7 @@
         {
           "default": "",
           "document": "API类型。 ms ： 微服务API； external :外部服务Api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiType",
           "required": true,
@@ -1673,8 +1693,19 @@
         {
           "default": "",
           "document": "Api描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API路径匹配类型。normal：普通API；wildcard：通配API。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApiMatchType",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1961,6 +1992,7 @@
         {
           "default": "",
           "document": "命名空间Id，若为外部API,为固定值：\"namespace-external\"",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -1970,6 +2002,7 @@
         {
           "default": "",
           "document": "服务Id，若为外部API,为固定值：\"ms-external\"",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -1979,6 +2012,7 @@
         {
           "default": "",
           "document": "API path",
+          "example": "无",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -1988,6 +2022,7 @@
         {
           "default": "",
           "document": "Api 请求",
+          "example": "无",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -1997,6 +2032,7 @@
         {
           "default": "",
           "document": "请求映射",
+          "example": "无",
           "member": "string",
           "name": "PathMapping",
           "required": true,
@@ -2006,6 +2042,7 @@
         {
           "default": "",
           "document": "api所在服务host,限定外部Api填写。格式: `http://127.0.0.1:8080`",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -2015,6 +2052,7 @@
         {
           "default": "",
           "document": "api描述信息",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -7581,6 +7619,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DeliveryKafkaInfo": {
+      "document": "kafka投递的topic和path的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "投递kafka的topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采集日志的path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "default，默认换行符分行\ntime，按时间分行\ncustom, 选了custom那么CustomRule就要填入具体的自定义值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义的分行值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomRule",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeployContainerGroupRequest": {
       "document": "DeployContainerGroup请求参数结构体",
@@ -17169,6 +17253,7 @@
         {
           "default": "",
           "document": "配置项id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -17178,6 +17263,7 @@
         {
           "default": "",
           "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -17187,6 +17273,7 @@
         {
           "default": "",
           "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CollectPath",
           "required": true,
@@ -17196,6 +17283,7 @@
         {
           "default": "",
           "document": "kafka vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "KafkaVIp",
           "required": true,
@@ -17205,6 +17293,7 @@
         {
           "default": "",
           "document": "kafka vport\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "KafkaVPort",
           "required": true,
@@ -17214,6 +17303,7 @@
         {
           "default": "",
           "document": "kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -17223,8 +17313,69 @@
         {
           "default": "",
           "document": "换行规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LineRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否需要认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAuth",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递的topic和path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliveryKafkaInfo",
+          "name": "KafkaInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否应用单行规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableGlobalLineRule",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义分行规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomRule",
           "required": true,
           "type": "string",
           "value_allowed_null": true
