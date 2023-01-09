@@ -11846,7 +11846,6 @@
       "document": "录制模板参数。",
       "members": [
         {
-          "default": "",
           "document": "录制间隔。\n单位秒，默认：1800。\n取值范围：30-7200。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
           "example": "400",
           "member": "int64",
@@ -11856,7 +11855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。",
           "example": "123",
           "member": "int64",
@@ -11866,7 +11864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启当前格式录制，默认值为0，0：否， 1：是。",
           "example": "0",
           "member": "int64",
@@ -11876,7 +11873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "点播子应用 ID。",
           "example": "1",
           "member": "int64",
@@ -11886,7 +11882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "录制文件名。\n支持的特殊占位符有：\n{StreamID}: 流ID\n{StartYear}: 开始时间-年\n{StartMonth}: 开始时间-月\n{StartDay}: 开始时间-日\n{StartHour}: 开始时间-小时\n{StartMinute}: 开始时间-分钟\n{StartSecond}: 开始时间-秒\n{StartMillisecond}: 开始时间-毫秒\n{EndYear}: 结束时间-年\n{EndMonth}: 结束时间-月\n{EndDay}: 结束时间-日\n{EndHour}: 结束时间-小时\n{EndMinute}: 结束时间-分钟\n{EndSecond}: 结束时间-秒\n{EndMillisecond}: 结束时间-毫秒\n\n若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
           "example": "{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{Star",
           "member": "string",
@@ -11896,7 +11891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务流\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "liu",
           "member": "string",
@@ -11906,7 +11900,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频存储策略。\nnormal：标准存储。\ncold：低频存储。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
           "member": "string",
@@ -11916,7 +11909,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "点播应用分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
           "member": "int64",

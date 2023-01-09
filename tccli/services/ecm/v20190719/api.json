@@ -2216,6 +2216,7 @@
         {
           "default": "",
           "document": "ECM区域，形如ap-xian-ecm。",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -2224,6 +2225,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络类型。目前只支持传入OPEN，表示公网属性。",
+          "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
@@ -2232,6 +2234,7 @@
         {
           "default": "",
           "document": "CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通。",
+          "example": "CUCC",
           "member": "string",
           "name": "VipIsp",
           "required": true,
@@ -2240,6 +2243,7 @@
         {
           "default": "",
           "document": "负载均衡实例的名称，只在创建一个实例的时候才会生效。规则：1-50 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
+          "example": "testname",
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
@@ -2248,6 +2252,7 @@
         {
           "default": "",
           "document": "负载均衡后端目标设备所属的网络 ID，如vpc-12345678。",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2256,6 +2261,7 @@
         {
           "default": "",
           "document": "创建负载均衡的个数，默认值 1。",
+          "example": "无",
           "member": "int64",
           "name": "Number",
           "required": false,
@@ -2264,6 +2270,7 @@
         {
           "default": "",
           "document": "负载均衡的带宽限制等信息。",
+          "example": "无",
           "member": "LoadBalancerInternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -2272,6 +2279,7 @@
         {
           "default": "",
           "document": "标签。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
@@ -2280,10 +2288,29 @@
         {
           "default": "",
           "document": "安全组。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。",
+          "example": "IPV4",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。",
+          "example": "subnet-dva8****",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2293,8 +2320,10 @@
       "members": [
         {
           "document": "由负载均衡实例ID组成的数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lb-mov2697v\"]",
           "member": "string",
           "name": "LoadBalancerIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8090,6 +8119,7 @@
         {
           "default": "",
           "document": "区域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-hangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -8099,6 +8129,7 @@
         {
           "default": "",
           "document": "位置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Position",
           "name": "Position",
           "required": true,
@@ -8108,6 +8139,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-1gmnrlgj",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8117,6 +8149,7 @@
         {
           "default": "",
           "document": "负载均衡实例的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-xxxxx",
           "member": "string",
           "name": "LoadBalancerName",
           "required": true,
@@ -8126,6 +8159,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络类型：OPEN：公网属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
@@ -8135,6 +8169,7 @@
         {
           "default": "",
           "document": "负载均衡实例的 VIP 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x.x.x.x",
           "member": "string",
           "name": "LoadBalancerVips",
           "required": true,
@@ -8144,6 +8179,7 @@
         {
           "default": "",
           "document": "负载均衡实例的状态，包括\n 0：创建中，1：正常运行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -8153,6 +8189,7 @@
         {
           "default": "",
           "document": "负载均衡实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 08:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -8162,6 +8199,7 @@
         {
           "default": "",
           "document": "负载均衡实例的上次状态转换时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 08:00:00",
           "member": "datetime",
           "name": "StatusTime",
           "required": true,
@@ -8171,6 +8209,7 @@
         {
           "default": "",
           "document": "私有网络的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -8180,6 +8219,7 @@
         {
           "default": "",
           "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": true,
@@ -8189,6 +8229,7 @@
         {
           "default": "",
           "document": "负载均衡IP地址所属的ISP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CTCC",
           "member": "string",
           "name": "VipIsp",
           "required": true,
@@ -8198,6 +8239,7 @@
         {
           "default": "",
           "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LoadBalancerInternetAccessible",
           "name": "NetworkAttributes",
           "required": true,
@@ -8207,6 +8249,7 @@
         {
           "default": "",
           "document": "安全组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg-hx6dxxxx",
           "member": "string",
           "name": "SecureGroups",
           "required": true,
@@ -8216,10 +8259,21 @@
         {
           "default": "",
           "document": "后端机器是否放通来自ELB的流量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例的IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2402:4e00:1000:4e00:0:920b:5519:d96d",
+          "member": "string",
+          "name": "AddressIPv6",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

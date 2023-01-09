@@ -17,7 +17,22 @@ Output:
 {
     "Response": {
         "RequestId": "099479c0-7b7c-11ed-8d71-fdsafda",
-        "ProcessStatistics": {}
+        "ProcessStatistics": {
+            "Items": [
+                {
+                    "Ip": "127.0.0.1",
+                    "ActiveConn": "1",
+                    "AllConn": 10
+                },
+                {
+                    "Ip": "127.0.0.2",
+                    "ActiveConn": "3",
+                    "AllConn": 5
+                }
+            ],
+            "AllConnSum": 15,
+            "ActiveConnSum": 4
+        }
     }
 }
 ```

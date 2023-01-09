@@ -96,6 +96,18 @@
       "name": "创建集群路由表",
       "output": "CreateClusterRouteTableResponse"
     },
+    "CreateClusterVirtualNode": {
+      "document": "创建虚拟节点",
+      "input": "CreateClusterVirtualNodeRequest",
+      "name": "创建虚拟节点",
+      "output": "CreateClusterVirtualNodeResponse"
+    },
+    "CreateClusterVirtualNodePool": {
+      "document": "创建虚拟节点池",
+      "input": "CreateClusterVirtualNodePoolRequest",
+      "name": "创建虚拟节点池",
+      "output": "CreateClusterVirtualNodePoolResponse"
+    },
     "CreateECMInstances": {
       "document": "创建边缘计算ECM机器",
       "input": "CreateECMInstancesRequest",
@@ -239,6 +251,18 @@
       "input": "DeleteClusterRouteTableRequest",
       "name": "删除集群路由表",
       "output": "DeleteClusterRouteTableResponse"
+    },
+    "DeleteClusterVirtualNode": {
+      "document": "删除虚拟节点",
+      "input": "DeleteClusterVirtualNodeRequest",
+      "name": "删除虚拟节点",
+      "output": "DeleteClusterVirtualNodeResponse"
+    },
+    "DeleteClusterVirtualNodePool": {
+      "document": "删除虚拟节点池",
+      "input": "DeleteClusterVirtualNodePoolRequest",
+      "name": "删除虚拟节点池",
+      "output": "DeleteClusterVirtualNodePoolResponse"
     },
     "DeleteECMInstances": {
       "document": "删除ECM实例",
@@ -479,6 +503,18 @@
       "input": "DescribeClusterStatusRequest",
       "name": "查看集群状态列表",
       "output": "DescribeClusterStatusResponse"
+    },
+    "DescribeClusterVirtualNode": {
+      "document": "查看虚拟节点列表",
+      "input": "DescribeClusterVirtualNodeRequest",
+      "name": "查看虚拟节点列表",
+      "output": "DescribeClusterVirtualNodeResponse"
+    },
+    "DescribeClusterVirtualNodePools": {
+      "document": "查看虚拟节点池列表",
+      "input": "DescribeClusterVirtualNodePoolsRequest",
+      "name": "查看虚拟节点池列表",
+      "output": "DescribeClusterVirtualNodePoolsResponse"
     },
     "DescribeClusters": {
       "document": "查询集群列表",
@@ -792,6 +828,12 @@
       "name": "关闭附加的VPC-CNI网络能力",
       "output": "DisableVpcCniNetworkTypeResponse"
     },
+    "DrainClusterVirtualNode": {
+      "document": "驱逐虚拟节点",
+      "input": "DrainClusterVirtualNodeRequest",
+      "name": "驱逐虚拟节点",
+      "output": "DrainClusterVirtualNodeResponse"
+    },
     "EnableClusterAudit": {
       "document": "开启集群审计",
       "input": "EnableClusterAuditRequest",
@@ -899,6 +941,12 @@
       "input": "ModifyClusterNodePoolRequest",
       "name": "编辑节点池",
       "output": "ModifyClusterNodePoolResponse"
+    },
+    "ModifyClusterVirtualNodePool": {
+      "document": "修改虚拟节点池",
+      "input": "ModifyClusterVirtualNodePoolRequest",
+      "name": "修改虚拟节点池",
+      "output": "ModifyClusterVirtualNodePoolResponse"
     },
     "ModifyNodePoolDesiredCapacityAboutAsg": {
       "document": "修改节点池关联伸缩组的期望实例数",
@@ -4294,6 +4342,177 @@
       ],
       "type": "object"
     },
+    "CreateClusterVirtualNodePoolRequest": {
+      "document": "CreateClusterVirtualNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池名称",
+          "example": "vk-nodepoll",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID列表",
+          "example": "[\"subnet-abcd1234\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点label",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点taint",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点列表",
+          "example": "无",
+          "member": "VirtualNodeSpec",
+          "name": "VirtualNodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "节点池操作系统：\n- linux（默认）\n- windows",
+          "example": "Linux",
+          "member": "string",
+          "name": "OS",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterVirtualNodePoolResponse": {
+      "document": "CreateClusterVirtualNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "节点池ID",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterVirtualNodeRequest": {
+      "document": "CreateClusterVirtualNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点所属节点池",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点所属子网",
+          "example": "subnet-abcd1234",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点子网ID列表，和参数SubnetId互斥",
+          "example": "[\"subnet-abcd1234\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点列表",
+          "example": "无",
+          "member": "VirtualNodeSpec",
+          "name": "VirtualNodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterVirtualNodeResponse": {
+      "document": "CreateClusterVirtualNode返回参数结构体",
+      "members": [
+        {
+          "document": "虚拟节点名称",
+          "example": "eklet-subnet-1234-0",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateECMInstancesRequest": {
       "document": "CreateECMInstances请求参数结构体",
       "members": [
@@ -6037,6 +6256,90 @@
     },
     "DeleteClusterRouteTableResponse": {
       "document": "DeleteClusterRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterVirtualNodePoolRequest": {
+      "document": "DeleteClusterVirtualNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点池ID列表",
+          "member": "string",
+          "name": "NodePoolIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterVirtualNodePoolResponse": {
+      "document": "DeleteClusterVirtualNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterVirtualNodeRequest": {
+      "document": "DeleteClusterVirtualNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点列表",
+          "member": "string",
+          "name": "NodeNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterVirtualNodeResponse": {
+      "document": "DeleteClusterVirtualNode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8051,6 +8354,102 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterVirtualNodePoolsRequest": {
+      "document": "DescribeClusterVirtualNodePools请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterVirtualNodePoolsResponse": {
+      "document": "DescribeClusterVirtualNodePools返回参数结构体",
+      "members": [
+        {
+          "document": "节点池总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "虚拟节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VirtualNodePool",
+          "name": "NodePoolSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterVirtualNodeRequest": {
+      "document": "DescribeClusterVirtualNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池ID",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点名称",
+          "member": "string",
+          "name": "NodeNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterVirtualNodeResponse": {
+      "document": "DescribeClusterVirtualNode返回参数结构体",
+      "members": [
+        {
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VirtualNode",
+          "name": "Nodes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11138,6 +11537,40 @@
         }
       ],
       "usage": "both"
+    },
+    "DrainClusterVirtualNodeRequest": {
+      "document": "DrainClusterVirtualNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点名",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DrainClusterVirtualNodeResponse": {
+      "document": "DrainClusterVirtualNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DriverVersion": {
       "document": "GPU驱动和CUDA的版本信息",
@@ -14621,6 +15054,78 @@
     },
     "ModifyClusterNodePoolResponse": {
       "document": "ModifyClusterNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterVirtualNodePoolRequest": {
+      "document": "ModifyClusterVirtualNodePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池ID",
+          "example": "np-abcd1234",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池名称",
+          "example": "virtual-node-prod",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点label",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "虚拟节点taint",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterVirtualNodePoolResponse": {
+      "document": "ModifyClusterVirtualNodePool返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19857,6 +20362,140 @@
         }
       ],
       "usage": "out"
+    },
+    "VirtualNode": {
+      "document": "虚拟节点",
+      "members": [
+        {
+          "default": "",
+          "document": "虚拟节点名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟节点所属子网",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟节点状态",
+          "member": "string",
+          "name": "Phase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VirtualNodePool": {
+      "document": "虚拟节点池",
+      "members": [
+        {
+          "default": "",
+          "document": "节点池ID",
+          "example": "无",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点池名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点池生命周期",
+          "example": "无",
+          "member": "string",
+          "name": "LifeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟节点label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "虚拟节点taint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VirtualNodeSpec": {
+      "document": "虚拟节点",
+      "members": [
+        {
+          "default": "",
+          "document": "节点展示名称",
+          "example": "测试节点",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "VolumeMount": {
       "document": "数据卷挂载路径信息",

@@ -4800,7 +4800,35 @@
     },
     "ProcessStatistic": {
       "document": "实时会话统计详情。",
-      "members": [],
+      "members": [
+        {
+          "document": "会话详情数组。",
+          "example": "无",
+          "member": "SessionItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总连接数。",
+          "example": "1",
+          "member": "int64",
+          "name": "AllConnSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总活跃连接数。",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveConnSum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "ProfileInfo": {
@@ -5419,6 +5447,39 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SessionItem": {
+      "document": "实时会话访问来源详情。",
+      "members": [
+        {
+          "document": "访问来源。",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前访问来源活跃连接数",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "ActiveConn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前访问来源总连接数",
+          "example": "1",
+          "member": "int64",
+          "name": "AllConn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

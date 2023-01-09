@@ -47,6 +47,7 @@ Output:
             }
         ],
         "RequestId": "79900a28xxxxxx-4af8a90f7292",
+        "VerifySerialNo": "16698630779",
         "VerifyResult": 1
     }
 }
@@ -101,6 +102,7 @@ Output:
             }
         ],
         "RequestId": "57151f15-2xxxxxx46418d4b72a",
+        "VerifySerialNo": "16698630779",
         "VerifyResult": 1
     }
 }

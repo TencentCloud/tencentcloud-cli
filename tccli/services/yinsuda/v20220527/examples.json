@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyChorus": [
+      {
+        "document": "申请合唱相关信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyChorus\n<公共请求参数>\n\n{\n    \"UserId\": \"20220123abc\",\n    \"AppName\": \"test\",\n    \"RoomId\": \"100832\",\n    \"MusicId\": \"mid-112ddff\",\n    \"ChorusUserIds\": [\n        \"user1\",\n        \"user2\"\n    ],\n    \"MaxChorusNum\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ChorusToken\": \"chid-9hh33x\",\n        \"RequestId\": \"58bfe77f-d477-48e8-9922-55f56d0b88fb\"\n    }\n}",
+        "title": "申请合唱"
+      }
+    ],
     "BatchDescribeKTVMusicDetails": [
       {
         "document": "批量获取曲目详情",

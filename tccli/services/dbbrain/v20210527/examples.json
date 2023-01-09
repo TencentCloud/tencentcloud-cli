@@ -196,7 +196,7 @@
       {
         "document": "获取单个proxy的实时会话统计详情",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyProcessStatistics\n<公共请求参数>\n\n{\n    \"InstanceId\": \"redis-test\",\n    \"Product\": \"redis\",\n    \"Limit\": \"20\",\n    \"InstanceProxyId\": \"b237ff3c5f30b0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"099479c0-7b7c-11ed-8d71-fdsafda\",\n        \"ProcessStatistics\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"099479c0-7b7c-11ed-8d71-fdsafda\",\n        \"ProcessStatistics\": {\n            \"Items\": [\n                {\n                    \"Ip\": \"127.0.0.1\",\n                    \"ActiveConn\": \"1\",\n                    \"AllConn\": 10\n                },\n                {\n                    \"Ip\": \"127.0.0.2\",\n                    \"ActiveConn\": \"3\",\n                    \"AllConn\": 5\n                }\n            ],\n            \"AllConnSum\": 15,\n            \"ActiveConnSum\": 4\n        }\n    }\n}",
         "title": "获取单个proxy实时会话统计详情"
       }
     ],

@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ApplyChorus": {
+      "document": "申请合唱相关信息，用于标记用户的演唱是在合唱场景下。",
+      "input": "ApplyChorusRequest",
+      "name": "申请合唱",
+      "output": "ApplyChorusResponse"
+    },
     "BatchDescribeKTVMusicDetails": {
       "document": "批量获取歌曲详细信息，包括：歌词下载链接、播放凭证、音高数据下载链接信息等。",
       "input": "BatchDescribeKTVMusicDetailsRequest",
@@ -115,6 +121,87 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyChorusRequest": {
+      "document": "ApplyChorus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "歌曲 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大合唱人数，默认值为 8，最大值为 20。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxChorusNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "合唱用户标识列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ChorusUserIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyChorusResponse": {
+      "document": "ApplyChorus返回参数结构体",
+      "members": [
+        {
+          "document": "合唱 Token。",
+          "example": "无",
+          "member": "string",
+          "name": "ChorusToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchDescribeKTVMusicDetailsRequest": {
       "document": "BatchDescribeKTVMusicDetails请求参数结构体",

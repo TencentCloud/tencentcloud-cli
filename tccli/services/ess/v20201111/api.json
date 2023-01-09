@@ -921,7 +921,7 @@
         },
         {
           "default": "",
-          "document": "操作者信息",
+          "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4750,6 +4750,15 @@
           "name": "PdfVerifyResults",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验签序列号",
+          "example": "无",
+          "member": "string",
+          "name": "VerifySerialNo",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

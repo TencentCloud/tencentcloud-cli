@@ -19,7 +19,7 @@
       "output": "ContinueMigrateJobResponse"
     },
     "ContinueSyncJob": {
-      "document": "恢复处于暂停中中的数据同步任务。",
+      "document": "恢复处于暂停中的数据同步任务。",
       "input": "ContinueSyncJobRequest",
       "name": "恢复被暂停的同步任务",
       "output": "ContinueSyncJobResponse"

@@ -7,7 +7,7 @@ Input:
 ```
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
     --ResourceType doc \
-    --ResourceId yDRvQUUgygqt75qpUuO4zjERW6iCFCEl \
+    --ResourceId y***********************************l \
     --Organization.OrganizationOpenId  \
     --Organization.OrganizationId  \
     --Organization.ClientIp  \
@@ -15,7 +15,7 @@ tccli ess CreateConvertTaskApi --cli-unfold-argument  \
     --Organization.Channel  \
     --Operator.ProxyIp  \
     --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDxHyUyKQDHrGYUuO4zjEEGgzwY0Ak1p \
+    --Operator.UserId y***********************************p \
     --Operator.Channel  \
     --Operator.OpenId  \
     --ResourceName hello.docx
@@ -43,11 +43,11 @@ tccli ess CreateConvertTaskApi --cli-unfold-argument  \
     --ResourceName hello.docx \
     --Operator.ProxyIp 8.8.8.8 \
     --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR \
-    --Organization.OrganizationId 682c1d5bdce884ad3df5ba5fabb6fcf1 \
+    --Operator.UserId y***********************************R \
+    --Organization.OrganizationId 6***********************************1 \
     --Organization.ClientIp 8.8.8.8 \
     --Organization.ProxyIp 8.8.8.8 \
-    --ResourceId yDRvQUUgygqt75qpUuO4zjERW6iCFCEl
+    --ResourceId y***********************************l
 ```
 
 Output: 

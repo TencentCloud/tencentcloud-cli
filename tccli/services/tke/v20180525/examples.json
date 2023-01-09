@@ -140,6 +140,22 @@
         "title": "创建集群路由表"
       }
     ],
+    "CreateClusterVirtualNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterVirtualNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolId\": \"np-abcd1234\",\n    \"SubnetId\": \"subnet-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"NodeName\": \"eklet-subnet-1234-0\"\n    }\n}",
+        "title": "创建虚拟节点"
+      }
+    ],
+    "CreateClusterVirtualNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"Name\": \"vk-nodepoll\",\n    \"SubnetIds\": [\n        \"subnet-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-abcd1234\",\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "创建虚拟节点池"
+      }
+    ],
     "CreateECMInstances": [
       {
         "document": "创建边缘计算ECM机器",
@@ -342,6 +358,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteClusterRouteTable\r\n&RouteTableName=MANAGED_CLUSTER\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
         "title": "删除集群路由表"
+      }
+    ],
+    "DeleteClusterVirtualNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterVirtualNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodeNames\": [\n        \"eklet-subnet-abcd1234-0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "删除虚拟节点"
+      }
+    ],
+    "DeleteClusterVirtualNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolIds\": [\n        \"np-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "删除虚拟节点池"
       }
     ],
     "DeleteECMInstances": [
@@ -662,6 +694,22 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterStatusSet\": [\n            {\n                \"ClusterClosingNodeNum\": 0,\n                \"ClusterAuditEnabled\": true,\n                \"ClusterDeletionProtection\": true,\n                \"ClusterId\": \"xx\",\n                \"ClusterBMonitor\": true,\n                \"ClusterInitNodeNum\": 0,\n                \"ClusterState\": \"xx\",\n                \"ClusterClosedNodeNum\": 0,\n                \"ClusterInstanceState\": \"xx\",\n                \"ClusterRunningNodeNum\": 0,\n                \"ClusterFailedNodeNum\": 0\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
         "title": "获取集群当前状态"
+      }
+    ],
+    "DescribeClusterVirtualNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterVirtualNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolId\": \"np-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"TotalCount\": 1,\n        \"Nodes\": [\n            {\n                \"Name\": \"eklet-subnet-abcd1234-0\",\n                \"SubnetId\": \"subnet-abcd1234\",\n                \"Phase\": \"Running\"\n            }\n        ]\n    }\n}",
+        "title": "查看虚拟节点列表"
+      }
+    ],
+    "DescribeClusterVirtualNodePools": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterVirtualNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"NodePoolSet\": [\n            {\n                \"NodePoolId\": \"np-abcd1234\",\n                \"SubnetIds\": [\n                    \"subnet-abcd1234\"\n                ],\n                \"Name\": \"virtual-nodepool\",\n                \"LifeState\": \"normal\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查看虚拟节点池列表"
       }
     ],
     "DescribeClusters": [
@@ -1086,6 +1134,14 @@
         "title": "关闭vpc-cni网络"
       }
     ],
+    "DrainClusterVirtualNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DrainClusterVirtualNode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodeName\": \"eklet-subnet-abcd1234-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "驱逐虚拟节点"
+      }
+    ],
     "EnableClusterAudit": [
       {
         "document": "",
@@ -1228,6 +1284,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\",\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
         "title": "编辑节点池"
+      }
+    ],
+    "ModifyClusterVirtualNodePool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-abcd1234\",\n    \"NodePoolId\": \"np-abcd1234\",\n    \"Name\": \"virtual-node-prod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "修改虚拟节点池"
       }
     ],
     "ModifyNodePoolDesiredCapacityAboutAsg": [

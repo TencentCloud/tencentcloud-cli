@@ -72,8 +72,7 @@
       "document": "CreateTaskFromTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "从经验库中查询到的经验模版ID",
+          "document": "从经验库中查询到的经验模板ID",
           "example": "11",
           "member": "uint64",
           "name": "TemplateId",
@@ -81,7 +80,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "演练的配置参数",
           "example": "无",
           "member": "TaskConfig",
@@ -100,7 +98,6 @@
           "example": "50",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

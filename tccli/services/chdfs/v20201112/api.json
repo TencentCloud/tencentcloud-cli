@@ -420,6 +420,15 @@
       "document": "CreateAccessRules返回参数结构体",
       "members": [
         {
+          "document": "权限规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "AccessRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -982,6 +991,24 @@
           "example": "0",
           "member": "uint64",
           "name": "DegradeCapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已使用COS深度归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeepArchiveCapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已使用COS智能分层存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IntelligentCapacityUsed",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1892,7 +1919,7 @@
         },
         {
           "default": "",
-          "document": "转换类型（1：归档；2：删除；3：低频）",
+          "document": "转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
