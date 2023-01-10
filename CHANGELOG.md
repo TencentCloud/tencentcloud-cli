@@ -1,3 +1,43 @@
+# Release 3.0.686.1
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 6 次发布
+
+发布时间：2023-01-11 01:35:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSnapshots](http://document.tencentcloudapi.woa.com/document/product/596/54348)
+
+	* 新增入参：SelectedTables
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 14 次发布
+
+发布时间：2023-01-11 01:36:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1141/41572)
+
+	* 新增入参：RegistryChargePrepaid
+
+
+
+
 # Release 3.0.685.1
 
 ## 主机安全(cwp) 版本：2018-02-28

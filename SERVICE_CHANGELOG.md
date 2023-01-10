@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
 
-### 第 42 次发布
+### 第 6 次发布
 
-发布时间：2023-01-10 01:17:03
+发布时间：2023-01-11 01:35:54
 
 本次发布包含了以下内容：
 
@@ -12,75 +12,28 @@
 
 修改接口：
 
-* [DescribeVersionStatistics](http://document.tencentcloudapi.woa.com/document/product/296/60922)
+* [DescribeSnapshots](http://document.tencentcloudapi.woa.com/document/product/596/54348)
 
-	* 新增出参：GeneralVersionNum
-
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 33 次发布
-
-发布时间：2023-01-10 01:20:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)
+	* 新增入参：SelectedTables
 
 
 
-## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-### 第 26 次发布
+## 容器镜像服务(tcr) 版本：2019-09-24
 
-发布时间：2023-01-10 01:41:25
+### 第 14 次发布
+
+发布时间：2023-01-11 01:36:56
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+修改接口：
 
-* [DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1141/41572)
 
-修改数据结构：
-
-* [ApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#ApiDetailInfo)
-
-	* 新增成员：ApiMatchType
-
-* [KafkaDeliveryConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#KafkaDeliveryConfig)
-
-	* 新增成员：EnableAuth, Username, Password, KafkaInfos, EnableGlobalLineRule, CustomRule
-
-
-
-
-## 云点播(vod) 版本：2018-07-17
-
-### 第 46 次发布
-
-发布时间：2023-01-10 01:42:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)
-
-修改数据结构：
-
-* [MediaVideoStreamItem](http://document.tencentcloudapi.woa.com/document/product/266/31773#MediaVideoStreamItem)
-
-	* 新增成员：DynamicRangeInfo
+	* 新增入参：RegistryChargePrepaid
 
 
 
@@ -17998,7 +17951,7 @@
 
 新增接口：
 
-* [[SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SuspendResumeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/76936)
 
 ### 第 32 次发布
 
@@ -38276,6 +38229,21 @@
 
 ## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
 
+### 第 6 次发布
+
+发布时间：2023-01-11 01:35:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSnapshots](http://document.tencentcloudapi.woa.com/document/product/596/54348)
+
+	* 新增入参：SelectedTables
+
+
 ### 第 5 次发布
 
 发布时间：2022-08-29 16:51:32
@@ -39411,6 +39379,21 @@
 
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 14 次发布
+
+发布时间：2023-01-11 01:36:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1141/41572)
+
+	* 新增入参：RegistryChargePrepaid
+
 
 ### 第 13 次发布
 
@@ -45038,7 +45021,7 @@
 
 新增数据结构：
 
-* [[DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo))
+* [DeliveryKafkaInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#DeliveryKafkaInfo)
 
 修改数据结构：
 
@@ -46457,7 +46440,7 @@
 
 新增数据结构：
 
-* [[DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)](http://document.tencentcloudapi.woa.com/document/product/266/31773#[DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo))
+* [DynamicRangeInfo](http://document.tencentcloudapi.woa.com/document/product/266/31773#DynamicRangeInfo)
 
 修改数据结构：
 
